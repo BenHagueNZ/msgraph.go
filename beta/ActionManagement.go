@@ -8,7 +8,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/yaegashi/msgraph.go/jsonx"
+	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
 // ManagementConditionStatements returns request builder for ManagementConditionStatement collection

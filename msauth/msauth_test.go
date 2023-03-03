@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/yaegashi/msgraph.go/msauth"
+	"github.com/BenHagueNZ/msgraph.go/msauth"
 	"golang.org/x/oauth2"
 )
 

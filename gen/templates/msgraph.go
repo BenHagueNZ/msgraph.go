@@ -18,7 +18,7 @@ import (
 	"time"
 
 	"github.com/rickb777/date/period"
-	"github.com/yaegashi/msgraph.go/jsonx"
+	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
 // BEGIN - everything below this line will be copied to the output

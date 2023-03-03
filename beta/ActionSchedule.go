@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/yaegashi/msgraph.go/jsonx"
+	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
 // ScheduleShareRequestParameter undocumented
