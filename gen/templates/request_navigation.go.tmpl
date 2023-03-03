@@ -1,0 +1,10 @@
+{{- $ := . }}
+{{- $x := .X }}
+{{- $y := .Y }}
+{{- $ySymType := $.SymBaseType $y.Type }}
+// {{$y.Sym}} is navigation property
+func (b *{{$x.Sym}}RequestBuilder) {{$y.Sym}}() *{{$ySymType}}RequestBuilder {
+	bb := &{{$ySymType}}RequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/{{$y.Name}}"
+	return bb
+}

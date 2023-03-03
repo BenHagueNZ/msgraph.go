@@ -1,0 +1,22 @@
+{{- $ := . }}
+{{- $x := .X }}
+// {{$x.Sym}} {{$x.Description}}
+type {{$x.Sym}} struct {
+{{- if ne $x.Base "" }}
+    // {{$.SymBaseType $x.Base}} is the base model of {{$x.Sym}}
+    {{$.SymBaseType $x.Base}}
+{{- else }}
+    // Object is the base model of {{$x.Sym}}
+    Object
+{{- end }}
+{{- range $y := .X.Members }}
+{{- $yTypeType := $.TypeFromType $y.Type }}
+    // {{$y.Sym}} {{$y.Description}}
+    {{$y.Sym}} {{$yTypeType}} `json:"{{$y.Name}},omitempty"`
+{{- end }}
+{{- range $y := .X.Navigations }}
+{{- $yTypeType := $.TypeFromType $y.Type }}
+    // {{$y.Sym}} {{$y.Description}}
+    {{$y.Sym}} {{$yTypeType}} `json:"{{$y.Name}},omitempty"`
+{{- end }}
+}

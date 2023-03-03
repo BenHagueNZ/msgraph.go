@@ -1,0 +1,33 @@
+{{- $ := . }}
+{{- $y := .Y }}
+{{- $ySymBindingType := $.SymFromType $y.BindingParameterType }}
+{{- if $y.ReturnType }}
+{{- $yTypeType := $.TypeFromType $y.ReturnType }}
+{{- end }}
+//
+type {{$ySymBindingType}}{{$y.Sym}}RequestBuilder struct { BaseRequestBuilder }
+
+{{- range $x := .X }}
+// {{$y.Sym}} action {{$y.Description}}
+func (b *{{$x}}RequestBuilder) {{$y.Sym}}(reqObj *{{$ySymBindingType}}{{$y.Sym}}RequestParameter) *{{$ySymBindingType}}{{$y.Sym}}RequestBuilder {
+    bb := &{{$ySymBindingType}}{{$y.Sym}}RequestBuilder {BaseRequestBuilder: b.BaseRequestBuilder}
+    bb.BaseRequestBuilder.baseURL += "/{{$y.Name}}"
+    bb.BaseRequestBuilder.requestObject = reqObj
+    return bb
+}
+{{- end }}
+
+//
+type {{$ySymBindingType}}{{$y.Sym}}Request struct { BaseRequest }
+
+//
+func (b *{{$ySymBindingType}}{{$y.Sym}}RequestBuilder) Request() *{{$ySymBindingType}}{{$y.Sym}}Request {
+    return &{{$ySymBindingType}}{{$y.Sym}}Request{
+        BaseRequest: BaseRequest{ baseURL: b.baseURL, client:  b.client, requestObject: b.requestObject },
+    }
+}
+
+//
+func (r *{{$ySymBindingType}}{{$y.Sym}}Request) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}

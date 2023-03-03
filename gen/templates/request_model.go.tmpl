@@ -1,0 +1,32 @@
+// {{.X}}RequestBuilder is request builder for {{.X}}
+type {{.X}}RequestBuilder struct { BaseRequestBuilder }
+
+// Request returns {{.X}}Request
+func (b *{{.X}}RequestBuilder) Request() *{{.X}}Request {
+    return &{{.X}}Request{
+        BaseRequest: BaseRequest{ baseURL: b.baseURL, client:  b.client },
+    }
+}
+
+// {{.X}}Request is request for {{.X}}
+type {{.X}}Request struct{ BaseRequest }
+
+// Get performs GET request for {{.X}}
+func (r *{{.X}}Request) Get(ctx context.Context) (resObj *{{.X}}, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for {{.X}}
+func (r *{{.X}}Request) Update(ctx context.Context, reqObj *{{.X}}) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for {{.X}}
+func (r *{{.X}}Request) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
