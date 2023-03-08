@@ -2,20 +2,24 @@
 
 package msgraph
 
+import "time"
+
 // LicenseAssignmentState undocumented
 type LicenseAssignmentState struct {
 	// Object is the base model of LicenseAssignmentState
 	Object
-	// SKUID undocumented
-	SKUID *UUID `json:"skuId,omitempty"`
-	// DisabledPlans undocumented
-	DisabledPlans []UUID `json:"disabledPlans,omitempty"`
 	// AssignedByGroup undocumented
 	AssignedByGroup *string `json:"assignedByGroup,omitempty"`
-	// State undocumented
-	State *string `json:"state,omitempty"`
+	// DisabledPlans undocumented
+	DisabledPlans []UUID `json:"disabledPlans,omitempty"`
 	// Error undocumented
 	Error *string `json:"error,omitempty"`
+	// LastUpdatedDateTime undocumented
+	LastUpdatedDateTime *time.Time `json:"lastUpdatedDateTime,omitempty"`
+	// SKUID undocumented
+	SKUID *UUID `json:"skuId,omitempty"`
+	// State undocumented
+	State *string `json:"state,omitempty"`
 }
 
 // LicenseDetails undocumented

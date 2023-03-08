@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsTanRequestBuilder struct{ BaseRequestBuilder }
 
 // Tan action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Tan(reqObj *WorkbookFunctionsTanReques
 	return bb
 }
 
-//
 type WorkbookFunctionsTanRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsTanRequestBuilder) Request() *WorkbookFunctionsTanRequest {
 	return &WorkbookFunctionsTanRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsTanRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

@@ -2,6 +2,14 @@
 
 package msgraph
 
+// InviteNewBotResponse undocumented
+type InviteNewBotResponse struct {
+	// ParticipantJoiningResponse is the base model of InviteNewBotResponse
+	ParticipantJoiningResponse
+	// InviteURI undocumented
+	InviteURI *string `json:"inviteUri,omitempty"`
+}
+
 // InviteParticipantsOperation undocumented
 type InviteParticipantsOperation struct {
 	// CommsOperation is the base model of InviteParticipantsOperation

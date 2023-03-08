@@ -2,34 +2,48 @@
 
 package msgraph
 
-// CustomAction undocumented
-type CustomAction struct {
-	// InformationProtectionAction is the base model of CustomAction
-	InformationProtectionAction
-	// Name undocumented
-	Name *string `json:"name,omitempty"`
-	// Properties undocumented
-	Properties []KeyValuePair `json:"properties,omitempty"`
+import "time"
+
+// CustomTaskExtension undocumented
+type CustomTaskExtension struct {
+	// CustomCalloutExtension is the base model of CustomTaskExtension
+	CustomCalloutExtension
+	// CallbackConfiguration undocumented
+	CallbackConfiguration *CustomExtensionCallbackConfiguration `json:"callbackConfiguration,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// LastModifiedDateTime undocumented
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// CreatedBy undocumented
+	CreatedBy *User `json:"createdBy,omitempty"`
+	// LastModifiedBy undocumented
+	LastModifiedBy *User `json:"lastModifiedBy,omitempty"`
 }
 
-// CustomSubjectAlternativeName undocumented
-type CustomSubjectAlternativeName struct {
-	// Object is the base model of CustomSubjectAlternativeName
-	Object
-	// SanType Custom SAN Type.
-	SanType *SubjectAlternativeNameType `json:"sanType,omitempty"`
-	// Name Custom SAN Name
-	Name *string `json:"name,omitempty"`
+// CustomTaskExtensionCallbackConfiguration undocumented
+type CustomTaskExtensionCallbackConfiguration struct {
+	// CustomExtensionCallbackConfiguration is the base model of CustomTaskExtensionCallbackConfiguration
+	CustomExtensionCallbackConfiguration
 }
 
-// CustomTimeZone undocumented
-type CustomTimeZone struct {
-	// TimeZoneBase is the base model of CustomTimeZone
-	TimeZoneBase
-	// Bias undocumented
-	Bias *int `json:"bias,omitempty"`
-	// StandardOffset undocumented
-	StandardOffset *StandardTimeZoneOffset `json:"standardOffset,omitempty"`
-	// DaylightOffset undocumented
-	DaylightOffset *DaylightTimeZoneOffset `json:"daylightOffset,omitempty"`
+// CustomTaskExtensionCallbackData undocumented
+type CustomTaskExtensionCallbackData struct {
+	// CustomExtensionData is the base model of CustomTaskExtensionCallbackData
+	CustomExtensionData
+	// OperationStatus undocumented
+	OperationStatus *IdentityGovernance_customTaskExtensionOperationStatus `json:"operationStatus,omitempty"`
+}
+
+// CustomTaskExtensionCalloutData undocumented
+type CustomTaskExtensionCalloutData struct {
+	// CustomExtensionData is the base model of CustomTaskExtensionCalloutData
+	CustomExtensionData
+	// Subject undocumented
+	Subject *User `json:"subject,omitempty"`
+	// Task undocumented
+	Task *IdentityGovernance_task `json:"task,omitempty"`
+	// TaskProcessingresult undocumented
+	TaskProcessingresult *IdentityGovernance_taskProcessingResult `json:"taskProcessingresult,omitempty"`
+	// Workflow undocumented
+	Workflow *IdentityGovernance_workflow `json:"workflow,omitempty"`
 }

@@ -14,6 +14,8 @@ type NetworkConnection struct {
 	DestinationAddress *string `json:"destinationAddress,omitempty"`
 	// DestinationDomain undocumented
 	DestinationDomain *string `json:"destinationDomain,omitempty"`
+	// DestinationLocation undocumented
+	DestinationLocation *string `json:"destinationLocation,omitempty"`
 	// DestinationPort undocumented
 	DestinationPort *string `json:"destinationPort,omitempty"`
 	// DestinationURL undocumented
@@ -38,6 +40,8 @@ type NetworkConnection struct {
 	RiskScore *string `json:"riskScore,omitempty"`
 	// SourceAddress undocumented
 	SourceAddress *string `json:"sourceAddress,omitempty"`
+	// SourceLocation undocumented
+	SourceLocation *string `json:"sourceLocation,omitempty"`
 	// SourcePort undocumented
 	SourcePort *string `json:"sourcePort,omitempty"`
 	// Status undocumented

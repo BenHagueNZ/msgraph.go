@@ -16,6 +16,10 @@ type Drive struct {
 	SharePointIDs *SharepointIDs `json:"sharePointIds,omitempty"`
 	// System undocumented
 	System *SystemFacet `json:"system,omitempty"`
+	// Bundles undocumented
+	Bundles []DriveItem `json:"bundles,omitempty"`
+	// Following undocumented
+	Following []DriveItem `json:"following,omitempty"`
 	// Items undocumented
 	Items []DriveItem `json:"items,omitempty"`
 	// List undocumented
@@ -32,6 +36,8 @@ type DriveItem struct {
 	BaseItem
 	// Audio undocumented
 	Audio *Audio `json:"audio,omitempty"`
+	// Bundle undocumented
+	Bundle *Bundle `json:"bundle,omitempty"`
 	// Content undocumented
 	Content *Stream `json:"content,omitempty"`
 	// CTag undocumented
@@ -48,8 +54,12 @@ type DriveItem struct {
 	Image *Image `json:"image,omitempty"`
 	// Location undocumented
 	Location *GeoCoordinates `json:"location,omitempty"`
+	// Malware undocumented
+	Malware *Malware `json:"malware,omitempty"`
 	// Package undocumented
 	Package *Package `json:"package,omitempty"`
+	// PendingOperations undocumented
+	PendingOperations *PendingOperations `json:"pendingOperations,omitempty"`
 	// Photo undocumented
 	Photo *Photo `json:"photo,omitempty"`
 	// Publication undocumented
@@ -96,6 +106,8 @@ type DriveItemUploadableProperties struct {
 	Object
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
+	// FileSize undocumented
+	FileSize *int `json:"fileSize,omitempty"`
 	// FileSystemInfo undocumented
 	FileSystemInfo *FileSystemInfo `json:"fileSystemInfo,omitempty"`
 	// Name undocumented

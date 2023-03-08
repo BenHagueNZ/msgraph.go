@@ -8,12 +8,12 @@ type SchemaExtension struct {
 	Entity
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
-	// TargetTypes undocumented
-	TargetTypes []string `json:"targetTypes,omitempty"`
+	// Owner undocumented
+	Owner *string `json:"owner,omitempty"`
 	// Properties undocumented
 	Properties []ExtensionSchemaProperty `json:"properties,omitempty"`
 	// Status undocumented
 	Status *string `json:"status,omitempty"`
-	// Owner undocumented
-	Owner *string `json:"owner,omitempty"`
+	// TargetTypes undocumented
+	TargetTypes []string `json:"targetTypes,omitempty"`
 }

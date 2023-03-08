@@ -38,3 +38,134 @@ var (
 	_UserAccountSecurityTypePAdministrator      = UserAccountSecurityTypeVAdministrator
 	_UserAccountSecurityTypePUnknownFutureValue = UserAccountSecurityTypeVUnknownFutureValue
 )
+
+// UserExperienceAnalyticsHealthState undocumented
+type UserExperienceAnalyticsHealthState string
+
+const (
+	// UserExperienceAnalyticsHealthStateVUnknown undocumented
+	UserExperienceAnalyticsHealthStateVUnknown UserExperienceAnalyticsHealthState = "unknown"
+	// UserExperienceAnalyticsHealthStateVInsufficientData undocumented
+	UserExperienceAnalyticsHealthStateVInsufficientData UserExperienceAnalyticsHealthState = "insufficientData"
+	// UserExperienceAnalyticsHealthStateVNeedsAttention undocumented
+	UserExperienceAnalyticsHealthStateVNeedsAttention UserExperienceAnalyticsHealthState = "needsAttention"
+	// UserExperienceAnalyticsHealthStateVMeetingGoals undocumented
+	UserExperienceAnalyticsHealthStateVMeetingGoals UserExperienceAnalyticsHealthState = "meetingGoals"
+	// UserExperienceAnalyticsHealthStateVUnknownFutureValue undocumented
+	UserExperienceAnalyticsHealthStateVUnknownFutureValue UserExperienceAnalyticsHealthState = "unknownFutureValue"
+)
+
+var (
+	// UserExperienceAnalyticsHealthStatePUnknown is a pointer to UserExperienceAnalyticsHealthStateVUnknown
+	UserExperienceAnalyticsHealthStatePUnknown = &_UserExperienceAnalyticsHealthStatePUnknown
+	// UserExperienceAnalyticsHealthStatePInsufficientData is a pointer to UserExperienceAnalyticsHealthStateVInsufficientData
+	UserExperienceAnalyticsHealthStatePInsufficientData = &_UserExperienceAnalyticsHealthStatePInsufficientData
+	// UserExperienceAnalyticsHealthStatePNeedsAttention is a pointer to UserExperienceAnalyticsHealthStateVNeedsAttention
+	UserExperienceAnalyticsHealthStatePNeedsAttention = &_UserExperienceAnalyticsHealthStatePNeedsAttention
+	// UserExperienceAnalyticsHealthStatePMeetingGoals is a pointer to UserExperienceAnalyticsHealthStateVMeetingGoals
+	UserExperienceAnalyticsHealthStatePMeetingGoals = &_UserExperienceAnalyticsHealthStatePMeetingGoals
+	// UserExperienceAnalyticsHealthStatePUnknownFutureValue is a pointer to UserExperienceAnalyticsHealthStateVUnknownFutureValue
+	UserExperienceAnalyticsHealthStatePUnknownFutureValue = &_UserExperienceAnalyticsHealthStatePUnknownFutureValue
+)
+
+var (
+	_UserExperienceAnalyticsHealthStatePUnknown            = UserExperienceAnalyticsHealthStateVUnknown
+	_UserExperienceAnalyticsHealthStatePInsufficientData   = UserExperienceAnalyticsHealthStateVInsufficientData
+	_UserExperienceAnalyticsHealthStatePNeedsAttention     = UserExperienceAnalyticsHealthStateVNeedsAttention
+	_UserExperienceAnalyticsHealthStatePMeetingGoals       = UserExperienceAnalyticsHealthStateVMeetingGoals
+	_UserExperienceAnalyticsHealthStatePUnknownFutureValue = UserExperienceAnalyticsHealthStateVUnknownFutureValue
+)
+
+// UserFlowType undocumented
+type UserFlowType string
+
+const (
+	// UserFlowTypeVSignUp undocumented
+	UserFlowTypeVSignUp UserFlowType = "signUp"
+	// UserFlowTypeVSignIn undocumented
+	UserFlowTypeVSignIn UserFlowType = "signIn"
+	// UserFlowTypeVSignUpOrSignIn undocumented
+	UserFlowTypeVSignUpOrSignIn UserFlowType = "signUpOrSignIn"
+	// UserFlowTypeVPasswordReset undocumented
+	UserFlowTypeVPasswordReset UserFlowType = "passwordReset"
+	// UserFlowTypeVProfileUpdate undocumented
+	UserFlowTypeVProfileUpdate UserFlowType = "profileUpdate"
+	// UserFlowTypeVResourceOwner undocumented
+	UserFlowTypeVResourceOwner UserFlowType = "resourceOwner"
+	// UserFlowTypeVUnknownFutureValue undocumented
+	UserFlowTypeVUnknownFutureValue UserFlowType = "unknownFutureValue"
+)
+
+var (
+	// UserFlowTypePSignUp is a pointer to UserFlowTypeVSignUp
+	UserFlowTypePSignUp = &_UserFlowTypePSignUp
+	// UserFlowTypePSignIn is a pointer to UserFlowTypeVSignIn
+	UserFlowTypePSignIn = &_UserFlowTypePSignIn
+	// UserFlowTypePSignUpOrSignIn is a pointer to UserFlowTypeVSignUpOrSignIn
+	UserFlowTypePSignUpOrSignIn = &_UserFlowTypePSignUpOrSignIn
+	// UserFlowTypePPasswordReset is a pointer to UserFlowTypeVPasswordReset
+	UserFlowTypePPasswordReset = &_UserFlowTypePPasswordReset
+	// UserFlowTypePProfileUpdate is a pointer to UserFlowTypeVProfileUpdate
+	UserFlowTypePProfileUpdate = &_UserFlowTypePProfileUpdate
+	// UserFlowTypePResourceOwner is a pointer to UserFlowTypeVResourceOwner
+	UserFlowTypePResourceOwner = &_UserFlowTypePResourceOwner
+	// UserFlowTypePUnknownFutureValue is a pointer to UserFlowTypeVUnknownFutureValue
+	UserFlowTypePUnknownFutureValue = &_UserFlowTypePUnknownFutureValue
+)
+
+var (
+	_UserFlowTypePSignUp             = UserFlowTypeVSignUp
+	_UserFlowTypePSignIn             = UserFlowTypeVSignIn
+	_UserFlowTypePSignUpOrSignIn     = UserFlowTypeVSignUpOrSignIn
+	_UserFlowTypePPasswordReset      = UserFlowTypeVPasswordReset
+	_UserFlowTypePProfileUpdate      = UserFlowTypeVProfileUpdate
+	_UserFlowTypePResourceOwner      = UserFlowTypeVResourceOwner
+	_UserFlowTypePUnknownFutureValue = UserFlowTypeVUnknownFutureValue
+)
+
+// UserPurpose undocumented
+type UserPurpose string
+
+const (
+	// UserPurposeVUser undocumented
+	UserPurposeVUser UserPurpose = "user"
+	// UserPurposeVLinked undocumented
+	UserPurposeVLinked UserPurpose = "linked"
+	// UserPurposeVShared undocumented
+	UserPurposeVShared UserPurpose = "shared"
+	// UserPurposeVRoom undocumented
+	UserPurposeVRoom UserPurpose = "room"
+	// UserPurposeVEquipment undocumented
+	UserPurposeVEquipment UserPurpose = "equipment"
+	// UserPurposeVOthers undocumented
+	UserPurposeVOthers UserPurpose = "others"
+	// UserPurposeVUnknownFutureValue undocumented
+	UserPurposeVUnknownFutureValue UserPurpose = "unknownFutureValue"
+)
+
+var (
+	// UserPurposePUser is a pointer to UserPurposeVUser
+	UserPurposePUser = &_UserPurposePUser
+	// UserPurposePLinked is a pointer to UserPurposeVLinked
+	UserPurposePLinked = &_UserPurposePLinked
+	// UserPurposePShared is a pointer to UserPurposeVShared
+	UserPurposePShared = &_UserPurposePShared
+	// UserPurposePRoom is a pointer to UserPurposeVRoom
+	UserPurposePRoom = &_UserPurposePRoom
+	// UserPurposePEquipment is a pointer to UserPurposeVEquipment
+	UserPurposePEquipment = &_UserPurposePEquipment
+	// UserPurposePOthers is a pointer to UserPurposeVOthers
+	UserPurposePOthers = &_UserPurposePOthers
+	// UserPurposePUnknownFutureValue is a pointer to UserPurposeVUnknownFutureValue
+	UserPurposePUnknownFutureValue = &_UserPurposePUnknownFutureValue
+)
+
+var (
+	_UserPurposePUser               = UserPurposeVUser
+	_UserPurposePLinked             = UserPurposeVLinked
+	_UserPurposePShared             = UserPurposeVShared
+	_UserPurposePRoom               = UserPurposeVRoom
+	_UserPurposePEquipment          = UserPurposeVEquipment
+	_UserPurposePOthers             = UserPurposeVOthers
+	_UserPurposePUnknownFutureValue = UserPurposeVUnknownFutureValue
+)

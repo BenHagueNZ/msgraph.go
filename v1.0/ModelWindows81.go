@@ -6,26 +6,26 @@ package msgraph
 type Windows81CompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of Windows81CompliancePolicy
 	DeviceCompliancePolicy
-	// PasswordRequired Require a password to unlock Windows device.
-	PasswordRequired *bool `json:"passwordRequired,omitempty"`
+	// OsMaximumVersion Maximum Windows 8.1 version.
+	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
+	// OsMinimumVersion Minimum Windows 8.1 version.
+	OsMinimumVersion *string `json:"osMinimumVersion,omitempty"`
 	// PasswordBlockSimple Indicates whether or not to block simple password.
 	PasswordBlockSimple *bool `json:"passwordBlockSimple,omitempty"`
 	// PasswordExpirationDays Password expiration in days.
 	PasswordExpirationDays *int `json:"passwordExpirationDays,omitempty"`
+	// PasswordMinimumCharacterSetCount The number of character sets required in the password.
+	PasswordMinimumCharacterSetCount *int `json:"passwordMinimumCharacterSetCount,omitempty"`
 	// PasswordMinimumLength The minimum password length.
 	PasswordMinimumLength *int `json:"passwordMinimumLength,omitempty"`
 	// PasswordMinutesOfInactivityBeforeLock Minutes of inactivity before a password is required.
 	PasswordMinutesOfInactivityBeforeLock *int `json:"passwordMinutesOfInactivityBeforeLock,omitempty"`
-	// PasswordMinimumCharacterSetCount The number of character sets required in the password.
-	PasswordMinimumCharacterSetCount *int `json:"passwordMinimumCharacterSetCount,omitempty"`
-	// PasswordRequiredType The required password type.
-	PasswordRequiredType *RequiredPasswordType `json:"passwordRequiredType,omitempty"`
 	// PasswordPreviousPasswordBlockCount The number of previous passwords to prevent re-use of. Valid values 0 to 24
 	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
-	// OsMinimumVersion Minimum Windows 8.1 version.
-	OsMinimumVersion *string `json:"osMinimumVersion,omitempty"`
-	// OsMaximumVersion Maximum Windows 8.1 version.
-	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
+	// PasswordRequired Require a password to unlock Windows device.
+	PasswordRequired *bool `json:"passwordRequired,omitempty"`
+	// PasswordRequiredType The required password type.
+	PasswordRequiredType *RequiredPasswordType `json:"passwordRequiredType,omitempty"`
 	// StorageRequireEncryption Indicates whether or not to require encryption on a windows 8.1 device.
 	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
 }
@@ -54,8 +54,6 @@ type Windows81GeneralConfiguration struct {
 	BrowserBlockSendingDoNotTrackHeader *bool `json:"browserBlockSendingDoNotTrackHeader,omitempty"`
 	// BrowserBlockSingleWordEntryOnIntranetSites Indicates whether or not to block a single word entry on Intranet sites.
 	BrowserBlockSingleWordEntryOnIntranetSites *bool `json:"browserBlockSingleWordEntryOnIntranetSites,omitempty"`
-	// BrowserRequireSmartScreen Indicates whether or not to require the user to use the smart screen filter.
-	BrowserRequireSmartScreen *bool `json:"browserRequireSmartScreen,omitempty"`
 	// BrowserEnterpriseModeSiteListLocation The enterprise mode site list location. Could be a local file, local network or http location.
 	BrowserEnterpriseModeSiteListLocation *string `json:"browserEnterpriseModeSiteListLocation,omitempty"`
 	// BrowserInternetSecurityLevel The internet security level.
@@ -64,12 +62,14 @@ type Windows81GeneralConfiguration struct {
 	BrowserIntranetSecurityLevel *SiteSecurityLevel `json:"browserIntranetSecurityLevel,omitempty"`
 	// BrowserLoggingReportLocation The logging report location.
 	BrowserLoggingReportLocation *string `json:"browserLoggingReportLocation,omitempty"`
-	// BrowserRequireHighSecurityForRestrictedSites Indicates whether or not to require high security for restricted sites.
-	BrowserRequireHighSecurityForRestrictedSites *bool `json:"browserRequireHighSecurityForRestrictedSites,omitempty"`
 	// BrowserRequireFirewall Indicates whether or not to require a firewall.
 	BrowserRequireFirewall *bool `json:"browserRequireFirewall,omitempty"`
 	// BrowserRequireFraudWarning Indicates whether or not to require fraud warning.
 	BrowserRequireFraudWarning *bool `json:"browserRequireFraudWarning,omitempty"`
+	// BrowserRequireHighSecurityForRestrictedSites Indicates whether or not to require high security for restricted sites.
+	BrowserRequireHighSecurityForRestrictedSites *bool `json:"browserRequireHighSecurityForRestrictedSites,omitempty"`
+	// BrowserRequireSmartScreen Indicates whether or not to require the user to use the smart screen filter.
+	BrowserRequireSmartScreen *bool `json:"browserRequireSmartScreen,omitempty"`
 	// BrowserTrustedSitesSecurityLevel The trusted sites security level.
 	BrowserTrustedSitesSecurityLevel *SiteSecurityLevel `json:"browserTrustedSitesSecurityLevel,omitempty"`
 	// CellularBlockDataRoaming Indicates whether or not to block data roaming.
@@ -80,12 +80,12 @@ type Windows81GeneralConfiguration struct {
 	PasswordBlockPicturePasswordAndPin *bool `json:"passwordBlockPicturePasswordAndPin,omitempty"`
 	// PasswordExpirationDays Password expiration in days.
 	PasswordExpirationDays *int `json:"passwordExpirationDays,omitempty"`
+	// PasswordMinimumCharacterSetCount The number of character sets required in the password.
+	PasswordMinimumCharacterSetCount *int `json:"passwordMinimumCharacterSetCount,omitempty"`
 	// PasswordMinimumLength The minimum password length.
 	PasswordMinimumLength *int `json:"passwordMinimumLength,omitempty"`
 	// PasswordMinutesOfInactivityBeforeScreenTimeout The minutes of inactivity before the screen times out.
 	PasswordMinutesOfInactivityBeforeScreenTimeout *int `json:"passwordMinutesOfInactivityBeforeScreenTimeout,omitempty"`
-	// PasswordMinimumCharacterSetCount The number of character sets required in the password.
-	PasswordMinimumCharacterSetCount *int `json:"passwordMinimumCharacterSetCount,omitempty"`
 	// PasswordPreviousPasswordBlockCount The number of previous passwords to prevent re-use of. Valid values 0 to 24
 	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
 	// PasswordRequiredType The required password type.

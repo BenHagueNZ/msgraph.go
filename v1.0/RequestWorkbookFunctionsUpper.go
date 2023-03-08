@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsUpperRequestBuilder struct{ BaseRequestBuilder }
 
 // Upper action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Upper(reqObj *WorkbookFunctionsUpperRe
 	return bb
 }
 
-//
 type WorkbookFunctionsUpperRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsUpperRequestBuilder) Request() *WorkbookFunctionsUpperRequest {
 	return &WorkbookFunctionsUpperRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsUpperRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

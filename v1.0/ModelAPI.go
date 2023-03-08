@@ -10,10 +10,16 @@ type APIApplication struct {
 	AcceptMappedClaims *bool `json:"acceptMappedClaims,omitempty"`
 	// KnownClientApplications undocumented
 	KnownClientApplications []UUID `json:"knownClientApplications,omitempty"`
+	// OAuth2PermissionScopes undocumented
+	OAuth2PermissionScopes []PermissionScope `json:"oauth2PermissionScopes,omitempty"`
 	// PreAuthorizedApplications undocumented
 	PreAuthorizedApplications []PreAuthorizedApplication `json:"preAuthorizedApplications,omitempty"`
 	// RequestedAccessTokenVersion undocumented
 	RequestedAccessTokenVersion *int `json:"requestedAccessTokenVersion,omitempty"`
-	// OAuth2PermissionScopes undocumented
-	OAuth2PermissionScopes []PermissionScope `json:"oauth2PermissionScopes,omitempty"`
+}
+
+// APIAuthenticationConfigurationBase undocumented
+type APIAuthenticationConfigurationBase struct {
+	// Object is the base model of APIAuthenticationConfigurationBase
+	Object
 }

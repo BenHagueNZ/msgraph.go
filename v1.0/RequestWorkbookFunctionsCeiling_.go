@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsCeiling_MathRequestBuilder struct{ BaseRequestBuilder }
 
 // Ceiling_Math action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Ceiling_Math(reqObj *WorkbookFunctions
 	return bb
 }
 
-//
 type WorkbookFunctionsCeiling_MathRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsCeiling_MathRequestBuilder) Request() *WorkbookFunctionsCeiling_MathRequest {
 	return &WorkbookFunctionsCeiling_MathRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsCeiling_MathRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsCeiling_PreciseRequestBuilder struct{ BaseRequestBuilder }
 
 // Ceiling_Precise action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) Ceiling_Precise(reqObj *WorkbookFuncti
 	return bb
 }
 
-//
 type WorkbookFunctionsCeiling_PreciseRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsCeiling_PreciseRequestBuilder) Request() *WorkbookFunctionsCeiling_PreciseRequest {
 	return &WorkbookFunctionsCeiling_PreciseRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsCeiling_PreciseRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

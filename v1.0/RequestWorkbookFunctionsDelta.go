@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsDeltaRequestBuilder struct{ BaseRequestBuilder }
 
 // Delta action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Delta(reqObj *WorkbookFunctionsDeltaRe
 	return bb
 }
 
-//
 type WorkbookFunctionsDeltaRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDeltaRequestBuilder) Request() *WorkbookFunctionsDeltaRequest {
 	return &WorkbookFunctionsDeltaRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDeltaRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

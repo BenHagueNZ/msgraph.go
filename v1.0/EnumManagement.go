@@ -28,6 +28,10 @@ const (
 	ManagementAgentTypeVJamf ManagementAgentType = "jamf"
 	// ManagementAgentTypeVGoogleCloudDevicePolicyController undocumented
 	ManagementAgentTypeVGoogleCloudDevicePolicyController ManagementAgentType = "googleCloudDevicePolicyController"
+	// ManagementAgentTypeVMicrosoft365ManagedMDM undocumented
+	ManagementAgentTypeVMicrosoft365ManagedMDM ManagementAgentType = "microsoft365ManagedMdm"
+	// ManagementAgentTypeVMsSense undocumented
+	ManagementAgentTypeVMsSense ManagementAgentType = "msSense"
 )
 
 var (
@@ -53,6 +57,10 @@ var (
 	ManagementAgentTypePJamf = &_ManagementAgentTypePJamf
 	// ManagementAgentTypePGoogleCloudDevicePolicyController is a pointer to ManagementAgentTypeVGoogleCloudDevicePolicyController
 	ManagementAgentTypePGoogleCloudDevicePolicyController = &_ManagementAgentTypePGoogleCloudDevicePolicyController
+	// ManagementAgentTypePMicrosoft365ManagedMDM is a pointer to ManagementAgentTypeVMicrosoft365ManagedMDM
+	ManagementAgentTypePMicrosoft365ManagedMDM = &_ManagementAgentTypePMicrosoft365ManagedMDM
+	// ManagementAgentTypePMsSense is a pointer to ManagementAgentTypeVMsSense
+	ManagementAgentTypePMsSense = &_ManagementAgentTypePMsSense
 )
 
 var (
@@ -67,4 +75,6 @@ var (
 	_ManagementAgentTypePUnknown                           = ManagementAgentTypeVUnknown
 	_ManagementAgentTypePJamf                              = ManagementAgentTypeVJamf
 	_ManagementAgentTypePGoogleCloudDevicePolicyController = ManagementAgentTypeVGoogleCloudDevicePolicyController
+	_ManagementAgentTypePMicrosoft365ManagedMDM            = ManagementAgentTypeVMicrosoft365ManagedMDM
+	_ManagementAgentTypePMsSense                           = ManagementAgentTypeVMsSense
 )

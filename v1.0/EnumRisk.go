@@ -30,6 +30,12 @@ const (
 	RiskDetailVAdminConfirmedUserCompromised RiskDetail = "adminConfirmedUserCompromised"
 	// RiskDetailVUnknownFutureValue undocumented
 	RiskDetailVUnknownFutureValue RiskDetail = "unknownFutureValue"
+	// RiskDetailVAdminConfirmedServicePrincipalCompromised undocumented
+	RiskDetailVAdminConfirmedServicePrincipalCompromised RiskDetail = "adminConfirmedServicePrincipalCompromised"
+	// RiskDetailVAdminDismissedAllRiskForServicePrincipal undocumented
+	RiskDetailVAdminDismissedAllRiskForServicePrincipal RiskDetail = "adminDismissedAllRiskForServicePrincipal"
+	// RiskDetailVM365DAdminDismissedDetection undocumented
+	RiskDetailVM365DAdminDismissedDetection RiskDetail = "m365DAdminDismissedDetection"
 )
 
 var (
@@ -57,21 +63,67 @@ var (
 	RiskDetailPAdminConfirmedUserCompromised = &_RiskDetailPAdminConfirmedUserCompromised
 	// RiskDetailPUnknownFutureValue is a pointer to RiskDetailVUnknownFutureValue
 	RiskDetailPUnknownFutureValue = &_RiskDetailPUnknownFutureValue
+	// RiskDetailPAdminConfirmedServicePrincipalCompromised is a pointer to RiskDetailVAdminConfirmedServicePrincipalCompromised
+	RiskDetailPAdminConfirmedServicePrincipalCompromised = &_RiskDetailPAdminConfirmedServicePrincipalCompromised
+	// RiskDetailPAdminDismissedAllRiskForServicePrincipal is a pointer to RiskDetailVAdminDismissedAllRiskForServicePrincipal
+	RiskDetailPAdminDismissedAllRiskForServicePrincipal = &_RiskDetailPAdminDismissedAllRiskForServicePrincipal
+	// RiskDetailPM365DAdminDismissedDetection is a pointer to RiskDetailVM365DAdminDismissedDetection
+	RiskDetailPM365DAdminDismissedDetection = &_RiskDetailPM365DAdminDismissedDetection
 )
 
 var (
-	_RiskDetailPNone                                 = RiskDetailVNone
-	_RiskDetailPAdminGeneratedTemporaryPassword      = RiskDetailVAdminGeneratedTemporaryPassword
-	_RiskDetailPUserPerformedSecuredPasswordChange   = RiskDetailVUserPerformedSecuredPasswordChange
-	_RiskDetailPUserPerformedSecuredPasswordReset    = RiskDetailVUserPerformedSecuredPasswordReset
-	_RiskDetailPAdminConfirmedSigninSafe             = RiskDetailVAdminConfirmedSigninSafe
-	_RiskDetailPAiConfirmedSigninSafe                = RiskDetailVAiConfirmedSigninSafe
-	_RiskDetailPUserPassedMFADrivenByRiskBasedPolicy = RiskDetailVUserPassedMFADrivenByRiskBasedPolicy
-	_RiskDetailPAdminDismissedAllRiskForUser         = RiskDetailVAdminDismissedAllRiskForUser
-	_RiskDetailPAdminConfirmedSigninCompromised      = RiskDetailVAdminConfirmedSigninCompromised
-	_RiskDetailPHidden                               = RiskDetailVHidden
-	_RiskDetailPAdminConfirmedUserCompromised        = RiskDetailVAdminConfirmedUserCompromised
-	_RiskDetailPUnknownFutureValue                   = RiskDetailVUnknownFutureValue
+	_RiskDetailPNone                                      = RiskDetailVNone
+	_RiskDetailPAdminGeneratedTemporaryPassword           = RiskDetailVAdminGeneratedTemporaryPassword
+	_RiskDetailPUserPerformedSecuredPasswordChange        = RiskDetailVUserPerformedSecuredPasswordChange
+	_RiskDetailPUserPerformedSecuredPasswordReset         = RiskDetailVUserPerformedSecuredPasswordReset
+	_RiskDetailPAdminConfirmedSigninSafe                  = RiskDetailVAdminConfirmedSigninSafe
+	_RiskDetailPAiConfirmedSigninSafe                     = RiskDetailVAiConfirmedSigninSafe
+	_RiskDetailPUserPassedMFADrivenByRiskBasedPolicy      = RiskDetailVUserPassedMFADrivenByRiskBasedPolicy
+	_RiskDetailPAdminDismissedAllRiskForUser              = RiskDetailVAdminDismissedAllRiskForUser
+	_RiskDetailPAdminConfirmedSigninCompromised           = RiskDetailVAdminConfirmedSigninCompromised
+	_RiskDetailPHidden                                    = RiskDetailVHidden
+	_RiskDetailPAdminConfirmedUserCompromised             = RiskDetailVAdminConfirmedUserCompromised
+	_RiskDetailPUnknownFutureValue                        = RiskDetailVUnknownFutureValue
+	_RiskDetailPAdminConfirmedServicePrincipalCompromised = RiskDetailVAdminConfirmedServicePrincipalCompromised
+	_RiskDetailPAdminDismissedAllRiskForServicePrincipal  = RiskDetailVAdminDismissedAllRiskForServicePrincipal
+	_RiskDetailPM365DAdminDismissedDetection              = RiskDetailVM365DAdminDismissedDetection
+)
+
+// RiskDetectionTimingType undocumented
+type RiskDetectionTimingType string
+
+const (
+	// RiskDetectionTimingTypeVNotDefined undocumented
+	RiskDetectionTimingTypeVNotDefined RiskDetectionTimingType = "notDefined"
+	// RiskDetectionTimingTypeVRealtime undocumented
+	RiskDetectionTimingTypeVRealtime RiskDetectionTimingType = "realtime"
+	// RiskDetectionTimingTypeVNearRealtime undocumented
+	RiskDetectionTimingTypeVNearRealtime RiskDetectionTimingType = "nearRealtime"
+	// RiskDetectionTimingTypeVOffline undocumented
+	RiskDetectionTimingTypeVOffline RiskDetectionTimingType = "offline"
+	// RiskDetectionTimingTypeVUnknownFutureValue undocumented
+	RiskDetectionTimingTypeVUnknownFutureValue RiskDetectionTimingType = "unknownFutureValue"
+)
+
+var (
+	// RiskDetectionTimingTypePNotDefined is a pointer to RiskDetectionTimingTypeVNotDefined
+	RiskDetectionTimingTypePNotDefined = &_RiskDetectionTimingTypePNotDefined
+	// RiskDetectionTimingTypePRealtime is a pointer to RiskDetectionTimingTypeVRealtime
+	RiskDetectionTimingTypePRealtime = &_RiskDetectionTimingTypePRealtime
+	// RiskDetectionTimingTypePNearRealtime is a pointer to RiskDetectionTimingTypeVNearRealtime
+	RiskDetectionTimingTypePNearRealtime = &_RiskDetectionTimingTypePNearRealtime
+	// RiskDetectionTimingTypePOffline is a pointer to RiskDetectionTimingTypeVOffline
+	RiskDetectionTimingTypePOffline = &_RiskDetectionTimingTypePOffline
+	// RiskDetectionTimingTypePUnknownFutureValue is a pointer to RiskDetectionTimingTypeVUnknownFutureValue
+	RiskDetectionTimingTypePUnknownFutureValue = &_RiskDetectionTimingTypePUnknownFutureValue
+)
+
+var (
+	_RiskDetectionTimingTypePNotDefined         = RiskDetectionTimingTypeVNotDefined
+	_RiskDetectionTimingTypePRealtime           = RiskDetectionTimingTypeVRealtime
+	_RiskDetectionTimingTypePNearRealtime       = RiskDetectionTimingTypeVNearRealtime
+	_RiskDetectionTimingTypePOffline            = RiskDetectionTimingTypeVOffline
+	_RiskDetectionTimingTypePUnknownFutureValue = RiskDetectionTimingTypeVUnknownFutureValue
 )
 
 // RiskEventType undocumented

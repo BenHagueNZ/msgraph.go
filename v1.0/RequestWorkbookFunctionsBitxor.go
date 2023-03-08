@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsBitxorRequestBuilder struct{ BaseRequestBuilder }
 
 // Bitxor action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Bitxor(reqObj *WorkbookFunctionsBitxor
 	return bb
 }
 
-//
 type WorkbookFunctionsBitxorRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsBitxorRequestBuilder) Request() *WorkbookFunctionsBitxorRequest {
 	return &WorkbookFunctionsBitxorRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsBitxorRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

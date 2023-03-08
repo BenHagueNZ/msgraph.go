@@ -37,33 +37,6 @@ func (r *PostRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-//
-type PostReplyRequestBuilder struct{ BaseRequestBuilder }
-
-// Reply action undocumented
-func (b *PostRequestBuilder) Reply(reqObj *PostReplyRequestParameter) *PostReplyRequestBuilder {
-	bb := &PostReplyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/reply"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-//
-type PostReplyRequest struct{ BaseRequest }
-
-//
-func (b *PostReplyRequestBuilder) Request() *PostReplyRequest {
-	return &PostReplyRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-//
-func (r *PostReplyRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-//
 type PostForwardRequestBuilder struct{ BaseRequestBuilder }
 
 // Forward action undocumented
@@ -74,17 +47,36 @@ func (b *PostRequestBuilder) Forward(reqObj *PostForwardRequestParameter) *PostF
 	return bb
 }
 
-//
 type PostForwardRequest struct{ BaseRequest }
 
-//
 func (b *PostForwardRequestBuilder) Request() *PostForwardRequest {
 	return &PostForwardRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *PostForwardRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type PostReplyRequestBuilder struct{ BaseRequestBuilder }
+
+// Reply action undocumented
+func (b *PostRequestBuilder) Reply(reqObj *PostReplyRequestParameter) *PostReplyRequestBuilder {
+	bb := &PostReplyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/reply"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type PostReplyRequest struct{ BaseRequest }
+
+func (b *PostReplyRequestBuilder) Request() *PostReplyRequest {
+	return &PostReplyRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *PostReplyRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }

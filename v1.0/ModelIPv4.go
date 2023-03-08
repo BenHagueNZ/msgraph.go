@@ -2,7 +2,15 @@
 
 package msgraph
 
-// IPv4Range undocumented
+// IPv4CidrRange undocumented
+type IPv4CidrRange struct {
+	// IPRange is the base model of IPv4CidrRange
+	IPRange
+	// CIDRAddress undocumented
+	CIDRAddress *string `json:"cidrAddress,omitempty"`
+}
+
+// IPv4Range IPv4 Range definition.
 type IPv4Range struct {
 	// IPRange is the base model of IPv4Range
 	IPRange

@@ -110,59 +110,29 @@ func (r *DriveItemVersionRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-//
-type DriveItemCheckinRequestBuilder struct{ BaseRequestBuilder }
+type DriveItemRestoreRequestBuilder struct{ BaseRequestBuilder }
 
-// Checkin action undocumented
-func (b *DriveItemRequestBuilder) Checkin(reqObj *DriveItemCheckinRequestParameter) *DriveItemCheckinRequestBuilder {
-	bb := &DriveItemCheckinRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/checkin"
+// Restore action undocumented
+func (b *DriveItemRequestBuilder) Restore(reqObj *DriveItemRestoreRequestParameter) *DriveItemRestoreRequestBuilder {
+	bb := &DriveItemRestoreRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/restore"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
 
-//
-type DriveItemCheckinRequest struct{ BaseRequest }
+type DriveItemRestoreRequest struct{ BaseRequest }
 
-//
-func (b *DriveItemCheckinRequestBuilder) Request() *DriveItemCheckinRequest {
-	return &DriveItemCheckinRequest{
+func (b *DriveItemRestoreRequestBuilder) Request() *DriveItemRestoreRequest {
+	return &DriveItemRestoreRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
-func (r *DriveItemCheckinRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+func (r *DriveItemRestoreRequest) Post(ctx context.Context) (resObj *DriveItem, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
 }
 
-//
-type DriveItemCheckoutRequestBuilder struct{ BaseRequestBuilder }
-
-// Checkout action undocumented
-func (b *DriveItemRequestBuilder) Checkout(reqObj *DriveItemCheckoutRequestParameter) *DriveItemCheckoutRequestBuilder {
-	bb := &DriveItemCheckoutRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/checkout"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-//
-type DriveItemCheckoutRequest struct{ BaseRequest }
-
-//
-func (b *DriveItemCheckoutRequestBuilder) Request() *DriveItemCheckoutRequest {
-	return &DriveItemCheckoutRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-//
-func (r *DriveItemCheckoutRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-//
 type DriveItemCopyRequestBuilder struct{ BaseRequestBuilder }
 
 // Copy action undocumented
@@ -173,50 +143,19 @@ func (b *DriveItemRequestBuilder) Copy(reqObj *DriveItemCopyRequestParameter) *D
 	return bb
 }
 
-//
 type DriveItemCopyRequest struct{ BaseRequest }
 
-//
 func (b *DriveItemCopyRequestBuilder) Request() *DriveItemCopyRequest {
 	return &DriveItemCopyRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *DriveItemCopyRequest) Post(ctx context.Context) (resObj *DriveItem, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
-type DriveItemCreateLinkRequestBuilder struct{ BaseRequestBuilder }
-
-// CreateLink action undocumented
-func (b *DriveItemRequestBuilder) CreateLink(reqObj *DriveItemCreateLinkRequestParameter) *DriveItemCreateLinkRequestBuilder {
-	bb := &DriveItemCreateLinkRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/createLink"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-//
-type DriveItemCreateLinkRequest struct{ BaseRequest }
-
-//
-func (b *DriveItemCreateLinkRequestBuilder) Request() *DriveItemCreateLinkRequest {
-	return &DriveItemCreateLinkRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-//
-func (r *DriveItemCreateLinkRequest) Post(ctx context.Context) (resObj *Permission, err error) {
-	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
-	return
-}
-
-//
 type DriveItemCreateUploadSessionRequestBuilder struct{ BaseRequestBuilder }
 
 // CreateUploadSession action undocumented
@@ -227,23 +166,109 @@ func (b *DriveItemRequestBuilder) CreateUploadSession(reqObj *DriveItemCreateUpl
 	return bb
 }
 
-//
 type DriveItemCreateUploadSessionRequest struct{ BaseRequest }
 
-//
 func (b *DriveItemCreateUploadSessionRequestBuilder) Request() *DriveItemCreateUploadSessionRequest {
 	return &DriveItemCreateUploadSessionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *DriveItemCreateUploadSessionRequest) Post(ctx context.Context) (resObj *UploadSession, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
+type DriveItemCheckinRequestBuilder struct{ BaseRequestBuilder }
+
+// Checkin action undocumented
+func (b *DriveItemRequestBuilder) Checkin(reqObj *DriveItemCheckinRequestParameter) *DriveItemCheckinRequestBuilder {
+	bb := &DriveItemCheckinRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/checkin"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type DriveItemCheckinRequest struct{ BaseRequest }
+
+func (b *DriveItemCheckinRequestBuilder) Request() *DriveItemCheckinRequest {
+	return &DriveItemCheckinRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *DriveItemCheckinRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type DriveItemCheckoutRequestBuilder struct{ BaseRequestBuilder }
+
+// Checkout action undocumented
+func (b *DriveItemRequestBuilder) Checkout(reqObj *DriveItemCheckoutRequestParameter) *DriveItemCheckoutRequestBuilder {
+	bb := &DriveItemCheckoutRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/checkout"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type DriveItemCheckoutRequest struct{ BaseRequest }
+
+func (b *DriveItemCheckoutRequestBuilder) Request() *DriveItemCheckoutRequest {
+	return &DriveItemCheckoutRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *DriveItemCheckoutRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type DriveItemCreateLinkRequestBuilder struct{ BaseRequestBuilder }
+
+// CreateLink action undocumented
+func (b *DriveItemRequestBuilder) CreateLink(reqObj *DriveItemCreateLinkRequestParameter) *DriveItemCreateLinkRequestBuilder {
+	bb := &DriveItemCreateLinkRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/createLink"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type DriveItemCreateLinkRequest struct{ BaseRequest }
+
+func (b *DriveItemCreateLinkRequestBuilder) Request() *DriveItemCreateLinkRequest {
+	return &DriveItemCreateLinkRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *DriveItemCreateLinkRequest) Post(ctx context.Context) (resObj *Permission, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type DriveItemFollowRequestBuilder struct{ BaseRequestBuilder }
+
+// Follow action undocumented
+func (b *DriveItemRequestBuilder) Follow(reqObj *DriveItemFollowRequestParameter) *DriveItemFollowRequestBuilder {
+	bb := &DriveItemFollowRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/follow"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type DriveItemFollowRequest struct{ BaseRequest }
+
+func (b *DriveItemFollowRequestBuilder) Request() *DriveItemFollowRequest {
+	return &DriveItemFollowRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *DriveItemFollowRequest) Post(ctx context.Context) (resObj *DriveItem, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
 type DriveItemInviteRequestBuilder struct{ BaseRequestBuilder }
 
 // Invite action undocumented
@@ -254,17 +279,14 @@ func (b *DriveItemRequestBuilder) Invite(reqObj *DriveItemInviteRequestParameter
 	return bb
 }
 
-//
 type DriveItemInviteRequest struct{ BaseRequest }
 
-//
 func (b *DriveItemInviteRequestBuilder) Request() *DriveItemInviteRequest {
 	return &DriveItemInviteRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *DriveItemInviteRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Permission, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
@@ -320,17 +342,14 @@ func (r *DriveItemInviteRequest) Paging(ctx context.Context, method, path string
 	}
 }
 
-//
 func (r *DriveItemInviteRequest) PostN(ctx context.Context, n int) ([]Permission, error) {
 	return r.Paging(ctx, "POST", "", r.requestObject, n)
 }
 
-//
 func (r *DriveItemInviteRequest) Post(ctx context.Context) ([]Permission, error) {
 	return r.Paging(ctx, "POST", "", r.requestObject, 0)
 }
 
-//
 type DriveItemPreviewRequestBuilder struct{ BaseRequestBuilder }
 
 // Preview action undocumented
@@ -341,23 +360,63 @@ func (b *DriveItemRequestBuilder) Preview(reqObj *DriveItemPreviewRequestParamet
 	return bb
 }
 
-//
 type DriveItemPreviewRequest struct{ BaseRequest }
 
-//
 func (b *DriveItemPreviewRequestBuilder) Request() *DriveItemPreviewRequest {
 	return &DriveItemPreviewRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *DriveItemPreviewRequest) Post(ctx context.Context) (resObj *ItemPreviewInfo, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
+type DriveItemUnfollowRequestBuilder struct{ BaseRequestBuilder }
+
+// Unfollow action undocumented
+func (b *DriveItemRequestBuilder) Unfollow(reqObj *DriveItemUnfollowRequestParameter) *DriveItemUnfollowRequestBuilder {
+	bb := &DriveItemUnfollowRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/unfollow"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type DriveItemUnfollowRequest struct{ BaseRequest }
+
+func (b *DriveItemUnfollowRequestBuilder) Request() *DriveItemUnfollowRequest {
+	return &DriveItemUnfollowRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *DriveItemUnfollowRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type DriveItemValidatePermissionRequestBuilder struct{ BaseRequestBuilder }
+
+// ValidatePermission action undocumented
+func (b *DriveItemRequestBuilder) ValidatePermission(reqObj *DriveItemValidatePermissionRequestParameter) *DriveItemValidatePermissionRequestBuilder {
+	bb := &DriveItemValidatePermissionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/validatePermission"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type DriveItemValidatePermissionRequest struct{ BaseRequest }
+
+func (b *DriveItemValidatePermissionRequestBuilder) Request() *DriveItemValidatePermissionRequest {
+	return &DriveItemValidatePermissionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *DriveItemValidatePermissionRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
 type DriveItemVersionRestoreVersionRequestBuilder struct{ BaseRequestBuilder }
 
 // RestoreVersion action undocumented
@@ -368,17 +427,14 @@ func (b *DriveItemVersionRequestBuilder) RestoreVersion(reqObj *DriveItemVersion
 	return bb
 }
 
-//
 type DriveItemVersionRestoreVersionRequest struct{ BaseRequest }
 
-//
 func (b *DriveItemVersionRestoreVersionRequestBuilder) Request() *DriveItemVersionRestoreVersionRequest {
 	return &DriveItemVersionRestoreVersionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *DriveItemVersionRestoreVersionRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }

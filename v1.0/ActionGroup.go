@@ -11,6 +11,18 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
+// GroupAssignLicenseRequestParameter undocumented
+type GroupAssignLicenseRequestParameter struct {
+	// AddLicenses undocumented
+	AddLicenses []AssignedLicense `json:"addLicenses,omitempty"`
+	// RemoveLicenses undocumented
+	RemoveLicenses []UUID `json:"removeLicenses,omitempty"`
+}
+
+// GroupCheckGrantedPermissionsForAppRequestParameter undocumented
+type GroupCheckGrantedPermissionsForAppRequestParameter struct {
+}
+
 // GroupValidatePropertiesRequestParameter undocumented
 type GroupValidatePropertiesRequestParameter struct {
 	// DisplayName undocumented
@@ -19,14 +31,6 @@ type GroupValidatePropertiesRequestParameter struct {
 	MailNickname *string `json:"mailNickname,omitempty"`
 	// OnBehalfOfUserID undocumented
 	OnBehalfOfUserID *UUID `json:"onBehalfOfUserId,omitempty"`
-}
-
-// GroupSubscribeByMailRequestParameter undocumented
-type GroupSubscribeByMailRequestParameter struct {
-}
-
-// GroupUnsubscribeByMailRequestParameter undocumented
-type GroupUnsubscribeByMailRequestParameter struct {
 }
 
 // GroupAddFavoriteRequestParameter undocumented
@@ -39,6 +43,14 @@ type GroupRemoveFavoriteRequestParameter struct {
 
 // GroupResetUnseenCountRequestParameter undocumented
 type GroupResetUnseenCountRequestParameter struct {
+}
+
+// GroupSubscribeByMailRequestParameter undocumented
+type GroupSubscribeByMailRequestParameter struct {
+}
+
+// GroupUnsubscribeByMailRequestParameter undocumented
+type GroupUnsubscribeByMailRequestParameter struct {
 }
 
 // GroupRenewRequestParameter undocumented
@@ -156,6 +168,109 @@ func (r *GroupAcceptedSendersCollectionRequest) Get(ctx context.Context) ([]Dire
 
 // Add performs POST request for DirectoryObject collection
 func (r *GroupAcceptedSendersCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// AppRoleAssignments returns request builder for AppRoleAssignment collection
+func (b *GroupRequestBuilder) AppRoleAssignments() *GroupAppRoleAssignmentsCollectionRequestBuilder {
+	bb := &GroupAppRoleAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/appRoleAssignments"
+	return bb
+}
+
+// GroupAppRoleAssignmentsCollectionRequestBuilder is request builder for AppRoleAssignment collection
+type GroupAppRoleAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for AppRoleAssignment collection
+func (b *GroupAppRoleAssignmentsCollectionRequestBuilder) Request() *GroupAppRoleAssignmentsCollectionRequest {
+	return &GroupAppRoleAssignmentsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for AppRoleAssignment item
+func (b *GroupAppRoleAssignmentsCollectionRequestBuilder) ID(id string) *AppRoleAssignmentRequestBuilder {
+	bb := &AppRoleAssignmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GroupAppRoleAssignmentsCollectionRequest is request for AppRoleAssignment collection
+type GroupAppRoleAssignmentsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for AppRoleAssignment collection
+func (r *GroupAppRoleAssignmentsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AppRoleAssignment, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []AppRoleAssignment
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []AppRoleAssignment
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for AppRoleAssignment collection, max N pages
+func (r *GroupAppRoleAssignmentsCollectionRequest) GetN(ctx context.Context, n int) ([]AppRoleAssignment, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for AppRoleAssignment collection
+func (r *GroupAppRoleAssignmentsCollectionRequest) Get(ctx context.Context) ([]AppRoleAssignment, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for AppRoleAssignment collection
+func (r *GroupAppRoleAssignmentsCollectionRequest) Add(ctx context.Context, reqObj *AppRoleAssignment) (resObj *AppRoleAssignment, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -1214,6 +1329,109 @@ func (r *GroupOwnersCollectionRequest) Get(ctx context.Context) ([]DirectoryObje
 
 // Add performs POST request for DirectoryObject collection
 func (r *GroupOwnersCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// PermissionGrants returns request builder for ResourceSpecificPermissionGrant collection
+func (b *GroupRequestBuilder) PermissionGrants() *GroupPermissionGrantsCollectionRequestBuilder {
+	bb := &GroupPermissionGrantsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/permissionGrants"
+	return bb
+}
+
+// GroupPermissionGrantsCollectionRequestBuilder is request builder for ResourceSpecificPermissionGrant collection
+type GroupPermissionGrantsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ResourceSpecificPermissionGrant collection
+func (b *GroupPermissionGrantsCollectionRequestBuilder) Request() *GroupPermissionGrantsCollectionRequest {
+	return &GroupPermissionGrantsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ResourceSpecificPermissionGrant item
+func (b *GroupPermissionGrantsCollectionRequestBuilder) ID(id string) *ResourceSpecificPermissionGrantRequestBuilder {
+	bb := &ResourceSpecificPermissionGrantRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GroupPermissionGrantsCollectionRequest is request for ResourceSpecificPermissionGrant collection
+type GroupPermissionGrantsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ResourceSpecificPermissionGrant collection
+func (r *GroupPermissionGrantsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ResourceSpecificPermissionGrant, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ResourceSpecificPermissionGrant
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ResourceSpecificPermissionGrant
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ResourceSpecificPermissionGrant collection, max N pages
+func (r *GroupPermissionGrantsCollectionRequest) GetN(ctx context.Context, n int) ([]ResourceSpecificPermissionGrant, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ResourceSpecificPermissionGrant collection
+func (r *GroupPermissionGrantsCollectionRequest) Get(ctx context.Context) ([]ResourceSpecificPermissionGrant, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ResourceSpecificPermissionGrant collection
+func (r *GroupPermissionGrantsCollectionRequest) Add(ctx context.Context, reqObj *ResourceSpecificPermissionGrant) (resObj *ResourceSpecificPermissionGrant, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

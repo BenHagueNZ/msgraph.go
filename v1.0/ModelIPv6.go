@@ -2,12 +2,20 @@
 
 package msgraph
 
-// IPv6Range undocumented
+// IPv6CidrRange undocumented
+type IPv6CidrRange struct {
+	// IPRange is the base model of IPv6CidrRange
+	IPRange
+	// CIDRAddress undocumented
+	CIDRAddress *string `json:"cidrAddress,omitempty"`
+}
+
+// IPv6Range IPv6 Range definition.
 type IPv6Range struct {
 	// IPRange is the base model of IPv6Range
 	IPRange
-	// LowerAddress Lower address
+	// LowerAddress Lower address.
 	LowerAddress *string `json:"lowerAddress,omitempty"`
-	// UpperAddress Upper address
+	// UpperAddress Upper address.
 	UpperAddress *string `json:"upperAddress,omitempty"`
 }

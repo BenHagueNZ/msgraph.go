@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsDvarRequestBuilder struct{ BaseRequestBuilder }
 
 // Dvar action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Dvar(reqObj *WorkbookFunctionsDvarRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsDvarRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDvarRequestBuilder) Request() *WorkbookFunctionsDvarRequest {
 	return &WorkbookFunctionsDvarRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDvarRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsDvarPRequestBuilder struct{ BaseRequestBuilder }
 
 // DvarP action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) DvarP(reqObj *WorkbookFunctionsDvarPRe
 	return bb
 }
 
-//
 type WorkbookFunctionsDvarPRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDvarPRequestBuilder) Request() *WorkbookFunctionsDvarPRequest {
 	return &WorkbookFunctionsDvarPRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDvarPRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

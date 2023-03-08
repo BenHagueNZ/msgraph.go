@@ -14,12 +14,12 @@ type ExtensionProperty struct {
 	DirectoryObject
 	// AppDisplayName undocumented
 	AppDisplayName *string `json:"appDisplayName,omitempty"`
-	// Name undocumented
-	Name *string `json:"name,omitempty"`
 	// DataType undocumented
 	DataType *string `json:"dataType,omitempty"`
 	// IsSyncedFromOnPremises undocumented
 	IsSyncedFromOnPremises *bool `json:"isSyncedFromOnPremises,omitempty"`
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
 	// TargetObjects undocumented
 	TargetObjects []string `json:"targetObjects,omitempty"`
 }

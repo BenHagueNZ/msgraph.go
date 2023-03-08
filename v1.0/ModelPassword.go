@@ -4,6 +4,16 @@ package msgraph
 
 import "time"
 
+// PasswordAuthenticationMethod undocumented
+type PasswordAuthenticationMethod struct {
+	// AuthenticationMethod is the base model of PasswordAuthenticationMethod
+	AuthenticationMethod
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// Password undocumented
+	Password *string `json:"password,omitempty"`
+}
+
 // PasswordCredential undocumented
 type PasswordCredential struct {
 	// Object is the base model of PasswordCredential
@@ -14,24 +24,44 @@ type PasswordCredential struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
-	// KeyID undocumented
-	KeyID *UUID `json:"keyId,omitempty"`
-	// StartDateTime undocumented
-	StartDateTime *time.Time `json:"startDateTime,omitempty"`
-	// SecretText undocumented
-	SecretText *string `json:"secretText,omitempty"`
 	// Hint undocumented
 	Hint *string `json:"hint,omitempty"`
+	// KeyID undocumented
+	KeyID *UUID `json:"keyId,omitempty"`
+	// SecretText undocumented
+	SecretText *string `json:"secretText,omitempty"`
+	// StartDateTime undocumented
+	StartDateTime *time.Time `json:"startDateTime,omitempty"`
+}
+
+// PasswordCredentialConfiguration undocumented
+type PasswordCredentialConfiguration struct {
+	// Object is the base model of PasswordCredentialConfiguration
+	Object
+	// MaxLifetime undocumented
+	MaxLifetime *Duration `json:"maxLifetime,omitempty"`
+	// RestrictForAppsCreatedAfterDateTime undocumented
+	RestrictForAppsCreatedAfterDateTime *time.Time `json:"restrictForAppsCreatedAfterDateTime,omitempty"`
+	// RestrictionType undocumented
+	RestrictionType *AppCredentialRestrictionType `json:"restrictionType,omitempty"`
 }
 
 // PasswordProfile undocumented
 type PasswordProfile struct {
 	// Object is the base model of PasswordProfile
 	Object
-	// Password undocumented
-	Password *string `json:"password,omitempty"`
 	// ForceChangePasswordNextSignIn undocumented
 	ForceChangePasswordNextSignIn *bool `json:"forceChangePasswordNextSignIn,omitempty"`
 	// ForceChangePasswordNextSignInWithMFA undocumented
 	ForceChangePasswordNextSignInWithMFA *bool `json:"forceChangePasswordNextSignInWithMfa,omitempty"`
+	// Password undocumented
+	Password *string `json:"password,omitempty"`
+}
+
+// PasswordResetResponse undocumented
+type PasswordResetResponse struct {
+	// Object is the base model of PasswordResetResponse
+	Object
+	// NewPassword undocumented
+	NewPassword *string `json:"newPassword,omitempty"`
 }

@@ -37,33 +37,39 @@ func (r *TeamRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-//
-type TeamCloneRequestBuilder struct{ BaseRequestBuilder }
+// TeamInfoRequestBuilder is request builder for TeamInfo
+type TeamInfoRequestBuilder struct{ BaseRequestBuilder }
 
-// Clone action undocumented
-func (b *TeamRequestBuilder) Clone(reqObj *TeamCloneRequestParameter) *TeamCloneRequestBuilder {
-	bb := &TeamCloneRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/clone"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-//
-type TeamCloneRequest struct{ BaseRequest }
-
-//
-func (b *TeamCloneRequestBuilder) Request() *TeamCloneRequest {
-	return &TeamCloneRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+// Request returns TeamInfoRequest
+func (b *TeamInfoRequestBuilder) Request() *TeamInfoRequest {
+	return &TeamInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-//
-func (r *TeamCloneRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+// TeamInfoRequest is request for TeamInfo
+type TeamInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for TeamInfo
+func (r *TeamInfoRequest) Get(ctx context.Context) (resObj *TeamInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
 }
 
-//
+// Update performs PATCH request for TeamInfo
+func (r *TeamInfoRequest) Update(ctx context.Context, reqObj *TeamInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TeamInfo
+func (r *TeamInfoRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 type TeamArchiveRequestBuilder struct{ BaseRequestBuilder }
 
 // Archive action undocumented
@@ -74,22 +80,18 @@ func (b *TeamRequestBuilder) Archive(reqObj *TeamArchiveRequestParameter) *TeamA
 	return bb
 }
 
-//
 type TeamArchiveRequest struct{ BaseRequest }
 
-//
 func (b *TeamArchiveRequestBuilder) Request() *TeamArchiveRequest {
 	return &TeamArchiveRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *TeamArchiveRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type TeamUnarchiveRequestBuilder struct{ BaseRequestBuilder }
 
 // Unarchive action undocumented
@@ -100,17 +102,80 @@ func (b *TeamRequestBuilder) Unarchive(reqObj *TeamUnarchiveRequestParameter) *T
 	return bb
 }
 
-//
 type TeamUnarchiveRequest struct{ BaseRequest }
 
-//
 func (b *TeamUnarchiveRequestBuilder) Request() *TeamUnarchiveRequest {
 	return &TeamUnarchiveRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *TeamUnarchiveRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type TeamCloneRequestBuilder struct{ BaseRequestBuilder }
+
+// Clone action undocumented
+func (b *TeamRequestBuilder) Clone(reqObj *TeamCloneRequestParameter) *TeamCloneRequestBuilder {
+	bb := &TeamCloneRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/clone"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type TeamCloneRequest struct{ BaseRequest }
+
+func (b *TeamCloneRequestBuilder) Request() *TeamCloneRequest {
+	return &TeamCloneRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *TeamCloneRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type TeamCompleteMigrationRequestBuilder struct{ BaseRequestBuilder }
+
+// CompleteMigration action undocumented
+func (b *TeamRequestBuilder) CompleteMigration(reqObj *TeamCompleteMigrationRequestParameter) *TeamCompleteMigrationRequestBuilder {
+	bb := &TeamCompleteMigrationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/completeMigration"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type TeamCompleteMigrationRequest struct{ BaseRequest }
+
+func (b *TeamCompleteMigrationRequestBuilder) Request() *TeamCompleteMigrationRequest {
+	return &TeamCompleteMigrationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *TeamCompleteMigrationRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type TeamSendActivityNotificationRequestBuilder struct{ BaseRequestBuilder }
+
+// SendActivityNotification action undocumented
+func (b *TeamRequestBuilder) SendActivityNotification(reqObj *TeamSendActivityNotificationRequestParameter) *TeamSendActivityNotificationRequestBuilder {
+	bb := &TeamSendActivityNotificationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/sendActivityNotification"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type TeamSendActivityNotificationRequest struct{ BaseRequest }
+
+func (b *TeamSendActivityNotificationRequestBuilder) Request() *TeamSendActivityNotificationRequest {
+	return &TeamSendActivityNotificationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *TeamSendActivityNotificationRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }

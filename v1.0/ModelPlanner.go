@@ -8,12 +8,12 @@ import "time"
 type Planner struct {
 	// Entity is the base model of Planner
 	Entity
-	// Tasks undocumented
-	Tasks []PlannerTask `json:"tasks,omitempty"`
-	// Plans undocumented
-	Plans []PlannerPlan `json:"plans,omitempty"`
 	// Buckets undocumented
 	Buckets []PlannerBucket `json:"buckets,omitempty"`
+	// Plans undocumented
+	Plans []PlannerPlan `json:"plans,omitempty"`
+	// Tasks undocumented
+	Tasks []PlannerTask `json:"tasks,omitempty"`
 }
 
 // PlannerAppliedCategories undocumented
@@ -26,10 +26,10 @@ type PlannerAppliedCategories struct {
 type PlannerAssignedToTaskBoardTaskFormat struct {
 	// Entity is the base model of PlannerAssignedToTaskBoardTaskFormat
 	Entity
-	// UnassignedOrderHint undocumented
-	UnassignedOrderHint *string `json:"unassignedOrderHint,omitempty"`
 	// OrderHintsByAssignee undocumented
 	OrderHintsByAssignee *PlannerOrderHintsByAssignee `json:"orderHintsByAssignee,omitempty"`
+	// UnassignedOrderHint undocumented
+	UnassignedOrderHint *string `json:"unassignedOrderHint,omitempty"`
 }
 
 // PlannerAssignment undocumented
@@ -56,10 +56,10 @@ type PlannerBucket struct {
 	Entity
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
-	// PlanID undocumented
-	PlanID *string `json:"planId,omitempty"`
 	// OrderHint undocumented
 	OrderHint *string `json:"orderHint,omitempty"`
+	// PlanID undocumented
+	PlanID *string `json:"planId,omitempty"`
 	// Tasks undocumented
 	Tasks []PlannerTask `json:"tasks,omitempty"`
 }
@@ -78,8 +78,40 @@ type PlannerCategoryDescriptions struct {
 	Object
 	// Category1 undocumented
 	Category1 *string `json:"category1,omitempty"`
+	// Category10 undocumented
+	Category10 *string `json:"category10,omitempty"`
+	// Category11 undocumented
+	Category11 *string `json:"category11,omitempty"`
+	// Category12 undocumented
+	Category12 *string `json:"category12,omitempty"`
+	// Category13 undocumented
+	Category13 *string `json:"category13,omitempty"`
+	// Category14 undocumented
+	Category14 *string `json:"category14,omitempty"`
+	// Category15 undocumented
+	Category15 *string `json:"category15,omitempty"`
+	// Category16 undocumented
+	Category16 *string `json:"category16,omitempty"`
+	// Category17 undocumented
+	Category17 *string `json:"category17,omitempty"`
+	// Category18 undocumented
+	Category18 *string `json:"category18,omitempty"`
+	// Category19 undocumented
+	Category19 *string `json:"category19,omitempty"`
 	// Category2 undocumented
 	Category2 *string `json:"category2,omitempty"`
+	// Category20 undocumented
+	Category20 *string `json:"category20,omitempty"`
+	// Category21 undocumented
+	Category21 *string `json:"category21,omitempty"`
+	// Category22 undocumented
+	Category22 *string `json:"category22,omitempty"`
+	// Category23 undocumented
+	Category23 *string `json:"category23,omitempty"`
+	// Category24 undocumented
+	Category24 *string `json:"category24,omitempty"`
+	// Category25 undocumented
+	Category25 *string `json:"category25,omitempty"`
 	// Category3 undocumented
 	Category3 *string `json:"category3,omitempty"`
 	// Category4 undocumented
@@ -88,6 +120,12 @@ type PlannerCategoryDescriptions struct {
 	Category5 *string `json:"category5,omitempty"`
 	// Category6 undocumented
 	Category6 *string `json:"category6,omitempty"`
+	// Category7 undocumented
+	Category7 *string `json:"category7,omitempty"`
+	// Category8 undocumented
+	Category8 *string `json:"category8,omitempty"`
+	// Category9 undocumented
+	Category9 *string `json:"category9,omitempty"`
 }
 
 // PlannerChecklistItem undocumented
@@ -96,14 +134,14 @@ type PlannerChecklistItem struct {
 	Object
 	// IsChecked undocumented
 	IsChecked *bool `json:"isChecked,omitempty"`
-	// Title undocumented
-	Title *string `json:"title,omitempty"`
-	// OrderHint undocumented
-	OrderHint *string `json:"orderHint,omitempty"`
 	// LastModifiedBy undocumented
 	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// OrderHint undocumented
+	OrderHint *string `json:"orderHint,omitempty"`
+	// Title undocumented
+	Title *string `json:"title,omitempty"`
 }
 
 // PlannerChecklistItems undocumented
@@ -118,14 +156,14 @@ type PlannerExternalReference struct {
 	Object
 	// Alias undocumented
 	Alias *string `json:"alias,omitempty"`
-	// Type undocumented
-	Type *string `json:"type,omitempty"`
-	// PreviewPriority undocumented
-	PreviewPriority *string `json:"previewPriority,omitempty"`
 	// LastModifiedBy undocumented
 	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// PreviewPriority undocumented
+	PreviewPriority *string `json:"previewPriority,omitempty"`
+	// Type undocumented
+	Type *string `json:"type,omitempty"`
 }
 
 // PlannerExternalReferences undocumented
@@ -152,6 +190,8 @@ type PlannerOrderHintsByAssignee struct {
 type PlannerPlan struct {
 	// Entity is the base model of PlannerPlan
 	Entity
+	// Container undocumented
+	Container *PlannerPlanContainer `json:"container,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -160,22 +200,34 @@ type PlannerPlan struct {
 	Owner *string `json:"owner,omitempty"`
 	// Title undocumented
 	Title *string `json:"title,omitempty"`
-	// Tasks undocumented
-	Tasks []PlannerTask `json:"tasks,omitempty"`
 	// Buckets undocumented
 	Buckets []PlannerBucket `json:"buckets,omitempty"`
 	// Details undocumented
 	Details *PlannerPlanDetails `json:"details,omitempty"`
+	// Tasks undocumented
+	Tasks []PlannerTask `json:"tasks,omitempty"`
+}
+
+// PlannerPlanContainer undocumented
+type PlannerPlanContainer struct {
+	// Object is the base model of PlannerPlanContainer
+	Object
+	// ContainerID undocumented
+	ContainerID *string `json:"containerId,omitempty"`
+	// Type undocumented
+	Type *PlannerContainerType `json:"type,omitempty"`
+	// URL undocumented
+	URL *string `json:"url,omitempty"`
 }
 
 // PlannerPlanDetails undocumented
 type PlannerPlanDetails struct {
 	// Entity is the base model of PlannerPlanDetails
 	Entity
-	// SharedWith undocumented
-	SharedWith *PlannerUserIDs `json:"sharedWith,omitempty"`
 	// CategoryDescriptions undocumented
 	CategoryDescriptions *PlannerCategoryDescriptions `json:"categoryDescriptions,omitempty"`
+	// SharedWith undocumented
+	SharedWith *PlannerUserIDs `json:"sharedWith,omitempty"`
 }
 
 // PlannerProgressTaskBoardTaskFormat undocumented
@@ -190,78 +242,80 @@ type PlannerProgressTaskBoardTaskFormat struct {
 type PlannerTask struct {
 	// Entity is the base model of PlannerTask
 	Entity
-	// CreatedBy undocumented
-	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
-	// PlanID undocumented
-	PlanID *string `json:"planId,omitempty"`
-	// BucketID undocumented
-	BucketID *string `json:"bucketId,omitempty"`
-	// Title undocumented
-	Title *string `json:"title,omitempty"`
-	// OrderHint undocumented
-	OrderHint *string `json:"orderHint,omitempty"`
+	// ActiveChecklistItemCount undocumented
+	ActiveChecklistItemCount *int `json:"activeChecklistItemCount,omitempty"`
+	// AppliedCategories undocumented
+	AppliedCategories *PlannerAppliedCategories `json:"appliedCategories,omitempty"`
 	// AssigneePriority undocumented
 	AssigneePriority *string `json:"assigneePriority,omitempty"`
-	// PercentComplete undocumented
-	PercentComplete *int `json:"percentComplete,omitempty"`
-	// StartDateTime undocumented
-	StartDateTime *time.Time `json:"startDateTime,omitempty"`
+	// Assignments undocumented
+	Assignments *PlannerAssignments `json:"assignments,omitempty"`
+	// BucketID undocumented
+	BucketID *string `json:"bucketId,omitempty"`
+	// ChecklistItemCount undocumented
+	ChecklistItemCount *int `json:"checklistItemCount,omitempty"`
+	// CompletedBy undocumented
+	CompletedBy *IdentitySet `json:"completedBy,omitempty"`
+	// CompletedDateTime undocumented
+	CompletedDateTime *time.Time `json:"completedDateTime,omitempty"`
+	// ConversationThreadID undocumented
+	ConversationThreadID *string `json:"conversationThreadId,omitempty"`
+	// CreatedBy undocumented
+	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// DueDateTime undocumented
 	DueDateTime *time.Time `json:"dueDateTime,omitempty"`
 	// HasDescription undocumented
 	HasDescription *bool `json:"hasDescription,omitempty"`
+	// OrderHint undocumented
+	OrderHint *string `json:"orderHint,omitempty"`
+	// PercentComplete undocumented
+	PercentComplete *int `json:"percentComplete,omitempty"`
+	// PlanID undocumented
+	PlanID *string `json:"planId,omitempty"`
 	// PreviewType undocumented
 	PreviewType *PlannerPreviewType `json:"previewType,omitempty"`
-	// CompletedDateTime undocumented
-	CompletedDateTime *time.Time `json:"completedDateTime,omitempty"`
-	// CompletedBy undocumented
-	CompletedBy *IdentitySet `json:"completedBy,omitempty"`
+	// Priority undocumented
+	Priority *int `json:"priority,omitempty"`
 	// ReferenceCount undocumented
 	ReferenceCount *int `json:"referenceCount,omitempty"`
-	// ChecklistItemCount undocumented
-	ChecklistItemCount *int `json:"checklistItemCount,omitempty"`
-	// ActiveChecklistItemCount undocumented
-	ActiveChecklistItemCount *int `json:"activeChecklistItemCount,omitempty"`
-	// AppliedCategories undocumented
-	AppliedCategories *PlannerAppliedCategories `json:"appliedCategories,omitempty"`
-	// Assignments undocumented
-	Assignments *PlannerAssignments `json:"assignments,omitempty"`
-	// ConversationThreadID undocumented
-	ConversationThreadID *string `json:"conversationThreadId,omitempty"`
-	// Details undocumented
-	Details *PlannerTaskDetails `json:"details,omitempty"`
+	// StartDateTime undocumented
+	StartDateTime *time.Time `json:"startDateTime,omitempty"`
+	// Title undocumented
+	Title *string `json:"title,omitempty"`
 	// AssignedToTaskBoardFormat undocumented
 	AssignedToTaskBoardFormat *PlannerAssignedToTaskBoardTaskFormat `json:"assignedToTaskBoardFormat,omitempty"`
-	// ProgressTaskBoardFormat undocumented
-	ProgressTaskBoardFormat *PlannerProgressTaskBoardTaskFormat `json:"progressTaskBoardFormat,omitempty"`
 	// BucketTaskBoardFormat undocumented
 	BucketTaskBoardFormat *PlannerBucketTaskBoardTaskFormat `json:"bucketTaskBoardFormat,omitempty"`
+	// Details undocumented
+	Details *PlannerTaskDetails `json:"details,omitempty"`
+	// ProgressTaskBoardFormat undocumented
+	ProgressTaskBoardFormat *PlannerProgressTaskBoardTaskFormat `json:"progressTaskBoardFormat,omitempty"`
 }
 
 // PlannerTaskDetails undocumented
 type PlannerTaskDetails struct {
 	// Entity is the base model of PlannerTaskDetails
 	Entity
+	// Checklist undocumented
+	Checklist *PlannerChecklistItems `json:"checklist,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// PreviewType undocumented
 	PreviewType *PlannerPreviewType `json:"previewType,omitempty"`
 	// References undocumented
 	References *PlannerExternalReferences `json:"references,omitempty"`
-	// Checklist undocumented
-	Checklist *PlannerChecklistItems `json:"checklist,omitempty"`
 }
 
 // PlannerUser undocumented
 type PlannerUser struct {
 	// Entity is the base model of PlannerUser
 	Entity
-	// Tasks undocumented
-	Tasks []PlannerTask `json:"tasks,omitempty"`
 	// Plans undocumented
 	Plans []PlannerPlan `json:"plans,omitempty"`
+	// Tasks undocumented
+	Tasks []PlannerTask `json:"tasks,omitempty"`
 }
 
 // PlannerUserIDs undocumented

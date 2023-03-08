@@ -6,7 +6,7 @@ package msgraph
 type WebApp struct {
 	// MobileApp is the base model of WebApp
 	MobileApp
-	// AppURL The web app URL.
+	// AppURL The web app URL. This property cannot be PATCHed.
 	AppURL *string `json:"appUrl,omitempty"`
 	// UseManagedBrowser Whether or not to use managed browser. This property is only applicable for Android and IOS.
 	UseManagedBrowser *bool `json:"useManagedBrowser,omitempty"`
@@ -18,10 +18,12 @@ type WebApplication struct {
 	Object
 	// HomePageURL undocumented
 	HomePageURL *string `json:"homePageUrl,omitempty"`
-	// RedirectUris undocumented
-	RedirectUris []string `json:"redirectUris,omitempty"`
-	// LogoutURL undocumented
-	LogoutURL *string `json:"logoutUrl,omitempty"`
 	// ImplicitGrantSettings undocumented
 	ImplicitGrantSettings *ImplicitGrantSettings `json:"implicitGrantSettings,omitempty"`
+	// LogoutURL undocumented
+	LogoutURL *string `json:"logoutUrl,omitempty"`
+	// RedirectUris undocumented
+	RedirectUris []string `json:"redirectUris,omitempty"`
+	// RedirectURISettings undocumented
+	RedirectURISettings []RedirectURISettings `json:"redirectUriSettings,omitempty"`
 }

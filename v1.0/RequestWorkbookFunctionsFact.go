@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsFactRequestBuilder struct{ BaseRequestBuilder }
 
 // Fact action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Fact(reqObj *WorkbookFunctionsFactRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsFactRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsFactRequestBuilder) Request() *WorkbookFunctionsFactRequest {
 	return &WorkbookFunctionsFactRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsFactRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsFactDoubleRequestBuilder struct{ BaseRequestBuilder }
 
 // FactDouble action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) FactDouble(reqObj *WorkbookFunctionsFa
 	return bb
 }
 
-//
 type WorkbookFunctionsFactDoubleRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsFactDoubleRequestBuilder) Request() *WorkbookFunctionsFactDoubleRequest {
 	return &WorkbookFunctionsFactDoubleRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsFactDoubleRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

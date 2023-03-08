@@ -30,16 +30,18 @@ type Domain struct {
 	PasswordNotificationWindowInDays *int `json:"passwordNotificationWindowInDays,omitempty"`
 	// PasswordValidityPeriodInDays undocumented
 	PasswordValidityPeriodInDays *int `json:"passwordValidityPeriodInDays,omitempty"`
-	// SupportedServices undocumented
-	SupportedServices []string `json:"supportedServices,omitempty"`
 	// State undocumented
 	State *DomainState `json:"state,omitempty"`
+	// SupportedServices undocumented
+	SupportedServices []string `json:"supportedServices,omitempty"`
+	// DomainNameReferences undocumented
+	DomainNameReferences []DirectoryObject `json:"domainNameReferences,omitempty"`
+	// FederationConfiguration undocumented
+	FederationConfiguration []InternalDomainFederation `json:"federationConfiguration,omitempty"`
 	// ServiceConfigurationRecords undocumented
 	ServiceConfigurationRecords []DomainDNSRecord `json:"serviceConfigurationRecords,omitempty"`
 	// VerificationDNSRecords undocumented
 	VerificationDNSRecords []DomainDNSRecord `json:"verificationDnsRecords,omitempty"`
-	// DomainNameReferences undocumented
-	DomainNameReferences []DirectoryObject `json:"domainNameReferences,omitempty"`
 }
 
 // DomainDNSCnameRecord undocumented
@@ -110,14 +112,24 @@ type DomainDNSUnavailableRecord struct {
 	Description *string `json:"description,omitempty"`
 }
 
+// DomainIdentitySource undocumented
+type DomainIdentitySource struct {
+	// IdentitySource is the base model of DomainIdentitySource
+	IdentitySource
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// DomainName undocumented
+	DomainName *string `json:"domainName,omitempty"`
+}
+
 // DomainState undocumented
 type DomainState struct {
 	// Object is the base model of DomainState
 	Object
-	// Status undocumented
-	Status *string `json:"status,omitempty"`
-	// Operation undocumented
-	Operation *string `json:"operation,omitempty"`
 	// LastActionDateTime undocumented
 	LastActionDateTime *time.Time `json:"lastActionDateTime,omitempty"`
+	// Operation undocumented
+	Operation *string `json:"operation,omitempty"`
+	// Status undocumented
+	Status *string `json:"status,omitempty"`
 }

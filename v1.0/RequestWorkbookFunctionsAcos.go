@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsAcosRequestBuilder struct{ BaseRequestBuilder }
 
 // Acos action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Acos(reqObj *WorkbookFunctionsAcosRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsAcosRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsAcosRequestBuilder) Request() *WorkbookFunctionsAcosRequest {
 	return &WorkbookFunctionsAcosRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsAcosRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

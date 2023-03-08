@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsDateRequestBuilder struct{ BaseRequestBuilder }
 
 // Date action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Date(reqObj *WorkbookFunctionsDateRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsDateRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDateRequestBuilder) Request() *WorkbookFunctionsDateRequest {
 	return &WorkbookFunctionsDateRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDateRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

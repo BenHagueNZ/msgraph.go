@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsGamma_DistRequestBuilder struct{ BaseRequestBuilder }
 
 // Gamma_Dist action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Gamma_Dist(reqObj *WorkbookFunctionsGa
 	return bb
 }
 
-//
 type WorkbookFunctionsGamma_DistRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsGamma_DistRequestBuilder) Request() *WorkbookFunctionsGamma_DistRequest {
 	return &WorkbookFunctionsGamma_DistRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsGamma_DistRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsGamma_InvRequestBuilder struct{ BaseRequestBuilder }
 
 // Gamma_Inv action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) Gamma_Inv(reqObj *WorkbookFunctionsGam
 	return bb
 }
 
-//
 type WorkbookFunctionsGamma_InvRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsGamma_InvRequestBuilder) Request() *WorkbookFunctionsGamma_InvRequest {
 	return &WorkbookFunctionsGamma_InvRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsGamma_InvRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

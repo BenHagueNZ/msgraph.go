@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsIsErrRequestBuilder struct{ BaseRequestBuilder }
 
 // IsErr action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) IsErr(reqObj *WorkbookFunctionsIsErrRe
 	return bb
 }
 
-//
 type WorkbookFunctionsIsErrRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsIsErrRequestBuilder) Request() *WorkbookFunctionsIsErrRequest {
 	return &WorkbookFunctionsIsErrRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsIsErrRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsIsErrorRequestBuilder struct{ BaseRequestBuilder }
 
 // IsError action undocumented
@@ -42,23 +37,19 @@ func (b *WorkbookFunctionsRequestBuilder) IsError(reqObj *WorkbookFunctionsIsErr
 	return bb
 }
 
-//
 type WorkbookFunctionsIsErrorRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsIsErrorRequestBuilder) Request() *WorkbookFunctionsIsErrorRequest {
 	return &WorkbookFunctionsIsErrorRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsIsErrorRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsIsEvenRequestBuilder struct{ BaseRequestBuilder }
 
 // IsEven action undocumented
@@ -69,23 +60,19 @@ func (b *WorkbookFunctionsRequestBuilder) IsEven(reqObj *WorkbookFunctionsIsEven
 	return bb
 }
 
-//
 type WorkbookFunctionsIsEvenRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsIsEvenRequestBuilder) Request() *WorkbookFunctionsIsEvenRequest {
 	return &WorkbookFunctionsIsEvenRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsIsEvenRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsIsFormulaRequestBuilder struct{ BaseRequestBuilder }
 
 // IsFormula action undocumented
@@ -96,23 +83,19 @@ func (b *WorkbookFunctionsRequestBuilder) IsFormula(reqObj *WorkbookFunctionsIsF
 	return bb
 }
 
-//
 type WorkbookFunctionsIsFormulaRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsIsFormulaRequestBuilder) Request() *WorkbookFunctionsIsFormulaRequest {
 	return &WorkbookFunctionsIsFormulaRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsIsFormulaRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsIsLogicalRequestBuilder struct{ BaseRequestBuilder }
 
 // IsLogical action undocumented
@@ -123,23 +106,19 @@ func (b *WorkbookFunctionsRequestBuilder) IsLogical(reqObj *WorkbookFunctionsIsL
 	return bb
 }
 
-//
 type WorkbookFunctionsIsLogicalRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsIsLogicalRequestBuilder) Request() *WorkbookFunctionsIsLogicalRequest {
 	return &WorkbookFunctionsIsLogicalRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsIsLogicalRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsIsNARequestBuilder struct{ BaseRequestBuilder }
 
 // IsNA action undocumented
@@ -150,23 +129,19 @@ func (b *WorkbookFunctionsRequestBuilder) IsNA(reqObj *WorkbookFunctionsIsNARequ
 	return bb
 }
 
-//
 type WorkbookFunctionsIsNARequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsIsNARequestBuilder) Request() *WorkbookFunctionsIsNARequest {
 	return &WorkbookFunctionsIsNARequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsIsNARequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsIsNonTextRequestBuilder struct{ BaseRequestBuilder }
 
 // IsNonText action undocumented
@@ -177,23 +152,19 @@ func (b *WorkbookFunctionsRequestBuilder) IsNonText(reqObj *WorkbookFunctionsIsN
 	return bb
 }
 
-//
 type WorkbookFunctionsIsNonTextRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsIsNonTextRequestBuilder) Request() *WorkbookFunctionsIsNonTextRequest {
 	return &WorkbookFunctionsIsNonTextRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsIsNonTextRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsIsNumberRequestBuilder struct{ BaseRequestBuilder }
 
 // IsNumber action undocumented
@@ -204,23 +175,19 @@ func (b *WorkbookFunctionsRequestBuilder) IsNumber(reqObj *WorkbookFunctionsIsNu
 	return bb
 }
 
-//
 type WorkbookFunctionsIsNumberRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsIsNumberRequestBuilder) Request() *WorkbookFunctionsIsNumberRequest {
 	return &WorkbookFunctionsIsNumberRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsIsNumberRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsIsOddRequestBuilder struct{ BaseRequestBuilder }
 
 // IsOdd action undocumented
@@ -231,23 +198,19 @@ func (b *WorkbookFunctionsRequestBuilder) IsOdd(reqObj *WorkbookFunctionsIsOddRe
 	return bb
 }
 
-//
 type WorkbookFunctionsIsOddRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsIsOddRequestBuilder) Request() *WorkbookFunctionsIsOddRequest {
 	return &WorkbookFunctionsIsOddRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsIsOddRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsIsTextRequestBuilder struct{ BaseRequestBuilder }
 
 // IsText action undocumented
@@ -258,17 +221,14 @@ func (b *WorkbookFunctionsRequestBuilder) IsText(reqObj *WorkbookFunctionsIsText
 	return bb
 }
 
-//
 type WorkbookFunctionsIsTextRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsIsTextRequestBuilder) Request() *WorkbookFunctionsIsTextRequest {
 	return &WorkbookFunctionsIsTextRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsIsTextRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

@@ -8,10 +8,10 @@ type WorkingHours struct {
 	Object
 	// DaysOfWeek undocumented
 	DaysOfWeek []DayOfWeek `json:"daysOfWeek,omitempty"`
-	// StartTime undocumented
-	StartTime *TimeOfDay `json:"startTime,omitempty"`
 	// EndTime undocumented
 	EndTime *TimeOfDay `json:"endTime,omitempty"`
+	// StartTime undocumented
+	StartTime *TimeOfDay `json:"startTime,omitempty"`
 	// TimeZone undocumented
 	TimeZone *TimeZoneBase `json:"timeZone,omitempty"`
 }

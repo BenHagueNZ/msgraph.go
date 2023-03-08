@@ -8,20 +8,20 @@ type Notebook struct {
 	OnenoteEntityHierarchyModel
 	// IsDefault undocumented
 	IsDefault *bool `json:"isDefault,omitempty"`
-	// UserRole undocumented
-	UserRole *OnenoteUserRole `json:"userRole,omitempty"`
 	// IsShared undocumented
 	IsShared *bool `json:"isShared,omitempty"`
-	// SectionsURL undocumented
-	SectionsURL *string `json:"sectionsUrl,omitempty"`
-	// SectionGroupsURL undocumented
-	SectionGroupsURL *string `json:"sectionGroupsUrl,omitempty"`
 	// Links undocumented
 	Links *NotebookLinks `json:"links,omitempty"`
-	// Sections undocumented
-	Sections []OnenoteSection `json:"sections,omitempty"`
+	// SectionGroupsURL undocumented
+	SectionGroupsURL *string `json:"sectionGroupsUrl,omitempty"`
+	// SectionsURL undocumented
+	SectionsURL *string `json:"sectionsUrl,omitempty"`
+	// UserRole undocumented
+	UserRole *OnenoteUserRole `json:"userRole,omitempty"`
 	// SectionGroups undocumented
 	SectionGroups []SectionGroup `json:"sectionGroups,omitempty"`
+	// Sections undocumented
+	Sections []OnenoteSection `json:"sections,omitempty"`
 }
 
 // NotebookLinks undocumented

@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsDecimalRequestBuilder struct{ BaseRequestBuilder }
 
 // Decimal action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Decimal(reqObj *WorkbookFunctionsDecim
 	return bb
 }
 
-//
 type WorkbookFunctionsDecimalRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDecimalRequestBuilder) Request() *WorkbookFunctionsDecimalRequest {
 	return &WorkbookFunctionsDecimalRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDecimalRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

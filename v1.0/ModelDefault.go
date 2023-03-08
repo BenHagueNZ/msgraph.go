@@ -18,26 +18,40 @@ type DefaultManagedAppProtection struct {
 	ManagedAppProtection
 	// AppDataEncryptionType Type of encryption which should be used for data in a managed app. (iOS Only)
 	AppDataEncryptionType *ManagedAppDataEncryptionType `json:"appDataEncryptionType,omitempty"`
-	// ScreenCaptureBlocked Indicates whether screen capture is blocked. (Android only)
-	ScreenCaptureBlocked *bool `json:"screenCaptureBlocked,omitempty"`
-	// EncryptAppData Indicates whether managed-app data should be encrypted. (Android only)
-	EncryptAppData *bool `json:"encryptAppData,omitempty"`
-	// DisableAppEncryptionIfDeviceEncryptionIsEnabled When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
-	DisableAppEncryptionIfDeviceEncryptionIsEnabled *bool `json:"disableAppEncryptionIfDeviceEncryptionIsEnabled,omitempty"`
-	// MinimumRequiredSdkVersion Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
-	MinimumRequiredSdkVersion *string `json:"minimumRequiredSdkVersion,omitempty"`
 	// CustomSettings A set of string key and string value pairs to be sent to the affected users, unalterned by this service
 	CustomSettings []KeyValuePair `json:"customSettings,omitempty"`
 	// DeployedAppCount Count of apps to which the current policy is deployed.
 	DeployedAppCount *int `json:"deployedAppCount,omitempty"`
-	// MinimumRequiredPatchVersion Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
-	MinimumRequiredPatchVersion *string `json:"minimumRequiredPatchVersion,omitempty"`
-	// MinimumWarningPatchVersion Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
-	MinimumWarningPatchVersion *string `json:"minimumWarningPatchVersion,omitempty"`
+	// DisableAppEncryptionIfDeviceEncryptionIsEnabled When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
+	DisableAppEncryptionIfDeviceEncryptionIsEnabled *bool `json:"disableAppEncryptionIfDeviceEncryptionIsEnabled,omitempty"`
+	// EncryptAppData Indicates whether managed-app data should be encrypted. (Android only)
+	EncryptAppData *bool `json:"encryptAppData,omitempty"`
 	// FaceIDBlocked Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
 	FaceIDBlocked *bool `json:"faceIdBlocked,omitempty"`
+	// MinimumRequiredPatchVersion Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
+	MinimumRequiredPatchVersion *string `json:"minimumRequiredPatchVersion,omitempty"`
+	// MinimumRequiredSdkVersion Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
+	MinimumRequiredSdkVersion *string `json:"minimumRequiredSdkVersion,omitempty"`
+	// MinimumWarningPatchVersion Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
+	MinimumWarningPatchVersion *string `json:"minimumWarningPatchVersion,omitempty"`
+	// ScreenCaptureBlocked Indicates whether screen capture is blocked. (Android only)
+	ScreenCaptureBlocked *bool `json:"screenCaptureBlocked,omitempty"`
 	// Apps undocumented
 	Apps []ManagedMobileApp `json:"apps,omitempty"`
 	// DeploymentSummary undocumented
 	DeploymentSummary *ManagedAppPolicyDeploymentSummary `json:"deploymentSummary,omitempty"`
+}
+
+// DefaultUserRolePermissions undocumented
+type DefaultUserRolePermissions struct {
+	// Object is the base model of DefaultUserRolePermissions
+	Object
+	// AllowedToCreateApps undocumented
+	AllowedToCreateApps *bool `json:"allowedToCreateApps,omitempty"`
+	// AllowedToCreateSecurityGroups undocumented
+	AllowedToCreateSecurityGroups *bool `json:"allowedToCreateSecurityGroups,omitempty"`
+	// AllowedToReadOtherUsers undocumented
+	AllowedToReadOtherUsers *bool `json:"allowedToReadOtherUsers,omitempty"`
+	// PermissionGrantPoliciesAssigned undocumented
+	PermissionGrantPoliciesAssigned []string `json:"permissionGrantPoliciesAssigned,omitempty"`
 }

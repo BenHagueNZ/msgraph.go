@@ -96,6 +96,8 @@ const (
 	ManagedAppDataStorageLocationVOneDriveForBusiness ManagedAppDataStorageLocation = "oneDriveForBusiness"
 	// ManagedAppDataStorageLocationVSharePoint undocumented
 	ManagedAppDataStorageLocationVSharePoint ManagedAppDataStorageLocation = "sharePoint"
+	// ManagedAppDataStorageLocationVBox undocumented
+	ManagedAppDataStorageLocationVBox ManagedAppDataStorageLocation = "box"
 	// ManagedAppDataStorageLocationVLocalStorage undocumented
 	ManagedAppDataStorageLocationVLocalStorage ManagedAppDataStorageLocation = "localStorage"
 )
@@ -105,6 +107,8 @@ var (
 	ManagedAppDataStorageLocationPOneDriveForBusiness = &_ManagedAppDataStorageLocationPOneDriveForBusiness
 	// ManagedAppDataStorageLocationPSharePoint is a pointer to ManagedAppDataStorageLocationVSharePoint
 	ManagedAppDataStorageLocationPSharePoint = &_ManagedAppDataStorageLocationPSharePoint
+	// ManagedAppDataStorageLocationPBox is a pointer to ManagedAppDataStorageLocationVBox
+	ManagedAppDataStorageLocationPBox = &_ManagedAppDataStorageLocationPBox
 	// ManagedAppDataStorageLocationPLocalStorage is a pointer to ManagedAppDataStorageLocationVLocalStorage
 	ManagedAppDataStorageLocationPLocalStorage = &_ManagedAppDataStorageLocationPLocalStorage
 )
@@ -112,6 +116,7 @@ var (
 var (
 	_ManagedAppDataStorageLocationPOneDriveForBusiness = ManagedAppDataStorageLocationVOneDriveForBusiness
 	_ManagedAppDataStorageLocationPSharePoint          = ManagedAppDataStorageLocationVSharePoint
+	_ManagedAppDataStorageLocationPBox                 = ManagedAppDataStorageLocationVBox
 	_ManagedAppDataStorageLocationPLocalStorage        = ManagedAppDataStorageLocationVLocalStorage
 )
 
@@ -184,6 +189,28 @@ var (
 var (
 	_ManagedAppPinCharacterSetPNumeric               = ManagedAppPinCharacterSetVNumeric
 	_ManagedAppPinCharacterSetPAlphanumericAndSymbol = ManagedAppPinCharacterSetVAlphanumericAndSymbol
+)
+
+// ManagedBrowserType undocumented
+type ManagedBrowserType string
+
+const (
+	// ManagedBrowserTypeVNotConfigured undocumented
+	ManagedBrowserTypeVNotConfigured ManagedBrowserType = "notConfigured"
+	// ManagedBrowserTypeVMicrosoftEdge undocumented
+	ManagedBrowserTypeVMicrosoftEdge ManagedBrowserType = "microsoftEdge"
+)
+
+var (
+	// ManagedBrowserTypePNotConfigured is a pointer to ManagedBrowserTypeVNotConfigured
+	ManagedBrowserTypePNotConfigured = &_ManagedBrowserTypePNotConfigured
+	// ManagedBrowserTypePMicrosoftEdge is a pointer to ManagedBrowserTypeVMicrosoftEdge
+	ManagedBrowserTypePMicrosoftEdge = &_ManagedBrowserTypePMicrosoftEdge
+)
+
+var (
+	_ManagedBrowserTypePNotConfigured = ManagedBrowserTypeVNotConfigured
+	_ManagedBrowserTypePMicrosoftEdge = ManagedBrowserTypeVMicrosoftEdge
 )
 
 // ManagedDeviceOwnerType undocumented

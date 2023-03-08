@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsUnicodeRequestBuilder struct{ BaseRequestBuilder }
 
 // Unicode action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Unicode(reqObj *WorkbookFunctionsUnico
 	return bb
 }
 
-//
 type WorkbookFunctionsUnicodeRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsUnicodeRequestBuilder) Request() *WorkbookFunctionsUnicodeRequest {
 	return &WorkbookFunctionsUnicodeRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsUnicodeRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

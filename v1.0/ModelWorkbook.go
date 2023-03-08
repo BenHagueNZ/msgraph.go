@@ -10,16 +10,18 @@ type Workbook struct {
 	Entity
 	// Application undocumented
 	Application *WorkbookApplication `json:"application,omitempty"`
-	// Names undocumented
-	Names []WorkbookNamedItem `json:"names,omitempty"`
-	// Tables undocumented
-	Tables []WorkbookTable `json:"tables,omitempty"`
-	// Worksheets undocumented
-	Worksheets []WorkbookWorksheet `json:"worksheets,omitempty"`
 	// Comments undocumented
 	Comments []WorkbookComment `json:"comments,omitempty"`
 	// Functions undocumented
 	Functions *WorkbookFunctions `json:"functions,omitempty"`
+	// Names undocumented
+	Names []WorkbookNamedItem `json:"names,omitempty"`
+	// Operations undocumented
+	Operations []WorkbookOperation `json:"operations,omitempty"`
+	// Tables undocumented
+	Tables []WorkbookTable `json:"tables,omitempty"`
+	// Worksheets undocumented
+	Worksheets []WorkbookWorksheet `json:"worksheets,omitempty"`
 }
 
 // WorkbookApplication undocumented
@@ -424,6 +426,30 @@ type WorkbookNamedItem struct {
 	Worksheet *WorkbookWorksheet `json:"worksheet,omitempty"`
 }
 
+// WorkbookOperation undocumented
+type WorkbookOperation struct {
+	// Entity is the base model of WorkbookOperation
+	Entity
+	// Error undocumented
+	Error *WorkbookOperationError `json:"error,omitempty"`
+	// ResourceLocation undocumented
+	ResourceLocation *string `json:"resourceLocation,omitempty"`
+	// Status undocumented
+	Status *WorkbookOperationStatus `json:"status,omitempty"`
+}
+
+// WorkbookOperationError undocumented
+type WorkbookOperationError struct {
+	// Object is the base model of WorkbookOperationError
+	Object
+	// Code undocumented
+	Code *string `json:"code,omitempty"`
+	// InnerError undocumented
+	InnerError *WorkbookOperationError `json:"innerError,omitempty"`
+	// Message undocumented
+	Message *string `json:"message,omitempty"`
+}
+
 // WorkbookPivotTable undocumented
 type WorkbookPivotTable struct {
 	// Entity is the base model of WorkbookPivotTable
@@ -468,10 +494,10 @@ type WorkbookRange struct {
 	RowIndex *int `json:"rowIndex,omitempty"`
 	// Text undocumented
 	Text json.RawMessage `json:"text,omitempty"`
-	// ValueTypes undocumented
-	ValueTypes json.RawMessage `json:"valueTypes,omitempty"`
 	// Values undocumented
 	Values json.RawMessage `json:"values,omitempty"`
+	// ValueTypes undocumented
+	ValueTypes json.RawMessage `json:"valueTypes,omitempty"`
 	// Format undocumented
 	Format *WorkbookRangeFormat `json:"format,omitempty"`
 	// Sort undocumented
@@ -580,10 +606,10 @@ type WorkbookRangeView struct {
 	RowCount *int `json:"rowCount,omitempty"`
 	// Text undocumented
 	Text json.RawMessage `json:"text,omitempty"`
-	// ValueTypes undocumented
-	ValueTypes json.RawMessage `json:"valueTypes,omitempty"`
 	// Values undocumented
 	Values json.RawMessage `json:"values,omitempty"`
+	// ValueTypes undocumented
+	ValueTypes json.RawMessage `json:"valueTypes,omitempty"`
 	// Rows undocumented
 	Rows []WorkbookRangeView `json:"rows,omitempty"`
 }

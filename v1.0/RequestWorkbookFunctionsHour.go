@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsHourRequestBuilder struct{ BaseRequestBuilder }
 
 // Hour action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Hour(reqObj *WorkbookFunctionsHourRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsHourRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsHourRequestBuilder) Request() *WorkbookFunctionsHourRequest {
 	return &WorkbookFunctionsHourRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsHourRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

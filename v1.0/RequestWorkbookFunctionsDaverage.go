@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsDaverageRequestBuilder struct{ BaseRequestBuilder }
 
 // Daverage action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Daverage(reqObj *WorkbookFunctionsDave
 	return bb
 }
 
-//
 type WorkbookFunctionsDaverageRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDaverageRequestBuilder) Request() *WorkbookFunctionsDaverageRequest {
 	return &WorkbookFunctionsDaverageRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDaverageRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

@@ -69,3 +69,36 @@ func (r *SharedInsightRequest) Update(ctx context.Context, reqObj *SharedInsight
 func (r *SharedInsightRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+// SharedWithChannelTeamInfoRequestBuilder is request builder for SharedWithChannelTeamInfo
+type SharedWithChannelTeamInfoRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SharedWithChannelTeamInfoRequest
+func (b *SharedWithChannelTeamInfoRequestBuilder) Request() *SharedWithChannelTeamInfoRequest {
+	return &SharedWithChannelTeamInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SharedWithChannelTeamInfoRequest is request for SharedWithChannelTeamInfo
+type SharedWithChannelTeamInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for SharedWithChannelTeamInfo
+func (r *SharedWithChannelTeamInfoRequest) Get(ctx context.Context) (resObj *SharedWithChannelTeamInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SharedWithChannelTeamInfo
+func (r *SharedWithChannelTeamInfoRequest) Update(ctx context.Context, reqObj *SharedWithChannelTeamInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SharedWithChannelTeamInfo
+func (r *SharedWithChannelTeamInfoRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}

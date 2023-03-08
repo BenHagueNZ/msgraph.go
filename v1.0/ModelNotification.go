@@ -8,14 +8,16 @@ import "time"
 type NotificationMessageTemplate struct {
 	// Entity is the base model of NotificationMessageTemplate
 	Entity
-	// LastModifiedDateTime DateTime the object was last modified.
-	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
-	// DisplayName Display name for the Notification Message Template.
-	DisplayName *string `json:"displayName,omitempty"`
-	// DefaultLocale The default locale to fallback onto when the requested locale is not available.
-	DefaultLocale *string `json:"defaultLocale,omitempty"`
 	// BrandingOptions The Message Template Branding Options. Branding is defined in the Intune Admin Console.
 	BrandingOptions *NotificationTemplateBrandingOptions `json:"brandingOptions,omitempty"`
+	// DefaultLocale The default locale to fallback onto when the requested locale is not available.
+	DefaultLocale *string `json:"defaultLocale,omitempty"`
+	// DisplayName Display name for the Notification Message Template.
+	DisplayName *string `json:"displayName,omitempty"`
+	// LastModifiedDateTime DateTime the object was last modified.
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// RoleScopeTagIDs List of Scope Tags for this Entity instance.
+	RoleScopeTagIDs []string `json:"roleScopeTagIds,omitempty"`
 	// LocalizedNotificationMessages undocumented
 	LocalizedNotificationMessages []LocalizedNotificationMessage `json:"localizedNotificationMessages,omitempty"`
 }

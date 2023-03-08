@@ -12,4 +12,6 @@ type Hashes struct {
 	QuickXorHash *string `json:"quickXorHash,omitempty"`
 	// Sha1Hash undocumented
 	Sha1Hash *string `json:"sha1Hash,omitempty"`
+	// Sha256Hash undocumented
+	Sha256Hash *string `json:"sha256Hash,omitempty"`
 }

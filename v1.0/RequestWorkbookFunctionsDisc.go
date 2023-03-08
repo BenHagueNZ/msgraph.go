@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsDiscRequestBuilder struct{ BaseRequestBuilder }
 
 // Disc action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Disc(reqObj *WorkbookFunctionsDiscRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsDiscRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDiscRequestBuilder) Request() *WorkbookFunctionsDiscRequest {
 	return &WorkbookFunctionsDiscRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDiscRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

@@ -8,36 +8,36 @@ import "time"
 type MobileApp struct {
 	// Entity is the base model of MobileApp
 	Entity
-	// DisplayName The admin provided or imported title of the app.
-	DisplayName *string `json:"displayName,omitempty"`
-	// Description The description of the app.
-	Description *string `json:"description,omitempty"`
-	// Publisher The publisher of the app.
-	Publisher *string `json:"publisher,omitempty"`
-	// LargeIcon The large icon, to be displayed in the app details and used for upload of the icon.
-	LargeIcon *MimeContent `json:"largeIcon,omitempty"`
 	// CreatedDateTime The date and time the app was created.
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
-	// LastModifiedDateTime The date and time the app was last modified.
-	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
-	// IsFeatured The value indicating whether the app is marked as featured by the admin.
-	IsFeatured *bool `json:"isFeatured,omitempty"`
-	// PrivacyInformationURL The privacy statement Url.
-	PrivacyInformationURL *string `json:"privacyInformationUrl,omitempty"`
-	// InformationURL The more information Url.
-	InformationURL *string `json:"informationUrl,omitempty"`
-	// Owner The owner of the app.
-	Owner *string `json:"owner,omitempty"`
+	// Description The description of the app.
+	Description *string `json:"description,omitempty"`
 	// Developer The developer of the app.
 	Developer *string `json:"developer,omitempty"`
+	// DisplayName The admin provided or imported title of the app.
+	DisplayName *string `json:"displayName,omitempty"`
+	// InformationURL The more information Url.
+	InformationURL *string `json:"informationUrl,omitempty"`
+	// IsFeatured The value indicating whether the app is marked as featured by the admin.
+	IsFeatured *bool `json:"isFeatured,omitempty"`
+	// LargeIcon The large icon, to be displayed in the app details and used for upload of the icon.
+	LargeIcon *MimeContent `json:"largeIcon,omitempty"`
+	// LastModifiedDateTime The date and time the app was last modified.
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 	// Notes Notes for the app.
 	Notes *string `json:"notes,omitempty"`
+	// Owner The owner of the app.
+	Owner *string `json:"owner,omitempty"`
+	// PrivacyInformationURL The privacy statement Url.
+	PrivacyInformationURL *string `json:"privacyInformationUrl,omitempty"`
+	// Publisher The publisher of the app.
+	Publisher *string `json:"publisher,omitempty"`
 	// PublishingState The publishing state for the app. The app cannot be assigned unless the app is published.
 	PublishingState *MobileAppPublishingState `json:"publishingState,omitempty"`
-	// Categories undocumented
-	Categories []MobileAppCategory `json:"categories,omitempty"`
 	// Assignments undocumented
 	Assignments []MobileAppAssignment `json:"assignments,omitempty"`
+	// Categories undocumented
+	Categories []MobileAppCategory `json:"categories,omitempty"`
 }
 
 // MobileAppAssignment A class containing the properties used for Group Assignment of a Mobile App.
@@ -46,13 +46,13 @@ type MobileAppAssignment struct {
 	Entity
 	// Intent The install intent defined by the admin.
 	Intent *InstallIntent `json:"intent,omitempty"`
-	// Target The target group assignment defined by the admin.
-	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 	// Settings The settings for target assignment defined by the admin.
 	Settings *MobileAppAssignmentSettings `json:"settings,omitempty"`
+	// Target The target group assignment defined by the admin.
+	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
 
-// MobileAppAssignmentSettings undocumented
+// MobileAppAssignmentSettings Abstract class to contain properties used to assign a mobile app to a group.
 type MobileAppAssignmentSettings struct {
 	// Object is the base model of MobileAppAssignmentSettings
 	Object
@@ -72,6 +72,8 @@ type MobileAppCategory struct {
 type MobileAppContent struct {
 	// Entity is the base model of MobileAppContent
 	Entity
+	// ContainedApps undocumented
+	ContainedApps []MobileContainedApp `json:"containedApps,omitempty"`
 	// Files undocumented
 	Files []MobileAppContentFile `json:"files,omitempty"`
 }
@@ -82,28 +84,46 @@ type MobileAppContentFile struct {
 	Entity
 	// AzureStorageURI The Azure Storage URI.
 	AzureStorageURI *string `json:"azureStorageUri,omitempty"`
-	// IsCommitted A value indicating whether the file is committed.
-	IsCommitted *bool `json:"isCommitted,omitempty"`
+	// AzureStorageURIExpirationDateTime The time the Azure storage Uri expires.
+	AzureStorageURIExpirationDateTime *time.Time `json:"azureStorageUriExpirationDateTime,omitempty"`
 	// CreatedDateTime The time the file was created.
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// IsCommitted A value indicating whether the file is committed.
+	IsCommitted *bool `json:"isCommitted,omitempty"`
+	// Manifest The manifest information.
+	Manifest *Binary `json:"manifest,omitempty"`
 	// Name the file name.
 	Name *string `json:"name,omitempty"`
 	// Size The size of the file prior to encryption.
 	Size *int `json:"size,omitempty"`
 	// SizeEncrypted The size of the file after encryption.
 	SizeEncrypted *int `json:"sizeEncrypted,omitempty"`
-	// AzureStorageURIExpirationDateTime The time the Azure storage Uri expires.
-	AzureStorageURIExpirationDateTime *time.Time `json:"azureStorageUriExpirationDateTime,omitempty"`
-	// Manifest The manifest information.
-	Manifest *Binary `json:"manifest,omitempty"`
 	// UploadState The state of the current upload request.
 	UploadState *MobileAppContentFileUploadState `json:"uploadState,omitempty"`
 }
 
-// MobileAppIdentifier undocumented
+// MobileAppIdentifier The identifier for a mobile app.
 type MobileAppIdentifier struct {
 	// Object is the base model of MobileAppIdentifier
 	Object
+}
+
+// MobileAppInstallTimeSettings Contains properties used to determine when to offer an app to devices and when to install the app on devices.
+type MobileAppInstallTimeSettings struct {
+	// Object is the base model of MobileAppInstallTimeSettings
+	Object
+	// DeadlineDateTime The time at which the app should be installed.
+	DeadlineDateTime *time.Time `json:"deadlineDateTime,omitempty"`
+	// StartDateTime The time at which the app should be available for installation.
+	StartDateTime *time.Time `json:"startDateTime,omitempty"`
+	// UseLocalTime Whether the local device time or UTC time should be used when determining the available and deadline times.
+	UseLocalTime *bool `json:"useLocalTime,omitempty"`
+}
+
+// MobileContainedApp An abstract class that represents a contained app in a mobileApp acting as a package.
+type MobileContainedApp struct {
+	// Entity is the base model of MobileContainedApp
+	Entity
 }
 
 // MobileLobApp An abstract base class containing properties for all mobile line of business apps.
@@ -120,24 +140,38 @@ type MobileLobApp struct {
 	ContentVersions []MobileAppContent `json:"contentVersions,omitempty"`
 }
 
-// MobileThreatDefenseConnector Entity which represents a connection to Mobile threat defense partner.
+// MobileThreatDefenseConnector Entity which represents a connection to Mobile Threat Defense partner.
 type MobileThreatDefenseConnector struct {
 	// Entity is the base model of MobileThreatDefenseConnector
 	Entity
-	// LastHeartbeatDateTime DateTime of last Heartbeat recieved from the Data Sync Partner
-	LastHeartbeatDateTime *time.Time `json:"lastHeartbeatDateTime,omitempty"`
-	// PartnerState Data Sync Partner state for this account
-	PartnerState *MobileThreatPartnerTenantState `json:"partnerState,omitempty"`
-	// AndroidEnabled For Android, set whether data from the data sync partner should be used during compliance evaluations
-	AndroidEnabled *bool `json:"androidEnabled,omitempty"`
-	// IOSEnabled For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
-	IOSEnabled *bool `json:"iosEnabled,omitempty"`
-	// AndroidDeviceBlockedOnMissingPartnerData For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+	// AllowPartnerToCollectIOSApplicationMetadata When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
+	AllowPartnerToCollectIOSApplicationMetadata *bool `json:"allowPartnerToCollectIOSApplicationMetadata,omitempty"`
+	// AllowPartnerToCollectIOSPersonalApplicationMetadata When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
+	AllowPartnerToCollectIOSPersonalApplicationMetadata *bool `json:"allowPartnerToCollectIOSPersonalApplicationMetadata,omitempty"`
+	// AndroidDeviceBlockedOnMissingPartnerData For Android, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
 	AndroidDeviceBlockedOnMissingPartnerData *bool `json:"androidDeviceBlockedOnMissingPartnerData,omitempty"`
-	// IOSDeviceBlockedOnMissingPartnerData For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+	// AndroidEnabled For Android, set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
+	AndroidEnabled *bool `json:"androidEnabled,omitempty"`
+	// AndroidMobileApplicationManagementEnabled When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
+	AndroidMobileApplicationManagementEnabled *bool `json:"androidMobileApplicationManagementEnabled,omitempty"`
+	// IOSDeviceBlockedOnMissingPartnerData For IOS, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
 	IOSDeviceBlockedOnMissingPartnerData *bool `json:"iosDeviceBlockedOnMissingPartnerData,omitempty"`
-	// PartnerUnsupportedOsVersionBlocked Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
-	PartnerUnsupportedOsVersionBlocked *bool `json:"partnerUnsupportedOsVersionBlocked,omitempty"`
+	// IOSEnabled For IOS, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
+	IOSEnabled *bool `json:"iosEnabled,omitempty"`
+	// IOSMobileApplicationManagementEnabled When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
+	IOSMobileApplicationManagementEnabled *bool `json:"iosMobileApplicationManagementEnabled,omitempty"`
+	// LastHeartbeatDateTime DateTime of last Heartbeat recieved from the Mobile Threat Defense partner
+	LastHeartbeatDateTime *time.Time `json:"lastHeartbeatDateTime,omitempty"`
+	// MicrosoftDefenderForEndpointAttachEnabled When TRUE, inidicates that configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, inidicates that configuration profile management via Microsoft Defender for Endpoint is disabled. Default value is FALSE.
+	MicrosoftDefenderForEndpointAttachEnabled *bool `json:"microsoftDefenderForEndpointAttachEnabled,omitempty"`
+	// PartnerState Mobile Threat Defense partner state for this account
+	PartnerState *MobileThreatPartnerTenantState `json:"partnerState,omitempty"`
 	// PartnerUnresponsivenessThresholdInDays Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
 	PartnerUnresponsivenessThresholdInDays *int `json:"partnerUnresponsivenessThresholdInDays,omitempty"`
+	// PartnerUnsupportedOsVersionBlocked Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner
+	PartnerUnsupportedOsVersionBlocked *bool `json:"partnerUnsupportedOsVersionBlocked,omitempty"`
+	// WindowsDeviceBlockedOnMissingPartnerData When TRUE, inidicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the Mobile Threat Defense partner for Windows. Default value is FALSE.
+	WindowsDeviceBlockedOnMissingPartnerData *bool `json:"windowsDeviceBlockedOnMissingPartnerData,omitempty"`
+	// WindowsEnabled When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during compliance evaluations for Windows. Default value is FALSE.
+	WindowsEnabled *bool `json:"windowsEnabled,omitempty"`
 }

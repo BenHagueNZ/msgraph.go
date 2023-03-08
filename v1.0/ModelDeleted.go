@@ -9,3 +9,11 @@ type Deleted struct {
 	// State undocumented
 	State *string `json:"state,omitempty"`
 }
+
+// DeletedTeam undocumented
+type DeletedTeam struct {
+	// Entity is the base model of DeletedTeam
+	Entity
+	// Channels undocumented
+	Channels []Channel `json:"channels,omitempty"`
+}

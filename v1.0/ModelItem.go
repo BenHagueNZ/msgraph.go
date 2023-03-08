@@ -32,10 +32,6 @@ type ItemActivity struct {
 type ItemActivityStat struct {
 	// Entity is the base model of ItemActivityStat
 	Entity
-	// StartDateTime undocumented
-	StartDateTime *time.Time `json:"startDateTime,omitempty"`
-	// EndDateTime undocumented
-	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// Access undocumented
 	Access *ItemActionStat `json:"access,omitempty"`
 	// Create undocumented
@@ -44,12 +40,16 @@ type ItemActivityStat struct {
 	Delete *ItemActionStat `json:"delete,omitempty"`
 	// Edit undocumented
 	Edit *ItemActionStat `json:"edit,omitempty"`
-	// Move undocumented
-	Move *ItemActionStat `json:"move,omitempty"`
-	// IsTrending undocumented
-	IsTrending *bool `json:"isTrending,omitempty"`
+	// EndDateTime undocumented
+	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// IncompleteData undocumented
 	IncompleteData *IncompleteData `json:"incompleteData,omitempty"`
+	// IsTrending undocumented
+	IsTrending *bool `json:"isTrending,omitempty"`
+	// Move undocumented
+	Move *ItemActionStat `json:"move,omitempty"`
+	// StartDateTime undocumented
+	StartDateTime *time.Time `json:"startDateTime,omitempty"`
 	// Activities undocumented
 	Activities []ItemActivity `json:"activities,omitempty"`
 }
@@ -58,10 +58,10 @@ type ItemActivityStat struct {
 type ItemAnalytics struct {
 	// Entity is the base model of ItemAnalytics
 	Entity
-	// ItemActivityStats undocumented
-	ItemActivityStats []ItemActivityStat `json:"itemActivityStats,omitempty"`
 	// AllTime undocumented
 	AllTime *ItemActivityStat `json:"allTime,omitempty"`
+	// ItemActivityStats undocumented
+	ItemActivityStats []ItemActivityStat `json:"itemActivityStats,omitempty"`
 	// LastSevenDays undocumented
 	LastSevenDays *ItemActivityStat `json:"lastSevenDays,omitempty"`
 }
@@ -78,10 +78,10 @@ type ItemAttachment struct {
 type ItemBody struct {
 	// Object is the base model of ItemBody
 	Object
-	// ContentType undocumented
-	ContentType *BodyType `json:"contentType,omitempty"`
 	// Content undocumented
 	Content *string `json:"content,omitempty"`
+	// ContentType undocumented
+	ContentType *BodyType `json:"contentType,omitempty"`
 }
 
 // ItemPreviewInfo undocumented

@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsNegBinom_DistRequestBuilder struct{ BaseRequestBuilder }
 
 // NegBinom_Dist action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) NegBinom_Dist(reqObj *WorkbookFunction
 	return bb
 }
 
-//
 type WorkbookFunctionsNegBinom_DistRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsNegBinom_DistRequestBuilder) Request() *WorkbookFunctionsNegBinom_DistRequest {
 	return &WorkbookFunctionsNegBinom_DistRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsNegBinom_DistRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

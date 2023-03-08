@@ -14,6 +14,8 @@ type ColumnDefinition struct {
 	Choice *ChoiceColumn `json:"choice,omitempty"`
 	// ColumnGroup undocumented
 	ColumnGroup *string `json:"columnGroup,omitempty"`
+	// ContentApprovalStatus undocumented
+	ContentApprovalStatus *ContentApprovalStatusColumn `json:"contentApprovalStatus,omitempty"`
 	// Currency undocumented
 	Currency *CurrencyColumn `json:"currency,omitempty"`
 	// DateTime undocumented
@@ -26,10 +28,20 @@ type ColumnDefinition struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// EnforceUniqueValues undocumented
 	EnforceUniqueValues *bool `json:"enforceUniqueValues,omitempty"`
+	// Geolocation undocumented
+	Geolocation *GeolocationColumn `json:"geolocation,omitempty"`
 	// Hidden undocumented
 	Hidden *bool `json:"hidden,omitempty"`
+	// HyperlinkOrPicture undocumented
+	HyperlinkOrPicture *HyperlinkOrPictureColumn `json:"hyperlinkOrPicture,omitempty"`
 	// Indexed undocumented
 	Indexed *bool `json:"indexed,omitempty"`
+	// IsDeletable undocumented
+	IsDeletable *bool `json:"isDeletable,omitempty"`
+	// IsReorderable undocumented
+	IsReorderable *bool `json:"isReorderable,omitempty"`
+	// IsSealed undocumented
+	IsSealed *bool `json:"isSealed,omitempty"`
 	// Lookup undocumented
 	Lookup *LookupColumn `json:"lookup,omitempty"`
 	// Name undocumented
@@ -38,12 +50,26 @@ type ColumnDefinition struct {
 	Number *NumberColumn `json:"number,omitempty"`
 	// PersonOrGroup undocumented
 	PersonOrGroup *PersonOrGroupColumn `json:"personOrGroup,omitempty"`
+	// PropagateChanges undocumented
+	PropagateChanges *bool `json:"propagateChanges,omitempty"`
 	// ReadOnly undocumented
 	ReadOnly *bool `json:"readOnly,omitempty"`
 	// Required undocumented
 	Required *bool `json:"required,omitempty"`
+	// SourceContentType undocumented
+	SourceContentType *ContentTypeInfo `json:"sourceContentType,omitempty"`
+	// Term undocumented
+	Term *TermColumn `json:"term,omitempty"`
 	// Text undocumented
 	Text *TextColumn `json:"text,omitempty"`
+	// Thumbnail undocumented
+	Thumbnail *ThumbnailColumn `json:"thumbnail,omitempty"`
+	// Type undocumented
+	Type *ColumnTypes `json:"type,omitempty"`
+	// Validation undocumented
+	Validation *ColumnValidation `json:"validation,omitempty"`
+	// SourceColumn undocumented
+	SourceColumn *ColumnDefinition `json:"sourceColumn,omitempty"`
 }
 
 // ColumnLink undocumented
@@ -52,4 +78,16 @@ type ColumnLink struct {
 	Entity
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
+}
+
+// ColumnValidation undocumented
+type ColumnValidation struct {
+	// Object is the base model of ColumnValidation
+	Object
+	// DefaultLanguage undocumented
+	DefaultLanguage *string `json:"defaultLanguage,omitempty"`
+	// Descriptions undocumented
+	Descriptions []DisplayNameLocalization `json:"descriptions,omitempty"`
+	// Formula undocumented
+	Formula *string `json:"formula,omitempty"`
 }

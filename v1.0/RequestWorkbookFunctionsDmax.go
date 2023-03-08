@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsDmaxRequestBuilder struct{ BaseRequestBuilder }
 
 // Dmax action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Dmax(reqObj *WorkbookFunctionsDmaxRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsDmaxRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDmaxRequestBuilder) Request() *WorkbookFunctionsDmaxRequest {
 	return &WorkbookFunctionsDmaxRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDmaxRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

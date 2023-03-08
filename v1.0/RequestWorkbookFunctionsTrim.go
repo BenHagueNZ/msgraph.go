@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsTrimRequestBuilder struct{ BaseRequestBuilder }
 
 // Trim action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Trim(reqObj *WorkbookFunctionsTrimRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsTrimRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsTrimRequestBuilder) Request() *WorkbookFunctionsTrimRequest {
 	return &WorkbookFunctionsTrimRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsTrimRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsTrimMeanRequestBuilder struct{ BaseRequestBuilder }
 
 // TrimMean action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) TrimMean(reqObj *WorkbookFunctionsTrim
 	return bb
 }
 
-//
 type WorkbookFunctionsTrimMeanRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsTrimMeanRequestBuilder) Request() *WorkbookFunctionsTrimMeanRequest {
 	return &WorkbookFunctionsTrimMeanRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsTrimMeanRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

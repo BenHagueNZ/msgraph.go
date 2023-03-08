@@ -2,7 +2,14 @@
 
 package msgraph
 
-import "context"
+import (
+	"context"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+
+	"github.com/BenHagueNZ/msgraph.go/jsonx"
+)
 
 // SiteRequestBuilder is request builder for Site
 type SiteRequestBuilder struct{ BaseRequestBuilder }
@@ -35,4 +42,198 @@ func (r *SiteRequest) Update(ctx context.Context, reqObj *Site) error {
 // Delete performs DELETE request for Site
 func (r *SiteRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+type SiteCollectionAddRequestBuilder struct{ BaseRequestBuilder }
+
+// Add action undocumented
+func (b *GroupSitesCollectionRequestBuilder) Add(reqObj *SiteCollectionAddRequestParameter) *SiteCollectionAddRequestBuilder {
+	bb := &SiteCollectionAddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/add"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+// Add action undocumented
+func (b *SiteSitesCollectionRequestBuilder) Add(reqObj *SiteCollectionAddRequestParameter) *SiteCollectionAddRequestBuilder {
+	bb := &SiteCollectionAddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/add"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+// Add action undocumented
+func (b *UserFollowedSitesCollectionRequestBuilder) Add(reqObj *SiteCollectionAddRequestParameter) *SiteCollectionAddRequestBuilder {
+	bb := &SiteCollectionAddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/add"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type SiteCollectionAddRequest struct{ BaseRequest }
+
+func (b *SiteCollectionAddRequestBuilder) Request() *SiteCollectionAddRequest {
+	return &SiteCollectionAddRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *SiteCollectionAddRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Site, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []Site
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []Site
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+func (r *SiteCollectionAddRequest) PostN(ctx context.Context, n int) ([]Site, error) {
+	return r.Paging(ctx, "POST", "", r.requestObject, n)
+}
+
+func (r *SiteCollectionAddRequest) Post(ctx context.Context) ([]Site, error) {
+	return r.Paging(ctx, "POST", "", r.requestObject, 0)
+}
+
+type SiteCollectionRemoveRequestBuilder struct{ BaseRequestBuilder }
+
+// Remove action undocumented
+func (b *GroupSitesCollectionRequestBuilder) Remove(reqObj *SiteCollectionRemoveRequestParameter) *SiteCollectionRemoveRequestBuilder {
+	bb := &SiteCollectionRemoveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/remove"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+// Remove action undocumented
+func (b *SiteSitesCollectionRequestBuilder) Remove(reqObj *SiteCollectionRemoveRequestParameter) *SiteCollectionRemoveRequestBuilder {
+	bb := &SiteCollectionRemoveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/remove"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+// Remove action undocumented
+func (b *UserFollowedSitesCollectionRequestBuilder) Remove(reqObj *SiteCollectionRemoveRequestParameter) *SiteCollectionRemoveRequestBuilder {
+	bb := &SiteCollectionRemoveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/remove"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type SiteCollectionRemoveRequest struct{ BaseRequest }
+
+func (b *SiteCollectionRemoveRequestBuilder) Request() *SiteCollectionRemoveRequest {
+	return &SiteCollectionRemoveRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *SiteCollectionRemoveRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Site, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []Site
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []Site
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+func (r *SiteCollectionRemoveRequest) PostN(ctx context.Context, n int) ([]Site, error) {
+	return r.Paging(ctx, "POST", "", r.requestObject, n)
+}
+
+func (r *SiteCollectionRemoveRequest) Post(ctx context.Context) ([]Site, error) {
+	return r.Paging(ctx, "POST", "", r.requestObject, 0)
 }

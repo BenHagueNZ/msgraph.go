@@ -2,8 +2,56 @@
 
 package msgraph
 
-// RunSchedule undocumented
-type RunSchedule struct {
-	// Object is the base model of RunSchedule
+import "time"
+
+// Run undocumented
+type Run struct {
+	// Entity is the base model of Run
+	Entity
+	// CompletedDateTime undocumented
+	CompletedDateTime *time.Time `json:"completedDateTime,omitempty"`
+	// FailedTasksCount undocumented
+	FailedTasksCount *int `json:"failedTasksCount,omitempty"`
+	// FailedUsersCount undocumented
+	FailedUsersCount *int `json:"failedUsersCount,omitempty"`
+	// LastUpdatedDateTime undocumented
+	LastUpdatedDateTime *time.Time `json:"lastUpdatedDateTime,omitempty"`
+	// ProcessingStatus undocumented
+	ProcessingStatus *IdentityGovernance_lifecycleWorkflowProcessingStatus `json:"processingStatus,omitempty"`
+	// ScheduledDateTime undocumented
+	ScheduledDateTime *time.Time `json:"scheduledDateTime,omitempty"`
+	// StartedDateTime undocumented
+	StartedDateTime *time.Time `json:"startedDateTime,omitempty"`
+	// SuccessfulUsersCount undocumented
+	SuccessfulUsersCount *int `json:"successfulUsersCount,omitempty"`
+	// TotalTasksCount undocumented
+	TotalTasksCount *int `json:"totalTasksCount,omitempty"`
+	// TotalUnprocessedTasksCount undocumented
+	TotalUnprocessedTasksCount *int `json:"totalUnprocessedTasksCount,omitempty"`
+	// TotalUsersCount undocumented
+	TotalUsersCount *int `json:"totalUsersCount,omitempty"`
+	// WorkflowExecutionType undocumented
+	WorkflowExecutionType *IdentityGovernance_workflowExecutionType `json:"workflowExecutionType,omitempty"`
+	// TaskProcessingResults undocumented
+	TaskProcessingResults []IdentityGovernance_taskProcessingResult `json:"taskProcessingResults,omitempty"`
+	// UserProcessingResults undocumented
+	UserProcessingResults []IdentityGovernance_userProcessingResult `json:"userProcessingResults,omitempty"`
+}
+
+// RunSummary undocumented
+type RunSummary struct {
+	// Object is the base model of RunSummary
 	Object
+	// FailedRuns undocumented
+	FailedRuns *int `json:"failedRuns,omitempty"`
+	// FailedTasks undocumented
+	FailedTasks *int `json:"failedTasks,omitempty"`
+	// SuccessfulRuns undocumented
+	SuccessfulRuns *int `json:"successfulRuns,omitempty"`
+	// TotalRuns undocumented
+	TotalRuns *int `json:"totalRuns,omitempty"`
+	// TotalTasks undocumented
+	TotalTasks *int `json:"totalTasks,omitempty"`
+	// TotalUsers undocumented
+	TotalUsers *int `json:"totalUsers,omitempty"`
 }

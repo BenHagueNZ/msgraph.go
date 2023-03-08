@@ -22,6 +22,8 @@ type Photo struct {
 	FocalLength *float64 `json:"focalLength,omitempty"`
 	// Iso undocumented
 	Iso *int `json:"iso,omitempty"`
+	// Orientation undocumented
+	Orientation *int `json:"orientation,omitempty"`
 	// TakenDateTime undocumented
 	TakenDateTime *time.Time `json:"takenDateTime,omitempty"`
 }

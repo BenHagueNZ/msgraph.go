@@ -6,48 +6,48 @@ package msgraph
 type AndroidCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of AndroidCompliancePolicy
 	DeviceCompliancePolicy
-	// PasswordRequired Require a password to unlock device.
-	PasswordRequired *bool `json:"passwordRequired,omitempty"`
-	// PasswordMinimumLength Minimum password length. Valid values 4 to 16
-	PasswordMinimumLength *int `json:"passwordMinimumLength,omitempty"`
-	// PasswordRequiredType Type of characters in password
-	PasswordRequiredType *AndroidRequiredPasswordType `json:"passwordRequiredType,omitempty"`
-	// PasswordMinutesOfInactivityBeforeLock Minutes of inactivity before a password is required.
-	PasswordMinutesOfInactivityBeforeLock *int `json:"passwordMinutesOfInactivityBeforeLock,omitempty"`
-	// PasswordExpirationDays Number of days before the password expires. Valid values 1 to 365
-	PasswordExpirationDays *int `json:"passwordExpirationDays,omitempty"`
-	// PasswordPreviousPasswordBlockCount Number of previous passwords to block. Valid values 1 to 24
-	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
-	// SecurityPreventInstallAppsFromUnknownSources Require that devices disallow installation of apps from unknown sources.
-	SecurityPreventInstallAppsFromUnknownSources *bool `json:"securityPreventInstallAppsFromUnknownSources,omitempty"`
-	// SecurityDisableUsbDebugging Disable USB debugging on Android devices.
-	SecurityDisableUsbDebugging *bool `json:"securityDisableUsbDebugging,omitempty"`
-	// SecurityRequireVerifyApps Require the Android Verify apps feature is turned on.
-	SecurityRequireVerifyApps *bool `json:"securityRequireVerifyApps,omitempty"`
 	// DeviceThreatProtectionEnabled Require that devices have enabled device threat protection.
 	DeviceThreatProtectionEnabled *bool `json:"deviceThreatProtectionEnabled,omitempty"`
 	// DeviceThreatProtectionRequiredSecurityLevel Require Mobile Threat Protection minimum risk level to report noncompliance.
 	DeviceThreatProtectionRequiredSecurityLevel *DeviceThreatProtectionLevel `json:"deviceThreatProtectionRequiredSecurityLevel,omitempty"`
-	// SecurityBlockJailbrokenDevices Devices must not be jailbroken or rooted.
-	SecurityBlockJailbrokenDevices *bool `json:"securityBlockJailbrokenDevices,omitempty"`
-	// OsMinimumVersion Minimum Android version.
-	OsMinimumVersion *string `json:"osMinimumVersion,omitempty"`
-	// OsMaximumVersion Maximum Android version.
-	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
 	// MinAndroidSecurityPatchLevel Minimum Android security patch level.
 	MinAndroidSecurityPatchLevel *string `json:"minAndroidSecurityPatchLevel,omitempty"`
-	// StorageRequireEncryption Require encryption on Android devices.
-	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
+	// OsMaximumVersion Maximum Android version.
+	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
+	// OsMinimumVersion Minimum Android version.
+	OsMinimumVersion *string `json:"osMinimumVersion,omitempty"`
+	// PasswordExpirationDays Number of days before the password expires. Valid values 1 to 365
+	PasswordExpirationDays *int `json:"passwordExpirationDays,omitempty"`
+	// PasswordMinimumLength Minimum password length. Valid values 4 to 16
+	PasswordMinimumLength *int `json:"passwordMinimumLength,omitempty"`
+	// PasswordMinutesOfInactivityBeforeLock Minutes of inactivity before a password is required.
+	PasswordMinutesOfInactivityBeforeLock *int `json:"passwordMinutesOfInactivityBeforeLock,omitempty"`
+	// PasswordPreviousPasswordBlockCount Number of previous passwords to block. Valid values 1 to 24
+	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
+	// PasswordRequired Require a password to unlock device.
+	PasswordRequired *bool `json:"passwordRequired,omitempty"`
+	// PasswordRequiredType Type of characters in password
+	PasswordRequiredType *AndroidRequiredPasswordType `json:"passwordRequiredType,omitempty"`
+	// SecurityBlockJailbrokenDevices Devices must not be jailbroken or rooted.
+	SecurityBlockJailbrokenDevices *bool `json:"securityBlockJailbrokenDevices,omitempty"`
+	// SecurityDisableUsbDebugging Disable USB debugging on Android devices.
+	SecurityDisableUsbDebugging *bool `json:"securityDisableUsbDebugging,omitempty"`
+	// SecurityPreventInstallAppsFromUnknownSources Require that devices disallow installation of apps from unknown sources.
+	SecurityPreventInstallAppsFromUnknownSources *bool `json:"securityPreventInstallAppsFromUnknownSources,omitempty"`
+	// SecurityRequireCompanyPortalAppIntegrity Require the device to pass the Company Portal client app runtime integrity check.
+	SecurityRequireCompanyPortalAppIntegrity *bool `json:"securityRequireCompanyPortalAppIntegrity,omitempty"`
+	// SecurityRequireGooglePlayServices Require Google Play Services to be installed and enabled on the device.
+	SecurityRequireGooglePlayServices *bool `json:"securityRequireGooglePlayServices,omitempty"`
 	// SecurityRequireSafetyNetAttestationBasicIntegrity Require the device to pass the SafetyNet basic integrity check.
 	SecurityRequireSafetyNetAttestationBasicIntegrity *bool `json:"securityRequireSafetyNetAttestationBasicIntegrity,omitempty"`
 	// SecurityRequireSafetyNetAttestationCertifiedDevice Require the device to pass the SafetyNet certified device check.
 	SecurityRequireSafetyNetAttestationCertifiedDevice *bool `json:"securityRequireSafetyNetAttestationCertifiedDevice,omitempty"`
-	// SecurityRequireGooglePlayServices Require Google Play Services to be installed and enabled on the device.
-	SecurityRequireGooglePlayServices *bool `json:"securityRequireGooglePlayServices,omitempty"`
 	// SecurityRequireUpToDateSecurityProviders Require the device to have up to date security providers. The device will require Google Play Services to be enabled and up to date.
 	SecurityRequireUpToDateSecurityProviders *bool `json:"securityRequireUpToDateSecurityProviders,omitempty"`
-	// SecurityRequireCompanyPortalAppIntegrity Require the device to pass the Company Portal client app runtime integrity check.
-	SecurityRequireCompanyPortalAppIntegrity *bool `json:"securityRequireCompanyPortalAppIntegrity,omitempty"`
+	// SecurityRequireVerifyApps Require the Android Verify apps feature is turned on.
+	SecurityRequireVerifyApps *bool `json:"securityRequireVerifyApps,omitempty"`
+	// StorageRequireEncryption Require encryption on Android devices.
+	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
 }
 
 // AndroidCustomConfiguration This topic provides descriptions of the declared methods, properties and relationships exposed by the androidCustomConfiguration resource.
@@ -68,6 +68,12 @@ type AndroidGeneralDeviceConfiguration struct {
 	AppsBlockCopyPaste *bool `json:"appsBlockCopyPaste,omitempty"`
 	// AppsBlockYouTube Indicates whether or not to block the YouTube app.
 	AppsBlockYouTube *bool `json:"appsBlockYouTube,omitempty"`
+	// AppsHideList List of apps to be hidden on the KNOX device. This collection can contain a maximum of 500 elements.
+	AppsHideList []AppListItem `json:"appsHideList,omitempty"`
+	// AppsInstallAllowList List of apps which can be installed on the KNOX device. This collection can contain a maximum of 500 elements.
+	AppsInstallAllowList []AppListItem `json:"appsInstallAllowList,omitempty"`
+	// AppsLaunchBlockList List of apps which are blocked from being launched on the KNOX device. This collection can contain a maximum of 500 elements.
+	AppsLaunchBlockList []AppListItem `json:"appsLaunchBlockList,omitempty"`
 	// BluetoothBlocked Indicates whether or not to block Bluetooth.
 	BluetoothBlocked *bool `json:"bluetoothBlocked,omitempty"`
 	// CameraBlocked Indicates whether or not to block the use of the camera.
@@ -80,24 +86,28 @@ type AndroidGeneralDeviceConfiguration struct {
 	CellularBlockVoiceRoaming *bool `json:"cellularBlockVoiceRoaming,omitempty"`
 	// CellularBlockWiFiTethering Indicates whether or not to block syncing Wi-Fi tethering.
 	CellularBlockWiFiTethering *bool `json:"cellularBlockWiFiTethering,omitempty"`
-	// CompliantAppsList List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
-	CompliantAppsList []AppListItem `json:"compliantAppsList,omitempty"`
 	// CompliantAppListType Type of list that is in the CompliantAppsList.
 	CompliantAppListType *AppListType `json:"compliantAppListType,omitempty"`
+	// CompliantAppsList List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
+	CompliantAppsList []AppListItem `json:"compliantAppsList,omitempty"`
+	// DeviceSharingAllowed Indicates whether or not to allow device sharing mode.
+	DeviceSharingAllowed *bool `json:"deviceSharingAllowed,omitempty"`
 	// DiagnosticDataBlockSubmission Indicates whether or not to block diagnostic data submission.
 	DiagnosticDataBlockSubmission *bool `json:"diagnosticDataBlockSubmission,omitempty"`
-	// LocationServicesBlocked Indicates whether or not to block location services.
-	LocationServicesBlocked *bool `json:"locationServicesBlocked,omitempty"`
+	// FactoryResetBlocked Indicates whether or not to block user performing a factory reset.
+	FactoryResetBlocked *bool `json:"factoryResetBlocked,omitempty"`
 	// GoogleAccountBlockAutoSync Indicates whether or not to block Google account auto sync.
 	GoogleAccountBlockAutoSync *bool `json:"googleAccountBlockAutoSync,omitempty"`
 	// GooglePlayStoreBlocked Indicates whether or not to block the Google Play store.
 	GooglePlayStoreBlocked *bool `json:"googlePlayStoreBlocked,omitempty"`
+	// KioskModeApps A list of apps that will be allowed to run when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
+	KioskModeApps []AppListItem `json:"kioskModeApps,omitempty"`
 	// KioskModeBlockSleepButton Indicates whether or not to block the screen sleep button while in Kiosk Mode.
 	KioskModeBlockSleepButton *bool `json:"kioskModeBlockSleepButton,omitempty"`
 	// KioskModeBlockVolumeButtons Indicates whether or not to block the volume buttons while in Kiosk Mode.
 	KioskModeBlockVolumeButtons *bool `json:"kioskModeBlockVolumeButtons,omitempty"`
-	// KioskModeApps A list of apps that will be allowed to run when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
-	KioskModeApps []AppListItem `json:"kioskModeApps,omitempty"`
+	// LocationServicesBlocked Indicates whether or not to block location services.
+	LocationServicesBlocked *bool `json:"locationServicesBlocked,omitempty"`
 	// NfcBlocked Indicates whether or not to block Near-Field Communication.
 	NfcBlocked *bool `json:"nfcBlocked,omitempty"`
 	// PasswordBlockFingerprintUnlock Indicates whether or not to block fingerprint unlock.
@@ -112,20 +122,18 @@ type AndroidGeneralDeviceConfiguration struct {
 	PasswordMinutesOfInactivityBeforeScreenTimeout *int `json:"passwordMinutesOfInactivityBeforeScreenTimeout,omitempty"`
 	// PasswordPreviousPasswordBlockCount Number of previous passwords to block. Valid values 0 to 24
 	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
-	// PasswordSignInFailureCountBeforeFactoryReset Number of sign in failures allowed before factory reset. Valid values 1 to 16
-	PasswordSignInFailureCountBeforeFactoryReset *int `json:"passwordSignInFailureCountBeforeFactoryReset,omitempty"`
-	// PasswordRequiredType Type of password that is required.
-	PasswordRequiredType *AndroidRequiredPasswordType `json:"passwordRequiredType,omitempty"`
 	// PasswordRequired Indicates whether or not to require a password.
 	PasswordRequired *bool `json:"passwordRequired,omitempty"`
+	// PasswordRequiredType Type of password that is required.
+	PasswordRequiredType *AndroidRequiredPasswordType `json:"passwordRequiredType,omitempty"`
+	// PasswordSignInFailureCountBeforeFactoryReset Number of sign in failures allowed before factory reset. Valid values 1 to 16
+	PasswordSignInFailureCountBeforeFactoryReset *int `json:"passwordSignInFailureCountBeforeFactoryReset,omitempty"`
 	// PowerOffBlocked Indicates whether or not to block powering off the device.
 	PowerOffBlocked *bool `json:"powerOffBlocked,omitempty"`
-	// FactoryResetBlocked Indicates whether or not to block user performing a factory reset.
-	FactoryResetBlocked *bool `json:"factoryResetBlocked,omitempty"`
 	// ScreenCaptureBlocked Indicates whether or not to block screenshots.
 	ScreenCaptureBlocked *bool `json:"screenCaptureBlocked,omitempty"`
-	// DeviceSharingAllowed Indicates whether or not to allow device sharing mode.
-	DeviceSharingAllowed *bool `json:"deviceSharingAllowed,omitempty"`
+	// SecurityRequireVerifyApps Require the Android Verify apps feature is turned on.
+	SecurityRequireVerifyApps *bool `json:"securityRequireVerifyApps,omitempty"`
 	// StorageBlockGoogleBackup Indicates whether or not to block Google Backup.
 	StorageBlockGoogleBackup *bool `json:"storageBlockGoogleBackup,omitempty"`
 	// StorageBlockRemovableStorage Indicates whether or not to block removable storage usage.
@@ -138,58 +146,54 @@ type AndroidGeneralDeviceConfiguration struct {
 	VoiceAssistantBlocked *bool `json:"voiceAssistantBlocked,omitempty"`
 	// VoiceDialingBlocked Indicates whether or not to block voice dialing.
 	VoiceDialingBlocked *bool `json:"voiceDialingBlocked,omitempty"`
-	// WebBrowserBlockPopups Indicates whether or not to block popups within the web browser.
-	WebBrowserBlockPopups *bool `json:"webBrowserBlockPopups,omitempty"`
 	// WebBrowserBlockAutofill Indicates whether or not to block the web browser's auto fill feature.
 	WebBrowserBlockAutofill *bool `json:"webBrowserBlockAutofill,omitempty"`
-	// WebBrowserBlockJavaScript Indicates whether or not to block JavaScript within the web browser.
-	WebBrowserBlockJavaScript *bool `json:"webBrowserBlockJavaScript,omitempty"`
 	// WebBrowserBlocked Indicates whether or not to block the web browser.
 	WebBrowserBlocked *bool `json:"webBrowserBlocked,omitempty"`
+	// WebBrowserBlockJavaScript Indicates whether or not to block JavaScript within the web browser.
+	WebBrowserBlockJavaScript *bool `json:"webBrowserBlockJavaScript,omitempty"`
+	// WebBrowserBlockPopups Indicates whether or not to block popups within the web browser.
+	WebBrowserBlockPopups *bool `json:"webBrowserBlockPopups,omitempty"`
 	// WebBrowserCookieSettings Cookie settings within the web browser.
 	WebBrowserCookieSettings *WebBrowserCookieSettings `json:"webBrowserCookieSettings,omitempty"`
 	// WiFiBlocked Indicates whether or not to block syncing Wi-Fi.
 	WiFiBlocked *bool `json:"wiFiBlocked,omitempty"`
-	// AppsInstallAllowList List of apps which can be installed on the KNOX device. This collection can contain a maximum of 500 elements.
-	AppsInstallAllowList []AppListItem `json:"appsInstallAllowList,omitempty"`
-	// AppsLaunchBlockList List of apps which are blocked from being launched on the KNOX device. This collection can contain a maximum of 500 elements.
-	AppsLaunchBlockList []AppListItem `json:"appsLaunchBlockList,omitempty"`
-	// AppsHideList List of apps to be hidden on the KNOX device. This collection can contain a maximum of 500 elements.
-	AppsHideList []AppListItem `json:"appsHideList,omitempty"`
-	// SecurityRequireVerifyApps Require the Android Verify apps feature is turned on.
-	SecurityRequireVerifyApps *bool `json:"securityRequireVerifyApps,omitempty"`
 }
 
 // AndroidLobApp Contains properties and inherited properties for Android Line Of Business apps.
 type AndroidLobApp struct {
 	// MobileLobApp is the base model of AndroidLobApp
 	MobileLobApp
-	// PackageID The package identifier.
-	PackageID *string `json:"packageId,omitempty"`
 	// MinimumSupportedOperatingSystem The value for the minimum applicable operating system.
 	MinimumSupportedOperatingSystem *AndroidMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
-	// VersionName The version name of Android Line of Business (LoB) app.
-	VersionName *string `json:"versionName,omitempty"`
+	// PackageID The package identifier.
+	PackageID *string `json:"packageId,omitempty"`
 	// VersionCode The version code of Android Line of Business (LoB) app.
 	VersionCode *string `json:"versionCode,omitempty"`
+	// VersionName The version name of Android Line of Business (LoB) app.
+	VersionName *string `json:"versionName,omitempty"`
 }
 
 // AndroidManagedAppProtection Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
 type AndroidManagedAppProtection struct {
 	// TargetedManagedAppProtection is the base model of AndroidManagedAppProtection
 	TargetedManagedAppProtection
-	// ScreenCaptureBlocked Indicates whether a managed user can take screen captures of managed apps
-	ScreenCaptureBlocked *bool `json:"screenCaptureBlocked,omitempty"`
+	// CustomBrowserDisplayName Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+	CustomBrowserDisplayName *string `json:"customBrowserDisplayName,omitempty"`
+	// CustomBrowserPackageID Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+	CustomBrowserPackageID *string `json:"customBrowserPackageId,omitempty"`
+	// DeployedAppCount Count of apps to which the current policy is deployed.
+	DeployedAppCount *int `json:"deployedAppCount,omitempty"`
 	// DisableAppEncryptionIfDeviceEncryptionIsEnabled When this setting is enabled, app level encryption is disabled if device level encryption is enabled
 	DisableAppEncryptionIfDeviceEncryptionIsEnabled *bool `json:"disableAppEncryptionIfDeviceEncryptionIsEnabled,omitempty"`
 	// EncryptAppData Indicates whether application data for managed apps should be encrypted
 	EncryptAppData *bool `json:"encryptAppData,omitempty"`
-	// DeployedAppCount Count of apps to which the current policy is deployed.
-	DeployedAppCount *int `json:"deployedAppCount,omitempty"`
 	// MinimumRequiredPatchVersion Define the oldest required Android security patch level a user can have to gain secure access to the app.
 	MinimumRequiredPatchVersion *string `json:"minimumRequiredPatchVersion,omitempty"`
 	// MinimumWarningPatchVersion Define the oldest recommended Android security patch level a user can have for secure access to the app.
 	MinimumWarningPatchVersion *string `json:"minimumWarningPatchVersion,omitempty"`
+	// ScreenCaptureBlocked Indicates whether a managed user can take screen captures of managed apps
+	ScreenCaptureBlocked *bool `json:"screenCaptureBlocked,omitempty"`
 	// Apps undocumented
 	Apps []ManagedMobileApp `json:"apps,omitempty"`
 	// DeploymentSummary undocumented
@@ -202,29 +206,45 @@ type AndroidManagedAppRegistration struct {
 	ManagedAppRegistration
 }
 
-// AndroidMinimumOperatingSystem undocumented
+// AndroidMinimumOperatingSystem Contains properties for the minimum operating system required for an Android mobile app.
 type AndroidMinimumOperatingSystem struct {
 	// Object is the base model of AndroidMinimumOperatingSystem
 	Object
-	// V4_0 Version 4.0 or later.
+	// V10_0 When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	V10_0 *bool `json:"v10_0,omitempty"`
+	// V11_0 When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	V11_0 *bool `json:"v11_0,omitempty"`
+	// V4_0 When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 	V4_0 *bool `json:"v4_0,omitempty"`
-	// V4_0_3 Version 4.0.3 or later.
+	// V4_0_3 When TRUE, only Version 4.0.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 	V4_0_3 *bool `json:"v4_0_3,omitempty"`
-	// V4_1 Version 4.1 or later.
+	// V4_1 When TRUE, only Version 4.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 	V4_1 *bool `json:"v4_1,omitempty"`
-	// V4_2 Version 4.2 or later.
+	// V4_2 When TRUE, only Version 4.2 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 	V4_2 *bool `json:"v4_2,omitempty"`
-	// V4_3 Version 4.3 or later.
+	// V4_3 When TRUE, only Version 4.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 	V4_3 *bool `json:"v4_3,omitempty"`
-	// V4_4 Version 4.4 or later.
+	// V4_4 When TRUE, only Version 4.4 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 	V4_4 *bool `json:"v4_4,omitempty"`
-	// V5_0 Version 5.0 or later.
+	// V5_0 When TRUE, only Version 5.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 	V5_0 *bool `json:"v5_0,omitempty"`
-	// V5_1 Version 5.1 or later.
+	// V5_1 When TRUE, only Version 5.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 	V5_1 *bool `json:"v5_1,omitempty"`
+	// V6_0 When TRUE, only Version 6.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	V6_0 *bool `json:"v6_0,omitempty"`
+	// V7_0 When TRUE, only Version 7.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	V7_0 *bool `json:"v7_0,omitempty"`
+	// V7_1 When TRUE, only Version 7.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	V7_1 *bool `json:"v7_1,omitempty"`
+	// V8_0 When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	V8_0 *bool `json:"v8_0,omitempty"`
+	// V8_1 When TRUE, only Version 8.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	V8_1 *bool `json:"v8_1,omitempty"`
+	// V9_0 When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	V9_0 *bool `json:"v9_0,omitempty"`
 }
 
-// AndroidMobileAppIdentifier undocumented
+// AndroidMobileAppIdentifier The identifier for an Android app.
 type AndroidMobileAppIdentifier struct {
 	// MobileAppIdentifier is the base model of AndroidMobileAppIdentifier
 	MobileAppIdentifier
@@ -236,60 +256,60 @@ type AndroidMobileAppIdentifier struct {
 type AndroidStoreApp struct {
 	// MobileApp is the base model of AndroidStoreApp
 	MobileApp
-	// PackageID The package identifier.
-	PackageID *string `json:"packageId,omitempty"`
 	// AppStoreURL The Android app store URL.
 	AppStoreURL *string `json:"appStoreUrl,omitempty"`
 	// MinimumSupportedOperatingSystem The value for the minimum applicable operating system.
 	MinimumSupportedOperatingSystem *AndroidMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
+	// PackageID The package identifier.
+	PackageID *string `json:"packageId,omitempty"`
 }
 
 // AndroidWorkProfileCompliancePolicy This class contains compliance settings for Android Work Profile.
 type AndroidWorkProfileCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of AndroidWorkProfileCompliancePolicy
 	DeviceCompliancePolicy
-	// PasswordRequired Require a password to unlock device.
-	PasswordRequired *bool `json:"passwordRequired,omitempty"`
-	// PasswordMinimumLength Minimum password length. Valid values 4 to 16
-	PasswordMinimumLength *int `json:"passwordMinimumLength,omitempty"`
-	// PasswordRequiredType Type of characters in password
-	PasswordRequiredType *AndroidRequiredPasswordType `json:"passwordRequiredType,omitempty"`
-	// PasswordMinutesOfInactivityBeforeLock Minutes of inactivity before a password is required.
-	PasswordMinutesOfInactivityBeforeLock *int `json:"passwordMinutesOfInactivityBeforeLock,omitempty"`
-	// PasswordExpirationDays Number of days before the password expires. Valid values 1 to 365
-	PasswordExpirationDays *int `json:"passwordExpirationDays,omitempty"`
-	// PasswordPreviousPasswordBlockCount Number of previous passwords to block. Valid values 1 to 24
-	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
-	// SecurityPreventInstallAppsFromUnknownSources Require that devices disallow installation of apps from unknown sources.
-	SecurityPreventInstallAppsFromUnknownSources *bool `json:"securityPreventInstallAppsFromUnknownSources,omitempty"`
-	// SecurityDisableUsbDebugging Disable USB debugging on Android devices.
-	SecurityDisableUsbDebugging *bool `json:"securityDisableUsbDebugging,omitempty"`
-	// SecurityRequireVerifyApps Require the Android Verify apps feature is turned on.
-	SecurityRequireVerifyApps *bool `json:"securityRequireVerifyApps,omitempty"`
 	// DeviceThreatProtectionEnabled Require that devices have enabled device threat protection.
 	DeviceThreatProtectionEnabled *bool `json:"deviceThreatProtectionEnabled,omitempty"`
 	// DeviceThreatProtectionRequiredSecurityLevel Require Mobile Threat Protection minimum risk level to report noncompliance.
 	DeviceThreatProtectionRequiredSecurityLevel *DeviceThreatProtectionLevel `json:"deviceThreatProtectionRequiredSecurityLevel,omitempty"`
-	// SecurityBlockJailbrokenDevices Devices must not be jailbroken or rooted.
-	SecurityBlockJailbrokenDevices *bool `json:"securityBlockJailbrokenDevices,omitempty"`
-	// OsMinimumVersion Minimum Android version.
-	OsMinimumVersion *string `json:"osMinimumVersion,omitempty"`
-	// OsMaximumVersion Maximum Android version.
-	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
 	// MinAndroidSecurityPatchLevel Minimum Android security patch level.
 	MinAndroidSecurityPatchLevel *string `json:"minAndroidSecurityPatchLevel,omitempty"`
-	// StorageRequireEncryption Require encryption on Android devices.
-	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
+	// OsMaximumVersion Maximum Android version.
+	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
+	// OsMinimumVersion Minimum Android version.
+	OsMinimumVersion *string `json:"osMinimumVersion,omitempty"`
+	// PasswordExpirationDays Number of days before the password expires. Valid values 1 to 365
+	PasswordExpirationDays *int `json:"passwordExpirationDays,omitempty"`
+	// PasswordMinimumLength Minimum password length. Valid values 4 to 16
+	PasswordMinimumLength *int `json:"passwordMinimumLength,omitempty"`
+	// PasswordMinutesOfInactivityBeforeLock Minutes of inactivity before a password is required.
+	PasswordMinutesOfInactivityBeforeLock *int `json:"passwordMinutesOfInactivityBeforeLock,omitempty"`
+	// PasswordPreviousPasswordBlockCount Number of previous passwords to block. Valid values 1 to 24
+	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
+	// PasswordRequired Require a password to unlock device.
+	PasswordRequired *bool `json:"passwordRequired,omitempty"`
+	// PasswordRequiredType Type of characters in password
+	PasswordRequiredType *AndroidRequiredPasswordType `json:"passwordRequiredType,omitempty"`
+	// SecurityBlockJailbrokenDevices Devices must not be jailbroken or rooted.
+	SecurityBlockJailbrokenDevices *bool `json:"securityBlockJailbrokenDevices,omitempty"`
+	// SecurityDisableUsbDebugging Disable USB debugging on Android devices.
+	SecurityDisableUsbDebugging *bool `json:"securityDisableUsbDebugging,omitempty"`
+	// SecurityPreventInstallAppsFromUnknownSources Require that devices disallow installation of apps from unknown sources.
+	SecurityPreventInstallAppsFromUnknownSources *bool `json:"securityPreventInstallAppsFromUnknownSources,omitempty"`
+	// SecurityRequireCompanyPortalAppIntegrity Require the device to pass the Company Portal client app runtime integrity check.
+	SecurityRequireCompanyPortalAppIntegrity *bool `json:"securityRequireCompanyPortalAppIntegrity,omitempty"`
+	// SecurityRequireGooglePlayServices Require Google Play Services to be installed and enabled on the device.
+	SecurityRequireGooglePlayServices *bool `json:"securityRequireGooglePlayServices,omitempty"`
 	// SecurityRequireSafetyNetAttestationBasicIntegrity Require the device to pass the SafetyNet basic integrity check.
 	SecurityRequireSafetyNetAttestationBasicIntegrity *bool `json:"securityRequireSafetyNetAttestationBasicIntegrity,omitempty"`
 	// SecurityRequireSafetyNetAttestationCertifiedDevice Require the device to pass the SafetyNet certified device check.
 	SecurityRequireSafetyNetAttestationCertifiedDevice *bool `json:"securityRequireSafetyNetAttestationCertifiedDevice,omitempty"`
-	// SecurityRequireGooglePlayServices Require Google Play Services to be installed and enabled on the device.
-	SecurityRequireGooglePlayServices *bool `json:"securityRequireGooglePlayServices,omitempty"`
 	// SecurityRequireUpToDateSecurityProviders Require the device to have up to date security providers. The device will require Google Play Services to be enabled and up to date.
 	SecurityRequireUpToDateSecurityProviders *bool `json:"securityRequireUpToDateSecurityProviders,omitempty"`
-	// SecurityRequireCompanyPortalAppIntegrity Require the device to pass the Company Portal client app runtime integrity check.
-	SecurityRequireCompanyPortalAppIntegrity *bool `json:"securityRequireCompanyPortalAppIntegrity,omitempty"`
+	// SecurityRequireVerifyApps Require the Android Verify apps feature is turned on.
+	SecurityRequireVerifyApps *bool `json:"securityRequireVerifyApps,omitempty"`
+	// StorageRequireEncryption Require encryption on Android devices.
+	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
 }
 
 // AndroidWorkProfileCustomConfiguration Android Work Profile custom configuration
@@ -316,28 +336,30 @@ type AndroidWorkProfileGeneralDeviceConfiguration struct {
 	PasswordMinutesOfInactivityBeforeScreenTimeout *int `json:"passwordMinutesOfInactivityBeforeScreenTimeout,omitempty"`
 	// PasswordPreviousPasswordBlockCount Number of previous passwords to block. Valid values 0 to 24
 	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
-	// PasswordSignInFailureCountBeforeFactoryReset Number of sign in failures allowed before factory reset. Valid values 1 to 16
-	PasswordSignInFailureCountBeforeFactoryReset *int `json:"passwordSignInFailureCountBeforeFactoryReset,omitempty"`
 	// PasswordRequiredType Type of password that is required.
 	PasswordRequiredType *AndroidWorkProfileRequiredPasswordType `json:"passwordRequiredType,omitempty"`
-	// WorkProfileDataSharingType Type of data sharing that is allowed.
-	WorkProfileDataSharingType *AndroidWorkProfileCrossProfileDataSharingType `json:"workProfileDataSharingType,omitempty"`
-	// WorkProfileBlockNotificationsWhileDeviceLocked Indicates whether or not to block notifications while device locked.
-	WorkProfileBlockNotificationsWhileDeviceLocked *bool `json:"workProfileBlockNotificationsWhileDeviceLocked,omitempty"`
+	// PasswordSignInFailureCountBeforeFactoryReset Number of sign in failures allowed before factory reset. Valid values 1 to 16
+	PasswordSignInFailureCountBeforeFactoryReset *int `json:"passwordSignInFailureCountBeforeFactoryReset,omitempty"`
+	// SecurityRequireVerifyApps Require the Android Verify apps feature is turned on.
+	SecurityRequireVerifyApps *bool `json:"securityRequireVerifyApps,omitempty"`
 	// WorkProfileBlockAddingAccounts Block users from adding/removing accounts in work profile.
 	WorkProfileBlockAddingAccounts *bool `json:"workProfileBlockAddingAccounts,omitempty"`
-	// WorkProfileBluetoothEnableContactSharing Allow bluetooth devices to access enterprise contacts.
-	WorkProfileBluetoothEnableContactSharing *bool `json:"workProfileBluetoothEnableContactSharing,omitempty"`
-	// WorkProfileBlockScreenCapture Block screen capture in work profile.
-	WorkProfileBlockScreenCapture *bool `json:"workProfileBlockScreenCapture,omitempty"`
-	// WorkProfileBlockCrossProfileCallerID Block display work profile caller ID in personal profile.
-	WorkProfileBlockCrossProfileCallerID *bool `json:"workProfileBlockCrossProfileCallerId,omitempty"`
 	// WorkProfileBlockCamera Block work profile camera.
 	WorkProfileBlockCamera *bool `json:"workProfileBlockCamera,omitempty"`
+	// WorkProfileBlockCrossProfileCallerID Block display work profile caller ID in personal profile.
+	WorkProfileBlockCrossProfileCallerID *bool `json:"workProfileBlockCrossProfileCallerId,omitempty"`
 	// WorkProfileBlockCrossProfileContactsSearch Block work profile contacts availability in personal profile.
 	WorkProfileBlockCrossProfileContactsSearch *bool `json:"workProfileBlockCrossProfileContactsSearch,omitempty"`
 	// WorkProfileBlockCrossProfileCopyPaste Boolean that indicates if the setting disallow cross profile copy/paste is enabled.
 	WorkProfileBlockCrossProfileCopyPaste *bool `json:"workProfileBlockCrossProfileCopyPaste,omitempty"`
+	// WorkProfileBlockNotificationsWhileDeviceLocked Indicates whether or not to block notifications while device locked.
+	WorkProfileBlockNotificationsWhileDeviceLocked *bool `json:"workProfileBlockNotificationsWhileDeviceLocked,omitempty"`
+	// WorkProfileBlockScreenCapture Block screen capture in work profile.
+	WorkProfileBlockScreenCapture *bool `json:"workProfileBlockScreenCapture,omitempty"`
+	// WorkProfileBluetoothEnableContactSharing Allow bluetooth devices to access enterprise contacts.
+	WorkProfileBluetoothEnableContactSharing *bool `json:"workProfileBluetoothEnableContactSharing,omitempty"`
+	// WorkProfileDataSharingType Type of data sharing that is allowed.
+	WorkProfileDataSharingType *AndroidWorkProfileCrossProfileDataSharingType `json:"workProfileDataSharingType,omitempty"`
 	// WorkProfileDefaultAppPermissionPolicy Type of password that is required.
 	WorkProfileDefaultAppPermissionPolicy *AndroidWorkProfileDefaultAppPermissionPolicyType `json:"workProfileDefaultAppPermissionPolicy,omitempty"`
 	// WorkProfilePasswordBlockFingerprintUnlock Indicates whether or not to block fingerprint unlock for work profile.
@@ -348,28 +370,26 @@ type AndroidWorkProfileGeneralDeviceConfiguration struct {
 	WorkProfilePasswordExpirationDays *int `json:"workProfilePasswordExpirationDays,omitempty"`
 	// WorkProfilePasswordMinimumLength Minimum length of work profile password. Valid values 4 to 16
 	WorkProfilePasswordMinimumLength *int `json:"workProfilePasswordMinimumLength,omitempty"`
-	// WorkProfilePasswordMinNumericCharacters Minimum # of numeric characters required in work profile password. Valid values 1 to 10
-	WorkProfilePasswordMinNumericCharacters *int `json:"workProfilePasswordMinNumericCharacters,omitempty"`
-	// WorkProfilePasswordMinNonLetterCharacters Minimum # of non-letter characters required in work profile password. Valid values 1 to 10
-	WorkProfilePasswordMinNonLetterCharacters *int `json:"workProfilePasswordMinNonLetterCharacters,omitempty"`
 	// WorkProfilePasswordMinLetterCharacters Minimum # of letter characters required in work profile password. Valid values 1 to 10
 	WorkProfilePasswordMinLetterCharacters *int `json:"workProfilePasswordMinLetterCharacters,omitempty"`
 	// WorkProfilePasswordMinLowerCaseCharacters Minimum # of lower-case characters required in work profile password. Valid values 1 to 10
 	WorkProfilePasswordMinLowerCaseCharacters *int `json:"workProfilePasswordMinLowerCaseCharacters,omitempty"`
-	// WorkProfilePasswordMinUpperCaseCharacters Minimum # of upper-case characters required in work profile password. Valid values 1 to 10
-	WorkProfilePasswordMinUpperCaseCharacters *int `json:"workProfilePasswordMinUpperCaseCharacters,omitempty"`
+	// WorkProfilePasswordMinNonLetterCharacters Minimum # of non-letter characters required in work profile password. Valid values 1 to 10
+	WorkProfilePasswordMinNonLetterCharacters *int `json:"workProfilePasswordMinNonLetterCharacters,omitempty"`
+	// WorkProfilePasswordMinNumericCharacters Minimum # of numeric characters required in work profile password. Valid values 1 to 10
+	WorkProfilePasswordMinNumericCharacters *int `json:"workProfilePasswordMinNumericCharacters,omitempty"`
 	// WorkProfilePasswordMinSymbolCharacters Minimum # of symbols required in work profile password. Valid values 1 to 10
 	WorkProfilePasswordMinSymbolCharacters *int `json:"workProfilePasswordMinSymbolCharacters,omitempty"`
+	// WorkProfilePasswordMinUpperCaseCharacters Minimum # of upper-case characters required in work profile password. Valid values 1 to 10
+	WorkProfilePasswordMinUpperCaseCharacters *int `json:"workProfilePasswordMinUpperCaseCharacters,omitempty"`
 	// WorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout Minutes of inactivity before the screen times out.
 	WorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout *int `json:"workProfilePasswordMinutesOfInactivityBeforeScreenTimeout,omitempty"`
 	// WorkProfilePasswordPreviousPasswordBlockCount Number of previous work profile passwords to block. Valid values 0 to 24
 	WorkProfilePasswordPreviousPasswordBlockCount *int `json:"workProfilePasswordPreviousPasswordBlockCount,omitempty"`
-	// WorkProfilePasswordSignInFailureCountBeforeFactoryReset Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 1 to 16
-	WorkProfilePasswordSignInFailureCountBeforeFactoryReset *int `json:"workProfilePasswordSignInFailureCountBeforeFactoryReset,omitempty"`
 	// WorkProfilePasswordRequiredType Type of work profile password that is required.
 	WorkProfilePasswordRequiredType *AndroidWorkProfileRequiredPasswordType `json:"workProfilePasswordRequiredType,omitempty"`
+	// WorkProfilePasswordSignInFailureCountBeforeFactoryReset Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 1 to 16
+	WorkProfilePasswordSignInFailureCountBeforeFactoryReset *int `json:"workProfilePasswordSignInFailureCountBeforeFactoryReset,omitempty"`
 	// WorkProfileRequirePassword Password is required or not for work profile
 	WorkProfileRequirePassword *bool `json:"workProfileRequirePassword,omitempty"`
-	// SecurityRequireVerifyApps Require the Android Verify apps feature is turned on.
-	SecurityRequireVerifyApps *bool `json:"securityRequireVerifyApps,omitempty"`
 }

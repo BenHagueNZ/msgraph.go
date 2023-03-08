@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsAverageRequestBuilder struct{ BaseRequestBuilder }
 
 // Average action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Average(reqObj *WorkbookFunctionsAvera
 	return bb
 }
 
-//
 type WorkbookFunctionsAverageRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsAverageRequestBuilder) Request() *WorkbookFunctionsAverageRequest {
 	return &WorkbookFunctionsAverageRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsAverageRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsAverageARequestBuilder struct{ BaseRequestBuilder }
 
 // AverageA action undocumented
@@ -42,23 +37,19 @@ func (b *WorkbookFunctionsRequestBuilder) AverageA(reqObj *WorkbookFunctionsAver
 	return bb
 }
 
-//
 type WorkbookFunctionsAverageARequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsAverageARequestBuilder) Request() *WorkbookFunctionsAverageARequest {
 	return &WorkbookFunctionsAverageARequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsAverageARequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsAverageIfRequestBuilder struct{ BaseRequestBuilder }
 
 // AverageIf action undocumented
@@ -69,23 +60,19 @@ func (b *WorkbookFunctionsRequestBuilder) AverageIf(reqObj *WorkbookFunctionsAve
 	return bb
 }
 
-//
 type WorkbookFunctionsAverageIfRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsAverageIfRequestBuilder) Request() *WorkbookFunctionsAverageIfRequest {
 	return &WorkbookFunctionsAverageIfRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsAverageIfRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsAverageIfsRequestBuilder struct{ BaseRequestBuilder }
 
 // AverageIfs action undocumented
@@ -96,17 +83,14 @@ func (b *WorkbookFunctionsRequestBuilder) AverageIfs(reqObj *WorkbookFunctionsAv
 	return bb
 }
 
-//
 type WorkbookFunctionsAverageIfsRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsAverageIfsRequestBuilder) Request() *WorkbookFunctionsAverageIfsRequest {
 	return &WorkbookFunctionsAverageIfsRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsAverageIfsRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

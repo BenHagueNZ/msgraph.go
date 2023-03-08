@@ -6,8 +6,8 @@ package msgraph
 type GenericError struct {
 	// Object is the base model of GenericError
 	Object
-	// Message undocumented
-	Message *string `json:"message,omitempty"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
+	// Message undocumented
+	Message *string `json:"message,omitempty"`
 }

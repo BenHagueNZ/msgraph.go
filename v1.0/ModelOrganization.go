@@ -4,7 +4,7 @@ package msgraph
 
 import "time"
 
-// Organization The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
+// Organization undocumented
 type Organization struct {
 	// DirectoryObject is the base model of Organization
 	DirectoryObject
@@ -20,6 +20,8 @@ type Organization struct {
 	CountryLetterCode *string `json:"countryLetterCode,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// DefaultUsageLocation undocumented
+	DefaultUsageLocation *string `json:"defaultUsageLocation,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// MarketingNotificationEmails undocumented
@@ -28,6 +30,8 @@ type Organization struct {
 	OnPremisesLastSyncDateTime *time.Time `json:"onPremisesLastSyncDateTime,omitempty"`
 	// OnPremisesSyncEnabled undocumented
 	OnPremisesSyncEnabled *bool `json:"onPremisesSyncEnabled,omitempty"`
+	// PartnerTenantType undocumented
+	PartnerTenantType *PartnerTenantType `json:"partnerTenantType,omitempty"`
 	// PostalCode undocumented
 	PostalCode *string `json:"postalCode,omitempty"`
 	// PreferredLanguage undocumented
@@ -46,10 +50,14 @@ type Organization struct {
 	Street *string `json:"street,omitempty"`
 	// TechnicalNotificationMails undocumented
 	TechnicalNotificationMails []string `json:"technicalNotificationMails,omitempty"`
+	// TenantType undocumented
+	TenantType *string `json:"tenantType,omitempty"`
 	// VerifiedDomains undocumented
 	VerifiedDomains []VerifiedDomain `json:"verifiedDomains,omitempty"`
 	// MobileDeviceManagementAuthority Mobile device management authority.
 	MobileDeviceManagementAuthority *MDMAuthority `json:"mobileDeviceManagementAuthority,omitempty"`
+	// Branding undocumented
+	Branding *OrganizationalBranding `json:"branding,omitempty"`
 	// CertificateBasedAuthConfiguration undocumented
 	CertificateBasedAuthConfiguration []CertificateBasedAuthConfiguration `json:"certificateBasedAuthConfiguration,omitempty"`
 	// Extensions undocumented

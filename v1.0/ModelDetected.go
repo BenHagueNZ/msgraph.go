@@ -6,14 +6,18 @@ package msgraph
 type DetectedApp struct {
 	// Entity is the base model of DetectedApp
 	Entity
-	// DisplayName Name of the discovered application. Read-only
-	DisplayName *string `json:"displayName,omitempty"`
-	// Version Version of the discovered application. Read-only
-	Version *string `json:"version,omitempty"`
-	// SizeInByte Discovered application size in bytes. Read-only
-	SizeInByte *int `json:"sizeInByte,omitempty"`
 	// DeviceCount The number of devices that have installed this application
 	DeviceCount *int `json:"deviceCount,omitempty"`
+	// DisplayName Name of the discovered application. Read-only
+	DisplayName *string `json:"displayName,omitempty"`
+	// Platform Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).
+	Platform *DetectedAppPlatformType `json:"platform,omitempty"`
+	// Publisher Indicates the publisher of the discovered application. For example: 'Microsoft'.  The default value is an empty string.
+	Publisher *string `json:"publisher,omitempty"`
+	// SizeInByte Discovered application size in bytes. Read-only
+	SizeInByte *int `json:"sizeInByte,omitempty"`
+	// Version Version of the discovered application. Read-only
+	Version *string `json:"version,omitempty"`
 	// ManagedDevices undocumented
 	ManagedDevices []ManagedDevice `json:"managedDevices,omitempty"`
 }

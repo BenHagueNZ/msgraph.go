@@ -2,6 +2,70 @@
 
 package msgraph
 
+// AppCredentialRestrictionType undocumented
+type AppCredentialRestrictionType string
+
+const (
+	// AppCredentialRestrictionTypeVPasswordAddition undocumented
+	AppCredentialRestrictionTypeVPasswordAddition AppCredentialRestrictionType = "passwordAddition"
+	// AppCredentialRestrictionTypeVPasswordLifetime undocumented
+	AppCredentialRestrictionTypeVPasswordLifetime AppCredentialRestrictionType = "passwordLifetime"
+	// AppCredentialRestrictionTypeVSymmetricKeyAddition undocumented
+	AppCredentialRestrictionTypeVSymmetricKeyAddition AppCredentialRestrictionType = "symmetricKeyAddition"
+	// AppCredentialRestrictionTypeVSymmetricKeyLifetime undocumented
+	AppCredentialRestrictionTypeVSymmetricKeyLifetime AppCredentialRestrictionType = "symmetricKeyLifetime"
+	// AppCredentialRestrictionTypeVCustomPasswordAddition undocumented
+	AppCredentialRestrictionTypeVCustomPasswordAddition AppCredentialRestrictionType = "customPasswordAddition"
+	// AppCredentialRestrictionTypeVUnknownFutureValue undocumented
+	AppCredentialRestrictionTypeVUnknownFutureValue AppCredentialRestrictionType = "unknownFutureValue"
+)
+
+var (
+	// AppCredentialRestrictionTypePPasswordAddition is a pointer to AppCredentialRestrictionTypeVPasswordAddition
+	AppCredentialRestrictionTypePPasswordAddition = &_AppCredentialRestrictionTypePPasswordAddition
+	// AppCredentialRestrictionTypePPasswordLifetime is a pointer to AppCredentialRestrictionTypeVPasswordLifetime
+	AppCredentialRestrictionTypePPasswordLifetime = &_AppCredentialRestrictionTypePPasswordLifetime
+	// AppCredentialRestrictionTypePSymmetricKeyAddition is a pointer to AppCredentialRestrictionTypeVSymmetricKeyAddition
+	AppCredentialRestrictionTypePSymmetricKeyAddition = &_AppCredentialRestrictionTypePSymmetricKeyAddition
+	// AppCredentialRestrictionTypePSymmetricKeyLifetime is a pointer to AppCredentialRestrictionTypeVSymmetricKeyLifetime
+	AppCredentialRestrictionTypePSymmetricKeyLifetime = &_AppCredentialRestrictionTypePSymmetricKeyLifetime
+	// AppCredentialRestrictionTypePCustomPasswordAddition is a pointer to AppCredentialRestrictionTypeVCustomPasswordAddition
+	AppCredentialRestrictionTypePCustomPasswordAddition = &_AppCredentialRestrictionTypePCustomPasswordAddition
+	// AppCredentialRestrictionTypePUnknownFutureValue is a pointer to AppCredentialRestrictionTypeVUnknownFutureValue
+	AppCredentialRestrictionTypePUnknownFutureValue = &_AppCredentialRestrictionTypePUnknownFutureValue
+)
+
+var (
+	_AppCredentialRestrictionTypePPasswordAddition       = AppCredentialRestrictionTypeVPasswordAddition
+	_AppCredentialRestrictionTypePPasswordLifetime       = AppCredentialRestrictionTypeVPasswordLifetime
+	_AppCredentialRestrictionTypePSymmetricKeyAddition   = AppCredentialRestrictionTypeVSymmetricKeyAddition
+	_AppCredentialRestrictionTypePSymmetricKeyLifetime   = AppCredentialRestrictionTypeVSymmetricKeyLifetime
+	_AppCredentialRestrictionTypePCustomPasswordAddition = AppCredentialRestrictionTypeVCustomPasswordAddition
+	_AppCredentialRestrictionTypePUnknownFutureValue     = AppCredentialRestrictionTypeVUnknownFutureValue
+)
+
+// AppKeyCredentialRestrictionType undocumented
+type AppKeyCredentialRestrictionType string
+
+const (
+	// AppKeyCredentialRestrictionTypeVAsymmetricKeyLifetime undocumented
+	AppKeyCredentialRestrictionTypeVAsymmetricKeyLifetime AppKeyCredentialRestrictionType = "asymmetricKeyLifetime"
+	// AppKeyCredentialRestrictionTypeVUnknownFutureValue undocumented
+	AppKeyCredentialRestrictionTypeVUnknownFutureValue AppKeyCredentialRestrictionType = "unknownFutureValue"
+)
+
+var (
+	// AppKeyCredentialRestrictionTypePAsymmetricKeyLifetime is a pointer to AppKeyCredentialRestrictionTypeVAsymmetricKeyLifetime
+	AppKeyCredentialRestrictionTypePAsymmetricKeyLifetime = &_AppKeyCredentialRestrictionTypePAsymmetricKeyLifetime
+	// AppKeyCredentialRestrictionTypePUnknownFutureValue is a pointer to AppKeyCredentialRestrictionTypeVUnknownFutureValue
+	AppKeyCredentialRestrictionTypePUnknownFutureValue = &_AppKeyCredentialRestrictionTypePUnknownFutureValue
+)
+
+var (
+	_AppKeyCredentialRestrictionTypePAsymmetricKeyLifetime = AppKeyCredentialRestrictionTypeVAsymmetricKeyLifetime
+	_AppKeyCredentialRestrictionTypePUnknownFutureValue    = AppKeyCredentialRestrictionTypeVUnknownFutureValue
+)
+
 // AppListType undocumented
 type AppListType string
 

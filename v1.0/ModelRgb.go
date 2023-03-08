@@ -2,14 +2,14 @@
 
 package msgraph
 
-// RgbColor undocumented
+// RgbColor Color in RGB.
 type RgbColor struct {
 	// Object is the base model of RgbColor
 	Object
-	// R Red value
-	R *byte `json:"r,omitempty"`
-	// G Green value
-	G *byte `json:"g,omitempty"`
 	// B Blue value
 	B *byte `json:"b,omitempty"`
+	// G Green value
+	G *byte `json:"g,omitempty"`
+	// R Red value
+	R *byte `json:"r,omitempty"`
 }

@@ -4,21 +4,21 @@ package msgraph
 
 import "context"
 
-// IdentityContainerRequestBuilder is request builder for IdentityContainer
-type IdentityContainerRequestBuilder struct{ BaseRequestBuilder }
+// IdentityGovernance_customTaskExtensionRequestBuilder is request builder for IdentityGovernance_customTaskExtension
+type IdentityGovernance_customTaskExtensionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns IdentityContainerRequest
-func (b *IdentityContainerRequestBuilder) Request() *IdentityContainerRequest {
-	return &IdentityContainerRequest{
+// Request returns IdentityGovernance_customTaskExtensionRequest
+func (b *IdentityGovernance_customTaskExtensionRequestBuilder) Request() *IdentityGovernance_customTaskExtensionRequest {
+	return &IdentityGovernance_customTaskExtensionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// IdentityContainerRequest is request for IdentityContainer
-type IdentityContainerRequest struct{ BaseRequest }
+// IdentityGovernance_customTaskExtensionRequest is request for IdentityGovernance_customTaskExtension
+type IdentityGovernance_customTaskExtensionRequest struct{ BaseRequest }
 
-// Get performs GET request for IdentityContainer
-func (r *IdentityContainerRequest) Get(ctx context.Context) (resObj *IdentityContainer, err error) {
+// Get performs GET request for IdentityGovernance_customTaskExtension
+func (r *IdentityGovernance_customTaskExtensionRequest) Get(ctx context.Context) (resObj *IdentityGovernance_customTaskExtension, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -27,31 +27,31 @@ func (r *IdentityContainerRequest) Get(ctx context.Context) (resObj *IdentityCon
 	return
 }
 
-// Update performs PATCH request for IdentityContainer
-func (r *IdentityContainerRequest) Update(ctx context.Context, reqObj *IdentityContainer) error {
+// Update performs PATCH request for IdentityGovernance_customTaskExtension
+func (r *IdentityGovernance_customTaskExtensionRequest) Update(ctx context.Context, reqObj *IdentityGovernance_customTaskExtension) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for IdentityContainer
-func (r *IdentityContainerRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for IdentityGovernance_customTaskExtension
+func (r *IdentityGovernance_customTaskExtensionRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// IdentityGovernanceRequestBuilder is request builder for IdentityGovernance
-type IdentityGovernanceRequestBuilder struct{ BaseRequestBuilder }
+// IdentityGovernance_lifecycleManagementSettingsRequestBuilder is request builder for IdentityGovernance_lifecycleManagementSettings
+type IdentityGovernance_lifecycleManagementSettingsRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns IdentityGovernanceRequest
-func (b *IdentityGovernanceRequestBuilder) Request() *IdentityGovernanceRequest {
-	return &IdentityGovernanceRequest{
+// Request returns IdentityGovernance_lifecycleManagementSettingsRequest
+func (b *IdentityGovernance_lifecycleManagementSettingsRequestBuilder) Request() *IdentityGovernance_lifecycleManagementSettingsRequest {
+	return &IdentityGovernance_lifecycleManagementSettingsRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// IdentityGovernanceRequest is request for IdentityGovernance
-type IdentityGovernanceRequest struct{ BaseRequest }
+// IdentityGovernance_lifecycleManagementSettingsRequest is request for IdentityGovernance_lifecycleManagementSettings
+type IdentityGovernance_lifecycleManagementSettingsRequest struct{ BaseRequest }
 
-// Get performs GET request for IdentityGovernance
-func (r *IdentityGovernanceRequest) Get(ctx context.Context) (resObj *IdentityGovernance, err error) {
+// Get performs GET request for IdentityGovernance_lifecycleManagementSettings
+func (r *IdentityGovernance_lifecycleManagementSettingsRequest) Get(ctx context.Context) (resObj *IdentityGovernance_lifecycleManagementSettings, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -60,31 +60,31 @@ func (r *IdentityGovernanceRequest) Get(ctx context.Context) (resObj *IdentityGo
 	return
 }
 
-// Update performs PATCH request for IdentityGovernance
-func (r *IdentityGovernanceRequest) Update(ctx context.Context, reqObj *IdentityGovernance) error {
+// Update performs PATCH request for IdentityGovernance_lifecycleManagementSettings
+func (r *IdentityGovernance_lifecycleManagementSettingsRequest) Update(ctx context.Context, reqObj *IdentityGovernance_lifecycleManagementSettings) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for IdentityGovernance
-func (r *IdentityGovernanceRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for IdentityGovernance_lifecycleManagementSettings
+func (r *IdentityGovernance_lifecycleManagementSettingsRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// IdentityProviderRequestBuilder is request builder for IdentityProvider
-type IdentityProviderRequestBuilder struct{ BaseRequestBuilder }
+// IdentityGovernance_runRequestBuilder is request builder for IdentityGovernance_run
+type IdentityGovernance_runRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns IdentityProviderRequest
-func (b *IdentityProviderRequestBuilder) Request() *IdentityProviderRequest {
-	return &IdentityProviderRequest{
+// Request returns IdentityGovernance_runRequest
+func (b *IdentityGovernance_runRequestBuilder) Request() *IdentityGovernance_runRequest {
+	return &IdentityGovernance_runRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// IdentityProviderRequest is request for IdentityProvider
-type IdentityProviderRequest struct{ BaseRequest }
+// IdentityGovernance_runRequest is request for IdentityGovernance_run
+type IdentityGovernance_runRequest struct{ BaseRequest }
 
-// Get performs GET request for IdentityProvider
-func (r *IdentityProviderRequest) Get(ctx context.Context) (resObj *IdentityProvider, err error) {
+// Get performs GET request for IdentityGovernance_run
+func (r *IdentityGovernance_runRequest) Get(ctx context.Context) (resObj *IdentityGovernance_run, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -93,31 +93,31 @@ func (r *IdentityProviderRequest) Get(ctx context.Context) (resObj *IdentityProv
 	return
 }
 
-// Update performs PATCH request for IdentityProvider
-func (r *IdentityProviderRequest) Update(ctx context.Context, reqObj *IdentityProvider) error {
+// Update performs PATCH request for IdentityGovernance_run
+func (r *IdentityGovernance_runRequest) Update(ctx context.Context, reqObj *IdentityGovernance_run) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for IdentityProvider
-func (r *IdentityProviderRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for IdentityGovernance_run
+func (r *IdentityGovernance_runRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// IdentityRiskEventRequestBuilder is request builder for IdentityRiskEvent
-type IdentityRiskEventRequestBuilder struct{ BaseRequestBuilder }
+// IdentityGovernance_taskRequestBuilder is request builder for IdentityGovernance_task
+type IdentityGovernance_taskRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns IdentityRiskEventRequest
-func (b *IdentityRiskEventRequestBuilder) Request() *IdentityRiskEventRequest {
-	return &IdentityRiskEventRequest{
+// Request returns IdentityGovernance_taskRequest
+func (b *IdentityGovernance_taskRequestBuilder) Request() *IdentityGovernance_taskRequest {
+	return &IdentityGovernance_taskRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// IdentityRiskEventRequest is request for IdentityRiskEvent
-type IdentityRiskEventRequest struct{ BaseRequest }
+// IdentityGovernance_taskRequest is request for IdentityGovernance_task
+type IdentityGovernance_taskRequest struct{ BaseRequest }
 
-// Get performs GET request for IdentityRiskEvent
-func (r *IdentityRiskEventRequest) Get(ctx context.Context) (resObj *IdentityRiskEvent, err error) {
+// Get performs GET request for IdentityGovernance_task
+func (r *IdentityGovernance_taskRequest) Get(ctx context.Context) (resObj *IdentityGovernance_task, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -126,31 +126,31 @@ func (r *IdentityRiskEventRequest) Get(ctx context.Context) (resObj *IdentityRis
 	return
 }
 
-// Update performs PATCH request for IdentityRiskEvent
-func (r *IdentityRiskEventRequest) Update(ctx context.Context, reqObj *IdentityRiskEvent) error {
+// Update performs PATCH request for IdentityGovernance_task
+func (r *IdentityGovernance_taskRequest) Update(ctx context.Context, reqObj *IdentityGovernance_task) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for IdentityRiskEvent
-func (r *IdentityRiskEventRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for IdentityGovernance_task
+func (r *IdentityGovernance_taskRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// IdentityUserFlowRequestBuilder is request builder for IdentityUserFlow
-type IdentityUserFlowRequestBuilder struct{ BaseRequestBuilder }
+// IdentityGovernance_taskDefinitionRequestBuilder is request builder for IdentityGovernance_taskDefinition
+type IdentityGovernance_taskDefinitionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns IdentityUserFlowRequest
-func (b *IdentityUserFlowRequestBuilder) Request() *IdentityUserFlowRequest {
-	return &IdentityUserFlowRequest{
+// Request returns IdentityGovernance_taskDefinitionRequest
+func (b *IdentityGovernance_taskDefinitionRequestBuilder) Request() *IdentityGovernance_taskDefinitionRequest {
+	return &IdentityGovernance_taskDefinitionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// IdentityUserFlowRequest is request for IdentityUserFlow
-type IdentityUserFlowRequest struct{ BaseRequest }
+// IdentityGovernance_taskDefinitionRequest is request for IdentityGovernance_taskDefinition
+type IdentityGovernance_taskDefinitionRequest struct{ BaseRequest }
 
-// Get performs GET request for IdentityUserFlow
-func (r *IdentityUserFlowRequest) Get(ctx context.Context) (resObj *IdentityUserFlow, err error) {
+// Get performs GET request for IdentityGovernance_taskDefinition
+func (r *IdentityGovernance_taskDefinitionRequest) Get(ctx context.Context) (resObj *IdentityGovernance_taskDefinition, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -159,12 +159,210 @@ func (r *IdentityUserFlowRequest) Get(ctx context.Context) (resObj *IdentityUser
 	return
 }
 
-// Update performs PATCH request for IdentityUserFlow
-func (r *IdentityUserFlowRequest) Update(ctx context.Context, reqObj *IdentityUserFlow) error {
+// Update performs PATCH request for IdentityGovernance_taskDefinition
+func (r *IdentityGovernance_taskDefinitionRequest) Update(ctx context.Context, reqObj *IdentityGovernance_taskDefinition) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for IdentityUserFlow
-func (r *IdentityUserFlowRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for IdentityGovernance_taskDefinition
+func (r *IdentityGovernance_taskDefinitionRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// IdentityGovernance_taskProcessingResultRequestBuilder is request builder for IdentityGovernance_taskProcessingResult
+type IdentityGovernance_taskProcessingResultRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns IdentityGovernance_taskProcessingResultRequest
+func (b *IdentityGovernance_taskProcessingResultRequestBuilder) Request() *IdentityGovernance_taskProcessingResultRequest {
+	return &IdentityGovernance_taskProcessingResultRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// IdentityGovernance_taskProcessingResultRequest is request for IdentityGovernance_taskProcessingResult
+type IdentityGovernance_taskProcessingResultRequest struct{ BaseRequest }
+
+// Get performs GET request for IdentityGovernance_taskProcessingResult
+func (r *IdentityGovernance_taskProcessingResultRequest) Get(ctx context.Context) (resObj *IdentityGovernance_taskProcessingResult, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for IdentityGovernance_taskProcessingResult
+func (r *IdentityGovernance_taskProcessingResultRequest) Update(ctx context.Context, reqObj *IdentityGovernance_taskProcessingResult) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for IdentityGovernance_taskProcessingResult
+func (r *IdentityGovernance_taskProcessingResultRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// IdentityGovernance_taskReportRequestBuilder is request builder for IdentityGovernance_taskReport
+type IdentityGovernance_taskReportRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns IdentityGovernance_taskReportRequest
+func (b *IdentityGovernance_taskReportRequestBuilder) Request() *IdentityGovernance_taskReportRequest {
+	return &IdentityGovernance_taskReportRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// IdentityGovernance_taskReportRequest is request for IdentityGovernance_taskReport
+type IdentityGovernance_taskReportRequest struct{ BaseRequest }
+
+// Get performs GET request for IdentityGovernance_taskReport
+func (r *IdentityGovernance_taskReportRequest) Get(ctx context.Context) (resObj *IdentityGovernance_taskReport, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for IdentityGovernance_taskReport
+func (r *IdentityGovernance_taskReportRequest) Update(ctx context.Context, reqObj *IdentityGovernance_taskReport) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for IdentityGovernance_taskReport
+func (r *IdentityGovernance_taskReportRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// IdentityGovernance_userProcessingResultRequestBuilder is request builder for IdentityGovernance_userProcessingResult
+type IdentityGovernance_userProcessingResultRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns IdentityGovernance_userProcessingResultRequest
+func (b *IdentityGovernance_userProcessingResultRequestBuilder) Request() *IdentityGovernance_userProcessingResultRequest {
+	return &IdentityGovernance_userProcessingResultRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// IdentityGovernance_userProcessingResultRequest is request for IdentityGovernance_userProcessingResult
+type IdentityGovernance_userProcessingResultRequest struct{ BaseRequest }
+
+// Get performs GET request for IdentityGovernance_userProcessingResult
+func (r *IdentityGovernance_userProcessingResultRequest) Get(ctx context.Context) (resObj *IdentityGovernance_userProcessingResult, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for IdentityGovernance_userProcessingResult
+func (r *IdentityGovernance_userProcessingResultRequest) Update(ctx context.Context, reqObj *IdentityGovernance_userProcessingResult) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for IdentityGovernance_userProcessingResult
+func (r *IdentityGovernance_userProcessingResultRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// IdentityGovernance_workflowRequestBuilder is request builder for IdentityGovernance_workflow
+type IdentityGovernance_workflowRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns IdentityGovernance_workflowRequest
+func (b *IdentityGovernance_workflowRequestBuilder) Request() *IdentityGovernance_workflowRequest {
+	return &IdentityGovernance_workflowRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// IdentityGovernance_workflowRequest is request for IdentityGovernance_workflow
+type IdentityGovernance_workflowRequest struct{ BaseRequest }
+
+// Get performs GET request for IdentityGovernance_workflow
+func (r *IdentityGovernance_workflowRequest) Get(ctx context.Context) (resObj *IdentityGovernance_workflow, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for IdentityGovernance_workflow
+func (r *IdentityGovernance_workflowRequest) Update(ctx context.Context, reqObj *IdentityGovernance_workflow) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for IdentityGovernance_workflow
+func (r *IdentityGovernance_workflowRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// IdentityGovernance_workflowTemplateRequestBuilder is request builder for IdentityGovernance_workflowTemplate
+type IdentityGovernance_workflowTemplateRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns IdentityGovernance_workflowTemplateRequest
+func (b *IdentityGovernance_workflowTemplateRequestBuilder) Request() *IdentityGovernance_workflowTemplateRequest {
+	return &IdentityGovernance_workflowTemplateRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// IdentityGovernance_workflowTemplateRequest is request for IdentityGovernance_workflowTemplate
+type IdentityGovernance_workflowTemplateRequest struct{ BaseRequest }
+
+// Get performs GET request for IdentityGovernance_workflowTemplate
+func (r *IdentityGovernance_workflowTemplateRequest) Get(ctx context.Context) (resObj *IdentityGovernance_workflowTemplate, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for IdentityGovernance_workflowTemplate
+func (r *IdentityGovernance_workflowTemplateRequest) Update(ctx context.Context, reqObj *IdentityGovernance_workflowTemplate) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for IdentityGovernance_workflowTemplate
+func (r *IdentityGovernance_workflowTemplateRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// IdentityGovernance_workflowVersionRequestBuilder is request builder for IdentityGovernance_workflowVersion
+type IdentityGovernance_workflowVersionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns IdentityGovernance_workflowVersionRequest
+func (b *IdentityGovernance_workflowVersionRequestBuilder) Request() *IdentityGovernance_workflowVersionRequest {
+	return &IdentityGovernance_workflowVersionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// IdentityGovernance_workflowVersionRequest is request for IdentityGovernance_workflowVersion
+type IdentityGovernance_workflowVersionRequest struct{ BaseRequest }
+
+// Get performs GET request for IdentityGovernance_workflowVersion
+func (r *IdentityGovernance_workflowVersionRequest) Get(ctx context.Context) (resObj *IdentityGovernance_workflowVersion, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for IdentityGovernance_workflowVersion
+func (r *IdentityGovernance_workflowVersionRequest) Update(ctx context.Context, reqObj *IdentityGovernance_workflowVersion) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for IdentityGovernance_workflowVersion
+func (r *IdentityGovernance_workflowVersionRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

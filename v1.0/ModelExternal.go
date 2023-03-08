@@ -2,10 +2,34 @@
 
 package msgraph
 
+// ExternalDomainFederation undocumented
+type ExternalDomainFederation struct {
+	// IdentitySource is the base model of ExternalDomainFederation
+	IdentitySource
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// DomainName undocumented
+	DomainName *string `json:"domainName,omitempty"`
+	// IssuerURI undocumented
+	IssuerURI *string `json:"issuerUri,omitempty"`
+}
+
+// ExternalDomainName undocumented
+type ExternalDomainName struct {
+	// Entity is the base model of ExternalDomainName
+	Entity
+}
+
 // ExternalLink undocumented
 type ExternalLink struct {
 	// Object is the base model of ExternalLink
 	Object
 	// Href undocumented
 	Href *string `json:"href,omitempty"`
+}
+
+// ExternalSponsors undocumented
+type ExternalSponsors struct {
+	// SubjectSet is the base model of ExternalSponsors
+	SubjectSet
 }

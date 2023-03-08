@@ -169,6 +169,39 @@ func (r *MobileAppContentFileRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// MobileContainedAppRequestBuilder is request builder for MobileContainedApp
+type MobileContainedAppRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns MobileContainedAppRequest
+func (b *MobileContainedAppRequestBuilder) Request() *MobileContainedAppRequest {
+	return &MobileContainedAppRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// MobileContainedAppRequest is request for MobileContainedApp
+type MobileContainedAppRequest struct{ BaseRequest }
+
+// Get performs GET request for MobileContainedApp
+func (r *MobileContainedAppRequest) Get(ctx context.Context) (resObj *MobileContainedApp, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for MobileContainedApp
+func (r *MobileContainedAppRequest) Update(ctx context.Context, reqObj *MobileContainedApp) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for MobileContainedApp
+func (r *MobileContainedAppRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // MobileLobAppRequestBuilder is request builder for MobileLobApp
 type MobileLobAppRequestBuilder struct{ BaseRequestBuilder }
 
@@ -235,7 +268,6 @@ func (r *MobileThreatDefenseConnectorRequest) Delete(ctx context.Context) error 
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-//
 type MobileAppAssignRequestBuilder struct{ BaseRequestBuilder }
 
 // Assign action undocumented
@@ -246,22 +278,18 @@ func (b *MobileAppRequestBuilder) Assign(reqObj *MobileAppAssignRequestParameter
 	return bb
 }
 
-//
 type MobileAppAssignRequest struct{ BaseRequest }
 
-//
 func (b *MobileAppAssignRequestBuilder) Request() *MobileAppAssignRequest {
 	return &MobileAppAssignRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *MobileAppAssignRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type MobileAppContentFileCommitRequestBuilder struct{ BaseRequestBuilder }
 
 // Commit action undocumented
@@ -272,22 +300,18 @@ func (b *MobileAppContentFileRequestBuilder) Commit(reqObj *MobileAppContentFile
 	return bb
 }
 
-//
 type MobileAppContentFileCommitRequest struct{ BaseRequest }
 
-//
 func (b *MobileAppContentFileCommitRequestBuilder) Request() *MobileAppContentFileCommitRequest {
 	return &MobileAppContentFileCommitRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *MobileAppContentFileCommitRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type MobileAppContentFileRenewUploadRequestBuilder struct{ BaseRequestBuilder }
 
 // RenewUpload action undocumented
@@ -298,17 +322,14 @@ func (b *MobileAppContentFileRequestBuilder) RenewUpload(reqObj *MobileAppConten
 	return bb
 }
 
-//
 type MobileAppContentFileRenewUploadRequest struct{ BaseRequest }
 
-//
 func (b *MobileAppContentFileRenewUploadRequestBuilder) Request() *MobileAppContentFileRenewUploadRequest {
 	return &MobileAppContentFileRenewUploadRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *MobileAppContentFileRenewUploadRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }

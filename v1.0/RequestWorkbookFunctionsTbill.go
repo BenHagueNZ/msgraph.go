@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsTbillEqRequestBuilder struct{ BaseRequestBuilder }
 
 // TbillEq action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) TbillEq(reqObj *WorkbookFunctionsTbill
 	return bb
 }
 
-//
 type WorkbookFunctionsTbillEqRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsTbillEqRequestBuilder) Request() *WorkbookFunctionsTbillEqRequest {
 	return &WorkbookFunctionsTbillEqRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsTbillEqRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsTbillPriceRequestBuilder struct{ BaseRequestBuilder }
 
 // TbillPrice action undocumented
@@ -42,23 +37,19 @@ func (b *WorkbookFunctionsRequestBuilder) TbillPrice(reqObj *WorkbookFunctionsTb
 	return bb
 }
 
-//
 type WorkbookFunctionsTbillPriceRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsTbillPriceRequestBuilder) Request() *WorkbookFunctionsTbillPriceRequest {
 	return &WorkbookFunctionsTbillPriceRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsTbillPriceRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsTbillYieldRequestBuilder struct{ BaseRequestBuilder }
 
 // TbillYield action undocumented
@@ -69,17 +60,14 @@ func (b *WorkbookFunctionsRequestBuilder) TbillYield(reqObj *WorkbookFunctionsTb
 	return bb
 }
 
-//
 type WorkbookFunctionsTbillYieldRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsTbillYieldRequestBuilder) Request() *WorkbookFunctionsTbillYieldRequest {
 	return &WorkbookFunctionsTbillYieldRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsTbillYieldRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

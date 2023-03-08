@@ -6,8 +6,8 @@ package msgraph
 type RequiredResourceAccess struct {
 	// Object is the base model of RequiredResourceAccess
 	Object
-	// ResourceAppID undocumented
-	ResourceAppID *string `json:"resourceAppId,omitempty"`
 	// ResourceAccess undocumented
 	ResourceAccess []ResourceAccess `json:"resourceAccess,omitempty"`
+	// ResourceAppID undocumented
+	ResourceAppID *string `json:"resourceAppId,omitempty"`
 }

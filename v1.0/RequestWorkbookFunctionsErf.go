@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsErfRequestBuilder struct{ BaseRequestBuilder }
 
 // Erf action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Erf(reqObj *WorkbookFunctionsErfReques
 	return bb
 }
 
-//
 type WorkbookFunctionsErfRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsErfRequestBuilder) Request() *WorkbookFunctionsErfRequest {
 	return &WorkbookFunctionsErfRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsErfRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsErfCRequestBuilder struct{ BaseRequestBuilder }
 
 // ErfC action undocumented
@@ -42,23 +37,19 @@ func (b *WorkbookFunctionsRequestBuilder) ErfC(reqObj *WorkbookFunctionsErfCRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsErfCRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsErfCRequestBuilder) Request() *WorkbookFunctionsErfCRequest {
 	return &WorkbookFunctionsErfCRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsErfCRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsErfC_PreciseRequestBuilder struct{ BaseRequestBuilder }
 
 // ErfC_Precise action undocumented
@@ -69,17 +60,14 @@ func (b *WorkbookFunctionsRequestBuilder) ErfC_Precise(reqObj *WorkbookFunctions
 	return bb
 }
 
-//
 type WorkbookFunctionsErfC_PreciseRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsErfC_PreciseRequestBuilder) Request() *WorkbookFunctionsErfC_PreciseRequest {
 	return &WorkbookFunctionsErfC_PreciseRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsErfC_PreciseRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

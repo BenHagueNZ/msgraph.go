@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsReplaceRequestBuilder struct{ BaseRequestBuilder }
 
 // Replace action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Replace(reqObj *WorkbookFunctionsRepla
 	return bb
 }
 
-//
 type WorkbookFunctionsReplaceRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsReplaceRequestBuilder) Request() *WorkbookFunctionsReplaceRequest {
 	return &WorkbookFunctionsReplaceRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsReplaceRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsReplaceBRequestBuilder struct{ BaseRequestBuilder }
 
 // ReplaceB action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) ReplaceB(reqObj *WorkbookFunctionsRepl
 	return bb
 }
 
-//
 type WorkbookFunctionsReplaceBRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsReplaceBRequestBuilder) Request() *WorkbookFunctionsReplaceBRequest {
 	return &WorkbookFunctionsReplaceBRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsReplaceBRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

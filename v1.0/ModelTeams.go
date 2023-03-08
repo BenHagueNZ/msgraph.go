@@ -8,12 +8,12 @@ import "time"
 type TeamsApp struct {
 	// Entity is the base model of TeamsApp
 	Entity
-	// ExternalID undocumented
-	ExternalID *string `json:"externalId,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// DistributionMethod undocumented
 	DistributionMethod *TeamsAppDistributionMethod `json:"distributionMethod,omitempty"`
+	// ExternalID undocumented
+	ExternalID *string `json:"externalId,omitempty"`
 	// AppDefinitions undocumented
 	AppDefinitions []TeamsAppDefinition `json:"appDefinitions,omitempty"`
 }
@@ -22,12 +22,24 @@ type TeamsApp struct {
 type TeamsAppDefinition struct {
 	// Entity is the base model of TeamsAppDefinition
 	Entity
-	// TeamsAppID undocumented
-	TeamsAppID *string `json:"teamsAppId,omitempty"`
+	// CreatedBy undocumented
+	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
+	// LastModifiedDateTime undocumented
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// PublishingState undocumented
+	PublishingState *TeamsAppPublishingState `json:"publishingState,omitempty"`
+	// ShortDescription undocumented
+	ShortDescription *string `json:"shortDescription,omitempty"`
+	// TeamsAppID undocumented
+	TeamsAppID *string `json:"teamsAppId,omitempty"`
 	// Version undocumented
 	Version *string `json:"version,omitempty"`
+	// Bot undocumented
+	Bot *TeamworkBot `json:"bot,omitempty"`
 }
 
 // TeamsAppInstallation undocumented
@@ -40,38 +52,74 @@ type TeamsAppInstallation struct {
 	TeamsAppDefinition *TeamsAppDefinition `json:"teamsAppDefinition,omitempty"`
 }
 
+// TeamsAppInstalledEventMessageDetail undocumented
+type TeamsAppInstalledEventMessageDetail struct {
+	// EventMessageDetail is the base model of TeamsAppInstalledEventMessageDetail
+	EventMessageDetail
+	// Initiator undocumented
+	Initiator *IdentitySet `json:"initiator,omitempty"`
+	// TeamsAppDisplayName undocumented
+	TeamsAppDisplayName *string `json:"teamsAppDisplayName,omitempty"`
+	// TeamsAppID undocumented
+	TeamsAppID *string `json:"teamsAppId,omitempty"`
+}
+
+// TeamsAppRemovedEventMessageDetail undocumented
+type TeamsAppRemovedEventMessageDetail struct {
+	// EventMessageDetail is the base model of TeamsAppRemovedEventMessageDetail
+	EventMessageDetail
+	// Initiator undocumented
+	Initiator *IdentitySet `json:"initiator,omitempty"`
+	// TeamsAppDisplayName undocumented
+	TeamsAppDisplayName *string `json:"teamsAppDisplayName,omitempty"`
+	// TeamsAppID undocumented
+	TeamsAppID *string `json:"teamsAppId,omitempty"`
+}
+
+// TeamsAppUpgradedEventMessageDetail undocumented
+type TeamsAppUpgradedEventMessageDetail struct {
+	// EventMessageDetail is the base model of TeamsAppUpgradedEventMessageDetail
+	EventMessageDetail
+	// Initiator undocumented
+	Initiator *IdentitySet `json:"initiator,omitempty"`
+	// TeamsAppDisplayName undocumented
+	TeamsAppDisplayName *string `json:"teamsAppDisplayName,omitempty"`
+	// TeamsAppID undocumented
+	TeamsAppID *string `json:"teamsAppId,omitempty"`
+}
+
 // TeamsAsyncOperation undocumented
 type TeamsAsyncOperation struct {
 	// Entity is the base model of TeamsAsyncOperation
 	Entity
-	// OperationType undocumented
-	OperationType *TeamsAsyncOperationType `json:"operationType,omitempty"`
-	// CreatedDateTime undocumented
-	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
-	// Status undocumented
-	Status *TeamsAsyncOperationStatus `json:"status,omitempty"`
-	// LastActionDateTime undocumented
-	LastActionDateTime *time.Time `json:"lastActionDateTime,omitempty"`
 	// AttemptsCount undocumented
 	AttemptsCount *int `json:"attemptsCount,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// Error undocumented
+	Error *OperationError `json:"error,omitempty"`
+	// LastActionDateTime undocumented
+	LastActionDateTime *time.Time `json:"lastActionDateTime,omitempty"`
+	// OperationType undocumented
+	OperationType *TeamsAsyncOperationType `json:"operationType,omitempty"`
+	// Status undocumented
+	Status *TeamsAsyncOperationStatus `json:"status,omitempty"`
 	// TargetResourceID undocumented
 	TargetResourceID *string `json:"targetResourceId,omitempty"`
 	// TargetResourceLocation undocumented
 	TargetResourceLocation *string `json:"targetResourceLocation,omitempty"`
-	// Error undocumented
-	Error *OperationError `json:"error,omitempty"`
 }
 
 // TeamsTab undocumented
 type TeamsTab struct {
 	// Entity is the base model of TeamsTab
 	Entity
+	// Configuration undocumented
+	Configuration *TeamsTabConfiguration `json:"configuration,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// WebURL undocumented
 	WebURL *string `json:"webUrl,omitempty"`
-	// Configuration undocumented
-	Configuration *TeamsTabConfiguration `json:"configuration,omitempty"`
 	// TeamsApp undocumented
 	TeamsApp *TeamsApp `json:"teamsApp,omitempty"`
 }
@@ -80,12 +128,18 @@ type TeamsTab struct {
 type TeamsTabConfiguration struct {
 	// Object is the base model of TeamsTabConfiguration
 	Object
-	// EntityID undocumented
-	EntityID *string `json:"entityId,omitempty"`
 	// ContentURL undocumented
 	ContentURL *string `json:"contentUrl,omitempty"`
+	// EntityID undocumented
+	EntityID *string `json:"entityId,omitempty"`
 	// RemoveURL undocumented
 	RemoveURL *string `json:"removeUrl,omitempty"`
 	// WebsiteURL undocumented
 	WebsiteURL *string `json:"websiteUrl,omitempty"`
+}
+
+// TeamsTemplate undocumented
+type TeamsTemplate struct {
+	// Entity is the base model of TeamsTemplate
+	Entity
 }

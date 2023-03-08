@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsSinhRequestBuilder struct{ BaseRequestBuilder }
 
 // Sinh action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Sinh(reqObj *WorkbookFunctionsSinhRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsSinhRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsSinhRequestBuilder) Request() *WorkbookFunctionsSinhRequest {
 	return &WorkbookFunctionsSinhRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsSinhRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

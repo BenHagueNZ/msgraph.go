@@ -2,7 +2,7 @@
 
 package msgraph
 
-// EdgeSearchEngine undocumented
+// EdgeSearchEngine Allows IT admins to set a predefined default search engine for MDM-Controlled devices.
 type EdgeSearchEngine struct {
 	// EdgeSearchEngineBase is the base model of EdgeSearchEngine
 	EdgeSearchEngineBase
@@ -10,13 +10,13 @@ type EdgeSearchEngine struct {
 	EdgeSearchEngineType *EdgeSearchEngineType `json:"edgeSearchEngineType,omitempty"`
 }
 
-// EdgeSearchEngineBase undocumented
+// EdgeSearchEngineBase Allows IT admins to set a default search engine for MDM-Controlled devices. Users can override this and change their default search engine provided the AllowSearchEngineCustomization policy is not set.
 type EdgeSearchEngineBase struct {
 	// Object is the base model of EdgeSearchEngineBase
 	Object
 }
 
-// EdgeSearchEngineCustom undocumented
+// EdgeSearchEngineCustom Allows IT admins to set a custom default search engine for MDM-Controlled devices.
 type EdgeSearchEngineCustom struct {
 	// EdgeSearchEngineBase is the base model of EdgeSearchEngineCustom
 	EdgeSearchEngineBase

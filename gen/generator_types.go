@@ -47,6 +47,7 @@ func stripNSPrefix(t string) (string, bool) {
 }
 
 func exported(n string) string {
+	n = strings.ReplaceAll(n, ".", "_")
 	return lintName(strings.Title(n))
 }
 

@@ -8,8 +8,14 @@ type AddIn struct {
 	Object
 	// ID undocumented
 	ID *UUID `json:"id,omitempty"`
-	// Type undocumented
-	Type *string `json:"type,omitempty"`
 	// Properties undocumented
 	Properties []KeyValue `json:"properties,omitempty"`
+	// Type undocumented
+	Type *string `json:"type,omitempty"`
+}
+
+// AddLargeGalleryViewOperation undocumented
+type AddLargeGalleryViewOperation struct {
+	// CommsOperation is the base model of AddLargeGalleryViewOperation
+	CommsOperation
 }

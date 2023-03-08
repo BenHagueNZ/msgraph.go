@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// User Represents an Azure Active Directory user object.
+// User undocumented
 type User struct {
 	// DirectoryObject is the base model of User
 	DirectoryObject
@@ -19,6 +19,8 @@ type User struct {
 	AssignedLicenses []AssignedLicense `json:"assignedLicenses,omitempty"`
 	// AssignedPlans undocumented
 	AssignedPlans []AssignedPlan `json:"assignedPlans,omitempty"`
+	// AuthorizationInfo undocumented
+	AuthorizationInfo *AuthorizationInfo `json:"authorizationInfo,omitempty"`
 	// BusinessPhones undocumented
 	BusinessPhones []string `json:"businessPhones,omitempty"`
 	// City undocumented
@@ -29,18 +31,34 @@ type User struct {
 	ConsentProvidedForMinor *string `json:"consentProvidedForMinor,omitempty"`
 	// Country undocumented
 	Country *string `json:"country,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// CreationType undocumented
 	CreationType *string `json:"creationType,omitempty"`
 	// Department undocumented
 	Department *string `json:"department,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
+	// EmployeeHireDate undocumented
+	EmployeeHireDate *time.Time `json:"employeeHireDate,omitempty"`
 	// EmployeeID undocumented
 	EmployeeID *string `json:"employeeId,omitempty"`
+	// EmployeeLeaveDateTime undocumented
+	EmployeeLeaveDateTime *time.Time `json:"employeeLeaveDateTime,omitempty"`
+	// EmployeeOrgData undocumented
+	EmployeeOrgData *EmployeeOrgData `json:"employeeOrgData,omitempty"`
+	// EmployeeType undocumented
+	EmployeeType *string `json:"employeeType,omitempty"`
+	// ExternalUserState undocumented
+	ExternalUserState *string `json:"externalUserState,omitempty"`
+	// ExternalUserStateChangeDateTime undocumented
+	ExternalUserStateChangeDateTime *time.Time `json:"externalUserStateChangeDateTime,omitempty"`
 	// FaxNumber undocumented
 	FaxNumber *string `json:"faxNumber,omitempty"`
 	// GivenName undocumented
 	GivenName *string `json:"givenName,omitempty"`
+	// Identities undocumented
+	Identities []ObjectIdentity `json:"identities,omitempty"`
 	// ImAddresses undocumented
 	ImAddresses []string `json:"imAddresses,omitempty"`
 	// IsResourceAccount undocumented
@@ -59,8 +77,12 @@ type User struct {
 	MailNickname *string `json:"mailNickname,omitempty"`
 	// MobilePhone undocumented
 	MobilePhone *string `json:"mobilePhone,omitempty"`
+	// OfficeLocation undocumented
+	OfficeLocation *string `json:"officeLocation,omitempty"`
 	// OnPremisesDistinguishedName undocumented
 	OnPremisesDistinguishedName *string `json:"onPremisesDistinguishedName,omitempty"`
+	// OnPremisesDomainName undocumented
+	OnPremisesDomainName *string `json:"onPremisesDomainName,omitempty"`
 	// OnPremisesExtensionAttributes undocumented
 	OnPremisesExtensionAttributes *OnPremisesExtensionAttributes `json:"onPremisesExtensionAttributes,omitempty"`
 	// OnPremisesImmutableID undocumented
@@ -69,14 +91,12 @@ type User struct {
 	OnPremisesLastSyncDateTime *time.Time `json:"onPremisesLastSyncDateTime,omitempty"`
 	// OnPremisesProvisioningErrors undocumented
 	OnPremisesProvisioningErrors []OnPremisesProvisioningError `json:"onPremisesProvisioningErrors,omitempty"`
+	// OnPremisesSamAccountName undocumented
+	OnPremisesSamAccountName *string `json:"onPremisesSamAccountName,omitempty"`
 	// OnPremisesSecurityIdentifier undocumented
 	OnPremisesSecurityIdentifier *string `json:"onPremisesSecurityIdentifier,omitempty"`
 	// OnPremisesSyncEnabled undocumented
 	OnPremisesSyncEnabled *bool `json:"onPremisesSyncEnabled,omitempty"`
-	// OnPremisesDomainName undocumented
-	OnPremisesDomainName *string `json:"onPremisesDomainName,omitempty"`
-	// OnPremisesSamAccountName undocumented
-	OnPremisesSamAccountName *string `json:"onPremisesSamAccountName,omitempty"`
 	// OnPremisesUserPrincipalName undocumented
 	OnPremisesUserPrincipalName *string `json:"onPremisesUserPrincipalName,omitempty"`
 	// OtherMails undocumented
@@ -85,16 +105,18 @@ type User struct {
 	PasswordPolicies *string `json:"passwordPolicies,omitempty"`
 	// PasswordProfile undocumented
 	PasswordProfile *PasswordProfile `json:"passwordProfile,omitempty"`
-	// OfficeLocation undocumented
-	OfficeLocation *string `json:"officeLocation,omitempty"`
 	// PostalCode undocumented
 	PostalCode *string `json:"postalCode,omitempty"`
+	// PreferredDataLocation undocumented
+	PreferredDataLocation *string `json:"preferredDataLocation,omitempty"`
 	// PreferredLanguage undocumented
 	PreferredLanguage *string `json:"preferredLanguage,omitempty"`
 	// ProvisionedPlans undocumented
 	ProvisionedPlans []ProvisionedPlan `json:"provisionedPlans,omitempty"`
 	// ProxyAddresses undocumented
 	ProxyAddresses []string `json:"proxyAddresses,omitempty"`
+	// SecurityIdentifier undocumented
+	SecurityIdentifier *string `json:"securityIdentifier,omitempty"`
 	// ShowInAddressList undocumented
 	ShowInAddressList *bool `json:"showInAddressList,omitempty"`
 	// SignInSessionsValidFromDateTime undocumented
@@ -135,58 +157,64 @@ type User struct {
 	Schools []string `json:"schools,omitempty"`
 	// Skills undocumented
 	Skills []string `json:"skills,omitempty"`
-	// OwnedDevices undocumented
-	OwnedDevices []DirectoryObject `json:"ownedDevices,omitempty"`
-	// RegisteredDevices undocumented
-	RegisteredDevices []DirectoryObject `json:"registeredDevices,omitempty"`
-	// Manager undocumented
-	Manager *DirectoryObject `json:"manager,omitempty"`
-	// DirectReports undocumented
-	DirectReports []DirectoryObject `json:"directReports,omitempty"`
-	// MemberOf undocumented
-	MemberOf []DirectoryObject `json:"memberOf,omitempty"`
+	// AppRoleAssignments undocumented
+	AppRoleAssignments []AppRoleAssignment `json:"appRoleAssignments,omitempty"`
 	// CreatedObjects undocumented
 	CreatedObjects []DirectoryObject `json:"createdObjects,omitempty"`
-	// OwnedObjects undocumented
-	OwnedObjects []DirectoryObject `json:"ownedObjects,omitempty"`
+	// DirectReports undocumented
+	DirectReports []DirectoryObject `json:"directReports,omitempty"`
 	// LicenseDetails undocumented
 	LicenseDetails []LicenseDetails `json:"licenseDetails,omitempty"`
+	// Manager undocumented
+	Manager *DirectoryObject `json:"manager,omitempty"`
+	// MemberOf undocumented
+	MemberOf []DirectoryObject `json:"memberOf,omitempty"`
+	// OAuth2PermissionGrants undocumented
+	OAuth2PermissionGrants []OAuth2PermissionGrant `json:"oauth2PermissionGrants,omitempty"`
+	// OwnedDevices undocumented
+	OwnedDevices []DirectoryObject `json:"ownedDevices,omitempty"`
+	// OwnedObjects undocumented
+	OwnedObjects []DirectoryObject `json:"ownedObjects,omitempty"`
+	// RegisteredDevices undocumented
+	RegisteredDevices []DirectoryObject `json:"registeredDevices,omitempty"`
+	// ScopedRoleMemberOf undocumented
+	ScopedRoleMemberOf []ScopedRoleMembership `json:"scopedRoleMemberOf,omitempty"`
 	// TransitiveMemberOf undocumented
 	TransitiveMemberOf []DirectoryObject `json:"transitiveMemberOf,omitempty"`
-	// Outlook undocumented
-	Outlook *OutlookUser `json:"outlook,omitempty"`
-	// Messages undocumented
-	Messages []Message `json:"messages,omitempty"`
-	// MailFolders undocumented
-	MailFolders []MailFolder `json:"mailFolders,omitempty"`
 	// Calendar undocumented
 	Calendar *Calendar `json:"calendar,omitempty"`
-	// Calendars undocumented
-	Calendars []Calendar `json:"calendars,omitempty"`
 	// CalendarGroups undocumented
 	CalendarGroups []CalendarGroup `json:"calendarGroups,omitempty"`
+	// Calendars undocumented
+	Calendars []Calendar `json:"calendars,omitempty"`
 	// CalendarView undocumented
 	CalendarView []Event `json:"calendarView,omitempty"`
-	// Events undocumented
-	Events []Event `json:"events,omitempty"`
-	// People undocumented
-	People []Person `json:"people,omitempty"`
-	// Contacts undocumented
-	Contacts []Contact `json:"contacts,omitempty"`
 	// ContactFolders undocumented
 	ContactFolders []ContactFolder `json:"contactFolders,omitempty"`
+	// Contacts undocumented
+	Contacts []Contact `json:"contacts,omitempty"`
+	// Events undocumented
+	Events []Event `json:"events,omitempty"`
 	// InferenceClassification undocumented
 	InferenceClassification *InferenceClassification `json:"inferenceClassification,omitempty"`
-	// Photo undocumented
-	Photo *ProfilePhoto `json:"photo,omitempty"`
-	// Photos undocumented
-	Photos []ProfilePhoto `json:"photos,omitempty"`
+	// MailFolders undocumented
+	MailFolders []MailFolder `json:"mailFolders,omitempty"`
+	// Messages undocumented
+	Messages []Message `json:"messages,omitempty"`
+	// Outlook undocumented
+	Outlook *OutlookUser `json:"outlook,omitempty"`
+	// People undocumented
+	People []Person `json:"people,omitempty"`
 	// Drive undocumented
 	Drive *Drive `json:"drive,omitempty"`
 	// Drives undocumented
 	Drives []Drive `json:"drives,omitempty"`
+	// FollowedSites undocumented
+	FollowedSites []Site `json:"followedSites,omitempty"`
 	// Extensions undocumented
 	Extensions []Extension `json:"extensions,omitempty"`
+	// AgreementAcceptances undocumented
+	AgreementAcceptances []AgreementAcceptance `json:"agreementAcceptances,omitempty"`
 	// ManagedDevices undocumented
 	ManagedDevices []ManagedDevice `json:"managedDevices,omitempty"`
 	// ManagedAppRegistrations undocumented
@@ -201,28 +229,42 @@ type User struct {
 	Settings *UserSettings `json:"settings,omitempty"`
 	// Onenote undocumented
 	Onenote *Onenote `json:"onenote,omitempty"`
+	// Photo undocumented
+	Photo *ProfilePhoto `json:"photo,omitempty"`
+	// Photos undocumented
+	Photos []ProfilePhoto `json:"photos,omitempty"`
 	// Activities undocumented
 	Activities []UserActivity `json:"activities,omitempty"`
 	// OnlineMeetings undocumented
 	OnlineMeetings []OnlineMeeting `json:"onlineMeetings,omitempty"`
+	// Presence undocumented
+	Presence *Presence `json:"presence,omitempty"`
+	// Authentication undocumented
+	Authentication *Authentication `json:"authentication,omitempty"`
+	// Chats undocumented
+	Chats []Chat `json:"chats,omitempty"`
 	// JoinedTeams undocumented
-	JoinedTeams []Group `json:"joinedTeams,omitempty"`
+	JoinedTeams []Team `json:"joinedTeams,omitempty"`
+	// Teamwork undocumented
+	Teamwork *UserTeamwork `json:"teamwork,omitempty"`
+	// Todo undocumented
+	Todo *Todo `json:"todo,omitempty"`
 }
 
 // UserActivity undocumented
 type UserActivity struct {
 	// Entity is the base model of UserActivity
 	Entity
-	// VisualElements undocumented
-	VisualElements *VisualInfo `json:"visualElements,omitempty"`
-	// ActivitySourceHost undocumented
-	ActivitySourceHost *string `json:"activitySourceHost,omitempty"`
 	// ActivationURL undocumented
 	ActivationURL *string `json:"activationUrl,omitempty"`
+	// ActivitySourceHost undocumented
+	ActivitySourceHost *string `json:"activitySourceHost,omitempty"`
 	// AppActivityID undocumented
 	AppActivityID *string `json:"appActivityId,omitempty"`
 	// AppDisplayName undocumented
 	AppDisplayName *string `json:"appDisplayName,omitempty"`
+	// ContentInfo undocumented
+	ContentInfo json.RawMessage `json:"contentInfo,omitempty"`
 	// ContentURL undocumented
 	ContentURL *string `json:"contentUrl,omitempty"`
 	// CreatedDateTime undocumented
@@ -233,24 +275,118 @@ type UserActivity struct {
 	FallbackURL *string `json:"fallbackUrl,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
-	// UserTimezone undocumented
-	UserTimezone *string `json:"userTimezone,omitempty"`
-	// ContentInfo undocumented
-	ContentInfo json.RawMessage `json:"contentInfo,omitempty"`
 	// Status undocumented
 	Status *Status `json:"status,omitempty"`
+	// UserTimezone undocumented
+	UserTimezone *string `json:"userTimezone,omitempty"`
+	// VisualElements undocumented
+	VisualElements *VisualInfo `json:"visualElements,omitempty"`
 	// HistoryItems undocumented
 	HistoryItems []ActivityHistoryItem `json:"historyItems,omitempty"`
 }
 
-// UserIdentity undocumented
-type UserIdentity struct {
-	// Object is the base model of UserIdentity
+// UserAttributeValuesItem undocumented
+type UserAttributeValuesItem struct {
+	// Object is the base model of UserAttributeValuesItem
 	Object
-	// ID undocumented
-	ID *string `json:"id,omitempty"`
+	// IsDefault undocumented
+	IsDefault *bool `json:"isDefault,omitempty"`
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
+	// Value undocumented
+	Value *string `json:"value,omitempty"`
+}
+
+// UserConsentRequestObject undocumented
+type UserConsentRequestObject struct {
+	// RequestObject is the base model of UserConsentRequestObject
+	RequestObject
+	// Reason undocumented
+	Reason *string `json:"reason,omitempty"`
+	// Approval undocumented
+	Approval *Approval `json:"approval,omitempty"`
+}
+
+// UserExperienceAnalyticsDevicePerformance The user experience analytics device performance entity contains device boot performance details.
+type UserExperienceAnalyticsDevicePerformance struct {
+	// Entity is the base model of UserExperienceAnalyticsDevicePerformance
+	Entity
+	// AverageBlueScreens Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
+	AverageBlueScreens *float64 `json:"averageBlueScreens,omitempty"`
+	// AverageRestarts Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999
+	AverageRestarts *float64 `json:"averageRestarts,omitempty"`
+	// BlueScreenCount Number of Blue Screens in the last 30 days. Valid values 0 to 9999999
+	BlueScreenCount *int `json:"blueScreenCount,omitempty"`
+	// BootScore The user experience analytics device boot score.
+	BootScore *int `json:"bootScore,omitempty"`
+	// CoreBootTimeInMs The user experience analytics device core boot time in milliseconds.
+	CoreBootTimeInMs *int `json:"coreBootTimeInMs,omitempty"`
+	// CoreLoginTimeInMs The user experience analytics device core login time in milliseconds.
+	CoreLoginTimeInMs *int `json:"coreLoginTimeInMs,omitempty"`
+	// DeviceCount User experience analytics summarized device count.
+	DeviceCount *int `json:"deviceCount,omitempty"`
+	// DeviceName The user experience analytics device name.
+	DeviceName *string `json:"deviceName,omitempty"`
+	// DiskType The user experience analytics device disk type.
+	DiskType *DiskType `json:"diskType,omitempty"`
+	// GroupPolicyBootTimeInMs The user experience analytics device group policy boot time in milliseconds.
+	GroupPolicyBootTimeInMs *int `json:"groupPolicyBootTimeInMs,omitempty"`
+	// GroupPolicyLoginTimeInMs The user experience analytics device group policy login time in milliseconds.
+	GroupPolicyLoginTimeInMs *int `json:"groupPolicyLoginTimeInMs,omitempty"`
+	// HealthStatus The health state of the user experience analytics device.
+	HealthStatus *UserExperienceAnalyticsHealthState `json:"healthStatus,omitempty"`
+	// LoginScore The user experience analytics device login score.
+	LoginScore *int `json:"loginScore,omitempty"`
+	// Manufacturer The user experience analytics device manufacturer.
+	Manufacturer *string `json:"manufacturer,omitempty"`
+	// Model The user experience analytics device model.
+	Model *string `json:"model,omitempty"`
+	// ModelStartupPerformanceScore The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+	ModelStartupPerformanceScore *float64 `json:"modelStartupPerformanceScore,omitempty"`
+	// OperatingSystemVersion The user experience analytics device Operating System version.
+	OperatingSystemVersion *string `json:"operatingSystemVersion,omitempty"`
+	// ResponsiveDesktopTimeInMs The user experience analytics responsive desktop time in milliseconds.
+	ResponsiveDesktopTimeInMs *int `json:"responsiveDesktopTimeInMs,omitempty"`
+	// RestartCount Number of Restarts in the last 30 days. Valid values 0 to 9999999
+	RestartCount *int `json:"restartCount,omitempty"`
+	// StartupPerformanceScore The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+	StartupPerformanceScore *float64 `json:"startupPerformanceScore,omitempty"`
+}
+
+// UserFlowAPIConnectorConfiguration undocumented
+type UserFlowAPIConnectorConfiguration struct {
+	// Object is the base model of UserFlowAPIConnectorConfiguration
+	Object
+	// PostAttributeCollection undocumented
+	PostAttributeCollection *IdentityAPIConnector `json:"postAttributeCollection,omitempty"`
+	// PostFederationSignup undocumented
+	PostFederationSignup *IdentityAPIConnector `json:"postFederationSignup,omitempty"`
+}
+
+// UserFlowLanguageConfiguration undocumented
+type UserFlowLanguageConfiguration struct {
+	// Entity is the base model of UserFlowLanguageConfiguration
+	Entity
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
+	// IsEnabled undocumented
+	IsEnabled *bool `json:"isEnabled,omitempty"`
+	// DefaultPages undocumented
+	DefaultPages []UserFlowLanguagePage `json:"defaultPages,omitempty"`
+	// OverridesPages undocumented
+	OverridesPages []UserFlowLanguagePage `json:"overridesPages,omitempty"`
+}
+
+// UserFlowLanguagePage undocumented
+type UserFlowLanguagePage struct {
+	// Entity is the base model of UserFlowLanguagePage
+	Entity
+}
+
+// UserIdentity undocumented
+type UserIdentity struct {
+	// Identity is the base model of UserIdentity
+	Identity
 	// IPAddress undocumented
 	IPAddress *string `json:"ipAddress,omitempty"`
 	// UserPrincipalName undocumented
@@ -261,16 +397,24 @@ type UserIdentity struct {
 type UserInstallStateSummary struct {
 	// Entity is the base model of UserInstallStateSummary
 	Entity
-	// UserName User name.
-	UserName *string `json:"userName,omitempty"`
-	// InstalledDeviceCount Installed Device Count.
-	InstalledDeviceCount *int `json:"installedDeviceCount,omitempty"`
 	// FailedDeviceCount Failed Device Count.
 	FailedDeviceCount *int `json:"failedDeviceCount,omitempty"`
+	// InstalledDeviceCount Installed Device Count.
+	InstalledDeviceCount *int `json:"installedDeviceCount,omitempty"`
 	// NotInstalledDeviceCount Not installed device count.
 	NotInstalledDeviceCount *int `json:"notInstalledDeviceCount,omitempty"`
+	// UserName User name.
+	UserName *string `json:"userName,omitempty"`
 	// DeviceStates undocumented
 	DeviceStates []DeviceInstallState `json:"deviceStates,omitempty"`
+}
+
+// UserScopeTeamsAppInstallation undocumented
+type UserScopeTeamsAppInstallation struct {
+	// TeamsAppInstallation is the base model of UserScopeTeamsAppInstallation
+	TeamsAppInstallation
+	// Chat undocumented
+	Chat *Chat `json:"chat,omitempty"`
 }
 
 // UserSecurityState undocumented
@@ -311,8 +455,106 @@ type UserSecurityState struct {
 type UserSettings struct {
 	// Entity is the base model of UserSettings
 	Entity
-	// ContributionToContentDiscoveryDisabled undocumented
-	ContributionToContentDiscoveryDisabled *bool `json:"contributionToContentDiscoveryDisabled,omitempty"`
 	// ContributionToContentDiscoveryAsOrganizationDisabled undocumented
 	ContributionToContentDiscoveryAsOrganizationDisabled *bool `json:"contributionToContentDiscoveryAsOrganizationDisabled,omitempty"`
+	// ContributionToContentDiscoveryDisabled undocumented
+	ContributionToContentDiscoveryDisabled *bool `json:"contributionToContentDiscoveryDisabled,omitempty"`
+	// ShiftPreferences undocumented
+	ShiftPreferences *ShiftPreferences `json:"shiftPreferences,omitempty"`
+}
+
+// UserSimulationDetails undocumented
+type UserSimulationDetails struct {
+	// Object is the base model of UserSimulationDetails
+	Object
+	// AssignedTrainingsCount undocumented
+	AssignedTrainingsCount *int `json:"assignedTrainingsCount,omitempty"`
+	// CompletedTrainingsCount undocumented
+	CompletedTrainingsCount *int `json:"completedTrainingsCount,omitempty"`
+	// CompromisedDateTime undocumented
+	CompromisedDateTime *time.Time `json:"compromisedDateTime,omitempty"`
+	// InProgressTrainingsCount undocumented
+	InProgressTrainingsCount *int `json:"inProgressTrainingsCount,omitempty"`
+	// IsCompromised undocumented
+	IsCompromised *bool `json:"isCompromised,omitempty"`
+	// ReportedPhishDateTime undocumented
+	ReportedPhishDateTime *time.Time `json:"reportedPhishDateTime,omitempty"`
+	// SimulationEvents undocumented
+	SimulationEvents []UserSimulationEventInfo `json:"simulationEvents,omitempty"`
+	// SimulationUser undocumented
+	SimulationUser *AttackSimulationUser `json:"simulationUser,omitempty"`
+	// TrainingEvents undocumented
+	TrainingEvents []UserTrainingEventInfo `json:"trainingEvents,omitempty"`
+}
+
+// UserSimulationEventInfo undocumented
+type UserSimulationEventInfo struct {
+	// Object is the base model of UserSimulationEventInfo
+	Object
+	// Browser undocumented
+	Browser *string `json:"browser,omitempty"`
+	// EventDateTime undocumented
+	EventDateTime *time.Time `json:"eventDateTime,omitempty"`
+	// EventName undocumented
+	EventName *string `json:"eventName,omitempty"`
+	// IPAddress undocumented
+	IPAddress *string `json:"ipAddress,omitempty"`
+	// OsPlatformDeviceDetails undocumented
+	OsPlatformDeviceDetails *string `json:"osPlatformDeviceDetails,omitempty"`
+}
+
+// UserTeamwork undocumented
+type UserTeamwork struct {
+	// Entity is the base model of UserTeamwork
+	Entity
+	// AssociatedTeams undocumented
+	AssociatedTeams []AssociatedTeamInfo `json:"associatedTeams,omitempty"`
+	// InstalledApps undocumented
+	InstalledApps []UserScopeTeamsAppInstallation `json:"installedApps,omitempty"`
+}
+
+// UserTrainingContentEventInfo undocumented
+type UserTrainingContentEventInfo struct {
+	// Object is the base model of UserTrainingContentEventInfo
+	Object
+	// Browser undocumented
+	Browser *string `json:"browser,omitempty"`
+	// ContentDateTime undocumented
+	ContentDateTime *time.Time `json:"contentDateTime,omitempty"`
+	// IPAddress undocumented
+	IPAddress *string `json:"ipAddress,omitempty"`
+	// OsPlatformDeviceDetails undocumented
+	OsPlatformDeviceDetails *string `json:"osPlatformDeviceDetails,omitempty"`
+	// PotentialScoreImpact undocumented
+	PotentialScoreImpact *float64 `json:"potentialScoreImpact,omitempty"`
+}
+
+// UserTrainingEventInfo undocumented
+type UserTrainingEventInfo struct {
+	// Object is the base model of UserTrainingEventInfo
+	Object
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// LatestTrainingStatus undocumented
+	LatestTrainingStatus *TrainingStatus `json:"latestTrainingStatus,omitempty"`
+	// TrainingAssignedProperties undocumented
+	TrainingAssignedProperties *UserTrainingContentEventInfo `json:"trainingAssignedProperties,omitempty"`
+	// TrainingCompletedProperties undocumented
+	TrainingCompletedProperties *UserTrainingContentEventInfo `json:"trainingCompletedProperties,omitempty"`
+	// TrainingUpdatedProperties undocumented
+	TrainingUpdatedProperties *UserTrainingContentEventInfo `json:"trainingUpdatedProperties,omitempty"`
+}
+
+// UserTrainingStatusInfo undocumented
+type UserTrainingStatusInfo struct {
+	// Object is the base model of UserTrainingStatusInfo
+	Object
+	// AssignedDateTime undocumented
+	AssignedDateTime *time.Time `json:"assignedDateTime,omitempty"`
+	// CompletionDateTime undocumented
+	CompletionDateTime *time.Time `json:"completionDateTime,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// TrainingStatus undocumented
+	TrainingStatus *TrainingStatus `json:"trainingStatus,omitempty"`
 }

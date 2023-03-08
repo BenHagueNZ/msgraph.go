@@ -2,6 +2,8 @@
 
 package msgraph
 
+import "time"
+
 // VerifiedDomain undocumented
 type VerifiedDomain struct {
 	// Object is the base model of VerifiedDomain
@@ -16,4 +18,16 @@ type VerifiedDomain struct {
 	Name *string `json:"name,omitempty"`
 	// Type undocumented
 	Type *string `json:"type,omitempty"`
+}
+
+// VerifiedPublisher undocumented
+type VerifiedPublisher struct {
+	// Object is the base model of VerifiedPublisher
+	Object
+	// AddedDateTime undocumented
+	AddedDateTime *time.Time `json:"addedDateTime,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// VerifiedPublisherID undocumented
+	VerifiedPublisherID *string `json:"verifiedPublisherId,omitempty"`
 }

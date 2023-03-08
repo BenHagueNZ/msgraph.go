@@ -6,8 +6,8 @@ package msgraph
 type LocaleInfo struct {
 	// Object is the base model of LocaleInfo
 	Object
-	// Locale undocumented
-	Locale *string `json:"locale,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
+	// Locale undocumented
+	Locale *string `json:"locale,omitempty"`
 }

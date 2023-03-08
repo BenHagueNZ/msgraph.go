@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsPermutRequestBuilder struct{ BaseRequestBuilder }
 
 // Permut action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Permut(reqObj *WorkbookFunctionsPermut
 	return bb
 }
 
-//
 type WorkbookFunctionsPermutRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsPermutRequestBuilder) Request() *WorkbookFunctionsPermutRequest {
 	return &WorkbookFunctionsPermutRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsPermutRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

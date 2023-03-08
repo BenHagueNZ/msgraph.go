@@ -8,18 +8,20 @@ type Invitation struct {
 	Entity
 	// InvitedUserDisplayName undocumented
 	InvitedUserDisplayName *string `json:"invitedUserDisplayName,omitempty"`
-	// InvitedUserType undocumented
-	InvitedUserType *string `json:"invitedUserType,omitempty"`
 	// InvitedUserEmailAddress undocumented
 	InvitedUserEmailAddress *string `json:"invitedUserEmailAddress,omitempty"`
 	// InvitedUserMessageInfo undocumented
 	InvitedUserMessageInfo *InvitedUserMessageInfo `json:"invitedUserMessageInfo,omitempty"`
-	// SendInvitationMessage undocumented
-	SendInvitationMessage *bool `json:"sendInvitationMessage,omitempty"`
-	// InviteRedirectURL undocumented
-	InviteRedirectURL *string `json:"inviteRedirectUrl,omitempty"`
+	// InvitedUserType undocumented
+	InvitedUserType *string `json:"invitedUserType,omitempty"`
 	// InviteRedeemURL undocumented
 	InviteRedeemURL *string `json:"inviteRedeemUrl,omitempty"`
+	// InviteRedirectURL undocumented
+	InviteRedirectURL *string `json:"inviteRedirectUrl,omitempty"`
+	// ResetRedemption undocumented
+	ResetRedemption *bool `json:"resetRedemption,omitempty"`
+	// SendInvitationMessage undocumented
+	SendInvitationMessage *bool `json:"sendInvitationMessage,omitempty"`
 	// Status undocumented
 	Status *string `json:"status,omitempty"`
 	// InvitedUser undocumented
@@ -30,8 +32,14 @@ type Invitation struct {
 type InvitationParticipantInfo struct {
 	// Object is the base model of InvitationParticipantInfo
 	Object
+	// Hidden undocumented
+	Hidden *bool `json:"hidden,omitempty"`
 	// Identity undocumented
 	Identity *IdentitySet `json:"identity,omitempty"`
+	// ParticipantID undocumented
+	ParticipantID *string `json:"participantId,omitempty"`
+	// RemoveFromDefaultAudioRoutingGroup undocumented
+	RemoveFromDefaultAudioRoutingGroup *bool `json:"removeFromDefaultAudioRoutingGroup,omitempty"`
 	// ReplacesCallID undocumented
 	ReplacesCallID *string `json:"replacesCallId,omitempty"`
 }

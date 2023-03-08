@@ -10,6 +10,8 @@ type Alert struct {
 	Entity
 	// ActivityGroupName undocumented
 	ActivityGroupName *string `json:"activityGroupName,omitempty"`
+	// AlertDetections undocumented
+	AlertDetections []AlertDetection `json:"alertDetections,omitempty"`
 	// AssignedTo undocumented
 	AssignedTo *string `json:"assignedTo,omitempty"`
 	// AzureSubscriptionID undocumented
@@ -42,10 +44,18 @@ type Alert struct {
 	HistoryStates []AlertHistoryState `json:"historyStates,omitempty"`
 	// HostStates undocumented
 	HostStates []HostSecurityState `json:"hostStates,omitempty"`
+	// IncidentIDs undocumented
+	IncidentIDs []string `json:"incidentIds,omitempty"`
+	// InvestigationSecurityStates undocumented
+	InvestigationSecurityStates []InvestigationSecurityState `json:"investigationSecurityStates,omitempty"`
+	// LastEventDateTime undocumented
+	LastEventDateTime *time.Time `json:"lastEventDateTime,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 	// MalwareStates undocumented
 	MalwareStates []MalwareState `json:"malwareStates,omitempty"`
+	// MessageSecurityStates undocumented
+	MessageSecurityStates []MessageSecurityState `json:"messageSecurityStates,omitempty"`
 	// NetworkConnections undocumented
 	NetworkConnections []NetworkConnection `json:"networkConnections,omitempty"`
 	// Processes undocumented
@@ -54,6 +64,8 @@ type Alert struct {
 	RecommendedActions []string `json:"recommendedActions,omitempty"`
 	// RegistryKeyStates undocumented
 	RegistryKeyStates []RegistryKeyState `json:"registryKeyStates,omitempty"`
+	// SecurityResources undocumented
+	SecurityResources []SecurityResource `json:"securityResources,omitempty"`
 	// Severity undocumented
 	Severity *AlertSeverity `json:"severity,omitempty"`
 	// SourceMaterials undocumented
@@ -66,12 +78,26 @@ type Alert struct {
 	Title *string `json:"title,omitempty"`
 	// Triggers undocumented
 	Triggers []AlertTrigger `json:"triggers,omitempty"`
+	// URIClickSecurityStates undocumented
+	URIClickSecurityStates []URIClickSecurityState `json:"uriClickSecurityStates,omitempty"`
 	// UserStates undocumented
 	UserStates []UserSecurityState `json:"userStates,omitempty"`
 	// VendorInformation undocumented
 	VendorInformation *SecurityVendorInformation `json:"vendorInformation,omitempty"`
 	// VulnerabilityStates undocumented
 	VulnerabilityStates []VulnerabilityState `json:"vulnerabilityStates,omitempty"`
+}
+
+// AlertDetection undocumented
+type AlertDetection struct {
+	// Object is the base model of AlertDetection
+	Object
+	// DetectionType undocumented
+	DetectionType *string `json:"detectionType,omitempty"`
+	// Method undocumented
+	Method *string `json:"method,omitempty"`
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
 }
 
 // AlertHistoryState undocumented

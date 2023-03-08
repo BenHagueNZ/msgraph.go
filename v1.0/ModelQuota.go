@@ -12,6 +12,8 @@ type Quota struct {
 	Remaining *int `json:"remaining,omitempty"`
 	// State undocumented
 	State *string `json:"state,omitempty"`
+	// StoragePlanInformation undocumented
+	StoragePlanInformation *StoragePlanInformation `json:"storagePlanInformation,omitempty"`
 	// Total undocumented
 	Total *int `json:"total,omitempty"`
 	// Used undocumented

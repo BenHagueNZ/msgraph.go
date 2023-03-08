@@ -4,18 +4,18 @@ package msgraph
 
 import "time"
 
-// RemoteAssistancePartner remoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.
+// RemoteAssistancePartner RemoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.
 type RemoteAssistancePartner struct {
 	// Entity is the base model of RemoteAssistancePartner
 	Entity
 	// DisplayName Display name of the partner.
 	DisplayName *string `json:"displayName,omitempty"`
-	// OnboardingURL URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
-	OnboardingURL *string `json:"onboardingUrl,omitempty"`
-	// OnboardingStatus TBD
-	OnboardingStatus *RemoteAssistanceOnboardingStatus `json:"onboardingStatus,omitempty"`
 	// LastConnectionDateTime Timestamp of the last request sent to Intune by the TEM partner.
 	LastConnectionDateTime *time.Time `json:"lastConnectionDateTime,omitempty"`
+	// OnboardingStatus A friendly description of the current TeamViewer connector status
+	OnboardingStatus *RemoteAssistanceOnboardingStatus `json:"onboardingStatus,omitempty"`
+	// OnboardingURL URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
+	OnboardingURL *string `json:"onboardingUrl,omitempty"`
 }
 
 // RemoteItem undocumented
@@ -34,6 +34,8 @@ type RemoteItem struct {
 	Folder *Folder `json:"folder,omitempty"`
 	// ID undocumented
 	ID *string `json:"id,omitempty"`
+	// Image undocumented
+	Image *Image `json:"image,omitempty"`
 	// LastModifiedBy undocumented
 	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
 	// LastModifiedDateTime undocumented
@@ -52,13 +54,15 @@ type RemoteItem struct {
 	Size *int `json:"size,omitempty"`
 	// SpecialFolder undocumented
 	SpecialFolder *SpecialFolder `json:"specialFolder,omitempty"`
+	// Video undocumented
+	Video *Video `json:"video,omitempty"`
 	// WebDavURL undocumented
 	WebDavURL *string `json:"webDavUrl,omitempty"`
 	// WebURL undocumented
 	WebURL *string `json:"webUrl,omitempty"`
 }
 
-// RemoteLockActionResult undocumented
+// RemoteLockActionResult Lock action result with a pin to unlock
 type RemoteLockActionResult struct {
 	// DeviceActionResult is the base model of RemoteLockActionResult
 	DeviceActionResult

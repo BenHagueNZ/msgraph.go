@@ -37,7 +37,6 @@ func (r *MailFolderRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-//
 type MailFolderCopyRequestBuilder struct{ BaseRequestBuilder }
 
 // Copy action undocumented
@@ -48,23 +47,19 @@ func (b *MailFolderRequestBuilder) Copy(reqObj *MailFolderCopyRequestParameter) 
 	return bb
 }
 
-//
 type MailFolderCopyRequest struct{ BaseRequest }
 
-//
 func (b *MailFolderCopyRequestBuilder) Request() *MailFolderCopyRequest {
 	return &MailFolderCopyRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *MailFolderCopyRequest) Post(ctx context.Context) (resObj *MailFolder, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type MailFolderMoveRequestBuilder struct{ BaseRequestBuilder }
 
 // Move action undocumented
@@ -75,17 +70,14 @@ func (b *MailFolderRequestBuilder) Move(reqObj *MailFolderMoveRequestParameter) 
 	return bb
 }
 
-//
 type MailFolderMoveRequest struct{ BaseRequest }
 
-//
 func (b *MailFolderMoveRequestBuilder) Request() *MailFolderMoveRequest {
 	return &MailFolderMoveRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *MailFolderMoveRequest) Post(ctx context.Context) (resObj *MailFolder, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

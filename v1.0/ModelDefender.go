@@ -2,16 +2,16 @@
 
 package msgraph
 
-// DefenderDetectedMalwareActions undocumented
+// DefenderDetectedMalwareActions Specify Defender’s actions to take on detected Malware per threat level.
 type DefenderDetectedMalwareActions struct {
 	// Object is the base model of DefenderDetectedMalwareActions
 	Object
+	// HighSeverity Indicates a Defender action to take for high severity Malware threat detected.
+	HighSeverity *DefenderThreatAction `json:"highSeverity,omitempty"`
 	// LowSeverity Indicates a Defender action to take for low severity Malware threat detected.
 	LowSeverity *DefenderThreatAction `json:"lowSeverity,omitempty"`
 	// ModerateSeverity Indicates a Defender action to take for moderate severity Malware threat detected.
 	ModerateSeverity *DefenderThreatAction `json:"moderateSeverity,omitempty"`
-	// HighSeverity Indicates a Defender action to take for high severity Malware threat detected.
-	HighSeverity *DefenderThreatAction `json:"highSeverity,omitempty"`
 	// SevereSeverity Indicates a Defender action to take for severe severity Malware threat detected.
 	SevereSeverity *DefenderThreatAction `json:"severeSeverity,omitempty"`
 }

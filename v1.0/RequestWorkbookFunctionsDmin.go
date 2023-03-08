@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsDminRequestBuilder struct{ BaseRequestBuilder }
 
 // Dmin action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Dmin(reqObj *WorkbookFunctionsDminRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsDminRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDminRequestBuilder) Request() *WorkbookFunctionsDminRequest {
 	return &WorkbookFunctionsDminRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDminRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

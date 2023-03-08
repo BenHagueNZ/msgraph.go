@@ -46,10 +46,26 @@ type AudioConferencing struct {
 	Object
 	// ConferenceID undocumented
 	ConferenceID *string `json:"conferenceId,omitempty"`
-	// TollNumber undocumented
-	TollNumber *string `json:"tollNumber,omitempty"`
-	// TollFreeNumber undocumented
-	TollFreeNumber *string `json:"tollFreeNumber,omitempty"`
 	// DialinURL undocumented
 	DialinURL *string `json:"dialinUrl,omitempty"`
+	// TollFreeNumber undocumented
+	TollFreeNumber *string `json:"tollFreeNumber,omitempty"`
+	// TollFreeNumbers undocumented
+	TollFreeNumbers []string `json:"tollFreeNumbers,omitempty"`
+	// TollNumber undocumented
+	TollNumber *string `json:"tollNumber,omitempty"`
+	// TollNumbers undocumented
+	TollNumbers []string `json:"tollNumbers,omitempty"`
+}
+
+// AudioRoutingGroup undocumented
+type AudioRoutingGroup struct {
+	// Entity is the base model of AudioRoutingGroup
+	Entity
+	// Receivers undocumented
+	Receivers []string `json:"receivers,omitempty"`
+	// RoutingMode undocumented
+	RoutingMode *RoutingMode `json:"routingMode,omitempty"`
+	// Sources undocumented
+	Sources []string `json:"sources,omitempty"`
 }

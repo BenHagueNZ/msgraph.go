@@ -2,30 +2,60 @@
 
 package msgraph
 
+// ContentApprovalStatusColumn undocumented
+type ContentApprovalStatusColumn struct {
+	// Object is the base model of ContentApprovalStatusColumn
+	Object
+}
+
+// ContentSharingSession undocumented
+type ContentSharingSession struct {
+	// Entity is the base model of ContentSharingSession
+	Entity
+}
+
 // ContentType undocumented
 type ContentType struct {
 	// Entity is the base model of ContentType
 	Entity
+	// AssociatedHubsUrls undocumented
+	AssociatedHubsUrls []string `json:"associatedHubsUrls,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
+	// DocumentSet undocumented
+	DocumentSet *DocumentSet `json:"documentSet,omitempty"`
+	// DocumentTemplate undocumented
+	DocumentTemplate *DocumentSetContent `json:"documentTemplate,omitempty"`
 	// Group undocumented
 	Group *string `json:"group,omitempty"`
 	// Hidden undocumented
 	Hidden *bool `json:"hidden,omitempty"`
 	// InheritedFrom undocumented
 	InheritedFrom *ItemReference `json:"inheritedFrom,omitempty"`
+	// IsBuiltIn undocumented
+	IsBuiltIn *bool `json:"isBuiltIn,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Order undocumented
 	Order *ContentTypeOrder `json:"order,omitempty"`
 	// ParentID undocumented
 	ParentID *string `json:"parentId,omitempty"`
+	// PropagateChanges undocumented
+	PropagateChanges *bool `json:"propagateChanges,omitempty"`
 	// ReadOnly undocumented
 	ReadOnly *bool `json:"readOnly,omitempty"`
 	// Sealed undocumented
 	Sealed *bool `json:"sealed,omitempty"`
+	// Base undocumented
+	Base *ContentType `json:"base,omitempty"`
+	// BaseTypes undocumented
+	BaseTypes []ContentType `json:"baseTypes,omitempty"`
 	// ColumnLinks undocumented
 	ColumnLinks []ColumnLink `json:"columnLinks,omitempty"`
+	// ColumnPositions undocumented
+	ColumnPositions []ColumnDefinition `json:"columnPositions,omitempty"`
+	// Columns undocumented
+	Columns []ColumnDefinition `json:"columns,omitempty"`
 }
 
 // ContentTypeInfo undocumented
@@ -34,6 +64,8 @@ type ContentTypeInfo struct {
 	Object
 	// ID undocumented
 	ID *string `json:"id,omitempty"`
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
 }
 
 // ContentTypeOrder undocumented

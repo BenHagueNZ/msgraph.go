@@ -11,18 +11,18 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// PostReplyRequestParameter undocumented
-type PostReplyRequestParameter struct {
-	// Post undocumented
-	Post *Post `json:"Post,omitempty"`
-}
-
 // PostForwardRequestParameter undocumented
 type PostForwardRequestParameter struct {
 	// Comment undocumented
 	Comment *string `json:"Comment,omitempty"`
 	// ToRecipients undocumented
 	ToRecipients []Recipient `json:"ToRecipients,omitempty"`
+}
+
+// PostReplyRequestParameter undocumented
+type PostReplyRequestParameter struct {
+	// Post undocumented
+	Post *Post `json:"Post,omitempty"`
 }
 
 // Attachments returns request builder for Attachment collection

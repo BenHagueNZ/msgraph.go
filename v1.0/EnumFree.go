@@ -6,6 +6,8 @@ package msgraph
 type FreeBusyStatus string
 
 const (
+	// FreeBusyStatusVUnknown undocumented
+	FreeBusyStatusVUnknown FreeBusyStatus = "unknown"
 	// FreeBusyStatusVFree undocumented
 	FreeBusyStatusVFree FreeBusyStatus = "free"
 	// FreeBusyStatusVTentative undocumented
@@ -16,11 +18,11 @@ const (
 	FreeBusyStatusVOof FreeBusyStatus = "oof"
 	// FreeBusyStatusVWorkingElsewhere undocumented
 	FreeBusyStatusVWorkingElsewhere FreeBusyStatus = "workingElsewhere"
-	// FreeBusyStatusVUnknown undocumented
-	FreeBusyStatusVUnknown FreeBusyStatus = "unknown"
 )
 
 var (
+	// FreeBusyStatusPUnknown is a pointer to FreeBusyStatusVUnknown
+	FreeBusyStatusPUnknown = &_FreeBusyStatusPUnknown
 	// FreeBusyStatusPFree is a pointer to FreeBusyStatusVFree
 	FreeBusyStatusPFree = &_FreeBusyStatusPFree
 	// FreeBusyStatusPTentative is a pointer to FreeBusyStatusVTentative
@@ -31,15 +33,13 @@ var (
 	FreeBusyStatusPOof = &_FreeBusyStatusPOof
 	// FreeBusyStatusPWorkingElsewhere is a pointer to FreeBusyStatusVWorkingElsewhere
 	FreeBusyStatusPWorkingElsewhere = &_FreeBusyStatusPWorkingElsewhere
-	// FreeBusyStatusPUnknown is a pointer to FreeBusyStatusVUnknown
-	FreeBusyStatusPUnknown = &_FreeBusyStatusPUnknown
 )
 
 var (
+	_FreeBusyStatusPUnknown          = FreeBusyStatusVUnknown
 	_FreeBusyStatusPFree             = FreeBusyStatusVFree
 	_FreeBusyStatusPTentative        = FreeBusyStatusVTentative
 	_FreeBusyStatusPBusy             = FreeBusyStatusVBusy
 	_FreeBusyStatusPOof              = FreeBusyStatusVOof
 	_FreeBusyStatusPWorkingElsewhere = FreeBusyStatusVWorkingElsewhere
-	_FreeBusyStatusPUnknown          = FreeBusyStatusVUnknown
 )

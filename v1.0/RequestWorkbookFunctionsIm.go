@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsImAbsRequestBuilder struct{ BaseRequestBuilder }
 
 // ImAbs action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImAbs(reqObj *WorkbookFunctionsImAbsRe
 	return bb
 }
 
-//
 type WorkbookFunctionsImAbsRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImAbsRequestBuilder) Request() *WorkbookFunctionsImAbsRequest {
 	return &WorkbookFunctionsImAbsRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImAbsRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImArgumentRequestBuilder struct{ BaseRequestBuilder }
 
 // ImArgument action undocumented
@@ -42,23 +37,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImArgument(reqObj *WorkbookFunctionsIm
 	return bb
 }
 
-//
 type WorkbookFunctionsImArgumentRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImArgumentRequestBuilder) Request() *WorkbookFunctionsImArgumentRequest {
 	return &WorkbookFunctionsImArgumentRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImArgumentRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImConjugateRequestBuilder struct{ BaseRequestBuilder }
 
 // ImConjugate action undocumented
@@ -69,23 +60,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImConjugate(reqObj *WorkbookFunctionsI
 	return bb
 }
 
-//
 type WorkbookFunctionsImConjugateRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImConjugateRequestBuilder) Request() *WorkbookFunctionsImConjugateRequest {
 	return &WorkbookFunctionsImConjugateRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImConjugateRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImCosRequestBuilder struct{ BaseRequestBuilder }
 
 // ImCos action undocumented
@@ -96,23 +83,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImCos(reqObj *WorkbookFunctionsImCosRe
 	return bb
 }
 
-//
 type WorkbookFunctionsImCosRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImCosRequestBuilder) Request() *WorkbookFunctionsImCosRequest {
 	return &WorkbookFunctionsImCosRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImCosRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImCoshRequestBuilder struct{ BaseRequestBuilder }
 
 // ImCosh action undocumented
@@ -123,23 +106,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImCosh(reqObj *WorkbookFunctionsImCosh
 	return bb
 }
 
-//
 type WorkbookFunctionsImCoshRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImCoshRequestBuilder) Request() *WorkbookFunctionsImCoshRequest {
 	return &WorkbookFunctionsImCoshRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImCoshRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImCotRequestBuilder struct{ BaseRequestBuilder }
 
 // ImCot action undocumented
@@ -150,23 +129,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImCot(reqObj *WorkbookFunctionsImCotRe
 	return bb
 }
 
-//
 type WorkbookFunctionsImCotRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImCotRequestBuilder) Request() *WorkbookFunctionsImCotRequest {
 	return &WorkbookFunctionsImCotRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImCotRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImCscRequestBuilder struct{ BaseRequestBuilder }
 
 // ImCsc action undocumented
@@ -177,23 +152,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImCsc(reqObj *WorkbookFunctionsImCscRe
 	return bb
 }
 
-//
 type WorkbookFunctionsImCscRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImCscRequestBuilder) Request() *WorkbookFunctionsImCscRequest {
 	return &WorkbookFunctionsImCscRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImCscRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImCschRequestBuilder struct{ BaseRequestBuilder }
 
 // ImCsch action undocumented
@@ -204,23 +175,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImCsch(reqObj *WorkbookFunctionsImCsch
 	return bb
 }
 
-//
 type WorkbookFunctionsImCschRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImCschRequestBuilder) Request() *WorkbookFunctionsImCschRequest {
 	return &WorkbookFunctionsImCschRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImCschRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImDivRequestBuilder struct{ BaseRequestBuilder }
 
 // ImDiv action undocumented
@@ -231,23 +198,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImDiv(reqObj *WorkbookFunctionsImDivRe
 	return bb
 }
 
-//
 type WorkbookFunctionsImDivRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImDivRequestBuilder) Request() *WorkbookFunctionsImDivRequest {
 	return &WorkbookFunctionsImDivRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImDivRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImExpRequestBuilder struct{ BaseRequestBuilder }
 
 // ImExp action undocumented
@@ -258,23 +221,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImExp(reqObj *WorkbookFunctionsImExpRe
 	return bb
 }
 
-//
 type WorkbookFunctionsImExpRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImExpRequestBuilder) Request() *WorkbookFunctionsImExpRequest {
 	return &WorkbookFunctionsImExpRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImExpRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImLnRequestBuilder struct{ BaseRequestBuilder }
 
 // ImLn action undocumented
@@ -285,23 +244,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImLn(reqObj *WorkbookFunctionsImLnRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsImLnRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImLnRequestBuilder) Request() *WorkbookFunctionsImLnRequest {
 	return &WorkbookFunctionsImLnRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImLnRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImLog10RequestBuilder struct{ BaseRequestBuilder }
 
 // ImLog10 action undocumented
@@ -312,23 +267,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImLog10(reqObj *WorkbookFunctionsImLog
 	return bb
 }
 
-//
 type WorkbookFunctionsImLog10Request struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImLog10RequestBuilder) Request() *WorkbookFunctionsImLog10Request {
 	return &WorkbookFunctionsImLog10Request{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImLog10Request) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImLog2RequestBuilder struct{ BaseRequestBuilder }
 
 // ImLog2 action undocumented
@@ -339,23 +290,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImLog2(reqObj *WorkbookFunctionsImLog2
 	return bb
 }
 
-//
 type WorkbookFunctionsImLog2Request struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImLog2RequestBuilder) Request() *WorkbookFunctionsImLog2Request {
 	return &WorkbookFunctionsImLog2Request{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImLog2Request) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImPowerRequestBuilder struct{ BaseRequestBuilder }
 
 // ImPower action undocumented
@@ -366,23 +313,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImPower(reqObj *WorkbookFunctionsImPow
 	return bb
 }
 
-//
 type WorkbookFunctionsImPowerRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImPowerRequestBuilder) Request() *WorkbookFunctionsImPowerRequest {
 	return &WorkbookFunctionsImPowerRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImPowerRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImProductRequestBuilder struct{ BaseRequestBuilder }
 
 // ImProduct action undocumented
@@ -393,23 +336,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImProduct(reqObj *WorkbookFunctionsImP
 	return bb
 }
 
-//
 type WorkbookFunctionsImProductRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImProductRequestBuilder) Request() *WorkbookFunctionsImProductRequest {
 	return &WorkbookFunctionsImProductRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImProductRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImRealRequestBuilder struct{ BaseRequestBuilder }
 
 // ImReal action undocumented
@@ -420,23 +359,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImReal(reqObj *WorkbookFunctionsImReal
 	return bb
 }
 
-//
 type WorkbookFunctionsImRealRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImRealRequestBuilder) Request() *WorkbookFunctionsImRealRequest {
 	return &WorkbookFunctionsImRealRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImRealRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImSecRequestBuilder struct{ BaseRequestBuilder }
 
 // ImSec action undocumented
@@ -447,23 +382,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImSec(reqObj *WorkbookFunctionsImSecRe
 	return bb
 }
 
-//
 type WorkbookFunctionsImSecRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImSecRequestBuilder) Request() *WorkbookFunctionsImSecRequest {
 	return &WorkbookFunctionsImSecRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImSecRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImSechRequestBuilder struct{ BaseRequestBuilder }
 
 // ImSech action undocumented
@@ -474,23 +405,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImSech(reqObj *WorkbookFunctionsImSech
 	return bb
 }
 
-//
 type WorkbookFunctionsImSechRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImSechRequestBuilder) Request() *WorkbookFunctionsImSechRequest {
 	return &WorkbookFunctionsImSechRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImSechRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImSinRequestBuilder struct{ BaseRequestBuilder }
 
 // ImSin action undocumented
@@ -501,23 +428,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImSin(reqObj *WorkbookFunctionsImSinRe
 	return bb
 }
 
-//
 type WorkbookFunctionsImSinRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImSinRequestBuilder) Request() *WorkbookFunctionsImSinRequest {
 	return &WorkbookFunctionsImSinRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImSinRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImSinhRequestBuilder struct{ BaseRequestBuilder }
 
 // ImSinh action undocumented
@@ -528,23 +451,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImSinh(reqObj *WorkbookFunctionsImSinh
 	return bb
 }
 
-//
 type WorkbookFunctionsImSinhRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImSinhRequestBuilder) Request() *WorkbookFunctionsImSinhRequest {
 	return &WorkbookFunctionsImSinhRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImSinhRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImSqrtRequestBuilder struct{ BaseRequestBuilder }
 
 // ImSqrt action undocumented
@@ -555,23 +474,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImSqrt(reqObj *WorkbookFunctionsImSqrt
 	return bb
 }
 
-//
 type WorkbookFunctionsImSqrtRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImSqrtRequestBuilder) Request() *WorkbookFunctionsImSqrtRequest {
 	return &WorkbookFunctionsImSqrtRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImSqrtRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImSubRequestBuilder struct{ BaseRequestBuilder }
 
 // ImSub action undocumented
@@ -582,23 +497,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImSub(reqObj *WorkbookFunctionsImSubRe
 	return bb
 }
 
-//
 type WorkbookFunctionsImSubRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImSubRequestBuilder) Request() *WorkbookFunctionsImSubRequest {
 	return &WorkbookFunctionsImSubRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImSubRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImSumRequestBuilder struct{ BaseRequestBuilder }
 
 // ImSum action undocumented
@@ -609,23 +520,19 @@ func (b *WorkbookFunctionsRequestBuilder) ImSum(reqObj *WorkbookFunctionsImSumRe
 	return bb
 }
 
-//
 type WorkbookFunctionsImSumRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImSumRequestBuilder) Request() *WorkbookFunctionsImSumRequest {
 	return &WorkbookFunctionsImSumRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImSumRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsImTanRequestBuilder struct{ BaseRequestBuilder }
 
 // ImTan action undocumented
@@ -636,17 +543,14 @@ func (b *WorkbookFunctionsRequestBuilder) ImTan(reqObj *WorkbookFunctionsImTanRe
 	return bb
 }
 
-//
 type WorkbookFunctionsImTanRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImTanRequestBuilder) Request() *WorkbookFunctionsImTanRequest {
 	return &WorkbookFunctionsImTanRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImTanRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsFindRequestBuilder struct{ BaseRequestBuilder }
 
 // Find action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Find(reqObj *WorkbookFunctionsFindRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsFindRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsFindRequestBuilder) Request() *WorkbookFunctionsFindRequest {
 	return &WorkbookFunctionsFindRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsFindRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsFindBRequestBuilder struct{ BaseRequestBuilder }
 
 // FindB action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) FindB(reqObj *WorkbookFunctionsFindBRe
 	return bb
 }
 
-//
 type WorkbookFunctionsFindBRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsFindBRequestBuilder) Request() *WorkbookFunctionsFindBRequest {
 	return &WorkbookFunctionsFindBRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsFindBRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

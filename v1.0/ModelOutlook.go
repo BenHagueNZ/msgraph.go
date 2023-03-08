@@ -8,40 +8,40 @@ import "time"
 type OutlookCategory struct {
 	// Entity is the base model of OutlookCategory
 	Entity
-	// DisplayName undocumented
-	DisplayName *string `json:"displayName,omitempty"`
 	// Color undocumented
 	Color *CategoryColor `json:"color,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
 }
 
 // OutlookGeoCoordinates undocumented
 type OutlookGeoCoordinates struct {
 	// Object is the base model of OutlookGeoCoordinates
 	Object
-	// Latitude undocumented
-	Latitude *float64 `json:"latitude,omitempty"`
-	// Longitude undocumented
-	Longitude *float64 `json:"longitude,omitempty"`
 	// Accuracy undocumented
 	Accuracy *float64 `json:"accuracy,omitempty"`
 	// Altitude undocumented
 	Altitude *float64 `json:"altitude,omitempty"`
 	// AltitudeAccuracy undocumented
 	AltitudeAccuracy *float64 `json:"altitudeAccuracy,omitempty"`
+	// Latitude undocumented
+	Latitude *float64 `json:"latitude,omitempty"`
+	// Longitude undocumented
+	Longitude *float64 `json:"longitude,omitempty"`
 }
 
 // OutlookItem undocumented
 type OutlookItem struct {
 	// Entity is the base model of OutlookItem
 	Entity
+	// Categories undocumented
+	Categories []string `json:"categories,omitempty"`
+	// ChangeKey undocumented
+	ChangeKey *string `json:"changeKey,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
-	// ChangeKey undocumented
-	ChangeKey *string `json:"changeKey,omitempty"`
-	// Categories undocumented
-	Categories []string `json:"categories,omitempty"`
 }
 
 // OutlookUser undocumented

@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsBitandRequestBuilder struct{ BaseRequestBuilder }
 
 // Bitand action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Bitand(reqObj *WorkbookFunctionsBitand
 	return bb
 }
 
-//
 type WorkbookFunctionsBitandRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsBitandRequestBuilder) Request() *WorkbookFunctionsBitandRequest {
 	return &WorkbookFunctionsBitandRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsBitandRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

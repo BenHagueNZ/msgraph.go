@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsDegreesRequestBuilder struct{ BaseRequestBuilder }
 
 // Degrees action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Degrees(reqObj *WorkbookFunctionsDegre
 	return bb
 }
 
-//
 type WorkbookFunctionsDegreesRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDegreesRequestBuilder) Request() *WorkbookFunctionsDegreesRequest {
 	return &WorkbookFunctionsDegreesRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDegreesRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

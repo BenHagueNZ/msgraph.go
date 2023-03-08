@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsHex2BinRequestBuilder struct{ BaseRequestBuilder }
 
 // Hex2Bin action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Hex2Bin(reqObj *WorkbookFunctionsHex2B
 	return bb
 }
 
-//
 type WorkbookFunctionsHex2BinRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsHex2BinRequestBuilder) Request() *WorkbookFunctionsHex2BinRequest {
 	return &WorkbookFunctionsHex2BinRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsHex2BinRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsHex2DecRequestBuilder struct{ BaseRequestBuilder }
 
 // Hex2Dec action undocumented
@@ -42,23 +37,19 @@ func (b *WorkbookFunctionsRequestBuilder) Hex2Dec(reqObj *WorkbookFunctionsHex2D
 	return bb
 }
 
-//
 type WorkbookFunctionsHex2DecRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsHex2DecRequestBuilder) Request() *WorkbookFunctionsHex2DecRequest {
 	return &WorkbookFunctionsHex2DecRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsHex2DecRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsHex2OctRequestBuilder struct{ BaseRequestBuilder }
 
 // Hex2Oct action undocumented
@@ -69,17 +60,14 @@ func (b *WorkbookFunctionsRequestBuilder) Hex2Oct(reqObj *WorkbookFunctionsHex2O
 	return bb
 }
 
-//
 type WorkbookFunctionsHex2OctRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsHex2OctRequestBuilder) Request() *WorkbookFunctionsHex2OctRequest {
 	return &WorkbookFunctionsHex2OctRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsHex2OctRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

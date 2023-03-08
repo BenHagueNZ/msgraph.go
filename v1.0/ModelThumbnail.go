@@ -18,6 +18,12 @@ type Thumbnail struct {
 	Width *int `json:"width,omitempty"`
 }
 
+// ThumbnailColumn undocumented
+type ThumbnailColumn struct {
+	// Object is the base model of ThumbnailColumn
+	Object
+}
+
 // ThumbnailSet undocumented
 type ThumbnailSet struct {
 	// Entity is the base model of ThumbnailSet

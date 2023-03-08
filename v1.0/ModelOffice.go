@@ -6,10 +6,10 @@ package msgraph
 type OfficeGraphInsights struct {
 	// Entity is the base model of OfficeGraphInsights
 	Entity
-	// Trending undocumented
-	Trending []Trending `json:"trending,omitempty"`
 	// Shared undocumented
 	Shared []SharedInsight `json:"shared,omitempty"`
+	// Trending undocumented
+	Trending []Trending `json:"trending,omitempty"`
 	// Used undocumented
 	Used []UsedInsight `json:"used,omitempty"`
 }

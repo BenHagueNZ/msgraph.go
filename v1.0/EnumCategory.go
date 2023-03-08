@@ -6,6 +6,8 @@ package msgraph
 type CategoryColor string
 
 const (
+	// CategoryColorVNone undocumented
+	CategoryColorVNone CategoryColor = "none"
 	// CategoryColorVPreset0 undocumented
 	CategoryColorVPreset0 CategoryColor = "preset0"
 	// CategoryColorVPreset1 undocumented
@@ -56,11 +58,11 @@ const (
 	CategoryColorVPreset23 CategoryColor = "preset23"
 	// CategoryColorVPreset24 undocumented
 	CategoryColorVPreset24 CategoryColor = "preset24"
-	// CategoryColorVNone undocumented
-	CategoryColorVNone CategoryColor = "none"
 )
 
 var (
+	// CategoryColorPNone is a pointer to CategoryColorVNone
+	CategoryColorPNone = &_CategoryColorPNone
 	// CategoryColorPPreset0 is a pointer to CategoryColorVPreset0
 	CategoryColorPPreset0 = &_CategoryColorPPreset0
 	// CategoryColorPPreset1 is a pointer to CategoryColorVPreset1
@@ -111,11 +113,10 @@ var (
 	CategoryColorPPreset23 = &_CategoryColorPPreset23
 	// CategoryColorPPreset24 is a pointer to CategoryColorVPreset24
 	CategoryColorPPreset24 = &_CategoryColorPPreset24
-	// CategoryColorPNone is a pointer to CategoryColorVNone
-	CategoryColorPNone = &_CategoryColorPNone
 )
 
 var (
+	_CategoryColorPNone     = CategoryColorVNone
 	_CategoryColorPPreset0  = CategoryColorVPreset0
 	_CategoryColorPPreset1  = CategoryColorVPreset1
 	_CategoryColorPPreset2  = CategoryColorVPreset2
@@ -141,5 +142,4 @@ var (
 	_CategoryColorPPreset22 = CategoryColorVPreset22
 	_CategoryColorPPreset23 = CategoryColorVPreset23
 	_CategoryColorPPreset24 = CategoryColorVPreset24
-	_CategoryColorPNone     = CategoryColorVNone
 )

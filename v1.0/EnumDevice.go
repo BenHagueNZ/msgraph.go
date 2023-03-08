@@ -145,6 +145,12 @@ const (
 	DeviceEnrollmentTypeVWindowsBulkAzureDomainJoin DeviceEnrollmentType = "windowsBulkAzureDomainJoin"
 	// DeviceEnrollmentTypeVWindowsCoManagement undocumented
 	DeviceEnrollmentTypeVWindowsCoManagement DeviceEnrollmentType = "windowsCoManagement"
+	// DeviceEnrollmentTypeVWindowsAzureADJoinUsingDeviceAuth undocumented
+	DeviceEnrollmentTypeVWindowsAzureADJoinUsingDeviceAuth DeviceEnrollmentType = "windowsAzureADJoinUsingDeviceAuth"
+	// DeviceEnrollmentTypeVAppleUserEnrollment undocumented
+	DeviceEnrollmentTypeVAppleUserEnrollment DeviceEnrollmentType = "appleUserEnrollment"
+	// DeviceEnrollmentTypeVAppleUserEnrollmentWithServiceAccount undocumented
+	DeviceEnrollmentTypeVAppleUserEnrollmentWithServiceAccount DeviceEnrollmentType = "appleUserEnrollmentWithServiceAccount"
 )
 
 var (
@@ -168,19 +174,28 @@ var (
 	DeviceEnrollmentTypePWindowsBulkAzureDomainJoin = &_DeviceEnrollmentTypePWindowsBulkAzureDomainJoin
 	// DeviceEnrollmentTypePWindowsCoManagement is a pointer to DeviceEnrollmentTypeVWindowsCoManagement
 	DeviceEnrollmentTypePWindowsCoManagement = &_DeviceEnrollmentTypePWindowsCoManagement
+	// DeviceEnrollmentTypePWindowsAzureADJoinUsingDeviceAuth is a pointer to DeviceEnrollmentTypeVWindowsAzureADJoinUsingDeviceAuth
+	DeviceEnrollmentTypePWindowsAzureADJoinUsingDeviceAuth = &_DeviceEnrollmentTypePWindowsAzureADJoinUsingDeviceAuth
+	// DeviceEnrollmentTypePAppleUserEnrollment is a pointer to DeviceEnrollmentTypeVAppleUserEnrollment
+	DeviceEnrollmentTypePAppleUserEnrollment = &_DeviceEnrollmentTypePAppleUserEnrollment
+	// DeviceEnrollmentTypePAppleUserEnrollmentWithServiceAccount is a pointer to DeviceEnrollmentTypeVAppleUserEnrollmentWithServiceAccount
+	DeviceEnrollmentTypePAppleUserEnrollmentWithServiceAccount = &_DeviceEnrollmentTypePAppleUserEnrollmentWithServiceAccount
 )
 
 var (
-	_DeviceEnrollmentTypePUnknown                    = DeviceEnrollmentTypeVUnknown
-	_DeviceEnrollmentTypePUserEnrollment             = DeviceEnrollmentTypeVUserEnrollment
-	_DeviceEnrollmentTypePDeviceEnrollmentManager    = DeviceEnrollmentTypeVDeviceEnrollmentManager
-	_DeviceEnrollmentTypePAppleBulkWithUser          = DeviceEnrollmentTypeVAppleBulkWithUser
-	_DeviceEnrollmentTypePAppleBulkWithoutUser       = DeviceEnrollmentTypeVAppleBulkWithoutUser
-	_DeviceEnrollmentTypePWindowsAzureADJoin         = DeviceEnrollmentTypeVWindowsAzureADJoin
-	_DeviceEnrollmentTypePWindowsBulkUserless        = DeviceEnrollmentTypeVWindowsBulkUserless
-	_DeviceEnrollmentTypePWindowsAutoEnrollment      = DeviceEnrollmentTypeVWindowsAutoEnrollment
-	_DeviceEnrollmentTypePWindowsBulkAzureDomainJoin = DeviceEnrollmentTypeVWindowsBulkAzureDomainJoin
-	_DeviceEnrollmentTypePWindowsCoManagement        = DeviceEnrollmentTypeVWindowsCoManagement
+	_DeviceEnrollmentTypePUnknown                               = DeviceEnrollmentTypeVUnknown
+	_DeviceEnrollmentTypePUserEnrollment                        = DeviceEnrollmentTypeVUserEnrollment
+	_DeviceEnrollmentTypePDeviceEnrollmentManager               = DeviceEnrollmentTypeVDeviceEnrollmentManager
+	_DeviceEnrollmentTypePAppleBulkWithUser                     = DeviceEnrollmentTypeVAppleBulkWithUser
+	_DeviceEnrollmentTypePAppleBulkWithoutUser                  = DeviceEnrollmentTypeVAppleBulkWithoutUser
+	_DeviceEnrollmentTypePWindowsAzureADJoin                    = DeviceEnrollmentTypeVWindowsAzureADJoin
+	_DeviceEnrollmentTypePWindowsBulkUserless                   = DeviceEnrollmentTypeVWindowsBulkUserless
+	_DeviceEnrollmentTypePWindowsAutoEnrollment                 = DeviceEnrollmentTypeVWindowsAutoEnrollment
+	_DeviceEnrollmentTypePWindowsBulkAzureDomainJoin            = DeviceEnrollmentTypeVWindowsBulkAzureDomainJoin
+	_DeviceEnrollmentTypePWindowsCoManagement                   = DeviceEnrollmentTypeVWindowsCoManagement
+	_DeviceEnrollmentTypePWindowsAzureADJoinUsingDeviceAuth     = DeviceEnrollmentTypeVWindowsAzureADJoinUsingDeviceAuth
+	_DeviceEnrollmentTypePAppleUserEnrollment                   = DeviceEnrollmentTypeVAppleUserEnrollment
+	_DeviceEnrollmentTypePAppleUserEnrollmentWithServiceAccount = DeviceEnrollmentTypeVAppleUserEnrollmentWithServiceAccount
 )
 
 // DeviceManagementExchangeAccessState undocumented
@@ -324,6 +339,8 @@ const (
 	DeviceManagementExchangeConnectorStatusVConnected DeviceManagementExchangeConnectorStatus = "connected"
 	// DeviceManagementExchangeConnectorStatusVDisconnected undocumented
 	DeviceManagementExchangeConnectorStatusVDisconnected DeviceManagementExchangeConnectorStatus = "disconnected"
+	// DeviceManagementExchangeConnectorStatusVUnknownFutureValue undocumented
+	DeviceManagementExchangeConnectorStatusVUnknownFutureValue DeviceManagementExchangeConnectorStatus = "unknownFutureValue"
 )
 
 var (
@@ -335,13 +352,16 @@ var (
 	DeviceManagementExchangeConnectorStatusPConnected = &_DeviceManagementExchangeConnectorStatusPConnected
 	// DeviceManagementExchangeConnectorStatusPDisconnected is a pointer to DeviceManagementExchangeConnectorStatusVDisconnected
 	DeviceManagementExchangeConnectorStatusPDisconnected = &_DeviceManagementExchangeConnectorStatusPDisconnected
+	// DeviceManagementExchangeConnectorStatusPUnknownFutureValue is a pointer to DeviceManagementExchangeConnectorStatusVUnknownFutureValue
+	DeviceManagementExchangeConnectorStatusPUnknownFutureValue = &_DeviceManagementExchangeConnectorStatusPUnknownFutureValue
 )
 
 var (
-	_DeviceManagementExchangeConnectorStatusPNone              = DeviceManagementExchangeConnectorStatusVNone
-	_DeviceManagementExchangeConnectorStatusPConnectionPending = DeviceManagementExchangeConnectorStatusVConnectionPending
-	_DeviceManagementExchangeConnectorStatusPConnected         = DeviceManagementExchangeConnectorStatusVConnected
-	_DeviceManagementExchangeConnectorStatusPDisconnected      = DeviceManagementExchangeConnectorStatusVDisconnected
+	_DeviceManagementExchangeConnectorStatusPNone               = DeviceManagementExchangeConnectorStatusVNone
+	_DeviceManagementExchangeConnectorStatusPConnectionPending  = DeviceManagementExchangeConnectorStatusVConnectionPending
+	_DeviceManagementExchangeConnectorStatusPConnected          = DeviceManagementExchangeConnectorStatusVConnected
+	_DeviceManagementExchangeConnectorStatusPDisconnected       = DeviceManagementExchangeConnectorStatusVDisconnected
+	_DeviceManagementExchangeConnectorStatusPUnknownFutureValue = DeviceManagementExchangeConnectorStatusVUnknownFutureValue
 )
 
 // DeviceManagementExchangeConnectorSyncType undocumented
@@ -378,6 +398,8 @@ const (
 	DeviceManagementExchangeConnectorTypeVServiceToService DeviceManagementExchangeConnectorType = "serviceToService"
 	// DeviceManagementExchangeConnectorTypeVDedicated undocumented
 	DeviceManagementExchangeConnectorTypeVDedicated DeviceManagementExchangeConnectorType = "dedicated"
+	// DeviceManagementExchangeConnectorTypeVUnknownFutureValue undocumented
+	DeviceManagementExchangeConnectorTypeVUnknownFutureValue DeviceManagementExchangeConnectorType = "unknownFutureValue"
 )
 
 var (
@@ -389,13 +411,38 @@ var (
 	DeviceManagementExchangeConnectorTypePServiceToService = &_DeviceManagementExchangeConnectorTypePServiceToService
 	// DeviceManagementExchangeConnectorTypePDedicated is a pointer to DeviceManagementExchangeConnectorTypeVDedicated
 	DeviceManagementExchangeConnectorTypePDedicated = &_DeviceManagementExchangeConnectorTypePDedicated
+	// DeviceManagementExchangeConnectorTypePUnknownFutureValue is a pointer to DeviceManagementExchangeConnectorTypeVUnknownFutureValue
+	DeviceManagementExchangeConnectorTypePUnknownFutureValue = &_DeviceManagementExchangeConnectorTypePUnknownFutureValue
 )
 
 var (
-	_DeviceManagementExchangeConnectorTypePOnPremises       = DeviceManagementExchangeConnectorTypeVOnPremises
-	_DeviceManagementExchangeConnectorTypePHosted           = DeviceManagementExchangeConnectorTypeVHosted
-	_DeviceManagementExchangeConnectorTypePServiceToService = DeviceManagementExchangeConnectorTypeVServiceToService
-	_DeviceManagementExchangeConnectorTypePDedicated        = DeviceManagementExchangeConnectorTypeVDedicated
+	_DeviceManagementExchangeConnectorTypePOnPremises         = DeviceManagementExchangeConnectorTypeVOnPremises
+	_DeviceManagementExchangeConnectorTypePHosted             = DeviceManagementExchangeConnectorTypeVHosted
+	_DeviceManagementExchangeConnectorTypePServiceToService   = DeviceManagementExchangeConnectorTypeVServiceToService
+	_DeviceManagementExchangeConnectorTypePDedicated          = DeviceManagementExchangeConnectorTypeVDedicated
+	_DeviceManagementExchangeConnectorTypePUnknownFutureValue = DeviceManagementExchangeConnectorTypeVUnknownFutureValue
+)
+
+// DeviceManagementExportJobLocalizationType undocumented
+type DeviceManagementExportJobLocalizationType string
+
+const (
+	// DeviceManagementExportJobLocalizationTypeVLocalizedValuesAsAdditionalColumn undocumented
+	DeviceManagementExportJobLocalizationTypeVLocalizedValuesAsAdditionalColumn DeviceManagementExportJobLocalizationType = "localizedValuesAsAdditionalColumn"
+	// DeviceManagementExportJobLocalizationTypeVReplaceLocalizableValues undocumented
+	DeviceManagementExportJobLocalizationTypeVReplaceLocalizableValues DeviceManagementExportJobLocalizationType = "replaceLocalizableValues"
+)
+
+var (
+	// DeviceManagementExportJobLocalizationTypePLocalizedValuesAsAdditionalColumn is a pointer to DeviceManagementExportJobLocalizationTypeVLocalizedValuesAsAdditionalColumn
+	DeviceManagementExportJobLocalizationTypePLocalizedValuesAsAdditionalColumn = &_DeviceManagementExportJobLocalizationTypePLocalizedValuesAsAdditionalColumn
+	// DeviceManagementExportJobLocalizationTypePReplaceLocalizableValues is a pointer to DeviceManagementExportJobLocalizationTypeVReplaceLocalizableValues
+	DeviceManagementExportJobLocalizationTypePReplaceLocalizableValues = &_DeviceManagementExportJobLocalizationTypePReplaceLocalizableValues
+)
+
+var (
+	_DeviceManagementExportJobLocalizationTypePLocalizedValuesAsAdditionalColumn = DeviceManagementExportJobLocalizationTypeVLocalizedValuesAsAdditionalColumn
+	_DeviceManagementExportJobLocalizationTypePReplaceLocalizableValues          = DeviceManagementExportJobLocalizationTypeVReplaceLocalizableValues
 )
 
 // DeviceManagementPartnerAppType undocumented
@@ -465,6 +512,75 @@ var (
 	_DeviceManagementPartnerTenantStatePTerminated   = DeviceManagementPartnerTenantStateVTerminated
 	_DeviceManagementPartnerTenantStatePRejected     = DeviceManagementPartnerTenantStateVRejected
 	_DeviceManagementPartnerTenantStatePUnresponsive = DeviceManagementPartnerTenantStateVUnresponsive
+)
+
+// DeviceManagementReportFileFormat undocumented
+type DeviceManagementReportFileFormat string
+
+const (
+	// DeviceManagementReportFileFormatVCsv undocumented
+	DeviceManagementReportFileFormatVCsv DeviceManagementReportFileFormat = "csv"
+	// DeviceManagementReportFileFormatVPdf undocumented
+	DeviceManagementReportFileFormatVPdf DeviceManagementReportFileFormat = "pdf"
+	// DeviceManagementReportFileFormatVJSON undocumented
+	DeviceManagementReportFileFormatVJSON DeviceManagementReportFileFormat = "json"
+	// DeviceManagementReportFileFormatVUnknownFutureValue undocumented
+	DeviceManagementReportFileFormatVUnknownFutureValue DeviceManagementReportFileFormat = "unknownFutureValue"
+)
+
+var (
+	// DeviceManagementReportFileFormatPCsv is a pointer to DeviceManagementReportFileFormatVCsv
+	DeviceManagementReportFileFormatPCsv = &_DeviceManagementReportFileFormatPCsv
+	// DeviceManagementReportFileFormatPPdf is a pointer to DeviceManagementReportFileFormatVPdf
+	DeviceManagementReportFileFormatPPdf = &_DeviceManagementReportFileFormatPPdf
+	// DeviceManagementReportFileFormatPJSON is a pointer to DeviceManagementReportFileFormatVJSON
+	DeviceManagementReportFileFormatPJSON = &_DeviceManagementReportFileFormatPJSON
+	// DeviceManagementReportFileFormatPUnknownFutureValue is a pointer to DeviceManagementReportFileFormatVUnknownFutureValue
+	DeviceManagementReportFileFormatPUnknownFutureValue = &_DeviceManagementReportFileFormatPUnknownFutureValue
+)
+
+var (
+	_DeviceManagementReportFileFormatPCsv                = DeviceManagementReportFileFormatVCsv
+	_DeviceManagementReportFileFormatPPdf                = DeviceManagementReportFileFormatVPdf
+	_DeviceManagementReportFileFormatPJSON               = DeviceManagementReportFileFormatVJSON
+	_DeviceManagementReportFileFormatPUnknownFutureValue = DeviceManagementReportFileFormatVUnknownFutureValue
+)
+
+// DeviceManagementReportStatus undocumented
+type DeviceManagementReportStatus string
+
+const (
+	// DeviceManagementReportStatusVUnknown undocumented
+	DeviceManagementReportStatusVUnknown DeviceManagementReportStatus = "unknown"
+	// DeviceManagementReportStatusVNotStarted undocumented
+	DeviceManagementReportStatusVNotStarted DeviceManagementReportStatus = "notStarted"
+	// DeviceManagementReportStatusVInProgress undocumented
+	DeviceManagementReportStatusVInProgress DeviceManagementReportStatus = "inProgress"
+	// DeviceManagementReportStatusVCompleted undocumented
+	DeviceManagementReportStatusVCompleted DeviceManagementReportStatus = "completed"
+	// DeviceManagementReportStatusVFailed undocumented
+	DeviceManagementReportStatusVFailed DeviceManagementReportStatus = "failed"
+)
+
+var (
+	// DeviceManagementReportStatusPUnknown is a pointer to DeviceManagementReportStatusVUnknown
+	DeviceManagementReportStatusPUnknown = &_DeviceManagementReportStatusPUnknown
+	// DeviceManagementReportStatusPNotStarted is a pointer to DeviceManagementReportStatusVNotStarted
+	DeviceManagementReportStatusPNotStarted = &_DeviceManagementReportStatusPNotStarted
+	// DeviceManagementReportStatusPInProgress is a pointer to DeviceManagementReportStatusVInProgress
+	DeviceManagementReportStatusPInProgress = &_DeviceManagementReportStatusPInProgress
+	// DeviceManagementReportStatusPCompleted is a pointer to DeviceManagementReportStatusVCompleted
+	DeviceManagementReportStatusPCompleted = &_DeviceManagementReportStatusPCompleted
+	// DeviceManagementReportStatusPFailed is a pointer to DeviceManagementReportStatusVFailed
+	DeviceManagementReportStatusPFailed = &_DeviceManagementReportStatusPFailed
+)
+
+var (
+	_DeviceManagementReportStatusPUnknown    = DeviceManagementReportStatusVUnknown
+	_DeviceManagementReportStatusPNotStarted = DeviceManagementReportStatusVNotStarted
+	_DeviceManagementReportStatusPInProgress = DeviceManagementReportStatusVInProgress
+	_DeviceManagementReportStatusPCompleted  = DeviceManagementReportStatusVCompleted
+	_DeviceManagementReportStatusPFailed     = DeviceManagementReportStatusVFailed
 )
 
 // DeviceManagementSubscriptionState undocumented

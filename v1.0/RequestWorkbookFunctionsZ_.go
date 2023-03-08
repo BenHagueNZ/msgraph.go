@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsZ_TestRequestBuilder struct{ BaseRequestBuilder }
 
 // Z_Test action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Z_Test(reqObj *WorkbookFunctionsZ_Test
 	return bb
 }
 
-//
 type WorkbookFunctionsZ_TestRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsZ_TestRequestBuilder) Request() *WorkbookFunctionsZ_TestRequest {
 	return &WorkbookFunctionsZ_TestRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsZ_TestRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

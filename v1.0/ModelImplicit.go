@@ -6,8 +6,8 @@ package msgraph
 type ImplicitGrantSettings struct {
 	// Object is the base model of ImplicitGrantSettings
 	Object
-	// EnableIDTokenIssuance undocumented
-	EnableIDTokenIssuance *bool `json:"enableIdTokenIssuance,omitempty"`
 	// EnableAccessTokenIssuance undocumented
 	EnableAccessTokenIssuance *bool `json:"enableAccessTokenIssuance,omitempty"`
+	// EnableIDTokenIssuance undocumented
+	EnableIDTokenIssuance *bool `json:"enableIdTokenIssuance,omitempty"`
 }

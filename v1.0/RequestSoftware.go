@@ -4,6 +4,39 @@ package msgraph
 
 import "context"
 
+// SoftwareOathAuthenticationMethodRequestBuilder is request builder for SoftwareOathAuthenticationMethod
+type SoftwareOathAuthenticationMethodRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SoftwareOathAuthenticationMethodRequest
+func (b *SoftwareOathAuthenticationMethodRequestBuilder) Request() *SoftwareOathAuthenticationMethodRequest {
+	return &SoftwareOathAuthenticationMethodRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SoftwareOathAuthenticationMethodRequest is request for SoftwareOathAuthenticationMethod
+type SoftwareOathAuthenticationMethodRequest struct{ BaseRequest }
+
+// Get performs GET request for SoftwareOathAuthenticationMethod
+func (r *SoftwareOathAuthenticationMethodRequest) Get(ctx context.Context) (resObj *SoftwareOathAuthenticationMethod, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SoftwareOathAuthenticationMethod
+func (r *SoftwareOathAuthenticationMethodRequest) Update(ctx context.Context, reqObj *SoftwareOathAuthenticationMethod) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SoftwareOathAuthenticationMethod
+func (r *SoftwareOathAuthenticationMethodRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // SoftwareUpdateStatusSummaryRequestBuilder is request builder for SoftwareUpdateStatusSummary
 type SoftwareUpdateStatusSummaryRequestBuilder struct{ BaseRequestBuilder }
 

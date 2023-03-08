@@ -37,7 +37,6 @@ func (r *NotebookRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-//
 type NotebookCollectionGetNotebookFromWebURLRequestBuilder struct{ BaseRequestBuilder }
 
 // GetNotebookFromWebURL action undocumented
@@ -48,23 +47,19 @@ func (b *OnenoteNotebooksCollectionRequestBuilder) GetNotebookFromWebURL(reqObj 
 	return bb
 }
 
-//
 type NotebookCollectionGetNotebookFromWebURLRequest struct{ BaseRequest }
 
-//
 func (b *NotebookCollectionGetNotebookFromWebURLRequestBuilder) Request() *NotebookCollectionGetNotebookFromWebURLRequest {
 	return &NotebookCollectionGetNotebookFromWebURLRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *NotebookCollectionGetNotebookFromWebURLRequest) Post(ctx context.Context) (resObj *CopyNotebookModel, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type NotebookCopyNotebookRequestBuilder struct{ BaseRequestBuilder }
 
 // CopyNotebook action undocumented
@@ -75,17 +70,14 @@ func (b *NotebookRequestBuilder) CopyNotebook(reqObj *NotebookCopyNotebookReques
 	return bb
 }
 
-//
 type NotebookCopyNotebookRequest struct{ BaseRequest }
 
-//
 func (b *NotebookCopyNotebookRequestBuilder) Request() *NotebookCopyNotebookRequest {
 	return &NotebookCopyNotebookRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *NotebookCopyNotebookRequest) Post(ctx context.Context) (resObj *OnenoteOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

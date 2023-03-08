@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsEvenRequestBuilder struct{ BaseRequestBuilder }
 
 // Even action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Even(reqObj *WorkbookFunctionsEvenRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsEvenRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsEvenRequestBuilder) Request() *WorkbookFunctionsEvenRequest {
 	return &WorkbookFunctionsEvenRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsEvenRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsTimeRequestBuilder struct{ BaseRequestBuilder }
 
 // Time action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Time(reqObj *WorkbookFunctionsTimeRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsTimeRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsTimeRequestBuilder) Request() *WorkbookFunctionsTimeRequest {
 	return &WorkbookFunctionsTimeRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsTimeRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

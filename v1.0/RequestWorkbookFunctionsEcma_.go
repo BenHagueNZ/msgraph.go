@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsEcma_CeilingRequestBuilder struct{ BaseRequestBuilder }
 
 // Ecma_Ceiling action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Ecma_Ceiling(reqObj *WorkbookFunctions
 	return bb
 }
 
-//
 type WorkbookFunctionsEcma_CeilingRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsEcma_CeilingRequestBuilder) Request() *WorkbookFunctionsEcma_CeilingRequest {
 	return &WorkbookFunctionsEcma_CeilingRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsEcma_CeilingRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

@@ -8,14 +8,72 @@ import "time"
 type Attachment struct {
 	// Entity is the base model of Attachment
 	Entity
+	// ContentType undocumented
+	ContentType *string `json:"contentType,omitempty"`
+	// IsInline undocumented
+	IsInline *bool `json:"isInline,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
-	// ContentType undocumented
-	ContentType *string `json:"contentType,omitempty"`
 	// Size undocumented
 	Size *int `json:"size,omitempty"`
+}
+
+// AttachmentBase undocumented
+type AttachmentBase struct {
+	// Entity is the base model of AttachmentBase
+	Entity
+	// ContentType undocumented
+	ContentType *string `json:"contentType,omitempty"`
+	// LastModifiedDateTime undocumented
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
+	// Size undocumented
+	Size *int `json:"size,omitempty"`
+}
+
+// AttachmentInfo undocumented
+type AttachmentInfo struct {
+	// Object is the base model of AttachmentInfo
+	Object
+	// AttachmentType undocumented
+	AttachmentType *AttachmentType `json:"attachmentType,omitempty"`
+	// ContentType undocumented
+	ContentType *string `json:"contentType,omitempty"`
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
+	// Size undocumented
+	Size *int `json:"size,omitempty"`
+}
+
+// AttachmentItem undocumented
+type AttachmentItem struct {
+	// Object is the base model of AttachmentItem
+	Object
+	// AttachmentType undocumented
+	AttachmentType *AttachmentType `json:"attachmentType,omitempty"`
+	// ContentID undocumented
+	ContentID *string `json:"contentId,omitempty"`
+	// ContentType undocumented
+	ContentType *string `json:"contentType,omitempty"`
 	// IsInline undocumented
 	IsInline *bool `json:"isInline,omitempty"`
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
+	// Size undocumented
+	Size *int `json:"size,omitempty"`
+}
+
+// AttachmentSession undocumented
+type AttachmentSession struct {
+	// Entity is the base model of AttachmentSession
+	Entity
+	// Content undocumented
+	Content *Stream `json:"content,omitempty"`
+	// ExpirationDateTime undocumented
+	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
+	// NextExpectedRanges undocumented
+	NextExpectedRanges []string `json:"nextExpectedRanges,omitempty"`
 }

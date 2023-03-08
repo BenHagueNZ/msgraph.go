@@ -223,3 +223,209 @@ func (b *TermsAndConditionsAcceptanceStatusRequestBuilder) TermsAndConditions() 
 	bb.baseURL += "/termsAndConditions"
 	return bb
 }
+
+// AgreementAcceptances returns request builder for AgreementAcceptance collection
+func (b *TermsOfUseContainerRequestBuilder) AgreementAcceptances() *TermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder {
+	bb := &TermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/agreementAcceptances"
+	return bb
+}
+
+// TermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder is request builder for AgreementAcceptance collection
+type TermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for AgreementAcceptance collection
+func (b *TermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder) Request() *TermsOfUseContainerAgreementAcceptancesCollectionRequest {
+	return &TermsOfUseContainerAgreementAcceptancesCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for AgreementAcceptance item
+func (b *TermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder) ID(id string) *AgreementAcceptanceRequestBuilder {
+	bb := &AgreementAcceptanceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// TermsOfUseContainerAgreementAcceptancesCollectionRequest is request for AgreementAcceptance collection
+type TermsOfUseContainerAgreementAcceptancesCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for AgreementAcceptance collection
+func (r *TermsOfUseContainerAgreementAcceptancesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AgreementAcceptance, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []AgreementAcceptance
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []AgreementAcceptance
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for AgreementAcceptance collection, max N pages
+func (r *TermsOfUseContainerAgreementAcceptancesCollectionRequest) GetN(ctx context.Context, n int) ([]AgreementAcceptance, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for AgreementAcceptance collection
+func (r *TermsOfUseContainerAgreementAcceptancesCollectionRequest) Get(ctx context.Context) ([]AgreementAcceptance, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for AgreementAcceptance collection
+func (r *TermsOfUseContainerAgreementAcceptancesCollectionRequest) Add(ctx context.Context, reqObj *AgreementAcceptance) (resObj *AgreementAcceptance, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Agreements returns request builder for Agreement collection
+func (b *TermsOfUseContainerRequestBuilder) Agreements() *TermsOfUseContainerAgreementsCollectionRequestBuilder {
+	bb := &TermsOfUseContainerAgreementsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/agreements"
+	return bb
+}
+
+// TermsOfUseContainerAgreementsCollectionRequestBuilder is request builder for Agreement collection
+type TermsOfUseContainerAgreementsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for Agreement collection
+func (b *TermsOfUseContainerAgreementsCollectionRequestBuilder) Request() *TermsOfUseContainerAgreementsCollectionRequest {
+	return &TermsOfUseContainerAgreementsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for Agreement item
+func (b *TermsOfUseContainerAgreementsCollectionRequestBuilder) ID(id string) *AgreementRequestBuilder {
+	bb := &AgreementRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// TermsOfUseContainerAgreementsCollectionRequest is request for Agreement collection
+type TermsOfUseContainerAgreementsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for Agreement collection
+func (r *TermsOfUseContainerAgreementsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Agreement, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []Agreement
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []Agreement
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for Agreement collection, max N pages
+func (r *TermsOfUseContainerAgreementsCollectionRequest) GetN(ctx context.Context, n int) ([]Agreement, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for Agreement collection
+func (r *TermsOfUseContainerAgreementsCollectionRequest) Get(ctx context.Context) ([]Agreement, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for Agreement collection
+func (r *TermsOfUseContainerAgreementsCollectionRequest) Add(ctx context.Context, reqObj *Agreement) (resObj *Agreement, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}

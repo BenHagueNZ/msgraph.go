@@ -7,6 +7,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"regexp"
 	"sort"
 	"strings"
 	"text/template"
@@ -109,7 +110,14 @@ func (g *Generator) Generate() error {
 	singletonMap := map[string]*Singleton{}
 	requestModelMap := map[string]bool{}
 	actionRequestBuilderMap := map[string][]string{}
-
+	//namespace := schema.AttrMap()["Namespace"] + "."
+	//alias := regexp.MustCompile("^" + schema.AttrMap()["Alias"] + "\\.")
+	//collectionAlias := regexp.MustCompile("^Collection\\(" + schema.AttrMap()["Alias"] + "\\.")
+	//collectionNamespace := "Collection(" + schema.AttrMap()["Namespace"] + "."
+	namespace := "microsoft.graph."
+	alias := regexp.MustCompile(`^graph\.`)
+	collectionAlias := regexp.MustCompile(`^Collection\(graph\.`)
+	collectionNamespace := "Collection(microsoft.graph."
 	for _, x := range schema.Elems {
 		switch x.XMLName.Local {
 		case "EnumType":
@@ -135,6 +143,7 @@ func (g *Generator) Generate() error {
 			}
 			t := nsPrefix + n
 			b, _ := m["BaseType"]
+			b = alias.ReplaceAllString(b, namespace)
 			et := &EntityType{Name: n, Sym: exported(n), Type: t, Base: b, Description: "undocumented"}
 			if strings.HasSuffix(et.Sym, "Request") {
 				et.Sym += "Object"
@@ -145,12 +154,14 @@ func (g *Generator) Generate() error {
 				switch y.XMLName.Local {
 				case "Property":
 					n := ma["Name"]
-					t := ma["Type"]
+					t := alias.ReplaceAllString(ma["Type"], namespace)
+					t = collectionAlias.ReplaceAllString(t, collectionNamespace)
 					m := &EntityTypeMember{Name: n, Sym: exported(n), Type: t, Description: "undocumented"}
 					et.Members = append(et.Members, m)
 				case "NavigationProperty":
 					n := ma["Name"]
-					t := ma["Type"]
+					t := alias.ReplaceAllString(ma["Type"], namespace)
+					t = collectionAlias.ReplaceAllString(t, collectionNamespace)
 					m := &EntityTypeNavigation{Name: n, Sym: exported(n), Type: t, Description: "undocumented"}
 					if strings.HasSuffix(m.Sym, "Request") {
 						m.Sym += "Navigation"
@@ -171,11 +182,13 @@ func (g *Generator) Generate() error {
 				switch y.XMLName.Local {
 				case "Parameter":
 					n := ma["Name"]
-					t := ma["Type"]
+					t := alias.ReplaceAllString(ma["Type"], namespace)
+					t = collectionAlias.ReplaceAllString(t, collectionNamespace)
 					m := &ActionTypeParameter{Name: n, Sym: exported(n), Type: t, Description: "undocumented"}
 					at.Parameters = append(at.Parameters, m)
 				case "ReturnType":
-					at.ReturnType = ma["Type"]
+					at.ReturnType = alias.ReplaceAllString(ma["Type"], namespace)
+					at.ReturnType = collectionAlias.ReplaceAllString(at.ReturnType, collectionNamespace)
 				}
 			}
 			at.BindingParameterType = at.Parameters[0].Type
@@ -196,7 +209,7 @@ func (g *Generator) Generate() error {
 					s := &Singleton{
 						Name: ma["Name"],
 						Sym:  exported(ma["Name"]),
-						Type: ma["Type"],
+						Type: alias.ReplaceAllString(ma["Type"], namespace),
 					}
 					singletonMap[s.Name] = s
 				}
@@ -312,6 +325,9 @@ func (g *Generator) Generate() error {
 	sort.Strings(keys)
 	for _, key := range keys {
 		x := entityTypeMap[key]
+		x.Type = alias.ReplaceAllString(x.Type, namespace)
+		x.Base = alias.ReplaceAllString(x.Base, namespace)
+
 		out, err = g.Create("Model", x.Sym)
 		if err != nil {
 			return err
@@ -330,9 +346,11 @@ func (g *Generator) Generate() error {
 	}
 	sort.Strings(keys)
 	for _, a := range keys {
+		a = collectionAlias.ReplaceAllString(a, collectionNamespace)
 		if _, ok := reservedTypeTable[a]; ok {
 			continue
 		}
+		fmt.Println(a)
 		x := actionTypeMap[a]
 		out, err = g.Create("Action", g.SymBaseType(a))
 		if err != nil {

@@ -120,3 +120,17 @@ func (r *RoleDefinitionRoleAssignmentsCollectionRequest) Add(ctx context.Context
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
+
+// Directory is navigation property
+func (b *RoleManagementRequestBuilder) Directory() *RbacApplicationRequestBuilder {
+	bb := &RbacApplicationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/directory"
+	return bb
+}
+
+// EntitlementManagement is navigation property
+func (b *RoleManagementRequestBuilder) EntitlementManagement() *RbacApplicationRequestBuilder {
+	bb := &RbacApplicationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/entitlementManagement"
+	return bb
+}

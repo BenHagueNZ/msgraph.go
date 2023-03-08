@@ -2,18 +2,124 @@
 
 package msgraph
 
+import "time"
+
 // Channel undocumented
 type Channel struct {
 	// Entity is the base model of Channel
 	Entity
-	// DisplayName undocumented
-	DisplayName *string `json:"displayName,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
+	// IsFavoriteByDefault undocumented
+	IsFavoriteByDefault *bool `json:"isFavoriteByDefault,omitempty"`
+	// MembershipType undocumented
+	MembershipType *ChannelMembershipType `json:"membershipType,omitempty"`
+	// TenantID undocumented
+	TenantID *string `json:"tenantId,omitempty"`
 	// WebURL undocumented
 	WebURL *string `json:"webUrl,omitempty"`
+	// FilesFolder undocumented
+	FilesFolder *DriveItem `json:"filesFolder,omitempty"`
+	// Members undocumented
+	Members []ConversationMember `json:"members,omitempty"`
+	// Messages undocumented
+	Messages []ChatMessage `json:"messages,omitempty"`
+	// SharedWithTeams undocumented
+	SharedWithTeams []SharedWithChannelTeamInfo `json:"sharedWithTeams,omitempty"`
 	// Tabs undocumented
 	Tabs []TeamsTab `json:"tabs,omitempty"`
+}
+
+// ChannelAddedEventMessageDetail undocumented
+type ChannelAddedEventMessageDetail struct {
+	// EventMessageDetail is the base model of ChannelAddedEventMessageDetail
+	EventMessageDetail
+	// ChannelDisplayName undocumented
+	ChannelDisplayName *string `json:"channelDisplayName,omitempty"`
+	// ChannelID undocumented
+	ChannelID *string `json:"channelId,omitempty"`
+	// Initiator undocumented
+	Initiator *IdentitySet `json:"initiator,omitempty"`
+}
+
+// ChannelDeletedEventMessageDetail undocumented
+type ChannelDeletedEventMessageDetail struct {
+	// EventMessageDetail is the base model of ChannelDeletedEventMessageDetail
+	EventMessageDetail
+	// ChannelDisplayName undocumented
+	ChannelDisplayName *string `json:"channelDisplayName,omitempty"`
+	// ChannelID undocumented
+	ChannelID *string `json:"channelId,omitempty"`
+	// Initiator undocumented
+	Initiator *IdentitySet `json:"initiator,omitempty"`
+}
+
+// ChannelDescriptionUpdatedEventMessageDetail undocumented
+type ChannelDescriptionUpdatedEventMessageDetail struct {
+	// EventMessageDetail is the base model of ChannelDescriptionUpdatedEventMessageDetail
+	EventMessageDetail
+	// ChannelDescription undocumented
+	ChannelDescription *string `json:"channelDescription,omitempty"`
+	// ChannelID undocumented
+	ChannelID *string `json:"channelId,omitempty"`
+	// Initiator undocumented
+	Initiator *IdentitySet `json:"initiator,omitempty"`
+}
+
+// ChannelIdentity undocumented
+type ChannelIdentity struct {
+	// Object is the base model of ChannelIdentity
+	Object
+	// ChannelID undocumented
+	ChannelID *string `json:"channelId,omitempty"`
+	// TeamID undocumented
+	TeamID *string `json:"teamId,omitempty"`
+}
+
+// ChannelMembersNotificationRecipient undocumented
+type ChannelMembersNotificationRecipient struct {
+	// TeamworkNotificationRecipient is the base model of ChannelMembersNotificationRecipient
+	TeamworkNotificationRecipient
+	// ChannelID undocumented
+	ChannelID *string `json:"channelId,omitempty"`
+	// TeamID undocumented
+	TeamID *string `json:"teamId,omitempty"`
+}
+
+// ChannelRenamedEventMessageDetail undocumented
+type ChannelRenamedEventMessageDetail struct {
+	// EventMessageDetail is the base model of ChannelRenamedEventMessageDetail
+	EventMessageDetail
+	// ChannelDisplayName undocumented
+	ChannelDisplayName *string `json:"channelDisplayName,omitempty"`
+	// ChannelID undocumented
+	ChannelID *string `json:"channelId,omitempty"`
+	// Initiator undocumented
+	Initiator *IdentitySet `json:"initiator,omitempty"`
+}
+
+// ChannelSetAsFavoriteByDefaultEventMessageDetail undocumented
+type ChannelSetAsFavoriteByDefaultEventMessageDetail struct {
+	// EventMessageDetail is the base model of ChannelSetAsFavoriteByDefaultEventMessageDetail
+	EventMessageDetail
+	// ChannelID undocumented
+	ChannelID *string `json:"channelId,omitempty"`
+	// Initiator undocumented
+	Initiator *IdentitySet `json:"initiator,omitempty"`
+}
+
+// ChannelUnsetAsFavoriteByDefaultEventMessageDetail undocumented
+type ChannelUnsetAsFavoriteByDefaultEventMessageDetail struct {
+	// EventMessageDetail is the base model of ChannelUnsetAsFavoriteByDefaultEventMessageDetail
+	EventMessageDetail
+	// ChannelID undocumented
+	ChannelID *string `json:"channelId,omitempty"`
+	// Initiator undocumented
+	Initiator *IdentitySet `json:"initiator,omitempty"`
 }

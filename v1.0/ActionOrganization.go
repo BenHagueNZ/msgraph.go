@@ -15,6 +15,13 @@ import (
 type OrganizationSetMobileDeviceManagementAuthorityRequestParameter struct {
 }
 
+// Branding is navigation property
+func (b *OrganizationRequestBuilder) Branding() *OrganizationalBrandingRequestBuilder {
+	bb := &OrganizationalBrandingRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/branding"
+	return bb
+}
+
 // CertificateBasedAuthConfiguration returns request builder for CertificateBasedAuthConfiguration collection
 func (b *OrganizationRequestBuilder) CertificateBasedAuthConfiguration() *OrganizationCertificateBasedAuthConfigurationCollectionRequestBuilder {
 	bb := &OrganizationCertificateBasedAuthConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}

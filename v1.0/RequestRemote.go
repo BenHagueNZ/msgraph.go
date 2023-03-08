@@ -37,7 +37,6 @@ func (r *RemoteAssistancePartnerRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-//
 type RemoteAssistancePartnerBeginOnboardingRequestBuilder struct{ BaseRequestBuilder }
 
 // BeginOnboarding action undocumented
@@ -48,22 +47,18 @@ func (b *RemoteAssistancePartnerRequestBuilder) BeginOnboarding(reqObj *RemoteAs
 	return bb
 }
 
-//
 type RemoteAssistancePartnerBeginOnboardingRequest struct{ BaseRequest }
 
-//
 func (b *RemoteAssistancePartnerBeginOnboardingRequestBuilder) Request() *RemoteAssistancePartnerBeginOnboardingRequest {
 	return &RemoteAssistancePartnerBeginOnboardingRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *RemoteAssistancePartnerBeginOnboardingRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type RemoteAssistancePartnerDisconnectRequestBuilder struct{ BaseRequestBuilder }
 
 // Disconnect action undocumented
@@ -74,17 +69,14 @@ func (b *RemoteAssistancePartnerRequestBuilder) Disconnect(reqObj *RemoteAssista
 	return bb
 }
 
-//
 type RemoteAssistancePartnerDisconnectRequest struct{ BaseRequest }
 
-//
 func (b *RemoteAssistancePartnerDisconnectRequestBuilder) Request() *RemoteAssistancePartnerDisconnectRequest {
 	return &RemoteAssistancePartnerDisconnectRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *RemoteAssistancePartnerDisconnectRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }

@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsRadiansRequestBuilder struct{ BaseRequestBuilder }
 
 // Radians action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Radians(reqObj *WorkbookFunctionsRadia
 	return bb
 }
 
-//
 type WorkbookFunctionsRadiansRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsRadiansRequestBuilder) Request() *WorkbookFunctionsRadiansRequest {
 	return &WorkbookFunctionsRadiansRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsRadiansRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

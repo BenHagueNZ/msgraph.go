@@ -331,11 +331,320 @@ func (r *ListItemsCollectionRequest) Add(ctx context.Context, reqObj *ListItem) 
 	return
 }
 
+// Operations returns request builder for RichLongRunningOperation collection
+func (b *ListRequestBuilder) Operations() *ListOperationsCollectionRequestBuilder {
+	bb := &ListOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/operations"
+	return bb
+}
+
+// ListOperationsCollectionRequestBuilder is request builder for RichLongRunningOperation collection
+type ListOperationsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for RichLongRunningOperation collection
+func (b *ListOperationsCollectionRequestBuilder) Request() *ListOperationsCollectionRequest {
+	return &ListOperationsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for RichLongRunningOperation item
+func (b *ListOperationsCollectionRequestBuilder) ID(id string) *RichLongRunningOperationRequestBuilder {
+	bb := &RichLongRunningOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// ListOperationsCollectionRequest is request for RichLongRunningOperation collection
+type ListOperationsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for RichLongRunningOperation collection
+func (r *ListOperationsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RichLongRunningOperation, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []RichLongRunningOperation
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []RichLongRunningOperation
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for RichLongRunningOperation collection, max N pages
+func (r *ListOperationsCollectionRequest) GetN(ctx context.Context, n int) ([]RichLongRunningOperation, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for RichLongRunningOperation collection
+func (r *ListOperationsCollectionRequest) Get(ctx context.Context) ([]RichLongRunningOperation, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for RichLongRunningOperation collection
+func (r *ListOperationsCollectionRequest) Add(ctx context.Context, reqObj *RichLongRunningOperation) (resObj *RichLongRunningOperation, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Subscriptions returns request builder for Subscription collection
+func (b *ListRequestBuilder) Subscriptions() *ListSubscriptionsCollectionRequestBuilder {
+	bb := &ListSubscriptionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/subscriptions"
+	return bb
+}
+
+// ListSubscriptionsCollectionRequestBuilder is request builder for Subscription collection
+type ListSubscriptionsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for Subscription collection
+func (b *ListSubscriptionsCollectionRequestBuilder) Request() *ListSubscriptionsCollectionRequest {
+	return &ListSubscriptionsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for Subscription item
+func (b *ListSubscriptionsCollectionRequestBuilder) ID(id string) *SubscriptionRequestBuilder {
+	bb := &SubscriptionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// ListSubscriptionsCollectionRequest is request for Subscription collection
+type ListSubscriptionsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for Subscription collection
+func (r *ListSubscriptionsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Subscription, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []Subscription
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []Subscription
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for Subscription collection, max N pages
+func (r *ListSubscriptionsCollectionRequest) GetN(ctx context.Context, n int) ([]Subscription, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for Subscription collection
+func (r *ListSubscriptionsCollectionRequest) Get(ctx context.Context) ([]Subscription, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for Subscription collection
+func (r *ListSubscriptionsCollectionRequest) Add(ctx context.Context, reqObj *Subscription) (resObj *Subscription, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Analytics is navigation property
 func (b *ListItemRequestBuilder) Analytics() *ItemAnalyticsRequestBuilder {
 	bb := &ItemAnalyticsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/analytics"
 	return bb
+}
+
+// DocumentSetVersions returns request builder for DocumentSetVersion collection
+func (b *ListItemRequestBuilder) DocumentSetVersions() *ListItemDocumentSetVersionsCollectionRequestBuilder {
+	bb := &ListItemDocumentSetVersionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/documentSetVersions"
+	return bb
+}
+
+// ListItemDocumentSetVersionsCollectionRequestBuilder is request builder for DocumentSetVersion collection
+type ListItemDocumentSetVersionsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DocumentSetVersion collection
+func (b *ListItemDocumentSetVersionsCollectionRequestBuilder) Request() *ListItemDocumentSetVersionsCollectionRequest {
+	return &ListItemDocumentSetVersionsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DocumentSetVersion item
+func (b *ListItemDocumentSetVersionsCollectionRequestBuilder) ID(id string) *DocumentSetVersionRequestBuilder {
+	bb := &DocumentSetVersionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// ListItemDocumentSetVersionsCollectionRequest is request for DocumentSetVersion collection
+type ListItemDocumentSetVersionsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DocumentSetVersion collection
+func (r *ListItemDocumentSetVersionsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DocumentSetVersion, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DocumentSetVersion
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DocumentSetVersion
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DocumentSetVersion collection, max N pages
+func (r *ListItemDocumentSetVersionsCollectionRequest) GetN(ctx context.Context, n int) ([]DocumentSetVersion, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DocumentSetVersion collection
+func (r *ListItemDocumentSetVersionsCollectionRequest) Get(ctx context.Context) ([]DocumentSetVersion, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DocumentSetVersion collection
+func (r *ListItemDocumentSetVersionsCollectionRequest) Add(ctx context.Context, reqObj *DocumentSetVersion) (resObj *DocumentSetVersion, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
 }
 
 // DriveItem is navigation property

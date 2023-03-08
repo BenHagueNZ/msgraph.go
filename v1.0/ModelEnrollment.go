@@ -2,11 +2,11 @@
 
 package msgraph
 
-// EnrollmentConfigurationAssignment undocumented
+// EnrollmentConfigurationAssignment Enrollment Configuration Assignment
 type EnrollmentConfigurationAssignment struct {
 	// Entity is the base model of EnrollmentConfigurationAssignment
 	Entity
-	// Target undocumented
+	// Target Represents an assignment to managed devices in the tenant
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
 
@@ -14,14 +14,6 @@ type EnrollmentConfigurationAssignment struct {
 type EnrollmentTroubleshootingEvent struct {
 	// DeviceManagementTroubleshootingEvent is the base model of EnrollmentTroubleshootingEvent
 	DeviceManagementTroubleshootingEvent
-	// ManagedDeviceIdentifier Device identifier created or collected by Intune.
-	ManagedDeviceIdentifier *string `json:"managedDeviceIdentifier,omitempty"`
-	// OperatingSystem Operating System.
-	OperatingSystem *string `json:"operatingSystem,omitempty"`
-	// OsVersion OS Version.
-	OsVersion *string `json:"osVersion,omitempty"`
-	// UserID Identifier for the user that tried to enroll the device.
-	UserID *string `json:"userId,omitempty"`
 	// DeviceID Azure AD device identifier.
 	DeviceID *string `json:"deviceId,omitempty"`
 	// EnrollmentType Type of the enrollment.
@@ -30,4 +22,12 @@ type EnrollmentTroubleshootingEvent struct {
 	FailureCategory *DeviceEnrollmentFailureReason `json:"failureCategory,omitempty"`
 	// FailureReason Detailed failure reason.
 	FailureReason *string `json:"failureReason,omitempty"`
+	// ManagedDeviceIdentifier Device identifier created or collected by Intune.
+	ManagedDeviceIdentifier *string `json:"managedDeviceIdentifier,omitempty"`
+	// OperatingSystem Operating System.
+	OperatingSystem *string `json:"operatingSystem,omitempty"`
+	// OsVersion OS Version.
+	OsVersion *string `json:"osVersion,omitempty"`
+	// UserID Identifier for the user that tried to enroll the device.
+	UserID *string `json:"userId,omitempty"`
 }

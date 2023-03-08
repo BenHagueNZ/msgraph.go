@@ -6,10 +6,10 @@ package msgraph
 type ConvertIDResult struct {
 	// Object is the base model of ConvertIDResult
 	Object
+	// ErrorDetails undocumented
+	ErrorDetails *GenericError `json:"errorDetails,omitempty"`
 	// SourceID undocumented
 	SourceID *string `json:"sourceId,omitempty"`
 	// TargetID undocumented
 	TargetID *string `json:"targetId,omitempty"`
-	// ErrorDetails undocumented
-	ErrorDetails *GenericError `json:"errorDetails,omitempty"`
 }

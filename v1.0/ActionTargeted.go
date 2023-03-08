@@ -21,12 +21,22 @@ type TargetedManagedAppConfigurationAssignRequestParameter struct {
 type TargetedManagedAppConfigurationTargetAppsRequestParameter struct {
 	// Apps undocumented
 	Apps []ManagedMobileApp `json:"apps,omitempty"`
+	// AppGroupType undocumented
+	AppGroupType *TargetedManagedAppGroupType `json:"appGroupType,omitempty"`
 }
 
 // TargetedManagedAppProtectionAssignRequestParameter undocumented
 type TargetedManagedAppProtectionAssignRequestParameter struct {
 	// Assignments undocumented
 	Assignments []TargetedManagedAppPolicyAssignment `json:"assignments,omitempty"`
+}
+
+// TargetedManagedAppProtectionTargetAppsRequestParameter undocumented
+type TargetedManagedAppProtectionTargetAppsRequestParameter struct {
+	// Apps undocumented
+	Apps []ManagedMobileApp `json:"apps,omitempty"`
+	// AppGroupType undocumented
+	AppGroupType *TargetedManagedAppGroupType `json:"appGroupType,omitempty"`
 }
 
 // Apps returns request builder for ManagedMobileApp collection

@@ -38,3 +38,60 @@ var (
 	_DataPolicyOperationStatusPFailed             = DataPolicyOperationStatusVFailed
 	_DataPolicyOperationStatusPUnknownFutureValue = DataPolicyOperationStatusVUnknownFutureValue
 )
+
+// DataSubjectType undocumented
+type DataSubjectType string
+
+const (
+	// DataSubjectTypeVCustomer undocumented
+	DataSubjectTypeVCustomer DataSubjectType = "customer"
+	// DataSubjectTypeVCurrentEmployee undocumented
+	DataSubjectTypeVCurrentEmployee DataSubjectType = "currentEmployee"
+	// DataSubjectTypeVFormerEmployee undocumented
+	DataSubjectTypeVFormerEmployee DataSubjectType = "formerEmployee"
+	// DataSubjectTypeVProspectiveEmployee undocumented
+	DataSubjectTypeVProspectiveEmployee DataSubjectType = "prospectiveEmployee"
+	// DataSubjectTypeVStudent undocumented
+	DataSubjectTypeVStudent DataSubjectType = "student"
+	// DataSubjectTypeVTeacher undocumented
+	DataSubjectTypeVTeacher DataSubjectType = "teacher"
+	// DataSubjectTypeVFaculty undocumented
+	DataSubjectTypeVFaculty DataSubjectType = "faculty"
+	// DataSubjectTypeVOther undocumented
+	DataSubjectTypeVOther DataSubjectType = "other"
+	// DataSubjectTypeVUnknownFutureValue undocumented
+	DataSubjectTypeVUnknownFutureValue DataSubjectType = "unknownFutureValue"
+)
+
+var (
+	// DataSubjectTypePCustomer is a pointer to DataSubjectTypeVCustomer
+	DataSubjectTypePCustomer = &_DataSubjectTypePCustomer
+	// DataSubjectTypePCurrentEmployee is a pointer to DataSubjectTypeVCurrentEmployee
+	DataSubjectTypePCurrentEmployee = &_DataSubjectTypePCurrentEmployee
+	// DataSubjectTypePFormerEmployee is a pointer to DataSubjectTypeVFormerEmployee
+	DataSubjectTypePFormerEmployee = &_DataSubjectTypePFormerEmployee
+	// DataSubjectTypePProspectiveEmployee is a pointer to DataSubjectTypeVProspectiveEmployee
+	DataSubjectTypePProspectiveEmployee = &_DataSubjectTypePProspectiveEmployee
+	// DataSubjectTypePStudent is a pointer to DataSubjectTypeVStudent
+	DataSubjectTypePStudent = &_DataSubjectTypePStudent
+	// DataSubjectTypePTeacher is a pointer to DataSubjectTypeVTeacher
+	DataSubjectTypePTeacher = &_DataSubjectTypePTeacher
+	// DataSubjectTypePFaculty is a pointer to DataSubjectTypeVFaculty
+	DataSubjectTypePFaculty = &_DataSubjectTypePFaculty
+	// DataSubjectTypePOther is a pointer to DataSubjectTypeVOther
+	DataSubjectTypePOther = &_DataSubjectTypePOther
+	// DataSubjectTypePUnknownFutureValue is a pointer to DataSubjectTypeVUnknownFutureValue
+	DataSubjectTypePUnknownFutureValue = &_DataSubjectTypePUnknownFutureValue
+)
+
+var (
+	_DataSubjectTypePCustomer            = DataSubjectTypeVCustomer
+	_DataSubjectTypePCurrentEmployee     = DataSubjectTypeVCurrentEmployee
+	_DataSubjectTypePFormerEmployee      = DataSubjectTypeVFormerEmployee
+	_DataSubjectTypePProspectiveEmployee = DataSubjectTypeVProspectiveEmployee
+	_DataSubjectTypePStudent             = DataSubjectTypeVStudent
+	_DataSubjectTypePTeacher             = DataSubjectTypeVTeacher
+	_DataSubjectTypePFaculty             = DataSubjectTypeVFaculty
+	_DataSubjectTypePOther               = DataSubjectTypeVOther
+	_DataSubjectTypePUnknownFutureValue  = DataSubjectTypeVUnknownFutureValue
+)

@@ -6,6 +6,8 @@ package msgraph
 type Attendee struct {
 	// AttendeeBase is the base model of Attendee
 	AttendeeBase
+	// ProposedNewTime undocumented
+	ProposedNewTime *TimeSlot `json:"proposedNewTime,omitempty"`
 	// Status undocumented
 	Status *ResponseStatus `json:"status,omitempty"`
 }

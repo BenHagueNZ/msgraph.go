@@ -2,6 +2,144 @@
 
 package msgraph
 
+// SearchAggregation undocumented
+type SearchAggregation struct {
+	// Object is the base model of SearchAggregation
+	Object
+	// Buckets undocumented
+	Buckets []SearchBucket `json:"buckets,omitempty"`
+	// Field undocumented
+	Field *string `json:"field,omitempty"`
+}
+
+// SearchAlteration undocumented
+type SearchAlteration struct {
+	// Object is the base model of SearchAlteration
+	Object
+	// AlteredHighlightedQueryString undocumented
+	AlteredHighlightedQueryString *string `json:"alteredHighlightedQueryString,omitempty"`
+	// AlteredQueryString undocumented
+	AlteredQueryString *string `json:"alteredQueryString,omitempty"`
+	// AlteredQueryTokens undocumented
+	AlteredQueryTokens []AlteredQueryToken `json:"alteredQueryTokens,omitempty"`
+}
+
+// SearchAlterationOptions undocumented
+type SearchAlterationOptions struct {
+	// Object is the base model of SearchAlterationOptions
+	Object
+	// EnableModification undocumented
+	EnableModification *bool `json:"enableModification,omitempty"`
+	// EnableSuggestion undocumented
+	EnableSuggestion *bool `json:"enableSuggestion,omitempty"`
+}
+
+// SearchBucket undocumented
+type SearchBucket struct {
+	// Object is the base model of SearchBucket
+	Object
+	// AggregationFilterToken undocumented
+	AggregationFilterToken *string `json:"aggregationFilterToken,omitempty"`
+	// Count undocumented
+	Count *int `json:"count,omitempty"`
+	// Key undocumented
+	Key *string `json:"key,omitempty"`
+}
+
+// SearchEntity undocumented
+type SearchEntity struct {
+	// Entity is the base model of SearchEntity
+	Entity
+}
+
+// SearchHit undocumented
+type SearchHit struct {
+	// Object is the base model of SearchHit
+	Object
+	// ContentSource undocumented
+	ContentSource *string `json:"contentSource,omitempty"`
+	// HitID undocumented
+	HitID *string `json:"hitId,omitempty"`
+	// Rank undocumented
+	Rank *int `json:"rank,omitempty"`
+	// ResultTemplateID undocumented
+	ResultTemplateID *string `json:"resultTemplateId,omitempty"`
+	// Summary undocumented
+	Summary *string `json:"summary,omitempty"`
+	// Resource undocumented
+	Resource *Entity `json:"resource,omitempty"`
+}
+
+// SearchHitsContainer undocumented
+type SearchHitsContainer struct {
+	// Object is the base model of SearchHitsContainer
+	Object
+	// Aggregations undocumented
+	Aggregations []SearchAggregation `json:"aggregations,omitempty"`
+	// Hits undocumented
+	Hits []SearchHit `json:"hits,omitempty"`
+	// MoreResultsAvailable undocumented
+	MoreResultsAvailable *bool `json:"moreResultsAvailable,omitempty"`
+	// Total undocumented
+	Total *int `json:"total,omitempty"`
+}
+
+// SearchQuery undocumented
+type SearchQuery struct {
+	// Object is the base model of SearchQuery
+	Object
+	// QueryString undocumented
+	QueryString *string `json:"queryString,omitempty"`
+}
+
+// SearchRequestObject undocumented
+type SearchRequestObject struct {
+	// Object is the base model of SearchRequestObject
+	Object
+	// AggregationFilters undocumented
+	AggregationFilters []string `json:"aggregationFilters,omitempty"`
+	// Aggregations undocumented
+	Aggregations []AggregationOption `json:"aggregations,omitempty"`
+	// ContentSources undocumented
+	ContentSources []string `json:"contentSources,omitempty"`
+	// EnableTopResults undocumented
+	EnableTopResults *bool `json:"enableTopResults,omitempty"`
+	// EntityTypes undocumented
+	EntityTypes []EntityType `json:"entityTypes,omitempty"`
+	// Fields undocumented
+	Fields []string `json:"fields,omitempty"`
+	// From undocumented
+	From *int `json:"from,omitempty"`
+	// Query undocumented
+	Query *SearchQuery `json:"query,omitempty"`
+	// QueryAlterationOptions undocumented
+	QueryAlterationOptions *SearchAlterationOptions `json:"queryAlterationOptions,omitempty"`
+	// Region undocumented
+	Region *string `json:"region,omitempty"`
+	// ResultTemplateOptions undocumented
+	ResultTemplateOptions *ResultTemplateOption `json:"resultTemplateOptions,omitempty"`
+	// SharePointOneDriveOptions undocumented
+	SharePointOneDriveOptions *SharePointOneDriveOptions `json:"sharePointOneDriveOptions,omitempty"`
+	// Size undocumented
+	Size *int `json:"size,omitempty"`
+	// SortProperties undocumented
+	SortProperties []SortProperty `json:"sortProperties,omitempty"`
+}
+
+// SearchResponse undocumented
+type SearchResponse struct {
+	// Object is the base model of SearchResponse
+	Object
+	// HitsContainers undocumented
+	HitsContainers []SearchHitsContainer `json:"hitsContainers,omitempty"`
+	// QueryAlterationResponse undocumented
+	QueryAlterationResponse *AlterationResponse `json:"queryAlterationResponse,omitempty"`
+	// ResultTemplates undocumented
+	ResultTemplates *ResultTemplateDictionary `json:"resultTemplates,omitempty"`
+	// SearchTerms undocumented
+	SearchTerms []string `json:"searchTerms,omitempty"`
+}
+
 // SearchResult undocumented
 type SearchResult struct {
 	// Object is the base model of SearchResult

@@ -6,14 +6,14 @@ package msgraph
 type CertificateAuthority struct {
 	// Object is the base model of CertificateAuthority
 	Object
-	// IsRootAuthority undocumented
-	IsRootAuthority *bool `json:"isRootAuthority,omitempty"`
+	// Certificate undocumented
+	Certificate *Binary `json:"certificate,omitempty"`
 	// CertificateRevocationListURL undocumented
 	CertificateRevocationListURL *string `json:"certificateRevocationListUrl,omitempty"`
 	// DeltaCertificateRevocationListURL undocumented
 	DeltaCertificateRevocationListURL *string `json:"deltaCertificateRevocationListUrl,omitempty"`
-	// Certificate undocumented
-	Certificate *Binary `json:"certificate,omitempty"`
+	// IsRootAuthority undocumented
+	IsRootAuthority *bool `json:"isRootAuthority,omitempty"`
 	// Issuer undocumented
 	Issuer *string `json:"issuer,omitempty"`
 	// IssuerSki undocumented

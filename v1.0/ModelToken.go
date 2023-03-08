@@ -2,6 +2,18 @@
 
 package msgraph
 
+// TokenIssuancePolicy undocumented
+type TokenIssuancePolicy struct {
+	// StsPolicy is the base model of TokenIssuancePolicy
+	StsPolicy
+}
+
+// TokenLifetimePolicy undocumented
+type TokenLifetimePolicy struct {
+	// StsPolicy is the base model of TokenLifetimePolicy
+	StsPolicy
+}
+
 // TokenMeetingInfo undocumented
 type TokenMeetingInfo struct {
 	// MeetingInfo is the base model of TokenMeetingInfo

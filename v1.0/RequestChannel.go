@@ -36,3 +36,70 @@ func (r *ChannelRequest) Update(ctx context.Context, reqObj *Channel) error {
 func (r *ChannelRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type ChannelCompleteMigrationRequestBuilder struct{ BaseRequestBuilder }
+
+// CompleteMigration action undocumented
+func (b *ChannelRequestBuilder) CompleteMigration(reqObj *ChannelCompleteMigrationRequestParameter) *ChannelCompleteMigrationRequestBuilder {
+	bb := &ChannelCompleteMigrationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/completeMigration"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ChannelCompleteMigrationRequest struct{ BaseRequest }
+
+func (b *ChannelCompleteMigrationRequestBuilder) Request() *ChannelCompleteMigrationRequest {
+	return &ChannelCompleteMigrationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ChannelCompleteMigrationRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type ChannelProvisionEmailRequestBuilder struct{ BaseRequestBuilder }
+
+// ProvisionEmail action undocumented
+func (b *ChannelRequestBuilder) ProvisionEmail(reqObj *ChannelProvisionEmailRequestParameter) *ChannelProvisionEmailRequestBuilder {
+	bb := &ChannelProvisionEmailRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/provisionEmail"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ChannelProvisionEmailRequest struct{ BaseRequest }
+
+func (b *ChannelProvisionEmailRequestBuilder) Request() *ChannelProvisionEmailRequest {
+	return &ChannelProvisionEmailRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ChannelProvisionEmailRequest) Post(ctx context.Context) (resObj *ProvisionChannelEmailResult, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type ChannelRemoveEmailRequestBuilder struct{ BaseRequestBuilder }
+
+// RemoveEmail action undocumented
+func (b *ChannelRequestBuilder) RemoveEmail(reqObj *ChannelRemoveEmailRequestParameter) *ChannelRemoveEmailRequestBuilder {
+	bb := &ChannelRemoveEmailRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/removeEmail"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ChannelRemoveEmailRequest struct{ BaseRequest }
+
+func (b *ChannelRemoveEmailRequestBuilder) Request() *ChannelRemoveEmailRequest {
+	return &ChannelRemoveEmailRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ChannelRemoveEmailRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}

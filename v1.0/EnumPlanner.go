@@ -2,6 +2,33 @@
 
 package msgraph
 
+// PlannerContainerType undocumented
+type PlannerContainerType string
+
+const (
+	// PlannerContainerTypeVGroup undocumented
+	PlannerContainerTypeVGroup PlannerContainerType = "group"
+	// PlannerContainerTypeVUnknownFutureValue undocumented
+	PlannerContainerTypeVUnknownFutureValue PlannerContainerType = "unknownFutureValue"
+	// PlannerContainerTypeVRoster undocumented
+	PlannerContainerTypeVRoster PlannerContainerType = "roster"
+)
+
+var (
+	// PlannerContainerTypePGroup is a pointer to PlannerContainerTypeVGroup
+	PlannerContainerTypePGroup = &_PlannerContainerTypePGroup
+	// PlannerContainerTypePUnknownFutureValue is a pointer to PlannerContainerTypeVUnknownFutureValue
+	PlannerContainerTypePUnknownFutureValue = &_PlannerContainerTypePUnknownFutureValue
+	// PlannerContainerTypePRoster is a pointer to PlannerContainerTypeVRoster
+	PlannerContainerTypePRoster = &_PlannerContainerTypePRoster
+)
+
+var (
+	_PlannerContainerTypePGroup              = PlannerContainerTypeVGroup
+	_PlannerContainerTypePUnknownFutureValue = PlannerContainerTypeVUnknownFutureValue
+	_PlannerContainerTypePRoster             = PlannerContainerTypeVRoster
+)
+
 // PlannerPreviewType undocumented
 type PlannerPreviewType string
 

@@ -11,6 +11,315 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
+// AgreementAcceptances returns request builder for AgreementAcceptance collection
+func (b *GraphServiceRequestBuilder) AgreementAcceptances() *GraphServiceAgreementAcceptancesCollectionRequestBuilder {
+	bb := &GraphServiceAgreementAcceptancesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/agreementAcceptances"
+	return bb
+}
+
+// GraphServiceAgreementAcceptancesCollectionRequestBuilder is request builder for AgreementAcceptance collection
+type GraphServiceAgreementAcceptancesCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for AgreementAcceptance collection
+func (b *GraphServiceAgreementAcceptancesCollectionRequestBuilder) Request() *GraphServiceAgreementAcceptancesCollectionRequest {
+	return &GraphServiceAgreementAcceptancesCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for AgreementAcceptance item
+func (b *GraphServiceAgreementAcceptancesCollectionRequestBuilder) ID(id string) *AgreementAcceptanceRequestBuilder {
+	bb := &AgreementAcceptanceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GraphServiceAgreementAcceptancesCollectionRequest is request for AgreementAcceptance collection
+type GraphServiceAgreementAcceptancesCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for AgreementAcceptance collection
+func (r *GraphServiceAgreementAcceptancesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AgreementAcceptance, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []AgreementAcceptance
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []AgreementAcceptance
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for AgreementAcceptance collection, max N pages
+func (r *GraphServiceAgreementAcceptancesCollectionRequest) GetN(ctx context.Context, n int) ([]AgreementAcceptance, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for AgreementAcceptance collection
+func (r *GraphServiceAgreementAcceptancesCollectionRequest) Get(ctx context.Context) ([]AgreementAcceptance, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for AgreementAcceptance collection
+func (r *GraphServiceAgreementAcceptancesCollectionRequest) Add(ctx context.Context, reqObj *AgreementAcceptance) (resObj *AgreementAcceptance, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Agreements returns request builder for Agreement collection
+func (b *GraphServiceRequestBuilder) Agreements() *GraphServiceAgreementsCollectionRequestBuilder {
+	bb := &GraphServiceAgreementsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/agreements"
+	return bb
+}
+
+// GraphServiceAgreementsCollectionRequestBuilder is request builder for Agreement collection
+type GraphServiceAgreementsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for Agreement collection
+func (b *GraphServiceAgreementsCollectionRequestBuilder) Request() *GraphServiceAgreementsCollectionRequest {
+	return &GraphServiceAgreementsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for Agreement item
+func (b *GraphServiceAgreementsCollectionRequestBuilder) ID(id string) *AgreementRequestBuilder {
+	bb := &AgreementRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GraphServiceAgreementsCollectionRequest is request for Agreement collection
+type GraphServiceAgreementsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for Agreement collection
+func (r *GraphServiceAgreementsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Agreement, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []Agreement
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []Agreement
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for Agreement collection, max N pages
+func (r *GraphServiceAgreementsCollectionRequest) GetN(ctx context.Context, n int) ([]Agreement, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for Agreement collection
+func (r *GraphServiceAgreementsCollectionRequest) Get(ctx context.Context) ([]Agreement, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for Agreement collection
+func (r *GraphServiceAgreementsCollectionRequest) Add(ctx context.Context, reqObj *Agreement) (resObj *Agreement, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// ApplicationTemplates returns request builder for ApplicationTemplate collection
+func (b *GraphServiceRequestBuilder) ApplicationTemplates() *GraphServiceApplicationTemplatesCollectionRequestBuilder {
+	bb := &GraphServiceApplicationTemplatesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/applicationTemplates"
+	return bb
+}
+
+// GraphServiceApplicationTemplatesCollectionRequestBuilder is request builder for ApplicationTemplate collection
+type GraphServiceApplicationTemplatesCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ApplicationTemplate collection
+func (b *GraphServiceApplicationTemplatesCollectionRequestBuilder) Request() *GraphServiceApplicationTemplatesCollectionRequest {
+	return &GraphServiceApplicationTemplatesCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ApplicationTemplate item
+func (b *GraphServiceApplicationTemplatesCollectionRequestBuilder) ID(id string) *ApplicationTemplateRequestBuilder {
+	bb := &ApplicationTemplateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GraphServiceApplicationTemplatesCollectionRequest is request for ApplicationTemplate collection
+type GraphServiceApplicationTemplatesCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ApplicationTemplate collection
+func (r *GraphServiceApplicationTemplatesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ApplicationTemplate, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ApplicationTemplate
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ApplicationTemplate
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ApplicationTemplate collection, max N pages
+func (r *GraphServiceApplicationTemplatesCollectionRequest) GetN(ctx context.Context, n int) ([]ApplicationTemplate, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ApplicationTemplate collection
+func (r *GraphServiceApplicationTemplatesCollectionRequest) Get(ctx context.Context) ([]ApplicationTemplate, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ApplicationTemplate collection
+func (r *GraphServiceApplicationTemplatesCollectionRequest) Add(ctx context.Context, reqObj *ApplicationTemplate) (resObj *ApplicationTemplate, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Applications returns request builder for Application collection
 func (b *GraphServiceRequestBuilder) Applications() *GraphServiceApplicationsCollectionRequestBuilder {
 	bb := &GraphServiceApplicationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -114,6 +423,109 @@ func (r *GraphServiceApplicationsCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
+// AuthenticationMethodConfigurations returns request builder for AuthenticationMethodConfiguration collection
+func (b *GraphServiceRequestBuilder) AuthenticationMethodConfigurations() *GraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder {
+	bb := &GraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/authenticationMethodConfigurations"
+	return bb
+}
+
+// GraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder is request builder for AuthenticationMethodConfiguration collection
+type GraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for AuthenticationMethodConfiguration collection
+func (b *GraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder) Request() *GraphServiceAuthenticationMethodConfigurationsCollectionRequest {
+	return &GraphServiceAuthenticationMethodConfigurationsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for AuthenticationMethodConfiguration item
+func (b *GraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder) ID(id string) *AuthenticationMethodConfigurationRequestBuilder {
+	bb := &AuthenticationMethodConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GraphServiceAuthenticationMethodConfigurationsCollectionRequest is request for AuthenticationMethodConfiguration collection
+type GraphServiceAuthenticationMethodConfigurationsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for AuthenticationMethodConfiguration collection
+func (r *GraphServiceAuthenticationMethodConfigurationsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AuthenticationMethodConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []AuthenticationMethodConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []AuthenticationMethodConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for AuthenticationMethodConfiguration collection, max N pages
+func (r *GraphServiceAuthenticationMethodConfigurationsCollectionRequest) GetN(ctx context.Context, n int) ([]AuthenticationMethodConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for AuthenticationMethodConfiguration collection
+func (r *GraphServiceAuthenticationMethodConfigurationsCollectionRequest) Get(ctx context.Context) ([]AuthenticationMethodConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for AuthenticationMethodConfiguration collection
+func (r *GraphServiceAuthenticationMethodConfigurationsCollectionRequest) Add(ctx context.Context, reqObj *AuthenticationMethodConfiguration) (resObj *AuthenticationMethodConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // CertificateBasedAuthConfiguration returns request builder for CertificateBasedAuthConfiguration collection
 func (b *GraphServiceRequestBuilder) CertificateBasedAuthConfiguration() *GraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder {
 	bb := &GraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -213,6 +625,212 @@ func (r *GraphServiceCertificateBasedAuthConfigurationCollectionRequest) Get(ctx
 
 // Add performs POST request for CertificateBasedAuthConfiguration collection
 func (r *GraphServiceCertificateBasedAuthConfigurationCollectionRequest) Add(ctx context.Context, reqObj *CertificateBasedAuthConfiguration) (resObj *CertificateBasedAuthConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Chats returns request builder for Chat collection
+func (b *GraphServiceRequestBuilder) Chats() *GraphServiceChatsCollectionRequestBuilder {
+	bb := &GraphServiceChatsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/chats"
+	return bb
+}
+
+// GraphServiceChatsCollectionRequestBuilder is request builder for Chat collection
+type GraphServiceChatsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for Chat collection
+func (b *GraphServiceChatsCollectionRequestBuilder) Request() *GraphServiceChatsCollectionRequest {
+	return &GraphServiceChatsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for Chat item
+func (b *GraphServiceChatsCollectionRequestBuilder) ID(id string) *ChatRequestBuilder {
+	bb := &ChatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GraphServiceChatsCollectionRequest is request for Chat collection
+type GraphServiceChatsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for Chat collection
+func (r *GraphServiceChatsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Chat, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []Chat
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []Chat
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for Chat collection, max N pages
+func (r *GraphServiceChatsCollectionRequest) GetN(ctx context.Context, n int) ([]Chat, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for Chat collection
+func (r *GraphServiceChatsCollectionRequest) Get(ctx context.Context) ([]Chat, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for Chat collection
+func (r *GraphServiceChatsCollectionRequest) Add(ctx context.Context, reqObj *Chat) (resObj *Chat, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Connections returns request builder for ExternalConnectors_externalConnection collection
+func (b *GraphServiceRequestBuilder) Connections() *GraphServiceConnectionsCollectionRequestBuilder {
+	bb := &GraphServiceConnectionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/connections"
+	return bb
+}
+
+// GraphServiceConnectionsCollectionRequestBuilder is request builder for ExternalConnectors_externalConnection collection
+type GraphServiceConnectionsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ExternalConnectors_externalConnection collection
+func (b *GraphServiceConnectionsCollectionRequestBuilder) Request() *GraphServiceConnectionsCollectionRequest {
+	return &GraphServiceConnectionsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ExternalConnectors_externalConnection item
+func (b *GraphServiceConnectionsCollectionRequestBuilder) ID(id string) *ExternalConnectors_externalConnectionRequestBuilder {
+	bb := &ExternalConnectors_externalConnectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GraphServiceConnectionsCollectionRequest is request for ExternalConnectors_externalConnection collection
+type GraphServiceConnectionsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ExternalConnectors_externalConnection collection
+func (r *GraphServiceConnectionsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ExternalConnectors_externalConnection, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ExternalConnectors_externalConnection
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ExternalConnectors_externalConnection
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ExternalConnectors_externalConnection collection, max N pages
+func (r *GraphServiceConnectionsCollectionRequest) GetN(ctx context.Context, n int) ([]ExternalConnectors_externalConnection, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ExternalConnectors_externalConnection collection
+func (r *GraphServiceConnectionsCollectionRequest) Get(ctx context.Context) ([]ExternalConnectors_externalConnection, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ExternalConnectors_externalConnection collection
+func (r *GraphServiceConnectionsCollectionRequest) Add(ctx context.Context, reqObj *ExternalConnectors_externalConnection) (resObj *ExternalConnectors_externalConnection, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -1865,6 +2483,212 @@ func (r *GraphServiceInvitationsCollectionRequest) Add(ctx context.Context, reqO
 	return
 }
 
+// Localizations returns request builder for OrganizationalBrandingLocalization collection
+func (b *GraphServiceRequestBuilder) Localizations() *GraphServiceLocalizationsCollectionRequestBuilder {
+	bb := &GraphServiceLocalizationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/localizations"
+	return bb
+}
+
+// GraphServiceLocalizationsCollectionRequestBuilder is request builder for OrganizationalBrandingLocalization collection
+type GraphServiceLocalizationsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for OrganizationalBrandingLocalization collection
+func (b *GraphServiceLocalizationsCollectionRequestBuilder) Request() *GraphServiceLocalizationsCollectionRequest {
+	return &GraphServiceLocalizationsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for OrganizationalBrandingLocalization item
+func (b *GraphServiceLocalizationsCollectionRequestBuilder) ID(id string) *OrganizationalBrandingLocalizationRequestBuilder {
+	bb := &OrganizationalBrandingLocalizationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GraphServiceLocalizationsCollectionRequest is request for OrganizationalBrandingLocalization collection
+type GraphServiceLocalizationsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for OrganizationalBrandingLocalization collection
+func (r *GraphServiceLocalizationsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]OrganizationalBrandingLocalization, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []OrganizationalBrandingLocalization
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []OrganizationalBrandingLocalization
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for OrganizationalBrandingLocalization collection, max N pages
+func (r *GraphServiceLocalizationsCollectionRequest) GetN(ctx context.Context, n int) ([]OrganizationalBrandingLocalization, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for OrganizationalBrandingLocalization collection
+func (r *GraphServiceLocalizationsCollectionRequest) Get(ctx context.Context) ([]OrganizationalBrandingLocalization, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for OrganizationalBrandingLocalization collection
+func (r *GraphServiceLocalizationsCollectionRequest) Add(ctx context.Context, reqObj *OrganizationalBrandingLocalization) (resObj *OrganizationalBrandingLocalization, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// OAuth2PermissionGrants returns request builder for OAuth2PermissionGrant collection
+func (b *GraphServiceRequestBuilder) OAuth2PermissionGrants() *GraphServiceOAuth2PermissionGrantsCollectionRequestBuilder {
+	bb := &GraphServiceOAuth2PermissionGrantsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/oauth2PermissionGrants"
+	return bb
+}
+
+// GraphServiceOAuth2PermissionGrantsCollectionRequestBuilder is request builder for OAuth2PermissionGrant collection
+type GraphServiceOAuth2PermissionGrantsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for OAuth2PermissionGrant collection
+func (b *GraphServiceOAuth2PermissionGrantsCollectionRequestBuilder) Request() *GraphServiceOAuth2PermissionGrantsCollectionRequest {
+	return &GraphServiceOAuth2PermissionGrantsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for OAuth2PermissionGrant item
+func (b *GraphServiceOAuth2PermissionGrantsCollectionRequestBuilder) ID(id string) *OAuth2PermissionGrantRequestBuilder {
+	bb := &OAuth2PermissionGrantRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GraphServiceOAuth2PermissionGrantsCollectionRequest is request for OAuth2PermissionGrant collection
+type GraphServiceOAuth2PermissionGrantsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for OAuth2PermissionGrant collection
+func (r *GraphServiceOAuth2PermissionGrantsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]OAuth2PermissionGrant, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []OAuth2PermissionGrant
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []OAuth2PermissionGrant
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for OAuth2PermissionGrant collection, max N pages
+func (r *GraphServiceOAuth2PermissionGrantsCollectionRequest) GetN(ctx context.Context, n int) ([]OAuth2PermissionGrant, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for OAuth2PermissionGrant collection
+func (r *GraphServiceOAuth2PermissionGrantsCollectionRequest) Get(ctx context.Context) ([]OAuth2PermissionGrant, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for OAuth2PermissionGrant collection
+func (r *GraphServiceOAuth2PermissionGrantsCollectionRequest) Add(ctx context.Context, reqObj *OAuth2PermissionGrant) (resObj *OAuth2PermissionGrant, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Organization returns request builder for Organization collection
 func (b *GraphServiceRequestBuilder) Organization() *GraphServiceOrganizationCollectionRequestBuilder {
 	bb := &GraphServiceOrganizationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -1968,6 +2792,212 @@ func (r *GraphServiceOrganizationCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
+// PermissionGrants returns request builder for ResourceSpecificPermissionGrant collection
+func (b *GraphServiceRequestBuilder) PermissionGrants() *GraphServicePermissionGrantsCollectionRequestBuilder {
+	bb := &GraphServicePermissionGrantsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/permissionGrants"
+	return bb
+}
+
+// GraphServicePermissionGrantsCollectionRequestBuilder is request builder for ResourceSpecificPermissionGrant collection
+type GraphServicePermissionGrantsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ResourceSpecificPermissionGrant collection
+func (b *GraphServicePermissionGrantsCollectionRequestBuilder) Request() *GraphServicePermissionGrantsCollectionRequest {
+	return &GraphServicePermissionGrantsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ResourceSpecificPermissionGrant item
+func (b *GraphServicePermissionGrantsCollectionRequestBuilder) ID(id string) *ResourceSpecificPermissionGrantRequestBuilder {
+	bb := &ResourceSpecificPermissionGrantRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GraphServicePermissionGrantsCollectionRequest is request for ResourceSpecificPermissionGrant collection
+type GraphServicePermissionGrantsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ResourceSpecificPermissionGrant collection
+func (r *GraphServicePermissionGrantsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ResourceSpecificPermissionGrant, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ResourceSpecificPermissionGrant
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ResourceSpecificPermissionGrant
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ResourceSpecificPermissionGrant collection, max N pages
+func (r *GraphServicePermissionGrantsCollectionRequest) GetN(ctx context.Context, n int) ([]ResourceSpecificPermissionGrant, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ResourceSpecificPermissionGrant collection
+func (r *GraphServicePermissionGrantsCollectionRequest) Get(ctx context.Context) ([]ResourceSpecificPermissionGrant, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ResourceSpecificPermissionGrant collection
+func (r *GraphServicePermissionGrantsCollectionRequest) Add(ctx context.Context, reqObj *ResourceSpecificPermissionGrant) (resObj *ResourceSpecificPermissionGrant, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Places returns request builder for Place collection
+func (b *GraphServiceRequestBuilder) Places() *GraphServicePlacesCollectionRequestBuilder {
+	bb := &GraphServicePlacesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/places"
+	return bb
+}
+
+// GraphServicePlacesCollectionRequestBuilder is request builder for Place collection
+type GraphServicePlacesCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for Place collection
+func (b *GraphServicePlacesCollectionRequestBuilder) Request() *GraphServicePlacesCollectionRequest {
+	return &GraphServicePlacesCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for Place item
+func (b *GraphServicePlacesCollectionRequestBuilder) ID(id string) *PlaceRequestBuilder {
+	bb := &PlaceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GraphServicePlacesCollectionRequest is request for Place collection
+type GraphServicePlacesCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for Place collection
+func (r *GraphServicePlacesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Place, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []Place
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []Place
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for Place collection, max N pages
+func (r *GraphServicePlacesCollectionRequest) GetN(ctx context.Context, n int) ([]Place, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for Place collection
+func (r *GraphServicePlacesCollectionRequest) Get(ctx context.Context) ([]Place, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for Place collection
+func (r *GraphServicePlacesCollectionRequest) Add(ctx context.Context, reqObj *Place) (resObj *Place, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // SchemaExtensions returns request builder for SchemaExtension collection
 func (b *GraphServiceRequestBuilder) SchemaExtensions() *GraphServiceSchemaExtensionsCollectionRequestBuilder {
 	bb := &GraphServiceSchemaExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -2067,6 +3097,212 @@ func (r *GraphServiceSchemaExtensionsCollectionRequest) Get(ctx context.Context)
 
 // Add performs POST request for SchemaExtension collection
 func (r *GraphServiceSchemaExtensionsCollectionRequest) Add(ctx context.Context, reqObj *SchemaExtension) (resObj *SchemaExtension, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// ScopedRoleMemberships returns request builder for ScopedRoleMembership collection
+func (b *GraphServiceRequestBuilder) ScopedRoleMemberships() *GraphServiceScopedRoleMembershipsCollectionRequestBuilder {
+	bb := &GraphServiceScopedRoleMembershipsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/scopedRoleMemberships"
+	return bb
+}
+
+// GraphServiceScopedRoleMembershipsCollectionRequestBuilder is request builder for ScopedRoleMembership collection
+type GraphServiceScopedRoleMembershipsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ScopedRoleMembership collection
+func (b *GraphServiceScopedRoleMembershipsCollectionRequestBuilder) Request() *GraphServiceScopedRoleMembershipsCollectionRequest {
+	return &GraphServiceScopedRoleMembershipsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ScopedRoleMembership item
+func (b *GraphServiceScopedRoleMembershipsCollectionRequestBuilder) ID(id string) *ScopedRoleMembershipRequestBuilder {
+	bb := &ScopedRoleMembershipRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GraphServiceScopedRoleMembershipsCollectionRequest is request for ScopedRoleMembership collection
+type GraphServiceScopedRoleMembershipsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ScopedRoleMembership collection
+func (r *GraphServiceScopedRoleMembershipsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ScopedRoleMembership, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ScopedRoleMembership
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ScopedRoleMembership
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ScopedRoleMembership collection, max N pages
+func (r *GraphServiceScopedRoleMembershipsCollectionRequest) GetN(ctx context.Context, n int) ([]ScopedRoleMembership, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ScopedRoleMembership collection
+func (r *GraphServiceScopedRoleMembershipsCollectionRequest) Get(ctx context.Context) ([]ScopedRoleMembership, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ScopedRoleMembership collection
+func (r *GraphServiceScopedRoleMembershipsCollectionRequest) Add(ctx context.Context, reqObj *ScopedRoleMembership) (resObj *ScopedRoleMembership, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// ServicePrincipals returns request builder for ServicePrincipal collection
+func (b *GraphServiceRequestBuilder) ServicePrincipals() *GraphServiceServicePrincipalsCollectionRequestBuilder {
+	bb := &GraphServiceServicePrincipalsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/servicePrincipals"
+	return bb
+}
+
+// GraphServiceServicePrincipalsCollectionRequestBuilder is request builder for ServicePrincipal collection
+type GraphServiceServicePrincipalsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ServicePrincipal collection
+func (b *GraphServiceServicePrincipalsCollectionRequestBuilder) Request() *GraphServiceServicePrincipalsCollectionRequest {
+	return &GraphServiceServicePrincipalsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ServicePrincipal item
+func (b *GraphServiceServicePrincipalsCollectionRequestBuilder) ID(id string) *ServicePrincipalRequestBuilder {
+	bb := &ServicePrincipalRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GraphServiceServicePrincipalsCollectionRequest is request for ServicePrincipal collection
+type GraphServiceServicePrincipalsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ServicePrincipal collection
+func (r *GraphServiceServicePrincipalsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ServicePrincipal, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ServicePrincipal
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ServicePrincipal
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ServicePrincipal collection, max N pages
+func (r *GraphServiceServicePrincipalsCollectionRequest) GetN(ctx context.Context, n int) ([]ServicePrincipal, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ServicePrincipal collection
+func (r *GraphServiceServicePrincipalsCollectionRequest) Get(ctx context.Context) ([]ServicePrincipal, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ServicePrincipal collection
+func (r *GraphServiceServicePrincipalsCollectionRequest) Add(ctx context.Context, reqObj *ServicePrincipal) (resObj *ServicePrincipal, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -2586,6 +3822,109 @@ func (r *GraphServiceTeamsCollectionRequest) Add(ctx context.Context, reqObj *Te
 	return
 }
 
+// TeamsTemplates returns request builder for TeamsTemplate collection
+func (b *GraphServiceRequestBuilder) TeamsTemplates() *GraphServiceTeamsTemplatesCollectionRequestBuilder {
+	bb := &GraphServiceTeamsTemplatesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/teamsTemplates"
+	return bb
+}
+
+// GraphServiceTeamsTemplatesCollectionRequestBuilder is request builder for TeamsTemplate collection
+type GraphServiceTeamsTemplatesCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for TeamsTemplate collection
+func (b *GraphServiceTeamsTemplatesCollectionRequestBuilder) Request() *GraphServiceTeamsTemplatesCollectionRequest {
+	return &GraphServiceTeamsTemplatesCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for TeamsTemplate item
+func (b *GraphServiceTeamsTemplatesCollectionRequestBuilder) ID(id string) *TeamsTemplateRequestBuilder {
+	bb := &TeamsTemplateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GraphServiceTeamsTemplatesCollectionRequest is request for TeamsTemplate collection
+type GraphServiceTeamsTemplatesCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for TeamsTemplate collection
+func (r *GraphServiceTeamsTemplatesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TeamsTemplate, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []TeamsTemplate
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []TeamsTemplate
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for TeamsTemplate collection, max N pages
+func (r *GraphServiceTeamsTemplatesCollectionRequest) GetN(ctx context.Context, n int) ([]TeamsTemplate, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for TeamsTemplate collection
+func (r *GraphServiceTeamsTemplatesCollectionRequest) Get(ctx context.Context) ([]TeamsTemplate, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for TeamsTemplate collection
+func (r *GraphServiceTeamsTemplatesCollectionRequest) Add(ctx context.Context, reqObj *TeamsTemplate) (resObj *TeamsTemplate, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Users returns request builder for User collection
 func (b *GraphServiceRequestBuilder) Users() *GraphServiceUsersCollectionRequestBuilder {
 	bb := &GraphServiceUsersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -2689,113 +4028,10 @@ func (r *GraphServiceUsersCollectionRequest) Add(ctx context.Context, reqObj *Us
 	return
 }
 
-// Workbooks returns request builder for DriveItem collection
-func (b *GraphServiceRequestBuilder) Workbooks() *GraphServiceWorkbooksCollectionRequestBuilder {
-	bb := &GraphServiceWorkbooksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/workbooks"
-	return bb
-}
-
-// GraphServiceWorkbooksCollectionRequestBuilder is request builder for DriveItem collection
-type GraphServiceWorkbooksCollectionRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns request for DriveItem collection
-func (b *GraphServiceWorkbooksCollectionRequestBuilder) Request() *GraphServiceWorkbooksCollectionRequest {
-	return &GraphServiceWorkbooksCollectionRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// ID returns request builder for DriveItem item
-func (b *GraphServiceWorkbooksCollectionRequestBuilder) ID(id string) *DriveItemRequestBuilder {
-	bb := &DriveItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/" + id
-	return bb
-}
-
-// GraphServiceWorkbooksCollectionRequest is request for DriveItem collection
-type GraphServiceWorkbooksCollectionRequest struct{ BaseRequest }
-
-// Paging perfoms paging operation for DriveItem collection
-func (r *GraphServiceWorkbooksCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DriveItem, error) {
-	req, err := r.NewJSONRequest(method, path, obj)
-	if err != nil {
-		return nil, err
-	}
-	if ctx != nil {
-		req = req.WithContext(ctx)
-	}
-	res, err := r.client.Do(req)
-	if err != nil {
-		return nil, err
-	}
-	var values []DriveItem
-	for {
-		if res.StatusCode != http.StatusOK {
-			b, _ := ioutil.ReadAll(res.Body)
-			res.Body.Close()
-			errRes := &ErrorResponse{Response: res}
-			err := jsonx.Unmarshal(b, errRes)
-			if err != nil {
-				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
-			}
-			return nil, errRes
-		}
-		var (
-			paging Paging
-			value  []DriveItem
-		)
-		err := jsonx.NewDecoder(res.Body).Decode(&paging)
-		res.Body.Close()
-		if err != nil {
-			return nil, err
-		}
-		err = jsonx.Unmarshal(paging.Value, &value)
-		if err != nil {
-			return nil, err
-		}
-		values = append(values, value...)
-		if n >= 0 {
-			n--
-		}
-		if n == 0 || len(paging.NextLink) == 0 {
-			return values, nil
-		}
-		req, err = http.NewRequest("GET", paging.NextLink, nil)
-		if ctx != nil {
-			req = req.WithContext(ctx)
-		}
-		res, err = r.client.Do(req)
-		if err != nil {
-			return nil, err
-		}
-	}
-}
-
-// GetN performs GET request for DriveItem collection, max N pages
-func (r *GraphServiceWorkbooksCollectionRequest) GetN(ctx context.Context, n int) ([]DriveItem, error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	return r.Paging(ctx, "GET", query, nil, n)
-}
-
-// Get performs GET request for DriveItem collection
-func (r *GraphServiceWorkbooksCollectionRequest) Get(ctx context.Context) ([]DriveItem, error) {
-	return r.GetN(ctx, 0)
-}
-
-// Add performs POST request for DriveItem collection
-func (r *GraphServiceWorkbooksCollectionRequest) Add(ctx context.Context, reqObj *DriveItem) (resObj *DriveItem, err error) {
-	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
-	return
-}
-
-// Security is navigation property
-func (b *GraphServiceRequestBuilder) Security() *SecurityRequestBuilder {
-	bb := &SecurityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/Security"
+// Admin is navigation property
+func (b *GraphServiceRequestBuilder) Admin() *AdminRequestBuilder {
+	bb := &AdminRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/admin"
 	return bb
 }
 
@@ -2813,10 +4049,31 @@ func (b *GraphServiceRequestBuilder) AuditLogs() *AuditLogRootRequestBuilder {
 	return bb
 }
 
+// AuthenticationMethodsPolicy is navigation property
+func (b *GraphServiceRequestBuilder) AuthenticationMethodsPolicy() *AuthenticationMethodsPolicyRequestBuilder {
+	bb := &AuthenticationMethodsPolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/authenticationMethodsPolicy"
+	return bb
+}
+
+// Branding is navigation property
+func (b *GraphServiceRequestBuilder) Branding() *OrganizationalBrandingRequestBuilder {
+	bb := &OrganizationalBrandingRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/branding"
+	return bb
+}
+
 // Communications is navigation property
 func (b *GraphServiceRequestBuilder) Communications() *CloudCommunicationsRequestBuilder {
 	bb := &CloudCommunicationsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/communications"
+	return bb
+}
+
+// Compliance is navigation property
+func (b *GraphServiceRequestBuilder) Compliance() *ComplianceRequestBuilder {
+	bb := &ComplianceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/compliance"
 	return bb
 }
 
@@ -2855,6 +4112,41 @@ func (b *GraphServiceRequestBuilder) Education() *EducationRootRequestBuilder {
 	return bb
 }
 
+// External is navigation property
+func (b *GraphServiceRequestBuilder) External() *ExternalConnectors_externalRequestBuilder {
+	bb := &ExternalConnectors_externalRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/external"
+	return bb
+}
+
+// Identity is navigation property
+func (b *GraphServiceRequestBuilder) Identity() *IdentityContainerRequestBuilder {
+	bb := &IdentityContainerRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/identity"
+	return bb
+}
+
+// IdentityGovernance is navigation property
+func (b *GraphServiceRequestBuilder) IdentityGovernance() *IdentityGovernanceRequestBuilder {
+	bb := &IdentityGovernanceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/identityGovernance"
+	return bb
+}
+
+// IdentityProtection is navigation property
+func (b *GraphServiceRequestBuilder) IdentityProtection() *IdentityProtectionRootRequestBuilder {
+	bb := &IdentityProtectionRootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/identityProtection"
+	return bb
+}
+
+// InformationProtection is navigation property
+func (b *GraphServiceRequestBuilder) InformationProtection() *InformationProtectionRequestBuilder {
+	bb := &InformationProtectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/informationProtection"
+	return bb
+}
+
 // Me is navigation property
 func (b *GraphServiceRequestBuilder) Me() *UserRequestBuilder {
 	bb := &UserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -2869,9 +4161,72 @@ func (b *GraphServiceRequestBuilder) Planner() *PlannerRequestBuilder {
 	return bb
 }
 
+// Policies is navigation property
+func (b *GraphServiceRequestBuilder) Policies() *PolicyRootRequestBuilder {
+	bb := &PolicyRootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/policies"
+	return bb
+}
+
+// Print is navigation property
+func (b *GraphServiceRequestBuilder) Print() *PrintRequestBuilder {
+	bb := &PrintRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/print"
+	return bb
+}
+
+// Privacy is navigation property
+func (b *GraphServiceRequestBuilder) Privacy() *PrivacyRequestBuilder {
+	bb := &PrivacyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/privacy"
+	return bb
+}
+
 // Reports is navigation property
 func (b *GraphServiceRequestBuilder) Reports() *ReportRootRequestBuilder {
 	bb := &ReportRootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/reports"
+	return bb
+}
+
+// RoleManagement is navigation property
+func (b *GraphServiceRequestBuilder) RoleManagement() *RoleManagementRequestBuilder {
+	bb := &RoleManagementRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/roleManagement"
+	return bb
+}
+
+// Search is navigation property
+func (b *GraphServiceRequestBuilder) Search() *SearchEntityRequestBuilder {
+	bb := &SearchEntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/search"
+	return bb
+}
+
+// Security is navigation property
+func (b *GraphServiceRequestBuilder) Security() *SecurityRequestBuilder {
+	bb := &SecurityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/security"
+	return bb
+}
+
+// Solutions is navigation property
+func (b *GraphServiceRequestBuilder) Solutions() *SolutionsRootRequestBuilder {
+	bb := &SolutionsRootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/solutions"
+	return bb
+}
+
+// Teamwork is navigation property
+func (b *GraphServiceRequestBuilder) Teamwork() *TeamworkRequestBuilder {
+	bb := &TeamworkRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/teamwork"
+	return bb
+}
+
+// TenantRelationships is navigation property
+func (b *GraphServiceRequestBuilder) TenantRelationships() *TenantRelationshipRequestBuilder {
+	bb := &TenantRelationshipRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/tenantRelationships"
 	return bb
 }

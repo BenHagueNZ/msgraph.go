@@ -2,8 +2,692 @@
 
 package msgraph
 
+import "time"
+
 // AccessAction undocumented
 type AccessAction struct {
 	// Object is the base model of AccessAction
 	Object
+}
+
+// AccessPackage undocumented
+type AccessPackage struct {
+	// Entity is the base model of AccessPackage
+	Entity
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// IsHidden undocumented
+	IsHidden *bool `json:"isHidden,omitempty"`
+	// ModifiedDateTime undocumented
+	ModifiedDateTime *time.Time `json:"modifiedDateTime,omitempty"`
+	// AccessPackagesIncompatibleWith undocumented
+	AccessPackagesIncompatibleWith []AccessPackage `json:"accessPackagesIncompatibleWith,omitempty"`
+	// AssignmentPolicies undocumented
+	AssignmentPolicies []AccessPackageAssignmentPolicy `json:"assignmentPolicies,omitempty"`
+	// Catalog undocumented
+	Catalog *AccessPackageCatalog `json:"catalog,omitempty"`
+	// IncompatibleAccessPackages undocumented
+	IncompatibleAccessPackages []AccessPackage `json:"incompatibleAccessPackages,omitempty"`
+	// IncompatibleGroups undocumented
+	IncompatibleGroups []Group `json:"incompatibleGroups,omitempty"`
+}
+
+// AccessPackageAnswer undocumented
+type AccessPackageAnswer struct {
+	// Object is the base model of AccessPackageAnswer
+	Object
+	// DisplayValue undocumented
+	DisplayValue *string `json:"displayValue,omitempty"`
+	// AnsweredQuestion undocumented
+	AnsweredQuestion *AccessPackageQuestion `json:"answeredQuestion,omitempty"`
+}
+
+// AccessPackageAnswerChoice undocumented
+type AccessPackageAnswerChoice struct {
+	// Object is the base model of AccessPackageAnswerChoice
+	Object
+	// ActualValue undocumented
+	ActualValue *string `json:"actualValue,omitempty"`
+	// Localizations undocumented
+	Localizations []AccessPackageLocalizedText `json:"localizations,omitempty"`
+	// Text undocumented
+	Text *string `json:"text,omitempty"`
+}
+
+// AccessPackageAnswerString undocumented
+type AccessPackageAnswerString struct {
+	// AccessPackageAnswer is the base model of AccessPackageAnswerString
+	AccessPackageAnswer
+	// Value undocumented
+	Value *string `json:"value,omitempty"`
+}
+
+// AccessPackageApprovalStage undocumented
+type AccessPackageApprovalStage struct {
+	// Object is the base model of AccessPackageApprovalStage
+	Object
+	// DurationBeforeAutomaticDenial undocumented
+	DurationBeforeAutomaticDenial *Duration `json:"durationBeforeAutomaticDenial,omitempty"`
+	// DurationBeforeEscalation undocumented
+	DurationBeforeEscalation *Duration `json:"durationBeforeEscalation,omitempty"`
+	// EscalationApprovers undocumented
+	EscalationApprovers []SubjectSet `json:"escalationApprovers,omitempty"`
+	// FallbackEscalationApprovers undocumented
+	FallbackEscalationApprovers []SubjectSet `json:"fallbackEscalationApprovers,omitempty"`
+	// FallbackPrimaryApprovers undocumented
+	FallbackPrimaryApprovers []SubjectSet `json:"fallbackPrimaryApprovers,omitempty"`
+	// IsApproverJustificationRequired undocumented
+	IsApproverJustificationRequired *bool `json:"isApproverJustificationRequired,omitempty"`
+	// IsEscalationEnabled undocumented
+	IsEscalationEnabled *bool `json:"isEscalationEnabled,omitempty"`
+	// PrimaryApprovers undocumented
+	PrimaryApprovers []SubjectSet `json:"primaryApprovers,omitempty"`
+}
+
+// AccessPackageAssignment undocumented
+type AccessPackageAssignment struct {
+	// Entity is the base model of AccessPackageAssignment
+	Entity
+	// ExpiredDateTime undocumented
+	ExpiredDateTime *time.Time `json:"expiredDateTime,omitempty"`
+	// Schedule undocumented
+	Schedule *EntitlementManagementSchedule `json:"schedule,omitempty"`
+	// State undocumented
+	State *AccessPackageAssignmentState `json:"state,omitempty"`
+	// Status undocumented
+	Status *string `json:"status,omitempty"`
+	// AccessPackage undocumented
+	AccessPackage *AccessPackage `json:"accessPackage,omitempty"`
+	// AssignmentPolicy undocumented
+	AssignmentPolicy *AccessPackageAssignmentPolicy `json:"assignmentPolicy,omitempty"`
+	// Target undocumented
+	Target *AccessPackageSubject `json:"target,omitempty"`
+}
+
+// AccessPackageAssignmentApprovalSettings undocumented
+type AccessPackageAssignmentApprovalSettings struct {
+	// Object is the base model of AccessPackageAssignmentApprovalSettings
+	Object
+	// IsApprovalRequiredForAdd undocumented
+	IsApprovalRequiredForAdd *bool `json:"isApprovalRequiredForAdd,omitempty"`
+	// IsApprovalRequiredForUpdate undocumented
+	IsApprovalRequiredForUpdate *bool `json:"isApprovalRequiredForUpdate,omitempty"`
+	// Stages undocumented
+	Stages []AccessPackageApprovalStage `json:"stages,omitempty"`
+}
+
+// AccessPackageAssignmentPolicy undocumented
+type AccessPackageAssignmentPolicy struct {
+	// Entity is the base model of AccessPackageAssignmentPolicy
+	Entity
+	// AllowedTargetScope undocumented
+	AllowedTargetScope *AllowedTargetScope `json:"allowedTargetScope,omitempty"`
+	// AutomaticRequestSettings undocumented
+	AutomaticRequestSettings *AccessPackageAutomaticRequestSettings `json:"automaticRequestSettings,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// Expiration undocumented
+	Expiration *ExpirationPattern `json:"expiration,omitempty"`
+	// ModifiedDateTime undocumented
+	ModifiedDateTime *time.Time `json:"modifiedDateTime,omitempty"`
+	// RequestApprovalSettings undocumented
+	RequestApprovalSettings *AccessPackageAssignmentApprovalSettings `json:"requestApprovalSettings,omitempty"`
+	// RequestorSettings undocumented
+	RequestorSettings *AccessPackageAssignmentRequestorSettings `json:"requestorSettings,omitempty"`
+	// ReviewSettings undocumented
+	ReviewSettings *AccessPackageAssignmentReviewSettings `json:"reviewSettings,omitempty"`
+	// SpecificAllowedTargets undocumented
+	SpecificAllowedTargets []SubjectSet `json:"specificAllowedTargets,omitempty"`
+	// AccessPackage undocumented
+	AccessPackage *AccessPackage `json:"accessPackage,omitempty"`
+	// Catalog undocumented
+	Catalog *AccessPackageCatalog `json:"catalog,omitempty"`
+	// Questions undocumented
+	Questions []AccessPackageQuestion `json:"questions,omitempty"`
+}
+
+// AccessPackageAssignmentRequestObject undocumented
+type AccessPackageAssignmentRequestObject struct {
+	// Entity is the base model of AccessPackageAssignmentRequestObject
+	Entity
+	// Answers undocumented
+	Answers []AccessPackageAnswer `json:"answers,omitempty"`
+	// CompletedDateTime undocumented
+	CompletedDateTime *time.Time `json:"completedDateTime,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// RequestType undocumented
+	RequestType *AccessPackageRequestType `json:"requestType,omitempty"`
+	// Schedule undocumented
+	Schedule *EntitlementManagementSchedule `json:"schedule,omitempty"`
+	// State undocumented
+	State *AccessPackageRequestState `json:"state,omitempty"`
+	// Status undocumented
+	Status *string `json:"status,omitempty"`
+	// AccessPackage undocumented
+	AccessPackage *AccessPackage `json:"accessPackage,omitempty"`
+	// Assignment undocumented
+	Assignment *AccessPackageAssignment `json:"assignment,omitempty"`
+	// Requestor undocumented
+	Requestor *AccessPackageSubject `json:"requestor,omitempty"`
+}
+
+// AccessPackageAssignmentRequestRequirements undocumented
+type AccessPackageAssignmentRequestRequirements struct {
+	// Object is the base model of AccessPackageAssignmentRequestRequirements
+	Object
+	// AllowCustomAssignmentSchedule undocumented
+	AllowCustomAssignmentSchedule *bool `json:"allowCustomAssignmentSchedule,omitempty"`
+	// IsApprovalRequiredForAdd undocumented
+	IsApprovalRequiredForAdd *bool `json:"isApprovalRequiredForAdd,omitempty"`
+	// IsApprovalRequiredForUpdate undocumented
+	IsApprovalRequiredForUpdate *bool `json:"isApprovalRequiredForUpdate,omitempty"`
+	// PolicyDescription undocumented
+	PolicyDescription *string `json:"policyDescription,omitempty"`
+	// PolicyDisplayName undocumented
+	PolicyDisplayName *string `json:"policyDisplayName,omitempty"`
+	// PolicyID undocumented
+	PolicyID *string `json:"policyId,omitempty"`
+	// Schedule undocumented
+	Schedule *EntitlementManagementSchedule `json:"schedule,omitempty"`
+	// Questions undocumented
+	Questions []AccessPackageQuestion `json:"questions,omitempty"`
+}
+
+// AccessPackageAssignmentRequestorSettings undocumented
+type AccessPackageAssignmentRequestorSettings struct {
+	// Object is the base model of AccessPackageAssignmentRequestorSettings
+	Object
+	// AllowCustomAssignmentSchedule undocumented
+	AllowCustomAssignmentSchedule *bool `json:"allowCustomAssignmentSchedule,omitempty"`
+	// EnableOnBehalfRequestorsToAddAccess undocumented
+	EnableOnBehalfRequestorsToAddAccess *bool `json:"enableOnBehalfRequestorsToAddAccess,omitempty"`
+	// EnableOnBehalfRequestorsToRemoveAccess undocumented
+	EnableOnBehalfRequestorsToRemoveAccess *bool `json:"enableOnBehalfRequestorsToRemoveAccess,omitempty"`
+	// EnableOnBehalfRequestorsToUpdateAccess undocumented
+	EnableOnBehalfRequestorsToUpdateAccess *bool `json:"enableOnBehalfRequestorsToUpdateAccess,omitempty"`
+	// EnableTargetsToSelfAddAccess undocumented
+	EnableTargetsToSelfAddAccess *bool `json:"enableTargetsToSelfAddAccess,omitempty"`
+	// EnableTargetsToSelfRemoveAccess undocumented
+	EnableTargetsToSelfRemoveAccess *bool `json:"enableTargetsToSelfRemoveAccess,omitempty"`
+	// EnableTargetsToSelfUpdateAccess undocumented
+	EnableTargetsToSelfUpdateAccess *bool `json:"enableTargetsToSelfUpdateAccess,omitempty"`
+	// OnBehalfRequestors undocumented
+	OnBehalfRequestors []SubjectSet `json:"onBehalfRequestors,omitempty"`
+}
+
+// AccessPackageAssignmentReviewSettings undocumented
+type AccessPackageAssignmentReviewSettings struct {
+	// Object is the base model of AccessPackageAssignmentReviewSettings
+	Object
+	// ExpirationBehavior undocumented
+	ExpirationBehavior *AccessReviewExpirationBehavior `json:"expirationBehavior,omitempty"`
+	// FallbackReviewers undocumented
+	FallbackReviewers []SubjectSet `json:"fallbackReviewers,omitempty"`
+	// IsEnabled undocumented
+	IsEnabled *bool `json:"isEnabled,omitempty"`
+	// IsRecommendationEnabled undocumented
+	IsRecommendationEnabled *bool `json:"isRecommendationEnabled,omitempty"`
+	// IsReviewerJustificationRequired undocumented
+	IsReviewerJustificationRequired *bool `json:"isReviewerJustificationRequired,omitempty"`
+	// IsSelfReview undocumented
+	IsSelfReview *bool `json:"isSelfReview,omitempty"`
+	// PrimaryReviewers undocumented
+	PrimaryReviewers []SubjectSet `json:"primaryReviewers,omitempty"`
+	// Schedule undocumented
+	Schedule *EntitlementManagementSchedule `json:"schedule,omitempty"`
+}
+
+// AccessPackageAutomaticRequestSettings undocumented
+type AccessPackageAutomaticRequestSettings struct {
+	// Object is the base model of AccessPackageAutomaticRequestSettings
+	Object
+	// GracePeriodBeforeAccessRemoval undocumented
+	GracePeriodBeforeAccessRemoval *Duration `json:"gracePeriodBeforeAccessRemoval,omitempty"`
+	// RemoveAccessWhenTargetLeavesAllowedTargets undocumented
+	RemoveAccessWhenTargetLeavesAllowedTargets *bool `json:"removeAccessWhenTargetLeavesAllowedTargets,omitempty"`
+	// RequestAccessForAllowedTargets undocumented
+	RequestAccessForAllowedTargets *bool `json:"requestAccessForAllowedTargets,omitempty"`
+}
+
+// AccessPackageCatalog undocumented
+type AccessPackageCatalog struct {
+	// Entity is the base model of AccessPackageCatalog
+	Entity
+	// CatalogType undocumented
+	CatalogType *AccessPackageCatalogType `json:"catalogType,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// IsExternallyVisible undocumented
+	IsExternallyVisible *bool `json:"isExternallyVisible,omitempty"`
+	// ModifiedDateTime undocumented
+	ModifiedDateTime *time.Time `json:"modifiedDateTime,omitempty"`
+	// State undocumented
+	State *AccessPackageCatalogState `json:"state,omitempty"`
+	// AccessPackages undocumented
+	AccessPackages []AccessPackage `json:"accessPackages,omitempty"`
+}
+
+// AccessPackageLocalizedText undocumented
+type AccessPackageLocalizedText struct {
+	// Object is the base model of AccessPackageLocalizedText
+	Object
+	// LanguageCode undocumented
+	LanguageCode *string `json:"languageCode,omitempty"`
+	// Text undocumented
+	Text *string `json:"text,omitempty"`
+}
+
+// AccessPackageMultipleChoiceQuestion undocumented
+type AccessPackageMultipleChoiceQuestion struct {
+	// AccessPackageQuestion is the base model of AccessPackageMultipleChoiceQuestion
+	AccessPackageQuestion
+	// Choices undocumented
+	Choices []AccessPackageAnswerChoice `json:"choices,omitempty"`
+	// IsMultipleSelectionAllowed undocumented
+	IsMultipleSelectionAllowed *bool `json:"isMultipleSelectionAllowed,omitempty"`
+}
+
+// AccessPackageQuestion undocumented
+type AccessPackageQuestion struct {
+	// Entity is the base model of AccessPackageQuestion
+	Entity
+	// IsAnswerEditable undocumented
+	IsAnswerEditable *bool `json:"isAnswerEditable,omitempty"`
+	// IsRequired undocumented
+	IsRequired *bool `json:"isRequired,omitempty"`
+	// Localizations undocumented
+	Localizations []AccessPackageLocalizedText `json:"localizations,omitempty"`
+	// Sequence undocumented
+	Sequence *int `json:"sequence,omitempty"`
+	// Text undocumented
+	Text *string `json:"text,omitempty"`
+}
+
+// AccessPackageSubject undocumented
+type AccessPackageSubject struct {
+	// Entity is the base model of AccessPackageSubject
+	Entity
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// Email undocumented
+	Email *string `json:"email,omitempty"`
+	// ObjectID undocumented
+	ObjectID *string `json:"objectId,omitempty"`
+	// OnPremisesSecurityIdentifier undocumented
+	OnPremisesSecurityIdentifier *string `json:"onPremisesSecurityIdentifier,omitempty"`
+	// PrincipalName undocumented
+	PrincipalName *string `json:"principalName,omitempty"`
+	// SubjectType undocumented
+	SubjectType *AccessPackageSubjectType `json:"subjectType,omitempty"`
+	// ConnectedOrganization undocumented
+	ConnectedOrganization *ConnectedOrganization `json:"connectedOrganization,omitempty"`
+}
+
+// AccessPackageTextInputQuestion undocumented
+type AccessPackageTextInputQuestion struct {
+	// AccessPackageQuestion is the base model of AccessPackageTextInputQuestion
+	AccessPackageQuestion
+	// IsSingleLineQuestion undocumented
+	IsSingleLineQuestion *bool `json:"isSingleLineQuestion,omitempty"`
+	// RegexPattern undocumented
+	RegexPattern *string `json:"regexPattern,omitempty"`
+}
+
+// AccessReviewApplyAction undocumented
+type AccessReviewApplyAction struct {
+	// Object is the base model of AccessReviewApplyAction
+	Object
+}
+
+// AccessReviewHistoryDefinition undocumented
+type AccessReviewHistoryDefinition struct {
+	// Entity is the base model of AccessReviewHistoryDefinition
+	Entity
+	// CreatedBy undocumented
+	CreatedBy *UserIdentity `json:"createdBy,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// Decisions undocumented
+	Decisions []AccessReviewHistoryDecisionFilter `json:"decisions,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// ReviewHistoryPeriodEndDateTime undocumented
+	ReviewHistoryPeriodEndDateTime *time.Time `json:"reviewHistoryPeriodEndDateTime,omitempty"`
+	// ReviewHistoryPeriodStartDateTime undocumented
+	ReviewHistoryPeriodStartDateTime *time.Time `json:"reviewHistoryPeriodStartDateTime,omitempty"`
+	// ScheduleSettings undocumented
+	ScheduleSettings *AccessReviewHistoryScheduleSettings `json:"scheduleSettings,omitempty"`
+	// Scopes undocumented
+	Scopes []AccessReviewScope `json:"scopes,omitempty"`
+	// Status undocumented
+	Status *AccessReviewHistoryStatus `json:"status,omitempty"`
+	// Instances undocumented
+	Instances []AccessReviewHistoryInstance `json:"instances,omitempty"`
+}
+
+// AccessReviewHistoryInstance undocumented
+type AccessReviewHistoryInstance struct {
+	// Entity is the base model of AccessReviewHistoryInstance
+	Entity
+	// DownloadURI undocumented
+	DownloadURI *string `json:"downloadUri,omitempty"`
+	// ExpirationDateTime undocumented
+	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
+	// FulfilledDateTime undocumented
+	FulfilledDateTime *time.Time `json:"fulfilledDateTime,omitempty"`
+	// ReviewHistoryPeriodEndDateTime undocumented
+	ReviewHistoryPeriodEndDateTime *time.Time `json:"reviewHistoryPeriodEndDateTime,omitempty"`
+	// ReviewHistoryPeriodStartDateTime undocumented
+	ReviewHistoryPeriodStartDateTime *time.Time `json:"reviewHistoryPeriodStartDateTime,omitempty"`
+	// RunDateTime undocumented
+	RunDateTime *time.Time `json:"runDateTime,omitempty"`
+	// Status undocumented
+	Status *AccessReviewHistoryStatus `json:"status,omitempty"`
+}
+
+// AccessReviewHistoryScheduleSettings undocumented
+type AccessReviewHistoryScheduleSettings struct {
+	// Object is the base model of AccessReviewHistoryScheduleSettings
+	Object
+	// Recurrence undocumented
+	Recurrence *PatternedRecurrence `json:"recurrence,omitempty"`
+	// ReportRange undocumented
+	ReportRange *string `json:"reportRange,omitempty"`
+}
+
+// AccessReviewInactiveUsersQueryScope undocumented
+type AccessReviewInactiveUsersQueryScope struct {
+	// AccessReviewQueryScope is the base model of AccessReviewInactiveUsersQueryScope
+	AccessReviewQueryScope
+	// InactiveDuration undocumented
+	InactiveDuration *Duration `json:"inactiveDuration,omitempty"`
+}
+
+// AccessReviewInstance undocumented
+type AccessReviewInstance struct {
+	// Entity is the base model of AccessReviewInstance
+	Entity
+	// EndDateTime undocumented
+	EndDateTime *time.Time `json:"endDateTime,omitempty"`
+	// FallbackReviewers undocumented
+	FallbackReviewers []AccessReviewReviewerScope `json:"fallbackReviewers,omitempty"`
+	// Reviewers undocumented
+	Reviewers []AccessReviewReviewerScope `json:"reviewers,omitempty"`
+	// Scope undocumented
+	Scope *AccessReviewScope `json:"scope,omitempty"`
+	// StartDateTime undocumented
+	StartDateTime *time.Time `json:"startDateTime,omitempty"`
+	// Status undocumented
+	Status *string `json:"status,omitempty"`
+	// ContactedReviewers undocumented
+	ContactedReviewers []AccessReviewReviewer `json:"contactedReviewers,omitempty"`
+	// Decisions undocumented
+	Decisions []AccessReviewInstanceDecisionItem `json:"decisions,omitempty"`
+	// Stages undocumented
+	Stages []AccessReviewStage `json:"stages,omitempty"`
+}
+
+// AccessReviewInstanceDecisionItem undocumented
+type AccessReviewInstanceDecisionItem struct {
+	// Entity is the base model of AccessReviewInstanceDecisionItem
+	Entity
+	// AccessReviewID undocumented
+	AccessReviewID *string `json:"accessReviewId,omitempty"`
+	// AppliedBy undocumented
+	AppliedBy *UserIdentity `json:"appliedBy,omitempty"`
+	// AppliedDateTime undocumented
+	AppliedDateTime *time.Time `json:"appliedDateTime,omitempty"`
+	// ApplyResult undocumented
+	ApplyResult *string `json:"applyResult,omitempty"`
+	// Decision undocumented
+	Decision *string `json:"decision,omitempty"`
+	// Justification undocumented
+	Justification *string `json:"justification,omitempty"`
+	// Principal undocumented
+	Principal *Identity `json:"principal,omitempty"`
+	// PrincipalLink undocumented
+	PrincipalLink *string `json:"principalLink,omitempty"`
+	// Recommendation undocumented
+	Recommendation *string `json:"recommendation,omitempty"`
+	// Resource undocumented
+	Resource *AccessReviewInstanceDecisionItemResource `json:"resource,omitempty"`
+	// ResourceLink undocumented
+	ResourceLink *string `json:"resourceLink,omitempty"`
+	// ReviewedBy undocumented
+	ReviewedBy *UserIdentity `json:"reviewedBy,omitempty"`
+	// ReviewedDateTime undocumented
+	ReviewedDateTime *time.Time `json:"reviewedDateTime,omitempty"`
+}
+
+// AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource undocumented
+type AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource struct {
+	// AccessReviewInstanceDecisionItemResource is the base model of AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource
+	AccessReviewInstanceDecisionItemResource
+	// AccessPackageDisplayName undocumented
+	AccessPackageDisplayName *string `json:"accessPackageDisplayName,omitempty"`
+	// AccessPackageID undocumented
+	AccessPackageID *string `json:"accessPackageId,omitempty"`
+}
+
+// AccessReviewInstanceDecisionItemAzureRoleResource undocumented
+type AccessReviewInstanceDecisionItemAzureRoleResource struct {
+	// AccessReviewInstanceDecisionItemResource is the base model of AccessReviewInstanceDecisionItemAzureRoleResource
+	AccessReviewInstanceDecisionItemResource
+	// Scope undocumented
+	Scope *AccessReviewInstanceDecisionItemResource `json:"scope,omitempty"`
+}
+
+// AccessReviewInstanceDecisionItemResource undocumented
+type AccessReviewInstanceDecisionItemResource struct {
+	// Object is the base model of AccessReviewInstanceDecisionItemResource
+	Object
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// ID undocumented
+	ID *string `json:"id,omitempty"`
+	// Type undocumented
+	Type *string `json:"type,omitempty"`
+}
+
+// AccessReviewInstanceDecisionItemServicePrincipalResource undocumented
+type AccessReviewInstanceDecisionItemServicePrincipalResource struct {
+	// AccessReviewInstanceDecisionItemResource is the base model of AccessReviewInstanceDecisionItemServicePrincipalResource
+	AccessReviewInstanceDecisionItemResource
+	// AppID undocumented
+	AppID *string `json:"appId,omitempty"`
+}
+
+// AccessReviewNotificationRecipientItem undocumented
+type AccessReviewNotificationRecipientItem struct {
+	// Object is the base model of AccessReviewNotificationRecipientItem
+	Object
+	// NotificationRecipientScope undocumented
+	NotificationRecipientScope *AccessReviewNotificationRecipientScope `json:"notificationRecipientScope,omitempty"`
+	// NotificationTemplateType undocumented
+	NotificationTemplateType *string `json:"notificationTemplateType,omitempty"`
+}
+
+// AccessReviewNotificationRecipientQueryScope undocumented
+type AccessReviewNotificationRecipientQueryScope struct {
+	// AccessReviewNotificationRecipientScope is the base model of AccessReviewNotificationRecipientQueryScope
+	AccessReviewNotificationRecipientScope
+	// Query undocumented
+	Query *string `json:"query,omitempty"`
+	// QueryRoot undocumented
+	QueryRoot *string `json:"queryRoot,omitempty"`
+	// QueryType undocumented
+	QueryType *string `json:"queryType,omitempty"`
+}
+
+// AccessReviewNotificationRecipientScope undocumented
+type AccessReviewNotificationRecipientScope struct {
+	// Object is the base model of AccessReviewNotificationRecipientScope
+	Object
+}
+
+// AccessReviewQueryScope undocumented
+type AccessReviewQueryScope struct {
+	// AccessReviewScope is the base model of AccessReviewQueryScope
+	AccessReviewScope
+	// Query undocumented
+	Query *string `json:"query,omitempty"`
+	// QueryRoot undocumented
+	QueryRoot *string `json:"queryRoot,omitempty"`
+	// QueryType undocumented
+	QueryType *string `json:"queryType,omitempty"`
+}
+
+// AccessReviewReviewer undocumented
+type AccessReviewReviewer struct {
+	// Entity is the base model of AccessReviewReviewer
+	Entity
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// UserPrincipalName undocumented
+	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
+}
+
+// AccessReviewReviewerScope undocumented
+type AccessReviewReviewerScope struct {
+	// Object is the base model of AccessReviewReviewerScope
+	Object
+	// Query undocumented
+	Query *string `json:"query,omitempty"`
+	// QueryRoot undocumented
+	QueryRoot *string `json:"queryRoot,omitempty"`
+	// QueryType undocumented
+	QueryType *string `json:"queryType,omitempty"`
+}
+
+// AccessReviewScheduleDefinition undocumented
+type AccessReviewScheduleDefinition struct {
+	// Entity is the base model of AccessReviewScheduleDefinition
+	Entity
+	// AdditionalNotificationRecipients undocumented
+	AdditionalNotificationRecipients []AccessReviewNotificationRecipientItem `json:"additionalNotificationRecipients,omitempty"`
+	// CreatedBy undocumented
+	CreatedBy *UserIdentity `json:"createdBy,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// DescriptionForAdmins undocumented
+	DescriptionForAdmins *string `json:"descriptionForAdmins,omitempty"`
+	// DescriptionForReviewers undocumented
+	DescriptionForReviewers *string `json:"descriptionForReviewers,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// FallbackReviewers undocumented
+	FallbackReviewers []AccessReviewReviewerScope `json:"fallbackReviewers,omitempty"`
+	// InstanceEnumerationScope undocumented
+	InstanceEnumerationScope *AccessReviewScope `json:"instanceEnumerationScope,omitempty"`
+	// LastModifiedDateTime undocumented
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// Reviewers undocumented
+	Reviewers []AccessReviewReviewerScope `json:"reviewers,omitempty"`
+	// Scope undocumented
+	Scope *AccessReviewScope `json:"scope,omitempty"`
+	// Settings undocumented
+	Settings *AccessReviewScheduleSettings `json:"settings,omitempty"`
+	// StageSettings undocumented
+	StageSettings []AccessReviewStageSettings `json:"stageSettings,omitempty"`
+	// Status undocumented
+	Status *string `json:"status,omitempty"`
+	// Instances undocumented
+	Instances []AccessReviewInstance `json:"instances,omitempty"`
+}
+
+// AccessReviewScheduleSettings undocumented
+type AccessReviewScheduleSettings struct {
+	// Object is the base model of AccessReviewScheduleSettings
+	Object
+	// ApplyActions undocumented
+	ApplyActions []AccessReviewApplyAction `json:"applyActions,omitempty"`
+	// AutoApplyDecisionsEnabled undocumented
+	AutoApplyDecisionsEnabled *bool `json:"autoApplyDecisionsEnabled,omitempty"`
+	// DecisionHistoriesForReviewersEnabled undocumented
+	DecisionHistoriesForReviewersEnabled *bool `json:"decisionHistoriesForReviewersEnabled,omitempty"`
+	// DefaultDecision undocumented
+	DefaultDecision *string `json:"defaultDecision,omitempty"`
+	// DefaultDecisionEnabled undocumented
+	DefaultDecisionEnabled *bool `json:"defaultDecisionEnabled,omitempty"`
+	// InstanceDurationInDays undocumented
+	InstanceDurationInDays *int `json:"instanceDurationInDays,omitempty"`
+	// JustificationRequiredOnApproval undocumented
+	JustificationRequiredOnApproval *bool `json:"justificationRequiredOnApproval,omitempty"`
+	// MailNotificationsEnabled undocumented
+	MailNotificationsEnabled *bool `json:"mailNotificationsEnabled,omitempty"`
+	// RecommendationsEnabled undocumented
+	RecommendationsEnabled *bool `json:"recommendationsEnabled,omitempty"`
+	// Recurrence undocumented
+	Recurrence *PatternedRecurrence `json:"recurrence,omitempty"`
+	// ReminderNotificationsEnabled undocumented
+	ReminderNotificationsEnabled *bool `json:"reminderNotificationsEnabled,omitempty"`
+}
+
+// AccessReviewScope undocumented
+type AccessReviewScope struct {
+	// Object is the base model of AccessReviewScope
+	Object
+}
+
+// AccessReviewSet undocumented
+type AccessReviewSet struct {
+	// Entity is the base model of AccessReviewSet
+	Entity
+	// Definitions undocumented
+	Definitions []AccessReviewScheduleDefinition `json:"definitions,omitempty"`
+	// HistoryDefinitions undocumented
+	HistoryDefinitions []AccessReviewHistoryDefinition `json:"historyDefinitions,omitempty"`
+}
+
+// AccessReviewStage undocumented
+type AccessReviewStage struct {
+	// Entity is the base model of AccessReviewStage
+	Entity
+	// EndDateTime undocumented
+	EndDateTime *time.Time `json:"endDateTime,omitempty"`
+	// FallbackReviewers undocumented
+	FallbackReviewers []AccessReviewReviewerScope `json:"fallbackReviewers,omitempty"`
+	// Reviewers undocumented
+	Reviewers []AccessReviewReviewerScope `json:"reviewers,omitempty"`
+	// StartDateTime undocumented
+	StartDateTime *time.Time `json:"startDateTime,omitempty"`
+	// Status undocumented
+	Status *string `json:"status,omitempty"`
+	// Decisions undocumented
+	Decisions []AccessReviewInstanceDecisionItem `json:"decisions,omitempty"`
+}
+
+// AccessReviewStageSettings undocumented
+type AccessReviewStageSettings struct {
+	// Object is the base model of AccessReviewStageSettings
+	Object
+	// DecisionsThatWillMoveToNextStage undocumented
+	DecisionsThatWillMoveToNextStage []string `json:"decisionsThatWillMoveToNextStage,omitempty"`
+	// DependsOn undocumented
+	DependsOn []string `json:"dependsOn,omitempty"`
+	// DurationInDays undocumented
+	DurationInDays *int `json:"durationInDays,omitempty"`
+	// FallbackReviewers undocumented
+	FallbackReviewers []AccessReviewReviewerScope `json:"fallbackReviewers,omitempty"`
+	// RecommendationsEnabled undocumented
+	RecommendationsEnabled *bool `json:"recommendationsEnabled,omitempty"`
+	// Reviewers undocumented
+	Reviewers []AccessReviewReviewerScope `json:"reviewers,omitempty"`
+	// StageID undocumented
+	StageID *string `json:"stageId,omitempty"`
 }

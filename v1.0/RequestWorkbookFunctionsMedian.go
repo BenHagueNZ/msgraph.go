@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsMedianRequestBuilder struct{ BaseRequestBuilder }
 
 // Median action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Median(reqObj *WorkbookFunctionsMedian
 	return bb
 }
 
-//
 type WorkbookFunctionsMedianRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsMedianRequestBuilder) Request() *WorkbookFunctionsMedianRequest {
 	return &WorkbookFunctionsMedianRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsMedianRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

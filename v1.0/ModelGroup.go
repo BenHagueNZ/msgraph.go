@@ -8,6 +8,8 @@ import "time"
 type Group struct {
 	// DirectoryObject is the base model of Group
 	DirectoryObject
+	// AssignedLabels undocumented
+	AssignedLabels []AssignedLabel `json:"assignedLabels,omitempty"`
 	// AssignedLicenses undocumented
 	AssignedLicenses []AssignedLicense `json:"assignedLicenses,omitempty"`
 	// Classification undocumented
@@ -18,10 +20,14 @@ type Group struct {
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// HasMembersWithLicenseErrors undocumented
-	HasMembersWithLicenseErrors *bool `json:"hasMembersWithLicenseErrors,omitempty"`
+	// ExpirationDateTime undocumented
+	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
 	// GroupTypes undocumented
 	GroupTypes []string `json:"groupTypes,omitempty"`
+	// HasMembersWithLicenseErrors undocumented
+	HasMembersWithLicenseErrors *bool `json:"hasMembersWithLicenseErrors,omitempty"`
+	// IsAssignableToRole undocumented
+	IsAssignableToRole *bool `json:"isAssignableToRole,omitempty"`
 	// LicenseProcessingState undocumented
 	LicenseProcessingState *LicenseProcessingState `json:"licenseProcessingState,omitempty"`
 	// Mail undocumented
@@ -30,6 +36,10 @@ type Group struct {
 	MailEnabled *bool `json:"mailEnabled,omitempty"`
 	// MailNickname undocumented
 	MailNickname *string `json:"mailNickname,omitempty"`
+	// MembershipRule undocumented
+	MembershipRule *string `json:"membershipRule,omitempty"`
+	// MembershipRuleProcessingState undocumented
+	MembershipRuleProcessingState *string `json:"membershipRuleProcessingState,omitempty"`
 	// OnPremisesDomainName undocumented
 	OnPremisesDomainName *string `json:"onPremisesDomainName,omitempty"`
 	// OnPremisesLastSyncDateTime undocumented
@@ -46,6 +56,8 @@ type Group struct {
 	OnPremisesSyncEnabled *bool `json:"onPremisesSyncEnabled,omitempty"`
 	// PreferredDataLocation undocumented
 	PreferredDataLocation *string `json:"preferredDataLocation,omitempty"`
+	// PreferredLanguage undocumented
+	PreferredLanguage *string `json:"preferredLanguage,omitempty"`
 	// ProxyAddresses undocumented
 	ProxyAddresses []string `json:"proxyAddresses,omitempty"`
 	// RenewedDateTime undocumented
@@ -54,52 +66,58 @@ type Group struct {
 	SecurityEnabled *bool `json:"securityEnabled,omitempty"`
 	// SecurityIdentifier undocumented
 	SecurityIdentifier *string `json:"securityIdentifier,omitempty"`
+	// Theme undocumented
+	Theme *string `json:"theme,omitempty"`
 	// Visibility undocumented
 	Visibility *string `json:"visibility,omitempty"`
 	// AllowExternalSenders undocumented
 	AllowExternalSenders *bool `json:"allowExternalSenders,omitempty"`
 	// AutoSubscribeNewMembers undocumented
 	AutoSubscribeNewMembers *bool `json:"autoSubscribeNewMembers,omitempty"`
+	// HideFromAddressLists undocumented
+	HideFromAddressLists *bool `json:"hideFromAddressLists,omitempty"`
+	// HideFromOutlookClients undocumented
+	HideFromOutlookClients *bool `json:"hideFromOutlookClients,omitempty"`
 	// IsSubscribedByMail undocumented
 	IsSubscribedByMail *bool `json:"isSubscribedByMail,omitempty"`
 	// UnseenCount undocumented
 	UnseenCount *int `json:"unseenCount,omitempty"`
 	// IsArchived undocumented
 	IsArchived *bool `json:"isArchived,omitempty"`
-	// Members undocumented
-	Members []DirectoryObject `json:"members,omitempty"`
-	// MemberOf undocumented
-	MemberOf []DirectoryObject `json:"memberOf,omitempty"`
-	// MembersWithLicenseErrors undocumented
-	MembersWithLicenseErrors []DirectoryObject `json:"membersWithLicenseErrors,omitempty"`
-	// TransitiveMembers undocumented
-	TransitiveMembers []DirectoryObject `json:"transitiveMembers,omitempty"`
-	// TransitiveMemberOf undocumented
-	TransitiveMemberOf []DirectoryObject `json:"transitiveMemberOf,omitempty"`
+	// AppRoleAssignments undocumented
+	AppRoleAssignments []AppRoleAssignment `json:"appRoleAssignments,omitempty"`
 	// CreatedOnBehalfOf undocumented
 	CreatedOnBehalfOf *DirectoryObject `json:"createdOnBehalfOf,omitempty"`
+	// MemberOf undocumented
+	MemberOf []DirectoryObject `json:"memberOf,omitempty"`
+	// Members undocumented
+	Members []DirectoryObject `json:"members,omitempty"`
+	// MembersWithLicenseErrors undocumented
+	MembersWithLicenseErrors []DirectoryObject `json:"membersWithLicenseErrors,omitempty"`
 	// Owners undocumented
 	Owners []DirectoryObject `json:"owners,omitempty"`
+	// PermissionGrants undocumented
+	PermissionGrants []ResourceSpecificPermissionGrant `json:"permissionGrants,omitempty"`
 	// Settings undocumented
 	Settings []GroupSetting `json:"settings,omitempty"`
-	// Conversations undocumented
-	Conversations []Conversation `json:"conversations,omitempty"`
-	// Photos undocumented
-	Photos []ProfilePhoto `json:"photos,omitempty"`
+	// TransitiveMemberOf undocumented
+	TransitiveMemberOf []DirectoryObject `json:"transitiveMemberOf,omitempty"`
+	// TransitiveMembers undocumented
+	TransitiveMembers []DirectoryObject `json:"transitiveMembers,omitempty"`
 	// AcceptedSenders undocumented
 	AcceptedSenders []DirectoryObject `json:"acceptedSenders,omitempty"`
-	// RejectedSenders undocumented
-	RejectedSenders []DirectoryObject `json:"rejectedSenders,omitempty"`
-	// Threads undocumented
-	Threads []ConversationThread `json:"threads,omitempty"`
 	// Calendar undocumented
 	Calendar *Calendar `json:"calendar,omitempty"`
 	// CalendarView undocumented
 	CalendarView []Event `json:"calendarView,omitempty"`
+	// Conversations undocumented
+	Conversations []Conversation `json:"conversations,omitempty"`
 	// Events undocumented
 	Events []Event `json:"events,omitempty"`
-	// Photo undocumented
-	Photo *ProfilePhoto `json:"photo,omitempty"`
+	// RejectedSenders undocumented
+	RejectedSenders []DirectoryObject `json:"rejectedSenders,omitempty"`
+	// Threads undocumented
+	Threads []ConversationThread `json:"threads,omitempty"`
 	// Drive undocumented
 	Drive *Drive `json:"drive,omitempty"`
 	// Drives undocumented
@@ -114,11 +132,15 @@ type Group struct {
 	Planner *PlannerGroup `json:"planner,omitempty"`
 	// Onenote undocumented
 	Onenote *Onenote `json:"onenote,omitempty"`
+	// Photo undocumented
+	Photo *ProfilePhoto `json:"photo,omitempty"`
+	// Photos undocumented
+	Photos []ProfilePhoto `json:"photos,omitempty"`
 	// Team undocumented
 	Team *Team `json:"team,omitempty"`
 }
 
-// GroupAssignmentTarget undocumented
+// GroupAssignmentTarget Represents an assignment to a group.
 type GroupAssignmentTarget struct {
 	// DeviceAndAppManagementAssignmentTarget is the base model of GroupAssignmentTarget
 	DeviceAndAppManagementAssignmentTarget
@@ -130,12 +152,22 @@ type GroupAssignmentTarget struct {
 type GroupLifecyclePolicy struct {
 	// Entity is the base model of GroupLifecyclePolicy
 	Entity
+	// AlternateNotificationEmails undocumented
+	AlternateNotificationEmails *string `json:"alternateNotificationEmails,omitempty"`
 	// GroupLifetimeInDays undocumented
 	GroupLifetimeInDays *int `json:"groupLifetimeInDays,omitempty"`
 	// ManagedGroupTypes undocumented
 	ManagedGroupTypes *string `json:"managedGroupTypes,omitempty"`
-	// AlternateNotificationEmails undocumented
-	AlternateNotificationEmails *string `json:"alternateNotificationEmails,omitempty"`
+}
+
+// GroupMembers undocumented
+type GroupMembers struct {
+	// SubjectSet is the base model of GroupMembers
+	SubjectSet
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// GroupID undocumented
+	GroupID *string `json:"groupId,omitempty"`
 }
 
 // GroupSetting undocumented
@@ -154,10 +186,10 @@ type GroupSetting struct {
 type GroupSettingTemplate struct {
 	// DirectoryObject is the base model of GroupSettingTemplate
 	DirectoryObject
-	// DisplayName undocumented
-	DisplayName *string `json:"displayName,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
 	// Values undocumented
 	Values []SettingTemplateValue `json:"values,omitempty"`
 }

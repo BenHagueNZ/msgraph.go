@@ -6,18 +6,22 @@ package msgraph
 type MailboxSettings struct {
 	// Object is the base model of MailboxSettings
 	Object
-	// AutomaticRepliesSetting undocumented
-	AutomaticRepliesSetting *AutomaticRepliesSetting `json:"automaticRepliesSetting,omitempty"`
 	// ArchiveFolder undocumented
 	ArchiveFolder *string `json:"archiveFolder,omitempty"`
-	// TimeZone undocumented
-	TimeZone *string `json:"timeZone,omitempty"`
-	// Language undocumented
-	Language *LocaleInfo `json:"language,omitempty"`
-	// WorkingHours undocumented
-	WorkingHours *WorkingHours `json:"workingHours,omitempty"`
+	// AutomaticRepliesSetting undocumented
+	AutomaticRepliesSetting *AutomaticRepliesSetting `json:"automaticRepliesSetting,omitempty"`
 	// DateFormat undocumented
 	DateFormat *string `json:"dateFormat,omitempty"`
+	// DelegateMeetingMessageDeliveryOptions undocumented
+	DelegateMeetingMessageDeliveryOptions *DelegateMeetingMessageDeliveryOptions `json:"delegateMeetingMessageDeliveryOptions,omitempty"`
+	// Language undocumented
+	Language *LocaleInfo `json:"language,omitempty"`
 	// TimeFormat undocumented
 	TimeFormat *string `json:"timeFormat,omitempty"`
+	// TimeZone undocumented
+	TimeZone *string `json:"timeZone,omitempty"`
+	// UserPurpose undocumented
+	UserPurpose *UserPurpose `json:"userPurpose,omitempty"`
+	// WorkingHours undocumented
+	WorkingHours *WorkingHours `json:"workingHours,omitempty"`
 }

@@ -8,12 +8,12 @@ import "time"
 type Operation struct {
 	// Entity is the base model of Operation
 	Entity
-	// Status undocumented
-	Status *OperationStatus `json:"status,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// LastActionDateTime undocumented
 	LastActionDateTime *time.Time `json:"lastActionDateTime,omitempty"`
+	// Status undocumented
+	Status *OperationStatus `json:"status,omitempty"`
 }
 
 // OperationError undocumented

@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsAmorDegrcRequestBuilder struct{ BaseRequestBuilder }
 
 // AmorDegrc action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) AmorDegrc(reqObj *WorkbookFunctionsAmo
 	return bb
 }
 
-//
 type WorkbookFunctionsAmorDegrcRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsAmorDegrcRequestBuilder) Request() *WorkbookFunctionsAmorDegrcRequest {
 	return &WorkbookFunctionsAmorDegrcRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsAmorDegrcRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsAmorLincRequestBuilder struct{ BaseRequestBuilder }
 
 // AmorLinc action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) AmorLinc(reqObj *WorkbookFunctionsAmor
 	return bb
 }
 
-//
 type WorkbookFunctionsAmorLincRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsAmorLincRequestBuilder) Request() *WorkbookFunctionsAmorLincRequest {
 	return &WorkbookFunctionsAmorLincRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsAmorLincRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

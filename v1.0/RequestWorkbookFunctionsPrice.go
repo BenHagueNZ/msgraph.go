@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsPriceRequestBuilder struct{ BaseRequestBuilder }
 
 // Price action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Price(reqObj *WorkbookFunctionsPriceRe
 	return bb
 }
 
-//
 type WorkbookFunctionsPriceRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsPriceRequestBuilder) Request() *WorkbookFunctionsPriceRequest {
 	return &WorkbookFunctionsPriceRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsPriceRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsPriceDiscRequestBuilder struct{ BaseRequestBuilder }
 
 // PriceDisc action undocumented
@@ -42,23 +37,19 @@ func (b *WorkbookFunctionsRequestBuilder) PriceDisc(reqObj *WorkbookFunctionsPri
 	return bb
 }
 
-//
 type WorkbookFunctionsPriceDiscRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsPriceDiscRequestBuilder) Request() *WorkbookFunctionsPriceDiscRequest {
 	return &WorkbookFunctionsPriceDiscRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsPriceDiscRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsPriceMatRequestBuilder struct{ BaseRequestBuilder }
 
 // PriceMat action undocumented
@@ -69,17 +60,14 @@ func (b *WorkbookFunctionsRequestBuilder) PriceMat(reqObj *WorkbookFunctionsPric
 	return bb
 }
 
-//
 type WorkbookFunctionsPriceMatRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsPriceMatRequestBuilder) Request() *WorkbookFunctionsPriceMatRequest {
 	return &WorkbookFunctionsPriceMatRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsPriceMatRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

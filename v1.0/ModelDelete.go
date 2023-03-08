@@ -2,7 +2,7 @@
 
 package msgraph
 
-// DeleteUserFromSharedAppleDeviceActionResult undocumented
+// DeleteUserFromSharedAppleDeviceActionResult Delete user from shared apple device action result
 type DeleteUserFromSharedAppleDeviceActionResult struct {
 	// DeviceActionResult is the base model of DeleteUserFromSharedAppleDeviceActionResult
 	DeviceActionResult

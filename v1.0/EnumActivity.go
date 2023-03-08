@@ -33,3 +33,35 @@ var (
 	_ActivityDomainPPersonal     = ActivityDomainVPersonal
 	_ActivityDomainPUnrestricted = ActivityDomainVUnrestricted
 )
+
+// ActivityType undocumented
+type ActivityType string
+
+const (
+	// ActivityTypeVSignin undocumented
+	ActivityTypeVSignin ActivityType = "signin"
+	// ActivityTypeVUser undocumented
+	ActivityTypeVUser ActivityType = "user"
+	// ActivityTypeVUnknownFutureValue undocumented
+	ActivityTypeVUnknownFutureValue ActivityType = "unknownFutureValue"
+	// ActivityTypeVServicePrincipal undocumented
+	ActivityTypeVServicePrincipal ActivityType = "servicePrincipal"
+)
+
+var (
+	// ActivityTypePSignin is a pointer to ActivityTypeVSignin
+	ActivityTypePSignin = &_ActivityTypePSignin
+	// ActivityTypePUser is a pointer to ActivityTypeVUser
+	ActivityTypePUser = &_ActivityTypePUser
+	// ActivityTypePUnknownFutureValue is a pointer to ActivityTypeVUnknownFutureValue
+	ActivityTypePUnknownFutureValue = &_ActivityTypePUnknownFutureValue
+	// ActivityTypePServicePrincipal is a pointer to ActivityTypeVServicePrincipal
+	ActivityTypePServicePrincipal = &_ActivityTypePServicePrincipal
+)
+
+var (
+	_ActivityTypePSignin             = ActivityTypeVSignin
+	_ActivityTypePUser               = ActivityTypeVUser
+	_ActivityTypePUnknownFutureValue = ActivityTypeVUnknownFutureValue
+	_ActivityTypePServicePrincipal   = ActivityTypeVServicePrincipal
+)

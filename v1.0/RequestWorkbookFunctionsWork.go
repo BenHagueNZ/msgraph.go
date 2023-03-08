@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsWorkDayRequestBuilder struct{ BaseRequestBuilder }
 
 // WorkDay action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) WorkDay(reqObj *WorkbookFunctionsWorkD
 	return bb
 }
 
-//
 type WorkbookFunctionsWorkDayRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsWorkDayRequestBuilder) Request() *WorkbookFunctionsWorkDayRequest {
 	return &WorkbookFunctionsWorkDayRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsWorkDayRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsWorkDay_IntlRequestBuilder struct{ BaseRequestBuilder }
 
 // WorkDay_Intl action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) WorkDay_Intl(reqObj *WorkbookFunctions
 	return bb
 }
 
-//
 type WorkbookFunctionsWorkDay_IntlRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsWorkDay_IntlRequestBuilder) Request() *WorkbookFunctionsWorkDay_IntlRequest {
 	return &WorkbookFunctionsWorkDay_IntlRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsWorkDay_IntlRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

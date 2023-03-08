@@ -11,6 +11,574 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
+// EducationAssignmentPublishRequestParameter undocumented
+type EducationAssignmentPublishRequestParameter struct {
+}
+
+// EducationAssignmentSetUpFeedbackResourcesFolderRequestParameter undocumented
+type EducationAssignmentSetUpFeedbackResourcesFolderRequestParameter struct {
+}
+
+// EducationAssignmentSetUpResourcesFolderRequestParameter undocumented
+type EducationAssignmentSetUpResourcesFolderRequestParameter struct {
+}
+
+// EducationSubmissionSetUpResourcesFolderRequestParameter undocumented
+type EducationSubmissionSetUpResourcesFolderRequestParameter struct {
+}
+
+// EducationSubmissionReassignRequestParameter undocumented
+type EducationSubmissionReassignRequestParameter struct {
+}
+
+// EducationSubmissionReturnRequestParameter undocumented
+type EducationSubmissionReturnRequestParameter struct {
+}
+
+// EducationSubmissionSubmitRequestParameter undocumented
+type EducationSubmissionSubmitRequestParameter struct {
+}
+
+// EducationSubmissionUnsubmitRequestParameter undocumented
+type EducationSubmissionUnsubmitRequestParameter struct {
+}
+
+// Categories returns request builder for EducationCategory collection
+func (b *EducationAssignmentRequestBuilder) Categories() *EducationAssignmentCategoriesCollectionRequestBuilder {
+	bb := &EducationAssignmentCategoriesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/categories"
+	return bb
+}
+
+// EducationAssignmentCategoriesCollectionRequestBuilder is request builder for EducationCategory collection
+type EducationAssignmentCategoriesCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationCategory collection
+func (b *EducationAssignmentCategoriesCollectionRequestBuilder) Request() *EducationAssignmentCategoriesCollectionRequest {
+	return &EducationAssignmentCategoriesCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationCategory item
+func (b *EducationAssignmentCategoriesCollectionRequestBuilder) ID(id string) *EducationCategoryRequestBuilder {
+	bb := &EducationCategoryRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationAssignmentCategoriesCollectionRequest is request for EducationCategory collection
+type EducationAssignmentCategoriesCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationCategory collection
+func (r *EducationAssignmentCategoriesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationCategory, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationCategory
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationCategory
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationCategory collection, max N pages
+func (r *EducationAssignmentCategoriesCollectionRequest) GetN(ctx context.Context, n int) ([]EducationCategory, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationCategory collection
+func (r *EducationAssignmentCategoriesCollectionRequest) Get(ctx context.Context) ([]EducationCategory, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationCategory collection
+func (r *EducationAssignmentCategoriesCollectionRequest) Add(ctx context.Context, reqObj *EducationCategory) (resObj *EducationCategory, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Resources returns request builder for EducationAssignmentResource collection
+func (b *EducationAssignmentRequestBuilder) Resources() *EducationAssignmentResourcesCollectionRequestBuilder {
+	bb := &EducationAssignmentResourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/resources"
+	return bb
+}
+
+// EducationAssignmentResourcesCollectionRequestBuilder is request builder for EducationAssignmentResource collection
+type EducationAssignmentResourcesCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationAssignmentResource collection
+func (b *EducationAssignmentResourcesCollectionRequestBuilder) Request() *EducationAssignmentResourcesCollectionRequest {
+	return &EducationAssignmentResourcesCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationAssignmentResource item
+func (b *EducationAssignmentResourcesCollectionRequestBuilder) ID(id string) *EducationAssignmentResourceRequestBuilder {
+	bb := &EducationAssignmentResourceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationAssignmentResourcesCollectionRequest is request for EducationAssignmentResource collection
+type EducationAssignmentResourcesCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationAssignmentResource collection
+func (r *EducationAssignmentResourcesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationAssignmentResource, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationAssignmentResource
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationAssignmentResource
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationAssignmentResource collection, max N pages
+func (r *EducationAssignmentResourcesCollectionRequest) GetN(ctx context.Context, n int) ([]EducationAssignmentResource, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationAssignmentResource collection
+func (r *EducationAssignmentResourcesCollectionRequest) Get(ctx context.Context) ([]EducationAssignmentResource, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationAssignmentResource collection
+func (r *EducationAssignmentResourcesCollectionRequest) Add(ctx context.Context, reqObj *EducationAssignmentResource) (resObj *EducationAssignmentResource, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Rubric is navigation property
+func (b *EducationAssignmentRequestBuilder) Rubric() *EducationRubricRequestBuilder {
+	bb := &EducationRubricRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/rubric"
+	return bb
+}
+
+// Submissions returns request builder for EducationSubmission collection
+func (b *EducationAssignmentRequestBuilder) Submissions() *EducationAssignmentSubmissionsCollectionRequestBuilder {
+	bb := &EducationAssignmentSubmissionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/submissions"
+	return bb
+}
+
+// EducationAssignmentSubmissionsCollectionRequestBuilder is request builder for EducationSubmission collection
+type EducationAssignmentSubmissionsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationSubmission collection
+func (b *EducationAssignmentSubmissionsCollectionRequestBuilder) Request() *EducationAssignmentSubmissionsCollectionRequest {
+	return &EducationAssignmentSubmissionsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationSubmission item
+func (b *EducationAssignmentSubmissionsCollectionRequestBuilder) ID(id string) *EducationSubmissionRequestBuilder {
+	bb := &EducationSubmissionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationAssignmentSubmissionsCollectionRequest is request for EducationSubmission collection
+type EducationAssignmentSubmissionsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationSubmission collection
+func (r *EducationAssignmentSubmissionsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationSubmission, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationSubmission
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationSubmission
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationSubmission collection, max N pages
+func (r *EducationAssignmentSubmissionsCollectionRequest) GetN(ctx context.Context, n int) ([]EducationSubmission, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationSubmission collection
+func (r *EducationAssignmentSubmissionsCollectionRequest) Get(ctx context.Context) ([]EducationSubmission, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationSubmission collection
+func (r *EducationAssignmentSubmissionsCollectionRequest) Add(ctx context.Context, reqObj *EducationSubmission) (resObj *EducationSubmission, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// AssignmentCategories returns request builder for EducationCategory collection
+func (b *EducationClassRequestBuilder) AssignmentCategories() *EducationClassAssignmentCategoriesCollectionRequestBuilder {
+	bb := &EducationClassAssignmentCategoriesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/assignmentCategories"
+	return bb
+}
+
+// EducationClassAssignmentCategoriesCollectionRequestBuilder is request builder for EducationCategory collection
+type EducationClassAssignmentCategoriesCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationCategory collection
+func (b *EducationClassAssignmentCategoriesCollectionRequestBuilder) Request() *EducationClassAssignmentCategoriesCollectionRequest {
+	return &EducationClassAssignmentCategoriesCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationCategory item
+func (b *EducationClassAssignmentCategoriesCollectionRequestBuilder) ID(id string) *EducationCategoryRequestBuilder {
+	bb := &EducationCategoryRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationClassAssignmentCategoriesCollectionRequest is request for EducationCategory collection
+type EducationClassAssignmentCategoriesCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationCategory collection
+func (r *EducationClassAssignmentCategoriesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationCategory, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationCategory
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationCategory
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationCategory collection, max N pages
+func (r *EducationClassAssignmentCategoriesCollectionRequest) GetN(ctx context.Context, n int) ([]EducationCategory, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationCategory collection
+func (r *EducationClassAssignmentCategoriesCollectionRequest) Get(ctx context.Context) ([]EducationCategory, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationCategory collection
+func (r *EducationClassAssignmentCategoriesCollectionRequest) Add(ctx context.Context, reqObj *EducationCategory) (resObj *EducationCategory, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// AssignmentDefaults is navigation property
+func (b *EducationClassRequestBuilder) AssignmentDefaults() *EducationAssignmentDefaultsRequestBuilder {
+	bb := &EducationAssignmentDefaultsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/assignmentDefaults"
+	return bb
+}
+
+// AssignmentSettings is navigation property
+func (b *EducationClassRequestBuilder) AssignmentSettings() *EducationAssignmentSettingsRequestBuilder {
+	bb := &EducationAssignmentSettingsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/assignmentSettings"
+	return bb
+}
+
+// Assignments returns request builder for EducationAssignment collection
+func (b *EducationClassRequestBuilder) Assignments() *EducationClassAssignmentsCollectionRequestBuilder {
+	bb := &EducationClassAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/assignments"
+	return bb
+}
+
+// EducationClassAssignmentsCollectionRequestBuilder is request builder for EducationAssignment collection
+type EducationClassAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationAssignment collection
+func (b *EducationClassAssignmentsCollectionRequestBuilder) Request() *EducationClassAssignmentsCollectionRequest {
+	return &EducationClassAssignmentsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationAssignment item
+func (b *EducationClassAssignmentsCollectionRequestBuilder) ID(id string) *EducationAssignmentRequestBuilder {
+	bb := &EducationAssignmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationClassAssignmentsCollectionRequest is request for EducationAssignment collection
+type EducationClassAssignmentsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationAssignment collection
+func (r *EducationClassAssignmentsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationAssignment, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationAssignment
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationAssignment
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationAssignment collection, max N pages
+func (r *EducationClassAssignmentsCollectionRequest) GetN(ctx context.Context, n int) ([]EducationAssignment, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationAssignment collection
+func (r *EducationClassAssignmentsCollectionRequest) Get(ctx context.Context) ([]EducationAssignment, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationAssignment collection
+func (r *EducationClassAssignmentsCollectionRequest) Add(ctx context.Context, reqObj *EducationAssignment) (resObj *EducationAssignment, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Group is navigation property
 func (b *EducationClassRequestBuilder) Group() *GroupRequestBuilder {
 	bb := &GroupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -643,6 +1211,13 @@ func (r *EducationRootUsersCollectionRequest) Add(ctx context.Context, reqObj *E
 	return
 }
 
+// AdministrativeUnit is navigation property
+func (b *EducationSchoolRequestBuilder) AdministrativeUnit() *AdministrativeUnitRequestBuilder {
+	bb := &AdministrativeUnitRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/administrativeUnit"
+	return bb
+}
+
 // Classes returns request builder for EducationClass collection
 func (b *EducationSchoolRequestBuilder) Classes() *EducationSchoolClassesCollectionRequestBuilder {
 	bb := &EducationSchoolClassesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -849,6 +1424,418 @@ func (r *EducationSchoolUsersCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
+// Outcomes returns request builder for EducationOutcome collection
+func (b *EducationSubmissionRequestBuilder) Outcomes() *EducationSubmissionOutcomesCollectionRequestBuilder {
+	bb := &EducationSubmissionOutcomesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/outcomes"
+	return bb
+}
+
+// EducationSubmissionOutcomesCollectionRequestBuilder is request builder for EducationOutcome collection
+type EducationSubmissionOutcomesCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationOutcome collection
+func (b *EducationSubmissionOutcomesCollectionRequestBuilder) Request() *EducationSubmissionOutcomesCollectionRequest {
+	return &EducationSubmissionOutcomesCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationOutcome item
+func (b *EducationSubmissionOutcomesCollectionRequestBuilder) ID(id string) *EducationOutcomeRequestBuilder {
+	bb := &EducationOutcomeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationSubmissionOutcomesCollectionRequest is request for EducationOutcome collection
+type EducationSubmissionOutcomesCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationOutcome collection
+func (r *EducationSubmissionOutcomesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationOutcome, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationOutcome
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationOutcome
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationOutcome collection, max N pages
+func (r *EducationSubmissionOutcomesCollectionRequest) GetN(ctx context.Context, n int) ([]EducationOutcome, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationOutcome collection
+func (r *EducationSubmissionOutcomesCollectionRequest) Get(ctx context.Context) ([]EducationOutcome, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationOutcome collection
+func (r *EducationSubmissionOutcomesCollectionRequest) Add(ctx context.Context, reqObj *EducationOutcome) (resObj *EducationOutcome, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Resources returns request builder for EducationSubmissionResource collection
+func (b *EducationSubmissionRequestBuilder) Resources() *EducationSubmissionResourcesCollectionRequestBuilder {
+	bb := &EducationSubmissionResourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/resources"
+	return bb
+}
+
+// EducationSubmissionResourcesCollectionRequestBuilder is request builder for EducationSubmissionResource collection
+type EducationSubmissionResourcesCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationSubmissionResource collection
+func (b *EducationSubmissionResourcesCollectionRequestBuilder) Request() *EducationSubmissionResourcesCollectionRequest {
+	return &EducationSubmissionResourcesCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationSubmissionResource item
+func (b *EducationSubmissionResourcesCollectionRequestBuilder) ID(id string) *EducationSubmissionResourceRequestBuilder {
+	bb := &EducationSubmissionResourceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationSubmissionResourcesCollectionRequest is request for EducationSubmissionResource collection
+type EducationSubmissionResourcesCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationSubmissionResource collection
+func (r *EducationSubmissionResourcesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationSubmissionResource, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationSubmissionResource
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationSubmissionResource
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationSubmissionResource collection, max N pages
+func (r *EducationSubmissionResourcesCollectionRequest) GetN(ctx context.Context, n int) ([]EducationSubmissionResource, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationSubmissionResource collection
+func (r *EducationSubmissionResourcesCollectionRequest) Get(ctx context.Context) ([]EducationSubmissionResource, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationSubmissionResource collection
+func (r *EducationSubmissionResourcesCollectionRequest) Add(ctx context.Context, reqObj *EducationSubmissionResource) (resObj *EducationSubmissionResource, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// SubmittedResources returns request builder for EducationSubmissionResource collection
+func (b *EducationSubmissionRequestBuilder) SubmittedResources() *EducationSubmissionSubmittedResourcesCollectionRequestBuilder {
+	bb := &EducationSubmissionSubmittedResourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/submittedResources"
+	return bb
+}
+
+// EducationSubmissionSubmittedResourcesCollectionRequestBuilder is request builder for EducationSubmissionResource collection
+type EducationSubmissionSubmittedResourcesCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationSubmissionResource collection
+func (b *EducationSubmissionSubmittedResourcesCollectionRequestBuilder) Request() *EducationSubmissionSubmittedResourcesCollectionRequest {
+	return &EducationSubmissionSubmittedResourcesCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationSubmissionResource item
+func (b *EducationSubmissionSubmittedResourcesCollectionRequestBuilder) ID(id string) *EducationSubmissionResourceRequestBuilder {
+	bb := &EducationSubmissionResourceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationSubmissionSubmittedResourcesCollectionRequest is request for EducationSubmissionResource collection
+type EducationSubmissionSubmittedResourcesCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationSubmissionResource collection
+func (r *EducationSubmissionSubmittedResourcesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationSubmissionResource, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationSubmissionResource
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationSubmissionResource
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationSubmissionResource collection, max N pages
+func (r *EducationSubmissionSubmittedResourcesCollectionRequest) GetN(ctx context.Context, n int) ([]EducationSubmissionResource, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationSubmissionResource collection
+func (r *EducationSubmissionSubmittedResourcesCollectionRequest) Get(ctx context.Context) ([]EducationSubmissionResource, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationSubmissionResource collection
+func (r *EducationSubmissionSubmittedResourcesCollectionRequest) Add(ctx context.Context, reqObj *EducationSubmissionResource) (resObj *EducationSubmissionResource, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Assignments returns request builder for EducationAssignment collection
+func (b *EducationUserRequestBuilder) Assignments() *EducationUserAssignmentsCollectionRequestBuilder {
+	bb := &EducationUserAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/assignments"
+	return bb
+}
+
+// EducationUserAssignmentsCollectionRequestBuilder is request builder for EducationAssignment collection
+type EducationUserAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationAssignment collection
+func (b *EducationUserAssignmentsCollectionRequestBuilder) Request() *EducationUserAssignmentsCollectionRequest {
+	return &EducationUserAssignmentsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationAssignment item
+func (b *EducationUserAssignmentsCollectionRequestBuilder) ID(id string) *EducationAssignmentRequestBuilder {
+	bb := &EducationAssignmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationUserAssignmentsCollectionRequest is request for EducationAssignment collection
+type EducationUserAssignmentsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationAssignment collection
+func (r *EducationUserAssignmentsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationAssignment, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationAssignment
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationAssignment
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationAssignment collection, max N pages
+func (r *EducationUserAssignmentsCollectionRequest) GetN(ctx context.Context, n int) ([]EducationAssignment, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationAssignment collection
+func (r *EducationUserAssignmentsCollectionRequest) Get(ctx context.Context) ([]EducationAssignment, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationAssignment collection
+func (r *EducationUserAssignmentsCollectionRequest) Add(ctx context.Context, reqObj *EducationAssignment) (resObj *EducationAssignment, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Classes returns request builder for EducationClass collection
 func (b *EducationUserRequestBuilder) Classes() *EducationUserClassesCollectionRequestBuilder {
 	bb := &EducationUserClassesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -952,6 +1939,109 @@ func (r *EducationUserClassesCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
+// Rubrics returns request builder for EducationRubric collection
+func (b *EducationUserRequestBuilder) Rubrics() *EducationUserRubricsCollectionRequestBuilder {
+	bb := &EducationUserRubricsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/rubrics"
+	return bb
+}
+
+// EducationUserRubricsCollectionRequestBuilder is request builder for EducationRubric collection
+type EducationUserRubricsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationRubric collection
+func (b *EducationUserRubricsCollectionRequestBuilder) Request() *EducationUserRubricsCollectionRequest {
+	return &EducationUserRubricsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationRubric item
+func (b *EducationUserRubricsCollectionRequestBuilder) ID(id string) *EducationRubricRequestBuilder {
+	bb := &EducationRubricRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationUserRubricsCollectionRequest is request for EducationRubric collection
+type EducationUserRubricsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationRubric collection
+func (r *EducationUserRubricsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationRubric, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationRubric
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationRubric
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationRubric collection, max N pages
+func (r *EducationUserRubricsCollectionRequest) GetN(ctx context.Context, n int) ([]EducationRubric, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationRubric collection
+func (r *EducationUserRubricsCollectionRequest) Get(ctx context.Context) ([]EducationRubric, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationRubric collection
+func (r *EducationUserRubricsCollectionRequest) Add(ctx context.Context, reqObj *EducationRubric) (resObj *EducationRubric, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Schools returns request builder for EducationSchool collection
 func (b *EducationUserRequestBuilder) Schools() *EducationUserSchoolsCollectionRequestBuilder {
 	bb := &EducationUserSchoolsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -1051,6 +2141,109 @@ func (r *EducationUserSchoolsCollectionRequest) Get(ctx context.Context) ([]Educ
 
 // Add performs POST request for EducationSchool collection
 func (r *EducationUserSchoolsCollectionRequest) Add(ctx context.Context, reqObj *EducationSchool) (resObj *EducationSchool, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// TaughtClasses returns request builder for EducationClass collection
+func (b *EducationUserRequestBuilder) TaughtClasses() *EducationUserTaughtClassesCollectionRequestBuilder {
+	bb := &EducationUserTaughtClassesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/taughtClasses"
+	return bb
+}
+
+// EducationUserTaughtClassesCollectionRequestBuilder is request builder for EducationClass collection
+type EducationUserTaughtClassesCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationClass collection
+func (b *EducationUserTaughtClassesCollectionRequestBuilder) Request() *EducationUserTaughtClassesCollectionRequest {
+	return &EducationUserTaughtClassesCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationClass item
+func (b *EducationUserTaughtClassesCollectionRequestBuilder) ID(id string) *EducationClassRequestBuilder {
+	bb := &EducationClassRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationUserTaughtClassesCollectionRequest is request for EducationClass collection
+type EducationUserTaughtClassesCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationClass collection
+func (r *EducationUserTaughtClassesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationClass, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationClass
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationClass
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationClass collection, max N pages
+func (r *EducationUserTaughtClassesCollectionRequest) GetN(ctx context.Context, n int) ([]EducationClass, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationClass collection
+func (r *EducationUserTaughtClassesCollectionRequest) Get(ctx context.Context) ([]EducationClass, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationClass collection
+func (r *EducationUserTaughtClassesCollectionRequest) Add(ctx context.Context, reqObj *EducationClass) (resObj *EducationClass, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

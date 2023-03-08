@@ -2,6 +2,14 @@
 
 package msgraph
 
+// CloudAppSecuritySessionControl undocumented
+type CloudAppSecuritySessionControl struct {
+	// ConditionalAccessSessionControl is the base model of CloudAppSecuritySessionControl
+	ConditionalAccessSessionControl
+	// CloudAppSecurityType undocumented
+	CloudAppSecurityType *CloudAppSecuritySessionControlType `json:"cloudAppSecurityType,omitempty"`
+}
+
 // CloudAppSecurityState undocumented
 type CloudAppSecurityState struct {
 	// Object is the base model of CloudAppSecurityState
@@ -20,6 +28,10 @@ type CloudCommunications struct {
 	Entity
 	// Calls undocumented
 	Calls []Call `json:"calls,omitempty"`
+	// CallRecords undocumented
+	CallRecords []CallRecords_callRecord `json:"callRecords,omitempty"`
 	// OnlineMeetings undocumented
 	OnlineMeetings []OnlineMeeting `json:"onlineMeetings,omitempty"`
+	// Presences undocumented
+	Presences []Presence `json:"presences,omitempty"`
 }

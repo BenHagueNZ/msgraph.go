@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsDcountRequestBuilder struct{ BaseRequestBuilder }
 
 // Dcount action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Dcount(reqObj *WorkbookFunctionsDcount
 	return bb
 }
 
-//
 type WorkbookFunctionsDcountRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDcountRequestBuilder) Request() *WorkbookFunctionsDcountRequest {
 	return &WorkbookFunctionsDcountRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDcountRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsDcountARequestBuilder struct{ BaseRequestBuilder }
 
 // DcountA action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) DcountA(reqObj *WorkbookFunctionsDcoun
 	return bb
 }
 
-//
 type WorkbookFunctionsDcountARequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDcountARequestBuilder) Request() *WorkbookFunctionsDcountARequest {
 	return &WorkbookFunctionsDcountARequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDcountARequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

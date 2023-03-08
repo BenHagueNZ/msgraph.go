@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsGcdRequestBuilder struct{ BaseRequestBuilder }
 
 // Gcd action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Gcd(reqObj *WorkbookFunctionsGcdReques
 	return bb
 }
 
-//
 type WorkbookFunctionsGcdRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsGcdRequestBuilder) Request() *WorkbookFunctionsGcdRequest {
 	return &WorkbookFunctionsGcdRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsGcdRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

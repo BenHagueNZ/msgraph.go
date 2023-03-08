@@ -8,10 +8,10 @@ type UsedInsight struct {
 	Entity
 	// LastUsed undocumented
 	LastUsed *UsageDetails `json:"lastUsed,omitempty"`
-	// ResourceVisualization undocumented
-	ResourceVisualization *ResourceVisualization `json:"resourceVisualization,omitempty"`
 	// ResourceReference undocumented
 	ResourceReference *ResourceReference `json:"resourceReference,omitempty"`
+	// ResourceVisualization undocumented
+	ResourceVisualization *ResourceVisualization `json:"resourceVisualization,omitempty"`
 	// Resource undocumented
 	Resource *Entity `json:"resource,omitempty"`
 }

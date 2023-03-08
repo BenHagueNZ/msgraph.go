@@ -8,18 +8,32 @@ import "time"
 type Subscription struct {
 	// Entity is the base model of Subscription
 	Entity
-	// Resource undocumented
-	Resource *string `json:"resource,omitempty"`
+	// ApplicationID undocumented
+	ApplicationID *string `json:"applicationId,omitempty"`
 	// ChangeType undocumented
 	ChangeType *string `json:"changeType,omitempty"`
 	// ClientState undocumented
 	ClientState *string `json:"clientState,omitempty"`
-	// NotificationURL undocumented
-	NotificationURL *string `json:"notificationUrl,omitempty"`
-	// ExpirationDateTime undocumented
-	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
-	// ApplicationID undocumented
-	ApplicationID *string `json:"applicationId,omitempty"`
 	// CreatorID undocumented
 	CreatorID *string `json:"creatorId,omitempty"`
+	// EncryptionCertificate undocumented
+	EncryptionCertificate *string `json:"encryptionCertificate,omitempty"`
+	// EncryptionCertificateID undocumented
+	EncryptionCertificateID *string `json:"encryptionCertificateId,omitempty"`
+	// ExpirationDateTime undocumented
+	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
+	// IncludeResourceData undocumented
+	IncludeResourceData *bool `json:"includeResourceData,omitempty"`
+	// LatestSupportedTLSVersion undocumented
+	LatestSupportedTLSVersion *string `json:"latestSupportedTlsVersion,omitempty"`
+	// LifecycleNotificationURL undocumented
+	LifecycleNotificationURL *string `json:"lifecycleNotificationUrl,omitempty"`
+	// NotificationQueryOptions undocumented
+	NotificationQueryOptions *string `json:"notificationQueryOptions,omitempty"`
+	// NotificationURL undocumented
+	NotificationURL *string `json:"notificationUrl,omitempty"`
+	// NotificationURLAppID undocumented
+	NotificationURLAppID *string `json:"notificationUrlAppId,omitempty"`
+	// Resource undocumented
+	Resource *string `json:"resource,omitempty"`
 }

@@ -6,6 +6,8 @@ package msgraph
 type SubscribedSKU struct {
 	// Entity is the base model of SubscribedSKU
 	Entity
+	// AppliesTo undocumented
+	AppliesTo *string `json:"appliesTo,omitempty"`
 	// CapabilityStatus undocumented
 	CapabilityStatus *string `json:"capabilityStatus,omitempty"`
 	// ConsumedUnits undocumented
@@ -18,6 +20,4 @@ type SubscribedSKU struct {
 	SKUID *UUID `json:"skuId,omitempty"`
 	// SKUPartNumber undocumented
 	SKUPartNumber *string `json:"skuPartNumber,omitempty"`
-	// AppliesTo undocumented
-	AppliesTo *string `json:"appliesTo,omitempty"`
 }

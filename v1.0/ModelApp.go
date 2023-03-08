@@ -2,6 +2,8 @@
 
 package msgraph
 
+import "time"
+
 // AppCatalogs undocumented
 type AppCatalogs struct {
 	// Entity is the base model of AppCatalogs
@@ -10,7 +12,7 @@ type AppCatalogs struct {
 	TeamsApps []TeamsApp `json:"teamsApps,omitempty"`
 }
 
-// AppConfigurationSettingItem undocumented
+// AppConfigurationSettingItem Contains properties for App configuration setting item.
 type AppConfigurationSettingItem struct {
 	// Object is the base model of AppConfigurationSettingItem
 	Object
@@ -20,6 +22,36 @@ type AppConfigurationSettingItem struct {
 	AppConfigKeyType *MDMAppConfigKeyType `json:"appConfigKeyType,omitempty"`
 	// AppConfigKeyValue app configuration key value.
 	AppConfigKeyValue *string `json:"appConfigKeyValue,omitempty"`
+}
+
+// AppConsentApprovalRoute undocumented
+type AppConsentApprovalRoute struct {
+	// Entity is the base model of AppConsentApprovalRoute
+	Entity
+	// AppConsentRequests undocumented
+	AppConsentRequests []AppConsentRequestObject `json:"appConsentRequests,omitempty"`
+}
+
+// AppConsentRequestObject undocumented
+type AppConsentRequestObject struct {
+	// Entity is the base model of AppConsentRequestObject
+	Entity
+	// AppDisplayName undocumented
+	AppDisplayName *string `json:"appDisplayName,omitempty"`
+	// AppID undocumented
+	AppID *string `json:"appId,omitempty"`
+	// PendingScopes undocumented
+	PendingScopes []AppConsentRequestScope `json:"pendingScopes,omitempty"`
+	// UserConsentRequests undocumented
+	UserConsentRequests []UserConsentRequestObject `json:"userConsentRequests,omitempty"`
+}
+
+// AppConsentRequestScope undocumented
+type AppConsentRequestScope struct {
+	// Object is the base model of AppConsentRequestScope
+	Object
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
 }
 
 // AppHostedMediaConfig undocumented
@@ -44,18 +76,40 @@ type AppIdentity struct {
 	ServicePrincipalName *string `json:"servicePrincipalName,omitempty"`
 }
 
-// AppListItem undocumented
+// AppListItem Represents an app in the list of managed applications
 type AppListItem struct {
 	// Object is the base model of AppListItem
 	Object
+	// AppID The application or bundle identifier of the application
+	AppID *string `json:"appId,omitempty"`
+	// AppStoreURL The Store URL of the application
+	AppStoreURL *string `json:"appStoreUrl,omitempty"`
 	// Name The application name
 	Name *string `json:"name,omitempty"`
 	// Publisher The publisher of the application
 	Publisher *string `json:"publisher,omitempty"`
-	// AppStoreURL The Store URL of the application
-	AppStoreURL *string `json:"appStoreUrl,omitempty"`
-	// AppID The application or bundle identifier of the application
-	AppID *string `json:"appId,omitempty"`
+}
+
+// AppManagementConfiguration undocumented
+type AppManagementConfiguration struct {
+	// Object is the base model of AppManagementConfiguration
+	Object
+	// KeyCredentials undocumented
+	KeyCredentials []KeyCredentialConfiguration `json:"keyCredentials,omitempty"`
+	// PasswordCredentials undocumented
+	PasswordCredentials []PasswordCredentialConfiguration `json:"passwordCredentials,omitempty"`
+}
+
+// AppManagementPolicy undocumented
+type AppManagementPolicy struct {
+	// PolicyBase is the base model of AppManagementPolicy
+	PolicyBase
+	// IsEnabled undocumented
+	IsEnabled *bool `json:"isEnabled,omitempty"`
+	// Restrictions undocumented
+	Restrictions *AppManagementConfiguration `json:"restrictions,omitempty"`
+	// AppliesTo undocumented
+	AppliesTo []DirectoryObject `json:"appliesTo,omitempty"`
 }
 
 // AppRole undocumented
@@ -76,4 +130,34 @@ type AppRole struct {
 	Origin *string `json:"origin,omitempty"`
 	// Value undocumented
 	Value *string `json:"value,omitempty"`
+}
+
+// AppRoleAssignment undocumented
+type AppRoleAssignment struct {
+	// DirectoryObject is the base model of AppRoleAssignment
+	DirectoryObject
+	// AppRoleID undocumented
+	AppRoleID *UUID `json:"appRoleId,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// PrincipalDisplayName undocumented
+	PrincipalDisplayName *string `json:"principalDisplayName,omitempty"`
+	// PrincipalID undocumented
+	PrincipalID *UUID `json:"principalId,omitempty"`
+	// PrincipalType undocumented
+	PrincipalType *string `json:"principalType,omitempty"`
+	// ResourceDisplayName undocumented
+	ResourceDisplayName *string `json:"resourceDisplayName,omitempty"`
+	// ResourceID undocumented
+	ResourceID *UUID `json:"resourceId,omitempty"`
+}
+
+// AppScope undocumented
+type AppScope struct {
+	// Entity is the base model of AppScope
+	Entity
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// Type undocumented
+	Type *string `json:"type,omitempty"`
 }

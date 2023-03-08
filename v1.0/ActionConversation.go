@@ -11,6 +11,12 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
+// ConversationMemberCollectionAddRequestParameter undocumented
+type ConversationMemberCollectionAddRequestParameter struct {
+	// Values undocumented
+	Values []ConversationMember `json:"values,omitempty"`
+}
+
 // ConversationThreadReplyRequestParameter undocumented
 type ConversationThreadReplyRequestParameter struct {
 	// Post undocumented

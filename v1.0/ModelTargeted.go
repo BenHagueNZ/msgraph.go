@@ -12,17 +12,17 @@ type TargetedManagedAppConfiguration struct {
 	IsAssigned *bool `json:"isAssigned,omitempty"`
 	// Apps undocumented
 	Apps []ManagedMobileApp `json:"apps,omitempty"`
-	// DeploymentSummary undocumented
-	DeploymentSummary *ManagedAppPolicyDeploymentSummary `json:"deploymentSummary,omitempty"`
 	// Assignments undocumented
 	Assignments []TargetedManagedAppPolicyAssignment `json:"assignments,omitempty"`
+	// DeploymentSummary undocumented
+	DeploymentSummary *ManagedAppPolicyDeploymentSummary `json:"deploymentSummary,omitempty"`
 }
 
 // TargetedManagedAppPolicyAssignment The type for deployment of groups or apps.
 type TargetedManagedAppPolicyAssignment struct {
 	// Entity is the base model of TargetedManagedAppPolicyAssignment
 	Entity
-	// Target Identifier for deployment of a group or app
+	// Target Identifier for deployment to a group or app
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
 

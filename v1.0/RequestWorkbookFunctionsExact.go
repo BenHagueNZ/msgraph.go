@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsExactRequestBuilder struct{ BaseRequestBuilder }
 
 // Exact action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Exact(reqObj *WorkbookFunctionsExactRe
 	return bb
 }
 
-//
 type WorkbookFunctionsExactRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsExactRequestBuilder) Request() *WorkbookFunctionsExactRequest {
 	return &WorkbookFunctionsExactRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsExactRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

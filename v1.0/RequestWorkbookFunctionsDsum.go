@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsDsumRequestBuilder struct{ BaseRequestBuilder }
 
 // Dsum action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Dsum(reqObj *WorkbookFunctionsDsumRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsDsumRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDsumRequestBuilder) Request() *WorkbookFunctionsDsumRequest {
 	return &WorkbookFunctionsDsumRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDsumRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

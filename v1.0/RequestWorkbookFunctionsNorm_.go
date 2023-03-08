@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsNorm_DistRequestBuilder struct{ BaseRequestBuilder }
 
 // Norm_Dist action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Norm_Dist(reqObj *WorkbookFunctionsNor
 	return bb
 }
 
-//
 type WorkbookFunctionsNorm_DistRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsNorm_DistRequestBuilder) Request() *WorkbookFunctionsNorm_DistRequest {
 	return &WorkbookFunctionsNorm_DistRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsNorm_DistRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsNorm_InvRequestBuilder struct{ BaseRequestBuilder }
 
 // Norm_Inv action undocumented
@@ -42,23 +37,19 @@ func (b *WorkbookFunctionsRequestBuilder) Norm_Inv(reqObj *WorkbookFunctionsNorm
 	return bb
 }
 
-//
 type WorkbookFunctionsNorm_InvRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsNorm_InvRequestBuilder) Request() *WorkbookFunctionsNorm_InvRequest {
 	return &WorkbookFunctionsNorm_InvRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsNorm_InvRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsNorm_S_DistRequestBuilder struct{ BaseRequestBuilder }
 
 // Norm_S_Dist action undocumented
@@ -69,23 +60,19 @@ func (b *WorkbookFunctionsRequestBuilder) Norm_S_Dist(reqObj *WorkbookFunctionsN
 	return bb
 }
 
-//
 type WorkbookFunctionsNorm_S_DistRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsNorm_S_DistRequestBuilder) Request() *WorkbookFunctionsNorm_S_DistRequest {
 	return &WorkbookFunctionsNorm_S_DistRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsNorm_S_DistRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsNorm_S_InvRequestBuilder struct{ BaseRequestBuilder }
 
 // Norm_S_Inv action undocumented
@@ -96,17 +83,14 @@ func (b *WorkbookFunctionsRequestBuilder) Norm_S_Inv(reqObj *WorkbookFunctionsNo
 	return bb
 }
 
-//
 type WorkbookFunctionsNorm_S_InvRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsNorm_S_InvRequestBuilder) Request() *WorkbookFunctionsNorm_S_InvRequest {
 	return &WorkbookFunctionsNorm_S_InvRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsNorm_S_InvRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

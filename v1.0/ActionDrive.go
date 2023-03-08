@@ -7,9 +7,34 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"time"
 
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
+
+// DriveItemRestoreRequestParameter undocumented
+type DriveItemRestoreRequestParameter struct {
+	// ParentReference undocumented
+	ParentReference *ItemReference `json:"parentReference,omitempty"`
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
+}
+
+// DriveItemCopyRequestParameter undocumented
+type DriveItemCopyRequestParameter struct {
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
+	// ParentReference undocumented
+	ParentReference *ItemReference `json:"parentReference,omitempty"`
+}
+
+// DriveItemCreateUploadSessionRequestParameter undocumented
+type DriveItemCreateUploadSessionRequestParameter struct {
+	// Item undocumented
+	Item *DriveItemUploadableProperties `json:"item,omitempty"`
+	// DeferCommit undocumented
+	DeferCommit *bool `json:"deferCommit,omitempty"`
+}
 
 // DriveItemCheckinRequestParameter undocumented
 type DriveItemCheckinRequestParameter struct {
@@ -23,26 +48,24 @@ type DriveItemCheckinRequestParameter struct {
 type DriveItemCheckoutRequestParameter struct {
 }
 
-// DriveItemCopyRequestParameter undocumented
-type DriveItemCopyRequestParameter struct {
-	// Name undocumented
-	Name *string `json:"name,omitempty"`
-	// ParentReference undocumented
-	ParentReference *ItemReference `json:"parentReference,omitempty"`
-}
-
 // DriveItemCreateLinkRequestParameter undocumented
 type DriveItemCreateLinkRequestParameter struct {
 	// Type undocumented
 	Type *string `json:"type,omitempty"`
 	// Scope undocumented
 	Scope *string `json:"scope,omitempty"`
+	// ExpirationDateTime undocumented
+	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
+	// Password undocumented
+	Password *string `json:"password,omitempty"`
+	// Message undocumented
+	Message *string `json:"message,omitempty"`
+	// RetainInheritedPermissions undocumented
+	RetainInheritedPermissions *bool `json:"retainInheritedPermissions,omitempty"`
 }
 
-// DriveItemCreateUploadSessionRequestParameter undocumented
-type DriveItemCreateUploadSessionRequestParameter struct {
-	// Item undocumented
-	Item *DriveItemUploadableProperties `json:"item,omitempty"`
+// DriveItemFollowRequestParameter undocumented
+type DriveItemFollowRequestParameter struct {
 }
 
 // DriveItemInviteRequestParameter undocumented
@@ -57,6 +80,12 @@ type DriveItemInviteRequestParameter struct {
 	Message *string `json:"message,omitempty"`
 	// Recipients undocumented
 	Recipients []DriveRecipient `json:"recipients,omitempty"`
+	// RetainInheritedPermissions undocumented
+	RetainInheritedPermissions *bool `json:"retainInheritedPermissions,omitempty"`
+	// ExpirationDateTime undocumented
+	ExpirationDateTime *string `json:"expirationDateTime,omitempty"`
+	// Password undocumented
+	Password *string `json:"password,omitempty"`
 }
 
 // DriveItemPreviewRequestParameter undocumented
@@ -67,8 +96,226 @@ type DriveItemPreviewRequestParameter struct {
 	Zoom *float64 `json:"zoom,omitempty"`
 }
 
+// DriveItemUnfollowRequestParameter undocumented
+type DriveItemUnfollowRequestParameter struct {
+}
+
+// DriveItemValidatePermissionRequestParameter undocumented
+type DriveItemValidatePermissionRequestParameter struct {
+	// ChallengeToken undocumented
+	ChallengeToken *string `json:"challengeToken,omitempty"`
+	// Password undocumented
+	Password *string `json:"password,omitempty"`
+}
+
 // DriveItemVersionRestoreVersionRequestParameter undocumented
 type DriveItemVersionRestoreVersionRequestParameter struct {
+}
+
+// Bundles returns request builder for DriveItem collection
+func (b *DriveRequestBuilder) Bundles() *DriveBundlesCollectionRequestBuilder {
+	bb := &DriveBundlesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/bundles"
+	return bb
+}
+
+// DriveBundlesCollectionRequestBuilder is request builder for DriveItem collection
+type DriveBundlesCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DriveItem collection
+func (b *DriveBundlesCollectionRequestBuilder) Request() *DriveBundlesCollectionRequest {
+	return &DriveBundlesCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DriveItem item
+func (b *DriveBundlesCollectionRequestBuilder) ID(id string) *DriveItemRequestBuilder {
+	bb := &DriveItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DriveBundlesCollectionRequest is request for DriveItem collection
+type DriveBundlesCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DriveItem collection
+func (r *DriveBundlesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DriveItem, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DriveItem
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DriveItem
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DriveItem collection, max N pages
+func (r *DriveBundlesCollectionRequest) GetN(ctx context.Context, n int) ([]DriveItem, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DriveItem collection
+func (r *DriveBundlesCollectionRequest) Get(ctx context.Context) ([]DriveItem, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DriveItem collection
+func (r *DriveBundlesCollectionRequest) Add(ctx context.Context, reqObj *DriveItem) (resObj *DriveItem, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Following returns request builder for DriveItem collection
+func (b *DriveRequestBuilder) Following() *DriveFollowingCollectionRequestBuilder {
+	bb := &DriveFollowingCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/following"
+	return bb
+}
+
+// DriveFollowingCollectionRequestBuilder is request builder for DriveItem collection
+type DriveFollowingCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DriveItem collection
+func (b *DriveFollowingCollectionRequestBuilder) Request() *DriveFollowingCollectionRequest {
+	return &DriveFollowingCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DriveItem item
+func (b *DriveFollowingCollectionRequestBuilder) ID(id string) *DriveItemRequestBuilder {
+	bb := &DriveItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DriveFollowingCollectionRequest is request for DriveItem collection
+type DriveFollowingCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DriveItem collection
+func (r *DriveFollowingCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DriveItem, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DriveItem
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DriveItem
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DriveItem collection, max N pages
+func (r *DriveFollowingCollectionRequest) GetN(ctx context.Context, n int) ([]DriveItem, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DriveItem collection
+func (r *DriveFollowingCollectionRequest) Get(ctx context.Context) ([]DriveItem, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DriveItem collection
+func (r *DriveFollowingCollectionRequest) Add(ctx context.Context, reqObj *DriveItem) (resObj *DriveItem, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
 }
 
 // Items returns request builder for DriveItem collection

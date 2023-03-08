@@ -11,6 +11,38 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
+// MessageForwardRequestParameter undocumented
+type MessageForwardRequestParameter struct {
+	// ToRecipients undocumented
+	ToRecipients []Recipient `json:"ToRecipients,omitempty"`
+	// Message undocumented
+	Message *Message `json:"Message,omitempty"`
+	// Comment undocumented
+	Comment *string `json:"Comment,omitempty"`
+}
+
+// MessageCopyRequestParameter undocumented
+type MessageCopyRequestParameter struct {
+	// DestinationID undocumented
+	DestinationID *string `json:"DestinationId,omitempty"`
+}
+
+// MessageMoveRequestParameter undocumented
+type MessageMoveRequestParameter struct {
+	// DestinationID undocumented
+	DestinationID *string `json:"DestinationId,omitempty"`
+}
+
+// MessageCreateForwardRequestParameter undocumented
+type MessageCreateForwardRequestParameter struct {
+	// ToRecipients undocumented
+	ToRecipients []Recipient `json:"ToRecipients,omitempty"`
+	// Message undocumented
+	Message *Message `json:"Message,omitempty"`
+	// Comment undocumented
+	Comment *string `json:"Comment,omitempty"`
+}
+
 // MessageCreateReplyRequestParameter undocumented
 type MessageCreateReplyRequestParameter struct {
 	// Message undocumented
@@ -25,32 +57,6 @@ type MessageCreateReplyAllRequestParameter struct {
 	Message *Message `json:"Message,omitempty"`
 	// Comment undocumented
 	Comment *string `json:"Comment,omitempty"`
-}
-
-// MessageCreateForwardRequestParameter undocumented
-type MessageCreateForwardRequestParameter struct {
-	// ToRecipients undocumented
-	ToRecipients []Recipient `json:"ToRecipients,omitempty"`
-	// Message undocumented
-	Message *Message `json:"Message,omitempty"`
-	// Comment undocumented
-	Comment *string `json:"Comment,omitempty"`
-}
-
-// MessageSendRequestParameter undocumented
-type MessageSendRequestParameter struct {
-}
-
-// MessageCopyRequestParameter undocumented
-type MessageCopyRequestParameter struct {
-	// DestinationID undocumented
-	DestinationID *string `json:"DestinationId,omitempty"`
-}
-
-// MessageMoveRequestParameter undocumented
-type MessageMoveRequestParameter struct {
-	// DestinationID undocumented
-	DestinationID *string `json:"DestinationId,omitempty"`
 }
 
 // MessageReplyRequestParameter undocumented
@@ -69,14 +75,8 @@ type MessageReplyAllRequestParameter struct {
 	Comment *string `json:"Comment,omitempty"`
 }
 
-// MessageForwardRequestParameter undocumented
-type MessageForwardRequestParameter struct {
-	// ToRecipients undocumented
-	ToRecipients []Recipient `json:"ToRecipients,omitempty"`
-	// Message undocumented
-	Message *Message `json:"Message,omitempty"`
-	// Comment undocumented
-	Comment *string `json:"Comment,omitempty"`
+// MessageSendRequestParameter undocumented
+type MessageSendRequestParameter struct {
 }
 
 // Attachments returns request builder for Attachment collection

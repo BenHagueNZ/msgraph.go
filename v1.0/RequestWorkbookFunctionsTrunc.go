@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsTruncRequestBuilder struct{ BaseRequestBuilder }
 
 // Trunc action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Trunc(reqObj *WorkbookFunctionsTruncRe
 	return bb
 }
 
-//
 type WorkbookFunctionsTruncRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsTruncRequestBuilder) Request() *WorkbookFunctionsTruncRequest {
 	return &WorkbookFunctionsTruncRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsTruncRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

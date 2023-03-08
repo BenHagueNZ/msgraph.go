@@ -14,8 +14,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/rickb777/date/period"
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
+	"github.com/rickb777/date/period"
 )
 
 // Binary is type alias for Edm.Binary

@@ -6,44 +6,44 @@ package msgraph
 type Person struct {
 	// Entity is the base model of Person
 	Entity
+	// Birthday undocumented
+	Birthday *string `json:"birthday,omitempty"`
+	// CompanyName undocumented
+	CompanyName *string `json:"companyName,omitempty"`
+	// Department undocumented
+	Department *string `json:"department,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// GivenName undocumented
 	GivenName *string `json:"givenName,omitempty"`
-	// Surname undocumented
-	Surname *string `json:"surname,omitempty"`
-	// Birthday undocumented
-	Birthday *string `json:"birthday,omitempty"`
-	// PersonNotes undocumented
-	PersonNotes *string `json:"personNotes,omitempty"`
+	// ImAddress undocumented
+	ImAddress *string `json:"imAddress,omitempty"`
 	// IsFavorite undocumented
 	IsFavorite *bool `json:"isFavorite,omitempty"`
-	// ScoredEmailAddresses undocumented
-	ScoredEmailAddresses []ScoredEmailAddress `json:"scoredEmailAddresses,omitempty"`
+	// JobTitle undocumented
+	JobTitle *string `json:"jobTitle,omitempty"`
+	// OfficeLocation undocumented
+	OfficeLocation *string `json:"officeLocation,omitempty"`
+	// PersonNotes undocumented
+	PersonNotes *string `json:"personNotes,omitempty"`
+	// PersonType undocumented
+	PersonType *PersonType `json:"personType,omitempty"`
 	// Phones undocumented
 	Phones []Phone `json:"phones,omitempty"`
 	// PostalAddresses undocumented
 	PostalAddresses []Location `json:"postalAddresses,omitempty"`
-	// Websites undocumented
-	Websites []Website `json:"websites,omitempty"`
-	// JobTitle undocumented
-	JobTitle *string `json:"jobTitle,omitempty"`
-	// CompanyName undocumented
-	CompanyName *string `json:"companyName,omitempty"`
-	// YomiCompany undocumented
-	YomiCompany *string `json:"yomiCompany,omitempty"`
-	// Department undocumented
-	Department *string `json:"department,omitempty"`
-	// OfficeLocation undocumented
-	OfficeLocation *string `json:"officeLocation,omitempty"`
 	// Profession undocumented
 	Profession *string `json:"profession,omitempty"`
-	// PersonType undocumented
-	PersonType *PersonType `json:"personType,omitempty"`
+	// ScoredEmailAddresses undocumented
+	ScoredEmailAddresses []ScoredEmailAddress `json:"scoredEmailAddresses,omitempty"`
+	// Surname undocumented
+	Surname *string `json:"surname,omitempty"`
 	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
-	// ImAddress undocumented
-	ImAddress *string `json:"imAddress,omitempty"`
+	// Websites undocumented
+	Websites []Website `json:"websites,omitempty"`
+	// YomiCompany undocumented
+	YomiCompany *string `json:"yomiCompany,omitempty"`
 }
 
 // PersonOrGroupColumn undocumented

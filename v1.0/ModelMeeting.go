@@ -2,6 +2,22 @@
 
 package msgraph
 
+import "time"
+
+// MeetingAttendanceReport undocumented
+type MeetingAttendanceReport struct {
+	// Entity is the base model of MeetingAttendanceReport
+	Entity
+	// MeetingEndDateTime undocumented
+	MeetingEndDateTime *time.Time `json:"meetingEndDateTime,omitempty"`
+	// MeetingStartDateTime undocumented
+	MeetingStartDateTime *time.Time `json:"meetingStartDateTime,omitempty"`
+	// TotalParticipantCount undocumented
+	TotalParticipantCount *int `json:"totalParticipantCount,omitempty"`
+	// AttendanceRecords undocumented
+	AttendanceRecords []AttendanceRecord `json:"attendanceRecords,omitempty"`
+}
+
 // MeetingInfo undocumented
 type MeetingInfo struct {
 	// Object is the base model of MeetingInfo
@@ -14,6 +30,8 @@ type MeetingParticipantInfo struct {
 	Object
 	// Identity undocumented
 	Identity *IdentitySet `json:"identity,omitempty"`
+	// Role undocumented
+	Role *OnlineMeetingRole `json:"role,omitempty"`
 	// Upn undocumented
 	Upn *string `json:"upn,omitempty"`
 }
@@ -22,38 +40,50 @@ type MeetingParticipantInfo struct {
 type MeetingParticipants struct {
 	// Object is the base model of MeetingParticipants
 	Object
-	// Organizer undocumented
-	Organizer *MeetingParticipantInfo `json:"organizer,omitempty"`
 	// Attendees undocumented
 	Attendees []MeetingParticipantInfo `json:"attendees,omitempty"`
+	// Organizer undocumented
+	Organizer *MeetingParticipantInfo `json:"organizer,omitempty"`
+}
+
+// MeetingPolicyUpdatedEventMessageDetail undocumented
+type MeetingPolicyUpdatedEventMessageDetail struct {
+	// EventMessageDetail is the base model of MeetingPolicyUpdatedEventMessageDetail
+	EventMessageDetail
+	// Initiator undocumented
+	Initiator *IdentitySet `json:"initiator,omitempty"`
+	// MeetingChatEnabled undocumented
+	MeetingChatEnabled *bool `json:"meetingChatEnabled,omitempty"`
+	// MeetingChatID undocumented
+	MeetingChatID *string `json:"meetingChatId,omitempty"`
 }
 
 // MeetingTimeSuggestion undocumented
 type MeetingTimeSuggestion struct {
 	// Object is the base model of MeetingTimeSuggestion
 	Object
+	// AttendeeAvailability undocumented
+	AttendeeAvailability []AttendeeAvailability `json:"attendeeAvailability,omitempty"`
 	// Confidence undocumented
 	Confidence *float64 `json:"confidence,omitempty"`
+	// Locations undocumented
+	Locations []Location `json:"locations,omitempty"`
+	// MeetingTimeSlot undocumented
+	MeetingTimeSlot *TimeSlot `json:"meetingTimeSlot,omitempty"`
 	// Order undocumented
 	Order *int `json:"order,omitempty"`
 	// OrganizerAvailability undocumented
 	OrganizerAvailability *FreeBusyStatus `json:"organizerAvailability,omitempty"`
-	// AttendeeAvailability undocumented
-	AttendeeAvailability []AttendeeAvailability `json:"attendeeAvailability,omitempty"`
-	// Locations undocumented
-	Locations []Location `json:"locations,omitempty"`
 	// SuggestionReason undocumented
 	SuggestionReason *string `json:"suggestionReason,omitempty"`
-	// MeetingTimeSlot undocumented
-	MeetingTimeSlot *TimeSlot `json:"meetingTimeSlot,omitempty"`
 }
 
 // MeetingTimeSuggestionsResult undocumented
 type MeetingTimeSuggestionsResult struct {
 	// Object is the base model of MeetingTimeSuggestionsResult
 	Object
-	// MeetingTimeSuggestions undocumented
-	MeetingTimeSuggestions []MeetingTimeSuggestion `json:"meetingTimeSuggestions,omitempty"`
 	// EmptySuggestionsReason undocumented
 	EmptySuggestionsReason *string `json:"emptySuggestionsReason,omitempty"`
+	// MeetingTimeSuggestions undocumented
+	MeetingTimeSuggestions []MeetingTimeSuggestion `json:"meetingTimeSuggestions,omitempty"`
 }

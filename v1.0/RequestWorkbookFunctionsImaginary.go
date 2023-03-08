@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsImaginaryRequestBuilder struct{ BaseRequestBuilder }
 
 // Imaginary action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Imaginary(reqObj *WorkbookFunctionsIma
 	return bb
 }
 
-//
 type WorkbookFunctionsImaginaryRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsImaginaryRequestBuilder) Request() *WorkbookFunctionsImaginaryRequest {
 	return &WorkbookFunctionsImaginaryRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsImaginaryRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

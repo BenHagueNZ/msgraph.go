@@ -8,40 +8,64 @@ import "time"
 type Conversation struct {
 	// Entity is the base model of Conversation
 	Entity
-	// Topic undocumented
-	Topic *string `json:"topic,omitempty"`
 	// HasAttachments undocumented
 	HasAttachments *bool `json:"hasAttachments,omitempty"`
 	// LastDeliveredDateTime undocumented
 	LastDeliveredDateTime *time.Time `json:"lastDeliveredDateTime,omitempty"`
-	// UniqueSenders undocumented
-	UniqueSenders []string `json:"uniqueSenders,omitempty"`
 	// Preview undocumented
 	Preview *string `json:"preview,omitempty"`
+	// Topic undocumented
+	Topic *string `json:"topic,omitempty"`
+	// UniqueSenders undocumented
+	UniqueSenders []string `json:"uniqueSenders,omitempty"`
 	// Threads undocumented
 	Threads []ConversationThread `json:"threads,omitempty"`
+}
+
+// ConversationMember undocumented
+type ConversationMember struct {
+	// Entity is the base model of ConversationMember
+	Entity
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// Roles undocumented
+	Roles []string `json:"roles,omitempty"`
+	// VisibleHistoryStartDateTime undocumented
+	VisibleHistoryStartDateTime *time.Time `json:"visibleHistoryStartDateTime,omitempty"`
+}
+
+// ConversationMemberRoleUpdatedEventMessageDetail undocumented
+type ConversationMemberRoleUpdatedEventMessageDetail struct {
+	// EventMessageDetail is the base model of ConversationMemberRoleUpdatedEventMessageDetail
+	EventMessageDetail
+	// ConversationMemberRoles undocumented
+	ConversationMemberRoles []string `json:"conversationMemberRoles,omitempty"`
+	// ConversationMemberUser undocumented
+	ConversationMemberUser *TeamworkUserIdentity `json:"conversationMemberUser,omitempty"`
+	// Initiator undocumented
+	Initiator *IdentitySet `json:"initiator,omitempty"`
 }
 
 // ConversationThread undocumented
 type ConversationThread struct {
 	// Entity is the base model of ConversationThread
 	Entity
-	// ToRecipients undocumented
-	ToRecipients []Recipient `json:"toRecipients,omitempty"`
-	// Topic undocumented
-	Topic *string `json:"topic,omitempty"`
-	// HasAttachments undocumented
-	HasAttachments *bool `json:"hasAttachments,omitempty"`
-	// LastDeliveredDateTime undocumented
-	LastDeliveredDateTime *time.Time `json:"lastDeliveredDateTime,omitempty"`
-	// UniqueSenders undocumented
-	UniqueSenders []string `json:"uniqueSenders,omitempty"`
 	// CcRecipients undocumented
 	CcRecipients []Recipient `json:"ccRecipients,omitempty"`
-	// Preview undocumented
-	Preview *string `json:"preview,omitempty"`
+	// HasAttachments undocumented
+	HasAttachments *bool `json:"hasAttachments,omitempty"`
 	// IsLocked undocumented
 	IsLocked *bool `json:"isLocked,omitempty"`
+	// LastDeliveredDateTime undocumented
+	LastDeliveredDateTime *time.Time `json:"lastDeliveredDateTime,omitempty"`
+	// Preview undocumented
+	Preview *string `json:"preview,omitempty"`
+	// Topic undocumented
+	Topic *string `json:"topic,omitempty"`
+	// ToRecipients undocumented
+	ToRecipients []Recipient `json:"toRecipients,omitempty"`
+	// UniqueSenders undocumented
+	UniqueSenders []string `json:"uniqueSenders,omitempty"`
 	// Posts undocumented
 	Posts []Post `json:"posts,omitempty"`
 }

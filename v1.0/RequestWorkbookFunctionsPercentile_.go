@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsPercentile_ExcRequestBuilder struct{ BaseRequestBuilder }
 
 // Percentile_Exc action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Percentile_Exc(reqObj *WorkbookFunctio
 	return bb
 }
 
-//
 type WorkbookFunctionsPercentile_ExcRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsPercentile_ExcRequestBuilder) Request() *WorkbookFunctionsPercentile_ExcRequest {
 	return &WorkbookFunctionsPercentile_ExcRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsPercentile_ExcRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsPercentile_IncRequestBuilder struct{ BaseRequestBuilder }
 
 // Percentile_Inc action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) Percentile_Inc(reqObj *WorkbookFunctio
 	return bb
 }
 
-//
 type WorkbookFunctionsPercentile_IncRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsPercentile_IncRequestBuilder) Request() *WorkbookFunctionsPercentile_IncRequest {
 	return &WorkbookFunctionsPercentile_IncRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsPercentile_IncRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

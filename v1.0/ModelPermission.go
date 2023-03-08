@@ -2,12 +2,24 @@
 
 package msgraph
 
+import "time"
+
 // Permission undocumented
 type Permission struct {
 	// Entity is the base model of Permission
 	Entity
+	// ExpirationDateTime undocumented
+	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
 	// GrantedTo undocumented
 	GrantedTo *IdentitySet `json:"grantedTo,omitempty"`
+	// GrantedToIdentities undocumented
+	GrantedToIdentities []IdentitySet `json:"grantedToIdentities,omitempty"`
+	// GrantedToIdentitiesV2 undocumented
+	GrantedToIdentitiesV2 []SharePointIdentitySet `json:"grantedToIdentitiesV2,omitempty"`
+	// GrantedToV2 undocumented
+	GrantedToV2 *SharePointIdentitySet `json:"grantedToV2,omitempty"`
+	// HasPassword undocumented
+	HasPassword *bool `json:"hasPassword,omitempty"`
 	// InheritedFrom undocumented
 	InheritedFrom *ItemReference `json:"inheritedFrom,omitempty"`
 	// Invitation undocumented
@@ -18,6 +30,38 @@ type Permission struct {
 	Roles []string `json:"roles,omitempty"`
 	// ShareID undocumented
 	ShareID *string `json:"shareId,omitempty"`
+}
+
+// PermissionGrantConditionSet undocumented
+type PermissionGrantConditionSet struct {
+	// Entity is the base model of PermissionGrantConditionSet
+	Entity
+	// ClientApplicationIDs undocumented
+	ClientApplicationIDs []string `json:"clientApplicationIds,omitempty"`
+	// ClientApplicationPublisherIDs undocumented
+	ClientApplicationPublisherIDs []string `json:"clientApplicationPublisherIds,omitempty"`
+	// ClientApplicationsFromVerifiedPublisherOnly undocumented
+	ClientApplicationsFromVerifiedPublisherOnly *bool `json:"clientApplicationsFromVerifiedPublisherOnly,omitempty"`
+	// ClientApplicationTenantIDs undocumented
+	ClientApplicationTenantIDs []string `json:"clientApplicationTenantIds,omitempty"`
+	// PermissionClassification undocumented
+	PermissionClassification *string `json:"permissionClassification,omitempty"`
+	// Permissions undocumented
+	Permissions []string `json:"permissions,omitempty"`
+	// PermissionType undocumented
+	PermissionType *PermissionType `json:"permissionType,omitempty"`
+	// ResourceApplication undocumented
+	ResourceApplication *string `json:"resourceApplication,omitempty"`
+}
+
+// PermissionGrantPolicy undocumented
+type PermissionGrantPolicy struct {
+	// PolicyBase is the base model of PermissionGrantPolicy
+	PolicyBase
+	// Excludes undocumented
+	Excludes []PermissionGrantConditionSet `json:"excludes,omitempty"`
+	// Includes undocumented
+	Includes []PermissionGrantConditionSet `json:"includes,omitempty"`
 }
 
 // PermissionScope undocumented

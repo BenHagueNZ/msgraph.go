@@ -6,14 +6,14 @@ package msgraph
 type AppliedConditionalAccessPolicy struct {
 	// Object is the base model of AppliedConditionalAccessPolicy
 	Object
-	// ID undocumented
-	ID *string `json:"id,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// EnforcedGrantControls undocumented
 	EnforcedGrantControls []string `json:"enforcedGrantControls,omitempty"`
 	// EnforcedSessionControls undocumented
 	EnforcedSessionControls []string `json:"enforcedSessionControls,omitempty"`
+	// ID undocumented
+	ID *string `json:"id,omitempty"`
 	// Result undocumented
 	Result *AppliedConditionalAccessPolicyResult `json:"result,omitempty"`
 }

@@ -8,50 +8,66 @@ import "time"
 type SignIn struct {
 	// Entity is the base model of SignIn
 	Entity
-	// CreatedDateTime undocumented
-	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
-	// UserDisplayName undocumented
-	UserDisplayName *string `json:"userDisplayName,omitempty"`
-	// UserPrincipalName undocumented
-	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
-	// UserID undocumented
-	UserID *string `json:"userId,omitempty"`
-	// AppID undocumented
-	AppID *string `json:"appId,omitempty"`
 	// AppDisplayName undocumented
 	AppDisplayName *string `json:"appDisplayName,omitempty"`
-	// IPAddress undocumented
-	IPAddress *string `json:"ipAddress,omitempty"`
-	// Status undocumented
-	Status *SignInStatus `json:"status,omitempty"`
-	// ClientAppUsed undocumented
-	ClientAppUsed *string `json:"clientAppUsed,omitempty"`
-	// DeviceDetail undocumented
-	DeviceDetail *DeviceDetail `json:"deviceDetail,omitempty"`
-	// Location undocumented
-	Location *SignInLocation `json:"location,omitempty"`
-	// CorrelationID undocumented
-	CorrelationID *string `json:"correlationId,omitempty"`
-	// ConditionalAccessStatus undocumented
-	ConditionalAccessStatus *ConditionalAccessStatus `json:"conditionalAccessStatus,omitempty"`
+	// AppID undocumented
+	AppID *string `json:"appId,omitempty"`
 	// AppliedConditionalAccessPolicies undocumented
 	AppliedConditionalAccessPolicies []AppliedConditionalAccessPolicy `json:"appliedConditionalAccessPolicies,omitempty"`
+	// ClientAppUsed undocumented
+	ClientAppUsed *string `json:"clientAppUsed,omitempty"`
+	// ConditionalAccessStatus undocumented
+	ConditionalAccessStatus *ConditionalAccessStatus `json:"conditionalAccessStatus,omitempty"`
+	// CorrelationID undocumented
+	CorrelationID *string `json:"correlationId,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// DeviceDetail undocumented
+	DeviceDetail *DeviceDetail `json:"deviceDetail,omitempty"`
+	// IPAddress undocumented
+	IPAddress *string `json:"ipAddress,omitempty"`
 	// IsInteractive undocumented
 	IsInteractive *bool `json:"isInteractive,omitempty"`
+	// Location undocumented
+	Location *SignInLocation `json:"location,omitempty"`
+	// ResourceDisplayName undocumented
+	ResourceDisplayName *string `json:"resourceDisplayName,omitempty"`
+	// ResourceID undocumented
+	ResourceID *string `json:"resourceId,omitempty"`
 	// RiskDetail undocumented
 	RiskDetail *RiskDetail `json:"riskDetail,omitempty"`
+	// RiskEventTypes undocumented
+	RiskEventTypes []RiskEventType `json:"riskEventTypes,omitempty"`
+	// RiskEventTypes_v2 undocumented
+	RiskEventTypes_v2 []string `json:"riskEventTypes_v2,omitempty"`
 	// RiskLevelAggregated undocumented
 	RiskLevelAggregated *RiskLevel `json:"riskLevelAggregated,omitempty"`
 	// RiskLevelDuringSignIn undocumented
 	RiskLevelDuringSignIn *RiskLevel `json:"riskLevelDuringSignIn,omitempty"`
 	// RiskState undocumented
 	RiskState *RiskState `json:"riskState,omitempty"`
-	// RiskEventTypes undocumented
-	RiskEventTypes []RiskEventType `json:"riskEventTypes,omitempty"`
-	// ResourceDisplayName undocumented
-	ResourceDisplayName *string `json:"resourceDisplayName,omitempty"`
-	// ResourceID undocumented
-	ResourceID *string `json:"resourceId,omitempty"`
+	// Status undocumented
+	Status *SignInStatus `json:"status,omitempty"`
+	// UserDisplayName undocumented
+	UserDisplayName *string `json:"userDisplayName,omitempty"`
+	// UserID undocumented
+	UserID *string `json:"userId,omitempty"`
+	// UserPrincipalName undocumented
+	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
+}
+
+// SignInFrequencySessionControl undocumented
+type SignInFrequencySessionControl struct {
+	// ConditionalAccessSessionControl is the base model of SignInFrequencySessionControl
+	ConditionalAccessSessionControl
+	// AuthenticationType undocumented
+	AuthenticationType *SignInFrequencyAuthenticationType `json:"authenticationType,omitempty"`
+	// FrequencyInterval undocumented
+	FrequencyInterval *SignInFrequencyInterval `json:"frequencyInterval,omitempty"`
+	// Type undocumented
+	Type *SigninFrequencyType `json:"type,omitempty"`
+	// Value undocumented
+	Value *int `json:"value,omitempty"`
 }
 
 // SignInLocation undocumented
@@ -60,22 +76,22 @@ type SignInLocation struct {
 	Object
 	// City undocumented
 	City *string `json:"city,omitempty"`
-	// State undocumented
-	State *string `json:"state,omitempty"`
 	// CountryOrRegion undocumented
 	CountryOrRegion *string `json:"countryOrRegion,omitempty"`
 	// GeoCoordinates undocumented
 	GeoCoordinates *GeoCoordinates `json:"geoCoordinates,omitempty"`
+	// State undocumented
+	State *string `json:"state,omitempty"`
 }
 
 // SignInStatus undocumented
 type SignInStatus struct {
 	// Object is the base model of SignInStatus
 	Object
+	// AdditionalDetails undocumented
+	AdditionalDetails *string `json:"additionalDetails,omitempty"`
 	// ErrorCode undocumented
 	ErrorCode *int `json:"errorCode,omitempty"`
 	// FailureReason undocumented
 	FailureReason *string `json:"failureReason,omitempty"`
-	// AdditionalDetails undocumented
-	AdditionalDetails *string `json:"additionalDetails,omitempty"`
 }

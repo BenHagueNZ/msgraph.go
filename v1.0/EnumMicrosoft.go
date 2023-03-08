@@ -2,6 +2,65 @@
 
 package msgraph
 
+// MicrosoftAuthenticatorAuthenticationMode undocumented
+type MicrosoftAuthenticatorAuthenticationMode string
+
+const (
+	// MicrosoftAuthenticatorAuthenticationModeVDeviceBasedPush undocumented
+	MicrosoftAuthenticatorAuthenticationModeVDeviceBasedPush MicrosoftAuthenticatorAuthenticationMode = "deviceBasedPush"
+	// MicrosoftAuthenticatorAuthenticationModeVPush undocumented
+	MicrosoftAuthenticatorAuthenticationModeVPush MicrosoftAuthenticatorAuthenticationMode = "push"
+	// MicrosoftAuthenticatorAuthenticationModeVAny undocumented
+	MicrosoftAuthenticatorAuthenticationModeVAny MicrosoftAuthenticatorAuthenticationMode = "any"
+)
+
+var (
+	// MicrosoftAuthenticatorAuthenticationModePDeviceBasedPush is a pointer to MicrosoftAuthenticatorAuthenticationModeVDeviceBasedPush
+	MicrosoftAuthenticatorAuthenticationModePDeviceBasedPush = &_MicrosoftAuthenticatorAuthenticationModePDeviceBasedPush
+	// MicrosoftAuthenticatorAuthenticationModePPush is a pointer to MicrosoftAuthenticatorAuthenticationModeVPush
+	MicrosoftAuthenticatorAuthenticationModePPush = &_MicrosoftAuthenticatorAuthenticationModePPush
+	// MicrosoftAuthenticatorAuthenticationModePAny is a pointer to MicrosoftAuthenticatorAuthenticationModeVAny
+	MicrosoftAuthenticatorAuthenticationModePAny = &_MicrosoftAuthenticatorAuthenticationModePAny
+)
+
+var (
+	_MicrosoftAuthenticatorAuthenticationModePDeviceBasedPush = MicrosoftAuthenticatorAuthenticationModeVDeviceBasedPush
+	_MicrosoftAuthenticatorAuthenticationModePPush            = MicrosoftAuthenticatorAuthenticationModeVPush
+	_MicrosoftAuthenticatorAuthenticationModePAny             = MicrosoftAuthenticatorAuthenticationModeVAny
+)
+
+// MicrosoftEdgeChannel undocumented
+type MicrosoftEdgeChannel string
+
+const (
+	// MicrosoftEdgeChannelVDev undocumented
+	MicrosoftEdgeChannelVDev MicrosoftEdgeChannel = "dev"
+	// MicrosoftEdgeChannelVBeta undocumented
+	MicrosoftEdgeChannelVBeta MicrosoftEdgeChannel = "beta"
+	// MicrosoftEdgeChannelVStable undocumented
+	MicrosoftEdgeChannelVStable MicrosoftEdgeChannel = "stable"
+	// MicrosoftEdgeChannelVUnknownFutureValue undocumented
+	MicrosoftEdgeChannelVUnknownFutureValue MicrosoftEdgeChannel = "unknownFutureValue"
+)
+
+var (
+	// MicrosoftEdgeChannelPDev is a pointer to MicrosoftEdgeChannelVDev
+	MicrosoftEdgeChannelPDev = &_MicrosoftEdgeChannelPDev
+	// MicrosoftEdgeChannelPBeta is a pointer to MicrosoftEdgeChannelVBeta
+	MicrosoftEdgeChannelPBeta = &_MicrosoftEdgeChannelPBeta
+	// MicrosoftEdgeChannelPStable is a pointer to MicrosoftEdgeChannelVStable
+	MicrosoftEdgeChannelPStable = &_MicrosoftEdgeChannelPStable
+	// MicrosoftEdgeChannelPUnknownFutureValue is a pointer to MicrosoftEdgeChannelVUnknownFutureValue
+	MicrosoftEdgeChannelPUnknownFutureValue = &_MicrosoftEdgeChannelPUnknownFutureValue
+)
+
+var (
+	_MicrosoftEdgeChannelPDev                = MicrosoftEdgeChannelVDev
+	_MicrosoftEdgeChannelPBeta               = MicrosoftEdgeChannelVBeta
+	_MicrosoftEdgeChannelPStable             = MicrosoftEdgeChannelVStable
+	_MicrosoftEdgeChannelPUnknownFutureValue = MicrosoftEdgeChannelVUnknownFutureValue
+)
+
 // MicrosoftStoreForBusinessLicenseType undocumented
 type MicrosoftStoreForBusinessLicenseType string
 

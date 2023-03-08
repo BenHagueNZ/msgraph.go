@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsCumIPmtRequestBuilder struct{ BaseRequestBuilder }
 
 // CumIPmt action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) CumIPmt(reqObj *WorkbookFunctionsCumIP
 	return bb
 }
 
-//
 type WorkbookFunctionsCumIPmtRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsCumIPmtRequestBuilder) Request() *WorkbookFunctionsCumIPmtRequest {
 	return &WorkbookFunctionsCumIPmtRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsCumIPmtRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsCumPrincRequestBuilder struct{ BaseRequestBuilder }
 
 // CumPrinc action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) CumPrinc(reqObj *WorkbookFunctionsCumP
 	return bb
 }
 
-//
 type WorkbookFunctionsCumPrincRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsCumPrincRequestBuilder) Request() *WorkbookFunctionsCumPrincRequest {
 	return &WorkbookFunctionsCumPrincRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsCumPrincRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

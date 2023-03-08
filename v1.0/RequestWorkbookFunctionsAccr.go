@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsAccrIntRequestBuilder struct{ BaseRequestBuilder }
 
 // AccrInt action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) AccrInt(reqObj *WorkbookFunctionsAccrI
 	return bb
 }
 
-//
 type WorkbookFunctionsAccrIntRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsAccrIntRequestBuilder) Request() *WorkbookFunctionsAccrIntRequest {
 	return &WorkbookFunctionsAccrIntRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsAccrIntRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsAccrIntMRequestBuilder struct{ BaseRequestBuilder }
 
 // AccrIntM action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) AccrIntM(reqObj *WorkbookFunctionsAccr
 	return bb
 }
 
-//
 type WorkbookFunctionsAccrIntMRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsAccrIntMRequestBuilder) Request() *WorkbookFunctionsAccrIntMRequest {
 	return &WorkbookFunctionsAccrIntMRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsAccrIntMRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

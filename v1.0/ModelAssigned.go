@@ -4,6 +4,16 @@ package msgraph
 
 import "time"
 
+// AssignedLabel undocumented
+type AssignedLabel struct {
+	// Object is the base model of AssignedLabel
+	Object
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// LabelID undocumented
+	LabelID *string `json:"labelId,omitempty"`
+}
+
 // AssignedLicense undocumented
 type AssignedLicense struct {
 	// Object is the base model of AssignedLicense
@@ -26,4 +36,16 @@ type AssignedPlan struct {
 	Service *string `json:"service,omitempty"`
 	// ServicePlanID undocumented
 	ServicePlanID *UUID `json:"servicePlanId,omitempty"`
+}
+
+// AssignedTrainingInfo undocumented
+type AssignedTrainingInfo struct {
+	// Object is the base model of AssignedTrainingInfo
+	Object
+	// AssignedUserCount undocumented
+	AssignedUserCount *int `json:"assignedUserCount,omitempty"`
+	// CompletedUserCount undocumented
+	CompletedUserCount *int `json:"completedUserCount,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
 }

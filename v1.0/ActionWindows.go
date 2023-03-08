@@ -11,10 +11,41 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
+// WindowsAutopilotDeviceIdentityAssignUserToDeviceRequestParameter undocumented
+type WindowsAutopilotDeviceIdentityAssignUserToDeviceRequestParameter struct {
+	// UserPrincipalName undocumented
+	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
+	// AddressableUserName undocumented
+	AddressableUserName *string `json:"addressableUserName,omitempty"`
+}
+
+// WindowsAutopilotDeviceIdentityUnassignUserFromDeviceRequestParameter undocumented
+type WindowsAutopilotDeviceIdentityUnassignUserFromDeviceRequestParameter struct {
+}
+
+// WindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequestParameter undocumented
+type WindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequestParameter struct {
+	// UserPrincipalName undocumented
+	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
+	// AddressableUserName undocumented
+	AddressableUserName *string `json:"addressableUserName,omitempty"`
+	// GroupTag undocumented
+	GroupTag *string `json:"groupTag,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+}
+
 // WindowsInformationProtectionAssignRequestParameter undocumented
 type WindowsInformationProtectionAssignRequestParameter struct {
 	// Assignments undocumented
 	Assignments []TargetedManagedAppPolicyAssignment `json:"assignments,omitempty"`
+}
+
+// Device is navigation property
+func (b *WindowsHelloForBusinessAuthenticationMethodRequestBuilder) Device() *DeviceRequestBuilder {
+	bb := &DeviceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/device"
+	return bb
 }
 
 // Assignments returns request builder for TargetedManagedAppPolicyAssignment collection
@@ -322,6 +353,109 @@ func (r *WindowsInformationProtectionProtectedAppLockerFilesCollectionRequest) G
 
 // Add performs POST request for WindowsInformationProtectionAppLockerFile collection
 func (r *WindowsInformationProtectionProtectedAppLockerFilesCollectionRequest) Add(ctx context.Context, reqObj *WindowsInformationProtectionAppLockerFile) (resObj *WindowsInformationProtectionAppLockerFile, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// CommittedContainedApps returns request builder for MobileContainedApp collection
+func (b *WindowsUniversalAppXRequestBuilder) CommittedContainedApps() *WindowsUniversalAppXCommittedContainedAppsCollectionRequestBuilder {
+	bb := &WindowsUniversalAppXCommittedContainedAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/committedContainedApps"
+	return bb
+}
+
+// WindowsUniversalAppXCommittedContainedAppsCollectionRequestBuilder is request builder for MobileContainedApp collection
+type WindowsUniversalAppXCommittedContainedAppsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for MobileContainedApp collection
+func (b *WindowsUniversalAppXCommittedContainedAppsCollectionRequestBuilder) Request() *WindowsUniversalAppXCommittedContainedAppsCollectionRequest {
+	return &WindowsUniversalAppXCommittedContainedAppsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for MobileContainedApp item
+func (b *WindowsUniversalAppXCommittedContainedAppsCollectionRequestBuilder) ID(id string) *MobileContainedAppRequestBuilder {
+	bb := &MobileContainedAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// WindowsUniversalAppXCommittedContainedAppsCollectionRequest is request for MobileContainedApp collection
+type WindowsUniversalAppXCommittedContainedAppsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for MobileContainedApp collection
+func (r *WindowsUniversalAppXCommittedContainedAppsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MobileContainedApp, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []MobileContainedApp
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []MobileContainedApp
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for MobileContainedApp collection, max N pages
+func (r *WindowsUniversalAppXCommittedContainedAppsCollectionRequest) GetN(ctx context.Context, n int) ([]MobileContainedApp, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for MobileContainedApp collection
+func (r *WindowsUniversalAppXCommittedContainedAppsCollectionRequest) Get(ctx context.Context) ([]MobileContainedApp, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for MobileContainedApp collection
+func (r *WindowsUniversalAppXCommittedContainedAppsCollectionRequest) Add(ctx context.Context, reqObj *MobileContainedApp) (resObj *MobileContainedApp, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

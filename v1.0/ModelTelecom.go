@@ -8,14 +8,14 @@ import "time"
 type TelecomExpenseManagementPartner struct {
 	// Entity is the base model of TelecomExpenseManagementPartner
 	Entity
-	// DisplayName Display name of the TEM partner.
-	DisplayName *string `json:"displayName,omitempty"`
-	// URL URL of the TEM partner's administrative control panel, where an administrator can configure their TEM service.
-	URL *string `json:"url,omitempty"`
 	// AppAuthorized Whether the partner's AAD app has been authorized to access Intune.
 	AppAuthorized *bool `json:"appAuthorized,omitempty"`
+	// DisplayName Display name of the TEM partner.
+	DisplayName *string `json:"displayName,omitempty"`
 	// Enabled Whether Intune's connection to the TEM service is currently enabled or disabled.
 	Enabled *bool `json:"enabled,omitempty"`
 	// LastConnectionDateTime Timestamp of the last request sent to Intune by the TEM partner.
 	LastConnectionDateTime *time.Time `json:"lastConnectionDateTime,omitempty"`
+	// URL URL of the TEM partner's administrative control panel, where an administrator can configure their TEM service.
+	URL *string `json:"url,omitempty"`
 }

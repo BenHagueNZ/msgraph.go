@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsRandRequestBuilder struct{ BaseRequestBuilder }
 
 // Rand action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Rand(reqObj *WorkbookFunctionsRandRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsRandRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsRandRequestBuilder) Request() *WorkbookFunctionsRandRequest {
 	return &WorkbookFunctionsRandRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsRandRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsRandBetweenRequestBuilder struct{ BaseRequestBuilder }
 
 // RandBetween action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) RandBetween(reqObj *WorkbookFunctionsR
 	return bb
 }
 
-//
 type WorkbookFunctionsRandBetweenRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsRandBetweenRequestBuilder) Request() *WorkbookFunctionsRandBetweenRequest {
 	return &WorkbookFunctionsRandBetweenRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsRandBetweenRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

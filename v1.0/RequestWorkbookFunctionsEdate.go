@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsEdateRequestBuilder struct{ BaseRequestBuilder }
 
 // Edate action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Edate(reqObj *WorkbookFunctionsEdateRe
 	return bb
 }
 
-//
 type WorkbookFunctionsEdateRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsEdateRequestBuilder) Request() *WorkbookFunctionsEdateRequest {
 	return &WorkbookFunctionsEdateRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsEdateRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

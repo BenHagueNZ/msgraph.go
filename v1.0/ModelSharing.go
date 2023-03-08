@@ -12,12 +12,12 @@ type SharingDetail struct {
 	SharedBy *InsightIdentity `json:"sharedBy,omitempty"`
 	// SharedDateTime undocumented
 	SharedDateTime *time.Time `json:"sharedDateTime,omitempty"`
+	// SharingReference undocumented
+	SharingReference *ResourceReference `json:"sharingReference,omitempty"`
 	// SharingSubject undocumented
 	SharingSubject *string `json:"sharingSubject,omitempty"`
 	// SharingType undocumented
 	SharingType *string `json:"sharingType,omitempty"`
-	// SharingReference undocumented
-	SharingReference *ResourceReference `json:"sharingReference,omitempty"`
 }
 
 // SharingInvitation undocumented
@@ -40,10 +40,14 @@ type SharingLink struct {
 	Object
 	// Application undocumented
 	Application *Identity `json:"application,omitempty"`
+	// PreventsDownload undocumented
+	PreventsDownload *bool `json:"preventsDownload,omitempty"`
 	// Scope undocumented
 	Scope *string `json:"scope,omitempty"`
 	// Type undocumented
 	Type *string `json:"type,omitempty"`
+	// WebHTML undocumented
+	WebHTML *string `json:"webHtml,omitempty"`
 	// WebURL undocumented
 	WebURL *string `json:"webUrl,omitempty"`
 }

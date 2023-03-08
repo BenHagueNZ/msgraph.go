@@ -32,6 +32,8 @@ type SharedDriveItem struct {
 	List *List `json:"list,omitempty"`
 	// ListItem undocumented
 	ListItem *ListItem `json:"listItem,omitempty"`
+	// Permission undocumented
+	Permission *Permission `json:"permission,omitempty"`
 	// Root undocumented
 	Root *DriveItem `json:"root,omitempty"`
 	// Site undocumented
@@ -44,19 +46,19 @@ type SharedInsight struct {
 	Entity
 	// LastShared undocumented
 	LastShared *SharingDetail `json:"lastShared,omitempty"`
-	// SharingHistory undocumented
-	SharingHistory []SharingDetail `json:"sharingHistory,omitempty"`
-	// ResourceVisualization undocumented
-	ResourceVisualization *ResourceVisualization `json:"resourceVisualization,omitempty"`
 	// ResourceReference undocumented
 	ResourceReference *ResourceReference `json:"resourceReference,omitempty"`
+	// ResourceVisualization undocumented
+	ResourceVisualization *ResourceVisualization `json:"resourceVisualization,omitempty"`
+	// SharingHistory undocumented
+	SharingHistory []SharingDetail `json:"sharingHistory,omitempty"`
 	// LastSharedMethod undocumented
 	LastSharedMethod *Entity `json:"lastSharedMethod,omitempty"`
 	// Resource undocumented
 	Resource *Entity `json:"resource,omitempty"`
 }
 
-// SharedPCAccountManagerPolicy undocumented
+// SharedPCAccountManagerPolicy SharedPC Account Manager Policy. Only applies when the account manager is enabled.
 type SharedPCAccountManagerPolicy struct {
 	// Object is the base model of SharedPCAccountManagerPolicy
 	Object
@@ -98,4 +100,14 @@ type SharedPCConfiguration struct {
 	KioskAppUserModelID *string `json:"kioskAppUserModelId,omitempty"`
 	// MaintenanceStartTime Specifies the daily start time of maintenance hour.
 	MaintenanceStartTime *TimeOfDay `json:"maintenanceStartTime,omitempty"`
+}
+
+// SharedWithChannelTeamInfo undocumented
+type SharedWithChannelTeamInfo struct {
+	// TeamInfo is the base model of SharedWithChannelTeamInfo
+	TeamInfo
+	// IsHostTeam undocumented
+	IsHostTeam *bool `json:"isHostTeam,omitempty"`
+	// AllowedMembers undocumented
+	AllowedMembers []ConversationMember `json:"allowedMembers,omitempty"`
 }

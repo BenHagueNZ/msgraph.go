@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsAtan2RequestBuilder struct{ BaseRequestBuilder }
 
 // Atan2 action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Atan2(reqObj *WorkbookFunctionsAtan2Re
 	return bb
 }
 
-//
 type WorkbookFunctionsAtan2Request struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsAtan2RequestBuilder) Request() *WorkbookFunctionsAtan2Request {
 	return &WorkbookFunctionsAtan2Request{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsAtan2Request) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

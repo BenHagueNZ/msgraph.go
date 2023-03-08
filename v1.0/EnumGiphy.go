@@ -6,25 +6,25 @@ package msgraph
 type GiphyRatingType string
 
 const (
-	// GiphyRatingTypeVModerate undocumented
-	GiphyRatingTypeVModerate GiphyRatingType = "moderate"
 	// GiphyRatingTypeVStrict undocumented
 	GiphyRatingTypeVStrict GiphyRatingType = "strict"
+	// GiphyRatingTypeVModerate undocumented
+	GiphyRatingTypeVModerate GiphyRatingType = "moderate"
 	// GiphyRatingTypeVUnknownFutureValue undocumented
 	GiphyRatingTypeVUnknownFutureValue GiphyRatingType = "unknownFutureValue"
 )
 
 var (
-	// GiphyRatingTypePModerate is a pointer to GiphyRatingTypeVModerate
-	GiphyRatingTypePModerate = &_GiphyRatingTypePModerate
 	// GiphyRatingTypePStrict is a pointer to GiphyRatingTypeVStrict
 	GiphyRatingTypePStrict = &_GiphyRatingTypePStrict
+	// GiphyRatingTypePModerate is a pointer to GiphyRatingTypeVModerate
+	GiphyRatingTypePModerate = &_GiphyRatingTypePModerate
 	// GiphyRatingTypePUnknownFutureValue is a pointer to GiphyRatingTypeVUnknownFutureValue
 	GiphyRatingTypePUnknownFutureValue = &_GiphyRatingTypePUnknownFutureValue
 )
 
 var (
-	_GiphyRatingTypePModerate           = GiphyRatingTypeVModerate
 	_GiphyRatingTypePStrict             = GiphyRatingTypeVStrict
+	_GiphyRatingTypePModerate           = GiphyRatingTypeVModerate
 	_GiphyRatingTypePUnknownFutureValue = GiphyRatingTypeVUnknownFutureValue
 )

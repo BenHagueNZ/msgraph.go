@@ -2,23 +2,77 @@
 
 package msgraph
 
+import "time"
+
+// MicrosoftAccountUserConversationMember undocumented
+type MicrosoftAccountUserConversationMember struct {
+	// ConversationMember is the base model of MicrosoftAccountUserConversationMember
+	ConversationMember
+	// UserID undocumented
+	UserID *string `json:"userId,omitempty"`
+}
+
+// MicrosoftAuthenticatorAuthenticationMethod undocumented
+type MicrosoftAuthenticatorAuthenticationMethod struct {
+	// AuthenticationMethod is the base model of MicrosoftAuthenticatorAuthenticationMethod
+	AuthenticationMethod
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// DeviceTag undocumented
+	DeviceTag *string `json:"deviceTag,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// PhoneAppVersion undocumented
+	PhoneAppVersion *string `json:"phoneAppVersion,omitempty"`
+	// Device undocumented
+	Device *Device `json:"device,omitempty"`
+}
+
+// MicrosoftAuthenticatorAuthenticationMethodConfiguration undocumented
+type MicrosoftAuthenticatorAuthenticationMethodConfiguration struct {
+	// AuthenticationMethodConfiguration is the base model of MicrosoftAuthenticatorAuthenticationMethodConfiguration
+	AuthenticationMethodConfiguration
+	// FeatureSettings undocumented
+	FeatureSettings *MicrosoftAuthenticatorFeatureSettings `json:"featureSettings,omitempty"`
+	// IncludeTargets undocumented
+	IncludeTargets []MicrosoftAuthenticatorAuthenticationMethodTarget `json:"includeTargets,omitempty"`
+}
+
+// MicrosoftAuthenticatorAuthenticationMethodTarget undocumented
+type MicrosoftAuthenticatorAuthenticationMethodTarget struct {
+	// AuthenticationMethodTarget is the base model of MicrosoftAuthenticatorAuthenticationMethodTarget
+	AuthenticationMethodTarget
+	// AuthenticationMode undocumented
+	AuthenticationMode *MicrosoftAuthenticatorAuthenticationMode `json:"authenticationMode,omitempty"`
+}
+
+// MicrosoftAuthenticatorFeatureSettings undocumented
+type MicrosoftAuthenticatorFeatureSettings struct {
+	// Object is the base model of MicrosoftAuthenticatorFeatureSettings
+	Object
+	// DisplayAppInformationRequiredState undocumented
+	DisplayAppInformationRequiredState *AuthenticationMethodFeatureConfiguration `json:"displayAppInformationRequiredState,omitempty"`
+	// DisplayLocationInformationRequiredState undocumented
+	DisplayLocationInformationRequiredState *AuthenticationMethodFeatureConfiguration `json:"displayLocationInformationRequiredState,omitempty"`
+}
+
 // MicrosoftStoreForBusinessApp Microsoft Store for Business Apps. This class does not support Create, Delete, or Update.
 type MicrosoftStoreForBusinessApp struct {
 	// MobileApp is the base model of MicrosoftStoreForBusinessApp
 	MobileApp
-	// UsedLicenseCount The number of Microsoft Store for Business licenses in use.
-	UsedLicenseCount *int `json:"usedLicenseCount,omitempty"`
-	// TotalLicenseCount The total number of Microsoft Store for Business licenses.
-	TotalLicenseCount *int `json:"totalLicenseCount,omitempty"`
-	// ProductKey The app product key
-	ProductKey *string `json:"productKey,omitempty"`
 	// LicenseType The app license type
 	LicenseType *MicrosoftStoreForBusinessLicenseType `json:"licenseType,omitempty"`
 	// PackageIdentityName The app package identifier
 	PackageIdentityName *string `json:"packageIdentityName,omitempty"`
+	// ProductKey The app product key
+	ProductKey *string `json:"productKey,omitempty"`
+	// TotalLicenseCount The total number of Microsoft Store for Business licenses.
+	TotalLicenseCount *int `json:"totalLicenseCount,omitempty"`
+	// UsedLicenseCount The number of Microsoft Store for Business licenses in use.
+	UsedLicenseCount *int `json:"usedLicenseCount,omitempty"`
 }
 
-// MicrosoftStoreForBusinessAppAssignmentSettings undocumented
+// MicrosoftStoreForBusinessAppAssignmentSettings Contains properties used to assign an Microsoft Store for Business mobile app to a group.
 type MicrosoftStoreForBusinessAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of MicrosoftStoreForBusinessAppAssignmentSettings
 	MobileAppAssignmentSettings

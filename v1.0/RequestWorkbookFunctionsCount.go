@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsCountRequestBuilder struct{ BaseRequestBuilder }
 
 // Count action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Count(reqObj *WorkbookFunctionsCountRe
 	return bb
 }
 
-//
 type WorkbookFunctionsCountRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsCountRequestBuilder) Request() *WorkbookFunctionsCountRequest {
 	return &WorkbookFunctionsCountRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsCountRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsCountARequestBuilder struct{ BaseRequestBuilder }
 
 // CountA action undocumented
@@ -42,23 +37,19 @@ func (b *WorkbookFunctionsRequestBuilder) CountA(reqObj *WorkbookFunctionsCountA
 	return bb
 }
 
-//
 type WorkbookFunctionsCountARequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsCountARequestBuilder) Request() *WorkbookFunctionsCountARequest {
 	return &WorkbookFunctionsCountARequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsCountARequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsCountBlankRequestBuilder struct{ BaseRequestBuilder }
 
 // CountBlank action undocumented
@@ -69,23 +60,19 @@ func (b *WorkbookFunctionsRequestBuilder) CountBlank(reqObj *WorkbookFunctionsCo
 	return bb
 }
 
-//
 type WorkbookFunctionsCountBlankRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsCountBlankRequestBuilder) Request() *WorkbookFunctionsCountBlankRequest {
 	return &WorkbookFunctionsCountBlankRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsCountBlankRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsCountIfRequestBuilder struct{ BaseRequestBuilder }
 
 // CountIf action undocumented
@@ -96,23 +83,19 @@ func (b *WorkbookFunctionsRequestBuilder) CountIf(reqObj *WorkbookFunctionsCount
 	return bb
 }
 
-//
 type WorkbookFunctionsCountIfRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsCountIfRequestBuilder) Request() *WorkbookFunctionsCountIfRequest {
 	return &WorkbookFunctionsCountIfRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsCountIfRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsCountIfsRequestBuilder struct{ BaseRequestBuilder }
 
 // CountIfs action undocumented
@@ -123,17 +106,14 @@ func (b *WorkbookFunctionsRequestBuilder) CountIfs(reqObj *WorkbookFunctionsCoun
 	return bb
 }
 
-//
 type WorkbookFunctionsCountIfsRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsCountIfsRequestBuilder) Request() *WorkbookFunctionsCountIfsRequest {
 	return &WorkbookFunctionsCountIfsRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsCountIfsRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

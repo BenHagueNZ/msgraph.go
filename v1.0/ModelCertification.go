@@ -2,6 +2,24 @@
 
 package msgraph
 
+import "time"
+
+// Certification undocumented
+type Certification struct {
+	// Object is the base model of Certification
+	Object
+	// CertificationDetailsURL undocumented
+	CertificationDetailsURL *string `json:"certificationDetailsUrl,omitempty"`
+	// CertificationExpirationDateTime undocumented
+	CertificationExpirationDateTime *time.Time `json:"certificationExpirationDateTime,omitempty"`
+	// IsCertifiedByMicrosoft undocumented
+	IsCertifiedByMicrosoft *bool `json:"isCertifiedByMicrosoft,omitempty"`
+	// IsPublisherAttested undocumented
+	IsPublisherAttested *bool `json:"isPublisherAttested,omitempty"`
+	// LastCertificationDateTime undocumented
+	LastCertificationDateTime *time.Time `json:"lastCertificationDateTime,omitempty"`
+}
+
 // CertificationControl undocumented
 type CertificationControl struct {
 	// Object is the base model of CertificationControl

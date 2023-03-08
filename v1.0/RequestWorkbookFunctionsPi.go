@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsPiRequestBuilder struct{ BaseRequestBuilder }
 
 // Pi action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Pi(reqObj *WorkbookFunctionsPiRequestP
 	return bb
 }
 
-//
 type WorkbookFunctionsPiRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsPiRequestBuilder) Request() *WorkbookFunctionsPiRequest {
 	return &WorkbookFunctionsPiRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsPiRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

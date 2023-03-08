@@ -11,14 +11,10 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// EventDismissReminderRequestParameter undocumented
-type EventDismissReminderRequestParameter struct {
-}
-
-// EventSnoozeReminderRequestParameter undocumented
-type EventSnoozeReminderRequestParameter struct {
-	// NewReminderTime undocumented
-	NewReminderTime *DateTimeTimeZone `json:"NewReminderTime,omitempty"`
+// EventCancelRequestParameter undocumented
+type EventCancelRequestParameter struct {
+	// Comment undocumented
+	Comment *string `json:"Comment,omitempty"`
 }
 
 // EventAcceptRequestParameter undocumented
@@ -31,14 +27,36 @@ type EventAcceptRequestParameter struct {
 
 // EventDeclineRequestParameter undocumented
 type EventDeclineRequestParameter struct {
+	// ProposedNewTime undocumented
+	ProposedNewTime *TimeSlot `json:"ProposedNewTime,omitempty"`
 	// SendResponse undocumented
 	SendResponse *bool `json:"SendResponse,omitempty"`
 	// Comment undocumented
 	Comment *string `json:"Comment,omitempty"`
 }
 
+// EventDismissReminderRequestParameter undocumented
+type EventDismissReminderRequestParameter struct {
+}
+
+// EventForwardRequestParameter undocumented
+type EventForwardRequestParameter struct {
+	// ToRecipients undocumented
+	ToRecipients []Recipient `json:"ToRecipients,omitempty"`
+	// Comment undocumented
+	Comment *string `json:"Comment,omitempty"`
+}
+
+// EventSnoozeReminderRequestParameter undocumented
+type EventSnoozeReminderRequestParameter struct {
+	// NewReminderTime undocumented
+	NewReminderTime *DateTimeTimeZone `json:"NewReminderTime,omitempty"`
+}
+
 // EventTentativelyAcceptRequestParameter undocumented
 type EventTentativelyAcceptRequestParameter struct {
+	// ProposedNewTime undocumented
+	ProposedNewTime *TimeSlot `json:"ProposedNewTime,omitempty"`
 	// SendResponse undocumented
 	SendResponse *bool `json:"SendResponse,omitempty"`
 	// Comment undocumented

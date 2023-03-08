@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsVar_PRequestBuilder struct{ BaseRequestBuilder }
 
 // Var_P action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Var_P(reqObj *WorkbookFunctionsVar_PRe
 	return bb
 }
 
-//
 type WorkbookFunctionsVar_PRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsVar_PRequestBuilder) Request() *WorkbookFunctionsVar_PRequest {
 	return &WorkbookFunctionsVar_PRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsVar_PRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsVar_SRequestBuilder struct{ BaseRequestBuilder }
 
 // Var_S action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) Var_S(reqObj *WorkbookFunctionsVar_SRe
 	return bb
 }
 
-//
 type WorkbookFunctionsVar_SRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsVar_SRequestBuilder) Request() *WorkbookFunctionsVar_SRequest {
 	return &WorkbookFunctionsVar_SRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsVar_SRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

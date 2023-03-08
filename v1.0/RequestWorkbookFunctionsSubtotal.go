@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsSubtotalRequestBuilder struct{ BaseRequestBuilder }
 
 // Subtotal action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Subtotal(reqObj *WorkbookFunctionsSubt
 	return bb
 }
 
-//
 type WorkbookFunctionsSubtotalRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsSubtotalRequestBuilder) Request() *WorkbookFunctionsSubtotalRequest {
 	return &WorkbookFunctionsSubtotalRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsSubtotalRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

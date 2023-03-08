@@ -2,7 +2,7 @@
 
 package msgraph
 
-// ResetPasscodeActionResult undocumented
+// ResetPasscodeActionResult Reset passcode action result
 type ResetPasscodeActionResult struct {
 	// DeviceActionResult is the base model of ResetPasscodeActionResult
 	DeviceActionResult

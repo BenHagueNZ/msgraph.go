@@ -10,18 +10,38 @@ type AppleDeviceFeaturesConfigurationBase struct {
 	DeviceConfiguration
 }
 
+// AppleManagedIdentityProvider undocumented
+type AppleManagedIdentityProvider struct {
+	// IdentityProviderBase is the base model of AppleManagedIdentityProvider
+	IdentityProviderBase
+	// CertificateData undocumented
+	CertificateData *string `json:"certificateData,omitempty"`
+	// DeveloperID undocumented
+	DeveloperID *string `json:"developerId,omitempty"`
+	// KeyID undocumented
+	KeyID *string `json:"keyId,omitempty"`
+	// ServiceID undocumented
+	ServiceID *string `json:"serviceId,omitempty"`
+}
+
 // ApplePushNotificationCertificate Apple push notification certificate.
 type ApplePushNotificationCertificate struct {
 	// Entity is the base model of ApplePushNotificationCertificate
 	Entity
 	// AppleIdentifier Apple Id of the account used to create the MDM push certificate.
 	AppleIdentifier *string `json:"appleIdentifier,omitempty"`
-	// TopicIdentifier Topic Id.
-	TopicIdentifier *string `json:"topicIdentifier,omitempty"`
-	// LastModifiedDateTime Last modified date and time for Apple push notification certificate.
-	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
-	// ExpirationDateTime The expiration date and time for Apple push notification certificate.
-	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
 	// Certificate undocumented
 	Certificate *string `json:"certificate,omitempty"`
+	// CertificateSerialNumber Certificate serial number. This property is read-only.
+	CertificateSerialNumber *string `json:"certificateSerialNumber,omitempty"`
+	// CertificateUploadFailureReason The reason the certificate upload failed.
+	CertificateUploadFailureReason *string `json:"certificateUploadFailureReason,omitempty"`
+	// CertificateUploadStatus The certificate upload status.
+	CertificateUploadStatus *string `json:"certificateUploadStatus,omitempty"`
+	// ExpirationDateTime The expiration date and time for Apple push notification certificate.
+	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
+	// LastModifiedDateTime Last modified date and time for Apple push notification certificate.
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// TopicIdentifier Topic Id.
+	TopicIdentifier *string `json:"topicIdentifier,omitempty"`
 }

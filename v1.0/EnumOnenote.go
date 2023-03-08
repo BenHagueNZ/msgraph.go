@@ -97,30 +97,30 @@ var (
 type OnenoteUserRole string
 
 const (
+	// OnenoteUserRoleVNone undocumented
+	OnenoteUserRoleVNone OnenoteUserRole = "None"
 	// OnenoteUserRoleVOwner undocumented
 	OnenoteUserRoleVOwner OnenoteUserRole = "Owner"
 	// OnenoteUserRoleVContributor undocumented
 	OnenoteUserRoleVContributor OnenoteUserRole = "Contributor"
 	// OnenoteUserRoleVReader undocumented
 	OnenoteUserRoleVReader OnenoteUserRole = "Reader"
-	// OnenoteUserRoleVNone undocumented
-	OnenoteUserRoleVNone OnenoteUserRole = "None"
 )
 
 var (
+	// OnenoteUserRolePNone is a pointer to OnenoteUserRoleVNone
+	OnenoteUserRolePNone = &_OnenoteUserRolePNone
 	// OnenoteUserRolePOwner is a pointer to OnenoteUserRoleVOwner
 	OnenoteUserRolePOwner = &_OnenoteUserRolePOwner
 	// OnenoteUserRolePContributor is a pointer to OnenoteUserRoleVContributor
 	OnenoteUserRolePContributor = &_OnenoteUserRolePContributor
 	// OnenoteUserRolePReader is a pointer to OnenoteUserRoleVReader
 	OnenoteUserRolePReader = &_OnenoteUserRolePReader
-	// OnenoteUserRolePNone is a pointer to OnenoteUserRoleVNone
-	OnenoteUserRolePNone = &_OnenoteUserRolePNone
 )
 
 var (
+	_OnenoteUserRolePNone        = OnenoteUserRoleVNone
 	_OnenoteUserRolePOwner       = OnenoteUserRoleVOwner
 	_OnenoteUserRolePContributor = OnenoteUserRoleVContributor
 	_OnenoteUserRolePReader      = OnenoteUserRoleVReader
-	_OnenoteUserRolePNone        = OnenoteUserRoleVNone
 )

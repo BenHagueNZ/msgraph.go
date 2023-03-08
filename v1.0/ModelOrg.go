@@ -24,22 +24,22 @@ type OrgContact struct {
 	Mail *string `json:"mail,omitempty"`
 	// MailNickname undocumented
 	MailNickname *string `json:"mailNickname,omitempty"`
-	// OnPremisesSyncEnabled undocumented
-	OnPremisesSyncEnabled *bool `json:"onPremisesSyncEnabled,omitempty"`
 	// OnPremisesLastSyncDateTime undocumented
 	OnPremisesLastSyncDateTime *time.Time `json:"onPremisesLastSyncDateTime,omitempty"`
 	// OnPremisesProvisioningErrors undocumented
 	OnPremisesProvisioningErrors []OnPremisesProvisioningError `json:"onPremisesProvisioningErrors,omitempty"`
+	// OnPremisesSyncEnabled undocumented
+	OnPremisesSyncEnabled *bool `json:"onPremisesSyncEnabled,omitempty"`
 	// Phones undocumented
 	Phones []Phone `json:"phones,omitempty"`
 	// ProxyAddresses undocumented
 	ProxyAddresses []string `json:"proxyAddresses,omitempty"`
 	// Surname undocumented
 	Surname *string `json:"surname,omitempty"`
-	// Manager undocumented
-	Manager *DirectoryObject `json:"manager,omitempty"`
 	// DirectReports undocumented
 	DirectReports []DirectoryObject `json:"directReports,omitempty"`
+	// Manager undocumented
+	Manager *DirectoryObject `json:"manager,omitempty"`
 	// MemberOf undocumented
 	MemberOf []DirectoryObject `json:"memberOf,omitempty"`
 	// TransitiveMemberOf undocumented

@@ -2,36 +2,36 @@
 
 package msgraph
 
-// IntuneBrand undocumented
+// IntuneBrand intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
 type IntuneBrand struct {
 	// Object is the base model of IntuneBrand
 	Object
-	// DisplayName Company/organization name that is displayed to end users.
-	DisplayName *string `json:"displayName,omitempty"`
-	// ContactITName Name of the person/organization responsible for IT support.
-	ContactITName *string `json:"contactITName,omitempty"`
-	// ContactITPhoneNumber Phone number of the person/organization responsible for IT support.
-	ContactITPhoneNumber *string `json:"contactITPhoneNumber,omitempty"`
 	// ContactITEmailAddress Email address of the person/organization responsible for IT support.
 	ContactITEmailAddress *string `json:"contactITEmailAddress,omitempty"`
+	// ContactITName Name of the person/organization responsible for IT support.
+	ContactITName *string `json:"contactITName,omitempty"`
 	// ContactITNotes Text comments regarding the person/organization responsible for IT support.
 	ContactITNotes *string `json:"contactITNotes,omitempty"`
-	// PrivacyURL URL to the company/organization’s privacy policy.
-	PrivacyURL *string `json:"privacyUrl,omitempty"`
-	// OnlineSupportSiteURL URL to the company/organization’s IT helpdesk site.
-	OnlineSupportSiteURL *string `json:"onlineSupportSiteUrl,omitempty"`
-	// OnlineSupportSiteName Display name of the company/organization’s IT helpdesk site.
-	OnlineSupportSiteName *string `json:"onlineSupportSiteName,omitempty"`
-	// ThemeColor Primary theme color used in the Company Portal applications and web portal.
-	ThemeColor *RgbColor `json:"themeColor,omitempty"`
-	// ShowLogo Boolean that represents whether the administrator-supplied logo images are shown or not shown.
-	ShowLogo *bool `json:"showLogo,omitempty"`
-	// LightBackgroundLogo Logo image displayed in Company Portal apps which have a light background behind the logo.
-	LightBackgroundLogo *MimeContent `json:"lightBackgroundLogo,omitempty"`
+	// ContactITPhoneNumber Phone number of the person/organization responsible for IT support.
+	ContactITPhoneNumber *string `json:"contactITPhoneNumber,omitempty"`
 	// DarkBackgroundLogo Logo image displayed in Company Portal apps which have a dark background behind the logo.
 	DarkBackgroundLogo *MimeContent `json:"darkBackgroundLogo,omitempty"`
-	// ShowNameNextToLogo Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
-	ShowNameNextToLogo *bool `json:"showNameNextToLogo,omitempty"`
+	// DisplayName Company/organization name that is displayed to end users.
+	DisplayName *string `json:"displayName,omitempty"`
+	// LightBackgroundLogo Logo image displayed in Company Portal apps which have a light background behind the logo.
+	LightBackgroundLogo *MimeContent `json:"lightBackgroundLogo,omitempty"`
+	// OnlineSupportSiteName Display name of the company/organization’s IT helpdesk site.
+	OnlineSupportSiteName *string `json:"onlineSupportSiteName,omitempty"`
+	// OnlineSupportSiteURL URL to the company/organization’s IT helpdesk site.
+	OnlineSupportSiteURL *string `json:"onlineSupportSiteUrl,omitempty"`
+	// PrivacyURL URL to the company/organization’s privacy policy.
+	PrivacyURL *string `json:"privacyUrl,omitempty"`
 	// ShowDisplayNameNextToLogo Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
 	ShowDisplayNameNextToLogo *bool `json:"showDisplayNameNextToLogo,omitempty"`
+	// ShowLogo Boolean that represents whether the administrator-supplied logo images are shown or not shown.
+	ShowLogo *bool `json:"showLogo,omitempty"`
+	// ShowNameNextToLogo Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
+	ShowNameNextToLogo *bool `json:"showNameNextToLogo,omitempty"`
+	// ThemeColor Primary theme color used in the Company Portal applications and web portal.
+	ThemeColor *RgbColor `json:"themeColor,omitempty"`
 }

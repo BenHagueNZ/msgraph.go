@@ -24,10 +24,10 @@ type CommsNotifications struct {
 type CommsOperation struct {
 	// Entity is the base model of CommsOperation
 	Entity
-	// Status undocumented
-	Status *OperationStatus `json:"status,omitempty"`
 	// ClientContext undocumented
 	ClientContext *string `json:"clientContext,omitempty"`
 	// ResultInfo undocumented
 	ResultInfo *ResultInfo `json:"resultInfo,omitempty"`
+	// Status undocumented
+	Status *OperationStatus `json:"status,omitempty"`
 }

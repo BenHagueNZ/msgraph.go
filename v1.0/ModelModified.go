@@ -8,8 +8,8 @@ type ModifiedProperty struct {
 	Object
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// OldValue undocumented
-	OldValue *string `json:"oldValue,omitempty"`
 	// NewValue undocumented
 	NewValue *string `json:"newValue,omitempty"`
+	// OldValue undocumented
+	OldValue *string `json:"oldValue,omitempty"`
 }

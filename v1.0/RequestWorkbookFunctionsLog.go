@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsLogRequestBuilder struct{ BaseRequestBuilder }
 
 // Log action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Log(reqObj *WorkbookFunctionsLogReques
 	return bb
 }
 
-//
 type WorkbookFunctionsLogRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsLogRequestBuilder) Request() *WorkbookFunctionsLogRequest {
 	return &WorkbookFunctionsLogRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsLogRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsLogNorm_DistRequestBuilder struct{ BaseRequestBuilder }
 
 // LogNorm_Dist action undocumented
@@ -42,23 +37,19 @@ func (b *WorkbookFunctionsRequestBuilder) LogNorm_Dist(reqObj *WorkbookFunctions
 	return bb
 }
 
-//
 type WorkbookFunctionsLogNorm_DistRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsLogNorm_DistRequestBuilder) Request() *WorkbookFunctionsLogNorm_DistRequest {
 	return &WorkbookFunctionsLogNorm_DistRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsLogNorm_DistRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsLogNorm_InvRequestBuilder struct{ BaseRequestBuilder }
 
 // LogNorm_Inv action undocumented
@@ -69,17 +60,14 @@ func (b *WorkbookFunctionsRequestBuilder) LogNorm_Inv(reqObj *WorkbookFunctionsL
 	return bb
 }
 
-//
 type WorkbookFunctionsLogNorm_InvRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsLogNorm_InvRequestBuilder) Request() *WorkbookFunctionsLogNorm_InvRequest {
 	return &WorkbookFunctionsLogNorm_InvRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsLogNorm_InvRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

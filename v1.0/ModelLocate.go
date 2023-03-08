@@ -2,7 +2,7 @@
 
 package msgraph
 
-// LocateDeviceActionResult undocumented
+// LocateDeviceActionResult Locate device action result
 type LocateDeviceActionResult struct {
 	// DeviceActionResult is the base model of LocateDeviceActionResult
 	DeviceActionResult

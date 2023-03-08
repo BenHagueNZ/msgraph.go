@@ -78,14 +78,14 @@ type WorkbookWorksheetCollectionAddRequestParameter struct {
 	Name *string `json:"name,omitempty"`
 }
 
+// WorkbookCloseSessionRequestParameter undocumented
+type WorkbookCloseSessionRequestParameter struct {
+}
+
 // WorkbookCreateSessionRequestParameter undocumented
 type WorkbookCreateSessionRequestParameter struct {
 	// PersistChanges undocumented
 	PersistChanges *bool `json:"persistChanges,omitempty"`
-}
-
-// WorkbookCloseSessionRequestParameter undocumented
-type WorkbookCloseSessionRequestParameter struct {
 }
 
 // WorkbookRefreshSessionRequestParameter undocumented
@@ -200,6 +200,14 @@ type WorkbookFilterApplyValuesFilterRequestParameter struct {
 
 // WorkbookFilterClearRequestParameter undocumented
 type WorkbookFilterClearRequestParameter struct {
+}
+
+// WorkbookFunctionsDeltaRequestParameter undocumented
+type WorkbookFunctionsDeltaRequestParameter struct {
+	// Number1 undocumented
+	Number1 json.RawMessage `json:"number1,omitempty"`
+	// Number2 undocumented
+	Number2 json.RawMessage `json:"number2,omitempty"`
 }
 
 // WorkbookFunctionsAbsRequestParameter undocumented
@@ -886,126 +894,6 @@ type WorkbookFunctionsCumPrincRequestParameter struct {
 	Type json.RawMessage `json:"type,omitempty"`
 }
 
-// WorkbookFunctionsDaverageRequestParameter undocumented
-type WorkbookFunctionsDaverageRequestParameter struct {
-	// Database undocumented
-	Database json.RawMessage `json:"database,omitempty"`
-	// Field undocumented
-	Field json.RawMessage `json:"field,omitempty"`
-	// Criteria undocumented
-	Criteria json.RawMessage `json:"criteria,omitempty"`
-}
-
-// WorkbookFunctionsDcountRequestParameter undocumented
-type WorkbookFunctionsDcountRequestParameter struct {
-	// Database undocumented
-	Database json.RawMessage `json:"database,omitempty"`
-	// Field undocumented
-	Field json.RawMessage `json:"field,omitempty"`
-	// Criteria undocumented
-	Criteria json.RawMessage `json:"criteria,omitempty"`
-}
-
-// WorkbookFunctionsDcountARequestParameter undocumented
-type WorkbookFunctionsDcountARequestParameter struct {
-	// Database undocumented
-	Database json.RawMessage `json:"database,omitempty"`
-	// Field undocumented
-	Field json.RawMessage `json:"field,omitempty"`
-	// Criteria undocumented
-	Criteria json.RawMessage `json:"criteria,omitempty"`
-}
-
-// WorkbookFunctionsDgetRequestParameter undocumented
-type WorkbookFunctionsDgetRequestParameter struct {
-	// Database undocumented
-	Database json.RawMessage `json:"database,omitempty"`
-	// Field undocumented
-	Field json.RawMessage `json:"field,omitempty"`
-	// Criteria undocumented
-	Criteria json.RawMessage `json:"criteria,omitempty"`
-}
-
-// WorkbookFunctionsDmaxRequestParameter undocumented
-type WorkbookFunctionsDmaxRequestParameter struct {
-	// Database undocumented
-	Database json.RawMessage `json:"database,omitempty"`
-	// Field undocumented
-	Field json.RawMessage `json:"field,omitempty"`
-	// Criteria undocumented
-	Criteria json.RawMessage `json:"criteria,omitempty"`
-}
-
-// WorkbookFunctionsDminRequestParameter undocumented
-type WorkbookFunctionsDminRequestParameter struct {
-	// Database undocumented
-	Database json.RawMessage `json:"database,omitempty"`
-	// Field undocumented
-	Field json.RawMessage `json:"field,omitempty"`
-	// Criteria undocumented
-	Criteria json.RawMessage `json:"criteria,omitempty"`
-}
-
-// WorkbookFunctionsDproductRequestParameter undocumented
-type WorkbookFunctionsDproductRequestParameter struct {
-	// Database undocumented
-	Database json.RawMessage `json:"database,omitempty"`
-	// Field undocumented
-	Field json.RawMessage `json:"field,omitempty"`
-	// Criteria undocumented
-	Criteria json.RawMessage `json:"criteria,omitempty"`
-}
-
-// WorkbookFunctionsDstDevRequestParameter undocumented
-type WorkbookFunctionsDstDevRequestParameter struct {
-	// Database undocumented
-	Database json.RawMessage `json:"database,omitempty"`
-	// Field undocumented
-	Field json.RawMessage `json:"field,omitempty"`
-	// Criteria undocumented
-	Criteria json.RawMessage `json:"criteria,omitempty"`
-}
-
-// WorkbookFunctionsDstDevPRequestParameter undocumented
-type WorkbookFunctionsDstDevPRequestParameter struct {
-	// Database undocumented
-	Database json.RawMessage `json:"database,omitempty"`
-	// Field undocumented
-	Field json.RawMessage `json:"field,omitempty"`
-	// Criteria undocumented
-	Criteria json.RawMessage `json:"criteria,omitempty"`
-}
-
-// WorkbookFunctionsDsumRequestParameter undocumented
-type WorkbookFunctionsDsumRequestParameter struct {
-	// Database undocumented
-	Database json.RawMessage `json:"database,omitempty"`
-	// Field undocumented
-	Field json.RawMessage `json:"field,omitempty"`
-	// Criteria undocumented
-	Criteria json.RawMessage `json:"criteria,omitempty"`
-}
-
-// WorkbookFunctionsDvarRequestParameter undocumented
-type WorkbookFunctionsDvarRequestParameter struct {
-	// Database undocumented
-	Database json.RawMessage `json:"database,omitempty"`
-	// Field undocumented
-	Field json.RawMessage `json:"field,omitempty"`
-	// Criteria undocumented
-	Criteria json.RawMessage `json:"criteria,omitempty"`
-}
-
-// WorkbookFunctionsDvarPRequestParameter undocumented
-type WorkbookFunctionsDvarPRequestParameter struct {
-	// Database undocumented
-	Database json.RawMessage `json:"database,omitempty"`
-	// Field undocumented
-	Field json.RawMessage `json:"field,omitempty"`
-	// Criteria undocumented
-	Criteria json.RawMessage `json:"criteria,omitempty"`
-}
-
 // WorkbookFunctionsDateRequestParameter undocumented
 type WorkbookFunctionsDateRequestParameter struct {
 	// Year undocumented
@@ -1020,6 +908,16 @@ type WorkbookFunctionsDateRequestParameter struct {
 type WorkbookFunctionsDatevalueRequestParameter struct {
 	// DateText undocumented
 	DateText json.RawMessage `json:"dateText,omitempty"`
+}
+
+// WorkbookFunctionsDaverageRequestParameter undocumented
+type WorkbookFunctionsDaverageRequestParameter struct {
+	// Database undocumented
+	Database json.RawMessage `json:"database,omitempty"`
+	// Field undocumented
+	Field json.RawMessage `json:"field,omitempty"`
+	// Criteria undocumented
+	Criteria json.RawMessage `json:"criteria,omitempty"`
 }
 
 // WorkbookFunctionsDayRequestParameter undocumented
@@ -1064,6 +962,26 @@ type WorkbookFunctionsDbRequestParameter struct {
 type WorkbookFunctionsDbcsRequestParameter struct {
 	// Text undocumented
 	Text json.RawMessage `json:"text,omitempty"`
+}
+
+// WorkbookFunctionsDcountRequestParameter undocumented
+type WorkbookFunctionsDcountRequestParameter struct {
+	// Database undocumented
+	Database json.RawMessage `json:"database,omitempty"`
+	// Field undocumented
+	Field json.RawMessage `json:"field,omitempty"`
+	// Criteria undocumented
+	Criteria json.RawMessage `json:"criteria,omitempty"`
+}
+
+// WorkbookFunctionsDcountARequestParameter undocumented
+type WorkbookFunctionsDcountARequestParameter struct {
+	// Database undocumented
+	Database json.RawMessage `json:"database,omitempty"`
+	// Field undocumented
+	Field json.RawMessage `json:"field,omitempty"`
+	// Criteria undocumented
+	Criteria json.RawMessage `json:"criteria,omitempty"`
 }
 
 // WorkbookFunctionsDdbRequestParameter undocumented
@@ -1118,18 +1036,20 @@ type WorkbookFunctionsDegreesRequestParameter struct {
 	Angle json.RawMessage `json:"angle,omitempty"`
 }
 
-// WorkbookFunctionsDeltaRequestParameter undocumented
-type WorkbookFunctionsDeltaRequestParameter struct {
-	// Number1 undocumented
-	Number1 json.RawMessage `json:"number1,omitempty"`
-	// Number2 undocumented
-	Number2 json.RawMessage `json:"number2,omitempty"`
-}
-
 // WorkbookFunctionsDevSqRequestParameter undocumented
 type WorkbookFunctionsDevSqRequestParameter struct {
 	// Values undocumented
 	Values json.RawMessage `json:"values,omitempty"`
+}
+
+// WorkbookFunctionsDgetRequestParameter undocumented
+type WorkbookFunctionsDgetRequestParameter struct {
+	// Database undocumented
+	Database json.RawMessage `json:"database,omitempty"`
+	// Field undocumented
+	Field json.RawMessage `json:"field,omitempty"`
+	// Criteria undocumented
+	Criteria json.RawMessage `json:"criteria,omitempty"`
 }
 
 // WorkbookFunctionsDiscRequestParameter undocumented
@@ -1144,6 +1064,26 @@ type WorkbookFunctionsDiscRequestParameter struct {
 	Redemption json.RawMessage `json:"redemption,omitempty"`
 	// Basis undocumented
 	Basis json.RawMessage `json:"basis,omitempty"`
+}
+
+// WorkbookFunctionsDmaxRequestParameter undocumented
+type WorkbookFunctionsDmaxRequestParameter struct {
+	// Database undocumented
+	Database json.RawMessage `json:"database,omitempty"`
+	// Field undocumented
+	Field json.RawMessage `json:"field,omitempty"`
+	// Criteria undocumented
+	Criteria json.RawMessage `json:"criteria,omitempty"`
+}
+
+// WorkbookFunctionsDminRequestParameter undocumented
+type WorkbookFunctionsDminRequestParameter struct {
+	// Database undocumented
+	Database json.RawMessage `json:"database,omitempty"`
+	// Field undocumented
+	Field json.RawMessage `json:"field,omitempty"`
+	// Criteria undocumented
+	Criteria json.RawMessage `json:"criteria,omitempty"`
 }
 
 // WorkbookFunctionsDollarRequestParameter undocumented
@@ -1170,6 +1110,46 @@ type WorkbookFunctionsDollarFrRequestParameter struct {
 	Fraction json.RawMessage `json:"fraction,omitempty"`
 }
 
+// WorkbookFunctionsDproductRequestParameter undocumented
+type WorkbookFunctionsDproductRequestParameter struct {
+	// Database undocumented
+	Database json.RawMessage `json:"database,omitempty"`
+	// Field undocumented
+	Field json.RawMessage `json:"field,omitempty"`
+	// Criteria undocumented
+	Criteria json.RawMessage `json:"criteria,omitempty"`
+}
+
+// WorkbookFunctionsDstDevRequestParameter undocumented
+type WorkbookFunctionsDstDevRequestParameter struct {
+	// Database undocumented
+	Database json.RawMessage `json:"database,omitempty"`
+	// Field undocumented
+	Field json.RawMessage `json:"field,omitempty"`
+	// Criteria undocumented
+	Criteria json.RawMessage `json:"criteria,omitempty"`
+}
+
+// WorkbookFunctionsDstDevPRequestParameter undocumented
+type WorkbookFunctionsDstDevPRequestParameter struct {
+	// Database undocumented
+	Database json.RawMessage `json:"database,omitempty"`
+	// Field undocumented
+	Field json.RawMessage `json:"field,omitempty"`
+	// Criteria undocumented
+	Criteria json.RawMessage `json:"criteria,omitempty"`
+}
+
+// WorkbookFunctionsDsumRequestParameter undocumented
+type WorkbookFunctionsDsumRequestParameter struct {
+	// Database undocumented
+	Database json.RawMessage `json:"database,omitempty"`
+	// Field undocumented
+	Field json.RawMessage `json:"field,omitempty"`
+	// Criteria undocumented
+	Criteria json.RawMessage `json:"criteria,omitempty"`
+}
+
 // WorkbookFunctionsDurationRequestParameter undocumented
 type WorkbookFunctionsDurationRequestParameter struct {
 	// Settlement undocumented
@@ -1184,6 +1164,26 @@ type WorkbookFunctionsDurationRequestParameter struct {
 	Frequency json.RawMessage `json:"frequency,omitempty"`
 	// Basis undocumented
 	Basis json.RawMessage `json:"basis,omitempty"`
+}
+
+// WorkbookFunctionsDvarRequestParameter undocumented
+type WorkbookFunctionsDvarRequestParameter struct {
+	// Database undocumented
+	Database json.RawMessage `json:"database,omitempty"`
+	// Field undocumented
+	Field json.RawMessage `json:"field,omitempty"`
+	// Criteria undocumented
+	Criteria json.RawMessage `json:"criteria,omitempty"`
+}
+
+// WorkbookFunctionsDvarPRequestParameter undocumented
+type WorkbookFunctionsDvarPRequestParameter struct {
+	// Database undocumented
+	Database json.RawMessage `json:"database,omitempty"`
+	// Field undocumented
+	Field json.RawMessage `json:"field,omitempty"`
+	// Criteria undocumented
+	Criteria json.RawMessage `json:"criteria,omitempty"`
 }
 
 // WorkbookFunctionsEcma_CeilingRequestParameter undocumented
@@ -1280,56 +1280,6 @@ type WorkbookFunctionsExpon_DistRequestParameter struct {
 	Cumulative json.RawMessage `json:"cumulative,omitempty"`
 }
 
-// WorkbookFunctionsFvscheduleRequestParameter undocumented
-type WorkbookFunctionsFvscheduleRequestParameter struct {
-	// Principal undocumented
-	Principal json.RawMessage `json:"principal,omitempty"`
-	// Schedule undocumented
-	Schedule json.RawMessage `json:"schedule,omitempty"`
-}
-
-// WorkbookFunctionsF_DistRequestParameter undocumented
-type WorkbookFunctionsF_DistRequestParameter struct {
-	// X undocumented
-	X json.RawMessage `json:"x,omitempty"`
-	// DegFreedom1 undocumented
-	DegFreedom1 json.RawMessage `json:"degFreedom1,omitempty"`
-	// DegFreedom2 undocumented
-	DegFreedom2 json.RawMessage `json:"degFreedom2,omitempty"`
-	// Cumulative undocumented
-	Cumulative json.RawMessage `json:"cumulative,omitempty"`
-}
-
-// WorkbookFunctionsF_Dist_RTRequestParameter undocumented
-type WorkbookFunctionsF_Dist_RTRequestParameter struct {
-	// X undocumented
-	X json.RawMessage `json:"x,omitempty"`
-	// DegFreedom1 undocumented
-	DegFreedom1 json.RawMessage `json:"degFreedom1,omitempty"`
-	// DegFreedom2 undocumented
-	DegFreedom2 json.RawMessage `json:"degFreedom2,omitempty"`
-}
-
-// WorkbookFunctionsF_InvRequestParameter undocumented
-type WorkbookFunctionsF_InvRequestParameter struct {
-	// Probability undocumented
-	Probability json.RawMessage `json:"probability,omitempty"`
-	// DegFreedom1 undocumented
-	DegFreedom1 json.RawMessage `json:"degFreedom1,omitempty"`
-	// DegFreedom2 undocumented
-	DegFreedom2 json.RawMessage `json:"degFreedom2,omitempty"`
-}
-
-// WorkbookFunctionsF_Inv_RTRequestParameter undocumented
-type WorkbookFunctionsF_Inv_RTRequestParameter struct {
-	// Probability undocumented
-	Probability json.RawMessage `json:"probability,omitempty"`
-	// DegFreedom1 undocumented
-	DegFreedom1 json.RawMessage `json:"degFreedom1,omitempty"`
-	// DegFreedom2 undocumented
-	DegFreedom2 json.RawMessage `json:"degFreedom2,omitempty"`
-}
-
 // WorkbookFunctionsFactRequestParameter undocumented
 type WorkbookFunctionsFactRequestParameter struct {
 	// Number undocumented
@@ -1420,6 +1370,56 @@ type WorkbookFunctionsFvRequestParameter struct {
 	Type json.RawMessage `json:"type,omitempty"`
 }
 
+// WorkbookFunctionsFvscheduleRequestParameter undocumented
+type WorkbookFunctionsFvscheduleRequestParameter struct {
+	// Principal undocumented
+	Principal json.RawMessage `json:"principal,omitempty"`
+	// Schedule undocumented
+	Schedule json.RawMessage `json:"schedule,omitempty"`
+}
+
+// WorkbookFunctionsF_DistRequestParameter undocumented
+type WorkbookFunctionsF_DistRequestParameter struct {
+	// X undocumented
+	X json.RawMessage `json:"x,omitempty"`
+	// DegFreedom1 undocumented
+	DegFreedom1 json.RawMessage `json:"degFreedom1,omitempty"`
+	// DegFreedom2 undocumented
+	DegFreedom2 json.RawMessage `json:"degFreedom2,omitempty"`
+	// Cumulative undocumented
+	Cumulative json.RawMessage `json:"cumulative,omitempty"`
+}
+
+// WorkbookFunctionsF_Dist_RTRequestParameter undocumented
+type WorkbookFunctionsF_Dist_RTRequestParameter struct {
+	// X undocumented
+	X json.RawMessage `json:"x,omitempty"`
+	// DegFreedom1 undocumented
+	DegFreedom1 json.RawMessage `json:"degFreedom1,omitempty"`
+	// DegFreedom2 undocumented
+	DegFreedom2 json.RawMessage `json:"degFreedom2,omitempty"`
+}
+
+// WorkbookFunctionsF_InvRequestParameter undocumented
+type WorkbookFunctionsF_InvRequestParameter struct {
+	// Probability undocumented
+	Probability json.RawMessage `json:"probability,omitempty"`
+	// DegFreedom1 undocumented
+	DegFreedom1 json.RawMessage `json:"degFreedom1,omitempty"`
+	// DegFreedom2 undocumented
+	DegFreedom2 json.RawMessage `json:"degFreedom2,omitempty"`
+}
+
+// WorkbookFunctionsF_Inv_RTRequestParameter undocumented
+type WorkbookFunctionsF_Inv_RTRequestParameter struct {
+	// Probability undocumented
+	Probability json.RawMessage `json:"probability,omitempty"`
+	// DegFreedom1 undocumented
+	DegFreedom1 json.RawMessage `json:"degFreedom1,omitempty"`
+	// DegFreedom2 undocumented
+	DegFreedom2 json.RawMessage `json:"degFreedom2,omitempty"`
+}
+
 // WorkbookFunctionsGammaRequestParameter undocumented
 type WorkbookFunctionsGammaRequestParameter struct {
 	// X undocumented
@@ -1472,30 +1472,18 @@ type WorkbookFunctionsGcdRequestParameter struct {
 	Values json.RawMessage `json:"values,omitempty"`
 }
 
-// WorkbookFunctionsGeStepRequestParameter undocumented
-type WorkbookFunctionsGeStepRequestParameter struct {
-	// Number undocumented
-	Number json.RawMessage `json:"number,omitempty"`
-	// Step undocumented
-	Step json.RawMessage `json:"step,omitempty"`
-}
-
 // WorkbookFunctionsGeoMeanRequestParameter undocumented
 type WorkbookFunctionsGeoMeanRequestParameter struct {
 	// Values undocumented
 	Values json.RawMessage `json:"values,omitempty"`
 }
 
-// WorkbookFunctionsHlookupRequestParameter undocumented
-type WorkbookFunctionsHlookupRequestParameter struct {
-	// LookupValue undocumented
-	LookupValue json.RawMessage `json:"lookupValue,omitempty"`
-	// TableArray undocumented
-	TableArray json.RawMessage `json:"tableArray,omitempty"`
-	// RowIndexNum undocumented
-	RowIndexNum json.RawMessage `json:"rowIndexNum,omitempty"`
-	// RangeLookup undocumented
-	RangeLookup json.RawMessage `json:"rangeLookup,omitempty"`
+// WorkbookFunctionsGeStepRequestParameter undocumented
+type WorkbookFunctionsGeStepRequestParameter struct {
+	// Number undocumented
+	Number json.RawMessage `json:"number,omitempty"`
+	// Step undocumented
+	Step json.RawMessage `json:"step,omitempty"`
 }
 
 // WorkbookFunctionsHarMeanRequestParameter undocumented
@@ -1526,10 +1514,30 @@ type WorkbookFunctionsHex2OctRequestParameter struct {
 	Places json.RawMessage `json:"places,omitempty"`
 }
 
+// WorkbookFunctionsHlookupRequestParameter undocumented
+type WorkbookFunctionsHlookupRequestParameter struct {
+	// LookupValue undocumented
+	LookupValue json.RawMessage `json:"lookupValue,omitempty"`
+	// TableArray undocumented
+	TableArray json.RawMessage `json:"tableArray,omitempty"`
+	// RowIndexNum undocumented
+	RowIndexNum json.RawMessage `json:"rowIndexNum,omitempty"`
+	// RangeLookup undocumented
+	RangeLookup json.RawMessage `json:"rangeLookup,omitempty"`
+}
+
 // WorkbookFunctionsHourRequestParameter undocumented
 type WorkbookFunctionsHourRequestParameter struct {
 	// SerialNumber undocumented
 	SerialNumber json.RawMessage `json:"serialNumber,omitempty"`
+}
+
+// WorkbookFunctionsHyperlinkRequestParameter undocumented
+type WorkbookFunctionsHyperlinkRequestParameter struct {
+	// LinkLocation undocumented
+	LinkLocation json.RawMessage `json:"linkLocation,omitempty"`
+	// FriendlyName undocumented
+	FriendlyName json.RawMessage `json:"friendlyName,omitempty"`
 }
 
 // WorkbookFunctionsHypGeom_DistRequestParameter undocumented
@@ -1546,22 +1554,6 @@ type WorkbookFunctionsHypGeom_DistRequestParameter struct {
 	Cumulative json.RawMessage `json:"cumulative,omitempty"`
 }
 
-// WorkbookFunctionsHyperlinkRequestParameter undocumented
-type WorkbookFunctionsHyperlinkRequestParameter struct {
-	// LinkLocation undocumented
-	LinkLocation json.RawMessage `json:"linkLocation,omitempty"`
-	// FriendlyName undocumented
-	FriendlyName json.RawMessage `json:"friendlyName,omitempty"`
-}
-
-// WorkbookFunctionsIso_CeilingRequestParameter undocumented
-type WorkbookFunctionsIso_CeilingRequestParameter struct {
-	// Number undocumented
-	Number json.RawMessage `json:"number,omitempty"`
-	// Significance undocumented
-	Significance json.RawMessage `json:"significance,omitempty"`
-}
-
 // WorkbookFunctionsIfRequestParameter undocumented
 type WorkbookFunctionsIfRequestParameter struct {
 	// LogicalTest undocumented
@@ -1574,6 +1566,12 @@ type WorkbookFunctionsIfRequestParameter struct {
 
 // WorkbookFunctionsImAbsRequestParameter undocumented
 type WorkbookFunctionsImAbsRequestParameter struct {
+	// Inumber undocumented
+	Inumber json.RawMessage `json:"inumber,omitempty"`
+}
+
+// WorkbookFunctionsImaginaryRequestParameter undocumented
+type WorkbookFunctionsImaginaryRequestParameter struct {
 	// Inumber undocumented
 	Inumber json.RawMessage `json:"inumber,omitempty"`
 }
@@ -1722,12 +1720,6 @@ type WorkbookFunctionsImTanRequestParameter struct {
 	Inumber json.RawMessage `json:"inumber,omitempty"`
 }
 
-// WorkbookFunctionsImaginaryRequestParameter undocumented
-type WorkbookFunctionsImaginaryRequestParameter struct {
-	// Inumber undocumented
-	Inumber json.RawMessage `json:"inumber,omitempty"`
-}
-
 // WorkbookFunctionsIntRequestParameter undocumented
 type WorkbookFunctionsIntRequestParameter struct {
 	// Number undocumented
@@ -1826,16 +1818,18 @@ type WorkbookFunctionsIsOddRequestParameter struct {
 	Number json.RawMessage `json:"number,omitempty"`
 }
 
-// WorkbookFunctionsIsTextRequestParameter undocumented
-type WorkbookFunctionsIsTextRequestParameter struct {
-	// Value undocumented
-	Value json.RawMessage `json:"value,omitempty"`
-}
-
 // WorkbookFunctionsIsoWeekNumRequestParameter undocumented
 type WorkbookFunctionsIsoWeekNumRequestParameter struct {
 	// Date undocumented
 	Date json.RawMessage `json:"date,omitempty"`
+}
+
+// WorkbookFunctionsIso_CeilingRequestParameter undocumented
+type WorkbookFunctionsIso_CeilingRequestParameter struct {
+	// Number undocumented
+	Number json.RawMessage `json:"number,omitempty"`
+	// Significance undocumented
+	Significance json.RawMessage `json:"significance,omitempty"`
 }
 
 // WorkbookFunctionsIspmtRequestParameter undocumented
@@ -1852,6 +1846,12 @@ type WorkbookFunctionsIspmtRequestParameter struct {
 
 // WorkbookFunctionsIsrefRequestParameter undocumented
 type WorkbookFunctionsIsrefRequestParameter struct {
+	// Value undocumented
+	Value json.RawMessage `json:"value,omitempty"`
+}
+
+// WorkbookFunctionsIsTextRequestParameter undocumented
+type WorkbookFunctionsIsTextRequestParameter struct {
 	// Value undocumented
 	Value json.RawMessage `json:"value,omitempty"`
 }
@@ -1962,40 +1962,6 @@ type WorkbookFunctionsLowerRequestParameter struct {
 	Text json.RawMessage `json:"text,omitempty"`
 }
 
-// WorkbookFunctionsMdurationRequestParameter undocumented
-type WorkbookFunctionsMdurationRequestParameter struct {
-	// Settlement undocumented
-	Settlement json.RawMessage `json:"settlement,omitempty"`
-	// Maturity undocumented
-	Maturity json.RawMessage `json:"maturity,omitempty"`
-	// Coupon undocumented
-	Coupon json.RawMessage `json:"coupon,omitempty"`
-	// Yld undocumented
-	Yld json.RawMessage `json:"yld,omitempty"`
-	// Frequency undocumented
-	Frequency json.RawMessage `json:"frequency,omitempty"`
-	// Basis undocumented
-	Basis json.RawMessage `json:"basis,omitempty"`
-}
-
-// WorkbookFunctionsMirrRequestParameter undocumented
-type WorkbookFunctionsMirrRequestParameter struct {
-	// Values undocumented
-	Values json.RawMessage `json:"values,omitempty"`
-	// FinanceRate undocumented
-	FinanceRate json.RawMessage `json:"financeRate,omitempty"`
-	// ReinvestRate undocumented
-	ReinvestRate json.RawMessage `json:"reinvestRate,omitempty"`
-}
-
-// WorkbookFunctionsMroundRequestParameter undocumented
-type WorkbookFunctionsMroundRequestParameter struct {
-	// Number undocumented
-	Number json.RawMessage `json:"number,omitempty"`
-	// Multiple undocumented
-	Multiple json.RawMessage `json:"multiple,omitempty"`
-}
-
 // WorkbookFunctionsMatchRequestParameter undocumented
 type WorkbookFunctionsMatchRequestParameter struct {
 	// LookupValue undocumented
@@ -2016,6 +1982,22 @@ type WorkbookFunctionsMaxRequestParameter struct {
 type WorkbookFunctionsMaxARequestParameter struct {
 	// Values undocumented
 	Values json.RawMessage `json:"values,omitempty"`
+}
+
+// WorkbookFunctionsMdurationRequestParameter undocumented
+type WorkbookFunctionsMdurationRequestParameter struct {
+	// Settlement undocumented
+	Settlement json.RawMessage `json:"settlement,omitempty"`
+	// Maturity undocumented
+	Maturity json.RawMessage `json:"maturity,omitempty"`
+	// Coupon undocumented
+	Coupon json.RawMessage `json:"coupon,omitempty"`
+	// Yld undocumented
+	Yld json.RawMessage `json:"yld,omitempty"`
+	// Frequency undocumented
+	Frequency json.RawMessage `json:"frequency,omitempty"`
+	// Basis undocumented
+	Basis json.RawMessage `json:"basis,omitempty"`
 }
 
 // WorkbookFunctionsMedianRequestParameter undocumented
@@ -2062,6 +2044,16 @@ type WorkbookFunctionsMinuteRequestParameter struct {
 	SerialNumber json.RawMessage `json:"serialNumber,omitempty"`
 }
 
+// WorkbookFunctionsMirrRequestParameter undocumented
+type WorkbookFunctionsMirrRequestParameter struct {
+	// Values undocumented
+	Values json.RawMessage `json:"values,omitempty"`
+	// FinanceRate undocumented
+	FinanceRate json.RawMessage `json:"financeRate,omitempty"`
+	// ReinvestRate undocumented
+	ReinvestRate json.RawMessage `json:"reinvestRate,omitempty"`
+}
+
 // WorkbookFunctionsModRequestParameter undocumented
 type WorkbookFunctionsModRequestParameter struct {
 	// Number undocumented
@@ -2076,6 +2068,14 @@ type WorkbookFunctionsMonthRequestParameter struct {
 	SerialNumber json.RawMessage `json:"serialNumber,omitempty"`
 }
 
+// WorkbookFunctionsMroundRequestParameter undocumented
+type WorkbookFunctionsMroundRequestParameter struct {
+	// Number undocumented
+	Number json.RawMessage `json:"number,omitempty"`
+	// Multiple undocumented
+	Multiple json.RawMessage `json:"multiple,omitempty"`
+}
+
 // WorkbookFunctionsMultiNomialRequestParameter undocumented
 type WorkbookFunctionsMultiNomialRequestParameter struct {
 	// Values undocumented
@@ -2086,20 +2086,6 @@ type WorkbookFunctionsMultiNomialRequestParameter struct {
 type WorkbookFunctionsNRequestParameter struct {
 	// Value undocumented
 	Value json.RawMessage `json:"value,omitempty"`
-}
-
-// WorkbookFunctionsNperRequestParameter undocumented
-type WorkbookFunctionsNperRequestParameter struct {
-	// Rate undocumented
-	Rate json.RawMessage `json:"rate,omitempty"`
-	// Pmt undocumented
-	Pmt json.RawMessage `json:"pmt,omitempty"`
-	// Pv undocumented
-	Pv json.RawMessage `json:"pv,omitempty"`
-	// Fv undocumented
-	Fv json.RawMessage `json:"fv,omitempty"`
-	// Type undocumented
-	Type json.RawMessage `json:"type,omitempty"`
 }
 
 // WorkbookFunctionsNaRequestParameter undocumented
@@ -2192,6 +2178,20 @@ type WorkbookFunctionsNotRequestParameter struct {
 
 // WorkbookFunctionsNowRequestParameter undocumented
 type WorkbookFunctionsNowRequestParameter struct {
+}
+
+// WorkbookFunctionsNperRequestParameter undocumented
+type WorkbookFunctionsNperRequestParameter struct {
+	// Rate undocumented
+	Rate json.RawMessage `json:"rate,omitempty"`
+	// Pmt undocumented
+	Pmt json.RawMessage `json:"pmt,omitempty"`
+	// Pv undocumented
+	Pv json.RawMessage `json:"pv,omitempty"`
+	// Fv undocumented
+	Fv json.RawMessage `json:"fv,omitempty"`
+	// Type undocumented
+	Type json.RawMessage `json:"type,omitempty"`
 }
 
 // WorkbookFunctionsNpvRequestParameter undocumented
@@ -2340,6 +2340,22 @@ type WorkbookFunctionsPdurationRequestParameter struct {
 	Fv json.RawMessage `json:"fv,omitempty"`
 }
 
+// WorkbookFunctionsPercentile_ExcRequestParameter undocumented
+type WorkbookFunctionsPercentile_ExcRequestParameter struct {
+	// Array undocumented
+	Array json.RawMessage `json:"array,omitempty"`
+	// K undocumented
+	K json.RawMessage `json:"k,omitempty"`
+}
+
+// WorkbookFunctionsPercentile_IncRequestParameter undocumented
+type WorkbookFunctionsPercentile_IncRequestParameter struct {
+	// Array undocumented
+	Array json.RawMessage `json:"array,omitempty"`
+	// K undocumented
+	K json.RawMessage `json:"k,omitempty"`
+}
+
 // WorkbookFunctionsPercentRank_ExcRequestParameter undocumented
 type WorkbookFunctionsPercentRank_ExcRequestParameter struct {
 	// Array undocumented
@@ -2358,22 +2374,6 @@ type WorkbookFunctionsPercentRank_IncRequestParameter struct {
 	X json.RawMessage `json:"x,omitempty"`
 	// Significance undocumented
 	Significance json.RawMessage `json:"significance,omitempty"`
-}
-
-// WorkbookFunctionsPercentile_ExcRequestParameter undocumented
-type WorkbookFunctionsPercentile_ExcRequestParameter struct {
-	// Array undocumented
-	Array json.RawMessage `json:"array,omitempty"`
-	// K undocumented
-	K json.RawMessage `json:"k,omitempty"`
-}
-
-// WorkbookFunctionsPercentile_IncRequestParameter undocumented
-type WorkbookFunctionsPercentile_IncRequestParameter struct {
-	// Array undocumented
-	Array json.RawMessage `json:"array,omitempty"`
-	// K undocumented
-	K json.RawMessage `json:"k,omitempty"`
 }
 
 // WorkbookFunctionsPermutRequestParameter undocumented
@@ -2814,6 +2814,16 @@ type WorkbookFunctionsSqrtPiRequestParameter struct {
 	Number json.RawMessage `json:"number,omitempty"`
 }
 
+// WorkbookFunctionsStandardizeRequestParameter undocumented
+type WorkbookFunctionsStandardizeRequestParameter struct {
+	// X undocumented
+	X json.RawMessage `json:"x,omitempty"`
+	// Mean undocumented
+	Mean json.RawMessage `json:"mean,omitempty"`
+	// StandardDev undocumented
+	StandardDev json.RawMessage `json:"standardDev,omitempty"`
+}
+
 // WorkbookFunctionsStDevARequestParameter undocumented
 type WorkbookFunctionsStDevARequestParameter struct {
 	// Values undocumented
@@ -2836,16 +2846,6 @@ type WorkbookFunctionsStDev_PRequestParameter struct {
 type WorkbookFunctionsStDev_SRequestParameter struct {
 	// Values undocumented
 	Values json.RawMessage `json:"values,omitempty"`
-}
-
-// WorkbookFunctionsStandardizeRequestParameter undocumented
-type WorkbookFunctionsStandardizeRequestParameter struct {
-	// X undocumented
-	X json.RawMessage `json:"x,omitempty"`
-	// Mean undocumented
-	Mean json.RawMessage `json:"mean,omitempty"`
-	// StandardDev undocumented
-	StandardDev json.RawMessage `json:"standardDev,omitempty"`
 }
 
 // WorkbookFunctionsSubstituteRequestParameter undocumented
@@ -2916,6 +2916,18 @@ type WorkbookFunctionsTRequestParameter struct {
 	Value json.RawMessage `json:"value,omitempty"`
 }
 
+// WorkbookFunctionsTanRequestParameter undocumented
+type WorkbookFunctionsTanRequestParameter struct {
+	// Number undocumented
+	Number json.RawMessage `json:"number,omitempty"`
+}
+
+// WorkbookFunctionsTanhRequestParameter undocumented
+type WorkbookFunctionsTanhRequestParameter struct {
+	// Number undocumented
+	Number json.RawMessage `json:"number,omitempty"`
+}
+
 // WorkbookFunctionsTbillEqRequestParameter undocumented
 type WorkbookFunctionsTbillEqRequestParameter struct {
 	// Settlement undocumented
@@ -2944,60 +2956,6 @@ type WorkbookFunctionsTbillYieldRequestParameter struct {
 	Maturity json.RawMessage `json:"maturity,omitempty"`
 	// Pr undocumented
 	Pr json.RawMessage `json:"pr,omitempty"`
-}
-
-// WorkbookFunctionsT_DistRequestParameter undocumented
-type WorkbookFunctionsT_DistRequestParameter struct {
-	// X undocumented
-	X json.RawMessage `json:"x,omitempty"`
-	// DegFreedom undocumented
-	DegFreedom json.RawMessage `json:"degFreedom,omitempty"`
-	// Cumulative undocumented
-	Cumulative json.RawMessage `json:"cumulative,omitempty"`
-}
-
-// WorkbookFunctionsT_Dist_2TRequestParameter undocumented
-type WorkbookFunctionsT_Dist_2TRequestParameter struct {
-	// X undocumented
-	X json.RawMessage `json:"x,omitempty"`
-	// DegFreedom undocumented
-	DegFreedom json.RawMessage `json:"degFreedom,omitempty"`
-}
-
-// WorkbookFunctionsT_Dist_RTRequestParameter undocumented
-type WorkbookFunctionsT_Dist_RTRequestParameter struct {
-	// X undocumented
-	X json.RawMessage `json:"x,omitempty"`
-	// DegFreedom undocumented
-	DegFreedom json.RawMessage `json:"degFreedom,omitempty"`
-}
-
-// WorkbookFunctionsT_InvRequestParameter undocumented
-type WorkbookFunctionsT_InvRequestParameter struct {
-	// Probability undocumented
-	Probability json.RawMessage `json:"probability,omitempty"`
-	// DegFreedom undocumented
-	DegFreedom json.RawMessage `json:"degFreedom,omitempty"`
-}
-
-// WorkbookFunctionsT_Inv_2TRequestParameter undocumented
-type WorkbookFunctionsT_Inv_2TRequestParameter struct {
-	// Probability undocumented
-	Probability json.RawMessage `json:"probability,omitempty"`
-	// DegFreedom undocumented
-	DegFreedom json.RawMessage `json:"degFreedom,omitempty"`
-}
-
-// WorkbookFunctionsTanRequestParameter undocumented
-type WorkbookFunctionsTanRequestParameter struct {
-	// Number undocumented
-	Number json.RawMessage `json:"number,omitempty"`
-}
-
-// WorkbookFunctionsTanhRequestParameter undocumented
-type WorkbookFunctionsTanhRequestParameter struct {
-	// Number undocumented
-	Number json.RawMessage `json:"number,omitempty"`
 }
 
 // WorkbookFunctionsTextRequestParameter undocumented
@@ -3060,12 +3018,46 @@ type WorkbookFunctionsTypeRequestParameter struct {
 	Value json.RawMessage `json:"value,omitempty"`
 }
 
-// WorkbookFunctionsUsdollarRequestParameter undocumented
-type WorkbookFunctionsUsdollarRequestParameter struct {
-	// Number undocumented
-	Number json.RawMessage `json:"number,omitempty"`
-	// Decimals undocumented
-	Decimals json.RawMessage `json:"decimals,omitempty"`
+// WorkbookFunctionsT_DistRequestParameter undocumented
+type WorkbookFunctionsT_DistRequestParameter struct {
+	// X undocumented
+	X json.RawMessage `json:"x,omitempty"`
+	// DegFreedom undocumented
+	DegFreedom json.RawMessage `json:"degFreedom,omitempty"`
+	// Cumulative undocumented
+	Cumulative json.RawMessage `json:"cumulative,omitempty"`
+}
+
+// WorkbookFunctionsT_Dist_2TRequestParameter undocumented
+type WorkbookFunctionsT_Dist_2TRequestParameter struct {
+	// X undocumented
+	X json.RawMessage `json:"x,omitempty"`
+	// DegFreedom undocumented
+	DegFreedom json.RawMessage `json:"degFreedom,omitempty"`
+}
+
+// WorkbookFunctionsT_Dist_RTRequestParameter undocumented
+type WorkbookFunctionsT_Dist_RTRequestParameter struct {
+	// X undocumented
+	X json.RawMessage `json:"x,omitempty"`
+	// DegFreedom undocumented
+	DegFreedom json.RawMessage `json:"degFreedom,omitempty"`
+}
+
+// WorkbookFunctionsT_InvRequestParameter undocumented
+type WorkbookFunctionsT_InvRequestParameter struct {
+	// Probability undocumented
+	Probability json.RawMessage `json:"probability,omitempty"`
+	// DegFreedom undocumented
+	DegFreedom json.RawMessage `json:"degFreedom,omitempty"`
+}
+
+// WorkbookFunctionsT_Inv_2TRequestParameter undocumented
+type WorkbookFunctionsT_Inv_2TRequestParameter struct {
+	// Probability undocumented
+	Probability json.RawMessage `json:"probability,omitempty"`
+	// DegFreedom undocumented
+	DegFreedom json.RawMessage `json:"degFreedom,omitempty"`
 }
 
 // WorkbookFunctionsUnicharRequestParameter undocumented
@@ -3086,16 +3078,12 @@ type WorkbookFunctionsUpperRequestParameter struct {
 	Text json.RawMessage `json:"text,omitempty"`
 }
 
-// WorkbookFunctionsVlookupRequestParameter undocumented
-type WorkbookFunctionsVlookupRequestParameter struct {
-	// LookupValue undocumented
-	LookupValue json.RawMessage `json:"lookupValue,omitempty"`
-	// TableArray undocumented
-	TableArray json.RawMessage `json:"tableArray,omitempty"`
-	// ColIndexNum undocumented
-	ColIndexNum json.RawMessage `json:"colIndexNum,omitempty"`
-	// RangeLookup undocumented
-	RangeLookup json.RawMessage `json:"rangeLookup,omitempty"`
+// WorkbookFunctionsUsdollarRequestParameter undocumented
+type WorkbookFunctionsUsdollarRequestParameter struct {
+	// Number undocumented
+	Number json.RawMessage `json:"number,omitempty"`
+	// Decimals undocumented
+	Decimals json.RawMessage `json:"decimals,omitempty"`
 }
 
 // WorkbookFunctionsValueRequestParameter undocumented
@@ -3146,16 +3134,28 @@ type WorkbookFunctionsVdbRequestParameter struct {
 	NoSwitch json.RawMessage `json:"noSwitch,omitempty"`
 }
 
-// WorkbookFunctionsWeekNumRequestParameter undocumented
-type WorkbookFunctionsWeekNumRequestParameter struct {
+// WorkbookFunctionsVlookupRequestParameter undocumented
+type WorkbookFunctionsVlookupRequestParameter struct {
+	// LookupValue undocumented
+	LookupValue json.RawMessage `json:"lookupValue,omitempty"`
+	// TableArray undocumented
+	TableArray json.RawMessage `json:"tableArray,omitempty"`
+	// ColIndexNum undocumented
+	ColIndexNum json.RawMessage `json:"colIndexNum,omitempty"`
+	// RangeLookup undocumented
+	RangeLookup json.RawMessage `json:"rangeLookup,omitempty"`
+}
+
+// WorkbookFunctionsWeekdayRequestParameter undocumented
+type WorkbookFunctionsWeekdayRequestParameter struct {
 	// SerialNumber undocumented
 	SerialNumber json.RawMessage `json:"serialNumber,omitempty"`
 	// ReturnType undocumented
 	ReturnType json.RawMessage `json:"returnType,omitempty"`
 }
 
-// WorkbookFunctionsWeekdayRequestParameter undocumented
-type WorkbookFunctionsWeekdayRequestParameter struct {
+// WorkbookFunctionsWeekNumRequestParameter undocumented
+type WorkbookFunctionsWeekNumRequestParameter struct {
 	// SerialNumber undocumented
 	SerialNumber json.RawMessage `json:"serialNumber,omitempty"`
 	// ReturnType undocumented
@@ -3610,6 +3610,109 @@ func (r *WorkbookNamesCollectionRequest) Get(ctx context.Context) ([]WorkbookNam
 
 // Add performs POST request for WorkbookNamedItem collection
 func (r *WorkbookNamesCollectionRequest) Add(ctx context.Context, reqObj *WorkbookNamedItem) (resObj *WorkbookNamedItem, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Operations returns request builder for WorkbookOperation collection
+func (b *WorkbookRequestBuilder) Operations() *WorkbookOperationsCollectionRequestBuilder {
+	bb := &WorkbookOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/operations"
+	return bb
+}
+
+// WorkbookOperationsCollectionRequestBuilder is request builder for WorkbookOperation collection
+type WorkbookOperationsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for WorkbookOperation collection
+func (b *WorkbookOperationsCollectionRequestBuilder) Request() *WorkbookOperationsCollectionRequest {
+	return &WorkbookOperationsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for WorkbookOperation item
+func (b *WorkbookOperationsCollectionRequestBuilder) ID(id string) *WorkbookOperationRequestBuilder {
+	bb := &WorkbookOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// WorkbookOperationsCollectionRequest is request for WorkbookOperation collection
+type WorkbookOperationsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for WorkbookOperation collection
+func (r *WorkbookOperationsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]WorkbookOperation, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []WorkbookOperation
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []WorkbookOperation
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for WorkbookOperation collection, max N pages
+func (r *WorkbookOperationsCollectionRequest) GetN(ctx context.Context, n int) ([]WorkbookOperation, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for WorkbookOperation collection
+func (r *WorkbookOperationsCollectionRequest) Get(ctx context.Context) ([]WorkbookOperation, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for WorkbookOperation collection
+func (r *WorkbookOperationsCollectionRequest) Add(ctx context.Context, reqObj *WorkbookOperation) (resObj *WorkbookOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

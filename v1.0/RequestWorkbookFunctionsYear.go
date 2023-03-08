@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsYearRequestBuilder struct{ BaseRequestBuilder }
 
 // Year action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Year(reqObj *WorkbookFunctionsYearRequ
 	return bb
 }
 
-//
 type WorkbookFunctionsYearRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsYearRequestBuilder) Request() *WorkbookFunctionsYearRequest {
 	return &WorkbookFunctionsYearRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsYearRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsYearFracRequestBuilder struct{ BaseRequestBuilder }
 
 // YearFrac action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) YearFrac(reqObj *WorkbookFunctionsYear
 	return bb
 }
 
-//
 type WorkbookFunctionsYearFracRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsYearFracRequestBuilder) Request() *WorkbookFunctionsYearFracRequest {
 	return &WorkbookFunctionsYearFracRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsYearFracRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

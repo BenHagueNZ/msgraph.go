@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsIso_CeilingRequestBuilder struct{ BaseRequestBuilder }
 
 // Iso_Ceiling action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Iso_Ceiling(reqObj *WorkbookFunctionsI
 	return bb
 }
 
-//
 type WorkbookFunctionsIso_CeilingRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsIso_CeilingRequestBuilder) Request() *WorkbookFunctionsIso_CeilingRequest {
 	return &WorkbookFunctionsIso_CeilingRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsIso_CeilingRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

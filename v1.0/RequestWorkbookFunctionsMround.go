@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsMroundRequestBuilder struct{ BaseRequestBuilder }
 
 // Mround action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Mround(reqObj *WorkbookFunctionsMround
 	return bb
 }
 
-//
 type WorkbookFunctionsMroundRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsMroundRequestBuilder) Request() *WorkbookFunctionsMroundRequest {
 	return &WorkbookFunctionsMroundRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsMroundRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

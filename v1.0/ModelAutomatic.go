@@ -10,26 +10,26 @@ type AutomaticRepliesMailTips struct {
 	Message *string `json:"message,omitempty"`
 	// MessageLanguage undocumented
 	MessageLanguage *LocaleInfo `json:"messageLanguage,omitempty"`
-	// ScheduledStartTime undocumented
-	ScheduledStartTime *DateTimeTimeZone `json:"scheduledStartTime,omitempty"`
 	// ScheduledEndTime undocumented
 	ScheduledEndTime *DateTimeTimeZone `json:"scheduledEndTime,omitempty"`
+	// ScheduledStartTime undocumented
+	ScheduledStartTime *DateTimeTimeZone `json:"scheduledStartTime,omitempty"`
 }
 
 // AutomaticRepliesSetting undocumented
 type AutomaticRepliesSetting struct {
 	// Object is the base model of AutomaticRepliesSetting
 	Object
-	// Status undocumented
-	Status *AutomaticRepliesStatus `json:"status,omitempty"`
 	// ExternalAudience undocumented
 	ExternalAudience *ExternalAudienceScope `json:"externalAudience,omitempty"`
-	// ScheduledStartDateTime undocumented
-	ScheduledStartDateTime *DateTimeTimeZone `json:"scheduledStartDateTime,omitempty"`
-	// ScheduledEndDateTime undocumented
-	ScheduledEndDateTime *DateTimeTimeZone `json:"scheduledEndDateTime,omitempty"`
-	// InternalReplyMessage undocumented
-	InternalReplyMessage *string `json:"internalReplyMessage,omitempty"`
 	// ExternalReplyMessage undocumented
 	ExternalReplyMessage *string `json:"externalReplyMessage,omitempty"`
+	// InternalReplyMessage undocumented
+	InternalReplyMessage *string `json:"internalReplyMessage,omitempty"`
+	// ScheduledEndDateTime undocumented
+	ScheduledEndDateTime *DateTimeTimeZone `json:"scheduledEndDateTime,omitempty"`
+	// ScheduledStartDateTime undocumented
+	ScheduledStartDateTime *DateTimeTimeZone `json:"scheduledStartDateTime,omitempty"`
+	// Status undocumented
+	Status *AutomaticRepliesStatus `json:"status,omitempty"`
 }

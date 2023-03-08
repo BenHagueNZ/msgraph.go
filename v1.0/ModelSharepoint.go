@@ -16,6 +16,8 @@ type SharepointIDs struct {
 	SiteID *string `json:"siteId,omitempty"`
 	// SiteURL undocumented
 	SiteURL *string `json:"siteUrl,omitempty"`
+	// TenantID undocumented
+	TenantID *string `json:"tenantId,omitempty"`
 	// WebID undocumented
 	WebID *string `json:"webId,omitempty"`
 }

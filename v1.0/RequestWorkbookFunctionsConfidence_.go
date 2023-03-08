@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsConfidence_NormRequestBuilder struct{ BaseRequestBuilder }
 
 // Confidence_Norm action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Confidence_Norm(reqObj *WorkbookFuncti
 	return bb
 }
 
-//
 type WorkbookFunctionsConfidence_NormRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsConfidence_NormRequestBuilder) Request() *WorkbookFunctionsConfidence_NormRequest {
 	return &WorkbookFunctionsConfidence_NormRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsConfidence_NormRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsConfidence_TRequestBuilder struct{ BaseRequestBuilder }
 
 // Confidence_T action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) Confidence_T(reqObj *WorkbookFunctions
 	return bb
 }
 
-//
 type WorkbookFunctionsConfidence_TRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsConfidence_TRequestBuilder) Request() *WorkbookFunctionsConfidence_TRequest {
 	return &WorkbookFunctionsConfidence_TRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsConfidence_TRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

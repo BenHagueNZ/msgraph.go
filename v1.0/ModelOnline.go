@@ -8,22 +8,70 @@ import "time"
 type OnlineMeeting struct {
 	// Entity is the base model of OnlineMeeting
 	Entity
-	// CreationDateTime undocumented
-	CreationDateTime *time.Time `json:"creationDateTime,omitempty"`
-	// StartDateTime undocumented
-	StartDateTime *time.Time `json:"startDateTime,omitempty"`
-	// EndDateTime undocumented
-	EndDateTime *time.Time `json:"endDateTime,omitempty"`
-	// JoinWebURL undocumented
-	JoinWebURL *string `json:"joinWebUrl,omitempty"`
-	// Subject undocumented
-	Subject *string `json:"subject,omitempty"`
-	// Participants undocumented
-	Participants *MeetingParticipants `json:"participants,omitempty"`
+	// AllowAttendeeToEnableCamera undocumented
+	AllowAttendeeToEnableCamera *bool `json:"allowAttendeeToEnableCamera,omitempty"`
+	// AllowAttendeeToEnableMic undocumented
+	AllowAttendeeToEnableMic *bool `json:"allowAttendeeToEnableMic,omitempty"`
+	// AllowedPresenters undocumented
+	AllowedPresenters *OnlineMeetingPresenters `json:"allowedPresenters,omitempty"`
+	// AllowMeetingChat undocumented
+	AllowMeetingChat *MeetingChatMode `json:"allowMeetingChat,omitempty"`
+	// AllowTeamworkReactions undocumented
+	AllowTeamworkReactions *bool `json:"allowTeamworkReactions,omitempty"`
+	// AttendeeReport undocumented
+	AttendeeReport *Stream `json:"attendeeReport,omitempty"`
 	// AudioConferencing undocumented
 	AudioConferencing *AudioConferencing `json:"audioConferencing,omitempty"`
+	// BroadcastSettings undocumented
+	BroadcastSettings *BroadcastMeetingSettings `json:"broadcastSettings,omitempty"`
 	// ChatInfo undocumented
 	ChatInfo *ChatInfo `json:"chatInfo,omitempty"`
+	// CreationDateTime undocumented
+	CreationDateTime *time.Time `json:"creationDateTime,omitempty"`
+	// EndDateTime undocumented
+	EndDateTime *time.Time `json:"endDateTime,omitempty"`
+	// ExternalID undocumented
+	ExternalID *string `json:"externalId,omitempty"`
+	// IsBroadcast undocumented
+	IsBroadcast *bool `json:"isBroadcast,omitempty"`
+	// IsEntryExitAnnounced undocumented
+	IsEntryExitAnnounced *bool `json:"isEntryExitAnnounced,omitempty"`
+	// JoinInformation undocumented
+	JoinInformation *ItemBody `json:"joinInformation,omitempty"`
+	// JoinMeetingIDSettings undocumented
+	JoinMeetingIDSettings *JoinMeetingIDSettings `json:"joinMeetingIdSettings,omitempty"`
+	// JoinWebURL undocumented
+	JoinWebURL *string `json:"joinWebUrl,omitempty"`
+	// LobbyBypassSettings undocumented
+	LobbyBypassSettings *LobbyBypassSettings `json:"lobbyBypassSettings,omitempty"`
+	// Participants undocumented
+	Participants *MeetingParticipants `json:"participants,omitempty"`
+	// RecordAutomatically undocumented
+	RecordAutomatically *bool `json:"recordAutomatically,omitempty"`
+	// StartDateTime undocumented
+	StartDateTime *time.Time `json:"startDateTime,omitempty"`
+	// Subject undocumented
+	Subject *string `json:"subject,omitempty"`
 	// VideoTeleconferenceID undocumented
 	VideoTeleconferenceID *string `json:"videoTeleconferenceId,omitempty"`
+	// AttendanceReports undocumented
+	AttendanceReports []MeetingAttendanceReport `json:"attendanceReports,omitempty"`
+}
+
+// OnlineMeetingInfo undocumented
+type OnlineMeetingInfo struct {
+	// Object is the base model of OnlineMeetingInfo
+	Object
+	// ConferenceID undocumented
+	ConferenceID *string `json:"conferenceId,omitempty"`
+	// JoinURL undocumented
+	JoinURL *string `json:"joinUrl,omitempty"`
+	// Phones undocumented
+	Phones []Phone `json:"phones,omitempty"`
+	// QuickDial undocumented
+	QuickDial *string `json:"quickDial,omitempty"`
+	// TollFreeNumbers undocumented
+	TollFreeNumbers []string `json:"tollFreeNumbers,omitempty"`
+	// TollNumber undocumented
+	TollNumber *string `json:"tollNumber,omitempty"`
 }

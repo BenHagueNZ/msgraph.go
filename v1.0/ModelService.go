@@ -2,6 +2,100 @@
 
 package msgraph
 
+import "time"
+
+// ServiceAnnouncement undocumented
+type ServiceAnnouncement struct {
+	// Entity is the base model of ServiceAnnouncement
+	Entity
+	// HealthOverviews undocumented
+	HealthOverviews []ServiceHealth `json:"healthOverviews,omitempty"`
+	// Issues undocumented
+	Issues []ServiceHealthIssue `json:"issues,omitempty"`
+	// Messages undocumented
+	Messages []ServiceUpdateMessage `json:"messages,omitempty"`
+}
+
+// ServiceAnnouncementAttachment undocumented
+type ServiceAnnouncementAttachment struct {
+	// Entity is the base model of ServiceAnnouncementAttachment
+	Entity
+	// Content undocumented
+	Content *Stream `json:"content,omitempty"`
+	// ContentType undocumented
+	ContentType *string `json:"contentType,omitempty"`
+	// LastModifiedDateTime undocumented
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
+	// Size undocumented
+	Size *int `json:"size,omitempty"`
+}
+
+// ServiceAnnouncementBase undocumented
+type ServiceAnnouncementBase struct {
+	// Entity is the base model of ServiceAnnouncementBase
+	Entity
+	// Details undocumented
+	Details []KeyValuePair `json:"details,omitempty"`
+	// EndDateTime undocumented
+	EndDateTime *time.Time `json:"endDateTime,omitempty"`
+	// LastModifiedDateTime undocumented
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// StartDateTime undocumented
+	StartDateTime *time.Time `json:"startDateTime,omitempty"`
+	// Title undocumented
+	Title *string `json:"title,omitempty"`
+}
+
+// ServiceHealth undocumented
+type ServiceHealth struct {
+	// Entity is the base model of ServiceHealth
+	Entity
+	// Service undocumented
+	Service *string `json:"service,omitempty"`
+	// Status undocumented
+	Status *ServiceHealthStatus `json:"status,omitempty"`
+	// Issues undocumented
+	Issues []ServiceHealthIssue `json:"issues,omitempty"`
+}
+
+// ServiceHealthIssue undocumented
+type ServiceHealthIssue struct {
+	// ServiceAnnouncementBase is the base model of ServiceHealthIssue
+	ServiceAnnouncementBase
+	// Classification undocumented
+	Classification *ServiceHealthClassificationType `json:"classification,omitempty"`
+	// Feature undocumented
+	Feature *string `json:"feature,omitempty"`
+	// FeatureGroup undocumented
+	FeatureGroup *string `json:"featureGroup,omitempty"`
+	// ImpactDescription undocumented
+	ImpactDescription *string `json:"impactDescription,omitempty"`
+	// IsResolved undocumented
+	IsResolved *bool `json:"isResolved,omitempty"`
+	// Origin undocumented
+	Origin *ServiceHealthOrigin `json:"origin,omitempty"`
+	// Posts undocumented
+	Posts []ServiceHealthIssuePost `json:"posts,omitempty"`
+	// Service undocumented
+	Service *string `json:"service,omitempty"`
+	// Status undocumented
+	Status *ServiceHealthStatus `json:"status,omitempty"`
+}
+
+// ServiceHealthIssuePost undocumented
+type ServiceHealthIssuePost struct {
+	// Object is the base model of ServiceHealthIssuePost
+	Object
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// Description undocumented
+	Description *ItemBody `json:"description,omitempty"`
+	// PostType undocumented
+	PostType *PostType `json:"postType,omitempty"`
+}
+
 // ServiceHostedMediaConfig undocumented
 type ServiceHostedMediaConfig struct {
 	// MediaConfig is the base model of ServiceHostedMediaConfig
@@ -14,12 +108,210 @@ type ServiceHostedMediaConfig struct {
 type ServicePlanInfo struct {
 	// Object is the base model of ServicePlanInfo
 	Object
+	// AppliesTo undocumented
+	AppliesTo *string `json:"appliesTo,omitempty"`
+	// ProvisioningStatus undocumented
+	ProvisioningStatus *string `json:"provisioningStatus,omitempty"`
 	// ServicePlanID undocumented
 	ServicePlanID *UUID `json:"servicePlanId,omitempty"`
 	// ServicePlanName undocumented
 	ServicePlanName *string `json:"servicePlanName,omitempty"`
-	// ProvisioningStatus undocumented
-	ProvisioningStatus *string `json:"provisioningStatus,omitempty"`
-	// AppliesTo undocumented
-	AppliesTo *string `json:"appliesTo,omitempty"`
+}
+
+// ServicePrincipal undocumented
+type ServicePrincipal struct {
+	// DirectoryObject is the base model of ServicePrincipal
+	DirectoryObject
+	// AccountEnabled undocumented
+	AccountEnabled *bool `json:"accountEnabled,omitempty"`
+	// AddIns undocumented
+	AddIns []AddIn `json:"addIns,omitempty"`
+	// AlternativeNames undocumented
+	AlternativeNames []string `json:"alternativeNames,omitempty"`
+	// AppDescription undocumented
+	AppDescription *string `json:"appDescription,omitempty"`
+	// AppDisplayName undocumented
+	AppDisplayName *string `json:"appDisplayName,omitempty"`
+	// AppID undocumented
+	AppID *string `json:"appId,omitempty"`
+	// ApplicationTemplateID undocumented
+	ApplicationTemplateID *string `json:"applicationTemplateId,omitempty"`
+	// AppOwnerOrganizationID undocumented
+	AppOwnerOrganizationID *UUID `json:"appOwnerOrganizationId,omitempty"`
+	// AppRoleAssignmentRequired undocumented
+	AppRoleAssignmentRequired *bool `json:"appRoleAssignmentRequired,omitempty"`
+	// AppRoles undocumented
+	AppRoles []AppRole `json:"appRoles,omitempty"`
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// DisabledByMicrosoftStatus undocumented
+	DisabledByMicrosoftStatus *string `json:"disabledByMicrosoftStatus,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// Homepage undocumented
+	Homepage *string `json:"homepage,omitempty"`
+	// Info undocumented
+	Info *InformationalURL `json:"info,omitempty"`
+	// KeyCredentials undocumented
+	KeyCredentials []KeyCredential `json:"keyCredentials,omitempty"`
+	// LoginURL undocumented
+	LoginURL *string `json:"loginUrl,omitempty"`
+	// LogoutURL undocumented
+	LogoutURL *string `json:"logoutUrl,omitempty"`
+	// Notes undocumented
+	Notes *string `json:"notes,omitempty"`
+	// NotificationEmailAddresses undocumented
+	NotificationEmailAddresses []string `json:"notificationEmailAddresses,omitempty"`
+	// OAuth2PermissionScopes undocumented
+	OAuth2PermissionScopes []PermissionScope `json:"oauth2PermissionScopes,omitempty"`
+	// PasswordCredentials undocumented
+	PasswordCredentials []PasswordCredential `json:"passwordCredentials,omitempty"`
+	// PreferredSingleSignOnMode undocumented
+	PreferredSingleSignOnMode *string `json:"preferredSingleSignOnMode,omitempty"`
+	// PreferredTokenSigningKeyThumbprint undocumented
+	PreferredTokenSigningKeyThumbprint *string `json:"preferredTokenSigningKeyThumbprint,omitempty"`
+	// ReplyUrls undocumented
+	ReplyUrls []string `json:"replyUrls,omitempty"`
+	// ResourceSpecificApplicationPermissions undocumented
+	ResourceSpecificApplicationPermissions []ResourceSpecificPermission `json:"resourceSpecificApplicationPermissions,omitempty"`
+	// SamlSingleSignOnSettings undocumented
+	SamlSingleSignOnSettings *SamlSingleSignOnSettings `json:"samlSingleSignOnSettings,omitempty"`
+	// ServicePrincipalNames undocumented
+	ServicePrincipalNames []string `json:"servicePrincipalNames,omitempty"`
+	// ServicePrincipalType undocumented
+	ServicePrincipalType *string `json:"servicePrincipalType,omitempty"`
+	// SignInAudience undocumented
+	SignInAudience *string `json:"signInAudience,omitempty"`
+	// Tags undocumented
+	Tags []string `json:"tags,omitempty"`
+	// TokenEncryptionKeyID undocumented
+	TokenEncryptionKeyID *UUID `json:"tokenEncryptionKeyId,omitempty"`
+	// VerifiedPublisher undocumented
+	VerifiedPublisher *VerifiedPublisher `json:"verifiedPublisher,omitempty"`
+	// AppManagementPolicies undocumented
+	AppManagementPolicies []AppManagementPolicy `json:"appManagementPolicies,omitempty"`
+	// AppRoleAssignedTo undocumented
+	AppRoleAssignedTo []AppRoleAssignment `json:"appRoleAssignedTo,omitempty"`
+	// AppRoleAssignments undocumented
+	AppRoleAssignments []AppRoleAssignment `json:"appRoleAssignments,omitempty"`
+	// ClaimsMappingPolicies undocumented
+	ClaimsMappingPolicies []ClaimsMappingPolicy `json:"claimsMappingPolicies,omitempty"`
+	// CreatedObjects undocumented
+	CreatedObjects []DirectoryObject `json:"createdObjects,omitempty"`
+	// DelegatedPermissionClassifications undocumented
+	DelegatedPermissionClassifications []DelegatedPermissionClassification `json:"delegatedPermissionClassifications,omitempty"`
+	// Endpoints undocumented
+	Endpoints []Endpoint `json:"endpoints,omitempty"`
+	// FederatedIdentityCredentials undocumented
+	FederatedIdentityCredentials []FederatedIdentityCredential `json:"federatedIdentityCredentials,omitempty"`
+	// HomeRealmDiscoveryPolicies undocumented
+	HomeRealmDiscoveryPolicies []HomeRealmDiscoveryPolicy `json:"homeRealmDiscoveryPolicies,omitempty"`
+	// MemberOf undocumented
+	MemberOf []DirectoryObject `json:"memberOf,omitempty"`
+	// OAuth2PermissionGrants undocumented
+	OAuth2PermissionGrants []OAuth2PermissionGrant `json:"oauth2PermissionGrants,omitempty"`
+	// OwnedObjects undocumented
+	OwnedObjects []DirectoryObject `json:"ownedObjects,omitempty"`
+	// Owners undocumented
+	Owners []DirectoryObject `json:"owners,omitempty"`
+	// TokenIssuancePolicies undocumented
+	TokenIssuancePolicies []TokenIssuancePolicy `json:"tokenIssuancePolicies,omitempty"`
+	// TokenLifetimePolicies undocumented
+	TokenLifetimePolicies []TokenLifetimePolicy `json:"tokenLifetimePolicies,omitempty"`
+	// TransitiveMemberOf undocumented
+	TransitiveMemberOf []DirectoryObject `json:"transitiveMemberOf,omitempty"`
+}
+
+// ServicePrincipalIdentity undocumented
+type ServicePrincipalIdentity struct {
+	// Identity is the base model of ServicePrincipalIdentity
+	Identity
+	// AppID undocumented
+	AppID *string `json:"appId,omitempty"`
+}
+
+// ServicePrincipalRiskDetection undocumented
+type ServicePrincipalRiskDetection struct {
+	// Entity is the base model of ServicePrincipalRiskDetection
+	Entity
+	// Activity undocumented
+	Activity *ActivityType `json:"activity,omitempty"`
+	// ActivityDateTime undocumented
+	ActivityDateTime *time.Time `json:"activityDateTime,omitempty"`
+	// AdditionalInfo undocumented
+	AdditionalInfo *string `json:"additionalInfo,omitempty"`
+	// AppID undocumented
+	AppID *string `json:"appId,omitempty"`
+	// CorrelationID undocumented
+	CorrelationID *string `json:"correlationId,omitempty"`
+	// DetectedDateTime undocumented
+	DetectedDateTime *time.Time `json:"detectedDateTime,omitempty"`
+	// DetectionTimingType undocumented
+	DetectionTimingType *RiskDetectionTimingType `json:"detectionTimingType,omitempty"`
+	// IPAddress undocumented
+	IPAddress *string `json:"ipAddress,omitempty"`
+	// KeyIDs undocumented
+	KeyIDs []string `json:"keyIds,omitempty"`
+	// LastUpdatedDateTime undocumented
+	LastUpdatedDateTime *time.Time `json:"lastUpdatedDateTime,omitempty"`
+	// Location undocumented
+	Location *SignInLocation `json:"location,omitempty"`
+	// RequestID undocumented
+	RequestID *string `json:"requestId,omitempty"`
+	// RiskDetail undocumented
+	RiskDetail *RiskDetail `json:"riskDetail,omitempty"`
+	// RiskEventType undocumented
+	RiskEventType *string `json:"riskEventType,omitempty"`
+	// RiskLevel undocumented
+	RiskLevel *RiskLevel `json:"riskLevel,omitempty"`
+	// RiskState undocumented
+	RiskState *RiskState `json:"riskState,omitempty"`
+	// ServicePrincipalDisplayName undocumented
+	ServicePrincipalDisplayName *string `json:"servicePrincipalDisplayName,omitempty"`
+	// ServicePrincipalID undocumented
+	ServicePrincipalID *string `json:"servicePrincipalId,omitempty"`
+	// Source undocumented
+	Source *string `json:"source,omitempty"`
+	// TokenIssuerType undocumented
+	TokenIssuerType *TokenIssuerType `json:"tokenIssuerType,omitempty"`
+}
+
+// ServiceUpdateMessage undocumented
+type ServiceUpdateMessage struct {
+	// ServiceAnnouncementBase is the base model of ServiceUpdateMessage
+	ServiceAnnouncementBase
+	// ActionRequiredByDateTime undocumented
+	ActionRequiredByDateTime *time.Time `json:"actionRequiredByDateTime,omitempty"`
+	// AttachmentsArchive undocumented
+	AttachmentsArchive *Stream `json:"attachmentsArchive,omitempty"`
+	// Body undocumented
+	Body *ItemBody `json:"body,omitempty"`
+	// Category undocumented
+	Category *ServiceUpdateCategory `json:"category,omitempty"`
+	// HasAttachments undocumented
+	HasAttachments *bool `json:"hasAttachments,omitempty"`
+	// IsMajorChange undocumented
+	IsMajorChange *bool `json:"isMajorChange,omitempty"`
+	// Services undocumented
+	Services []string `json:"services,omitempty"`
+	// Severity undocumented
+	Severity *ServiceUpdateSeverity `json:"severity,omitempty"`
+	// Tags undocumented
+	Tags []string `json:"tags,omitempty"`
+	// ViewPoint undocumented
+	ViewPoint *ServiceUpdateMessageViewpoint `json:"viewPoint,omitempty"`
+	// Attachments undocumented
+	Attachments []ServiceAnnouncementAttachment `json:"attachments,omitempty"`
+}
+
+// ServiceUpdateMessageViewpoint undocumented
+type ServiceUpdateMessageViewpoint struct {
+	// Object is the base model of ServiceUpdateMessageViewpoint
+	Object
+	// IsArchived undocumented
+	IsArchived *bool `json:"isArchived,omitempty"`
+	// IsFavorited undocumented
+	IsFavorited *bool `json:"isFavorited,omitempty"`
+	// IsRead undocumented
+	IsRead *bool `json:"isRead,omitempty"`
 }

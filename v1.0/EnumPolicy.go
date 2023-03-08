@@ -8,6 +8,8 @@ type PolicyPlatformType string
 const (
 	// PolicyPlatformTypeVAndroid undocumented
 	PolicyPlatformTypeVAndroid PolicyPlatformType = "android"
+	// PolicyPlatformTypeVAndroidForWork undocumented
+	PolicyPlatformTypeVAndroidForWork PolicyPlatformType = "androidForWork"
 	// PolicyPlatformTypeVIOS undocumented
 	PolicyPlatformTypeVIOS PolicyPlatformType = "iOS"
 	// PolicyPlatformTypeVMacOS undocumented
@@ -18,8 +20,6 @@ const (
 	PolicyPlatformTypeVWindows81AndLater PolicyPlatformType = "windows81AndLater"
 	// PolicyPlatformTypeVWindows10AndLater undocumented
 	PolicyPlatformTypeVWindows10AndLater PolicyPlatformType = "windows10AndLater"
-	// PolicyPlatformTypeVAndroidWorkProfile undocumented
-	PolicyPlatformTypeVAndroidWorkProfile PolicyPlatformType = "androidWorkProfile"
 	// PolicyPlatformTypeVAll undocumented
 	PolicyPlatformTypeVAll PolicyPlatformType = "all"
 )
@@ -27,6 +27,8 @@ const (
 var (
 	// PolicyPlatformTypePAndroid is a pointer to PolicyPlatformTypeVAndroid
 	PolicyPlatformTypePAndroid = &_PolicyPlatformTypePAndroid
+	// PolicyPlatformTypePAndroidForWork is a pointer to PolicyPlatformTypeVAndroidForWork
+	PolicyPlatformTypePAndroidForWork = &_PolicyPlatformTypePAndroidForWork
 	// PolicyPlatformTypePIOS is a pointer to PolicyPlatformTypeVIOS
 	PolicyPlatformTypePIOS = &_PolicyPlatformTypePIOS
 	// PolicyPlatformTypePMacOS is a pointer to PolicyPlatformTypeVMacOS
@@ -37,19 +39,17 @@ var (
 	PolicyPlatformTypePWindows81AndLater = &_PolicyPlatformTypePWindows81AndLater
 	// PolicyPlatformTypePWindows10AndLater is a pointer to PolicyPlatformTypeVWindows10AndLater
 	PolicyPlatformTypePWindows10AndLater = &_PolicyPlatformTypePWindows10AndLater
-	// PolicyPlatformTypePAndroidWorkProfile is a pointer to PolicyPlatformTypeVAndroidWorkProfile
-	PolicyPlatformTypePAndroidWorkProfile = &_PolicyPlatformTypePAndroidWorkProfile
 	// PolicyPlatformTypePAll is a pointer to PolicyPlatformTypeVAll
 	PolicyPlatformTypePAll = &_PolicyPlatformTypePAll
 )
 
 var (
-	_PolicyPlatformTypePAndroid            = PolicyPlatformTypeVAndroid
-	_PolicyPlatformTypePIOS                = PolicyPlatformTypeVIOS
-	_PolicyPlatformTypePMacOS              = PolicyPlatformTypeVMacOS
-	_PolicyPlatformTypePWindowsPhone81     = PolicyPlatformTypeVWindowsPhone81
-	_PolicyPlatformTypePWindows81AndLater  = PolicyPlatformTypeVWindows81AndLater
-	_PolicyPlatformTypePWindows10AndLater  = PolicyPlatformTypeVWindows10AndLater
-	_PolicyPlatformTypePAndroidWorkProfile = PolicyPlatformTypeVAndroidWorkProfile
-	_PolicyPlatformTypePAll                = PolicyPlatformTypeVAll
+	_PolicyPlatformTypePAndroid           = PolicyPlatformTypeVAndroid
+	_PolicyPlatformTypePAndroidForWork    = PolicyPlatformTypeVAndroidForWork
+	_PolicyPlatformTypePIOS               = PolicyPlatformTypeVIOS
+	_PolicyPlatformTypePMacOS             = PolicyPlatformTypeVMacOS
+	_PolicyPlatformTypePWindowsPhone81    = PolicyPlatformTypeVWindowsPhone81
+	_PolicyPlatformTypePWindows81AndLater = PolicyPlatformTypeVWindows81AndLater
+	_PolicyPlatformTypePWindows10AndLater = PolicyPlatformTypeVWindows10AndLater
+	_PolicyPlatformTypePAll               = PolicyPlatformTypeVAll
 )

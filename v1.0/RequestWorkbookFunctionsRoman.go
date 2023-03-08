@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsRomanRequestBuilder struct{ BaseRequestBuilder }
 
 // Roman action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Roman(reqObj *WorkbookFunctionsRomanRe
 	return bb
 }
 
-//
 type WorkbookFunctionsRomanRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsRomanRequestBuilder) Request() *WorkbookFunctionsRomanRequest {
 	return &WorkbookFunctionsRomanRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsRomanRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

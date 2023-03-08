@@ -14,6 +14,8 @@ type KeyCredential struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
+	// Key undocumented
+	Key *Binary `json:"key,omitempty"`
 	// KeyID undocumented
 	KeyID *UUID `json:"keyId,omitempty"`
 	// StartDateTime undocumented
@@ -22,8 +24,18 @@ type KeyCredential struct {
 	Type *string `json:"type,omitempty"`
 	// Usage undocumented
 	Usage *string `json:"usage,omitempty"`
-	// Key undocumented
-	Key *Binary `json:"key,omitempty"`
+}
+
+// KeyCredentialConfiguration undocumented
+type KeyCredentialConfiguration struct {
+	// Object is the base model of KeyCredentialConfiguration
+	Object
+	// MaxLifetime undocumented
+	MaxLifetime *Duration `json:"maxLifetime,omitempty"`
+	// RestrictForAppsCreatedAfterDateTime undocumented
+	RestrictForAppsCreatedAfterDateTime *time.Time `json:"restrictForAppsCreatedAfterDateTime,omitempty"`
+	// RestrictionType undocumented
+	RestrictionType *AppKeyCredentialRestrictionType `json:"restrictionType,omitempty"`
 }
 
 // KeyValue undocumented
@@ -40,8 +52,8 @@ type KeyValue struct {
 type KeyValuePair struct {
 	// Object is the base model of KeyValuePair
 	Object
-	// Name Name for this key-value pair
+	// Name undocumented
 	Name *string `json:"name,omitempty"`
-	// Value Value for this key-value pair
+	// Value undocumented
 	Value *string `json:"value,omitempty"`
 }

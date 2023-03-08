@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsGeoMeanRequestBuilder struct{ BaseRequestBuilder }
 
 // GeoMean action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) GeoMean(reqObj *WorkbookFunctionsGeoMe
 	return bb
 }
 
-//
 type WorkbookFunctionsGeoMeanRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsGeoMeanRequestBuilder) Request() *WorkbookFunctionsGeoMeanRequest {
 	return &WorkbookFunctionsGeoMeanRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsGeoMeanRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

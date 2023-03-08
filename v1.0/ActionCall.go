@@ -11,6 +11,28 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
+// CallCollectionLogTeleconferenceDeviceQualityRequestParameter undocumented
+type CallCollectionLogTeleconferenceDeviceQualityRequestParameter struct {
+	// Quality undocumented
+	Quality *TeleconferenceDeviceQuality `json:"quality,omitempty"`
+}
+
+// CallRedirectRequestParameter undocumented
+type CallRedirectRequestParameter struct {
+	// Targets undocumented
+	Targets []InvitationParticipantInfo `json:"targets,omitempty"`
+	// Timeout undocumented
+	Timeout *int `json:"timeout,omitempty"`
+	// CallbackURI undocumented
+	CallbackURI *string `json:"callbackUri,omitempty"`
+}
+
+// CallAddLargeGalleryViewRequestParameter undocumented
+type CallAddLargeGalleryViewRequestParameter struct {
+	// ClientContext undocumented
+	ClientContext *string `json:"clientContext,omitempty"`
+}
+
 // CallAnswerRequestParameter undocumented
 type CallAnswerRequestParameter struct {
 	// CallbackURI undocumented
@@ -19,6 +41,16 @@ type CallAnswerRequestParameter struct {
 	MediaConfig *MediaConfig `json:"mediaConfig,omitempty"`
 	// AcceptedModalities undocumented
 	AcceptedModalities []Modality `json:"acceptedModalities,omitempty"`
+	// ParticipantCapacity undocumented
+	ParticipantCapacity *int `json:"participantCapacity,omitempty"`
+	// CallOptions undocumented
+	CallOptions *IncomingCallOptions `json:"callOptions,omitempty"`
+}
+
+// CallCancelMediaProcessingRequestParameter undocumented
+type CallCancelMediaProcessingRequestParameter struct {
+	// ClientContext undocumented
+	ClientContext *string `json:"clientContext,omitempty"`
 }
 
 // CallChangeScreenSharingRoleRequestParameter undocumented
@@ -65,16 +97,6 @@ type CallRecordResponseRequestParameter struct {
 	ClientContext *string `json:"clientContext,omitempty"`
 }
 
-// CallRedirectRequestParameter undocumented
-type CallRedirectRequestParameter struct {
-	// Targets undocumented
-	Targets []InvitationParticipantInfo `json:"targets,omitempty"`
-	// Timeout undocumented
-	Timeout *int `json:"timeout,omitempty"`
-	// CallbackURI undocumented
-	CallbackURI *string `json:"callbackUri,omitempty"`
-}
-
 // CallRejectRequestParameter undocumented
 type CallRejectRequestParameter struct {
 	// Reason undocumented
@@ -93,12 +115,228 @@ type CallSubscribeToToneRequestParameter struct {
 type CallTransferRequestParameter struct {
 	// TransferTarget undocumented
 	TransferTarget *InvitationParticipantInfo `json:"transferTarget,omitempty"`
+	// Transferee undocumented
+	Transferee *ParticipantInfo `json:"transferee,omitempty"`
 }
 
 // CallUnmuteRequestParameter undocumented
 type CallUnmuteRequestParameter struct {
 	// ClientContext undocumented
 	ClientContext *string `json:"clientContext,omitempty"`
+}
+
+// CallUpdateRecordingStatusRequestParameter undocumented
+type CallUpdateRecordingStatusRequestParameter struct {
+	// Status undocumented
+	Status *RecordingStatus `json:"status,omitempty"`
+	// ClientContext undocumented
+	ClientContext *string `json:"clientContext,omitempty"`
+}
+
+// AudioRoutingGroups returns request builder for AudioRoutingGroup collection
+func (b *CallRequestBuilder) AudioRoutingGroups() *CallAudioRoutingGroupsCollectionRequestBuilder {
+	bb := &CallAudioRoutingGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/audioRoutingGroups"
+	return bb
+}
+
+// CallAudioRoutingGroupsCollectionRequestBuilder is request builder for AudioRoutingGroup collection
+type CallAudioRoutingGroupsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for AudioRoutingGroup collection
+func (b *CallAudioRoutingGroupsCollectionRequestBuilder) Request() *CallAudioRoutingGroupsCollectionRequest {
+	return &CallAudioRoutingGroupsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for AudioRoutingGroup item
+func (b *CallAudioRoutingGroupsCollectionRequestBuilder) ID(id string) *AudioRoutingGroupRequestBuilder {
+	bb := &AudioRoutingGroupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// CallAudioRoutingGroupsCollectionRequest is request for AudioRoutingGroup collection
+type CallAudioRoutingGroupsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for AudioRoutingGroup collection
+func (r *CallAudioRoutingGroupsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AudioRoutingGroup, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []AudioRoutingGroup
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []AudioRoutingGroup
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for AudioRoutingGroup collection, max N pages
+func (r *CallAudioRoutingGroupsCollectionRequest) GetN(ctx context.Context, n int) ([]AudioRoutingGroup, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for AudioRoutingGroup collection
+func (r *CallAudioRoutingGroupsCollectionRequest) Get(ctx context.Context) ([]AudioRoutingGroup, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for AudioRoutingGroup collection
+func (r *CallAudioRoutingGroupsCollectionRequest) Add(ctx context.Context, reqObj *AudioRoutingGroup) (resObj *AudioRoutingGroup, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// ContentSharingSessions returns request builder for ContentSharingSession collection
+func (b *CallRequestBuilder) ContentSharingSessions() *CallContentSharingSessionsCollectionRequestBuilder {
+	bb := &CallContentSharingSessionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/contentSharingSessions"
+	return bb
+}
+
+// CallContentSharingSessionsCollectionRequestBuilder is request builder for ContentSharingSession collection
+type CallContentSharingSessionsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ContentSharingSession collection
+func (b *CallContentSharingSessionsCollectionRequestBuilder) Request() *CallContentSharingSessionsCollectionRequest {
+	return &CallContentSharingSessionsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ContentSharingSession item
+func (b *CallContentSharingSessionsCollectionRequestBuilder) ID(id string) *ContentSharingSessionRequestBuilder {
+	bb := &ContentSharingSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// CallContentSharingSessionsCollectionRequest is request for ContentSharingSession collection
+type CallContentSharingSessionsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ContentSharingSession collection
+func (r *CallContentSharingSessionsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ContentSharingSession, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ContentSharingSession
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ContentSharingSession
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ContentSharingSession collection, max N pages
+func (r *CallContentSharingSessionsCollectionRequest) GetN(ctx context.Context, n int) ([]ContentSharingSession, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ContentSharingSession collection
+func (r *CallContentSharingSessionsCollectionRequest) Get(ctx context.Context) ([]ContentSharingSession, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ContentSharingSession collection
+func (r *CallContentSharingSessionsCollectionRequest) Add(ctx context.Context, reqObj *ContentSharingSession) (resObj *ContentSharingSession, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
 }
 
 // Operations returns request builder for CommsOperation collection

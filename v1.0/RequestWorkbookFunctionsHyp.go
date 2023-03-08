@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsHypGeom_DistRequestBuilder struct{ BaseRequestBuilder }
 
 // HypGeom_Dist action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) HypGeom_Dist(reqObj *WorkbookFunctions
 	return bb
 }
 
-//
 type WorkbookFunctionsHypGeom_DistRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsHypGeom_DistRequestBuilder) Request() *WorkbookFunctionsHypGeom_DistRequest {
 	return &WorkbookFunctionsHypGeom_DistRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsHypGeom_DistRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

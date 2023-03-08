@@ -10,14 +10,28 @@ type DataPolicyOperation struct {
 	Entity
 	// CompletedDateTime undocumented
 	CompletedDateTime *time.Time `json:"completedDateTime,omitempty"`
+	// Progress undocumented
+	Progress *float64 `json:"progress,omitempty"`
 	// Status undocumented
 	Status *DataPolicyOperationStatus `json:"status,omitempty"`
 	// StorageLocation undocumented
 	StorageLocation *string `json:"storageLocation,omitempty"`
-	// UserID undocumented
-	UserID *string `json:"userId,omitempty"`
 	// SubmittedDateTime undocumented
 	SubmittedDateTime *time.Time `json:"submittedDateTime,omitempty"`
-	// Progress undocumented
-	Progress *float64 `json:"progress,omitempty"`
+	// UserID undocumented
+	UserID *string `json:"userId,omitempty"`
+}
+
+// DataSubject undocumented
+type DataSubject struct {
+	// Object is the base model of DataSubject
+	Object
+	// Email undocumented
+	Email *string `json:"email,omitempty"`
+	// FirstName undocumented
+	FirstName *string `json:"firstName,omitempty"`
+	// LastName undocumented
+	LastName *string `json:"lastName,omitempty"`
+	// Residency undocumented
+	Residency *string `json:"residency,omitempty"`
 }

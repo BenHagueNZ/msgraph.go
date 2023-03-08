@@ -6,10 +6,10 @@ package msgraph
 type AlternativeSecurityID struct {
 	// Object is the base model of AlternativeSecurityID
 	Object
-	// Type undocumented
-	Type *int `json:"type,omitempty"`
 	// IdentityProvider undocumented
 	IdentityProvider *string `json:"identityProvider,omitempty"`
 	// Key undocumented
 	Key *Binary `json:"key,omitempty"`
+	// Type undocumented
+	Type *int `json:"type,omitempty"`
 }

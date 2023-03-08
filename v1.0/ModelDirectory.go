@@ -8,39 +8,45 @@ import "time"
 type Directory struct {
 	// Entity is the base model of Directory
 	Entity
+	// AdministrativeUnits undocumented
+	AdministrativeUnits []AdministrativeUnit `json:"administrativeUnits,omitempty"`
 	// DeletedItems undocumented
 	DeletedItems []DirectoryObject `json:"deletedItems,omitempty"`
+	// FederationConfigurations undocumented
+	FederationConfigurations []IdentityProviderBase `json:"federationConfigurations,omitempty"`
+	// OnPremisesSynchronization undocumented
+	OnPremisesSynchronization []OnPremisesDirectorySynchronization `json:"onPremisesSynchronization,omitempty"`
 }
 
 // DirectoryAudit undocumented
 type DirectoryAudit struct {
 	// Entity is the base model of DirectoryAudit
 	Entity
+	// ActivityDateTime undocumented
+	ActivityDateTime *time.Time `json:"activityDateTime,omitempty"`
+	// ActivityDisplayName undocumented
+	ActivityDisplayName *string `json:"activityDisplayName,omitempty"`
+	// AdditionalDetails undocumented
+	AdditionalDetails []KeyValue `json:"additionalDetails,omitempty"`
 	// Category undocumented
 	Category *string `json:"category,omitempty"`
 	// CorrelationID undocumented
 	CorrelationID *string `json:"correlationId,omitempty"`
-	// Result undocumented
-	Result *OperationResult `json:"result,omitempty"`
-	// ResultReason undocumented
-	ResultReason *string `json:"resultReason,omitempty"`
-	// ActivityDisplayName undocumented
-	ActivityDisplayName *string `json:"activityDisplayName,omitempty"`
-	// ActivityDateTime undocumented
-	ActivityDateTime *time.Time `json:"activityDateTime,omitempty"`
+	// InitiatedBy undocumented
+	InitiatedBy *AuditActivityInitiator `json:"initiatedBy,omitempty"`
 	// LoggedByService undocumented
 	LoggedByService *string `json:"loggedByService,omitempty"`
 	// OperationType undocumented
 	OperationType *string `json:"operationType,omitempty"`
-	// InitiatedBy undocumented
-	InitiatedBy *AuditActivityInitiator `json:"initiatedBy,omitempty"`
+	// Result undocumented
+	Result *OperationResult `json:"result,omitempty"`
+	// ResultReason undocumented
+	ResultReason *string `json:"resultReason,omitempty"`
 	// TargetResources undocumented
 	TargetResources []TargetResource `json:"targetResources,omitempty"`
-	// AdditionalDetails undocumented
-	AdditionalDetails []KeyValue `json:"additionalDetails,omitempty"`
 }
 
-// DirectoryObject Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+// DirectoryObject undocumented
 type DirectoryObject struct {
 	// Entity is the base model of DirectoryObject
 	Entity
@@ -74,6 +80,8 @@ type DirectoryRole struct {
 	RoleTemplateID *string `json:"roleTemplateId,omitempty"`
 	// Members undocumented
 	Members []DirectoryObject `json:"members,omitempty"`
+	// ScopedMembers undocumented
+	ScopedMembers []ScopedRoleMembership `json:"scopedMembers,omitempty"`
 }
 
 // DirectoryRoleTemplate undocumented

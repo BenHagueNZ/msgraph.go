@@ -37,7 +37,6 @@ func (r *NotificationMessageTemplateRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-//
 type NotificationMessageTemplateSendTestMessageRequestBuilder struct{ BaseRequestBuilder }
 
 // SendTestMessage action undocumented
@@ -48,17 +47,14 @@ func (b *NotificationMessageTemplateRequestBuilder) SendTestMessage(reqObj *Noti
 	return bb
 }
 
-//
 type NotificationMessageTemplateSendTestMessageRequest struct{ BaseRequest }
 
-//
 func (b *NotificationMessageTemplateSendTestMessageRequestBuilder) Request() *NotificationMessageTemplateSendTestMessageRequest {
 	return &NotificationMessageTemplateSendTestMessageRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *NotificationMessageTemplateSendTestMessageRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }

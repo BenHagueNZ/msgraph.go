@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsQuotientRequestBuilder struct{ BaseRequestBuilder }
 
 // Quotient action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Quotient(reqObj *WorkbookFunctionsQuot
 	return bb
 }
 
-//
 type WorkbookFunctionsQuotientRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsQuotientRequestBuilder) Request() *WorkbookFunctionsQuotientRequest {
 	return &WorkbookFunctionsQuotientRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsQuotientRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

@@ -8,8 +8,8 @@ type InvitedUserMessageInfo struct {
 	Object
 	// CcRecipients undocumented
 	CcRecipients []Recipient `json:"ccRecipients,omitempty"`
-	// MessageLanguage undocumented
-	MessageLanguage *string `json:"messageLanguage,omitempty"`
 	// CustomizedMessageBody undocumented
 	CustomizedMessageBody *string `json:"customizedMessageBody,omitempty"`
+	// MessageLanguage undocumented
+	MessageLanguage *string `json:"messageLanguage,omitempty"`
 }

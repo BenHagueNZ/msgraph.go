@@ -6,10 +6,10 @@ package msgraph
 type RoleAssignment struct {
 	// Entity is the base model of RoleAssignment
 	Entity
-	// DisplayName The display or friendly name of the role Assignment.
-	DisplayName *string `json:"displayName,omitempty"`
 	// Description Description of the Role Assignment.
 	Description *string `json:"description,omitempty"`
+	// DisplayName The display or friendly name of the role Assignment.
+	DisplayName *string `json:"displayName,omitempty"`
 	// ResourceScopes List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
 	ResourceScopes []string `json:"resourceScopes,omitempty"`
 	// RoleDefinition undocumented
@@ -20,22 +20,32 @@ type RoleAssignment struct {
 type RoleDefinition struct {
 	// Entity is the base model of RoleDefinition
 	Entity
-	// DisplayName Display Name of the Role definition.
-	DisplayName *string `json:"displayName,omitempty"`
 	// Description Description of the Role definition.
 	Description *string `json:"description,omitempty"`
-	// RolePermissions List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
-	RolePermissions []RolePermission `json:"rolePermissions,omitempty"`
+	// DisplayName Display Name of the Role definition.
+	DisplayName *string `json:"displayName,omitempty"`
 	// IsBuiltIn Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
 	IsBuiltIn *bool `json:"isBuiltIn,omitempty"`
+	// RolePermissions List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
+	RolePermissions []RolePermission `json:"rolePermissions,omitempty"`
 	// RoleAssignments undocumented
 	RoleAssignments []RoleAssignment `json:"roleAssignments,omitempty"`
 }
 
-// RolePermission undocumented
+// RoleManagement undocumented
+type RoleManagement struct {
+	// Object is the base model of RoleManagement
+	Object
+	// Directory undocumented
+	Directory *RbacApplication `json:"directory,omitempty"`
+	// EntitlementManagement undocumented
+	EntitlementManagement *RbacApplication `json:"entitlementManagement,omitempty"`
+}
+
+// RolePermission Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
 type RolePermission struct {
 	// Object is the base model of RolePermission
 	Object
-	// ResourceActions Actions
+	// ResourceActions Resource Actions each containing a set of allowed and not allowed permissions.
 	ResourceActions []ResourceAction `json:"resourceActions,omitempty"`
 }

@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsSumRequestBuilder struct{ BaseRequestBuilder }
 
 // Sum action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Sum(reqObj *WorkbookFunctionsSumReques
 	return bb
 }
 
-//
 type WorkbookFunctionsSumRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsSumRequestBuilder) Request() *WorkbookFunctionsSumRequest {
 	return &WorkbookFunctionsSumRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsSumRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsSumIfRequestBuilder struct{ BaseRequestBuilder }
 
 // SumIf action undocumented
@@ -42,23 +37,19 @@ func (b *WorkbookFunctionsRequestBuilder) SumIf(reqObj *WorkbookFunctionsSumIfRe
 	return bb
 }
 
-//
 type WorkbookFunctionsSumIfRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsSumIfRequestBuilder) Request() *WorkbookFunctionsSumIfRequest {
 	return &WorkbookFunctionsSumIfRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsSumIfRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsSumIfsRequestBuilder struct{ BaseRequestBuilder }
 
 // SumIfs action undocumented
@@ -69,23 +60,19 @@ func (b *WorkbookFunctionsRequestBuilder) SumIfs(reqObj *WorkbookFunctionsSumIfs
 	return bb
 }
 
-//
 type WorkbookFunctionsSumIfsRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsSumIfsRequestBuilder) Request() *WorkbookFunctionsSumIfsRequest {
 	return &WorkbookFunctionsSumIfsRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsSumIfsRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsSumSqRequestBuilder struct{ BaseRequestBuilder }
 
 // SumSq action undocumented
@@ -96,17 +83,14 @@ func (b *WorkbookFunctionsRequestBuilder) SumSq(reqObj *WorkbookFunctionsSumSqRe
 	return bb
 }
 
-//
 type WorkbookFunctionsSumSqRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsSumSqRequestBuilder) Request() *WorkbookFunctionsSumSqRequest {
 	return &WorkbookFunctionsSumSqRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsSumSqRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

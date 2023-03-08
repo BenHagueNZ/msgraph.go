@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsBeta_DistRequestBuilder struct{ BaseRequestBuilder }
 
 // Beta_Dist action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Beta_Dist(reqObj *WorkbookFunctionsBet
 	return bb
 }
 
-//
 type WorkbookFunctionsBeta_DistRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsBeta_DistRequestBuilder) Request() *WorkbookFunctionsBeta_DistRequest {
 	return &WorkbookFunctionsBeta_DistRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsBeta_DistRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsBeta_InvRequestBuilder struct{ BaseRequestBuilder }
 
 // Beta_Inv action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) Beta_Inv(reqObj *WorkbookFunctionsBeta
 	return bb
 }
 
-//
 type WorkbookFunctionsBeta_InvRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsBeta_InvRequestBuilder) Request() *WorkbookFunctionsBeta_InvRequest {
 	return &WorkbookFunctionsBeta_InvRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsBeta_InvRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

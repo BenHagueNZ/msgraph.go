@@ -2,7 +2,7 @@
 
 package msgraph
 
-// MimeContent undocumented
+// MimeContent Contains properties for a generic mime content.
 type MimeContent struct {
 	// Object is the base model of MimeContent
 	Object

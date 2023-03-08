@@ -8,6 +8,8 @@ type Site struct {
 	BaseItem
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
+	// Error undocumented
+	Error *PublicError `json:"error,omitempty"`
 	// Root undocumented
 	Root *Root `json:"root,omitempty"`
 	// SharepointIDs undocumented
@@ -24,12 +26,22 @@ type Site struct {
 	Drive *Drive `json:"drive,omitempty"`
 	// Drives undocumented
 	Drives []Drive `json:"drives,omitempty"`
+	// ExternalColumns undocumented
+	ExternalColumns []ColumnDefinition `json:"externalColumns,omitempty"`
 	// Items undocumented
 	Items []BaseItem `json:"items,omitempty"`
 	// Lists undocumented
 	Lists []List `json:"lists,omitempty"`
+	// Operations undocumented
+	Operations []RichLongRunningOperation `json:"operations,omitempty"`
+	// Permissions undocumented
+	Permissions []Permission `json:"permissions,omitempty"`
 	// Sites undocumented
 	Sites []Site `json:"sites,omitempty"`
+	// TermStore undocumented
+	TermStore *TermStore_store `json:"termStore,omitempty"`
+	// TermStores undocumented
+	TermStores []TermStore_store `json:"termStores,omitempty"`
 	// Onenote undocumented
 	Onenote *Onenote `json:"onenote,omitempty"`
 }
@@ -38,6 +50,8 @@ type Site struct {
 type SiteCollection struct {
 	// Object is the base model of SiteCollection
 	Object
+	// DataLocationCode undocumented
+	DataLocationCode *string `json:"dataLocationCode,omitempty"`
 	// Hostname undocumented
 	Hostname *string `json:"hostname,omitempty"`
 	// Root undocumented

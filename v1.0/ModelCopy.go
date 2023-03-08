@@ -8,34 +8,34 @@ import "time"
 type CopyNotebookModel struct {
 	// Object is the base model of CopyNotebookModel
 	Object
-	// IsDefault undocumented
-	IsDefault *bool `json:"isDefault,omitempty"`
-	// UserRole undocumented
-	UserRole *OnenoteUserRole `json:"userRole,omitempty"`
-	// IsShared undocumented
-	IsShared *bool `json:"isShared,omitempty"`
-	// SectionsURL undocumented
-	SectionsURL *string `json:"sectionsUrl,omitempty"`
-	// SectionGroupsURL undocumented
-	SectionGroupsURL *string `json:"sectionGroupsUrl,omitempty"`
-	// Links undocumented
-	Links *NotebookLinks `json:"links,omitempty"`
-	// Name undocumented
-	Name *string `json:"name,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *string `json:"createdBy,omitempty"`
 	// CreatedByIdentity undocumented
 	CreatedByIdentity *IdentitySet `json:"createdByIdentity,omitempty"`
+	// CreatedTime undocumented
+	CreatedTime *time.Time `json:"createdTime,omitempty"`
+	// ID undocumented
+	ID *string `json:"id,omitempty"`
+	// IsDefault undocumented
+	IsDefault *bool `json:"isDefault,omitempty"`
+	// IsShared undocumented
+	IsShared *bool `json:"isShared,omitempty"`
 	// LastModifiedBy undocumented
 	LastModifiedBy *string `json:"lastModifiedBy,omitempty"`
 	// LastModifiedByIdentity undocumented
 	LastModifiedByIdentity *IdentitySet `json:"lastModifiedByIdentity,omitempty"`
 	// LastModifiedTime undocumented
 	LastModifiedTime *time.Time `json:"lastModifiedTime,omitempty"`
-	// ID undocumented
-	ID *string `json:"id,omitempty"`
+	// Links undocumented
+	Links *NotebookLinks `json:"links,omitempty"`
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
+	// SectionGroupsURL undocumented
+	SectionGroupsURL *string `json:"sectionGroupsUrl,omitempty"`
+	// SectionsURL undocumented
+	SectionsURL *string `json:"sectionsUrl,omitempty"`
 	// Self undocumented
 	Self *string `json:"self,omitempty"`
-	// CreatedTime undocumented
-	CreatedTime *time.Time `json:"createdTime,omitempty"`
+	// UserRole undocumented
+	UserRole *OnenoteUserRole `json:"userRole,omitempty"`
 }

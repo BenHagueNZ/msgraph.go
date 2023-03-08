@@ -8,8 +8,8 @@ type CustomTimeZone struct {
 	TimeZoneBase
 	// Bias undocumented
 	Bias *int `json:"bias,omitempty"`
-	// StandardOffset undocumented
-	StandardOffset *StandardTimeZoneOffset `json:"standardOffset,omitempty"`
 	// DaylightOffset undocumented
 	DaylightOffset *DaylightTimeZoneOffset `json:"daylightOffset,omitempty"`
+	// StandardOffset undocumented
+	StandardOffset *StandardTimeZoneOffset `json:"standardOffset,omitempty"`
 }

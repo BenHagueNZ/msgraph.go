@@ -8,10 +8,10 @@ type ScoredEmailAddress struct {
 	Object
 	// Address undocumented
 	Address *string `json:"address,omitempty"`
+	// ItemID undocumented
+	ItemID *string `json:"itemId,omitempty"`
 	// RelevanceScore undocumented
 	RelevanceScore *float64 `json:"relevanceScore,omitempty"`
 	// SelectionLikelihood undocumented
 	SelectionLikelihood *SelectionLikelihoodInfo `json:"selectionLikelihood,omitempty"`
-	// ItemID undocumented
-	ItemID *string `json:"itemId,omitempty"`
 }

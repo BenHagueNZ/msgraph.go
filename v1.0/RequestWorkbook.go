@@ -961,6 +961,39 @@ func (r *WorkbookNamedItemRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// WorkbookOperationRequestBuilder is request builder for WorkbookOperation
+type WorkbookOperationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WorkbookOperationRequest
+func (b *WorkbookOperationRequestBuilder) Request() *WorkbookOperationRequest {
+	return &WorkbookOperationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WorkbookOperationRequest is request for WorkbookOperation
+type WorkbookOperationRequest struct{ BaseRequest }
+
+// Get performs GET request for WorkbookOperation
+func (r *WorkbookOperationRequest) Get(ctx context.Context) (resObj *WorkbookOperation, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WorkbookOperation
+func (r *WorkbookOperationRequest) Update(ctx context.Context, reqObj *WorkbookOperation) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WorkbookOperation
+func (r *WorkbookOperationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // WorkbookPivotTableRequestBuilder is request builder for WorkbookPivotTable
 type WorkbookPivotTableRequestBuilder struct{ BaseRequestBuilder }
 
@@ -1423,7 +1456,6 @@ func (r *WorkbookWorksheetProtectionRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-//
 type WorkbookChartCollectionAddRequestBuilder struct{ BaseRequestBuilder }
 
 // Add action undocumented
@@ -1434,23 +1466,19 @@ func (b *WorkbookWorksheetChartsCollectionRequestBuilder) Add(reqObj *WorkbookCh
 	return bb
 }
 
-//
 type WorkbookChartCollectionAddRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookChartCollectionAddRequestBuilder) Request() *WorkbookChartCollectionAddRequest {
 	return &WorkbookChartCollectionAddRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookChartCollectionAddRequest) Post(ctx context.Context) (resObj *WorkbookChart, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookNamedItemCollectionAddRequestBuilder struct{ BaseRequestBuilder }
 
 // Add action undocumented
@@ -1469,23 +1497,19 @@ func (b *WorkbookWorksheetNamesCollectionRequestBuilder) Add(reqObj *WorkbookNam
 	return bb
 }
 
-//
 type WorkbookNamedItemCollectionAddRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookNamedItemCollectionAddRequestBuilder) Request() *WorkbookNamedItemCollectionAddRequest {
 	return &WorkbookNamedItemCollectionAddRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookNamedItemCollectionAddRequest) Post(ctx context.Context) (resObj *WorkbookNamedItem, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookNamedItemCollectionAddFormulaLocalRequestBuilder struct{ BaseRequestBuilder }
 
 // AddFormulaLocal action undocumented
@@ -1504,23 +1528,19 @@ func (b *WorkbookWorksheetNamesCollectionRequestBuilder) AddFormulaLocal(reqObj 
 	return bb
 }
 
-//
 type WorkbookNamedItemCollectionAddFormulaLocalRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookNamedItemCollectionAddFormulaLocalRequestBuilder) Request() *WorkbookNamedItemCollectionAddFormulaLocalRequest {
 	return &WorkbookNamedItemCollectionAddFormulaLocalRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookNamedItemCollectionAddFormulaLocalRequest) Post(ctx context.Context) (resObj *WorkbookNamedItem, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookPivotTableCollectionRefreshAllRequestBuilder struct{ BaseRequestBuilder }
 
 // RefreshAll action undocumented
@@ -1531,22 +1551,18 @@ func (b *WorkbookWorksheetPivotTablesCollectionRequestBuilder) RefreshAll(reqObj
 	return bb
 }
 
-//
 type WorkbookPivotTableCollectionRefreshAllRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookPivotTableCollectionRefreshAllRequestBuilder) Request() *WorkbookPivotTableCollectionRefreshAllRequest {
 	return &WorkbookPivotTableCollectionRefreshAllRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookPivotTableCollectionRefreshAllRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookTableCollectionAddRequestBuilder struct{ BaseRequestBuilder }
 
 // Add action undocumented
@@ -1565,23 +1581,19 @@ func (b *WorkbookWorksheetTablesCollectionRequestBuilder) Add(reqObj *WorkbookTa
 	return bb
 }
 
-//
 type WorkbookTableCollectionAddRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookTableCollectionAddRequestBuilder) Request() *WorkbookTableCollectionAddRequest {
 	return &WorkbookTableCollectionAddRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookTableCollectionAddRequest) Post(ctx context.Context) (resObj *WorkbookTable, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookTableColumnCollectionAddRequestBuilder struct{ BaseRequestBuilder }
 
 // Add action undocumented
@@ -1592,23 +1604,19 @@ func (b *WorkbookTableColumnsCollectionRequestBuilder) Add(reqObj *WorkbookTable
 	return bb
 }
 
-//
 type WorkbookTableColumnCollectionAddRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookTableColumnCollectionAddRequestBuilder) Request() *WorkbookTableColumnCollectionAddRequest {
 	return &WorkbookTableColumnCollectionAddRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookTableColumnCollectionAddRequest) Post(ctx context.Context) (resObj *WorkbookTableColumn, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookTableRowCollectionAddRequestBuilder struct{ BaseRequestBuilder }
 
 // Add action undocumented
@@ -1619,23 +1627,19 @@ func (b *WorkbookTableRowsCollectionRequestBuilder) Add(reqObj *WorkbookTableRow
 	return bb
 }
 
-//
 type WorkbookTableRowCollectionAddRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookTableRowCollectionAddRequestBuilder) Request() *WorkbookTableRowCollectionAddRequest {
 	return &WorkbookTableRowCollectionAddRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookTableRowCollectionAddRequest) Post(ctx context.Context) (resObj *WorkbookTableRow, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookWorksheetCollectionAddRequestBuilder struct{ BaseRequestBuilder }
 
 // Add action undocumented
@@ -1646,50 +1650,19 @@ func (b *WorkbookWorksheetsCollectionRequestBuilder) Add(reqObj *WorkbookWorkshe
 	return bb
 }
 
-//
 type WorkbookWorksheetCollectionAddRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookWorksheetCollectionAddRequestBuilder) Request() *WorkbookWorksheetCollectionAddRequest {
 	return &WorkbookWorksheetCollectionAddRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookWorksheetCollectionAddRequest) Post(ctx context.Context) (resObj *WorkbookWorksheet, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
-type WorkbookCreateSessionRequestBuilder struct{ BaseRequestBuilder }
-
-// CreateSession action undocumented
-func (b *WorkbookRequestBuilder) CreateSession(reqObj *WorkbookCreateSessionRequestParameter) *WorkbookCreateSessionRequestBuilder {
-	bb := &WorkbookCreateSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/createSession"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-//
-type WorkbookCreateSessionRequest struct{ BaseRequest }
-
-//
-func (b *WorkbookCreateSessionRequestBuilder) Request() *WorkbookCreateSessionRequest {
-	return &WorkbookCreateSessionRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-//
-func (r *WorkbookCreateSessionRequest) Post(ctx context.Context) (resObj *WorkbookSessionInfo, err error) {
-	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
-	return
-}
-
-//
 type WorkbookCloseSessionRequestBuilder struct{ BaseRequestBuilder }
 
 // CloseSession action undocumented
@@ -1700,22 +1673,41 @@ func (b *WorkbookRequestBuilder) CloseSession(reqObj *WorkbookCloseSessionReques
 	return bb
 }
 
-//
 type WorkbookCloseSessionRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookCloseSessionRequestBuilder) Request() *WorkbookCloseSessionRequest {
 	return &WorkbookCloseSessionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookCloseSessionRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
+type WorkbookCreateSessionRequestBuilder struct{ BaseRequestBuilder }
+
+// CreateSession action undocumented
+func (b *WorkbookRequestBuilder) CreateSession(reqObj *WorkbookCreateSessionRequestParameter) *WorkbookCreateSessionRequestBuilder {
+	bb := &WorkbookCreateSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/createSession"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type WorkbookCreateSessionRequest struct{ BaseRequest }
+
+func (b *WorkbookCreateSessionRequestBuilder) Request() *WorkbookCreateSessionRequest {
+	return &WorkbookCreateSessionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *WorkbookCreateSessionRequest) Post(ctx context.Context) (resObj *WorkbookSessionInfo, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
 type WorkbookRefreshSessionRequestBuilder struct{ BaseRequestBuilder }
 
 // RefreshSession action undocumented
@@ -1726,22 +1718,18 @@ func (b *WorkbookRequestBuilder) RefreshSession(reqObj *WorkbookRefreshSessionRe
 	return bb
 }
 
-//
 type WorkbookRefreshSessionRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookRefreshSessionRequestBuilder) Request() *WorkbookRefreshSessionRequest {
 	return &WorkbookRefreshSessionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookRefreshSessionRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookApplicationCalculateRequestBuilder struct{ BaseRequestBuilder }
 
 // Calculate action undocumented
@@ -1752,22 +1740,18 @@ func (b *WorkbookApplicationRequestBuilder) Calculate(reqObj *WorkbookApplicatio
 	return bb
 }
 
-//
 type WorkbookApplicationCalculateRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookApplicationCalculateRequestBuilder) Request() *WorkbookApplicationCalculateRequest {
 	return &WorkbookApplicationCalculateRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookApplicationCalculateRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookChartSetDataRequestBuilder struct{ BaseRequestBuilder }
 
 // SetData action undocumented
@@ -1778,22 +1762,18 @@ func (b *WorkbookChartRequestBuilder) SetData(reqObj *WorkbookChartSetDataReques
 	return bb
 }
 
-//
 type WorkbookChartSetDataRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookChartSetDataRequestBuilder) Request() *WorkbookChartSetDataRequest {
 	return &WorkbookChartSetDataRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookChartSetDataRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookChartSetPositionRequestBuilder struct{ BaseRequestBuilder }
 
 // SetPosition action undocumented
@@ -1804,22 +1784,18 @@ func (b *WorkbookChartRequestBuilder) SetPosition(reqObj *WorkbookChartSetPositi
 	return bb
 }
 
-//
 type WorkbookChartSetPositionRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookChartSetPositionRequestBuilder) Request() *WorkbookChartSetPositionRequest {
 	return &WorkbookChartSetPositionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookChartSetPositionRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookChartFillClearRequestBuilder struct{ BaseRequestBuilder }
 
 // Clear action undocumented
@@ -1830,22 +1806,18 @@ func (b *WorkbookChartFillRequestBuilder) Clear(reqObj *WorkbookChartFillClearRe
 	return bb
 }
 
-//
 type WorkbookChartFillClearRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookChartFillClearRequestBuilder) Request() *WorkbookChartFillClearRequest {
 	return &WorkbookChartFillClearRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookChartFillClearRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookChartFillSetSolidColorRequestBuilder struct{ BaseRequestBuilder }
 
 // SetSolidColor action undocumented
@@ -1856,22 +1828,18 @@ func (b *WorkbookChartFillRequestBuilder) SetSolidColor(reqObj *WorkbookChartFil
 	return bb
 }
 
-//
 type WorkbookChartFillSetSolidColorRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookChartFillSetSolidColorRequestBuilder) Request() *WorkbookChartFillSetSolidColorRequest {
 	return &WorkbookChartFillSetSolidColorRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookChartFillSetSolidColorRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookChartLineFormatClearRequestBuilder struct{ BaseRequestBuilder }
 
 // Clear action undocumented
@@ -1882,22 +1850,18 @@ func (b *WorkbookChartLineFormatRequestBuilder) Clear(reqObj *WorkbookChartLineF
 	return bb
 }
 
-//
 type WorkbookChartLineFormatClearRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookChartLineFormatClearRequestBuilder) Request() *WorkbookChartLineFormatClearRequest {
 	return &WorkbookChartLineFormatClearRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookChartLineFormatClearRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookFilterApplyRequestBuilder struct{ BaseRequestBuilder }
 
 // Apply action undocumented
@@ -1908,22 +1872,18 @@ func (b *WorkbookFilterRequestBuilder) Apply(reqObj *WorkbookFilterApplyRequestP
 	return bb
 }
 
-//
 type WorkbookFilterApplyRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFilterApplyRequestBuilder) Request() *WorkbookFilterApplyRequest {
 	return &WorkbookFilterApplyRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFilterApplyRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookFilterApplyBottomItemsFilterRequestBuilder struct{ BaseRequestBuilder }
 
 // ApplyBottomItemsFilter action undocumented
@@ -1934,22 +1894,18 @@ func (b *WorkbookFilterRequestBuilder) ApplyBottomItemsFilter(reqObj *WorkbookFi
 	return bb
 }
 
-//
 type WorkbookFilterApplyBottomItemsFilterRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFilterApplyBottomItemsFilterRequestBuilder) Request() *WorkbookFilterApplyBottomItemsFilterRequest {
 	return &WorkbookFilterApplyBottomItemsFilterRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFilterApplyBottomItemsFilterRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookFilterApplyBottomPercentFilterRequestBuilder struct{ BaseRequestBuilder }
 
 // ApplyBottomPercentFilter action undocumented
@@ -1960,22 +1916,18 @@ func (b *WorkbookFilterRequestBuilder) ApplyBottomPercentFilter(reqObj *Workbook
 	return bb
 }
 
-//
 type WorkbookFilterApplyBottomPercentFilterRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFilterApplyBottomPercentFilterRequestBuilder) Request() *WorkbookFilterApplyBottomPercentFilterRequest {
 	return &WorkbookFilterApplyBottomPercentFilterRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFilterApplyBottomPercentFilterRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookFilterApplyCellColorFilterRequestBuilder struct{ BaseRequestBuilder }
 
 // ApplyCellColorFilter action undocumented
@@ -1986,22 +1938,18 @@ func (b *WorkbookFilterRequestBuilder) ApplyCellColorFilter(reqObj *WorkbookFilt
 	return bb
 }
 
-//
 type WorkbookFilterApplyCellColorFilterRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFilterApplyCellColorFilterRequestBuilder) Request() *WorkbookFilterApplyCellColorFilterRequest {
 	return &WorkbookFilterApplyCellColorFilterRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFilterApplyCellColorFilterRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookFilterApplyCustomFilterRequestBuilder struct{ BaseRequestBuilder }
 
 // ApplyCustomFilter action undocumented
@@ -2012,22 +1960,18 @@ func (b *WorkbookFilterRequestBuilder) ApplyCustomFilter(reqObj *WorkbookFilterA
 	return bb
 }
 
-//
 type WorkbookFilterApplyCustomFilterRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFilterApplyCustomFilterRequestBuilder) Request() *WorkbookFilterApplyCustomFilterRequest {
 	return &WorkbookFilterApplyCustomFilterRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFilterApplyCustomFilterRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookFilterApplyDynamicFilterRequestBuilder struct{ BaseRequestBuilder }
 
 // ApplyDynamicFilter action undocumented
@@ -2038,22 +1982,18 @@ func (b *WorkbookFilterRequestBuilder) ApplyDynamicFilter(reqObj *WorkbookFilter
 	return bb
 }
 
-//
 type WorkbookFilterApplyDynamicFilterRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFilterApplyDynamicFilterRequestBuilder) Request() *WorkbookFilterApplyDynamicFilterRequest {
 	return &WorkbookFilterApplyDynamicFilterRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFilterApplyDynamicFilterRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookFilterApplyFontColorFilterRequestBuilder struct{ BaseRequestBuilder }
 
 // ApplyFontColorFilter action undocumented
@@ -2064,22 +2004,18 @@ func (b *WorkbookFilterRequestBuilder) ApplyFontColorFilter(reqObj *WorkbookFilt
 	return bb
 }
 
-//
 type WorkbookFilterApplyFontColorFilterRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFilterApplyFontColorFilterRequestBuilder) Request() *WorkbookFilterApplyFontColorFilterRequest {
 	return &WorkbookFilterApplyFontColorFilterRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFilterApplyFontColorFilterRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookFilterApplyIconFilterRequestBuilder struct{ BaseRequestBuilder }
 
 // ApplyIconFilter action undocumented
@@ -2090,22 +2026,18 @@ func (b *WorkbookFilterRequestBuilder) ApplyIconFilter(reqObj *WorkbookFilterApp
 	return bb
 }
 
-//
 type WorkbookFilterApplyIconFilterRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFilterApplyIconFilterRequestBuilder) Request() *WorkbookFilterApplyIconFilterRequest {
 	return &WorkbookFilterApplyIconFilterRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFilterApplyIconFilterRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookFilterApplyTopItemsFilterRequestBuilder struct{ BaseRequestBuilder }
 
 // ApplyTopItemsFilter action undocumented
@@ -2116,22 +2048,18 @@ func (b *WorkbookFilterRequestBuilder) ApplyTopItemsFilter(reqObj *WorkbookFilte
 	return bb
 }
 
-//
 type WorkbookFilterApplyTopItemsFilterRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFilterApplyTopItemsFilterRequestBuilder) Request() *WorkbookFilterApplyTopItemsFilterRequest {
 	return &WorkbookFilterApplyTopItemsFilterRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFilterApplyTopItemsFilterRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookFilterApplyTopPercentFilterRequestBuilder struct{ BaseRequestBuilder }
 
 // ApplyTopPercentFilter action undocumented
@@ -2142,22 +2070,18 @@ func (b *WorkbookFilterRequestBuilder) ApplyTopPercentFilter(reqObj *WorkbookFil
 	return bb
 }
 
-//
 type WorkbookFilterApplyTopPercentFilterRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFilterApplyTopPercentFilterRequestBuilder) Request() *WorkbookFilterApplyTopPercentFilterRequest {
 	return &WorkbookFilterApplyTopPercentFilterRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFilterApplyTopPercentFilterRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookFilterApplyValuesFilterRequestBuilder struct{ BaseRequestBuilder }
 
 // ApplyValuesFilter action undocumented
@@ -2168,22 +2092,18 @@ func (b *WorkbookFilterRequestBuilder) ApplyValuesFilter(reqObj *WorkbookFilterA
 	return bb
 }
 
-//
 type WorkbookFilterApplyValuesFilterRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFilterApplyValuesFilterRequestBuilder) Request() *WorkbookFilterApplyValuesFilterRequest {
 	return &WorkbookFilterApplyValuesFilterRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFilterApplyValuesFilterRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookFilterClearRequestBuilder struct{ BaseRequestBuilder }
 
 // Clear action undocumented
@@ -2194,22 +2114,18 @@ func (b *WorkbookFilterRequestBuilder) Clear(reqObj *WorkbookFilterClearRequestP
 	return bb
 }
 
-//
 type WorkbookFilterClearRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFilterClearRequestBuilder) Request() *WorkbookFilterClearRequest {
 	return &WorkbookFilterClearRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFilterClearRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookPivotTableRefreshRequestBuilder struct{ BaseRequestBuilder }
 
 // Refresh action undocumented
@@ -2220,22 +2136,18 @@ func (b *WorkbookPivotTableRequestBuilder) Refresh(reqObj *WorkbookPivotTableRef
 	return bb
 }
 
-//
 type WorkbookPivotTableRefreshRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookPivotTableRefreshRequestBuilder) Request() *WorkbookPivotTableRefreshRequest {
 	return &WorkbookPivotTableRefreshRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookPivotTableRefreshRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookRangeClearRequestBuilder struct{ BaseRequestBuilder }
 
 // Clear action undocumented
@@ -2246,22 +2158,18 @@ func (b *WorkbookRangeRequestBuilder) Clear(reqObj *WorkbookRangeClearRequestPar
 	return bb
 }
 
-//
 type WorkbookRangeClearRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookRangeClearRequestBuilder) Request() *WorkbookRangeClearRequest {
 	return &WorkbookRangeClearRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookRangeClearRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookRangeDeleteRequestBuilder struct{ BaseRequestBuilder }
 
 // Delete action undocumented
@@ -2272,22 +2180,18 @@ func (b *WorkbookRangeRequestBuilder) Delete(reqObj *WorkbookRangeDeleteRequestP
 	return bb
 }
 
-//
 type WorkbookRangeDeleteRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookRangeDeleteRequestBuilder) Request() *WorkbookRangeDeleteRequest {
 	return &WorkbookRangeDeleteRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookRangeDeleteRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookRangeInsertRequestBuilder struct{ BaseRequestBuilder }
 
 // Insert action undocumented
@@ -2298,23 +2202,19 @@ func (b *WorkbookRangeRequestBuilder) Insert(reqObj *WorkbookRangeInsertRequestP
 	return bb
 }
 
-//
 type WorkbookRangeInsertRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookRangeInsertRequestBuilder) Request() *WorkbookRangeInsertRequest {
 	return &WorkbookRangeInsertRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookRangeInsertRequest) Post(ctx context.Context) (resObj *WorkbookRange, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookRangeMergeRequestBuilder struct{ BaseRequestBuilder }
 
 // Merge action undocumented
@@ -2325,22 +2225,18 @@ func (b *WorkbookRangeRequestBuilder) Merge(reqObj *WorkbookRangeMergeRequestPar
 	return bb
 }
 
-//
 type WorkbookRangeMergeRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookRangeMergeRequestBuilder) Request() *WorkbookRangeMergeRequest {
 	return &WorkbookRangeMergeRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookRangeMergeRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookRangeUnmergeRequestBuilder struct{ BaseRequestBuilder }
 
 // Unmerge action undocumented
@@ -2351,22 +2247,18 @@ func (b *WorkbookRangeRequestBuilder) Unmerge(reqObj *WorkbookRangeUnmergeReques
 	return bb
 }
 
-//
 type WorkbookRangeUnmergeRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookRangeUnmergeRequestBuilder) Request() *WorkbookRangeUnmergeRequest {
 	return &WorkbookRangeUnmergeRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookRangeUnmergeRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookRangeFillClearRequestBuilder struct{ BaseRequestBuilder }
 
 // Clear action undocumented
@@ -2377,22 +2269,18 @@ func (b *WorkbookRangeFillRequestBuilder) Clear(reqObj *WorkbookRangeFillClearRe
 	return bb
 }
 
-//
 type WorkbookRangeFillClearRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookRangeFillClearRequestBuilder) Request() *WorkbookRangeFillClearRequest {
 	return &WorkbookRangeFillClearRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookRangeFillClearRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookRangeFormatAutofitColumnsRequestBuilder struct{ BaseRequestBuilder }
 
 // AutofitColumns action undocumented
@@ -2403,22 +2291,18 @@ func (b *WorkbookRangeFormatRequestBuilder) AutofitColumns(reqObj *WorkbookRange
 	return bb
 }
 
-//
 type WorkbookRangeFormatAutofitColumnsRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookRangeFormatAutofitColumnsRequestBuilder) Request() *WorkbookRangeFormatAutofitColumnsRequest {
 	return &WorkbookRangeFormatAutofitColumnsRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookRangeFormatAutofitColumnsRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookRangeFormatAutofitRowsRequestBuilder struct{ BaseRequestBuilder }
 
 // AutofitRows action undocumented
@@ -2429,22 +2313,18 @@ func (b *WorkbookRangeFormatRequestBuilder) AutofitRows(reqObj *WorkbookRangeFor
 	return bb
 }
 
-//
 type WorkbookRangeFormatAutofitRowsRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookRangeFormatAutofitRowsRequestBuilder) Request() *WorkbookRangeFormatAutofitRowsRequest {
 	return &WorkbookRangeFormatAutofitRowsRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookRangeFormatAutofitRowsRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookRangeSortApplyRequestBuilder struct{ BaseRequestBuilder }
 
 // Apply action undocumented
@@ -2455,22 +2335,18 @@ func (b *WorkbookRangeSortRequestBuilder) Apply(reqObj *WorkbookRangeSortApplyRe
 	return bb
 }
 
-//
 type WorkbookRangeSortApplyRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookRangeSortApplyRequestBuilder) Request() *WorkbookRangeSortApplyRequest {
 	return &WorkbookRangeSortApplyRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookRangeSortApplyRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookTableClearFiltersRequestBuilder struct{ BaseRequestBuilder }
 
 // ClearFilters action undocumented
@@ -2481,22 +2357,18 @@ func (b *WorkbookTableRequestBuilder) ClearFilters(reqObj *WorkbookTableClearFil
 	return bb
 }
 
-//
 type WorkbookTableClearFiltersRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookTableClearFiltersRequestBuilder) Request() *WorkbookTableClearFiltersRequest {
 	return &WorkbookTableClearFiltersRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookTableClearFiltersRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookTableConvertToRangeRequestBuilder struct{ BaseRequestBuilder }
 
 // ConvertToRange action undocumented
@@ -2507,23 +2379,19 @@ func (b *WorkbookTableRequestBuilder) ConvertToRange(reqObj *WorkbookTableConver
 	return bb
 }
 
-//
 type WorkbookTableConvertToRangeRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookTableConvertToRangeRequestBuilder) Request() *WorkbookTableConvertToRangeRequest {
 	return &WorkbookTableConvertToRangeRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookTableConvertToRangeRequest) Post(ctx context.Context) (resObj *WorkbookRange, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookTableReapplyFiltersRequestBuilder struct{ BaseRequestBuilder }
 
 // ReapplyFilters action undocumented
@@ -2534,22 +2402,18 @@ func (b *WorkbookTableRequestBuilder) ReapplyFilters(reqObj *WorkbookTableReappl
 	return bb
 }
 
-//
 type WorkbookTableReapplyFiltersRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookTableReapplyFiltersRequestBuilder) Request() *WorkbookTableReapplyFiltersRequest {
 	return &WorkbookTableReapplyFiltersRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookTableReapplyFiltersRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookTableSortApplyRequestBuilder struct{ BaseRequestBuilder }
 
 // Apply action undocumented
@@ -2560,22 +2424,18 @@ func (b *WorkbookTableSortRequestBuilder) Apply(reqObj *WorkbookTableSortApplyRe
 	return bb
 }
 
-//
 type WorkbookTableSortApplyRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookTableSortApplyRequestBuilder) Request() *WorkbookTableSortApplyRequest {
 	return &WorkbookTableSortApplyRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookTableSortApplyRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookTableSortClearRequestBuilder struct{ BaseRequestBuilder }
 
 // Clear action undocumented
@@ -2586,22 +2446,18 @@ func (b *WorkbookTableSortRequestBuilder) Clear(reqObj *WorkbookTableSortClearRe
 	return bb
 }
 
-//
 type WorkbookTableSortClearRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookTableSortClearRequestBuilder) Request() *WorkbookTableSortClearRequest {
 	return &WorkbookTableSortClearRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookTableSortClearRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookTableSortReapplyRequestBuilder struct{ BaseRequestBuilder }
 
 // Reapply action undocumented
@@ -2612,22 +2468,18 @@ func (b *WorkbookTableSortRequestBuilder) Reapply(reqObj *WorkbookTableSortReapp
 	return bb
 }
 
-//
 type WorkbookTableSortReapplyRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookTableSortReapplyRequestBuilder) Request() *WorkbookTableSortReapplyRequest {
 	return &WorkbookTableSortReapplyRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookTableSortReapplyRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookWorksheetProtectionProtectRequestBuilder struct{ BaseRequestBuilder }
 
 // Protect action undocumented
@@ -2638,22 +2490,18 @@ func (b *WorkbookWorksheetProtectionRequestBuilder) Protect(reqObj *WorkbookWork
 	return bb
 }
 
-//
 type WorkbookWorksheetProtectionProtectRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookWorksheetProtectionProtectRequestBuilder) Request() *WorkbookWorksheetProtectionProtectRequest {
 	return &WorkbookWorksheetProtectionProtectRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookWorksheetProtectionProtectRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }
 
-//
 type WorkbookWorksheetProtectionUnprotectRequestBuilder struct{ BaseRequestBuilder }
 
 // Unprotect action undocumented
@@ -2664,17 +2512,14 @@ func (b *WorkbookWorksheetProtectionRequestBuilder) Unprotect(reqObj *WorkbookWo
 	return bb
 }
 
-//
 type WorkbookWorksheetProtectionUnprotectRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookWorksheetProtectionUnprotectRequestBuilder) Request() *WorkbookWorksheetProtectionUnprotectRequest {
 	return &WorkbookWorksheetProtectionUnprotectRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookWorksheetProtectionUnprotectRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }

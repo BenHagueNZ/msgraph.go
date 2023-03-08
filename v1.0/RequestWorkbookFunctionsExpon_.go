@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsExpon_DistRequestBuilder struct{ BaseRequestBuilder }
 
 // Expon_Dist action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Expon_Dist(reqObj *WorkbookFunctionsEx
 	return bb
 }
 
-//
 type WorkbookFunctionsExpon_DistRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsExpon_DistRequestBuilder) Request() *WorkbookFunctionsExpon_DistRequest {
 	return &WorkbookFunctionsExpon_DistRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsExpon_DistRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

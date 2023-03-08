@@ -36,3 +36,25 @@ func (r *SubscriptionRequest) Update(ctx context.Context, reqObj *Subscription) 
 func (r *SubscriptionRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type SubscriptionReauthorizeRequestBuilder struct{ BaseRequestBuilder }
+
+// Reauthorize action undocumented
+func (b *SubscriptionRequestBuilder) Reauthorize(reqObj *SubscriptionReauthorizeRequestParameter) *SubscriptionReauthorizeRequestBuilder {
+	bb := &SubscriptionReauthorizeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/reauthorize"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type SubscriptionReauthorizeRequest struct{ BaseRequest }
+
+func (b *SubscriptionReauthorizeRequestBuilder) Request() *SubscriptionReauthorizeRequest {
+	return &SubscriptionReauthorizeRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *SubscriptionReauthorizeRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}

@@ -22,6 +22,10 @@ type List struct {
 	Drive *Drive `json:"drive,omitempty"`
 	// Items undocumented
 	Items []ListItem `json:"items,omitempty"`
+	// Operations undocumented
+	Operations []RichLongRunningOperation `json:"operations,omitempty"`
+	// Subscriptions undocumented
+	Subscriptions []Subscription `json:"subscriptions,omitempty"`
 }
 
 // ListInfo undocumented
@@ -46,6 +50,8 @@ type ListItem struct {
 	SharepointIDs *SharepointIDs `json:"sharepointIds,omitempty"`
 	// Analytics undocumented
 	Analytics *ItemAnalytics `json:"analytics,omitempty"`
+	// DocumentSetVersions undocumented
+	DocumentSetVersions []DocumentSetVersion `json:"documentSetVersions,omitempty"`
 	// DriveItem undocumented
 	DriveItem *DriveItem `json:"driveItem,omitempty"`
 	// Fields undocumented

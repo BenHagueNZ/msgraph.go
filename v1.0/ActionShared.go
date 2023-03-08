@@ -135,6 +135,13 @@ func (b *SharedDriveItemRequestBuilder) ListItem() *ListItemRequestBuilder {
 	return bb
 }
 
+// Permission is navigation property
+func (b *SharedDriveItemRequestBuilder) Permission() *PermissionRequestBuilder {
+	bb := &PermissionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/permission"
+	return bb
+}
+
 // Root is navigation property
 func (b *SharedDriveItemRequestBuilder) Root() *DriveItemRequestBuilder {
 	bb := &DriveItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -161,4 +168,107 @@ func (b *SharedInsightRequestBuilder) Resource() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/resource"
 	return bb
+}
+
+// AllowedMembers returns request builder for ConversationMember collection
+func (b *SharedWithChannelTeamInfoRequestBuilder) AllowedMembers() *SharedWithChannelTeamInfoAllowedMembersCollectionRequestBuilder {
+	bb := &SharedWithChannelTeamInfoAllowedMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/allowedMembers"
+	return bb
+}
+
+// SharedWithChannelTeamInfoAllowedMembersCollectionRequestBuilder is request builder for ConversationMember collection
+type SharedWithChannelTeamInfoAllowedMembersCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ConversationMember collection
+func (b *SharedWithChannelTeamInfoAllowedMembersCollectionRequestBuilder) Request() *SharedWithChannelTeamInfoAllowedMembersCollectionRequest {
+	return &SharedWithChannelTeamInfoAllowedMembersCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ConversationMember item
+func (b *SharedWithChannelTeamInfoAllowedMembersCollectionRequestBuilder) ID(id string) *ConversationMemberRequestBuilder {
+	bb := &ConversationMemberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// SharedWithChannelTeamInfoAllowedMembersCollectionRequest is request for ConversationMember collection
+type SharedWithChannelTeamInfoAllowedMembersCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ConversationMember collection
+func (r *SharedWithChannelTeamInfoAllowedMembersCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ConversationMember, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ConversationMember
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ConversationMember
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ConversationMember collection, max N pages
+func (r *SharedWithChannelTeamInfoAllowedMembersCollectionRequest) GetN(ctx context.Context, n int) ([]ConversationMember, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ConversationMember collection
+func (r *SharedWithChannelTeamInfoAllowedMembersCollectionRequest) Get(ctx context.Context) ([]ConversationMember, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ConversationMember collection
+func (r *SharedWithChannelTeamInfoAllowedMembersCollectionRequest) Add(ctx context.Context, reqObj *ConversationMember) (resObj *ConversationMember, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
 }

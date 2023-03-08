@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsBitorRequestBuilder struct{ BaseRequestBuilder }
 
 // Bitor action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Bitor(reqObj *WorkbookFunctionsBitorRe
 	return bb
 }
 
-//
 type WorkbookFunctionsBitorRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsBitorRequestBuilder) Request() *WorkbookFunctionsBitorRequest {
 	return &WorkbookFunctionsBitorRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsBitorRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

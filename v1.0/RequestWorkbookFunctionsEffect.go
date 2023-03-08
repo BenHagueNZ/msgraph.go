@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsEffectRequestBuilder struct{ BaseRequestBuilder }
 
 // Effect action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Effect(reqObj *WorkbookFunctionsEffect
 	return bb
 }
 
-//
 type WorkbookFunctionsEffectRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsEffectRequestBuilder) Request() *WorkbookFunctionsEffectRequest {
 	return &WorkbookFunctionsEffectRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsEffectRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

@@ -24,6 +24,43 @@ var (
 	_CallDirectionPOutgoing = CallDirectionVOutgoing
 )
 
+// CallRecordingStatus undocumented
+type CallRecordingStatus string
+
+const (
+	// CallRecordingStatusVSuccess undocumented
+	CallRecordingStatusVSuccess CallRecordingStatus = "success"
+	// CallRecordingStatusVFailure undocumented
+	CallRecordingStatusVFailure CallRecordingStatus = "failure"
+	// CallRecordingStatusVInitial undocumented
+	CallRecordingStatusVInitial CallRecordingStatus = "initial"
+	// CallRecordingStatusVChunkFinished undocumented
+	CallRecordingStatusVChunkFinished CallRecordingStatus = "chunkFinished"
+	// CallRecordingStatusVUnknownFutureValue undocumented
+	CallRecordingStatusVUnknownFutureValue CallRecordingStatus = "unknownFutureValue"
+)
+
+var (
+	// CallRecordingStatusPSuccess is a pointer to CallRecordingStatusVSuccess
+	CallRecordingStatusPSuccess = &_CallRecordingStatusPSuccess
+	// CallRecordingStatusPFailure is a pointer to CallRecordingStatusVFailure
+	CallRecordingStatusPFailure = &_CallRecordingStatusPFailure
+	// CallRecordingStatusPInitial is a pointer to CallRecordingStatusVInitial
+	CallRecordingStatusPInitial = &_CallRecordingStatusPInitial
+	// CallRecordingStatusPChunkFinished is a pointer to CallRecordingStatusVChunkFinished
+	CallRecordingStatusPChunkFinished = &_CallRecordingStatusPChunkFinished
+	// CallRecordingStatusPUnknownFutureValue is a pointer to CallRecordingStatusVUnknownFutureValue
+	CallRecordingStatusPUnknownFutureValue = &_CallRecordingStatusPUnknownFutureValue
+)
+
+var (
+	_CallRecordingStatusPSuccess            = CallRecordingStatusVSuccess
+	_CallRecordingStatusPFailure            = CallRecordingStatusVFailure
+	_CallRecordingStatusPInitial            = CallRecordingStatusVInitial
+	_CallRecordingStatusPChunkFinished      = CallRecordingStatusVChunkFinished
+	_CallRecordingStatusPUnknownFutureValue = CallRecordingStatusVUnknownFutureValue
+)
+
 // CallState undocumented
 type CallState string
 
@@ -84,4 +121,36 @@ var (
 	_CallStatePTerminating        = CallStateVTerminating
 	_CallStatePTerminated         = CallStateVTerminated
 	_CallStatePUnknownFutureValue = CallStateVUnknownFutureValue
+)
+
+// CallTranscriptionState undocumented
+type CallTranscriptionState string
+
+const (
+	// CallTranscriptionStateVNotStarted undocumented
+	CallTranscriptionStateVNotStarted CallTranscriptionState = "notStarted"
+	// CallTranscriptionStateVActive undocumented
+	CallTranscriptionStateVActive CallTranscriptionState = "active"
+	// CallTranscriptionStateVInactive undocumented
+	CallTranscriptionStateVInactive CallTranscriptionState = "inactive"
+	// CallTranscriptionStateVUnknownFutureValue undocumented
+	CallTranscriptionStateVUnknownFutureValue CallTranscriptionState = "unknownFutureValue"
+)
+
+var (
+	// CallTranscriptionStatePNotStarted is a pointer to CallTranscriptionStateVNotStarted
+	CallTranscriptionStatePNotStarted = &_CallTranscriptionStatePNotStarted
+	// CallTranscriptionStatePActive is a pointer to CallTranscriptionStateVActive
+	CallTranscriptionStatePActive = &_CallTranscriptionStatePActive
+	// CallTranscriptionStatePInactive is a pointer to CallTranscriptionStateVInactive
+	CallTranscriptionStatePInactive = &_CallTranscriptionStatePInactive
+	// CallTranscriptionStatePUnknownFutureValue is a pointer to CallTranscriptionStateVUnknownFutureValue
+	CallTranscriptionStatePUnknownFutureValue = &_CallTranscriptionStatePUnknownFutureValue
+)
+
+var (
+	_CallTranscriptionStatePNotStarted         = CallTranscriptionStateVNotStarted
+	_CallTranscriptionStatePActive             = CallTranscriptionStateVActive
+	_CallTranscriptionStatePInactive           = CallTranscriptionStateVInactive
+	_CallTranscriptionStatePUnknownFutureValue = CallTranscriptionStateVUnknownFutureValue
 )

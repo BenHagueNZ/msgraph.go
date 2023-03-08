@@ -6,18 +6,18 @@ package msgraph
 type Reminder struct {
 	// Object is the base model of Reminder
 	Object
-	// EventID undocumented
-	EventID *string `json:"eventId,omitempty"`
-	// EventStartTime undocumented
-	EventStartTime *DateTimeTimeZone `json:"eventStartTime,omitempty"`
-	// EventEndTime undocumented
-	EventEndTime *DateTimeTimeZone `json:"eventEndTime,omitempty"`
 	// ChangeKey undocumented
 	ChangeKey *string `json:"changeKey,omitempty"`
-	// EventSubject undocumented
-	EventSubject *string `json:"eventSubject,omitempty"`
+	// EventEndTime undocumented
+	EventEndTime *DateTimeTimeZone `json:"eventEndTime,omitempty"`
+	// EventID undocumented
+	EventID *string `json:"eventId,omitempty"`
 	// EventLocation undocumented
 	EventLocation *Location `json:"eventLocation,omitempty"`
+	// EventStartTime undocumented
+	EventStartTime *DateTimeTimeZone `json:"eventStartTime,omitempty"`
+	// EventSubject undocumented
+	EventSubject *string `json:"eventSubject,omitempty"`
 	// EventWebLink undocumented
 	EventWebLink *string `json:"eventWebLink,omitempty"`
 	// ReminderFireTime undocumented

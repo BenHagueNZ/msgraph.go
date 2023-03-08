@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsChooseRequestBuilder struct{ BaseRequestBuilder }
 
 // Choose action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Choose(reqObj *WorkbookFunctionsChoose
 	return bb
 }
 
-//
 type WorkbookFunctionsChooseRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsChooseRequestBuilder) Request() *WorkbookFunctionsChooseRequest {
 	return &WorkbookFunctionsChooseRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsChooseRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

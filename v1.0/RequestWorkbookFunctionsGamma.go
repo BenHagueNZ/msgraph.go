@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsGammaRequestBuilder struct{ BaseRequestBuilder }
 
 // Gamma action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Gamma(reqObj *WorkbookFunctionsGammaRe
 	return bb
 }
 
-//
 type WorkbookFunctionsGammaRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsGammaRequestBuilder) Request() *WorkbookFunctionsGammaRequest {
 	return &WorkbookFunctionsGammaRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsGammaRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsGammaLnRequestBuilder struct{ BaseRequestBuilder }
 
 // GammaLn action undocumented
@@ -42,23 +37,19 @@ func (b *WorkbookFunctionsRequestBuilder) GammaLn(reqObj *WorkbookFunctionsGamma
 	return bb
 }
 
-//
 type WorkbookFunctionsGammaLnRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsGammaLnRequestBuilder) Request() *WorkbookFunctionsGammaLnRequest {
 	return &WorkbookFunctionsGammaLnRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsGammaLnRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsGammaLn_PreciseRequestBuilder struct{ BaseRequestBuilder }
 
 // GammaLn_Precise action undocumented
@@ -69,17 +60,14 @@ func (b *WorkbookFunctionsRequestBuilder) GammaLn_Precise(reqObj *WorkbookFuncti
 	return bb
 }
 
-//
 type WorkbookFunctionsGammaLn_PreciseRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsGammaLn_PreciseRequestBuilder) Request() *WorkbookFunctionsGammaLn_PreciseRequest {
 	return &WorkbookFunctionsGammaLn_PreciseRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsGammaLn_PreciseRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

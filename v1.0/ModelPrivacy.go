@@ -2,6 +2,14 @@
 
 package msgraph
 
+// Privacy undocumented
+type Privacy struct {
+	// Object is the base model of Privacy
+	Object
+	// SubjectRightsRequests undocumented
+	SubjectRightsRequests []SubjectRightsRequestObject `json:"subjectRightsRequests,omitempty"`
+}
+
 // PrivacyProfile undocumented
 type PrivacyProfile struct {
 	// Object is the base model of PrivacyProfile

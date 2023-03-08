@@ -118,6 +118,13 @@ func (r *TeamsAppAppDefinitionsCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
+// Bot is navigation property
+func (b *TeamsAppDefinitionRequestBuilder) Bot() *TeamworkBotRequestBuilder {
+	bb := &TeamworkBotRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/bot"
+	return bb
+}
+
 // TeamsApp is navigation property
 func (b *TeamsAppInstallationRequestBuilder) TeamsApp() *TeamsAppRequestBuilder {
 	bb := &TeamsAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}

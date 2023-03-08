@@ -6,12 +6,6 @@ package msgraph
 type RecurrencePattern struct {
 	// Object is the base model of RecurrencePattern
 	Object
-	// Type undocumented
-	Type *RecurrencePatternType `json:"type,omitempty"`
-	// Interval undocumented
-	Interval *int `json:"interval,omitempty"`
-	// Month undocumented
-	Month *int `json:"month,omitempty"`
 	// DayOfMonth undocumented
 	DayOfMonth *int `json:"dayOfMonth,omitempty"`
 	// DaysOfWeek undocumented
@@ -20,20 +14,26 @@ type RecurrencePattern struct {
 	FirstDayOfWeek *DayOfWeek `json:"firstDayOfWeek,omitempty"`
 	// Index undocumented
 	Index *WeekIndex `json:"index,omitempty"`
+	// Interval undocumented
+	Interval *int `json:"interval,omitempty"`
+	// Month undocumented
+	Month *int `json:"month,omitempty"`
+	// Type undocumented
+	Type *RecurrencePatternType `json:"type,omitempty"`
 }
 
 // RecurrenceRange undocumented
 type RecurrenceRange struct {
 	// Object is the base model of RecurrenceRange
 	Object
-	// Type undocumented
-	Type *RecurrenceRangeType `json:"type,omitempty"`
-	// StartDate undocumented
-	StartDate *Date `json:"startDate,omitempty"`
 	// EndDate undocumented
 	EndDate *Date `json:"endDate,omitempty"`
-	// RecurrenceTimeZone undocumented
-	RecurrenceTimeZone *string `json:"recurrenceTimeZone,omitempty"`
 	// NumberOfOccurrences undocumented
 	NumberOfOccurrences *int `json:"numberOfOccurrences,omitempty"`
+	// RecurrenceTimeZone undocumented
+	RecurrenceTimeZone *string `json:"recurrenceTimeZone,omitempty"`
+	// StartDate undocumented
+	StartDate *Date `json:"startDate,omitempty"`
+	// Type undocumented
+	Type *RecurrenceRangeType `json:"type,omitempty"`
 }

@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsPhiRequestBuilder struct{ BaseRequestBuilder }
 
 // Phi action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Phi(reqObj *WorkbookFunctionsPhiReques
 	return bb
 }
 
-//
 type WorkbookFunctionsPhiRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsPhiRequestBuilder) Request() *WorkbookFunctionsPhiRequest {
 	return &WorkbookFunctionsPhiRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsPhiRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

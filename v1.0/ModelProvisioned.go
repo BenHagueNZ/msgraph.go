@@ -2,6 +2,16 @@
 
 package msgraph
 
+// ProvisionedIdentity undocumented
+type ProvisionedIdentity struct {
+	// Identity is the base model of ProvisionedIdentity
+	Identity
+	// Details undocumented
+	Details *DetailsInfo `json:"details,omitempty"`
+	// IdentityType undocumented
+	IdentityType *string `json:"identityType,omitempty"`
+}
+
 // ProvisionedPlan undocumented
 type ProvisionedPlan struct {
 	// Object is the base model of ProvisionedPlan

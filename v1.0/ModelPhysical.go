@@ -6,16 +6,16 @@ package msgraph
 type PhysicalAddress struct {
 	// Object is the base model of PhysicalAddress
 	Object
-	// Street undocumented
-	Street *string `json:"street,omitempty"`
 	// City undocumented
 	City *string `json:"city,omitempty"`
-	// State undocumented
-	State *string `json:"state,omitempty"`
 	// CountryOrRegion undocumented
 	CountryOrRegion *string `json:"countryOrRegion,omitempty"`
 	// PostalCode undocumented
 	PostalCode *string `json:"postalCode,omitempty"`
+	// State undocumented
+	State *string `json:"state,omitempty"`
+	// Street undocumented
+	Street *string `json:"street,omitempty"`
 }
 
 // PhysicalOfficeAddress undocumented

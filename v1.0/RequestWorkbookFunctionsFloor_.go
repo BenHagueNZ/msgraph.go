@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsFloor_MathRequestBuilder struct{ BaseRequestBuilder }
 
 // Floor_Math action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Floor_Math(reqObj *WorkbookFunctionsFl
 	return bb
 }
 
-//
 type WorkbookFunctionsFloor_MathRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsFloor_MathRequestBuilder) Request() *WorkbookFunctionsFloor_MathRequest {
 	return &WorkbookFunctionsFloor_MathRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsFloor_MathRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsFloor_PreciseRequestBuilder struct{ BaseRequestBuilder }
 
 // Floor_Precise action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) Floor_Precise(reqObj *WorkbookFunction
 	return bb
 }
 
-//
 type WorkbookFunctionsFloor_PreciseRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsFloor_PreciseRequestBuilder) Request() *WorkbookFunctionsFloor_PreciseRequest {
 	return &WorkbookFunctionsFloor_PreciseRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsFloor_PreciseRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

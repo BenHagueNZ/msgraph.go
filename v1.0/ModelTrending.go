@@ -8,14 +8,14 @@ import "time"
 type Trending struct {
 	// Entity is the base model of Trending
 	Entity
-	// Weight undocumented
-	Weight *float64 `json:"weight,omitempty"`
-	// ResourceVisualization undocumented
-	ResourceVisualization *ResourceVisualization `json:"resourceVisualization,omitempty"`
-	// ResourceReference undocumented
-	ResourceReference *ResourceReference `json:"resourceReference,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// ResourceReference undocumented
+	ResourceReference *ResourceReference `json:"resourceReference,omitempty"`
+	// ResourceVisualization undocumented
+	ResourceVisualization *ResourceVisualization `json:"resourceVisualization,omitempty"`
+	// Weight undocumented
+	Weight *float64 `json:"weight,omitempty"`
 	// Resource undocumented
 	Resource *Entity `json:"resource,omitempty"`
 }

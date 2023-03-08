@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsHyperlinkRequestBuilder struct{ BaseRequestBuilder }
 
 // Hyperlink action undocumented
@@ -15,17 +14,14 @@ func (b *WorkbookFunctionsRequestBuilder) Hyperlink(reqObj *WorkbookFunctionsHyp
 	return bb
 }
 
-//
 type WorkbookFunctionsHyperlinkRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsHyperlinkRequestBuilder) Request() *WorkbookFunctionsHyperlinkRequest {
 	return &WorkbookFunctionsHyperlinkRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsHyperlinkRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

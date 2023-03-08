@@ -2,7 +2,7 @@
 
 package msgraph
 
-// ProxiedDomain undocumented
+// ProxiedDomain Proxied Domain
 type ProxiedDomain struct {
 	// Object is the base model of ProxiedDomain
 	Object

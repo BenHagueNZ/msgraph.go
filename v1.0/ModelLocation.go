@@ -6,18 +6,18 @@ package msgraph
 type Location struct {
 	// Object is the base model of Location
 	Object
+	// Address undocumented
+	Address *PhysicalAddress `json:"address,omitempty"`
+	// Coordinates undocumented
+	Coordinates *OutlookGeoCoordinates `json:"coordinates,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// LocationEmailAddress undocumented
 	LocationEmailAddress *string `json:"locationEmailAddress,omitempty"`
-	// Address undocumented
-	Address *PhysicalAddress `json:"address,omitempty"`
-	// LocationURI undocumented
-	LocationURI *string `json:"locationUri,omitempty"`
-	// Coordinates undocumented
-	Coordinates *OutlookGeoCoordinates `json:"coordinates,omitempty"`
 	// LocationType undocumented
 	LocationType *LocationType `json:"locationType,omitempty"`
+	// LocationURI undocumented
+	LocationURI *string `json:"locationUri,omitempty"`
 	// UniqueID undocumented
 	UniqueID *string `json:"uniqueId,omitempty"`
 	// UniqueIDType undocumented
@@ -28,10 +28,10 @@ type Location struct {
 type LocationConstraint struct {
 	// Object is the base model of LocationConstraint
 	Object
-	// Locations undocumented
-	Locations []LocationConstraintItem `json:"locations,omitempty"`
 	// IsRequired undocumented
 	IsRequired *bool `json:"isRequired,omitempty"`
+	// Locations undocumented
+	Locations []LocationConstraintItem `json:"locations,omitempty"`
 	// SuggestLocation undocumented
 	SuggestLocation *bool `json:"suggestLocation,omitempty"`
 }

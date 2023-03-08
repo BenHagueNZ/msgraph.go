@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsMaxRequestBuilder struct{ BaseRequestBuilder }
 
 // Max action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Max(reqObj *WorkbookFunctionsMaxReques
 	return bb
 }
 
-//
 type WorkbookFunctionsMaxRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsMaxRequestBuilder) Request() *WorkbookFunctionsMaxRequest {
 	return &WorkbookFunctionsMaxRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsMaxRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsMaxARequestBuilder struct{ BaseRequestBuilder }
 
 // MaxA action undocumented
@@ -42,17 +37,14 @@ func (b *WorkbookFunctionsRequestBuilder) MaxA(reqObj *WorkbookFunctionsMaxARequ
 	return bb
 }
 
-//
 type WorkbookFunctionsMaxARequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsMaxARequestBuilder) Request() *WorkbookFunctionsMaxARequest {
 	return &WorkbookFunctionsMaxARequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsMaxARequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

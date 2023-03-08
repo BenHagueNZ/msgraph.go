@@ -4,7 +4,6 @@ package msgraph
 
 import "context"
 
-//
 type WorkbookFunctionsDollarRequestBuilder struct{ BaseRequestBuilder }
 
 // Dollar action undocumented
@@ -15,23 +14,19 @@ func (b *WorkbookFunctionsRequestBuilder) Dollar(reqObj *WorkbookFunctionsDollar
 	return bb
 }
 
-//
 type WorkbookFunctionsDollarRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDollarRequestBuilder) Request() *WorkbookFunctionsDollarRequest {
 	return &WorkbookFunctionsDollarRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDollarRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsDollarDeRequestBuilder struct{ BaseRequestBuilder }
 
 // DollarDe action undocumented
@@ -42,23 +37,19 @@ func (b *WorkbookFunctionsRequestBuilder) DollarDe(reqObj *WorkbookFunctionsDoll
 	return bb
 }
 
-//
 type WorkbookFunctionsDollarDeRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDollarDeRequestBuilder) Request() *WorkbookFunctionsDollarDeRequest {
 	return &WorkbookFunctionsDollarDeRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDollarDeRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }
 
-//
 type WorkbookFunctionsDollarFrRequestBuilder struct{ BaseRequestBuilder }
 
 // DollarFr action undocumented
@@ -69,17 +60,14 @@ func (b *WorkbookFunctionsRequestBuilder) DollarFr(reqObj *WorkbookFunctionsDoll
 	return bb
 }
 
-//
 type WorkbookFunctionsDollarFrRequest struct{ BaseRequest }
 
-//
 func (b *WorkbookFunctionsDollarFrRequestBuilder) Request() *WorkbookFunctionsDollarFrRequest {
 	return &WorkbookFunctionsDollarFrRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-//
 func (r *WorkbookFunctionsDollarFrRequest) Post(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return

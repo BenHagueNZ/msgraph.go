@@ -6,18 +6,18 @@ package msgraph
 type SectionGroup struct {
 	// OnenoteEntityHierarchyModel is the base model of SectionGroup
 	OnenoteEntityHierarchyModel
-	// SectionsURL undocumented
-	SectionsURL *string `json:"sectionsUrl,omitempty"`
 	// SectionGroupsURL undocumented
 	SectionGroupsURL *string `json:"sectionGroupsUrl,omitempty"`
+	// SectionsURL undocumented
+	SectionsURL *string `json:"sectionsUrl,omitempty"`
 	// ParentNotebook undocumented
 	ParentNotebook *Notebook `json:"parentNotebook,omitempty"`
 	// ParentSectionGroup undocumented
 	ParentSectionGroup *SectionGroup `json:"parentSectionGroup,omitempty"`
-	// Sections undocumented
-	Sections []OnenoteSection `json:"sections,omitempty"`
 	// SectionGroups undocumented
 	SectionGroups []SectionGroup `json:"sectionGroups,omitempty"`
+	// Sections undocumented
+	Sections []OnenoteSection `json:"sections,omitempty"`
 }
 
 // SectionLinks undocumented

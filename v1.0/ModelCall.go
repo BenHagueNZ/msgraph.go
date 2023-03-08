@@ -2,46 +2,76 @@
 
 package msgraph
 
+import "time"
+
 // Call undocumented
 type Call struct {
 	// Entity is the base model of Call
 	Entity
-	// State undocumented
-	State *CallState `json:"state,omitempty"`
-	// MediaState undocumented
-	MediaState *CallMediaState `json:"mediaState,omitempty"`
-	// ResultInfo undocumented
-	ResultInfo *ResultInfo `json:"resultInfo,omitempty"`
-	// Direction undocumented
-	Direction *CallDirection `json:"direction,omitempty"`
-	// Subject undocumented
-	Subject *string `json:"subject,omitempty"`
 	// CallbackURI undocumented
 	CallbackURI *string `json:"callbackUri,omitempty"`
-	// Source undocumented
-	Source *ParticipantInfo `json:"source,omitempty"`
-	// Targets undocumented
-	Targets []InvitationParticipantInfo `json:"targets,omitempty"`
-	// RequestedModalities undocumented
-	RequestedModalities []Modality `json:"requestedModalities,omitempty"`
-	// MediaConfig undocumented
-	MediaConfig *MediaConfig `json:"mediaConfig,omitempty"`
-	// ChatInfo undocumented
-	ChatInfo *ChatInfo `json:"chatInfo,omitempty"`
+	// CallChainID undocumented
+	CallChainID *string `json:"callChainId,omitempty"`
 	// CallOptions undocumented
 	CallOptions *CallOptions `json:"callOptions,omitempty"`
+	// CallRoutes undocumented
+	CallRoutes []CallRoute `json:"callRoutes,omitempty"`
+	// ChatInfo undocumented
+	ChatInfo *ChatInfo `json:"chatInfo,omitempty"`
+	// Direction undocumented
+	Direction *CallDirection `json:"direction,omitempty"`
+	// IncomingContext undocumented
+	IncomingContext *IncomingContext `json:"incomingContext,omitempty"`
+	// MediaConfig undocumented
+	MediaConfig *MediaConfig `json:"mediaConfig,omitempty"`
+	// MediaState undocumented
+	MediaState *CallMediaState `json:"mediaState,omitempty"`
 	// MeetingInfo undocumented
 	MeetingInfo *MeetingInfo `json:"meetingInfo,omitempty"`
-	// TenantID undocumented
-	TenantID *string `json:"tenantId,omitempty"`
 	// MyParticipantID undocumented
 	MyParticipantID *string `json:"myParticipantId,omitempty"`
+	// RequestedModalities undocumented
+	RequestedModalities []Modality `json:"requestedModalities,omitempty"`
+	// ResultInfo undocumented
+	ResultInfo *ResultInfo `json:"resultInfo,omitempty"`
+	// Source undocumented
+	Source *ParticipantInfo `json:"source,omitempty"`
+	// State undocumented
+	State *CallState `json:"state,omitempty"`
+	// Subject undocumented
+	Subject *string `json:"subject,omitempty"`
+	// Targets undocumented
+	Targets []InvitationParticipantInfo `json:"targets,omitempty"`
+	// TenantID undocumented
+	TenantID *string `json:"tenantId,omitempty"`
 	// ToneInfo undocumented
 	ToneInfo *ToneInfo `json:"toneInfo,omitempty"`
-	// Participants undocumented
-	Participants []Participant `json:"participants,omitempty"`
+	// Transcription undocumented
+	Transcription *CallTranscriptionInfo `json:"transcription,omitempty"`
+	// AudioRoutingGroups undocumented
+	AudioRoutingGroups []AudioRoutingGroup `json:"audioRoutingGroups,omitempty"`
+	// ContentSharingSessions undocumented
+	ContentSharingSessions []ContentSharingSession `json:"contentSharingSessions,omitempty"`
 	// Operations undocumented
 	Operations []CommsOperation `json:"operations,omitempty"`
+	// Participants undocumented
+	Participants []Participant `json:"participants,omitempty"`
+}
+
+// CallEndedEventMessageDetail undocumented
+type CallEndedEventMessageDetail struct {
+	// EventMessageDetail is the base model of CallEndedEventMessageDetail
+	EventMessageDetail
+	// CallDuration undocumented
+	CallDuration *Duration `json:"callDuration,omitempty"`
+	// CallEventType undocumented
+	CallEventType *TeamworkCallEventType `json:"callEventType,omitempty"`
+	// CallID undocumented
+	CallID *string `json:"callId,omitempty"`
+	// CallParticipants undocumented
+	CallParticipants []CallParticipantInfo `json:"callParticipants,omitempty"`
+	// Initiator undocumented
+	Initiator *IdentitySet `json:"initiator,omitempty"`
 }
 
 // CallMediaState undocumented
@@ -56,4 +86,82 @@ type CallMediaState struct {
 type CallOptions struct {
 	// Object is the base model of CallOptions
 	Object
+	// HideBotAfterEscalation undocumented
+	HideBotAfterEscalation *bool `json:"hideBotAfterEscalation,omitempty"`
+	// IsContentSharingNotificationEnabled undocumented
+	IsContentSharingNotificationEnabled *bool `json:"isContentSharingNotificationEnabled,omitempty"`
+}
+
+// CallParticipantInfo undocumented
+type CallParticipantInfo struct {
+	// Object is the base model of CallParticipantInfo
+	Object
+	// Participant undocumented
+	Participant *IdentitySet `json:"participant,omitempty"`
+}
+
+// CallRecordingEventMessageDetail undocumented
+type CallRecordingEventMessageDetail struct {
+	// EventMessageDetail is the base model of CallRecordingEventMessageDetail
+	EventMessageDetail
+	// CallID undocumented
+	CallID *string `json:"callId,omitempty"`
+	// CallRecordingDisplayName undocumented
+	CallRecordingDisplayName *string `json:"callRecordingDisplayName,omitempty"`
+	// CallRecordingDuration undocumented
+	CallRecordingDuration *Duration `json:"callRecordingDuration,omitempty"`
+	// CallRecordingStatus undocumented
+	CallRecordingStatus *CallRecordingStatus `json:"callRecordingStatus,omitempty"`
+	// CallRecordingURL undocumented
+	CallRecordingURL *string `json:"callRecordingUrl,omitempty"`
+	// Initiator undocumented
+	Initiator *IdentitySet `json:"initiator,omitempty"`
+	// MeetingOrganizer undocumented
+	MeetingOrganizer *IdentitySet `json:"meetingOrganizer,omitempty"`
+}
+
+// CallRoute undocumented
+type CallRoute struct {
+	// Object is the base model of CallRoute
+	Object
+	// Final undocumented
+	Final *IdentitySet `json:"final,omitempty"`
+	// Original undocumented
+	Original *IdentitySet `json:"original,omitempty"`
+	// RoutingType undocumented
+	RoutingType *RoutingType `json:"routingType,omitempty"`
+}
+
+// CallStartedEventMessageDetail undocumented
+type CallStartedEventMessageDetail struct {
+	// EventMessageDetail is the base model of CallStartedEventMessageDetail
+	EventMessageDetail
+	// CallEventType undocumented
+	CallEventType *TeamworkCallEventType `json:"callEventType,omitempty"`
+	// CallID undocumented
+	CallID *string `json:"callId,omitempty"`
+	// Initiator undocumented
+	Initiator *IdentitySet `json:"initiator,omitempty"`
+}
+
+// CallTranscriptEventMessageDetail undocumented
+type CallTranscriptEventMessageDetail struct {
+	// EventMessageDetail is the base model of CallTranscriptEventMessageDetail
+	EventMessageDetail
+	// CallID undocumented
+	CallID *string `json:"callId,omitempty"`
+	// CallTranscriptICalUID undocumented
+	CallTranscriptICalUID *string `json:"callTranscriptICalUid,omitempty"`
+	// MeetingOrganizer undocumented
+	MeetingOrganizer *IdentitySet `json:"meetingOrganizer,omitempty"`
+}
+
+// CallTranscriptionInfo undocumented
+type CallTranscriptionInfo struct {
+	// Object is the base model of CallTranscriptionInfo
+	Object
+	// LastModifiedDateTime undocumented
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// State undocumented
+	State *CallTranscriptionState `json:"state,omitempty"`
 }

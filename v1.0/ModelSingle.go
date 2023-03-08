@@ -2,6 +2,26 @@
 
 package msgraph
 
+// SingleServicePrincipal undocumented
+type SingleServicePrincipal struct {
+	// SubjectSet is the base model of SingleServicePrincipal
+	SubjectSet
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// ServicePrincipalID undocumented
+	ServicePrincipalID *string `json:"servicePrincipalId,omitempty"`
+}
+
+// SingleUser undocumented
+type SingleUser struct {
+	// SubjectSet is the base model of SingleUser
+	SubjectSet
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// UserID undocumented
+	UserID *string `json:"userId,omitempty"`
+}
+
 // SingleValueLegacyExtendedProperty undocumented
 type SingleValueLegacyExtendedProperty struct {
 	// Entity is the base model of SingleValueLegacyExtendedProperty

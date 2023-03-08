@@ -10,8 +10,8 @@ type FollowupFlag struct {
 	CompletedDateTime *DateTimeTimeZone `json:"completedDateTime,omitempty"`
 	// DueDateTime undocumented
 	DueDateTime *DateTimeTimeZone `json:"dueDateTime,omitempty"`
-	// StartDateTime undocumented
-	StartDateTime *DateTimeTimeZone `json:"startDateTime,omitempty"`
 	// FlagStatus undocumented
 	FlagStatus *FollowupFlagStatus `json:"flagStatus,omitempty"`
+	// StartDateTime undocumented
+	StartDateTime *DateTimeTimeZone `json:"startDateTime,omitempty"`
 }
