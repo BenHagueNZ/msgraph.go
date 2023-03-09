@@ -11,5 +11,5 @@ type Parameter struct {
 	// Values undocumented
 	Values []string `json:"values,omitempty"`
 	// ValueType undocumented
-	ValueType *IdentityGovernance_valueType `json:"valueType,omitempty"`
+	ValueType *ValueType `json:"valueType,omitempty"`
 }

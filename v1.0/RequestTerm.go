@@ -4,6 +4,39 @@ package msgraph
 
 import "context"
 
+// TermRequestBuilder is request builder for Term
+type TermRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TermRequest
+func (b *TermRequestBuilder) Request() *TermRequest {
+	return &TermRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TermRequest is request for Term
+type TermRequest struct{ BaseRequest }
+
+// Get performs GET request for Term
+func (r *TermRequest) Get(ctx context.Context) (resObj *Term, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for Term
+func (r *TermRequest) Update(ctx context.Context, reqObj *Term) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for Term
+func (r *TermRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // TermColumnRequestBuilder is request builder for TermColumn
 type TermColumnRequestBuilder struct{ BaseRequestBuilder }
 
@@ -34,104 +67,5 @@ func (r *TermColumnRequest) Update(ctx context.Context, reqObj *TermColumn) erro
 
 // Delete performs DELETE request for TermColumn
 func (r *TermColumnRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// TermStore_setRequestBuilder is request builder for TermStore_set
-type TermStore_setRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns TermStore_setRequest
-func (b *TermStore_setRequestBuilder) Request() *TermStore_setRequest {
-	return &TermStore_setRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// TermStore_setRequest is request for TermStore_set
-type TermStore_setRequest struct{ BaseRequest }
-
-// Get performs GET request for TermStore_set
-func (r *TermStore_setRequest) Get(ctx context.Context) (resObj *TermStore_set, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for TermStore_set
-func (r *TermStore_setRequest) Update(ctx context.Context, reqObj *TermStore_set) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for TermStore_set
-func (r *TermStore_setRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// TermStore_storeRequestBuilder is request builder for TermStore_store
-type TermStore_storeRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns TermStore_storeRequest
-func (b *TermStore_storeRequestBuilder) Request() *TermStore_storeRequest {
-	return &TermStore_storeRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// TermStore_storeRequest is request for TermStore_store
-type TermStore_storeRequest struct{ BaseRequest }
-
-// Get performs GET request for TermStore_store
-func (r *TermStore_storeRequest) Get(ctx context.Context) (resObj *TermStore_store, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for TermStore_store
-func (r *TermStore_storeRequest) Update(ctx context.Context, reqObj *TermStore_store) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for TermStore_store
-func (r *TermStore_storeRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// TermStore_termRequestBuilder is request builder for TermStore_term
-type TermStore_termRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns TermStore_termRequest
-func (b *TermStore_termRequestBuilder) Request() *TermStore_termRequest {
-	return &TermStore_termRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// TermStore_termRequest is request for TermStore_term
-type TermStore_termRequest struct{ BaseRequest }
-
-// Get performs GET request for TermStore_term
-func (r *TermStore_termRequest) Get(ctx context.Context) (resObj *TermStore_term, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for TermStore_term
-func (r *TermStore_termRequest) Update(ctx context.Context, reqObj *TermStore_term) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for TermStore_term
-func (r *TermStore_termRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

@@ -24,22 +24,22 @@ func (b *CustomTaskExtensionCalloutDataRequestBuilder) Subject() *UserRequestBui
 }
 
 // Task is navigation property
-func (b *CustomTaskExtensionCalloutDataRequestBuilder) Task() *IdentityGovernance_taskRequestBuilder {
-	bb := &IdentityGovernance_taskRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *CustomTaskExtensionCalloutDataRequestBuilder) Task() *TaskRequestBuilder {
+	bb := &TaskRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/task"
 	return bb
 }
 
 // TaskProcessingresult is navigation property
-func (b *CustomTaskExtensionCalloutDataRequestBuilder) TaskProcessingresult() *IdentityGovernance_taskProcessingResultRequestBuilder {
-	bb := &IdentityGovernance_taskProcessingResultRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *CustomTaskExtensionCalloutDataRequestBuilder) TaskProcessingresult() *TaskProcessingResultRequestBuilder {
+	bb := &TaskProcessingResultRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/taskProcessingresult"
 	return bb
 }
 
 // Workflow is navigation property
-func (b *CustomTaskExtensionCalloutDataRequestBuilder) Workflow() *IdentityGovernance_workflowRequestBuilder {
-	bb := &IdentityGovernance_workflowRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *CustomTaskExtensionCalloutDataRequestBuilder) Workflow() *WorkflowRequestBuilder {
+	bb := &WorkflowRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/workflow"
 	return bb
 }

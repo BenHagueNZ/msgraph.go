@@ -4,6 +4,39 @@ package msgraph
 
 import "context"
 
+// LifecycleManagementSettingsRequestBuilder is request builder for LifecycleManagementSettings
+type LifecycleManagementSettingsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns LifecycleManagementSettingsRequest
+func (b *LifecycleManagementSettingsRequestBuilder) Request() *LifecycleManagementSettingsRequest {
+	return &LifecycleManagementSettingsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// LifecycleManagementSettingsRequest is request for LifecycleManagementSettings
+type LifecycleManagementSettingsRequest struct{ BaseRequest }
+
+// Get performs GET request for LifecycleManagementSettings
+func (r *LifecycleManagementSettingsRequest) Get(ctx context.Context) (resObj *LifecycleManagementSettings, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for LifecycleManagementSettings
+func (r *LifecycleManagementSettingsRequest) Update(ctx context.Context, reqObj *LifecycleManagementSettings) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for LifecycleManagementSettings
+func (r *LifecycleManagementSettingsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // LifecycleWorkflowsContainerRequestBuilder is request builder for LifecycleWorkflowsContainer
 type LifecycleWorkflowsContainerRequestBuilder struct{ BaseRequestBuilder }
 

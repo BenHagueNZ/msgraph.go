@@ -4,6 +4,39 @@ package msgraph
 
 import "context"
 
+// AttackSimulationRepeatOffenderRequestBuilder is request builder for AttackSimulationRepeatOffender
+type AttackSimulationRepeatOffenderRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AttackSimulationRepeatOffenderRequest
+func (b *AttackSimulationRepeatOffenderRequestBuilder) Request() *AttackSimulationRepeatOffenderRequest {
+	return &AttackSimulationRepeatOffenderRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AttackSimulationRepeatOffenderRequest is request for AttackSimulationRepeatOffender
+type AttackSimulationRepeatOffenderRequest struct{ BaseRequest }
+
+// Get performs GET request for AttackSimulationRepeatOffender
+func (r *AttackSimulationRepeatOffenderRequest) Get(ctx context.Context) (resObj *AttackSimulationRepeatOffender, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AttackSimulationRepeatOffender
+func (r *AttackSimulationRepeatOffenderRequest) Update(ctx context.Context, reqObj *AttackSimulationRepeatOffender) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AttackSimulationRepeatOffender
+func (r *AttackSimulationRepeatOffenderRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // AttackSimulationRootRequestBuilder is request builder for AttackSimulationRoot
 type AttackSimulationRootRequestBuilder struct{ BaseRequestBuilder }
 
@@ -34,5 +67,104 @@ func (r *AttackSimulationRootRequest) Update(ctx context.Context, reqObj *Attack
 
 // Delete performs DELETE request for AttackSimulationRoot
 func (r *AttackSimulationRootRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AttackSimulationSimulationUserCoverageRequestBuilder is request builder for AttackSimulationSimulationUserCoverage
+type AttackSimulationSimulationUserCoverageRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AttackSimulationSimulationUserCoverageRequest
+func (b *AttackSimulationSimulationUserCoverageRequestBuilder) Request() *AttackSimulationSimulationUserCoverageRequest {
+	return &AttackSimulationSimulationUserCoverageRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AttackSimulationSimulationUserCoverageRequest is request for AttackSimulationSimulationUserCoverage
+type AttackSimulationSimulationUserCoverageRequest struct{ BaseRequest }
+
+// Get performs GET request for AttackSimulationSimulationUserCoverage
+func (r *AttackSimulationSimulationUserCoverageRequest) Get(ctx context.Context) (resObj *AttackSimulationSimulationUserCoverage, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AttackSimulationSimulationUserCoverage
+func (r *AttackSimulationSimulationUserCoverageRequest) Update(ctx context.Context, reqObj *AttackSimulationSimulationUserCoverage) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AttackSimulationSimulationUserCoverage
+func (r *AttackSimulationSimulationUserCoverageRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AttackSimulationTrainingUserCoverageRequestBuilder is request builder for AttackSimulationTrainingUserCoverage
+type AttackSimulationTrainingUserCoverageRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AttackSimulationTrainingUserCoverageRequest
+func (b *AttackSimulationTrainingUserCoverageRequestBuilder) Request() *AttackSimulationTrainingUserCoverageRequest {
+	return &AttackSimulationTrainingUserCoverageRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AttackSimulationTrainingUserCoverageRequest is request for AttackSimulationTrainingUserCoverage
+type AttackSimulationTrainingUserCoverageRequest struct{ BaseRequest }
+
+// Get performs GET request for AttackSimulationTrainingUserCoverage
+func (r *AttackSimulationTrainingUserCoverageRequest) Get(ctx context.Context) (resObj *AttackSimulationTrainingUserCoverage, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AttackSimulationTrainingUserCoverage
+func (r *AttackSimulationTrainingUserCoverageRequest) Update(ctx context.Context, reqObj *AttackSimulationTrainingUserCoverage) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AttackSimulationTrainingUserCoverage
+func (r *AttackSimulationTrainingUserCoverageRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AttackSimulationUserRequestBuilder is request builder for AttackSimulationUser
+type AttackSimulationUserRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AttackSimulationUserRequest
+func (b *AttackSimulationUserRequestBuilder) Request() *AttackSimulationUserRequest {
+	return &AttackSimulationUserRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AttackSimulationUserRequest is request for AttackSimulationUser
+type AttackSimulationUserRequest struct{ BaseRequest }
+
+// Get performs GET request for AttackSimulationUser
+func (r *AttackSimulationUserRequest) Get(ctx context.Context) (resObj *AttackSimulationUser, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AttackSimulationUser
+func (r *AttackSimulationUserRequest) Update(ctx context.Context, reqObj *AttackSimulationUser) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AttackSimulationUser
+func (r *AttackSimulationUserRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

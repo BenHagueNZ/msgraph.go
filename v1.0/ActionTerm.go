@@ -3,15 +3,15 @@
 package msgraph
 
 // ParentTerm is navigation property
-func (b *TermColumnRequestBuilder) ParentTerm() *TermStore_termRequestBuilder {
-	bb := &TermStore_termRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *TermColumnRequestBuilder) ParentTerm() *TermRequestBuilder {
+	bb := &TermRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/parentTerm"
 	return bb
 }
 
 // TermSet is navigation property
-func (b *TermColumnRequestBuilder) TermSet() *TermStore_setRequestBuilder {
-	bb := &TermStore_setRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *TermColumnRequestBuilder) TermSet() *SetRequestBuilder {
+	bb := &SetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/termSet"
 	return bb
 }

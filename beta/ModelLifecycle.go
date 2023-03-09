@@ -15,15 +15,15 @@ type LifecycleWorkflowsContainer struct {
 	// Entity is the base model of LifecycleWorkflowsContainer
 	Entity
 	// CustomTaskExtensions undocumented
-	CustomTaskExtensions []IdentityGovernance_customTaskExtension `json:"customTaskExtensions,omitempty"`
+	CustomTaskExtensions []CustomTaskExtension `json:"customTaskExtensions,omitempty"`
 	// DeletedItems undocumented
 	DeletedItems *DeletedItemContainer `json:"deletedItems,omitempty"`
 	// Settings undocumented
-	Settings *IdentityGovernance_lifecycleManagementSettings `json:"settings,omitempty"`
+	Settings *LifecycleManagementSettings `json:"settings,omitempty"`
 	// TaskDefinitions undocumented
-	TaskDefinitions []IdentityGovernance_taskDefinition `json:"taskDefinitions,omitempty"`
+	TaskDefinitions []TaskDefinition `json:"taskDefinitions,omitempty"`
 	// Workflows undocumented
-	Workflows []IdentityGovernance_workflow `json:"workflows,omitempty"`
+	Workflows []Workflow `json:"workflows,omitempty"`
 	// WorkflowTemplates undocumented
-	WorkflowTemplates []IdentityGovernance_workflowTemplate `json:"workflowTemplates,omitempty"`
+	WorkflowTemplates []WorkflowTemplate `json:"workflowTemplates,omitempty"`
 }

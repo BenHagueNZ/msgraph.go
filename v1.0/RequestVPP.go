@@ -4,6 +4,39 @@ package msgraph
 
 import "context"
 
+// VPPLicensingTypeRequestBuilder is request builder for VPPLicensingType
+type VPPLicensingTypeRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns VPPLicensingTypeRequest
+func (b *VPPLicensingTypeRequestBuilder) Request() *VPPLicensingTypeRequest {
+	return &VPPLicensingTypeRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// VPPLicensingTypeRequest is request for VPPLicensingType
+type VPPLicensingTypeRequest struct{ BaseRequest }
+
+// Get performs GET request for VPPLicensingType
+func (r *VPPLicensingTypeRequest) Get(ctx context.Context) (resObj *VPPLicensingType, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for VPPLicensingType
+func (r *VPPLicensingTypeRequest) Update(ctx context.Context, reqObj *VPPLicensingType) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for VPPLicensingType
+func (r *VPPLicensingTypeRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // VPPTokenRequestBuilder is request builder for VPPToken
 type VPPTokenRequestBuilder struct{ BaseRequestBuilder }
 

@@ -37,6 +37,72 @@ func (r *CustomTaskExtensionRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// CustomTaskExtensionCallbackConfigurationRequestBuilder is request builder for CustomTaskExtensionCallbackConfiguration
+type CustomTaskExtensionCallbackConfigurationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns CustomTaskExtensionCallbackConfigurationRequest
+func (b *CustomTaskExtensionCallbackConfigurationRequestBuilder) Request() *CustomTaskExtensionCallbackConfigurationRequest {
+	return &CustomTaskExtensionCallbackConfigurationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// CustomTaskExtensionCallbackConfigurationRequest is request for CustomTaskExtensionCallbackConfiguration
+type CustomTaskExtensionCallbackConfigurationRequest struct{ BaseRequest }
+
+// Get performs GET request for CustomTaskExtensionCallbackConfiguration
+func (r *CustomTaskExtensionCallbackConfigurationRequest) Get(ctx context.Context) (resObj *CustomTaskExtensionCallbackConfiguration, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for CustomTaskExtensionCallbackConfiguration
+func (r *CustomTaskExtensionCallbackConfigurationRequest) Update(ctx context.Context, reqObj *CustomTaskExtensionCallbackConfiguration) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for CustomTaskExtensionCallbackConfiguration
+func (r *CustomTaskExtensionCallbackConfigurationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// CustomTaskExtensionCallbackDataRequestBuilder is request builder for CustomTaskExtensionCallbackData
+type CustomTaskExtensionCallbackDataRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns CustomTaskExtensionCallbackDataRequest
+func (b *CustomTaskExtensionCallbackDataRequestBuilder) Request() *CustomTaskExtensionCallbackDataRequest {
+	return &CustomTaskExtensionCallbackDataRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// CustomTaskExtensionCallbackDataRequest is request for CustomTaskExtensionCallbackData
+type CustomTaskExtensionCallbackDataRequest struct{ BaseRequest }
+
+// Get performs GET request for CustomTaskExtensionCallbackData
+func (r *CustomTaskExtensionCallbackDataRequest) Get(ctx context.Context) (resObj *CustomTaskExtensionCallbackData, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for CustomTaskExtensionCallbackData
+func (r *CustomTaskExtensionCallbackDataRequest) Update(ctx context.Context, reqObj *CustomTaskExtensionCallbackData) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for CustomTaskExtensionCallbackData
+func (r *CustomTaskExtensionCallbackDataRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // CustomTaskExtensionCalloutDataRequestBuilder is request builder for CustomTaskExtensionCalloutData
 type CustomTaskExtensionCalloutDataRequestBuilder struct{ BaseRequestBuilder }
 

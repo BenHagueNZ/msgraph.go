@@ -31,7 +31,7 @@ type CustomTaskExtensionCallbackData struct {
 	// CustomExtensionData is the base model of CustomTaskExtensionCallbackData
 	CustomExtensionData
 	// OperationStatus undocumented
-	OperationStatus *IdentityGovernance_customTaskExtensionOperationStatus `json:"operationStatus,omitempty"`
+	OperationStatus *CustomTaskExtensionOperationStatus `json:"operationStatus,omitempty"`
 }
 
 // CustomTaskExtensionCalloutData undocumented
@@ -41,9 +41,9 @@ type CustomTaskExtensionCalloutData struct {
 	// Subject undocumented
 	Subject *User `json:"subject,omitempty"`
 	// Task undocumented
-	Task *IdentityGovernance_task `json:"task,omitempty"`
+	Task *Task `json:"task,omitempty"`
 	// TaskProcessingresult undocumented
-	TaskProcessingresult *IdentityGovernance_taskProcessingResult `json:"taskProcessingresult,omitempty"`
+	TaskProcessingresult *TaskProcessingResult `json:"taskProcessingresult,omitempty"`
 	// Workflow undocumented
-	Workflow *IdentityGovernance_workflow `json:"workflow,omitempty"`
+	Workflow *Workflow `json:"workflow,omitempty"`
 }

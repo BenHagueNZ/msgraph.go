@@ -70,6 +70,105 @@ func (r *ScheduleChangeRequestObjectRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// ScheduleEntityRequestBuilder is request builder for ScheduleEntity
+type ScheduleEntityRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ScheduleEntityRequest
+func (b *ScheduleEntityRequestBuilder) Request() *ScheduleEntityRequest {
+	return &ScheduleEntityRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ScheduleEntityRequest is request for ScheduleEntity
+type ScheduleEntityRequest struct{ BaseRequest }
+
+// Get performs GET request for ScheduleEntity
+func (r *ScheduleEntityRequest) Get(ctx context.Context) (resObj *ScheduleEntity, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ScheduleEntity
+func (r *ScheduleEntityRequest) Update(ctx context.Context, reqObj *ScheduleEntity) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ScheduleEntity
+func (r *ScheduleEntityRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ScheduleInformationRequestBuilder is request builder for ScheduleInformation
+type ScheduleInformationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ScheduleInformationRequest
+func (b *ScheduleInformationRequestBuilder) Request() *ScheduleInformationRequest {
+	return &ScheduleInformationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ScheduleInformationRequest is request for ScheduleInformation
+type ScheduleInformationRequest struct{ BaseRequest }
+
+// Get performs GET request for ScheduleInformation
+func (r *ScheduleInformationRequest) Get(ctx context.Context) (resObj *ScheduleInformation, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ScheduleInformation
+func (r *ScheduleInformationRequest) Update(ctx context.Context, reqObj *ScheduleInformation) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ScheduleInformation
+func (r *ScheduleInformationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ScheduleItemRequestBuilder is request builder for ScheduleItem
+type ScheduleItemRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ScheduleItemRequest
+func (b *ScheduleItemRequestBuilder) Request() *ScheduleItemRequest {
+	return &ScheduleItemRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ScheduleItemRequest is request for ScheduleItem
+type ScheduleItemRequest struct{ BaseRequest }
+
+// Get performs GET request for ScheduleItem
+func (r *ScheduleItemRequest) Get(ctx context.Context) (resObj *ScheduleItem, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ScheduleItem
+func (r *ScheduleItemRequest) Update(ctx context.Context, reqObj *ScheduleItem) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ScheduleItem
+func (r *ScheduleItemRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 type ScheduleShareRequestBuilder struct{ BaseRequestBuilder }
 
 // Share action undocumented

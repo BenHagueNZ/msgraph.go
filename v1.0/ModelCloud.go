@@ -29,7 +29,7 @@ type CloudCommunications struct {
 	// Calls undocumented
 	Calls []Call `json:"calls,omitempty"`
 	// CallRecords undocumented
-	CallRecords []CallRecords_callRecord `json:"callRecords,omitempty"`
+	CallRecords []CallRecord `json:"callRecords,omitempty"`
 	// OnlineMeetings undocumented
 	OnlineMeetings []OnlineMeeting `json:"onlineMeetings,omitempty"`
 	// Presences undocumented

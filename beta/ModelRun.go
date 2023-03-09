@@ -17,7 +17,7 @@ type Run struct {
 	// LastUpdatedDateTime undocumented
 	LastUpdatedDateTime *time.Time `json:"lastUpdatedDateTime,omitempty"`
 	// ProcessingStatus undocumented
-	ProcessingStatus *IdentityGovernance_lifecycleWorkflowProcessingStatus `json:"processingStatus,omitempty"`
+	ProcessingStatus *LifecycleWorkflowProcessingStatus `json:"processingStatus,omitempty"`
 	// ScheduledDateTime undocumented
 	ScheduledDateTime *time.Time `json:"scheduledDateTime,omitempty"`
 	// StartedDateTime undocumented
@@ -31,11 +31,11 @@ type Run struct {
 	// TotalUsersCount undocumented
 	TotalUsersCount *int `json:"totalUsersCount,omitempty"`
 	// WorkflowExecutionType undocumented
-	WorkflowExecutionType *IdentityGovernance_workflowExecutionType `json:"workflowExecutionType,omitempty"`
+	WorkflowExecutionType *WorkflowExecutionType `json:"workflowExecutionType,omitempty"`
 	// TaskProcessingResults undocumented
-	TaskProcessingResults []IdentityGovernance_taskProcessingResult `json:"taskProcessingResults,omitempty"`
+	TaskProcessingResults []TaskProcessingResult `json:"taskProcessingResults,omitempty"`
 	// UserProcessingResults undocumented
-	UserProcessingResults []IdentityGovernance_userProcessingResult `json:"userProcessingResults,omitempty"`
+	UserProcessingResults []UserProcessingResult `json:"userProcessingResults,omitempty"`
 }
 
 // RunSummary undocumented

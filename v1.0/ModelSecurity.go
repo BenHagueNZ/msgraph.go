@@ -7,11 +7,11 @@ type Security struct {
 	// Entity is the base model of Security
 	Entity
 	// Cases undocumented
-	Cases *Security_casesRoot `json:"cases,omitempty"`
+	Cases *CasesRoot `json:"cases,omitempty"`
 	// Alerts_v2 undocumented
-	Alerts_v2 []Security_alert `json:"alerts_v2,omitempty"`
+	Alerts_v2 []Alert `json:"alerts_v2,omitempty"`
 	// Incidents undocumented
-	Incidents []Security_incident `json:"incidents,omitempty"`
+	Incidents []Incident `json:"incidents,omitempty"`
 	// AttackSimulation undocumented
 	AttackSimulation *AttackSimulationRoot `json:"attackSimulation,omitempty"`
 	// Alerts undocumented

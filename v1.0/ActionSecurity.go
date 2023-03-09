@@ -114,35 +114,35 @@ func (r *SecurityAlertsCollectionRequest) Add(ctx context.Context, reqObj *Alert
 	return
 }
 
-// Alerts_v2 returns request builder for Security_alert collection
+// Alerts_v2 returns request builder for Alert collection
 func (b *SecurityRequestBuilder) Alerts_v2() *SecurityAlerts_v2CollectionRequestBuilder {
 	bb := &SecurityAlerts_v2CollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/alerts_v2"
 	return bb
 }
 
-// SecurityAlerts_v2CollectionRequestBuilder is request builder for Security_alert collection
+// SecurityAlerts_v2CollectionRequestBuilder is request builder for Alert collection
 type SecurityAlerts_v2CollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for Security_alert collection
+// Request returns request for Alert collection
 func (b *SecurityAlerts_v2CollectionRequestBuilder) Request() *SecurityAlerts_v2CollectionRequest {
 	return &SecurityAlerts_v2CollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for Security_alert item
-func (b *SecurityAlerts_v2CollectionRequestBuilder) ID(id string) *Security_alertRequestBuilder {
-	bb := &Security_alertRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Alert item
+func (b *SecurityAlerts_v2CollectionRequestBuilder) ID(id string) *AlertRequestBuilder {
+	bb := &AlertRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SecurityAlerts_v2CollectionRequest is request for Security_alert collection
+// SecurityAlerts_v2CollectionRequest is request for Alert collection
 type SecurityAlerts_v2CollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for Security_alert collection
-func (r *SecurityAlerts_v2CollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Security_alert, error) {
+// Paging perfoms paging operation for Alert collection
+func (r *SecurityAlerts_v2CollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Alert, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -154,7 +154,7 @@ func (r *SecurityAlerts_v2CollectionRequest) Paging(ctx context.Context, method,
 	if err != nil {
 		return nil, err
 	}
-	var values []Security_alert
+	var values []Alert
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -168,7 +168,7 @@ func (r *SecurityAlerts_v2CollectionRequest) Paging(ctx context.Context, method,
 		}
 		var (
 			paging Paging
-			value  []Security_alert
+			value  []Alert
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -197,8 +197,8 @@ func (r *SecurityAlerts_v2CollectionRequest) Paging(ctx context.Context, method,
 	}
 }
 
-// GetN performs GET request for Security_alert collection, max N pages
-func (r *SecurityAlerts_v2CollectionRequest) GetN(ctx context.Context, n int) ([]Security_alert, error) {
+// GetN performs GET request for Alert collection, max N pages
+func (r *SecurityAlerts_v2CollectionRequest) GetN(ctx context.Context, n int) ([]Alert, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -206,13 +206,13 @@ func (r *SecurityAlerts_v2CollectionRequest) GetN(ctx context.Context, n int) ([
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for Security_alert collection
-func (r *SecurityAlerts_v2CollectionRequest) Get(ctx context.Context) ([]Security_alert, error) {
+// Get performs GET request for Alert collection
+func (r *SecurityAlerts_v2CollectionRequest) Get(ctx context.Context) ([]Alert, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for Security_alert collection
-func (r *SecurityAlerts_v2CollectionRequest) Add(ctx context.Context, reqObj *Security_alert) (resObj *Security_alert, err error) {
+// Add performs POST request for Alert collection
+func (r *SecurityAlerts_v2CollectionRequest) Add(ctx context.Context, reqObj *Alert) (resObj *Alert, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -225,41 +225,41 @@ func (b *SecurityRequestBuilder) AttackSimulation() *AttackSimulationRootRequest
 }
 
 // Cases is navigation property
-func (b *SecurityRequestBuilder) Cases() *Security_casesRootRequestBuilder {
-	bb := &Security_casesRootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *SecurityRequestBuilder) Cases() *CasesRootRequestBuilder {
+	bb := &CasesRootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/cases"
 	return bb
 }
 
-// Incidents returns request builder for Security_incident collection
+// Incidents returns request builder for Incident collection
 func (b *SecurityRequestBuilder) Incidents() *SecurityIncidentsCollectionRequestBuilder {
 	bb := &SecurityIncidentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/incidents"
 	return bb
 }
 
-// SecurityIncidentsCollectionRequestBuilder is request builder for Security_incident collection
+// SecurityIncidentsCollectionRequestBuilder is request builder for Incident collection
 type SecurityIncidentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for Security_incident collection
+// Request returns request for Incident collection
 func (b *SecurityIncidentsCollectionRequestBuilder) Request() *SecurityIncidentsCollectionRequest {
 	return &SecurityIncidentsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for Security_incident item
-func (b *SecurityIncidentsCollectionRequestBuilder) ID(id string) *Security_incidentRequestBuilder {
-	bb := &Security_incidentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Incident item
+func (b *SecurityIncidentsCollectionRequestBuilder) ID(id string) *IncidentRequestBuilder {
+	bb := &IncidentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SecurityIncidentsCollectionRequest is request for Security_incident collection
+// SecurityIncidentsCollectionRequest is request for Incident collection
 type SecurityIncidentsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for Security_incident collection
-func (r *SecurityIncidentsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Security_incident, error) {
+// Paging perfoms paging operation for Incident collection
+func (r *SecurityIncidentsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Incident, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -271,7 +271,7 @@ func (r *SecurityIncidentsCollectionRequest) Paging(ctx context.Context, method,
 	if err != nil {
 		return nil, err
 	}
-	var values []Security_incident
+	var values []Incident
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -285,7 +285,7 @@ func (r *SecurityIncidentsCollectionRequest) Paging(ctx context.Context, method,
 		}
 		var (
 			paging Paging
-			value  []Security_incident
+			value  []Incident
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -314,8 +314,8 @@ func (r *SecurityIncidentsCollectionRequest) Paging(ctx context.Context, method,
 	}
 }
 
-// GetN performs GET request for Security_incident collection, max N pages
-func (r *SecurityIncidentsCollectionRequest) GetN(ctx context.Context, n int) ([]Security_incident, error) {
+// GetN performs GET request for Incident collection, max N pages
+func (r *SecurityIncidentsCollectionRequest) GetN(ctx context.Context, n int) ([]Incident, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -323,13 +323,13 @@ func (r *SecurityIncidentsCollectionRequest) GetN(ctx context.Context, n int) ([
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for Security_incident collection
-func (r *SecurityIncidentsCollectionRequest) Get(ctx context.Context) ([]Security_incident, error) {
+// Get performs GET request for Incident collection
+func (r *SecurityIncidentsCollectionRequest) Get(ctx context.Context) ([]Incident, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for Security_incident collection
-func (r *SecurityIncidentsCollectionRequest) Add(ctx context.Context, reqObj *Security_incident) (resObj *Security_incident, err error) {
+// Add performs POST request for Incident collection
+func (r *SecurityIncidentsCollectionRequest) Add(ctx context.Context, reqObj *Incident) (resObj *Incident, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

@@ -18,35 +18,35 @@ func (b *UserProcessingResultRequestBuilder) Subject() *UserRequestBuilder {
 	return bb
 }
 
-// TaskProcessingResults returns request builder for IdentityGovernance_taskProcessingResult collection
+// TaskProcessingResults returns request builder for TaskProcessingResult collection
 func (b *UserProcessingResultRequestBuilder) TaskProcessingResults() *UserProcessingResultTaskProcessingResultsCollectionRequestBuilder {
 	bb := &UserProcessingResultTaskProcessingResultsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/taskProcessingResults"
 	return bb
 }
 
-// UserProcessingResultTaskProcessingResultsCollectionRequestBuilder is request builder for IdentityGovernance_taskProcessingResult collection
+// UserProcessingResultTaskProcessingResultsCollectionRequestBuilder is request builder for TaskProcessingResult collection
 type UserProcessingResultTaskProcessingResultsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityGovernance_taskProcessingResult collection
+// Request returns request for TaskProcessingResult collection
 func (b *UserProcessingResultTaskProcessingResultsCollectionRequestBuilder) Request() *UserProcessingResultTaskProcessingResultsCollectionRequest {
 	return &UserProcessingResultTaskProcessingResultsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityGovernance_taskProcessingResult item
-func (b *UserProcessingResultTaskProcessingResultsCollectionRequestBuilder) ID(id string) *IdentityGovernance_taskProcessingResultRequestBuilder {
-	bb := &IdentityGovernance_taskProcessingResultRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for TaskProcessingResult item
+func (b *UserProcessingResultTaskProcessingResultsCollectionRequestBuilder) ID(id string) *TaskProcessingResultRequestBuilder {
+	bb := &TaskProcessingResultRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// UserProcessingResultTaskProcessingResultsCollectionRequest is request for IdentityGovernance_taskProcessingResult collection
+// UserProcessingResultTaskProcessingResultsCollectionRequest is request for TaskProcessingResult collection
 type UserProcessingResultTaskProcessingResultsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityGovernance_taskProcessingResult collection
-func (r *UserProcessingResultTaskProcessingResultsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityGovernance_taskProcessingResult, error) {
+// Paging perfoms paging operation for TaskProcessingResult collection
+func (r *UserProcessingResultTaskProcessingResultsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TaskProcessingResult, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -58,7 +58,7 @@ func (r *UserProcessingResultTaskProcessingResultsCollectionRequest) Paging(ctx 
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityGovernance_taskProcessingResult
+	var values []TaskProcessingResult
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -72,7 +72,7 @@ func (r *UserProcessingResultTaskProcessingResultsCollectionRequest) Paging(ctx 
 		}
 		var (
 			paging Paging
-			value  []IdentityGovernance_taskProcessingResult
+			value  []TaskProcessingResult
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -101,8 +101,8 @@ func (r *UserProcessingResultTaskProcessingResultsCollectionRequest) Paging(ctx 
 	}
 }
 
-// GetN performs GET request for IdentityGovernance_taskProcessingResult collection, max N pages
-func (r *UserProcessingResultTaskProcessingResultsCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityGovernance_taskProcessingResult, error) {
+// GetN performs GET request for TaskProcessingResult collection, max N pages
+func (r *UserProcessingResultTaskProcessingResultsCollectionRequest) GetN(ctx context.Context, n int) ([]TaskProcessingResult, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -110,13 +110,13 @@ func (r *UserProcessingResultTaskProcessingResultsCollectionRequest) GetN(ctx co
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityGovernance_taskProcessingResult collection
-func (r *UserProcessingResultTaskProcessingResultsCollectionRequest) Get(ctx context.Context) ([]IdentityGovernance_taskProcessingResult, error) {
+// Get performs GET request for TaskProcessingResult collection
+func (r *UserProcessingResultTaskProcessingResultsCollectionRequest) Get(ctx context.Context) ([]TaskProcessingResult, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityGovernance_taskProcessingResult collection
-func (r *UserProcessingResultTaskProcessingResultsCollectionRequest) Add(ctx context.Context, reqObj *IdentityGovernance_taskProcessingResult) (resObj *IdentityGovernance_taskProcessingResult, err error) {
+// Add performs POST request for TaskProcessingResult collection
+func (r *UserProcessingResultTaskProcessingResultsCollectionRequest) Add(ctx context.Context, reqObj *TaskProcessingResult) (resObj *TaskProcessingResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

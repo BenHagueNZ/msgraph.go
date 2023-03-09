@@ -13,7 +13,7 @@ type UserProcessingResult struct {
 	// FailedTasksCount undocumented
 	FailedTasksCount *int `json:"failedTasksCount,omitempty"`
 	// ProcessingStatus undocumented
-	ProcessingStatus *IdentityGovernance_lifecycleWorkflowProcessingStatus `json:"processingStatus,omitempty"`
+	ProcessingStatus *LifecycleWorkflowProcessingStatus `json:"processingStatus,omitempty"`
 	// ScheduledDateTime undocumented
 	ScheduledDateTime *time.Time `json:"scheduledDateTime,omitempty"`
 	// StartedDateTime undocumented
@@ -23,13 +23,13 @@ type UserProcessingResult struct {
 	// TotalUnprocessedTasksCount undocumented
 	TotalUnprocessedTasksCount *int `json:"totalUnprocessedTasksCount,omitempty"`
 	// WorkflowExecutionType undocumented
-	WorkflowExecutionType *IdentityGovernance_workflowExecutionType `json:"workflowExecutionType,omitempty"`
+	WorkflowExecutionType *WorkflowExecutionType `json:"workflowExecutionType,omitempty"`
 	// WorkflowVersion undocumented
 	WorkflowVersion *int `json:"workflowVersion,omitempty"`
 	// Subject undocumented
 	Subject *User `json:"subject,omitempty"`
 	// TaskProcessingResults undocumented
-	TaskProcessingResults []IdentityGovernance_taskProcessingResult `json:"taskProcessingResults,omitempty"`
+	TaskProcessingResults []TaskProcessingResult `json:"taskProcessingResults,omitempty"`
 }
 
 // UserSummary undocumented

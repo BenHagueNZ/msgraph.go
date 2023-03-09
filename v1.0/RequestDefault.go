@@ -4,6 +4,39 @@ package msgraph
 
 import "context"
 
+// DefaultColumnValueRequestBuilder is request builder for DefaultColumnValue
+type DefaultColumnValueRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns DefaultColumnValueRequest
+func (b *DefaultColumnValueRequestBuilder) Request() *DefaultColumnValueRequest {
+	return &DefaultColumnValueRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// DefaultColumnValueRequest is request for DefaultColumnValue
+type DefaultColumnValueRequest struct{ BaseRequest }
+
+// Get performs GET request for DefaultColumnValue
+func (r *DefaultColumnValueRequest) Get(ctx context.Context) (resObj *DefaultColumnValue, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for DefaultColumnValue
+func (r *DefaultColumnValueRequest) Update(ctx context.Context, reqObj *DefaultColumnValue) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for DefaultColumnValue
+func (r *DefaultColumnValueRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // DefaultManagedAppProtectionRequestBuilder is request builder for DefaultManagedAppProtection
 type DefaultManagedAppProtectionRequestBuilder struct{ BaseRequestBuilder }
 
@@ -34,5 +67,38 @@ func (r *DefaultManagedAppProtectionRequest) Update(ctx context.Context, reqObj 
 
 // Delete performs DELETE request for DefaultManagedAppProtection
 func (r *DefaultManagedAppProtectionRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// DefaultUserRolePermissionsRequestBuilder is request builder for DefaultUserRolePermissions
+type DefaultUserRolePermissionsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns DefaultUserRolePermissionsRequest
+func (b *DefaultUserRolePermissionsRequestBuilder) Request() *DefaultUserRolePermissionsRequest {
+	return &DefaultUserRolePermissionsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// DefaultUserRolePermissionsRequest is request for DefaultUserRolePermissions
+type DefaultUserRolePermissionsRequest struct{ BaseRequest }
+
+// Get performs GET request for DefaultUserRolePermissions
+func (r *DefaultUserRolePermissionsRequest) Get(ctx context.Context) (resObj *DefaultUserRolePermissions, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for DefaultUserRolePermissions
+func (r *DefaultUserRolePermissionsRequest) Update(ctx context.Context, reqObj *DefaultUserRolePermissions) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for DefaultUserRolePermissions
+func (r *DefaultUserRolePermissionsRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

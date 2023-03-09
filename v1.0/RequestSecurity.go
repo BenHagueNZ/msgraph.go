@@ -69,3 +69,69 @@ func (r *SecurityReportsRootRequest) Update(ctx context.Context, reqObj *Securit
 func (r *SecurityReportsRootRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+// SecurityResourceRequestBuilder is request builder for SecurityResource
+type SecurityResourceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityResourceRequest
+func (b *SecurityResourceRequestBuilder) Request() *SecurityResourceRequest {
+	return &SecurityResourceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityResourceRequest is request for SecurityResource
+type SecurityResourceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityResource
+func (r *SecurityResourceRequest) Get(ctx context.Context) (resObj *SecurityResource, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityResource
+func (r *SecurityResourceRequest) Update(ctx context.Context, reqObj *SecurityResource) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityResource
+func (r *SecurityResourceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityVendorInformationRequestBuilder is request builder for SecurityVendorInformation
+type SecurityVendorInformationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityVendorInformationRequest
+func (b *SecurityVendorInformationRequestBuilder) Request() *SecurityVendorInformationRequest {
+	return &SecurityVendorInformationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityVendorInformationRequest is request for SecurityVendorInformation
+type SecurityVendorInformationRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityVendorInformation
+func (r *SecurityVendorInformationRequest) Get(ctx context.Context) (resObj *SecurityVendorInformation, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityVendorInformation
+func (r *SecurityVendorInformationRequest) Update(ctx context.Context, reqObj *SecurityVendorInformation) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityVendorInformation
+func (r *SecurityVendorInformationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}

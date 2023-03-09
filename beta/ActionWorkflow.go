@@ -11,6 +11,22 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
+// WorkflowActivateRequestParameter undocumented
+type WorkflowActivateRequestParameter struct {
+	// Subjects undocumented
+	Subjects []User `json:"subjects,omitempty"`
+}
+
+// WorkflowCreateNewVersionRequestParameter undocumented
+type WorkflowCreateNewVersionRequestParameter struct {
+	// Workflow undocumented
+	Workflow *Workflow `json:"workflow,omitempty"`
+}
+
+// WorkflowRestoreRequestParameter undocumented
+type WorkflowRestoreRequestParameter struct {
+}
+
 // ExecutionScope returns request builder for User collection
 func (b *WorkflowRequestBuilder) ExecutionScope() *WorkflowExecutionScopeCollectionRequestBuilder {
 	bb := &WorkflowExecutionScopeCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -114,35 +130,35 @@ func (r *WorkflowExecutionScopeCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Runs returns request builder for IdentityGovernance_run collection
+// Runs returns request builder for Run collection
 func (b *WorkflowRequestBuilder) Runs() *WorkflowRunsCollectionRequestBuilder {
 	bb := &WorkflowRunsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/runs"
 	return bb
 }
 
-// WorkflowRunsCollectionRequestBuilder is request builder for IdentityGovernance_run collection
+// WorkflowRunsCollectionRequestBuilder is request builder for Run collection
 type WorkflowRunsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityGovernance_run collection
+// Request returns request for Run collection
 func (b *WorkflowRunsCollectionRequestBuilder) Request() *WorkflowRunsCollectionRequest {
 	return &WorkflowRunsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityGovernance_run item
-func (b *WorkflowRunsCollectionRequestBuilder) ID(id string) *IdentityGovernance_runRequestBuilder {
-	bb := &IdentityGovernance_runRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Run item
+func (b *WorkflowRunsCollectionRequestBuilder) ID(id string) *RunRequestBuilder {
+	bb := &RunRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WorkflowRunsCollectionRequest is request for IdentityGovernance_run collection
+// WorkflowRunsCollectionRequest is request for Run collection
 type WorkflowRunsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityGovernance_run collection
-func (r *WorkflowRunsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityGovernance_run, error) {
+// Paging perfoms paging operation for Run collection
+func (r *WorkflowRunsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Run, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -154,7 +170,7 @@ func (r *WorkflowRunsCollectionRequest) Paging(ctx context.Context, method, path
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityGovernance_run
+	var values []Run
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -168,7 +184,7 @@ func (r *WorkflowRunsCollectionRequest) Paging(ctx context.Context, method, path
 		}
 		var (
 			paging Paging
-			value  []IdentityGovernance_run
+			value  []Run
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -197,8 +213,8 @@ func (r *WorkflowRunsCollectionRequest) Paging(ctx context.Context, method, path
 	}
 }
 
-// GetN performs GET request for IdentityGovernance_run collection, max N pages
-func (r *WorkflowRunsCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityGovernance_run, error) {
+// GetN performs GET request for Run collection, max N pages
+func (r *WorkflowRunsCollectionRequest) GetN(ctx context.Context, n int) ([]Run, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -206,46 +222,46 @@ func (r *WorkflowRunsCollectionRequest) GetN(ctx context.Context, n int) ([]Iden
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityGovernance_run collection
-func (r *WorkflowRunsCollectionRequest) Get(ctx context.Context) ([]IdentityGovernance_run, error) {
+// Get performs GET request for Run collection
+func (r *WorkflowRunsCollectionRequest) Get(ctx context.Context) ([]Run, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityGovernance_run collection
-func (r *WorkflowRunsCollectionRequest) Add(ctx context.Context, reqObj *IdentityGovernance_run) (resObj *IdentityGovernance_run, err error) {
+// Add performs POST request for Run collection
+func (r *WorkflowRunsCollectionRequest) Add(ctx context.Context, reqObj *Run) (resObj *Run, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// TaskReports returns request builder for IdentityGovernance_taskReport collection
+// TaskReports returns request builder for TaskReport collection
 func (b *WorkflowRequestBuilder) TaskReports() *WorkflowTaskReportsCollectionRequestBuilder {
 	bb := &WorkflowTaskReportsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/taskReports"
 	return bb
 }
 
-// WorkflowTaskReportsCollectionRequestBuilder is request builder for IdentityGovernance_taskReport collection
+// WorkflowTaskReportsCollectionRequestBuilder is request builder for TaskReport collection
 type WorkflowTaskReportsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityGovernance_taskReport collection
+// Request returns request for TaskReport collection
 func (b *WorkflowTaskReportsCollectionRequestBuilder) Request() *WorkflowTaskReportsCollectionRequest {
 	return &WorkflowTaskReportsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityGovernance_taskReport item
-func (b *WorkflowTaskReportsCollectionRequestBuilder) ID(id string) *IdentityGovernance_taskReportRequestBuilder {
-	bb := &IdentityGovernance_taskReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for TaskReport item
+func (b *WorkflowTaskReportsCollectionRequestBuilder) ID(id string) *TaskReportRequestBuilder {
+	bb := &TaskReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WorkflowTaskReportsCollectionRequest is request for IdentityGovernance_taskReport collection
+// WorkflowTaskReportsCollectionRequest is request for TaskReport collection
 type WorkflowTaskReportsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityGovernance_taskReport collection
-func (r *WorkflowTaskReportsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityGovernance_taskReport, error) {
+// Paging perfoms paging operation for TaskReport collection
+func (r *WorkflowTaskReportsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TaskReport, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -257,7 +273,7 @@ func (r *WorkflowTaskReportsCollectionRequest) Paging(ctx context.Context, metho
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityGovernance_taskReport
+	var values []TaskReport
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -271,7 +287,7 @@ func (r *WorkflowTaskReportsCollectionRequest) Paging(ctx context.Context, metho
 		}
 		var (
 			paging Paging
-			value  []IdentityGovernance_taskReport
+			value  []TaskReport
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -300,8 +316,8 @@ func (r *WorkflowTaskReportsCollectionRequest) Paging(ctx context.Context, metho
 	}
 }
 
-// GetN performs GET request for IdentityGovernance_taskReport collection, max N pages
-func (r *WorkflowTaskReportsCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityGovernance_taskReport, error) {
+// GetN performs GET request for TaskReport collection, max N pages
+func (r *WorkflowTaskReportsCollectionRequest) GetN(ctx context.Context, n int) ([]TaskReport, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -309,46 +325,46 @@ func (r *WorkflowTaskReportsCollectionRequest) GetN(ctx context.Context, n int) 
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityGovernance_taskReport collection
-func (r *WorkflowTaskReportsCollectionRequest) Get(ctx context.Context) ([]IdentityGovernance_taskReport, error) {
+// Get performs GET request for TaskReport collection
+func (r *WorkflowTaskReportsCollectionRequest) Get(ctx context.Context) ([]TaskReport, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityGovernance_taskReport collection
-func (r *WorkflowTaskReportsCollectionRequest) Add(ctx context.Context, reqObj *IdentityGovernance_taskReport) (resObj *IdentityGovernance_taskReport, err error) {
+// Add performs POST request for TaskReport collection
+func (r *WorkflowTaskReportsCollectionRequest) Add(ctx context.Context, reqObj *TaskReport) (resObj *TaskReport, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// UserProcessingResults returns request builder for IdentityGovernance_userProcessingResult collection
+// UserProcessingResults returns request builder for UserProcessingResult collection
 func (b *WorkflowRequestBuilder) UserProcessingResults() *WorkflowUserProcessingResultsCollectionRequestBuilder {
 	bb := &WorkflowUserProcessingResultsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/userProcessingResults"
 	return bb
 }
 
-// WorkflowUserProcessingResultsCollectionRequestBuilder is request builder for IdentityGovernance_userProcessingResult collection
+// WorkflowUserProcessingResultsCollectionRequestBuilder is request builder for UserProcessingResult collection
 type WorkflowUserProcessingResultsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityGovernance_userProcessingResult collection
+// Request returns request for UserProcessingResult collection
 func (b *WorkflowUserProcessingResultsCollectionRequestBuilder) Request() *WorkflowUserProcessingResultsCollectionRequest {
 	return &WorkflowUserProcessingResultsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityGovernance_userProcessingResult item
-func (b *WorkflowUserProcessingResultsCollectionRequestBuilder) ID(id string) *IdentityGovernance_userProcessingResultRequestBuilder {
-	bb := &IdentityGovernance_userProcessingResultRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for UserProcessingResult item
+func (b *WorkflowUserProcessingResultsCollectionRequestBuilder) ID(id string) *UserProcessingResultRequestBuilder {
+	bb := &UserProcessingResultRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WorkflowUserProcessingResultsCollectionRequest is request for IdentityGovernance_userProcessingResult collection
+// WorkflowUserProcessingResultsCollectionRequest is request for UserProcessingResult collection
 type WorkflowUserProcessingResultsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityGovernance_userProcessingResult collection
-func (r *WorkflowUserProcessingResultsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityGovernance_userProcessingResult, error) {
+// Paging perfoms paging operation for UserProcessingResult collection
+func (r *WorkflowUserProcessingResultsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UserProcessingResult, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -360,7 +376,7 @@ func (r *WorkflowUserProcessingResultsCollectionRequest) Paging(ctx context.Cont
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityGovernance_userProcessingResult
+	var values []UserProcessingResult
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -374,7 +390,7 @@ func (r *WorkflowUserProcessingResultsCollectionRequest) Paging(ctx context.Cont
 		}
 		var (
 			paging Paging
-			value  []IdentityGovernance_userProcessingResult
+			value  []UserProcessingResult
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -403,8 +419,8 @@ func (r *WorkflowUserProcessingResultsCollectionRequest) Paging(ctx context.Cont
 	}
 }
 
-// GetN performs GET request for IdentityGovernance_userProcessingResult collection, max N pages
-func (r *WorkflowUserProcessingResultsCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityGovernance_userProcessingResult, error) {
+// GetN performs GET request for UserProcessingResult collection, max N pages
+func (r *WorkflowUserProcessingResultsCollectionRequest) GetN(ctx context.Context, n int) ([]UserProcessingResult, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -412,46 +428,46 @@ func (r *WorkflowUserProcessingResultsCollectionRequest) GetN(ctx context.Contex
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityGovernance_userProcessingResult collection
-func (r *WorkflowUserProcessingResultsCollectionRequest) Get(ctx context.Context) ([]IdentityGovernance_userProcessingResult, error) {
+// Get performs GET request for UserProcessingResult collection
+func (r *WorkflowUserProcessingResultsCollectionRequest) Get(ctx context.Context) ([]UserProcessingResult, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityGovernance_userProcessingResult collection
-func (r *WorkflowUserProcessingResultsCollectionRequest) Add(ctx context.Context, reqObj *IdentityGovernance_userProcessingResult) (resObj *IdentityGovernance_userProcessingResult, err error) {
+// Add performs POST request for UserProcessingResult collection
+func (r *WorkflowUserProcessingResultsCollectionRequest) Add(ctx context.Context, reqObj *UserProcessingResult) (resObj *UserProcessingResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// Versions returns request builder for IdentityGovernance_workflowVersion collection
+// Versions returns request builder for WorkflowVersion collection
 func (b *WorkflowRequestBuilder) Versions() *WorkflowVersionsCollectionRequestBuilder {
 	bb := &WorkflowVersionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/versions"
 	return bb
 }
 
-// WorkflowVersionsCollectionRequestBuilder is request builder for IdentityGovernance_workflowVersion collection
+// WorkflowVersionsCollectionRequestBuilder is request builder for WorkflowVersion collection
 type WorkflowVersionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityGovernance_workflowVersion collection
+// Request returns request for WorkflowVersion collection
 func (b *WorkflowVersionsCollectionRequestBuilder) Request() *WorkflowVersionsCollectionRequest {
 	return &WorkflowVersionsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityGovernance_workflowVersion item
-func (b *WorkflowVersionsCollectionRequestBuilder) ID(id string) *IdentityGovernance_workflowVersionRequestBuilder {
-	bb := &IdentityGovernance_workflowVersionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for WorkflowVersion item
+func (b *WorkflowVersionsCollectionRequestBuilder) ID(id string) *WorkflowVersionRequestBuilder {
+	bb := &WorkflowVersionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WorkflowVersionsCollectionRequest is request for IdentityGovernance_workflowVersion collection
+// WorkflowVersionsCollectionRequest is request for WorkflowVersion collection
 type WorkflowVersionsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityGovernance_workflowVersion collection
-func (r *WorkflowVersionsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityGovernance_workflowVersion, error) {
+// Paging perfoms paging operation for WorkflowVersion collection
+func (r *WorkflowVersionsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]WorkflowVersion, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -463,7 +479,7 @@ func (r *WorkflowVersionsCollectionRequest) Paging(ctx context.Context, method, 
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityGovernance_workflowVersion
+	var values []WorkflowVersion
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -477,7 +493,7 @@ func (r *WorkflowVersionsCollectionRequest) Paging(ctx context.Context, method, 
 		}
 		var (
 			paging Paging
-			value  []IdentityGovernance_workflowVersion
+			value  []WorkflowVersion
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -506,8 +522,8 @@ func (r *WorkflowVersionsCollectionRequest) Paging(ctx context.Context, method, 
 	}
 }
 
-// GetN performs GET request for IdentityGovernance_workflowVersion collection, max N pages
-func (r *WorkflowVersionsCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityGovernance_workflowVersion, error) {
+// GetN performs GET request for WorkflowVersion collection, max N pages
+func (r *WorkflowVersionsCollectionRequest) GetN(ctx context.Context, n int) ([]WorkflowVersion, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -515,13 +531,13 @@ func (r *WorkflowVersionsCollectionRequest) GetN(ctx context.Context, n int) ([]
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityGovernance_workflowVersion collection
-func (r *WorkflowVersionsCollectionRequest) Get(ctx context.Context) ([]IdentityGovernance_workflowVersion, error) {
+// Get performs GET request for WorkflowVersion collection
+func (r *WorkflowVersionsCollectionRequest) Get(ctx context.Context) ([]WorkflowVersion, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityGovernance_workflowVersion collection
-func (r *WorkflowVersionsCollectionRequest) Add(ctx context.Context, reqObj *IdentityGovernance_workflowVersion) (resObj *IdentityGovernance_workflowVersion, err error) {
+// Add performs POST request for WorkflowVersion collection
+func (r *WorkflowVersionsCollectionRequest) Add(ctx context.Context, reqObj *WorkflowVersion) (resObj *WorkflowVersion, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -540,35 +556,35 @@ func (b *WorkflowBaseRequestBuilder) LastModifiedBy() *UserRequestBuilder {
 	return bb
 }
 
-// Tasks returns request builder for IdentityGovernance_task collection
+// Tasks returns request builder for Task collection
 func (b *WorkflowBaseRequestBuilder) Tasks() *WorkflowBaseTasksCollectionRequestBuilder {
 	bb := &WorkflowBaseTasksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tasks"
 	return bb
 }
 
-// WorkflowBaseTasksCollectionRequestBuilder is request builder for IdentityGovernance_task collection
+// WorkflowBaseTasksCollectionRequestBuilder is request builder for Task collection
 type WorkflowBaseTasksCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityGovernance_task collection
+// Request returns request for Task collection
 func (b *WorkflowBaseTasksCollectionRequestBuilder) Request() *WorkflowBaseTasksCollectionRequest {
 	return &WorkflowBaseTasksCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityGovernance_task item
-func (b *WorkflowBaseTasksCollectionRequestBuilder) ID(id string) *IdentityGovernance_taskRequestBuilder {
-	bb := &IdentityGovernance_taskRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Task item
+func (b *WorkflowBaseTasksCollectionRequestBuilder) ID(id string) *TaskRequestBuilder {
+	bb := &TaskRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WorkflowBaseTasksCollectionRequest is request for IdentityGovernance_task collection
+// WorkflowBaseTasksCollectionRequest is request for Task collection
 type WorkflowBaseTasksCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityGovernance_task collection
-func (r *WorkflowBaseTasksCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityGovernance_task, error) {
+// Paging perfoms paging operation for Task collection
+func (r *WorkflowBaseTasksCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Task, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -580,7 +596,7 @@ func (r *WorkflowBaseTasksCollectionRequest) Paging(ctx context.Context, method,
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityGovernance_task
+	var values []Task
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -594,7 +610,7 @@ func (r *WorkflowBaseTasksCollectionRequest) Paging(ctx context.Context, method,
 		}
 		var (
 			paging Paging
-			value  []IdentityGovernance_task
+			value  []Task
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -623,8 +639,8 @@ func (r *WorkflowBaseTasksCollectionRequest) Paging(ctx context.Context, method,
 	}
 }
 
-// GetN performs GET request for IdentityGovernance_task collection, max N pages
-func (r *WorkflowBaseTasksCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityGovernance_task, error) {
+// GetN performs GET request for Task collection, max N pages
+func (r *WorkflowBaseTasksCollectionRequest) GetN(ctx context.Context, n int) ([]Task, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -632,46 +648,46 @@ func (r *WorkflowBaseTasksCollectionRequest) GetN(ctx context.Context, n int) ([
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityGovernance_task collection
-func (r *WorkflowBaseTasksCollectionRequest) Get(ctx context.Context) ([]IdentityGovernance_task, error) {
+// Get performs GET request for Task collection
+func (r *WorkflowBaseTasksCollectionRequest) Get(ctx context.Context) ([]Task, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityGovernance_task collection
-func (r *WorkflowBaseTasksCollectionRequest) Add(ctx context.Context, reqObj *IdentityGovernance_task) (resObj *IdentityGovernance_task, err error) {
+// Add performs POST request for Task collection
+func (r *WorkflowBaseTasksCollectionRequest) Add(ctx context.Context, reqObj *Task) (resObj *Task, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// Tasks returns request builder for IdentityGovernance_task collection
+// Tasks returns request builder for Task collection
 func (b *WorkflowTemplateRequestBuilder) Tasks() *WorkflowTemplateTasksCollectionRequestBuilder {
 	bb := &WorkflowTemplateTasksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tasks"
 	return bb
 }
 
-// WorkflowTemplateTasksCollectionRequestBuilder is request builder for IdentityGovernance_task collection
+// WorkflowTemplateTasksCollectionRequestBuilder is request builder for Task collection
 type WorkflowTemplateTasksCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityGovernance_task collection
+// Request returns request for Task collection
 func (b *WorkflowTemplateTasksCollectionRequestBuilder) Request() *WorkflowTemplateTasksCollectionRequest {
 	return &WorkflowTemplateTasksCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityGovernance_task item
-func (b *WorkflowTemplateTasksCollectionRequestBuilder) ID(id string) *IdentityGovernance_taskRequestBuilder {
-	bb := &IdentityGovernance_taskRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Task item
+func (b *WorkflowTemplateTasksCollectionRequestBuilder) ID(id string) *TaskRequestBuilder {
+	bb := &TaskRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WorkflowTemplateTasksCollectionRequest is request for IdentityGovernance_task collection
+// WorkflowTemplateTasksCollectionRequest is request for Task collection
 type WorkflowTemplateTasksCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityGovernance_task collection
-func (r *WorkflowTemplateTasksCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityGovernance_task, error) {
+// Paging perfoms paging operation for Task collection
+func (r *WorkflowTemplateTasksCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Task, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -683,7 +699,7 @@ func (r *WorkflowTemplateTasksCollectionRequest) Paging(ctx context.Context, met
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityGovernance_task
+	var values []Task
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -697,7 +713,7 @@ func (r *WorkflowTemplateTasksCollectionRequest) Paging(ctx context.Context, met
 		}
 		var (
 			paging Paging
-			value  []IdentityGovernance_task
+			value  []Task
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -726,8 +742,8 @@ func (r *WorkflowTemplateTasksCollectionRequest) Paging(ctx context.Context, met
 	}
 }
 
-// GetN performs GET request for IdentityGovernance_task collection, max N pages
-func (r *WorkflowTemplateTasksCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityGovernance_task, error) {
+// GetN performs GET request for Task collection, max N pages
+func (r *WorkflowTemplateTasksCollectionRequest) GetN(ctx context.Context, n int) ([]Task, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -735,13 +751,13 @@ func (r *WorkflowTemplateTasksCollectionRequest) GetN(ctx context.Context, n int
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityGovernance_task collection
-func (r *WorkflowTemplateTasksCollectionRequest) Get(ctx context.Context) ([]IdentityGovernance_task, error) {
+// Get performs GET request for Task collection
+func (r *WorkflowTemplateTasksCollectionRequest) Get(ctx context.Context) ([]Task, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityGovernance_task collection
-func (r *WorkflowTemplateTasksCollectionRequest) Add(ctx context.Context, reqObj *IdentityGovernance_task) (resObj *IdentityGovernance_task, err error) {
+// Add performs POST request for Task collection
+func (r *WorkflowTemplateTasksCollectionRequest) Add(ctx context.Context, reqObj *Task) (resObj *Task, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

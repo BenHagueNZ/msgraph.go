@@ -11,7 +11,7 @@ type Task struct {
 	// Arguments undocumented
 	Arguments []KeyValuePair `json:"arguments,omitempty"`
 	// Category undocumented
-	Category *IdentityGovernance_lifecycleTaskCategory `json:"category,omitempty"`
+	Category *LifecycleTaskCategory `json:"category,omitempty"`
 	// ContinueOnError undocumented
 	ContinueOnError *bool `json:"continueOnError,omitempty"`
 	// Description undocumented
@@ -25,7 +25,7 @@ type Task struct {
 	// TaskDefinitionID undocumented
 	TaskDefinitionID *string `json:"taskDefinitionId,omitempty"`
 	// TaskProcessingResults undocumented
-	TaskProcessingResults []IdentityGovernance_taskProcessingResult `json:"taskProcessingResults,omitempty"`
+	TaskProcessingResults []TaskProcessingResult `json:"taskProcessingResults,omitempty"`
 }
 
 // TaskDefinition undocumented
@@ -33,7 +33,7 @@ type TaskDefinition struct {
 	// Entity is the base model of TaskDefinition
 	Entity
 	// Category undocumented
-	Category *IdentityGovernance_lifecycleTaskCategory `json:"category,omitempty"`
+	Category *LifecycleTaskCategory `json:"category,omitempty"`
 	// ContinueOnError undocumented
 	ContinueOnError *bool `json:"continueOnError,omitempty"`
 	// Description undocumented
@@ -41,7 +41,7 @@ type TaskDefinition struct {
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Parameters undocumented
-	Parameters []IdentityGovernance_parameter `json:"parameters,omitempty"`
+	Parameters []Parameter `json:"parameters,omitempty"`
 	// Version undocumented
 	Version *int `json:"version,omitempty"`
 }
@@ -57,13 +57,13 @@ type TaskProcessingResult struct {
 	// FailureReason undocumented
 	FailureReason *string `json:"failureReason,omitempty"`
 	// ProcessingStatus undocumented
-	ProcessingStatus *IdentityGovernance_lifecycleWorkflowProcessingStatus `json:"processingStatus,omitempty"`
+	ProcessingStatus *LifecycleWorkflowProcessingStatus `json:"processingStatus,omitempty"`
 	// StartedDateTime undocumented
 	StartedDateTime *time.Time `json:"startedDateTime,omitempty"`
 	// Subject undocumented
 	Subject *User `json:"subject,omitempty"`
 	// Task undocumented
-	Task *IdentityGovernance_task `json:"task,omitempty"`
+	Task *Task `json:"task,omitempty"`
 }
 
 // TaskReport undocumented
@@ -77,7 +77,7 @@ type TaskReport struct {
 	// LastUpdatedDateTime undocumented
 	LastUpdatedDateTime *time.Time `json:"lastUpdatedDateTime,omitempty"`
 	// ProcessingStatus undocumented
-	ProcessingStatus *IdentityGovernance_lifecycleWorkflowProcessingStatus `json:"processingStatus,omitempty"`
+	ProcessingStatus *LifecycleWorkflowProcessingStatus `json:"processingStatus,omitempty"`
 	// RunID undocumented
 	RunID *string `json:"runId,omitempty"`
 	// StartedDateTime undocumented
@@ -89,11 +89,11 @@ type TaskReport struct {
 	// UnprocessedUsersCount undocumented
 	UnprocessedUsersCount *int `json:"unprocessedUsersCount,omitempty"`
 	// Task undocumented
-	Task *IdentityGovernance_task `json:"task,omitempty"`
+	Task *Task `json:"task,omitempty"`
 	// TaskDefinition undocumented
-	TaskDefinition *IdentityGovernance_taskDefinition `json:"taskDefinition,omitempty"`
+	TaskDefinition *TaskDefinition `json:"taskDefinition,omitempty"`
 	// TaskProcessingResults undocumented
-	TaskProcessingResults []IdentityGovernance_taskProcessingResult `json:"taskProcessingResults,omitempty"`
+	TaskProcessingResults []TaskProcessingResult `json:"taskProcessingResults,omitempty"`
 }
 
 // TaskReportSummary undocumented

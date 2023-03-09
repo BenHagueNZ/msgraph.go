@@ -732,35 +732,35 @@ func (r *GraphServiceChatsCollectionRequest) Add(ctx context.Context, reqObj *Ch
 	return
 }
 
-// Connections returns request builder for ExternalConnectors_externalConnection collection
+// Connections returns request builder for ExternalConnection collection
 func (b *GraphServiceRequestBuilder) Connections() *GraphServiceConnectionsCollectionRequestBuilder {
 	bb := &GraphServiceConnectionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/connections"
 	return bb
 }
 
-// GraphServiceConnectionsCollectionRequestBuilder is request builder for ExternalConnectors_externalConnection collection
+// GraphServiceConnectionsCollectionRequestBuilder is request builder for ExternalConnection collection
 type GraphServiceConnectionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for ExternalConnectors_externalConnection collection
+// Request returns request for ExternalConnection collection
 func (b *GraphServiceConnectionsCollectionRequestBuilder) Request() *GraphServiceConnectionsCollectionRequest {
 	return &GraphServiceConnectionsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for ExternalConnectors_externalConnection item
-func (b *GraphServiceConnectionsCollectionRequestBuilder) ID(id string) *ExternalConnectors_externalConnectionRequestBuilder {
-	bb := &ExternalConnectors_externalConnectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for ExternalConnection item
+func (b *GraphServiceConnectionsCollectionRequestBuilder) ID(id string) *ExternalConnectionRequestBuilder {
+	bb := &ExternalConnectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// GraphServiceConnectionsCollectionRequest is request for ExternalConnectors_externalConnection collection
+// GraphServiceConnectionsCollectionRequest is request for ExternalConnection collection
 type GraphServiceConnectionsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for ExternalConnectors_externalConnection collection
-func (r *GraphServiceConnectionsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ExternalConnectors_externalConnection, error) {
+// Paging perfoms paging operation for ExternalConnection collection
+func (r *GraphServiceConnectionsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ExternalConnection, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -772,7 +772,7 @@ func (r *GraphServiceConnectionsCollectionRequest) Paging(ctx context.Context, m
 	if err != nil {
 		return nil, err
 	}
-	var values []ExternalConnectors_externalConnection
+	var values []ExternalConnection
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -786,7 +786,7 @@ func (r *GraphServiceConnectionsCollectionRequest) Paging(ctx context.Context, m
 		}
 		var (
 			paging Paging
-			value  []ExternalConnectors_externalConnection
+			value  []ExternalConnection
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -815,8 +815,8 @@ func (r *GraphServiceConnectionsCollectionRequest) Paging(ctx context.Context, m
 	}
 }
 
-// GetN performs GET request for ExternalConnectors_externalConnection collection, max N pages
-func (r *GraphServiceConnectionsCollectionRequest) GetN(ctx context.Context, n int) ([]ExternalConnectors_externalConnection, error) {
+// GetN performs GET request for ExternalConnection collection, max N pages
+func (r *GraphServiceConnectionsCollectionRequest) GetN(ctx context.Context, n int) ([]ExternalConnection, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -824,13 +824,13 @@ func (r *GraphServiceConnectionsCollectionRequest) GetN(ctx context.Context, n i
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for ExternalConnectors_externalConnection collection
-func (r *GraphServiceConnectionsCollectionRequest) Get(ctx context.Context) ([]ExternalConnectors_externalConnection, error) {
+// Get performs GET request for ExternalConnection collection
+func (r *GraphServiceConnectionsCollectionRequest) Get(ctx context.Context) ([]ExternalConnection, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for ExternalConnectors_externalConnection collection
-func (r *GraphServiceConnectionsCollectionRequest) Add(ctx context.Context, reqObj *ExternalConnectors_externalConnection) (resObj *ExternalConnectors_externalConnection, err error) {
+// Add performs POST request for ExternalConnection collection
+func (r *GraphServiceConnectionsCollectionRequest) Add(ctx context.Context, reqObj *ExternalConnection) (resObj *ExternalConnection, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -4113,8 +4113,8 @@ func (b *GraphServiceRequestBuilder) Education() *EducationRootRequestBuilder {
 }
 
 // External is navigation property
-func (b *GraphServiceRequestBuilder) External() *ExternalConnectors_externalRequestBuilder {
-	bb := &ExternalConnectors_externalRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *GraphServiceRequestBuilder) External() *ExternalRequestBuilder {
+	bb := &ExternalRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/external"
 	return bb
 }

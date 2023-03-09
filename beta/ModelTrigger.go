@@ -4,10 +4,10 @@ package msgraph
 
 // TriggerAndScopeBasedConditions undocumented
 type TriggerAndScopeBasedConditions struct {
-	// IdentityGovernance_workflowExecutionConditions is the base model of TriggerAndScopeBasedConditions
-	IdentityGovernance_workflowExecutionConditions
+	// WorkflowExecutionConditions is the base model of TriggerAndScopeBasedConditions
+	WorkflowExecutionConditions
 	// Scope undocumented
 	Scope *SubjectSet `json:"scope,omitempty"`
 	// Trigger undocumented
-	Trigger *IdentityGovernance_workflowExecutionTrigger `json:"trigger,omitempty"`
+	Trigger *WorkflowExecutionTrigger `json:"trigger,omitempty"`
 }

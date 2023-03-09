@@ -4,6 +4,39 @@ package msgraph
 
 import "context"
 
+// MailAssessmentRequestObjectRequestBuilder is request builder for MailAssessmentRequestObject
+type MailAssessmentRequestObjectRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns MailAssessmentRequestObjectRequest
+func (b *MailAssessmentRequestObjectRequestBuilder) Request() *MailAssessmentRequestObjectRequest {
+	return &MailAssessmentRequestObjectRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// MailAssessmentRequestObjectRequest is request for MailAssessmentRequestObject
+type MailAssessmentRequestObjectRequest struct{ BaseRequest }
+
+// Get performs GET request for MailAssessmentRequestObject
+func (r *MailAssessmentRequestObjectRequest) Get(ctx context.Context) (resObj *MailAssessmentRequestObject, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for MailAssessmentRequestObject
+func (r *MailAssessmentRequestObjectRequest) Update(ctx context.Context, reqObj *MailAssessmentRequestObject) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for MailAssessmentRequestObject
+func (r *MailAssessmentRequestObjectRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // MailFolderRequestBuilder is request builder for MailFolder
 type MailFolderRequestBuilder struct{ BaseRequestBuilder }
 
@@ -34,6 +67,105 @@ func (r *MailFolderRequest) Update(ctx context.Context, reqObj *MailFolder) erro
 
 // Delete performs DELETE request for MailFolder
 func (r *MailFolderRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// MailSearchFolderRequestBuilder is request builder for MailSearchFolder
+type MailSearchFolderRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns MailSearchFolderRequest
+func (b *MailSearchFolderRequestBuilder) Request() *MailSearchFolderRequest {
+	return &MailSearchFolderRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// MailSearchFolderRequest is request for MailSearchFolder
+type MailSearchFolderRequest struct{ BaseRequest }
+
+// Get performs GET request for MailSearchFolder
+func (r *MailSearchFolderRequest) Get(ctx context.Context) (resObj *MailSearchFolder, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for MailSearchFolder
+func (r *MailSearchFolderRequest) Update(ctx context.Context, reqObj *MailSearchFolder) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for MailSearchFolder
+func (r *MailSearchFolderRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// MailTipsRequestBuilder is request builder for MailTips
+type MailTipsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns MailTipsRequest
+func (b *MailTipsRequestBuilder) Request() *MailTipsRequest {
+	return &MailTipsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// MailTipsRequest is request for MailTips
+type MailTipsRequest struct{ BaseRequest }
+
+// Get performs GET request for MailTips
+func (r *MailTipsRequest) Get(ctx context.Context) (resObj *MailTips, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for MailTips
+func (r *MailTipsRequest) Update(ctx context.Context, reqObj *MailTips) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for MailTips
+func (r *MailTipsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// MailTipsErrorRequestBuilder is request builder for MailTipsError
+type MailTipsErrorRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns MailTipsErrorRequest
+func (b *MailTipsErrorRequestBuilder) Request() *MailTipsErrorRequest {
+	return &MailTipsErrorRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// MailTipsErrorRequest is request for MailTipsError
+type MailTipsErrorRequest struct{ BaseRequest }
+
+// Get performs GET request for MailTipsError
+func (r *MailTipsErrorRequest) Get(ctx context.Context) (resObj *MailTipsError, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for MailTipsError
+func (r *MailTipsErrorRequest) Update(ctx context.Context, reqObj *MailTipsError) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for MailTipsError
+func (r *MailTipsErrorRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

@@ -37,6 +37,39 @@ func (r *ApplicationRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// ApplicationEnforcedRestrictionsSessionControlRequestBuilder is request builder for ApplicationEnforcedRestrictionsSessionControl
+type ApplicationEnforcedRestrictionsSessionControlRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ApplicationEnforcedRestrictionsSessionControlRequest
+func (b *ApplicationEnforcedRestrictionsSessionControlRequestBuilder) Request() *ApplicationEnforcedRestrictionsSessionControlRequest {
+	return &ApplicationEnforcedRestrictionsSessionControlRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ApplicationEnforcedRestrictionsSessionControlRequest is request for ApplicationEnforcedRestrictionsSessionControl
+type ApplicationEnforcedRestrictionsSessionControlRequest struct{ BaseRequest }
+
+// Get performs GET request for ApplicationEnforcedRestrictionsSessionControl
+func (r *ApplicationEnforcedRestrictionsSessionControlRequest) Get(ctx context.Context) (resObj *ApplicationEnforcedRestrictionsSessionControl, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ApplicationEnforcedRestrictionsSessionControl
+func (r *ApplicationEnforcedRestrictionsSessionControlRequest) Update(ctx context.Context, reqObj *ApplicationEnforcedRestrictionsSessionControl) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ApplicationEnforcedRestrictionsSessionControl
+func (r *ApplicationEnforcedRestrictionsSessionControlRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // ApplicationServicePrincipalRequestBuilder is request builder for ApplicationServicePrincipal
 type ApplicationServicePrincipalRequestBuilder struct{ BaseRequestBuilder }
 

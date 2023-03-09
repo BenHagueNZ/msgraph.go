@@ -37,21 +37,21 @@ func (r *CallRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// CallRecords_callRecordRequestBuilder is request builder for CallRecords_callRecord
-type CallRecords_callRecordRequestBuilder struct{ BaseRequestBuilder }
+// CallEndedEventMessageDetailRequestBuilder is request builder for CallEndedEventMessageDetail
+type CallEndedEventMessageDetailRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns CallRecords_callRecordRequest
-func (b *CallRecords_callRecordRequestBuilder) Request() *CallRecords_callRecordRequest {
-	return &CallRecords_callRecordRequest{
+// Request returns CallEndedEventMessageDetailRequest
+func (b *CallEndedEventMessageDetailRequestBuilder) Request() *CallEndedEventMessageDetailRequest {
+	return &CallEndedEventMessageDetailRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// CallRecords_callRecordRequest is request for CallRecords_callRecord
-type CallRecords_callRecordRequest struct{ BaseRequest }
+// CallEndedEventMessageDetailRequest is request for CallEndedEventMessageDetail
+type CallEndedEventMessageDetailRequest struct{ BaseRequest }
 
-// Get performs GET request for CallRecords_callRecord
-func (r *CallRecords_callRecordRequest) Get(ctx context.Context) (resObj *CallRecords_callRecord, err error) {
+// Get performs GET request for CallEndedEventMessageDetail
+func (r *CallEndedEventMessageDetailRequest) Get(ctx context.Context) (resObj *CallEndedEventMessageDetail, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -60,13 +60,310 @@ func (r *CallRecords_callRecordRequest) Get(ctx context.Context) (resObj *CallRe
 	return
 }
 
-// Update performs PATCH request for CallRecords_callRecord
-func (r *CallRecords_callRecordRequest) Update(ctx context.Context, reqObj *CallRecords_callRecord) error {
+// Update performs PATCH request for CallEndedEventMessageDetail
+func (r *CallEndedEventMessageDetailRequest) Update(ctx context.Context, reqObj *CallEndedEventMessageDetail) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for CallRecords_callRecord
-func (r *CallRecords_callRecordRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for CallEndedEventMessageDetail
+func (r *CallEndedEventMessageDetailRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// CallMediaStateRequestBuilder is request builder for CallMediaState
+type CallMediaStateRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns CallMediaStateRequest
+func (b *CallMediaStateRequestBuilder) Request() *CallMediaStateRequest {
+	return &CallMediaStateRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// CallMediaStateRequest is request for CallMediaState
+type CallMediaStateRequest struct{ BaseRequest }
+
+// Get performs GET request for CallMediaState
+func (r *CallMediaStateRequest) Get(ctx context.Context) (resObj *CallMediaState, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for CallMediaState
+func (r *CallMediaStateRequest) Update(ctx context.Context, reqObj *CallMediaState) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for CallMediaState
+func (r *CallMediaStateRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// CallOptionsRequestBuilder is request builder for CallOptions
+type CallOptionsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns CallOptionsRequest
+func (b *CallOptionsRequestBuilder) Request() *CallOptionsRequest {
+	return &CallOptionsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// CallOptionsRequest is request for CallOptions
+type CallOptionsRequest struct{ BaseRequest }
+
+// Get performs GET request for CallOptions
+func (r *CallOptionsRequest) Get(ctx context.Context) (resObj *CallOptions, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for CallOptions
+func (r *CallOptionsRequest) Update(ctx context.Context, reqObj *CallOptions) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for CallOptions
+func (r *CallOptionsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// CallParticipantInfoRequestBuilder is request builder for CallParticipantInfo
+type CallParticipantInfoRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns CallParticipantInfoRequest
+func (b *CallParticipantInfoRequestBuilder) Request() *CallParticipantInfoRequest {
+	return &CallParticipantInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// CallParticipantInfoRequest is request for CallParticipantInfo
+type CallParticipantInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for CallParticipantInfo
+func (r *CallParticipantInfoRequest) Get(ctx context.Context) (resObj *CallParticipantInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for CallParticipantInfo
+func (r *CallParticipantInfoRequest) Update(ctx context.Context, reqObj *CallParticipantInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for CallParticipantInfo
+func (r *CallParticipantInfoRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// CallRecordRequestBuilder is request builder for CallRecord
+type CallRecordRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns CallRecordRequest
+func (b *CallRecordRequestBuilder) Request() *CallRecordRequest {
+	return &CallRecordRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// CallRecordRequest is request for CallRecord
+type CallRecordRequest struct{ BaseRequest }
+
+// Get performs GET request for CallRecord
+func (r *CallRecordRequest) Get(ctx context.Context) (resObj *CallRecord, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for CallRecord
+func (r *CallRecordRequest) Update(ctx context.Context, reqObj *CallRecord) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for CallRecord
+func (r *CallRecordRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// CallRecordingEventMessageDetailRequestBuilder is request builder for CallRecordingEventMessageDetail
+type CallRecordingEventMessageDetailRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns CallRecordingEventMessageDetailRequest
+func (b *CallRecordingEventMessageDetailRequestBuilder) Request() *CallRecordingEventMessageDetailRequest {
+	return &CallRecordingEventMessageDetailRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// CallRecordingEventMessageDetailRequest is request for CallRecordingEventMessageDetail
+type CallRecordingEventMessageDetailRequest struct{ BaseRequest }
+
+// Get performs GET request for CallRecordingEventMessageDetail
+func (r *CallRecordingEventMessageDetailRequest) Get(ctx context.Context) (resObj *CallRecordingEventMessageDetail, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for CallRecordingEventMessageDetail
+func (r *CallRecordingEventMessageDetailRequest) Update(ctx context.Context, reqObj *CallRecordingEventMessageDetail) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for CallRecordingEventMessageDetail
+func (r *CallRecordingEventMessageDetailRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// CallRouteRequestBuilder is request builder for CallRoute
+type CallRouteRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns CallRouteRequest
+func (b *CallRouteRequestBuilder) Request() *CallRouteRequest {
+	return &CallRouteRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// CallRouteRequest is request for CallRoute
+type CallRouteRequest struct{ BaseRequest }
+
+// Get performs GET request for CallRoute
+func (r *CallRouteRequest) Get(ctx context.Context) (resObj *CallRoute, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for CallRoute
+func (r *CallRouteRequest) Update(ctx context.Context, reqObj *CallRoute) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for CallRoute
+func (r *CallRouteRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// CallStartedEventMessageDetailRequestBuilder is request builder for CallStartedEventMessageDetail
+type CallStartedEventMessageDetailRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns CallStartedEventMessageDetailRequest
+func (b *CallStartedEventMessageDetailRequestBuilder) Request() *CallStartedEventMessageDetailRequest {
+	return &CallStartedEventMessageDetailRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// CallStartedEventMessageDetailRequest is request for CallStartedEventMessageDetail
+type CallStartedEventMessageDetailRequest struct{ BaseRequest }
+
+// Get performs GET request for CallStartedEventMessageDetail
+func (r *CallStartedEventMessageDetailRequest) Get(ctx context.Context) (resObj *CallStartedEventMessageDetail, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for CallStartedEventMessageDetail
+func (r *CallStartedEventMessageDetailRequest) Update(ctx context.Context, reqObj *CallStartedEventMessageDetail) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for CallStartedEventMessageDetail
+func (r *CallStartedEventMessageDetailRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// CallTranscriptEventMessageDetailRequestBuilder is request builder for CallTranscriptEventMessageDetail
+type CallTranscriptEventMessageDetailRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns CallTranscriptEventMessageDetailRequest
+func (b *CallTranscriptEventMessageDetailRequestBuilder) Request() *CallTranscriptEventMessageDetailRequest {
+	return &CallTranscriptEventMessageDetailRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// CallTranscriptEventMessageDetailRequest is request for CallTranscriptEventMessageDetail
+type CallTranscriptEventMessageDetailRequest struct{ BaseRequest }
+
+// Get performs GET request for CallTranscriptEventMessageDetail
+func (r *CallTranscriptEventMessageDetailRequest) Get(ctx context.Context) (resObj *CallTranscriptEventMessageDetail, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for CallTranscriptEventMessageDetail
+func (r *CallTranscriptEventMessageDetailRequest) Update(ctx context.Context, reqObj *CallTranscriptEventMessageDetail) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for CallTranscriptEventMessageDetail
+func (r *CallTranscriptEventMessageDetailRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// CallTranscriptionInfoRequestBuilder is request builder for CallTranscriptionInfo
+type CallTranscriptionInfoRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns CallTranscriptionInfoRequest
+func (b *CallTranscriptionInfoRequestBuilder) Request() *CallTranscriptionInfoRequest {
+	return &CallTranscriptionInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// CallTranscriptionInfoRequest is request for CallTranscriptionInfo
+type CallTranscriptionInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for CallTranscriptionInfo
+func (r *CallTranscriptionInfoRequest) Get(ctx context.Context) (resObj *CallTranscriptionInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for CallTranscriptionInfo
+func (r *CallTranscriptionInfoRequest) Update(ctx context.Context, reqObj *CallTranscriptionInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for CallTranscriptionInfo
+func (r *CallTranscriptionInfoRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

@@ -143,6 +143,39 @@ func (r *BookingCustomQuestionRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// BookingCustomerRequestBuilder is request builder for BookingCustomer
+type BookingCustomerRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns BookingCustomerRequest
+func (b *BookingCustomerRequestBuilder) Request() *BookingCustomerRequest {
+	return &BookingCustomerRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// BookingCustomerRequest is request for BookingCustomer
+type BookingCustomerRequest struct{ BaseRequest }
+
+// Get performs GET request for BookingCustomer
+func (r *BookingCustomerRequest) Get(ctx context.Context) (resObj *BookingCustomer, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for BookingCustomer
+func (r *BookingCustomerRequest) Update(ctx context.Context, reqObj *BookingCustomer) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for BookingCustomer
+func (r *BookingCustomerRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // BookingCustomerBaseRequestBuilder is request builder for BookingCustomerBase
 type BookingCustomerBaseRequestBuilder struct{ BaseRequestBuilder }
 
@@ -173,6 +206,204 @@ func (r *BookingCustomerBaseRequest) Update(ctx context.Context, reqObj *Booking
 
 // Delete performs DELETE request for BookingCustomerBase
 func (r *BookingCustomerBaseRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// BookingCustomerInformationRequestBuilder is request builder for BookingCustomerInformation
+type BookingCustomerInformationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns BookingCustomerInformationRequest
+func (b *BookingCustomerInformationRequestBuilder) Request() *BookingCustomerInformationRequest {
+	return &BookingCustomerInformationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// BookingCustomerInformationRequest is request for BookingCustomerInformation
+type BookingCustomerInformationRequest struct{ BaseRequest }
+
+// Get performs GET request for BookingCustomerInformation
+func (r *BookingCustomerInformationRequest) Get(ctx context.Context) (resObj *BookingCustomerInformation, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for BookingCustomerInformation
+func (r *BookingCustomerInformationRequest) Update(ctx context.Context, reqObj *BookingCustomerInformation) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for BookingCustomerInformation
+func (r *BookingCustomerInformationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// BookingCustomerInformationBaseRequestBuilder is request builder for BookingCustomerInformationBase
+type BookingCustomerInformationBaseRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns BookingCustomerInformationBaseRequest
+func (b *BookingCustomerInformationBaseRequestBuilder) Request() *BookingCustomerInformationBaseRequest {
+	return &BookingCustomerInformationBaseRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// BookingCustomerInformationBaseRequest is request for BookingCustomerInformationBase
+type BookingCustomerInformationBaseRequest struct{ BaseRequest }
+
+// Get performs GET request for BookingCustomerInformationBase
+func (r *BookingCustomerInformationBaseRequest) Get(ctx context.Context) (resObj *BookingCustomerInformationBase, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for BookingCustomerInformationBase
+func (r *BookingCustomerInformationBaseRequest) Update(ctx context.Context, reqObj *BookingCustomerInformationBase) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for BookingCustomerInformationBase
+func (r *BookingCustomerInformationBaseRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// BookingQuestionAnswerRequestBuilder is request builder for BookingQuestionAnswer
+type BookingQuestionAnswerRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns BookingQuestionAnswerRequest
+func (b *BookingQuestionAnswerRequestBuilder) Request() *BookingQuestionAnswerRequest {
+	return &BookingQuestionAnswerRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// BookingQuestionAnswerRequest is request for BookingQuestionAnswer
+type BookingQuestionAnswerRequest struct{ BaseRequest }
+
+// Get performs GET request for BookingQuestionAnswer
+func (r *BookingQuestionAnswerRequest) Get(ctx context.Context) (resObj *BookingQuestionAnswer, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for BookingQuestionAnswer
+func (r *BookingQuestionAnswerRequest) Update(ctx context.Context, reqObj *BookingQuestionAnswer) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for BookingQuestionAnswer
+func (r *BookingQuestionAnswerRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// BookingQuestionAssignmentRequestBuilder is request builder for BookingQuestionAssignment
+type BookingQuestionAssignmentRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns BookingQuestionAssignmentRequest
+func (b *BookingQuestionAssignmentRequestBuilder) Request() *BookingQuestionAssignmentRequest {
+	return &BookingQuestionAssignmentRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// BookingQuestionAssignmentRequest is request for BookingQuestionAssignment
+type BookingQuestionAssignmentRequest struct{ BaseRequest }
+
+// Get performs GET request for BookingQuestionAssignment
+func (r *BookingQuestionAssignmentRequest) Get(ctx context.Context) (resObj *BookingQuestionAssignment, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for BookingQuestionAssignment
+func (r *BookingQuestionAssignmentRequest) Update(ctx context.Context, reqObj *BookingQuestionAssignment) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for BookingQuestionAssignment
+func (r *BookingQuestionAssignmentRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// BookingReminderRequestBuilder is request builder for BookingReminder
+type BookingReminderRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns BookingReminderRequest
+func (b *BookingReminderRequestBuilder) Request() *BookingReminderRequest {
+	return &BookingReminderRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// BookingReminderRequest is request for BookingReminder
+type BookingReminderRequest struct{ BaseRequest }
+
+// Get performs GET request for BookingReminder
+func (r *BookingReminderRequest) Get(ctx context.Context) (resObj *BookingReminder, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for BookingReminder
+func (r *BookingReminderRequest) Update(ctx context.Context, reqObj *BookingReminder) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for BookingReminder
+func (r *BookingReminderRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// BookingSchedulingPolicyRequestBuilder is request builder for BookingSchedulingPolicy
+type BookingSchedulingPolicyRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns BookingSchedulingPolicyRequest
+func (b *BookingSchedulingPolicyRequestBuilder) Request() *BookingSchedulingPolicyRequest {
+	return &BookingSchedulingPolicyRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// BookingSchedulingPolicyRequest is request for BookingSchedulingPolicy
+type BookingSchedulingPolicyRequest struct{ BaseRequest }
+
+// Get performs GET request for BookingSchedulingPolicy
+func (r *BookingSchedulingPolicyRequest) Get(ctx context.Context) (resObj *BookingSchedulingPolicy, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for BookingSchedulingPolicy
+func (r *BookingSchedulingPolicyRequest) Update(ctx context.Context, reqObj *BookingSchedulingPolicy) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for BookingSchedulingPolicy
+func (r *BookingSchedulingPolicyRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -209,6 +440,39 @@ func (r *BookingServiceRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// BookingStaffMemberRequestBuilder is request builder for BookingStaffMember
+type BookingStaffMemberRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns BookingStaffMemberRequest
+func (b *BookingStaffMemberRequestBuilder) Request() *BookingStaffMemberRequest {
+	return &BookingStaffMemberRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// BookingStaffMemberRequest is request for BookingStaffMember
+type BookingStaffMemberRequest struct{ BaseRequest }
+
+// Get performs GET request for BookingStaffMember
+func (r *BookingStaffMemberRequest) Get(ctx context.Context) (resObj *BookingStaffMember, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for BookingStaffMember
+func (r *BookingStaffMemberRequest) Update(ctx context.Context, reqObj *BookingStaffMember) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for BookingStaffMember
+func (r *BookingStaffMemberRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // BookingStaffMemberBaseRequestBuilder is request builder for BookingStaffMemberBase
 type BookingStaffMemberBaseRequestBuilder struct{ BaseRequestBuilder }
 
@@ -239,6 +503,72 @@ func (r *BookingStaffMemberBaseRequest) Update(ctx context.Context, reqObj *Book
 
 // Delete performs DELETE request for BookingStaffMemberBase
 func (r *BookingStaffMemberBaseRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// BookingWorkHoursRequestBuilder is request builder for BookingWorkHours
+type BookingWorkHoursRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns BookingWorkHoursRequest
+func (b *BookingWorkHoursRequestBuilder) Request() *BookingWorkHoursRequest {
+	return &BookingWorkHoursRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// BookingWorkHoursRequest is request for BookingWorkHours
+type BookingWorkHoursRequest struct{ BaseRequest }
+
+// Get performs GET request for BookingWorkHours
+func (r *BookingWorkHoursRequest) Get(ctx context.Context) (resObj *BookingWorkHours, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for BookingWorkHours
+func (r *BookingWorkHoursRequest) Update(ctx context.Context, reqObj *BookingWorkHours) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for BookingWorkHours
+func (r *BookingWorkHoursRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// BookingWorkTimeSlotRequestBuilder is request builder for BookingWorkTimeSlot
+type BookingWorkTimeSlotRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns BookingWorkTimeSlotRequest
+func (b *BookingWorkTimeSlotRequestBuilder) Request() *BookingWorkTimeSlotRequest {
+	return &BookingWorkTimeSlotRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// BookingWorkTimeSlotRequest is request for BookingWorkTimeSlot
+type BookingWorkTimeSlotRequest struct{ BaseRequest }
+
+// Get performs GET request for BookingWorkTimeSlot
+func (r *BookingWorkTimeSlotRequest) Get(ctx context.Context) (resObj *BookingWorkTimeSlot, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for BookingWorkTimeSlot
+func (r *BookingWorkTimeSlotRequest) Update(ctx context.Context, reqObj *BookingWorkTimeSlot) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for BookingWorkTimeSlot
+func (r *BookingWorkTimeSlotRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

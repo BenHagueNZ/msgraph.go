@@ -69,3 +69,36 @@ func (r *UserProcessingResultRequest) Update(ctx context.Context, reqObj *UserPr
 func (r *UserProcessingResultRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+// UserSummaryRequestBuilder is request builder for UserSummary
+type UserSummaryRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns UserSummaryRequest
+func (b *UserSummaryRequestBuilder) Request() *UserSummaryRequest {
+	return &UserSummaryRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// UserSummaryRequest is request for UserSummary
+type UserSummaryRequest struct{ BaseRequest }
+
+// Get performs GET request for UserSummary
+func (r *UserSummaryRequest) Get(ctx context.Context) (resObj *UserSummary, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for UserSummary
+func (r *UserSummaryRequest) Update(ctx context.Context, reqObj *UserSummary) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for UserSummary
+func (r *UserSummaryRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}

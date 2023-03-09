@@ -77,6 +77,39 @@ func (r *UserActivityRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// UserAttributeValuesItemRequestBuilder is request builder for UserAttributeValuesItem
+type UserAttributeValuesItemRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns UserAttributeValuesItemRequest
+func (b *UserAttributeValuesItemRequestBuilder) Request() *UserAttributeValuesItemRequest {
+	return &UserAttributeValuesItemRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// UserAttributeValuesItemRequest is request for UserAttributeValuesItem
+type UserAttributeValuesItemRequest struct{ BaseRequest }
+
+// Get performs GET request for UserAttributeValuesItem
+func (r *UserAttributeValuesItemRequest) Get(ctx context.Context) (resObj *UserAttributeValuesItem, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for UserAttributeValuesItem
+func (r *UserAttributeValuesItemRequest) Update(ctx context.Context, reqObj *UserAttributeValuesItem) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for UserAttributeValuesItem
+func (r *UserAttributeValuesItemRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // UserConsentRequestObjectRequestBuilder is request builder for UserConsentRequestObject
 type UserConsentRequestObjectRequestBuilder struct{ BaseRequestBuilder }
 
@@ -107,6 +140,39 @@ func (r *UserConsentRequestObjectRequest) Update(ctx context.Context, reqObj *Us
 
 // Delete performs DELETE request for UserConsentRequestObject
 func (r *UserConsentRequestObjectRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// UserExperienceAnalyticsDevicePerformanceRequestBuilder is request builder for UserExperienceAnalyticsDevicePerformance
+type UserExperienceAnalyticsDevicePerformanceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns UserExperienceAnalyticsDevicePerformanceRequest
+func (b *UserExperienceAnalyticsDevicePerformanceRequestBuilder) Request() *UserExperienceAnalyticsDevicePerformanceRequest {
+	return &UserExperienceAnalyticsDevicePerformanceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// UserExperienceAnalyticsDevicePerformanceRequest is request for UserExperienceAnalyticsDevicePerformance
+type UserExperienceAnalyticsDevicePerformanceRequest struct{ BaseRequest }
+
+// Get performs GET request for UserExperienceAnalyticsDevicePerformance
+func (r *UserExperienceAnalyticsDevicePerformanceRequest) Get(ctx context.Context) (resObj *UserExperienceAnalyticsDevicePerformance, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for UserExperienceAnalyticsDevicePerformance
+func (r *UserExperienceAnalyticsDevicePerformanceRequest) Update(ctx context.Context, reqObj *UserExperienceAnalyticsDevicePerformance) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for UserExperienceAnalyticsDevicePerformance
+func (r *UserExperienceAnalyticsDevicePerformanceRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -209,6 +275,39 @@ func (r *UserFlowLanguagePageRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// UserIdentityRequestBuilder is request builder for UserIdentity
+type UserIdentityRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns UserIdentityRequest
+func (b *UserIdentityRequestBuilder) Request() *UserIdentityRequest {
+	return &UserIdentityRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// UserIdentityRequest is request for UserIdentity
+type UserIdentityRequest struct{ BaseRequest }
+
+// Get performs GET request for UserIdentity
+func (r *UserIdentityRequest) Get(ctx context.Context) (resObj *UserIdentity, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for UserIdentity
+func (r *UserIdentityRequest) Update(ctx context.Context, reqObj *UserIdentity) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for UserIdentity
+func (r *UserIdentityRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // UserInstallStateSummaryRequestBuilder is request builder for UserInstallStateSummary
 type UserInstallStateSummaryRequestBuilder struct{ BaseRequestBuilder }
 
@@ -275,6 +374,39 @@ func (r *UserScopeTeamsAppInstallationRequest) Delete(ctx context.Context) error
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// UserSecurityStateRequestBuilder is request builder for UserSecurityState
+type UserSecurityStateRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns UserSecurityStateRequest
+func (b *UserSecurityStateRequestBuilder) Request() *UserSecurityStateRequest {
+	return &UserSecurityStateRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// UserSecurityStateRequest is request for UserSecurityState
+type UserSecurityStateRequest struct{ BaseRequest }
+
+// Get performs GET request for UserSecurityState
+func (r *UserSecurityStateRequest) Get(ctx context.Context) (resObj *UserSecurityState, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for UserSecurityState
+func (r *UserSecurityStateRequest) Update(ctx context.Context, reqObj *UserSecurityState) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for UserSecurityState
+func (r *UserSecurityStateRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // UserSettingsRequestBuilder is request builder for UserSettings
 type UserSettingsRequestBuilder struct{ BaseRequestBuilder }
 
@@ -308,6 +440,72 @@ func (r *UserSettingsRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// UserSimulationDetailsRequestBuilder is request builder for UserSimulationDetails
+type UserSimulationDetailsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns UserSimulationDetailsRequest
+func (b *UserSimulationDetailsRequestBuilder) Request() *UserSimulationDetailsRequest {
+	return &UserSimulationDetailsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// UserSimulationDetailsRequest is request for UserSimulationDetails
+type UserSimulationDetailsRequest struct{ BaseRequest }
+
+// Get performs GET request for UserSimulationDetails
+func (r *UserSimulationDetailsRequest) Get(ctx context.Context) (resObj *UserSimulationDetails, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for UserSimulationDetails
+func (r *UserSimulationDetailsRequest) Update(ctx context.Context, reqObj *UserSimulationDetails) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for UserSimulationDetails
+func (r *UserSimulationDetailsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// UserSimulationEventInfoRequestBuilder is request builder for UserSimulationEventInfo
+type UserSimulationEventInfoRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns UserSimulationEventInfoRequest
+func (b *UserSimulationEventInfoRequestBuilder) Request() *UserSimulationEventInfoRequest {
+	return &UserSimulationEventInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// UserSimulationEventInfoRequest is request for UserSimulationEventInfo
+type UserSimulationEventInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for UserSimulationEventInfo
+func (r *UserSimulationEventInfoRequest) Get(ctx context.Context) (resObj *UserSimulationEventInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for UserSimulationEventInfo
+func (r *UserSimulationEventInfoRequest) Update(ctx context.Context, reqObj *UserSimulationEventInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for UserSimulationEventInfo
+func (r *UserSimulationEventInfoRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // UserTeamworkRequestBuilder is request builder for UserTeamwork
 type UserTeamworkRequestBuilder struct{ BaseRequestBuilder }
 
@@ -338,6 +536,105 @@ func (r *UserTeamworkRequest) Update(ctx context.Context, reqObj *UserTeamwork) 
 
 // Delete performs DELETE request for UserTeamwork
 func (r *UserTeamworkRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// UserTrainingContentEventInfoRequestBuilder is request builder for UserTrainingContentEventInfo
+type UserTrainingContentEventInfoRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns UserTrainingContentEventInfoRequest
+func (b *UserTrainingContentEventInfoRequestBuilder) Request() *UserTrainingContentEventInfoRequest {
+	return &UserTrainingContentEventInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// UserTrainingContentEventInfoRequest is request for UserTrainingContentEventInfo
+type UserTrainingContentEventInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for UserTrainingContentEventInfo
+func (r *UserTrainingContentEventInfoRequest) Get(ctx context.Context) (resObj *UserTrainingContentEventInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for UserTrainingContentEventInfo
+func (r *UserTrainingContentEventInfoRequest) Update(ctx context.Context, reqObj *UserTrainingContentEventInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for UserTrainingContentEventInfo
+func (r *UserTrainingContentEventInfoRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// UserTrainingEventInfoRequestBuilder is request builder for UserTrainingEventInfo
+type UserTrainingEventInfoRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns UserTrainingEventInfoRequest
+func (b *UserTrainingEventInfoRequestBuilder) Request() *UserTrainingEventInfoRequest {
+	return &UserTrainingEventInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// UserTrainingEventInfoRequest is request for UserTrainingEventInfo
+type UserTrainingEventInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for UserTrainingEventInfo
+func (r *UserTrainingEventInfoRequest) Get(ctx context.Context) (resObj *UserTrainingEventInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for UserTrainingEventInfo
+func (r *UserTrainingEventInfoRequest) Update(ctx context.Context, reqObj *UserTrainingEventInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for UserTrainingEventInfo
+func (r *UserTrainingEventInfoRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// UserTrainingStatusInfoRequestBuilder is request builder for UserTrainingStatusInfo
+type UserTrainingStatusInfoRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns UserTrainingStatusInfoRequest
+func (b *UserTrainingStatusInfoRequestBuilder) Request() *UserTrainingStatusInfoRequest {
+	return &UserTrainingStatusInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// UserTrainingStatusInfoRequest is request for UserTrainingStatusInfo
+type UserTrainingStatusInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for UserTrainingStatusInfo
+func (r *UserTrainingStatusInfoRequest) Get(ctx context.Context) (resObj *UserTrainingStatusInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for UserTrainingStatusInfo
+func (r *UserTrainingStatusInfoRequest) Update(ctx context.Context, reqObj *UserTrainingStatusInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for UserTrainingStatusInfo
+func (r *UserTrainingStatusInfoRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

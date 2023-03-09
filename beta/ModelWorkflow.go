@@ -6,8 +6,8 @@ import "time"
 
 // Workflow undocumented
 type Workflow struct {
-	// IdentityGovernance_workflowBase is the base model of Workflow
-	IdentityGovernance_workflowBase
+	// WorkflowBase is the base model of Workflow
+	WorkflowBase
 	// DeletedDateTime undocumented
 	DeletedDateTime *time.Time `json:"deletedDateTime,omitempty"`
 	// ID undocumented
@@ -19,13 +19,13 @@ type Workflow struct {
 	// ExecutionScope undocumented
 	ExecutionScope []User `json:"executionScope,omitempty"`
 	// Runs undocumented
-	Runs []IdentityGovernance_run `json:"runs,omitempty"`
+	Runs []Run `json:"runs,omitempty"`
 	// TaskReports undocumented
-	TaskReports []IdentityGovernance_taskReport `json:"taskReports,omitempty"`
+	TaskReports []TaskReport `json:"taskReports,omitempty"`
 	// UserProcessingResults undocumented
-	UserProcessingResults []IdentityGovernance_userProcessingResult `json:"userProcessingResults,omitempty"`
+	UserProcessingResults []UserProcessingResult `json:"userProcessingResults,omitempty"`
 	// Versions undocumented
-	Versions []IdentityGovernance_workflowVersion `json:"versions,omitempty"`
+	Versions []WorkflowVersion `json:"versions,omitempty"`
 }
 
 // WorkflowBase undocumented
@@ -33,7 +33,7 @@ type WorkflowBase struct {
 	// Object is the base model of WorkflowBase
 	Object
 	// Category undocumented
-	Category *IdentityGovernance_lifecycleWorkflowCategory `json:"category,omitempty"`
+	Category *LifecycleWorkflowCategory `json:"category,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -41,7 +41,7 @@ type WorkflowBase struct {
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// ExecutionConditions undocumented
-	ExecutionConditions *IdentityGovernance_workflowExecutionConditions `json:"executionConditions,omitempty"`
+	ExecutionConditions *WorkflowExecutionConditions `json:"executionConditions,omitempty"`
 	// IsEnabled undocumented
 	IsEnabled *bool `json:"isEnabled,omitempty"`
 	// IsSchedulingEnabled undocumented
@@ -53,7 +53,7 @@ type WorkflowBase struct {
 	// LastModifiedBy undocumented
 	LastModifiedBy *User `json:"lastModifiedBy,omitempty"`
 	// Tasks undocumented
-	Tasks []IdentityGovernance_task `json:"tasks,omitempty"`
+	Tasks []Task `json:"tasks,omitempty"`
 }
 
 // WorkflowExecutionConditions undocumented
@@ -73,21 +73,21 @@ type WorkflowTemplate struct {
 	// Entity is the base model of WorkflowTemplate
 	Entity
 	// Category undocumented
-	Category *IdentityGovernance_lifecycleWorkflowCategory `json:"category,omitempty"`
+	Category *LifecycleWorkflowCategory `json:"category,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// ExecutionConditions undocumented
-	ExecutionConditions *IdentityGovernance_workflowExecutionConditions `json:"executionConditions,omitempty"`
+	ExecutionConditions *WorkflowExecutionConditions `json:"executionConditions,omitempty"`
 	// Tasks undocumented
-	Tasks []IdentityGovernance_task `json:"tasks,omitempty"`
+	Tasks []Task `json:"tasks,omitempty"`
 }
 
 // WorkflowVersion undocumented
 type WorkflowVersion struct {
-	// IdentityGovernance_workflowBase is the base model of WorkflowVersion
-	IdentityGovernance_workflowBase
+	// WorkflowBase is the base model of WorkflowVersion
+	WorkflowBase
 	// VersionNumber undocumented
 	VersionNumber *int `json:"versionNumber,omitempty"`
 }

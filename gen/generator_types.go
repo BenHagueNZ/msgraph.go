@@ -47,7 +47,10 @@ func stripNSPrefix(t string) (string, bool) {
 }
 
 func exported(n string) string {
-	n = strings.ReplaceAll(n, ".", "_")
+	last := strings.LastIndex(n, ".")
+	if last != -1 {
+		n = n[last+1:]
+	}
 	return lintName(strings.Title(n))
 }
 
@@ -63,7 +66,12 @@ func (g *Generator) SymBaseType(t string) string {
 		return exported(x)
 	}
 	if strings.HasPrefix(t, colPrefix) {
-		return g.SymBaseType(t[len(colPrefix) : len(t)-1])
+		str := g.SymBaseType(t[len(colPrefix) : len(t)-1])
+		last := strings.LastIndex(str, ".")
+		if last != -1 {
+			str = str[last+1:]
+		}
+		return str
 	}
 	panic(fmt.Errorf("Unknown type %s", t))
 }
@@ -76,7 +84,12 @@ func (g *Generator) SymFromType(t string) string {
 		return exported(x)
 	}
 	if strings.HasPrefix(t, colPrefix) {
-		return g.SymBaseType(t[len(colPrefix):len(t)-1]) + "Collection"
+		str := g.SymBaseType(t[len(colPrefix) : len(t)-1])
+		last := strings.LastIndex(str, ".")
+		if last != -1 {
+			str = str[last+1:]
+		}
+		return str + "Collection"
 	}
 	panic(fmt.Errorf("Unknown type %s", t))
 }

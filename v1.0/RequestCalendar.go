@@ -143,6 +143,39 @@ func (r *CalendarSharingMessageRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// CalendarSharingMessageActionRequestBuilder is request builder for CalendarSharingMessageAction
+type CalendarSharingMessageActionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns CalendarSharingMessageActionRequest
+func (b *CalendarSharingMessageActionRequestBuilder) Request() *CalendarSharingMessageActionRequest {
+	return &CalendarSharingMessageActionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// CalendarSharingMessageActionRequest is request for CalendarSharingMessageAction
+type CalendarSharingMessageActionRequest struct{ BaseRequest }
+
+// Get performs GET request for CalendarSharingMessageAction
+func (r *CalendarSharingMessageActionRequest) Get(ctx context.Context) (resObj *CalendarSharingMessageAction, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for CalendarSharingMessageAction
+func (r *CalendarSharingMessageActionRequest) Update(ctx context.Context, reqObj *CalendarSharingMessageAction) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for CalendarSharingMessageAction
+func (r *CalendarSharingMessageActionRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 type CalendarGetScheduleRequestBuilder struct{ BaseRequestBuilder }
 
 // GetSchedule action undocumented

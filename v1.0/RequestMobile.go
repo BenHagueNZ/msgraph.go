@@ -70,6 +70,39 @@ func (r *MobileAppAssignmentRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// MobileAppAssignmentSettingsRequestBuilder is request builder for MobileAppAssignmentSettings
+type MobileAppAssignmentSettingsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns MobileAppAssignmentSettingsRequest
+func (b *MobileAppAssignmentSettingsRequestBuilder) Request() *MobileAppAssignmentSettingsRequest {
+	return &MobileAppAssignmentSettingsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// MobileAppAssignmentSettingsRequest is request for MobileAppAssignmentSettings
+type MobileAppAssignmentSettingsRequest struct{ BaseRequest }
+
+// Get performs GET request for MobileAppAssignmentSettings
+func (r *MobileAppAssignmentSettingsRequest) Get(ctx context.Context) (resObj *MobileAppAssignmentSettings, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for MobileAppAssignmentSettings
+func (r *MobileAppAssignmentSettingsRequest) Update(ctx context.Context, reqObj *MobileAppAssignmentSettings) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for MobileAppAssignmentSettings
+func (r *MobileAppAssignmentSettingsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // MobileAppCategoryRequestBuilder is request builder for MobileAppCategory
 type MobileAppCategoryRequestBuilder struct{ BaseRequestBuilder }
 
@@ -166,6 +199,72 @@ func (r *MobileAppContentFileRequest) Update(ctx context.Context, reqObj *Mobile
 
 // Delete performs DELETE request for MobileAppContentFile
 func (r *MobileAppContentFileRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// MobileAppIdentifierRequestBuilder is request builder for MobileAppIdentifier
+type MobileAppIdentifierRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns MobileAppIdentifierRequest
+func (b *MobileAppIdentifierRequestBuilder) Request() *MobileAppIdentifierRequest {
+	return &MobileAppIdentifierRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// MobileAppIdentifierRequest is request for MobileAppIdentifier
+type MobileAppIdentifierRequest struct{ BaseRequest }
+
+// Get performs GET request for MobileAppIdentifier
+func (r *MobileAppIdentifierRequest) Get(ctx context.Context) (resObj *MobileAppIdentifier, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for MobileAppIdentifier
+func (r *MobileAppIdentifierRequest) Update(ctx context.Context, reqObj *MobileAppIdentifier) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for MobileAppIdentifier
+func (r *MobileAppIdentifierRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// MobileAppInstallTimeSettingsRequestBuilder is request builder for MobileAppInstallTimeSettings
+type MobileAppInstallTimeSettingsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns MobileAppInstallTimeSettingsRequest
+func (b *MobileAppInstallTimeSettingsRequestBuilder) Request() *MobileAppInstallTimeSettingsRequest {
+	return &MobileAppInstallTimeSettingsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// MobileAppInstallTimeSettingsRequest is request for MobileAppInstallTimeSettings
+type MobileAppInstallTimeSettingsRequest struct{ BaseRequest }
+
+// Get performs GET request for MobileAppInstallTimeSettings
+func (r *MobileAppInstallTimeSettingsRequest) Get(ctx context.Context) (resObj *MobileAppInstallTimeSettings, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for MobileAppInstallTimeSettings
+func (r *MobileAppInstallTimeSettingsRequest) Update(ctx context.Context, reqObj *MobileAppInstallTimeSettings) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for MobileAppInstallTimeSettings
+func (r *MobileAppInstallTimeSettingsRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

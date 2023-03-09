@@ -37,6 +37,39 @@ func (r *TaskRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// TaskDefinitionRequestBuilder is request builder for TaskDefinition
+type TaskDefinitionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TaskDefinitionRequest
+func (b *TaskDefinitionRequestBuilder) Request() *TaskDefinitionRequest {
+	return &TaskDefinitionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TaskDefinitionRequest is request for TaskDefinition
+type TaskDefinitionRequest struct{ BaseRequest }
+
+// Get performs GET request for TaskDefinition
+func (r *TaskDefinitionRequest) Get(ctx context.Context) (resObj *TaskDefinition, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TaskDefinition
+func (r *TaskDefinitionRequest) Update(ctx context.Context, reqObj *TaskDefinition) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TaskDefinition
+func (r *TaskDefinitionRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // TaskProcessingResultRequestBuilder is request builder for TaskProcessingResult
 type TaskProcessingResultRequestBuilder struct{ BaseRequestBuilder }
 
@@ -100,5 +133,38 @@ func (r *TaskReportRequest) Update(ctx context.Context, reqObj *TaskReport) erro
 
 // Delete performs DELETE request for TaskReport
 func (r *TaskReportRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// TaskReportSummaryRequestBuilder is request builder for TaskReportSummary
+type TaskReportSummaryRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TaskReportSummaryRequest
+func (b *TaskReportSummaryRequestBuilder) Request() *TaskReportSummaryRequest {
+	return &TaskReportSummaryRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TaskReportSummaryRequest is request for TaskReportSummary
+type TaskReportSummaryRequest struct{ BaseRequest }
+
+// Get performs GET request for TaskReportSummary
+func (r *TaskReportSummaryRequest) Get(ctx context.Context) (resObj *TaskReportSummary, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TaskReportSummary
+func (r *TaskReportSummaryRequest) Update(ctx context.Context, reqObj *TaskReportSummary) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TaskReportSummary
+func (r *TaskReportSummaryRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

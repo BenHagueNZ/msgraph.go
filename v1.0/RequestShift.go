@@ -37,6 +37,105 @@ func (r *ShiftRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// ShiftActivityRequestBuilder is request builder for ShiftActivity
+type ShiftActivityRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ShiftActivityRequest
+func (b *ShiftActivityRequestBuilder) Request() *ShiftActivityRequest {
+	return &ShiftActivityRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ShiftActivityRequest is request for ShiftActivity
+type ShiftActivityRequest struct{ BaseRequest }
+
+// Get performs GET request for ShiftActivity
+func (r *ShiftActivityRequest) Get(ctx context.Context) (resObj *ShiftActivity, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ShiftActivity
+func (r *ShiftActivityRequest) Update(ctx context.Context, reqObj *ShiftActivity) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ShiftActivity
+func (r *ShiftActivityRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ShiftAvailabilityRequestBuilder is request builder for ShiftAvailability
+type ShiftAvailabilityRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ShiftAvailabilityRequest
+func (b *ShiftAvailabilityRequestBuilder) Request() *ShiftAvailabilityRequest {
+	return &ShiftAvailabilityRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ShiftAvailabilityRequest is request for ShiftAvailability
+type ShiftAvailabilityRequest struct{ BaseRequest }
+
+// Get performs GET request for ShiftAvailability
+func (r *ShiftAvailabilityRequest) Get(ctx context.Context) (resObj *ShiftAvailability, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ShiftAvailability
+func (r *ShiftAvailabilityRequest) Update(ctx context.Context, reqObj *ShiftAvailability) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ShiftAvailability
+func (r *ShiftAvailabilityRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ShiftItemRequestBuilder is request builder for ShiftItem
+type ShiftItemRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ShiftItemRequest
+func (b *ShiftItemRequestBuilder) Request() *ShiftItemRequest {
+	return &ShiftItemRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ShiftItemRequest is request for ShiftItem
+type ShiftItemRequest struct{ BaseRequest }
+
+// Get performs GET request for ShiftItem
+func (r *ShiftItemRequest) Get(ctx context.Context) (resObj *ShiftItem, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ShiftItem
+func (r *ShiftItemRequest) Update(ctx context.Context, reqObj *ShiftItem) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ShiftItem
+func (r *ShiftItemRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // ShiftPreferencesRequestBuilder is request builder for ShiftPreferences
 type ShiftPreferencesRequestBuilder struct{ BaseRequestBuilder }
 

@@ -4,10 +4,10 @@ package msgraph
 
 // TimeBasedAttributeTrigger undocumented
 type TimeBasedAttributeTrigger struct {
-	// IdentityGovernance_workflowExecutionTrigger is the base model of TimeBasedAttributeTrigger
-	IdentityGovernance_workflowExecutionTrigger
+	// WorkflowExecutionTrigger is the base model of TimeBasedAttributeTrigger
+	WorkflowExecutionTrigger
 	// OffsetInDays undocumented
 	OffsetInDays *int `json:"offsetInDays,omitempty"`
 	// TimeBasedAttribute undocumented
-	TimeBasedAttribute *IdentityGovernance_workflowTriggerTimeBasedAttribute `json:"timeBasedAttribute,omitempty"`
+	TimeBasedAttribute *WorkflowTriggerTimeBasedAttribute `json:"timeBasedAttribute,omitempty"`
 }

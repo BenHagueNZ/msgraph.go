@@ -37,6 +37,39 @@ func (r *PlannerRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// PlannerAppliedCategoriesRequestBuilder is request builder for PlannerAppliedCategories
+type PlannerAppliedCategoriesRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PlannerAppliedCategoriesRequest
+func (b *PlannerAppliedCategoriesRequestBuilder) Request() *PlannerAppliedCategoriesRequest {
+	return &PlannerAppliedCategoriesRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PlannerAppliedCategoriesRequest is request for PlannerAppliedCategories
+type PlannerAppliedCategoriesRequest struct{ BaseRequest }
+
+// Get performs GET request for PlannerAppliedCategories
+func (r *PlannerAppliedCategoriesRequest) Get(ctx context.Context) (resObj *PlannerAppliedCategories, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for PlannerAppliedCategories
+func (r *PlannerAppliedCategoriesRequest) Update(ctx context.Context, reqObj *PlannerAppliedCategories) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for PlannerAppliedCategories
+func (r *PlannerAppliedCategoriesRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // PlannerAssignedToTaskBoardTaskFormatRequestBuilder is request builder for PlannerAssignedToTaskBoardTaskFormat
 type PlannerAssignedToTaskBoardTaskFormatRequestBuilder struct{ BaseRequestBuilder }
 
@@ -67,6 +100,72 @@ func (r *PlannerAssignedToTaskBoardTaskFormatRequest) Update(ctx context.Context
 
 // Delete performs DELETE request for PlannerAssignedToTaskBoardTaskFormat
 func (r *PlannerAssignedToTaskBoardTaskFormatRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// PlannerAssignmentRequestBuilder is request builder for PlannerAssignment
+type PlannerAssignmentRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PlannerAssignmentRequest
+func (b *PlannerAssignmentRequestBuilder) Request() *PlannerAssignmentRequest {
+	return &PlannerAssignmentRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PlannerAssignmentRequest is request for PlannerAssignment
+type PlannerAssignmentRequest struct{ BaseRequest }
+
+// Get performs GET request for PlannerAssignment
+func (r *PlannerAssignmentRequest) Get(ctx context.Context) (resObj *PlannerAssignment, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for PlannerAssignment
+func (r *PlannerAssignmentRequest) Update(ctx context.Context, reqObj *PlannerAssignment) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for PlannerAssignment
+func (r *PlannerAssignmentRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// PlannerAssignmentsRequestBuilder is request builder for PlannerAssignments
+type PlannerAssignmentsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PlannerAssignmentsRequest
+func (b *PlannerAssignmentsRequestBuilder) Request() *PlannerAssignmentsRequest {
+	return &PlannerAssignmentsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PlannerAssignmentsRequest is request for PlannerAssignments
+type PlannerAssignmentsRequest struct{ BaseRequest }
+
+// Get performs GET request for PlannerAssignments
+func (r *PlannerAssignmentsRequest) Get(ctx context.Context) (resObj *PlannerAssignments, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for PlannerAssignments
+func (r *PlannerAssignmentsRequest) Update(ctx context.Context, reqObj *PlannerAssignments) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for PlannerAssignments
+func (r *PlannerAssignmentsRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -136,6 +235,171 @@ func (r *PlannerBucketTaskBoardTaskFormatRequest) Delete(ctx context.Context) er
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// PlannerCategoryDescriptionsRequestBuilder is request builder for PlannerCategoryDescriptions
+type PlannerCategoryDescriptionsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PlannerCategoryDescriptionsRequest
+func (b *PlannerCategoryDescriptionsRequestBuilder) Request() *PlannerCategoryDescriptionsRequest {
+	return &PlannerCategoryDescriptionsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PlannerCategoryDescriptionsRequest is request for PlannerCategoryDescriptions
+type PlannerCategoryDescriptionsRequest struct{ BaseRequest }
+
+// Get performs GET request for PlannerCategoryDescriptions
+func (r *PlannerCategoryDescriptionsRequest) Get(ctx context.Context) (resObj *PlannerCategoryDescriptions, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for PlannerCategoryDescriptions
+func (r *PlannerCategoryDescriptionsRequest) Update(ctx context.Context, reqObj *PlannerCategoryDescriptions) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for PlannerCategoryDescriptions
+func (r *PlannerCategoryDescriptionsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// PlannerChecklistItemRequestBuilder is request builder for PlannerChecklistItem
+type PlannerChecklistItemRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PlannerChecklistItemRequest
+func (b *PlannerChecklistItemRequestBuilder) Request() *PlannerChecklistItemRequest {
+	return &PlannerChecklistItemRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PlannerChecklistItemRequest is request for PlannerChecklistItem
+type PlannerChecklistItemRequest struct{ BaseRequest }
+
+// Get performs GET request for PlannerChecklistItem
+func (r *PlannerChecklistItemRequest) Get(ctx context.Context) (resObj *PlannerChecklistItem, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for PlannerChecklistItem
+func (r *PlannerChecklistItemRequest) Update(ctx context.Context, reqObj *PlannerChecklistItem) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for PlannerChecklistItem
+func (r *PlannerChecklistItemRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// PlannerChecklistItemsRequestBuilder is request builder for PlannerChecklistItems
+type PlannerChecklistItemsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PlannerChecklistItemsRequest
+func (b *PlannerChecklistItemsRequestBuilder) Request() *PlannerChecklistItemsRequest {
+	return &PlannerChecklistItemsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PlannerChecklistItemsRequest is request for PlannerChecklistItems
+type PlannerChecklistItemsRequest struct{ BaseRequest }
+
+// Get performs GET request for PlannerChecklistItems
+func (r *PlannerChecklistItemsRequest) Get(ctx context.Context) (resObj *PlannerChecklistItems, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for PlannerChecklistItems
+func (r *PlannerChecklistItemsRequest) Update(ctx context.Context, reqObj *PlannerChecklistItems) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for PlannerChecklistItems
+func (r *PlannerChecklistItemsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// PlannerExternalReferenceRequestBuilder is request builder for PlannerExternalReference
+type PlannerExternalReferenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PlannerExternalReferenceRequest
+func (b *PlannerExternalReferenceRequestBuilder) Request() *PlannerExternalReferenceRequest {
+	return &PlannerExternalReferenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PlannerExternalReferenceRequest is request for PlannerExternalReference
+type PlannerExternalReferenceRequest struct{ BaseRequest }
+
+// Get performs GET request for PlannerExternalReference
+func (r *PlannerExternalReferenceRequest) Get(ctx context.Context) (resObj *PlannerExternalReference, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for PlannerExternalReference
+func (r *PlannerExternalReferenceRequest) Update(ctx context.Context, reqObj *PlannerExternalReference) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for PlannerExternalReference
+func (r *PlannerExternalReferenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// PlannerExternalReferencesRequestBuilder is request builder for PlannerExternalReferences
+type PlannerExternalReferencesRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PlannerExternalReferencesRequest
+func (b *PlannerExternalReferencesRequestBuilder) Request() *PlannerExternalReferencesRequest {
+	return &PlannerExternalReferencesRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PlannerExternalReferencesRequest is request for PlannerExternalReferences
+type PlannerExternalReferencesRequest struct{ BaseRequest }
+
+// Get performs GET request for PlannerExternalReferences
+func (r *PlannerExternalReferencesRequest) Get(ctx context.Context) (resObj *PlannerExternalReferences, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for PlannerExternalReferences
+func (r *PlannerExternalReferencesRequest) Update(ctx context.Context, reqObj *PlannerExternalReferences) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for PlannerExternalReferences
+func (r *PlannerExternalReferencesRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // PlannerGroupRequestBuilder is request builder for PlannerGroup
 type PlannerGroupRequestBuilder struct{ BaseRequestBuilder }
 
@@ -169,6 +433,39 @@ func (r *PlannerGroupRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// PlannerOrderHintsByAssigneeRequestBuilder is request builder for PlannerOrderHintsByAssignee
+type PlannerOrderHintsByAssigneeRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PlannerOrderHintsByAssigneeRequest
+func (b *PlannerOrderHintsByAssigneeRequestBuilder) Request() *PlannerOrderHintsByAssigneeRequest {
+	return &PlannerOrderHintsByAssigneeRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PlannerOrderHintsByAssigneeRequest is request for PlannerOrderHintsByAssignee
+type PlannerOrderHintsByAssigneeRequest struct{ BaseRequest }
+
+// Get performs GET request for PlannerOrderHintsByAssignee
+func (r *PlannerOrderHintsByAssigneeRequest) Get(ctx context.Context) (resObj *PlannerOrderHintsByAssignee, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for PlannerOrderHintsByAssignee
+func (r *PlannerOrderHintsByAssigneeRequest) Update(ctx context.Context, reqObj *PlannerOrderHintsByAssignee) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for PlannerOrderHintsByAssignee
+func (r *PlannerOrderHintsByAssigneeRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // PlannerPlanRequestBuilder is request builder for PlannerPlan
 type PlannerPlanRequestBuilder struct{ BaseRequestBuilder }
 
@@ -199,6 +496,39 @@ func (r *PlannerPlanRequest) Update(ctx context.Context, reqObj *PlannerPlan) er
 
 // Delete performs DELETE request for PlannerPlan
 func (r *PlannerPlanRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// PlannerPlanContainerRequestBuilder is request builder for PlannerPlanContainer
+type PlannerPlanContainerRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PlannerPlanContainerRequest
+func (b *PlannerPlanContainerRequestBuilder) Request() *PlannerPlanContainerRequest {
+	return &PlannerPlanContainerRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PlannerPlanContainerRequest is request for PlannerPlanContainer
+type PlannerPlanContainerRequest struct{ BaseRequest }
+
+// Get performs GET request for PlannerPlanContainer
+func (r *PlannerPlanContainerRequest) Get(ctx context.Context) (resObj *PlannerPlanContainer, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for PlannerPlanContainer
+func (r *PlannerPlanContainerRequest) Update(ctx context.Context, reqObj *PlannerPlanContainer) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for PlannerPlanContainer
+func (r *PlannerPlanContainerRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -364,5 +694,38 @@ func (r *PlannerUserRequest) Update(ctx context.Context, reqObj *PlannerUser) er
 
 // Delete performs DELETE request for PlannerUser
 func (r *PlannerUserRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// PlannerUserIDsRequestBuilder is request builder for PlannerUserIDs
+type PlannerUserIDsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PlannerUserIDsRequest
+func (b *PlannerUserIDsRequestBuilder) Request() *PlannerUserIDsRequest {
+	return &PlannerUserIDsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PlannerUserIDsRequest is request for PlannerUserIDs
+type PlannerUserIDsRequest struct{ BaseRequest }
+
+// Get performs GET request for PlannerUserIDs
+func (r *PlannerUserIDsRequest) Get(ctx context.Context) (resObj *PlannerUserIDs, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for PlannerUserIDs
+func (r *PlannerUserIDsRequest) Update(ctx context.Context, reqObj *PlannerUserIDs) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for PlannerUserIDs
+func (r *PlannerUserIDsRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

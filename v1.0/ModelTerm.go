@@ -11,7 +11,7 @@ type TermColumn struct {
 	// ShowFullyQualifiedName undocumented
 	ShowFullyQualifiedName *bool `json:"showFullyQualifiedName,omitempty"`
 	// ParentTerm undocumented
-	ParentTerm *TermStore_term `json:"parentTerm,omitempty"`
+	ParentTerm *Term `json:"parentTerm,omitempty"`
 	// TermSet undocumented
-	TermSet *TermStore_set `json:"termSet,omitempty"`
+	TermSet *Set `json:"termSet,omitempty"`
 }

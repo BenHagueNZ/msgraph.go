@@ -4,6 +4,39 @@ package msgraph
 
 import "context"
 
+// PolicyBaseRequestBuilder is request builder for PolicyBase
+type PolicyBaseRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PolicyBaseRequest
+func (b *PolicyBaseRequestBuilder) Request() *PolicyBaseRequest {
+	return &PolicyBaseRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PolicyBaseRequest is request for PolicyBase
+type PolicyBaseRequest struct{ BaseRequest }
+
+// Get performs GET request for PolicyBase
+func (r *PolicyBaseRequest) Get(ctx context.Context) (resObj *PolicyBase, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for PolicyBase
+func (r *PolicyBaseRequest) Update(ctx context.Context, reqObj *PolicyBase) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for PolicyBase
+func (r *PolicyBaseRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // PolicyRootRequestBuilder is request builder for PolicyRoot
 type PolicyRootRequestBuilder struct{ BaseRequestBuilder }
 

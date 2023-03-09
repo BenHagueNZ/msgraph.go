@@ -4,6 +4,39 @@ package msgraph
 
 import "context"
 
+// AuthorizationInfoRequestBuilder is request builder for AuthorizationInfo
+type AuthorizationInfoRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AuthorizationInfoRequest
+func (b *AuthorizationInfoRequestBuilder) Request() *AuthorizationInfoRequest {
+	return &AuthorizationInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AuthorizationInfoRequest is request for AuthorizationInfo
+type AuthorizationInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for AuthorizationInfo
+func (r *AuthorizationInfoRequest) Get(ctx context.Context) (resObj *AuthorizationInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AuthorizationInfo
+func (r *AuthorizationInfoRequest) Update(ctx context.Context, reqObj *AuthorizationInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AuthorizationInfo
+func (r *AuthorizationInfoRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // AuthorizationPolicyRequestBuilder is request builder for AuthorizationPolicy
 type AuthorizationPolicyRequestBuilder struct{ BaseRequestBuilder }
 

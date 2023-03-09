@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// CustomTaskExtensions returns request builder for IdentityGovernance_customTaskExtension collection
+// CustomTaskExtensions returns request builder for CustomTaskExtension collection
 func (b *LifecycleWorkflowsContainerRequestBuilder) CustomTaskExtensions() *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequestBuilder {
 	bb := &LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/customTaskExtensions"
 	return bb
 }
 
-// LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequestBuilder is request builder for IdentityGovernance_customTaskExtension collection
+// LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequestBuilder is request builder for CustomTaskExtension collection
 type LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityGovernance_customTaskExtension collection
+// Request returns request for CustomTaskExtension collection
 func (b *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequestBuilder) Request() *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest {
 	return &LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityGovernance_customTaskExtension item
-func (b *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequestBuilder) ID(id string) *IdentityGovernance_customTaskExtensionRequestBuilder {
-	bb := &IdentityGovernance_customTaskExtensionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for CustomTaskExtension item
+func (b *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequestBuilder) ID(id string) *CustomTaskExtensionRequestBuilder {
+	bb := &CustomTaskExtensionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest is request for IdentityGovernance_customTaskExtension collection
+// LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest is request for CustomTaskExtension collection
 type LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityGovernance_customTaskExtension collection
-func (r *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityGovernance_customTaskExtension, error) {
+// Paging perfoms paging operation for CustomTaskExtension collection
+func (r *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CustomTaskExtension, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest) Pagin
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityGovernance_customTaskExtension
+	var values []CustomTaskExtension
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest) Pagin
 		}
 		var (
 			paging Paging
-			value  []IdentityGovernance_customTaskExtension
+			value  []CustomTaskExtension
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest) Pagin
 	}
 }
 
-// GetN performs GET request for IdentityGovernance_customTaskExtension collection, max N pages
-func (r *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityGovernance_customTaskExtension, error) {
+// GetN performs GET request for CustomTaskExtension collection, max N pages
+func (r *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest) GetN(ctx context.Context, n int) ([]CustomTaskExtension, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest) GetN(
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityGovernance_customTaskExtension collection
-func (r *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest) Get(ctx context.Context) ([]IdentityGovernance_customTaskExtension, error) {
+// Get performs GET request for CustomTaskExtension collection
+func (r *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest) Get(ctx context.Context) ([]CustomTaskExtension, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityGovernance_customTaskExtension collection
-func (r *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest) Add(ctx context.Context, reqObj *IdentityGovernance_customTaskExtension) (resObj *IdentityGovernance_customTaskExtension, err error) {
+// Add performs POST request for CustomTaskExtension collection
+func (r *LifecycleWorkflowsContainerCustomTaskExtensionsCollectionRequest) Add(ctx context.Context, reqObj *CustomTaskExtension) (resObj *CustomTaskExtension, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -122,41 +122,41 @@ func (b *LifecycleWorkflowsContainerRequestBuilder) DeletedItems() *DeletedItemC
 }
 
 // Settings is navigation property
-func (b *LifecycleWorkflowsContainerRequestBuilder) Settings() *IdentityGovernance_lifecycleManagementSettingsRequestBuilder {
-	bb := &IdentityGovernance_lifecycleManagementSettingsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *LifecycleWorkflowsContainerRequestBuilder) Settings() *LifecycleManagementSettingsRequestBuilder {
+	bb := &LifecycleManagementSettingsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/settings"
 	return bb
 }
 
-// TaskDefinitions returns request builder for IdentityGovernance_taskDefinition collection
+// TaskDefinitions returns request builder for TaskDefinition collection
 func (b *LifecycleWorkflowsContainerRequestBuilder) TaskDefinitions() *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequestBuilder {
 	bb := &LifecycleWorkflowsContainerTaskDefinitionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/taskDefinitions"
 	return bb
 }
 
-// LifecycleWorkflowsContainerTaskDefinitionsCollectionRequestBuilder is request builder for IdentityGovernance_taskDefinition collection
+// LifecycleWorkflowsContainerTaskDefinitionsCollectionRequestBuilder is request builder for TaskDefinition collection
 type LifecycleWorkflowsContainerTaskDefinitionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityGovernance_taskDefinition collection
+// Request returns request for TaskDefinition collection
 func (b *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequestBuilder) Request() *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest {
 	return &LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityGovernance_taskDefinition item
-func (b *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequestBuilder) ID(id string) *IdentityGovernance_taskDefinitionRequestBuilder {
-	bb := &IdentityGovernance_taskDefinitionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for TaskDefinition item
+func (b *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequestBuilder) ID(id string) *TaskDefinitionRequestBuilder {
+	bb := &TaskDefinitionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest is request for IdentityGovernance_taskDefinition collection
+// LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest is request for TaskDefinition collection
 type LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityGovernance_taskDefinition collection
-func (r *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityGovernance_taskDefinition, error) {
+// Paging perfoms paging operation for TaskDefinition collection
+func (r *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TaskDefinition, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -168,7 +168,7 @@ func (r *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest) Paging(ctx
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityGovernance_taskDefinition
+	var values []TaskDefinition
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -182,7 +182,7 @@ func (r *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest) Paging(ctx
 		}
 		var (
 			paging Paging
-			value  []IdentityGovernance_taskDefinition
+			value  []TaskDefinition
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -211,8 +211,8 @@ func (r *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest) Paging(ctx
 	}
 }
 
-// GetN performs GET request for IdentityGovernance_taskDefinition collection, max N pages
-func (r *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityGovernance_taskDefinition, error) {
+// GetN performs GET request for TaskDefinition collection, max N pages
+func (r *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest) GetN(ctx context.Context, n int) ([]TaskDefinition, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -220,46 +220,46 @@ func (r *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest) GetN(ctx c
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityGovernance_taskDefinition collection
-func (r *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest) Get(ctx context.Context) ([]IdentityGovernance_taskDefinition, error) {
+// Get performs GET request for TaskDefinition collection
+func (r *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest) Get(ctx context.Context) ([]TaskDefinition, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityGovernance_taskDefinition collection
-func (r *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest) Add(ctx context.Context, reqObj *IdentityGovernance_taskDefinition) (resObj *IdentityGovernance_taskDefinition, err error) {
+// Add performs POST request for TaskDefinition collection
+func (r *LifecycleWorkflowsContainerTaskDefinitionsCollectionRequest) Add(ctx context.Context, reqObj *TaskDefinition) (resObj *TaskDefinition, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// WorkflowTemplates returns request builder for IdentityGovernance_workflowTemplate collection
+// WorkflowTemplates returns request builder for WorkflowTemplate collection
 func (b *LifecycleWorkflowsContainerRequestBuilder) WorkflowTemplates() *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequestBuilder {
 	bb := &LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/workflowTemplates"
 	return bb
 }
 
-// LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequestBuilder is request builder for IdentityGovernance_workflowTemplate collection
+// LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequestBuilder is request builder for WorkflowTemplate collection
 type LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityGovernance_workflowTemplate collection
+// Request returns request for WorkflowTemplate collection
 func (b *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequestBuilder) Request() *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest {
 	return &LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityGovernance_workflowTemplate item
-func (b *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequestBuilder) ID(id string) *IdentityGovernance_workflowTemplateRequestBuilder {
-	bb := &IdentityGovernance_workflowTemplateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for WorkflowTemplate item
+func (b *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequestBuilder) ID(id string) *WorkflowTemplateRequestBuilder {
+	bb := &WorkflowTemplateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest is request for IdentityGovernance_workflowTemplate collection
+// LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest is request for WorkflowTemplate collection
 type LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityGovernance_workflowTemplate collection
-func (r *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityGovernance_workflowTemplate, error) {
+// Paging perfoms paging operation for WorkflowTemplate collection
+func (r *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]WorkflowTemplate, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -271,7 +271,7 @@ func (r *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest) Paging(c
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityGovernance_workflowTemplate
+	var values []WorkflowTemplate
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -285,7 +285,7 @@ func (r *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest) Paging(c
 		}
 		var (
 			paging Paging
-			value  []IdentityGovernance_workflowTemplate
+			value  []WorkflowTemplate
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -314,8 +314,8 @@ func (r *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest) Paging(c
 	}
 }
 
-// GetN performs GET request for IdentityGovernance_workflowTemplate collection, max N pages
-func (r *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityGovernance_workflowTemplate, error) {
+// GetN performs GET request for WorkflowTemplate collection, max N pages
+func (r *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest) GetN(ctx context.Context, n int) ([]WorkflowTemplate, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -323,46 +323,46 @@ func (r *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest) GetN(ctx
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityGovernance_workflowTemplate collection
-func (r *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest) Get(ctx context.Context) ([]IdentityGovernance_workflowTemplate, error) {
+// Get performs GET request for WorkflowTemplate collection
+func (r *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest) Get(ctx context.Context) ([]WorkflowTemplate, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityGovernance_workflowTemplate collection
-func (r *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest) Add(ctx context.Context, reqObj *IdentityGovernance_workflowTemplate) (resObj *IdentityGovernance_workflowTemplate, err error) {
+// Add performs POST request for WorkflowTemplate collection
+func (r *LifecycleWorkflowsContainerWorkflowTemplatesCollectionRequest) Add(ctx context.Context, reqObj *WorkflowTemplate) (resObj *WorkflowTemplate, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// Workflows returns request builder for IdentityGovernance_workflow collection
+// Workflows returns request builder for Workflow collection
 func (b *LifecycleWorkflowsContainerRequestBuilder) Workflows() *LifecycleWorkflowsContainerWorkflowsCollectionRequestBuilder {
 	bb := &LifecycleWorkflowsContainerWorkflowsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/workflows"
 	return bb
 }
 
-// LifecycleWorkflowsContainerWorkflowsCollectionRequestBuilder is request builder for IdentityGovernance_workflow collection
+// LifecycleWorkflowsContainerWorkflowsCollectionRequestBuilder is request builder for Workflow collection
 type LifecycleWorkflowsContainerWorkflowsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityGovernance_workflow collection
+// Request returns request for Workflow collection
 func (b *LifecycleWorkflowsContainerWorkflowsCollectionRequestBuilder) Request() *LifecycleWorkflowsContainerWorkflowsCollectionRequest {
 	return &LifecycleWorkflowsContainerWorkflowsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityGovernance_workflow item
-func (b *LifecycleWorkflowsContainerWorkflowsCollectionRequestBuilder) ID(id string) *IdentityGovernance_workflowRequestBuilder {
-	bb := &IdentityGovernance_workflowRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Workflow item
+func (b *LifecycleWorkflowsContainerWorkflowsCollectionRequestBuilder) ID(id string) *WorkflowRequestBuilder {
+	bb := &WorkflowRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// LifecycleWorkflowsContainerWorkflowsCollectionRequest is request for IdentityGovernance_workflow collection
+// LifecycleWorkflowsContainerWorkflowsCollectionRequest is request for Workflow collection
 type LifecycleWorkflowsContainerWorkflowsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityGovernance_workflow collection
-func (r *LifecycleWorkflowsContainerWorkflowsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityGovernance_workflow, error) {
+// Paging perfoms paging operation for Workflow collection
+func (r *LifecycleWorkflowsContainerWorkflowsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Workflow, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -374,7 +374,7 @@ func (r *LifecycleWorkflowsContainerWorkflowsCollectionRequest) Paging(ctx conte
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityGovernance_workflow
+	var values []Workflow
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -388,7 +388,7 @@ func (r *LifecycleWorkflowsContainerWorkflowsCollectionRequest) Paging(ctx conte
 		}
 		var (
 			paging Paging
-			value  []IdentityGovernance_workflow
+			value  []Workflow
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -417,8 +417,8 @@ func (r *LifecycleWorkflowsContainerWorkflowsCollectionRequest) Paging(ctx conte
 	}
 }
 
-// GetN performs GET request for IdentityGovernance_workflow collection, max N pages
-func (r *LifecycleWorkflowsContainerWorkflowsCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityGovernance_workflow, error) {
+// GetN performs GET request for Workflow collection, max N pages
+func (r *LifecycleWorkflowsContainerWorkflowsCollectionRequest) GetN(ctx context.Context, n int) ([]Workflow, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -426,13 +426,13 @@ func (r *LifecycleWorkflowsContainerWorkflowsCollectionRequest) GetN(ctx context
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityGovernance_workflow collection
-func (r *LifecycleWorkflowsContainerWorkflowsCollectionRequest) Get(ctx context.Context) ([]IdentityGovernance_workflow, error) {
+// Get performs GET request for Workflow collection
+func (r *LifecycleWorkflowsContainerWorkflowsCollectionRequest) Get(ctx context.Context) ([]Workflow, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityGovernance_workflow collection
-func (r *LifecycleWorkflowsContainerWorkflowsCollectionRequest) Add(ctx context.Context, reqObj *IdentityGovernance_workflow) (resObj *IdentityGovernance_workflow, err error) {
+// Add performs POST request for Workflow collection
+func (r *LifecycleWorkflowsContainerWorkflowsCollectionRequest) Add(ctx context.Context, reqObj *Workflow) (resObj *Workflow, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

@@ -202,7 +202,7 @@ func (g *Generator) Generate() error {
 					s := &EntitySet{
 						Name: ma["Name"],
 						Sym:  exported(ma["Name"]),
-						Type: ma["EntityType"],
+						Type: alias.ReplaceAllString(ma["EntityType"], namespace),
 					}
 					entitySetMap[s.Name] = s
 				case "Singleton":
@@ -220,9 +220,11 @@ func (g *Generator) Generate() error {
 			targetList := strings.Split(target, "/")
 			targetMember := ""
 			if len(targetList) > 1 {
-				target = targetList[0]
-				targetMember = targetList[1]
+				target = alias.ReplaceAllString(targetList[0], namespace)
+				targetMember = alias.ReplaceAllString(targetList[1], namespace)
 			}
+			target = alias.ReplaceAllString(target, namespace)
+			targetMember = alias.ReplaceAllString(targetMember, namespace)
 			for _, y := range x.Elems {
 				switch y.XMLName.Local {
 				case "Annotation":
@@ -246,7 +248,10 @@ func (g *Generator) Generate() error {
 			}
 		}
 	}
-
+	//	for x := range entityTypeMap {
+	//		fmt.Println(x)
+	//	}
+	//	os.Exit(0)
 	// Copy all *.go files without template processing
 	// Copy everything below the first "// BEGIN" line to the output
 	paths, err := filepath.Glob("templates/*.go")
@@ -323,6 +328,11 @@ func (g *Generator) Generate() error {
 		keys = append(keys, x)
 	}
 	sort.Strings(keys)
+	//	for _, key := range keys {
+	//		fmt.Println(entityTypeMap[key])
+	//	}
+	//	os.Exit(0)
+
 	for _, key := range keys {
 		x := entityTypeMap[key]
 		x.Type = alias.ReplaceAllString(x.Type, namespace)
@@ -347,10 +357,10 @@ func (g *Generator) Generate() error {
 	sort.Strings(keys)
 	for _, a := range keys {
 		a = collectionAlias.ReplaceAllString(a, collectionNamespace)
+		a = alias.ReplaceAllString(a, namespace)
 		if _, ok := reservedTypeTable[a]; ok {
 			continue
 		}
-		fmt.Println(a)
 		x := actionTypeMap[a]
 		out, err = g.Create("Action", g.SymBaseType(a))
 		if err != nil {
@@ -368,9 +378,9 @@ func (g *Generator) Generate() error {
 	}
 
 	for _, x := range entityTypeMap {
-		if len(x.Navigations) == 0 {
-			continue
-		}
+		//	if len(x.Navigations) == 0 {
+		//		continue
+		//	}
 		requestModelMap[x.Sym] = true
 		for _, y := range x.Navigations {
 			requestModelMap[g.SymBaseType(y.Type)] = true
@@ -437,13 +447,15 @@ func (g *Generator) Generate() error {
 	for x := range entityTypeMap {
 		keys = append(keys, x)
 	}
+
 	sort.Strings(keys)
 	for _, key := range keys {
 		x := entityTypeMap[key]
 		actionRequestBuilderMap[x.Type] = append(actionRequestBuilderMap[x.Type], x.Sym)
-		if len(x.Navigations) == 0 {
-			continue
-		}
+
+		//	if len(x.Navigations) == 0 {
+		//		continue
+		//	}
 		out, err = g.Create("Action", x.Sym)
 		if err != nil {
 			return err

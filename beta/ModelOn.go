@@ -4,6 +4,6 @@ package msgraph
 
 // OnDemandExecutionOnly undocumented
 type OnDemandExecutionOnly struct {
-	// IdentityGovernance_workflowExecutionConditions is the base model of OnDemandExecutionOnly
-	IdentityGovernance_workflowExecutionConditions
+	// WorkflowExecutionConditions is the base model of OnDemandExecutionOnly
+	WorkflowExecutionConditions
 }

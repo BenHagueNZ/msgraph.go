@@ -44,6 +44,39 @@ func (r *ImportedWindowsAutopilotDeviceIdentityRequest) Delete(ctx context.Conte
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// ImportedWindowsAutopilotDeviceIdentityStateRequestBuilder is request builder for ImportedWindowsAutopilotDeviceIdentityState
+type ImportedWindowsAutopilotDeviceIdentityStateRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ImportedWindowsAutopilotDeviceIdentityStateRequest
+func (b *ImportedWindowsAutopilotDeviceIdentityStateRequestBuilder) Request() *ImportedWindowsAutopilotDeviceIdentityStateRequest {
+	return &ImportedWindowsAutopilotDeviceIdentityStateRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ImportedWindowsAutopilotDeviceIdentityStateRequest is request for ImportedWindowsAutopilotDeviceIdentityState
+type ImportedWindowsAutopilotDeviceIdentityStateRequest struct{ BaseRequest }
+
+// Get performs GET request for ImportedWindowsAutopilotDeviceIdentityState
+func (r *ImportedWindowsAutopilotDeviceIdentityStateRequest) Get(ctx context.Context) (resObj *ImportedWindowsAutopilotDeviceIdentityState, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ImportedWindowsAutopilotDeviceIdentityState
+func (r *ImportedWindowsAutopilotDeviceIdentityStateRequest) Update(ctx context.Context, reqObj *ImportedWindowsAutopilotDeviceIdentityState) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ImportedWindowsAutopilotDeviceIdentityState
+func (r *ImportedWindowsAutopilotDeviceIdentityStateRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // ImportedWindowsAutopilotDeviceIdentityUploadRequestBuilder is request builder for ImportedWindowsAutopilotDeviceIdentityUpload
 type ImportedWindowsAutopilotDeviceIdentityUploadRequestBuilder struct{ BaseRequestBuilder }
 
