@@ -8,6 +8,19 @@
 
 (The online references at pkg.go.dev above are not shown due to huge size of packages - [#23](https://github.com/BenHagueNZ/msgraph.go/issues/23))
 
+## Notes on this clone
+
+There are several issues currently.
+1) Does not work correctly with the new xml format. Related to adding multiple namespaces. Partially fixed but not completely
+2) Creation of URLs believed to be inaccurate
+3) Beta API not being created at all
+
+The generator_generate.go file parses out xml file and then calls the tmpl files to create the various files needed. generator_types.go is also quite relevant.
+
+Couple of possible approaches - Either try to fix the generator for all cases, or pull out a smaller number and try to get them going manually.
+
+## From original below
+
 ## Introduction
 
 [Microsoft Graph] client library for Go.  Still in PoC or pre-alpha stage.
