@@ -2,13 +2,13 @@
 
 package msgraph
 
-// WebApp Contains properties and inherited properties for web apps.
+// WebApp undocumented
 type WebApp struct {
 	// MobileApp is the base model of WebApp
 	MobileApp
-	// AppURL The web app URL. This property cannot be PATCHed.
+	// AppURL undocumented
 	AppURL *string `json:"appUrl,omitempty"`
-	// UseManagedBrowser Whether or not to use managed browser. This property is only applicable for Android and IOS.
+	// UseManagedBrowser undocumented
 	UseManagedBrowser *bool `json:"useManagedBrowser,omitempty"`
 }
 

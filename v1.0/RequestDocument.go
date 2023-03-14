@@ -135,25 +135,3 @@ func (r *DocumentSetVersionItemRequest) Update(ctx context.Context, reqObj *Docu
 func (r *DocumentSetVersionItemRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
-
-type DocumentSetVersionRestoreRequestBuilder struct{ BaseRequestBuilder }
-
-// Restore action undocumented
-func (b *DocumentSetVersionRequestBuilder) Restore(reqObj *DocumentSetVersionRestoreRequestParameter) *DocumentSetVersionRestoreRequestBuilder {
-	bb := &DocumentSetVersionRestoreRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/restore"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type DocumentSetVersionRestoreRequest struct{ BaseRequest }
-
-func (b *DocumentSetVersionRestoreRequestBuilder) Request() *DocumentSetVersionRestoreRequest {
-	return &DocumentSetVersionRestoreRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *DocumentSetVersionRestoreRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}

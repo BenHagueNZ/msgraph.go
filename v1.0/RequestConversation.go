@@ -148,7 +148,7 @@ type ConversationMemberCollectionAddRequestBuilder struct{ BaseRequestBuilder }
 // Add action undocumented
 func (b *ChannelMembersCollectionRequestBuilder) Add(reqObj *ConversationMemberCollectionAddRequestParameter) *ConversationMemberCollectionAddRequestBuilder {
 	bb := &ConversationMemberCollectionAddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/add"
+	bb.BaseRequestBuilder.baseURL += "/Add"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -156,7 +156,7 @@ func (b *ChannelMembersCollectionRequestBuilder) Add(reqObj *ConversationMemberC
 // Add action undocumented
 func (b *ChatMembersCollectionRequestBuilder) Add(reqObj *ConversationMemberCollectionAddRequestParameter) *ConversationMemberCollectionAddRequestBuilder {
 	bb := &ConversationMemberCollectionAddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/add"
+	bb.BaseRequestBuilder.baseURL += "/Add"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -164,7 +164,7 @@ func (b *ChatMembersCollectionRequestBuilder) Add(reqObj *ConversationMemberColl
 // Add action undocumented
 func (b *SharedWithChannelTeamInfoAllowedMembersCollectionRequestBuilder) Add(reqObj *ConversationMemberCollectionAddRequestParameter) *ConversationMemberCollectionAddRequestBuilder {
 	bb := &ConversationMemberCollectionAddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/add"
+	bb.BaseRequestBuilder.baseURL += "/Add"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -172,7 +172,7 @@ func (b *SharedWithChannelTeamInfoAllowedMembersCollectionRequestBuilder) Add(re
 // Add action undocumented
 func (b *TeamMembersCollectionRequestBuilder) Add(reqObj *ConversationMemberCollectionAddRequestParameter) *ConversationMemberCollectionAddRequestBuilder {
 	bb := &ConversationMemberCollectionAddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/add"
+	bb.BaseRequestBuilder.baseURL += "/Add"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -246,26 +246,4 @@ func (r *ConversationMemberCollectionAddRequest) PostN(ctx context.Context, n in
 
 func (r *ConversationMemberCollectionAddRequest) Post(ctx context.Context) ([]ActionResultPart, error) {
 	return r.Paging(ctx, "POST", "", r.requestObject, 0)
-}
-
-type ConversationThreadReplyRequestBuilder struct{ BaseRequestBuilder }
-
-// Reply action undocumented
-func (b *ConversationThreadRequestBuilder) Reply(reqObj *ConversationThreadReplyRequestParameter) *ConversationThreadReplyRequestBuilder {
-	bb := &ConversationThreadReplyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/reply"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type ConversationThreadReplyRequest struct{ BaseRequest }
-
-func (b *ConversationThreadReplyRequestBuilder) Request() *ConversationThreadReplyRequest {
-	return &ConversationThreadReplyRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *ConversationThreadReplyRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }

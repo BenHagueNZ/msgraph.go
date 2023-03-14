@@ -14,27 +14,27 @@ type SettingSource struct {
 	SourceType *SettingSourceType `json:"sourceType,omitempty"`
 }
 
-// SettingStateDeviceSummary Device Compilance Policy and Configuration for a Setting State summary
+// SettingStateDeviceSummary undocumented
 type SettingStateDeviceSummary struct {
 	// Entity is the base model of SettingStateDeviceSummary
 	Entity
-	// CompliantDeviceCount Device Compliant count for the setting
+	// CompliantDeviceCount undocumented
 	CompliantDeviceCount *int `json:"compliantDeviceCount,omitempty"`
-	// ConflictDeviceCount Device conflict error count for the setting
+	// ConflictDeviceCount undocumented
 	ConflictDeviceCount *int `json:"conflictDeviceCount,omitempty"`
-	// ErrorDeviceCount Device error count for the setting
+	// ErrorDeviceCount undocumented
 	ErrorDeviceCount *int `json:"errorDeviceCount,omitempty"`
-	// InstancePath Name of the InstancePath for the setting
+	// InstancePath undocumented
 	InstancePath *string `json:"instancePath,omitempty"`
-	// NonCompliantDeviceCount Device NonCompliant count for the setting
+	// NonCompliantDeviceCount undocumented
 	NonCompliantDeviceCount *int `json:"nonCompliantDeviceCount,omitempty"`
-	// NotApplicableDeviceCount Device Not Applicable count for the setting
+	// NotApplicableDeviceCount undocumented
 	NotApplicableDeviceCount *int `json:"notApplicableDeviceCount,omitempty"`
-	// RemediatedDeviceCount Device Compliant count for the setting
+	// RemediatedDeviceCount undocumented
 	RemediatedDeviceCount *int `json:"remediatedDeviceCount,omitempty"`
-	// SettingName Name of the setting
+	// SettingName undocumented
 	SettingName *string `json:"settingName,omitempty"`
-	// UnknownDeviceCount Device Unkown count for the setting
+	// UnknownDeviceCount undocumented
 	UnknownDeviceCount *int `json:"unknownDeviceCount,omitempty"`
 }
 

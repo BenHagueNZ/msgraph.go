@@ -14,53 +14,53 @@ type AuditActivityInitiator struct {
 	User *UserIdentity `json:"user,omitempty"`
 }
 
-// AuditActor A class containing the properties for Audit Actor.
+// AuditActor undocumented
 type AuditActor struct {
 	// Object is the base model of AuditActor
 	Object
-	// ApplicationDisplayName Name of the Application.
+	// ApplicationDisplayName undocumented
 	ApplicationDisplayName *string `json:"applicationDisplayName,omitempty"`
-	// ApplicationID AAD Application Id.
+	// ApplicationID undocumented
 	ApplicationID *string `json:"applicationId,omitempty"`
-	// AuditActorType Actor Type.
+	// AuditActorType undocumented
 	AuditActorType *string `json:"auditActorType,omitempty"`
-	// IPAddress IPAddress.
+	// IPAddress undocumented
 	IPAddress *string `json:"ipAddress,omitempty"`
-	// ServicePrincipalName Service Principal Name (SPN).
+	// ServicePrincipalName undocumented
 	ServicePrincipalName *string `json:"servicePrincipalName,omitempty"`
-	// UserID User Id.
+	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
-	// UserPermissions List of user permissions when the audit was performed.
+	// UserPermissions undocumented
 	UserPermissions []string `json:"userPermissions,omitempty"`
-	// UserPrincipalName User Principal Name (UPN).
+	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
-// AuditEvent A class containing the properties for Audit Event.
+// AuditEvent undocumented
 type AuditEvent struct {
 	// Entity is the base model of AuditEvent
 	Entity
-	// Activity Friendly name of the activity.
+	// Activity undocumented
 	Activity *string `json:"activity,omitempty"`
-	// ActivityDateTime The date time in UTC when the activity was performed.
+	// ActivityDateTime undocumented
 	ActivityDateTime *time.Time `json:"activityDateTime,omitempty"`
-	// ActivityOperationType The HTTP operation type of the activity.
+	// ActivityOperationType undocumented
 	ActivityOperationType *string `json:"activityOperationType,omitempty"`
-	// ActivityResult The result of the activity.
+	// ActivityResult undocumented
 	ActivityResult *string `json:"activityResult,omitempty"`
-	// ActivityType The type of activity that was being performed.
+	// ActivityType undocumented
 	ActivityType *string `json:"activityType,omitempty"`
-	// Actor AAD user and application that are associated with the audit event.
+	// Actor undocumented
 	Actor *AuditActor `json:"actor,omitempty"`
-	// Category Audit category.
+	// Category undocumented
 	Category *string `json:"category,omitempty"`
-	// ComponentName Component name.
+	// ComponentName undocumented
 	ComponentName *string `json:"componentName,omitempty"`
-	// CorrelationID The client request Id that is used to correlate activity within the system.
+	// CorrelationID undocumented
 	CorrelationID *UUID `json:"correlationId,omitempty"`
-	// DisplayName Event display name.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// Resources Resources being modified.
+	// Resources undocumented
 	Resources []AuditResource `json:"resources,omitempty"`
 }
 
@@ -76,28 +76,28 @@ type AuditLogRoot struct {
 	SignIns []SignIn `json:"signIns,omitempty"`
 }
 
-// AuditProperty A class containing the properties for Audit Property.
+// AuditProperty undocumented
 type AuditProperty struct {
 	// Object is the base model of AuditProperty
 	Object
-	// DisplayName Display name.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// NewValue New value.
+	// NewValue undocumented
 	NewValue *string `json:"newValue,omitempty"`
-	// OldValue Old value.
+	// OldValue undocumented
 	OldValue *string `json:"oldValue,omitempty"`
 }
 
-// AuditResource A class containing the properties for Audit Resource.
+// AuditResource undocumented
 type AuditResource struct {
 	// Object is the base model of AuditResource
 	Object
-	// AuditResourceType Audit resource's type.
+	// AuditResourceType undocumented
 	AuditResourceType *string `json:"auditResourceType,omitempty"`
-	// DisplayName Display name.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// ModifiedProperties List of modified properties.
+	// ModifiedProperties undocumented
 	ModifiedProperties []AuditProperty `json:"modifiedProperties,omitempty"`
-	// ResourceID Audit resource's Id.
+	// ResourceID undocumented
 	ResourceID *string `json:"resourceId,omitempty"`
 }

@@ -18,35 +18,35 @@ func (b *InformationProtectionRequestBuilder) Bitlocker() *BitlockerRequestBuild
 	return bb
 }
 
-// ThreatAssessmentRequests returns request builder for ThreatAssessmentRequestObject collection
+// ThreatAssessmentRequests returns request builder for ThreatAssessmentRequest collection
 func (b *InformationProtectionRequestBuilder) ThreatAssessmentRequests() *InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder {
 	bb := &InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/threatAssessmentRequests"
 	return bb
 }
 
-// InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder is request builder for ThreatAssessmentRequestObject collection
+// InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder is request builder for ThreatAssessmentRequest collection
 type InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for ThreatAssessmentRequestObject collection
+// Request returns request for ThreatAssessmentRequest collection
 func (b *InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder) Request() *InformationProtectionThreatAssessmentRequestsCollectionRequest {
 	return &InformationProtectionThreatAssessmentRequestsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for ThreatAssessmentRequestObject item
-func (b *InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder) ID(id string) *ThreatAssessmentRequestObjectRequestBuilder {
-	bb := &ThreatAssessmentRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for ThreatAssessmentRequest item
+func (b *InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder) ID(id string) *ThreatAssessmentRequestRequestBuilder {
+	bb := &ThreatAssessmentRequestRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// InformationProtectionThreatAssessmentRequestsCollectionRequest is request for ThreatAssessmentRequestObject collection
+// InformationProtectionThreatAssessmentRequestsCollectionRequest is request for ThreatAssessmentRequest collection
 type InformationProtectionThreatAssessmentRequestsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for ThreatAssessmentRequestObject collection
-func (r *InformationProtectionThreatAssessmentRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ThreatAssessmentRequestObject, error) {
+// Paging perfoms paging operation for ThreatAssessmentRequest collection
+func (r *InformationProtectionThreatAssessmentRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ThreatAssessmentRequest, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -58,7 +58,7 @@ func (r *InformationProtectionThreatAssessmentRequestsCollectionRequest) Paging(
 	if err != nil {
 		return nil, err
 	}
-	var values []ThreatAssessmentRequestObject
+	var values []ThreatAssessmentRequest
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -72,7 +72,7 @@ func (r *InformationProtectionThreatAssessmentRequestsCollectionRequest) Paging(
 		}
 		var (
 			paging Paging
-			value  []ThreatAssessmentRequestObject
+			value  []ThreatAssessmentRequest
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -101,8 +101,8 @@ func (r *InformationProtectionThreatAssessmentRequestsCollectionRequest) Paging(
 	}
 }
 
-// GetN performs GET request for ThreatAssessmentRequestObject collection, max N pages
-func (r *InformationProtectionThreatAssessmentRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]ThreatAssessmentRequestObject, error) {
+// GetN performs GET request for ThreatAssessmentRequest collection, max N pages
+func (r *InformationProtectionThreatAssessmentRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]ThreatAssessmentRequest, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -110,13 +110,13 @@ func (r *InformationProtectionThreatAssessmentRequestsCollectionRequest) GetN(ct
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for ThreatAssessmentRequestObject collection
-func (r *InformationProtectionThreatAssessmentRequestsCollectionRequest) Get(ctx context.Context) ([]ThreatAssessmentRequestObject, error) {
+// Get performs GET request for ThreatAssessmentRequest collection
+func (r *InformationProtectionThreatAssessmentRequestsCollectionRequest) Get(ctx context.Context) ([]ThreatAssessmentRequest, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for ThreatAssessmentRequestObject collection
-func (r *InformationProtectionThreatAssessmentRequestsCollectionRequest) Add(ctx context.Context, reqObj *ThreatAssessmentRequestObject) (resObj *ThreatAssessmentRequestObject, err error) {
+// Add performs POST request for ThreatAssessmentRequest collection
+func (r *InformationProtectionThreatAssessmentRequestsCollectionRequest) Add(ctx context.Context, reqObj *ThreatAssessmentRequest) (resObj *ThreatAssessmentRequest, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

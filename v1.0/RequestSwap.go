@@ -4,6 +4,39 @@ package msgraph
 
 import "context"
 
+// SwapShiftsChangeRequestRequestBuilder is request builder for SwapShiftsChangeRequest
+type SwapShiftsChangeRequestRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SwapShiftsChangeRequestRequest
+func (b *SwapShiftsChangeRequestRequestBuilder) Request() *SwapShiftsChangeRequestRequest {
+	return &SwapShiftsChangeRequestRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SwapShiftsChangeRequestRequest is request for SwapShiftsChangeRequest
+type SwapShiftsChangeRequestRequest struct{ BaseRequest }
+
+// Get performs GET request for SwapShiftsChangeRequest
+func (r *SwapShiftsChangeRequestRequest) Get(ctx context.Context) (resObj *SwapShiftsChangeRequest, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SwapShiftsChangeRequest
+func (r *SwapShiftsChangeRequestRequest) Update(ctx context.Context, reqObj *SwapShiftsChangeRequest) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SwapShiftsChangeRequest
+func (r *SwapShiftsChangeRequestRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // SwapShiftsChangeRequestObjectRequestBuilder is request builder for SwapShiftsChangeRequestObject
 type SwapShiftsChangeRequestObjectRequestBuilder struct{ BaseRequestBuilder }
 

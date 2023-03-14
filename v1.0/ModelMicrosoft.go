@@ -56,26 +56,26 @@ type MicrosoftAuthenticatorFeatureSettings struct {
 	DisplayLocationInformationRequiredState *AuthenticationMethodFeatureConfiguration `json:"displayLocationInformationRequiredState,omitempty"`
 }
 
-// MicrosoftStoreForBusinessApp Microsoft Store for Business Apps. This class does not support Create, Delete, or Update.
+// MicrosoftStoreForBusinessApp undocumented
 type MicrosoftStoreForBusinessApp struct {
 	// MobileApp is the base model of MicrosoftStoreForBusinessApp
 	MobileApp
-	// LicenseType The app license type
+	// LicenseType undocumented
 	LicenseType *MicrosoftStoreForBusinessLicenseType `json:"licenseType,omitempty"`
-	// PackageIdentityName The app package identifier
+	// PackageIdentityName undocumented
 	PackageIdentityName *string `json:"packageIdentityName,omitempty"`
-	// ProductKey The app product key
+	// ProductKey undocumented
 	ProductKey *string `json:"productKey,omitempty"`
-	// TotalLicenseCount The total number of Microsoft Store for Business licenses.
+	// TotalLicenseCount undocumented
 	TotalLicenseCount *int `json:"totalLicenseCount,omitempty"`
-	// UsedLicenseCount The number of Microsoft Store for Business licenses in use.
+	// UsedLicenseCount undocumented
 	UsedLicenseCount *int `json:"usedLicenseCount,omitempty"`
 }
 
-// MicrosoftStoreForBusinessAppAssignmentSettings Contains properties used to assign an Microsoft Store for Business mobile app to a group.
+// MicrosoftStoreForBusinessAppAssignmentSettings undocumented
 type MicrosoftStoreForBusinessAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of MicrosoftStoreForBusinessAppAssignmentSettings
 	MobileAppAssignmentSettings
-	// UseDeviceContext Whether or not to use device execution context for Microsoft Store for Business mobile app.
+	// UseDeviceContext undocumented
 	UseDeviceContext *bool `json:"useDeviceContext,omitempty"`
 }

@@ -18,8 +18,8 @@ type File struct {
 
 // FileAssessmentRequestObject undocumented
 type FileAssessmentRequestObject struct {
-	// ThreatAssessmentRequestObject is the base model of FileAssessmentRequestObject
-	ThreatAssessmentRequestObject
+	// ThreatAssessmentRequest is the base model of FileAssessmentRequestObject
+	ThreatAssessmentRequest
 	// ContentData undocumented
 	ContentData *string `json:"contentData,omitempty"`
 	// FileName undocumented
@@ -38,23 +38,23 @@ type FileAttachment struct {
 	ContentLocation *string `json:"contentLocation,omitempty"`
 }
 
-// FileEncryptionInfo Contains properties for file encryption information for the content version of a line of business app.
+// FileEncryptionInfo undocumented
 type FileEncryptionInfo struct {
 	// Object is the base model of FileEncryptionInfo
 	Object
-	// EncryptionKey The key used to encrypt the file content.
+	// EncryptionKey undocumented
 	EncryptionKey *Binary `json:"encryptionKey,omitempty"`
-	// FileDigest The file digest prior to encryption. ProfileVersion1 requires a non-null FileDigest.
+	// FileDigest undocumented
 	FileDigest *Binary `json:"fileDigest,omitempty"`
-	// FileDigestAlgorithm The file digest algorithm. ProfileVersion1 currently only supports SHA256 for the FileDigestAlgorithm.
+	// FileDigestAlgorithm undocumented
 	FileDigestAlgorithm *string `json:"fileDigestAlgorithm,omitempty"`
-	// InitializationVector The initialization vector (IV) used for the encryption algorithm. Must be 16 bytes.
+	// InitializationVector undocumented
 	InitializationVector *Binary `json:"initializationVector,omitempty"`
-	// Mac The hash of the concatenation of the IV and encrypted file content. Must be 32 bytes.
+	// Mac undocumented
 	Mac *Binary `json:"mac,omitempty"`
-	// MacKey The key used to compute the message authentication code of the concatenation of the IV and encrypted file content. Must be 32 bytes.
+	// MacKey undocumented
 	MacKey *Binary `json:"macKey,omitempty"`
-	// ProfileIdentifier The profile identifier. Maps to the strategy used to encrypt the file. Currently, only ProfileVersion1 is supported.
+	// ProfileIdentifier undocumented
 	ProfileIdentifier *string `json:"profileIdentifier,omitempty"`
 }
 

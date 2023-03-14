@@ -20,34 +20,34 @@ type ComplianceInformation struct {
 	CertificationName *string `json:"certificationName,omitempty"`
 }
 
-// ComplianceManagementPartner Compliance management partner for all platforms
+// ComplianceManagementPartner undocumented
 type ComplianceManagementPartner struct {
 	// Entity is the base model of ComplianceManagementPartner
 	Entity
-	// AndroidEnrollmentAssignments User groups which enroll Android devices through partner.
+	// AndroidEnrollmentAssignments undocumented
 	AndroidEnrollmentAssignments []ComplianceManagementPartnerAssignment `json:"androidEnrollmentAssignments,omitempty"`
-	// AndroidOnboarded Partner onboarded for Android devices.
+	// AndroidOnboarded undocumented
 	AndroidOnboarded *bool `json:"androidOnboarded,omitempty"`
-	// DisplayName Partner display name
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// IOSEnrollmentAssignments User groups which enroll ios devices through partner.
+	// IOSEnrollmentAssignments undocumented
 	IOSEnrollmentAssignments []ComplianceManagementPartnerAssignment `json:"iosEnrollmentAssignments,omitempty"`
-	// IOSOnboarded Partner onboarded for ios devices.
+	// IOSOnboarded undocumented
 	IOSOnboarded *bool `json:"iosOnboarded,omitempty"`
-	// LastHeartbeatDateTime Timestamp of last heartbeat after admin onboarded to the compliance management partner
+	// LastHeartbeatDateTime undocumented
 	LastHeartbeatDateTime *time.Time `json:"lastHeartbeatDateTime,omitempty"`
-	// MacOsEnrollmentAssignments User groups which enroll Mac devices through partner.
+	// MacOsEnrollmentAssignments undocumented
 	MacOsEnrollmentAssignments []ComplianceManagementPartnerAssignment `json:"macOsEnrollmentAssignments,omitempty"`
-	// MacOsOnboarded Partner onboarded for Mac devices.
+	// MacOsOnboarded undocumented
 	MacOsOnboarded *bool `json:"macOsOnboarded,omitempty"`
-	// PartnerState Partner state of this tenant
+	// PartnerState undocumented
 	PartnerState *DeviceManagementPartnerTenantState `json:"partnerState,omitempty"`
 }
 
-// ComplianceManagementPartnerAssignment User group targeting for Compliance Management Partner
+// ComplianceManagementPartnerAssignment undocumented
 type ComplianceManagementPartnerAssignment struct {
 	// Object is the base model of ComplianceManagementPartnerAssignment
 	Object
-	// Target Group assignment target.
+	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }

@@ -136,6 +136,39 @@ func (r *TimeOffReasonRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// TimeOffRequestRequestBuilder is request builder for TimeOffRequest
+type TimeOffRequestRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TimeOffRequestRequest
+func (b *TimeOffRequestRequestBuilder) Request() *TimeOffRequestRequest {
+	return &TimeOffRequestRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TimeOffRequestRequest is request for TimeOffRequest
+type TimeOffRequestRequest struct{ BaseRequest }
+
+// Get performs GET request for TimeOffRequest
+func (r *TimeOffRequestRequest) Get(ctx context.Context) (resObj *TimeOffRequest, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TimeOffRequest
+func (r *TimeOffRequestRequest) Update(ctx context.Context, reqObj *TimeOffRequest) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TimeOffRequest
+func (r *TimeOffRequestRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // TimeOffRequestObjectRequestBuilder is request builder for TimeOffRequestObject
 type TimeOffRequestObjectRequestBuilder struct{ BaseRequestBuilder }
 

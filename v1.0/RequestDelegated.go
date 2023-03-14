@@ -235,6 +235,39 @@ func (r *DelegatedAdminRelationshipOperationRequest) Delete(ctx context.Context)
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// DelegatedAdminRelationshipRequestRequestBuilder is request builder for DelegatedAdminRelationshipRequest
+type DelegatedAdminRelationshipRequestRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns DelegatedAdminRelationshipRequestRequest
+func (b *DelegatedAdminRelationshipRequestRequestBuilder) Request() *DelegatedAdminRelationshipRequestRequest {
+	return &DelegatedAdminRelationshipRequestRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// DelegatedAdminRelationshipRequestRequest is request for DelegatedAdminRelationshipRequest
+type DelegatedAdminRelationshipRequestRequest struct{ BaseRequest }
+
+// Get performs GET request for DelegatedAdminRelationshipRequest
+func (r *DelegatedAdminRelationshipRequestRequest) Get(ctx context.Context) (resObj *DelegatedAdminRelationshipRequest, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for DelegatedAdminRelationshipRequest
+func (r *DelegatedAdminRelationshipRequestRequest) Update(ctx context.Context, reqObj *DelegatedAdminRelationshipRequest) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for DelegatedAdminRelationshipRequest
+func (r *DelegatedAdminRelationshipRequestRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // DelegatedAdminRelationshipRequestObjectRequestBuilder is request builder for DelegatedAdminRelationshipRequestObject
 type DelegatedAdminRelationshipRequestObjectRequestBuilder struct{ BaseRequestBuilder }
 

@@ -19,12 +19,12 @@ type AccessPackageGetApplicablePolicyRequirementsRequestParameter struct {
 type AccessPackageAssignmentReprocessRequestParameter struct {
 }
 
-// AccessPackageAssignmentRequestObjectCancelRequestParameter undocumented
-type AccessPackageAssignmentRequestObjectCancelRequestParameter struct {
+// AccessPackageAssignmentRequestCancelRequestParameter undocumented
+type AccessPackageAssignmentRequestCancelRequestParameter struct {
 }
 
-// AccessPackageAssignmentRequestObjectReprocessRequestParameter undocumented
-type AccessPackageAssignmentRequestObjectReprocessRequestParameter struct {
+// AccessPackageAssignmentRequestReprocessRequestParameter undocumented
+type AccessPackageAssignmentRequestReprocessRequestParameter struct {
 }
 
 // AccessReviewHistoryInstanceGenerateDownloadURIRequestParameter undocumented

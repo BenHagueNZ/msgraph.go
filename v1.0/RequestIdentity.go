@@ -504,7 +504,7 @@ type IdentityUserFlowAttributeAssignmentCollectionSetOrderRequestBuilder struct{
 // SetOrder action undocumented
 func (b *B2xIdentityUserFlowUserAttributeAssignmentsCollectionRequestBuilder) SetOrder(reqObj *IdentityUserFlowAttributeAssignmentCollectionSetOrderRequestParameter) *IdentityUserFlowAttributeAssignmentCollectionSetOrderRequestBuilder {
 	bb := &IdentityUserFlowAttributeAssignmentCollectionSetOrderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/setOrder"
+	bb.BaseRequestBuilder.baseURL += "/SetOrder"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -519,27 +519,4 @@ func (b *IdentityUserFlowAttributeAssignmentCollectionSetOrderRequestBuilder) Re
 
 func (r *IdentityUserFlowAttributeAssignmentCollectionSetOrderRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type IdentityAPIConnectorUploadClientCertificateRequestBuilder struct{ BaseRequestBuilder }
-
-// UploadClientCertificate action undocumented
-func (b *IdentityAPIConnectorRequestBuilder) UploadClientCertificate(reqObj *IdentityAPIConnectorUploadClientCertificateRequestParameter) *IdentityAPIConnectorUploadClientCertificateRequestBuilder {
-	bb := &IdentityAPIConnectorUploadClientCertificateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/uploadClientCertificate"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type IdentityAPIConnectorUploadClientCertificateRequest struct{ BaseRequest }
-
-func (b *IdentityAPIConnectorUploadClientCertificateRequestBuilder) Request() *IdentityAPIConnectorUploadClientCertificateRequest {
-	return &IdentityAPIConnectorUploadClientCertificateRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *IdentityAPIConnectorUploadClientCertificateRequest) Post(ctx context.Context) (resObj *IdentityAPIConnector, err error) {
-	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
-	return
 }

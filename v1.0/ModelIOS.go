@@ -4,447 +4,447 @@ package msgraph
 
 import "time"
 
-// IOSCertificateProfile Device Configuration.
+// IOSCertificateProfile undocumented
 type IOSCertificateProfile struct {
 	// DeviceConfiguration is the base model of IOSCertificateProfile
 	DeviceConfiguration
 }
 
-// IOSCompliancePolicy This class contains compliance settings for IOS.
+// IOSCompliancePolicy undocumented
 type IOSCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of IOSCompliancePolicy
 	DeviceCompliancePolicy
-	// DeviceThreatProtectionEnabled Require that devices have enabled device threat protection .
+	// DeviceThreatProtectionEnabled undocumented
 	DeviceThreatProtectionEnabled *bool `json:"deviceThreatProtectionEnabled,omitempty"`
-	// DeviceThreatProtectionRequiredSecurityLevel Require Mobile Threat Protection minimum risk level to report noncompliance.
+	// DeviceThreatProtectionRequiredSecurityLevel undocumented
 	DeviceThreatProtectionRequiredSecurityLevel *DeviceThreatProtectionLevel `json:"deviceThreatProtectionRequiredSecurityLevel,omitempty"`
-	// ManagedEmailProfileRequired Indicates whether or not to require a managed email profile.
+	// ManagedEmailProfileRequired undocumented
 	ManagedEmailProfileRequired *bool `json:"managedEmailProfileRequired,omitempty"`
-	// OsMaximumVersion Maximum IOS version.
+	// OsMaximumVersion undocumented
 	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
-	// OsMinimumVersion Minimum IOS version.
+	// OsMinimumVersion undocumented
 	OsMinimumVersion *string `json:"osMinimumVersion,omitempty"`
-	// PasscodeBlockSimple Indicates whether or not to block simple passcodes.
+	// PasscodeBlockSimple undocumented
 	PasscodeBlockSimple *bool `json:"passcodeBlockSimple,omitempty"`
-	// PasscodeExpirationDays Number of days before the passcode expires. Valid values 1 to 65535
+	// PasscodeExpirationDays undocumented
 	PasscodeExpirationDays *int `json:"passcodeExpirationDays,omitempty"`
-	// PasscodeMinimumCharacterSetCount The number of character sets required in the password.
+	// PasscodeMinimumCharacterSetCount undocumented
 	PasscodeMinimumCharacterSetCount *int `json:"passcodeMinimumCharacterSetCount,omitempty"`
-	// PasscodeMinimumLength Minimum length of passcode. Valid values 4 to 14
+	// PasscodeMinimumLength undocumented
 	PasscodeMinimumLength *int `json:"passcodeMinimumLength,omitempty"`
-	// PasscodeMinutesOfInactivityBeforeLock Minutes of inactivity before a passcode is required.
+	// PasscodeMinutesOfInactivityBeforeLock undocumented
 	PasscodeMinutesOfInactivityBeforeLock *int `json:"passcodeMinutesOfInactivityBeforeLock,omitempty"`
-	// PasscodePreviousPasscodeBlockCount Number of previous passcodes to block. Valid values 1 to 24
+	// PasscodePreviousPasscodeBlockCount undocumented
 	PasscodePreviousPasscodeBlockCount *int `json:"passcodePreviousPasscodeBlockCount,omitempty"`
-	// PasscodeRequired Indicates whether or not to require a passcode.
+	// PasscodeRequired undocumented
 	PasscodeRequired *bool `json:"passcodeRequired,omitempty"`
-	// PasscodeRequiredType The required passcode type.
+	// PasscodeRequiredType undocumented
 	PasscodeRequiredType *RequiredPasswordType `json:"passcodeRequiredType,omitempty"`
-	// SecurityBlockJailbrokenDevices Devices must not be jailbroken or rooted.
+	// SecurityBlockJailbrokenDevices undocumented
 	SecurityBlockJailbrokenDevices *bool `json:"securityBlockJailbrokenDevices,omitempty"`
 }
 
-// IOSCustomConfiguration This topic provides descriptions of the declared methods, properties and relationships exposed by the iosCustomConfiguration resource.
+// IOSCustomConfiguration undocumented
 type IOSCustomConfiguration struct {
 	// DeviceConfiguration is the base model of IOSCustomConfiguration
 	DeviceConfiguration
-	// Payload Payload. (UTF8 encoded byte array)
+	// Payload undocumented
 	Payload *Binary `json:"payload,omitempty"`
-	// PayloadFileName Payload file name (*.mobileconfig | *.xml).
+	// PayloadFileName undocumented
 	PayloadFileName *string `json:"payloadFileName,omitempty"`
-	// PayloadName Name that is displayed to the user.
+	// PayloadName undocumented
 	PayloadName *string `json:"payloadName,omitempty"`
 }
 
-// IOSDeviceFeaturesConfiguration iOS Device Features Configuration Profile.
+// IOSDeviceFeaturesConfiguration undocumented
 type IOSDeviceFeaturesConfiguration struct {
 	// AppleDeviceFeaturesConfigurationBase is the base model of IOSDeviceFeaturesConfiguration
 	AppleDeviceFeaturesConfigurationBase
-	// AssetTagTemplate Asset tag information for the device, displayed on the login window and lock screen.
+	// AssetTagTemplate undocumented
 	AssetTagTemplate *string `json:"assetTagTemplate,omitempty"`
-	// HomeScreenDockIcons A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.
+	// HomeScreenDockIcons undocumented
 	HomeScreenDockIcons []IOSHomeScreenItem `json:"homeScreenDockIcons,omitempty"`
-	// HomeScreenPages A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.
+	// HomeScreenPages undocumented
 	HomeScreenPages []IOSHomeScreenPage `json:"homeScreenPages,omitempty"`
-	// LockScreenFootnote A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.
+	// LockScreenFootnote undocumented
 	LockScreenFootnote *string `json:"lockScreenFootnote,omitempty"`
-	// NotificationSettings Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.
+	// NotificationSettings undocumented
 	NotificationSettings []IOSNotificationSettings `json:"notificationSettings,omitempty"`
 }
 
-// IOSDeviceType Contains properties of the possible iOS device types the mobile app can run on.
+// IOSDeviceType undocumented
 type IOSDeviceType struct {
 	// Object is the base model of IOSDeviceType
 	Object
-	// IPad Whether the app should run on iPads.
+	// IPad undocumented
 	IPad *bool `json:"iPad,omitempty"`
-	// IPhoneAndIPod Whether the app should run on iPhones and iPods.
+	// IPhoneAndIPod undocumented
 	IPhoneAndIPod *bool `json:"iPhoneAndIPod,omitempty"`
 }
 
-// IOSGeneralDeviceConfiguration This topic provides descriptions of the declared methods, properties and relationships exposed by the iosGeneralDeviceConfiguration resource.
+// IOSGeneralDeviceConfiguration undocumented
 type IOSGeneralDeviceConfiguration struct {
 	// DeviceConfiguration is the base model of IOSGeneralDeviceConfiguration
 	DeviceConfiguration
-	// AccountBlockModification Indicates whether or not to allow account modification when the device is in supervised mode.
+	// AccountBlockModification undocumented
 	AccountBlockModification *bool `json:"accountBlockModification,omitempty"`
-	// ActivationLockAllowWhenSupervised Indicates whether or not to allow activation lock when the device is in the supervised mode.
+	// ActivationLockAllowWhenSupervised undocumented
 	ActivationLockAllowWhenSupervised *bool `json:"activationLockAllowWhenSupervised,omitempty"`
-	// AirDropBlocked Indicates whether or not to allow AirDrop when the device is in supervised mode.
+	// AirDropBlocked undocumented
 	AirDropBlocked *bool `json:"airDropBlocked,omitempty"`
-	// AirDropForceUnmanagedDropTarget Indicates whether or not to cause AirDrop to be considered an unmanaged drop target (iOS 9.0 and later).
+	// AirDropForceUnmanagedDropTarget undocumented
 	AirDropForceUnmanagedDropTarget *bool `json:"airDropForceUnmanagedDropTarget,omitempty"`
-	// AirPlayForcePairingPasswordForOutgoingRequests Indicates whether or not to enforce all devices receiving AirPlay requests from this device to use a pairing password.
+	// AirPlayForcePairingPasswordForOutgoingRequests undocumented
 	AirPlayForcePairingPasswordForOutgoingRequests *bool `json:"airPlayForcePairingPasswordForOutgoingRequests,omitempty"`
-	// AppleNewsBlocked Indicates whether or not to block the user from using News when the device is in supervised mode (iOS 9.0 and later).
+	// AppleNewsBlocked undocumented
 	AppleNewsBlocked *bool `json:"appleNewsBlocked,omitempty"`
-	// AppleWatchBlockPairing Indicates whether or not to allow Apple Watch pairing when the device is in supervised mode (iOS 9.0 and later).
+	// AppleWatchBlockPairing undocumented
 	AppleWatchBlockPairing *bool `json:"appleWatchBlockPairing,omitempty"`
-	// AppleWatchForceWristDetection Indicates whether or not to force a paired Apple Watch to use Wrist Detection (iOS 8.2 and later).
+	// AppleWatchForceWristDetection undocumented
 	AppleWatchForceWristDetection *bool `json:"appleWatchForceWristDetection,omitempty"`
-	// AppsSingleAppModeList Gets or sets the list of iOS apps allowed to autonomously enter Single App Mode. Supervised only. iOS 7.0 and later. This collection can contain a maximum of 500 elements.
+	// AppsSingleAppModeList undocumented
 	AppsSingleAppModeList []AppListItem `json:"appsSingleAppModeList,omitempty"`
-	// AppStoreBlockAutomaticDownloads Indicates whether or not to block the automatic downloading of apps purchased on other devices when the device is in supervised mode (iOS 9.0 and later).
+	// AppStoreBlockAutomaticDownloads undocumented
 	AppStoreBlockAutomaticDownloads *bool `json:"appStoreBlockAutomaticDownloads,omitempty"`
-	// AppStoreBlocked Indicates whether or not to block the user from using the App Store. Requires a supervised device for iOS 13 and later.
+	// AppStoreBlocked undocumented
 	AppStoreBlocked *bool `json:"appStoreBlocked,omitempty"`
-	// AppStoreBlockInAppPurchases Indicates whether or not to block the user from making in app purchases.
+	// AppStoreBlockInAppPurchases undocumented
 	AppStoreBlockInAppPurchases *bool `json:"appStoreBlockInAppPurchases,omitempty"`
-	// AppStoreBlockUIAppInstallation Indicates whether or not to block the App Store app, not restricting installation through Host apps. Applies to supervised mode only (iOS 9.0 and later).
+	// AppStoreBlockUIAppInstallation undocumented
 	AppStoreBlockUIAppInstallation *bool `json:"appStoreBlockUIAppInstallation,omitempty"`
-	// AppStoreRequirePassword Indicates whether or not to require a password when using the app store.
+	// AppStoreRequirePassword undocumented
 	AppStoreRequirePassword *bool `json:"appStoreRequirePassword,omitempty"`
-	// AppsVisibilityList List of apps in the visibility list (either visible/launchable apps list or hidden/unlaunchable apps list, controlled by AppsVisibilityListType) (iOS 9.3 and later). This collection can contain a maximum of 10000 elements.
+	// AppsVisibilityList undocumented
 	AppsVisibilityList []AppListItem `json:"appsVisibilityList,omitempty"`
-	// AppsVisibilityListType Type of list that is in the AppsVisibilityList.
+	// AppsVisibilityListType undocumented
 	AppsVisibilityListType *AppListType `json:"appsVisibilityListType,omitempty"`
-	// BluetoothBlockModification Indicates whether or not to allow modification of Bluetooth settings when the device is in supervised mode (iOS 10.0 and later).
+	// BluetoothBlockModification undocumented
 	BluetoothBlockModification *bool `json:"bluetoothBlockModification,omitempty"`
-	// CameraBlocked Indicates whether or not to block the user from accessing the camera of the device. Requires a supervised device for iOS 13 and later.
+	// CameraBlocked undocumented
 	CameraBlocked *bool `json:"cameraBlocked,omitempty"`
-	// CellularBlockDataRoaming Indicates whether or not to block data roaming.
+	// CellularBlockDataRoaming undocumented
 	CellularBlockDataRoaming *bool `json:"cellularBlockDataRoaming,omitempty"`
-	// CellularBlockGlobalBackgroundFetchWhileRoaming Indicates whether or not to block global background fetch while roaming.
+	// CellularBlockGlobalBackgroundFetchWhileRoaming undocumented
 	CellularBlockGlobalBackgroundFetchWhileRoaming *bool `json:"cellularBlockGlobalBackgroundFetchWhileRoaming,omitempty"`
-	// CellularBlockPerAppDataModification Indicates whether or not to allow changes to cellular app data usage settings when the device is in supervised mode.
+	// CellularBlockPerAppDataModification undocumented
 	CellularBlockPerAppDataModification *bool `json:"cellularBlockPerAppDataModification,omitempty"`
-	// CellularBlockPersonalHotspot Indicates whether or not to block Personal Hotspot.
+	// CellularBlockPersonalHotspot undocumented
 	CellularBlockPersonalHotspot *bool `json:"cellularBlockPersonalHotspot,omitempty"`
-	// CellularBlockVoiceRoaming Indicates whether or not to block voice roaming.
+	// CellularBlockVoiceRoaming undocumented
 	CellularBlockVoiceRoaming *bool `json:"cellularBlockVoiceRoaming,omitempty"`
-	// CertificatesBlockUntrustedTLSCertificates Indicates whether or not to block untrusted TLS certificates.
+	// CertificatesBlockUntrustedTLSCertificates undocumented
 	CertificatesBlockUntrustedTLSCertificates *bool `json:"certificatesBlockUntrustedTlsCertificates,omitempty"`
-	// ClassroomAppBlockRemoteScreenObservation Indicates whether or not to allow remote screen observation by Classroom app when the device is in supervised mode (iOS 9.3 and later).
+	// ClassroomAppBlockRemoteScreenObservation undocumented
 	ClassroomAppBlockRemoteScreenObservation *bool `json:"classroomAppBlockRemoteScreenObservation,omitempty"`
-	// ClassroomAppForceUnpromptedScreenObservation Indicates whether or not to automatically give permission to the teacher of a managed course on the Classroom app to view a student's screen without prompting when the device is in supervised mode.
+	// ClassroomAppForceUnpromptedScreenObservation undocumented
 	ClassroomAppForceUnpromptedScreenObservation *bool `json:"classroomAppForceUnpromptedScreenObservation,omitempty"`
-	// CompliantAppListType List that is in the AppComplianceList.
+	// CompliantAppListType undocumented
 	CompliantAppListType *AppListType `json:"compliantAppListType,omitempty"`
-	// CompliantAppsList List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
+	// CompliantAppsList undocumented
 	CompliantAppsList []AppListItem `json:"compliantAppsList,omitempty"`
-	// ConfigurationProfileBlockChanges Indicates whether or not to block the user from installing configuration profiles and certificates interactively when the device is in supervised mode.
+	// ConfigurationProfileBlockChanges undocumented
 	ConfigurationProfileBlockChanges *bool `json:"configurationProfileBlockChanges,omitempty"`
-	// DefinitionLookupBlocked Indicates whether or not to block definition lookup when the device is in supervised mode (iOS 8.1.3 and later ).
+	// DefinitionLookupBlocked undocumented
 	DefinitionLookupBlocked *bool `json:"definitionLookupBlocked,omitempty"`
-	// DeviceBlockEnableRestrictions Indicates whether or not to allow the user to enables restrictions in the device settings when the device is in supervised mode.
+	// DeviceBlockEnableRestrictions undocumented
 	DeviceBlockEnableRestrictions *bool `json:"deviceBlockEnableRestrictions,omitempty"`
-	// DeviceBlockEraseContentAndSettings Indicates whether or not to allow the use of the 'Erase all content and settings' option on the device when the device is in supervised mode.
+	// DeviceBlockEraseContentAndSettings undocumented
 	DeviceBlockEraseContentAndSettings *bool `json:"deviceBlockEraseContentAndSettings,omitempty"`
-	// DeviceBlockNameModification Indicates whether or not to allow device name modification when the device is in supervised mode (iOS 9.0 and later).
+	// DeviceBlockNameModification undocumented
 	DeviceBlockNameModification *bool `json:"deviceBlockNameModification,omitempty"`
-	// DiagnosticDataBlockSubmission Indicates whether or not to block diagnostic data submission.
+	// DiagnosticDataBlockSubmission undocumented
 	DiagnosticDataBlockSubmission *bool `json:"diagnosticDataBlockSubmission,omitempty"`
-	// DiagnosticDataBlockSubmissionModification Indicates whether or not to allow diagnostics submission settings modification when the device is in supervised mode (iOS 9.3.2 and later).
+	// DiagnosticDataBlockSubmissionModification undocumented
 	DiagnosticDataBlockSubmissionModification *bool `json:"diagnosticDataBlockSubmissionModification,omitempty"`
-	// DocumentsBlockManagedDocumentsInUnmanagedApps Indicates whether or not to block the user from viewing managed documents in unmanaged apps.
+	// DocumentsBlockManagedDocumentsInUnmanagedApps undocumented
 	DocumentsBlockManagedDocumentsInUnmanagedApps *bool `json:"documentsBlockManagedDocumentsInUnmanagedApps,omitempty"`
-	// DocumentsBlockUnmanagedDocumentsInManagedApps Indicates whether or not to block the user from viewing unmanaged documents in managed apps.
+	// DocumentsBlockUnmanagedDocumentsInManagedApps undocumented
 	DocumentsBlockUnmanagedDocumentsInManagedApps *bool `json:"documentsBlockUnmanagedDocumentsInManagedApps,omitempty"`
-	// EmailInDomainSuffixes An email address lacking a suffix that matches any of these strings will be considered out-of-domain.
+	// EmailInDomainSuffixes undocumented
 	EmailInDomainSuffixes []string `json:"emailInDomainSuffixes,omitempty"`
-	// EnterpriseAppBlockTrust Indicates whether or not to block the user from trusting an enterprise app.
+	// EnterpriseAppBlockTrust undocumented
 	EnterpriseAppBlockTrust *bool `json:"enterpriseAppBlockTrust,omitempty"`
-	// EnterpriseAppBlockTrustModification [Deprecated] Configuring this setting and setting the value to 'true' has no effect on the device.
+	// EnterpriseAppBlockTrustModification undocumented
 	EnterpriseAppBlockTrustModification *bool `json:"enterpriseAppBlockTrustModification,omitempty"`
-	// FaceTimeBlocked Indicates whether or not to block the user from using FaceTime. Requires a supervised device for iOS 13 and later.
+	// FaceTimeBlocked undocumented
 	FaceTimeBlocked *bool `json:"faceTimeBlocked,omitempty"`
-	// FindMyFriendsBlocked Indicates whether or not to block changes to Find My Friends when the device is in supervised mode.
+	// FindMyFriendsBlocked undocumented
 	FindMyFriendsBlocked *bool `json:"findMyFriendsBlocked,omitempty"`
-	// GameCenterBlocked Indicates whether or not to block the user from using Game Center when the device is in supervised mode.
+	// GameCenterBlocked undocumented
 	GameCenterBlocked *bool `json:"gameCenterBlocked,omitempty"`
-	// GamingBlockGameCenterFriends Indicates whether or not to block the user from having friends in Game Center. Requires a supervised device for iOS 13 and later.
+	// GamingBlockGameCenterFriends undocumented
 	GamingBlockGameCenterFriends *bool `json:"gamingBlockGameCenterFriends,omitempty"`
-	// GamingBlockMultiplayer Indicates whether or not to block the user from using multiplayer gaming. Requires a supervised device for iOS 13 and later.
+	// GamingBlockMultiplayer undocumented
 	GamingBlockMultiplayer *bool `json:"gamingBlockMultiplayer,omitempty"`
-	// HostPairingBlocked indicates whether or not to allow host pairing to control the devices an iOS device can pair with when the iOS device is in supervised mode.
+	// HostPairingBlocked undocumented
 	HostPairingBlocked *bool `json:"hostPairingBlocked,omitempty"`
-	// IBooksStoreBlocked Indicates whether or not to block the user from using the iBooks Store when the device is in supervised mode.
+	// IBooksStoreBlocked undocumented
 	IBooksStoreBlocked *bool `json:"iBooksStoreBlocked,omitempty"`
-	// IBooksStoreBlockErotica Indicates whether or not to block the user from downloading media from the iBookstore that has been tagged as erotica.
+	// IBooksStoreBlockErotica undocumented
 	IBooksStoreBlockErotica *bool `json:"iBooksStoreBlockErotica,omitempty"`
-	// ICloudBlockActivityContinuation Indicates whether or not to block the user from continuing work they started on iOS device to another iOS or macOS device.
+	// ICloudBlockActivityContinuation undocumented
 	ICloudBlockActivityContinuation *bool `json:"iCloudBlockActivityContinuation,omitempty"`
-	// ICloudBlockBackup Indicates whether or not to block iCloud backup. Requires a supervised device for iOS 13 and later.
+	// ICloudBlockBackup undocumented
 	ICloudBlockBackup *bool `json:"iCloudBlockBackup,omitempty"`
-	// ICloudBlockDocumentSync Indicates whether or not to block iCloud document sync. Requires a supervised device for iOS 13 and later.
+	// ICloudBlockDocumentSync undocumented
 	ICloudBlockDocumentSync *bool `json:"iCloudBlockDocumentSync,omitempty"`
-	// ICloudBlockManagedAppsSync Indicates whether or not to block Managed Apps Cloud Sync.
+	// ICloudBlockManagedAppsSync undocumented
 	ICloudBlockManagedAppsSync *bool `json:"iCloudBlockManagedAppsSync,omitempty"`
-	// ICloudBlockPhotoLibrary Indicates whether or not to block iCloud Photo Library.
+	// ICloudBlockPhotoLibrary undocumented
 	ICloudBlockPhotoLibrary *bool `json:"iCloudBlockPhotoLibrary,omitempty"`
-	// ICloudBlockPhotoStreamSync Indicates whether or not to block iCloud Photo Stream Sync.
+	// ICloudBlockPhotoStreamSync undocumented
 	ICloudBlockPhotoStreamSync *bool `json:"iCloudBlockPhotoStreamSync,omitempty"`
-	// ICloudBlockSharedPhotoStream Indicates whether or not to block Shared Photo Stream.
+	// ICloudBlockSharedPhotoStream undocumented
 	ICloudBlockSharedPhotoStream *bool `json:"iCloudBlockSharedPhotoStream,omitempty"`
-	// ICloudRequireEncryptedBackup Indicates whether or not to require backups to iCloud be encrypted.
+	// ICloudRequireEncryptedBackup undocumented
 	ICloudRequireEncryptedBackup *bool `json:"iCloudRequireEncryptedBackup,omitempty"`
-	// ITunesBlockExplicitContent Indicates whether or not to block the user from accessing explicit content in iTunes and the App Store. Requires a supervised device for iOS 13 and later.
+	// ITunesBlockExplicitContent undocumented
 	ITunesBlockExplicitContent *bool `json:"iTunesBlockExplicitContent,omitempty"`
-	// ITunesBlockMusicService Indicates whether or not to block Music service and revert Music app to classic mode when the device is in supervised mode (iOS 9.3 and later and macOS 10.12 and later).
+	// ITunesBlockMusicService undocumented
 	ITunesBlockMusicService *bool `json:"iTunesBlockMusicService,omitempty"`
-	// ITunesBlockRadio Indicates whether or not to block the user from using iTunes Radio when the device is in supervised mode (iOS 9.3 and later).
+	// ITunesBlockRadio undocumented
 	ITunesBlockRadio *bool `json:"iTunesBlockRadio,omitempty"`
-	// KeyboardBlockAutoCorrect Indicates whether or not to block keyboard auto-correction when the device is in supervised mode (iOS 8.1.3 and later).
+	// KeyboardBlockAutoCorrect undocumented
 	KeyboardBlockAutoCorrect *bool `json:"keyboardBlockAutoCorrect,omitempty"`
-	// KeyboardBlockDictation Indicates whether or not to block the user from using dictation input when the device is in supervised mode.
+	// KeyboardBlockDictation undocumented
 	KeyboardBlockDictation *bool `json:"keyboardBlockDictation,omitempty"`
-	// KeyboardBlockPredictive Indicates whether or not to block predictive keyboards when device is in supervised mode (iOS 8.1.3 and later).
+	// KeyboardBlockPredictive undocumented
 	KeyboardBlockPredictive *bool `json:"keyboardBlockPredictive,omitempty"`
-	// KeyboardBlockShortcuts Indicates whether or not to block keyboard shortcuts when the device is in supervised mode (iOS 9.0 and later).
+	// KeyboardBlockShortcuts undocumented
 	KeyboardBlockShortcuts *bool `json:"keyboardBlockShortcuts,omitempty"`
-	// KeyboardBlockSpellCheck Indicates whether or not to block keyboard spell-checking when the device is in supervised mode (iOS 8.1.3 and later).
+	// KeyboardBlockSpellCheck undocumented
 	KeyboardBlockSpellCheck *bool `json:"keyboardBlockSpellCheck,omitempty"`
-	// KioskModeAllowAssistiveSpeak Indicates whether or not to allow assistive speak while in kiosk mode.
+	// KioskModeAllowAssistiveSpeak undocumented
 	KioskModeAllowAssistiveSpeak *bool `json:"kioskModeAllowAssistiveSpeak,omitempty"`
-	// KioskModeAllowAssistiveTouchSettings Indicates whether or not to allow access to the Assistive Touch Settings while in kiosk mode.
+	// KioskModeAllowAssistiveTouchSettings undocumented
 	KioskModeAllowAssistiveTouchSettings *bool `json:"kioskModeAllowAssistiveTouchSettings,omitempty"`
-	// KioskModeAllowAutoLock Indicates whether or not to allow device auto lock while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockAutoLock instead.
+	// KioskModeAllowAutoLock undocumented
 	KioskModeAllowAutoLock *bool `json:"kioskModeAllowAutoLock,omitempty"`
-	// KioskModeAllowColorInversionSettings Indicates whether or not to allow access to the Color Inversion Settings while in kiosk mode.
+	// KioskModeAllowColorInversionSettings undocumented
 	KioskModeAllowColorInversionSettings *bool `json:"kioskModeAllowColorInversionSettings,omitempty"`
-	// KioskModeAllowRingerSwitch Indicates whether or not to allow use of the ringer switch while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockRingerSwitch instead.
+	// KioskModeAllowRingerSwitch undocumented
 	KioskModeAllowRingerSwitch *bool `json:"kioskModeAllowRingerSwitch,omitempty"`
-	// KioskModeAllowScreenRotation Indicates whether or not to allow screen rotation while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockScreenRotation instead.
+	// KioskModeAllowScreenRotation undocumented
 	KioskModeAllowScreenRotation *bool `json:"kioskModeAllowScreenRotation,omitempty"`
-	// KioskModeAllowSleepButton Indicates whether or not to allow use of the sleep button while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockSleepButton instead.
+	// KioskModeAllowSleepButton undocumented
 	KioskModeAllowSleepButton *bool `json:"kioskModeAllowSleepButton,omitempty"`
-	// KioskModeAllowTouchscreen Indicates whether or not to allow use of the touchscreen while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockTouchscreen instead.
+	// KioskModeAllowTouchscreen undocumented
 	KioskModeAllowTouchscreen *bool `json:"kioskModeAllowTouchscreen,omitempty"`
-	// KioskModeAllowVoiceOverSettings Indicates whether or not to allow access to the voice over settings while in kiosk mode.
+	// KioskModeAllowVoiceOverSettings undocumented
 	KioskModeAllowVoiceOverSettings *bool `json:"kioskModeAllowVoiceOverSettings,omitempty"`
-	// KioskModeAllowVolumeButtons Indicates whether or not to allow use of the volume buttons while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockVolumeButtons instead.
+	// KioskModeAllowVolumeButtons undocumented
 	KioskModeAllowVolumeButtons *bool `json:"kioskModeAllowVolumeButtons,omitempty"`
-	// KioskModeAllowZoomSettings Indicates whether or not to allow access to the zoom settings while in kiosk mode.
+	// KioskModeAllowZoomSettings undocumented
 	KioskModeAllowZoomSettings *bool `json:"kioskModeAllowZoomSettings,omitempty"`
-	// KioskModeAppStoreURL URL in the app store to the app to use for kiosk mode. Use if KioskModeManagedAppId is not known.
+	// KioskModeAppStoreURL undocumented
 	KioskModeAppStoreURL *string `json:"kioskModeAppStoreUrl,omitempty"`
-	// KioskModeBuiltInAppID ID for built-in apps to use for kiosk mode. Used when KioskModeManagedAppId and KioskModeAppStoreUrl are not set.
+	// KioskModeBuiltInAppID undocumented
 	KioskModeBuiltInAppID *string `json:"kioskModeBuiltInAppId,omitempty"`
-	// KioskModeManagedAppID Managed app id of the app to use for kiosk mode. If KioskModeManagedAppId is specified then KioskModeAppStoreUrl will be ignored.
+	// KioskModeManagedAppID undocumented
 	KioskModeManagedAppID *string `json:"kioskModeManagedAppId,omitempty"`
-	// KioskModeRequireAssistiveTouch Indicates whether or not to require assistive touch while in kiosk mode.
+	// KioskModeRequireAssistiveTouch undocumented
 	KioskModeRequireAssistiveTouch *bool `json:"kioskModeRequireAssistiveTouch,omitempty"`
-	// KioskModeRequireColorInversion Indicates whether or not to require color inversion while in kiosk mode.
+	// KioskModeRequireColorInversion undocumented
 	KioskModeRequireColorInversion *bool `json:"kioskModeRequireColorInversion,omitempty"`
-	// KioskModeRequireMonoAudio Indicates whether or not to require mono audio while in kiosk mode.
+	// KioskModeRequireMonoAudio undocumented
 	KioskModeRequireMonoAudio *bool `json:"kioskModeRequireMonoAudio,omitempty"`
-	// KioskModeRequireVoiceOver Indicates whether or not to require voice over while in kiosk mode.
+	// KioskModeRequireVoiceOver undocumented
 	KioskModeRequireVoiceOver *bool `json:"kioskModeRequireVoiceOver,omitempty"`
-	// KioskModeRequireZoom Indicates whether or not to require zoom while in kiosk mode.
+	// KioskModeRequireZoom undocumented
 	KioskModeRequireZoom *bool `json:"kioskModeRequireZoom,omitempty"`
-	// LockScreenBlockControlCenter Indicates whether or not to block the user from using control center on the lock screen.
+	// LockScreenBlockControlCenter undocumented
 	LockScreenBlockControlCenter *bool `json:"lockScreenBlockControlCenter,omitempty"`
-	// LockScreenBlockNotificationView Indicates whether or not to block the user from using the notification view on the lock screen.
+	// LockScreenBlockNotificationView undocumented
 	LockScreenBlockNotificationView *bool `json:"lockScreenBlockNotificationView,omitempty"`
-	// LockScreenBlockPassbook Indicates whether or not to block the user from using passbook when the device is locked.
+	// LockScreenBlockPassbook undocumented
 	LockScreenBlockPassbook *bool `json:"lockScreenBlockPassbook,omitempty"`
-	// LockScreenBlockTodayView Indicates whether or not to block the user from using the Today View on the lock screen.
+	// LockScreenBlockTodayView undocumented
 	LockScreenBlockTodayView *bool `json:"lockScreenBlockTodayView,omitempty"`
-	// MediaContentRatingApps Media content rating settings for Apps
+	// MediaContentRatingApps undocumented
 	MediaContentRatingApps *RatingAppsType `json:"mediaContentRatingApps,omitempty"`
-	// MediaContentRatingAustralia Media content rating settings for Australia
+	// MediaContentRatingAustralia undocumented
 	MediaContentRatingAustralia *MediaContentRatingAustralia `json:"mediaContentRatingAustralia,omitempty"`
-	// MediaContentRatingCanada Media content rating settings for Canada
+	// MediaContentRatingCanada undocumented
 	MediaContentRatingCanada *MediaContentRatingCanada `json:"mediaContentRatingCanada,omitempty"`
-	// MediaContentRatingFrance Media content rating settings for France
+	// MediaContentRatingFrance undocumented
 	MediaContentRatingFrance *MediaContentRatingFrance `json:"mediaContentRatingFrance,omitempty"`
-	// MediaContentRatingGermany Media content rating settings for Germany
+	// MediaContentRatingGermany undocumented
 	MediaContentRatingGermany *MediaContentRatingGermany `json:"mediaContentRatingGermany,omitempty"`
-	// MediaContentRatingIreland Media content rating settings for Ireland
+	// MediaContentRatingIreland undocumented
 	MediaContentRatingIreland *MediaContentRatingIreland `json:"mediaContentRatingIreland,omitempty"`
-	// MediaContentRatingJapan Media content rating settings for Japan
+	// MediaContentRatingJapan undocumented
 	MediaContentRatingJapan *MediaContentRatingJapan `json:"mediaContentRatingJapan,omitempty"`
-	// MediaContentRatingNewZealand Media content rating settings for New Zealand
+	// MediaContentRatingNewZealand undocumented
 	MediaContentRatingNewZealand *MediaContentRatingNewZealand `json:"mediaContentRatingNewZealand,omitempty"`
-	// MediaContentRatingUnitedKingdom Media content rating settings for United Kingdom
+	// MediaContentRatingUnitedKingdom undocumented
 	MediaContentRatingUnitedKingdom *MediaContentRatingUnitedKingdom `json:"mediaContentRatingUnitedKingdom,omitempty"`
-	// MediaContentRatingUnitedStates Media content rating settings for United States
+	// MediaContentRatingUnitedStates undocumented
 	MediaContentRatingUnitedStates *MediaContentRatingUnitedStates `json:"mediaContentRatingUnitedStates,omitempty"`
-	// MessagesBlocked Indicates whether or not to block the user from using the Messages app on the supervised device.
+	// MessagesBlocked undocumented
 	MessagesBlocked *bool `json:"messagesBlocked,omitempty"`
-	// NetworkUsageRules List of managed apps and the network rules that applies to them. This collection can contain a maximum of 1000 elements.
+	// NetworkUsageRules undocumented
 	NetworkUsageRules []IOSNetworkUsageRule `json:"networkUsageRules,omitempty"`
-	// NotificationsBlockSettingsModification Indicates whether or not to allow notifications settings modification (iOS 9.3 and later).
+	// NotificationsBlockSettingsModification undocumented
 	NotificationsBlockSettingsModification *bool `json:"notificationsBlockSettingsModification,omitempty"`
-	// PasscodeBlockFingerprintModification Block modification of registered Touch ID fingerprints when in supervised mode.
+	// PasscodeBlockFingerprintModification undocumented
 	PasscodeBlockFingerprintModification *bool `json:"passcodeBlockFingerprintModification,omitempty"`
-	// PasscodeBlockFingerprintUnlock Indicates whether or not to block fingerprint unlock.
+	// PasscodeBlockFingerprintUnlock undocumented
 	PasscodeBlockFingerprintUnlock *bool `json:"passcodeBlockFingerprintUnlock,omitempty"`
-	// PasscodeBlockModification Indicates whether or not to allow passcode modification on the supervised device (iOS 9.0 and later).
+	// PasscodeBlockModification undocumented
 	PasscodeBlockModification *bool `json:"passcodeBlockModification,omitempty"`
-	// PasscodeBlockSimple Indicates whether or not to block simple passcodes.
+	// PasscodeBlockSimple undocumented
 	PasscodeBlockSimple *bool `json:"passcodeBlockSimple,omitempty"`
-	// PasscodeExpirationDays Number of days before the passcode expires. Valid values 1 to 65535
+	// PasscodeExpirationDays undocumented
 	PasscodeExpirationDays *int `json:"passcodeExpirationDays,omitempty"`
-	// PasscodeMinimumCharacterSetCount Number of character sets a passcode must contain. Valid values 0 to 4
+	// PasscodeMinimumCharacterSetCount undocumented
 	PasscodeMinimumCharacterSetCount *int `json:"passcodeMinimumCharacterSetCount,omitempty"`
-	// PasscodeMinimumLength Minimum length of passcode. Valid values 4 to 14
+	// PasscodeMinimumLength undocumented
 	PasscodeMinimumLength *int `json:"passcodeMinimumLength,omitempty"`
-	// PasscodeMinutesOfInactivityBeforeLock Minutes of inactivity before a passcode is required.
+	// PasscodeMinutesOfInactivityBeforeLock undocumented
 	PasscodeMinutesOfInactivityBeforeLock *int `json:"passcodeMinutesOfInactivityBeforeLock,omitempty"`
-	// PasscodeMinutesOfInactivityBeforeScreenTimeout Minutes of inactivity before the screen times out.
+	// PasscodeMinutesOfInactivityBeforeScreenTimeout undocumented
 	PasscodeMinutesOfInactivityBeforeScreenTimeout *int `json:"passcodeMinutesOfInactivityBeforeScreenTimeout,omitempty"`
-	// PasscodePreviousPasscodeBlockCount Number of previous passcodes to block. Valid values 1 to 24
+	// PasscodePreviousPasscodeBlockCount undocumented
 	PasscodePreviousPasscodeBlockCount *int `json:"passcodePreviousPasscodeBlockCount,omitempty"`
-	// PasscodeRequired Indicates whether or not to require a passcode.
+	// PasscodeRequired undocumented
 	PasscodeRequired *bool `json:"passcodeRequired,omitempty"`
-	// PasscodeRequiredType Type of passcode that is required.
+	// PasscodeRequiredType undocumented
 	PasscodeRequiredType *RequiredPasswordType `json:"passcodeRequiredType,omitempty"`
-	// PasscodeSignInFailureCountBeforeWipe Number of sign in failures allowed before wiping the device. Valid values 2 to 11
+	// PasscodeSignInFailureCountBeforeWipe undocumented
 	PasscodeSignInFailureCountBeforeWipe *int `json:"passcodeSignInFailureCountBeforeWipe,omitempty"`
-	// PodcastsBlocked Indicates whether or not to block the user from using podcasts on the supervised device (iOS 8.0 and later).
+	// PodcastsBlocked undocumented
 	PodcastsBlocked *bool `json:"podcastsBlocked,omitempty"`
-	// SafariBlockAutofill Indicates whether or not to block the user from using Auto fill in Safari. Requires a supervised device for iOS 13 and later.
+	// SafariBlockAutofill undocumented
 	SafariBlockAutofill *bool `json:"safariBlockAutofill,omitempty"`
-	// SafariBlocked Indicates whether or not to block the user from using Safari. Requires a supervised device for iOS 13 and later.
+	// SafariBlocked undocumented
 	SafariBlocked *bool `json:"safariBlocked,omitempty"`
-	// SafariBlockJavaScript Indicates whether or not to block JavaScript in Safari.
+	// SafariBlockJavaScript undocumented
 	SafariBlockJavaScript *bool `json:"safariBlockJavaScript,omitempty"`
-	// SafariBlockPopups Indicates whether or not to block popups in Safari.
+	// SafariBlockPopups undocumented
 	SafariBlockPopups *bool `json:"safariBlockPopups,omitempty"`
-	// SafariCookieSettings Cookie settings for Safari.
+	// SafariCookieSettings undocumented
 	SafariCookieSettings *WebBrowserCookieSettings `json:"safariCookieSettings,omitempty"`
-	// SafariManagedDomains URLs matching the patterns listed here will be considered managed.
+	// SafariManagedDomains undocumented
 	SafariManagedDomains []string `json:"safariManagedDomains,omitempty"`
-	// SafariPasswordAutoFillDomains Users can save passwords in Safari only from URLs matching the patterns listed here. Applies to devices in supervised mode (iOS 9.3 and later).
+	// SafariPasswordAutoFillDomains undocumented
 	SafariPasswordAutoFillDomains []string `json:"safariPasswordAutoFillDomains,omitempty"`
-	// SafariRequireFraudWarning Indicates whether or not to require fraud warning in Safari.
+	// SafariRequireFraudWarning undocumented
 	SafariRequireFraudWarning *bool `json:"safariRequireFraudWarning,omitempty"`
-	// ScreenCaptureBlocked Indicates whether or not to block the user from taking Screenshots.
+	// ScreenCaptureBlocked undocumented
 	ScreenCaptureBlocked *bool `json:"screenCaptureBlocked,omitempty"`
-	// SiriBlocked Indicates whether or not to block the user from using Siri.
+	// SiriBlocked undocumented
 	SiriBlocked *bool `json:"siriBlocked,omitempty"`
-	// SiriBlockedWhenLocked Indicates whether or not to block the user from using Siri when locked.
+	// SiriBlockedWhenLocked undocumented
 	SiriBlockedWhenLocked *bool `json:"siriBlockedWhenLocked,omitempty"`
-	// SiriBlockUserGeneratedContent Indicates whether or not to block Siri from querying user-generated content when used on a supervised device.
+	// SiriBlockUserGeneratedContent undocumented
 	SiriBlockUserGeneratedContent *bool `json:"siriBlockUserGeneratedContent,omitempty"`
-	// SiriRequireProfanityFilter Indicates whether or not to prevent Siri from dictating, or speaking profane language on supervised device.
+	// SiriRequireProfanityFilter undocumented
 	SiriRequireProfanityFilter *bool `json:"siriRequireProfanityFilter,omitempty"`
-	// SpotlightBlockInternetResults Indicates whether or not to block Spotlight search from returning internet results on supervised device.
+	// SpotlightBlockInternetResults undocumented
 	SpotlightBlockInternetResults *bool `json:"spotlightBlockInternetResults,omitempty"`
-	// VoiceDialingBlocked Indicates whether or not to block voice dialing.
+	// VoiceDialingBlocked undocumented
 	VoiceDialingBlocked *bool `json:"voiceDialingBlocked,omitempty"`
-	// WallpaperBlockModification Indicates whether or not to allow wallpaper modification on supervised device (iOS 9.0 and later) .
+	// WallpaperBlockModification undocumented
 	WallpaperBlockModification *bool `json:"wallpaperBlockModification,omitempty"`
-	// WiFiConnectOnlyToConfiguredNetworks Indicates whether or not to force the device to use only Wi-Fi networks from configuration profiles when the device is in supervised mode. Available for devices running iOS and iPadOS versions 14.4 and earlier. Devices running 14.5+ should use the setting, “WiFiConnectToAllowedNetworksOnlyForced.
+	// WiFiConnectOnlyToConfiguredNetworks undocumented
 	WiFiConnectOnlyToConfiguredNetworks *bool `json:"wiFiConnectOnlyToConfiguredNetworks,omitempty"`
 }
 
-// IOSHomeScreenApp Represents an icon for an app on the Home Screen
+// IOSHomeScreenApp undocumented
 type IOSHomeScreenApp struct {
 	// IOSHomeScreenItem is the base model of IOSHomeScreenApp
 	IOSHomeScreenItem
-	// BundleID BundleID of the app if isWebClip is false or the URL of a web clip if isWebClip is true.
+	// BundleID undocumented
 	BundleID *string `json:"bundleID,omitempty"`
 }
 
-// IOSHomeScreenFolder A folder containing pages of apps and web clips on the Home Screen.
+// IOSHomeScreenFolder undocumented
 type IOSHomeScreenFolder struct {
 	// IOSHomeScreenItem is the base model of IOSHomeScreenFolder
 	IOSHomeScreenItem
-	// Pages Pages of Home Screen Layout Icons which must be applications or web clips. This collection can contain a maximum of 500 elements.
+	// Pages undocumented
 	Pages []IOSHomeScreenFolderPage `json:"pages,omitempty"`
 }
 
-// IOSHomeScreenFolderPage A page for a folder containing apps and web clips on the Home Screen.
+// IOSHomeScreenFolderPage undocumented
 type IOSHomeScreenFolderPage struct {
 	// Object is the base model of IOSHomeScreenFolderPage
 	Object
-	// Apps A list of apps and web clips to appear on a page within a folder. This collection can contain a maximum of 500 elements.
+	// Apps undocumented
 	Apps []IOSHomeScreenApp `json:"apps,omitempty"`
-	// DisplayName Name of the folder page
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 }
 
-// IOSHomeScreenItem Represents an item on the iOS Home Screen
+// IOSHomeScreenItem undocumented
 type IOSHomeScreenItem struct {
 	// Object is the base model of IOSHomeScreenItem
 	Object
-	// DisplayName Name of the app
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 }
 
-// IOSHomeScreenPage A page containing apps, folders, and web clips on the Home Screen.
+// IOSHomeScreenPage undocumented
 type IOSHomeScreenPage struct {
 	// Object is the base model of IOSHomeScreenPage
 	Object
-	// DisplayName Name of the page
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// Icons A list of apps, folders, and web clips to appear on a page. This collection can contain a maximum of 500 elements.
+	// Icons undocumented
 	Icons []IOSHomeScreenItem `json:"icons,omitempty"`
 }
 
-// IOSLobApp Contains properties and inherited properties for iOS Line Of Business apps.
+// IOSLobApp undocumented
 type IOSLobApp struct {
 	// MobileLobApp is the base model of IOSLobApp
 	MobileLobApp
-	// ApplicableDeviceType The iOS architecture for which this app can run on.
+	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
-	// BuildNumber The build number of iOS Line of Business (LoB) app.
+	// BuildNumber undocumented
 	BuildNumber *string `json:"buildNumber,omitempty"`
-	// BundleID The Identity Name.
+	// BundleID undocumented
 	BundleID *string `json:"bundleId,omitempty"`
-	// ExpirationDateTime The expiration time.
+	// ExpirationDateTime undocumented
 	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
-	// MinimumSupportedOperatingSystem The value for the minimum applicable operating system.
+	// MinimumSupportedOperatingSystem undocumented
 	MinimumSupportedOperatingSystem *IOSMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
-	// VersionNumber The version number of iOS Line of Business (LoB) app.
+	// VersionNumber undocumented
 	VersionNumber *string `json:"versionNumber,omitempty"`
 }
 
-// IOSLobAppAssignmentSettings Contains properties used to assign an iOS LOB mobile app to a group.
+// IOSLobAppAssignmentSettings undocumented
 type IOSLobAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of IOSLobAppAssignmentSettings
 	MobileAppAssignmentSettings
-	// IsRemovable When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
+	// IsRemovable undocumented
 	IsRemovable *bool `json:"isRemovable,omitempty"`
-	// UninstallOnDeviceRemoval When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune. By default, property is set to null which internally is treated as TRUE.
+	// UninstallOnDeviceRemoval undocumented
 	UninstallOnDeviceRemoval *bool `json:"uninstallOnDeviceRemoval,omitempty"`
-	// VPNConfigurationID This is the unique identifier (Id) of the VPN Configuration to apply to the app.
+	// VPNConfigurationID undocumented
 	VPNConfigurationID *string `json:"vpnConfigurationId,omitempty"`
 }
 
-// IOSLobAppProvisioningConfigurationAssignment A class containing the properties used for Group Assignment of an iOS LOB App Provisioning and Configuration.
+// IOSLobAppProvisioningConfigurationAssignment undocumented
 type IOSLobAppProvisioningConfigurationAssignment struct {
 	// Entity is the base model of IOSLobAppProvisioningConfigurationAssignment
 	Entity
-	// Target The target group assignment defined by the admin.
+	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
 
-// IOSManagedAppProtection Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
+// IOSManagedAppProtection undocumented
 type IOSManagedAppProtection struct {
 	// TargetedManagedAppProtection is the base model of IOSManagedAppProtection
 	TargetedManagedAppProtection
-	// AppDataEncryptionType Type of encryption which should be used for data in a managed app.
+	// AppDataEncryptionType undocumented
 	AppDataEncryptionType *ManagedAppDataEncryptionType `json:"appDataEncryptionType,omitempty"`
-	// CustomBrowserProtocol A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+	// CustomBrowserProtocol undocumented
 	CustomBrowserProtocol *string `json:"customBrowserProtocol,omitempty"`
-	// DeployedAppCount Count of apps to which the current policy is deployed.
+	// DeployedAppCount undocumented
 	DeployedAppCount *int `json:"deployedAppCount,omitempty"`
-	// FaceIDBlocked Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
+	// FaceIDBlocked undocumented
 	FaceIDBlocked *bool `json:"faceIdBlocked,omitempty"`
-	// MinimumRequiredSdkVersion Versions less than the specified version will block the managed app from accessing company data.
+	// MinimumRequiredSdkVersion undocumented
 	MinimumRequiredSdkVersion *string `json:"minimumRequiredSdkVersion,omitempty"`
 	// Apps undocumented
 	Apps []ManagedMobileApp `json:"apps,omitempty"`
@@ -452,121 +452,121 @@ type IOSManagedAppProtection struct {
 	DeploymentSummary *ManagedAppPolicyDeploymentSummary `json:"deploymentSummary,omitempty"`
 }
 
-// IOSManagedAppRegistration Represents the synchronization details of an ios app, with management capabilities, for a specific user.
+// IOSManagedAppRegistration undocumented
 type IOSManagedAppRegistration struct {
 	// ManagedAppRegistration is the base model of IOSManagedAppRegistration
 	ManagedAppRegistration
 }
 
-// IOSMinimumOperatingSystem Contains properties of the minimum operating system required for an iOS mobile app.
+// IOSMinimumOperatingSystem undocumented
 type IOSMinimumOperatingSystem struct {
 	// Object is the base model of IOSMinimumOperatingSystem
 	Object
-	// V10_0 When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	// V10_0 undocumented
 	V10_0 *bool `json:"v10_0,omitempty"`
-	// V11_0 When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	// V11_0 undocumented
 	V11_0 *bool `json:"v11_0,omitempty"`
-	// V12_0 When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	// V12_0 undocumented
 	V12_0 *bool `json:"v12_0,omitempty"`
-	// V13_0 When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	// V13_0 undocumented
 	V13_0 *bool `json:"v13_0,omitempty"`
-	// V14_0 When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	// V14_0 undocumented
 	V14_0 *bool `json:"v14_0,omitempty"`
-	// V15_0 When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	// V15_0 undocumented
 	V15_0 *bool `json:"v15_0,omitempty"`
-	// V8_0 When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	// V8_0 undocumented
 	V8_0 *bool `json:"v8_0,omitempty"`
-	// V9_0 When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+	// V9_0 undocumented
 	V9_0 *bool `json:"v9_0,omitempty"`
 }
 
-// IOSMobileAppConfiguration Contains properties, inherited properties and actions for iOS mobile app configurations.
+// IOSMobileAppConfiguration undocumented
 type IOSMobileAppConfiguration struct {
 	// ManagedDeviceMobileAppConfiguration is the base model of IOSMobileAppConfiguration
 	ManagedDeviceMobileAppConfiguration
-	// EncodedSettingXML mdm app configuration Base64 binary.
+	// EncodedSettingXML undocumented
 	EncodedSettingXML *Binary `json:"encodedSettingXml,omitempty"`
-	// Settings app configuration setting items.
+	// Settings undocumented
 	Settings []AppConfigurationSettingItem `json:"settings,omitempty"`
 }
 
-// IOSMobileAppIdentifier The identifier for an iOS app.
+// IOSMobileAppIdentifier undocumented
 type IOSMobileAppIdentifier struct {
 	// MobileAppIdentifier is the base model of IOSMobileAppIdentifier
 	MobileAppIdentifier
-	// BundleID The identifier for an app, as specified in the app store.
+	// BundleID undocumented
 	BundleID *string `json:"bundleId,omitempty"`
 }
 
-// IOSNetworkUsageRule Network Usage Rules allow enterprises to specify how managed apps use networks, such as cellular data networks.
+// IOSNetworkUsageRule undocumented
 type IOSNetworkUsageRule struct {
 	// Object is the base model of IOSNetworkUsageRule
 	Object
-	// CellularDataBlocked If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
+	// CellularDataBlocked undocumented
 	CellularDataBlocked *bool `json:"cellularDataBlocked,omitempty"`
-	// CellularDataBlockWhenRoaming If set to true, corresponding managed apps will not be allowed to use cellular data when roaming.
+	// CellularDataBlockWhenRoaming undocumented
 	CellularDataBlockWhenRoaming *bool `json:"cellularDataBlockWhenRoaming,omitempty"`
-	// ManagedApps Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.
+	// ManagedApps undocumented
 	ManagedApps []AppListItem `json:"managedApps,omitempty"`
 }
 
-// IOSNotificationSettings An item describing notification setting.
+// IOSNotificationSettings undocumented
 type IOSNotificationSettings struct {
 	// Object is the base model of IOSNotificationSettings
 	Object
-	// AlertType Indicates the type of alert for notifications for this app.
+	// AlertType undocumented
 	AlertType *IOSNotificationAlertType `json:"alertType,omitempty"`
-	// AppName Application name to be associated with the bundleID.
+	// AppName undocumented
 	AppName *string `json:"appName,omitempty"`
-	// BadgesEnabled Indicates whether badges are allowed for this app.
+	// BadgesEnabled undocumented
 	BadgesEnabled *bool `json:"badgesEnabled,omitempty"`
-	// BundleID Bundle id of app to which to apply these notification settings.
+	// BundleID undocumented
 	BundleID *string `json:"bundleID,omitempty"`
-	// Enabled Indicates whether notifications are allowed for this app.
+	// Enabled undocumented
 	Enabled *bool `json:"enabled,omitempty"`
-	// Publisher Publisher to be associated with the bundleID.
+	// Publisher undocumented
 	Publisher *string `json:"publisher,omitempty"`
-	// ShowInNotificationCenter Indicates whether notifications can be shown in notification center.
+	// ShowInNotificationCenter undocumented
 	ShowInNotificationCenter *bool `json:"showInNotificationCenter,omitempty"`
-	// ShowOnLockScreen Indicates whether notifications can be shown on the lock screen.
+	// ShowOnLockScreen undocumented
 	ShowOnLockScreen *bool `json:"showOnLockScreen,omitempty"`
-	// SoundsEnabled Indicates whether sounds are allowed for this app.
+	// SoundsEnabled undocumented
 	SoundsEnabled *bool `json:"soundsEnabled,omitempty"`
 }
 
-// IOSStoreApp Contains properties and inherited properties for iOS store apps.
+// IOSStoreApp undocumented
 type IOSStoreApp struct {
 	// MobileApp is the base model of IOSStoreApp
 	MobileApp
-	// ApplicableDeviceType The iOS architecture for which this app can run on.
+	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
-	// AppStoreURL The Apple App Store URL
+	// AppStoreURL undocumented
 	AppStoreURL *string `json:"appStoreUrl,omitempty"`
-	// BundleID The Identity Name.
+	// BundleID undocumented
 	BundleID *string `json:"bundleId,omitempty"`
-	// MinimumSupportedOperatingSystem The value for the minimum applicable operating system.
+	// MinimumSupportedOperatingSystem undocumented
 	MinimumSupportedOperatingSystem *IOSMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
 }
 
-// IOSStoreAppAssignmentSettings Contains properties used to assign an iOS Store mobile app to a group.
+// IOSStoreAppAssignmentSettings undocumented
 type IOSStoreAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of IOSStoreAppAssignmentSettings
 	MobileAppAssignmentSettings
-	// VPNConfigurationID The VPN Configuration Id to apply for this app.
+	// VPNConfigurationID undocumented
 	VPNConfigurationID *string `json:"vpnConfigurationId,omitempty"`
 }
 
-// IOSUpdateConfiguration IOS Update Configuration, allows you to configure time window within week to install iOS updates
+// IOSUpdateConfiguration undocumented
 type IOSUpdateConfiguration struct {
 	// DeviceConfiguration is the base model of IOSUpdateConfiguration
 	DeviceConfiguration
-	// ActiveHoursEnd Active Hours End (active hours mean the time window when updates install should not happen)
+	// ActiveHoursEnd undocumented
 	ActiveHoursEnd *TimeOfDay `json:"activeHoursEnd,omitempty"`
-	// ActiveHoursStart Active Hours Start (active hours mean the time window when updates install should not happen)
+	// ActiveHoursStart undocumented
 	ActiveHoursStart *TimeOfDay `json:"activeHoursStart,omitempty"`
-	// ScheduledInstallDays Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
+	// ScheduledInstallDays undocumented
 	ScheduledInstallDays []DayOfWeek `json:"scheduledInstallDays,omitempty"`
-	// UtcTimeOffsetInMinutes UTC Time Offset indicated in minutes
+	// UtcTimeOffsetInMinutes undocumented
 	UtcTimeOffsetInMinutes *int `json:"utcTimeOffsetInMinutes,omitempty"`
 }
 
@@ -574,89 +574,89 @@ type IOSUpdateConfiguration struct {
 type IOSUpdateDeviceStatus struct {
 	// Entity is the base model of IOSUpdateDeviceStatus
 	Entity
-	// ComplianceGracePeriodExpirationDateTime The DateTime when device compliance grace period expires
+	// ComplianceGracePeriodExpirationDateTime undocumented
 	ComplianceGracePeriodExpirationDateTime *time.Time `json:"complianceGracePeriodExpirationDateTime,omitempty"`
-	// DeviceDisplayName Device name of the DevicePolicyStatus.
+	// DeviceDisplayName undocumented
 	DeviceDisplayName *string `json:"deviceDisplayName,omitempty"`
-	// DeviceID The device id that is being reported.
+	// DeviceID undocumented
 	DeviceID *string `json:"deviceId,omitempty"`
-	// DeviceModel The device model that is being reported
+	// DeviceModel undocumented
 	DeviceModel *string `json:"deviceModel,omitempty"`
-	// InstallStatus The installation status of the policy report.
+	// InstallStatus undocumented
 	InstallStatus *IOSUpdatesInstallStatus `json:"installStatus,omitempty"`
-	// LastReportedDateTime Last modified date time of the policy report.
+	// LastReportedDateTime undocumented
 	LastReportedDateTime *time.Time `json:"lastReportedDateTime,omitempty"`
-	// OsVersion The device version that is being reported.
+	// OsVersion undocumented
 	OsVersion *string `json:"osVersion,omitempty"`
-	// Status Compliance status of the policy report.
+	// Status undocumented
 	Status *ComplianceStatus `json:"status,omitempty"`
-	// UserID The User id that is being reported.
+	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
-	// UserName The User Name that is being reported
+	// UserName undocumented
 	UserName *string `json:"userName,omitempty"`
-	// UserPrincipalName UserPrincipalName.
+	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
-// IOSVPPApp Contains properties and inherited properties for iOS Volume-Purchased Program (VPP) Apps.
+// IOSVPPApp undocumented
 type IOSVPPApp struct {
 	// MobileApp is the base model of IOSVPPApp
 	MobileApp
-	// ApplicableDeviceType The applicable iOS Device Type.
+	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
-	// AppStoreURL The store URL.
+	// AppStoreURL undocumented
 	AppStoreURL *string `json:"appStoreUrl,omitempty"`
-	// BundleID The Identity Name.
+	// BundleID undocumented
 	BundleID *string `json:"bundleId,omitempty"`
-	// LicensingType The supported License Type.
+	// LicensingType undocumented
 	LicensingType *VPPLicensingType `json:"licensingType,omitempty"`
-	// ReleaseDateTime The VPP application release date and time.
+	// ReleaseDateTime undocumented
 	ReleaseDateTime *time.Time `json:"releaseDateTime,omitempty"`
-	// TotalLicenseCount The total number of VPP licenses.
+	// TotalLicenseCount undocumented
 	TotalLicenseCount *int `json:"totalLicenseCount,omitempty"`
-	// UsedLicenseCount The number of VPP licenses in use.
+	// UsedLicenseCount undocumented
 	UsedLicenseCount *int `json:"usedLicenseCount,omitempty"`
-	// VPPTokenAccountType The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: `business`, `education`.
+	// VPPTokenAccountType undocumented
 	VPPTokenAccountType *VPPTokenAccountType `json:"vppTokenAccountType,omitempty"`
-	// VPPTokenAppleID The Apple Id associated with the given Apple Volume Purchase Program Token.
+	// VPPTokenAppleID undocumented
 	VPPTokenAppleID *string `json:"vppTokenAppleId,omitempty"`
-	// VPPTokenOrganizationName The organization associated with the Apple Volume Purchase Program Token
+	// VPPTokenOrganizationName undocumented
 	VPPTokenOrganizationName *string `json:"vppTokenOrganizationName,omitempty"`
 }
 
-// IOSVPPAppAssignmentSettings Contains properties used to assign an iOS VPP mobile app to a group.
+// IOSVPPAppAssignmentSettings undocumented
 type IOSVPPAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of IOSVPPAppAssignmentSettings
 	MobileAppAssignmentSettings
-	// UseDeviceLicensing Whether or not to use device licensing.
+	// UseDeviceLicensing undocumented
 	UseDeviceLicensing *bool `json:"useDeviceLicensing,omitempty"`
-	// VPNConfigurationID The VPN Configuration Id to apply for this app.
+	// VPNConfigurationID undocumented
 	VPNConfigurationID *string `json:"vpnConfigurationId,omitempty"`
 }
 
-// IOSVPPEBook A class containing the properties for iOS Vpp eBook.
+// IOSVPPEBook undocumented
 type IOSVPPEBook struct {
 	// ManagedEBook is the base model of IOSVPPEBook
 	ManagedEBook
-	// AppleID The Apple ID associated with Vpp token.
+	// AppleID undocumented
 	AppleID *string `json:"appleId,omitempty"`
-	// Genres Genres.
+	// Genres undocumented
 	Genres []string `json:"genres,omitempty"`
-	// Language Language.
+	// Language undocumented
 	Language *string `json:"language,omitempty"`
-	// Seller Seller.
+	// Seller undocumented
 	Seller *string `json:"seller,omitempty"`
-	// TotalLicenseCount Total license count.
+	// TotalLicenseCount undocumented
 	TotalLicenseCount *int `json:"totalLicenseCount,omitempty"`
-	// UsedLicenseCount Used license count.
+	// UsedLicenseCount undocumented
 	UsedLicenseCount *int `json:"usedLicenseCount,omitempty"`
-	// VPPOrganizationName The Vpp token's organization name.
+	// VPPOrganizationName undocumented
 	VPPOrganizationName *string `json:"vppOrganizationName,omitempty"`
-	// VPPTokenID The Vpp token ID.
+	// VPPTokenID undocumented
 	VPPTokenID *UUID `json:"vppTokenId,omitempty"`
 }
 
-// IOSVPPEBookAssignment Contains properties used to assign an iOS VPP EBook to a group.
+// IOSVPPEBookAssignment undocumented
 type IOSVPPEBookAssignment struct {
 	// ManagedEBookAssignment is the base model of IOSVPPEBookAssignment
 	ManagedEBookAssignment

@@ -11,12 +11,12 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// UnifiedRoleAssignmentScheduleRequestObjectCancelRequestParameter undocumented
-type UnifiedRoleAssignmentScheduleRequestObjectCancelRequestParameter struct {
+// UnifiedRoleAssignmentScheduleRequestCancelRequestParameter undocumented
+type UnifiedRoleAssignmentScheduleRequestCancelRequestParameter struct {
 }
 
-// UnifiedRoleEligibilityScheduleRequestObjectCancelRequestParameter undocumented
-type UnifiedRoleEligibilityScheduleRequestObjectCancelRequestParameter struct {
+// UnifiedRoleEligibilityScheduleRequestCancelRequestParameter undocumented
+type UnifiedRoleEligibilityScheduleRequestCancelRequestParameter struct {
 }
 
 // AppScope is navigation property

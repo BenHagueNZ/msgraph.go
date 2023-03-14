@@ -2,7 +2,7 @@
 
 package msgraph
 
-// BookingAppointment Represents a booked appointment of a service by a customer in a business.
+// BookingAppointment undocumented
 type BookingAppointment struct {
 	// Entity is the base model of BookingAppointment
 	Entity
@@ -40,11 +40,11 @@ type BookingAppointment struct {
 	Reminders []BookingReminder `json:"reminders,omitempty"`
 	// SelfServiceAppointmentID undocumented
 	SelfServiceAppointmentID *string `json:"selfServiceAppointmentId,omitempty"`
-	// ServiceID The id of the booking service associated with this appointment.
+	// ServiceID undocumented
 	ServiceID *string `json:"serviceId,omitempty"`
 	// ServiceLocation undocumented
 	ServiceLocation *Location `json:"serviceLocation,omitempty"`
-	// ServiceName The name of the booking service associated with this appointment.
+	// ServiceName undocumented
 	ServiceName *string `json:"serviceName,omitempty"`
 	// ServiceNotes undocumented
 	ServiceNotes *string `json:"serviceNotes,omitempty"`
@@ -56,7 +56,7 @@ type BookingAppointment struct {
 	StartDateTime *DateTimeTimeZone `json:"startDateTime,omitempty"`
 }
 
-// BookingBusiness Represents a Microsot Bookings Business.
+// BookingBusiness undocumented
 type BookingBusiness struct {
 	// Entity is the base model of BookingBusiness
 	Entity
@@ -68,7 +68,7 @@ type BookingBusiness struct {
 	BusinessType *string `json:"businessType,omitempty"`
 	// DefaultCurrencyIso undocumented
 	DefaultCurrencyIso *string `json:"defaultCurrencyIso,omitempty"`
-	// DisplayName Display name of this entity.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
@@ -82,7 +82,7 @@ type BookingBusiness struct {
 	PublicURL *string `json:"publicUrl,omitempty"`
 	// SchedulingPolicy undocumented
 	SchedulingPolicy *BookingSchedulingPolicy `json:"schedulingPolicy,omitempty"`
-	// WebSiteURL The URL of the business web site.
+	// WebSiteURL undocumented
 	WebSiteURL *string `json:"webSiteUrl,omitempty"`
 	// Appointments undocumented
 	Appointments []BookingAppointment `json:"appointments,omitempty"`
@@ -106,7 +106,7 @@ type BookingCurrency struct {
 	Symbol *string `json:"symbol,omitempty"`
 }
 
-// BookingCustomQuestion Represents a custom question of the business.
+// BookingCustomQuestion undocumented
 type BookingCustomQuestion struct {
 	// Entity is the base model of BookingCustomQuestion
 	Entity
@@ -114,25 +114,25 @@ type BookingCustomQuestion struct {
 	AnswerInputType *AnswerInputType `json:"answerInputType,omitempty"`
 	// AnswerOptions undocumented
 	AnswerOptions []string `json:"answerOptions,omitempty"`
-	// DisplayName Display name of this entity.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 }
 
-// BookingCustomer Represents a customer of the business.
+// BookingCustomer undocumented
 type BookingCustomer struct {
 	// BookingCustomerBase is the base model of BookingCustomer
 	BookingCustomerBase
 	// Addresses undocumented
 	Addresses []PhysicalAddress `json:"addresses,omitempty"`
-	// DisplayName Display name of this entity.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// EmailAddress The e-mail address of this person.
+	// EmailAddress undocumented
 	EmailAddress *string `json:"emailAddress,omitempty"`
 	// Phones undocumented
 	Phones []Phone `json:"phones,omitempty"`
 }
 
-// BookingCustomerBase Booking entities that provide a display name.
+// BookingCustomerBase undocumented
 type BookingCustomerBase struct {
 	// Entity is the base model of BookingCustomerBase
 	Entity
@@ -196,35 +196,35 @@ type BookingQuestionAssignment struct {
 	QuestionID *string `json:"questionId,omitempty"`
 }
 
-// BookingReminder This type represents when and to whom to send an e-mail reminder.
+// BookingReminder undocumented
 type BookingReminder struct {
 	// Object is the base model of BookingReminder
 	Object
-	// Message Message to send.
+	// Message undocumented
 	Message *string `json:"message,omitempty"`
-	// Offset How much time before an appointment the reminder should be sent.
+	// Offset undocumented
 	Offset *Duration `json:"offset,omitempty"`
-	// Recipients Who should receive the reminder.
+	// Recipients undocumented
 	Recipients *BookingReminderRecipients `json:"recipients,omitempty"`
 }
 
-// BookingSchedulingPolicy This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
+// BookingSchedulingPolicy undocumented
 type BookingSchedulingPolicy struct {
 	// Object is the base model of BookingSchedulingPolicy
 	Object
-	// AllowStaffSelection Allow customers to choose a specific person for the booking.
+	// AllowStaffSelection undocumented
 	AllowStaffSelection *bool `json:"allowStaffSelection,omitempty"`
-	// MaximumAdvance Maximum number of days in advance that a booking can be made.
+	// MaximumAdvance undocumented
 	MaximumAdvance *Duration `json:"maximumAdvance,omitempty"`
-	// MinimumLeadTime Minimum lead time for bookings and cancellations.
+	// MinimumLeadTime undocumented
 	MinimumLeadTime *Duration `json:"minimumLeadTime,omitempty"`
-	// SendConfirmationsToOwner Notify the business via email when a booking is created or changed.
+	// SendConfirmationsToOwner undocumented
 	SendConfirmationsToOwner *bool `json:"sendConfirmationsToOwner,omitempty"`
-	// TimeSlotInterval Duration of each time slot.
+	// TimeSlotInterval undocumented
 	TimeSlotInterval *Duration `json:"timeSlotInterval,omitempty"`
 }
 
-// BookingService Represents a particular service offered by a booking business.
+// BookingService undocumented
 type BookingService struct {
 	// Entity is the base model of BookingService
 	Entity
@@ -240,11 +240,11 @@ type BookingService struct {
 	DefaultPrice *float64 `json:"defaultPrice,omitempty"`
 	// DefaultPriceType undocumented
 	DefaultPriceType *BookingPriceType `json:"defaultPriceType,omitempty"`
-	// DefaultReminders The default reminders set in an appointment of this service.
+	// DefaultReminders undocumented
 	DefaultReminders []BookingReminder `json:"defaultReminders,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
-	// DisplayName Display name of this entity.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// IsAnonymousJoinEnabled undocumented
 	IsAnonymousJoinEnabled *bool `json:"isAnonymousJoinEnabled,omitempty"`
@@ -268,19 +268,19 @@ type BookingService struct {
 	SmsNotificationsEnabled *bool `json:"smsNotificationsEnabled,omitempty"`
 	// StaffMemberIDs undocumented
 	StaffMemberIDs []string `json:"staffMemberIds,omitempty"`
-	// WebURL The URL of the booking service.
+	// WebURL undocumented
 	WebURL *string `json:"webUrl,omitempty"`
 }
 
-// BookingStaffMember Represents a staff member who provides services in a business.
+// BookingStaffMember undocumented
 type BookingStaffMember struct {
 	// BookingStaffMemberBase is the base model of BookingStaffMember
 	BookingStaffMemberBase
 	// AvailabilityIsAffectedByPersonalCalendar undocumented
 	AvailabilityIsAffectedByPersonalCalendar *bool `json:"availabilityIsAffectedByPersonalCalendar,omitempty"`
-	// DisplayName Display name of this entity.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// EmailAddress The e-mail address of this person.
+	// EmailAddress undocumented
 	EmailAddress *string `json:"emailAddress,omitempty"`
 	// IsEmailNotificationEnabled undocumented
 	IsEmailNotificationEnabled *bool `json:"isEmailNotificationEnabled,omitempty"`
@@ -294,19 +294,19 @@ type BookingStaffMember struct {
 	WorkingHours []BookingWorkHours `json:"workingHours,omitempty"`
 }
 
-// BookingStaffMemberBase Booking entities that provide a display name.
+// BookingStaffMemberBase undocumented
 type BookingStaffMemberBase struct {
 	// Entity is the base model of BookingStaffMemberBase
 	Entity
 }
 
-// BookingWorkHours This type represents the set of working hours in a single day of the week.
+// BookingWorkHours undocumented
 type BookingWorkHours struct {
 	// Object is the base model of BookingWorkHours
 	Object
-	// Day The day of the week represented by this instance.
+	// Day undocumented
 	Day *DayOfWeek `json:"day,omitempty"`
-	// TimeSlots A list of start/end times during a day.
+	// TimeSlots undocumented
 	TimeSlots []BookingWorkTimeSlot `json:"timeSlots,omitempty"`
 }
 

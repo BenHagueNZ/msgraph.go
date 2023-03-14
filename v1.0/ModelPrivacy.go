@@ -7,7 +7,7 @@ type Privacy struct {
 	// Object is the base model of Privacy
 	Object
 	// SubjectRightsRequests undocumented
-	SubjectRightsRequests []SubjectRightsRequestObject `json:"subjectRightsRequests,omitempty"`
+	SubjectRightsRequests []SubjectRightsRequest `json:"subjectRightsRequests,omitempty"`
 }
 
 // PrivacyProfile undocumented

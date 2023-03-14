@@ -2,14 +2,14 @@
 
 package msgraph
 
-// BitLockerRemovableDrivePolicy BitLocker Removable Drive Policies.
+// BitLockerRemovableDrivePolicy undocumented
 type BitLockerRemovableDrivePolicy struct {
 	// Object is the base model of BitLockerRemovableDrivePolicy
 	Object
-	// BlockCrossOrganizationWriteAccess This policy setting determines whether BitLocker protection is required for removable data drives to be writable on a computer.
+	// BlockCrossOrganizationWriteAccess undocumented
 	BlockCrossOrganizationWriteAccess *bool `json:"blockCrossOrganizationWriteAccess,omitempty"`
-	// EncryptionMethod Select the encryption method for removable  drives.
+	// EncryptionMethod undocumented
 	EncryptionMethod *BitLockerEncryptionMethod `json:"encryptionMethod,omitempty"`
-	// RequireEncryptionForWriteAccess Indicates whether to block write access to devices configured in another organization.  If requireEncryptionForWriteAccess is false, this value does not affect.
+	// RequireEncryptionForWriteAccess undocumented
 	RequireEncryptionForWriteAccess *bool `json:"requireEncryptionForWriteAccess,omitempty"`
 }

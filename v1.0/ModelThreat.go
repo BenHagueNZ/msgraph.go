@@ -5,7 +5,7 @@ package msgraph
 import "time"
 
 // ThreatAssessmentRequestObject undocumented
-type ThreatAssessmentRequestObject struct {
+type ThreatAssessmentRequest struct {
 	// Entity is the base model of ThreatAssessmentRequestObject
 	Entity
 	// Category undocumented

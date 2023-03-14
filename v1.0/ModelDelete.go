@@ -2,10 +2,10 @@
 
 package msgraph
 
-// DeleteUserFromSharedAppleDeviceActionResult Delete user from shared apple device action result
+// DeleteUserFromSharedAppleDeviceActionResult undocumented
 type DeleteUserFromSharedAppleDeviceActionResult struct {
 	// DeviceActionResult is the base model of DeleteUserFromSharedAppleDeviceActionResult
 	DeviceActionResult
-	// UserPrincipalName User principal name of the user to be deleted
+	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }

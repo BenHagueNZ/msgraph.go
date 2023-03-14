@@ -2,13 +2,13 @@
 
 package msgraph
 
-// TargetedManagedAppConfiguration Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
+// TargetedManagedAppConfiguration undocumented
 type TargetedManagedAppConfiguration struct {
 	// ManagedAppConfiguration is the base model of TargetedManagedAppConfiguration
 	ManagedAppConfiguration
-	// DeployedAppCount Count of apps to which the current policy is deployed.
+	// DeployedAppCount undocumented
 	DeployedAppCount *int `json:"deployedAppCount,omitempty"`
-	// IsAssigned Indicates if the policy is deployed to any inclusion groups or not.
+	// IsAssigned undocumented
 	IsAssigned *bool `json:"isAssigned,omitempty"`
 	// Apps undocumented
 	Apps []ManagedMobileApp `json:"apps,omitempty"`
@@ -18,19 +18,19 @@ type TargetedManagedAppConfiguration struct {
 	DeploymentSummary *ManagedAppPolicyDeploymentSummary `json:"deploymentSummary,omitempty"`
 }
 
-// TargetedManagedAppPolicyAssignment The type for deployment of groups or apps.
+// TargetedManagedAppPolicyAssignment undocumented
 type TargetedManagedAppPolicyAssignment struct {
 	// Entity is the base model of TargetedManagedAppPolicyAssignment
 	Entity
-	// Target Identifier for deployment to a group or app
+	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
 
-// TargetedManagedAppProtection Policy used to configure detailed management settings targeted to specific security groups
+// TargetedManagedAppProtection undocumented
 type TargetedManagedAppProtection struct {
 	// ManagedAppProtection is the base model of TargetedManagedAppProtection
 	ManagedAppProtection
-	// IsAssigned Indicates if the policy is deployed to any inclusion groups or not.
+	// IsAssigned undocumented
 	IsAssigned *bool `json:"isAssigned,omitempty"`
 	// Assignments undocumented
 	Assignments []TargetedManagedAppPolicyAssignment `json:"assignments,omitempty"`

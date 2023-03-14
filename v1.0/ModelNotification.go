@@ -4,19 +4,19 @@ package msgraph
 
 import "time"
 
-// NotificationMessageTemplate Notification messages are messages that are sent to end users who are determined to be not-compliant with the compliance policies defined by the administrator. Administrators choose notifications and configure them in the Intune Admin Console using the compliance policy creation page under the “Actions for non-compliance” section. Use the notificationMessageTemplate object to create your own custom notifications for administrators to choose while configuring actions for non-compliance.
+// NotificationMessageTemplate undocumented
 type NotificationMessageTemplate struct {
 	// Entity is the base model of NotificationMessageTemplate
 	Entity
-	// BrandingOptions The Message Template Branding Options. Branding is defined in the Intune Admin Console.
+	// BrandingOptions undocumented
 	BrandingOptions *NotificationTemplateBrandingOptions `json:"brandingOptions,omitempty"`
-	// DefaultLocale The default locale to fallback onto when the requested locale is not available.
+	// DefaultLocale undocumented
 	DefaultLocale *string `json:"defaultLocale,omitempty"`
-	// DisplayName Display name for the Notification Message Template.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// LastModifiedDateTime DateTime the object was last modified.
+	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
-	// RoleScopeTagIDs List of Scope Tags for this Entity instance.
+	// RoleScopeTagIDs undocumented
 	RoleScopeTagIDs []string `json:"roleScopeTagIds,omitempty"`
 	// LocalizedNotificationMessages undocumented
 	LocalizedNotificationMessages []LocalizedNotificationMessage `json:"localizedNotificationMessages,omitempty"`

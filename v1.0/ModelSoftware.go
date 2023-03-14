@@ -14,34 +14,34 @@ type SoftwareOathAuthenticationMethod struct {
 type SoftwareUpdateStatusSummary struct {
 	// Entity is the base model of SoftwareUpdateStatusSummary
 	Entity
-	// CompliantDeviceCount Number of compliant devices.
+	// CompliantDeviceCount undocumented
 	CompliantDeviceCount *int `json:"compliantDeviceCount,omitempty"`
-	// CompliantUserCount Number of compliant users.
+	// CompliantUserCount undocumented
 	CompliantUserCount *int `json:"compliantUserCount,omitempty"`
-	// ConflictDeviceCount Number of conflict devices.
+	// ConflictDeviceCount undocumented
 	ConflictDeviceCount *int `json:"conflictDeviceCount,omitempty"`
-	// ConflictUserCount Number of conflict users.
+	// ConflictUserCount undocumented
 	ConflictUserCount *int `json:"conflictUserCount,omitempty"`
-	// DisplayName The name of the policy.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// ErrorDeviceCount Number of devices had error.
+	// ErrorDeviceCount undocumented
 	ErrorDeviceCount *int `json:"errorDeviceCount,omitempty"`
-	// ErrorUserCount Number of users had error.
+	// ErrorUserCount undocumented
 	ErrorUserCount *int `json:"errorUserCount,omitempty"`
-	// NonCompliantDeviceCount Number of non compliant devices.
+	// NonCompliantDeviceCount undocumented
 	NonCompliantDeviceCount *int `json:"nonCompliantDeviceCount,omitempty"`
-	// NonCompliantUserCount Number of non compliant users.
+	// NonCompliantUserCount undocumented
 	NonCompliantUserCount *int `json:"nonCompliantUserCount,omitempty"`
-	// NotApplicableDeviceCount Number of not applicable devices.
+	// NotApplicableDeviceCount undocumented
 	NotApplicableDeviceCount *int `json:"notApplicableDeviceCount,omitempty"`
-	// NotApplicableUserCount Number of not applicable users.
+	// NotApplicableUserCount undocumented
 	NotApplicableUserCount *int `json:"notApplicableUserCount,omitempty"`
-	// RemediatedDeviceCount Number of remediated devices.
+	// RemediatedDeviceCount undocumented
 	RemediatedDeviceCount *int `json:"remediatedDeviceCount,omitempty"`
-	// RemediatedUserCount Number of remediated users.
+	// RemediatedUserCount undocumented
 	RemediatedUserCount *int `json:"remediatedUserCount,omitempty"`
-	// UnknownDeviceCount Number of unknown devices.
+	// UnknownDeviceCount undocumented
 	UnknownDeviceCount *int `json:"unknownDeviceCount,omitempty"`
-	// UnknownUserCount Number of unknown users.
+	// UnknownUserCount undocumented
 	UnknownUserCount *int `json:"unknownUserCount,omitempty"`
 }

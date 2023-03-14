@@ -10,12 +10,12 @@ type IPv6CidrRange struct {
 	CIDRAddress *string `json:"cidrAddress,omitempty"`
 }
 
-// IPv6Range IPv6 Range definition.
+// IPv6Range undocumented
 type IPv6Range struct {
 	// IPRange is the base model of IPv6Range
 	IPRange
-	// LowerAddress Lower address.
+	// LowerAddress undocumented
 	LowerAddress *string `json:"lowerAddress,omitempty"`
-	// UpperAddress Upper address.
+	// UpperAddress undocumented
 	UpperAddress *string `json:"upperAddress,omitempty"`
 }

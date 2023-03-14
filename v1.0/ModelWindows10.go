@@ -2,660 +2,660 @@
 
 package msgraph
 
-// Windows10CompliancePolicy This class contains compliance settings for Windows 10.
+// Windows10CompliancePolicy undocumented
 type Windows10CompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of Windows10CompliancePolicy
 	DeviceCompliancePolicy
-	// BitLockerEnabled Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled
+	// BitLockerEnabled undocumented
 	BitLockerEnabled *bool `json:"bitLockerEnabled,omitempty"`
-	// CodeIntegrityEnabled Require devices to be reported as healthy by Windows Device Health Attestation.
+	// CodeIntegrityEnabled undocumented
 	CodeIntegrityEnabled *bool `json:"codeIntegrityEnabled,omitempty"`
-	// EarlyLaunchAntiMalwareDriverEnabled Require devices to be reported as healthy by Windows Device Health Attestation - early launch antimalware driver is enabled.
+	// EarlyLaunchAntiMalwareDriverEnabled undocumented
 	EarlyLaunchAntiMalwareDriverEnabled *bool `json:"earlyLaunchAntiMalwareDriverEnabled,omitempty"`
-	// MobileOsMaximumVersion Maximum Windows Phone version.
+	// MobileOsMaximumVersion undocumented
 	MobileOsMaximumVersion *string `json:"mobileOsMaximumVersion,omitempty"`
-	// MobileOsMinimumVersion Minimum Windows Phone version.
+	// MobileOsMinimumVersion undocumented
 	MobileOsMinimumVersion *string `json:"mobileOsMinimumVersion,omitempty"`
-	// OsMaximumVersion Maximum Windows 10 version.
+	// OsMaximumVersion undocumented
 	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
-	// OsMinimumVersion Minimum Windows 10 version.
+	// OsMinimumVersion undocumented
 	OsMinimumVersion *string `json:"osMinimumVersion,omitempty"`
-	// PasswordBlockSimple Indicates whether or not to block simple password.
+	// PasswordBlockSimple undocumented
 	PasswordBlockSimple *bool `json:"passwordBlockSimple,omitempty"`
-	// PasswordExpirationDays The password expiration in days.
+	// PasswordExpirationDays undocumented
 	PasswordExpirationDays *int `json:"passwordExpirationDays,omitempty"`
-	// PasswordMinimumCharacterSetCount The number of character sets required in the password.
+	// PasswordMinimumCharacterSetCount undocumented
 	PasswordMinimumCharacterSetCount *int `json:"passwordMinimumCharacterSetCount,omitempty"`
-	// PasswordMinimumLength The minimum password length.
+	// PasswordMinimumLength undocumented
 	PasswordMinimumLength *int `json:"passwordMinimumLength,omitempty"`
-	// PasswordMinutesOfInactivityBeforeLock Minutes of inactivity before a password is required.
+	// PasswordMinutesOfInactivityBeforeLock undocumented
 	PasswordMinutesOfInactivityBeforeLock *int `json:"passwordMinutesOfInactivityBeforeLock,omitempty"`
-	// PasswordPreviousPasswordBlockCount The number of previous passwords to prevent re-use of.
+	// PasswordPreviousPasswordBlockCount undocumented
 	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
-	// PasswordRequired Require a password to unlock Windows device.
+	// PasswordRequired undocumented
 	PasswordRequired *bool `json:"passwordRequired,omitempty"`
-	// PasswordRequiredToUnlockFromIdle Require a password to unlock an idle device.
+	// PasswordRequiredToUnlockFromIdle undocumented
 	PasswordRequiredToUnlockFromIdle *bool `json:"passwordRequiredToUnlockFromIdle,omitempty"`
-	// PasswordRequiredType The required password type.
+	// PasswordRequiredType undocumented
 	PasswordRequiredType *RequiredPasswordType `json:"passwordRequiredType,omitempty"`
-	// RequireHealthyDeviceReport Require devices to be reported as healthy by Windows Device Health Attestation.
+	// RequireHealthyDeviceReport undocumented
 	RequireHealthyDeviceReport *bool `json:"requireHealthyDeviceReport,omitempty"`
-	// SecureBootEnabled Require devices to be reported as healthy by Windows Device Health Attestation - secure boot is enabled.
+	// SecureBootEnabled undocumented
 	SecureBootEnabled *bool `json:"secureBootEnabled,omitempty"`
-	// StorageRequireEncryption Require encryption on windows devices.
+	// StorageRequireEncryption undocumented
 	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
 }
 
-// Windows10CustomConfiguration This topic provides descriptions of the declared methods, properties and relationships exposed by the windows10CustomConfiguration resource.
+// Windows10CustomConfiguration undocumented
 type Windows10CustomConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10CustomConfiguration
 	DeviceConfiguration
-	// OMASettings OMA settings. This collection can contain a maximum of 1000 elements.
+	// OMASettings undocumented
 	OMASettings []OMASetting `json:"omaSettings,omitempty"`
 }
 
-// Windows10EndpointProtectionConfiguration This topic provides descriptions of the declared methods, properties and relationships exposed by the Windows10EndpointProtectionConfiguration resource.
+// Windows10EndpointProtectionConfiguration undocumented
 type Windows10EndpointProtectionConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10EndpointProtectionConfiguration
 	DeviceConfiguration
-	// ApplicationGuardAllowPersistence Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)
+	// ApplicationGuardAllowPersistence undocumented
 	ApplicationGuardAllowPersistence *bool `json:"applicationGuardAllowPersistence,omitempty"`
-	// ApplicationGuardAllowPrintToLocalPrinters Allow printing to Local Printers from Container
+	// ApplicationGuardAllowPrintToLocalPrinters undocumented
 	ApplicationGuardAllowPrintToLocalPrinters *bool `json:"applicationGuardAllowPrintToLocalPrinters,omitempty"`
-	// ApplicationGuardAllowPrintToNetworkPrinters Allow printing to Network Printers from Container
+	// ApplicationGuardAllowPrintToNetworkPrinters undocumented
 	ApplicationGuardAllowPrintToNetworkPrinters *bool `json:"applicationGuardAllowPrintToNetworkPrinters,omitempty"`
-	// ApplicationGuardAllowPrintToPDF Allow printing to PDF from Container
+	// ApplicationGuardAllowPrintToPDF undocumented
 	ApplicationGuardAllowPrintToPDF *bool `json:"applicationGuardAllowPrintToPDF,omitempty"`
-	// ApplicationGuardAllowPrintToXPS Allow printing to XPS from Container
+	// ApplicationGuardAllowPrintToXPS undocumented
 	ApplicationGuardAllowPrintToXPS *bool `json:"applicationGuardAllowPrintToXPS,omitempty"`
-	// ApplicationGuardBlockClipboardSharing Block clipboard to share data from Host to Container, or from Container to Host, or both ways, or neither ways.
+	// ApplicationGuardBlockClipboardSharing undocumented
 	ApplicationGuardBlockClipboardSharing *ApplicationGuardBlockClipboardSharingType `json:"applicationGuardBlockClipboardSharing,omitempty"`
-	// ApplicationGuardBlockFileTransfer Block clipboard to transfer image file, text file or neither of them
+	// ApplicationGuardBlockFileTransfer undocumented
 	ApplicationGuardBlockFileTransfer *ApplicationGuardBlockFileTransferType `json:"applicationGuardBlockFileTransfer,omitempty"`
-	// ApplicationGuardBlockNonEnterpriseContent Block enterprise sites to load non-enterprise content, such as third party plug-ins
+	// ApplicationGuardBlockNonEnterpriseContent undocumented
 	ApplicationGuardBlockNonEnterpriseContent *bool `json:"applicationGuardBlockNonEnterpriseContent,omitempty"`
-	// ApplicationGuardEnabled Enable Windows Defender Application Guard
+	// ApplicationGuardEnabled undocumented
 	ApplicationGuardEnabled *bool `json:"applicationGuardEnabled,omitempty"`
-	// ApplicationGuardForceAuditing Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)
+	// ApplicationGuardForceAuditing undocumented
 	ApplicationGuardForceAuditing *bool `json:"applicationGuardForceAuditing,omitempty"`
-	// AppLockerApplicationControl Enables the Admin to choose what types of app to allow on devices.
+	// AppLockerApplicationControl undocumented
 	AppLockerApplicationControl *AppLockerApplicationControlType `json:"appLockerApplicationControl,omitempty"`
-	// BitLockerDisableWarningForOtherDiskEncryption Allows the Admin to disable the warning prompt for other disk encryption on the user machines.
+	// BitLockerDisableWarningForOtherDiskEncryption undocumented
 	BitLockerDisableWarningForOtherDiskEncryption *bool `json:"bitLockerDisableWarningForOtherDiskEncryption,omitempty"`
-	// BitLockerEnableStorageCardEncryptionOnMobile Allows the admin to require encryption to be turned on using BitLocker. This policy is valid only for a mobile SKU.
+	// BitLockerEnableStorageCardEncryptionOnMobile undocumented
 	BitLockerEnableStorageCardEncryptionOnMobile *bool `json:"bitLockerEnableStorageCardEncryptionOnMobile,omitempty"`
-	// BitLockerEncryptDevice Allows the admin to require encryption to be turned on using BitLocker.
+	// BitLockerEncryptDevice undocumented
 	BitLockerEncryptDevice *bool `json:"bitLockerEncryptDevice,omitempty"`
-	// BitLockerRemovableDrivePolicy BitLocker Removable Drive Policy.
+	// BitLockerRemovableDrivePolicy undocumented
 	BitLockerRemovableDrivePolicy *BitLockerRemovableDrivePolicy `json:"bitLockerRemovableDrivePolicy,omitempty"`
-	// DefenderAdditionalGuardedFolders List of folder paths to be added to the list of protected folders
+	// DefenderAdditionalGuardedFolders undocumented
 	DefenderAdditionalGuardedFolders []string `json:"defenderAdditionalGuardedFolders,omitempty"`
-	// DefenderAttackSurfaceReductionExcludedPaths List of exe files and folders to be excluded from attack surface reduction rules
+	// DefenderAttackSurfaceReductionExcludedPaths undocumented
 	DefenderAttackSurfaceReductionExcludedPaths []string `json:"defenderAttackSurfaceReductionExcludedPaths,omitempty"`
-	// DefenderExploitProtectionXML Xml content containing information regarding exploit protection details.
+	// DefenderExploitProtectionXML undocumented
 	DefenderExploitProtectionXML *Binary `json:"defenderExploitProtectionXml,omitempty"`
-	// DefenderExploitProtectionXMLFileName Name of the file from which DefenderExploitProtectionXml was obtained.
+	// DefenderExploitProtectionXMLFileName undocumented
 	DefenderExploitProtectionXMLFileName *string `json:"defenderExploitProtectionXmlFileName,omitempty"`
-	// DefenderGuardedFoldersAllowedAppPaths List of paths to exe that are allowed to access protected folders
+	// DefenderGuardedFoldersAllowedAppPaths undocumented
 	DefenderGuardedFoldersAllowedAppPaths []string `json:"defenderGuardedFoldersAllowedAppPaths,omitempty"`
-	// DefenderSecurityCenterBlockExploitProtectionOverride Indicates whether or not to block user from overriding Exploit Protection settings.
+	// DefenderSecurityCenterBlockExploitProtectionOverride undocumented
 	DefenderSecurityCenterBlockExploitProtectionOverride *bool `json:"defenderSecurityCenterBlockExploitProtectionOverride,omitempty"`
-	// FirewallBlockStatefulFTP Blocks stateful FTP connections to the device
+	// FirewallBlockStatefulFTP undocumented
 	FirewallBlockStatefulFTP *bool `json:"firewallBlockStatefulFTP,omitempty"`
-	// FirewallCertificateRevocationListCheckMethod Specify how the certificate revocation list is to be enforced
+	// FirewallCertificateRevocationListCheckMethod undocumented
 	FirewallCertificateRevocationListCheckMethod *FirewallCertificateRevocationListCheckMethodType `json:"firewallCertificateRevocationListCheckMethod,omitempty"`
-	// FirewallIdleTimeoutForSecurityAssociationInSeconds Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600
+	// FirewallIdleTimeoutForSecurityAssociationInSeconds undocumented
 	FirewallIdleTimeoutForSecurityAssociationInSeconds *int `json:"firewallIdleTimeoutForSecurityAssociationInSeconds,omitempty"`
-	// FirewallIPSecExemptionsAllowDHCP Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic
+	// FirewallIPSecExemptionsAllowDHCP undocumented
 	FirewallIPSecExemptionsAllowDHCP *bool `json:"firewallIPSecExemptionsAllowDHCP,omitempty"`
-	// FirewallIPSecExemptionsAllowICMP Configures IPSec exemptions to allow ICMP
+	// FirewallIPSecExemptionsAllowICMP undocumented
 	FirewallIPSecExemptionsAllowICMP *bool `json:"firewallIPSecExemptionsAllowICMP,omitempty"`
-	// FirewallIPSecExemptionsAllowNeighborDiscovery Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP type-codes
+	// FirewallIPSecExemptionsAllowNeighborDiscovery undocumented
 	FirewallIPSecExemptionsAllowNeighborDiscovery *bool `json:"firewallIPSecExemptionsAllowNeighborDiscovery,omitempty"`
-	// FirewallIPSecExemptionsAllowRouterDiscovery Configures IPSec exemptions to allow router discovery IPv6 ICMP type-codes
+	// FirewallIPSecExemptionsAllowRouterDiscovery undocumented
 	FirewallIPSecExemptionsAllowRouterDiscovery *bool `json:"firewallIPSecExemptionsAllowRouterDiscovery,omitempty"`
-	// FirewallMergeKeyingModuleSettings If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
+	// FirewallMergeKeyingModuleSettings undocumented
 	FirewallMergeKeyingModuleSettings *bool `json:"firewallMergeKeyingModuleSettings,omitempty"`
-	// FirewallPacketQueueingMethod Configures how packet queueing should be applied in the tunnel gateway scenario
+	// FirewallPacketQueueingMethod undocumented
 	FirewallPacketQueueingMethod *FirewallPacketQueueingMethodType `json:"firewallPacketQueueingMethod,omitempty"`
-	// FirewallPreSharedKeyEncodingMethod Select the preshared key encoding to be used
+	// FirewallPreSharedKeyEncodingMethod undocumented
 	FirewallPreSharedKeyEncodingMethod *FirewallPreSharedKeyEncodingMethodType `json:"firewallPreSharedKeyEncodingMethod,omitempty"`
-	// FirewallProfileDomain Configures the firewall profile settings for domain networks
+	// FirewallProfileDomain undocumented
 	FirewallProfileDomain *WindowsFirewallNetworkProfile `json:"firewallProfileDomain,omitempty"`
-	// FirewallProfilePrivate Configures the firewall profile settings for private networks
+	// FirewallProfilePrivate undocumented
 	FirewallProfilePrivate *WindowsFirewallNetworkProfile `json:"firewallProfilePrivate,omitempty"`
-	// FirewallProfilePublic Configures the firewall profile settings for public networks
+	// FirewallProfilePublic undocumented
 	FirewallProfilePublic *WindowsFirewallNetworkProfile `json:"firewallProfilePublic,omitempty"`
-	// SmartScreenBlockOverrideForFiles Allows IT Admins to control whether users can can ignore SmartScreen warnings and run malicious files.
+	// SmartScreenBlockOverrideForFiles undocumented
 	SmartScreenBlockOverrideForFiles *bool `json:"smartScreenBlockOverrideForFiles,omitempty"`
-	// SmartScreenEnableInShell Allows IT Admins to configure SmartScreen for Windows.
+	// SmartScreenEnableInShell undocumented
 	SmartScreenEnableInShell *bool `json:"smartScreenEnableInShell,omitempty"`
 }
 
-// Windows10EnterpriseModernAppManagementConfiguration Windows10 Enterprise Modern App Management Configuration.
+// Windows10EnterpriseModernAppManagementConfiguration undocumented
 type Windows10EnterpriseModernAppManagementConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10EnterpriseModernAppManagementConfiguration
 	DeviceConfiguration
-	// UninstallBuiltInApps Indicates whether or not to uninstall a fixed list of built-in Windows apps.
+	// UninstallBuiltInApps undocumented
 	UninstallBuiltInApps *bool `json:"uninstallBuiltInApps,omitempty"`
 }
 
-// Windows10GeneralConfiguration This topic provides descriptions of the declared methods, properties and relationships exposed by the windows10GeneralConfiguration resource.
+// Windows10GeneralConfiguration undocumented
 type Windows10GeneralConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10GeneralConfiguration
 	DeviceConfiguration
-	// AccountsBlockAddingNonMicrosoftAccountEmail Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.
+	// AccountsBlockAddingNonMicrosoftAccountEmail undocumented
 	AccountsBlockAddingNonMicrosoftAccountEmail *bool `json:"accountsBlockAddingNonMicrosoftAccountEmail,omitempty"`
-	// AntiTheftModeBlocked Indicates whether or not to block the user from selecting an AntiTheft mode preference (Windows 10 Mobile only).
+	// AntiTheftModeBlocked undocumented
 	AntiTheftModeBlocked *bool `json:"antiTheftModeBlocked,omitempty"`
-	// AppsAllowTrustedAppsSideloading Indicates whether apps from AppX packages signed with a trusted certificate can be side loaded.
+	// AppsAllowTrustedAppsSideloading undocumented
 	AppsAllowTrustedAppsSideloading *StateManagementSetting `json:"appsAllowTrustedAppsSideloading,omitempty"`
-	// AppsBlockWindowsStoreOriginatedApps Indicates whether or not to disable the launch of all apps from Windows Store that came pre-installed or were downloaded.
+	// AppsBlockWindowsStoreOriginatedApps undocumented
 	AppsBlockWindowsStoreOriginatedApps *bool `json:"appsBlockWindowsStoreOriginatedApps,omitempty"`
-	// BluetoothAllowedServices Specify a list of allowed Bluetooth services and profiles in hex formatted strings.
+	// BluetoothAllowedServices undocumented
 	BluetoothAllowedServices []string `json:"bluetoothAllowedServices,omitempty"`
-	// BluetoothBlockAdvertising Whether or not to Block the user from using bluetooth advertising.
+	// BluetoothBlockAdvertising undocumented
 	BluetoothBlockAdvertising *bool `json:"bluetoothBlockAdvertising,omitempty"`
-	// BluetoothBlockDiscoverableMode Whether or not to Block the user from using bluetooth discoverable mode.
+	// BluetoothBlockDiscoverableMode undocumented
 	BluetoothBlockDiscoverableMode *bool `json:"bluetoothBlockDiscoverableMode,omitempty"`
-	// BluetoothBlocked Whether or not to Block the user from using bluetooth.
+	// BluetoothBlocked undocumented
 	BluetoothBlocked *bool `json:"bluetoothBlocked,omitempty"`
-	// BluetoothBlockPrePairing Whether or not to block specific bundled Bluetooth peripherals to automatically pair with the host device.
+	// BluetoothBlockPrePairing undocumented
 	BluetoothBlockPrePairing *bool `json:"bluetoothBlockPrePairing,omitempty"`
-	// CameraBlocked Whether or not to Block the user from accessing the camera of the device.
+	// CameraBlocked undocumented
 	CameraBlocked *bool `json:"cameraBlocked,omitempty"`
-	// CellularBlockDataWhenRoaming Whether or not to Block the user from using data over cellular while roaming.
+	// CellularBlockDataWhenRoaming undocumented
 	CellularBlockDataWhenRoaming *bool `json:"cellularBlockDataWhenRoaming,omitempty"`
-	// CellularBlockVPN Whether or not to Block the user from using VPN over cellular.
+	// CellularBlockVPN undocumented
 	CellularBlockVPN *bool `json:"cellularBlockVpn,omitempty"`
-	// CellularBlockVPNWhenRoaming Whether or not to Block the user from using VPN when roaming over cellular.
+	// CellularBlockVPNWhenRoaming undocumented
 	CellularBlockVPNWhenRoaming *bool `json:"cellularBlockVpnWhenRoaming,omitempty"`
-	// CertificatesBlockManualRootCertificateInstallation Whether or not to Block the user from doing manual root certificate installation.
+	// CertificatesBlockManualRootCertificateInstallation undocumented
 	CertificatesBlockManualRootCertificateInstallation *bool `json:"certificatesBlockManualRootCertificateInstallation,omitempty"`
-	// ConnectedDevicesServiceBlocked Whether or not to block Connected Devices Service which enables discovery and connection to other devices, remote messaging, remote app sessions and other cross-device experiences.
+	// ConnectedDevicesServiceBlocked undocumented
 	ConnectedDevicesServiceBlocked *bool `json:"connectedDevicesServiceBlocked,omitempty"`
-	// CopyPasteBlocked Whether or not to Block the user from using copy paste.
+	// CopyPasteBlocked undocumented
 	CopyPasteBlocked *bool `json:"copyPasteBlocked,omitempty"`
-	// CortanaBlocked Whether or not to Block the user from using Cortana.
+	// CortanaBlocked undocumented
 	CortanaBlocked *bool `json:"cortanaBlocked,omitempty"`
-	// DefenderBlockEndUserAccess Whether or not to block end user access to Defender.
+	// DefenderBlockEndUserAccess undocumented
 	DefenderBlockEndUserAccess *bool `json:"defenderBlockEndUserAccess,omitempty"`
-	// DefenderCloudBlockLevel Specifies the level of cloud-delivered protection.
+	// DefenderCloudBlockLevel undocumented
 	DefenderCloudBlockLevel *DefenderCloudBlockLevelType `json:"defenderCloudBlockLevel,omitempty"`
-	// DefenderDaysBeforeDeletingQuarantinedMalware Number of days before deleting quarantined malware. Valid values 0 to 90
+	// DefenderDaysBeforeDeletingQuarantinedMalware undocumented
 	DefenderDaysBeforeDeletingQuarantinedMalware *int `json:"defenderDaysBeforeDeletingQuarantinedMalware,omitempty"`
-	// DefenderDetectedMalwareActions Gets or sets Defender’s actions to take on detected Malware per threat level.
+	// DefenderDetectedMalwareActions undocumented
 	DefenderDetectedMalwareActions *DefenderDetectedMalwareActions `json:"defenderDetectedMalwareActions,omitempty"`
-	// DefenderFileExtensionsToExclude File extensions to exclude from scans and real time protection.
+	// DefenderFileExtensionsToExclude undocumented
 	DefenderFileExtensionsToExclude []string `json:"defenderFileExtensionsToExclude,omitempty"`
-	// DefenderFilesAndFoldersToExclude Files and folder to exclude from scans and real time protection.
+	// DefenderFilesAndFoldersToExclude undocumented
 	DefenderFilesAndFoldersToExclude []string `json:"defenderFilesAndFoldersToExclude,omitempty"`
-	// DefenderMonitorFileActivity Value for monitoring file activity.
+	// DefenderMonitorFileActivity undocumented
 	DefenderMonitorFileActivity *DefenderMonitorFileActivity `json:"defenderMonitorFileActivity,omitempty"`
-	// DefenderProcessesToExclude Processes to exclude from scans and real time protection.
+	// DefenderProcessesToExclude undocumented
 	DefenderProcessesToExclude []string `json:"defenderProcessesToExclude,omitempty"`
-	// DefenderPromptForSampleSubmission The configuration for how to prompt user for sample submission.
+	// DefenderPromptForSampleSubmission undocumented
 	DefenderPromptForSampleSubmission *DefenderPromptForSampleSubmission `json:"defenderPromptForSampleSubmission,omitempty"`
-	// DefenderRequireBehaviorMonitoring Indicates whether or not to require behavior monitoring.
+	// DefenderRequireBehaviorMonitoring undocumented
 	DefenderRequireBehaviorMonitoring *bool `json:"defenderRequireBehaviorMonitoring,omitempty"`
-	// DefenderRequireCloudProtection Indicates whether or not to require cloud protection.
+	// DefenderRequireCloudProtection undocumented
 	DefenderRequireCloudProtection *bool `json:"defenderRequireCloudProtection,omitempty"`
-	// DefenderRequireNetworkInspectionSystem Indicates whether or not to require network inspection system.
+	// DefenderRequireNetworkInspectionSystem undocumented
 	DefenderRequireNetworkInspectionSystem *bool `json:"defenderRequireNetworkInspectionSystem,omitempty"`
-	// DefenderRequireRealTimeMonitoring Indicates whether or not to require real time monitoring.
+	// DefenderRequireRealTimeMonitoring undocumented
 	DefenderRequireRealTimeMonitoring *bool `json:"defenderRequireRealTimeMonitoring,omitempty"`
-	// DefenderScanArchiveFiles Indicates whether or not to scan archive files.
+	// DefenderScanArchiveFiles undocumented
 	DefenderScanArchiveFiles *bool `json:"defenderScanArchiveFiles,omitempty"`
-	// DefenderScanDownloads Indicates whether or not to scan downloads.
+	// DefenderScanDownloads undocumented
 	DefenderScanDownloads *bool `json:"defenderScanDownloads,omitempty"`
-	// DefenderScanIncomingMail Indicates whether or not to scan incoming mail messages.
+	// DefenderScanIncomingMail undocumented
 	DefenderScanIncomingMail *bool `json:"defenderScanIncomingMail,omitempty"`
-	// DefenderScanMappedNetworkDrivesDuringFullScan Indicates whether or not to scan mapped network drives during full scan.
+	// DefenderScanMappedNetworkDrivesDuringFullScan undocumented
 	DefenderScanMappedNetworkDrivesDuringFullScan *bool `json:"defenderScanMappedNetworkDrivesDuringFullScan,omitempty"`
-	// DefenderScanMaxCPU Max CPU usage percentage during scan. Valid values 0 to 100
+	// DefenderScanMaxCPU undocumented
 	DefenderScanMaxCPU *int `json:"defenderScanMaxCpu,omitempty"`
-	// DefenderScanNetworkFiles Indicates whether or not to scan files opened from a network folder.
+	// DefenderScanNetworkFiles undocumented
 	DefenderScanNetworkFiles *bool `json:"defenderScanNetworkFiles,omitempty"`
-	// DefenderScanRemovableDrivesDuringFullScan Indicates whether or not to scan removable drives during full scan.
+	// DefenderScanRemovableDrivesDuringFullScan undocumented
 	DefenderScanRemovableDrivesDuringFullScan *bool `json:"defenderScanRemovableDrivesDuringFullScan,omitempty"`
-	// DefenderScanScriptsLoadedInInternetExplorer Indicates whether or not to scan scripts loaded in Internet Explorer browser.
+	// DefenderScanScriptsLoadedInInternetExplorer undocumented
 	DefenderScanScriptsLoadedInInternetExplorer *bool `json:"defenderScanScriptsLoadedInInternetExplorer,omitempty"`
-	// DefenderScanType The defender system scan type.
+	// DefenderScanType undocumented
 	DefenderScanType *DefenderScanType `json:"defenderScanType,omitempty"`
-	// DefenderScheduledQuickScanTime The time to perform a daily quick scan.
+	// DefenderScheduledQuickScanTime undocumented
 	DefenderScheduledQuickScanTime *TimeOfDay `json:"defenderScheduledQuickScanTime,omitempty"`
-	// DefenderScheduledScanTime The defender time for the system scan.
+	// DefenderScheduledScanTime undocumented
 	DefenderScheduledScanTime *TimeOfDay `json:"defenderScheduledScanTime,omitempty"`
-	// DefenderSignatureUpdateIntervalInHours The signature update interval in hours. Specify 0 not to check. Valid values 0 to 24
+	// DefenderSignatureUpdateIntervalInHours undocumented
 	DefenderSignatureUpdateIntervalInHours *int `json:"defenderSignatureUpdateIntervalInHours,omitempty"`
-	// DefenderSystemScanSchedule Defender day of the week for the system scan.
+	// DefenderSystemScanSchedule undocumented
 	DefenderSystemScanSchedule *WeeklySchedule `json:"defenderSystemScanSchedule,omitempty"`
-	// DeveloperUnlockSetting Indicates whether or not to allow developer unlock.
+	// DeveloperUnlockSetting undocumented
 	DeveloperUnlockSetting *StateManagementSetting `json:"developerUnlockSetting,omitempty"`
-	// DeviceManagementBlockFactoryResetOnMobile Indicates whether or not to Block the user from resetting their phone.
+	// DeviceManagementBlockFactoryResetOnMobile undocumented
 	DeviceManagementBlockFactoryResetOnMobile *bool `json:"deviceManagementBlockFactoryResetOnMobile,omitempty"`
-	// DeviceManagementBlockManualUnenroll Indicates whether or not to Block the user from doing manual un-enrollment from device management.
+	// DeviceManagementBlockManualUnenroll undocumented
 	DeviceManagementBlockManualUnenroll *bool `json:"deviceManagementBlockManualUnenroll,omitempty"`
-	// DiagnosticsDataSubmissionMode Gets or sets a value allowing the device to send diagnostic and usage telemetry data, such as Watson.
+	// DiagnosticsDataSubmissionMode undocumented
 	DiagnosticsDataSubmissionMode *DiagnosticDataSubmissionMode `json:"diagnosticsDataSubmissionMode,omitempty"`
-	// EdgeAllowStartPagesModification Allow users to change Start pages on Edge. Use the EdgeHomepageUrls to specify the Start pages that the user would see by default when they open Edge.
+	// EdgeAllowStartPagesModification undocumented
 	EdgeAllowStartPagesModification *bool `json:"edgeAllowStartPagesModification,omitempty"`
-	// EdgeBlockAccessToAboutFlags Indicates whether or not to prevent access to about flags on Edge browser.
+	// EdgeBlockAccessToAboutFlags undocumented
 	EdgeBlockAccessToAboutFlags *bool `json:"edgeBlockAccessToAboutFlags,omitempty"`
-	// EdgeBlockAddressBarDropdown Block the address bar dropdown functionality in Microsoft Edge. Disable this settings to minimize network connections from Microsoft Edge to Microsoft services.
+	// EdgeBlockAddressBarDropdown undocumented
 	EdgeBlockAddressBarDropdown *bool `json:"edgeBlockAddressBarDropdown,omitempty"`
-	// EdgeBlockAutofill Indicates whether or not to block auto fill.
+	// EdgeBlockAutofill undocumented
 	EdgeBlockAutofill *bool `json:"edgeBlockAutofill,omitempty"`
-	// EdgeBlockCompatibilityList Block Microsoft compatibility list in Microsoft Edge. This list from Microsoft helps Edge properly display sites with known compatibility issues.
+	// EdgeBlockCompatibilityList undocumented
 	EdgeBlockCompatibilityList *bool `json:"edgeBlockCompatibilityList,omitempty"`
-	// EdgeBlockDeveloperTools Indicates whether or not to block developer tools in the Edge browser.
+	// EdgeBlockDeveloperTools undocumented
 	EdgeBlockDeveloperTools *bool `json:"edgeBlockDeveloperTools,omitempty"`
-	// EdgeBlocked Indicates whether or not to Block the user from using the Edge browser.
+	// EdgeBlocked undocumented
 	EdgeBlocked *bool `json:"edgeBlocked,omitempty"`
-	// EdgeBlockExtensions Indicates whether or not to block extensions in the Edge browser.
+	// EdgeBlockExtensions undocumented
 	EdgeBlockExtensions *bool `json:"edgeBlockExtensions,omitempty"`
-	// EdgeBlockInPrivateBrowsing Indicates whether or not to block InPrivate browsing on corporate networks, in the Edge browser.
+	// EdgeBlockInPrivateBrowsing undocumented
 	EdgeBlockInPrivateBrowsing *bool `json:"edgeBlockInPrivateBrowsing,omitempty"`
-	// EdgeBlockJavaScript Indicates whether or not to Block the user from using JavaScript.
+	// EdgeBlockJavaScript undocumented
 	EdgeBlockJavaScript *bool `json:"edgeBlockJavaScript,omitempty"`
-	// EdgeBlockLiveTileDataCollection Block the collection of information by Microsoft for live tile creation when users pin a site to Start from Microsoft Edge.
+	// EdgeBlockLiveTileDataCollection undocumented
 	EdgeBlockLiveTileDataCollection *bool `json:"edgeBlockLiveTileDataCollection,omitempty"`
-	// EdgeBlockPasswordManager Indicates whether or not to Block password manager.
+	// EdgeBlockPasswordManager undocumented
 	EdgeBlockPasswordManager *bool `json:"edgeBlockPasswordManager,omitempty"`
-	// EdgeBlockPopups Indicates whether or not to block popups.
+	// EdgeBlockPopups undocumented
 	EdgeBlockPopups *bool `json:"edgeBlockPopups,omitempty"`
-	// EdgeBlockSearchSuggestions Indicates whether or not to block the user from using the search suggestions in the address bar.
+	// EdgeBlockSearchSuggestions undocumented
 	EdgeBlockSearchSuggestions *bool `json:"edgeBlockSearchSuggestions,omitempty"`
-	// EdgeBlockSendingDoNotTrackHeader Indicates whether or not to Block the user from sending the do not track header.
+	// EdgeBlockSendingDoNotTrackHeader undocumented
 	EdgeBlockSendingDoNotTrackHeader *bool `json:"edgeBlockSendingDoNotTrackHeader,omitempty"`
-	// EdgeBlockSendingIntranetTrafficToInternetExplorer Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer. Note: the name of this property is misleading; the property is obsolete, use EdgeSendIntranetTrafficToInternetExplorer instead.
+	// EdgeBlockSendingIntranetTrafficToInternetExplorer undocumented
 	EdgeBlockSendingIntranetTrafficToInternetExplorer *bool `json:"edgeBlockSendingIntranetTrafficToInternetExplorer,omitempty"`
-	// EdgeClearBrowsingDataOnExit Clear browsing data on exiting Microsoft Edge.
+	// EdgeClearBrowsingDataOnExit undocumented
 	EdgeClearBrowsingDataOnExit *bool `json:"edgeClearBrowsingDataOnExit,omitempty"`
-	// EdgeCookiePolicy Indicates which cookies to block in the Edge browser.
+	// EdgeCookiePolicy undocumented
 	EdgeCookiePolicy *EdgeCookiePolicy `json:"edgeCookiePolicy,omitempty"`
-	// EdgeDisableFirstRunPage Block the Microsoft web page that opens on the first use of Microsoft Edge. This policy allows enterprises, like those enrolled in zero emissions configurations, to block this page.
+	// EdgeDisableFirstRunPage undocumented
 	EdgeDisableFirstRunPage *bool `json:"edgeDisableFirstRunPage,omitempty"`
-	// EdgeEnterpriseModeSiteListLocation Indicates the enterprise mode site list location. Could be a local file, local network or http location.
+	// EdgeEnterpriseModeSiteListLocation undocumented
 	EdgeEnterpriseModeSiteListLocation *string `json:"edgeEnterpriseModeSiteListLocation,omitempty"`
-	// EdgeFirstRunURL The first run URL for when Edge browser is opened for the first time.
+	// EdgeFirstRunURL undocumented
 	EdgeFirstRunURL *string `json:"edgeFirstRunUrl,omitempty"`
-	// EdgeHomepageUrls The list of URLs for homepages shodwn on MDM-enrolled devices on Edge browser.
+	// EdgeHomepageUrls undocumented
 	EdgeHomepageUrls []string `json:"edgeHomepageUrls,omitempty"`
-	// EdgeRequireSmartScreen Indicates whether or not to Require the user to use the smart screen filter.
+	// EdgeRequireSmartScreen undocumented
 	EdgeRequireSmartScreen *bool `json:"edgeRequireSmartScreen,omitempty"`
-	// EdgeSearchEngine Allows IT admins to set a default search engine for MDM-Controlled devices. Users can override this and change their default search engine provided the AllowSearchEngineCustomization policy is not set.
+	// EdgeSearchEngine undocumented
 	EdgeSearchEngine *EdgeSearchEngineBase `json:"edgeSearchEngine,omitempty"`
-	// EdgeSendIntranetTrafficToInternetExplorer Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer.
+	// EdgeSendIntranetTrafficToInternetExplorer undocumented
 	EdgeSendIntranetTrafficToInternetExplorer *bool `json:"edgeSendIntranetTrafficToInternetExplorer,omitempty"`
-	// EdgeSyncFavoritesWithInternetExplorer Enable favorites sync between Internet Explorer and Microsoft Edge. Additions, deletions, modifications and order changes to favorites are shared between browsers.
+	// EdgeSyncFavoritesWithInternetExplorer undocumented
 	EdgeSyncFavoritesWithInternetExplorer *bool `json:"edgeSyncFavoritesWithInternetExplorer,omitempty"`
-	// EnterpriseCloudPrintDiscoveryEndPoint Endpoint for discovering cloud printers.
+	// EnterpriseCloudPrintDiscoveryEndPoint undocumented
 	EnterpriseCloudPrintDiscoveryEndPoint *string `json:"enterpriseCloudPrintDiscoveryEndPoint,omitempty"`
-	// EnterpriseCloudPrintDiscoveryMaxLimit Maximum number of printers that should be queried from a discovery endpoint. This is a mobile only setting. Valid values 1 to 65535
+	// EnterpriseCloudPrintDiscoveryMaxLimit undocumented
 	EnterpriseCloudPrintDiscoveryMaxLimit *int `json:"enterpriseCloudPrintDiscoveryMaxLimit,omitempty"`
-	// EnterpriseCloudPrintMopriaDiscoveryResourceIdentifier OAuth resource URI for printer discovery service as configured in Azure portal.
+	// EnterpriseCloudPrintMopriaDiscoveryResourceIdentifier undocumented
 	EnterpriseCloudPrintMopriaDiscoveryResourceIdentifier *string `json:"enterpriseCloudPrintMopriaDiscoveryResourceIdentifier,omitempty"`
-	// EnterpriseCloudPrintOAuthAuthority Authentication endpoint for acquiring OAuth tokens.
+	// EnterpriseCloudPrintOAuthAuthority undocumented
 	EnterpriseCloudPrintOAuthAuthority *string `json:"enterpriseCloudPrintOAuthAuthority,omitempty"`
-	// EnterpriseCloudPrintOAuthClientIdentifier GUID of a client application authorized to retrieve OAuth tokens from the OAuth Authority.
+	// EnterpriseCloudPrintOAuthClientIdentifier undocumented
 	EnterpriseCloudPrintOAuthClientIdentifier *string `json:"enterpriseCloudPrintOAuthClientIdentifier,omitempty"`
-	// EnterpriseCloudPrintResourceIdentifier OAuth resource URI for print service as configured in the Azure portal.
+	// EnterpriseCloudPrintResourceIdentifier undocumented
 	EnterpriseCloudPrintResourceIdentifier *string `json:"enterpriseCloudPrintResourceIdentifier,omitempty"`
-	// ExperienceBlockDeviceDiscovery Indicates whether or not to enable device discovery UX.
+	// ExperienceBlockDeviceDiscovery undocumented
 	ExperienceBlockDeviceDiscovery *bool `json:"experienceBlockDeviceDiscovery,omitempty"`
-	// ExperienceBlockErrorDialogWhenNoSIM Indicates whether or not to allow the error dialog from displaying if no SIM card is detected.
+	// ExperienceBlockErrorDialogWhenNoSIM undocumented
 	ExperienceBlockErrorDialogWhenNoSIM *bool `json:"experienceBlockErrorDialogWhenNoSIM,omitempty"`
-	// ExperienceBlockTaskSwitcher Indicates whether or not to enable task switching on the device.
+	// ExperienceBlockTaskSwitcher undocumented
 	ExperienceBlockTaskSwitcher *bool `json:"experienceBlockTaskSwitcher,omitempty"`
-	// GameDvrBlocked Indicates whether or not to block DVR and broadcasting.
+	// GameDvrBlocked undocumented
 	GameDvrBlocked *bool `json:"gameDvrBlocked,omitempty"`
-	// InternetSharingBlocked Indicates whether or not to Block the user from using internet sharing.
+	// InternetSharingBlocked undocumented
 	InternetSharingBlocked *bool `json:"internetSharingBlocked,omitempty"`
-	// LocationServicesBlocked Indicates whether or not to Block the user from location services.
+	// LocationServicesBlocked undocumented
 	LocationServicesBlocked *bool `json:"locationServicesBlocked,omitempty"`
-	// LockScreenAllowTimeoutConfiguration Specify whether to show a user-configurable setting to control the screen timeout while on the lock screen of Windows 10 Mobile devices. If this policy is set to Allow, the value set by lockScreenTimeoutInSeconds is ignored.
+	// LockScreenAllowTimeoutConfiguration undocumented
 	LockScreenAllowTimeoutConfiguration *bool `json:"lockScreenAllowTimeoutConfiguration,omitempty"`
-	// LockScreenBlockActionCenterNotifications Indicates whether or not to block action center notifications over lock screen.
+	// LockScreenBlockActionCenterNotifications undocumented
 	LockScreenBlockActionCenterNotifications *bool `json:"lockScreenBlockActionCenterNotifications,omitempty"`
-	// LockScreenBlockCortana Indicates whether or not the user can interact with Cortana using speech while the system is locked.
+	// LockScreenBlockCortana undocumented
 	LockScreenBlockCortana *bool `json:"lockScreenBlockCortana,omitempty"`
-	// LockScreenBlockToastNotifications Indicates whether to allow toast notifications above the device lock screen.
+	// LockScreenBlockToastNotifications undocumented
 	LockScreenBlockToastNotifications *bool `json:"lockScreenBlockToastNotifications,omitempty"`
-	// LockScreenTimeoutInSeconds Set the duration (in seconds) from the screen locking to the screen turning off for Windows 10 Mobile devices. Supported values are 11-1800. Valid values 11 to 1800
+	// LockScreenTimeoutInSeconds undocumented
 	LockScreenTimeoutInSeconds *int `json:"lockScreenTimeoutInSeconds,omitempty"`
-	// LogonBlockFastUserSwitching Disables the ability to quickly switch between users that are logged on simultaneously without logging off.
+	// LogonBlockFastUserSwitching undocumented
 	LogonBlockFastUserSwitching *bool `json:"logonBlockFastUserSwitching,omitempty"`
-	// MicrosoftAccountBlocked Indicates whether or not to Block a Microsoft account.
+	// MicrosoftAccountBlocked undocumented
 	MicrosoftAccountBlocked *bool `json:"microsoftAccountBlocked,omitempty"`
-	// MicrosoftAccountBlockSettingsSync Indicates whether or not to Block Microsoft account settings sync.
+	// MicrosoftAccountBlockSettingsSync undocumented
 	MicrosoftAccountBlockSettingsSync *bool `json:"microsoftAccountBlockSettingsSync,omitempty"`
-	// NetworkProxyApplySettingsDeviceWide If set, proxy settings will be applied to all processes and accounts in the device. Otherwise, it will be applied to the user account that’s enrolled into MDM.
+	// NetworkProxyApplySettingsDeviceWide undocumented
 	NetworkProxyApplySettingsDeviceWide *bool `json:"networkProxyApplySettingsDeviceWide,omitempty"`
-	// NetworkProxyAutomaticConfigurationURL Address to the proxy auto-config (PAC) script you want to use.
+	// NetworkProxyAutomaticConfigurationURL undocumented
 	NetworkProxyAutomaticConfigurationURL *string `json:"networkProxyAutomaticConfigurationUrl,omitempty"`
-	// NetworkProxyDisableAutoDetect Disable automatic detection of settings. If enabled, the system will try to find the path to a proxy auto-config (PAC) script.
+	// NetworkProxyDisableAutoDetect undocumented
 	NetworkProxyDisableAutoDetect *bool `json:"networkProxyDisableAutoDetect,omitempty"`
-	// NetworkProxyServer Specifies manual proxy server settings.
+	// NetworkProxyServer undocumented
 	NetworkProxyServer *Windows10NetworkProxyServer `json:"networkProxyServer,omitempty"`
-	// NfcBlocked Indicates whether or not to Block the user from using near field communication.
+	// NfcBlocked undocumented
 	NfcBlocked *bool `json:"nfcBlocked,omitempty"`
-	// OneDriveDisableFileSync Gets or sets a value allowing IT admins to prevent apps and features from working with files on OneDrive.
+	// OneDriveDisableFileSync undocumented
 	OneDriveDisableFileSync *bool `json:"oneDriveDisableFileSync,omitempty"`
-	// PasswordBlockSimple Specify whether PINs or passwords such as "1111" or "1234" are allowed. For Windows 10 desktops, it also controls the use of picture passwords.
+	// PasswordBlockSimple undocumented
 	PasswordBlockSimple *bool `json:"passwordBlockSimple,omitempty"`
-	// PasswordExpirationDays The password expiration in days. Valid values 0 to 730
+	// PasswordExpirationDays undocumented
 	PasswordExpirationDays *int `json:"passwordExpirationDays,omitempty"`
-	// PasswordMinimumCharacterSetCount The number of character sets required in the password.
+	// PasswordMinimumCharacterSetCount undocumented
 	PasswordMinimumCharacterSetCount *int `json:"passwordMinimumCharacterSetCount,omitempty"`
-	// PasswordMinimumLength The minimum password length. Valid values 4 to 16
+	// PasswordMinimumLength undocumented
 	PasswordMinimumLength *int `json:"passwordMinimumLength,omitempty"`
-	// PasswordMinutesOfInactivityBeforeScreenTimeout The minutes of inactivity before the screen times out.
+	// PasswordMinutesOfInactivityBeforeScreenTimeout undocumented
 	PasswordMinutesOfInactivityBeforeScreenTimeout *int `json:"passwordMinutesOfInactivityBeforeScreenTimeout,omitempty"`
-	// PasswordPreviousPasswordBlockCount The number of previous passwords to prevent reuse of. Valid values 0 to 50
+	// PasswordPreviousPasswordBlockCount undocumented
 	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
-	// PasswordRequired Indicates whether or not to require the user to have a password.
+	// PasswordRequired undocumented
 	PasswordRequired *bool `json:"passwordRequired,omitempty"`
-	// PasswordRequiredType The required password type.
+	// PasswordRequiredType undocumented
 	PasswordRequiredType *RequiredPasswordType `json:"passwordRequiredType,omitempty"`
-	// PasswordRequireWhenResumeFromIdleState Indicates whether or not to require a password upon resuming from an idle state.
+	// PasswordRequireWhenResumeFromIdleState undocumented
 	PasswordRequireWhenResumeFromIdleState *bool `json:"passwordRequireWhenResumeFromIdleState,omitempty"`
-	// PasswordSignInFailureCountBeforeFactoryReset The number of sign in failures before factory reset. Valid values 0 to 999
+	// PasswordSignInFailureCountBeforeFactoryReset undocumented
 	PasswordSignInFailureCountBeforeFactoryReset *int `json:"passwordSignInFailureCountBeforeFactoryReset,omitempty"`
-	// PersonalizationDesktopImageURL A http or https Url to a jpg, jpeg or png image that needs to be downloaded and used as the Desktop Image or a file Url to a local image on the file system that needs to used as the Desktop Image.
+	// PersonalizationDesktopImageURL undocumented
 	PersonalizationDesktopImageURL *string `json:"personalizationDesktopImageUrl,omitempty"`
-	// PersonalizationLockScreenImageURL A http or https Url to a jpg, jpeg or png image that neeeds to be downloaded and used as the Lock Screen Image or a file Url to a local image on the file system that needs to be used as the Lock Screen Image.
+	// PersonalizationLockScreenImageURL undocumented
 	PersonalizationLockScreenImageURL *string `json:"personalizationLockScreenImageUrl,omitempty"`
-	// PrivacyAdvertisingID Enables or disables the use of advertising ID. Added in Windows 10, version 1607.
+	// PrivacyAdvertisingID undocumented
 	PrivacyAdvertisingID *StateManagementSetting `json:"privacyAdvertisingId,omitempty"`
-	// PrivacyAutoAcceptPairingAndConsentPrompts Indicates whether or not to allow the automatic acceptance of the pairing and privacy user consent dialog when launching apps.
+	// PrivacyAutoAcceptPairingAndConsentPrompts undocumented
 	PrivacyAutoAcceptPairingAndConsentPrompts *bool `json:"privacyAutoAcceptPairingAndConsentPrompts,omitempty"`
-	// PrivacyBlockInputPersonalization Indicates whether or not to block the usage of cloud based speech services for Cortana, Dictation, or Store applications.
+	// PrivacyBlockInputPersonalization undocumented
 	PrivacyBlockInputPersonalization *bool `json:"privacyBlockInputPersonalization,omitempty"`
-	// ResetProtectionModeBlocked Indicates whether or not to Block the user from reset protection mode.
+	// ResetProtectionModeBlocked undocumented
 	ResetProtectionModeBlocked *bool `json:"resetProtectionModeBlocked,omitempty"`
-	// SafeSearchFilter Specifies what filter level of safe search is required.
+	// SafeSearchFilter undocumented
 	SafeSearchFilter *SafeSearchFilterType `json:"safeSearchFilter,omitempty"`
-	// ScreenCaptureBlocked Indicates whether or not to Block the user from taking Screenshots.
+	// ScreenCaptureBlocked undocumented
 	ScreenCaptureBlocked *bool `json:"screenCaptureBlocked,omitempty"`
-	// SearchBlockDiacritics Specifies if search can use diacritics.
+	// SearchBlockDiacritics undocumented
 	SearchBlockDiacritics *bool `json:"searchBlockDiacritics,omitempty"`
-	// SearchDisableAutoLanguageDetection Specifies whether to use automatic language detection when indexing content and properties.
+	// SearchDisableAutoLanguageDetection undocumented
 	SearchDisableAutoLanguageDetection *bool `json:"searchDisableAutoLanguageDetection,omitempty"`
-	// SearchDisableIndexerBackoff Indicates whether or not to disable the search indexer backoff feature.
+	// SearchDisableIndexerBackoff undocumented
 	SearchDisableIndexerBackoff *bool `json:"searchDisableIndexerBackoff,omitempty"`
-	// SearchDisableIndexingEncryptedItems Indicates whether or not to block indexing of WIP-protected items to prevent them from appearing in search results for Cortana or Explorer.
+	// SearchDisableIndexingEncryptedItems undocumented
 	SearchDisableIndexingEncryptedItems *bool `json:"searchDisableIndexingEncryptedItems,omitempty"`
-	// SearchDisableIndexingRemovableDrive Indicates whether or not to allow users to add locations on removable drives to libraries and to be indexed.
+	// SearchDisableIndexingRemovableDrive undocumented
 	SearchDisableIndexingRemovableDrive *bool `json:"searchDisableIndexingRemovableDrive,omitempty"`
-	// SearchEnableAutomaticIndexSizeManangement Specifies minimum amount of hard drive space on the same drive as the index location before indexing stops.
+	// SearchEnableAutomaticIndexSizeManangement undocumented
 	SearchEnableAutomaticIndexSizeManangement *bool `json:"searchEnableAutomaticIndexSizeManangement,omitempty"`
-	// SearchEnableRemoteQueries Indicates whether or not to block remote queries of this computer’s index.
+	// SearchEnableRemoteQueries undocumented
 	SearchEnableRemoteQueries *bool `json:"searchEnableRemoteQueries,omitempty"`
-	// SettingsBlockAccountsPage Indicates whether or not to block access to Accounts in Settings app.
+	// SettingsBlockAccountsPage undocumented
 	SettingsBlockAccountsPage *bool `json:"settingsBlockAccountsPage,omitempty"`
-	// SettingsBlockAddProvisioningPackage Indicates whether or not to block the user from installing provisioning packages.
+	// SettingsBlockAddProvisioningPackage undocumented
 	SettingsBlockAddProvisioningPackage *bool `json:"settingsBlockAddProvisioningPackage,omitempty"`
-	// SettingsBlockAppsPage Indicates whether or not to block access to Apps in Settings app.
+	// SettingsBlockAppsPage undocumented
 	SettingsBlockAppsPage *bool `json:"settingsBlockAppsPage,omitempty"`
-	// SettingsBlockChangeLanguage Indicates whether or not to block the user from changing the language settings.
+	// SettingsBlockChangeLanguage undocumented
 	SettingsBlockChangeLanguage *bool `json:"settingsBlockChangeLanguage,omitempty"`
-	// SettingsBlockChangePowerSleep Indicates whether or not to block the user from changing power and sleep settings.
+	// SettingsBlockChangePowerSleep undocumented
 	SettingsBlockChangePowerSleep *bool `json:"settingsBlockChangePowerSleep,omitempty"`
-	// SettingsBlockChangeRegion Indicates whether or not to block the user from changing the region settings.
+	// SettingsBlockChangeRegion undocumented
 	SettingsBlockChangeRegion *bool `json:"settingsBlockChangeRegion,omitempty"`
-	// SettingsBlockChangeSystemTime Indicates whether or not to block the user from changing date and time settings.
+	// SettingsBlockChangeSystemTime undocumented
 	SettingsBlockChangeSystemTime *bool `json:"settingsBlockChangeSystemTime,omitempty"`
-	// SettingsBlockDevicesPage Indicates whether or not to block access to Devices in Settings app.
+	// SettingsBlockDevicesPage undocumented
 	SettingsBlockDevicesPage *bool `json:"settingsBlockDevicesPage,omitempty"`
-	// SettingsBlockEaseOfAccessPage Indicates whether or not to block access to Ease of Access in Settings app.
+	// SettingsBlockEaseOfAccessPage undocumented
 	SettingsBlockEaseOfAccessPage *bool `json:"settingsBlockEaseOfAccessPage,omitempty"`
-	// SettingsBlockEditDeviceName Indicates whether or not to block the user from editing the device name.
+	// SettingsBlockEditDeviceName undocumented
 	SettingsBlockEditDeviceName *bool `json:"settingsBlockEditDeviceName,omitempty"`
-	// SettingsBlockGamingPage Indicates whether or not to block access to Gaming in Settings app.
+	// SettingsBlockGamingPage undocumented
 	SettingsBlockGamingPage *bool `json:"settingsBlockGamingPage,omitempty"`
-	// SettingsBlockNetworkInternetPage Indicates whether or not to block access to Network & Internet in Settings app.
+	// SettingsBlockNetworkInternetPage undocumented
 	SettingsBlockNetworkInternetPage *bool `json:"settingsBlockNetworkInternetPage,omitempty"`
-	// SettingsBlockPersonalizationPage Indicates whether or not to block access to Personalization in Settings app.
+	// SettingsBlockPersonalizationPage undocumented
 	SettingsBlockPersonalizationPage *bool `json:"settingsBlockPersonalizationPage,omitempty"`
-	// SettingsBlockPrivacyPage Indicates whether or not to block access to Privacy in Settings app.
+	// SettingsBlockPrivacyPage undocumented
 	SettingsBlockPrivacyPage *bool `json:"settingsBlockPrivacyPage,omitempty"`
-	// SettingsBlockRemoveProvisioningPackage Indicates whether or not to block the runtime configuration agent from removing provisioning packages.
+	// SettingsBlockRemoveProvisioningPackage undocumented
 	SettingsBlockRemoveProvisioningPackage *bool `json:"settingsBlockRemoveProvisioningPackage,omitempty"`
-	// SettingsBlockSettingsApp Indicates whether or not to block access to Settings app.
+	// SettingsBlockSettingsApp undocumented
 	SettingsBlockSettingsApp *bool `json:"settingsBlockSettingsApp,omitempty"`
-	// SettingsBlockSystemPage Indicates whether or not to block access to System in Settings app.
+	// SettingsBlockSystemPage undocumented
 	SettingsBlockSystemPage *bool `json:"settingsBlockSystemPage,omitempty"`
-	// SettingsBlockTimeLanguagePage Indicates whether or not to block access to Time & Language in Settings app.
+	// SettingsBlockTimeLanguagePage undocumented
 	SettingsBlockTimeLanguagePage *bool `json:"settingsBlockTimeLanguagePage,omitempty"`
-	// SettingsBlockUpdateSecurityPage Indicates whether or not to block access to Update & Security in Settings app.
+	// SettingsBlockUpdateSecurityPage undocumented
 	SettingsBlockUpdateSecurityPage *bool `json:"settingsBlockUpdateSecurityPage,omitempty"`
-	// SharedUserAppDataAllowed Indicates whether or not to block multiple users of the same app to share data.
+	// SharedUserAppDataAllowed undocumented
 	SharedUserAppDataAllowed *bool `json:"sharedUserAppDataAllowed,omitempty"`
-	// SmartScreenBlockPromptOverride Indicates whether or not users can override SmartScreen Filter warnings about potentially malicious websites.
+	// SmartScreenBlockPromptOverride undocumented
 	SmartScreenBlockPromptOverride *bool `json:"smartScreenBlockPromptOverride,omitempty"`
-	// SmartScreenBlockPromptOverrideForFiles Indicates whether or not users can override the SmartScreen Filter warnings about downloading unverified files
+	// SmartScreenBlockPromptOverrideForFiles undocumented
 	SmartScreenBlockPromptOverrideForFiles *bool `json:"smartScreenBlockPromptOverrideForFiles,omitempty"`
-	// SmartScreenEnableAppInstallControl This property will be deprecated in July 2019 and will be replaced by property SmartScreenAppInstallControl. Allows IT Admins to control whether users are allowed to install apps from places other than the Store.
+	// SmartScreenEnableAppInstallControl undocumented
 	SmartScreenEnableAppInstallControl *bool `json:"smartScreenEnableAppInstallControl,omitempty"`
-	// StartBlockUnpinningAppsFromTaskbar Indicates whether or not to block the user from unpinning apps from taskbar.
+	// StartBlockUnpinningAppsFromTaskbar undocumented
 	StartBlockUnpinningAppsFromTaskbar *bool `json:"startBlockUnpinningAppsFromTaskbar,omitempty"`
-	// StartMenuAppListVisibility Setting the value of this collapses the app list, removes the app list entirely, or disables the corresponding toggle in the Settings app.
+	// StartMenuAppListVisibility undocumented
 	StartMenuAppListVisibility *WindowsStartMenuAppListVisibilityType `json:"startMenuAppListVisibility,omitempty"`
-	// StartMenuHideChangeAccountSettings Enabling this policy hides the change account setting from appearing in the user tile in the start menu.
+	// StartMenuHideChangeAccountSettings undocumented
 	StartMenuHideChangeAccountSettings *bool `json:"startMenuHideChangeAccountSettings,omitempty"`
-	// StartMenuHideFrequentlyUsedApps Enabling this policy hides the most used apps from appearing on the start menu and disables the corresponding toggle in the Settings app.
+	// StartMenuHideFrequentlyUsedApps undocumented
 	StartMenuHideFrequentlyUsedApps *bool `json:"startMenuHideFrequentlyUsedApps,omitempty"`
-	// StartMenuHideHibernate Enabling this policy hides hibernate from appearing in the power button in the start menu.
+	// StartMenuHideHibernate undocumented
 	StartMenuHideHibernate *bool `json:"startMenuHideHibernate,omitempty"`
-	// StartMenuHideLock Enabling this policy hides lock from appearing in the user tile in the start menu.
+	// StartMenuHideLock undocumented
 	StartMenuHideLock *bool `json:"startMenuHideLock,omitempty"`
-	// StartMenuHidePowerButton Enabling this policy hides the power button from appearing in the start menu.
+	// StartMenuHidePowerButton undocumented
 	StartMenuHidePowerButton *bool `json:"startMenuHidePowerButton,omitempty"`
-	// StartMenuHideRecentJumpLists Enabling this policy hides recent jump lists from appearing on the start menu/taskbar and disables the corresponding toggle in the Settings app.
+	// StartMenuHideRecentJumpLists undocumented
 	StartMenuHideRecentJumpLists *bool `json:"startMenuHideRecentJumpLists,omitempty"`
-	// StartMenuHideRecentlyAddedApps Enabling this policy hides recently added apps from appearing on the start menu and disables the corresponding toggle in the Settings app.
+	// StartMenuHideRecentlyAddedApps undocumented
 	StartMenuHideRecentlyAddedApps *bool `json:"startMenuHideRecentlyAddedApps,omitempty"`
-	// StartMenuHideRestartOptions Enabling this policy hides “Restart/Update and Restart” from appearing in the power button in the start menu.
+	// StartMenuHideRestartOptions undocumented
 	StartMenuHideRestartOptions *bool `json:"startMenuHideRestartOptions,omitempty"`
-	// StartMenuHideShutDown Enabling this policy hides shut down/update and shut down from appearing in the power button in the start menu.
+	// StartMenuHideShutDown undocumented
 	StartMenuHideShutDown *bool `json:"startMenuHideShutDown,omitempty"`
-	// StartMenuHideSignOut Enabling this policy hides sign out from appearing in the user tile in the start menu.
+	// StartMenuHideSignOut undocumented
 	StartMenuHideSignOut *bool `json:"startMenuHideSignOut,omitempty"`
-	// StartMenuHideSleep Enabling this policy hides sleep from appearing in the power button in the start menu.
+	// StartMenuHideSleep undocumented
 	StartMenuHideSleep *bool `json:"startMenuHideSleep,omitempty"`
-	// StartMenuHideSwitchAccount Enabling this policy hides switch account from appearing in the user tile in the start menu.
+	// StartMenuHideSwitchAccount undocumented
 	StartMenuHideSwitchAccount *bool `json:"startMenuHideSwitchAccount,omitempty"`
-	// StartMenuHideUserTile Enabling this policy hides the user tile from appearing in the start menu.
+	// StartMenuHideUserTile undocumented
 	StartMenuHideUserTile *bool `json:"startMenuHideUserTile,omitempty"`
-	// StartMenuLayoutEdgeAssetsXML This policy setting allows you to import Edge assets to be used with startMenuLayoutXml policy. Start layout can contain secondary tile from Edge app which looks for Edge local asset file. Edge local asset would not exist and cause Edge secondary tile to appear empty in this case. This policy only gets applied when startMenuLayoutXml policy is modified. The value should be a UTF-8 Base64 encoded byte array.
+	// StartMenuLayoutEdgeAssetsXML undocumented
 	StartMenuLayoutEdgeAssetsXML *Binary `json:"startMenuLayoutEdgeAssetsXml,omitempty"`
-	// StartMenuLayoutXML Allows admins to override the default Start menu layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in a UTF8 encoded byte array format.
+	// StartMenuLayoutXML undocumented
 	StartMenuLayoutXML *Binary `json:"startMenuLayoutXml,omitempty"`
-	// StartMenuMode Allows admins to decide how the Start menu is displayed.
+	// StartMenuMode undocumented
 	StartMenuMode *WindowsStartMenuModeType `json:"startMenuMode,omitempty"`
-	// StartMenuPinnedFolderDocuments Enforces the visibility (Show/Hide) of the Documents folder shortcut on the Start menu.
+	// StartMenuPinnedFolderDocuments undocumented
 	StartMenuPinnedFolderDocuments *VisibilitySetting `json:"startMenuPinnedFolderDocuments,omitempty"`
-	// StartMenuPinnedFolderDownloads Enforces the visibility (Show/Hide) of the Downloads folder shortcut on the Start menu.
+	// StartMenuPinnedFolderDownloads undocumented
 	StartMenuPinnedFolderDownloads *VisibilitySetting `json:"startMenuPinnedFolderDownloads,omitempty"`
-	// StartMenuPinnedFolderFileExplorer Enforces the visibility (Show/Hide) of the FileExplorer shortcut on the Start menu.
+	// StartMenuPinnedFolderFileExplorer undocumented
 	StartMenuPinnedFolderFileExplorer *VisibilitySetting `json:"startMenuPinnedFolderFileExplorer,omitempty"`
-	// StartMenuPinnedFolderHomeGroup Enforces the visibility (Show/Hide) of the HomeGroup folder shortcut on the Start menu.
+	// StartMenuPinnedFolderHomeGroup undocumented
 	StartMenuPinnedFolderHomeGroup *VisibilitySetting `json:"startMenuPinnedFolderHomeGroup,omitempty"`
-	// StartMenuPinnedFolderMusic Enforces the visibility (Show/Hide) of the Music folder shortcut on the Start menu.
+	// StartMenuPinnedFolderMusic undocumented
 	StartMenuPinnedFolderMusic *VisibilitySetting `json:"startMenuPinnedFolderMusic,omitempty"`
-	// StartMenuPinnedFolderNetwork Enforces the visibility (Show/Hide) of the Network folder shortcut on the Start menu.
+	// StartMenuPinnedFolderNetwork undocumented
 	StartMenuPinnedFolderNetwork *VisibilitySetting `json:"startMenuPinnedFolderNetwork,omitempty"`
-	// StartMenuPinnedFolderPersonalFolder Enforces the visibility (Show/Hide) of the PersonalFolder shortcut on the Start menu.
+	// StartMenuPinnedFolderPersonalFolder undocumented
 	StartMenuPinnedFolderPersonalFolder *VisibilitySetting `json:"startMenuPinnedFolderPersonalFolder,omitempty"`
-	// StartMenuPinnedFolderPictures Enforces the visibility (Show/Hide) of the Pictures folder shortcut on the Start menu.
+	// StartMenuPinnedFolderPictures undocumented
 	StartMenuPinnedFolderPictures *VisibilitySetting `json:"startMenuPinnedFolderPictures,omitempty"`
-	// StartMenuPinnedFolderSettings Enforces the visibility (Show/Hide) of the Settings folder shortcut on the Start menu.
+	// StartMenuPinnedFolderSettings undocumented
 	StartMenuPinnedFolderSettings *VisibilitySetting `json:"startMenuPinnedFolderSettings,omitempty"`
-	// StartMenuPinnedFolderVideos Enforces the visibility (Show/Hide) of the Videos folder shortcut on the Start menu.
+	// StartMenuPinnedFolderVideos undocumented
 	StartMenuPinnedFolderVideos *VisibilitySetting `json:"startMenuPinnedFolderVideos,omitempty"`
-	// StorageBlockRemovableStorage Indicates whether or not to Block the user from using removable storage.
+	// StorageBlockRemovableStorage undocumented
 	StorageBlockRemovableStorage *bool `json:"storageBlockRemovableStorage,omitempty"`
-	// StorageRequireMobileDeviceEncryption Indicating whether or not to require encryption on a mobile device.
+	// StorageRequireMobileDeviceEncryption undocumented
 	StorageRequireMobileDeviceEncryption *bool `json:"storageRequireMobileDeviceEncryption,omitempty"`
-	// StorageRestrictAppDataToSystemVolume Indicates whether application data is restricted to the system drive.
+	// StorageRestrictAppDataToSystemVolume undocumented
 	StorageRestrictAppDataToSystemVolume *bool `json:"storageRestrictAppDataToSystemVolume,omitempty"`
-	// StorageRestrictAppInstallToSystemVolume Indicates whether the installation of applications is restricted to the system drive.
+	// StorageRestrictAppInstallToSystemVolume undocumented
 	StorageRestrictAppInstallToSystemVolume *bool `json:"storageRestrictAppInstallToSystemVolume,omitempty"`
-	// TenantLockdownRequireNetworkDuringOutOfBoxExperience Whether the device is required to connect to the network.
+	// TenantLockdownRequireNetworkDuringOutOfBoxExperience undocumented
 	TenantLockdownRequireNetworkDuringOutOfBoxExperience *bool `json:"tenantLockdownRequireNetworkDuringOutOfBoxExperience,omitempty"`
-	// UsbBlocked Indicates whether or not to Block the user from USB connection.
+	// UsbBlocked undocumented
 	UsbBlocked *bool `json:"usbBlocked,omitempty"`
-	// VoiceRecordingBlocked Indicates whether or not to Block the user from voice recording.
+	// VoiceRecordingBlocked undocumented
 	VoiceRecordingBlocked *bool `json:"voiceRecordingBlocked,omitempty"`
-	// WebRtcBlockLocalhostIPAddress Indicates whether or not user's localhost IP address is displayed while making phone calls using the WebRTC
+	// WebRtcBlockLocalhostIPAddress undocumented
 	WebRtcBlockLocalhostIPAddress *bool `json:"webRtcBlockLocalhostIpAddress,omitempty"`
-	// WiFiBlockAutomaticConnectHotspots Indicating whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
+	// WiFiBlockAutomaticConnectHotspots undocumented
 	WiFiBlockAutomaticConnectHotspots *bool `json:"wiFiBlockAutomaticConnectHotspots,omitempty"`
-	// WiFiBlocked Indicates whether or not to Block the user from using Wi-Fi.
+	// WiFiBlocked undocumented
 	WiFiBlocked *bool `json:"wiFiBlocked,omitempty"`
-	// WiFiBlockManualConfiguration Indicates whether or not to Block the user from using Wi-Fi manual configuration.
+	// WiFiBlockManualConfiguration undocumented
 	WiFiBlockManualConfiguration *bool `json:"wiFiBlockManualConfiguration,omitempty"`
-	// WiFiScanInterval Specify how often devices scan for Wi-Fi networks. Supported values are 1-500, where 100 = default, and 500 = low frequency. Valid values 1 to 500
+	// WiFiScanInterval undocumented
 	WiFiScanInterval *int `json:"wiFiScanInterval,omitempty"`
-	// WindowsSpotlightBlockConsumerSpecificFeatures Allows IT admins to block experiences that are typically for consumers only, such as Start suggestions, Membership notifications, Post-OOBE app install and redirect tiles.
+	// WindowsSpotlightBlockConsumerSpecificFeatures undocumented
 	WindowsSpotlightBlockConsumerSpecificFeatures *bool `json:"windowsSpotlightBlockConsumerSpecificFeatures,omitempty"`
-	// WindowsSpotlightBlocked Allows IT admins to turn off all Windows Spotlight features
+	// WindowsSpotlightBlocked undocumented
 	WindowsSpotlightBlocked *bool `json:"windowsSpotlightBlocked,omitempty"`
-	// WindowsSpotlightBlockOnActionCenter Block suggestions from Microsoft that show after each OS clean install, upgrade or in an on-going basis to introduce users to what is new or changed
+	// WindowsSpotlightBlockOnActionCenter undocumented
 	WindowsSpotlightBlockOnActionCenter *bool `json:"windowsSpotlightBlockOnActionCenter,omitempty"`
-	// WindowsSpotlightBlockTailoredExperiences Block personalized content in Windows spotlight based on user’s device usage.
+	// WindowsSpotlightBlockTailoredExperiences undocumented
 	WindowsSpotlightBlockTailoredExperiences *bool `json:"windowsSpotlightBlockTailoredExperiences,omitempty"`
-	// WindowsSpotlightBlockThirdPartyNotifications Block third party content delivered via Windows Spotlight
+	// WindowsSpotlightBlockThirdPartyNotifications undocumented
 	WindowsSpotlightBlockThirdPartyNotifications *bool `json:"windowsSpotlightBlockThirdPartyNotifications,omitempty"`
-	// WindowsSpotlightBlockWelcomeExperience Block Windows Spotlight Windows welcome experience
+	// WindowsSpotlightBlockWelcomeExperience undocumented
 	WindowsSpotlightBlockWelcomeExperience *bool `json:"windowsSpotlightBlockWelcomeExperience,omitempty"`
-	// WindowsSpotlightBlockWindowsTips Allows IT admins to turn off the popup of Windows Tips.
+	// WindowsSpotlightBlockWindowsTips undocumented
 	WindowsSpotlightBlockWindowsTips *bool `json:"windowsSpotlightBlockWindowsTips,omitempty"`
-	// WindowsSpotlightConfigureOnLockScreen Specifies the type of Spotlight
+	// WindowsSpotlightConfigureOnLockScreen undocumented
 	WindowsSpotlightConfigureOnLockScreen *WindowsSpotlightEnablementSettings `json:"windowsSpotlightConfigureOnLockScreen,omitempty"`
-	// WindowsStoreBlockAutoUpdate Indicates whether or not to block automatic update of apps from Windows Store.
+	// WindowsStoreBlockAutoUpdate undocumented
 	WindowsStoreBlockAutoUpdate *bool `json:"windowsStoreBlockAutoUpdate,omitempty"`
-	// WindowsStoreBlocked Indicates whether or not to Block the user from using the Windows store.
+	// WindowsStoreBlocked undocumented
 	WindowsStoreBlocked *bool `json:"windowsStoreBlocked,omitempty"`
-	// WindowsStoreEnablePrivateStoreOnly Indicates whether or not to enable Private Store Only.
+	// WindowsStoreEnablePrivateStoreOnly undocumented
 	WindowsStoreEnablePrivateStoreOnly *bool `json:"windowsStoreEnablePrivateStoreOnly,omitempty"`
-	// WirelessDisplayBlockProjectionToThisDevice Indicates whether or not to allow other devices from discovering this PC for projection.
+	// WirelessDisplayBlockProjectionToThisDevice undocumented
 	WirelessDisplayBlockProjectionToThisDevice *bool `json:"wirelessDisplayBlockProjectionToThisDevice,omitempty"`
-	// WirelessDisplayBlockUserInputFromReceiver Indicates whether or not to allow user input from wireless display receiver.
+	// WirelessDisplayBlockUserInputFromReceiver undocumented
 	WirelessDisplayBlockUserInputFromReceiver *bool `json:"wirelessDisplayBlockUserInputFromReceiver,omitempty"`
-	// WirelessDisplayRequirePinForPairing Indicates whether or not to require a PIN for new devices to initiate pairing.
+	// WirelessDisplayRequirePinForPairing undocumented
 	WirelessDisplayRequirePinForPairing *bool `json:"wirelessDisplayRequirePinForPairing,omitempty"`
 }
 
-// Windows10MobileCompliancePolicy This class contains compliance settings for Windows 10 Mobile.
+// Windows10MobileCompliancePolicy undocumented
 type Windows10MobileCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of Windows10MobileCompliancePolicy
 	DeviceCompliancePolicy
-	// BitLockerEnabled Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled
+	// BitLockerEnabled undocumented
 	BitLockerEnabled *bool `json:"bitLockerEnabled,omitempty"`
-	// CodeIntegrityEnabled Require devices to be reported as healthy by Windows Device Health Attestation.
+	// CodeIntegrityEnabled undocumented
 	CodeIntegrityEnabled *bool `json:"codeIntegrityEnabled,omitempty"`
-	// EarlyLaunchAntiMalwareDriverEnabled Require devices to be reported as healthy by Windows Device Health Attestation - early launch antimalware driver is enabled.
+	// EarlyLaunchAntiMalwareDriverEnabled undocumented
 	EarlyLaunchAntiMalwareDriverEnabled *bool `json:"earlyLaunchAntiMalwareDriverEnabled,omitempty"`
-	// OsMaximumVersion Maximum Windows Phone version.
+	// OsMaximumVersion undocumented
 	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
-	// OsMinimumVersion Minimum Windows Phone version.
+	// OsMinimumVersion undocumented
 	OsMinimumVersion *string `json:"osMinimumVersion,omitempty"`
-	// PasswordBlockSimple Whether or not to block syncing the calendar.
+	// PasswordBlockSimple undocumented
 	PasswordBlockSimple *bool `json:"passwordBlockSimple,omitempty"`
-	// PasswordExpirationDays Number of days before password expiration. Valid values 1 to 255
+	// PasswordExpirationDays undocumented
 	PasswordExpirationDays *int `json:"passwordExpirationDays,omitempty"`
-	// PasswordMinimumCharacterSetCount The number of character sets required in the password.
+	// PasswordMinimumCharacterSetCount undocumented
 	PasswordMinimumCharacterSetCount *int `json:"passwordMinimumCharacterSetCount,omitempty"`
-	// PasswordMinimumLength Minimum password length. Valid values 4 to 16
+	// PasswordMinimumLength undocumented
 	PasswordMinimumLength *int `json:"passwordMinimumLength,omitempty"`
-	// PasswordMinutesOfInactivityBeforeLock Minutes of inactivity before a password is required.
+	// PasswordMinutesOfInactivityBeforeLock undocumented
 	PasswordMinutesOfInactivityBeforeLock *int `json:"passwordMinutesOfInactivityBeforeLock,omitempty"`
-	// PasswordPreviousPasswordBlockCount The number of previous passwords to prevent re-use of.
+	// PasswordPreviousPasswordBlockCount undocumented
 	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
-	// PasswordRequired Require a password to unlock Windows Phone device.
+	// PasswordRequired undocumented
 	PasswordRequired *bool `json:"passwordRequired,omitempty"`
-	// PasswordRequiredType The required password type.
+	// PasswordRequiredType undocumented
 	PasswordRequiredType *RequiredPasswordType `json:"passwordRequiredType,omitempty"`
-	// PasswordRequireToUnlockFromIdle Require a password to unlock an idle device.
+	// PasswordRequireToUnlockFromIdle undocumented
 	PasswordRequireToUnlockFromIdle *bool `json:"passwordRequireToUnlockFromIdle,omitempty"`
-	// SecureBootEnabled Require devices to be reported as healthy by Windows Device Health Attestation - secure boot is enabled.
+	// SecureBootEnabled undocumented
 	SecureBootEnabled *bool `json:"secureBootEnabled,omitempty"`
-	// StorageRequireEncryption Require encryption on windows devices.
+	// StorageRequireEncryption undocumented
 	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
 }
 
-// Windows10NetworkProxyServer Network Proxy Server Policy.
+// Windows10NetworkProxyServer undocumented
 type Windows10NetworkProxyServer struct {
 	// Object is the base model of Windows10NetworkProxyServer
 	Object
-	// Address Address to the proxy server. Specify an address in the format <server>[“:”<port>]
+	// Address undocumented
 	Address *string `json:"address,omitempty"`
-	// Exceptions Addresses that should not use the proxy server. The system will not use the proxy server for addresses beginning with what is specified in this node.
+	// Exceptions undocumented
 	Exceptions []string `json:"exceptions,omitempty"`
-	// UseForLocalAddresses Specifies whether the proxy server should be used for local (intranet) addresses.
+	// UseForLocalAddresses undocumented
 	UseForLocalAddresses *bool `json:"useForLocalAddresses,omitempty"`
 }
 
-// Windows10SecureAssessmentConfiguration This topic provides descriptions of the declared methods, properties and relationships exposed by the secureAssessment resource.
+// Windows10SecureAssessmentConfiguration undocumented
 type Windows10SecureAssessmentConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10SecureAssessmentConfiguration
 	DeviceConfiguration
-	// AllowPrinting Indicates whether or not to allow the app from printing during the test.
+	// AllowPrinting undocumented
 	AllowPrinting *bool `json:"allowPrinting,omitempty"`
-	// AllowScreenCapture Indicates whether or not to allow screen capture capability during a test.
+	// AllowScreenCapture undocumented
 	AllowScreenCapture *bool `json:"allowScreenCapture,omitempty"`
-	// AllowTextSuggestion Indicates whether or not to allow text suggestions during the test.
+	// AllowTextSuggestion undocumented
 	AllowTextSuggestion *bool `json:"allowTextSuggestion,omitempty"`
-	// ConfigurationAccount The account used to configure the Windows device for taking the test. The user can be a domain account (domain\user), an AAD account (username@tenant.com) or a local account (username).
+	// ConfigurationAccount undocumented
 	ConfigurationAccount *string `json:"configurationAccount,omitempty"`
-	// LaunchURI Url link to an assessment that's automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).
+	// LaunchURI undocumented
 	LaunchURI *string `json:"launchUri,omitempty"`
 }
 
-// Windows10TeamGeneralConfiguration This topic provides descriptions of the declared methods, properties and relationships exposed by the windows10TeamGeneralConfiguration resource.
+// Windows10TeamGeneralConfiguration undocumented
 type Windows10TeamGeneralConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10TeamGeneralConfiguration
 	DeviceConfiguration
-	// AzureOperationalInsightsBlockTelemetry Indicates whether or not to Block Azure Operational Insights.
+	// AzureOperationalInsightsBlockTelemetry undocumented
 	AzureOperationalInsightsBlockTelemetry *bool `json:"azureOperationalInsightsBlockTelemetry,omitempty"`
-	// AzureOperationalInsightsWorkspaceID The Azure Operational Insights workspace id.
+	// AzureOperationalInsightsWorkspaceID undocumented
 	AzureOperationalInsightsWorkspaceID *string `json:"azureOperationalInsightsWorkspaceId,omitempty"`
-	// AzureOperationalInsightsWorkspaceKey The Azure Operational Insights Workspace key.
+	// AzureOperationalInsightsWorkspaceKey undocumented
 	AzureOperationalInsightsWorkspaceKey *string `json:"azureOperationalInsightsWorkspaceKey,omitempty"`
-	// ConnectAppBlockAutoLaunch Specifies whether to automatically launch the Connect app whenever a projection is initiated.
+	// ConnectAppBlockAutoLaunch undocumented
 	ConnectAppBlockAutoLaunch *bool `json:"connectAppBlockAutoLaunch,omitempty"`
-	// MaintenanceWindowBlocked Indicates whether or not to Block setting a maintenance window for device updates.
+	// MaintenanceWindowBlocked undocumented
 	MaintenanceWindowBlocked *bool `json:"maintenanceWindowBlocked,omitempty"`
-	// MaintenanceWindowDurationInHours Maintenance window duration for device updates. Valid values 0 to 5
+	// MaintenanceWindowDurationInHours undocumented
 	MaintenanceWindowDurationInHours *int `json:"maintenanceWindowDurationInHours,omitempty"`
-	// MaintenanceWindowStartTime Maintenance window start time for device updates.
+	// MaintenanceWindowStartTime undocumented
 	MaintenanceWindowStartTime *TimeOfDay `json:"maintenanceWindowStartTime,omitempty"`
-	// MiracastBlocked Indicates whether or not to Block wireless projection.
+	// MiracastBlocked undocumented
 	MiracastBlocked *bool `json:"miracastBlocked,omitempty"`
-	// MiracastChannel The channel.
+	// MiracastChannel undocumented
 	MiracastChannel *MiracastChannel `json:"miracastChannel,omitempty"`
-	// MiracastRequirePin Indicates whether or not to require a pin for wireless projection.
+	// MiracastRequirePin undocumented
 	MiracastRequirePin *bool `json:"miracastRequirePin,omitempty"`
-	// SettingsBlockMyMeetingsAndFiles Specifies whether to disable the "My meetings and files" feature in the Start menu, which shows the signed-in user's meetings and files from Office 365.
+	// SettingsBlockMyMeetingsAndFiles undocumented
 	SettingsBlockMyMeetingsAndFiles *bool `json:"settingsBlockMyMeetingsAndFiles,omitempty"`
-	// SettingsBlockSessionResume Specifies whether to allow the ability to resume a session when the session times out.
+	// SettingsBlockSessionResume undocumented
 	SettingsBlockSessionResume *bool `json:"settingsBlockSessionResume,omitempty"`
-	// SettingsBlockSigninSuggestions Specifies whether to disable auto-populating of the sign-in dialog with invitees from scheduled meetings.
+	// SettingsBlockSigninSuggestions undocumented
 	SettingsBlockSigninSuggestions *bool `json:"settingsBlockSigninSuggestions,omitempty"`
-	// SettingsDefaultVolume Specifies the default volume value for a new session. Permitted values are 0-100. The default is 45. Valid values 0 to 100
+	// SettingsDefaultVolume undocumented
 	SettingsDefaultVolume *int `json:"settingsDefaultVolume,omitempty"`
-	// SettingsScreenTimeoutInMinutes Specifies the number of minutes until the Hub screen turns off.
+	// SettingsScreenTimeoutInMinutes undocumented
 	SettingsScreenTimeoutInMinutes *int `json:"settingsScreenTimeoutInMinutes,omitempty"`
-	// SettingsSessionTimeoutInMinutes Specifies the number of minutes until the session times out.
+	// SettingsSessionTimeoutInMinutes undocumented
 	SettingsSessionTimeoutInMinutes *int `json:"settingsSessionTimeoutInMinutes,omitempty"`
-	// SettingsSleepTimeoutInMinutes Specifies the number of minutes until the Hub enters sleep mode.
+	// SettingsSleepTimeoutInMinutes undocumented
 	SettingsSleepTimeoutInMinutes *int `json:"settingsSleepTimeoutInMinutes,omitempty"`
-	// WelcomeScreenBackgroundImageURL The welcome screen background image URL. The URL must use the HTTPS protocol and return a PNG image.
+	// WelcomeScreenBackgroundImageURL undocumented
 	WelcomeScreenBackgroundImageURL *string `json:"welcomeScreenBackgroundImageUrl,omitempty"`
-	// WelcomeScreenBlockAutomaticWakeUp Indicates whether or not to Block the welcome screen from waking up automatically when someone enters the room.
+	// WelcomeScreenBlockAutomaticWakeUp undocumented
 	WelcomeScreenBlockAutomaticWakeUp *bool `json:"welcomeScreenBlockAutomaticWakeUp,omitempty"`
-	// WelcomeScreenMeetingInformation The welcome screen meeting information shown.
+	// WelcomeScreenMeetingInformation undocumented
 	WelcomeScreenMeetingInformation *WelcomeScreenMeetingInformation `json:"welcomeScreenMeetingInformation,omitempty"`
 }

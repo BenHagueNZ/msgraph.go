@@ -2,178 +2,178 @@
 
 package msgraph
 
-// MacOSCompliancePolicy This class contains compliance settings for Mac OS.
+// MacOSCompliancePolicy undocumented
 type MacOSCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of MacOSCompliancePolicy
 	DeviceCompliancePolicy
-	// DeviceThreatProtectionEnabled Require that devices have enabled device threat protection.
+	// DeviceThreatProtectionEnabled undocumented
 	DeviceThreatProtectionEnabled *bool `json:"deviceThreatProtectionEnabled,omitempty"`
-	// DeviceThreatProtectionRequiredSecurityLevel Require Mobile Threat Protection minimum risk level to report noncompliance.
+	// DeviceThreatProtectionRequiredSecurityLevel undocumented
 	DeviceThreatProtectionRequiredSecurityLevel *DeviceThreatProtectionLevel `json:"deviceThreatProtectionRequiredSecurityLevel,omitempty"`
-	// FirewallBlockAllIncoming Corresponds to the “Block all incoming connections” option.
+	// FirewallBlockAllIncoming undocumented
 	FirewallBlockAllIncoming *bool `json:"firewallBlockAllIncoming,omitempty"`
-	// FirewallEnabled Whether the firewall should be enabled or not.
+	// FirewallEnabled undocumented
 	FirewallEnabled *bool `json:"firewallEnabled,omitempty"`
-	// FirewallEnableStealthMode Corresponds to “Enable stealth mode.”
+	// FirewallEnableStealthMode undocumented
 	FirewallEnableStealthMode *bool `json:"firewallEnableStealthMode,omitempty"`
-	// OsMaximumVersion Maximum MacOS version.
+	// OsMaximumVersion undocumented
 	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
-	// OsMinimumVersion Minimum MacOS version.
+	// OsMinimumVersion undocumented
 	OsMinimumVersion *string `json:"osMinimumVersion,omitempty"`
-	// PasswordBlockSimple Indicates whether or not to block simple passwords.
+	// PasswordBlockSimple undocumented
 	PasswordBlockSimple *bool `json:"passwordBlockSimple,omitempty"`
-	// PasswordExpirationDays Number of days before the password expires. Valid values 1 to 65535
+	// PasswordExpirationDays undocumented
 	PasswordExpirationDays *int `json:"passwordExpirationDays,omitempty"`
-	// PasswordMinimumCharacterSetCount The number of character sets required in the password.
+	// PasswordMinimumCharacterSetCount undocumented
 	PasswordMinimumCharacterSetCount *int `json:"passwordMinimumCharacterSetCount,omitempty"`
-	// PasswordMinimumLength Minimum length of password. Valid values 4 to 14
+	// PasswordMinimumLength undocumented
 	PasswordMinimumLength *int `json:"passwordMinimumLength,omitempty"`
-	// PasswordMinutesOfInactivityBeforeLock Minutes of inactivity before a password is required.
+	// PasswordMinutesOfInactivityBeforeLock undocumented
 	PasswordMinutesOfInactivityBeforeLock *int `json:"passwordMinutesOfInactivityBeforeLock,omitempty"`
-	// PasswordPreviousPasswordBlockCount Number of previous passwords to block. Valid values 1 to 24
+	// PasswordPreviousPasswordBlockCount undocumented
 	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
-	// PasswordRequired Whether or not to require a password.
+	// PasswordRequired undocumented
 	PasswordRequired *bool `json:"passwordRequired,omitempty"`
-	// PasswordRequiredType The required password type.
+	// PasswordRequiredType undocumented
 	PasswordRequiredType *RequiredPasswordType `json:"passwordRequiredType,omitempty"`
-	// StorageRequireEncryption Require encryption on Mac OS devices.
+	// StorageRequireEncryption undocumented
 	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
-	// SystemIntegrityProtectionEnabled Require that devices have enabled system integrity protection.
+	// SystemIntegrityProtectionEnabled undocumented
 	SystemIntegrityProtectionEnabled *bool `json:"systemIntegrityProtectionEnabled,omitempty"`
 }
 
-// MacOSCustomConfiguration This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSCustomConfiguration resource.
+// MacOSCustomConfiguration undocumented
 type MacOSCustomConfiguration struct {
 	// DeviceConfiguration is the base model of MacOSCustomConfiguration
 	DeviceConfiguration
-	// Payload Payload. (UTF8 encoded byte array)
+	// Payload undocumented
 	Payload *Binary `json:"payload,omitempty"`
-	// PayloadFileName Payload file name (*.mobileconfig | *.xml).
+	// PayloadFileName undocumented
 	PayloadFileName *string `json:"payloadFileName,omitempty"`
-	// PayloadName Name that is displayed to the user.
+	// PayloadName undocumented
 	PayloadName *string `json:"payloadName,omitempty"`
 }
 
-// MacOSDeviceFeaturesConfiguration MacOS device features configuration profile.
+// MacOSDeviceFeaturesConfiguration undocumented
 type MacOSDeviceFeaturesConfiguration struct {
 	// AppleDeviceFeaturesConfigurationBase is the base model of MacOSDeviceFeaturesConfiguration
 	AppleDeviceFeaturesConfigurationBase
 }
 
-// MacOSGeneralDeviceConfiguration This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSGeneralDeviceConfiguration resource.
+// MacOSGeneralDeviceConfiguration undocumented
 type MacOSGeneralDeviceConfiguration struct {
 	// DeviceConfiguration is the base model of MacOSGeneralDeviceConfiguration
 	DeviceConfiguration
-	// CompliantAppListType List that is in the CompliantAppsList.
+	// CompliantAppListType undocumented
 	CompliantAppListType *AppListType `json:"compliantAppListType,omitempty"`
-	// CompliantAppsList List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
+	// CompliantAppsList undocumented
 	CompliantAppsList []AppListItem `json:"compliantAppsList,omitempty"`
-	// EmailInDomainSuffixes An email address lacking a suffix that matches any of these strings will be considered out-of-domain.
+	// EmailInDomainSuffixes undocumented
 	EmailInDomainSuffixes []string `json:"emailInDomainSuffixes,omitempty"`
-	// PasswordBlockSimple Block simple passwords.
+	// PasswordBlockSimple undocumented
 	PasswordBlockSimple *bool `json:"passwordBlockSimple,omitempty"`
-	// PasswordExpirationDays Number of days before the password expires.
+	// PasswordExpirationDays undocumented
 	PasswordExpirationDays *int `json:"passwordExpirationDays,omitempty"`
-	// PasswordMinimumCharacterSetCount Number of character sets a password must contain. Valid values 0 to 4
+	// PasswordMinimumCharacterSetCount undocumented
 	PasswordMinimumCharacterSetCount *int `json:"passwordMinimumCharacterSetCount,omitempty"`
-	// PasswordMinimumLength Minimum length of passwords.
+	// PasswordMinimumLength undocumented
 	PasswordMinimumLength *int `json:"passwordMinimumLength,omitempty"`
-	// PasswordMinutesOfInactivityBeforeLock Minutes of inactivity required before a password is required.
+	// PasswordMinutesOfInactivityBeforeLock undocumented
 	PasswordMinutesOfInactivityBeforeLock *int `json:"passwordMinutesOfInactivityBeforeLock,omitempty"`
-	// PasswordMinutesOfInactivityBeforeScreenTimeout Minutes of inactivity required before the screen times out.
+	// PasswordMinutesOfInactivityBeforeScreenTimeout undocumented
 	PasswordMinutesOfInactivityBeforeScreenTimeout *int `json:"passwordMinutesOfInactivityBeforeScreenTimeout,omitempty"`
-	// PasswordPreviousPasswordBlockCount Number of previous passwords to block.
+	// PasswordPreviousPasswordBlockCount undocumented
 	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
-	// PasswordRequired Whether or not to require a password.
+	// PasswordRequired undocumented
 	PasswordRequired *bool `json:"passwordRequired,omitempty"`
-	// PasswordRequiredType Type of password that is required.
+	// PasswordRequiredType undocumented
 	PasswordRequiredType *RequiredPasswordType `json:"passwordRequiredType,omitempty"`
 }
 
-// MacOSLobApp Contains properties and inherited properties for the macOS LOB App.
+// MacOSLobApp undocumented
 type MacOSLobApp struct {
 	// MobileLobApp is the base model of MacOSLobApp
 	MobileLobApp
-	// BuildNumber The build number of the package. This should match the package CFBundleShortVersionString of the .pkg file.
+	// BuildNumber undocumented
 	BuildNumber *string `json:"buildNumber,omitempty"`
-	// BundleID The primary bundleId of the package.
+	// BundleID undocumented
 	BundleID *string `json:"bundleId,omitempty"`
-	// ChildApps List of ComplexType macOSLobChildApp objects. Represents the apps expected to be installed by the package.
+	// ChildApps undocumented
 	ChildApps []MacOSLobChildApp `json:"childApps,omitempty"`
-	// IgnoreVersionDetection When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature.
+	// IgnoreVersionDetection undocumented
 	IgnoreVersionDetection *bool `json:"ignoreVersionDetection,omitempty"`
-	// InstallAsManaged When TRUE, indicates that the app will be installed as managed (requires macOS 11.0 and other managed package restrictions). When FALSE, indicates that the app will be installed as unmanaged.
+	// InstallAsManaged undocumented
 	InstallAsManaged *bool `json:"installAsManaged,omitempty"`
-	// Md5Hash The MD5 hash codes. This is empty if the package was uploaded directly. If the Intune App Wrapping Tool is used to create a .intunemac, this value can be found inside the Detection.xml file.
+	// Md5Hash undocumented
 	Md5Hash []string `json:"md5Hash,omitempty"`
-	// Md5HashChunkSize The chunk size for MD5 hash. This is '0' or empty if the package was uploaded directly. If the Intune App Wrapping Tool is used to create a .intunemac, this value can be found inside the Detection.xml file.
+	// Md5HashChunkSize undocumented
 	Md5HashChunkSize *int `json:"md5HashChunkSize,omitempty"`
-	// MinimumSupportedOperatingSystem ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.
+	// MinimumSupportedOperatingSystem undocumented
 	MinimumSupportedOperatingSystem *MacOSMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
-	// VersionNumber The version number of the package. This should match the package CFBundleVersion in the packageinfo file.
+	// VersionNumber undocumented
 	VersionNumber *string `json:"versionNumber,omitempty"`
 }
 
-// MacOSLobChildApp Contains properties of a macOS .app in the package
+// MacOSLobChildApp undocumented
 type MacOSLobChildApp struct {
 	// Object is the base model of MacOSLobChildApp
 	Object
-	// BuildNumber The build number of the app.
+	// BuildNumber undocumented
 	BuildNumber *string `json:"buildNumber,omitempty"`
-	// BundleID The bundleId of the app.
+	// BundleID undocumented
 	BundleID *string `json:"bundleId,omitempty"`
-	// VersionNumber The version number of the app.
+	// VersionNumber undocumented
 	VersionNumber *string `json:"versionNumber,omitempty"`
 }
 
-// MacOSMicrosoftEdgeApp Contains properties and inherited properties for the macOS Microsoft Edge App.
+// MacOSMicrosoftEdgeApp undocumented
 type MacOSMicrosoftEdgeApp struct {
 	// MobileApp is the base model of MacOSMicrosoftEdgeApp
 	MobileApp
-	// Channel The channel to install on target devices.
+	// Channel undocumented
 	Channel *MicrosoftEdgeChannel `json:"channel,omitempty"`
 }
 
-// MacOSMinimumOperatingSystem The minimum operating system required for a macOS app.
+// MacOSMinimumOperatingSystem undocumented
 type MacOSMinimumOperatingSystem struct {
 	// Object is the base model of MacOSMinimumOperatingSystem
 	Object
-	// V10_10 When TRUE, indicates OS X 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+	// V10_10 undocumented
 	V10_10 *bool `json:"v10_10,omitempty"`
-	// V10_11 When TRUE, indicates OS X 10.11 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+	// V10_11 undocumented
 	V10_11 *bool `json:"v10_11,omitempty"`
-	// V10_12 When TRUE, indicates macOS 10.12 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+	// V10_12 undocumented
 	V10_12 *bool `json:"v10_12,omitempty"`
-	// V10_13 When TRUE, indicates macOS 10.13 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+	// V10_13 undocumented
 	V10_13 *bool `json:"v10_13,omitempty"`
-	// V10_14 When TRUE, indicates macOS 10.14 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+	// V10_14 undocumented
 	V10_14 *bool `json:"v10_14,omitempty"`
-	// V10_15 When TRUE, indicates macOS 10.15 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+	// V10_15 undocumented
 	V10_15 *bool `json:"v10_15,omitempty"`
-	// V10_7 When TRUE, indicates Mac OS X 10.7 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+	// V10_7 undocumented
 	V10_7 *bool `json:"v10_7,omitempty"`
-	// V10_8 When TRUE, indicates OS X 10.8 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+	// V10_8 undocumented
 	V10_8 *bool `json:"v10_8,omitempty"`
-	// V10_9 When TRUE, indicates OS X 10.9 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+	// V10_9 undocumented
 	V10_9 *bool `json:"v10_9,omitempty"`
-	// V11_0 When TRUE, indicates macOS 11.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+	// V11_0 undocumented
 	V11_0 *bool `json:"v11_0,omitempty"`
-	// V12_0 When TRUE, indicates macOS 12.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+	// V12_0 undocumented
 	V12_0 *bool `json:"v12_0,omitempty"`
-	// V13_0 When TRUE, indicates macOS 13.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+	// V13_0 undocumented
 	V13_0 *bool `json:"v13_0,omitempty"`
 }
 
-// MacOSOfficeSuiteApp Contains properties and inherited properties for the MacOS Office Suite App.
+// MacOSOfficeSuiteApp undocumented
 type MacOSOfficeSuiteApp struct {
 	// MobileApp is the base model of MacOSOfficeSuiteApp
 	MobileApp
 }
 
-// MacOsLobAppAssignmentSettings Contains properties used to assign a macOS LOB app to a group.
+// MacOsLobAppAssignmentSettings undocumented
 type MacOsLobAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of MacOsLobAppAssignmentSettings
 	MobileAppAssignmentSettings
-	// UninstallOnDeviceRemoval When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.
+	// UninstallOnDeviceRemoval undocumented
 	UninstallOnDeviceRemoval *bool `json:"uninstallOnDeviceRemoval,omitempty"`
 }

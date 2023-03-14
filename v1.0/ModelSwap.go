@@ -4,8 +4,8 @@ package msgraph
 
 // SwapShiftsChangeRequestObject undocumented
 type SwapShiftsChangeRequestObject struct {
-	// OfferShiftRequestObject is the base model of SwapShiftsChangeRequestObject
-	OfferShiftRequestObject
+	// OfferShiftRequest is the base model of SwapShiftsChangeRequestObject
+	OfferShiftRequest
 	// RecipientShiftID undocumented
 	RecipientShiftID *string `json:"recipientShiftId,omitempty"`
 }

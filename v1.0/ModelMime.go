@@ -2,12 +2,12 @@
 
 package msgraph
 
-// MimeContent Contains properties for a generic mime content.
+// MimeContent undocumented
 type MimeContent struct {
 	// Object is the base model of MimeContent
 	Object
-	// Type Indicates the content mime type.
+	// Type undocumented
 	Type *string `json:"type,omitempty"`
-	// Value The byte array that contains the actual content.
+	// Value undocumented
 	Value *Binary `json:"value,omitempty"`
 }

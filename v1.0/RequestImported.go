@@ -115,7 +115,7 @@ type ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestBuilder struct
 // Import action undocumented
 func (b *DeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder) Import(reqObj *ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestParameter) *ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestBuilder {
 	bb := &ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/import"
+	bb.BaseRequestBuilder.baseURL += "/Import"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -123,7 +123,7 @@ func (b *DeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionReque
 // Import action undocumented
 func (b *ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionRequestBuilder) Import(reqObj *ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestParameter) *ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestBuilder {
 	bb := &ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/import"
+	bb.BaseRequestBuilder.baseURL += "/Import"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }

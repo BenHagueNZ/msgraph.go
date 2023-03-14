@@ -2,14 +2,7 @@
 
 package msgraph
 
-import (
-	"context"
-	"fmt"
-	"io/ioutil"
-	"net/http"
-
-	"github.com/BenHagueNZ/msgraph.go/jsonx"
-)
+import "context"
 
 // AccessActionRequestBuilder is request builder for AccessAction
 type AccessActionRequestBuilder struct{ BaseRequestBuilder }
@@ -305,6 +298,39 @@ func (r *AccessPackageAssignmentPolicyRequest) Update(ctx context.Context, reqOb
 
 // Delete performs DELETE request for AccessPackageAssignmentPolicy
 func (r *AccessPackageAssignmentPolicyRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AccessPackageAssignmentRequestRequestBuilder is request builder for AccessPackageAssignmentRequest
+type AccessPackageAssignmentRequestRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AccessPackageAssignmentRequestRequest
+func (b *AccessPackageAssignmentRequestRequestBuilder) Request() *AccessPackageAssignmentRequestRequest {
+	return &AccessPackageAssignmentRequestRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AccessPackageAssignmentRequestRequest is request for AccessPackageAssignmentRequest
+type AccessPackageAssignmentRequestRequest struct{ BaseRequest }
+
+// Get performs GET request for AccessPackageAssignmentRequest
+func (r *AccessPackageAssignmentRequestRequest) Get(ctx context.Context) (resObj *AccessPackageAssignmentRequest, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AccessPackageAssignmentRequest
+func (r *AccessPackageAssignmentRequestRequest) Update(ctx context.Context, reqObj *AccessPackageAssignmentRequest) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AccessPackageAssignmentRequest
+func (r *AccessPackageAssignmentRequestRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -1428,350 +1454,4 @@ func (r *AccessReviewStageSettingsRequest) Update(ctx context.Context, reqObj *A
 // Delete performs DELETE request for AccessReviewStageSettings
 func (r *AccessReviewStageSettingsRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-type AccessPackageGetApplicablePolicyRequirementsRequestBuilder struct{ BaseRequestBuilder }
-
-// GetApplicablePolicyRequirements action undocumented
-func (b *AccessPackageRequestBuilder) GetApplicablePolicyRequirements(reqObj *AccessPackageGetApplicablePolicyRequirementsRequestParameter) *AccessPackageGetApplicablePolicyRequirementsRequestBuilder {
-	bb := &AccessPackageGetApplicablePolicyRequirementsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/getApplicablePolicyRequirements"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type AccessPackageGetApplicablePolicyRequirementsRequest struct{ BaseRequest }
-
-func (b *AccessPackageGetApplicablePolicyRequirementsRequestBuilder) Request() *AccessPackageGetApplicablePolicyRequirementsRequest {
-	return &AccessPackageGetApplicablePolicyRequirementsRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *AccessPackageGetApplicablePolicyRequirementsRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AccessPackageAssignmentRequestRequirements, error) {
-	req, err := r.NewJSONRequest(method, path, obj)
-	if err != nil {
-		return nil, err
-	}
-	if ctx != nil {
-		req = req.WithContext(ctx)
-	}
-	res, err := r.client.Do(req)
-	if err != nil {
-		return nil, err
-	}
-	var values []AccessPackageAssignmentRequestRequirements
-	for {
-		if res.StatusCode != http.StatusOK {
-			b, _ := ioutil.ReadAll(res.Body)
-			res.Body.Close()
-			errRes := &ErrorResponse{Response: res}
-			err := jsonx.Unmarshal(b, errRes)
-			if err != nil {
-				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
-			}
-			return nil, errRes
-		}
-		var (
-			paging Paging
-			value  []AccessPackageAssignmentRequestRequirements
-		)
-		err := jsonx.NewDecoder(res.Body).Decode(&paging)
-		res.Body.Close()
-		if err != nil {
-			return nil, err
-		}
-		err = jsonx.Unmarshal(paging.Value, &value)
-		if err != nil {
-			return nil, err
-		}
-		values = append(values, value...)
-		if n >= 0 {
-			n--
-		}
-		if n == 0 || len(paging.NextLink) == 0 {
-			return values, nil
-		}
-		req, err = http.NewRequest("GET", paging.NextLink, nil)
-		if ctx != nil {
-			req = req.WithContext(ctx)
-		}
-		res, err = r.client.Do(req)
-		if err != nil {
-			return nil, err
-		}
-	}
-}
-
-func (r *AccessPackageGetApplicablePolicyRequirementsRequest) PostN(ctx context.Context, n int) ([]AccessPackageAssignmentRequestRequirements, error) {
-	return r.Paging(ctx, "POST", "", r.requestObject, n)
-}
-
-func (r *AccessPackageGetApplicablePolicyRequirementsRequest) Post(ctx context.Context) ([]AccessPackageAssignmentRequestRequirements, error) {
-	return r.Paging(ctx, "POST", "", r.requestObject, 0)
-}
-
-type AccessPackageAssignmentReprocessRequestBuilder struct{ BaseRequestBuilder }
-
-// Reprocess action undocumented
-func (b *AccessPackageAssignmentRequestBuilder) Reprocess(reqObj *AccessPackageAssignmentReprocessRequestParameter) *AccessPackageAssignmentReprocessRequestBuilder {
-	bb := &AccessPackageAssignmentReprocessRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/reprocess"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type AccessPackageAssignmentReprocessRequest struct{ BaseRequest }
-
-func (b *AccessPackageAssignmentReprocessRequestBuilder) Request() *AccessPackageAssignmentReprocessRequest {
-	return &AccessPackageAssignmentReprocessRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *AccessPackageAssignmentReprocessRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type AccessPackageAssignmentRequestObjectCancelRequestBuilder struct{ BaseRequestBuilder }
-
-// Cancel action undocumented
-func (b *AccessPackageAssignmentRequestObjectRequestBuilder) Cancel(reqObj *AccessPackageAssignmentRequestObjectCancelRequestParameter) *AccessPackageAssignmentRequestObjectCancelRequestBuilder {
-	bb := &AccessPackageAssignmentRequestObjectCancelRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/cancel"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type AccessPackageAssignmentRequestObjectCancelRequest struct{ BaseRequest }
-
-func (b *AccessPackageAssignmentRequestObjectCancelRequestBuilder) Request() *AccessPackageAssignmentRequestObjectCancelRequest {
-	return &AccessPackageAssignmentRequestObjectCancelRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *AccessPackageAssignmentRequestObjectCancelRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type AccessPackageAssignmentRequestObjectReprocessRequestBuilder struct{ BaseRequestBuilder }
-
-// Reprocess action undocumented
-func (b *AccessPackageAssignmentRequestObjectRequestBuilder) Reprocess(reqObj *AccessPackageAssignmentRequestObjectReprocessRequestParameter) *AccessPackageAssignmentRequestObjectReprocessRequestBuilder {
-	bb := &AccessPackageAssignmentRequestObjectReprocessRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/reprocess"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type AccessPackageAssignmentRequestObjectReprocessRequest struct{ BaseRequest }
-
-func (b *AccessPackageAssignmentRequestObjectReprocessRequestBuilder) Request() *AccessPackageAssignmentRequestObjectReprocessRequest {
-	return &AccessPackageAssignmentRequestObjectReprocessRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *AccessPackageAssignmentRequestObjectReprocessRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type AccessReviewHistoryInstanceGenerateDownloadURIRequestBuilder struct{ BaseRequestBuilder }
-
-// GenerateDownloadURI action undocumented
-func (b *AccessReviewHistoryInstanceRequestBuilder) GenerateDownloadURI(reqObj *AccessReviewHistoryInstanceGenerateDownloadURIRequestParameter) *AccessReviewHistoryInstanceGenerateDownloadURIRequestBuilder {
-	bb := &AccessReviewHistoryInstanceGenerateDownloadURIRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/generateDownloadUri"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type AccessReviewHistoryInstanceGenerateDownloadURIRequest struct{ BaseRequest }
-
-func (b *AccessReviewHistoryInstanceGenerateDownloadURIRequestBuilder) Request() *AccessReviewHistoryInstanceGenerateDownloadURIRequest {
-	return &AccessReviewHistoryInstanceGenerateDownloadURIRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *AccessReviewHistoryInstanceGenerateDownloadURIRequest) Post(ctx context.Context) (resObj *AccessReviewHistoryInstance, err error) {
-	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
-	return
-}
-
-type AccessReviewInstanceAcceptRecommendationsRequestBuilder struct{ BaseRequestBuilder }
-
-// AcceptRecommendations action undocumented
-func (b *AccessReviewInstanceRequestBuilder) AcceptRecommendations(reqObj *AccessReviewInstanceAcceptRecommendationsRequestParameter) *AccessReviewInstanceAcceptRecommendationsRequestBuilder {
-	bb := &AccessReviewInstanceAcceptRecommendationsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/acceptRecommendations"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type AccessReviewInstanceAcceptRecommendationsRequest struct{ BaseRequest }
-
-func (b *AccessReviewInstanceAcceptRecommendationsRequestBuilder) Request() *AccessReviewInstanceAcceptRecommendationsRequest {
-	return &AccessReviewInstanceAcceptRecommendationsRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *AccessReviewInstanceAcceptRecommendationsRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type AccessReviewInstanceApplyDecisionsRequestBuilder struct{ BaseRequestBuilder }
-
-// ApplyDecisions action undocumented
-func (b *AccessReviewInstanceRequestBuilder) ApplyDecisions(reqObj *AccessReviewInstanceApplyDecisionsRequestParameter) *AccessReviewInstanceApplyDecisionsRequestBuilder {
-	bb := &AccessReviewInstanceApplyDecisionsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/applyDecisions"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type AccessReviewInstanceApplyDecisionsRequest struct{ BaseRequest }
-
-func (b *AccessReviewInstanceApplyDecisionsRequestBuilder) Request() *AccessReviewInstanceApplyDecisionsRequest {
-	return &AccessReviewInstanceApplyDecisionsRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *AccessReviewInstanceApplyDecisionsRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type AccessReviewInstanceBatchRecordDecisionsRequestBuilder struct{ BaseRequestBuilder }
-
-// BatchRecordDecisions action undocumented
-func (b *AccessReviewInstanceRequestBuilder) BatchRecordDecisions(reqObj *AccessReviewInstanceBatchRecordDecisionsRequestParameter) *AccessReviewInstanceBatchRecordDecisionsRequestBuilder {
-	bb := &AccessReviewInstanceBatchRecordDecisionsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/batchRecordDecisions"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type AccessReviewInstanceBatchRecordDecisionsRequest struct{ BaseRequest }
-
-func (b *AccessReviewInstanceBatchRecordDecisionsRequestBuilder) Request() *AccessReviewInstanceBatchRecordDecisionsRequest {
-	return &AccessReviewInstanceBatchRecordDecisionsRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *AccessReviewInstanceBatchRecordDecisionsRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type AccessReviewInstanceResetDecisionsRequestBuilder struct{ BaseRequestBuilder }
-
-// ResetDecisions action undocumented
-func (b *AccessReviewInstanceRequestBuilder) ResetDecisions(reqObj *AccessReviewInstanceResetDecisionsRequestParameter) *AccessReviewInstanceResetDecisionsRequestBuilder {
-	bb := &AccessReviewInstanceResetDecisionsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/resetDecisions"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type AccessReviewInstanceResetDecisionsRequest struct{ BaseRequest }
-
-func (b *AccessReviewInstanceResetDecisionsRequestBuilder) Request() *AccessReviewInstanceResetDecisionsRequest {
-	return &AccessReviewInstanceResetDecisionsRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *AccessReviewInstanceResetDecisionsRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type AccessReviewInstanceSendReminderRequestBuilder struct{ BaseRequestBuilder }
-
-// SendReminder action undocumented
-func (b *AccessReviewInstanceRequestBuilder) SendReminder(reqObj *AccessReviewInstanceSendReminderRequestParameter) *AccessReviewInstanceSendReminderRequestBuilder {
-	bb := &AccessReviewInstanceSendReminderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/sendReminder"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type AccessReviewInstanceSendReminderRequest struct{ BaseRequest }
-
-func (b *AccessReviewInstanceSendReminderRequestBuilder) Request() *AccessReviewInstanceSendReminderRequest {
-	return &AccessReviewInstanceSendReminderRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *AccessReviewInstanceSendReminderRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type AccessReviewInstanceStopRequestBuilder struct{ BaseRequestBuilder }
-
-// Stop action undocumented
-func (b *AccessReviewInstanceRequestBuilder) Stop(reqObj *AccessReviewInstanceStopRequestParameter) *AccessReviewInstanceStopRequestBuilder {
-	bb := &AccessReviewInstanceStopRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/stop"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type AccessReviewInstanceStopRequest struct{ BaseRequest }
-
-func (b *AccessReviewInstanceStopRequestBuilder) Request() *AccessReviewInstanceStopRequest {
-	return &AccessReviewInstanceStopRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *AccessReviewInstanceStopRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type AccessReviewScheduleDefinitionStopRequestBuilder struct{ BaseRequestBuilder }
-
-// Stop action undocumented
-func (b *AccessReviewScheduleDefinitionRequestBuilder) Stop(reqObj *AccessReviewScheduleDefinitionStopRequestParameter) *AccessReviewScheduleDefinitionStopRequestBuilder {
-	bb := &AccessReviewScheduleDefinitionStopRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/stop"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type AccessReviewScheduleDefinitionStopRequest struct{ BaseRequest }
-
-func (b *AccessReviewScheduleDefinitionStopRequestBuilder) Request() *AccessReviewScheduleDefinitionStopRequest {
-	return &AccessReviewScheduleDefinitionStopRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *AccessReviewScheduleDefinitionStopRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type AccessReviewStageStopRequestBuilder struct{ BaseRequestBuilder }
-
-// Stop action undocumented
-func (b *AccessReviewStageRequestBuilder) Stop(reqObj *AccessReviewStageStopRequestParameter) *AccessReviewStageStopRequestBuilder {
-	bb := &AccessReviewStageStopRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/stop"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type AccessReviewStageStopRequest struct{ BaseRequest }
-
-func (b *AccessReviewStageStopRequestBuilder) Request() *AccessReviewStageStopRequest {
-	return &AccessReviewStageStopRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *AccessReviewStageStopRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }

@@ -5,7 +5,7 @@ package msgraph
 // SearchEntityQueryRequestParameter undocumented
 type SearchEntityQueryRequestParameter struct {
 	// Requests undocumented
-	Requests []SearchRequestObject `json:"requests,omitempty"`
+	Requests []SearchRequest `json:"requests,omitempty"`
 }
 
 // Resource is navigation property

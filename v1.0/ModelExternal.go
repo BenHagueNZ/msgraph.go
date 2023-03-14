@@ -33,3 +33,143 @@ type ExternalSponsors struct {
 	// SubjectSet is the base model of ExternalSponsors
 	SubjectSet
 }
+
+// ExternalConnectorsACL undocumented
+type ExternalConnectorsACL struct {
+	// Object is the base model of ExternalConnectorsACL
+	Object
+	// AccessType undocumented
+	AccessType *ExternalConnectorsAccessType `json:"accessType,omitempty"`
+	// Type undocumented
+	Type *ExternalConnectorsACLType `json:"type,omitempty"`
+	// Value undocumented
+	Value *string `json:"value,omitempty"`
+}
+
+// ExternalConnectorsConfiguration undocumented
+type ExternalConnectorsConfiguration struct {
+	// Object is the base model of ExternalConnectorsConfiguration
+	Object
+	// AuthorizedAppIDs undocumented
+	AuthorizedAppIDs []string `json:"authorizedAppIds,omitempty"`
+}
+
+// ExternalConnectorsConnectionOperation undocumented
+type ExternalConnectorsConnectionOperation struct {
+	// Entity is the base model of ExternalConnectorsConnectionOperation
+	Entity
+	// Error undocumented
+	Error *PublicError `json:"error,omitempty"`
+	// Status undocumented
+	Status *ExternalConnectorsConnectionOperationStatus `json:"status,omitempty"`
+}
+
+// ExternalConnectorsExternal undocumented
+type ExternalConnectorsExternal struct {
+	// Object is the base model of ExternalConnectorsExternal
+	Object
+	// Connections undocumented
+	Connections []ExternalConnectorsExternalConnection `json:"connections,omitempty"`
+}
+
+// ExternalConnectorsExternalConnection undocumented
+type ExternalConnectorsExternalConnection struct {
+	// Entity is the base model of ExternalConnectorsExternalConnection
+	Entity
+	// Configuration undocumented
+	Configuration *ExternalConnectorsConfiguration `json:"configuration,omitempty"`
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
+	// State undocumented
+	State *ExternalConnectorsConnectionState `json:"state,omitempty"`
+	// Groups undocumented
+	Groups []ExternalConnectorsExternalGroup `json:"groups,omitempty"`
+	// Items undocumented
+	Items []ExternalConnectorsExternalItem `json:"items,omitempty"`
+	// Operations undocumented
+	Operations []ExternalConnectorsConnectionOperation `json:"operations,omitempty"`
+	// Schema undocumented
+	Schema *ExternalConnectorsSchema `json:"schema,omitempty"`
+}
+
+// ExternalConnectorsExternalGroup undocumented
+type ExternalConnectorsExternalGroup struct {
+	// Entity is the base model of ExternalConnectorsExternalGroup
+	Entity
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// Members undocumented
+	Members []ExternalConnectorsIdentity `json:"members,omitempty"`
+}
+
+// ExternalConnectorsExternalItem undocumented
+type ExternalConnectorsExternalItem struct {
+	// Entity is the base model of ExternalConnectorsExternalItem
+	Entity
+	// ACL undocumented
+	ACL []ExternalConnectorsACL `json:"acl,omitempty"`
+	// Content undocumented
+	Content *ExternalConnectorsExternalItemContent `json:"content,omitempty"`
+	// Properties undocumented
+	Properties *ExternalConnectorsProperties `json:"properties,omitempty"`
+}
+
+// ExternalConnectorsExternalItemContent undocumented
+type ExternalConnectorsExternalItemContent struct {
+	// Object is the base model of ExternalConnectorsExternalItemContent
+	Object
+	// Type undocumented
+	Type *ExternalConnectorsExternalItemContentType `json:"type,omitempty"`
+	// Value undocumented
+	Value *string `json:"value,omitempty"`
+}
+
+// ExternalConnectorsIdentity undocumented
+type ExternalConnectorsIdentity struct {
+	// Entity is the base model of ExternalConnectorsIdentity
+	Entity
+	// Type undocumented
+	Type *ExternalConnectorsIdentityType `json:"type,omitempty"`
+}
+
+// ExternalConnectorsProperties undocumented
+type ExternalConnectorsProperties struct {
+	// Object is the base model of ExternalConnectorsProperties
+	Object
+}
+
+// ExternalConnectorsProperty undocumented
+type ExternalConnectorsProperty struct {
+	// Object is the base model of ExternalConnectorsProperty
+	Object
+	// Aliases undocumented
+	Aliases []string `json:"aliases,omitempty"`
+	// IsQueryable undocumented
+	IsQueryable *bool `json:"isQueryable,omitempty"`
+	// IsRefinable undocumented
+	IsRefinable *bool `json:"isRefinable,omitempty"`
+	// IsRetrievable undocumented
+	IsRetrievable *bool `json:"isRetrievable,omitempty"`
+	// IsSearchable undocumented
+	IsSearchable *bool `json:"isSearchable,omitempty"`
+	// Labels undocumented
+	Labels []ExternalConnectorsLabel `json:"labels,omitempty"`
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
+	// Type undocumented
+	Type *ExternalConnectorsPropertyType `json:"type,omitempty"`
+}
+
+// ExternalConnectorsSchema undocumented
+type ExternalConnectorsSchema struct {
+	// Entity is the base model of ExternalConnectorsSchema
+	Entity
+	// BaseType undocumented
+	BaseType *string `json:"baseType,omitempty"`
+	// Properties undocumented
+	Properties []ExternalConnectorsProperty `json:"properties,omitempty"`
+}

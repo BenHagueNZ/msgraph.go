@@ -37,6 +37,39 @@ func (r *ScheduleRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// ScheduleChangeRequestRequestBuilder is request builder for ScheduleChangeRequest
+type ScheduleChangeRequestRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ScheduleChangeRequestRequest
+func (b *ScheduleChangeRequestRequestBuilder) Request() *ScheduleChangeRequestRequest {
+	return &ScheduleChangeRequestRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ScheduleChangeRequestRequest is request for ScheduleChangeRequest
+type ScheduleChangeRequestRequest struct{ BaseRequest }
+
+// Get performs GET request for ScheduleChangeRequest
+func (r *ScheduleChangeRequestRequest) Get(ctx context.Context) (resObj *ScheduleChangeRequest, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ScheduleChangeRequest
+func (r *ScheduleChangeRequestRequest) Update(ctx context.Context, reqObj *ScheduleChangeRequest) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ScheduleChangeRequest
+func (r *ScheduleChangeRequestRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // ScheduleChangeRequestObjectRequestBuilder is request builder for ScheduleChangeRequestObject
 type ScheduleChangeRequestObjectRequestBuilder struct{ BaseRequestBuilder }
 
@@ -167,70 +200,4 @@ func (r *ScheduleItemRequest) Update(ctx context.Context, reqObj *ScheduleItem) 
 // Delete performs DELETE request for ScheduleItem
 func (r *ScheduleItemRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-type ScheduleShareRequestBuilder struct{ BaseRequestBuilder }
-
-// Share action undocumented
-func (b *ScheduleRequestBuilder) Share(reqObj *ScheduleShareRequestParameter) *ScheduleShareRequestBuilder {
-	bb := &ScheduleShareRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/share"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type ScheduleShareRequest struct{ BaseRequest }
-
-func (b *ScheduleShareRequestBuilder) Request() *ScheduleShareRequest {
-	return &ScheduleShareRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *ScheduleShareRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type ScheduleChangeRequestObjectDeclineRequestBuilder struct{ BaseRequestBuilder }
-
-// Decline action undocumented
-func (b *ScheduleChangeRequestObjectRequestBuilder) Decline(reqObj *ScheduleChangeRequestObjectDeclineRequestParameter) *ScheduleChangeRequestObjectDeclineRequestBuilder {
-	bb := &ScheduleChangeRequestObjectDeclineRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/decline"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type ScheduleChangeRequestObjectDeclineRequest struct{ BaseRequest }
-
-func (b *ScheduleChangeRequestObjectDeclineRequestBuilder) Request() *ScheduleChangeRequestObjectDeclineRequest {
-	return &ScheduleChangeRequestObjectDeclineRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *ScheduleChangeRequestObjectDeclineRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type ScheduleChangeRequestObjectApproveRequestBuilder struct{ BaseRequestBuilder }
-
-// Approve action undocumented
-func (b *ScheduleChangeRequestObjectRequestBuilder) Approve(reqObj *ScheduleChangeRequestObjectApproveRequestParameter) *ScheduleChangeRequestObjectApproveRequestBuilder {
-	bb := &ScheduleChangeRequestObjectApproveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/approve"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type ScheduleChangeRequestObjectApproveRequest struct{ BaseRequest }
-
-func (b *ScheduleChangeRequestObjectApproveRequestBuilder) Request() *ScheduleChangeRequestObjectApproveRequest {
-	return &ScheduleChangeRequestObjectApproveRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *ScheduleChangeRequestObjectApproveRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }

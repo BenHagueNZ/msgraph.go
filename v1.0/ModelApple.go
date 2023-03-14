@@ -4,7 +4,7 @@ package msgraph
 
 import "time"
 
-// AppleDeviceFeaturesConfigurationBase Apple device features configuration profile.
+// AppleDeviceFeaturesConfigurationBase undocumented
 type AppleDeviceFeaturesConfigurationBase struct {
 	// DeviceConfiguration is the base model of AppleDeviceFeaturesConfigurationBase
 	DeviceConfiguration
@@ -24,24 +24,24 @@ type AppleManagedIdentityProvider struct {
 	ServiceID *string `json:"serviceId,omitempty"`
 }
 
-// ApplePushNotificationCertificate Apple push notification certificate.
+// ApplePushNotificationCertificate undocumented
 type ApplePushNotificationCertificate struct {
 	// Entity is the base model of ApplePushNotificationCertificate
 	Entity
-	// AppleIdentifier Apple Id of the account used to create the MDM push certificate.
+	// AppleIdentifier undocumented
 	AppleIdentifier *string `json:"appleIdentifier,omitempty"`
 	// Certificate undocumented
 	Certificate *string `json:"certificate,omitempty"`
-	// CertificateSerialNumber Certificate serial number. This property is read-only.
+	// CertificateSerialNumber undocumented
 	CertificateSerialNumber *string `json:"certificateSerialNumber,omitempty"`
-	// CertificateUploadFailureReason The reason the certificate upload failed.
+	// CertificateUploadFailureReason undocumented
 	CertificateUploadFailureReason *string `json:"certificateUploadFailureReason,omitempty"`
-	// CertificateUploadStatus The certificate upload status.
+	// CertificateUploadStatus undocumented
 	CertificateUploadStatus *string `json:"certificateUploadStatus,omitempty"`
-	// ExpirationDateTime The expiration date and time for Apple push notification certificate.
+	// ExpirationDateTime undocumented
 	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
-	// LastModifiedDateTime Last modified date and time for Apple push notification certificate.
+	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
-	// TopicIdentifier Topic Id.
+	// TopicIdentifier undocumented
 	TopicIdentifier *string `json:"topicIdentifier,omitempty"`
 }

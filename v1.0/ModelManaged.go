@@ -7,93 +7,93 @@ import (
 	"time"
 )
 
-// ManagedAndroidLobApp Contains properties and inherited properties for Managed Android Line Of Business apps.
+// ManagedAndroidLobApp undocumented
 type ManagedAndroidLobApp struct {
 	// ManagedMobileLobApp is the base model of ManagedAndroidLobApp
 	ManagedMobileLobApp
-	// MinimumSupportedOperatingSystem The value for the minimum applicable operating system.
+	// MinimumSupportedOperatingSystem undocumented
 	MinimumSupportedOperatingSystem *AndroidMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
-	// PackageID The package identifier.
+	// PackageID undocumented
 	PackageID *string `json:"packageId,omitempty"`
-	// VersionCode The version code of managed Android Line of Business (LoB) app.
+	// VersionCode undocumented
 	VersionCode *string `json:"versionCode,omitempty"`
-	// VersionName The version name of managed Android Line of Business (LoB) app.
+	// VersionName undocumented
 	VersionName *string `json:"versionName,omitempty"`
 }
 
-// ManagedAndroidStoreApp Contains properties and inherited properties for Android store apps that you can manage with an Intune app protection policy.
+// ManagedAndroidStoreApp undocumented
 type ManagedAndroidStoreApp struct {
 	// ManagedApp is the base model of ManagedAndroidStoreApp
 	ManagedApp
-	// AppStoreURL The Android AppStoreUrl.
+	// AppStoreURL undocumented
 	AppStoreURL *string `json:"appStoreUrl,omitempty"`
-	// MinimumSupportedOperatingSystem The value for the minimum supported operating system.
+	// MinimumSupportedOperatingSystem undocumented
 	MinimumSupportedOperatingSystem *AndroidMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
-	// PackageID The app's package ID.
+	// PackageID undocumented
 	PackageID *string `json:"packageId,omitempty"`
 }
 
-// ManagedApp Abstract class that contains properties and inherited properties for apps that you can manage with an Intune app protection policy.
+// ManagedApp undocumented
 type ManagedApp struct {
 	// MobileApp is the base model of ManagedApp
 	MobileApp
-	// AppAvailability The Application's availability.
+	// AppAvailability undocumented
 	AppAvailability *ManagedAppAvailability `json:"appAvailability,omitempty"`
-	// Version The Application's version.
+	// Version undocumented
 	Version *string `json:"version,omitempty"`
 }
 
-// ManagedAppConfiguration Configuration used to deliver a set of custom settings as-is to apps for users to whom the configuration is scoped
+// ManagedAppConfiguration undocumented
 type ManagedAppConfiguration struct {
 	// ManagedAppPolicy is the base model of ManagedAppConfiguration
 	ManagedAppPolicy
-	// CustomSettings A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
+	// CustomSettings undocumented
 	CustomSettings []KeyValuePair `json:"customSettings,omitempty"`
 }
 
-// ManagedAppDiagnosticStatus Represents diagnostics status.
+// ManagedAppDiagnosticStatus undocumented
 type ManagedAppDiagnosticStatus struct {
 	// Object is the base model of ManagedAppDiagnosticStatus
 	Object
-	// MitigationInstruction Instruction on how to mitigate a failed validation
+	// MitigationInstruction undocumented
 	MitigationInstruction *string `json:"mitigationInstruction,omitempty"`
-	// State The state of the operation
+	// State undocumented
 	State *string `json:"state,omitempty"`
-	// ValidationName The validation friendly name
+	// ValidationName undocumented
 	ValidationName *string `json:"validationName,omitempty"`
 }
 
-// ManagedAppOperation Represents an operation applied against an app registration.
+// ManagedAppOperation undocumented
 type ManagedAppOperation struct {
 	// Entity is the base model of ManagedAppOperation
 	Entity
-	// DisplayName The operation name.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// LastModifiedDateTime The last time the app operation was modified.
+	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
-	// State The current state of the operation
+	// State undocumented
 	State *string `json:"state,omitempty"`
-	// Version Version of the entity.
+	// Version undocumented
 	Version *string `json:"version,omitempty"`
 }
 
-// ManagedAppPolicy The ManagedAppPolicy resource represents a base type for platform specific policies.
+// ManagedAppPolicy undocumented
 type ManagedAppPolicy struct {
 	// Entity is the base model of ManagedAppPolicy
 	Entity
-	// CreatedDateTime The date and time the policy was created.
+	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
-	// Description The policy's description.
+	// Description undocumented
 	Description *string `json:"description,omitempty"`
-	// DisplayName Policy display name.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// LastModifiedDateTime Last time the policy was modified.
+	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
-	// Version Version of the entity.
+	// Version undocumented
 	Version *string `json:"version,omitempty"`
 }
 
-// ManagedAppPolicyDeploymentSummary The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
+// ManagedAppPolicyDeploymentSummary undocumented
 type ManagedAppPolicyDeploymentSummary struct {
 	// Entity is the base model of ManagedAppPolicyDeploymentSummary
 	Entity
@@ -105,107 +105,107 @@ type ManagedAppPolicyDeploymentSummary struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// LastRefreshTime undocumented
 	LastRefreshTime *time.Time `json:"lastRefreshTime,omitempty"`
-	// Version Version of the entity.
+	// Version undocumented
 	Version *string `json:"version,omitempty"`
 }
 
-// ManagedAppPolicyDeploymentSummaryPerApp Represents policy deployment summary per app.
+// ManagedAppPolicyDeploymentSummaryPerApp undocumented
 type ManagedAppPolicyDeploymentSummaryPerApp struct {
 	// Object is the base model of ManagedAppPolicyDeploymentSummaryPerApp
 	Object
-	// ConfigurationAppliedUserCount Number of users the policy is applied.
+	// ConfigurationAppliedUserCount undocumented
 	ConfigurationAppliedUserCount *int `json:"configurationAppliedUserCount,omitempty"`
-	// MobileAppIdentifier Deployment of an app.
+	// MobileAppIdentifier undocumented
 	MobileAppIdentifier *MobileAppIdentifier `json:"mobileAppIdentifier,omitempty"`
 }
 
-// ManagedAppProtection Policy used to configure detailed management settings for a specified set of apps
+// ManagedAppProtection undocumented
 type ManagedAppProtection struct {
 	// ManagedAppPolicy is the base model of ManagedAppProtection
 	ManagedAppPolicy
-	// AllowedDataStorageLocations Data storage locations where a user may store managed data.
+	// AllowedDataStorageLocations undocumented
 	AllowedDataStorageLocations []ManagedAppDataStorageLocation `json:"allowedDataStorageLocations,omitempty"`
-	// AllowedInboundDataTransferSources Sources from which data is allowed to be transferred.
+	// AllowedInboundDataTransferSources undocumented
 	AllowedInboundDataTransferSources *ManagedAppDataTransferLevel `json:"allowedInboundDataTransferSources,omitempty"`
-	// AllowedOutboundClipboardSharingLevel The level to which the clipboard may be shared between apps on the managed device.
+	// AllowedOutboundClipboardSharingLevel undocumented
 	AllowedOutboundClipboardSharingLevel *ManagedAppClipboardSharingLevel `json:"allowedOutboundClipboardSharingLevel,omitempty"`
-	// AllowedOutboundDataTransferDestinations Destinations to which data is allowed to be transferred.
+	// AllowedOutboundDataTransferDestinations undocumented
 	AllowedOutboundDataTransferDestinations *ManagedAppDataTransferLevel `json:"allowedOutboundDataTransferDestinations,omitempty"`
-	// ContactSyncBlocked Indicates whether contacts can be synced to the user's device.
+	// ContactSyncBlocked undocumented
 	ContactSyncBlocked *bool `json:"contactSyncBlocked,omitempty"`
-	// DataBackupBlocked Indicates whether the backup of a managed app's data is blocked.
+	// DataBackupBlocked undocumented
 	DataBackupBlocked *bool `json:"dataBackupBlocked,omitempty"`
-	// DeviceComplianceRequired Indicates whether device compliance is required.
+	// DeviceComplianceRequired undocumented
 	DeviceComplianceRequired *bool `json:"deviceComplianceRequired,omitempty"`
-	// DisableAppPinIfDevicePinIsSet Indicates whether use of the app pin is required if the device pin is set.
+	// DisableAppPinIfDevicePinIsSet undocumented
 	DisableAppPinIfDevicePinIsSet *bool `json:"disableAppPinIfDevicePinIsSet,omitempty"`
-	// FingerprintBlocked Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
+	// FingerprintBlocked undocumented
 	FingerprintBlocked *bool `json:"fingerprintBlocked,omitempty"`
-	// ManagedBrowser Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+	// ManagedBrowser undocumented
 	ManagedBrowser *ManagedBrowserType `json:"managedBrowser,omitempty"`
-	// ManagedBrowserToOpenLinksRequired Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
+	// ManagedBrowserToOpenLinksRequired undocumented
 	ManagedBrowserToOpenLinksRequired *bool `json:"managedBrowserToOpenLinksRequired,omitempty"`
-	// MaximumPinRetries Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
+	// MaximumPinRetries undocumented
 	MaximumPinRetries *int `json:"maximumPinRetries,omitempty"`
-	// MinimumPinLength Minimum pin length required for an app-level pin if PinRequired is set to True
+	// MinimumPinLength undocumented
 	MinimumPinLength *int `json:"minimumPinLength,omitempty"`
-	// MinimumRequiredAppVersion Versions less than the specified version will block the managed app from accessing company data.
+	// MinimumRequiredAppVersion undocumented
 	MinimumRequiredAppVersion *string `json:"minimumRequiredAppVersion,omitempty"`
-	// MinimumRequiredOsVersion Versions less than the specified version will block the managed app from accessing company data.
+	// MinimumRequiredOsVersion undocumented
 	MinimumRequiredOsVersion *string `json:"minimumRequiredOsVersion,omitempty"`
-	// MinimumWarningAppVersion Versions less than the specified version will result in warning message on the managed app.
+	// MinimumWarningAppVersion undocumented
 	MinimumWarningAppVersion *string `json:"minimumWarningAppVersion,omitempty"`
-	// MinimumWarningOsVersion Versions less than the specified version will result in warning message on the managed app from accessing company data.
+	// MinimumWarningOsVersion undocumented
 	MinimumWarningOsVersion *string `json:"minimumWarningOsVersion,omitempty"`
-	// OrganizationalCredentialsRequired Indicates whether organizational credentials are required for app use.
+	// OrganizationalCredentialsRequired undocumented
 	OrganizationalCredentialsRequired *bool `json:"organizationalCredentialsRequired,omitempty"`
-	// PeriodBeforePinReset TimePeriod before the all-level pin must be reset if PinRequired is set to True.
+	// PeriodBeforePinReset undocumented
 	PeriodBeforePinReset *Duration `json:"periodBeforePinReset,omitempty"`
-	// PeriodOfflineBeforeAccessCheck The period after which access is checked when the device is not connected to the internet.
+	// PeriodOfflineBeforeAccessCheck undocumented
 	PeriodOfflineBeforeAccessCheck *Duration `json:"periodOfflineBeforeAccessCheck,omitempty"`
-	// PeriodOfflineBeforeWipeIsEnforced The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
+	// PeriodOfflineBeforeWipeIsEnforced undocumented
 	PeriodOfflineBeforeWipeIsEnforced *Duration `json:"periodOfflineBeforeWipeIsEnforced,omitempty"`
-	// PeriodOnlineBeforeAccessCheck The period after which access is checked when the device is connected to the internet.
+	// PeriodOnlineBeforeAccessCheck undocumented
 	PeriodOnlineBeforeAccessCheck *Duration `json:"periodOnlineBeforeAccessCheck,omitempty"`
-	// PinCharacterSet Character set which may be used for an app-level pin if PinRequired is set to True.
+	// PinCharacterSet undocumented
 	PinCharacterSet *ManagedAppPinCharacterSet `json:"pinCharacterSet,omitempty"`
-	// PinRequired Indicates whether an app-level pin is required.
+	// PinRequired undocumented
 	PinRequired *bool `json:"pinRequired,omitempty"`
-	// PrintBlocked Indicates whether printing is allowed from managed apps.
+	// PrintBlocked undocumented
 	PrintBlocked *bool `json:"printBlocked,omitempty"`
-	// SaveAsBlocked Indicates whether users may use the "Save As" menu item to save a copy of protected files.
+	// SaveAsBlocked undocumented
 	SaveAsBlocked *bool `json:"saveAsBlocked,omitempty"`
-	// SimplePinBlocked Indicates whether simplePin is blocked.
+	// SimplePinBlocked undocumented
 	SimplePinBlocked *bool `json:"simplePinBlocked,omitempty"`
 }
 
-// ManagedAppRegistration The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
+// ManagedAppRegistration undocumented
 type ManagedAppRegistration struct {
 	// Entity is the base model of ManagedAppRegistration
 	Entity
-	// AppIdentifier The app package Identifier
+	// AppIdentifier undocumented
 	AppIdentifier *MobileAppIdentifier `json:"appIdentifier,omitempty"`
-	// ApplicationVersion App version
+	// ApplicationVersion undocumented
 	ApplicationVersion *string `json:"applicationVersion,omitempty"`
-	// CreatedDateTime Date and time of creation
+	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
-	// DeviceName Host device name
+	// DeviceName undocumented
 	DeviceName *string `json:"deviceName,omitempty"`
-	// DeviceTag App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
+	// DeviceTag undocumented
 	DeviceTag *string `json:"deviceTag,omitempty"`
-	// DeviceType Host device type
+	// DeviceType undocumented
 	DeviceType *string `json:"deviceType,omitempty"`
-	// FlaggedReasons Zero or more reasons an app registration is flagged. E.g. app running on rooted device
+	// FlaggedReasons undocumented
 	FlaggedReasons []ManagedAppFlaggedReason `json:"flaggedReasons,omitempty"`
-	// LastSyncDateTime Date and time of last the app synced with management service.
+	// LastSyncDateTime undocumented
 	LastSyncDateTime *time.Time `json:"lastSyncDateTime,omitempty"`
-	// ManagementSdkVersion App management SDK version
+	// ManagementSdkVersion undocumented
 	ManagementSdkVersion *string `json:"managementSdkVersion,omitempty"`
-	// PlatformVersion Operating System version
+	// PlatformVersion undocumented
 	PlatformVersion *string `json:"platformVersion,omitempty"`
-	// UserID The user Id to who this app registration belongs.
+	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
-	// Version Version of the entity.
+	// Version undocumented
 	Version *string `json:"version,omitempty"`
 	// AppliedPolicies undocumented
 	AppliedPolicies []ManagedAppPolicy `json:"appliedPolicies,omitempty"`
@@ -215,133 +215,133 @@ type ManagedAppRegistration struct {
 	Operations []ManagedAppOperation `json:"operations,omitempty"`
 }
 
-// ManagedAppStatus Represents app protection and configuration status for the organization.
+// ManagedAppStatus undocumented
 type ManagedAppStatus struct {
 	// Entity is the base model of ManagedAppStatus
 	Entity
-	// DisplayName Friendly name of the status report.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// Version Version of the entity.
+	// Version undocumented
 	Version *string `json:"version,omitempty"`
 }
 
-// ManagedAppStatusRaw Represents an un-typed status report about organizations app protection and configuration.
+// ManagedAppStatusRaw undocumented
 type ManagedAppStatusRaw struct {
 	// ManagedAppStatus is the base model of ManagedAppStatusRaw
 	ManagedAppStatus
-	// Content Status report content.
+	// Content undocumented
 	Content json.RawMessage `json:"content,omitempty"`
 }
 
-// ManagedDevice Devices that are managed or pre-enrolled through Intune
+// ManagedDevice undocumented
 type ManagedDevice struct {
 	// Entity is the base model of ManagedDevice
 	Entity
-	// ActivationLockBypassCode Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
+	// ActivationLockBypassCode undocumented
 	ActivationLockBypassCode *string `json:"activationLockBypassCode,omitempty"`
-	// AndroidSecurityPatchLevel Android security patch level. This property is read-only.
+	// AndroidSecurityPatchLevel undocumented
 	AndroidSecurityPatchLevel *string `json:"androidSecurityPatchLevel,omitempty"`
-	// AzureADDeviceID The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
+	// AzureADDeviceID undocumented
 	AzureADDeviceID *string `json:"azureADDeviceId,omitempty"`
-	// AzureADRegistered Whether the device is Azure Active Directory registered. This property is read-only.
+	// AzureADRegistered undocumented
 	AzureADRegistered *bool `json:"azureADRegistered,omitempty"`
-	// ComplianceGracePeriodExpirationDateTime The DateTime when device compliance grace period expires. This property is read-only.
+	// ComplianceGracePeriodExpirationDateTime undocumented
 	ComplianceGracePeriodExpirationDateTime *time.Time `json:"complianceGracePeriodExpirationDateTime,omitempty"`
-	// ComplianceState Compliance state of the device. This property is read-only.
+	// ComplianceState undocumented
 	ComplianceState *ComplianceState `json:"complianceState,omitempty"`
-	// ConfigurationManagerClientEnabledFeatures ConfigrMgr client enabled features. This property is read-only.
+	// ConfigurationManagerClientEnabledFeatures undocumented
 	ConfigurationManagerClientEnabledFeatures *ConfigurationManagerClientEnabledFeatures `json:"configurationManagerClientEnabledFeatures,omitempty"`
-	// DeviceActionResults List of ComplexType deviceActionResult objects. This property is read-only.
+	// DeviceActionResults undocumented
 	DeviceActionResults []DeviceActionResult `json:"deviceActionResults,omitempty"`
-	// DeviceCategoryDisplayName Device category display name. This property is read-only.
+	// DeviceCategoryDisplayName undocumented
 	DeviceCategoryDisplayName *string `json:"deviceCategoryDisplayName,omitempty"`
-	// DeviceEnrollmentType Enrollment type of the device. This property is read-only.
+	// DeviceEnrollmentType undocumented
 	DeviceEnrollmentType *DeviceEnrollmentType `json:"deviceEnrollmentType,omitempty"`
-	// DeviceHealthAttestationState The device health attestation state. This property is read-only.
+	// DeviceHealthAttestationState undocumented
 	DeviceHealthAttestationState *DeviceHealthAttestationState `json:"deviceHealthAttestationState,omitempty"`
-	// DeviceName Name of the device. This property is read-only.
+	// DeviceName undocumented
 	DeviceName *string `json:"deviceName,omitempty"`
-	// DeviceRegistrationState Device registration state. This property is read-only.
+	// DeviceRegistrationState undocumented
 	DeviceRegistrationState *DeviceRegistrationState `json:"deviceRegistrationState,omitempty"`
-	// EasActivated Whether the device is Exchange ActiveSync activated. This property is read-only.
+	// EasActivated undocumented
 	EasActivated *bool `json:"easActivated,omitempty"`
-	// EasActivationDateTime Exchange ActivationSync activation time of the device. This property is read-only.
+	// EasActivationDateTime undocumented
 	EasActivationDateTime *time.Time `json:"easActivationDateTime,omitempty"`
-	// EasDeviceID Exchange ActiveSync Id of the device. This property is read-only.
+	// EasDeviceID undocumented
 	EasDeviceID *string `json:"easDeviceId,omitempty"`
-	// EmailAddress Email(s) for the user associated with the device. This property is read-only.
+	// EmailAddress undocumented
 	EmailAddress *string `json:"emailAddress,omitempty"`
-	// EnrolledDateTime Enrollment time of the device. This property is read-only.
+	// EnrolledDateTime undocumented
 	EnrolledDateTime *time.Time `json:"enrolledDateTime,omitempty"`
-	// EthernetMacAddress Ethernet MAC. This property is read-only.
+	// EthernetMacAddress undocumented
 	EthernetMacAddress *string `json:"ethernetMacAddress,omitempty"`
-	// ExchangeAccessState The Access State of the device in Exchange. This property is read-only.
+	// ExchangeAccessState undocumented
 	ExchangeAccessState *DeviceManagementExchangeAccessState `json:"exchangeAccessState,omitempty"`
-	// ExchangeAccessStateReason The reason for the device's access state in Exchange. This property is read-only.
+	// ExchangeAccessStateReason undocumented
 	ExchangeAccessStateReason *DeviceManagementExchangeAccessStateReason `json:"exchangeAccessStateReason,omitempty"`
-	// ExchangeLastSuccessfulSyncDateTime Last time the device contacted Exchange. This property is read-only.
+	// ExchangeLastSuccessfulSyncDateTime undocumented
 	ExchangeLastSuccessfulSyncDateTime *time.Time `json:"exchangeLastSuccessfulSyncDateTime,omitempty"`
-	// FreeStorageSpaceInBytes Free Storage in Bytes. This property is read-only.
+	// FreeStorageSpaceInBytes undocumented
 	FreeStorageSpaceInBytes *int `json:"freeStorageSpaceInBytes,omitempty"`
-	// Iccid Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.
+	// Iccid undocumented
 	Iccid *string `json:"iccid,omitempty"`
-	// Imei IMEI. This property is read-only.
+	// Imei undocumented
 	Imei *string `json:"imei,omitempty"`
-	// IsEncrypted Device encryption status. This property is read-only.
+	// IsEncrypted undocumented
 	IsEncrypted *bool `json:"isEncrypted,omitempty"`
-	// IsSupervised Device supervised status. This property is read-only.
+	// IsSupervised undocumented
 	IsSupervised *bool `json:"isSupervised,omitempty"`
-	// JailBroken whether the device is jail broken or rooted. This property is read-only.
+	// JailBroken undocumented
 	JailBroken *string `json:"jailBroken,omitempty"`
-	// LastSyncDateTime The date and time that the device last completed a successful sync with Intune. This property is read-only.
+	// LastSyncDateTime undocumented
 	LastSyncDateTime *time.Time `json:"lastSyncDateTime,omitempty"`
-	// ManagedDeviceName Automatically generated name to identify a device. Can be overwritten to a user friendly name.
+	// ManagedDeviceName undocumented
 	ManagedDeviceName *string `json:"managedDeviceName,omitempty"`
-	// ManagedDeviceOwnerType Ownership of the device. Can be 'company' or 'personal'
+	// ManagedDeviceOwnerType undocumented
 	ManagedDeviceOwnerType *ManagedDeviceOwnerType `json:"managedDeviceOwnerType,omitempty"`
-	// ManagementAgent Management channel of the device. Intune, EAS, etc. This property is read-only.
+	// ManagementAgent undocumented
 	ManagementAgent *ManagementAgentType `json:"managementAgent,omitempty"`
-	// ManagementCertificateExpirationDate Reports device management certificate expiration date. This property is read-only.
+	// ManagementCertificateExpirationDate undocumented
 	ManagementCertificateExpirationDate *time.Time `json:"managementCertificateExpirationDate,omitempty"`
-	// Manufacturer Manufacturer of the device. This property is read-only.
+	// Manufacturer undocumented
 	Manufacturer *string `json:"manufacturer,omitempty"`
-	// Meid MEID. This property is read-only.
+	// Meid undocumented
 	Meid *string `json:"meid,omitempty"`
-	// Model Model of the device. This property is read-only.
+	// Model undocumented
 	Model *string `json:"model,omitempty"`
-	// Notes Notes on the device created by IT Admin
+	// Notes undocumented
 	Notes *string `json:"notes,omitempty"`
-	// OperatingSystem Operating system of the device. Windows, iOS, etc. This property is read-only.
+	// OperatingSystem undocumented
 	OperatingSystem *string `json:"operatingSystem,omitempty"`
-	// OsVersion Operating system version of the device. This property is read-only.
+	// OsVersion undocumented
 	OsVersion *string `json:"osVersion,omitempty"`
-	// PartnerReportedThreatState Indicates the threat state of a device when a Mobile Threat Defense partner is in use by the account and device. Read Only. This property is read-only.
+	// PartnerReportedThreatState undocumented
 	PartnerReportedThreatState *ManagedDevicePartnerReportedHealthState `json:"partnerReportedThreatState,omitempty"`
-	// PhoneNumber Phone number of the device. This property is read-only.
+	// PhoneNumber undocumented
 	PhoneNumber *string `json:"phoneNumber,omitempty"`
-	// PhysicalMemoryInBytes Total Memory in Bytes. This property is read-only.
+	// PhysicalMemoryInBytes undocumented
 	PhysicalMemoryInBytes *int `json:"physicalMemoryInBytes,omitempty"`
-	// RemoteAssistanceSessionErrorDetails An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
+	// RemoteAssistanceSessionErrorDetails undocumented
 	RemoteAssistanceSessionErrorDetails *string `json:"remoteAssistanceSessionErrorDetails,omitempty"`
-	// RemoteAssistanceSessionURL Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+	// RemoteAssistanceSessionURL undocumented
 	RemoteAssistanceSessionURL *string `json:"remoteAssistanceSessionUrl,omitempty"`
-	// RequireUserEnrollmentApproval Reports if the managed iOS device is user approval enrollment. This property is read-only.
+	// RequireUserEnrollmentApproval undocumented
 	RequireUserEnrollmentApproval *bool `json:"requireUserEnrollmentApproval,omitempty"`
-	// SerialNumber SerialNumber. This property is read-only.
+	// SerialNumber undocumented
 	SerialNumber *string `json:"serialNumber,omitempty"`
-	// SubscriberCarrier Subscriber Carrier. This property is read-only.
+	// SubscriberCarrier undocumented
 	SubscriberCarrier *string `json:"subscriberCarrier,omitempty"`
-	// TotalStorageSpaceInBytes Total Storage in Bytes. This property is read-only.
+	// TotalStorageSpaceInBytes undocumented
 	TotalStorageSpaceInBytes *int `json:"totalStorageSpaceInBytes,omitempty"`
-	// Udid Unique Device Identifier for iOS and macOS devices. This property is read-only.
+	// Udid undocumented
 	Udid *string `json:"udid,omitempty"`
-	// UserDisplayName User display name. This property is read-only.
+	// UserDisplayName undocumented
 	UserDisplayName *string `json:"userDisplayName,omitempty"`
-	// UserID Unique Identifier for the user associated with the device. This property is read-only.
+	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
-	// UserPrincipalName Device user principal name. This property is read-only.
+	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
-	// WiFiMacAddress Wi-Fi MAC. This property is read-only.
+	// WiFiMacAddress undocumented
 	WiFiMacAddress *string `json:"wiFiMacAddress,omitempty"`
 	// DeviceCompliancePolicyStates undocumented
 	DeviceCompliancePolicyStates []DeviceCompliancePolicyState `json:"deviceCompliancePolicyStates,omitempty"`
@@ -353,21 +353,21 @@ type ManagedDevice struct {
 	Users []User `json:"users,omitempty"`
 }
 
-// ManagedDeviceMobileAppConfiguration An abstract class for Mobile app configuration for enrolled devices.
+// ManagedDeviceMobileAppConfiguration undocumented
 type ManagedDeviceMobileAppConfiguration struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfiguration
 	Entity
-	// CreatedDateTime DateTime the object was created.
+	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
-	// Description Admin provided description of the Device Configuration.
+	// Description undocumented
 	Description *string `json:"description,omitempty"`
-	// DisplayName Admin provided name of the device configuration.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// LastModifiedDateTime DateTime the object was last modified.
+	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
-	// TargetedMobileApps the associated app.
+	// TargetedMobileApps undocumented
 	TargetedMobileApps []string `json:"targetedMobileApps,omitempty"`
-	// Version Version of the device configuration.
+	// Version undocumented
 	Version *int `json:"version,omitempty"`
 	// Assignments undocumented
 	Assignments []ManagedDeviceMobileAppConfigurationAssignment `json:"assignments,omitempty"`
@@ -381,127 +381,127 @@ type ManagedDeviceMobileAppConfiguration struct {
 	UserStatusSummary *ManagedDeviceMobileAppConfigurationUserSummary `json:"userStatusSummary,omitempty"`
 }
 
-// ManagedDeviceMobileAppConfigurationAssignment Contains the properties used to assign an MDM app configuration to a group.
+// ManagedDeviceMobileAppConfigurationAssignment undocumented
 type ManagedDeviceMobileAppConfigurationAssignment struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationAssignment
 	Entity
-	// Target Assignment target that the T&C policy is assigned to.
+	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
 
-// ManagedDeviceMobileAppConfigurationDeviceStatus Contains properties, inherited properties and actions for an MDM mobile app configuration status for a device.
+// ManagedDeviceMobileAppConfigurationDeviceStatus undocumented
 type ManagedDeviceMobileAppConfigurationDeviceStatus struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationDeviceStatus
 	Entity
-	// ComplianceGracePeriodExpirationDateTime The DateTime when device compliance grace period expires
+	// ComplianceGracePeriodExpirationDateTime undocumented
 	ComplianceGracePeriodExpirationDateTime *time.Time `json:"complianceGracePeriodExpirationDateTime,omitempty"`
-	// DeviceDisplayName Device name of the DevicePolicyStatus.
+	// DeviceDisplayName undocumented
 	DeviceDisplayName *string `json:"deviceDisplayName,omitempty"`
-	// DeviceModel The device model that is being reported
+	// DeviceModel undocumented
 	DeviceModel *string `json:"deviceModel,omitempty"`
-	// LastReportedDateTime Last modified date time of the policy report.
+	// LastReportedDateTime undocumented
 	LastReportedDateTime *time.Time `json:"lastReportedDateTime,omitempty"`
-	// Status Compliance status of the policy report.
+	// Status undocumented
 	Status *ComplianceStatus `json:"status,omitempty"`
-	// UserName The User Name that is being reported
+	// UserName undocumented
 	UserName *string `json:"userName,omitempty"`
-	// UserPrincipalName UserPrincipalName.
+	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
-// ManagedDeviceMobileAppConfigurationDeviceSummary Contains properties, inherited properties and actions for an MDM mobile app configuration device status summary.
+// ManagedDeviceMobileAppConfigurationDeviceSummary undocumented
 type ManagedDeviceMobileAppConfigurationDeviceSummary struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationDeviceSummary
 	Entity
-	// ConfigurationVersion Version of the policy for that overview
+	// ConfigurationVersion undocumented
 	ConfigurationVersion *int `json:"configurationVersion,omitempty"`
-	// ErrorCount Number of error devices
+	// ErrorCount undocumented
 	ErrorCount *int `json:"errorCount,omitempty"`
-	// FailedCount Number of failed devices
+	// FailedCount undocumented
 	FailedCount *int `json:"failedCount,omitempty"`
-	// LastUpdateDateTime Last update time
+	// LastUpdateDateTime undocumented
 	LastUpdateDateTime *time.Time `json:"lastUpdateDateTime,omitempty"`
-	// NotApplicableCount Number of not applicable devices
+	// NotApplicableCount undocumented
 	NotApplicableCount *int `json:"notApplicableCount,omitempty"`
-	// PendingCount Number of pending devices
+	// PendingCount undocumented
 	PendingCount *int `json:"pendingCount,omitempty"`
-	// SuccessCount Number of succeeded devices
+	// SuccessCount undocumented
 	SuccessCount *int `json:"successCount,omitempty"`
 }
 
-// ManagedDeviceMobileAppConfigurationUserStatus Contains properties, inherited properties and actions for an MDM mobile app configuration status for a user.
+// ManagedDeviceMobileAppConfigurationUserStatus undocumented
 type ManagedDeviceMobileAppConfigurationUserStatus struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationUserStatus
 	Entity
-	// DevicesCount Devices count for that user.
+	// DevicesCount undocumented
 	DevicesCount *int `json:"devicesCount,omitempty"`
-	// LastReportedDateTime Last modified date time of the policy report.
+	// LastReportedDateTime undocumented
 	LastReportedDateTime *time.Time `json:"lastReportedDateTime,omitempty"`
-	// Status Compliance status of the policy report.
+	// Status undocumented
 	Status *ComplianceStatus `json:"status,omitempty"`
-	// UserDisplayName User name of the DevicePolicyStatus.
+	// UserDisplayName undocumented
 	UserDisplayName *string `json:"userDisplayName,omitempty"`
-	// UserPrincipalName UserPrincipalName.
+	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
-// ManagedDeviceMobileAppConfigurationUserSummary Contains properties, inherited properties and actions for an MDM mobile app configuration user status summary.
+// ManagedDeviceMobileAppConfigurationUserSummary undocumented
 type ManagedDeviceMobileAppConfigurationUserSummary struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationUserSummary
 	Entity
-	// ConfigurationVersion Version of the policy for that overview
+	// ConfigurationVersion undocumented
 	ConfigurationVersion *int `json:"configurationVersion,omitempty"`
-	// ErrorCount Number of error Users
+	// ErrorCount undocumented
 	ErrorCount *int `json:"errorCount,omitempty"`
-	// FailedCount Number of failed Users
+	// FailedCount undocumented
 	FailedCount *int `json:"failedCount,omitempty"`
-	// LastUpdateDateTime Last update time
+	// LastUpdateDateTime undocumented
 	LastUpdateDateTime *time.Time `json:"lastUpdateDateTime,omitempty"`
-	// NotApplicableCount Number of not applicable users
+	// NotApplicableCount undocumented
 	NotApplicableCount *int `json:"notApplicableCount,omitempty"`
-	// PendingCount Number of pending Users
+	// PendingCount undocumented
 	PendingCount *int `json:"pendingCount,omitempty"`
-	// SuccessCount Number of succeeded Users
+	// SuccessCount undocumented
 	SuccessCount *int `json:"successCount,omitempty"`
 }
 
-// ManagedDeviceOverview Summary data for managed devices
+// ManagedDeviceOverview undocumented
 type ManagedDeviceOverview struct {
 	// Entity is the base model of ManagedDeviceOverview
 	Entity
-	// DeviceExchangeAccessStateSummary Distribution of Exchange Access State in Intune
+	// DeviceExchangeAccessStateSummary undocumented
 	DeviceExchangeAccessStateSummary *DeviceExchangeAccessStateSummary `json:"deviceExchangeAccessStateSummary,omitempty"`
-	// DeviceOperatingSystemSummary Device operating system summary.
+	// DeviceOperatingSystemSummary undocumented
 	DeviceOperatingSystemSummary *DeviceOperatingSystemSummary `json:"deviceOperatingSystemSummary,omitempty"`
-	// DualEnrolledDeviceCount The number of devices enrolled in both MDM and EAS
+	// DualEnrolledDeviceCount undocumented
 	DualEnrolledDeviceCount *int `json:"dualEnrolledDeviceCount,omitempty"`
-	// EnrolledDeviceCount Total enrolled device count. Does not include PC devices managed via Intune PC Agent
+	// EnrolledDeviceCount undocumented
 	EnrolledDeviceCount *int `json:"enrolledDeviceCount,omitempty"`
-	// MDMEnrolledCount The number of devices enrolled in MDM
+	// MDMEnrolledCount undocumented
 	MDMEnrolledCount *int `json:"mdmEnrolledCount,omitempty"`
 }
 
-// ManagedEBook An abstract class containing the base properties for Managed eBook.
+// ManagedEBook undocumented
 type ManagedEBook struct {
 	// Entity is the base model of ManagedEBook
 	Entity
-	// CreatedDateTime The date and time when the eBook file was created.
+	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
-	// Description Description.
+	// Description undocumented
 	Description *string `json:"description,omitempty"`
-	// DisplayName Name of the eBook.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// InformationURL The more information Url.
+	// InformationURL undocumented
 	InformationURL *string `json:"informationUrl,omitempty"`
-	// LargeCover Book cover.
+	// LargeCover undocumented
 	LargeCover *MimeContent `json:"largeCover,omitempty"`
-	// LastModifiedDateTime The date and time when the eBook was last modified.
+	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
-	// PrivacyInformationURL The privacy statement Url.
+	// PrivacyInformationURL undocumented
 	PrivacyInformationURL *string `json:"privacyInformationUrl,omitempty"`
-	// PublishedDateTime The date and time when the eBook was published.
+	// PublishedDateTime undocumented
 	PublishedDateTime *time.Time `json:"publishedDateTime,omitempty"`
-	// Publisher Publisher.
+	// Publisher undocumented
 	Publisher *string `json:"publisher,omitempty"`
 	// Assignments undocumented
 	Assignments []ManagedEBookAssignment `json:"assignments,omitempty"`
@@ -513,67 +513,67 @@ type ManagedEBook struct {
 	UserStateSummary []UserInstallStateSummary `json:"userStateSummary,omitempty"`
 }
 
-// ManagedEBookAssignment Contains properties used to assign a eBook to a group.
+// ManagedEBookAssignment undocumented
 type ManagedEBookAssignment struct {
 	// Entity is the base model of ManagedEBookAssignment
 	Entity
-	// InstallIntent The install intent for eBook.
+	// InstallIntent undocumented
 	InstallIntent *InstallIntent `json:"installIntent,omitempty"`
-	// Target The assignment target for eBook.
+	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
 
-// ManagedIOSLobApp Contains properties and inherited properties for Managed iOS Line Of Business apps.
+// ManagedIOSLobApp undocumented
 type ManagedIOSLobApp struct {
 	// ManagedMobileLobApp is the base model of ManagedIOSLobApp
 	ManagedMobileLobApp
-	// ApplicableDeviceType The iOS architecture for which this app can run on.
+	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
-	// BuildNumber The build number of managed iOS Line of Business (LoB) app.
+	// BuildNumber undocumented
 	BuildNumber *string `json:"buildNumber,omitempty"`
-	// BundleID The Identity Name.
+	// BundleID undocumented
 	BundleID *string `json:"bundleId,omitempty"`
-	// ExpirationDateTime The expiration time.
+	// ExpirationDateTime undocumented
 	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
-	// MinimumSupportedOperatingSystem The value for the minimum applicable operating system.
+	// MinimumSupportedOperatingSystem undocumented
 	MinimumSupportedOperatingSystem *IOSMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
-	// VersionNumber The version number of managed iOS Line of Business (LoB) app.
+	// VersionNumber undocumented
 	VersionNumber *string `json:"versionNumber,omitempty"`
 }
 
-// ManagedIOSStoreApp Contains properties and inherited properties for an iOS store app that you can manage with an Intune app protection policy.
+// ManagedIOSStoreApp undocumented
 type ManagedIOSStoreApp struct {
 	// ManagedApp is the base model of ManagedIOSStoreApp
 	ManagedApp
-	// ApplicableDeviceType The iOS architecture for which this app can run on.
+	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
-	// AppStoreURL The Apple AppStoreUrl.
+	// AppStoreURL undocumented
 	AppStoreURL *string `json:"appStoreUrl,omitempty"`
-	// BundleID The app's Bundle ID.
+	// BundleID undocumented
 	BundleID *string `json:"bundleId,omitempty"`
-	// MinimumSupportedOperatingSystem The value for the minimum supported operating system.
+	// MinimumSupportedOperatingSystem undocumented
 	MinimumSupportedOperatingSystem *IOSMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
 }
 
-// ManagedMobileApp The identifier for the deployment an app.
+// ManagedMobileApp undocumented
 type ManagedMobileApp struct {
 	// Entity is the base model of ManagedMobileApp
 	Entity
-	// MobileAppIdentifier The identifier for an app with it's operating system type.
+	// MobileAppIdentifier undocumented
 	MobileAppIdentifier *MobileAppIdentifier `json:"mobileAppIdentifier,omitempty"`
-	// Version Version of the entity.
+	// Version undocumented
 	Version *string `json:"version,omitempty"`
 }
 
-// ManagedMobileLobApp An abstract base class containing properties for all managed mobile line of business apps.
+// ManagedMobileLobApp undocumented
 type ManagedMobileLobApp struct {
 	// ManagedApp is the base model of ManagedMobileLobApp
 	ManagedApp
-	// CommittedContentVersion The internal committed content version.
+	// CommittedContentVersion undocumented
 	CommittedContentVersion *string `json:"committedContentVersion,omitempty"`
-	// FileName The name of the main Lob application file.
+	// FileName undocumented
 	FileName *string `json:"fileName,omitempty"`
-	// Size The total size, including all uploaded files.
+	// Size undocumented
 	Size *int `json:"size,omitempty"`
 	// ContentVersions undocumented
 	ContentVersions []MobileAppContent `json:"contentVersions,omitempty"`

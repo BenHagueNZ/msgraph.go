@@ -2,16 +2,884 @@
 
 package msgraph
 
+import (
+	"context"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+
+	"github.com/BenHagueNZ/msgraph.go/jsonx"
+)
+
 // ParentTerm is navigation property
-func (b *TermColumnRequestBuilder) ParentTerm() *TermRequestBuilder {
-	bb := &TermRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *TermColumnRequestBuilder) ParentTerm() *TermStoreTermRequestBuilder {
+	bb := &TermStoreTermRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/parentTerm"
 	return bb
 }
 
 // TermSet is navigation property
-func (b *TermColumnRequestBuilder) TermSet() *SetRequestBuilder {
-	bb := &SetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *TermColumnRequestBuilder) TermSet() *TermStoreSetRequestBuilder {
+	bb := &TermStoreSetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/termSet"
+	return bb
+}
+
+// Sets returns request builder for TermStoreSet collection
+func (b *TermStoreGroupRequestBuilder) Sets() *TermStoreGroupSetsCollectionRequestBuilder {
+	bb := &TermStoreGroupSetsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/sets"
+	return bb
+}
+
+// TermStoreGroupSetsCollectionRequestBuilder is request builder for TermStoreSet collection
+type TermStoreGroupSetsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for TermStoreSet collection
+func (b *TermStoreGroupSetsCollectionRequestBuilder) Request() *TermStoreGroupSetsCollectionRequest {
+	return &TermStoreGroupSetsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for TermStoreSet item
+func (b *TermStoreGroupSetsCollectionRequestBuilder) ID(id string) *TermStoreSetRequestBuilder {
+	bb := &TermStoreSetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// TermStoreGroupSetsCollectionRequest is request for TermStoreSet collection
+type TermStoreGroupSetsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for TermStoreSet collection
+func (r *TermStoreGroupSetsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TermStoreSet, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []TermStoreSet
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []TermStoreSet
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for TermStoreSet collection, max N pages
+func (r *TermStoreGroupSetsCollectionRequest) GetN(ctx context.Context, n int) ([]TermStoreSet, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for TermStoreSet collection
+func (r *TermStoreGroupSetsCollectionRequest) Get(ctx context.Context) ([]TermStoreSet, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for TermStoreSet collection
+func (r *TermStoreGroupSetsCollectionRequest) Add(ctx context.Context, reqObj *TermStoreSet) (resObj *TermStoreSet, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// FromTerm is navigation property
+func (b *TermStoreRelationRequestBuilder) FromTerm() *TermStoreTermRequestBuilder {
+	bb := &TermStoreTermRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/fromTerm"
+	return bb
+}
+
+// Set is navigation property
+func (b *TermStoreRelationRequestBuilder) Set() *TermStoreSetRequestBuilder {
+	bb := &TermStoreSetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/set"
+	return bb
+}
+
+// ToTerm is navigation property
+func (b *TermStoreRelationRequestBuilder) ToTerm() *TermStoreTermRequestBuilder {
+	bb := &TermStoreTermRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/toTerm"
+	return bb
+}
+
+// Children returns request builder for TermStoreTerm collection
+func (b *TermStoreSetRequestBuilder) Children() *TermStoreSetChildrenCollectionRequestBuilder {
+	bb := &TermStoreSetChildrenCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/children"
+	return bb
+}
+
+// TermStoreSetChildrenCollectionRequestBuilder is request builder for TermStoreTerm collection
+type TermStoreSetChildrenCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for TermStoreTerm collection
+func (b *TermStoreSetChildrenCollectionRequestBuilder) Request() *TermStoreSetChildrenCollectionRequest {
+	return &TermStoreSetChildrenCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for TermStoreTerm item
+func (b *TermStoreSetChildrenCollectionRequestBuilder) ID(id string) *TermStoreTermRequestBuilder {
+	bb := &TermStoreTermRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// TermStoreSetChildrenCollectionRequest is request for TermStoreTerm collection
+type TermStoreSetChildrenCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for TermStoreTerm collection
+func (r *TermStoreSetChildrenCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TermStoreTerm, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []TermStoreTerm
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []TermStoreTerm
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for TermStoreTerm collection, max N pages
+func (r *TermStoreSetChildrenCollectionRequest) GetN(ctx context.Context, n int) ([]TermStoreTerm, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for TermStoreTerm collection
+func (r *TermStoreSetChildrenCollectionRequest) Get(ctx context.Context) ([]TermStoreTerm, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for TermStoreTerm collection
+func (r *TermStoreSetChildrenCollectionRequest) Add(ctx context.Context, reqObj *TermStoreTerm) (resObj *TermStoreTerm, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// ParentGroup is navigation property
+func (b *TermStoreSetRequestBuilder) ParentGroup() *TermStoreGroupRequestBuilder {
+	bb := &TermStoreGroupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/parentGroup"
+	return bb
+}
+
+// Relations returns request builder for TermStoreRelation collection
+func (b *TermStoreSetRequestBuilder) Relations() *TermStoreSetRelationsCollectionRequestBuilder {
+	bb := &TermStoreSetRelationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/relations"
+	return bb
+}
+
+// TermStoreSetRelationsCollectionRequestBuilder is request builder for TermStoreRelation collection
+type TermStoreSetRelationsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for TermStoreRelation collection
+func (b *TermStoreSetRelationsCollectionRequestBuilder) Request() *TermStoreSetRelationsCollectionRequest {
+	return &TermStoreSetRelationsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for TermStoreRelation item
+func (b *TermStoreSetRelationsCollectionRequestBuilder) ID(id string) *TermStoreRelationRequestBuilder {
+	bb := &TermStoreRelationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// TermStoreSetRelationsCollectionRequest is request for TermStoreRelation collection
+type TermStoreSetRelationsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for TermStoreRelation collection
+func (r *TermStoreSetRelationsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TermStoreRelation, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []TermStoreRelation
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []TermStoreRelation
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for TermStoreRelation collection, max N pages
+func (r *TermStoreSetRelationsCollectionRequest) GetN(ctx context.Context, n int) ([]TermStoreRelation, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for TermStoreRelation collection
+func (r *TermStoreSetRelationsCollectionRequest) Get(ctx context.Context) ([]TermStoreRelation, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for TermStoreRelation collection
+func (r *TermStoreSetRelationsCollectionRequest) Add(ctx context.Context, reqObj *TermStoreRelation) (resObj *TermStoreRelation, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Terms returns request builder for TermStoreTerm collection
+func (b *TermStoreSetRequestBuilder) Terms() *TermStoreSetTermsCollectionRequestBuilder {
+	bb := &TermStoreSetTermsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/terms"
+	return bb
+}
+
+// TermStoreSetTermsCollectionRequestBuilder is request builder for TermStoreTerm collection
+type TermStoreSetTermsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for TermStoreTerm collection
+func (b *TermStoreSetTermsCollectionRequestBuilder) Request() *TermStoreSetTermsCollectionRequest {
+	return &TermStoreSetTermsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for TermStoreTerm item
+func (b *TermStoreSetTermsCollectionRequestBuilder) ID(id string) *TermStoreTermRequestBuilder {
+	bb := &TermStoreTermRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// TermStoreSetTermsCollectionRequest is request for TermStoreTerm collection
+type TermStoreSetTermsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for TermStoreTerm collection
+func (r *TermStoreSetTermsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TermStoreTerm, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []TermStoreTerm
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []TermStoreTerm
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for TermStoreTerm collection, max N pages
+func (r *TermStoreSetTermsCollectionRequest) GetN(ctx context.Context, n int) ([]TermStoreTerm, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for TermStoreTerm collection
+func (r *TermStoreSetTermsCollectionRequest) Get(ctx context.Context) ([]TermStoreTerm, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for TermStoreTerm collection
+func (r *TermStoreSetTermsCollectionRequest) Add(ctx context.Context, reqObj *TermStoreTerm) (resObj *TermStoreTerm, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Groups returns request builder for TermStoreGroup collection
+func (b *TermStoreStoreRequestBuilder) Groups() *TermStoreStoreGroupsCollectionRequestBuilder {
+	bb := &TermStoreStoreGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/groups"
+	return bb
+}
+
+// TermStoreStoreGroupsCollectionRequestBuilder is request builder for TermStoreGroup collection
+type TermStoreStoreGroupsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for TermStoreGroup collection
+func (b *TermStoreStoreGroupsCollectionRequestBuilder) Request() *TermStoreStoreGroupsCollectionRequest {
+	return &TermStoreStoreGroupsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for TermStoreGroup item
+func (b *TermStoreStoreGroupsCollectionRequestBuilder) ID(id string) *TermStoreGroupRequestBuilder {
+	bb := &TermStoreGroupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// TermStoreStoreGroupsCollectionRequest is request for TermStoreGroup collection
+type TermStoreStoreGroupsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for TermStoreGroup collection
+func (r *TermStoreStoreGroupsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TermStoreGroup, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []TermStoreGroup
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []TermStoreGroup
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for TermStoreGroup collection, max N pages
+func (r *TermStoreStoreGroupsCollectionRequest) GetN(ctx context.Context, n int) ([]TermStoreGroup, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for TermStoreGroup collection
+func (r *TermStoreStoreGroupsCollectionRequest) Get(ctx context.Context) ([]TermStoreGroup, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for TermStoreGroup collection
+func (r *TermStoreStoreGroupsCollectionRequest) Add(ctx context.Context, reqObj *TermStoreGroup) (resObj *TermStoreGroup, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Sets returns request builder for TermStoreSet collection
+func (b *TermStoreStoreRequestBuilder) Sets() *TermStoreStoreSetsCollectionRequestBuilder {
+	bb := &TermStoreStoreSetsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/sets"
+	return bb
+}
+
+// TermStoreStoreSetsCollectionRequestBuilder is request builder for TermStoreSet collection
+type TermStoreStoreSetsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for TermStoreSet collection
+func (b *TermStoreStoreSetsCollectionRequestBuilder) Request() *TermStoreStoreSetsCollectionRequest {
+	return &TermStoreStoreSetsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for TermStoreSet item
+func (b *TermStoreStoreSetsCollectionRequestBuilder) ID(id string) *TermStoreSetRequestBuilder {
+	bb := &TermStoreSetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// TermStoreStoreSetsCollectionRequest is request for TermStoreSet collection
+type TermStoreStoreSetsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for TermStoreSet collection
+func (r *TermStoreStoreSetsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TermStoreSet, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []TermStoreSet
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []TermStoreSet
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for TermStoreSet collection, max N pages
+func (r *TermStoreStoreSetsCollectionRequest) GetN(ctx context.Context, n int) ([]TermStoreSet, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for TermStoreSet collection
+func (r *TermStoreStoreSetsCollectionRequest) Get(ctx context.Context) ([]TermStoreSet, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for TermStoreSet collection
+func (r *TermStoreStoreSetsCollectionRequest) Add(ctx context.Context, reqObj *TermStoreSet) (resObj *TermStoreSet, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Children returns request builder for TermStoreTerm collection
+func (b *TermStoreTermRequestBuilder) Children() *TermStoreTermChildrenCollectionRequestBuilder {
+	bb := &TermStoreTermChildrenCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/children"
+	return bb
+}
+
+// TermStoreTermChildrenCollectionRequestBuilder is request builder for TermStoreTerm collection
+type TermStoreTermChildrenCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for TermStoreTerm collection
+func (b *TermStoreTermChildrenCollectionRequestBuilder) Request() *TermStoreTermChildrenCollectionRequest {
+	return &TermStoreTermChildrenCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for TermStoreTerm item
+func (b *TermStoreTermChildrenCollectionRequestBuilder) ID(id string) *TermStoreTermRequestBuilder {
+	bb := &TermStoreTermRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// TermStoreTermChildrenCollectionRequest is request for TermStoreTerm collection
+type TermStoreTermChildrenCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for TermStoreTerm collection
+func (r *TermStoreTermChildrenCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TermStoreTerm, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []TermStoreTerm
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []TermStoreTerm
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for TermStoreTerm collection, max N pages
+func (r *TermStoreTermChildrenCollectionRequest) GetN(ctx context.Context, n int) ([]TermStoreTerm, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for TermStoreTerm collection
+func (r *TermStoreTermChildrenCollectionRequest) Get(ctx context.Context) ([]TermStoreTerm, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for TermStoreTerm collection
+func (r *TermStoreTermChildrenCollectionRequest) Add(ctx context.Context, reqObj *TermStoreTerm) (resObj *TermStoreTerm, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Relations returns request builder for TermStoreRelation collection
+func (b *TermStoreTermRequestBuilder) Relations() *TermStoreTermRelationsCollectionRequestBuilder {
+	bb := &TermStoreTermRelationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/relations"
+	return bb
+}
+
+// TermStoreTermRelationsCollectionRequestBuilder is request builder for TermStoreRelation collection
+type TermStoreTermRelationsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for TermStoreRelation collection
+func (b *TermStoreTermRelationsCollectionRequestBuilder) Request() *TermStoreTermRelationsCollectionRequest {
+	return &TermStoreTermRelationsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for TermStoreRelation item
+func (b *TermStoreTermRelationsCollectionRequestBuilder) ID(id string) *TermStoreRelationRequestBuilder {
+	bb := &TermStoreRelationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// TermStoreTermRelationsCollectionRequest is request for TermStoreRelation collection
+type TermStoreTermRelationsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for TermStoreRelation collection
+func (r *TermStoreTermRelationsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TermStoreRelation, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []TermStoreRelation
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []TermStoreRelation
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for TermStoreRelation collection, max N pages
+func (r *TermStoreTermRelationsCollectionRequest) GetN(ctx context.Context, n int) ([]TermStoreRelation, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for TermStoreRelation collection
+func (r *TermStoreTermRelationsCollectionRequest) Get(ctx context.Context) ([]TermStoreRelation, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for TermStoreRelation collection
+func (r *TermStoreTermRelationsCollectionRequest) Add(ctx context.Context, reqObj *TermStoreRelation) (resObj *TermStoreRelation, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Set is navigation property
+func (b *TermStoreTermRequestBuilder) Set() *TermStoreSetRequestBuilder {
+	bb := &TermStoreSetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/set"
 	return bb
 }

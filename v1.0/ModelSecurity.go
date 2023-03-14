@@ -2,16 +2,18 @@
 
 package msgraph
 
+import "time"
+
 // Security undocumented
 type Security struct {
 	// Entity is the base model of Security
 	Entity
 	// Cases undocumented
-	Cases *CasesRoot `json:"cases,omitempty"`
+	Cases *SecurityCasesRoot `json:"cases,omitempty"`
 	// Alerts_v2 undocumented
-	Alerts_v2 []Alert `json:"alerts_v2,omitempty"`
+	Alerts_v2 []SecurityAlert `json:"alerts_v2,omitempty"`
 	// Incidents undocumented
-	Incidents []Incident `json:"incidents,omitempty"`
+	Incidents []SecurityIncident `json:"incidents,omitempty"`
 	// AttackSimulation undocumented
 	AttackSimulation *AttackSimulationRoot `json:"attackSimulation,omitempty"`
 	// Alerts undocumented
@@ -50,4 +52,832 @@ type SecurityVendorInformation struct {
 	SubProvider *string `json:"subProvider,omitempty"`
 	// Vendor undocumented
 	Vendor *string `json:"vendor,omitempty"`
+}
+
+// SecurityAlert undocumented
+type SecurityAlert struct {
+	// Entity is the base model of SecurityAlert
+	Entity
+	// ActorDisplayName undocumented
+	ActorDisplayName *string `json:"actorDisplayName,omitempty"`
+	// AlertWebURL undocumented
+	AlertWebURL *string `json:"alertWebUrl,omitempty"`
+	// AssignedTo undocumented
+	AssignedTo *string `json:"assignedTo,omitempty"`
+	// Category undocumented
+	Category *string `json:"category,omitempty"`
+	// Classification undocumented
+	Classification *SecurityAlertClassification `json:"classification,omitempty"`
+	// Comments undocumented
+	Comments []SecurityAlertComment `json:"comments,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// DetectionSource undocumented
+	DetectionSource *SecurityDetectionSource `json:"detectionSource,omitempty"`
+	// DetectorID undocumented
+	DetectorID *string `json:"detectorId,omitempty"`
+	// Determination undocumented
+	Determination *SecurityAlertDetermination `json:"determination,omitempty"`
+	// Evidence undocumented
+	Evidence []SecurityAlertEvidence `json:"evidence,omitempty"`
+	// FirstActivityDateTime undocumented
+	FirstActivityDateTime *time.Time `json:"firstActivityDateTime,omitempty"`
+	// IncidentID undocumented
+	IncidentID *string `json:"incidentId,omitempty"`
+	// IncidentWebURL undocumented
+	IncidentWebURL *string `json:"incidentWebUrl,omitempty"`
+	// LastActivityDateTime undocumented
+	LastActivityDateTime *time.Time `json:"lastActivityDateTime,omitempty"`
+	// LastUpdateDateTime undocumented
+	LastUpdateDateTime *time.Time `json:"lastUpdateDateTime,omitempty"`
+	// MitreTechniques undocumented
+	MitreTechniques []string `json:"mitreTechniques,omitempty"`
+	// ProviderAlertID undocumented
+	ProviderAlertID *string `json:"providerAlertId,omitempty"`
+	// RecommendedActions undocumented
+	RecommendedActions *string `json:"recommendedActions,omitempty"`
+	// ResolvedDateTime undocumented
+	ResolvedDateTime *time.Time `json:"resolvedDateTime,omitempty"`
+	// ServiceSource undocumented
+	ServiceSource *SecurityServiceSource `json:"serviceSource,omitempty"`
+	// Severity undocumented
+	Severity *SecurityAlertSeverity `json:"severity,omitempty"`
+	// Status undocumented
+	Status *SecurityAlertStatus `json:"status,omitempty"`
+	// TenantID undocumented
+	TenantID *string `json:"tenantId,omitempty"`
+	// ThreatDisplayName undocumented
+	ThreatDisplayName *string `json:"threatDisplayName,omitempty"`
+	// ThreatFamilyName undocumented
+	ThreatFamilyName *string `json:"threatFamilyName,omitempty"`
+	// Title undocumented
+	Title *string `json:"title,omitempty"`
+}
+
+// SecurityAlertComment undocumented
+type SecurityAlertComment struct {
+	// Object is the base model of SecurityAlertComment
+	Object
+	// Comment undocumented
+	Comment *string `json:"comment,omitempty"`
+	// CreatedByDisplayName undocumented
+	CreatedByDisplayName *string `json:"createdByDisplayName,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+}
+
+// SecurityAlertEvidence undocumented
+type SecurityAlertEvidence struct {
+	// Object is the base model of SecurityAlertEvidence
+	Object
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// RemediationStatus undocumented
+	RemediationStatus *SecurityEvidenceRemediationStatus `json:"remediationStatus,omitempty"`
+	// RemediationStatusDetails undocumented
+	RemediationStatusDetails *string `json:"remediationStatusDetails,omitempty"`
+	// Roles undocumented
+	Roles []SecurityEvidenceRole `json:"roles,omitempty"`
+	// Tags undocumented
+	Tags []string `json:"tags,omitempty"`
+	// Verdict undocumented
+	Verdict *SecurityEvidenceVerdict `json:"verdict,omitempty"`
+}
+
+// SecurityAnalyzedMessageEvidence undocumented
+type SecurityAnalyzedMessageEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityAnalyzedMessageEvidence
+	SecurityAlertEvidence
+	// AntiSpamDirection undocumented
+	AntiSpamDirection *string `json:"antiSpamDirection,omitempty"`
+	// AttachmentsCount undocumented
+	AttachmentsCount *int `json:"attachmentsCount,omitempty"`
+	// DeliveryAction undocumented
+	DeliveryAction *string `json:"deliveryAction,omitempty"`
+	// DeliveryLocation undocumented
+	DeliveryLocation *string `json:"deliveryLocation,omitempty"`
+	// InternetMessageID undocumented
+	InternetMessageID *string `json:"internetMessageId,omitempty"`
+	// Language undocumented
+	Language *string `json:"language,omitempty"`
+	// NetworkMessageID undocumented
+	NetworkMessageID *string `json:"networkMessageId,omitempty"`
+	// P1Sender undocumented
+	P1Sender *SecurityEmailSender `json:"p1Sender,omitempty"`
+	// P2Sender undocumented
+	P2Sender *SecurityEmailSender `json:"p2Sender,omitempty"`
+	// ReceivedDateTime undocumented
+	ReceivedDateTime *time.Time `json:"receivedDateTime,omitempty"`
+	// RecipientEmailAddress undocumented
+	RecipientEmailAddress *string `json:"recipientEmailAddress,omitempty"`
+	// SenderIP undocumented
+	SenderIP *string `json:"senderIp,omitempty"`
+	// Subject undocumented
+	Subject *string `json:"subject,omitempty"`
+	// ThreatDetectionMethods undocumented
+	ThreatDetectionMethods []string `json:"threatDetectionMethods,omitempty"`
+	// Threats undocumented
+	Threats []string `json:"threats,omitempty"`
+	// URLCount undocumented
+	URLCount *int `json:"urlCount,omitempty"`
+	// Urls undocumented
+	Urls []string `json:"urls,omitempty"`
+	// Urn undocumented
+	Urn *string `json:"urn,omitempty"`
+}
+
+// SecurityCase undocumented
+type SecurityCase struct {
+	// Entity is the base model of SecurityCase
+	Entity
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// LastModifiedBy undocumented
+	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
+	// LastModifiedDateTime undocumented
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// Status undocumented
+	Status *SecurityCaseStatus `json:"status,omitempty"`
+}
+
+// SecurityCaseOperation undocumented
+type SecurityCaseOperation struct {
+	// Entity is the base model of SecurityCaseOperation
+	Entity
+	// Action undocumented
+	Action *SecurityCaseAction `json:"action,omitempty"`
+	// CompletedDateTime undocumented
+	CompletedDateTime *time.Time `json:"completedDateTime,omitempty"`
+	// CreatedBy undocumented
+	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// PercentProgress undocumented
+	PercentProgress *int `json:"percentProgress,omitempty"`
+	// ResultInfo undocumented
+	ResultInfo *ResultInfo `json:"resultInfo,omitempty"`
+	// Status undocumented
+	Status *SecurityCaseOperationStatus `json:"status,omitempty"`
+}
+
+// SecurityCasesRoot undocumented
+type SecurityCasesRoot struct {
+	// Entity is the base model of SecurityCasesRoot
+	Entity
+	// EdiscoveryCases undocumented
+	EdiscoveryCases []SecurityEdiscoveryCase `json:"ediscoveryCases,omitempty"`
+}
+
+// SecurityCloudApplicationEvidence undocumented
+type SecurityCloudApplicationEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityCloudApplicationEvidence
+	SecurityAlertEvidence
+	// AppID undocumented
+	AppID *int `json:"appId,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// InstanceID undocumented
+	InstanceID *int `json:"instanceId,omitempty"`
+	// InstanceName undocumented
+	InstanceName *string `json:"instanceName,omitempty"`
+	// SaasAppID undocumented
+	SaasAppID *int `json:"saasAppId,omitempty"`
+}
+
+// SecurityDataSet undocumented
+type SecurityDataSet struct {
+	// Entity is the base model of SecurityDataSet
+	Entity
+	// CreatedBy undocumented
+	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+}
+
+// SecurityDataSource undocumented
+type SecurityDataSource struct {
+	// Entity is the base model of SecurityDataSource
+	Entity
+	// CreatedBy undocumented
+	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// HoldStatus undocumented
+	HoldStatus *SecurityDataSourceHoldStatus `json:"holdStatus,omitempty"`
+}
+
+// SecurityDataSourceContainer undocumented
+type SecurityDataSourceContainer struct {
+	// Entity is the base model of SecurityDataSourceContainer
+	Entity
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// HoldStatus undocumented
+	HoldStatus *SecurityDataSourceHoldStatus `json:"holdStatus,omitempty"`
+	// LastModifiedDateTime undocumented
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// ReleasedDateTime undocumented
+	ReleasedDateTime *time.Time `json:"releasedDateTime,omitempty"`
+	// Status undocumented
+	Status *SecurityDataSourceContainerStatus `json:"status,omitempty"`
+}
+
+// SecurityDeviceEvidence undocumented
+type SecurityDeviceEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityDeviceEvidence
+	SecurityAlertEvidence
+	// AzureAdDeviceID undocumented
+	AzureAdDeviceID *string `json:"azureAdDeviceId,omitempty"`
+	// DefenderAvStatus undocumented
+	DefenderAvStatus *SecurityDefenderAvStatus `json:"defenderAvStatus,omitempty"`
+	// DeviceDNSName undocumented
+	DeviceDNSName *string `json:"deviceDnsName,omitempty"`
+	// FirstSeenDateTime undocumented
+	FirstSeenDateTime *time.Time `json:"firstSeenDateTime,omitempty"`
+	// HealthStatus undocumented
+	HealthStatus *SecurityDeviceHealthStatus `json:"healthStatus,omitempty"`
+	// LoggedOnUsers undocumented
+	LoggedOnUsers []SecurityLoggedOnUser `json:"loggedOnUsers,omitempty"`
+	// MdeDeviceID undocumented
+	MdeDeviceID *string `json:"mdeDeviceId,omitempty"`
+	// OnboardingStatus undocumented
+	OnboardingStatus *SecurityOnboardingStatus `json:"onboardingStatus,omitempty"`
+	// OsBuild undocumented
+	OsBuild *int `json:"osBuild,omitempty"`
+	// OsPlatform undocumented
+	OsPlatform *string `json:"osPlatform,omitempty"`
+	// RbacGroupID undocumented
+	RbacGroupID *int `json:"rbacGroupId,omitempty"`
+	// RbacGroupName undocumented
+	RbacGroupName *string `json:"rbacGroupName,omitempty"`
+	// RiskScore undocumented
+	RiskScore *SecurityDeviceRiskScore `json:"riskScore,omitempty"`
+	// Version undocumented
+	Version *string `json:"version,omitempty"`
+	// VMMetadata undocumented
+	VMMetadata *SecurityVMMetadata `json:"vmMetadata,omitempty"`
+}
+
+// SecurityEdiscoveryAddToReviewSetOperation undocumented
+type SecurityEdiscoveryAddToReviewSetOperation struct {
+	// SecurityCaseOperation is the base model of SecurityEdiscoveryAddToReviewSetOperation
+	SecurityCaseOperation
+	// ReviewSet undocumented
+	ReviewSet *SecurityEdiscoveryReviewSet `json:"reviewSet,omitempty"`
+	// Search undocumented
+	Search *SecurityEdiscoverySearch `json:"search,omitempty"`
+}
+
+// SecurityEdiscoveryCase undocumented
+type SecurityEdiscoveryCase struct {
+	// SecurityCase is the base model of SecurityEdiscoveryCase
+	SecurityCase
+	// ClosedBy undocumented
+	ClosedBy *IdentitySet `json:"closedBy,omitempty"`
+	// ClosedDateTime undocumented
+	ClosedDateTime *time.Time `json:"closedDateTime,omitempty"`
+	// ExternalID undocumented
+	ExternalID *string `json:"externalId,omitempty"`
+	// Custodians undocumented
+	Custodians []SecurityEdiscoveryCustodian `json:"custodians,omitempty"`
+	// NoncustodialDataSources undocumented
+	NoncustodialDataSources []SecurityEdiscoveryNoncustodialDataSource `json:"noncustodialDataSources,omitempty"`
+	// Operations undocumented
+	Operations []SecurityCaseOperation `json:"operations,omitempty"`
+	// ReviewSets undocumented
+	ReviewSets []SecurityEdiscoveryReviewSet `json:"reviewSets,omitempty"`
+	// Searches undocumented
+	Searches []SecurityEdiscoverySearch `json:"searches,omitempty"`
+	// Settings undocumented
+	Settings *SecurityEdiscoveryCaseSettings `json:"settings,omitempty"`
+	// Tags undocumented
+	Tags []SecurityEdiscoveryReviewTag `json:"tags,omitempty"`
+}
+
+// SecurityEdiscoveryCaseSettings undocumented
+type SecurityEdiscoveryCaseSettings struct {
+	// Entity is the base model of SecurityEdiscoveryCaseSettings
+	Entity
+	// Ocr undocumented
+	Ocr *SecurityOcrSettings `json:"ocr,omitempty"`
+	// RedundancyDetection undocumented
+	RedundancyDetection *SecurityRedundancyDetectionSettings `json:"redundancyDetection,omitempty"`
+	// TopicModeling undocumented
+	TopicModeling *SecurityTopicModelingSettings `json:"topicModeling,omitempty"`
+}
+
+// SecurityEdiscoveryCustodian undocumented
+type SecurityEdiscoveryCustodian struct {
+	// SecurityDataSourceContainer is the base model of SecurityEdiscoveryCustodian
+	SecurityDataSourceContainer
+	// AcknowledgedDateTime undocumented
+	AcknowledgedDateTime *time.Time `json:"acknowledgedDateTime,omitempty"`
+	// Email undocumented
+	Email *string `json:"email,omitempty"`
+	// LastIndexOperation undocumented
+	LastIndexOperation *SecurityEdiscoveryIndexOperation `json:"lastIndexOperation,omitempty"`
+	// SiteSources undocumented
+	SiteSources []SecuritySiteSource `json:"siteSources,omitempty"`
+	// UnifiedGroupSources undocumented
+	UnifiedGroupSources []SecurityUnifiedGroupSource `json:"unifiedGroupSources,omitempty"`
+	// UserSources undocumented
+	UserSources []SecurityUserSource `json:"userSources,omitempty"`
+}
+
+// SecurityEdiscoveryEstimateOperation undocumented
+type SecurityEdiscoveryEstimateOperation struct {
+	// SecurityCaseOperation is the base model of SecurityEdiscoveryEstimateOperation
+	SecurityCaseOperation
+	// IndexedItemCount undocumented
+	IndexedItemCount *int `json:"indexedItemCount,omitempty"`
+	// IndexedItemsSize undocumented
+	IndexedItemsSize *int `json:"indexedItemsSize,omitempty"`
+	// MailboxCount undocumented
+	MailboxCount *int `json:"mailboxCount,omitempty"`
+	// SiteCount undocumented
+	SiteCount *int `json:"siteCount,omitempty"`
+	// UnindexedItemCount undocumented
+	UnindexedItemCount *int `json:"unindexedItemCount,omitempty"`
+	// UnindexedItemsSize undocumented
+	UnindexedItemsSize *int `json:"unindexedItemsSize,omitempty"`
+	// Search undocumented
+	Search *SecurityEdiscoverySearch `json:"search,omitempty"`
+}
+
+// SecurityEdiscoveryHoldOperation undocumented
+type SecurityEdiscoveryHoldOperation struct {
+	// SecurityCaseOperation is the base model of SecurityEdiscoveryHoldOperation
+	SecurityCaseOperation
+}
+
+// SecurityEdiscoveryIndexOperation undocumented
+type SecurityEdiscoveryIndexOperation struct {
+	// SecurityCaseOperation is the base model of SecurityEdiscoveryIndexOperation
+	SecurityCaseOperation
+}
+
+// SecurityEdiscoveryNoncustodialDataSource undocumented
+type SecurityEdiscoveryNoncustodialDataSource struct {
+	// SecurityDataSourceContainer is the base model of SecurityEdiscoveryNoncustodialDataSource
+	SecurityDataSourceContainer
+	// DataSource undocumented
+	DataSource *SecurityDataSource `json:"dataSource,omitempty"`
+	// LastIndexOperation undocumented
+	LastIndexOperation *SecurityEdiscoveryIndexOperation `json:"lastIndexOperation,omitempty"`
+}
+
+// SecurityEdiscoveryPurgeDataOperation undocumented
+type SecurityEdiscoveryPurgeDataOperation struct {
+	// SecurityCaseOperation is the base model of SecurityEdiscoveryPurgeDataOperation
+	SecurityCaseOperation
+}
+
+// SecurityEdiscoveryReviewSet undocumented
+type SecurityEdiscoveryReviewSet struct {
+	// SecurityDataSet is the base model of SecurityEdiscoveryReviewSet
+	SecurityDataSet
+	// Queries undocumented
+	Queries []SecurityEdiscoveryReviewSetQuery `json:"queries,omitempty"`
+}
+
+// SecurityEdiscoveryReviewSetQuery undocumented
+type SecurityEdiscoveryReviewSetQuery struct {
+	// SecuritySearch is the base model of SecurityEdiscoveryReviewSetQuery
+	SecuritySearch
+}
+
+// SecurityEdiscoveryReviewTag undocumented
+type SecurityEdiscoveryReviewTag struct {
+	// SecurityTag is the base model of SecurityEdiscoveryReviewTag
+	SecurityTag
+	// ChildSelectability undocumented
+	ChildSelectability *SecurityChildSelectability `json:"childSelectability,omitempty"`
+	// ChildTags undocumented
+	ChildTags []SecurityEdiscoveryReviewTag `json:"childTags,omitempty"`
+	// Parent undocumented
+	Parent *SecurityEdiscoveryReviewTag `json:"parent,omitempty"`
+}
+
+// SecurityEdiscoverySearch undocumented
+type SecurityEdiscoverySearch struct {
+	// SecuritySearch is the base model of SecurityEdiscoverySearch
+	SecuritySearch
+	// DataSourceScopes undocumented
+	DataSourceScopes *SecurityDataSourceScopes `json:"dataSourceScopes,omitempty"`
+	// AdditionalSources undocumented
+	AdditionalSources []SecurityDataSource `json:"additionalSources,omitempty"`
+	// AddToReviewSetOperation undocumented
+	AddToReviewSetOperation *SecurityEdiscoveryAddToReviewSetOperation `json:"addToReviewSetOperation,omitempty"`
+	// CustodianSources undocumented
+	CustodianSources []SecurityDataSource `json:"custodianSources,omitempty"`
+	// LastEstimateStatisticsOperation undocumented
+	LastEstimateStatisticsOperation *SecurityEdiscoveryEstimateOperation `json:"lastEstimateStatisticsOperation,omitempty"`
+	// NoncustodialSources undocumented
+	NoncustodialSources []SecurityEdiscoveryNoncustodialDataSource `json:"noncustodialSources,omitempty"`
+}
+
+// SecurityEdiscoveryTagOperation undocumented
+type SecurityEdiscoveryTagOperation struct {
+	// SecurityCaseOperation is the base model of SecurityEdiscoveryTagOperation
+	SecurityCaseOperation
+}
+
+// SecurityEmailSender undocumented
+type SecurityEmailSender struct {
+	// Object is the base model of SecurityEmailSender
+	Object
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// DomainName undocumented
+	DomainName *string `json:"domainName,omitempty"`
+	// EmailAddress undocumented
+	EmailAddress *string `json:"emailAddress,omitempty"`
+}
+
+// SecurityFileDetails undocumented
+type SecurityFileDetails struct {
+	// Object is the base model of SecurityFileDetails
+	Object
+	// FileName undocumented
+	FileName *string `json:"fileName,omitempty"`
+	// FilePath undocumented
+	FilePath *string `json:"filePath,omitempty"`
+	// FilePublisher undocumented
+	FilePublisher *string `json:"filePublisher,omitempty"`
+	// FileSize undocumented
+	FileSize *int `json:"fileSize,omitempty"`
+	// Issuer undocumented
+	Issuer *string `json:"issuer,omitempty"`
+	// Sha1 undocumented
+	Sha1 *string `json:"sha1,omitempty"`
+	// Sha256 undocumented
+	Sha256 *string `json:"sha256,omitempty"`
+	// Signer undocumented
+	Signer *string `json:"signer,omitempty"`
+}
+
+// SecurityFileEvidence undocumented
+type SecurityFileEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityFileEvidence
+	SecurityAlertEvidence
+	// DetectionStatus undocumented
+	DetectionStatus *SecurityDetectionStatus `json:"detectionStatus,omitempty"`
+	// FileDetails undocumented
+	FileDetails *SecurityFileDetails `json:"fileDetails,omitempty"`
+	// MdeDeviceID undocumented
+	MdeDeviceID *string `json:"mdeDeviceId,omitempty"`
+}
+
+// SecurityHuntingQueryResults undocumented
+type SecurityHuntingQueryResults struct {
+	// Object is the base model of SecurityHuntingQueryResults
+	Object
+	// Results undocumented
+	Results []SecurityHuntingRowResult `json:"results,omitempty"`
+	// Schema undocumented
+	Schema []SecuritySinglePropertySchema `json:"schema,omitempty"`
+}
+
+// SecurityHuntingRowResult undocumented
+type SecurityHuntingRowResult struct {
+	// Object is the base model of SecurityHuntingRowResult
+	Object
+}
+
+// SecurityIncident undocumented
+type SecurityIncident struct {
+	// Entity is the base model of SecurityIncident
+	Entity
+	// AssignedTo undocumented
+	AssignedTo *string `json:"assignedTo,omitempty"`
+	// Classification undocumented
+	Classification *SecurityAlertClassification `json:"classification,omitempty"`
+	// Comments undocumented
+	Comments []SecurityAlertComment `json:"comments,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// CustomTags undocumented
+	CustomTags []string `json:"customTags,omitempty"`
+	// Determination undocumented
+	Determination *SecurityAlertDetermination `json:"determination,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// IncidentWebURL undocumented
+	IncidentWebURL *string `json:"incidentWebUrl,omitempty"`
+	// LastUpdateDateTime undocumented
+	LastUpdateDateTime *time.Time `json:"lastUpdateDateTime,omitempty"`
+	// RedirectIncidentID undocumented
+	RedirectIncidentID *string `json:"redirectIncidentId,omitempty"`
+	// Severity undocumented
+	Severity *SecurityAlertSeverity `json:"severity,omitempty"`
+	// Status undocumented
+	Status *SecurityIncidentStatus `json:"status,omitempty"`
+	// TenantID undocumented
+	TenantID *string `json:"tenantId,omitempty"`
+	// Alerts undocumented
+	Alerts []SecurityAlert `json:"alerts,omitempty"`
+}
+
+// SecurityIPEvidence undocumented
+type SecurityIPEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityIPEvidence
+	SecurityAlertEvidence
+	// CountryLetterCode undocumented
+	CountryLetterCode *string `json:"countryLetterCode,omitempty"`
+	// IPAddress undocumented
+	IPAddress *string `json:"ipAddress,omitempty"`
+}
+
+// SecurityLoggedOnUser undocumented
+type SecurityLoggedOnUser struct {
+	// Object is the base model of SecurityLoggedOnUser
+	Object
+	// AccountName undocumented
+	AccountName *string `json:"accountName,omitempty"`
+	// DomainName undocumented
+	DomainName *string `json:"domainName,omitempty"`
+}
+
+// SecurityMailClusterEvidence undocumented
+type SecurityMailClusterEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityMailClusterEvidence
+	SecurityAlertEvidence
+	// ClusterBy undocumented
+	ClusterBy *string `json:"clusterBy,omitempty"`
+	// ClusterByValue undocumented
+	ClusterByValue *string `json:"clusterByValue,omitempty"`
+	// EmailCount undocumented
+	EmailCount *int `json:"emailCount,omitempty"`
+	// NetworkMessageIDs undocumented
+	NetworkMessageIDs []string `json:"networkMessageIds,omitempty"`
+	// Query undocumented
+	Query *string `json:"query,omitempty"`
+	// Urn undocumented
+	Urn *string `json:"urn,omitempty"`
+}
+
+// SecurityMailboxEvidence undocumented
+type SecurityMailboxEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityMailboxEvidence
+	SecurityAlertEvidence
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// PrimaryAddress undocumented
+	PrimaryAddress *string `json:"primaryAddress,omitempty"`
+	// UserAccount undocumented
+	UserAccount *SecurityUserAccount `json:"userAccount,omitempty"`
+}
+
+// SecurityOAuthApplicationEvidence undocumented
+type SecurityOAuthApplicationEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityOAuthApplicationEvidence
+	SecurityAlertEvidence
+	// AppID undocumented
+	AppID *string `json:"appId,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// ObjectID undocumented
+	ObjectID *string `json:"objectId,omitempty"`
+	// Publisher undocumented
+	Publisher *string `json:"publisher,omitempty"`
+}
+
+// SecurityOcrSettings undocumented
+type SecurityOcrSettings struct {
+	// Object is the base model of SecurityOcrSettings
+	Object
+	// IsEnabled undocumented
+	IsEnabled *bool `json:"isEnabled,omitempty"`
+	// MaxImageSize undocumented
+	MaxImageSize *int `json:"maxImageSize,omitempty"`
+	// Timeout undocumented
+	Timeout *Duration `json:"timeout,omitempty"`
+}
+
+// SecurityProcessEvidence undocumented
+type SecurityProcessEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityProcessEvidence
+	SecurityAlertEvidence
+	// DetectionStatus undocumented
+	DetectionStatus *SecurityDetectionStatus `json:"detectionStatus,omitempty"`
+	// ImageFile undocumented
+	ImageFile *SecurityFileDetails `json:"imageFile,omitempty"`
+	// MdeDeviceID undocumented
+	MdeDeviceID *string `json:"mdeDeviceId,omitempty"`
+	// ParentProcessCreationDateTime undocumented
+	ParentProcessCreationDateTime *time.Time `json:"parentProcessCreationDateTime,omitempty"`
+	// ParentProcessID undocumented
+	ParentProcessID *int `json:"parentProcessId,omitempty"`
+	// ParentProcessImageFile undocumented
+	ParentProcessImageFile *SecurityFileDetails `json:"parentProcessImageFile,omitempty"`
+	// ProcessCommandLine undocumented
+	ProcessCommandLine *string `json:"processCommandLine,omitempty"`
+	// ProcessCreationDateTime undocumented
+	ProcessCreationDateTime *time.Time `json:"processCreationDateTime,omitempty"`
+	// ProcessID undocumented
+	ProcessID *int `json:"processId,omitempty"`
+	// UserAccount undocumented
+	UserAccount *SecurityUserAccount `json:"userAccount,omitempty"`
+}
+
+// SecurityRedundancyDetectionSettings undocumented
+type SecurityRedundancyDetectionSettings struct {
+	// Object is the base model of SecurityRedundancyDetectionSettings
+	Object
+	// IsEnabled undocumented
+	IsEnabled *bool `json:"isEnabled,omitempty"`
+	// MaxWords undocumented
+	MaxWords *int `json:"maxWords,omitempty"`
+	// MinWords undocumented
+	MinWords *int `json:"minWords,omitempty"`
+	// SimilarityThreshold undocumented
+	SimilarityThreshold *int `json:"similarityThreshold,omitempty"`
+}
+
+// SecurityRegistryKeyEvidence undocumented
+type SecurityRegistryKeyEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityRegistryKeyEvidence
+	SecurityAlertEvidence
+	// RegistryHive undocumented
+	RegistryHive *string `json:"registryHive,omitempty"`
+	// RegistryKey undocumented
+	RegistryKey *string `json:"registryKey,omitempty"`
+}
+
+// SecurityRegistryValueEvidence undocumented
+type SecurityRegistryValueEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityRegistryValueEvidence
+	SecurityAlertEvidence
+	// RegistryHive undocumented
+	RegistryHive *string `json:"registryHive,omitempty"`
+	// RegistryKey undocumented
+	RegistryKey *string `json:"registryKey,omitempty"`
+	// RegistryValue undocumented
+	RegistryValue *string `json:"registryValue,omitempty"`
+	// RegistryValueName undocumented
+	RegistryValueName *string `json:"registryValueName,omitempty"`
+	// RegistryValueType undocumented
+	RegistryValueType *string `json:"registryValueType,omitempty"`
+}
+
+// SecuritySearch undocumented
+type SecuritySearch struct {
+	// Entity is the base model of SecuritySearch
+	Entity
+	// ContentQuery undocumented
+	ContentQuery *string `json:"contentQuery,omitempty"`
+	// CreatedBy undocumented
+	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// LastModifiedBy undocumented
+	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
+	// LastModifiedDateTime undocumented
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+}
+
+// SecuritySecurityGroupEvidence undocumented
+type SecuritySecurityGroupEvidence struct {
+	// SecurityAlertEvidence is the base model of SecuritySecurityGroupEvidence
+	SecurityAlertEvidence
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// SecurityGroupID undocumented
+	SecurityGroupID *string `json:"securityGroupId,omitempty"`
+}
+
+// SecuritySinglePropertySchema undocumented
+type SecuritySinglePropertySchema struct {
+	// Object is the base model of SecuritySinglePropertySchema
+	Object
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
+	// Type undocumented
+	Type *string `json:"type,omitempty"`
+}
+
+// SecuritySiteSource undocumented
+type SecuritySiteSource struct {
+	// SecurityDataSource is the base model of SecuritySiteSource
+	SecurityDataSource
+	// Site undocumented
+	Site *Site `json:"site,omitempty"`
+}
+
+// SecurityStringValueDictionary undocumented
+type SecurityStringValueDictionary struct {
+	// Object is the base model of SecurityStringValueDictionary
+	Object
+}
+
+// SecurityTag undocumented
+type SecurityTag struct {
+	// Entity is the base model of SecurityTag
+	Entity
+	// CreatedBy undocumented
+	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// LastModifiedDateTime undocumented
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+}
+
+// SecurityTopicModelingSettings undocumented
+type SecurityTopicModelingSettings struct {
+	// Object is the base model of SecurityTopicModelingSettings
+	Object
+	// DynamicallyAdjustTopicCount undocumented
+	DynamicallyAdjustTopicCount *bool `json:"dynamicallyAdjustTopicCount,omitempty"`
+	// IgnoreNumbers undocumented
+	IgnoreNumbers *bool `json:"ignoreNumbers,omitempty"`
+	// IsEnabled undocumented
+	IsEnabled *bool `json:"isEnabled,omitempty"`
+	// TopicCount undocumented
+	TopicCount *int `json:"topicCount,omitempty"`
+}
+
+// SecurityUnifiedGroupSource undocumented
+type SecurityUnifiedGroupSource struct {
+	// SecurityDataSource is the base model of SecurityUnifiedGroupSource
+	SecurityDataSource
+	// IncludedSources undocumented
+	IncludedSources *SecuritySourceType `json:"includedSources,omitempty"`
+	// Group undocumented
+	Group *Group `json:"group,omitempty"`
+}
+
+// SecurityURLEvidence undocumented
+type SecurityURLEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityURLEvidence
+	SecurityAlertEvidence
+	// URL undocumented
+	URL *string `json:"url,omitempty"`
+}
+
+// SecurityUserAccount undocumented
+type SecurityUserAccount struct {
+	// Object is the base model of SecurityUserAccount
+	Object
+	// AccountName undocumented
+	AccountName *string `json:"accountName,omitempty"`
+	// AzureAdUserID undocumented
+	AzureAdUserID *string `json:"azureAdUserId,omitempty"`
+	// DomainName undocumented
+	DomainName *string `json:"domainName,omitempty"`
+	// UserPrincipalName undocumented
+	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
+	// UserSid undocumented
+	UserSid *string `json:"userSid,omitempty"`
+}
+
+// SecurityUserEvidence undocumented
+type SecurityUserEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityUserEvidence
+	SecurityAlertEvidence
+	// UserAccount undocumented
+	UserAccount *SecurityUserAccount `json:"userAccount,omitempty"`
+}
+
+// SecurityUserSource undocumented
+type SecurityUserSource struct {
+	// SecurityDataSource is the base model of SecurityUserSource
+	SecurityDataSource
+	// Email undocumented
+	Email *string `json:"email,omitempty"`
+	// IncludedSources undocumented
+	IncludedSources *SecuritySourceType `json:"includedSources,omitempty"`
+	// SiteWebURL undocumented
+	SiteWebURL *string `json:"siteWebUrl,omitempty"`
+}
+
+// SecurityVMMetadata undocumented
+type SecurityVMMetadata struct {
+	// Object is the base model of SecurityVMMetadata
+	Object
+	// CloudProvider undocumented
+	CloudProvider *SecurityVMCloudProvider `json:"cloudProvider,omitempty"`
+	// ResourceID undocumented
+	ResourceID *string `json:"resourceId,omitempty"`
+	// SubscriptionID undocumented
+	SubscriptionID *string `json:"subscriptionId,omitempty"`
+	// VMID undocumented
+	VMID *string `json:"vmId,omitempty"`
 }

@@ -174,7 +174,7 @@ type ContentTypeCollectionAddCopyRequestBuilder struct{ BaseRequestBuilder }
 // AddCopy action undocumented
 func (b *ContentTypeBaseTypesCollectionRequestBuilder) AddCopy(reqObj *ContentTypeCollectionAddCopyRequestParameter) *ContentTypeCollectionAddCopyRequestBuilder {
 	bb := &ContentTypeCollectionAddCopyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/addCopy"
+	bb.BaseRequestBuilder.baseURL += "/AddCopy"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -182,7 +182,7 @@ func (b *ContentTypeBaseTypesCollectionRequestBuilder) AddCopy(reqObj *ContentTy
 // AddCopy action undocumented
 func (b *ListContentTypesCollectionRequestBuilder) AddCopy(reqObj *ContentTypeCollectionAddCopyRequestParameter) *ContentTypeCollectionAddCopyRequestBuilder {
 	bb := &ContentTypeCollectionAddCopyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/addCopy"
+	bb.BaseRequestBuilder.baseURL += "/AddCopy"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -190,7 +190,7 @@ func (b *ListContentTypesCollectionRequestBuilder) AddCopy(reqObj *ContentTypeCo
 // AddCopy action undocumented
 func (b *SiteContentTypesCollectionRequestBuilder) AddCopy(reqObj *ContentTypeCollectionAddCopyRequestParameter) *ContentTypeCollectionAddCopyRequestBuilder {
 	bb := &ContentTypeCollectionAddCopyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/addCopy"
+	bb.BaseRequestBuilder.baseURL += "/AddCopy"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -213,7 +213,7 @@ type ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder struct{ BaseRe
 // AddCopyFromContentTypeHub action undocumented
 func (b *ContentTypeBaseTypesCollectionRequestBuilder) AddCopyFromContentTypeHub(reqObj *ContentTypeCollectionAddCopyFromContentTypeHubRequestParameter) *ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder {
 	bb := &ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/addCopyFromContentTypeHub"
+	bb.BaseRequestBuilder.baseURL += "/AddCopyFromContentTypeHub"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -221,7 +221,7 @@ func (b *ContentTypeBaseTypesCollectionRequestBuilder) AddCopyFromContentTypeHub
 // AddCopyFromContentTypeHub action undocumented
 func (b *ListContentTypesCollectionRequestBuilder) AddCopyFromContentTypeHub(reqObj *ContentTypeCollectionAddCopyFromContentTypeHubRequestParameter) *ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder {
 	bb := &ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/addCopyFromContentTypeHub"
+	bb.BaseRequestBuilder.baseURL += "/AddCopyFromContentTypeHub"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -229,7 +229,7 @@ func (b *ListContentTypesCollectionRequestBuilder) AddCopyFromContentTypeHub(req
 // AddCopyFromContentTypeHub action undocumented
 func (b *SiteContentTypesCollectionRequestBuilder) AddCopyFromContentTypeHub(reqObj *ContentTypeCollectionAddCopyFromContentTypeHubRequestParameter) *ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder {
 	bb := &ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/addCopyFromContentTypeHub"
+	bb.BaseRequestBuilder.baseURL += "/AddCopyFromContentTypeHub"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -245,92 +245,4 @@ func (b *ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder) Request()
 func (r *ContentTypeCollectionAddCopyFromContentTypeHubRequest) Post(ctx context.Context) (resObj *ContentType, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
-}
-
-type ContentTypePublishRequestBuilder struct{ BaseRequestBuilder }
-
-// Publish action undocumented
-func (b *ContentTypeRequestBuilder) Publish(reqObj *ContentTypePublishRequestParameter) *ContentTypePublishRequestBuilder {
-	bb := &ContentTypePublishRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/publish"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type ContentTypePublishRequest struct{ BaseRequest }
-
-func (b *ContentTypePublishRequestBuilder) Request() *ContentTypePublishRequest {
-	return &ContentTypePublishRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *ContentTypePublishRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type ContentTypeUnpublishRequestBuilder struct{ BaseRequestBuilder }
-
-// Unpublish action undocumented
-func (b *ContentTypeRequestBuilder) Unpublish(reqObj *ContentTypeUnpublishRequestParameter) *ContentTypeUnpublishRequestBuilder {
-	bb := &ContentTypeUnpublishRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/unpublish"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type ContentTypeUnpublishRequest struct{ BaseRequest }
-
-func (b *ContentTypeUnpublishRequestBuilder) Request() *ContentTypeUnpublishRequest {
-	return &ContentTypeUnpublishRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *ContentTypeUnpublishRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type ContentTypeAssociateWithHubSitesRequestBuilder struct{ BaseRequestBuilder }
-
-// AssociateWithHubSites action undocumented
-func (b *ContentTypeRequestBuilder) AssociateWithHubSites(reqObj *ContentTypeAssociateWithHubSitesRequestParameter) *ContentTypeAssociateWithHubSitesRequestBuilder {
-	bb := &ContentTypeAssociateWithHubSitesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/associateWithHubSites"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type ContentTypeAssociateWithHubSitesRequest struct{ BaseRequest }
-
-func (b *ContentTypeAssociateWithHubSitesRequestBuilder) Request() *ContentTypeAssociateWithHubSitesRequest {
-	return &ContentTypeAssociateWithHubSitesRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *ContentTypeAssociateWithHubSitesRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type ContentTypeCopyToDefaultContentLocationRequestBuilder struct{ BaseRequestBuilder }
-
-// CopyToDefaultContentLocation action undocumented
-func (b *ContentTypeRequestBuilder) CopyToDefaultContentLocation(reqObj *ContentTypeCopyToDefaultContentLocationRequestParameter) *ContentTypeCopyToDefaultContentLocationRequestBuilder {
-	bb := &ContentTypeCopyToDefaultContentLocationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/copyToDefaultContentLocation"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type ContentTypeCopyToDefaultContentLocationRequest struct{ BaseRequest }
-
-func (b *ContentTypeCopyToDefaultContentLocationRequestBuilder) Request() *ContentTypeCopyToDefaultContentLocationRequest {
-	return &ContentTypeCopyToDefaultContentLocationRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *ContentTypeCopyToDefaultContentLocationRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }

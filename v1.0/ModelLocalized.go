@@ -4,18 +4,18 @@ package msgraph
 
 import "time"
 
-// LocalizedNotificationMessage The text content of a Notification Message Template for the specified locale.
+// LocalizedNotificationMessage undocumented
 type LocalizedNotificationMessage struct {
 	// Entity is the base model of LocalizedNotificationMessage
 	Entity
-	// IsDefault Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
+	// IsDefault undocumented
 	IsDefault *bool `json:"isDefault,omitempty"`
-	// LastModifiedDateTime DateTime the object was last modified.
+	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
-	// Locale The Locale for which this message is destined.
+	// Locale undocumented
 	Locale *string `json:"locale,omitempty"`
-	// MessageTemplate The Message Template content.
+	// MessageTemplate undocumented
 	MessageTemplate *string `json:"messageTemplate,omitempty"`
-	// Subject The Message Template Subject.
+	// Subject undocumented
 	Subject *string `json:"subject,omitempty"`
 }

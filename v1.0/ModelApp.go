@@ -12,15 +12,15 @@ type AppCatalogs struct {
 	TeamsApps []TeamsApp `json:"teamsApps,omitempty"`
 }
 
-// AppConfigurationSettingItem Contains properties for App configuration setting item.
+// AppConfigurationSettingItem undocumented
 type AppConfigurationSettingItem struct {
 	// Object is the base model of AppConfigurationSettingItem
 	Object
-	// AppConfigKey app configuration key.
+	// AppConfigKey undocumented
 	AppConfigKey *string `json:"appConfigKey,omitempty"`
-	// AppConfigKeyType app configuration key type.
+	// AppConfigKeyType undocumented
 	AppConfigKeyType *MDMAppConfigKeyType `json:"appConfigKeyType,omitempty"`
-	// AppConfigKeyValue app configuration key value.
+	// AppConfigKeyValue undocumented
 	AppConfigKeyValue *string `json:"appConfigKeyValue,omitempty"`
 }
 
@@ -29,7 +29,7 @@ type AppConsentApprovalRoute struct {
 	// Entity is the base model of AppConsentApprovalRoute
 	Entity
 	// AppConsentRequests undocumented
-	AppConsentRequests []AppConsentRequestObject `json:"appConsentRequests,omitempty"`
+	AppConsentRequests []AppConsentRequest `json:"appConsentRequests,omitempty"`
 }
 
 // AppConsentRequestObject undocumented
@@ -43,7 +43,7 @@ type AppConsentRequestObject struct {
 	// PendingScopes undocumented
 	PendingScopes []AppConsentRequestScope `json:"pendingScopes,omitempty"`
 	// UserConsentRequests undocumented
-	UserConsentRequests []UserConsentRequestObject `json:"userConsentRequests,omitempty"`
+	UserConsentRequests []UserConsentRequest `json:"userConsentRequests,omitempty"`
 }
 
 // AppConsentRequestScope undocumented
@@ -76,17 +76,17 @@ type AppIdentity struct {
 	ServicePrincipalName *string `json:"servicePrincipalName,omitempty"`
 }
 
-// AppListItem Represents an app in the list of managed applications
+// AppListItem undocumented
 type AppListItem struct {
 	// Object is the base model of AppListItem
 	Object
-	// AppID The application or bundle identifier of the application
+	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
-	// AppStoreURL The Store URL of the application
+	// AppStoreURL undocumented
 	AppStoreURL *string `json:"appStoreUrl,omitempty"`
-	// Name The application name
+	// Name undocumented
 	Name *string `json:"name,omitempty"`
-	// Publisher The publisher of the application
+	// Publisher undocumented
 	Publisher *string `json:"publisher,omitempty"`
 }
 

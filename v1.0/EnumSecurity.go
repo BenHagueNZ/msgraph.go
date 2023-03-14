@@ -165,3 +165,1212 @@ var (
 	_SecurityResourceTypePRelated            = SecurityResourceTypeVRelated
 	_SecurityResourceTypePUnknownFutureValue = SecurityResourceTypeVUnknownFutureValue
 )
+
+// SecurityAdditionalDataOptions undocumented
+type SecurityAdditionalDataOptions string
+
+const (
+	// SecurityAdditionalDataOptionsVAllVersions undocumented
+	SecurityAdditionalDataOptionsVAllVersions SecurityAdditionalDataOptions = "allVersions"
+	// SecurityAdditionalDataOptionsVLinkedFiles undocumented
+	SecurityAdditionalDataOptionsVLinkedFiles SecurityAdditionalDataOptions = "linkedFiles"
+	// SecurityAdditionalDataOptionsVUnknownFutureValue undocumented
+	SecurityAdditionalDataOptionsVUnknownFutureValue SecurityAdditionalDataOptions = "unknownFutureValue"
+)
+
+var (
+	// SecurityAdditionalDataOptionsPAllVersions is a pointer to SecurityAdditionalDataOptionsVAllVersions
+	SecurityAdditionalDataOptionsPAllVersions = &_SecurityAdditionalDataOptionsPAllVersions
+	// SecurityAdditionalDataOptionsPLinkedFiles is a pointer to SecurityAdditionalDataOptionsVLinkedFiles
+	SecurityAdditionalDataOptionsPLinkedFiles = &_SecurityAdditionalDataOptionsPLinkedFiles
+	// SecurityAdditionalDataOptionsPUnknownFutureValue is a pointer to SecurityAdditionalDataOptionsVUnknownFutureValue
+	SecurityAdditionalDataOptionsPUnknownFutureValue = &_SecurityAdditionalDataOptionsPUnknownFutureValue
+)
+
+var (
+	_SecurityAdditionalDataOptionsPAllVersions        = SecurityAdditionalDataOptionsVAllVersions
+	_SecurityAdditionalDataOptionsPLinkedFiles        = SecurityAdditionalDataOptionsVLinkedFiles
+	_SecurityAdditionalDataOptionsPUnknownFutureValue = SecurityAdditionalDataOptionsVUnknownFutureValue
+)
+
+// SecurityAlertClassification undocumented
+type SecurityAlertClassification string
+
+const (
+	// SecurityAlertClassificationVUnknown undocumented
+	SecurityAlertClassificationVUnknown SecurityAlertClassification = "unknown"
+	// SecurityAlertClassificationVFalsePositive undocumented
+	SecurityAlertClassificationVFalsePositive SecurityAlertClassification = "falsePositive"
+	// SecurityAlertClassificationVTruePositive undocumented
+	SecurityAlertClassificationVTruePositive SecurityAlertClassification = "truePositive"
+	// SecurityAlertClassificationVInformationalExpectedActivity undocumented
+	SecurityAlertClassificationVInformationalExpectedActivity SecurityAlertClassification = "informationalExpectedActivity"
+	// SecurityAlertClassificationVUnknownFutureValue undocumented
+	SecurityAlertClassificationVUnknownFutureValue SecurityAlertClassification = "unknownFutureValue"
+)
+
+var (
+	// SecurityAlertClassificationPUnknown is a pointer to SecurityAlertClassificationVUnknown
+	SecurityAlertClassificationPUnknown = &_SecurityAlertClassificationPUnknown
+	// SecurityAlertClassificationPFalsePositive is a pointer to SecurityAlertClassificationVFalsePositive
+	SecurityAlertClassificationPFalsePositive = &_SecurityAlertClassificationPFalsePositive
+	// SecurityAlertClassificationPTruePositive is a pointer to SecurityAlertClassificationVTruePositive
+	SecurityAlertClassificationPTruePositive = &_SecurityAlertClassificationPTruePositive
+	// SecurityAlertClassificationPInformationalExpectedActivity is a pointer to SecurityAlertClassificationVInformationalExpectedActivity
+	SecurityAlertClassificationPInformationalExpectedActivity = &_SecurityAlertClassificationPInformationalExpectedActivity
+	// SecurityAlertClassificationPUnknownFutureValue is a pointer to SecurityAlertClassificationVUnknownFutureValue
+	SecurityAlertClassificationPUnknownFutureValue = &_SecurityAlertClassificationPUnknownFutureValue
+)
+
+var (
+	_SecurityAlertClassificationPUnknown                       = SecurityAlertClassificationVUnknown
+	_SecurityAlertClassificationPFalsePositive                 = SecurityAlertClassificationVFalsePositive
+	_SecurityAlertClassificationPTruePositive                  = SecurityAlertClassificationVTruePositive
+	_SecurityAlertClassificationPInformationalExpectedActivity = SecurityAlertClassificationVInformationalExpectedActivity
+	_SecurityAlertClassificationPUnknownFutureValue            = SecurityAlertClassificationVUnknownFutureValue
+)
+
+// SecurityAlertDetermination undocumented
+type SecurityAlertDetermination string
+
+const (
+	// SecurityAlertDeterminationVUnknown undocumented
+	SecurityAlertDeterminationVUnknown SecurityAlertDetermination = "unknown"
+	// SecurityAlertDeterminationVApt undocumented
+	SecurityAlertDeterminationVApt SecurityAlertDetermination = "apt"
+	// SecurityAlertDeterminationVMalware undocumented
+	SecurityAlertDeterminationVMalware SecurityAlertDetermination = "malware"
+	// SecurityAlertDeterminationVSecurityPersonnel undocumented
+	SecurityAlertDeterminationVSecurityPersonnel SecurityAlertDetermination = "securityPersonnel"
+	// SecurityAlertDeterminationVSecurityTesting undocumented
+	SecurityAlertDeterminationVSecurityTesting SecurityAlertDetermination = "securityTesting"
+	// SecurityAlertDeterminationVUnwantedSoftware undocumented
+	SecurityAlertDeterminationVUnwantedSoftware SecurityAlertDetermination = "unwantedSoftware"
+	// SecurityAlertDeterminationVOther undocumented
+	SecurityAlertDeterminationVOther SecurityAlertDetermination = "other"
+	// SecurityAlertDeterminationVMultiStagedAttack undocumented
+	SecurityAlertDeterminationVMultiStagedAttack SecurityAlertDetermination = "multiStagedAttack"
+	// SecurityAlertDeterminationVCompromisedAccount undocumented
+	SecurityAlertDeterminationVCompromisedAccount SecurityAlertDetermination = "compromisedAccount"
+	// SecurityAlertDeterminationVPhishing undocumented
+	SecurityAlertDeterminationVPhishing SecurityAlertDetermination = "phishing"
+	// SecurityAlertDeterminationVMaliciousUserActivity undocumented
+	SecurityAlertDeterminationVMaliciousUserActivity SecurityAlertDetermination = "maliciousUserActivity"
+	// SecurityAlertDeterminationVNotMalicious undocumented
+	SecurityAlertDeterminationVNotMalicious SecurityAlertDetermination = "notMalicious"
+	// SecurityAlertDeterminationVNotEnoughDataToValidate undocumented
+	SecurityAlertDeterminationVNotEnoughDataToValidate SecurityAlertDetermination = "notEnoughDataToValidate"
+	// SecurityAlertDeterminationVConfirmedActivity undocumented
+	SecurityAlertDeterminationVConfirmedActivity SecurityAlertDetermination = "confirmedActivity"
+	// SecurityAlertDeterminationVLineOfBusinessApplication undocumented
+	SecurityAlertDeterminationVLineOfBusinessApplication SecurityAlertDetermination = "lineOfBusinessApplication"
+	// SecurityAlertDeterminationVUnknownFutureValue undocumented
+	SecurityAlertDeterminationVUnknownFutureValue SecurityAlertDetermination = "unknownFutureValue"
+)
+
+var (
+	// SecurityAlertDeterminationPUnknown is a pointer to SecurityAlertDeterminationVUnknown
+	SecurityAlertDeterminationPUnknown = &_SecurityAlertDeterminationPUnknown
+	// SecurityAlertDeterminationPApt is a pointer to SecurityAlertDeterminationVApt
+	SecurityAlertDeterminationPApt = &_SecurityAlertDeterminationPApt
+	// SecurityAlertDeterminationPMalware is a pointer to SecurityAlertDeterminationVMalware
+	SecurityAlertDeterminationPMalware = &_SecurityAlertDeterminationPMalware
+	// SecurityAlertDeterminationPSecurityPersonnel is a pointer to SecurityAlertDeterminationVSecurityPersonnel
+	SecurityAlertDeterminationPSecurityPersonnel = &_SecurityAlertDeterminationPSecurityPersonnel
+	// SecurityAlertDeterminationPSecurityTesting is a pointer to SecurityAlertDeterminationVSecurityTesting
+	SecurityAlertDeterminationPSecurityTesting = &_SecurityAlertDeterminationPSecurityTesting
+	// SecurityAlertDeterminationPUnwantedSoftware is a pointer to SecurityAlertDeterminationVUnwantedSoftware
+	SecurityAlertDeterminationPUnwantedSoftware = &_SecurityAlertDeterminationPUnwantedSoftware
+	// SecurityAlertDeterminationPOther is a pointer to SecurityAlertDeterminationVOther
+	SecurityAlertDeterminationPOther = &_SecurityAlertDeterminationPOther
+	// SecurityAlertDeterminationPMultiStagedAttack is a pointer to SecurityAlertDeterminationVMultiStagedAttack
+	SecurityAlertDeterminationPMultiStagedAttack = &_SecurityAlertDeterminationPMultiStagedAttack
+	// SecurityAlertDeterminationPCompromisedAccount is a pointer to SecurityAlertDeterminationVCompromisedAccount
+	SecurityAlertDeterminationPCompromisedAccount = &_SecurityAlertDeterminationPCompromisedAccount
+	// SecurityAlertDeterminationPPhishing is a pointer to SecurityAlertDeterminationVPhishing
+	SecurityAlertDeterminationPPhishing = &_SecurityAlertDeterminationPPhishing
+	// SecurityAlertDeterminationPMaliciousUserActivity is a pointer to SecurityAlertDeterminationVMaliciousUserActivity
+	SecurityAlertDeterminationPMaliciousUserActivity = &_SecurityAlertDeterminationPMaliciousUserActivity
+	// SecurityAlertDeterminationPNotMalicious is a pointer to SecurityAlertDeterminationVNotMalicious
+	SecurityAlertDeterminationPNotMalicious = &_SecurityAlertDeterminationPNotMalicious
+	// SecurityAlertDeterminationPNotEnoughDataToValidate is a pointer to SecurityAlertDeterminationVNotEnoughDataToValidate
+	SecurityAlertDeterminationPNotEnoughDataToValidate = &_SecurityAlertDeterminationPNotEnoughDataToValidate
+	// SecurityAlertDeterminationPConfirmedActivity is a pointer to SecurityAlertDeterminationVConfirmedActivity
+	SecurityAlertDeterminationPConfirmedActivity = &_SecurityAlertDeterminationPConfirmedActivity
+	// SecurityAlertDeterminationPLineOfBusinessApplication is a pointer to SecurityAlertDeterminationVLineOfBusinessApplication
+	SecurityAlertDeterminationPLineOfBusinessApplication = &_SecurityAlertDeterminationPLineOfBusinessApplication
+	// SecurityAlertDeterminationPUnknownFutureValue is a pointer to SecurityAlertDeterminationVUnknownFutureValue
+	SecurityAlertDeterminationPUnknownFutureValue = &_SecurityAlertDeterminationPUnknownFutureValue
+)
+
+var (
+	_SecurityAlertDeterminationPUnknown                   = SecurityAlertDeterminationVUnknown
+	_SecurityAlertDeterminationPApt                       = SecurityAlertDeterminationVApt
+	_SecurityAlertDeterminationPMalware                   = SecurityAlertDeterminationVMalware
+	_SecurityAlertDeterminationPSecurityPersonnel         = SecurityAlertDeterminationVSecurityPersonnel
+	_SecurityAlertDeterminationPSecurityTesting           = SecurityAlertDeterminationVSecurityTesting
+	_SecurityAlertDeterminationPUnwantedSoftware          = SecurityAlertDeterminationVUnwantedSoftware
+	_SecurityAlertDeterminationPOther                     = SecurityAlertDeterminationVOther
+	_SecurityAlertDeterminationPMultiStagedAttack         = SecurityAlertDeterminationVMultiStagedAttack
+	_SecurityAlertDeterminationPCompromisedAccount        = SecurityAlertDeterminationVCompromisedAccount
+	_SecurityAlertDeterminationPPhishing                  = SecurityAlertDeterminationVPhishing
+	_SecurityAlertDeterminationPMaliciousUserActivity     = SecurityAlertDeterminationVMaliciousUserActivity
+	_SecurityAlertDeterminationPNotMalicious              = SecurityAlertDeterminationVNotMalicious
+	_SecurityAlertDeterminationPNotEnoughDataToValidate   = SecurityAlertDeterminationVNotEnoughDataToValidate
+	_SecurityAlertDeterminationPConfirmedActivity         = SecurityAlertDeterminationVConfirmedActivity
+	_SecurityAlertDeterminationPLineOfBusinessApplication = SecurityAlertDeterminationVLineOfBusinessApplication
+	_SecurityAlertDeterminationPUnknownFutureValue        = SecurityAlertDeterminationVUnknownFutureValue
+)
+
+// SecurityAlertSeverity undocumented
+type SecurityAlertSeverity string
+
+const (
+	// SecurityAlertSeverityVUnknown undocumented
+	SecurityAlertSeverityVUnknown SecurityAlertSeverity = "unknown"
+	// SecurityAlertSeverityVInformational undocumented
+	SecurityAlertSeverityVInformational SecurityAlertSeverity = "informational"
+	// SecurityAlertSeverityVLow undocumented
+	SecurityAlertSeverityVLow SecurityAlertSeverity = "low"
+	// SecurityAlertSeverityVMedium undocumented
+	SecurityAlertSeverityVMedium SecurityAlertSeverity = "medium"
+	// SecurityAlertSeverityVHigh undocumented
+	SecurityAlertSeverityVHigh SecurityAlertSeverity = "high"
+	// SecurityAlertSeverityVUnknownFutureValue undocumented
+	SecurityAlertSeverityVUnknownFutureValue SecurityAlertSeverity = "unknownFutureValue"
+)
+
+var (
+	// SecurityAlertSeverityPUnknown is a pointer to SecurityAlertSeverityVUnknown
+	SecurityAlertSeverityPUnknown = &_SecurityAlertSeverityPUnknown
+	// SecurityAlertSeverityPInformational is a pointer to SecurityAlertSeverityVInformational
+	SecurityAlertSeverityPInformational = &_SecurityAlertSeverityPInformational
+	// SecurityAlertSeverityPLow is a pointer to SecurityAlertSeverityVLow
+	SecurityAlertSeverityPLow = &_SecurityAlertSeverityPLow
+	// SecurityAlertSeverityPMedium is a pointer to SecurityAlertSeverityVMedium
+	SecurityAlertSeverityPMedium = &_SecurityAlertSeverityPMedium
+	// SecurityAlertSeverityPHigh is a pointer to SecurityAlertSeverityVHigh
+	SecurityAlertSeverityPHigh = &_SecurityAlertSeverityPHigh
+	// SecurityAlertSeverityPUnknownFutureValue is a pointer to SecurityAlertSeverityVUnknownFutureValue
+	SecurityAlertSeverityPUnknownFutureValue = &_SecurityAlertSeverityPUnknownFutureValue
+)
+
+var (
+	_SecurityAlertSeverityPUnknown            = SecurityAlertSeverityVUnknown
+	_SecurityAlertSeverityPInformational      = SecurityAlertSeverityVInformational
+	_SecurityAlertSeverityPLow                = SecurityAlertSeverityVLow
+	_SecurityAlertSeverityPMedium             = SecurityAlertSeverityVMedium
+	_SecurityAlertSeverityPHigh               = SecurityAlertSeverityVHigh
+	_SecurityAlertSeverityPUnknownFutureValue = SecurityAlertSeverityVUnknownFutureValue
+)
+
+// SecurityAlertStatus undocumented
+type SecurityAlertStatus string
+
+const (
+	// SecurityAlertStatusVUnknown undocumented
+	SecurityAlertStatusVUnknown SecurityAlertStatus = "unknown"
+	// SecurityAlertStatusVNew undocumented
+	SecurityAlertStatusVNew SecurityAlertStatus = "new"
+	// SecurityAlertStatusVInProgress undocumented
+	SecurityAlertStatusVInProgress SecurityAlertStatus = "inProgress"
+	// SecurityAlertStatusVResolved undocumented
+	SecurityAlertStatusVResolved SecurityAlertStatus = "resolved"
+	// SecurityAlertStatusVUnknownFutureValue undocumented
+	SecurityAlertStatusVUnknownFutureValue SecurityAlertStatus = "unknownFutureValue"
+)
+
+var (
+	// SecurityAlertStatusPUnknown is a pointer to SecurityAlertStatusVUnknown
+	SecurityAlertStatusPUnknown = &_SecurityAlertStatusPUnknown
+	// SecurityAlertStatusPNew is a pointer to SecurityAlertStatusVNew
+	SecurityAlertStatusPNew = &_SecurityAlertStatusPNew
+	// SecurityAlertStatusPInProgress is a pointer to SecurityAlertStatusVInProgress
+	SecurityAlertStatusPInProgress = &_SecurityAlertStatusPInProgress
+	// SecurityAlertStatusPResolved is a pointer to SecurityAlertStatusVResolved
+	SecurityAlertStatusPResolved = &_SecurityAlertStatusPResolved
+	// SecurityAlertStatusPUnknownFutureValue is a pointer to SecurityAlertStatusVUnknownFutureValue
+	SecurityAlertStatusPUnknownFutureValue = &_SecurityAlertStatusPUnknownFutureValue
+)
+
+var (
+	_SecurityAlertStatusPUnknown            = SecurityAlertStatusVUnknown
+	_SecurityAlertStatusPNew                = SecurityAlertStatusVNew
+	_SecurityAlertStatusPInProgress         = SecurityAlertStatusVInProgress
+	_SecurityAlertStatusPResolved           = SecurityAlertStatusVResolved
+	_SecurityAlertStatusPUnknownFutureValue = SecurityAlertStatusVUnknownFutureValue
+)
+
+// SecurityCaseAction undocumented
+type SecurityCaseAction string
+
+const (
+	// SecurityCaseActionVContentExport undocumented
+	SecurityCaseActionVContentExport SecurityCaseAction = "contentExport"
+	// SecurityCaseActionVApplyTags undocumented
+	SecurityCaseActionVApplyTags SecurityCaseAction = "applyTags"
+	// SecurityCaseActionVConvertToPdf undocumented
+	SecurityCaseActionVConvertToPdf SecurityCaseAction = "convertToPdf"
+	// SecurityCaseActionVIndex undocumented
+	SecurityCaseActionVIndex SecurityCaseAction = "index"
+	// SecurityCaseActionVEstimateStatistics undocumented
+	SecurityCaseActionVEstimateStatistics SecurityCaseAction = "estimateStatistics"
+	// SecurityCaseActionVAddToReviewSet undocumented
+	SecurityCaseActionVAddToReviewSet SecurityCaseAction = "addToReviewSet"
+	// SecurityCaseActionVHoldUpdate undocumented
+	SecurityCaseActionVHoldUpdate SecurityCaseAction = "holdUpdate"
+	// SecurityCaseActionVUnknownFutureValue undocumented
+	SecurityCaseActionVUnknownFutureValue SecurityCaseAction = "unknownFutureValue"
+	// SecurityCaseActionVPurgeData undocumented
+	SecurityCaseActionVPurgeData SecurityCaseAction = "purgeData"
+)
+
+var (
+	// SecurityCaseActionPContentExport is a pointer to SecurityCaseActionVContentExport
+	SecurityCaseActionPContentExport = &_SecurityCaseActionPContentExport
+	// SecurityCaseActionPApplyTags is a pointer to SecurityCaseActionVApplyTags
+	SecurityCaseActionPApplyTags = &_SecurityCaseActionPApplyTags
+	// SecurityCaseActionPConvertToPdf is a pointer to SecurityCaseActionVConvertToPdf
+	SecurityCaseActionPConvertToPdf = &_SecurityCaseActionPConvertToPdf
+	// SecurityCaseActionPIndex is a pointer to SecurityCaseActionVIndex
+	SecurityCaseActionPIndex = &_SecurityCaseActionPIndex
+	// SecurityCaseActionPEstimateStatistics is a pointer to SecurityCaseActionVEstimateStatistics
+	SecurityCaseActionPEstimateStatistics = &_SecurityCaseActionPEstimateStatistics
+	// SecurityCaseActionPAddToReviewSet is a pointer to SecurityCaseActionVAddToReviewSet
+	SecurityCaseActionPAddToReviewSet = &_SecurityCaseActionPAddToReviewSet
+	// SecurityCaseActionPHoldUpdate is a pointer to SecurityCaseActionVHoldUpdate
+	SecurityCaseActionPHoldUpdate = &_SecurityCaseActionPHoldUpdate
+	// SecurityCaseActionPUnknownFutureValue is a pointer to SecurityCaseActionVUnknownFutureValue
+	SecurityCaseActionPUnknownFutureValue = &_SecurityCaseActionPUnknownFutureValue
+	// SecurityCaseActionPPurgeData is a pointer to SecurityCaseActionVPurgeData
+	SecurityCaseActionPPurgeData = &_SecurityCaseActionPPurgeData
+)
+
+var (
+	_SecurityCaseActionPContentExport      = SecurityCaseActionVContentExport
+	_SecurityCaseActionPApplyTags          = SecurityCaseActionVApplyTags
+	_SecurityCaseActionPConvertToPdf       = SecurityCaseActionVConvertToPdf
+	_SecurityCaseActionPIndex              = SecurityCaseActionVIndex
+	_SecurityCaseActionPEstimateStatistics = SecurityCaseActionVEstimateStatistics
+	_SecurityCaseActionPAddToReviewSet     = SecurityCaseActionVAddToReviewSet
+	_SecurityCaseActionPHoldUpdate         = SecurityCaseActionVHoldUpdate
+	_SecurityCaseActionPUnknownFutureValue = SecurityCaseActionVUnknownFutureValue
+	_SecurityCaseActionPPurgeData          = SecurityCaseActionVPurgeData
+)
+
+// SecurityCaseOperationStatus undocumented
+type SecurityCaseOperationStatus string
+
+const (
+	// SecurityCaseOperationStatusVNotStarted undocumented
+	SecurityCaseOperationStatusVNotStarted SecurityCaseOperationStatus = "notStarted"
+	// SecurityCaseOperationStatusVSubmissionFailed undocumented
+	SecurityCaseOperationStatusVSubmissionFailed SecurityCaseOperationStatus = "submissionFailed"
+	// SecurityCaseOperationStatusVRunning undocumented
+	SecurityCaseOperationStatusVRunning SecurityCaseOperationStatus = "running"
+	// SecurityCaseOperationStatusVSucceeded undocumented
+	SecurityCaseOperationStatusVSucceeded SecurityCaseOperationStatus = "succeeded"
+	// SecurityCaseOperationStatusVPartiallySucceeded undocumented
+	SecurityCaseOperationStatusVPartiallySucceeded SecurityCaseOperationStatus = "partiallySucceeded"
+	// SecurityCaseOperationStatusVFailed undocumented
+	SecurityCaseOperationStatusVFailed SecurityCaseOperationStatus = "failed"
+	// SecurityCaseOperationStatusVUnknownFutureValue undocumented
+	SecurityCaseOperationStatusVUnknownFutureValue SecurityCaseOperationStatus = "unknownFutureValue"
+)
+
+var (
+	// SecurityCaseOperationStatusPNotStarted is a pointer to SecurityCaseOperationStatusVNotStarted
+	SecurityCaseOperationStatusPNotStarted = &_SecurityCaseOperationStatusPNotStarted
+	// SecurityCaseOperationStatusPSubmissionFailed is a pointer to SecurityCaseOperationStatusVSubmissionFailed
+	SecurityCaseOperationStatusPSubmissionFailed = &_SecurityCaseOperationStatusPSubmissionFailed
+	// SecurityCaseOperationStatusPRunning is a pointer to SecurityCaseOperationStatusVRunning
+	SecurityCaseOperationStatusPRunning = &_SecurityCaseOperationStatusPRunning
+	// SecurityCaseOperationStatusPSucceeded is a pointer to SecurityCaseOperationStatusVSucceeded
+	SecurityCaseOperationStatusPSucceeded = &_SecurityCaseOperationStatusPSucceeded
+	// SecurityCaseOperationStatusPPartiallySucceeded is a pointer to SecurityCaseOperationStatusVPartiallySucceeded
+	SecurityCaseOperationStatusPPartiallySucceeded = &_SecurityCaseOperationStatusPPartiallySucceeded
+	// SecurityCaseOperationStatusPFailed is a pointer to SecurityCaseOperationStatusVFailed
+	SecurityCaseOperationStatusPFailed = &_SecurityCaseOperationStatusPFailed
+	// SecurityCaseOperationStatusPUnknownFutureValue is a pointer to SecurityCaseOperationStatusVUnknownFutureValue
+	SecurityCaseOperationStatusPUnknownFutureValue = &_SecurityCaseOperationStatusPUnknownFutureValue
+)
+
+var (
+	_SecurityCaseOperationStatusPNotStarted         = SecurityCaseOperationStatusVNotStarted
+	_SecurityCaseOperationStatusPSubmissionFailed   = SecurityCaseOperationStatusVSubmissionFailed
+	_SecurityCaseOperationStatusPRunning            = SecurityCaseOperationStatusVRunning
+	_SecurityCaseOperationStatusPSucceeded          = SecurityCaseOperationStatusVSucceeded
+	_SecurityCaseOperationStatusPPartiallySucceeded = SecurityCaseOperationStatusVPartiallySucceeded
+	_SecurityCaseOperationStatusPFailed             = SecurityCaseOperationStatusVFailed
+	_SecurityCaseOperationStatusPUnknownFutureValue = SecurityCaseOperationStatusVUnknownFutureValue
+)
+
+// SecurityCaseStatus undocumented
+type SecurityCaseStatus string
+
+const (
+	// SecurityCaseStatusVUnknown undocumented
+	SecurityCaseStatusVUnknown SecurityCaseStatus = "unknown"
+	// SecurityCaseStatusVActive undocumented
+	SecurityCaseStatusVActive SecurityCaseStatus = "active"
+	// SecurityCaseStatusVPendingDelete undocumented
+	SecurityCaseStatusVPendingDelete SecurityCaseStatus = "pendingDelete"
+	// SecurityCaseStatusVClosing undocumented
+	SecurityCaseStatusVClosing SecurityCaseStatus = "closing"
+	// SecurityCaseStatusVClosed undocumented
+	SecurityCaseStatusVClosed SecurityCaseStatus = "closed"
+	// SecurityCaseStatusVClosedWithError undocumented
+	SecurityCaseStatusVClosedWithError SecurityCaseStatus = "closedWithError"
+	// SecurityCaseStatusVUnknownFutureValue undocumented
+	SecurityCaseStatusVUnknownFutureValue SecurityCaseStatus = "unknownFutureValue"
+)
+
+var (
+	// SecurityCaseStatusPUnknown is a pointer to SecurityCaseStatusVUnknown
+	SecurityCaseStatusPUnknown = &_SecurityCaseStatusPUnknown
+	// SecurityCaseStatusPActive is a pointer to SecurityCaseStatusVActive
+	SecurityCaseStatusPActive = &_SecurityCaseStatusPActive
+	// SecurityCaseStatusPPendingDelete is a pointer to SecurityCaseStatusVPendingDelete
+	SecurityCaseStatusPPendingDelete = &_SecurityCaseStatusPPendingDelete
+	// SecurityCaseStatusPClosing is a pointer to SecurityCaseStatusVClosing
+	SecurityCaseStatusPClosing = &_SecurityCaseStatusPClosing
+	// SecurityCaseStatusPClosed is a pointer to SecurityCaseStatusVClosed
+	SecurityCaseStatusPClosed = &_SecurityCaseStatusPClosed
+	// SecurityCaseStatusPClosedWithError is a pointer to SecurityCaseStatusVClosedWithError
+	SecurityCaseStatusPClosedWithError = &_SecurityCaseStatusPClosedWithError
+	// SecurityCaseStatusPUnknownFutureValue is a pointer to SecurityCaseStatusVUnknownFutureValue
+	SecurityCaseStatusPUnknownFutureValue = &_SecurityCaseStatusPUnknownFutureValue
+)
+
+var (
+	_SecurityCaseStatusPUnknown            = SecurityCaseStatusVUnknown
+	_SecurityCaseStatusPActive             = SecurityCaseStatusVActive
+	_SecurityCaseStatusPPendingDelete      = SecurityCaseStatusVPendingDelete
+	_SecurityCaseStatusPClosing            = SecurityCaseStatusVClosing
+	_SecurityCaseStatusPClosed             = SecurityCaseStatusVClosed
+	_SecurityCaseStatusPClosedWithError    = SecurityCaseStatusVClosedWithError
+	_SecurityCaseStatusPUnknownFutureValue = SecurityCaseStatusVUnknownFutureValue
+)
+
+// SecurityChildSelectability undocumented
+type SecurityChildSelectability string
+
+const (
+	// SecurityChildSelectabilityVOne undocumented
+	SecurityChildSelectabilityVOne SecurityChildSelectability = "One"
+	// SecurityChildSelectabilityVMany undocumented
+	SecurityChildSelectabilityVMany SecurityChildSelectability = "Many"
+	// SecurityChildSelectabilityVUnknownFutureValue undocumented
+	SecurityChildSelectabilityVUnknownFutureValue SecurityChildSelectability = "unknownFutureValue"
+)
+
+var (
+	// SecurityChildSelectabilityPOne is a pointer to SecurityChildSelectabilityVOne
+	SecurityChildSelectabilityPOne = &_SecurityChildSelectabilityPOne
+	// SecurityChildSelectabilityPMany is a pointer to SecurityChildSelectabilityVMany
+	SecurityChildSelectabilityPMany = &_SecurityChildSelectabilityPMany
+	// SecurityChildSelectabilityPUnknownFutureValue is a pointer to SecurityChildSelectabilityVUnknownFutureValue
+	SecurityChildSelectabilityPUnknownFutureValue = &_SecurityChildSelectabilityPUnknownFutureValue
+)
+
+var (
+	_SecurityChildSelectabilityPOne                = SecurityChildSelectabilityVOne
+	_SecurityChildSelectabilityPMany               = SecurityChildSelectabilityVMany
+	_SecurityChildSelectabilityPUnknownFutureValue = SecurityChildSelectabilityVUnknownFutureValue
+)
+
+// SecurityDataSourceContainerStatus undocumented
+type SecurityDataSourceContainerStatus string
+
+const (
+	// SecurityDataSourceContainerStatusVActive undocumented
+	SecurityDataSourceContainerStatusVActive SecurityDataSourceContainerStatus = "active"
+	// SecurityDataSourceContainerStatusVReleased undocumented
+	SecurityDataSourceContainerStatusVReleased SecurityDataSourceContainerStatus = "released"
+	// SecurityDataSourceContainerStatusVUnknownFutureValue undocumented
+	SecurityDataSourceContainerStatusVUnknownFutureValue SecurityDataSourceContainerStatus = "unknownFutureValue"
+)
+
+var (
+	// SecurityDataSourceContainerStatusPActive is a pointer to SecurityDataSourceContainerStatusVActive
+	SecurityDataSourceContainerStatusPActive = &_SecurityDataSourceContainerStatusPActive
+	// SecurityDataSourceContainerStatusPReleased is a pointer to SecurityDataSourceContainerStatusVReleased
+	SecurityDataSourceContainerStatusPReleased = &_SecurityDataSourceContainerStatusPReleased
+	// SecurityDataSourceContainerStatusPUnknownFutureValue is a pointer to SecurityDataSourceContainerStatusVUnknownFutureValue
+	SecurityDataSourceContainerStatusPUnknownFutureValue = &_SecurityDataSourceContainerStatusPUnknownFutureValue
+)
+
+var (
+	_SecurityDataSourceContainerStatusPActive             = SecurityDataSourceContainerStatusVActive
+	_SecurityDataSourceContainerStatusPReleased           = SecurityDataSourceContainerStatusVReleased
+	_SecurityDataSourceContainerStatusPUnknownFutureValue = SecurityDataSourceContainerStatusVUnknownFutureValue
+)
+
+// SecurityDataSourceHoldStatus undocumented
+type SecurityDataSourceHoldStatus string
+
+const (
+	// SecurityDataSourceHoldStatusVNotApplied undocumented
+	SecurityDataSourceHoldStatusVNotApplied SecurityDataSourceHoldStatus = "notApplied"
+	// SecurityDataSourceHoldStatusVApplied undocumented
+	SecurityDataSourceHoldStatusVApplied SecurityDataSourceHoldStatus = "applied"
+	// SecurityDataSourceHoldStatusVApplying undocumented
+	SecurityDataSourceHoldStatusVApplying SecurityDataSourceHoldStatus = "applying"
+	// SecurityDataSourceHoldStatusVRemoving undocumented
+	SecurityDataSourceHoldStatusVRemoving SecurityDataSourceHoldStatus = "removing"
+	// SecurityDataSourceHoldStatusVPartial undocumented
+	SecurityDataSourceHoldStatusVPartial SecurityDataSourceHoldStatus = "partial"
+	// SecurityDataSourceHoldStatusVUnknownFutureValue undocumented
+	SecurityDataSourceHoldStatusVUnknownFutureValue SecurityDataSourceHoldStatus = "unknownFutureValue"
+)
+
+var (
+	// SecurityDataSourceHoldStatusPNotApplied is a pointer to SecurityDataSourceHoldStatusVNotApplied
+	SecurityDataSourceHoldStatusPNotApplied = &_SecurityDataSourceHoldStatusPNotApplied
+	// SecurityDataSourceHoldStatusPApplied is a pointer to SecurityDataSourceHoldStatusVApplied
+	SecurityDataSourceHoldStatusPApplied = &_SecurityDataSourceHoldStatusPApplied
+	// SecurityDataSourceHoldStatusPApplying is a pointer to SecurityDataSourceHoldStatusVApplying
+	SecurityDataSourceHoldStatusPApplying = &_SecurityDataSourceHoldStatusPApplying
+	// SecurityDataSourceHoldStatusPRemoving is a pointer to SecurityDataSourceHoldStatusVRemoving
+	SecurityDataSourceHoldStatusPRemoving = &_SecurityDataSourceHoldStatusPRemoving
+	// SecurityDataSourceHoldStatusPPartial is a pointer to SecurityDataSourceHoldStatusVPartial
+	SecurityDataSourceHoldStatusPPartial = &_SecurityDataSourceHoldStatusPPartial
+	// SecurityDataSourceHoldStatusPUnknownFutureValue is a pointer to SecurityDataSourceHoldStatusVUnknownFutureValue
+	SecurityDataSourceHoldStatusPUnknownFutureValue = &_SecurityDataSourceHoldStatusPUnknownFutureValue
+)
+
+var (
+	_SecurityDataSourceHoldStatusPNotApplied         = SecurityDataSourceHoldStatusVNotApplied
+	_SecurityDataSourceHoldStatusPApplied            = SecurityDataSourceHoldStatusVApplied
+	_SecurityDataSourceHoldStatusPApplying           = SecurityDataSourceHoldStatusVApplying
+	_SecurityDataSourceHoldStatusPRemoving           = SecurityDataSourceHoldStatusVRemoving
+	_SecurityDataSourceHoldStatusPPartial            = SecurityDataSourceHoldStatusVPartial
+	_SecurityDataSourceHoldStatusPUnknownFutureValue = SecurityDataSourceHoldStatusVUnknownFutureValue
+)
+
+// SecurityDataSourceScopes undocumented
+type SecurityDataSourceScopes string
+
+const (
+	// SecurityDataSourceScopesVNone undocumented
+	SecurityDataSourceScopesVNone SecurityDataSourceScopes = "none"
+	// SecurityDataSourceScopesVAllTenantMailboxes undocumented
+	SecurityDataSourceScopesVAllTenantMailboxes SecurityDataSourceScopes = "allTenantMailboxes"
+	// SecurityDataSourceScopesVAllTenantSites undocumented
+	SecurityDataSourceScopesVAllTenantSites SecurityDataSourceScopes = "allTenantSites"
+	// SecurityDataSourceScopesVAllCaseCustodians undocumented
+	SecurityDataSourceScopesVAllCaseCustodians SecurityDataSourceScopes = "allCaseCustodians"
+	// SecurityDataSourceScopesVAllCaseNoncustodialDataSources undocumented
+	SecurityDataSourceScopesVAllCaseNoncustodialDataSources SecurityDataSourceScopes = "allCaseNoncustodialDataSources"
+	// SecurityDataSourceScopesVUnknownFutureValue undocumented
+	SecurityDataSourceScopesVUnknownFutureValue SecurityDataSourceScopes = "unknownFutureValue"
+)
+
+var (
+	// SecurityDataSourceScopesPNone is a pointer to SecurityDataSourceScopesVNone
+	SecurityDataSourceScopesPNone = &_SecurityDataSourceScopesPNone
+	// SecurityDataSourceScopesPAllTenantMailboxes is a pointer to SecurityDataSourceScopesVAllTenantMailboxes
+	SecurityDataSourceScopesPAllTenantMailboxes = &_SecurityDataSourceScopesPAllTenantMailboxes
+	// SecurityDataSourceScopesPAllTenantSites is a pointer to SecurityDataSourceScopesVAllTenantSites
+	SecurityDataSourceScopesPAllTenantSites = &_SecurityDataSourceScopesPAllTenantSites
+	// SecurityDataSourceScopesPAllCaseCustodians is a pointer to SecurityDataSourceScopesVAllCaseCustodians
+	SecurityDataSourceScopesPAllCaseCustodians = &_SecurityDataSourceScopesPAllCaseCustodians
+	// SecurityDataSourceScopesPAllCaseNoncustodialDataSources is a pointer to SecurityDataSourceScopesVAllCaseNoncustodialDataSources
+	SecurityDataSourceScopesPAllCaseNoncustodialDataSources = &_SecurityDataSourceScopesPAllCaseNoncustodialDataSources
+	// SecurityDataSourceScopesPUnknownFutureValue is a pointer to SecurityDataSourceScopesVUnknownFutureValue
+	SecurityDataSourceScopesPUnknownFutureValue = &_SecurityDataSourceScopesPUnknownFutureValue
+)
+
+var (
+	_SecurityDataSourceScopesPNone                           = SecurityDataSourceScopesVNone
+	_SecurityDataSourceScopesPAllTenantMailboxes             = SecurityDataSourceScopesVAllTenantMailboxes
+	_SecurityDataSourceScopesPAllTenantSites                 = SecurityDataSourceScopesVAllTenantSites
+	_SecurityDataSourceScopesPAllCaseCustodians              = SecurityDataSourceScopesVAllCaseCustodians
+	_SecurityDataSourceScopesPAllCaseNoncustodialDataSources = SecurityDataSourceScopesVAllCaseNoncustodialDataSources
+	_SecurityDataSourceScopesPUnknownFutureValue             = SecurityDataSourceScopesVUnknownFutureValue
+)
+
+// SecurityDefenderAvStatus undocumented
+type SecurityDefenderAvStatus string
+
+const (
+	// SecurityDefenderAvStatusVNotReporting undocumented
+	SecurityDefenderAvStatusVNotReporting SecurityDefenderAvStatus = "notReporting"
+	// SecurityDefenderAvStatusVDisabled undocumented
+	SecurityDefenderAvStatusVDisabled SecurityDefenderAvStatus = "disabled"
+	// SecurityDefenderAvStatusVNotUpdated undocumented
+	SecurityDefenderAvStatusVNotUpdated SecurityDefenderAvStatus = "notUpdated"
+	// SecurityDefenderAvStatusVUpdated undocumented
+	SecurityDefenderAvStatusVUpdated SecurityDefenderAvStatus = "updated"
+	// SecurityDefenderAvStatusVUnknown undocumented
+	SecurityDefenderAvStatusVUnknown SecurityDefenderAvStatus = "unknown"
+	// SecurityDefenderAvStatusVNotSupported undocumented
+	SecurityDefenderAvStatusVNotSupported SecurityDefenderAvStatus = "notSupported"
+	// SecurityDefenderAvStatusVUnknownFutureValue undocumented
+	SecurityDefenderAvStatusVUnknownFutureValue SecurityDefenderAvStatus = "unknownFutureValue"
+)
+
+var (
+	// SecurityDefenderAvStatusPNotReporting is a pointer to SecurityDefenderAvStatusVNotReporting
+	SecurityDefenderAvStatusPNotReporting = &_SecurityDefenderAvStatusPNotReporting
+	// SecurityDefenderAvStatusPDisabled is a pointer to SecurityDefenderAvStatusVDisabled
+	SecurityDefenderAvStatusPDisabled = &_SecurityDefenderAvStatusPDisabled
+	// SecurityDefenderAvStatusPNotUpdated is a pointer to SecurityDefenderAvStatusVNotUpdated
+	SecurityDefenderAvStatusPNotUpdated = &_SecurityDefenderAvStatusPNotUpdated
+	// SecurityDefenderAvStatusPUpdated is a pointer to SecurityDefenderAvStatusVUpdated
+	SecurityDefenderAvStatusPUpdated = &_SecurityDefenderAvStatusPUpdated
+	// SecurityDefenderAvStatusPUnknown is a pointer to SecurityDefenderAvStatusVUnknown
+	SecurityDefenderAvStatusPUnknown = &_SecurityDefenderAvStatusPUnknown
+	// SecurityDefenderAvStatusPNotSupported is a pointer to SecurityDefenderAvStatusVNotSupported
+	SecurityDefenderAvStatusPNotSupported = &_SecurityDefenderAvStatusPNotSupported
+	// SecurityDefenderAvStatusPUnknownFutureValue is a pointer to SecurityDefenderAvStatusVUnknownFutureValue
+	SecurityDefenderAvStatusPUnknownFutureValue = &_SecurityDefenderAvStatusPUnknownFutureValue
+)
+
+var (
+	_SecurityDefenderAvStatusPNotReporting       = SecurityDefenderAvStatusVNotReporting
+	_SecurityDefenderAvStatusPDisabled           = SecurityDefenderAvStatusVDisabled
+	_SecurityDefenderAvStatusPNotUpdated         = SecurityDefenderAvStatusVNotUpdated
+	_SecurityDefenderAvStatusPUpdated            = SecurityDefenderAvStatusVUpdated
+	_SecurityDefenderAvStatusPUnknown            = SecurityDefenderAvStatusVUnknown
+	_SecurityDefenderAvStatusPNotSupported       = SecurityDefenderAvStatusVNotSupported
+	_SecurityDefenderAvStatusPUnknownFutureValue = SecurityDefenderAvStatusVUnknownFutureValue
+)
+
+// SecurityDetectionSource undocumented
+type SecurityDetectionSource string
+
+const (
+	// SecurityDetectionSourceVUnknown undocumented
+	SecurityDetectionSourceVUnknown SecurityDetectionSource = "unknown"
+	// SecurityDetectionSourceVMicrosoftDefenderForEndpoint undocumented
+	SecurityDetectionSourceVMicrosoftDefenderForEndpoint SecurityDetectionSource = "microsoftDefenderForEndpoint"
+	// SecurityDetectionSourceVAntivirus undocumented
+	SecurityDetectionSourceVAntivirus SecurityDetectionSource = "antivirus"
+	// SecurityDetectionSourceVSmartScreen undocumented
+	SecurityDetectionSourceVSmartScreen SecurityDetectionSource = "smartScreen"
+	// SecurityDetectionSourceVCustomTi undocumented
+	SecurityDetectionSourceVCustomTi SecurityDetectionSource = "customTi"
+	// SecurityDetectionSourceVMicrosoftDefenderForOffice365 undocumented
+	SecurityDetectionSourceVMicrosoftDefenderForOffice365 SecurityDetectionSource = "microsoftDefenderForOffice365"
+	// SecurityDetectionSourceVAutomatedInvestigation undocumented
+	SecurityDetectionSourceVAutomatedInvestigation SecurityDetectionSource = "automatedInvestigation"
+	// SecurityDetectionSourceVMicrosoftThreatExperts undocumented
+	SecurityDetectionSourceVMicrosoftThreatExperts SecurityDetectionSource = "microsoftThreatExperts"
+	// SecurityDetectionSourceVCustomDetection undocumented
+	SecurityDetectionSourceVCustomDetection SecurityDetectionSource = "customDetection"
+	// SecurityDetectionSourceVMicrosoftDefenderForIdentity undocumented
+	SecurityDetectionSourceVMicrosoftDefenderForIdentity SecurityDetectionSource = "microsoftDefenderForIdentity"
+	// SecurityDetectionSourceVCloudAppSecurity undocumented
+	SecurityDetectionSourceVCloudAppSecurity SecurityDetectionSource = "cloudAppSecurity"
+	// SecurityDetectionSourceVMicrosoft365Defender undocumented
+	SecurityDetectionSourceVMicrosoft365Defender SecurityDetectionSource = "microsoft365Defender"
+	// SecurityDetectionSourceVAzureAdIdentityProtection undocumented
+	SecurityDetectionSourceVAzureAdIdentityProtection SecurityDetectionSource = "azureAdIdentityProtection"
+	// SecurityDetectionSourceVManual undocumented
+	SecurityDetectionSourceVManual SecurityDetectionSource = "manual"
+	// SecurityDetectionSourceVMicrosoftDataLossPrevention undocumented
+	SecurityDetectionSourceVMicrosoftDataLossPrevention SecurityDetectionSource = "microsoftDataLossPrevention"
+	// SecurityDetectionSourceVAppGovernancePolicy undocumented
+	SecurityDetectionSourceVAppGovernancePolicy SecurityDetectionSource = "appGovernancePolicy"
+	// SecurityDetectionSourceVAppGovernanceDetection undocumented
+	SecurityDetectionSourceVAppGovernanceDetection SecurityDetectionSource = "appGovernanceDetection"
+	// SecurityDetectionSourceVUnknownFutureValue undocumented
+	SecurityDetectionSourceVUnknownFutureValue SecurityDetectionSource = "unknownFutureValue"
+)
+
+var (
+	// SecurityDetectionSourcePUnknown is a pointer to SecurityDetectionSourceVUnknown
+	SecurityDetectionSourcePUnknown = &_SecurityDetectionSourcePUnknown
+	// SecurityDetectionSourcePMicrosoftDefenderForEndpoint is a pointer to SecurityDetectionSourceVMicrosoftDefenderForEndpoint
+	SecurityDetectionSourcePMicrosoftDefenderForEndpoint = &_SecurityDetectionSourcePMicrosoftDefenderForEndpoint
+	// SecurityDetectionSourcePAntivirus is a pointer to SecurityDetectionSourceVAntivirus
+	SecurityDetectionSourcePAntivirus = &_SecurityDetectionSourcePAntivirus
+	// SecurityDetectionSourcePSmartScreen is a pointer to SecurityDetectionSourceVSmartScreen
+	SecurityDetectionSourcePSmartScreen = &_SecurityDetectionSourcePSmartScreen
+	// SecurityDetectionSourcePCustomTi is a pointer to SecurityDetectionSourceVCustomTi
+	SecurityDetectionSourcePCustomTi = &_SecurityDetectionSourcePCustomTi
+	// SecurityDetectionSourcePMicrosoftDefenderForOffice365 is a pointer to SecurityDetectionSourceVMicrosoftDefenderForOffice365
+	SecurityDetectionSourcePMicrosoftDefenderForOffice365 = &_SecurityDetectionSourcePMicrosoftDefenderForOffice365
+	// SecurityDetectionSourcePAutomatedInvestigation is a pointer to SecurityDetectionSourceVAutomatedInvestigation
+	SecurityDetectionSourcePAutomatedInvestigation = &_SecurityDetectionSourcePAutomatedInvestigation
+	// SecurityDetectionSourcePMicrosoftThreatExperts is a pointer to SecurityDetectionSourceVMicrosoftThreatExperts
+	SecurityDetectionSourcePMicrosoftThreatExperts = &_SecurityDetectionSourcePMicrosoftThreatExperts
+	// SecurityDetectionSourcePCustomDetection is a pointer to SecurityDetectionSourceVCustomDetection
+	SecurityDetectionSourcePCustomDetection = &_SecurityDetectionSourcePCustomDetection
+	// SecurityDetectionSourcePMicrosoftDefenderForIdentity is a pointer to SecurityDetectionSourceVMicrosoftDefenderForIdentity
+	SecurityDetectionSourcePMicrosoftDefenderForIdentity = &_SecurityDetectionSourcePMicrosoftDefenderForIdentity
+	// SecurityDetectionSourcePCloudAppSecurity is a pointer to SecurityDetectionSourceVCloudAppSecurity
+	SecurityDetectionSourcePCloudAppSecurity = &_SecurityDetectionSourcePCloudAppSecurity
+	// SecurityDetectionSourcePMicrosoft365Defender is a pointer to SecurityDetectionSourceVMicrosoft365Defender
+	SecurityDetectionSourcePMicrosoft365Defender = &_SecurityDetectionSourcePMicrosoft365Defender
+	// SecurityDetectionSourcePAzureAdIdentityProtection is a pointer to SecurityDetectionSourceVAzureAdIdentityProtection
+	SecurityDetectionSourcePAzureAdIdentityProtection = &_SecurityDetectionSourcePAzureAdIdentityProtection
+	// SecurityDetectionSourcePManual is a pointer to SecurityDetectionSourceVManual
+	SecurityDetectionSourcePManual = &_SecurityDetectionSourcePManual
+	// SecurityDetectionSourcePMicrosoftDataLossPrevention is a pointer to SecurityDetectionSourceVMicrosoftDataLossPrevention
+	SecurityDetectionSourcePMicrosoftDataLossPrevention = &_SecurityDetectionSourcePMicrosoftDataLossPrevention
+	// SecurityDetectionSourcePAppGovernancePolicy is a pointer to SecurityDetectionSourceVAppGovernancePolicy
+	SecurityDetectionSourcePAppGovernancePolicy = &_SecurityDetectionSourcePAppGovernancePolicy
+	// SecurityDetectionSourcePAppGovernanceDetection is a pointer to SecurityDetectionSourceVAppGovernanceDetection
+	SecurityDetectionSourcePAppGovernanceDetection = &_SecurityDetectionSourcePAppGovernanceDetection
+	// SecurityDetectionSourcePUnknownFutureValue is a pointer to SecurityDetectionSourceVUnknownFutureValue
+	SecurityDetectionSourcePUnknownFutureValue = &_SecurityDetectionSourcePUnknownFutureValue
+)
+
+var (
+	_SecurityDetectionSourcePUnknown                       = SecurityDetectionSourceVUnknown
+	_SecurityDetectionSourcePMicrosoftDefenderForEndpoint  = SecurityDetectionSourceVMicrosoftDefenderForEndpoint
+	_SecurityDetectionSourcePAntivirus                     = SecurityDetectionSourceVAntivirus
+	_SecurityDetectionSourcePSmartScreen                   = SecurityDetectionSourceVSmartScreen
+	_SecurityDetectionSourcePCustomTi                      = SecurityDetectionSourceVCustomTi
+	_SecurityDetectionSourcePMicrosoftDefenderForOffice365 = SecurityDetectionSourceVMicrosoftDefenderForOffice365
+	_SecurityDetectionSourcePAutomatedInvestigation        = SecurityDetectionSourceVAutomatedInvestigation
+	_SecurityDetectionSourcePMicrosoftThreatExperts        = SecurityDetectionSourceVMicrosoftThreatExperts
+	_SecurityDetectionSourcePCustomDetection               = SecurityDetectionSourceVCustomDetection
+	_SecurityDetectionSourcePMicrosoftDefenderForIdentity  = SecurityDetectionSourceVMicrosoftDefenderForIdentity
+	_SecurityDetectionSourcePCloudAppSecurity              = SecurityDetectionSourceVCloudAppSecurity
+	_SecurityDetectionSourcePMicrosoft365Defender          = SecurityDetectionSourceVMicrosoft365Defender
+	_SecurityDetectionSourcePAzureAdIdentityProtection     = SecurityDetectionSourceVAzureAdIdentityProtection
+	_SecurityDetectionSourcePManual                        = SecurityDetectionSourceVManual
+	_SecurityDetectionSourcePMicrosoftDataLossPrevention   = SecurityDetectionSourceVMicrosoftDataLossPrevention
+	_SecurityDetectionSourcePAppGovernancePolicy           = SecurityDetectionSourceVAppGovernancePolicy
+	_SecurityDetectionSourcePAppGovernanceDetection        = SecurityDetectionSourceVAppGovernanceDetection
+	_SecurityDetectionSourcePUnknownFutureValue            = SecurityDetectionSourceVUnknownFutureValue
+)
+
+// SecurityDetectionStatus undocumented
+type SecurityDetectionStatus string
+
+const (
+	// SecurityDetectionStatusVDetected undocumented
+	SecurityDetectionStatusVDetected SecurityDetectionStatus = "detected"
+	// SecurityDetectionStatusVBlocked undocumented
+	SecurityDetectionStatusVBlocked SecurityDetectionStatus = "blocked"
+	// SecurityDetectionStatusVPrevented undocumented
+	SecurityDetectionStatusVPrevented SecurityDetectionStatus = "prevented"
+	// SecurityDetectionStatusVUnknownFutureValue undocumented
+	SecurityDetectionStatusVUnknownFutureValue SecurityDetectionStatus = "unknownFutureValue"
+)
+
+var (
+	// SecurityDetectionStatusPDetected is a pointer to SecurityDetectionStatusVDetected
+	SecurityDetectionStatusPDetected = &_SecurityDetectionStatusPDetected
+	// SecurityDetectionStatusPBlocked is a pointer to SecurityDetectionStatusVBlocked
+	SecurityDetectionStatusPBlocked = &_SecurityDetectionStatusPBlocked
+	// SecurityDetectionStatusPPrevented is a pointer to SecurityDetectionStatusVPrevented
+	SecurityDetectionStatusPPrevented = &_SecurityDetectionStatusPPrevented
+	// SecurityDetectionStatusPUnknownFutureValue is a pointer to SecurityDetectionStatusVUnknownFutureValue
+	SecurityDetectionStatusPUnknownFutureValue = &_SecurityDetectionStatusPUnknownFutureValue
+)
+
+var (
+	_SecurityDetectionStatusPDetected           = SecurityDetectionStatusVDetected
+	_SecurityDetectionStatusPBlocked            = SecurityDetectionStatusVBlocked
+	_SecurityDetectionStatusPPrevented          = SecurityDetectionStatusVPrevented
+	_SecurityDetectionStatusPUnknownFutureValue = SecurityDetectionStatusVUnknownFutureValue
+)
+
+// SecurityDeviceHealthStatus undocumented
+type SecurityDeviceHealthStatus string
+
+const (
+	// SecurityDeviceHealthStatusVActive undocumented
+	SecurityDeviceHealthStatusVActive SecurityDeviceHealthStatus = "active"
+	// SecurityDeviceHealthStatusVInactive undocumented
+	SecurityDeviceHealthStatusVInactive SecurityDeviceHealthStatus = "inactive"
+	// SecurityDeviceHealthStatusVImpairedCommunication undocumented
+	SecurityDeviceHealthStatusVImpairedCommunication SecurityDeviceHealthStatus = "impairedCommunication"
+	// SecurityDeviceHealthStatusVNoSensorData undocumented
+	SecurityDeviceHealthStatusVNoSensorData SecurityDeviceHealthStatus = "noSensorData"
+	// SecurityDeviceHealthStatusVNoSensorDataImpairedCommunication undocumented
+	SecurityDeviceHealthStatusVNoSensorDataImpairedCommunication SecurityDeviceHealthStatus = "noSensorDataImpairedCommunication"
+	// SecurityDeviceHealthStatusVUnknown undocumented
+	SecurityDeviceHealthStatusVUnknown SecurityDeviceHealthStatus = "unknown"
+	// SecurityDeviceHealthStatusVUnknownFutureValue undocumented
+	SecurityDeviceHealthStatusVUnknownFutureValue SecurityDeviceHealthStatus = "unknownFutureValue"
+)
+
+var (
+	// SecurityDeviceHealthStatusPActive is a pointer to SecurityDeviceHealthStatusVActive
+	SecurityDeviceHealthStatusPActive = &_SecurityDeviceHealthStatusPActive
+	// SecurityDeviceHealthStatusPInactive is a pointer to SecurityDeviceHealthStatusVInactive
+	SecurityDeviceHealthStatusPInactive = &_SecurityDeviceHealthStatusPInactive
+	// SecurityDeviceHealthStatusPImpairedCommunication is a pointer to SecurityDeviceHealthStatusVImpairedCommunication
+	SecurityDeviceHealthStatusPImpairedCommunication = &_SecurityDeviceHealthStatusPImpairedCommunication
+	// SecurityDeviceHealthStatusPNoSensorData is a pointer to SecurityDeviceHealthStatusVNoSensorData
+	SecurityDeviceHealthStatusPNoSensorData = &_SecurityDeviceHealthStatusPNoSensorData
+	// SecurityDeviceHealthStatusPNoSensorDataImpairedCommunication is a pointer to SecurityDeviceHealthStatusVNoSensorDataImpairedCommunication
+	SecurityDeviceHealthStatusPNoSensorDataImpairedCommunication = &_SecurityDeviceHealthStatusPNoSensorDataImpairedCommunication
+	// SecurityDeviceHealthStatusPUnknown is a pointer to SecurityDeviceHealthStatusVUnknown
+	SecurityDeviceHealthStatusPUnknown = &_SecurityDeviceHealthStatusPUnknown
+	// SecurityDeviceHealthStatusPUnknownFutureValue is a pointer to SecurityDeviceHealthStatusVUnknownFutureValue
+	SecurityDeviceHealthStatusPUnknownFutureValue = &_SecurityDeviceHealthStatusPUnknownFutureValue
+)
+
+var (
+	_SecurityDeviceHealthStatusPActive                            = SecurityDeviceHealthStatusVActive
+	_SecurityDeviceHealthStatusPInactive                          = SecurityDeviceHealthStatusVInactive
+	_SecurityDeviceHealthStatusPImpairedCommunication             = SecurityDeviceHealthStatusVImpairedCommunication
+	_SecurityDeviceHealthStatusPNoSensorData                      = SecurityDeviceHealthStatusVNoSensorData
+	_SecurityDeviceHealthStatusPNoSensorDataImpairedCommunication = SecurityDeviceHealthStatusVNoSensorDataImpairedCommunication
+	_SecurityDeviceHealthStatusPUnknown                           = SecurityDeviceHealthStatusVUnknown
+	_SecurityDeviceHealthStatusPUnknownFutureValue                = SecurityDeviceHealthStatusVUnknownFutureValue
+)
+
+// SecurityDeviceRiskScore undocumented
+type SecurityDeviceRiskScore string
+
+const (
+	// SecurityDeviceRiskScoreVNone undocumented
+	SecurityDeviceRiskScoreVNone SecurityDeviceRiskScore = "none"
+	// SecurityDeviceRiskScoreVInformational undocumented
+	SecurityDeviceRiskScoreVInformational SecurityDeviceRiskScore = "informational"
+	// SecurityDeviceRiskScoreVLow undocumented
+	SecurityDeviceRiskScoreVLow SecurityDeviceRiskScore = "low"
+	// SecurityDeviceRiskScoreVMedium undocumented
+	SecurityDeviceRiskScoreVMedium SecurityDeviceRiskScore = "medium"
+	// SecurityDeviceRiskScoreVHigh undocumented
+	SecurityDeviceRiskScoreVHigh SecurityDeviceRiskScore = "high"
+	// SecurityDeviceRiskScoreVUnknownFutureValue undocumented
+	SecurityDeviceRiskScoreVUnknownFutureValue SecurityDeviceRiskScore = "unknownFutureValue"
+)
+
+var (
+	// SecurityDeviceRiskScorePNone is a pointer to SecurityDeviceRiskScoreVNone
+	SecurityDeviceRiskScorePNone = &_SecurityDeviceRiskScorePNone
+	// SecurityDeviceRiskScorePInformational is a pointer to SecurityDeviceRiskScoreVInformational
+	SecurityDeviceRiskScorePInformational = &_SecurityDeviceRiskScorePInformational
+	// SecurityDeviceRiskScorePLow is a pointer to SecurityDeviceRiskScoreVLow
+	SecurityDeviceRiskScorePLow = &_SecurityDeviceRiskScorePLow
+	// SecurityDeviceRiskScorePMedium is a pointer to SecurityDeviceRiskScoreVMedium
+	SecurityDeviceRiskScorePMedium = &_SecurityDeviceRiskScorePMedium
+	// SecurityDeviceRiskScorePHigh is a pointer to SecurityDeviceRiskScoreVHigh
+	SecurityDeviceRiskScorePHigh = &_SecurityDeviceRiskScorePHigh
+	// SecurityDeviceRiskScorePUnknownFutureValue is a pointer to SecurityDeviceRiskScoreVUnknownFutureValue
+	SecurityDeviceRiskScorePUnknownFutureValue = &_SecurityDeviceRiskScorePUnknownFutureValue
+)
+
+var (
+	_SecurityDeviceRiskScorePNone               = SecurityDeviceRiskScoreVNone
+	_SecurityDeviceRiskScorePInformational      = SecurityDeviceRiskScoreVInformational
+	_SecurityDeviceRiskScorePLow                = SecurityDeviceRiskScoreVLow
+	_SecurityDeviceRiskScorePMedium             = SecurityDeviceRiskScoreVMedium
+	_SecurityDeviceRiskScorePHigh               = SecurityDeviceRiskScoreVHigh
+	_SecurityDeviceRiskScorePUnknownFutureValue = SecurityDeviceRiskScoreVUnknownFutureValue
+)
+
+// SecurityEvidenceRemediationStatus undocumented
+type SecurityEvidenceRemediationStatus string
+
+const (
+	// SecurityEvidenceRemediationStatusVNone undocumented
+	SecurityEvidenceRemediationStatusVNone SecurityEvidenceRemediationStatus = "none"
+	// SecurityEvidenceRemediationStatusVRemediated undocumented
+	SecurityEvidenceRemediationStatusVRemediated SecurityEvidenceRemediationStatus = "remediated"
+	// SecurityEvidenceRemediationStatusVPrevented undocumented
+	SecurityEvidenceRemediationStatusVPrevented SecurityEvidenceRemediationStatus = "prevented"
+	// SecurityEvidenceRemediationStatusVBlocked undocumented
+	SecurityEvidenceRemediationStatusVBlocked SecurityEvidenceRemediationStatus = "blocked"
+	// SecurityEvidenceRemediationStatusVNotFound undocumented
+	SecurityEvidenceRemediationStatusVNotFound SecurityEvidenceRemediationStatus = "notFound"
+	// SecurityEvidenceRemediationStatusVUnknownFutureValue undocumented
+	SecurityEvidenceRemediationStatusVUnknownFutureValue SecurityEvidenceRemediationStatus = "unknownFutureValue"
+)
+
+var (
+	// SecurityEvidenceRemediationStatusPNone is a pointer to SecurityEvidenceRemediationStatusVNone
+	SecurityEvidenceRemediationStatusPNone = &_SecurityEvidenceRemediationStatusPNone
+	// SecurityEvidenceRemediationStatusPRemediated is a pointer to SecurityEvidenceRemediationStatusVRemediated
+	SecurityEvidenceRemediationStatusPRemediated = &_SecurityEvidenceRemediationStatusPRemediated
+	// SecurityEvidenceRemediationStatusPPrevented is a pointer to SecurityEvidenceRemediationStatusVPrevented
+	SecurityEvidenceRemediationStatusPPrevented = &_SecurityEvidenceRemediationStatusPPrevented
+	// SecurityEvidenceRemediationStatusPBlocked is a pointer to SecurityEvidenceRemediationStatusVBlocked
+	SecurityEvidenceRemediationStatusPBlocked = &_SecurityEvidenceRemediationStatusPBlocked
+	// SecurityEvidenceRemediationStatusPNotFound is a pointer to SecurityEvidenceRemediationStatusVNotFound
+	SecurityEvidenceRemediationStatusPNotFound = &_SecurityEvidenceRemediationStatusPNotFound
+	// SecurityEvidenceRemediationStatusPUnknownFutureValue is a pointer to SecurityEvidenceRemediationStatusVUnknownFutureValue
+	SecurityEvidenceRemediationStatusPUnknownFutureValue = &_SecurityEvidenceRemediationStatusPUnknownFutureValue
+)
+
+var (
+	_SecurityEvidenceRemediationStatusPNone               = SecurityEvidenceRemediationStatusVNone
+	_SecurityEvidenceRemediationStatusPRemediated         = SecurityEvidenceRemediationStatusVRemediated
+	_SecurityEvidenceRemediationStatusPPrevented          = SecurityEvidenceRemediationStatusVPrevented
+	_SecurityEvidenceRemediationStatusPBlocked            = SecurityEvidenceRemediationStatusVBlocked
+	_SecurityEvidenceRemediationStatusPNotFound           = SecurityEvidenceRemediationStatusVNotFound
+	_SecurityEvidenceRemediationStatusPUnknownFutureValue = SecurityEvidenceRemediationStatusVUnknownFutureValue
+)
+
+// SecurityEvidenceRole undocumented
+type SecurityEvidenceRole string
+
+const (
+	// SecurityEvidenceRoleVUnknown undocumented
+	SecurityEvidenceRoleVUnknown SecurityEvidenceRole = "unknown"
+	// SecurityEvidenceRoleVContextual undocumented
+	SecurityEvidenceRoleVContextual SecurityEvidenceRole = "contextual"
+	// SecurityEvidenceRoleVScanned undocumented
+	SecurityEvidenceRoleVScanned SecurityEvidenceRole = "scanned"
+	// SecurityEvidenceRoleVSource undocumented
+	SecurityEvidenceRoleVSource SecurityEvidenceRole = "source"
+	// SecurityEvidenceRoleVDestination undocumented
+	SecurityEvidenceRoleVDestination SecurityEvidenceRole = "destination"
+	// SecurityEvidenceRoleVCreated undocumented
+	SecurityEvidenceRoleVCreated SecurityEvidenceRole = "created"
+	// SecurityEvidenceRoleVAdded undocumented
+	SecurityEvidenceRoleVAdded SecurityEvidenceRole = "added"
+	// SecurityEvidenceRoleVCompromised undocumented
+	SecurityEvidenceRoleVCompromised SecurityEvidenceRole = "compromised"
+	// SecurityEvidenceRoleVEdited undocumented
+	SecurityEvidenceRoleVEdited SecurityEvidenceRole = "edited"
+	// SecurityEvidenceRoleVAttacked undocumented
+	SecurityEvidenceRoleVAttacked SecurityEvidenceRole = "attacked"
+	// SecurityEvidenceRoleVAttacker undocumented
+	SecurityEvidenceRoleVAttacker SecurityEvidenceRole = "attacker"
+	// SecurityEvidenceRoleVCommandAndControl undocumented
+	SecurityEvidenceRoleVCommandAndControl SecurityEvidenceRole = "commandAndControl"
+	// SecurityEvidenceRoleVLoaded undocumented
+	SecurityEvidenceRoleVLoaded SecurityEvidenceRole = "loaded"
+	// SecurityEvidenceRoleVSuspicious undocumented
+	SecurityEvidenceRoleVSuspicious SecurityEvidenceRole = "suspicious"
+	// SecurityEvidenceRoleVPolicyViolator undocumented
+	SecurityEvidenceRoleVPolicyViolator SecurityEvidenceRole = "policyViolator"
+	// SecurityEvidenceRoleVUnknownFutureValue undocumented
+	SecurityEvidenceRoleVUnknownFutureValue SecurityEvidenceRole = "unknownFutureValue"
+)
+
+var (
+	// SecurityEvidenceRolePUnknown is a pointer to SecurityEvidenceRoleVUnknown
+	SecurityEvidenceRolePUnknown = &_SecurityEvidenceRolePUnknown
+	// SecurityEvidenceRolePContextual is a pointer to SecurityEvidenceRoleVContextual
+	SecurityEvidenceRolePContextual = &_SecurityEvidenceRolePContextual
+	// SecurityEvidenceRolePScanned is a pointer to SecurityEvidenceRoleVScanned
+	SecurityEvidenceRolePScanned = &_SecurityEvidenceRolePScanned
+	// SecurityEvidenceRolePSource is a pointer to SecurityEvidenceRoleVSource
+	SecurityEvidenceRolePSource = &_SecurityEvidenceRolePSource
+	// SecurityEvidenceRolePDestination is a pointer to SecurityEvidenceRoleVDestination
+	SecurityEvidenceRolePDestination = &_SecurityEvidenceRolePDestination
+	// SecurityEvidenceRolePCreated is a pointer to SecurityEvidenceRoleVCreated
+	SecurityEvidenceRolePCreated = &_SecurityEvidenceRolePCreated
+	// SecurityEvidenceRolePAdded is a pointer to SecurityEvidenceRoleVAdded
+	SecurityEvidenceRolePAdded = &_SecurityEvidenceRolePAdded
+	// SecurityEvidenceRolePCompromised is a pointer to SecurityEvidenceRoleVCompromised
+	SecurityEvidenceRolePCompromised = &_SecurityEvidenceRolePCompromised
+	// SecurityEvidenceRolePEdited is a pointer to SecurityEvidenceRoleVEdited
+	SecurityEvidenceRolePEdited = &_SecurityEvidenceRolePEdited
+	// SecurityEvidenceRolePAttacked is a pointer to SecurityEvidenceRoleVAttacked
+	SecurityEvidenceRolePAttacked = &_SecurityEvidenceRolePAttacked
+	// SecurityEvidenceRolePAttacker is a pointer to SecurityEvidenceRoleVAttacker
+	SecurityEvidenceRolePAttacker = &_SecurityEvidenceRolePAttacker
+	// SecurityEvidenceRolePCommandAndControl is a pointer to SecurityEvidenceRoleVCommandAndControl
+	SecurityEvidenceRolePCommandAndControl = &_SecurityEvidenceRolePCommandAndControl
+	// SecurityEvidenceRolePLoaded is a pointer to SecurityEvidenceRoleVLoaded
+	SecurityEvidenceRolePLoaded = &_SecurityEvidenceRolePLoaded
+	// SecurityEvidenceRolePSuspicious is a pointer to SecurityEvidenceRoleVSuspicious
+	SecurityEvidenceRolePSuspicious = &_SecurityEvidenceRolePSuspicious
+	// SecurityEvidenceRolePPolicyViolator is a pointer to SecurityEvidenceRoleVPolicyViolator
+	SecurityEvidenceRolePPolicyViolator = &_SecurityEvidenceRolePPolicyViolator
+	// SecurityEvidenceRolePUnknownFutureValue is a pointer to SecurityEvidenceRoleVUnknownFutureValue
+	SecurityEvidenceRolePUnknownFutureValue = &_SecurityEvidenceRolePUnknownFutureValue
+)
+
+var (
+	_SecurityEvidenceRolePUnknown            = SecurityEvidenceRoleVUnknown
+	_SecurityEvidenceRolePContextual         = SecurityEvidenceRoleVContextual
+	_SecurityEvidenceRolePScanned            = SecurityEvidenceRoleVScanned
+	_SecurityEvidenceRolePSource             = SecurityEvidenceRoleVSource
+	_SecurityEvidenceRolePDestination        = SecurityEvidenceRoleVDestination
+	_SecurityEvidenceRolePCreated            = SecurityEvidenceRoleVCreated
+	_SecurityEvidenceRolePAdded              = SecurityEvidenceRoleVAdded
+	_SecurityEvidenceRolePCompromised        = SecurityEvidenceRoleVCompromised
+	_SecurityEvidenceRolePEdited             = SecurityEvidenceRoleVEdited
+	_SecurityEvidenceRolePAttacked           = SecurityEvidenceRoleVAttacked
+	_SecurityEvidenceRolePAttacker           = SecurityEvidenceRoleVAttacker
+	_SecurityEvidenceRolePCommandAndControl  = SecurityEvidenceRoleVCommandAndControl
+	_SecurityEvidenceRolePLoaded             = SecurityEvidenceRoleVLoaded
+	_SecurityEvidenceRolePSuspicious         = SecurityEvidenceRoleVSuspicious
+	_SecurityEvidenceRolePPolicyViolator     = SecurityEvidenceRoleVPolicyViolator
+	_SecurityEvidenceRolePUnknownFutureValue = SecurityEvidenceRoleVUnknownFutureValue
+)
+
+// SecurityEvidenceVerdict undocumented
+type SecurityEvidenceVerdict string
+
+const (
+	// SecurityEvidenceVerdictVUnknown undocumented
+	SecurityEvidenceVerdictVUnknown SecurityEvidenceVerdict = "unknown"
+	// SecurityEvidenceVerdictVSuspicious undocumented
+	SecurityEvidenceVerdictVSuspicious SecurityEvidenceVerdict = "suspicious"
+	// SecurityEvidenceVerdictVMalicious undocumented
+	SecurityEvidenceVerdictVMalicious SecurityEvidenceVerdict = "malicious"
+	// SecurityEvidenceVerdictVNoThreatsFound undocumented
+	SecurityEvidenceVerdictVNoThreatsFound SecurityEvidenceVerdict = "noThreatsFound"
+	// SecurityEvidenceVerdictVUnknownFutureValue undocumented
+	SecurityEvidenceVerdictVUnknownFutureValue SecurityEvidenceVerdict = "unknownFutureValue"
+)
+
+var (
+	// SecurityEvidenceVerdictPUnknown is a pointer to SecurityEvidenceVerdictVUnknown
+	SecurityEvidenceVerdictPUnknown = &_SecurityEvidenceVerdictPUnknown
+	// SecurityEvidenceVerdictPSuspicious is a pointer to SecurityEvidenceVerdictVSuspicious
+	SecurityEvidenceVerdictPSuspicious = &_SecurityEvidenceVerdictPSuspicious
+	// SecurityEvidenceVerdictPMalicious is a pointer to SecurityEvidenceVerdictVMalicious
+	SecurityEvidenceVerdictPMalicious = &_SecurityEvidenceVerdictPMalicious
+	// SecurityEvidenceVerdictPNoThreatsFound is a pointer to SecurityEvidenceVerdictVNoThreatsFound
+	SecurityEvidenceVerdictPNoThreatsFound = &_SecurityEvidenceVerdictPNoThreatsFound
+	// SecurityEvidenceVerdictPUnknownFutureValue is a pointer to SecurityEvidenceVerdictVUnknownFutureValue
+	SecurityEvidenceVerdictPUnknownFutureValue = &_SecurityEvidenceVerdictPUnknownFutureValue
+)
+
+var (
+	_SecurityEvidenceVerdictPUnknown            = SecurityEvidenceVerdictVUnknown
+	_SecurityEvidenceVerdictPSuspicious         = SecurityEvidenceVerdictVSuspicious
+	_SecurityEvidenceVerdictPMalicious          = SecurityEvidenceVerdictVMalicious
+	_SecurityEvidenceVerdictPNoThreatsFound     = SecurityEvidenceVerdictVNoThreatsFound
+	_SecurityEvidenceVerdictPUnknownFutureValue = SecurityEvidenceVerdictVUnknownFutureValue
+)
+
+// SecurityIncidentStatus undocumented
+type SecurityIncidentStatus string
+
+const (
+	// SecurityIncidentStatusVActive undocumented
+	SecurityIncidentStatusVActive SecurityIncidentStatus = "active"
+	// SecurityIncidentStatusVResolved undocumented
+	SecurityIncidentStatusVResolved SecurityIncidentStatus = "resolved"
+	// SecurityIncidentStatusVInProgress undocumented
+	SecurityIncidentStatusVInProgress SecurityIncidentStatus = "inProgress"
+	// SecurityIncidentStatusVRedirected undocumented
+	SecurityIncidentStatusVRedirected SecurityIncidentStatus = "redirected"
+	// SecurityIncidentStatusVUnknownFutureValue undocumented
+	SecurityIncidentStatusVUnknownFutureValue SecurityIncidentStatus = "unknownFutureValue"
+)
+
+var (
+	// SecurityIncidentStatusPActive is a pointer to SecurityIncidentStatusVActive
+	SecurityIncidentStatusPActive = &_SecurityIncidentStatusPActive
+	// SecurityIncidentStatusPResolved is a pointer to SecurityIncidentStatusVResolved
+	SecurityIncidentStatusPResolved = &_SecurityIncidentStatusPResolved
+	// SecurityIncidentStatusPInProgress is a pointer to SecurityIncidentStatusVInProgress
+	SecurityIncidentStatusPInProgress = &_SecurityIncidentStatusPInProgress
+	// SecurityIncidentStatusPRedirected is a pointer to SecurityIncidentStatusVRedirected
+	SecurityIncidentStatusPRedirected = &_SecurityIncidentStatusPRedirected
+	// SecurityIncidentStatusPUnknownFutureValue is a pointer to SecurityIncidentStatusVUnknownFutureValue
+	SecurityIncidentStatusPUnknownFutureValue = &_SecurityIncidentStatusPUnknownFutureValue
+)
+
+var (
+	_SecurityIncidentStatusPActive             = SecurityIncidentStatusVActive
+	_SecurityIncidentStatusPResolved           = SecurityIncidentStatusVResolved
+	_SecurityIncidentStatusPInProgress         = SecurityIncidentStatusVInProgress
+	_SecurityIncidentStatusPRedirected         = SecurityIncidentStatusVRedirected
+	_SecurityIncidentStatusPUnknownFutureValue = SecurityIncidentStatusVUnknownFutureValue
+)
+
+// SecurityOnboardingStatus undocumented
+type SecurityOnboardingStatus string
+
+const (
+	// SecurityOnboardingStatusVInsufficientInfo undocumented
+	SecurityOnboardingStatusVInsufficientInfo SecurityOnboardingStatus = "insufficientInfo"
+	// SecurityOnboardingStatusVOnboarded undocumented
+	SecurityOnboardingStatusVOnboarded SecurityOnboardingStatus = "onboarded"
+	// SecurityOnboardingStatusVCanBeOnboarded undocumented
+	SecurityOnboardingStatusVCanBeOnboarded SecurityOnboardingStatus = "canBeOnboarded"
+	// SecurityOnboardingStatusVUnsupported undocumented
+	SecurityOnboardingStatusVUnsupported SecurityOnboardingStatus = "unsupported"
+	// SecurityOnboardingStatusVUnknownFutureValue undocumented
+	SecurityOnboardingStatusVUnknownFutureValue SecurityOnboardingStatus = "unknownFutureValue"
+)
+
+var (
+	// SecurityOnboardingStatusPInsufficientInfo is a pointer to SecurityOnboardingStatusVInsufficientInfo
+	SecurityOnboardingStatusPInsufficientInfo = &_SecurityOnboardingStatusPInsufficientInfo
+	// SecurityOnboardingStatusPOnboarded is a pointer to SecurityOnboardingStatusVOnboarded
+	SecurityOnboardingStatusPOnboarded = &_SecurityOnboardingStatusPOnboarded
+	// SecurityOnboardingStatusPCanBeOnboarded is a pointer to SecurityOnboardingStatusVCanBeOnboarded
+	SecurityOnboardingStatusPCanBeOnboarded = &_SecurityOnboardingStatusPCanBeOnboarded
+	// SecurityOnboardingStatusPUnsupported is a pointer to SecurityOnboardingStatusVUnsupported
+	SecurityOnboardingStatusPUnsupported = &_SecurityOnboardingStatusPUnsupported
+	// SecurityOnboardingStatusPUnknownFutureValue is a pointer to SecurityOnboardingStatusVUnknownFutureValue
+	SecurityOnboardingStatusPUnknownFutureValue = &_SecurityOnboardingStatusPUnknownFutureValue
+)
+
+var (
+	_SecurityOnboardingStatusPInsufficientInfo   = SecurityOnboardingStatusVInsufficientInfo
+	_SecurityOnboardingStatusPOnboarded          = SecurityOnboardingStatusVOnboarded
+	_SecurityOnboardingStatusPCanBeOnboarded     = SecurityOnboardingStatusVCanBeOnboarded
+	_SecurityOnboardingStatusPUnsupported        = SecurityOnboardingStatusVUnsupported
+	_SecurityOnboardingStatusPUnknownFutureValue = SecurityOnboardingStatusVUnknownFutureValue
+)
+
+// SecurityPurgeAreas undocumented
+type SecurityPurgeAreas string
+
+const (
+	// SecurityPurgeAreasVMailboxes undocumented
+	SecurityPurgeAreasVMailboxes SecurityPurgeAreas = "mailboxes"
+	// SecurityPurgeAreasVTeamsMessages undocumented
+	SecurityPurgeAreasVTeamsMessages SecurityPurgeAreas = "teamsMessages"
+	// SecurityPurgeAreasVUnknownFutureValue undocumented
+	SecurityPurgeAreasVUnknownFutureValue SecurityPurgeAreas = "unknownFutureValue"
+)
+
+var (
+	// SecurityPurgeAreasPMailboxes is a pointer to SecurityPurgeAreasVMailboxes
+	SecurityPurgeAreasPMailboxes = &_SecurityPurgeAreasPMailboxes
+	// SecurityPurgeAreasPTeamsMessages is a pointer to SecurityPurgeAreasVTeamsMessages
+	SecurityPurgeAreasPTeamsMessages = &_SecurityPurgeAreasPTeamsMessages
+	// SecurityPurgeAreasPUnknownFutureValue is a pointer to SecurityPurgeAreasVUnknownFutureValue
+	SecurityPurgeAreasPUnknownFutureValue = &_SecurityPurgeAreasPUnknownFutureValue
+)
+
+var (
+	_SecurityPurgeAreasPMailboxes          = SecurityPurgeAreasVMailboxes
+	_SecurityPurgeAreasPTeamsMessages      = SecurityPurgeAreasVTeamsMessages
+	_SecurityPurgeAreasPUnknownFutureValue = SecurityPurgeAreasVUnknownFutureValue
+)
+
+// SecurityPurgeType undocumented
+type SecurityPurgeType string
+
+const (
+	// SecurityPurgeTypeVRecoverable undocumented
+	SecurityPurgeTypeVRecoverable SecurityPurgeType = "recoverable"
+	// SecurityPurgeTypeVPermanentlyDeleted undocumented
+	SecurityPurgeTypeVPermanentlyDeleted SecurityPurgeType = "permanentlyDeleted"
+	// SecurityPurgeTypeVUnknownFutureValue undocumented
+	SecurityPurgeTypeVUnknownFutureValue SecurityPurgeType = "unknownFutureValue"
+)
+
+var (
+	// SecurityPurgeTypePRecoverable is a pointer to SecurityPurgeTypeVRecoverable
+	SecurityPurgeTypePRecoverable = &_SecurityPurgeTypePRecoverable
+	// SecurityPurgeTypePPermanentlyDeleted is a pointer to SecurityPurgeTypeVPermanentlyDeleted
+	SecurityPurgeTypePPermanentlyDeleted = &_SecurityPurgeTypePPermanentlyDeleted
+	// SecurityPurgeTypePUnknownFutureValue is a pointer to SecurityPurgeTypeVUnknownFutureValue
+	SecurityPurgeTypePUnknownFutureValue = &_SecurityPurgeTypePUnknownFutureValue
+)
+
+var (
+	_SecurityPurgeTypePRecoverable        = SecurityPurgeTypeVRecoverable
+	_SecurityPurgeTypePPermanentlyDeleted = SecurityPurgeTypeVPermanentlyDeleted
+	_SecurityPurgeTypePUnknownFutureValue = SecurityPurgeTypeVUnknownFutureValue
+)
+
+// SecurityServiceSource undocumented
+type SecurityServiceSource string
+
+const (
+	// SecurityServiceSourceVUnknown undocumented
+	SecurityServiceSourceVUnknown SecurityServiceSource = "unknown"
+	// SecurityServiceSourceVMicrosoftDefenderForEndpoint undocumented
+	SecurityServiceSourceVMicrosoftDefenderForEndpoint SecurityServiceSource = "microsoftDefenderForEndpoint"
+	// SecurityServiceSourceVMicrosoftDefenderForIdentity undocumented
+	SecurityServiceSourceVMicrosoftDefenderForIdentity SecurityServiceSource = "microsoftDefenderForIdentity"
+	// SecurityServiceSourceVMicrosoftDefenderForCloudApps undocumented
+	SecurityServiceSourceVMicrosoftDefenderForCloudApps SecurityServiceSource = "microsoftDefenderForCloudApps"
+	// SecurityServiceSourceVMicrosoftDefenderForOffice365 undocumented
+	SecurityServiceSourceVMicrosoftDefenderForOffice365 SecurityServiceSource = "microsoftDefenderForOffice365"
+	// SecurityServiceSourceVMicrosoft365Defender undocumented
+	SecurityServiceSourceVMicrosoft365Defender SecurityServiceSource = "microsoft365Defender"
+	// SecurityServiceSourceVAzureAdIdentityProtection undocumented
+	SecurityServiceSourceVAzureAdIdentityProtection SecurityServiceSource = "azureAdIdentityProtection"
+	// SecurityServiceSourceVMicrosoftAppGovernance undocumented
+	SecurityServiceSourceVMicrosoftAppGovernance SecurityServiceSource = "microsoftAppGovernance"
+	// SecurityServiceSourceVDataLossPrevention undocumented
+	SecurityServiceSourceVDataLossPrevention SecurityServiceSource = "dataLossPrevention"
+	// SecurityServiceSourceVUnknownFutureValue undocumented
+	SecurityServiceSourceVUnknownFutureValue SecurityServiceSource = "unknownFutureValue"
+)
+
+var (
+	// SecurityServiceSourcePUnknown is a pointer to SecurityServiceSourceVUnknown
+	SecurityServiceSourcePUnknown = &_SecurityServiceSourcePUnknown
+	// SecurityServiceSourcePMicrosoftDefenderForEndpoint is a pointer to SecurityServiceSourceVMicrosoftDefenderForEndpoint
+	SecurityServiceSourcePMicrosoftDefenderForEndpoint = &_SecurityServiceSourcePMicrosoftDefenderForEndpoint
+	// SecurityServiceSourcePMicrosoftDefenderForIdentity is a pointer to SecurityServiceSourceVMicrosoftDefenderForIdentity
+	SecurityServiceSourcePMicrosoftDefenderForIdentity = &_SecurityServiceSourcePMicrosoftDefenderForIdentity
+	// SecurityServiceSourcePMicrosoftDefenderForCloudApps is a pointer to SecurityServiceSourceVMicrosoftDefenderForCloudApps
+	SecurityServiceSourcePMicrosoftDefenderForCloudApps = &_SecurityServiceSourcePMicrosoftDefenderForCloudApps
+	// SecurityServiceSourcePMicrosoftDefenderForOffice365 is a pointer to SecurityServiceSourceVMicrosoftDefenderForOffice365
+	SecurityServiceSourcePMicrosoftDefenderForOffice365 = &_SecurityServiceSourcePMicrosoftDefenderForOffice365
+	// SecurityServiceSourcePMicrosoft365Defender is a pointer to SecurityServiceSourceVMicrosoft365Defender
+	SecurityServiceSourcePMicrosoft365Defender = &_SecurityServiceSourcePMicrosoft365Defender
+	// SecurityServiceSourcePAzureAdIdentityProtection is a pointer to SecurityServiceSourceVAzureAdIdentityProtection
+	SecurityServiceSourcePAzureAdIdentityProtection = &_SecurityServiceSourcePAzureAdIdentityProtection
+	// SecurityServiceSourcePMicrosoftAppGovernance is a pointer to SecurityServiceSourceVMicrosoftAppGovernance
+	SecurityServiceSourcePMicrosoftAppGovernance = &_SecurityServiceSourcePMicrosoftAppGovernance
+	// SecurityServiceSourcePDataLossPrevention is a pointer to SecurityServiceSourceVDataLossPrevention
+	SecurityServiceSourcePDataLossPrevention = &_SecurityServiceSourcePDataLossPrevention
+	// SecurityServiceSourcePUnknownFutureValue is a pointer to SecurityServiceSourceVUnknownFutureValue
+	SecurityServiceSourcePUnknownFutureValue = &_SecurityServiceSourcePUnknownFutureValue
+)
+
+var (
+	_SecurityServiceSourcePUnknown                       = SecurityServiceSourceVUnknown
+	_SecurityServiceSourcePMicrosoftDefenderForEndpoint  = SecurityServiceSourceVMicrosoftDefenderForEndpoint
+	_SecurityServiceSourcePMicrosoftDefenderForIdentity  = SecurityServiceSourceVMicrosoftDefenderForIdentity
+	_SecurityServiceSourcePMicrosoftDefenderForCloudApps = SecurityServiceSourceVMicrosoftDefenderForCloudApps
+	_SecurityServiceSourcePMicrosoftDefenderForOffice365 = SecurityServiceSourceVMicrosoftDefenderForOffice365
+	_SecurityServiceSourcePMicrosoft365Defender          = SecurityServiceSourceVMicrosoft365Defender
+	_SecurityServiceSourcePAzureAdIdentityProtection     = SecurityServiceSourceVAzureAdIdentityProtection
+	_SecurityServiceSourcePMicrosoftAppGovernance        = SecurityServiceSourceVMicrosoftAppGovernance
+	_SecurityServiceSourcePDataLossPrevention            = SecurityServiceSourceVDataLossPrevention
+	_SecurityServiceSourcePUnknownFutureValue            = SecurityServiceSourceVUnknownFutureValue
+)
+
+// SecuritySourceType undocumented
+type SecuritySourceType string
+
+const (
+	// SecuritySourceTypeVMailbox undocumented
+	SecuritySourceTypeVMailbox SecuritySourceType = "mailbox"
+	// SecuritySourceTypeVSite undocumented
+	SecuritySourceTypeVSite SecuritySourceType = "site"
+	// SecuritySourceTypeVUnknownFutureValue undocumented
+	SecuritySourceTypeVUnknownFutureValue SecuritySourceType = "unknownFutureValue"
+)
+
+var (
+	// SecuritySourceTypePMailbox is a pointer to SecuritySourceTypeVMailbox
+	SecuritySourceTypePMailbox = &_SecuritySourceTypePMailbox
+	// SecuritySourceTypePSite is a pointer to SecuritySourceTypeVSite
+	SecuritySourceTypePSite = &_SecuritySourceTypePSite
+	// SecuritySourceTypePUnknownFutureValue is a pointer to SecuritySourceTypeVUnknownFutureValue
+	SecuritySourceTypePUnknownFutureValue = &_SecuritySourceTypePUnknownFutureValue
+)
+
+var (
+	_SecuritySourceTypePMailbox            = SecuritySourceTypeVMailbox
+	_SecuritySourceTypePSite               = SecuritySourceTypeVSite
+	_SecuritySourceTypePUnknownFutureValue = SecuritySourceTypeVUnknownFutureValue
+)
+
+// SecurityVMCloudProvider undocumented
+type SecurityVMCloudProvider string
+
+const (
+	// SecurityVMCloudProviderVUnknown undocumented
+	SecurityVMCloudProviderVUnknown SecurityVMCloudProvider = "unknown"
+	// SecurityVMCloudProviderVAzure undocumented
+	SecurityVMCloudProviderVAzure SecurityVMCloudProvider = "azure"
+	// SecurityVMCloudProviderVUnknownFutureValue undocumented
+	SecurityVMCloudProviderVUnknownFutureValue SecurityVMCloudProvider = "unknownFutureValue"
+)
+
+var (
+	// SecurityVMCloudProviderPUnknown is a pointer to SecurityVMCloudProviderVUnknown
+	SecurityVMCloudProviderPUnknown = &_SecurityVMCloudProviderPUnknown
+	// SecurityVMCloudProviderPAzure is a pointer to SecurityVMCloudProviderVAzure
+	SecurityVMCloudProviderPAzure = &_SecurityVMCloudProviderPAzure
+	// SecurityVMCloudProviderPUnknownFutureValue is a pointer to SecurityVMCloudProviderVUnknownFutureValue
+	SecurityVMCloudProviderPUnknownFutureValue = &_SecurityVMCloudProviderPUnknownFutureValue
+)
+
+var (
+	_SecurityVMCloudProviderPUnknown            = SecurityVMCloudProviderVUnknown
+	_SecurityVMCloudProviderPAzure              = SecurityVMCloudProviderVAzure
+	_SecurityVMCloudProviderPUnknownFutureValue = SecurityVMCloudProviderVUnknownFutureValue
+)

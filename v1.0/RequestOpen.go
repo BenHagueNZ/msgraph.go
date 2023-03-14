@@ -37,6 +37,39 @@ func (r *OpenShiftRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// OpenShiftChangeRequestRequestBuilder is request builder for OpenShiftChangeRequest
+type OpenShiftChangeRequestRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns OpenShiftChangeRequestRequest
+func (b *OpenShiftChangeRequestRequestBuilder) Request() *OpenShiftChangeRequestRequest {
+	return &OpenShiftChangeRequestRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// OpenShiftChangeRequestRequest is request for OpenShiftChangeRequest
+type OpenShiftChangeRequestRequest struct{ BaseRequest }
+
+// Get performs GET request for OpenShiftChangeRequest
+func (r *OpenShiftChangeRequestRequest) Get(ctx context.Context) (resObj *OpenShiftChangeRequest, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for OpenShiftChangeRequest
+func (r *OpenShiftChangeRequestRequest) Update(ctx context.Context, reqObj *OpenShiftChangeRequest) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for OpenShiftChangeRequest
+func (r *OpenShiftChangeRequestRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // OpenShiftChangeRequestObjectRequestBuilder is request builder for OpenShiftChangeRequestObject
 type OpenShiftChangeRequestObjectRequestBuilder struct{ BaseRequestBuilder }
 

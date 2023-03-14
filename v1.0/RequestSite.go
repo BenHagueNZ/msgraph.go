@@ -82,7 +82,7 @@ type SiteCollectionAddRequestBuilder struct{ BaseRequestBuilder }
 // Add action undocumented
 func (b *GroupSitesCollectionRequestBuilder) Add(reqObj *SiteCollectionAddRequestParameter) *SiteCollectionAddRequestBuilder {
 	bb := &SiteCollectionAddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/add"
+	bb.BaseRequestBuilder.baseURL += "/Add"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -90,7 +90,7 @@ func (b *GroupSitesCollectionRequestBuilder) Add(reqObj *SiteCollectionAddReques
 // Add action undocumented
 func (b *SiteSitesCollectionRequestBuilder) Add(reqObj *SiteCollectionAddRequestParameter) *SiteCollectionAddRequestBuilder {
 	bb := &SiteCollectionAddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/add"
+	bb.BaseRequestBuilder.baseURL += "/Add"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -98,7 +98,7 @@ func (b *SiteSitesCollectionRequestBuilder) Add(reqObj *SiteCollectionAddRequest
 // Add action undocumented
 func (b *UserFollowedSitesCollectionRequestBuilder) Add(reqObj *SiteCollectionAddRequestParameter) *SiteCollectionAddRequestBuilder {
 	bb := &SiteCollectionAddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/add"
+	bb.BaseRequestBuilder.baseURL += "/Add"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -179,7 +179,7 @@ type SiteCollectionRemoveRequestBuilder struct{ BaseRequestBuilder }
 // Remove action undocumented
 func (b *GroupSitesCollectionRequestBuilder) Remove(reqObj *SiteCollectionRemoveRequestParameter) *SiteCollectionRemoveRequestBuilder {
 	bb := &SiteCollectionRemoveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/remove"
+	bb.BaseRequestBuilder.baseURL += "/Remove"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -187,7 +187,7 @@ func (b *GroupSitesCollectionRequestBuilder) Remove(reqObj *SiteCollectionRemove
 // Remove action undocumented
 func (b *SiteSitesCollectionRequestBuilder) Remove(reqObj *SiteCollectionRemoveRequestParameter) *SiteCollectionRemoveRequestBuilder {
 	bb := &SiteCollectionRemoveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/remove"
+	bb.BaseRequestBuilder.baseURL += "/Remove"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -195,7 +195,7 @@ func (b *SiteSitesCollectionRequestBuilder) Remove(reqObj *SiteCollectionRemoveR
 // Remove action undocumented
 func (b *UserFollowedSitesCollectionRequestBuilder) Remove(reqObj *SiteCollectionRemoveRequestParameter) *SiteCollectionRemoveRequestBuilder {
 	bb := &SiteCollectionRemoveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/remove"
+	bb.BaseRequestBuilder.baseURL += "/Remove"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -269,4 +269,37 @@ func (r *SiteCollectionRemoveRequest) PostN(ctx context.Context, n int) ([]Site,
 
 func (r *SiteCollectionRemoveRequest) Post(ctx context.Context) ([]Site, error) {
 	return r.Paging(ctx, "POST", "", r.requestObject, 0)
+}
+
+// SiteRequestBuilder is request builder for Site
+type SiteRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SiteRequest
+func (b *SiteRequestBuilder) Request() *SiteRequest {
+	return &SiteRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SiteRequest is request for Site
+type SiteRequest struct{ BaseRequest }
+
+// Get performs GET request for Site
+func (r *SiteRequest) Get(ctx context.Context) (resObj *Site, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for Site
+func (r *SiteRequest) Update(ctx context.Context, reqObj *Site) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for Site
+func (r *SiteRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

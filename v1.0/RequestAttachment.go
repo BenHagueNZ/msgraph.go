@@ -174,7 +174,7 @@ type AttachmentCollectionCreateUploadSessionRequestBuilder struct{ BaseRequestBu
 // CreateUploadSession action undocumented
 func (b *EventAttachmentsCollectionRequestBuilder) CreateUploadSession(reqObj *AttachmentCollectionCreateUploadSessionRequestParameter) *AttachmentCollectionCreateUploadSessionRequestBuilder {
 	bb := &AttachmentCollectionCreateUploadSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/createUploadSession"
+	bb.BaseRequestBuilder.baseURL += "/CreateUploadSession"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -182,7 +182,7 @@ func (b *EventAttachmentsCollectionRequestBuilder) CreateUploadSession(reqObj *A
 // CreateUploadSession action undocumented
 func (b *MessageAttachmentsCollectionRequestBuilder) CreateUploadSession(reqObj *AttachmentCollectionCreateUploadSessionRequestParameter) *AttachmentCollectionCreateUploadSessionRequestBuilder {
 	bb := &AttachmentCollectionCreateUploadSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/createUploadSession"
+	bb.BaseRequestBuilder.baseURL += "/CreateUploadSession"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -190,7 +190,7 @@ func (b *MessageAttachmentsCollectionRequestBuilder) CreateUploadSession(reqObj 
 // CreateUploadSession action undocumented
 func (b *PostAttachmentsCollectionRequestBuilder) CreateUploadSession(reqObj *AttachmentCollectionCreateUploadSessionRequestParameter) *AttachmentCollectionCreateUploadSessionRequestBuilder {
 	bb := &AttachmentCollectionCreateUploadSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/createUploadSession"
+	bb.BaseRequestBuilder.baseURL += "/CreateUploadSession"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -213,7 +213,7 @@ type AttachmentBaseCollectionCreateUploadSessionRequestBuilder struct{ BaseReque
 // CreateUploadSession action undocumented
 func (b *TodoTaskAttachmentsCollectionRequestBuilder) CreateUploadSession(reqObj *AttachmentBaseCollectionCreateUploadSessionRequestParameter) *AttachmentBaseCollectionCreateUploadSessionRequestBuilder {
 	bb := &AttachmentBaseCollectionCreateUploadSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/createUploadSession"
+	bb.BaseRequestBuilder.baseURL += "/CreateUploadSession"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }

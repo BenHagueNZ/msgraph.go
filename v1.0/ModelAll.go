@@ -2,13 +2,13 @@
 
 package msgraph
 
-// AllDevicesAssignmentTarget Represents an assignment to all managed devices in the tenant.
+// AllDevicesAssignmentTarget undocumented
 type AllDevicesAssignmentTarget struct {
 	// DeviceAndAppManagementAssignmentTarget is the base model of AllDevicesAssignmentTarget
 	DeviceAndAppManagementAssignmentTarget
 }
 
-// AllLicensedUsersAssignmentTarget Represents an assignment to all licensed users in the tenant.
+// AllLicensedUsersAssignmentTarget undocumented
 type AllLicensedUsersAssignmentTarget struct {
 	// DeviceAndAppManagementAssignmentTarget is the base model of AllLicensedUsersAssignmentTarget
 	DeviceAndAppManagementAssignmentTarget

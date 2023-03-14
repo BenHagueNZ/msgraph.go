@@ -4,23 +4,23 @@ package msgraph
 
 import "time"
 
-// ImportedWindowsAutopilotDeviceIdentity Imported windows autopilot devices.
+// ImportedWindowsAutopilotDeviceIdentity undocumented
 type ImportedWindowsAutopilotDeviceIdentity struct {
 	// Entity is the base model of ImportedWindowsAutopilotDeviceIdentity
 	Entity
-	// AssignedUserPrincipalName UPN of the user the device will be assigned
+	// AssignedUserPrincipalName undocumented
 	AssignedUserPrincipalName *string `json:"assignedUserPrincipalName,omitempty"`
-	// GroupTag Group Tag of the Windows autopilot device.
+	// GroupTag undocumented
 	GroupTag *string `json:"groupTag,omitempty"`
-	// HardwareIdentifier Hardware Blob of the Windows autopilot device.
+	// HardwareIdentifier undocumented
 	HardwareIdentifier *Binary `json:"hardwareIdentifier,omitempty"`
-	// ImportID The Import Id of the Windows autopilot device.
+	// ImportID undocumented
 	ImportID *string `json:"importId,omitempty"`
-	// ProductKey Product Key of the Windows autopilot device.
+	// ProductKey undocumented
 	ProductKey *string `json:"productKey,omitempty"`
-	// SerialNumber Serial number of the Windows autopilot device.
+	// SerialNumber undocumented
 	SerialNumber *string `json:"serialNumber,omitempty"`
-	// State Current state of the imported device.
+	// State undocumented
 	State *ImportedWindowsAutopilotDeviceIdentityState `json:"state,omitempty"`
 }
 
@@ -28,23 +28,23 @@ type ImportedWindowsAutopilotDeviceIdentity struct {
 type ImportedWindowsAutopilotDeviceIdentityState struct {
 	// Object is the base model of ImportedWindowsAutopilotDeviceIdentityState
 	Object
-	// DeviceErrorCode Device error code reported by Device Directory Service(DDS).
+	// DeviceErrorCode undocumented
 	DeviceErrorCode *int `json:"deviceErrorCode,omitempty"`
-	// DeviceErrorName Device error name reported by Device Directory Service(DDS).
+	// DeviceErrorName undocumented
 	DeviceErrorName *string `json:"deviceErrorName,omitempty"`
-	// DeviceImportStatus Device status reported by Device Directory Service(DDS).
+	// DeviceImportStatus undocumented
 	DeviceImportStatus *ImportedWindowsAutopilotDeviceIdentityImportStatus `json:"deviceImportStatus,omitempty"`
-	// DeviceRegistrationID Device Registration ID for successfully added device reported by Device Directory Service(DDS).
+	// DeviceRegistrationID undocumented
 	DeviceRegistrationID *string `json:"deviceRegistrationId,omitempty"`
 }
 
-// ImportedWindowsAutopilotDeviceIdentityUpload Import windows autopilot devices using upload.
+// ImportedWindowsAutopilotDeviceIdentityUpload undocumented
 type ImportedWindowsAutopilotDeviceIdentityUpload struct {
 	// Entity is the base model of ImportedWindowsAutopilotDeviceIdentityUpload
 	Entity
-	// CreatedDateTimeUtc DateTime when the entity is created.
+	// CreatedDateTimeUtc undocumented
 	CreatedDateTimeUtc *time.Time `json:"createdDateTimeUtc,omitempty"`
-	// Status Upload status.
+	// Status undocumented
 	Status *ImportedWindowsAutopilotDeviceIdentityUploadStatus `json:"status,omitempty"`
 	// DeviceIdentities undocumented
 	DeviceIdentities []ImportedWindowsAutopilotDeviceIdentity `json:"deviceIdentities,omitempty"`

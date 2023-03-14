@@ -4,17 +4,17 @@ package msgraph
 
 import "time"
 
-// RemoteAssistancePartner RemoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.
+// RemoteAssistancePartner undocumented
 type RemoteAssistancePartner struct {
 	// Entity is the base model of RemoteAssistancePartner
 	Entity
-	// DisplayName Display name of the partner.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// LastConnectionDateTime Timestamp of the last request sent to Intune by the TEM partner.
+	// LastConnectionDateTime undocumented
 	LastConnectionDateTime *time.Time `json:"lastConnectionDateTime,omitempty"`
-	// OnboardingStatus A friendly description of the current TeamViewer connector status
+	// OnboardingStatus undocumented
 	OnboardingStatus *RemoteAssistanceOnboardingStatus `json:"onboardingStatus,omitempty"`
-	// OnboardingURL URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
+	// OnboardingURL undocumented
 	OnboardingURL *string `json:"onboardingUrl,omitempty"`
 }
 
@@ -62,10 +62,10 @@ type RemoteItem struct {
 	WebURL *string `json:"webUrl,omitempty"`
 }
 
-// RemoteLockActionResult Lock action result with a pin to unlock
+// RemoteLockActionResult undocumented
 type RemoteLockActionResult struct {
 	// DeviceActionResult is the base model of RemoteLockActionResult
 	DeviceActionResult
-	// UnlockPin Pin to unlock the client
+	// UnlockPin undocumented
 	UnlockPin *string `json:"unlockPin,omitempty"`
 }

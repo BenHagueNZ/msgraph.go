@@ -12,9 +12,9 @@ type MediaConfig struct {
 type MediaContentRatingAustralia struct {
 	// Object is the base model of MediaContentRatingAustralia
 	Object
-	// MovieRating Movies rating selected for Australia
+	// MovieRating undocumented
 	MovieRating *RatingAustraliaMoviesType `json:"movieRating,omitempty"`
-	// TvRating TV rating selected for Australia
+	// TvRating undocumented
 	TvRating *RatingAustraliaTelevisionType `json:"tvRating,omitempty"`
 }
 
@@ -22,9 +22,9 @@ type MediaContentRatingAustralia struct {
 type MediaContentRatingCanada struct {
 	// Object is the base model of MediaContentRatingCanada
 	Object
-	// MovieRating Movies rating selected for Canada
+	// MovieRating undocumented
 	MovieRating *RatingCanadaMoviesType `json:"movieRating,omitempty"`
-	// TvRating TV rating selected for Canada
+	// TvRating undocumented
 	TvRating *RatingCanadaTelevisionType `json:"tvRating,omitempty"`
 }
 
@@ -32,9 +32,9 @@ type MediaContentRatingCanada struct {
 type MediaContentRatingFrance struct {
 	// Object is the base model of MediaContentRatingFrance
 	Object
-	// MovieRating Movies rating selected for France
+	// MovieRating undocumented
 	MovieRating *RatingFranceMoviesType `json:"movieRating,omitempty"`
-	// TvRating TV rating selected for France
+	// TvRating undocumented
 	TvRating *RatingFranceTelevisionType `json:"tvRating,omitempty"`
 }
 
@@ -42,9 +42,9 @@ type MediaContentRatingFrance struct {
 type MediaContentRatingGermany struct {
 	// Object is the base model of MediaContentRatingGermany
 	Object
-	// MovieRating Movies rating selected for Germany
+	// MovieRating undocumented
 	MovieRating *RatingGermanyMoviesType `json:"movieRating,omitempty"`
-	// TvRating TV rating selected for Germany
+	// TvRating undocumented
 	TvRating *RatingGermanyTelevisionType `json:"tvRating,omitempty"`
 }
 
@@ -52,9 +52,9 @@ type MediaContentRatingGermany struct {
 type MediaContentRatingIreland struct {
 	// Object is the base model of MediaContentRatingIreland
 	Object
-	// MovieRating Movies rating selected for Ireland
+	// MovieRating undocumented
 	MovieRating *RatingIrelandMoviesType `json:"movieRating,omitempty"`
-	// TvRating TV rating selected for Ireland
+	// TvRating undocumented
 	TvRating *RatingIrelandTelevisionType `json:"tvRating,omitempty"`
 }
 
@@ -62,9 +62,9 @@ type MediaContentRatingIreland struct {
 type MediaContentRatingJapan struct {
 	// Object is the base model of MediaContentRatingJapan
 	Object
-	// MovieRating Movies rating selected for Japan
+	// MovieRating undocumented
 	MovieRating *RatingJapanMoviesType `json:"movieRating,omitempty"`
-	// TvRating TV rating selected for Japan
+	// TvRating undocumented
 	TvRating *RatingJapanTelevisionType `json:"tvRating,omitempty"`
 }
 
@@ -72,9 +72,9 @@ type MediaContentRatingJapan struct {
 type MediaContentRatingNewZealand struct {
 	// Object is the base model of MediaContentRatingNewZealand
 	Object
-	// MovieRating Movies rating selected for New Zealand
+	// MovieRating undocumented
 	MovieRating *RatingNewZealandMoviesType `json:"movieRating,omitempty"`
-	// TvRating TV rating selected for New Zealand
+	// TvRating undocumented
 	TvRating *RatingNewZealandTelevisionType `json:"tvRating,omitempty"`
 }
 
@@ -82,9 +82,9 @@ type MediaContentRatingNewZealand struct {
 type MediaContentRatingUnitedKingdom struct {
 	// Object is the base model of MediaContentRatingUnitedKingdom
 	Object
-	// MovieRating Movies rating selected for United Kingdom
+	// MovieRating undocumented
 	MovieRating *RatingUnitedKingdomMoviesType `json:"movieRating,omitempty"`
-	// TvRating TV rating selected for United Kingdom
+	// TvRating undocumented
 	TvRating *RatingUnitedKingdomTelevisionType `json:"tvRating,omitempty"`
 }
 
@@ -92,9 +92,9 @@ type MediaContentRatingUnitedKingdom struct {
 type MediaContentRatingUnitedStates struct {
 	// Object is the base model of MediaContentRatingUnitedStates
 	Object
-	// MovieRating Movies rating selected for United States
+	// MovieRating undocumented
 	MovieRating *RatingUnitedStatesMoviesType `json:"movieRating,omitempty"`
-	// TvRating TV rating selected for United States
+	// TvRating undocumented
 	TvRating *RatingUnitedStatesTelevisionType `json:"tvRating,omitempty"`
 }
 

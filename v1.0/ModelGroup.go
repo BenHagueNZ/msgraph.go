@@ -140,11 +140,11 @@ type Group struct {
 	Team *Team `json:"team,omitempty"`
 }
 
-// GroupAssignmentTarget Represents an assignment to a group.
+// GroupAssignmentTarget undocumented
 type GroupAssignmentTarget struct {
 	// DeviceAndAppManagementAssignmentTarget is the base model of GroupAssignmentTarget
 	DeviceAndAppManagementAssignmentTarget
-	// GroupID The group Id that is the target of the assignment.
+	// GroupID undocumented
 	GroupID *string `json:"groupId,omitempty"`
 }
 

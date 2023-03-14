@@ -2,12 +2,12 @@
 
 package msgraph
 
-// ProxiedDomain Proxied Domain
+// ProxiedDomain undocumented
 type ProxiedDomain struct {
 	// Object is the base model of ProxiedDomain
 	Object
-	// IPAddressOrFQDN The IP address or FQDN
+	// IPAddressOrFQDN undocumented
 	IPAddressOrFQDN *string `json:"ipAddressOrFQDN,omitempty"`
-	// Proxy Proxy IP or FQDN
+	// Proxy undocumented
 	Proxy *string `json:"proxy,omitempty"`
 }

@@ -165,3 +165,447 @@ type CallTranscriptionInfo struct {
 	// State undocumented
 	State *CallTranscriptionState `json:"state,omitempty"`
 }
+
+// CallRecordsCallRecord undocumented
+type CallRecordsCallRecord struct {
+	// Entity is the base model of CallRecordsCallRecord
+	Entity
+	// EndDateTime undocumented
+	EndDateTime *time.Time `json:"endDateTime,omitempty"`
+	// JoinWebURL undocumented
+	JoinWebURL *string `json:"joinWebUrl,omitempty"`
+	// LastModifiedDateTime undocumented
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// Modalities undocumented
+	Modalities []CallRecordsModality `json:"modalities,omitempty"`
+	// Organizer undocumented
+	Organizer *IdentitySet `json:"organizer,omitempty"`
+	// Participants undocumented
+	Participants []IdentitySet `json:"participants,omitempty"`
+	// StartDateTime undocumented
+	StartDateTime *time.Time `json:"startDateTime,omitempty"`
+	// Type undocumented
+	Type *CallRecordsCallType `json:"type,omitempty"`
+	// Version undocumented
+	Version *int `json:"version,omitempty"`
+	// Sessions undocumented
+	Sessions []CallRecordsSession `json:"sessions,omitempty"`
+}
+
+// CallRecordsClientUserAgent undocumented
+type CallRecordsClientUserAgent struct {
+	// CallRecordsUserAgent is the base model of CallRecordsClientUserAgent
+	CallRecordsUserAgent
+	// AzureADAppID undocumented
+	AzureADAppID *string `json:"azureADAppId,omitempty"`
+	// CommunicationServiceID undocumented
+	CommunicationServiceID *string `json:"communicationServiceId,omitempty"`
+	// Platform undocumented
+	Platform *CallRecordsClientPlatform `json:"platform,omitempty"`
+	// ProductFamily undocumented
+	ProductFamily *CallRecordsProductFamily `json:"productFamily,omitempty"`
+}
+
+// CallRecordsDeviceInfo undocumented
+type CallRecordsDeviceInfo struct {
+	// Object is the base model of CallRecordsDeviceInfo
+	Object
+	// CaptureDeviceDriver undocumented
+	CaptureDeviceDriver *string `json:"captureDeviceDriver,omitempty"`
+	// CaptureDeviceName undocumented
+	CaptureDeviceName *string `json:"captureDeviceName,omitempty"`
+	// CaptureNotFunctioningEventRatio undocumented
+	CaptureNotFunctioningEventRatio *float64 `json:"captureNotFunctioningEventRatio,omitempty"`
+	// CPUInsufficentEventRatio undocumented
+	CPUInsufficentEventRatio *float64 `json:"cpuInsufficentEventRatio,omitempty"`
+	// DeviceClippingEventRatio undocumented
+	DeviceClippingEventRatio *float64 `json:"deviceClippingEventRatio,omitempty"`
+	// DeviceGlitchEventRatio undocumented
+	DeviceGlitchEventRatio *float64 `json:"deviceGlitchEventRatio,omitempty"`
+	// HowlingEventCount undocumented
+	HowlingEventCount *int `json:"howlingEventCount,omitempty"`
+	// InitialSignalLevelRootMeanSquare undocumented
+	InitialSignalLevelRootMeanSquare *float64 `json:"initialSignalLevelRootMeanSquare,omitempty"`
+	// LowSpeechLevelEventRatio undocumented
+	LowSpeechLevelEventRatio *float64 `json:"lowSpeechLevelEventRatio,omitempty"`
+	// LowSpeechToNoiseEventRatio undocumented
+	LowSpeechToNoiseEventRatio *float64 `json:"lowSpeechToNoiseEventRatio,omitempty"`
+	// MicGlitchRate undocumented
+	MicGlitchRate *float64 `json:"micGlitchRate,omitempty"`
+	// ReceivedNoiseLevel undocumented
+	ReceivedNoiseLevel *int `json:"receivedNoiseLevel,omitempty"`
+	// ReceivedSignalLevel undocumented
+	ReceivedSignalLevel *int `json:"receivedSignalLevel,omitempty"`
+	// RenderDeviceDriver undocumented
+	RenderDeviceDriver *string `json:"renderDeviceDriver,omitempty"`
+	// RenderDeviceName undocumented
+	RenderDeviceName *string `json:"renderDeviceName,omitempty"`
+	// RenderMuteEventRatio undocumented
+	RenderMuteEventRatio *float64 `json:"renderMuteEventRatio,omitempty"`
+	// RenderNotFunctioningEventRatio undocumented
+	RenderNotFunctioningEventRatio *float64 `json:"renderNotFunctioningEventRatio,omitempty"`
+	// RenderZeroVolumeEventRatio undocumented
+	RenderZeroVolumeEventRatio *float64 `json:"renderZeroVolumeEventRatio,omitempty"`
+	// SentNoiseLevel undocumented
+	SentNoiseLevel *int `json:"sentNoiseLevel,omitempty"`
+	// SentSignalLevel undocumented
+	SentSignalLevel *int `json:"sentSignalLevel,omitempty"`
+	// SpeakerGlitchRate undocumented
+	SpeakerGlitchRate *float64 `json:"speakerGlitchRate,omitempty"`
+}
+
+// CallRecordsDirectRoutingLogRow undocumented
+type CallRecordsDirectRoutingLogRow struct {
+	// Object is the base model of CallRecordsDirectRoutingLogRow
+	Object
+	// CalleeNumber undocumented
+	CalleeNumber *string `json:"calleeNumber,omitempty"`
+	// CallEndSubReason undocumented
+	CallEndSubReason *int `json:"callEndSubReason,omitempty"`
+	// CallerNumber undocumented
+	CallerNumber *string `json:"callerNumber,omitempty"`
+	// CallType undocumented
+	CallType *string `json:"callType,omitempty"`
+	// CorrelationID undocumented
+	CorrelationID *string `json:"correlationId,omitempty"`
+	// Duration undocumented
+	Duration *int `json:"duration,omitempty"`
+	// EndDateTime undocumented
+	EndDateTime *time.Time `json:"endDateTime,omitempty"`
+	// FailureDateTime undocumented
+	FailureDateTime *time.Time `json:"failureDateTime,omitempty"`
+	// FinalSipCode undocumented
+	FinalSipCode *int `json:"finalSipCode,omitempty"`
+	// FinalSipCodePhrase undocumented
+	FinalSipCodePhrase *string `json:"finalSipCodePhrase,omitempty"`
+	// ID undocumented
+	ID *string `json:"id,omitempty"`
+	// InviteDateTime undocumented
+	InviteDateTime *time.Time `json:"inviteDateTime,omitempty"`
+	// MediaBypassEnabled undocumented
+	MediaBypassEnabled *bool `json:"mediaBypassEnabled,omitempty"`
+	// MediaPathLocation undocumented
+	MediaPathLocation *string `json:"mediaPathLocation,omitempty"`
+	// SignalingLocation undocumented
+	SignalingLocation *string `json:"signalingLocation,omitempty"`
+	// StartDateTime undocumented
+	StartDateTime *time.Time `json:"startDateTime,omitempty"`
+	// SuccessfulCall undocumented
+	SuccessfulCall *bool `json:"successfulCall,omitempty"`
+	// TrunkFullyQualifiedDomainName undocumented
+	TrunkFullyQualifiedDomainName *string `json:"trunkFullyQualifiedDomainName,omitempty"`
+	// UserDisplayName undocumented
+	UserDisplayName *string `json:"userDisplayName,omitempty"`
+	// UserID undocumented
+	UserID *string `json:"userId,omitempty"`
+	// UserPrincipalName undocumented
+	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
+}
+
+// CallRecordsEndpoint undocumented
+type CallRecordsEndpoint struct {
+	// Object is the base model of CallRecordsEndpoint
+	Object
+	// UserAgent undocumented
+	UserAgent *CallRecordsUserAgent `json:"userAgent,omitempty"`
+}
+
+// CallRecordsFailureInfo undocumented
+type CallRecordsFailureInfo struct {
+	// Object is the base model of CallRecordsFailureInfo
+	Object
+	// Reason undocumented
+	Reason *string `json:"reason,omitempty"`
+	// Stage undocumented
+	Stage *CallRecordsFailureStage `json:"stage,omitempty"`
+}
+
+// CallRecordsFeedbackTokenSet undocumented
+type CallRecordsFeedbackTokenSet struct {
+	// Object is the base model of CallRecordsFeedbackTokenSet
+	Object
+}
+
+// CallRecordsMedia undocumented
+type CallRecordsMedia struct {
+	// Object is the base model of CallRecordsMedia
+	Object
+	// CalleeDevice undocumented
+	CalleeDevice *CallRecordsDeviceInfo `json:"calleeDevice,omitempty"`
+	// CalleeNetwork undocumented
+	CalleeNetwork *CallRecordsNetworkInfo `json:"calleeNetwork,omitempty"`
+	// CallerDevice undocumented
+	CallerDevice *CallRecordsDeviceInfo `json:"callerDevice,omitempty"`
+	// CallerNetwork undocumented
+	CallerNetwork *CallRecordsNetworkInfo `json:"callerNetwork,omitempty"`
+	// Label undocumented
+	Label *string `json:"label,omitempty"`
+	// Streams undocumented
+	Streams []CallRecordsMediaStream `json:"streams,omitempty"`
+}
+
+// CallRecordsMediaStream undocumented
+type CallRecordsMediaStream struct {
+	// Object is the base model of CallRecordsMediaStream
+	Object
+	// AudioCodec undocumented
+	AudioCodec *CallRecordsAudioCodec `json:"audioCodec,omitempty"`
+	// AverageAudioDegradation undocumented
+	AverageAudioDegradation *float64 `json:"averageAudioDegradation,omitempty"`
+	// AverageAudioNetworkJitter undocumented
+	AverageAudioNetworkJitter *Duration `json:"averageAudioNetworkJitter,omitempty"`
+	// AverageBandwidthEstimate undocumented
+	AverageBandwidthEstimate *int `json:"averageBandwidthEstimate,omitempty"`
+	// AverageJitter undocumented
+	AverageJitter *Duration `json:"averageJitter,omitempty"`
+	// AveragePacketLossRate undocumented
+	AveragePacketLossRate *float64 `json:"averagePacketLossRate,omitempty"`
+	// AverageRatioOfConcealedSamples undocumented
+	AverageRatioOfConcealedSamples *float64 `json:"averageRatioOfConcealedSamples,omitempty"`
+	// AverageReceivedFrameRate undocumented
+	AverageReceivedFrameRate *float64 `json:"averageReceivedFrameRate,omitempty"`
+	// AverageRoundTripTime undocumented
+	AverageRoundTripTime *Duration `json:"averageRoundTripTime,omitempty"`
+	// AverageVideoFrameLossPercentage undocumented
+	AverageVideoFrameLossPercentage *float64 `json:"averageVideoFrameLossPercentage,omitempty"`
+	// AverageVideoFrameRate undocumented
+	AverageVideoFrameRate *float64 `json:"averageVideoFrameRate,omitempty"`
+	// AverageVideoPacketLossRate undocumented
+	AverageVideoPacketLossRate *float64 `json:"averageVideoPacketLossRate,omitempty"`
+	// EndDateTime undocumented
+	EndDateTime *time.Time `json:"endDateTime,omitempty"`
+	// LowFrameRateRatio undocumented
+	LowFrameRateRatio *float64 `json:"lowFrameRateRatio,omitempty"`
+	// LowVideoProcessingCapabilityRatio undocumented
+	LowVideoProcessingCapabilityRatio *float64 `json:"lowVideoProcessingCapabilityRatio,omitempty"`
+	// MaxAudioNetworkJitter undocumented
+	MaxAudioNetworkJitter *Duration `json:"maxAudioNetworkJitter,omitempty"`
+	// MaxJitter undocumented
+	MaxJitter *Duration `json:"maxJitter,omitempty"`
+	// MaxPacketLossRate undocumented
+	MaxPacketLossRate *float64 `json:"maxPacketLossRate,omitempty"`
+	// MaxRatioOfConcealedSamples undocumented
+	MaxRatioOfConcealedSamples *float64 `json:"maxRatioOfConcealedSamples,omitempty"`
+	// MaxRoundTripTime undocumented
+	MaxRoundTripTime *Duration `json:"maxRoundTripTime,omitempty"`
+	// PacketUtilization undocumented
+	PacketUtilization *int `json:"packetUtilization,omitempty"`
+	// PostForwardErrorCorrectionPacketLossRate undocumented
+	PostForwardErrorCorrectionPacketLossRate *float64 `json:"postForwardErrorCorrectionPacketLossRate,omitempty"`
+	// StartDateTime undocumented
+	StartDateTime *time.Time `json:"startDateTime,omitempty"`
+	// StreamDirection undocumented
+	StreamDirection *CallRecordsMediaStreamDirection `json:"streamDirection,omitempty"`
+	// StreamID undocumented
+	StreamID *string `json:"streamId,omitempty"`
+	// VideoCodec undocumented
+	VideoCodec *CallRecordsVideoCodec `json:"videoCodec,omitempty"`
+	// WasMediaBypassed undocumented
+	WasMediaBypassed *bool `json:"wasMediaBypassed,omitempty"`
+}
+
+// CallRecordsNetworkInfo undocumented
+type CallRecordsNetworkInfo struct {
+	// Object is the base model of CallRecordsNetworkInfo
+	Object
+	// BandwidthLowEventRatio undocumented
+	BandwidthLowEventRatio *float64 `json:"bandwidthLowEventRatio,omitempty"`
+	// BasicServiceSetIdentifier undocumented
+	BasicServiceSetIdentifier *string `json:"basicServiceSetIdentifier,omitempty"`
+	// ConnectionType undocumented
+	ConnectionType *CallRecordsNetworkConnectionType `json:"connectionType,omitempty"`
+	// DelayEventRatio undocumented
+	DelayEventRatio *float64 `json:"delayEventRatio,omitempty"`
+	// DNSSuffix undocumented
+	DNSSuffix *string `json:"dnsSuffix,omitempty"`
+	// IPAddress undocumented
+	IPAddress *string `json:"ipAddress,omitempty"`
+	// LinkSpeed undocumented
+	LinkSpeed *int `json:"linkSpeed,omitempty"`
+	// MacAddress undocumented
+	MacAddress *string `json:"macAddress,omitempty"`
+	// NetworkTransportProtocol undocumented
+	NetworkTransportProtocol *CallRecordsNetworkTransportProtocol `json:"networkTransportProtocol,omitempty"`
+	// Port undocumented
+	Port *int `json:"port,omitempty"`
+	// ReceivedQualityEventRatio undocumented
+	ReceivedQualityEventRatio *float64 `json:"receivedQualityEventRatio,omitempty"`
+	// ReflexiveIPAddress undocumented
+	ReflexiveIPAddress *string `json:"reflexiveIPAddress,omitempty"`
+	// RelayIPAddress undocumented
+	RelayIPAddress *string `json:"relayIPAddress,omitempty"`
+	// RelayPort undocumented
+	RelayPort *int `json:"relayPort,omitempty"`
+	// SentQualityEventRatio undocumented
+	SentQualityEventRatio *float64 `json:"sentQualityEventRatio,omitempty"`
+	// Subnet undocumented
+	Subnet *string `json:"subnet,omitempty"`
+	// TraceRouteHops undocumented
+	TraceRouteHops []CallRecordsTraceRouteHop `json:"traceRouteHops,omitempty"`
+	// WiFiBand undocumented
+	WiFiBand *CallRecordsWiFiBand `json:"wifiBand,omitempty"`
+	// WiFiBatteryCharge undocumented
+	WiFiBatteryCharge *int `json:"wifiBatteryCharge,omitempty"`
+	// WiFiChannel undocumented
+	WiFiChannel *int `json:"wifiChannel,omitempty"`
+	// WiFiMicrosoftDriver undocumented
+	WiFiMicrosoftDriver *string `json:"wifiMicrosoftDriver,omitempty"`
+	// WiFiMicrosoftDriverVersion undocumented
+	WiFiMicrosoftDriverVersion *string `json:"wifiMicrosoftDriverVersion,omitempty"`
+	// WiFiRadioType undocumented
+	WiFiRadioType *CallRecordsWiFiRadioType `json:"wifiRadioType,omitempty"`
+	// WiFiSignalStrength undocumented
+	WiFiSignalStrength *int `json:"wifiSignalStrength,omitempty"`
+	// WiFiVendorDriver undocumented
+	WiFiVendorDriver *string `json:"wifiVendorDriver,omitempty"`
+	// WiFiVendorDriverVersion undocumented
+	WiFiVendorDriverVersion *string `json:"wifiVendorDriverVersion,omitempty"`
+}
+
+// CallRecordsParticipantEndpoint undocumented
+type CallRecordsParticipantEndpoint struct {
+	// CallRecordsEndpoint is the base model of CallRecordsParticipantEndpoint
+	CallRecordsEndpoint
+	// Feedback undocumented
+	Feedback *CallRecordsUserFeedback `json:"feedback,omitempty"`
+	// Identity undocumented
+	Identity *IdentitySet `json:"identity,omitempty"`
+}
+
+// CallRecordsPstnCallLogRow undocumented
+type CallRecordsPstnCallLogRow struct {
+	// Object is the base model of CallRecordsPstnCallLogRow
+	Object
+	// CallDurationSource undocumented
+	CallDurationSource *CallRecordsPstnCallDurationSource `json:"callDurationSource,omitempty"`
+	// CalleeNumber undocumented
+	CalleeNumber *string `json:"calleeNumber,omitempty"`
+	// CallerNumber undocumented
+	CallerNumber *string `json:"callerNumber,omitempty"`
+	// CallID undocumented
+	CallID *string `json:"callId,omitempty"`
+	// CallType undocumented
+	CallType *string `json:"callType,omitempty"`
+	// Charge undocumented
+	Charge *int `json:"charge,omitempty"`
+	// ConferenceID undocumented
+	ConferenceID *string `json:"conferenceId,omitempty"`
+	// ConnectionCharge undocumented
+	ConnectionCharge *int `json:"connectionCharge,omitempty"`
+	// Currency undocumented
+	Currency *string `json:"currency,omitempty"`
+	// DestinationContext undocumented
+	DestinationContext *string `json:"destinationContext,omitempty"`
+	// DestinationName undocumented
+	DestinationName *string `json:"destinationName,omitempty"`
+	// Duration undocumented
+	Duration *int `json:"duration,omitempty"`
+	// EndDateTime undocumented
+	EndDateTime *time.Time `json:"endDateTime,omitempty"`
+	// ID undocumented
+	ID *string `json:"id,omitempty"`
+	// InventoryType undocumented
+	InventoryType *string `json:"inventoryType,omitempty"`
+	// LicenseCapability undocumented
+	LicenseCapability *string `json:"licenseCapability,omitempty"`
+	// Operator undocumented
+	Operator *string `json:"operator,omitempty"`
+	// StartDateTime undocumented
+	StartDateTime *time.Time `json:"startDateTime,omitempty"`
+	// TenantCountryCode undocumented
+	TenantCountryCode *string `json:"tenantCountryCode,omitempty"`
+	// UsageCountryCode undocumented
+	UsageCountryCode *string `json:"usageCountryCode,omitempty"`
+	// UserDisplayName undocumented
+	UserDisplayName *string `json:"userDisplayName,omitempty"`
+	// UserID undocumented
+	UserID *string `json:"userId,omitempty"`
+	// UserPrincipalName undocumented
+	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
+}
+
+// CallRecordsSegment undocumented
+type CallRecordsSegment struct {
+	// Entity is the base model of CallRecordsSegment
+	Entity
+	// Callee undocumented
+	Callee *CallRecordsEndpoint `json:"callee,omitempty"`
+	// Caller undocumented
+	Caller *CallRecordsEndpoint `json:"caller,omitempty"`
+	// EndDateTime undocumented
+	EndDateTime *time.Time `json:"endDateTime,omitempty"`
+	// FailureInfo undocumented
+	FailureInfo *CallRecordsFailureInfo `json:"failureInfo,omitempty"`
+	// Media undocumented
+	Media []CallRecordsMedia `json:"media,omitempty"`
+	// StartDateTime undocumented
+	StartDateTime *time.Time `json:"startDateTime,omitempty"`
+}
+
+// CallRecordsServiceEndpoint undocumented
+type CallRecordsServiceEndpoint struct {
+	// CallRecordsEndpoint is the base model of CallRecordsServiceEndpoint
+	CallRecordsEndpoint
+}
+
+// CallRecordsServiceUserAgent undocumented
+type CallRecordsServiceUserAgent struct {
+	// CallRecordsUserAgent is the base model of CallRecordsServiceUserAgent
+	CallRecordsUserAgent
+	// Role undocumented
+	Role *CallRecordsServiceRole `json:"role,omitempty"`
+}
+
+// CallRecordsSession undocumented
+type CallRecordsSession struct {
+	// Entity is the base model of CallRecordsSession
+	Entity
+	// Callee undocumented
+	Callee *CallRecordsEndpoint `json:"callee,omitempty"`
+	// Caller undocumented
+	Caller *CallRecordsEndpoint `json:"caller,omitempty"`
+	// EndDateTime undocumented
+	EndDateTime *time.Time `json:"endDateTime,omitempty"`
+	// FailureInfo undocumented
+	FailureInfo *CallRecordsFailureInfo `json:"failureInfo,omitempty"`
+	// Modalities undocumented
+	Modalities []CallRecordsModality `json:"modalities,omitempty"`
+	// StartDateTime undocumented
+	StartDateTime *time.Time `json:"startDateTime,omitempty"`
+	// Segments undocumented
+	Segments []CallRecordsSegment `json:"segments,omitempty"`
+}
+
+// CallRecordsTraceRouteHop undocumented
+type CallRecordsTraceRouteHop struct {
+	// Object is the base model of CallRecordsTraceRouteHop
+	Object
+	// HopCount undocumented
+	HopCount *int `json:"hopCount,omitempty"`
+	// IPAddress undocumented
+	IPAddress *string `json:"ipAddress,omitempty"`
+	// RoundTripTime undocumented
+	RoundTripTime *Duration `json:"roundTripTime,omitempty"`
+}
+
+// CallRecordsUserAgent undocumented
+type CallRecordsUserAgent struct {
+	// Object is the base model of CallRecordsUserAgent
+	Object
+	// ApplicationVersion undocumented
+	ApplicationVersion *string `json:"applicationVersion,omitempty"`
+	// HeaderValue undocumented
+	HeaderValue *string `json:"headerValue,omitempty"`
+}
+
+// CallRecordsUserFeedback undocumented
+type CallRecordsUserFeedback struct {
+	// Object is the base model of CallRecordsUserFeedback
+	Object
+	// Rating undocumented
+	Rating *CallRecordsUserFeedbackRating `json:"rating,omitempty"`
+	// Text undocumented
+	Text *string `json:"text,omitempty"`
+	// Tokens undocumented
+	Tokens *CallRecordsFeedbackTokenSet `json:"tokens,omitempty"`
+}

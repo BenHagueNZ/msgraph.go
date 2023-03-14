@@ -12,29 +12,29 @@ type DefaultColumnValue struct {
 	Value *string `json:"value,omitempty"`
 }
 
-// DefaultManagedAppProtection Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
+// DefaultManagedAppProtection undocumented
 type DefaultManagedAppProtection struct {
 	// ManagedAppProtection is the base model of DefaultManagedAppProtection
 	ManagedAppProtection
-	// AppDataEncryptionType Type of encryption which should be used for data in a managed app. (iOS Only)
+	// AppDataEncryptionType undocumented
 	AppDataEncryptionType *ManagedAppDataEncryptionType `json:"appDataEncryptionType,omitempty"`
-	// CustomSettings A set of string key and string value pairs to be sent to the affected users, unalterned by this service
+	// CustomSettings undocumented
 	CustomSettings []KeyValuePair `json:"customSettings,omitempty"`
-	// DeployedAppCount Count of apps to which the current policy is deployed.
+	// DeployedAppCount undocumented
 	DeployedAppCount *int `json:"deployedAppCount,omitempty"`
-	// DisableAppEncryptionIfDeviceEncryptionIsEnabled When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
+	// DisableAppEncryptionIfDeviceEncryptionIsEnabled undocumented
 	DisableAppEncryptionIfDeviceEncryptionIsEnabled *bool `json:"disableAppEncryptionIfDeviceEncryptionIsEnabled,omitempty"`
-	// EncryptAppData Indicates whether managed-app data should be encrypted. (Android only)
+	// EncryptAppData undocumented
 	EncryptAppData *bool `json:"encryptAppData,omitempty"`
-	// FaceIDBlocked Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
+	// FaceIDBlocked undocumented
 	FaceIDBlocked *bool `json:"faceIdBlocked,omitempty"`
-	// MinimumRequiredPatchVersion Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
+	// MinimumRequiredPatchVersion undocumented
 	MinimumRequiredPatchVersion *string `json:"minimumRequiredPatchVersion,omitempty"`
-	// MinimumRequiredSdkVersion Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
+	// MinimumRequiredSdkVersion undocumented
 	MinimumRequiredSdkVersion *string `json:"minimumRequiredSdkVersion,omitempty"`
-	// MinimumWarningPatchVersion Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
+	// MinimumWarningPatchVersion undocumented
 	MinimumWarningPatchVersion *string `json:"minimumWarningPatchVersion,omitempty"`
-	// ScreenCaptureBlocked Indicates whether screen capture is blocked. (Android only)
+	// ScreenCaptureBlocked undocumented
 	ScreenCaptureBlocked *bool `json:"screenCaptureBlocked,omitempty"`
 	// Apps undocumented
 	Apps []ManagedMobileApp `json:"apps,omitempty"`

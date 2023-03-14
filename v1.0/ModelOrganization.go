@@ -54,7 +54,7 @@ type Organization struct {
 	TenantType *string `json:"tenantType,omitempty"`
 	// VerifiedDomains undocumented
 	VerifiedDomains []VerifiedDomain `json:"verifiedDomains,omitempty"`
-	// MobileDeviceManagementAuthority Mobile device management authority.
+	// MobileDeviceManagementAuthority undocumented
 	MobileDeviceManagementAuthority *MDMAuthority `json:"mobileDeviceManagementAuthority,omitempty"`
 	// Branding undocumented
 	Branding *OrganizationalBranding `json:"branding,omitempty"`

@@ -2,31 +2,31 @@
 
 package msgraph
 
-// RoleAssignment The Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
+// RoleAssignment undocumented
 type RoleAssignment struct {
 	// Entity is the base model of RoleAssignment
 	Entity
-	// Description Description of the Role Assignment.
+	// Description undocumented
 	Description *string `json:"description,omitempty"`
-	// DisplayName The display or friendly name of the role Assignment.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// ResourceScopes List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
+	// ResourceScopes undocumented
 	ResourceScopes []string `json:"resourceScopes,omitempty"`
 	// RoleDefinition undocumented
 	RoleDefinition *RoleDefinition `json:"roleDefinition,omitempty"`
 }
 
-// RoleDefinition The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.
+// RoleDefinition undocumented
 type RoleDefinition struct {
 	// Entity is the base model of RoleDefinition
 	Entity
-	// Description Description of the Role definition.
+	// Description undocumented
 	Description *string `json:"description,omitempty"`
-	// DisplayName Display Name of the Role definition.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// IsBuiltIn Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
+	// IsBuiltIn undocumented
 	IsBuiltIn *bool `json:"isBuiltIn,omitempty"`
-	// RolePermissions List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
+	// RolePermissions undocumented
 	RolePermissions []RolePermission `json:"rolePermissions,omitempty"`
 	// RoleAssignments undocumented
 	RoleAssignments []RoleAssignment `json:"roleAssignments,omitempty"`
@@ -42,10 +42,10 @@ type RoleManagement struct {
 	EntitlementManagement *RbacApplication `json:"entitlementManagement,omitempty"`
 }
 
-// RolePermission Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
+// RolePermission undocumented
 type RolePermission struct {
 	// Object is the base model of RolePermission
 	Object
-	// ResourceActions Resource Actions each containing a set of allowed and not allowed permissions.
+	// ResourceActions undocumented
 	ResourceActions []ResourceAction `json:"resourceActions,omitempty"`
 }

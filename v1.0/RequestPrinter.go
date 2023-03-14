@@ -273,7 +273,7 @@ type PrinterCollectionCreateRequestBuilder struct{ BaseRequestBuilder }
 // Create action undocumented
 func (b *PrintPrintersCollectionRequestBuilder) Create(reqObj *PrinterCollectionCreateRequestParameter) *PrinterCollectionCreateRequestBuilder {
 	bb := &PrinterCollectionCreateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/create"
+	bb.BaseRequestBuilder.baseURL += "/Create"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -287,27 +287,5 @@ func (b *PrinterCollectionCreateRequestBuilder) Request() *PrinterCollectionCrea
 }
 
 func (r *PrinterCollectionCreateRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type PrinterRestoreFactoryDefaultsRequestBuilder struct{ BaseRequestBuilder }
-
-// RestoreFactoryDefaults action undocumented
-func (b *PrinterRequestBuilder) RestoreFactoryDefaults(reqObj *PrinterRestoreFactoryDefaultsRequestParameter) *PrinterRestoreFactoryDefaultsRequestBuilder {
-	bb := &PrinterRestoreFactoryDefaultsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/restoreFactoryDefaults"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type PrinterRestoreFactoryDefaultsRequest struct{ BaseRequest }
-
-func (b *PrinterRestoreFactoryDefaultsRequestBuilder) Request() *PrinterRestoreFactoryDefaultsRequest {
-	return &PrinterRestoreFactoryDefaultsRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *PrinterRestoreFactoryDefaultsRequest) Post(ctx context.Context) error {
 	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }

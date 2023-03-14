@@ -2,16 +2,16 @@
 
 package msgraph
 
-// EditionUpgradeConfiguration Windows 10 Edition Upgrade configuration.
+// EditionUpgradeConfiguration undocumented
 type EditionUpgradeConfiguration struct {
 	// DeviceConfiguration is the base model of EditionUpgradeConfiguration
 	DeviceConfiguration
-	// License Edition Upgrade License File Content.
+	// License undocumented
 	License *string `json:"license,omitempty"`
-	// LicenseType Edition Upgrade License Type.
+	// LicenseType undocumented
 	LicenseType *EditionUpgradeLicenseType `json:"licenseType,omitempty"`
-	// ProductKey Edition Upgrade Product Key.
+	// ProductKey undocumented
 	ProductKey *string `json:"productKey,omitempty"`
-	// TargetEdition Edition Upgrade Target Edition.
+	// TargetEdition undocumented
 	TargetEdition *Windows10EditionType `json:"targetEdition,omitempty"`
 }

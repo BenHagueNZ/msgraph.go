@@ -4,74 +4,74 @@ package msgraph
 
 import "time"
 
-// OMASetting OMA Settings definition.
+// OMASetting undocumented
 type OMASetting struct {
 	// Object is the base model of OMASetting
 	Object
-	// Description Description.
+	// Description undocumented
 	Description *string `json:"description,omitempty"`
-	// DisplayName Display Name.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// OMAURI OMA.
+	// OMAURI undocumented
 	OMAURI *string `json:"omaUri,omitempty"`
 }
 
-// OMASettingBase64 OMA Settings Base64 definition.
+// OMASettingBase64 undocumented
 type OMASettingBase64 struct {
 	// OMASetting is the base model of OMASettingBase64
 	OMASetting
-	// FileName File name associated with the Value property (*.cer | *.crt | *.p7b | *.bin).
+	// FileName undocumented
 	FileName *string `json:"fileName,omitempty"`
-	// Value Value. (Base64 encoded string)
+	// Value undocumented
 	Value *string `json:"value,omitempty"`
 }
 
-// OMASettingBoolean OMA Settings Boolean definition.
+// OMASettingBoolean undocumented
 type OMASettingBoolean struct {
 	// OMASetting is the base model of OMASettingBoolean
 	OMASetting
-	// Value Value.
+	// Value undocumented
 	Value *bool `json:"value,omitempty"`
 }
 
-// OMASettingDateTime OMA Settings DateTime definition.
+// OMASettingDateTime undocumented
 type OMASettingDateTime struct {
 	// OMASetting is the base model of OMASettingDateTime
 	OMASetting
-	// Value Value.
+	// Value undocumented
 	Value *time.Time `json:"value,omitempty"`
 }
 
-// OMASettingFloatingPoint OMA Settings Floating Point definition.
+// OMASettingFloatingPoint undocumented
 type OMASettingFloatingPoint struct {
 	// OMASetting is the base model of OMASettingFloatingPoint
 	OMASetting
-	// Value Value.
+	// Value undocumented
 	Value *float64 `json:"value,omitempty"`
 }
 
-// OMASettingInteger OMA Settings Integer definition.
+// OMASettingInteger undocumented
 type OMASettingInteger struct {
 	// OMASetting is the base model of OMASettingInteger
 	OMASetting
-	// Value Value.
+	// Value undocumented
 	Value *int `json:"value,omitempty"`
 }
 
-// OMASettingString OMA Settings String definition.
+// OMASettingString undocumented
 type OMASettingString struct {
 	// OMASetting is the base model of OMASettingString
 	OMASetting
-	// Value Value.
+	// Value undocumented
 	Value *string `json:"value,omitempty"`
 }
 
-// OMASettingStringXML OMA Settings StringXML definition.
+// OMASettingStringXML undocumented
 type OMASettingStringXML struct {
 	// OMASetting is the base model of OMASettingStringXML
 	OMASetting
-	// FileName File name associated with the Value property (*.xml).
+	// FileName undocumented
 	FileName *string `json:"fileName,omitempty"`
-	// Value Value. (UTF8 encoded byte array)
+	// Value undocumented
 	Value *Binary `json:"value,omitempty"`
 }

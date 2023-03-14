@@ -2,6 +2,8 @@
 
 package msgraph
 
+import "time"
+
 // TermColumn undocumented
 type TermColumn struct {
 	// Object is the base model of TermColumn
@@ -11,7 +13,129 @@ type TermColumn struct {
 	// ShowFullyQualifiedName undocumented
 	ShowFullyQualifiedName *bool `json:"showFullyQualifiedName,omitempty"`
 	// ParentTerm undocumented
-	ParentTerm *Term `json:"parentTerm,omitempty"`
+	ParentTerm *TermStoreTerm `json:"parentTerm,omitempty"`
 	// TermSet undocumented
-	TermSet *Set `json:"termSet,omitempty"`
+	TermSet *TermStoreSet `json:"termSet,omitempty"`
+}
+
+// TermStoreGroup undocumented
+type TermStoreGroup struct {
+	// Entity is the base model of TermStoreGroup
+	Entity
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// DisplayName undocumented
+	DisplayName *string `json:"displayName,omitempty"`
+	// ParentSiteID undocumented
+	ParentSiteID *string `json:"parentSiteId,omitempty"`
+	// Scope undocumented
+	Scope *TermStoreTermGroupScope `json:"scope,omitempty"`
+	// Sets undocumented
+	Sets []TermStoreSet `json:"sets,omitempty"`
+}
+
+// TermStoreLocalizedDescription undocumented
+type TermStoreLocalizedDescription struct {
+	// Object is the base model of TermStoreLocalizedDescription
+	Object
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// LanguageTag undocumented
+	LanguageTag *string `json:"languageTag,omitempty"`
+}
+
+// TermStoreLocalizedLabel undocumented
+type TermStoreLocalizedLabel struct {
+	// Object is the base model of TermStoreLocalizedLabel
+	Object
+	// IsDefault undocumented
+	IsDefault *bool `json:"isDefault,omitempty"`
+	// LanguageTag undocumented
+	LanguageTag *string `json:"languageTag,omitempty"`
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
+}
+
+// TermStoreLocalizedName undocumented
+type TermStoreLocalizedName struct {
+	// Object is the base model of TermStoreLocalizedName
+	Object
+	// LanguageTag undocumented
+	LanguageTag *string `json:"languageTag,omitempty"`
+	// Name undocumented
+	Name *string `json:"name,omitempty"`
+}
+
+// TermStoreRelation undocumented
+type TermStoreRelation struct {
+	// Entity is the base model of TermStoreRelation
+	Entity
+	// Relationship undocumented
+	Relationship *TermStoreRelationType `json:"relationship,omitempty"`
+	// FromTerm undocumented
+	FromTerm *TermStoreTerm `json:"fromTerm,omitempty"`
+	// Set undocumented
+	Set *TermStoreSet `json:"set,omitempty"`
+	// ToTerm undocumented
+	ToTerm *TermStoreTerm `json:"toTerm,omitempty"`
+}
+
+// TermStoreSet undocumented
+type TermStoreSet struct {
+	// Entity is the base model of TermStoreSet
+	Entity
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// Description undocumented
+	Description *string `json:"description,omitempty"`
+	// LocalizedNames undocumented
+	LocalizedNames []TermStoreLocalizedName `json:"localizedNames,omitempty"`
+	// Properties undocumented
+	Properties []KeyValue `json:"properties,omitempty"`
+	// Children undocumented
+	Children []TermStoreTerm `json:"children,omitempty"`
+	// ParentGroup undocumented
+	ParentGroup *TermStoreGroup `json:"parentGroup,omitempty"`
+	// Relations undocumented
+	Relations []TermStoreRelation `json:"relations,omitempty"`
+	// Terms undocumented
+	Terms []TermStoreTerm `json:"terms,omitempty"`
+}
+
+// TermStoreStore undocumented
+type TermStoreStore struct {
+	// Entity is the base model of TermStoreStore
+	Entity
+	// DefaultLanguageTag undocumented
+	DefaultLanguageTag *string `json:"defaultLanguageTag,omitempty"`
+	// LanguageTags undocumented
+	LanguageTags []string `json:"languageTags,omitempty"`
+	// Groups undocumented
+	Groups []TermStoreGroup `json:"groups,omitempty"`
+	// Sets undocumented
+	Sets []TermStoreSet `json:"sets,omitempty"`
+}
+
+// TermStoreTerm undocumented
+type TermStoreTerm struct {
+	// Entity is the base model of TermStoreTerm
+	Entity
+	// CreatedDateTime undocumented
+	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
+	// Descriptions undocumented
+	Descriptions []TermStoreLocalizedDescription `json:"descriptions,omitempty"`
+	// Labels undocumented
+	Labels []TermStoreLocalizedLabel `json:"labels,omitempty"`
+	// LastModifiedDateTime undocumented
+	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+	// Properties undocumented
+	Properties []KeyValue `json:"properties,omitempty"`
+	// Children undocumented
+	Children []TermStoreTerm `json:"children,omitempty"`
+	// Relations undocumented
+	Relations []TermStoreRelation `json:"relations,omitempty"`
+	// Set undocumented
+	Set *TermStoreSet `json:"set,omitempty"`
 }

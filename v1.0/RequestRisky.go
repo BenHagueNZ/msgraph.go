@@ -141,7 +141,7 @@ type RiskyServicePrincipalCollectionConfirmCompromisedRequestBuilder struct{ Bas
 // ConfirmCompromised action undocumented
 func (b *IdentityProtectionRootRiskyServicePrincipalsCollectionRequestBuilder) ConfirmCompromised(reqObj *RiskyServicePrincipalCollectionConfirmCompromisedRequestParameter) *RiskyServicePrincipalCollectionConfirmCompromisedRequestBuilder {
 	bb := &RiskyServicePrincipalCollectionConfirmCompromisedRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/confirmCompromised"
+	bb.BaseRequestBuilder.baseURL += "/ConfirmCompromised"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -163,7 +163,7 @@ type RiskyServicePrincipalCollectionDismissRequestBuilder struct{ BaseRequestBui
 // Dismiss action undocumented
 func (b *IdentityProtectionRootRiskyServicePrincipalsCollectionRequestBuilder) Dismiss(reqObj *RiskyServicePrincipalCollectionDismissRequestParameter) *RiskyServicePrincipalCollectionDismissRequestBuilder {
 	bb := &RiskyServicePrincipalCollectionDismissRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/dismiss"
+	bb.BaseRequestBuilder.baseURL += "/Dismiss"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -185,7 +185,7 @@ type RiskyUserCollectionConfirmCompromisedRequestBuilder struct{ BaseRequestBuil
 // ConfirmCompromised action undocumented
 func (b *IdentityProtectionRootRiskyUsersCollectionRequestBuilder) ConfirmCompromised(reqObj *RiskyUserCollectionConfirmCompromisedRequestParameter) *RiskyUserCollectionConfirmCompromisedRequestBuilder {
 	bb := &RiskyUserCollectionConfirmCompromisedRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/confirmCompromised"
+	bb.BaseRequestBuilder.baseURL += "/ConfirmCompromised"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -207,7 +207,7 @@ type RiskyUserCollectionDismissRequestBuilder struct{ BaseRequestBuilder }
 // Dismiss action undocumented
 func (b *IdentityProtectionRootRiskyUsersCollectionRequestBuilder) Dismiss(reqObj *RiskyUserCollectionDismissRequestParameter) *RiskyUserCollectionDismissRequestBuilder {
 	bb := &RiskyUserCollectionDismissRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/dismiss"
+	bb.BaseRequestBuilder.baseURL += "/Dismiss"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }

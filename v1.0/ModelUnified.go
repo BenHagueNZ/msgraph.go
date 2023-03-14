@@ -90,8 +90,8 @@ type UnifiedRoleAssignmentScheduleInstance struct {
 
 // UnifiedRoleAssignmentScheduleRequestObject undocumented
 type UnifiedRoleAssignmentScheduleRequestObject struct {
-	// RequestObject is the base model of UnifiedRoleAssignmentScheduleRequestObject
-	RequestObject
+	// Request is the base model of UnifiedRoleAssignmentScheduleRequestObject
+	Request
 	// Action undocumented
 	Action *UnifiedRoleScheduleRequestActions `json:"action,omitempty"`
 	// AppScopeID undocumented
@@ -176,8 +176,8 @@ type UnifiedRoleEligibilityScheduleInstance struct {
 
 // UnifiedRoleEligibilityScheduleRequestObject undocumented
 type UnifiedRoleEligibilityScheduleRequestObject struct {
-	// RequestObject is the base model of UnifiedRoleEligibilityScheduleRequestObject
-	RequestObject
+	// Request is the base model of UnifiedRoleEligibilityScheduleRequestObject
+	Request
 	// Action undocumented
 	Action *UnifiedRoleScheduleRequestActions `json:"action,omitempty"`
 	// AppScopeID undocumented

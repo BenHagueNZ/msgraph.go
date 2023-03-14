@@ -13,13 +13,13 @@ type RbacApplication struct {
 	// RoleAssignmentScheduleInstances undocumented
 	RoleAssignmentScheduleInstances []UnifiedRoleAssignmentScheduleInstance `json:"roleAssignmentScheduleInstances,omitempty"`
 	// RoleAssignmentScheduleRequests undocumented
-	RoleAssignmentScheduleRequests []UnifiedRoleAssignmentScheduleRequestObject `json:"roleAssignmentScheduleRequests,omitempty"`
+	RoleAssignmentScheduleRequests []UnifiedRoleAssignmentScheduleRequest `json:"roleAssignmentScheduleRequests,omitempty"`
 	// RoleAssignmentSchedules undocumented
 	RoleAssignmentSchedules []UnifiedRoleAssignmentSchedule `json:"roleAssignmentSchedules,omitempty"`
 	// RoleEligibilityScheduleInstances undocumented
 	RoleEligibilityScheduleInstances []UnifiedRoleEligibilityScheduleInstance `json:"roleEligibilityScheduleInstances,omitempty"`
 	// RoleEligibilityScheduleRequests undocumented
-	RoleEligibilityScheduleRequests []UnifiedRoleEligibilityScheduleRequestObject `json:"roleEligibilityScheduleRequests,omitempty"`
+	RoleEligibilityScheduleRequests []UnifiedRoleEligibilityScheduleRequest `json:"roleEligibilityScheduleRequests,omitempty"`
 	// RoleEligibilitySchedules undocumented
 	RoleEligibilitySchedules []UnifiedRoleEligibilitySchedule `json:"roleEligibilitySchedules,omitempty"`
 }

@@ -2,28 +2,28 @@
 
 package msgraph
 
-// ConfigurationManagerClientEnabledFeatures configuration Manager client enabled features
+// ConfigurationManagerClientEnabledFeatures undocumented
 type ConfigurationManagerClientEnabledFeatures struct {
 	// Object is the base model of ConfigurationManagerClientEnabledFeatures
 	Object
-	// CompliancePolicy Whether compliance policy is managed by Intune
+	// CompliancePolicy undocumented
 	CompliancePolicy *bool `json:"compliancePolicy,omitempty"`
-	// DeviceConfiguration Whether device configuration is managed by Intune
+	// DeviceConfiguration undocumented
 	DeviceConfiguration *bool `json:"deviceConfiguration,omitempty"`
-	// Inventory Whether inventory is managed by Intune
+	// Inventory undocumented
 	Inventory *bool `json:"inventory,omitempty"`
-	// ModernApps Whether modern application is managed by Intune
+	// ModernApps undocumented
 	ModernApps *bool `json:"modernApps,omitempty"`
-	// ResourceAccess Whether resource access is managed by Intune
+	// ResourceAccess undocumented
 	ResourceAccess *bool `json:"resourceAccess,omitempty"`
-	// WindowsUpdateForBusiness Whether Windows Update for Business is managed by Intune
+	// WindowsUpdateForBusiness undocumented
 	WindowsUpdateForBusiness *bool `json:"windowsUpdateForBusiness,omitempty"`
 }
 
-// ConfigurationManagerCollectionAssignmentTarget Represents an assignment to a Configuration Manager Collection.
+// ConfigurationManagerCollectionAssignmentTarget undocumented
 type ConfigurationManagerCollectionAssignmentTarget struct {
 	// DeviceAndAppManagementAssignmentTarget is the base model of ConfigurationManagerCollectionAssignmentTarget
 	DeviceAndAppManagementAssignmentTarget
-	// CollectionID The collection Id that is the target of the assignment.
+	// CollectionID undocumented
 	CollectionID *string `json:"collectionId,omitempty"`
 }

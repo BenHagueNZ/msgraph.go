@@ -37,6 +37,105 @@ func (r *SecurityRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// SecurityAlertRequestBuilder is request builder for SecurityAlert
+type SecurityAlertRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityAlertRequest
+func (b *SecurityAlertRequestBuilder) Request() *SecurityAlertRequest {
+	return &SecurityAlertRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityAlertRequest is request for SecurityAlert
+type SecurityAlertRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityAlert
+func (r *SecurityAlertRequest) Get(ctx context.Context) (resObj *SecurityAlert, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityAlert
+func (r *SecurityAlertRequest) Update(ctx context.Context, reqObj *SecurityAlert) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityAlert
+func (r *SecurityAlertRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityCasesRootRequestBuilder is request builder for SecurityCasesRoot
+type SecurityCasesRootRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityCasesRootRequest
+func (b *SecurityCasesRootRequestBuilder) Request() *SecurityCasesRootRequest {
+	return &SecurityCasesRootRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityCasesRootRequest is request for SecurityCasesRoot
+type SecurityCasesRootRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityCasesRoot
+func (r *SecurityCasesRootRequest) Get(ctx context.Context) (resObj *SecurityCasesRoot, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityCasesRoot
+func (r *SecurityCasesRootRequest) Update(ctx context.Context, reqObj *SecurityCasesRoot) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityCasesRoot
+func (r *SecurityCasesRootRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityIncidentRequestBuilder is request builder for SecurityIncident
+type SecurityIncidentRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityIncidentRequest
+func (b *SecurityIncidentRequestBuilder) Request() *SecurityIncidentRequest {
+	return &SecurityIncidentRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityIncidentRequest is request for SecurityIncident
+type SecurityIncidentRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityIncident
+func (r *SecurityIncidentRequest) Get(ctx context.Context) (resObj *SecurityIncident, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityIncident
+func (r *SecurityIncidentRequest) Update(ctx context.Context, reqObj *SecurityIncident) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityIncident
+func (r *SecurityIncidentRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // SecurityReportsRootRequestBuilder is request builder for SecurityReportsRoot
 type SecurityReportsRootRequestBuilder struct{ BaseRequestBuilder }
 
@@ -134,4 +233,1956 @@ func (r *SecurityVendorInformationRequest) Update(ctx context.Context, reqObj *S
 // Delete performs DELETE request for SecurityVendorInformation
 func (r *SecurityVendorInformationRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityRequestBuilder is request builder for Security
+type SecurityRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityRequest
+func (b *SecurityRequestBuilder) Request() *SecurityRequest {
+	return &SecurityRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityRequest is request for Security
+type SecurityRequest struct{ BaseRequest }
+
+// Get performs GET request for Security
+func (r *SecurityRequest) Get(ctx context.Context) (resObj *Security, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for Security
+func (r *SecurityRequest) Update(ctx context.Context, reqObj *Security) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for Security
+func (r *SecurityRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityAlertRequestBuilder is request builder for SecurityAlert
+type SecurityAlertRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityAlertRequest
+func (b *SecurityAlertRequestBuilder) Request() *SecurityAlertRequest {
+	return &SecurityAlertRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityAlertRequest is request for SecurityAlert
+type SecurityAlertRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityAlert
+func (r *SecurityAlertRequest) Get(ctx context.Context) (resObj *SecurityAlert, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityAlert
+func (r *SecurityAlertRequest) Update(ctx context.Context, reqObj *SecurityAlert) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityAlert
+func (r *SecurityAlertRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityAlertCommentRequestBuilder is request builder for SecurityAlertComment
+type SecurityAlertCommentRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityAlertCommentRequest
+func (b *SecurityAlertCommentRequestBuilder) Request() *SecurityAlertCommentRequest {
+	return &SecurityAlertCommentRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityAlertCommentRequest is request for SecurityAlertComment
+type SecurityAlertCommentRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityAlertComment
+func (r *SecurityAlertCommentRequest) Get(ctx context.Context) (resObj *SecurityAlertComment, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityAlertComment
+func (r *SecurityAlertCommentRequest) Update(ctx context.Context, reqObj *SecurityAlertComment) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityAlertComment
+func (r *SecurityAlertCommentRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityAlertEvidenceRequestBuilder is request builder for SecurityAlertEvidence
+type SecurityAlertEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityAlertEvidenceRequest
+func (b *SecurityAlertEvidenceRequestBuilder) Request() *SecurityAlertEvidenceRequest {
+	return &SecurityAlertEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityAlertEvidenceRequest is request for SecurityAlertEvidence
+type SecurityAlertEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityAlertEvidence
+func (r *SecurityAlertEvidenceRequest) Get(ctx context.Context) (resObj *SecurityAlertEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityAlertEvidence
+func (r *SecurityAlertEvidenceRequest) Update(ctx context.Context, reqObj *SecurityAlertEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityAlertEvidence
+func (r *SecurityAlertEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityAnalyzedMessageEvidenceRequestBuilder is request builder for SecurityAnalyzedMessageEvidence
+type SecurityAnalyzedMessageEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityAnalyzedMessageEvidenceRequest
+func (b *SecurityAnalyzedMessageEvidenceRequestBuilder) Request() *SecurityAnalyzedMessageEvidenceRequest {
+	return &SecurityAnalyzedMessageEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityAnalyzedMessageEvidenceRequest is request for SecurityAnalyzedMessageEvidence
+type SecurityAnalyzedMessageEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityAnalyzedMessageEvidence
+func (r *SecurityAnalyzedMessageEvidenceRequest) Get(ctx context.Context) (resObj *SecurityAnalyzedMessageEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityAnalyzedMessageEvidence
+func (r *SecurityAnalyzedMessageEvidenceRequest) Update(ctx context.Context, reqObj *SecurityAnalyzedMessageEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityAnalyzedMessageEvidence
+func (r *SecurityAnalyzedMessageEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityCaseRequestBuilder is request builder for SecurityCase
+type SecurityCaseRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityCaseRequest
+func (b *SecurityCaseRequestBuilder) Request() *SecurityCaseRequest {
+	return &SecurityCaseRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityCaseRequest is request for SecurityCase
+type SecurityCaseRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityCase
+func (r *SecurityCaseRequest) Get(ctx context.Context) (resObj *SecurityCase, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityCase
+func (r *SecurityCaseRequest) Update(ctx context.Context, reqObj *SecurityCase) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityCase
+func (r *SecurityCaseRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityCaseOperationRequestBuilder is request builder for SecurityCaseOperation
+type SecurityCaseOperationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityCaseOperationRequest
+func (b *SecurityCaseOperationRequestBuilder) Request() *SecurityCaseOperationRequest {
+	return &SecurityCaseOperationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityCaseOperationRequest is request for SecurityCaseOperation
+type SecurityCaseOperationRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityCaseOperation
+func (r *SecurityCaseOperationRequest) Get(ctx context.Context) (resObj *SecurityCaseOperation, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityCaseOperation
+func (r *SecurityCaseOperationRequest) Update(ctx context.Context, reqObj *SecurityCaseOperation) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityCaseOperation
+func (r *SecurityCaseOperationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityCasesRootRequestBuilder is request builder for SecurityCasesRoot
+type SecurityCasesRootRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityCasesRootRequest
+func (b *SecurityCasesRootRequestBuilder) Request() *SecurityCasesRootRequest {
+	return &SecurityCasesRootRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityCasesRootRequest is request for SecurityCasesRoot
+type SecurityCasesRootRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityCasesRoot
+func (r *SecurityCasesRootRequest) Get(ctx context.Context) (resObj *SecurityCasesRoot, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityCasesRoot
+func (r *SecurityCasesRootRequest) Update(ctx context.Context, reqObj *SecurityCasesRoot) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityCasesRoot
+func (r *SecurityCasesRootRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityCloudApplicationEvidenceRequestBuilder is request builder for SecurityCloudApplicationEvidence
+type SecurityCloudApplicationEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityCloudApplicationEvidenceRequest
+func (b *SecurityCloudApplicationEvidenceRequestBuilder) Request() *SecurityCloudApplicationEvidenceRequest {
+	return &SecurityCloudApplicationEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityCloudApplicationEvidenceRequest is request for SecurityCloudApplicationEvidence
+type SecurityCloudApplicationEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityCloudApplicationEvidence
+func (r *SecurityCloudApplicationEvidenceRequest) Get(ctx context.Context) (resObj *SecurityCloudApplicationEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityCloudApplicationEvidence
+func (r *SecurityCloudApplicationEvidenceRequest) Update(ctx context.Context, reqObj *SecurityCloudApplicationEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityCloudApplicationEvidence
+func (r *SecurityCloudApplicationEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityDataSetRequestBuilder is request builder for SecurityDataSet
+type SecurityDataSetRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityDataSetRequest
+func (b *SecurityDataSetRequestBuilder) Request() *SecurityDataSetRequest {
+	return &SecurityDataSetRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityDataSetRequest is request for SecurityDataSet
+type SecurityDataSetRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityDataSet
+func (r *SecurityDataSetRequest) Get(ctx context.Context) (resObj *SecurityDataSet, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityDataSet
+func (r *SecurityDataSetRequest) Update(ctx context.Context, reqObj *SecurityDataSet) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityDataSet
+func (r *SecurityDataSetRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityDataSourceRequestBuilder is request builder for SecurityDataSource
+type SecurityDataSourceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityDataSourceRequest
+func (b *SecurityDataSourceRequestBuilder) Request() *SecurityDataSourceRequest {
+	return &SecurityDataSourceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityDataSourceRequest is request for SecurityDataSource
+type SecurityDataSourceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityDataSource
+func (r *SecurityDataSourceRequest) Get(ctx context.Context) (resObj *SecurityDataSource, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityDataSource
+func (r *SecurityDataSourceRequest) Update(ctx context.Context, reqObj *SecurityDataSource) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityDataSource
+func (r *SecurityDataSourceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityDataSourceContainerRequestBuilder is request builder for SecurityDataSourceContainer
+type SecurityDataSourceContainerRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityDataSourceContainerRequest
+func (b *SecurityDataSourceContainerRequestBuilder) Request() *SecurityDataSourceContainerRequest {
+	return &SecurityDataSourceContainerRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityDataSourceContainerRequest is request for SecurityDataSourceContainer
+type SecurityDataSourceContainerRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityDataSourceContainer
+func (r *SecurityDataSourceContainerRequest) Get(ctx context.Context) (resObj *SecurityDataSourceContainer, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityDataSourceContainer
+func (r *SecurityDataSourceContainerRequest) Update(ctx context.Context, reqObj *SecurityDataSourceContainer) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityDataSourceContainer
+func (r *SecurityDataSourceContainerRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityDeviceEvidenceRequestBuilder is request builder for SecurityDeviceEvidence
+type SecurityDeviceEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityDeviceEvidenceRequest
+func (b *SecurityDeviceEvidenceRequestBuilder) Request() *SecurityDeviceEvidenceRequest {
+	return &SecurityDeviceEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityDeviceEvidenceRequest is request for SecurityDeviceEvidence
+type SecurityDeviceEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityDeviceEvidence
+func (r *SecurityDeviceEvidenceRequest) Get(ctx context.Context) (resObj *SecurityDeviceEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityDeviceEvidence
+func (r *SecurityDeviceEvidenceRequest) Update(ctx context.Context, reqObj *SecurityDeviceEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityDeviceEvidence
+func (r *SecurityDeviceEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEdiscoveryAddToReviewSetOperationRequestBuilder is request builder for SecurityEdiscoveryAddToReviewSetOperation
+type SecurityEdiscoveryAddToReviewSetOperationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEdiscoveryAddToReviewSetOperationRequest
+func (b *SecurityEdiscoveryAddToReviewSetOperationRequestBuilder) Request() *SecurityEdiscoveryAddToReviewSetOperationRequest {
+	return &SecurityEdiscoveryAddToReviewSetOperationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEdiscoveryAddToReviewSetOperationRequest is request for SecurityEdiscoveryAddToReviewSetOperation
+type SecurityEdiscoveryAddToReviewSetOperationRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEdiscoveryAddToReviewSetOperation
+func (r *SecurityEdiscoveryAddToReviewSetOperationRequest) Get(ctx context.Context) (resObj *SecurityEdiscoveryAddToReviewSetOperation, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEdiscoveryAddToReviewSetOperation
+func (r *SecurityEdiscoveryAddToReviewSetOperationRequest) Update(ctx context.Context, reqObj *SecurityEdiscoveryAddToReviewSetOperation) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEdiscoveryAddToReviewSetOperation
+func (r *SecurityEdiscoveryAddToReviewSetOperationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEdiscoveryCaseRequestBuilder is request builder for SecurityEdiscoveryCase
+type SecurityEdiscoveryCaseRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEdiscoveryCaseRequest
+func (b *SecurityEdiscoveryCaseRequestBuilder) Request() *SecurityEdiscoveryCaseRequest {
+	return &SecurityEdiscoveryCaseRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEdiscoveryCaseRequest is request for SecurityEdiscoveryCase
+type SecurityEdiscoveryCaseRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEdiscoveryCase
+func (r *SecurityEdiscoveryCaseRequest) Get(ctx context.Context) (resObj *SecurityEdiscoveryCase, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEdiscoveryCase
+func (r *SecurityEdiscoveryCaseRequest) Update(ctx context.Context, reqObj *SecurityEdiscoveryCase) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEdiscoveryCase
+func (r *SecurityEdiscoveryCaseRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEdiscoveryCaseSettingsRequestBuilder is request builder for SecurityEdiscoveryCaseSettings
+type SecurityEdiscoveryCaseSettingsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEdiscoveryCaseSettingsRequest
+func (b *SecurityEdiscoveryCaseSettingsRequestBuilder) Request() *SecurityEdiscoveryCaseSettingsRequest {
+	return &SecurityEdiscoveryCaseSettingsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEdiscoveryCaseSettingsRequest is request for SecurityEdiscoveryCaseSettings
+type SecurityEdiscoveryCaseSettingsRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEdiscoveryCaseSettings
+func (r *SecurityEdiscoveryCaseSettingsRequest) Get(ctx context.Context) (resObj *SecurityEdiscoveryCaseSettings, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEdiscoveryCaseSettings
+func (r *SecurityEdiscoveryCaseSettingsRequest) Update(ctx context.Context, reqObj *SecurityEdiscoveryCaseSettings) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEdiscoveryCaseSettings
+func (r *SecurityEdiscoveryCaseSettingsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEdiscoveryCustodianRequestBuilder is request builder for SecurityEdiscoveryCustodian
+type SecurityEdiscoveryCustodianRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEdiscoveryCustodianRequest
+func (b *SecurityEdiscoveryCustodianRequestBuilder) Request() *SecurityEdiscoveryCustodianRequest {
+	return &SecurityEdiscoveryCustodianRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEdiscoveryCustodianRequest is request for SecurityEdiscoveryCustodian
+type SecurityEdiscoveryCustodianRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEdiscoveryCustodian
+func (r *SecurityEdiscoveryCustodianRequest) Get(ctx context.Context) (resObj *SecurityEdiscoveryCustodian, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEdiscoveryCustodian
+func (r *SecurityEdiscoveryCustodianRequest) Update(ctx context.Context, reqObj *SecurityEdiscoveryCustodian) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEdiscoveryCustodian
+func (r *SecurityEdiscoveryCustodianRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEdiscoveryEstimateOperationRequestBuilder is request builder for SecurityEdiscoveryEstimateOperation
+type SecurityEdiscoveryEstimateOperationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEdiscoveryEstimateOperationRequest
+func (b *SecurityEdiscoveryEstimateOperationRequestBuilder) Request() *SecurityEdiscoveryEstimateOperationRequest {
+	return &SecurityEdiscoveryEstimateOperationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEdiscoveryEstimateOperationRequest is request for SecurityEdiscoveryEstimateOperation
+type SecurityEdiscoveryEstimateOperationRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEdiscoveryEstimateOperation
+func (r *SecurityEdiscoveryEstimateOperationRequest) Get(ctx context.Context) (resObj *SecurityEdiscoveryEstimateOperation, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEdiscoveryEstimateOperation
+func (r *SecurityEdiscoveryEstimateOperationRequest) Update(ctx context.Context, reqObj *SecurityEdiscoveryEstimateOperation) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEdiscoveryEstimateOperation
+func (r *SecurityEdiscoveryEstimateOperationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEdiscoveryHoldOperationRequestBuilder is request builder for SecurityEdiscoveryHoldOperation
+type SecurityEdiscoveryHoldOperationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEdiscoveryHoldOperationRequest
+func (b *SecurityEdiscoveryHoldOperationRequestBuilder) Request() *SecurityEdiscoveryHoldOperationRequest {
+	return &SecurityEdiscoveryHoldOperationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEdiscoveryHoldOperationRequest is request for SecurityEdiscoveryHoldOperation
+type SecurityEdiscoveryHoldOperationRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEdiscoveryHoldOperation
+func (r *SecurityEdiscoveryHoldOperationRequest) Get(ctx context.Context) (resObj *SecurityEdiscoveryHoldOperation, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEdiscoveryHoldOperation
+func (r *SecurityEdiscoveryHoldOperationRequest) Update(ctx context.Context, reqObj *SecurityEdiscoveryHoldOperation) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEdiscoveryHoldOperation
+func (r *SecurityEdiscoveryHoldOperationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEdiscoveryIndexOperationRequestBuilder is request builder for SecurityEdiscoveryIndexOperation
+type SecurityEdiscoveryIndexOperationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEdiscoveryIndexOperationRequest
+func (b *SecurityEdiscoveryIndexOperationRequestBuilder) Request() *SecurityEdiscoveryIndexOperationRequest {
+	return &SecurityEdiscoveryIndexOperationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEdiscoveryIndexOperationRequest is request for SecurityEdiscoveryIndexOperation
+type SecurityEdiscoveryIndexOperationRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEdiscoveryIndexOperation
+func (r *SecurityEdiscoveryIndexOperationRequest) Get(ctx context.Context) (resObj *SecurityEdiscoveryIndexOperation, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEdiscoveryIndexOperation
+func (r *SecurityEdiscoveryIndexOperationRequest) Update(ctx context.Context, reqObj *SecurityEdiscoveryIndexOperation) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEdiscoveryIndexOperation
+func (r *SecurityEdiscoveryIndexOperationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEdiscoveryNoncustodialDataSourceRequestBuilder is request builder for SecurityEdiscoveryNoncustodialDataSource
+type SecurityEdiscoveryNoncustodialDataSourceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEdiscoveryNoncustodialDataSourceRequest
+func (b *SecurityEdiscoveryNoncustodialDataSourceRequestBuilder) Request() *SecurityEdiscoveryNoncustodialDataSourceRequest {
+	return &SecurityEdiscoveryNoncustodialDataSourceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEdiscoveryNoncustodialDataSourceRequest is request for SecurityEdiscoveryNoncustodialDataSource
+type SecurityEdiscoveryNoncustodialDataSourceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEdiscoveryNoncustodialDataSource
+func (r *SecurityEdiscoveryNoncustodialDataSourceRequest) Get(ctx context.Context) (resObj *SecurityEdiscoveryNoncustodialDataSource, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEdiscoveryNoncustodialDataSource
+func (r *SecurityEdiscoveryNoncustodialDataSourceRequest) Update(ctx context.Context, reqObj *SecurityEdiscoveryNoncustodialDataSource) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEdiscoveryNoncustodialDataSource
+func (r *SecurityEdiscoveryNoncustodialDataSourceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEdiscoveryPurgeDataOperationRequestBuilder is request builder for SecurityEdiscoveryPurgeDataOperation
+type SecurityEdiscoveryPurgeDataOperationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEdiscoveryPurgeDataOperationRequest
+func (b *SecurityEdiscoveryPurgeDataOperationRequestBuilder) Request() *SecurityEdiscoveryPurgeDataOperationRequest {
+	return &SecurityEdiscoveryPurgeDataOperationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEdiscoveryPurgeDataOperationRequest is request for SecurityEdiscoveryPurgeDataOperation
+type SecurityEdiscoveryPurgeDataOperationRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEdiscoveryPurgeDataOperation
+func (r *SecurityEdiscoveryPurgeDataOperationRequest) Get(ctx context.Context) (resObj *SecurityEdiscoveryPurgeDataOperation, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEdiscoveryPurgeDataOperation
+func (r *SecurityEdiscoveryPurgeDataOperationRequest) Update(ctx context.Context, reqObj *SecurityEdiscoveryPurgeDataOperation) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEdiscoveryPurgeDataOperation
+func (r *SecurityEdiscoveryPurgeDataOperationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEdiscoveryReviewSetRequestBuilder is request builder for SecurityEdiscoveryReviewSet
+type SecurityEdiscoveryReviewSetRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEdiscoveryReviewSetRequest
+func (b *SecurityEdiscoveryReviewSetRequestBuilder) Request() *SecurityEdiscoveryReviewSetRequest {
+	return &SecurityEdiscoveryReviewSetRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEdiscoveryReviewSetRequest is request for SecurityEdiscoveryReviewSet
+type SecurityEdiscoveryReviewSetRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEdiscoveryReviewSet
+func (r *SecurityEdiscoveryReviewSetRequest) Get(ctx context.Context) (resObj *SecurityEdiscoveryReviewSet, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEdiscoveryReviewSet
+func (r *SecurityEdiscoveryReviewSetRequest) Update(ctx context.Context, reqObj *SecurityEdiscoveryReviewSet) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEdiscoveryReviewSet
+func (r *SecurityEdiscoveryReviewSetRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEdiscoveryReviewSetQueryRequestBuilder is request builder for SecurityEdiscoveryReviewSetQuery
+type SecurityEdiscoveryReviewSetQueryRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEdiscoveryReviewSetQueryRequest
+func (b *SecurityEdiscoveryReviewSetQueryRequestBuilder) Request() *SecurityEdiscoveryReviewSetQueryRequest {
+	return &SecurityEdiscoveryReviewSetQueryRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEdiscoveryReviewSetQueryRequest is request for SecurityEdiscoveryReviewSetQuery
+type SecurityEdiscoveryReviewSetQueryRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEdiscoveryReviewSetQuery
+func (r *SecurityEdiscoveryReviewSetQueryRequest) Get(ctx context.Context) (resObj *SecurityEdiscoveryReviewSetQuery, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEdiscoveryReviewSetQuery
+func (r *SecurityEdiscoveryReviewSetQueryRequest) Update(ctx context.Context, reqObj *SecurityEdiscoveryReviewSetQuery) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEdiscoveryReviewSetQuery
+func (r *SecurityEdiscoveryReviewSetQueryRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEdiscoveryReviewTagRequestBuilder is request builder for SecurityEdiscoveryReviewTag
+type SecurityEdiscoveryReviewTagRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEdiscoveryReviewTagRequest
+func (b *SecurityEdiscoveryReviewTagRequestBuilder) Request() *SecurityEdiscoveryReviewTagRequest {
+	return &SecurityEdiscoveryReviewTagRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEdiscoveryReviewTagRequest is request for SecurityEdiscoveryReviewTag
+type SecurityEdiscoveryReviewTagRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEdiscoveryReviewTag
+func (r *SecurityEdiscoveryReviewTagRequest) Get(ctx context.Context) (resObj *SecurityEdiscoveryReviewTag, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEdiscoveryReviewTag
+func (r *SecurityEdiscoveryReviewTagRequest) Update(ctx context.Context, reqObj *SecurityEdiscoveryReviewTag) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEdiscoveryReviewTag
+func (r *SecurityEdiscoveryReviewTagRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEdiscoverySearchRequestBuilder is request builder for SecurityEdiscoverySearch
+type SecurityEdiscoverySearchRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEdiscoverySearchRequest
+func (b *SecurityEdiscoverySearchRequestBuilder) Request() *SecurityEdiscoverySearchRequest {
+	return &SecurityEdiscoverySearchRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEdiscoverySearchRequest is request for SecurityEdiscoverySearch
+type SecurityEdiscoverySearchRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEdiscoverySearch
+func (r *SecurityEdiscoverySearchRequest) Get(ctx context.Context) (resObj *SecurityEdiscoverySearch, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEdiscoverySearch
+func (r *SecurityEdiscoverySearchRequest) Update(ctx context.Context, reqObj *SecurityEdiscoverySearch) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEdiscoverySearch
+func (r *SecurityEdiscoverySearchRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEdiscoveryTagOperationRequestBuilder is request builder for SecurityEdiscoveryTagOperation
+type SecurityEdiscoveryTagOperationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEdiscoveryTagOperationRequest
+func (b *SecurityEdiscoveryTagOperationRequestBuilder) Request() *SecurityEdiscoveryTagOperationRequest {
+	return &SecurityEdiscoveryTagOperationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEdiscoveryTagOperationRequest is request for SecurityEdiscoveryTagOperation
+type SecurityEdiscoveryTagOperationRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEdiscoveryTagOperation
+func (r *SecurityEdiscoveryTagOperationRequest) Get(ctx context.Context) (resObj *SecurityEdiscoveryTagOperation, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEdiscoveryTagOperation
+func (r *SecurityEdiscoveryTagOperationRequest) Update(ctx context.Context, reqObj *SecurityEdiscoveryTagOperation) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEdiscoveryTagOperation
+func (r *SecurityEdiscoveryTagOperationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityEmailSenderRequestBuilder is request builder for SecurityEmailSender
+type SecurityEmailSenderRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityEmailSenderRequest
+func (b *SecurityEmailSenderRequestBuilder) Request() *SecurityEmailSenderRequest {
+	return &SecurityEmailSenderRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityEmailSenderRequest is request for SecurityEmailSender
+type SecurityEmailSenderRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityEmailSender
+func (r *SecurityEmailSenderRequest) Get(ctx context.Context) (resObj *SecurityEmailSender, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityEmailSender
+func (r *SecurityEmailSenderRequest) Update(ctx context.Context, reqObj *SecurityEmailSender) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityEmailSender
+func (r *SecurityEmailSenderRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityFileDetailsRequestBuilder is request builder for SecurityFileDetails
+type SecurityFileDetailsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityFileDetailsRequest
+func (b *SecurityFileDetailsRequestBuilder) Request() *SecurityFileDetailsRequest {
+	return &SecurityFileDetailsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityFileDetailsRequest is request for SecurityFileDetails
+type SecurityFileDetailsRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityFileDetails
+func (r *SecurityFileDetailsRequest) Get(ctx context.Context) (resObj *SecurityFileDetails, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityFileDetails
+func (r *SecurityFileDetailsRequest) Update(ctx context.Context, reqObj *SecurityFileDetails) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityFileDetails
+func (r *SecurityFileDetailsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityFileEvidenceRequestBuilder is request builder for SecurityFileEvidence
+type SecurityFileEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityFileEvidenceRequest
+func (b *SecurityFileEvidenceRequestBuilder) Request() *SecurityFileEvidenceRequest {
+	return &SecurityFileEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityFileEvidenceRequest is request for SecurityFileEvidence
+type SecurityFileEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityFileEvidence
+func (r *SecurityFileEvidenceRequest) Get(ctx context.Context) (resObj *SecurityFileEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityFileEvidence
+func (r *SecurityFileEvidenceRequest) Update(ctx context.Context, reqObj *SecurityFileEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityFileEvidence
+func (r *SecurityFileEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityHuntingQueryResultsRequestBuilder is request builder for SecurityHuntingQueryResults
+type SecurityHuntingQueryResultsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityHuntingQueryResultsRequest
+func (b *SecurityHuntingQueryResultsRequestBuilder) Request() *SecurityHuntingQueryResultsRequest {
+	return &SecurityHuntingQueryResultsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityHuntingQueryResultsRequest is request for SecurityHuntingQueryResults
+type SecurityHuntingQueryResultsRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityHuntingQueryResults
+func (r *SecurityHuntingQueryResultsRequest) Get(ctx context.Context) (resObj *SecurityHuntingQueryResults, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityHuntingQueryResults
+func (r *SecurityHuntingQueryResultsRequest) Update(ctx context.Context, reqObj *SecurityHuntingQueryResults) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityHuntingQueryResults
+func (r *SecurityHuntingQueryResultsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityHuntingRowResultRequestBuilder is request builder for SecurityHuntingRowResult
+type SecurityHuntingRowResultRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityHuntingRowResultRequest
+func (b *SecurityHuntingRowResultRequestBuilder) Request() *SecurityHuntingRowResultRequest {
+	return &SecurityHuntingRowResultRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityHuntingRowResultRequest is request for SecurityHuntingRowResult
+type SecurityHuntingRowResultRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityHuntingRowResult
+func (r *SecurityHuntingRowResultRequest) Get(ctx context.Context) (resObj *SecurityHuntingRowResult, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityHuntingRowResult
+func (r *SecurityHuntingRowResultRequest) Update(ctx context.Context, reqObj *SecurityHuntingRowResult) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityHuntingRowResult
+func (r *SecurityHuntingRowResultRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityIPEvidenceRequestBuilder is request builder for SecurityIPEvidence
+type SecurityIPEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityIPEvidenceRequest
+func (b *SecurityIPEvidenceRequestBuilder) Request() *SecurityIPEvidenceRequest {
+	return &SecurityIPEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityIPEvidenceRequest is request for SecurityIPEvidence
+type SecurityIPEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityIPEvidence
+func (r *SecurityIPEvidenceRequest) Get(ctx context.Context) (resObj *SecurityIPEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityIPEvidence
+func (r *SecurityIPEvidenceRequest) Update(ctx context.Context, reqObj *SecurityIPEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityIPEvidence
+func (r *SecurityIPEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityIncidentRequestBuilder is request builder for SecurityIncident
+type SecurityIncidentRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityIncidentRequest
+func (b *SecurityIncidentRequestBuilder) Request() *SecurityIncidentRequest {
+	return &SecurityIncidentRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityIncidentRequest is request for SecurityIncident
+type SecurityIncidentRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityIncident
+func (r *SecurityIncidentRequest) Get(ctx context.Context) (resObj *SecurityIncident, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityIncident
+func (r *SecurityIncidentRequest) Update(ctx context.Context, reqObj *SecurityIncident) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityIncident
+func (r *SecurityIncidentRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityLoggedOnUserRequestBuilder is request builder for SecurityLoggedOnUser
+type SecurityLoggedOnUserRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityLoggedOnUserRequest
+func (b *SecurityLoggedOnUserRequestBuilder) Request() *SecurityLoggedOnUserRequest {
+	return &SecurityLoggedOnUserRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityLoggedOnUserRequest is request for SecurityLoggedOnUser
+type SecurityLoggedOnUserRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityLoggedOnUser
+func (r *SecurityLoggedOnUserRequest) Get(ctx context.Context) (resObj *SecurityLoggedOnUser, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityLoggedOnUser
+func (r *SecurityLoggedOnUserRequest) Update(ctx context.Context, reqObj *SecurityLoggedOnUser) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityLoggedOnUser
+func (r *SecurityLoggedOnUserRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityMailClusterEvidenceRequestBuilder is request builder for SecurityMailClusterEvidence
+type SecurityMailClusterEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityMailClusterEvidenceRequest
+func (b *SecurityMailClusterEvidenceRequestBuilder) Request() *SecurityMailClusterEvidenceRequest {
+	return &SecurityMailClusterEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityMailClusterEvidenceRequest is request for SecurityMailClusterEvidence
+type SecurityMailClusterEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityMailClusterEvidence
+func (r *SecurityMailClusterEvidenceRequest) Get(ctx context.Context) (resObj *SecurityMailClusterEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityMailClusterEvidence
+func (r *SecurityMailClusterEvidenceRequest) Update(ctx context.Context, reqObj *SecurityMailClusterEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityMailClusterEvidence
+func (r *SecurityMailClusterEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityMailboxEvidenceRequestBuilder is request builder for SecurityMailboxEvidence
+type SecurityMailboxEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityMailboxEvidenceRequest
+func (b *SecurityMailboxEvidenceRequestBuilder) Request() *SecurityMailboxEvidenceRequest {
+	return &SecurityMailboxEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityMailboxEvidenceRequest is request for SecurityMailboxEvidence
+type SecurityMailboxEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityMailboxEvidence
+func (r *SecurityMailboxEvidenceRequest) Get(ctx context.Context) (resObj *SecurityMailboxEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityMailboxEvidence
+func (r *SecurityMailboxEvidenceRequest) Update(ctx context.Context, reqObj *SecurityMailboxEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityMailboxEvidence
+func (r *SecurityMailboxEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityOAuthApplicationEvidenceRequestBuilder is request builder for SecurityOAuthApplicationEvidence
+type SecurityOAuthApplicationEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityOAuthApplicationEvidenceRequest
+func (b *SecurityOAuthApplicationEvidenceRequestBuilder) Request() *SecurityOAuthApplicationEvidenceRequest {
+	return &SecurityOAuthApplicationEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityOAuthApplicationEvidenceRequest is request for SecurityOAuthApplicationEvidence
+type SecurityOAuthApplicationEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityOAuthApplicationEvidence
+func (r *SecurityOAuthApplicationEvidenceRequest) Get(ctx context.Context) (resObj *SecurityOAuthApplicationEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityOAuthApplicationEvidence
+func (r *SecurityOAuthApplicationEvidenceRequest) Update(ctx context.Context, reqObj *SecurityOAuthApplicationEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityOAuthApplicationEvidence
+func (r *SecurityOAuthApplicationEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityOcrSettingsRequestBuilder is request builder for SecurityOcrSettings
+type SecurityOcrSettingsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityOcrSettingsRequest
+func (b *SecurityOcrSettingsRequestBuilder) Request() *SecurityOcrSettingsRequest {
+	return &SecurityOcrSettingsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityOcrSettingsRequest is request for SecurityOcrSettings
+type SecurityOcrSettingsRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityOcrSettings
+func (r *SecurityOcrSettingsRequest) Get(ctx context.Context) (resObj *SecurityOcrSettings, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityOcrSettings
+func (r *SecurityOcrSettingsRequest) Update(ctx context.Context, reqObj *SecurityOcrSettings) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityOcrSettings
+func (r *SecurityOcrSettingsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityProcessEvidenceRequestBuilder is request builder for SecurityProcessEvidence
+type SecurityProcessEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityProcessEvidenceRequest
+func (b *SecurityProcessEvidenceRequestBuilder) Request() *SecurityProcessEvidenceRequest {
+	return &SecurityProcessEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityProcessEvidenceRequest is request for SecurityProcessEvidence
+type SecurityProcessEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityProcessEvidence
+func (r *SecurityProcessEvidenceRequest) Get(ctx context.Context) (resObj *SecurityProcessEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityProcessEvidence
+func (r *SecurityProcessEvidenceRequest) Update(ctx context.Context, reqObj *SecurityProcessEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityProcessEvidence
+func (r *SecurityProcessEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityRedundancyDetectionSettingsRequestBuilder is request builder for SecurityRedundancyDetectionSettings
+type SecurityRedundancyDetectionSettingsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityRedundancyDetectionSettingsRequest
+func (b *SecurityRedundancyDetectionSettingsRequestBuilder) Request() *SecurityRedundancyDetectionSettingsRequest {
+	return &SecurityRedundancyDetectionSettingsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityRedundancyDetectionSettingsRequest is request for SecurityRedundancyDetectionSettings
+type SecurityRedundancyDetectionSettingsRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityRedundancyDetectionSettings
+func (r *SecurityRedundancyDetectionSettingsRequest) Get(ctx context.Context) (resObj *SecurityRedundancyDetectionSettings, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityRedundancyDetectionSettings
+func (r *SecurityRedundancyDetectionSettingsRequest) Update(ctx context.Context, reqObj *SecurityRedundancyDetectionSettings) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityRedundancyDetectionSettings
+func (r *SecurityRedundancyDetectionSettingsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityRegistryKeyEvidenceRequestBuilder is request builder for SecurityRegistryKeyEvidence
+type SecurityRegistryKeyEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityRegistryKeyEvidenceRequest
+func (b *SecurityRegistryKeyEvidenceRequestBuilder) Request() *SecurityRegistryKeyEvidenceRequest {
+	return &SecurityRegistryKeyEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityRegistryKeyEvidenceRequest is request for SecurityRegistryKeyEvidence
+type SecurityRegistryKeyEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityRegistryKeyEvidence
+func (r *SecurityRegistryKeyEvidenceRequest) Get(ctx context.Context) (resObj *SecurityRegistryKeyEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityRegistryKeyEvidence
+func (r *SecurityRegistryKeyEvidenceRequest) Update(ctx context.Context, reqObj *SecurityRegistryKeyEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityRegistryKeyEvidence
+func (r *SecurityRegistryKeyEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityRegistryValueEvidenceRequestBuilder is request builder for SecurityRegistryValueEvidence
+type SecurityRegistryValueEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityRegistryValueEvidenceRequest
+func (b *SecurityRegistryValueEvidenceRequestBuilder) Request() *SecurityRegistryValueEvidenceRequest {
+	return &SecurityRegistryValueEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityRegistryValueEvidenceRequest is request for SecurityRegistryValueEvidence
+type SecurityRegistryValueEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityRegistryValueEvidence
+func (r *SecurityRegistryValueEvidenceRequest) Get(ctx context.Context) (resObj *SecurityRegistryValueEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityRegistryValueEvidence
+func (r *SecurityRegistryValueEvidenceRequest) Update(ctx context.Context, reqObj *SecurityRegistryValueEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityRegistryValueEvidence
+func (r *SecurityRegistryValueEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecuritySearchRequestBuilder is request builder for SecuritySearch
+type SecuritySearchRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecuritySearchRequest
+func (b *SecuritySearchRequestBuilder) Request() *SecuritySearchRequest {
+	return &SecuritySearchRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecuritySearchRequest is request for SecuritySearch
+type SecuritySearchRequest struct{ BaseRequest }
+
+// Get performs GET request for SecuritySearch
+func (r *SecuritySearchRequest) Get(ctx context.Context) (resObj *SecuritySearch, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecuritySearch
+func (r *SecuritySearchRequest) Update(ctx context.Context, reqObj *SecuritySearch) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecuritySearch
+func (r *SecuritySearchRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecuritySecurityGroupEvidenceRequestBuilder is request builder for SecuritySecurityGroupEvidence
+type SecuritySecurityGroupEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecuritySecurityGroupEvidenceRequest
+func (b *SecuritySecurityGroupEvidenceRequestBuilder) Request() *SecuritySecurityGroupEvidenceRequest {
+	return &SecuritySecurityGroupEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecuritySecurityGroupEvidenceRequest is request for SecuritySecurityGroupEvidence
+type SecuritySecurityGroupEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecuritySecurityGroupEvidence
+func (r *SecuritySecurityGroupEvidenceRequest) Get(ctx context.Context) (resObj *SecuritySecurityGroupEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecuritySecurityGroupEvidence
+func (r *SecuritySecurityGroupEvidenceRequest) Update(ctx context.Context, reqObj *SecuritySecurityGroupEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecuritySecurityGroupEvidence
+func (r *SecuritySecurityGroupEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecuritySinglePropertySchemaRequestBuilder is request builder for SecuritySinglePropertySchema
+type SecuritySinglePropertySchemaRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecuritySinglePropertySchemaRequest
+func (b *SecuritySinglePropertySchemaRequestBuilder) Request() *SecuritySinglePropertySchemaRequest {
+	return &SecuritySinglePropertySchemaRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecuritySinglePropertySchemaRequest is request for SecuritySinglePropertySchema
+type SecuritySinglePropertySchemaRequest struct{ BaseRequest }
+
+// Get performs GET request for SecuritySinglePropertySchema
+func (r *SecuritySinglePropertySchemaRequest) Get(ctx context.Context) (resObj *SecuritySinglePropertySchema, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecuritySinglePropertySchema
+func (r *SecuritySinglePropertySchemaRequest) Update(ctx context.Context, reqObj *SecuritySinglePropertySchema) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecuritySinglePropertySchema
+func (r *SecuritySinglePropertySchemaRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecuritySiteSourceRequestBuilder is request builder for SecuritySiteSource
+type SecuritySiteSourceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecuritySiteSourceRequest
+func (b *SecuritySiteSourceRequestBuilder) Request() *SecuritySiteSourceRequest {
+	return &SecuritySiteSourceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecuritySiteSourceRequest is request for SecuritySiteSource
+type SecuritySiteSourceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecuritySiteSource
+func (r *SecuritySiteSourceRequest) Get(ctx context.Context) (resObj *SecuritySiteSource, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecuritySiteSource
+func (r *SecuritySiteSourceRequest) Update(ctx context.Context, reqObj *SecuritySiteSource) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecuritySiteSource
+func (r *SecuritySiteSourceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityStringValueDictionaryRequestBuilder is request builder for SecurityStringValueDictionary
+type SecurityStringValueDictionaryRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityStringValueDictionaryRequest
+func (b *SecurityStringValueDictionaryRequestBuilder) Request() *SecurityStringValueDictionaryRequest {
+	return &SecurityStringValueDictionaryRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityStringValueDictionaryRequest is request for SecurityStringValueDictionary
+type SecurityStringValueDictionaryRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityStringValueDictionary
+func (r *SecurityStringValueDictionaryRequest) Get(ctx context.Context) (resObj *SecurityStringValueDictionary, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityStringValueDictionary
+func (r *SecurityStringValueDictionaryRequest) Update(ctx context.Context, reqObj *SecurityStringValueDictionary) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityStringValueDictionary
+func (r *SecurityStringValueDictionaryRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityTagRequestBuilder is request builder for SecurityTag
+type SecurityTagRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityTagRequest
+func (b *SecurityTagRequestBuilder) Request() *SecurityTagRequest {
+	return &SecurityTagRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityTagRequest is request for SecurityTag
+type SecurityTagRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityTag
+func (r *SecurityTagRequest) Get(ctx context.Context) (resObj *SecurityTag, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityTag
+func (r *SecurityTagRequest) Update(ctx context.Context, reqObj *SecurityTag) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityTag
+func (r *SecurityTagRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityTopicModelingSettingsRequestBuilder is request builder for SecurityTopicModelingSettings
+type SecurityTopicModelingSettingsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityTopicModelingSettingsRequest
+func (b *SecurityTopicModelingSettingsRequestBuilder) Request() *SecurityTopicModelingSettingsRequest {
+	return &SecurityTopicModelingSettingsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityTopicModelingSettingsRequest is request for SecurityTopicModelingSettings
+type SecurityTopicModelingSettingsRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityTopicModelingSettings
+func (r *SecurityTopicModelingSettingsRequest) Get(ctx context.Context) (resObj *SecurityTopicModelingSettings, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityTopicModelingSettings
+func (r *SecurityTopicModelingSettingsRequest) Update(ctx context.Context, reqObj *SecurityTopicModelingSettings) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityTopicModelingSettings
+func (r *SecurityTopicModelingSettingsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityURLEvidenceRequestBuilder is request builder for SecurityURLEvidence
+type SecurityURLEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityURLEvidenceRequest
+func (b *SecurityURLEvidenceRequestBuilder) Request() *SecurityURLEvidenceRequest {
+	return &SecurityURLEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityURLEvidenceRequest is request for SecurityURLEvidence
+type SecurityURLEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityURLEvidence
+func (r *SecurityURLEvidenceRequest) Get(ctx context.Context) (resObj *SecurityURLEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityURLEvidence
+func (r *SecurityURLEvidenceRequest) Update(ctx context.Context, reqObj *SecurityURLEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityURLEvidence
+func (r *SecurityURLEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityUnifiedGroupSourceRequestBuilder is request builder for SecurityUnifiedGroupSource
+type SecurityUnifiedGroupSourceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityUnifiedGroupSourceRequest
+func (b *SecurityUnifiedGroupSourceRequestBuilder) Request() *SecurityUnifiedGroupSourceRequest {
+	return &SecurityUnifiedGroupSourceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityUnifiedGroupSourceRequest is request for SecurityUnifiedGroupSource
+type SecurityUnifiedGroupSourceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityUnifiedGroupSource
+func (r *SecurityUnifiedGroupSourceRequest) Get(ctx context.Context) (resObj *SecurityUnifiedGroupSource, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityUnifiedGroupSource
+func (r *SecurityUnifiedGroupSourceRequest) Update(ctx context.Context, reqObj *SecurityUnifiedGroupSource) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityUnifiedGroupSource
+func (r *SecurityUnifiedGroupSourceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityUserAccountRequestBuilder is request builder for SecurityUserAccount
+type SecurityUserAccountRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityUserAccountRequest
+func (b *SecurityUserAccountRequestBuilder) Request() *SecurityUserAccountRequest {
+	return &SecurityUserAccountRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityUserAccountRequest is request for SecurityUserAccount
+type SecurityUserAccountRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityUserAccount
+func (r *SecurityUserAccountRequest) Get(ctx context.Context) (resObj *SecurityUserAccount, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityUserAccount
+func (r *SecurityUserAccountRequest) Update(ctx context.Context, reqObj *SecurityUserAccount) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityUserAccount
+func (r *SecurityUserAccountRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityUserEvidenceRequestBuilder is request builder for SecurityUserEvidence
+type SecurityUserEvidenceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityUserEvidenceRequest
+func (b *SecurityUserEvidenceRequestBuilder) Request() *SecurityUserEvidenceRequest {
+	return &SecurityUserEvidenceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityUserEvidenceRequest is request for SecurityUserEvidence
+type SecurityUserEvidenceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityUserEvidence
+func (r *SecurityUserEvidenceRequest) Get(ctx context.Context) (resObj *SecurityUserEvidence, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityUserEvidence
+func (r *SecurityUserEvidenceRequest) Update(ctx context.Context, reqObj *SecurityUserEvidence) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityUserEvidence
+func (r *SecurityUserEvidenceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityUserSourceRequestBuilder is request builder for SecurityUserSource
+type SecurityUserSourceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityUserSourceRequest
+func (b *SecurityUserSourceRequestBuilder) Request() *SecurityUserSourceRequest {
+	return &SecurityUserSourceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityUserSourceRequest is request for SecurityUserSource
+type SecurityUserSourceRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityUserSource
+func (r *SecurityUserSourceRequest) Get(ctx context.Context) (resObj *SecurityUserSource, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityUserSource
+func (r *SecurityUserSourceRequest) Update(ctx context.Context, reqObj *SecurityUserSource) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityUserSource
+func (r *SecurityUserSourceRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// SecurityVMMetadataRequestBuilder is request builder for SecurityVMMetadata
+type SecurityVMMetadataRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns SecurityVMMetadataRequest
+func (b *SecurityVMMetadataRequestBuilder) Request() *SecurityVMMetadataRequest {
+	return &SecurityVMMetadataRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// SecurityVMMetadataRequest is request for SecurityVMMetadata
+type SecurityVMMetadataRequest struct{ BaseRequest }
+
+// Get performs GET request for SecurityVMMetadata
+func (r *SecurityVMMetadataRequest) Get(ctx context.Context) (resObj *SecurityVMMetadata, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for SecurityVMMetadata
+func (r *SecurityVMMetadataRequest) Update(ctx context.Context, reqObj *SecurityVMMetadata) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for SecurityVMMetadata
+func (r *SecurityVMMetadataRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+type SecurityEdiscoveryCustodianCollectionSecurityApplyHoldRequestBuilder struct{ BaseRequestBuilder }
+
+// SecurityApplyHold action undocumented
+func (b *SecurityEdiscoveryCaseCustodiansCollectionRequestBuilder) SecurityApplyHold(reqObj *SecurityEdiscoveryCustodianCollectionSecurityApplyHoldRequestParameter) *SecurityEdiscoveryCustodianCollectionSecurityApplyHoldRequestBuilder {
+	bb := &SecurityEdiscoveryCustodianCollectionSecurityApplyHoldRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SecurityApplyHold"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type SecurityEdiscoveryCustodianCollectionSecurityApplyHoldRequest struct{ BaseRequest }
+
+func (b *SecurityEdiscoveryCustodianCollectionSecurityApplyHoldRequestBuilder) Request() *SecurityEdiscoveryCustodianCollectionSecurityApplyHoldRequest {
+	return &SecurityEdiscoveryCustodianCollectionSecurityApplyHoldRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *SecurityEdiscoveryCustodianCollectionSecurityApplyHoldRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type SecurityEdiscoveryCustodianCollectionSecurityRemoveHoldRequestBuilder struct{ BaseRequestBuilder }
+
+// SecurityRemoveHold action undocumented
+func (b *SecurityEdiscoveryCaseCustodiansCollectionRequestBuilder) SecurityRemoveHold(reqObj *SecurityEdiscoveryCustodianCollectionSecurityRemoveHoldRequestParameter) *SecurityEdiscoveryCustodianCollectionSecurityRemoveHoldRequestBuilder {
+	bb := &SecurityEdiscoveryCustodianCollectionSecurityRemoveHoldRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SecurityRemoveHold"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type SecurityEdiscoveryCustodianCollectionSecurityRemoveHoldRequest struct{ BaseRequest }
+
+func (b *SecurityEdiscoveryCustodianCollectionSecurityRemoveHoldRequestBuilder) Request() *SecurityEdiscoveryCustodianCollectionSecurityRemoveHoldRequest {
+	return &SecurityEdiscoveryCustodianCollectionSecurityRemoveHoldRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *SecurityEdiscoveryCustodianCollectionSecurityRemoveHoldRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityApplyHoldRequestBuilder struct{ BaseRequestBuilder }
+
+// SecurityApplyHold action undocumented
+func (b *SecurityEdiscoveryCaseNoncustodialDataSourcesCollectionRequestBuilder) SecurityApplyHold(reqObj *SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityApplyHoldRequestParameter) *SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityApplyHoldRequestBuilder {
+	bb := &SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityApplyHoldRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SecurityApplyHold"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+// SecurityApplyHold action undocumented
+func (b *SecurityEdiscoverySearchNoncustodialSourcesCollectionRequestBuilder) SecurityApplyHold(reqObj *SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityApplyHoldRequestParameter) *SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityApplyHoldRequestBuilder {
+	bb := &SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityApplyHoldRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SecurityApplyHold"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityApplyHoldRequest struct{ BaseRequest }
+
+func (b *SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityApplyHoldRequestBuilder) Request() *SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityApplyHoldRequest {
+	return &SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityApplyHoldRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityApplyHoldRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityRemoveHoldRequestBuilder struct{ BaseRequestBuilder }
+
+// SecurityRemoveHold action undocumented
+func (b *SecurityEdiscoveryCaseNoncustodialDataSourcesCollectionRequestBuilder) SecurityRemoveHold(reqObj *SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityRemoveHoldRequestParameter) *SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityRemoveHoldRequestBuilder {
+	bb := &SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityRemoveHoldRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SecurityRemoveHold"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+// SecurityRemoveHold action undocumented
+func (b *SecurityEdiscoverySearchNoncustodialSourcesCollectionRequestBuilder) SecurityRemoveHold(reqObj *SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityRemoveHoldRequestParameter) *SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityRemoveHoldRequestBuilder {
+	bb := &SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityRemoveHoldRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SecurityRemoveHold"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityRemoveHoldRequest struct{ BaseRequest }
+
+func (b *SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityRemoveHoldRequestBuilder) Request() *SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityRemoveHoldRequest {
+	return &SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityRemoveHoldRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *SecurityEdiscoveryNoncustodialDataSourceCollectionSecurityRemoveHoldRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }

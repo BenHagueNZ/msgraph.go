@@ -2,7 +2,7 @@
 
 package msgraph
 
-// ExclusionGroupAssignmentTarget Represents a group that should be excluded from an assignment.
+// ExclusionGroupAssignmentTarget undocumented
 type ExclusionGroupAssignmentTarget struct {
 	// GroupAssignmentTarget is the base model of ExclusionGroupAssignmentTarget
 	GroupAssignmentTarget

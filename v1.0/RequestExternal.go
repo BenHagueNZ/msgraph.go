@@ -4,21 +4,21 @@ package msgraph
 
 import "context"
 
-// ExternalRequestBuilder is request builder for External
-type ExternalRequestBuilder struct{ BaseRequestBuilder }
+// ExternalConnectorsExternalRequestBuilder is request builder for ExternalConnectorsExternal
+type ExternalConnectorsExternalRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns ExternalRequest
-func (b *ExternalRequestBuilder) Request() *ExternalRequest {
-	return &ExternalRequest{
+// Request returns ExternalConnectorsExternalRequest
+func (b *ExternalConnectorsExternalRequestBuilder) Request() *ExternalConnectorsExternalRequest {
+	return &ExternalConnectorsExternalRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ExternalRequest is request for External
-type ExternalRequest struct{ BaseRequest }
+// ExternalConnectorsExternalRequest is request for ExternalConnectorsExternal
+type ExternalConnectorsExternalRequest struct{ BaseRequest }
 
-// Get performs GET request for External
-func (r *ExternalRequest) Get(ctx context.Context) (resObj *External, err error) {
+// Get performs GET request for ExternalConnectorsExternal
+func (r *ExternalConnectorsExternalRequest) Get(ctx context.Context) (resObj *ExternalConnectorsExternal, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -27,31 +27,31 @@ func (r *ExternalRequest) Get(ctx context.Context) (resObj *External, err error)
 	return
 }
 
-// Update performs PATCH request for External
-func (r *ExternalRequest) Update(ctx context.Context, reqObj *External) error {
+// Update performs PATCH request for ExternalConnectorsExternal
+func (r *ExternalConnectorsExternalRequest) Update(ctx context.Context, reqObj *ExternalConnectorsExternal) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for External
-func (r *ExternalRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for ExternalConnectorsExternal
+func (r *ExternalConnectorsExternalRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// ExternalConnectionRequestBuilder is request builder for ExternalConnection
-type ExternalConnectionRequestBuilder struct{ BaseRequestBuilder }
+// ExternalConnectorsExternalConnectionRequestBuilder is request builder for ExternalConnectorsExternalConnection
+type ExternalConnectorsExternalConnectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns ExternalConnectionRequest
-func (b *ExternalConnectionRequestBuilder) Request() *ExternalConnectionRequest {
-	return &ExternalConnectionRequest{
+// Request returns ExternalConnectorsExternalConnectionRequest
+func (b *ExternalConnectorsExternalConnectionRequestBuilder) Request() *ExternalConnectorsExternalConnectionRequest {
+	return &ExternalConnectorsExternalConnectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ExternalConnectionRequest is request for ExternalConnection
-type ExternalConnectionRequest struct{ BaseRequest }
+// ExternalConnectorsExternalConnectionRequest is request for ExternalConnectorsExternalConnection
+type ExternalConnectorsExternalConnectionRequest struct{ BaseRequest }
 
-// Get performs GET request for ExternalConnection
-func (r *ExternalConnectionRequest) Get(ctx context.Context) (resObj *ExternalConnection, err error) {
+// Get performs GET request for ExternalConnectorsExternalConnection
+func (r *ExternalConnectorsExternalConnectionRequest) Get(ctx context.Context) (resObj *ExternalConnectorsExternalConnection, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -60,13 +60,13 @@ func (r *ExternalConnectionRequest) Get(ctx context.Context) (resObj *ExternalCo
 	return
 }
 
-// Update performs PATCH request for ExternalConnection
-func (r *ExternalConnectionRequest) Update(ctx context.Context, reqObj *ExternalConnection) error {
+// Update performs PATCH request for ExternalConnectorsExternalConnection
+func (r *ExternalConnectorsExternalConnectionRequest) Update(ctx context.Context, reqObj *ExternalConnectorsExternalConnection) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for ExternalConnection
-func (r *ExternalConnectionRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for ExternalConnectorsExternalConnection
+func (r *ExternalConnectorsExternalConnectionRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -199,5 +199,401 @@ func (r *ExternalSponsorsRequest) Update(ctx context.Context, reqObj *ExternalSp
 
 // Delete performs DELETE request for ExternalSponsors
 func (r *ExternalSponsorsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ExternalConnectorsACLRequestBuilder is request builder for ExternalConnectorsACL
+type ExternalConnectorsACLRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ExternalConnectorsACLRequest
+func (b *ExternalConnectorsACLRequestBuilder) Request() *ExternalConnectorsACLRequest {
+	return &ExternalConnectorsACLRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ExternalConnectorsACLRequest is request for ExternalConnectorsACL
+type ExternalConnectorsACLRequest struct{ BaseRequest }
+
+// Get performs GET request for ExternalConnectorsACL
+func (r *ExternalConnectorsACLRequest) Get(ctx context.Context) (resObj *ExternalConnectorsACL, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ExternalConnectorsACL
+func (r *ExternalConnectorsACLRequest) Update(ctx context.Context, reqObj *ExternalConnectorsACL) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ExternalConnectorsACL
+func (r *ExternalConnectorsACLRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ExternalConnectorsConfigurationRequestBuilder is request builder for ExternalConnectorsConfiguration
+type ExternalConnectorsConfigurationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ExternalConnectorsConfigurationRequest
+func (b *ExternalConnectorsConfigurationRequestBuilder) Request() *ExternalConnectorsConfigurationRequest {
+	return &ExternalConnectorsConfigurationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ExternalConnectorsConfigurationRequest is request for ExternalConnectorsConfiguration
+type ExternalConnectorsConfigurationRequest struct{ BaseRequest }
+
+// Get performs GET request for ExternalConnectorsConfiguration
+func (r *ExternalConnectorsConfigurationRequest) Get(ctx context.Context) (resObj *ExternalConnectorsConfiguration, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ExternalConnectorsConfiguration
+func (r *ExternalConnectorsConfigurationRequest) Update(ctx context.Context, reqObj *ExternalConnectorsConfiguration) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ExternalConnectorsConfiguration
+func (r *ExternalConnectorsConfigurationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ExternalConnectorsConnectionOperationRequestBuilder is request builder for ExternalConnectorsConnectionOperation
+type ExternalConnectorsConnectionOperationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ExternalConnectorsConnectionOperationRequest
+func (b *ExternalConnectorsConnectionOperationRequestBuilder) Request() *ExternalConnectorsConnectionOperationRequest {
+	return &ExternalConnectorsConnectionOperationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ExternalConnectorsConnectionOperationRequest is request for ExternalConnectorsConnectionOperation
+type ExternalConnectorsConnectionOperationRequest struct{ BaseRequest }
+
+// Get performs GET request for ExternalConnectorsConnectionOperation
+func (r *ExternalConnectorsConnectionOperationRequest) Get(ctx context.Context) (resObj *ExternalConnectorsConnectionOperation, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ExternalConnectorsConnectionOperation
+func (r *ExternalConnectorsConnectionOperationRequest) Update(ctx context.Context, reqObj *ExternalConnectorsConnectionOperation) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ExternalConnectorsConnectionOperation
+func (r *ExternalConnectorsConnectionOperationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ExternalConnectorsExternalRequestBuilder is request builder for ExternalConnectorsExternal
+type ExternalConnectorsExternalRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ExternalConnectorsExternalRequest
+func (b *ExternalConnectorsExternalRequestBuilder) Request() *ExternalConnectorsExternalRequest {
+	return &ExternalConnectorsExternalRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ExternalConnectorsExternalRequest is request for ExternalConnectorsExternal
+type ExternalConnectorsExternalRequest struct{ BaseRequest }
+
+// Get performs GET request for ExternalConnectorsExternal
+func (r *ExternalConnectorsExternalRequest) Get(ctx context.Context) (resObj *ExternalConnectorsExternal, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ExternalConnectorsExternal
+func (r *ExternalConnectorsExternalRequest) Update(ctx context.Context, reqObj *ExternalConnectorsExternal) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ExternalConnectorsExternal
+func (r *ExternalConnectorsExternalRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ExternalConnectorsExternalConnectionRequestBuilder is request builder for ExternalConnectorsExternalConnection
+type ExternalConnectorsExternalConnectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ExternalConnectorsExternalConnectionRequest
+func (b *ExternalConnectorsExternalConnectionRequestBuilder) Request() *ExternalConnectorsExternalConnectionRequest {
+	return &ExternalConnectorsExternalConnectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ExternalConnectorsExternalConnectionRequest is request for ExternalConnectorsExternalConnection
+type ExternalConnectorsExternalConnectionRequest struct{ BaseRequest }
+
+// Get performs GET request for ExternalConnectorsExternalConnection
+func (r *ExternalConnectorsExternalConnectionRequest) Get(ctx context.Context) (resObj *ExternalConnectorsExternalConnection, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ExternalConnectorsExternalConnection
+func (r *ExternalConnectorsExternalConnectionRequest) Update(ctx context.Context, reqObj *ExternalConnectorsExternalConnection) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ExternalConnectorsExternalConnection
+func (r *ExternalConnectorsExternalConnectionRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ExternalConnectorsExternalGroupRequestBuilder is request builder for ExternalConnectorsExternalGroup
+type ExternalConnectorsExternalGroupRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ExternalConnectorsExternalGroupRequest
+func (b *ExternalConnectorsExternalGroupRequestBuilder) Request() *ExternalConnectorsExternalGroupRequest {
+	return &ExternalConnectorsExternalGroupRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ExternalConnectorsExternalGroupRequest is request for ExternalConnectorsExternalGroup
+type ExternalConnectorsExternalGroupRequest struct{ BaseRequest }
+
+// Get performs GET request for ExternalConnectorsExternalGroup
+func (r *ExternalConnectorsExternalGroupRequest) Get(ctx context.Context) (resObj *ExternalConnectorsExternalGroup, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ExternalConnectorsExternalGroup
+func (r *ExternalConnectorsExternalGroupRequest) Update(ctx context.Context, reqObj *ExternalConnectorsExternalGroup) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ExternalConnectorsExternalGroup
+func (r *ExternalConnectorsExternalGroupRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ExternalConnectorsExternalItemRequestBuilder is request builder for ExternalConnectorsExternalItem
+type ExternalConnectorsExternalItemRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ExternalConnectorsExternalItemRequest
+func (b *ExternalConnectorsExternalItemRequestBuilder) Request() *ExternalConnectorsExternalItemRequest {
+	return &ExternalConnectorsExternalItemRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ExternalConnectorsExternalItemRequest is request for ExternalConnectorsExternalItem
+type ExternalConnectorsExternalItemRequest struct{ BaseRequest }
+
+// Get performs GET request for ExternalConnectorsExternalItem
+func (r *ExternalConnectorsExternalItemRequest) Get(ctx context.Context) (resObj *ExternalConnectorsExternalItem, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ExternalConnectorsExternalItem
+func (r *ExternalConnectorsExternalItemRequest) Update(ctx context.Context, reqObj *ExternalConnectorsExternalItem) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ExternalConnectorsExternalItem
+func (r *ExternalConnectorsExternalItemRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ExternalConnectorsExternalItemContentRequestBuilder is request builder for ExternalConnectorsExternalItemContent
+type ExternalConnectorsExternalItemContentRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ExternalConnectorsExternalItemContentRequest
+func (b *ExternalConnectorsExternalItemContentRequestBuilder) Request() *ExternalConnectorsExternalItemContentRequest {
+	return &ExternalConnectorsExternalItemContentRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ExternalConnectorsExternalItemContentRequest is request for ExternalConnectorsExternalItemContent
+type ExternalConnectorsExternalItemContentRequest struct{ BaseRequest }
+
+// Get performs GET request for ExternalConnectorsExternalItemContent
+func (r *ExternalConnectorsExternalItemContentRequest) Get(ctx context.Context) (resObj *ExternalConnectorsExternalItemContent, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ExternalConnectorsExternalItemContent
+func (r *ExternalConnectorsExternalItemContentRequest) Update(ctx context.Context, reqObj *ExternalConnectorsExternalItemContent) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ExternalConnectorsExternalItemContent
+func (r *ExternalConnectorsExternalItemContentRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ExternalConnectorsIdentityRequestBuilder is request builder for ExternalConnectorsIdentity
+type ExternalConnectorsIdentityRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ExternalConnectorsIdentityRequest
+func (b *ExternalConnectorsIdentityRequestBuilder) Request() *ExternalConnectorsIdentityRequest {
+	return &ExternalConnectorsIdentityRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ExternalConnectorsIdentityRequest is request for ExternalConnectorsIdentity
+type ExternalConnectorsIdentityRequest struct{ BaseRequest }
+
+// Get performs GET request for ExternalConnectorsIdentity
+func (r *ExternalConnectorsIdentityRequest) Get(ctx context.Context) (resObj *ExternalConnectorsIdentity, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ExternalConnectorsIdentity
+func (r *ExternalConnectorsIdentityRequest) Update(ctx context.Context, reqObj *ExternalConnectorsIdentity) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ExternalConnectorsIdentity
+func (r *ExternalConnectorsIdentityRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ExternalConnectorsPropertiesRequestBuilder is request builder for ExternalConnectorsProperties
+type ExternalConnectorsPropertiesRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ExternalConnectorsPropertiesRequest
+func (b *ExternalConnectorsPropertiesRequestBuilder) Request() *ExternalConnectorsPropertiesRequest {
+	return &ExternalConnectorsPropertiesRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ExternalConnectorsPropertiesRequest is request for ExternalConnectorsProperties
+type ExternalConnectorsPropertiesRequest struct{ BaseRequest }
+
+// Get performs GET request for ExternalConnectorsProperties
+func (r *ExternalConnectorsPropertiesRequest) Get(ctx context.Context) (resObj *ExternalConnectorsProperties, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ExternalConnectorsProperties
+func (r *ExternalConnectorsPropertiesRequest) Update(ctx context.Context, reqObj *ExternalConnectorsProperties) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ExternalConnectorsProperties
+func (r *ExternalConnectorsPropertiesRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ExternalConnectorsPropertyRequestBuilder is request builder for ExternalConnectorsProperty
+type ExternalConnectorsPropertyRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ExternalConnectorsPropertyRequest
+func (b *ExternalConnectorsPropertyRequestBuilder) Request() *ExternalConnectorsPropertyRequest {
+	return &ExternalConnectorsPropertyRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ExternalConnectorsPropertyRequest is request for ExternalConnectorsProperty
+type ExternalConnectorsPropertyRequest struct{ BaseRequest }
+
+// Get performs GET request for ExternalConnectorsProperty
+func (r *ExternalConnectorsPropertyRequest) Get(ctx context.Context) (resObj *ExternalConnectorsProperty, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ExternalConnectorsProperty
+func (r *ExternalConnectorsPropertyRequest) Update(ctx context.Context, reqObj *ExternalConnectorsProperty) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ExternalConnectorsProperty
+func (r *ExternalConnectorsPropertyRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ExternalConnectorsSchemaRequestBuilder is request builder for ExternalConnectorsSchema
+type ExternalConnectorsSchemaRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ExternalConnectorsSchemaRequest
+func (b *ExternalConnectorsSchemaRequestBuilder) Request() *ExternalConnectorsSchemaRequest {
+	return &ExternalConnectorsSchemaRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ExternalConnectorsSchemaRequest is request for ExternalConnectorsSchema
+type ExternalConnectorsSchemaRequest struct{ BaseRequest }
+
+// Get performs GET request for ExternalConnectorsSchema
+func (r *ExternalConnectorsSchemaRequest) Get(ctx context.Context) (resObj *ExternalConnectorsSchema, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ExternalConnectorsSchema
+func (r *ExternalConnectorsSchemaRequest) Update(ctx context.Context, reqObj *ExternalConnectorsSchema) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ExternalConnectorsSchema
+func (r *ExternalConnectorsSchemaRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

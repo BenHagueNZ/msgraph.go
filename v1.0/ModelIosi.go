@@ -2,12 +2,12 @@
 
 package msgraph
 
-// IosiPadOSWebClip Contains properties and inherited properties for iOS web apps.
+// IosiPadOSWebClip undocumented
 type IosiPadOSWebClip struct {
 	// MobileApp is the base model of IosiPadOSWebClip
 	MobileApp
-	// AppURL Indicates iOS/iPadOS web clip app URL. Example: "https://www.contoso.com"
+	// AppURL undocumented
 	AppURL *string `json:"appUrl,omitempty"`
-	// UseManagedBrowser Whether or not to use managed browser. When TRUE, the app will be required to be opened in Microsoft Edge. When FALSE, the app will not be required to be opened in Microsoft Edge. By default, this property is set to FALSE.
+	// UseManagedBrowser undocumented
 	UseManagedBrowser *bool `json:"useManagedBrowser,omitempty"`
 }

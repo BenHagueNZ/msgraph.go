@@ -135,7 +135,7 @@ type User struct {
 	UserType *string `json:"userType,omitempty"`
 	// MailboxSettings undocumented
 	MailboxSettings *MailboxSettings `json:"mailboxSettings,omitempty"`
-	// DeviceEnrollmentLimit The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
+	// DeviceEnrollmentLimit undocumented
 	DeviceEnrollmentLimit *int `json:"deviceEnrollmentLimit,omitempty"`
 	// AboutMe undocumented
 	AboutMe *string `json:"aboutMe,omitempty"`
@@ -299,57 +299,57 @@ type UserAttributeValuesItem struct {
 
 // UserConsentRequestObject undocumented
 type UserConsentRequestObject struct {
-	// RequestObject is the base model of UserConsentRequestObject
-	RequestObject
+	// Request is the base model of UserConsentRequestObject
+	Request
 	// Reason undocumented
 	Reason *string `json:"reason,omitempty"`
 	// Approval undocumented
 	Approval *Approval `json:"approval,omitempty"`
 }
 
-// UserExperienceAnalyticsDevicePerformance The user experience analytics device performance entity contains device boot performance details.
+// UserExperienceAnalyticsDevicePerformance undocumented
 type UserExperienceAnalyticsDevicePerformance struct {
 	// Entity is the base model of UserExperienceAnalyticsDevicePerformance
 	Entity
-	// AverageBlueScreens Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
+	// AverageBlueScreens undocumented
 	AverageBlueScreens *float64 `json:"averageBlueScreens,omitempty"`
-	// AverageRestarts Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999
+	// AverageRestarts undocumented
 	AverageRestarts *float64 `json:"averageRestarts,omitempty"`
-	// BlueScreenCount Number of Blue Screens in the last 30 days. Valid values 0 to 9999999
+	// BlueScreenCount undocumented
 	BlueScreenCount *int `json:"blueScreenCount,omitempty"`
-	// BootScore The user experience analytics device boot score.
+	// BootScore undocumented
 	BootScore *int `json:"bootScore,omitempty"`
-	// CoreBootTimeInMs The user experience analytics device core boot time in milliseconds.
+	// CoreBootTimeInMs undocumented
 	CoreBootTimeInMs *int `json:"coreBootTimeInMs,omitempty"`
-	// CoreLoginTimeInMs The user experience analytics device core login time in milliseconds.
+	// CoreLoginTimeInMs undocumented
 	CoreLoginTimeInMs *int `json:"coreLoginTimeInMs,omitempty"`
-	// DeviceCount User experience analytics summarized device count.
+	// DeviceCount undocumented
 	DeviceCount *int `json:"deviceCount,omitempty"`
-	// DeviceName The user experience analytics device name.
+	// DeviceName undocumented
 	DeviceName *string `json:"deviceName,omitempty"`
-	// DiskType The user experience analytics device disk type.
+	// DiskType undocumented
 	DiskType *DiskType `json:"diskType,omitempty"`
-	// GroupPolicyBootTimeInMs The user experience analytics device group policy boot time in milliseconds.
+	// GroupPolicyBootTimeInMs undocumented
 	GroupPolicyBootTimeInMs *int `json:"groupPolicyBootTimeInMs,omitempty"`
-	// GroupPolicyLoginTimeInMs The user experience analytics device group policy login time in milliseconds.
+	// GroupPolicyLoginTimeInMs undocumented
 	GroupPolicyLoginTimeInMs *int `json:"groupPolicyLoginTimeInMs,omitempty"`
-	// HealthStatus The health state of the user experience analytics device.
+	// HealthStatus undocumented
 	HealthStatus *UserExperienceAnalyticsHealthState `json:"healthStatus,omitempty"`
-	// LoginScore The user experience analytics device login score.
+	// LoginScore undocumented
 	LoginScore *int `json:"loginScore,omitempty"`
-	// Manufacturer The user experience analytics device manufacturer.
+	// Manufacturer undocumented
 	Manufacturer *string `json:"manufacturer,omitempty"`
-	// Model The user experience analytics device model.
+	// Model undocumented
 	Model *string `json:"model,omitempty"`
-	// ModelStartupPerformanceScore The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+	// ModelStartupPerformanceScore undocumented
 	ModelStartupPerformanceScore *float64 `json:"modelStartupPerformanceScore,omitempty"`
-	// OperatingSystemVersion The user experience analytics device Operating System version.
+	// OperatingSystemVersion undocumented
 	OperatingSystemVersion *string `json:"operatingSystemVersion,omitempty"`
-	// ResponsiveDesktopTimeInMs The user experience analytics responsive desktop time in milliseconds.
+	// ResponsiveDesktopTimeInMs undocumented
 	ResponsiveDesktopTimeInMs *int `json:"responsiveDesktopTimeInMs,omitempty"`
-	// RestartCount Number of Restarts in the last 30 days. Valid values 0 to 9999999
+	// RestartCount undocumented
 	RestartCount *int `json:"restartCount,omitempty"`
-	// StartupPerformanceScore The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+	// StartupPerformanceScore undocumented
 	StartupPerformanceScore *float64 `json:"startupPerformanceScore,omitempty"`
 }
 
@@ -393,17 +393,17 @@ type UserIdentity struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
-// UserInstallStateSummary Contains properties for the installation state summary for a user.
+// UserInstallStateSummary undocumented
 type UserInstallStateSummary struct {
 	// Entity is the base model of UserInstallStateSummary
 	Entity
-	// FailedDeviceCount Failed Device Count.
+	// FailedDeviceCount undocumented
 	FailedDeviceCount *int `json:"failedDeviceCount,omitempty"`
-	// InstalledDeviceCount Installed Device Count.
+	// InstalledDeviceCount undocumented
 	InstalledDeviceCount *int `json:"installedDeviceCount,omitempty"`
-	// NotInstalledDeviceCount Not installed device count.
+	// NotInstalledDeviceCount undocumented
 	NotInstalledDeviceCount *int `json:"notInstalledDeviceCount,omitempty"`
-	// UserName User name.
+	// UserName undocumented
 	UserName *string `json:"userName,omitempty"`
 	// DeviceStates undocumented
 	DeviceStates []DeviceInstallState `json:"deviceStates,omitempty"`

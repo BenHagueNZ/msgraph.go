@@ -8,20 +8,20 @@ import "time"
 type EnterpriseCodeSigningCertificate struct {
 	// Entity is the base model of EnterpriseCodeSigningCertificate
 	Entity
-	// Content The Windows Enterprise Code-Signing Certificate in the raw data format. Set to null once certificate has been uploaded and other properties have been populated.
+	// Content undocumented
 	Content *Binary `json:"content,omitempty"`
-	// ExpirationDateTime The cert expiration date and time (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+	// ExpirationDateTime undocumented
 	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
-	// Issuer The issuer value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+	// Issuer undocumented
 	Issuer *string `json:"issuer,omitempty"`
-	// IssuerName The issuer name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+	// IssuerName undocumented
 	IssuerName *string `json:"issuerName,omitempty"`
-	// Status Whether the Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned. Default is notProvisioned. Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+	// Status undocumented
 	Status *CertificateStatus `json:"status,omitempty"`
-	// Subject The subject value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+	// Subject undocumented
 	Subject *string `json:"subject,omitempty"`
-	// SubjectName The subject name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+	// SubjectName undocumented
 	SubjectName *string `json:"subjectName,omitempty"`
-	// UploadDateTime The date time of CodeSigning Cert when it is uploaded (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+	// UploadDateTime undocumented
 	UploadDateTime *time.Time `json:"uploadDateTime,omitempty"`
 }

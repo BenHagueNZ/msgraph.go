@@ -972,41 +972,41 @@ func (r *SiteSitesCollectionRequest) Add(ctx context.Context, reqObj *Site) (res
 }
 
 // TermStore is navigation property
-func (b *SiteRequestBuilder) TermStore() *StoreRequestBuilder {
-	bb := &StoreRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *SiteRequestBuilder) TermStore() *TermStoreStoreRequestBuilder {
+	bb := &TermStoreStoreRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/termStore"
 	return bb
 }
 
-// TermStores returns request builder for Store collection
+// TermStores returns request builder for TermStoreStore collection
 func (b *SiteRequestBuilder) TermStores() *SiteTermStoresCollectionRequestBuilder {
 	bb := &SiteTermStoresCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/termStores"
 	return bb
 }
 
-// SiteTermStoresCollectionRequestBuilder is request builder for Store collection
+// SiteTermStoresCollectionRequestBuilder is request builder for TermStoreStore collection
 type SiteTermStoresCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for Store collection
+// Request returns request for TermStoreStore collection
 func (b *SiteTermStoresCollectionRequestBuilder) Request() *SiteTermStoresCollectionRequest {
 	return &SiteTermStoresCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for Store item
-func (b *SiteTermStoresCollectionRequestBuilder) ID(id string) *StoreRequestBuilder {
-	bb := &StoreRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for TermStoreStore item
+func (b *SiteTermStoresCollectionRequestBuilder) ID(id string) *TermStoreStoreRequestBuilder {
+	bb := &TermStoreStoreRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SiteTermStoresCollectionRequest is request for Store collection
+// SiteTermStoresCollectionRequest is request for TermStoreStore collection
 type SiteTermStoresCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for Store collection
-func (r *SiteTermStoresCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Store, error) {
+// Paging perfoms paging operation for TermStoreStore collection
+func (r *SiteTermStoresCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TermStoreStore, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1018,7 +1018,7 @@ func (r *SiteTermStoresCollectionRequest) Paging(ctx context.Context, method, pa
 	if err != nil {
 		return nil, err
 	}
-	var values []Store
+	var values []TermStoreStore
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1032,7 +1032,7 @@ func (r *SiteTermStoresCollectionRequest) Paging(ctx context.Context, method, pa
 		}
 		var (
 			paging Paging
-			value  []Store
+			value  []TermStoreStore
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1061,8 +1061,8 @@ func (r *SiteTermStoresCollectionRequest) Paging(ctx context.Context, method, pa
 	}
 }
 
-// GetN performs GET request for Store collection, max N pages
-func (r *SiteTermStoresCollectionRequest) GetN(ctx context.Context, n int) ([]Store, error) {
+// GetN performs GET request for TermStoreStore collection, max N pages
+func (r *SiteTermStoresCollectionRequest) GetN(ctx context.Context, n int) ([]TermStoreStore, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1070,13 +1070,13 @@ func (r *SiteTermStoresCollectionRequest) GetN(ctx context.Context, n int) ([]St
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for Store collection
-func (r *SiteTermStoresCollectionRequest) Get(ctx context.Context) ([]Store, error) {
+// Get performs GET request for TermStoreStore collection
+func (r *SiteTermStoresCollectionRequest) Get(ctx context.Context) ([]TermStoreStore, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for Store collection
-func (r *SiteTermStoresCollectionRequest) Add(ctx context.Context, reqObj *Store) (resObj *Store, err error) {
+// Add performs POST request for TermStoreStore collection
+func (r *SiteTermStoresCollectionRequest) Add(ctx context.Context, reqObj *TermStoreStore) (resObj *TermStoreStore, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

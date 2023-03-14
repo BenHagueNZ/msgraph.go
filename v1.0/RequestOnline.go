@@ -75,7 +75,7 @@ type OnlineMeetingCollectionCreateOrGetRequestBuilder struct{ BaseRequestBuilder
 // CreateOrGet action undocumented
 func (b *CloudCommunicationsOnlineMeetingsCollectionRequestBuilder) CreateOrGet(reqObj *OnlineMeetingCollectionCreateOrGetRequestParameter) *OnlineMeetingCollectionCreateOrGetRequestBuilder {
 	bb := &OnlineMeetingCollectionCreateOrGetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/createOrGet"
+	bb.BaseRequestBuilder.baseURL += "/CreateOrGet"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -83,7 +83,7 @@ func (b *CloudCommunicationsOnlineMeetingsCollectionRequestBuilder) CreateOrGet(
 // CreateOrGet action undocumented
 func (b *UserOnlineMeetingsCollectionRequestBuilder) CreateOrGet(reqObj *OnlineMeetingCollectionCreateOrGetRequestParameter) *OnlineMeetingCollectionCreateOrGetRequestBuilder {
 	bb := &OnlineMeetingCollectionCreateOrGetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/createOrGet"
+	bb.BaseRequestBuilder.baseURL += "/CreateOrGet"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }

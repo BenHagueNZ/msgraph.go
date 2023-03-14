@@ -4,25 +4,25 @@ package msgraph
 
 import "time"
 
-// TermsAndConditions A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
+// TermsAndConditions undocumented
 type TermsAndConditions struct {
 	// Entity is the base model of TermsAndConditions
 	Entity
-	// AcceptanceStatement Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.
+	// AcceptanceStatement undocumented
 	AcceptanceStatement *string `json:"acceptanceStatement,omitempty"`
-	// BodyText Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&C policy.
+	// BodyText undocumented
 	BodyText *string `json:"bodyText,omitempty"`
-	// CreatedDateTime DateTime the object was created.
+	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
-	// Description Administrator-supplied description of the T&C policy.
+	// Description undocumented
 	Description *string `json:"description,omitempty"`
-	// DisplayName Administrator-supplied name for the T&C policy.
+	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
-	// LastModifiedDateTime DateTime the object was last modified.
+	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
-	// Title Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&C policy.
+	// Title undocumented
 	Title *string `json:"title,omitempty"`
-	// Version Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&C policy.
+	// Version undocumented
 	Version *int `json:"version,omitempty"`
 	// AcceptanceStatuses undocumented
 	AcceptanceStatuses []TermsAndConditionsAcceptanceStatus `json:"acceptanceStatuses,omitempty"`
@@ -30,27 +30,27 @@ type TermsAndConditions struct {
 	Assignments []TermsAndConditionsAssignment `json:"assignments,omitempty"`
 }
 
-// TermsAndConditionsAcceptanceStatus A termsAndConditionsAcceptanceStatus entity represents the acceptance status of a given Terms and Conditions (T&C) policy by a given user. Users must accept the most up-to-date version of the terms in order to retain access to the Company Portal.
+// TermsAndConditionsAcceptanceStatus undocumented
 type TermsAndConditionsAcceptanceStatus struct {
 	// Entity is the base model of TermsAndConditionsAcceptanceStatus
 	Entity
-	// AcceptedDateTime DateTime when the terms were last accepted by the user.
+	// AcceptedDateTime undocumented
 	AcceptedDateTime *time.Time `json:"acceptedDateTime,omitempty"`
-	// AcceptedVersion Most recent version number of the T&C accepted by the user.
+	// AcceptedVersion undocumented
 	AcceptedVersion *int `json:"acceptedVersion,omitempty"`
-	// UserDisplayName Display name of the user whose acceptance the entity represents.
+	// UserDisplayName undocumented
 	UserDisplayName *string `json:"userDisplayName,omitempty"`
-	// UserPrincipalName The userPrincipalName of the User that accepted the term.
+	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 	// TermsAndConditions undocumented
 	TermsAndConditions *TermsAndConditions `json:"termsAndConditions,omitempty"`
 }
 
-// TermsAndConditionsAssignment A termsAndConditionsAssignment entity represents the assignment of a given Terms and Conditions (T&C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.
+// TermsAndConditionsAssignment undocumented
 type TermsAndConditionsAssignment struct {
 	// Entity is the base model of TermsAndConditionsAssignment
 	Entity
-	// Target Assignment target that the T&C policy is assigned to.
+	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
 

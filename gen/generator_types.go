@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"unicode"
 )
 
 const (
@@ -46,12 +47,12 @@ func stripNSPrefix(t string) (string, bool) {
 	return t, ok
 }
 
-func exported(n string) string {
-	last := strings.LastIndex(n, ".")
-	if last != -1 {
-		n = n[last+1:]
-	}
-	return lintName(strings.Title(n))
+func exported(str string) string {
+	runes := []rune(str)
+	runes[strings.Index(str, ".")+1] = unicode.ToUpper(runes[strings.Index(str, ".")+1])
+	str = string(runes)
+	str = strings.Replace(str, ".", "", 1)
+	return lintName(strings.Title(str))
 }
 
 func isCollectionType(t string) bool {
@@ -67,13 +68,13 @@ func (g *Generator) SymBaseType(t string) string {
 	}
 	if strings.HasPrefix(t, colPrefix) {
 		str := g.SymBaseType(t[len(colPrefix) : len(t)-1])
-		last := strings.LastIndex(str, ".")
-		if last != -1 {
-			str = str[last+1:]
-		}
+		runes := []rune(str)
+		runes[strings.Index(str, ".")+1] = unicode.ToUpper(runes[strings.Index(str, ".")+1])
+		str = string(runes)
+		str = strings.Replace(str, ".", "", 1)
 		return str
 	}
-	panic(fmt.Errorf("Unknown type %s", t))
+	panic(fmt.Errorf("unknown type %s", t))
 }
 
 func (g *Generator) SymFromType(t string) string {
@@ -85,13 +86,13 @@ func (g *Generator) SymFromType(t string) string {
 	}
 	if strings.HasPrefix(t, colPrefix) {
 		str := g.SymBaseType(t[len(colPrefix) : len(t)-1])
-		last := strings.LastIndex(str, ".")
-		if last != -1 {
-			str = str[last+1:]
-		}
+		runes := []rune(str)
+		runes[strings.Index(str, ".")+1] = unicode.ToUpper(runes[strings.Index(str, ".")+1])
+		str = string(runes)
+		str = strings.Replace(str, ".", "", 1)
 		return str + "Collection"
 	}
-	panic(fmt.Errorf("Unknown type %s", t))
+	panic(fmt.Errorf("unknown type %s", t))
 }
 
 func (g *Generator) TypeFromType(t string) string {
@@ -107,5 +108,5 @@ func (g *Generator) TypeFromType(t string) string {
 	if strings.HasPrefix(t, colPrefix) {
 		return "[]" + g.TypeFromType(t[len(colPrefix) : len(t)-1])[1:]
 	}
-	panic(fmt.Errorf("Unknown type %s", t))
+	panic(fmt.Errorf("unknown type %s", t))
 }

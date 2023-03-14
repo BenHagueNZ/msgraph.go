@@ -2,10 +2,10 @@
 
 package msgraph
 
-// ResetPasscodeActionResult Reset passcode action result
+// ResetPasscodeActionResult undocumented
 type ResetPasscodeActionResult struct {
 	// DeviceActionResult is the base model of ResetPasscodeActionResult
 	DeviceActionResult
-	// Passcode Newly generated passcode for the device
+	// Passcode undocumented
 	Passcode *string `json:"passcode,omitempty"`
 }

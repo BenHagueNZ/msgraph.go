@@ -32,8 +32,8 @@ type EmailAuthenticationMethodConfiguration struct {
 
 // EmailFileAssessmentRequestObject undocumented
 type EmailFileAssessmentRequestObject struct {
-	// ThreatAssessmentRequestObject is the base model of EmailFileAssessmentRequestObject
-	ThreatAssessmentRequestObject
+	// ThreatAssessmentRequest is the base model of EmailFileAssessmentRequestObject
+	ThreatAssessmentRequest
 	// ContentData undocumented
 	ContentData *string `json:"contentData,omitempty"`
 	// DestinationRoutingReason undocumented

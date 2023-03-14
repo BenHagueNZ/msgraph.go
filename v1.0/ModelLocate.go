@@ -2,10 +2,10 @@
 
 package msgraph
 
-// LocateDeviceActionResult Locate device action result
+// LocateDeviceActionResult undocumented
 type LocateDeviceActionResult struct {
 	// DeviceActionResult is the base model of LocateDeviceActionResult
 	DeviceActionResult
-	// DeviceLocation device location
+	// DeviceLocation undocumented
 	DeviceLocation *DeviceGeoLocation `json:"deviceLocation,omitempty"`
 }

@@ -103,6 +103,39 @@ func (r *AppConsentApprovalRouteRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// AppConsentRequestRequestBuilder is request builder for AppConsentRequest
+type AppConsentRequestRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AppConsentRequestRequest
+func (b *AppConsentRequestRequestBuilder) Request() *AppConsentRequestRequest {
+	return &AppConsentRequestRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AppConsentRequestRequest is request for AppConsentRequest
+type AppConsentRequestRequest struct{ BaseRequest }
+
+// Get performs GET request for AppConsentRequest
+func (r *AppConsentRequestRequest) Get(ctx context.Context) (resObj *AppConsentRequest, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AppConsentRequest
+func (r *AppConsentRequestRequest) Update(ctx context.Context, reqObj *AppConsentRequest) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AppConsentRequest
+func (r *AppConsentRequestRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // AppConsentRequestObjectRequestBuilder is request builder for AppConsentRequestObject
 type AppConsentRequestObjectRequestBuilder struct{ BaseRequestBuilder }
 

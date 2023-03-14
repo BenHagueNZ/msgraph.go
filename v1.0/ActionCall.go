@@ -544,3 +544,209 @@ func (r *CallParticipantsCollectionRequest) Add(ctx context.Context, reqObj *Par
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
+
+// Sessions returns request builder for CallRecordsSession collection
+func (b *CallRecordsCallRecordRequestBuilder) Sessions() *CallRecordsCallRecordSessionsCollectionRequestBuilder {
+	bb := &CallRecordsCallRecordSessionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/sessions"
+	return bb
+}
+
+// CallRecordsCallRecordSessionsCollectionRequestBuilder is request builder for CallRecordsSession collection
+type CallRecordsCallRecordSessionsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for CallRecordsSession collection
+func (b *CallRecordsCallRecordSessionsCollectionRequestBuilder) Request() *CallRecordsCallRecordSessionsCollectionRequest {
+	return &CallRecordsCallRecordSessionsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for CallRecordsSession item
+func (b *CallRecordsCallRecordSessionsCollectionRequestBuilder) ID(id string) *CallRecordsSessionRequestBuilder {
+	bb := &CallRecordsSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// CallRecordsCallRecordSessionsCollectionRequest is request for CallRecordsSession collection
+type CallRecordsCallRecordSessionsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for CallRecordsSession collection
+func (r *CallRecordsCallRecordSessionsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CallRecordsSession, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []CallRecordsSession
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []CallRecordsSession
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for CallRecordsSession collection, max N pages
+func (r *CallRecordsCallRecordSessionsCollectionRequest) GetN(ctx context.Context, n int) ([]CallRecordsSession, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for CallRecordsSession collection
+func (r *CallRecordsCallRecordSessionsCollectionRequest) Get(ctx context.Context) ([]CallRecordsSession, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for CallRecordsSession collection
+func (r *CallRecordsCallRecordSessionsCollectionRequest) Add(ctx context.Context, reqObj *CallRecordsSession) (resObj *CallRecordsSession, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Segments returns request builder for CallRecordsSegment collection
+func (b *CallRecordsSessionRequestBuilder) Segments() *CallRecordsSessionSegmentsCollectionRequestBuilder {
+	bb := &CallRecordsSessionSegmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/segments"
+	return bb
+}
+
+// CallRecordsSessionSegmentsCollectionRequestBuilder is request builder for CallRecordsSegment collection
+type CallRecordsSessionSegmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for CallRecordsSegment collection
+func (b *CallRecordsSessionSegmentsCollectionRequestBuilder) Request() *CallRecordsSessionSegmentsCollectionRequest {
+	return &CallRecordsSessionSegmentsCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for CallRecordsSegment item
+func (b *CallRecordsSessionSegmentsCollectionRequestBuilder) ID(id string) *CallRecordsSegmentRequestBuilder {
+	bb := &CallRecordsSegmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// CallRecordsSessionSegmentsCollectionRequest is request for CallRecordsSegment collection
+type CallRecordsSessionSegmentsCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for CallRecordsSegment collection
+func (r *CallRecordsSessionSegmentsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CallRecordsSegment, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []CallRecordsSegment
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []CallRecordsSegment
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for CallRecordsSegment collection, max N pages
+func (r *CallRecordsSessionSegmentsCollectionRequest) GetN(ctx context.Context, n int) ([]CallRecordsSegment, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for CallRecordsSegment collection
+func (r *CallRecordsSessionSegmentsCollectionRequest) Get(ctx context.Context) ([]CallRecordsSegment, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for CallRecordsSegment collection
+func (r *CallRecordsSessionSegmentsCollectionRequest) Add(ctx context.Context, reqObj *CallRecordsSegment) (resObj *CallRecordsSegment, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}

@@ -438,7 +438,7 @@ type ServiceUpdateMessageCollectionArchiveRequestBuilder struct{ BaseRequestBuil
 // Archive action undocumented
 func (b *ServiceAnnouncementMessagesCollectionRequestBuilder) Archive(reqObj *ServiceUpdateMessageCollectionArchiveRequestParameter) *ServiceUpdateMessageCollectionArchiveRequestBuilder {
 	bb := &ServiceUpdateMessageCollectionArchiveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/archive"
+	bb.BaseRequestBuilder.baseURL += "/Archive"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -461,7 +461,7 @@ type ServiceUpdateMessageCollectionFavoriteRequestBuilder struct{ BaseRequestBui
 // Favorite action undocumented
 func (b *ServiceAnnouncementMessagesCollectionRequestBuilder) Favorite(reqObj *ServiceUpdateMessageCollectionFavoriteRequestParameter) *ServiceUpdateMessageCollectionFavoriteRequestBuilder {
 	bb := &ServiceUpdateMessageCollectionFavoriteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/favorite"
+	bb.BaseRequestBuilder.baseURL += "/Favorite"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -484,7 +484,7 @@ type ServiceUpdateMessageCollectionMarkReadRequestBuilder struct{ BaseRequestBui
 // MarkRead action undocumented
 func (b *ServiceAnnouncementMessagesCollectionRequestBuilder) MarkRead(reqObj *ServiceUpdateMessageCollectionMarkReadRequestParameter) *ServiceUpdateMessageCollectionMarkReadRequestBuilder {
 	bb := &ServiceUpdateMessageCollectionMarkReadRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/markRead"
+	bb.BaseRequestBuilder.baseURL += "/MarkRead"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -507,7 +507,7 @@ type ServiceUpdateMessageCollectionMarkUnreadRequestBuilder struct{ BaseRequestB
 // MarkUnread action undocumented
 func (b *ServiceAnnouncementMessagesCollectionRequestBuilder) MarkUnread(reqObj *ServiceUpdateMessageCollectionMarkUnreadRequestParameter) *ServiceUpdateMessageCollectionMarkUnreadRequestBuilder {
 	bb := &ServiceUpdateMessageCollectionMarkUnreadRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/markUnread"
+	bb.BaseRequestBuilder.baseURL += "/MarkUnread"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -530,7 +530,7 @@ type ServiceUpdateMessageCollectionUnarchiveRequestBuilder struct{ BaseRequestBu
 // Unarchive action undocumented
 func (b *ServiceAnnouncementMessagesCollectionRequestBuilder) Unarchive(reqObj *ServiceUpdateMessageCollectionUnarchiveRequestParameter) *ServiceUpdateMessageCollectionUnarchiveRequestBuilder {
 	bb := &ServiceUpdateMessageCollectionUnarchiveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/unarchive"
+	bb.BaseRequestBuilder.baseURL += "/Unarchive"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -553,7 +553,7 @@ type ServiceUpdateMessageCollectionUnfavoriteRequestBuilder struct{ BaseRequestB
 // Unfavorite action undocumented
 func (b *ServiceAnnouncementMessagesCollectionRequestBuilder) Unfavorite(reqObj *ServiceUpdateMessageCollectionUnfavoriteRequestParameter) *ServiceUpdateMessageCollectionUnfavoriteRequestBuilder {
 	bb := &ServiceUpdateMessageCollectionUnfavoriteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/unfavorite"
+	bb.BaseRequestBuilder.baseURL += "/Unfavorite"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
@@ -567,119 +567,6 @@ func (b *ServiceUpdateMessageCollectionUnfavoriteRequestBuilder) Request() *Serv
 }
 
 func (r *ServiceUpdateMessageCollectionUnfavoriteRequest) Post(ctx context.Context) (resObj *bool, err error) {
-	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
-	return
-}
-
-type ServicePrincipalAddKeyRequestBuilder struct{ BaseRequestBuilder }
-
-// AddKey action undocumented
-func (b *ServicePrincipalRequestBuilder) AddKey(reqObj *ServicePrincipalAddKeyRequestParameter) *ServicePrincipalAddKeyRequestBuilder {
-	bb := &ServicePrincipalAddKeyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/addKey"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type ServicePrincipalAddKeyRequest struct{ BaseRequest }
-
-func (b *ServicePrincipalAddKeyRequestBuilder) Request() *ServicePrincipalAddKeyRequest {
-	return &ServicePrincipalAddKeyRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *ServicePrincipalAddKeyRequest) Post(ctx context.Context) (resObj *KeyCredential, err error) {
-	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
-	return
-}
-
-type ServicePrincipalAddPasswordRequestBuilder struct{ BaseRequestBuilder }
-
-// AddPassword action undocumented
-func (b *ServicePrincipalRequestBuilder) AddPassword(reqObj *ServicePrincipalAddPasswordRequestParameter) *ServicePrincipalAddPasswordRequestBuilder {
-	bb := &ServicePrincipalAddPasswordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/addPassword"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type ServicePrincipalAddPasswordRequest struct{ BaseRequest }
-
-func (b *ServicePrincipalAddPasswordRequestBuilder) Request() *ServicePrincipalAddPasswordRequest {
-	return &ServicePrincipalAddPasswordRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *ServicePrincipalAddPasswordRequest) Post(ctx context.Context) (resObj *PasswordCredential, err error) {
-	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
-	return
-}
-
-type ServicePrincipalRemoveKeyRequestBuilder struct{ BaseRequestBuilder }
-
-// RemoveKey action undocumented
-func (b *ServicePrincipalRequestBuilder) RemoveKey(reqObj *ServicePrincipalRemoveKeyRequestParameter) *ServicePrincipalRemoveKeyRequestBuilder {
-	bb := &ServicePrincipalRemoveKeyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/removeKey"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type ServicePrincipalRemoveKeyRequest struct{ BaseRequest }
-
-func (b *ServicePrincipalRemoveKeyRequestBuilder) Request() *ServicePrincipalRemoveKeyRequest {
-	return &ServicePrincipalRemoveKeyRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *ServicePrincipalRemoveKeyRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type ServicePrincipalRemovePasswordRequestBuilder struct{ BaseRequestBuilder }
-
-// RemovePassword action undocumented
-func (b *ServicePrincipalRequestBuilder) RemovePassword(reqObj *ServicePrincipalRemovePasswordRequestParameter) *ServicePrincipalRemovePasswordRequestBuilder {
-	bb := &ServicePrincipalRemovePasswordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/removePassword"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type ServicePrincipalRemovePasswordRequest struct{ BaseRequest }
-
-func (b *ServicePrincipalRemovePasswordRequestBuilder) Request() *ServicePrincipalRemovePasswordRequest {
-	return &ServicePrincipalRemovePasswordRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *ServicePrincipalRemovePasswordRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type ServicePrincipalAddTokenSigningCertificateRequestBuilder struct{ BaseRequestBuilder }
-
-// AddTokenSigningCertificate action undocumented
-func (b *ServicePrincipalRequestBuilder) AddTokenSigningCertificate(reqObj *ServicePrincipalAddTokenSigningCertificateRequestParameter) *ServicePrincipalAddTokenSigningCertificateRequestBuilder {
-	bb := &ServicePrincipalAddTokenSigningCertificateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/addTokenSigningCertificate"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type ServicePrincipalAddTokenSigningCertificateRequest struct{ BaseRequest }
-
-func (b *ServicePrincipalAddTokenSigningCertificateRequestBuilder) Request() *ServicePrincipalAddTokenSigningCertificateRequest {
-	return &ServicePrincipalAddTokenSigningCertificateRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *ServicePrincipalAddTokenSigningCertificateRequest) Post(ctx context.Context) (resObj *SelfSignedCertificate, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }

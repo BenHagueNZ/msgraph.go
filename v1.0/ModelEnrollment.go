@@ -2,32 +2,32 @@
 
 package msgraph
 
-// EnrollmentConfigurationAssignment Enrollment Configuration Assignment
+// EnrollmentConfigurationAssignment undocumented
 type EnrollmentConfigurationAssignment struct {
 	// Entity is the base model of EnrollmentConfigurationAssignment
 	Entity
-	// Target Represents an assignment to managed devices in the tenant
+	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
 
-// EnrollmentTroubleshootingEvent Event representing an enrollment failure.
+// EnrollmentTroubleshootingEvent undocumented
 type EnrollmentTroubleshootingEvent struct {
 	// DeviceManagementTroubleshootingEvent is the base model of EnrollmentTroubleshootingEvent
 	DeviceManagementTroubleshootingEvent
-	// DeviceID Azure AD device identifier.
+	// DeviceID undocumented
 	DeviceID *string `json:"deviceId,omitempty"`
-	// EnrollmentType Type of the enrollment.
+	// EnrollmentType undocumented
 	EnrollmentType *DeviceEnrollmentType `json:"enrollmentType,omitempty"`
-	// FailureCategory Highlevel failure category.
+	// FailureCategory undocumented
 	FailureCategory *DeviceEnrollmentFailureReason `json:"failureCategory,omitempty"`
-	// FailureReason Detailed failure reason.
+	// FailureReason undocumented
 	FailureReason *string `json:"failureReason,omitempty"`
-	// ManagedDeviceIdentifier Device identifier created or collected by Intune.
+	// ManagedDeviceIdentifier undocumented
 	ManagedDeviceIdentifier *string `json:"managedDeviceIdentifier,omitempty"`
-	// OperatingSystem Operating System.
+	// OperatingSystem undocumented
 	OperatingSystem *string `json:"operatingSystem,omitempty"`
-	// OsVersion OS Version.
+	// OsVersion undocumented
 	OsVersion *string `json:"osVersion,omitempty"`
-	// UserID Identifier for the user that tried to enroll the device.
+	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
 }

@@ -12,13 +12,13 @@ type ResourceAccess struct {
 	Type *string `json:"type,omitempty"`
 }
 
-// ResourceAction Set of allowed and not allowed actions for a resource.
+// ResourceAction undocumented
 type ResourceAction struct {
 	// Object is the base model of ResourceAction
 	Object
-	// AllowedResourceActions Allowed Actions
+	// AllowedResourceActions undocumented
 	AllowedResourceActions []string `json:"allowedResourceActions,omitempty"`
-	// NotAllowedResourceActions Not Allowed Actions.
+	// NotAllowedResourceActions undocumented
 	NotAllowedResourceActions []string `json:"notAllowedResourceActions,omitempty"`
 }
 
@@ -28,15 +28,15 @@ type ResourceData struct {
 	Object
 }
 
-// ResourceOperation Describes the resourceOperation resource (entity) of the Microsoft Graph API (REST), which supports Intune workflows related to role-based access control (RBAC).
+// ResourceOperation undocumented
 type ResourceOperation struct {
 	// Entity is the base model of ResourceOperation
 	Entity
-	// ActionName Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
+	// ActionName undocumented
 	ActionName *string `json:"actionName,omitempty"`
-	// Description Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.
+	// Description undocumented
 	Description *string `json:"description,omitempty"`
-	// ResourceName Name of the Resource this operation is performed on.
+	// ResourceName undocumented
 	ResourceName *string `json:"resourceName,omitempty"`
 }
 

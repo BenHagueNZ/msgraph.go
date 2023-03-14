@@ -2,102 +2,102 @@
 
 package msgraph
 
-// Windows81CompliancePolicy This class contains compliance settings for Windows 8.1.
+// Windows81CompliancePolicy undocumented
 type Windows81CompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of Windows81CompliancePolicy
 	DeviceCompliancePolicy
-	// OsMaximumVersion Maximum Windows 8.1 version.
+	// OsMaximumVersion undocumented
 	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
-	// OsMinimumVersion Minimum Windows 8.1 version.
+	// OsMinimumVersion undocumented
 	OsMinimumVersion *string `json:"osMinimumVersion,omitempty"`
-	// PasswordBlockSimple Indicates whether or not to block simple password.
+	// PasswordBlockSimple undocumented
 	PasswordBlockSimple *bool `json:"passwordBlockSimple,omitempty"`
-	// PasswordExpirationDays Password expiration in days.
+	// PasswordExpirationDays undocumented
 	PasswordExpirationDays *int `json:"passwordExpirationDays,omitempty"`
-	// PasswordMinimumCharacterSetCount The number of character sets required in the password.
+	// PasswordMinimumCharacterSetCount undocumented
 	PasswordMinimumCharacterSetCount *int `json:"passwordMinimumCharacterSetCount,omitempty"`
-	// PasswordMinimumLength The minimum password length.
+	// PasswordMinimumLength undocumented
 	PasswordMinimumLength *int `json:"passwordMinimumLength,omitempty"`
-	// PasswordMinutesOfInactivityBeforeLock Minutes of inactivity before a password is required.
+	// PasswordMinutesOfInactivityBeforeLock undocumented
 	PasswordMinutesOfInactivityBeforeLock *int `json:"passwordMinutesOfInactivityBeforeLock,omitempty"`
-	// PasswordPreviousPasswordBlockCount The number of previous passwords to prevent re-use of. Valid values 0 to 24
+	// PasswordPreviousPasswordBlockCount undocumented
 	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
-	// PasswordRequired Require a password to unlock Windows device.
+	// PasswordRequired undocumented
 	PasswordRequired *bool `json:"passwordRequired,omitempty"`
-	// PasswordRequiredType The required password type.
+	// PasswordRequiredType undocumented
 	PasswordRequiredType *RequiredPasswordType `json:"passwordRequiredType,omitempty"`
-	// StorageRequireEncryption Indicates whether or not to require encryption on a windows 8.1 device.
+	// StorageRequireEncryption undocumented
 	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
 }
 
-// Windows81GeneralConfiguration This topic provides descriptions of the declared methods, properties and relationships exposed by the windows81GeneralConfiguration resource.
+// Windows81GeneralConfiguration undocumented
 type Windows81GeneralConfiguration struct {
 	// DeviceConfiguration is the base model of Windows81GeneralConfiguration
 	DeviceConfiguration
-	// AccountsBlockAddingNonMicrosoftAccountEmail Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.
+	// AccountsBlockAddingNonMicrosoftAccountEmail undocumented
 	AccountsBlockAddingNonMicrosoftAccountEmail *bool `json:"accountsBlockAddingNonMicrosoftAccountEmail,omitempty"`
-	// ApplyOnlyToWindows81 Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
+	// ApplyOnlyToWindows81 undocumented
 	ApplyOnlyToWindows81 *bool `json:"applyOnlyToWindows81,omitempty"`
-	// BrowserBlockAutofill Indicates whether or not to block auto fill.
+	// BrowserBlockAutofill undocumented
 	BrowserBlockAutofill *bool `json:"browserBlockAutofill,omitempty"`
-	// BrowserBlockAutomaticDetectionOfIntranetSites Indicates whether or not to block automatic detection of Intranet sites.
+	// BrowserBlockAutomaticDetectionOfIntranetSites undocumented
 	BrowserBlockAutomaticDetectionOfIntranetSites *bool `json:"browserBlockAutomaticDetectionOfIntranetSites,omitempty"`
-	// BrowserBlockEnterpriseModeAccess Indicates whether or not to block enterprise mode access.
+	// BrowserBlockEnterpriseModeAccess undocumented
 	BrowserBlockEnterpriseModeAccess *bool `json:"browserBlockEnterpriseModeAccess,omitempty"`
-	// BrowserBlockJavaScript Indicates whether or not to Block the user from using JavaScript.
+	// BrowserBlockJavaScript undocumented
 	BrowserBlockJavaScript *bool `json:"browserBlockJavaScript,omitempty"`
-	// BrowserBlockPlugins Indicates whether or not to block plug-ins.
+	// BrowserBlockPlugins undocumented
 	BrowserBlockPlugins *bool `json:"browserBlockPlugins,omitempty"`
-	// BrowserBlockPopups Indicates whether or not to block popups.
+	// BrowserBlockPopups undocumented
 	BrowserBlockPopups *bool `json:"browserBlockPopups,omitempty"`
-	// BrowserBlockSendingDoNotTrackHeader Indicates whether or not to Block the user from sending the do not track header.
+	// BrowserBlockSendingDoNotTrackHeader undocumented
 	BrowserBlockSendingDoNotTrackHeader *bool `json:"browserBlockSendingDoNotTrackHeader,omitempty"`
-	// BrowserBlockSingleWordEntryOnIntranetSites Indicates whether or not to block a single word entry on Intranet sites.
+	// BrowserBlockSingleWordEntryOnIntranetSites undocumented
 	BrowserBlockSingleWordEntryOnIntranetSites *bool `json:"browserBlockSingleWordEntryOnIntranetSites,omitempty"`
-	// BrowserEnterpriseModeSiteListLocation The enterprise mode site list location. Could be a local file, local network or http location.
+	// BrowserEnterpriseModeSiteListLocation undocumented
 	BrowserEnterpriseModeSiteListLocation *string `json:"browserEnterpriseModeSiteListLocation,omitempty"`
-	// BrowserInternetSecurityLevel The internet security level.
+	// BrowserInternetSecurityLevel undocumented
 	BrowserInternetSecurityLevel *InternetSiteSecurityLevel `json:"browserInternetSecurityLevel,omitempty"`
-	// BrowserIntranetSecurityLevel The Intranet security level.
+	// BrowserIntranetSecurityLevel undocumented
 	BrowserIntranetSecurityLevel *SiteSecurityLevel `json:"browserIntranetSecurityLevel,omitempty"`
-	// BrowserLoggingReportLocation The logging report location.
+	// BrowserLoggingReportLocation undocumented
 	BrowserLoggingReportLocation *string `json:"browserLoggingReportLocation,omitempty"`
-	// BrowserRequireFirewall Indicates whether or not to require a firewall.
+	// BrowserRequireFirewall undocumented
 	BrowserRequireFirewall *bool `json:"browserRequireFirewall,omitempty"`
-	// BrowserRequireFraudWarning Indicates whether or not to require fraud warning.
+	// BrowserRequireFraudWarning undocumented
 	BrowserRequireFraudWarning *bool `json:"browserRequireFraudWarning,omitempty"`
-	// BrowserRequireHighSecurityForRestrictedSites Indicates whether or not to require high security for restricted sites.
+	// BrowserRequireHighSecurityForRestrictedSites undocumented
 	BrowserRequireHighSecurityForRestrictedSites *bool `json:"browserRequireHighSecurityForRestrictedSites,omitempty"`
-	// BrowserRequireSmartScreen Indicates whether or not to require the user to use the smart screen filter.
+	// BrowserRequireSmartScreen undocumented
 	BrowserRequireSmartScreen *bool `json:"browserRequireSmartScreen,omitempty"`
-	// BrowserTrustedSitesSecurityLevel The trusted sites security level.
+	// BrowserTrustedSitesSecurityLevel undocumented
 	BrowserTrustedSitesSecurityLevel *SiteSecurityLevel `json:"browserTrustedSitesSecurityLevel,omitempty"`
-	// CellularBlockDataRoaming Indicates whether or not to block data roaming.
+	// CellularBlockDataRoaming undocumented
 	CellularBlockDataRoaming *bool `json:"cellularBlockDataRoaming,omitempty"`
-	// DiagnosticsBlockDataSubmission Indicates whether or not to block diagnostic data submission.
+	// DiagnosticsBlockDataSubmission undocumented
 	DiagnosticsBlockDataSubmission *bool `json:"diagnosticsBlockDataSubmission,omitempty"`
-	// PasswordBlockPicturePasswordAndPin Indicates whether or not to Block the user from using a pictures password and pin.
+	// PasswordBlockPicturePasswordAndPin undocumented
 	PasswordBlockPicturePasswordAndPin *bool `json:"passwordBlockPicturePasswordAndPin,omitempty"`
-	// PasswordExpirationDays Password expiration in days.
+	// PasswordExpirationDays undocumented
 	PasswordExpirationDays *int `json:"passwordExpirationDays,omitempty"`
-	// PasswordMinimumCharacterSetCount The number of character sets required in the password.
+	// PasswordMinimumCharacterSetCount undocumented
 	PasswordMinimumCharacterSetCount *int `json:"passwordMinimumCharacterSetCount,omitempty"`
-	// PasswordMinimumLength The minimum password length.
+	// PasswordMinimumLength undocumented
 	PasswordMinimumLength *int `json:"passwordMinimumLength,omitempty"`
-	// PasswordMinutesOfInactivityBeforeScreenTimeout The minutes of inactivity before the screen times out.
+	// PasswordMinutesOfInactivityBeforeScreenTimeout undocumented
 	PasswordMinutesOfInactivityBeforeScreenTimeout *int `json:"passwordMinutesOfInactivityBeforeScreenTimeout,omitempty"`
-	// PasswordPreviousPasswordBlockCount The number of previous passwords to prevent re-use of. Valid values 0 to 24
+	// PasswordPreviousPasswordBlockCount undocumented
 	PasswordPreviousPasswordBlockCount *int `json:"passwordPreviousPasswordBlockCount,omitempty"`
-	// PasswordRequiredType The required password type.
+	// PasswordRequiredType undocumented
 	PasswordRequiredType *RequiredPasswordType `json:"passwordRequiredType,omitempty"`
-	// PasswordSignInFailureCountBeforeFactoryReset The number of sign in failures before factory reset.
+	// PasswordSignInFailureCountBeforeFactoryReset undocumented
 	PasswordSignInFailureCountBeforeFactoryReset *int `json:"passwordSignInFailureCountBeforeFactoryReset,omitempty"`
-	// StorageRequireDeviceEncryption Indicates whether or not to require encryption on a mobile device.
+	// StorageRequireDeviceEncryption undocumented
 	StorageRequireDeviceEncryption *bool `json:"storageRequireDeviceEncryption,omitempty"`
-	// UpdatesRequireAutomaticUpdates Indicates whether or not to require automatic updates.
+	// UpdatesRequireAutomaticUpdates undocumented
 	UpdatesRequireAutomaticUpdates *bool `json:"updatesRequireAutomaticUpdates,omitempty"`
-	// UserAccountControlSettings The user account control settings.
+	// UserAccountControlSettings undocumented
 	UserAccountControlSettings *WindowsUserAccountControlSettings `json:"userAccountControlSettings,omitempty"`
-	// WorkFoldersURL The work folders url.
+	// WorkFoldersURL undocumented
 	WorkFoldersURL *string `json:"workFoldersUrl,omitempty"`
 }
