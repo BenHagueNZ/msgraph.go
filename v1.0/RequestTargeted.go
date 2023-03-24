@@ -102,3 +102,91 @@ func (r *TargetedManagedAppProtectionRequest) Update(ctx context.Context, reqObj
 func (r *TargetedManagedAppProtectionRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type TargetedManagedAppConfigurationAssignRequestBuilder struct{ BaseRequestBuilder }
+
+// Assign action undocumented
+func (b *TargetedManagedAppConfigurationRequestBuilder) Assign(reqObj *TargetedManagedAppConfigurationAssignRequestParameter) *TargetedManagedAppConfigurationAssignRequestBuilder {
+	bb := &TargetedManagedAppConfigurationAssignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Assign"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type TargetedManagedAppConfigurationAssignRequest struct{ BaseRequest }
+
+func (b *TargetedManagedAppConfigurationAssignRequestBuilder) Request() *TargetedManagedAppConfigurationAssignRequest {
+	return &TargetedManagedAppConfigurationAssignRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *TargetedManagedAppConfigurationAssignRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type TargetedManagedAppConfigurationTargetAppsRequestBuilder struct{ BaseRequestBuilder }
+
+// TargetApps action undocumented
+func (b *TargetedManagedAppConfigurationRequestBuilder) TargetApps(reqObj *TargetedManagedAppConfigurationTargetAppsRequestParameter) *TargetedManagedAppConfigurationTargetAppsRequestBuilder {
+	bb := &TargetedManagedAppConfigurationTargetAppsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/TargetApps"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type TargetedManagedAppConfigurationTargetAppsRequest struct{ BaseRequest }
+
+func (b *TargetedManagedAppConfigurationTargetAppsRequestBuilder) Request() *TargetedManagedAppConfigurationTargetAppsRequest {
+	return &TargetedManagedAppConfigurationTargetAppsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *TargetedManagedAppConfigurationTargetAppsRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type TargetedManagedAppProtectionAssignRequestBuilder struct{ BaseRequestBuilder }
+
+// Assign action undocumented
+func (b *TargetedManagedAppProtectionRequestBuilder) Assign(reqObj *TargetedManagedAppProtectionAssignRequestParameter) *TargetedManagedAppProtectionAssignRequestBuilder {
+	bb := &TargetedManagedAppProtectionAssignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Assign"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type TargetedManagedAppProtectionAssignRequest struct{ BaseRequest }
+
+func (b *TargetedManagedAppProtectionAssignRequestBuilder) Request() *TargetedManagedAppProtectionAssignRequest {
+	return &TargetedManagedAppProtectionAssignRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *TargetedManagedAppProtectionAssignRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type TargetedManagedAppProtectionTargetAppsRequestBuilder struct{ BaseRequestBuilder }
+
+// TargetApps action undocumented
+func (b *TargetedManagedAppProtectionRequestBuilder) TargetApps(reqObj *TargetedManagedAppProtectionTargetAppsRequestParameter) *TargetedManagedAppProtectionTargetAppsRequestBuilder {
+	bb := &TargetedManagedAppProtectionTargetAppsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/TargetApps"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type TargetedManagedAppProtectionTargetAppsRequest struct{ BaseRequest }
+
+func (b *TargetedManagedAppProtectionTargetAppsRequestBuilder) Request() *TargetedManagedAppProtectionTargetAppsRequest {
+	return &TargetedManagedAppProtectionTargetAppsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *TargetedManagedAppProtectionTargetAppsRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}

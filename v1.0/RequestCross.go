@@ -267,3 +267,25 @@ func (r *CrossTenantAccessPolicyTargetConfigurationRequest) Update(ctx context.C
 func (r *CrossTenantAccessPolicyTargetConfigurationRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestBuilder struct{ BaseRequestBuilder }
+
+// ResetToSystemDefault action undocumented
+func (b *CrossTenantAccessPolicyConfigurationDefaultRequestBuilder) ResetToSystemDefault(reqObj *CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestParameter) *CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestBuilder {
+	bb := &CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/ResetToSystemDefault"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequest struct{ BaseRequest }
+
+func (b *CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestBuilder) Request() *CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequest {
+	return &CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}

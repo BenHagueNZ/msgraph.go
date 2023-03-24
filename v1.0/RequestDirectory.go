@@ -209,639 +209,25 @@ func (r *DirectoryRoleTemplateRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-type DirectoryObjectCollectionValidatePropertiesRequestBuilder struct{ BaseRequestBuilder }
+type DirectoryObjectCheckMemberGroupsRequestBuilder struct{ BaseRequestBuilder }
 
-// ValidateProperties action undocumented
-func (b *AdministrativeUnitMembersCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
+// CheckMemberGroups action undocumented
+func (b *DirectoryObjectRequestBuilder) CheckMemberGroups(reqObj *DirectoryObjectCheckMemberGroupsRequestParameter) *DirectoryObjectCheckMemberGroupsRequestBuilder {
+	bb := &DirectoryObjectCheckMemberGroupsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/CheckMemberGroups"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
 
-// ValidateProperties action undocumented
-func (b *AppManagementPolicyAppliesToCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
+type DirectoryObjectCheckMemberGroupsRequest struct{ BaseRequest }
 
-// ValidateProperties action undocumented
-func (b *ApplicationOwnersCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *ConnectedOrganizationExternalSponsorsCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *ConnectedOrganizationInternalSponsorsCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *DeviceMemberOfCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *DeviceRegisteredOwnersCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *DeviceRegisteredUsersCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *DeviceTransitiveMemberOfCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *DirectoryDeletedItemsCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *DirectoryRoleMembersCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *DomainDomainNameReferencesCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *FeatureRolloutPolicyAppliesToCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *GroupAcceptedSendersCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *GroupMemberOfCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *GroupMembersCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *GroupMembersWithLicenseErrorsCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *GroupOwnersCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *GroupRejectedSendersCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *GroupTransitiveMemberOfCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *GroupTransitiveMembersCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *OrgContactDirectReportsCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *OrgContactMemberOfCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *OrgContactTransitiveMemberOfCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *ServicePrincipalCreatedObjectsCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *ServicePrincipalMemberOfCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *ServicePrincipalOwnedObjectsCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *ServicePrincipalOwnersCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *ServicePrincipalTransitiveMemberOfCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *StsPolicyAppliesToCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *UnifiedRoleManagementPolicyRuleTargetTargetObjectsCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *UserCreatedObjectsCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *UserDirectReportsCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *UserMemberOfCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *UserOwnedDevicesCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *UserOwnedObjectsCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *UserRegisteredDevicesCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// ValidateProperties action undocumented
-func (b *UserTransitiveMemberOfCollectionRequestBuilder) ValidateProperties(reqObj *DirectoryObjectCollectionValidatePropertiesRequestParameter) *DirectoryObjectCollectionValidatePropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type DirectoryObjectCollectionValidatePropertiesRequest struct{ BaseRequest }
-
-func (b *DirectoryObjectCollectionValidatePropertiesRequestBuilder) Request() *DirectoryObjectCollectionValidatePropertiesRequest {
-	return &DirectoryObjectCollectionValidatePropertiesRequest{
+func (b *DirectoryObjectCheckMemberGroupsRequestBuilder) Request() *DirectoryObjectCheckMemberGroupsRequest {
+	return &DirectoryObjectCheckMemberGroupsRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-func (r *DirectoryObjectCollectionValidatePropertiesRequest) Post(ctx context.Context) error {
-	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
-}
-
-type DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder struct{ BaseRequestBuilder }
-
-// GetAvailableExtensionProperties action undocumented
-func (b *AdministrativeUnitMembersCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *AppManagementPolicyAppliesToCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *ApplicationOwnersCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *ConnectedOrganizationExternalSponsorsCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *ConnectedOrganizationInternalSponsorsCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *DeviceMemberOfCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *DeviceRegisteredOwnersCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *DeviceRegisteredUsersCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *DeviceTransitiveMemberOfCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *DirectoryDeletedItemsCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *DirectoryRoleMembersCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *DomainDomainNameReferencesCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *FeatureRolloutPolicyAppliesToCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *GroupAcceptedSendersCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *GroupMemberOfCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *GroupMembersCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *GroupMembersWithLicenseErrorsCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *GroupOwnersCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *GroupRejectedSendersCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *GroupTransitiveMemberOfCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *GroupTransitiveMembersCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *OrgContactDirectReportsCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *OrgContactMemberOfCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *OrgContactTransitiveMemberOfCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *ServicePrincipalCreatedObjectsCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *ServicePrincipalMemberOfCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *ServicePrincipalOwnedObjectsCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *ServicePrincipalOwnersCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *ServicePrincipalTransitiveMemberOfCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *StsPolicyAppliesToCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *UnifiedRoleManagementPolicyRuleTargetTargetObjectsCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *UserCreatedObjectsCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *UserDirectReportsCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *UserMemberOfCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *UserOwnedDevicesCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *UserOwnedObjectsCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *UserRegisteredDevicesCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetAvailableExtensionProperties action undocumented
-func (b *UserTransitiveMemberOfCollectionRequestBuilder) GetAvailableExtensionProperties(reqObj *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestParameter) *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder {
-	bb := &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetAvailableExtensionProperties"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type DirectoryObjectCollectionGetAvailableExtensionPropertiesRequest struct{ BaseRequest }
-
-func (b *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequestBuilder) Request() *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequest {
-	return &DirectoryObjectCollectionGetAvailableExtensionPropertiesRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ExtensionProperty, error) {
+func (r *DirectoryObjectCheckMemberGroupsRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]string, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -853,7 +239,7 @@ func (r *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequest) Paging
 	if err != nil {
 		return nil, err
 	}
-	var values []ExtensionProperty
+	var values []string
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -867,7 +253,7 @@ func (r *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequest) Paging
 		}
 		var (
 			paging Paging
-			value  []ExtensionProperty
+			value  []string
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -896,329 +282,33 @@ func (r *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequest) Paging
 	}
 }
 
-func (r *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequest) PostN(ctx context.Context, n int) ([]ExtensionProperty, error) {
+func (r *DirectoryObjectCheckMemberGroupsRequest) PostN(ctx context.Context, n int) ([]string, error) {
 	return r.Paging(ctx, "POST", "", r.requestObject, n)
 }
 
-func (r *DirectoryObjectCollectionGetAvailableExtensionPropertiesRequest) Post(ctx context.Context) ([]ExtensionProperty, error) {
+func (r *DirectoryObjectCheckMemberGroupsRequest) Post(ctx context.Context) ([]string, error) {
 	return r.Paging(ctx, "POST", "", r.requestObject, 0)
 }
 
-type DirectoryObjectCollectionGetByIDsRequestBuilder struct{ BaseRequestBuilder }
+type DirectoryObjectCheckMemberObjectsRequestBuilder struct{ BaseRequestBuilder }
 
-// GetByIDs action undocumented
-func (b *AdministrativeUnitMembersCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
+// CheckMemberObjects action undocumented
+func (b *DirectoryObjectRequestBuilder) CheckMemberObjects(reqObj *DirectoryObjectCheckMemberObjectsRequestParameter) *DirectoryObjectCheckMemberObjectsRequestBuilder {
+	bb := &DirectoryObjectCheckMemberObjectsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/CheckMemberObjects"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
 
-// GetByIDs action undocumented
-func (b *AppManagementPolicyAppliesToCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
+type DirectoryObjectCheckMemberObjectsRequest struct{ BaseRequest }
 
-// GetByIDs action undocumented
-func (b *ApplicationOwnersCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *ConnectedOrganizationExternalSponsorsCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *ConnectedOrganizationInternalSponsorsCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *DeviceMemberOfCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *DeviceRegisteredOwnersCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *DeviceRegisteredUsersCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *DeviceTransitiveMemberOfCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *DirectoryDeletedItemsCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *DirectoryRoleMembersCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *DomainDomainNameReferencesCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *FeatureRolloutPolicyAppliesToCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *GroupAcceptedSendersCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *GroupMemberOfCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *GroupMembersCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *GroupMembersWithLicenseErrorsCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *GroupOwnersCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *GroupRejectedSendersCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *GroupTransitiveMemberOfCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *GroupTransitiveMembersCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *OrgContactDirectReportsCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *OrgContactMemberOfCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *OrgContactTransitiveMemberOfCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *ServicePrincipalCreatedObjectsCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *ServicePrincipalMemberOfCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *ServicePrincipalOwnedObjectsCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *ServicePrincipalOwnersCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *ServicePrincipalTransitiveMemberOfCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *StsPolicyAppliesToCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *UnifiedRoleManagementPolicyRuleTargetTargetObjectsCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *UserCreatedObjectsCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *UserDirectReportsCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *UserMemberOfCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *UserOwnedDevicesCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *UserOwnedObjectsCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *UserRegisteredDevicesCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// GetByIDs action undocumented
-func (b *UserTransitiveMemberOfCollectionRequestBuilder) GetByIDs(reqObj *DirectoryObjectCollectionGetByIDsRequestParameter) *DirectoryObjectCollectionGetByIDsRequestBuilder {
-	bb := &DirectoryObjectCollectionGetByIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/GetByIds"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type DirectoryObjectCollectionGetByIDsRequest struct{ BaseRequest }
-
-func (b *DirectoryObjectCollectionGetByIDsRequestBuilder) Request() *DirectoryObjectCollectionGetByIDsRequest {
-	return &DirectoryObjectCollectionGetByIDsRequest{
+func (b *DirectoryObjectCheckMemberObjectsRequestBuilder) Request() *DirectoryObjectCheckMemberObjectsRequest {
+	return &DirectoryObjectCheckMemberObjectsRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-func (r *DirectoryObjectCollectionGetByIDsRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+func (r *DirectoryObjectCheckMemberObjectsRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]string, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1230,7 +320,7 @@ func (r *DirectoryObjectCollectionGetByIDsRequest) Paging(ctx context.Context, m
 	if err != nil {
 		return nil, err
 	}
-	var values []DirectoryObject
+	var values []string
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1244,7 +334,7 @@ func (r *DirectoryObjectCollectionGetByIDsRequest) Paging(ctx context.Context, m
 		}
 		var (
 			paging Paging
-			value  []DirectoryObject
+			value  []string
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1273,10 +363,195 @@ func (r *DirectoryObjectCollectionGetByIDsRequest) Paging(ctx context.Context, m
 	}
 }
 
-func (r *DirectoryObjectCollectionGetByIDsRequest) PostN(ctx context.Context, n int) ([]DirectoryObject, error) {
+func (r *DirectoryObjectCheckMemberObjectsRequest) PostN(ctx context.Context, n int) ([]string, error) {
 	return r.Paging(ctx, "POST", "", r.requestObject, n)
 }
 
-func (r *DirectoryObjectCollectionGetByIDsRequest) Post(ctx context.Context) ([]DirectoryObject, error) {
+func (r *DirectoryObjectCheckMemberObjectsRequest) Post(ctx context.Context) ([]string, error) {
 	return r.Paging(ctx, "POST", "", r.requestObject, 0)
+}
+
+type DirectoryObjectGetMemberGroupsRequestBuilder struct{ BaseRequestBuilder }
+
+// GetMemberGroups action undocumented
+func (b *DirectoryObjectRequestBuilder) GetMemberGroups(reqObj *DirectoryObjectGetMemberGroupsRequestParameter) *DirectoryObjectGetMemberGroupsRequestBuilder {
+	bb := &DirectoryObjectGetMemberGroupsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/GetMemberGroups"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type DirectoryObjectGetMemberGroupsRequest struct{ BaseRequest }
+
+func (b *DirectoryObjectGetMemberGroupsRequestBuilder) Request() *DirectoryObjectGetMemberGroupsRequest {
+	return &DirectoryObjectGetMemberGroupsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *DirectoryObjectGetMemberGroupsRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]string, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []string
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []string
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+func (r *DirectoryObjectGetMemberGroupsRequest) PostN(ctx context.Context, n int) ([]string, error) {
+	return r.Paging(ctx, "POST", "", r.requestObject, n)
+}
+
+func (r *DirectoryObjectGetMemberGroupsRequest) Post(ctx context.Context) ([]string, error) {
+	return r.Paging(ctx, "POST", "", r.requestObject, 0)
+}
+
+type DirectoryObjectGetMemberObjectsRequestBuilder struct{ BaseRequestBuilder }
+
+// GetMemberObjects action undocumented
+func (b *DirectoryObjectRequestBuilder) GetMemberObjects(reqObj *DirectoryObjectGetMemberObjectsRequestParameter) *DirectoryObjectGetMemberObjectsRequestBuilder {
+	bb := &DirectoryObjectGetMemberObjectsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/GetMemberObjects"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type DirectoryObjectGetMemberObjectsRequest struct{ BaseRequest }
+
+func (b *DirectoryObjectGetMemberObjectsRequestBuilder) Request() *DirectoryObjectGetMemberObjectsRequest {
+	return &DirectoryObjectGetMemberObjectsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *DirectoryObjectGetMemberObjectsRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]string, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []string
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []string
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+func (r *DirectoryObjectGetMemberObjectsRequest) PostN(ctx context.Context, n int) ([]string, error) {
+	return r.Paging(ctx, "POST", "", r.requestObject, n)
+}
+
+func (r *DirectoryObjectGetMemberObjectsRequest) Post(ctx context.Context) ([]string, error) {
+	return r.Paging(ctx, "POST", "", r.requestObject, 0)
+}
+
+type DirectoryObjectRestoreRequestBuilder struct{ BaseRequestBuilder }
+
+// Restore action undocumented
+func (b *DirectoryObjectRequestBuilder) Restore(reqObj *DirectoryObjectRestoreRequestParameter) *DirectoryObjectRestoreRequestBuilder {
+	bb := &DirectoryObjectRestoreRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Restore"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type DirectoryObjectRestoreRequest struct{ BaseRequest }
+
+func (b *DirectoryObjectRestoreRequestBuilder) Request() *DirectoryObjectRestoreRequest {
+	return &DirectoryObjectRestoreRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *DirectoryObjectRestoreRequest) Post(ctx context.Context) (resObj *DirectoryObject, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
 }

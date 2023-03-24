@@ -2,7 +2,14 @@
 
 package msgraph
 
-import "context"
+import (
+	"context"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+
+	"github.com/BenHagueNZ/msgraph.go/jsonx"
+)
 
 // GroupRequestBuilder is request builder for Group
 type GroupRequestBuilder struct{ BaseRequestBuilder }
@@ -200,4 +207,308 @@ func (r *GroupSettingTemplateRequest) Update(ctx context.Context, reqObj *GroupS
 // Delete performs DELETE request for GroupSettingTemplate
 func (r *GroupSettingTemplateRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+type GroupAssignLicenseRequestBuilder struct{ BaseRequestBuilder }
+
+// AssignLicense action undocumented
+func (b *GroupRequestBuilder) AssignLicense(reqObj *GroupAssignLicenseRequestParameter) *GroupAssignLicenseRequestBuilder {
+	bb := &GroupAssignLicenseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/AssignLicense"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type GroupAssignLicenseRequest struct{ BaseRequest }
+
+func (b *GroupAssignLicenseRequestBuilder) Request() *GroupAssignLicenseRequest {
+	return &GroupAssignLicenseRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *GroupAssignLicenseRequest) Post(ctx context.Context) (resObj *Group, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type GroupCheckGrantedPermissionsForAppRequestBuilder struct{ BaseRequestBuilder }
+
+// CheckGrantedPermissionsForApp action undocumented
+func (b *GroupRequestBuilder) CheckGrantedPermissionsForApp(reqObj *GroupCheckGrantedPermissionsForAppRequestParameter) *GroupCheckGrantedPermissionsForAppRequestBuilder {
+	bb := &GroupCheckGrantedPermissionsForAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/CheckGrantedPermissionsForApp"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type GroupCheckGrantedPermissionsForAppRequest struct{ BaseRequest }
+
+func (b *GroupCheckGrantedPermissionsForAppRequestBuilder) Request() *GroupCheckGrantedPermissionsForAppRequest {
+	return &GroupCheckGrantedPermissionsForAppRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *GroupCheckGrantedPermissionsForAppRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ResourceSpecificPermissionGrant, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ResourceSpecificPermissionGrant
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ResourceSpecificPermissionGrant
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+func (r *GroupCheckGrantedPermissionsForAppRequest) PostN(ctx context.Context, n int) ([]ResourceSpecificPermissionGrant, error) {
+	return r.Paging(ctx, "POST", "", r.requestObject, n)
+}
+
+func (r *GroupCheckGrantedPermissionsForAppRequest) Post(ctx context.Context) ([]ResourceSpecificPermissionGrant, error) {
+	return r.Paging(ctx, "POST", "", r.requestObject, 0)
+}
+
+type GroupValidatePropertiesRequestBuilder struct{ BaseRequestBuilder }
+
+// ValidateProperties action undocumented
+func (b *GroupRequestBuilder) ValidateProperties(reqObj *GroupValidatePropertiesRequestParameter) *GroupValidatePropertiesRequestBuilder {
+	bb := &GroupValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type GroupValidatePropertiesRequest struct{ BaseRequest }
+
+func (b *GroupValidatePropertiesRequestBuilder) Request() *GroupValidatePropertiesRequest {
+	return &GroupValidatePropertiesRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *GroupValidatePropertiesRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type GroupAddFavoriteRequestBuilder struct{ BaseRequestBuilder }
+
+// AddFavorite action undocumented
+func (b *GroupRequestBuilder) AddFavorite(reqObj *GroupAddFavoriteRequestParameter) *GroupAddFavoriteRequestBuilder {
+	bb := &GroupAddFavoriteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/AddFavorite"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type GroupAddFavoriteRequest struct{ BaseRequest }
+
+func (b *GroupAddFavoriteRequestBuilder) Request() *GroupAddFavoriteRequest {
+	return &GroupAddFavoriteRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *GroupAddFavoriteRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type GroupRemoveFavoriteRequestBuilder struct{ BaseRequestBuilder }
+
+// RemoveFavorite action undocumented
+func (b *GroupRequestBuilder) RemoveFavorite(reqObj *GroupRemoveFavoriteRequestParameter) *GroupRemoveFavoriteRequestBuilder {
+	bb := &GroupRemoveFavoriteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/RemoveFavorite"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type GroupRemoveFavoriteRequest struct{ BaseRequest }
+
+func (b *GroupRemoveFavoriteRequestBuilder) Request() *GroupRemoveFavoriteRequest {
+	return &GroupRemoveFavoriteRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *GroupRemoveFavoriteRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type GroupResetUnseenCountRequestBuilder struct{ BaseRequestBuilder }
+
+// ResetUnseenCount action undocumented
+func (b *GroupRequestBuilder) ResetUnseenCount(reqObj *GroupResetUnseenCountRequestParameter) *GroupResetUnseenCountRequestBuilder {
+	bb := &GroupResetUnseenCountRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/ResetUnseenCount"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type GroupResetUnseenCountRequest struct{ BaseRequest }
+
+func (b *GroupResetUnseenCountRequestBuilder) Request() *GroupResetUnseenCountRequest {
+	return &GroupResetUnseenCountRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *GroupResetUnseenCountRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type GroupSubscribeByMailRequestBuilder struct{ BaseRequestBuilder }
+
+// SubscribeByMail action undocumented
+func (b *GroupRequestBuilder) SubscribeByMail(reqObj *GroupSubscribeByMailRequestParameter) *GroupSubscribeByMailRequestBuilder {
+	bb := &GroupSubscribeByMailRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SubscribeByMail"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type GroupSubscribeByMailRequest struct{ BaseRequest }
+
+func (b *GroupSubscribeByMailRequestBuilder) Request() *GroupSubscribeByMailRequest {
+	return &GroupSubscribeByMailRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *GroupSubscribeByMailRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type GroupUnsubscribeByMailRequestBuilder struct{ BaseRequestBuilder }
+
+// UnsubscribeByMail action undocumented
+func (b *GroupRequestBuilder) UnsubscribeByMail(reqObj *GroupUnsubscribeByMailRequestParameter) *GroupUnsubscribeByMailRequestBuilder {
+	bb := &GroupUnsubscribeByMailRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/UnsubscribeByMail"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type GroupUnsubscribeByMailRequest struct{ BaseRequest }
+
+func (b *GroupUnsubscribeByMailRequestBuilder) Request() *GroupUnsubscribeByMailRequest {
+	return &GroupUnsubscribeByMailRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *GroupUnsubscribeByMailRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type GroupRenewRequestBuilder struct{ BaseRequestBuilder }
+
+// Renew action undocumented
+func (b *GroupRequestBuilder) Renew(reqObj *GroupRenewRequestParameter) *GroupRenewRequestBuilder {
+	bb := &GroupRenewRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Renew"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type GroupRenewRequest struct{ BaseRequest }
+
+func (b *GroupRenewRequestBuilder) Request() *GroupRenewRequest {
+	return &GroupRenewRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *GroupRenewRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type GroupLifecyclePolicyAddGroupRequestBuilder struct{ BaseRequestBuilder }
+
+// AddGroup action undocumented
+func (b *GroupLifecyclePolicyRequestBuilder) AddGroup(reqObj *GroupLifecyclePolicyAddGroupRequestParameter) *GroupLifecyclePolicyAddGroupRequestBuilder {
+	bb := &GroupLifecyclePolicyAddGroupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/AddGroup"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type GroupLifecyclePolicyAddGroupRequest struct{ BaseRequest }
+
+func (b *GroupLifecyclePolicyAddGroupRequestBuilder) Request() *GroupLifecyclePolicyAddGroupRequest {
+	return &GroupLifecyclePolicyAddGroupRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *GroupLifecyclePolicyAddGroupRequest) Post(ctx context.Context) (resObj *bool, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type GroupLifecyclePolicyRemoveGroupRequestBuilder struct{ BaseRequestBuilder }
+
+// RemoveGroup action undocumented
+func (b *GroupLifecyclePolicyRequestBuilder) RemoveGroup(reqObj *GroupLifecyclePolicyRemoveGroupRequestParameter) *GroupLifecyclePolicyRemoveGroupRequestBuilder {
+	bb := &GroupLifecyclePolicyRemoveGroupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/RemoveGroup"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type GroupLifecyclePolicyRemoveGroupRequest struct{ BaseRequest }
+
+func (b *GroupLifecyclePolicyRemoveGroupRequestBuilder) Request() *GroupLifecyclePolicyRemoveGroupRequest {
+	return &GroupLifecyclePolicyRemoveGroupRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *GroupLifecyclePolicyRemoveGroupRequest) Post(ctx context.Context) (resObj *bool, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
 }

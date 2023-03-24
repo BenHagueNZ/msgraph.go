@@ -135,3 +135,160 @@ func (r *ApplicationTemplateRequest) Update(ctx context.Context, reqObj *Applica
 func (r *ApplicationTemplateRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type ApplicationSetVerifiedPublisherRequestBuilder struct{ BaseRequestBuilder }
+
+// SetVerifiedPublisher action undocumented
+func (b *ApplicationRequestBuilder) SetVerifiedPublisher(reqObj *ApplicationSetVerifiedPublisherRequestParameter) *ApplicationSetVerifiedPublisherRequestBuilder {
+	bb := &ApplicationSetVerifiedPublisherRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SetVerifiedPublisher"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ApplicationSetVerifiedPublisherRequest struct{ BaseRequest }
+
+func (b *ApplicationSetVerifiedPublisherRequestBuilder) Request() *ApplicationSetVerifiedPublisherRequest {
+	return &ApplicationSetVerifiedPublisherRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ApplicationSetVerifiedPublisherRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type ApplicationUnsetVerifiedPublisherRequestBuilder struct{ BaseRequestBuilder }
+
+// UnsetVerifiedPublisher action undocumented
+func (b *ApplicationRequestBuilder) UnsetVerifiedPublisher(reqObj *ApplicationUnsetVerifiedPublisherRequestParameter) *ApplicationUnsetVerifiedPublisherRequestBuilder {
+	bb := &ApplicationUnsetVerifiedPublisherRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/UnsetVerifiedPublisher"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ApplicationUnsetVerifiedPublisherRequest struct{ BaseRequest }
+
+func (b *ApplicationUnsetVerifiedPublisherRequestBuilder) Request() *ApplicationUnsetVerifiedPublisherRequest {
+	return &ApplicationUnsetVerifiedPublisherRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ApplicationUnsetVerifiedPublisherRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type ApplicationAddKeyRequestBuilder struct{ BaseRequestBuilder }
+
+// AddKey action undocumented
+func (b *ApplicationRequestBuilder) AddKey(reqObj *ApplicationAddKeyRequestParameter) *ApplicationAddKeyRequestBuilder {
+	bb := &ApplicationAddKeyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/AddKey"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ApplicationAddKeyRequest struct{ BaseRequest }
+
+func (b *ApplicationAddKeyRequestBuilder) Request() *ApplicationAddKeyRequest {
+	return &ApplicationAddKeyRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ApplicationAddKeyRequest) Post(ctx context.Context) (resObj *KeyCredential, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type ApplicationAddPasswordRequestBuilder struct{ BaseRequestBuilder }
+
+// AddPassword action undocumented
+func (b *ApplicationRequestBuilder) AddPassword(reqObj *ApplicationAddPasswordRequestParameter) *ApplicationAddPasswordRequestBuilder {
+	bb := &ApplicationAddPasswordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/AddPassword"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ApplicationAddPasswordRequest struct{ BaseRequest }
+
+func (b *ApplicationAddPasswordRequestBuilder) Request() *ApplicationAddPasswordRequest {
+	return &ApplicationAddPasswordRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ApplicationAddPasswordRequest) Post(ctx context.Context) (resObj *PasswordCredential, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type ApplicationRemoveKeyRequestBuilder struct{ BaseRequestBuilder }
+
+// RemoveKey action undocumented
+func (b *ApplicationRequestBuilder) RemoveKey(reqObj *ApplicationRemoveKeyRequestParameter) *ApplicationRemoveKeyRequestBuilder {
+	bb := &ApplicationRemoveKeyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/RemoveKey"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ApplicationRemoveKeyRequest struct{ BaseRequest }
+
+func (b *ApplicationRemoveKeyRequestBuilder) Request() *ApplicationRemoveKeyRequest {
+	return &ApplicationRemoveKeyRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ApplicationRemoveKeyRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type ApplicationRemovePasswordRequestBuilder struct{ BaseRequestBuilder }
+
+// RemovePassword action undocumented
+func (b *ApplicationRequestBuilder) RemovePassword(reqObj *ApplicationRemovePasswordRequestParameter) *ApplicationRemovePasswordRequestBuilder {
+	bb := &ApplicationRemovePasswordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/RemovePassword"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ApplicationRemovePasswordRequest struct{ BaseRequest }
+
+func (b *ApplicationRemovePasswordRequestBuilder) Request() *ApplicationRemovePasswordRequest {
+	return &ApplicationRemovePasswordRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ApplicationRemovePasswordRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type ApplicationTemplateInstantiateRequestBuilder struct{ BaseRequestBuilder }
+
+// Instantiate action undocumented
+func (b *ApplicationTemplateRequestBuilder) Instantiate(reqObj *ApplicationTemplateInstantiateRequestParameter) *ApplicationTemplateInstantiateRequestBuilder {
+	bb := &ApplicationTemplateInstantiateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Instantiate"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ApplicationTemplateInstantiateRequest struct{ BaseRequest }
+
+func (b *ApplicationTemplateInstantiateRequestBuilder) Request() *ApplicationTemplateInstantiateRequest {
+	return &ApplicationTemplateInstantiateRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ApplicationTemplateInstantiateRequest) Post(ctx context.Context) (resObj *ApplicationServicePrincipal, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}

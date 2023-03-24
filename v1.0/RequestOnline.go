@@ -69,34 +69,3 @@ func (r *OnlineMeetingInfoRequest) Update(ctx context.Context, reqObj *OnlineMee
 func (r *OnlineMeetingInfoRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
-
-type OnlineMeetingCollectionCreateOrGetRequestBuilder struct{ BaseRequestBuilder }
-
-// CreateOrGet action undocumented
-func (b *CloudCommunicationsOnlineMeetingsCollectionRequestBuilder) CreateOrGet(reqObj *OnlineMeetingCollectionCreateOrGetRequestParameter) *OnlineMeetingCollectionCreateOrGetRequestBuilder {
-	bb := &OnlineMeetingCollectionCreateOrGetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/CreateOrGet"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// CreateOrGet action undocumented
-func (b *UserOnlineMeetingsCollectionRequestBuilder) CreateOrGet(reqObj *OnlineMeetingCollectionCreateOrGetRequestParameter) *OnlineMeetingCollectionCreateOrGetRequestBuilder {
-	bb := &OnlineMeetingCollectionCreateOrGetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/CreateOrGet"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type OnlineMeetingCollectionCreateOrGetRequest struct{ BaseRequest }
-
-func (b *OnlineMeetingCollectionCreateOrGetRequestBuilder) Request() *OnlineMeetingCollectionCreateOrGetRequest {
-	return &OnlineMeetingCollectionCreateOrGetRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
-	}
-}
-
-func (r *OnlineMeetingCollectionCreateOrGetRequest) Post(ctx context.Context) (resObj *OnlineMeeting, err error) {
-	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
-	return
-}

@@ -36,3 +36,26 @@ func (r *OrganizationRequest) Update(ctx context.Context, reqObj *Organization) 
 func (r *OrganizationRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type OrganizationSetMobileDeviceManagementAuthorityRequestBuilder struct{ BaseRequestBuilder }
+
+// SetMobileDeviceManagementAuthority action undocumented
+func (b *OrganizationRequestBuilder) SetMobileDeviceManagementAuthority(reqObj *OrganizationSetMobileDeviceManagementAuthorityRequestParameter) *OrganizationSetMobileDeviceManagementAuthorityRequestBuilder {
+	bb := &OrganizationSetMobileDeviceManagementAuthorityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SetMobileDeviceManagementAuthority"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type OrganizationSetMobileDeviceManagementAuthorityRequest struct{ BaseRequest }
+
+func (b *OrganizationSetMobileDeviceManagementAuthorityRequestBuilder) Request() *OrganizationSetMobileDeviceManagementAuthorityRequest {
+	return &OrganizationSetMobileDeviceManagementAuthorityRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *OrganizationSetMobileDeviceManagementAuthorityRequest) Post(ctx context.Context) (resObj *int, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}

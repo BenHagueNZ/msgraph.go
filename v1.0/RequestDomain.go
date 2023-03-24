@@ -300,3 +300,71 @@ func (r *DomainStateRequest) Update(ctx context.Context, reqObj *DomainState) er
 func (r *DomainStateRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type DomainForceDeleteRequestBuilder struct{ BaseRequestBuilder }
+
+// ForceDelete action undocumented
+func (b *DomainRequestBuilder) ForceDelete(reqObj *DomainForceDeleteRequestParameter) *DomainForceDeleteRequestBuilder {
+	bb := &DomainForceDeleteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/ForceDelete"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type DomainForceDeleteRequest struct{ BaseRequest }
+
+func (b *DomainForceDeleteRequestBuilder) Request() *DomainForceDeleteRequest {
+	return &DomainForceDeleteRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *DomainForceDeleteRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type DomainPromoteRequestBuilder struct{ BaseRequestBuilder }
+
+// Promote action undocumented
+func (b *DomainRequestBuilder) Promote(reqObj *DomainPromoteRequestParameter) *DomainPromoteRequestBuilder {
+	bb := &DomainPromoteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Promote"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type DomainPromoteRequest struct{ BaseRequest }
+
+func (b *DomainPromoteRequestBuilder) Request() *DomainPromoteRequest {
+	return &DomainPromoteRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *DomainPromoteRequest) Post(ctx context.Context) (resObj *bool, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type DomainVerifyRequestBuilder struct{ BaseRequestBuilder }
+
+// Verify action undocumented
+func (b *DomainRequestBuilder) Verify(reqObj *DomainVerifyRequestParameter) *DomainVerifyRequestBuilder {
+	bb := &DomainVerifyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Verify"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type DomainVerifyRequest struct{ BaseRequest }
+
+func (b *DomainVerifyRequestBuilder) Request() *DomainVerifyRequest {
+	return &DomainVerifyRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *DomainVerifyRequest) Post(ctx context.Context) (resObj *Domain, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}

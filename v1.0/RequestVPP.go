@@ -69,3 +69,26 @@ func (r *VPPTokenRequest) Update(ctx context.Context, reqObj *VPPToken) error {
 func (r *VPPTokenRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type VPPTokenSyncLicensesRequestBuilder struct{ BaseRequestBuilder }
+
+// SyncLicenses action undocumented
+func (b *VPPTokenRequestBuilder) SyncLicenses(reqObj *VPPTokenSyncLicensesRequestParameter) *VPPTokenSyncLicensesRequestBuilder {
+	bb := &VPPTokenSyncLicensesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SyncLicenses"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type VPPTokenSyncLicensesRequest struct{ BaseRequest }
+
+func (b *VPPTokenSyncLicensesRequestBuilder) Request() *VPPTokenSyncLicensesRequest {
+	return &VPPTokenSyncLicensesRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *VPPTokenSyncLicensesRequest) Post(ctx context.Context) (resObj *VPPToken, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}

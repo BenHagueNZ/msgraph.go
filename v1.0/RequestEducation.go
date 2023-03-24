@@ -1455,3 +1455,187 @@ func (r *EducationWordResourceRequest) Update(ctx context.Context, reqObj *Educa
 func (r *EducationWordResourceRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type EducationAssignmentPublishRequestBuilder struct{ BaseRequestBuilder }
+
+// Publish action undocumented
+func (b *EducationAssignmentRequestBuilder) Publish(reqObj *EducationAssignmentPublishRequestParameter) *EducationAssignmentPublishRequestBuilder {
+	bb := &EducationAssignmentPublishRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Publish"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type EducationAssignmentPublishRequest struct{ BaseRequest }
+
+func (b *EducationAssignmentPublishRequestBuilder) Request() *EducationAssignmentPublishRequest {
+	return &EducationAssignmentPublishRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *EducationAssignmentPublishRequest) Post(ctx context.Context) (resObj *EducationAssignment, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type EducationAssignmentSetUpFeedbackResourcesFolderRequestBuilder struct{ BaseRequestBuilder }
+
+// SetUpFeedbackResourcesFolder action undocumented
+func (b *EducationAssignmentRequestBuilder) SetUpFeedbackResourcesFolder(reqObj *EducationAssignmentSetUpFeedbackResourcesFolderRequestParameter) *EducationAssignmentSetUpFeedbackResourcesFolderRequestBuilder {
+	bb := &EducationAssignmentSetUpFeedbackResourcesFolderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SetUpFeedbackResourcesFolder"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type EducationAssignmentSetUpFeedbackResourcesFolderRequest struct{ BaseRequest }
+
+func (b *EducationAssignmentSetUpFeedbackResourcesFolderRequestBuilder) Request() *EducationAssignmentSetUpFeedbackResourcesFolderRequest {
+	return &EducationAssignmentSetUpFeedbackResourcesFolderRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *EducationAssignmentSetUpFeedbackResourcesFolderRequest) Post(ctx context.Context) (resObj *EducationAssignment, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type EducationAssignmentSetUpResourcesFolderRequestBuilder struct{ BaseRequestBuilder }
+
+// SetUpResourcesFolder action undocumented
+func (b *EducationAssignmentRequestBuilder) SetUpResourcesFolder(reqObj *EducationAssignmentSetUpResourcesFolderRequestParameter) *EducationAssignmentSetUpResourcesFolderRequestBuilder {
+	bb := &EducationAssignmentSetUpResourcesFolderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SetUpResourcesFolder"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type EducationAssignmentSetUpResourcesFolderRequest struct{ BaseRequest }
+
+func (b *EducationAssignmentSetUpResourcesFolderRequestBuilder) Request() *EducationAssignmentSetUpResourcesFolderRequest {
+	return &EducationAssignmentSetUpResourcesFolderRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *EducationAssignmentSetUpResourcesFolderRequest) Post(ctx context.Context) (resObj *EducationAssignment, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type EducationSubmissionSetUpResourcesFolderRequestBuilder struct{ BaseRequestBuilder }
+
+// SetUpResourcesFolder action undocumented
+func (b *EducationSubmissionRequestBuilder) SetUpResourcesFolder(reqObj *EducationSubmissionSetUpResourcesFolderRequestParameter) *EducationSubmissionSetUpResourcesFolderRequestBuilder {
+	bb := &EducationSubmissionSetUpResourcesFolderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SetUpResourcesFolder"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type EducationSubmissionSetUpResourcesFolderRequest struct{ BaseRequest }
+
+func (b *EducationSubmissionSetUpResourcesFolderRequestBuilder) Request() *EducationSubmissionSetUpResourcesFolderRequest {
+	return &EducationSubmissionSetUpResourcesFolderRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *EducationSubmissionSetUpResourcesFolderRequest) Post(ctx context.Context) (resObj *EducationSubmission, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type EducationSubmissionReassignRequestBuilder struct{ BaseRequestBuilder }
+
+// Reassign action undocumented
+func (b *EducationSubmissionRequestBuilder) Reassign(reqObj *EducationSubmissionReassignRequestParameter) *EducationSubmissionReassignRequestBuilder {
+	bb := &EducationSubmissionReassignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Reassign"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type EducationSubmissionReassignRequest struct{ BaseRequest }
+
+func (b *EducationSubmissionReassignRequestBuilder) Request() *EducationSubmissionReassignRequest {
+	return &EducationSubmissionReassignRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *EducationSubmissionReassignRequest) Post(ctx context.Context) (resObj *EducationSubmission, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type EducationSubmissionReturnRequestBuilder struct{ BaseRequestBuilder }
+
+// Return action undocumented
+func (b *EducationSubmissionRequestBuilder) Return(reqObj *EducationSubmissionReturnRequestParameter) *EducationSubmissionReturnRequestBuilder {
+	bb := &EducationSubmissionReturnRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Return"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type EducationSubmissionReturnRequest struct{ BaseRequest }
+
+func (b *EducationSubmissionReturnRequestBuilder) Request() *EducationSubmissionReturnRequest {
+	return &EducationSubmissionReturnRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *EducationSubmissionReturnRequest) Post(ctx context.Context) (resObj *EducationSubmission, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type EducationSubmissionSubmitRequestBuilder struct{ BaseRequestBuilder }
+
+// Submit action undocumented
+func (b *EducationSubmissionRequestBuilder) Submit(reqObj *EducationSubmissionSubmitRequestParameter) *EducationSubmissionSubmitRequestBuilder {
+	bb := &EducationSubmissionSubmitRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Submit"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type EducationSubmissionSubmitRequest struct{ BaseRequest }
+
+func (b *EducationSubmissionSubmitRequestBuilder) Request() *EducationSubmissionSubmitRequest {
+	return &EducationSubmissionSubmitRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *EducationSubmissionSubmitRequest) Post(ctx context.Context) (resObj *EducationSubmission, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type EducationSubmissionUnsubmitRequestBuilder struct{ BaseRequestBuilder }
+
+// Unsubmit action undocumented
+func (b *EducationSubmissionRequestBuilder) Unsubmit(reqObj *EducationSubmissionUnsubmitRequestParameter) *EducationSubmissionUnsubmitRequestBuilder {
+	bb := &EducationSubmissionUnsubmitRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Unsubmit"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type EducationSubmissionUnsubmitRequest struct{ BaseRequest }
+
+func (b *EducationSubmissionUnsubmitRequestBuilder) Request() *EducationSubmissionUnsubmitRequest {
+	return &EducationSubmissionUnsubmitRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *EducationSubmissionUnsubmitRequest) Post(ctx context.Context) (resObj *EducationSubmission, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}

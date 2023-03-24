@@ -531,3 +531,157 @@ func (r *ChatViewpointRequest) Update(ctx context.Context, reqObj *ChatViewpoint
 func (r *ChatViewpointRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type ChatSendActivityNotificationRequestBuilder struct{ BaseRequestBuilder }
+
+// SendActivityNotification action undocumented
+func (b *ChatRequestBuilder) SendActivityNotification(reqObj *ChatSendActivityNotificationRequestParameter) *ChatSendActivityNotificationRequestBuilder {
+	bb := &ChatSendActivityNotificationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SendActivityNotification"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ChatSendActivityNotificationRequest struct{ BaseRequest }
+
+func (b *ChatSendActivityNotificationRequestBuilder) Request() *ChatSendActivityNotificationRequest {
+	return &ChatSendActivityNotificationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ChatSendActivityNotificationRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type ChatHideForUserRequestBuilder struct{ BaseRequestBuilder }
+
+// HideForUser action undocumented
+func (b *ChatRequestBuilder) HideForUser(reqObj *ChatHideForUserRequestParameter) *ChatHideForUserRequestBuilder {
+	bb := &ChatHideForUserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/HideForUser"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ChatHideForUserRequest struct{ BaseRequest }
+
+func (b *ChatHideForUserRequestBuilder) Request() *ChatHideForUserRequest {
+	return &ChatHideForUserRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ChatHideForUserRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type ChatMarkChatReadForUserRequestBuilder struct{ BaseRequestBuilder }
+
+// MarkChatReadForUser action undocumented
+func (b *ChatRequestBuilder) MarkChatReadForUser(reqObj *ChatMarkChatReadForUserRequestParameter) *ChatMarkChatReadForUserRequestBuilder {
+	bb := &ChatMarkChatReadForUserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/MarkChatReadForUser"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ChatMarkChatReadForUserRequest struct{ BaseRequest }
+
+func (b *ChatMarkChatReadForUserRequestBuilder) Request() *ChatMarkChatReadForUserRequest {
+	return &ChatMarkChatReadForUserRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ChatMarkChatReadForUserRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type ChatMarkChatUnreadForUserRequestBuilder struct{ BaseRequestBuilder }
+
+// MarkChatUnreadForUser action undocumented
+func (b *ChatRequestBuilder) MarkChatUnreadForUser(reqObj *ChatMarkChatUnreadForUserRequestParameter) *ChatMarkChatUnreadForUserRequestBuilder {
+	bb := &ChatMarkChatUnreadForUserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/MarkChatUnreadForUser"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ChatMarkChatUnreadForUserRequest struct{ BaseRequest }
+
+func (b *ChatMarkChatUnreadForUserRequestBuilder) Request() *ChatMarkChatUnreadForUserRequest {
+	return &ChatMarkChatUnreadForUserRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ChatMarkChatUnreadForUserRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type ChatUnhideForUserRequestBuilder struct{ BaseRequestBuilder }
+
+// UnhideForUser action undocumented
+func (b *ChatRequestBuilder) UnhideForUser(reqObj *ChatUnhideForUserRequestParameter) *ChatUnhideForUserRequestBuilder {
+	bb := &ChatUnhideForUserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/UnhideForUser"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ChatUnhideForUserRequest struct{ BaseRequest }
+
+func (b *ChatUnhideForUserRequestBuilder) Request() *ChatUnhideForUserRequest {
+	return &ChatUnhideForUserRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ChatUnhideForUserRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type ChatMessageSoftDeleteRequestBuilder struct{ BaseRequestBuilder }
+
+// SoftDelete action undocumented
+func (b *ChatMessageRequestBuilder) SoftDelete(reqObj *ChatMessageSoftDeleteRequestParameter) *ChatMessageSoftDeleteRequestBuilder {
+	bb := &ChatMessageSoftDeleteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SoftDelete"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ChatMessageSoftDeleteRequest struct{ BaseRequest }
+
+func (b *ChatMessageSoftDeleteRequestBuilder) Request() *ChatMessageSoftDeleteRequest {
+	return &ChatMessageSoftDeleteRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ChatMessageSoftDeleteRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type ChatMessageUndoSoftDeleteRequestBuilder struct{ BaseRequestBuilder }
+
+// UndoSoftDelete action undocumented
+func (b *ChatMessageRequestBuilder) UndoSoftDelete(reqObj *ChatMessageUndoSoftDeleteRequestParameter) *ChatMessageUndoSoftDeleteRequestBuilder {
+	bb := &ChatMessageUndoSoftDeleteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/UndoSoftDelete"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ChatMessageUndoSoftDeleteRequest struct{ BaseRequest }
+
+func (b *ChatMessageUndoSoftDeleteRequestBuilder) Request() *ChatMessageUndoSoftDeleteRequest {
+	return &ChatMessageUndoSoftDeleteRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ChatMessageUndoSoftDeleteRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}

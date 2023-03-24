@@ -69,3 +69,47 @@ func (r *PhoneAuthenticationMethodRequest) Update(ctx context.Context, reqObj *P
 func (r *PhoneAuthenticationMethodRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type PhoneAuthenticationMethodDisableSmsSignInRequestBuilder struct{ BaseRequestBuilder }
+
+// DisableSmsSignIn action undocumented
+func (b *PhoneAuthenticationMethodRequestBuilder) DisableSmsSignIn(reqObj *PhoneAuthenticationMethodDisableSmsSignInRequestParameter) *PhoneAuthenticationMethodDisableSmsSignInRequestBuilder {
+	bb := &PhoneAuthenticationMethodDisableSmsSignInRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/DisableSmsSignIn"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type PhoneAuthenticationMethodDisableSmsSignInRequest struct{ BaseRequest }
+
+func (b *PhoneAuthenticationMethodDisableSmsSignInRequestBuilder) Request() *PhoneAuthenticationMethodDisableSmsSignInRequest {
+	return &PhoneAuthenticationMethodDisableSmsSignInRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *PhoneAuthenticationMethodDisableSmsSignInRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type PhoneAuthenticationMethodEnableSmsSignInRequestBuilder struct{ BaseRequestBuilder }
+
+// EnableSmsSignIn action undocumented
+func (b *PhoneAuthenticationMethodRequestBuilder) EnableSmsSignIn(reqObj *PhoneAuthenticationMethodEnableSmsSignInRequestParameter) *PhoneAuthenticationMethodEnableSmsSignInRequestBuilder {
+	bb := &PhoneAuthenticationMethodEnableSmsSignInRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/EnableSmsSignIn"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type PhoneAuthenticationMethodEnableSmsSignInRequest struct{ BaseRequest }
+
+func (b *PhoneAuthenticationMethodEnableSmsSignInRequestBuilder) Request() *PhoneAuthenticationMethodEnableSmsSignInRequest {
+	return &PhoneAuthenticationMethodEnableSmsSignInRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *PhoneAuthenticationMethodEnableSmsSignInRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}

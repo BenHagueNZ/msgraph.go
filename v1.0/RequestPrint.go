@@ -696,3 +696,116 @@ func (r *PrintUsageByUserRequest) Update(ctx context.Context, reqObj *PrintUsage
 func (r *PrintUsageByUserRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type PrintDocumentCreateUploadSessionRequestBuilder struct{ BaseRequestBuilder }
+
+// CreateUploadSession action undocumented
+func (b *PrintDocumentRequestBuilder) CreateUploadSession(reqObj *PrintDocumentCreateUploadSessionRequestParameter) *PrintDocumentCreateUploadSessionRequestBuilder {
+	bb := &PrintDocumentCreateUploadSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/CreateUploadSession"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type PrintDocumentCreateUploadSessionRequest struct{ BaseRequest }
+
+func (b *PrintDocumentCreateUploadSessionRequestBuilder) Request() *PrintDocumentCreateUploadSessionRequest {
+	return &PrintDocumentCreateUploadSessionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *PrintDocumentCreateUploadSessionRequest) Post(ctx context.Context) (resObj *UploadSession, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type PrintJobCancelRequestBuilder struct{ BaseRequestBuilder }
+
+// Cancel action undocumented
+func (b *PrintJobRequestBuilder) Cancel(reqObj *PrintJobCancelRequestParameter) *PrintJobCancelRequestBuilder {
+	bb := &PrintJobCancelRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Cancel"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type PrintJobCancelRequest struct{ BaseRequest }
+
+func (b *PrintJobCancelRequestBuilder) Request() *PrintJobCancelRequest {
+	return &PrintJobCancelRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *PrintJobCancelRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type PrintJobAbortRequestBuilder struct{ BaseRequestBuilder }
+
+// Abort action undocumented
+func (b *PrintJobRequestBuilder) Abort(reqObj *PrintJobAbortRequestParameter) *PrintJobAbortRequestBuilder {
+	bb := &PrintJobAbortRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Abort"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type PrintJobAbortRequest struct{ BaseRequest }
+
+func (b *PrintJobAbortRequestBuilder) Request() *PrintJobAbortRequest {
+	return &PrintJobAbortRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *PrintJobAbortRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type PrintJobRedirectRequestBuilder struct{ BaseRequestBuilder }
+
+// Redirect action undocumented
+func (b *PrintJobRequestBuilder) Redirect(reqObj *PrintJobRedirectRequestParameter) *PrintJobRedirectRequestBuilder {
+	bb := &PrintJobRedirectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Redirect"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type PrintJobRedirectRequest struct{ BaseRequest }
+
+func (b *PrintJobRedirectRequestBuilder) Request() *PrintJobRedirectRequest {
+	return &PrintJobRedirectRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *PrintJobRedirectRequest) Post(ctx context.Context) (resObj *PrintJob, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type PrintJobStartRequestBuilder struct{ BaseRequestBuilder }
+
+// Start action undocumented
+func (b *PrintJobRequestBuilder) Start(reqObj *PrintJobStartRequestParameter) *PrintJobStartRequestBuilder {
+	bb := &PrintJobStartRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Start"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type PrintJobStartRequest struct{ BaseRequest }
+
+func (b *PrintJobStartRequestBuilder) Request() *PrintJobStartRequest {
+	return &PrintJobStartRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *PrintJobStartRequest) Post(ctx context.Context) (resObj *PrintJobStatus, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}

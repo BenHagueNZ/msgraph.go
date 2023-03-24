@@ -169,25 +169,71 @@ func (r *ParticipantLeftNotificationRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-type ParticipantCollectionInviteRequestBuilder struct{ BaseRequestBuilder }
+type ParticipantMuteRequestBuilder struct{ BaseRequestBuilder }
 
-// Invite action undocumented
-func (b *CallParticipantsCollectionRequestBuilder) Invite(reqObj *ParticipantCollectionInviteRequestParameter) *ParticipantCollectionInviteRequestBuilder {
-	bb := &ParticipantCollectionInviteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/Invite"
+// Mute action undocumented
+func (b *ParticipantRequestBuilder) Mute(reqObj *ParticipantMuteRequestParameter) *ParticipantMuteRequestBuilder {
+	bb := &ParticipantMuteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Mute"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
 
-type ParticipantCollectionInviteRequest struct{ BaseRequest }
+type ParticipantMuteRequest struct{ BaseRequest }
 
-func (b *ParticipantCollectionInviteRequestBuilder) Request() *ParticipantCollectionInviteRequest {
-	return &ParticipantCollectionInviteRequest{
+func (b *ParticipantMuteRequestBuilder) Request() *ParticipantMuteRequest {
+	return &ParticipantMuteRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-func (r *ParticipantCollectionInviteRequest) Post(ctx context.Context) (resObj *InviteParticipantsOperation, err error) {
+func (r *ParticipantMuteRequest) Post(ctx context.Context) (resObj *MuteParticipantOperation, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type ParticipantStartHoldMusicRequestBuilder struct{ BaseRequestBuilder }
+
+// StartHoldMusic action undocumented
+func (b *ParticipantRequestBuilder) StartHoldMusic(reqObj *ParticipantStartHoldMusicRequestParameter) *ParticipantStartHoldMusicRequestBuilder {
+	bb := &ParticipantStartHoldMusicRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/StartHoldMusic"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ParticipantStartHoldMusicRequest struct{ BaseRequest }
+
+func (b *ParticipantStartHoldMusicRequestBuilder) Request() *ParticipantStartHoldMusicRequest {
+	return &ParticipantStartHoldMusicRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ParticipantStartHoldMusicRequest) Post(ctx context.Context) (resObj *StartHoldMusicOperation, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type ParticipantStopHoldMusicRequestBuilder struct{ BaseRequestBuilder }
+
+// StopHoldMusic action undocumented
+func (b *ParticipantRequestBuilder) StopHoldMusic(reqObj *ParticipantStopHoldMusicRequestParameter) *ParticipantStopHoldMusicRequestBuilder {
+	bb := &ParticipantStopHoldMusicRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/StopHoldMusic"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ParticipantStopHoldMusicRequest struct{ BaseRequest }
+
+func (b *ParticipantStopHoldMusicRequestBuilder) Request() *ParticipantStopHoldMusicRequest {
+	return &ParticipantStopHoldMusicRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ParticipantStopHoldMusicRequest) Post(ctx context.Context) (resObj *StopHoldMusicOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
 	return
 }

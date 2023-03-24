@@ -2,14 +2,7 @@
 
 package msgraph
 
-import (
-	"context"
-	"fmt"
-	"io/ioutil"
-	"net/http"
-
-	"github.com/BenHagueNZ/msgraph.go/jsonx"
-)
+import "context"
 
 // ConversationRequestBuilder is request builder for Conversation
 type ConversationRequestBuilder struct{ BaseRequestBuilder }
@@ -143,107 +136,24 @@ func (r *ConversationThreadRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-type ConversationMemberCollectionAddRequestBuilder struct{ BaseRequestBuilder }
+type ConversationThreadReplyRequestBuilder struct{ BaseRequestBuilder }
 
-// Add action undocumented
-func (b *ChannelMembersCollectionRequestBuilder) Add(reqObj *ConversationMemberCollectionAddRequestParameter) *ConversationMemberCollectionAddRequestBuilder {
-	bb := &ConversationMemberCollectionAddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/Add"
+// Reply action undocumented
+func (b *ConversationThreadRequestBuilder) Reply(reqObj *ConversationThreadReplyRequestParameter) *ConversationThreadReplyRequestBuilder {
+	bb := &ConversationThreadReplyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Reply"
 	bb.BaseRequestBuilder.requestObject = reqObj
 	return bb
 }
 
-// Add action undocumented
-func (b *ChatMembersCollectionRequestBuilder) Add(reqObj *ConversationMemberCollectionAddRequestParameter) *ConversationMemberCollectionAddRequestBuilder {
-	bb := &ConversationMemberCollectionAddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/Add"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
+type ConversationThreadReplyRequest struct{ BaseRequest }
 
-// Add action undocumented
-func (b *SharedWithChannelTeamInfoAllowedMembersCollectionRequestBuilder) Add(reqObj *ConversationMemberCollectionAddRequestParameter) *ConversationMemberCollectionAddRequestBuilder {
-	bb := &ConversationMemberCollectionAddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/Add"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-// Add action undocumented
-func (b *TeamMembersCollectionRequestBuilder) Add(reqObj *ConversationMemberCollectionAddRequestParameter) *ConversationMemberCollectionAddRequestBuilder {
-	bb := &ConversationMemberCollectionAddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/Add"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
-type ConversationMemberCollectionAddRequest struct{ BaseRequest }
-
-func (b *ConversationMemberCollectionAddRequestBuilder) Request() *ConversationMemberCollectionAddRequest {
-	return &ConversationMemberCollectionAddRequest{
+func (b *ConversationThreadReplyRequestBuilder) Request() *ConversationThreadReplyRequest {
+	return &ConversationThreadReplyRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
 	}
 }
 
-func (r *ConversationMemberCollectionAddRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ActionResultPart, error) {
-	req, err := r.NewJSONRequest(method, path, obj)
-	if err != nil {
-		return nil, err
-	}
-	if ctx != nil {
-		req = req.WithContext(ctx)
-	}
-	res, err := r.client.Do(req)
-	if err != nil {
-		return nil, err
-	}
-	var values []ActionResultPart
-	for {
-		if res.StatusCode != http.StatusOK {
-			b, _ := ioutil.ReadAll(res.Body)
-			res.Body.Close()
-			errRes := &ErrorResponse{Response: res}
-			err := jsonx.Unmarshal(b, errRes)
-			if err != nil {
-				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
-			}
-			return nil, errRes
-		}
-		var (
-			paging Paging
-			value  []ActionResultPart
-		)
-		err := jsonx.NewDecoder(res.Body).Decode(&paging)
-		res.Body.Close()
-		if err != nil {
-			return nil, err
-		}
-		err = jsonx.Unmarshal(paging.Value, &value)
-		if err != nil {
-			return nil, err
-		}
-		values = append(values, value...)
-		if n >= 0 {
-			n--
-		}
-		if n == 0 || len(paging.NextLink) == 0 {
-			return values, nil
-		}
-		req, err = http.NewRequest("GET", paging.NextLink, nil)
-		if ctx != nil {
-			req = req.WithContext(ctx)
-		}
-		res, err = r.client.Do(req)
-		if err != nil {
-			return nil, err
-		}
-	}
-}
-
-func (r *ConversationMemberCollectionAddRequest) PostN(ctx context.Context, n int) ([]ActionResultPart, error) {
-	return r.Paging(ctx, "POST", "", r.requestObject, n)
-}
-
-func (r *ConversationMemberCollectionAddRequest) Post(ctx context.Context) ([]ActionResultPart, error) {
-	return r.Paging(ctx, "POST", "", r.requestObject, 0)
+func (r *ConversationThreadReplyRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
 }

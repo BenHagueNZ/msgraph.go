@@ -333,3 +333,25 @@ func (r *TeamsTemplateRequest) Update(ctx context.Context, reqObj *TeamsTemplate
 func (r *TeamsTemplateRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type TeamsAppInstallationUpgradeRequestBuilder struct{ BaseRequestBuilder }
+
+// Upgrade action undocumented
+func (b *TeamsAppInstallationRequestBuilder) Upgrade(reqObj *TeamsAppInstallationUpgradeRequestParameter) *TeamsAppInstallationUpgradeRequestBuilder {
+	bb := &TeamsAppInstallationUpgradeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Upgrade"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type TeamsAppInstallationUpgradeRequest struct{ BaseRequest }
+
+func (b *TeamsAppInstallationUpgradeRequestBuilder) Request() *TeamsAppInstallationUpgradeRequest {
+	return &TeamsAppInstallationUpgradeRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *TeamsAppInstallationUpgradeRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}

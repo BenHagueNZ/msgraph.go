@@ -729,3 +729,47 @@ func (r *UnifiedRoleScheduleInstanceBaseRequest) Update(ctx context.Context, req
 func (r *UnifiedRoleScheduleInstanceBaseRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type UnifiedRoleAssignmentScheduleRequestObjectCancelRequestBuilder struct{ BaseRequestBuilder }
+
+// Cancel action undocumented
+func (b *UnifiedRoleAssignmentScheduleRequestObjectRequestBuilder) Cancel(reqObj *UnifiedRoleAssignmentScheduleRequestObjectCancelRequestParameter) *UnifiedRoleAssignmentScheduleRequestObjectCancelRequestBuilder {
+	bb := &UnifiedRoleAssignmentScheduleRequestObjectCancelRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Cancel"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type UnifiedRoleAssignmentScheduleRequestObjectCancelRequest struct{ BaseRequest }
+
+func (b *UnifiedRoleAssignmentScheduleRequestObjectCancelRequestBuilder) Request() *UnifiedRoleAssignmentScheduleRequestObjectCancelRequest {
+	return &UnifiedRoleAssignmentScheduleRequestObjectCancelRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *UnifiedRoleAssignmentScheduleRequestObjectCancelRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
+type UnifiedRoleEligibilityScheduleRequestObjectCancelRequestBuilder struct{ BaseRequestBuilder }
+
+// Cancel action undocumented
+func (b *UnifiedRoleEligibilityScheduleRequestObjectRequestBuilder) Cancel(reqObj *UnifiedRoleEligibilityScheduleRequestObjectCancelRequestParameter) *UnifiedRoleEligibilityScheduleRequestObjectCancelRequestBuilder {
+	bb := &UnifiedRoleEligibilityScheduleRequestObjectCancelRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Cancel"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type UnifiedRoleEligibilityScheduleRequestObjectCancelRequest struct{ BaseRequest }
+
+func (b *UnifiedRoleEligibilityScheduleRequestObjectCancelRequestBuilder) Request() *UnifiedRoleEligibilityScheduleRequestObjectCancelRequest {
+	return &UnifiedRoleEligibilityScheduleRequestObjectCancelRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *UnifiedRoleEligibilityScheduleRequestObjectCancelRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}

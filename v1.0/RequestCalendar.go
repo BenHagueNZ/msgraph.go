@@ -2,7 +2,14 @@
 
 package msgraph
 
-import "context"
+import (
+	"context"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+
+	"github.com/BenHagueNZ/msgraph.go/jsonx"
+)
 
 // CalendarRequestBuilder is request builder for Calendar
 type CalendarRequestBuilder struct{ BaseRequestBuilder }
@@ -167,4 +174,108 @@ func (r *CalendarSharingMessageActionRequest) Update(ctx context.Context, reqObj
 // Delete performs DELETE request for CalendarSharingMessageAction
 func (r *CalendarSharingMessageActionRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+type CalendarGetScheduleRequestBuilder struct{ BaseRequestBuilder }
+
+// GetSchedule action undocumented
+func (b *CalendarRequestBuilder) GetSchedule(reqObj *CalendarGetScheduleRequestParameter) *CalendarGetScheduleRequestBuilder {
+	bb := &CalendarGetScheduleRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/GetSchedule"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type CalendarGetScheduleRequest struct{ BaseRequest }
+
+func (b *CalendarGetScheduleRequestBuilder) Request() *CalendarGetScheduleRequest {
+	return &CalendarGetScheduleRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *CalendarGetScheduleRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ScheduleInformation, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ScheduleInformation
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ScheduleInformation
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+func (r *CalendarGetScheduleRequest) PostN(ctx context.Context, n int) ([]ScheduleInformation, error) {
+	return r.Paging(ctx, "POST", "", r.requestObject, n)
+}
+
+func (r *CalendarGetScheduleRequest) Post(ctx context.Context) ([]ScheduleInformation, error) {
+	return r.Paging(ctx, "POST", "", r.requestObject, 0)
+}
+
+type CalendarSharingMessageAcceptRequestBuilder struct{ BaseRequestBuilder }
+
+// Accept action undocumented
+func (b *CalendarSharingMessageRequestBuilder) Accept(reqObj *CalendarSharingMessageAcceptRequestParameter) *CalendarSharingMessageAcceptRequestBuilder {
+	bb := &CalendarSharingMessageAcceptRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Accept"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type CalendarSharingMessageAcceptRequest struct{ BaseRequest }
+
+func (b *CalendarSharingMessageAcceptRequestBuilder) Request() *CalendarSharingMessageAcceptRequest {
+	return &CalendarSharingMessageAcceptRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *CalendarSharingMessageAcceptRequest) Post(ctx context.Context) (resObj *Calendar, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
 }

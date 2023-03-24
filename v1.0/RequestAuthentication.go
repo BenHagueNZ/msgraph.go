@@ -333,3 +333,26 @@ func (r *AuthenticationMethodsRegistrationCampaignIncludeTargetRequest) Update(c
 func (r *AuthenticationMethodsRegistrationCampaignIncludeTargetRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type AuthenticationMethodResetPasswordRequestBuilder struct{ BaseRequestBuilder }
+
+// ResetPassword action undocumented
+func (b *AuthenticationMethodRequestBuilder) ResetPassword(reqObj *AuthenticationMethodResetPasswordRequestParameter) *AuthenticationMethodResetPasswordRequestBuilder {
+	bb := &AuthenticationMethodResetPasswordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/ResetPassword"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type AuthenticationMethodResetPasswordRequest struct{ BaseRequest }
+
+func (b *AuthenticationMethodResetPasswordRequestBuilder) Request() *AuthenticationMethodResetPasswordRequest {
+	return &AuthenticationMethodResetPasswordRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *AuthenticationMethodResetPasswordRequest) Post(ctx context.Context) (resObj *PasswordResetResponse, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}

@@ -413,8 +413,7 @@ func (g *Generator) Generate() error {
 			if err != nil {
 				return err
 			}
-			fmt.Println("e")
-			fmt.Println(x)
+
 			g.X = x
 			err := tmpl.ExecuteTemplate(out, "request_model.go.tmpl", g)
 			if err != nil {
@@ -463,10 +462,11 @@ func (g *Generator) Generate() error {
 		sort.Strings(keys)
 		for _, key := range keys {
 			x := entityTypeMap[key]
-			actionRequestBuilderMap[x.Type] = append(actionRequestBuilderMap[x.Type], x.Sym)
+			fmt.Println("b")
+			fmt.Println(x.Type)
+			actionRequestBuilderMap[strings.ToLower(x.Type)] = append(actionRequestBuilderMap[strings.ToLower(x.Type)], x.Sym)
 
 			if len(x.Navigations) == 0 {
-				fmt.Printf(x.Name, x.Navigations)
 				continue
 			}
 			out, err = g.Create("Action", x.Sym)
@@ -504,12 +504,17 @@ func (g *Generator) Generate() error {
 				continue
 			}
 			for _, y := range x {
+				fmt.Println("b")
+				fmt.Println(g.SymBaseType(a))
+				fmt.Println(y.Sym)
+				fmt.Println(actionRequestBuilderMap[a])
+				fmt.Println(a)
 				out, err = g.Create("Request", g.SymBaseType(a)+y.Sym)
 				if err != nil {
 					return err
 				}
 				g.Y = y
-				if b, ok := actionRequestBuilderMap[a]; ok {
+				if b, ok := actionRequestBuilderMap[strings.ToLower(a)]; ok {
 					g.X = b
 					if y.ReturnType == "" {
 						err = tmpl.ExecuteTemplate(out, "request_action_void.go.tmpl", g)

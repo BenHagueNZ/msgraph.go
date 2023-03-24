@@ -399,3 +399,25 @@ func (r *TeamworkUserIdentityRequest) Update(ctx context.Context, reqObj *Teamwo
 func (r *TeamworkUserIdentityRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type TeamworkSendActivityNotificationToRecipientsRequestBuilder struct{ BaseRequestBuilder }
+
+// SendActivityNotificationToRecipients action undocumented
+func (b *TeamworkRequestBuilder) SendActivityNotificationToRecipients(reqObj *TeamworkSendActivityNotificationToRecipientsRequestParameter) *TeamworkSendActivityNotificationToRecipientsRequestBuilder {
+	bb := &TeamworkSendActivityNotificationToRecipientsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SendActivityNotificationToRecipients"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type TeamworkSendActivityNotificationToRecipientsRequest struct{ BaseRequest }
+
+func (b *TeamworkSendActivityNotificationToRecipientsRequestBuilder) Request() *TeamworkSendActivityNotificationToRecipientsRequest {
+	return &TeamworkSendActivityNotificationToRecipientsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *TeamworkSendActivityNotificationToRecipientsRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
