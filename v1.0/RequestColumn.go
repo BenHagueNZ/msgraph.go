@@ -69,36 +69,3 @@ func (r *ColumnLinkRequest) Update(ctx context.Context, reqObj *ColumnLink) erro
 func (r *ColumnLinkRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
-
-// ColumnValidationRequestBuilder is request builder for ColumnValidation
-type ColumnValidationRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns ColumnValidationRequest
-func (b *ColumnValidationRequestBuilder) Request() *ColumnValidationRequest {
-	return &ColumnValidationRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// ColumnValidationRequest is request for ColumnValidation
-type ColumnValidationRequest struct{ BaseRequest }
-
-// Get performs GET request for ColumnValidation
-func (r *ColumnValidationRequest) Get(ctx context.Context) (resObj *ColumnValidation, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for ColumnValidation
-func (r *ColumnValidationRequest) Update(ctx context.Context, reqObj *ColumnValidation) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for ColumnValidation
-func (r *ColumnValidationRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}

@@ -320,35 +320,35 @@ func (r *DelegatedAdminRelationshipOperationsCollectionRequest) Add(ctx context.
 	return
 }
 
-// Requests returns request builder for DelegatedAdminRelationshipRequest collection
+// Requests returns request builder for DelegatedAdminRelationshipRequestObject collection
 func (b *DelegatedAdminRelationshipRequestBuilder) Requests() *DelegatedAdminRelationshipRequestsCollectionRequestBuilder {
 	bb := &DelegatedAdminRelationshipRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/requests"
 	return bb
 }
 
-// DelegatedAdminRelationshipRequestsCollectionRequestBuilder is request builder for DelegatedAdminRelationshipRequest collection
+// DelegatedAdminRelationshipRequestsCollectionRequestBuilder is request builder for DelegatedAdminRelationshipRequestObject collection
 type DelegatedAdminRelationshipRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DelegatedAdminRelationshipRequest collection
+// Request returns request for DelegatedAdminRelationshipRequestObject collection
 func (b *DelegatedAdminRelationshipRequestsCollectionRequestBuilder) Request() *DelegatedAdminRelationshipRequestsCollectionRequest {
 	return &DelegatedAdminRelationshipRequestsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DelegatedAdminRelationshipRequest item
-func (b *DelegatedAdminRelationshipRequestsCollectionRequestBuilder) ID(id string) *DelegatedAdminRelationshipRequestRequestBuilder {
-	bb := &DelegatedAdminRelationshipRequestRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for DelegatedAdminRelationshipRequestObject item
+func (b *DelegatedAdminRelationshipRequestsCollectionRequestBuilder) ID(id string) *DelegatedAdminRelationshipRequestObjectRequestBuilder {
+	bb := &DelegatedAdminRelationshipRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DelegatedAdminRelationshipRequestsCollectionRequest is request for DelegatedAdminRelationshipRequest collection
+// DelegatedAdminRelationshipRequestsCollectionRequest is request for DelegatedAdminRelationshipRequestObject collection
 type DelegatedAdminRelationshipRequestsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DelegatedAdminRelationshipRequest collection
-func (r *DelegatedAdminRelationshipRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DelegatedAdminRelationshipRequest, error) {
+// Paging perfoms paging operation for DelegatedAdminRelationshipRequestObject collection
+func (r *DelegatedAdminRelationshipRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DelegatedAdminRelationshipRequestObject, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -360,7 +360,7 @@ func (r *DelegatedAdminRelationshipRequestsCollectionRequest) Paging(ctx context
 	if err != nil {
 		return nil, err
 	}
-	var values []DelegatedAdminRelationshipRequest
+	var values []DelegatedAdminRelationshipRequestObject
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -374,7 +374,7 @@ func (r *DelegatedAdminRelationshipRequestsCollectionRequest) Paging(ctx context
 		}
 		var (
 			paging Paging
-			value  []DelegatedAdminRelationshipRequest
+			value  []DelegatedAdminRelationshipRequestObject
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -403,8 +403,8 @@ func (r *DelegatedAdminRelationshipRequestsCollectionRequest) Paging(ctx context
 	}
 }
 
-// GetN performs GET request for DelegatedAdminRelationshipRequest collection, max N pages
-func (r *DelegatedAdminRelationshipRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]DelegatedAdminRelationshipRequest, error) {
+// GetN performs GET request for DelegatedAdminRelationshipRequestObject collection, max N pages
+func (r *DelegatedAdminRelationshipRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]DelegatedAdminRelationshipRequestObject, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -412,13 +412,13 @@ func (r *DelegatedAdminRelationshipRequestsCollectionRequest) GetN(ctx context.C
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DelegatedAdminRelationshipRequest collection
-func (r *DelegatedAdminRelationshipRequestsCollectionRequest) Get(ctx context.Context) ([]DelegatedAdminRelationshipRequest, error) {
+// Get performs GET request for DelegatedAdminRelationshipRequestObject collection
+func (r *DelegatedAdminRelationshipRequestsCollectionRequest) Get(ctx context.Context) ([]DelegatedAdminRelationshipRequestObject, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DelegatedAdminRelationshipRequest collection
-func (r *DelegatedAdminRelationshipRequestsCollectionRequest) Add(ctx context.Context, reqObj *DelegatedAdminRelationshipRequest) (resObj *DelegatedAdminRelationshipRequest, err error) {
+// Add performs POST request for DelegatedAdminRelationshipRequestObject collection
+func (r *DelegatedAdminRelationshipRequestsCollectionRequest) Add(ctx context.Context, reqObj *DelegatedAdminRelationshipRequestObject) (resObj *DelegatedAdminRelationshipRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

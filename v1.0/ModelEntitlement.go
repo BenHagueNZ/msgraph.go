@@ -15,7 +15,7 @@ type EntitlementManagement struct {
 	// AssignmentPolicies undocumented
 	AssignmentPolicies []AccessPackageAssignmentPolicy `json:"assignmentPolicies,omitempty"`
 	// AssignmentRequests undocumented
-	AssignmentRequests []AccessPackageAssignmentRequest `json:"assignmentRequests,omitempty"`
+	AssignmentRequests []AccessPackageAssignmentRequestObject `json:"assignmentRequests,omitempty"`
 	// Assignments undocumented
 	Assignments []AccessPackageAssignment `json:"assignments,omitempty"`
 	// Catalogs undocumented

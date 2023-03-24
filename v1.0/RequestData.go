@@ -36,36 +36,3 @@ func (r *DataPolicyOperationRequest) Update(ctx context.Context, reqObj *DataPol
 func (r *DataPolicyOperationRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
-
-// DataSubjectRequestBuilder is request builder for DataSubject
-type DataSubjectRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns DataSubjectRequest
-func (b *DataSubjectRequestBuilder) Request() *DataSubjectRequest {
-	return &DataSubjectRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// DataSubjectRequest is request for DataSubject
-type DataSubjectRequest struct{ BaseRequest }
-
-// Get performs GET request for DataSubject
-func (r *DataSubjectRequest) Get(ctx context.Context) (resObj *DataSubject, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for DataSubject
-func (r *DataSubjectRequest) Update(ctx context.Context, reqObj *DataSubject) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for DataSubject
-func (r *DataSubjectRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}

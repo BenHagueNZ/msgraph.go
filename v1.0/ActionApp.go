@@ -114,35 +114,35 @@ func (r *AppCatalogsTeamsAppsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// AppConsentRequests returns request builder for AppConsentRequest collection
+// AppConsentRequests returns request builder for AppConsentRequestObject collection
 func (b *AppConsentApprovalRouteRequestBuilder) AppConsentRequests() *AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder {
 	bb := &AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appConsentRequests"
 	return bb
 }
 
-// AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder is request builder for AppConsentRequest collection
+// AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder is request builder for AppConsentRequestObject collection
 type AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for AppConsentRequest collection
+// Request returns request for AppConsentRequestObject collection
 func (b *AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder) Request() *AppConsentApprovalRouteAppConsentRequestsCollectionRequest {
 	return &AppConsentApprovalRouteAppConsentRequestsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for AppConsentRequest item
-func (b *AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder) ID(id string) *AppConsentRequestRequestBuilder {
-	bb := &AppConsentRequestRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for AppConsentRequestObject item
+func (b *AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder) ID(id string) *AppConsentRequestObjectRequestBuilder {
+	bb := &AppConsentRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AppConsentApprovalRouteAppConsentRequestsCollectionRequest is request for AppConsentRequest collection
+// AppConsentApprovalRouteAppConsentRequestsCollectionRequest is request for AppConsentRequestObject collection
 type AppConsentApprovalRouteAppConsentRequestsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for AppConsentRequest collection
-func (r *AppConsentApprovalRouteAppConsentRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AppConsentRequest, error) {
+// Paging perfoms paging operation for AppConsentRequestObject collection
+func (r *AppConsentApprovalRouteAppConsentRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AppConsentRequestObject, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -154,7 +154,7 @@ func (r *AppConsentApprovalRouteAppConsentRequestsCollectionRequest) Paging(ctx 
 	if err != nil {
 		return nil, err
 	}
-	var values []AppConsentRequest
+	var values []AppConsentRequestObject
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -168,7 +168,7 @@ func (r *AppConsentApprovalRouteAppConsentRequestsCollectionRequest) Paging(ctx 
 		}
 		var (
 			paging Paging
-			value  []AppConsentRequest
+			value  []AppConsentRequestObject
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -197,8 +197,8 @@ func (r *AppConsentApprovalRouteAppConsentRequestsCollectionRequest) Paging(ctx 
 	}
 }
 
-// GetN performs GET request for AppConsentRequest collection, max N pages
-func (r *AppConsentApprovalRouteAppConsentRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]AppConsentRequest, error) {
+// GetN performs GET request for AppConsentRequestObject collection, max N pages
+func (r *AppConsentApprovalRouteAppConsentRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]AppConsentRequestObject, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -206,46 +206,46 @@ func (r *AppConsentApprovalRouteAppConsentRequestsCollectionRequest) GetN(ctx co
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for AppConsentRequest collection
-func (r *AppConsentApprovalRouteAppConsentRequestsCollectionRequest) Get(ctx context.Context) ([]AppConsentRequest, error) {
+// Get performs GET request for AppConsentRequestObject collection
+func (r *AppConsentApprovalRouteAppConsentRequestsCollectionRequest) Get(ctx context.Context) ([]AppConsentRequestObject, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for AppConsentRequest collection
-func (r *AppConsentApprovalRouteAppConsentRequestsCollectionRequest) Add(ctx context.Context, reqObj *AppConsentRequest) (resObj *AppConsentRequest, err error) {
+// Add performs POST request for AppConsentRequestObject collection
+func (r *AppConsentApprovalRouteAppConsentRequestsCollectionRequest) Add(ctx context.Context, reqObj *AppConsentRequestObject) (resObj *AppConsentRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// UserConsentRequests returns request builder for UserConsentRequest collection
+// UserConsentRequests returns request builder for UserConsentRequestObject collection
 func (b *AppConsentRequestObjectRequestBuilder) UserConsentRequests() *AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder {
 	bb := &AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/userConsentRequests"
 	return bb
 }
 
-// AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder is request builder for UserConsentRequest collection
+// AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder is request builder for UserConsentRequestObject collection
 type AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for UserConsentRequest collection
+// Request returns request for UserConsentRequestObject collection
 func (b *AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder) Request() *AppConsentRequestObjectUserConsentRequestsCollectionRequest {
 	return &AppConsentRequestObjectUserConsentRequestsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for UserConsentRequest item
-func (b *AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder) ID(id string) *UserConsentRequestRequestBuilder {
-	bb := &UserConsentRequestRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for UserConsentRequestObject item
+func (b *AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder) ID(id string) *UserConsentRequestObjectRequestBuilder {
+	bb := &UserConsentRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AppConsentRequestObjectUserConsentRequestsCollectionRequest is request for UserConsentRequest collection
+// AppConsentRequestObjectUserConsentRequestsCollectionRequest is request for UserConsentRequestObject collection
 type AppConsentRequestObjectUserConsentRequestsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for UserConsentRequest collection
-func (r *AppConsentRequestObjectUserConsentRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UserConsentRequest, error) {
+// Paging perfoms paging operation for UserConsentRequestObject collection
+func (r *AppConsentRequestObjectUserConsentRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UserConsentRequestObject, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -257,7 +257,7 @@ func (r *AppConsentRequestObjectUserConsentRequestsCollectionRequest) Paging(ctx
 	if err != nil {
 		return nil, err
 	}
-	var values []UserConsentRequest
+	var values []UserConsentRequestObject
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -271,7 +271,7 @@ func (r *AppConsentRequestObjectUserConsentRequestsCollectionRequest) Paging(ctx
 		}
 		var (
 			paging Paging
-			value  []UserConsentRequest
+			value  []UserConsentRequestObject
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -300,8 +300,8 @@ func (r *AppConsentRequestObjectUserConsentRequestsCollectionRequest) Paging(ctx
 	}
 }
 
-// GetN performs GET request for UserConsentRequest collection, max N pages
-func (r *AppConsentRequestObjectUserConsentRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]UserConsentRequest, error) {
+// GetN performs GET request for UserConsentRequestObject collection, max N pages
+func (r *AppConsentRequestObjectUserConsentRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]UserConsentRequestObject, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -309,13 +309,13 @@ func (r *AppConsentRequestObjectUserConsentRequestsCollectionRequest) GetN(ctx c
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for UserConsentRequest collection
-func (r *AppConsentRequestObjectUserConsentRequestsCollectionRequest) Get(ctx context.Context) ([]UserConsentRequest, error) {
+// Get performs GET request for UserConsentRequestObject collection
+func (r *AppConsentRequestObjectUserConsentRequestsCollectionRequest) Get(ctx context.Context) ([]UserConsentRequestObject, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for UserConsentRequest collection
-func (r *AppConsentRequestObjectUserConsentRequestsCollectionRequest) Add(ctx context.Context, reqObj *UserConsentRequest) (resObj *UserConsentRequest, err error) {
+// Add performs POST request for UserConsentRequestObject collection
+func (r *AppConsentRequestObjectUserConsentRequestsCollectionRequest) Add(ctx context.Context, reqObj *UserConsentRequestObject) (resObj *UserConsentRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

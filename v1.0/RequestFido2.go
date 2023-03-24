@@ -69,36 +69,3 @@ func (r *Fido2AuthenticationMethodConfigurationRequest) Update(ctx context.Conte
 func (r *Fido2AuthenticationMethodConfigurationRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
-
-// Fido2KeyRestrictionsRequestBuilder is request builder for Fido2KeyRestrictions
-type Fido2KeyRestrictionsRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns Fido2KeyRestrictionsRequest
-func (b *Fido2KeyRestrictionsRequestBuilder) Request() *Fido2KeyRestrictionsRequest {
-	return &Fido2KeyRestrictionsRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// Fido2KeyRestrictionsRequest is request for Fido2KeyRestrictions
-type Fido2KeyRestrictionsRequest struct{ BaseRequest }
-
-// Get performs GET request for Fido2KeyRestrictions
-func (r *Fido2KeyRestrictionsRequest) Get(ctx context.Context) (resObj *Fido2KeyRestrictions, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for Fido2KeyRestrictions
-func (r *Fido2KeyRestrictionsRequest) Update(ctx context.Context, reqObj *Fido2KeyRestrictions) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for Fido2KeyRestrictions
-func (r *Fido2KeyRestrictionsRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}

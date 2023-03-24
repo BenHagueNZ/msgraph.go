@@ -4,8 +4,8 @@ package msgraph
 
 // MailAssessmentRequestObject undocumented
 type MailAssessmentRequestObject struct {
-	// ThreatAssessmentRequest is the base model of MailAssessmentRequestObject
-	ThreatAssessmentRequest
+	// ThreatAssessmentRequestObject is the base model of MailAssessmentRequestObject
+	ThreatAssessmentRequestObject
 	// DestinationRoutingReason undocumented
 	DestinationRoutingReason *MailDestinationRoutingReason `json:"destinationRoutingReason,omitempty"`
 	// MessageURI undocumented

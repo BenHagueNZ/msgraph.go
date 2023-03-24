@@ -24,7 +24,7 @@ type PrinterCollectionCreateRequestParameter struct {
 	// HasPhysicalDevice undocumented
 	HasPhysicalDevice *bool `json:"hasPhysicalDevice,omitempty"`
 	// CertificateSigningRequest undocumented
-	CertificateSigningRequest *PrintCertificateSigningRequest `json:"certificateSigningRequest,omitempty"`
+	CertificateSigningRequest *PrintCertificateSigningRequestObject `json:"certificateSigningRequest,omitempty"`
 	// ConnectorID undocumented
 	ConnectorID *string `json:"connectorId,omitempty"`
 }

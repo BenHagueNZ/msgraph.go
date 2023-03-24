@@ -102,6 +102,7 @@ func (g *Generator) Generate() error {
 	if err != nil {
 		return err
 	}
+	allRequestModelMap := map[string]bool{}
 
 	for _, schema := range o.Elems[0].Elems {
 		//	alias := regexp.MustCompile("^" + schema.AttrMap()["Alias"] + "\\.")
@@ -110,8 +111,14 @@ func (g *Generator) Generate() error {
 		namespace := "microsoft.graph."
 		alias := regexp.MustCompile(`^graph\.`)
 		collectionAlias := regexp.MustCompile(`^Collection\(graph\.`)
+		collectionRequestAlias := regexp.MustCompile(`Request\)`)
+		collectionRequestNamespace := "RequestObject)"
+		requestAlias := regexp.MustCompile(`[Rr]equest$`)
+		requestNamespace := "RequestObject"
 		collectionNamespace := "Collection(microsoft.graph."
 		namePrefix := schema.AttrMap()["Namespace"]
+		fmt.Println()
+		fmt.Println("Schema", namePrefix)
 		if namePrefix == "microsoft.graph" {
 			namePrefix = ""
 		} else {
@@ -137,6 +144,7 @@ func (g *Generator) Generate() error {
 				runes := []rune(n)
 				runes[0] = unicode.ToUpper(runes[0])
 				n = namePrefix + string(runes)
+				n = requestAlias.ReplaceAllString(n, requestNamespace)
 				t := &EnumType{Name: n, Sym: exported(n), Description: "undocumented"}
 				for _, y := range x.Elems {
 					n := y.Attrs[0].Value
@@ -161,12 +169,16 @@ func (g *Generator) Generate() error {
 				runes = []rune(n)
 				runes[0] = unicode.ToUpper(runes[0])
 				t := nsPrefix + string(runes)
-				b, _ := m["BaseType"]
+				b := m["BaseType"]
 				b = alias.ReplaceAllString(b, namespace)
+				b = requestAlias.ReplaceAllString(b, requestNamespace)
 				et := &EntityType{Name: n, Sym: exported(n), Type: t, Base: b, Description: "undocumented"}
 				if strings.HasSuffix(et.Sym, "Request") {
 					et.Sym += "Object"
 					g.SymTypeMap[t] = et.Sym
+				}
+				if strings.HasSuffix(et.Type, "Request") {
+					et.Type += "Object"
 				}
 				for _, y := range x.Elems {
 					ma := y.AttrMap()
@@ -181,6 +193,7 @@ func (g *Generator) Generate() error {
 						n := ma["Name"]
 						t := alias.ReplaceAllString(ma["Type"], namespace)
 						t = collectionAlias.ReplaceAllString(t, collectionNamespace)
+						t = collectionRequestAlias.ReplaceAllString(t, collectionRequestNamespace)
 						m := &EntityTypeNavigation{Name: n, Sym: exported(n), Type: t, Description: "undocumented"}
 						if strings.HasSuffix(m.Sym, "Request") {
 							m.Sym += "Navigation"
@@ -206,6 +219,10 @@ func (g *Generator) Generate() error {
 						n := ma["Name"]
 						t := alias.ReplaceAllString(ma["Type"], namespace)
 						t = collectionAlias.ReplaceAllString(t, collectionNamespace)
+						t = collectionRequestAlias.ReplaceAllString(t, collectionRequestNamespace)
+						if strings.HasSuffix(t, "Request") {
+							t += "Object"
+						}
 						m := &ActionTypeParameter{Name: n, Sym: exported(n), Type: t, Description: "undocumented"}
 						at.Parameters = append(at.Parameters, m)
 					case "ReturnType":
@@ -243,16 +260,21 @@ func (g *Generator) Generate() error {
 				targetMember := ""
 				if len(targetList) > 1 {
 					target = alias.ReplaceAllString(targetList[0], namespace)
+					target = requestAlias.ReplaceAllString(target, requestNamespace)
 					targetMember = alias.ReplaceAllString(targetList[1], namespace)
+					targetMember = requestAlias.ReplaceAllString(targetMember, requestNamespace)
 				}
 				target = alias.ReplaceAllString(target, namespace)
+				target = requestAlias.ReplaceAllString(target, requestNamespace)
+
 				targetMember = alias.ReplaceAllString(targetMember, namespace)
+				targetMember = requestAlias.ReplaceAllString(targetMember, requestNamespace)
 				for _, y := range x.Elems {
 					switch y.XMLName.Local {
 					case "Annotation":
 						ma := y.AttrMap()
-						term, _ := ma["Term"]
-						str, _ := ma["String"]
+						term := ma["Term"]
+						str := ma["String"]
 						if term == "Org.OData.Core.V1.Description" {
 							if e, ok := entityTypeMap[target]; ok {
 								if targetMember == "" {
@@ -275,55 +297,6 @@ func (g *Generator) Generate() error {
 		//		fmt.Println(x)
 		//	}
 		//	os.Exit(0)
-		// Copy all *.go files without template processing
-		// Copy everything below the first "// BEGIN" line to the output
-		paths, err := filepath.Glob("templates/*.go")
-		if err != nil {
-			return err
-		}
-		for _, path := range paths {
-			err := func() error {
-				inFile, err := os.Open(path)
-				if err != nil {
-					return err
-				}
-				defer inFile.Close()
-				outFile, err := g.Create(filepath.Base(path), "")
-				if err != nil {
-					return err
-				}
-				defer outFile.Close()
-				scanner := bufio.NewScanner(inFile)
-				enabled := false
-				for scanner.Scan() {
-					line := scanner.Text()
-					if strings.HasPrefix(line, "// BEGIN") {
-						enabled = true
-						continue
-					}
-					if enabled {
-						fmt.Fprintln(outFile, line)
-					}
-				}
-				return scanner.Err()
-			}()
-			if err != nil {
-				return err
-			}
-		}
-
-		// Copy some *.go.tmpl files with template processing
-		for _, path := range []string{"const.go.tmpl"} {
-			out, err := g.Create(path[:len(path)-5], "")
-			if err != nil {
-				return err
-			}
-			err = tmpl.ExecuteTemplate(out, path, g)
-			if err != nil {
-				return err
-			}
-			out.Close()
-		}
 
 		var out io.WriteCloser
 
@@ -385,7 +358,10 @@ func (g *Generator) Generate() error {
 			if err != nil {
 				return err
 			}
-			requestModelMap[g.SymBaseType(a)] = true
+			if !allRequestModelMap[g.SymBaseType(a)] {
+				requestModelMap[g.SymBaseType(a)] = true
+				allRequestModelMap[g.SymBaseType(a)] = true
+			}
 			for _, y := range x {
 				g.X = y
 				err := tmpl.ExecuteTemplate(out, "action.go.tmpl", g)
@@ -395,26 +371,39 @@ func (g *Generator) Generate() error {
 			}
 			out.Close()
 		}
-
 		for _, x := range entityTypeMap {
-			//	if len(x.Navigations) == 0 {
-			//		continue
-			//	}
-			requestModelMap[x.Sym] = true
+			if len(x.Navigations) == 0 {
+				continue
+			}
+			if !allRequestModelMap[x.Sym] {
+				requestModelMap[x.Sym] = true
+				allRequestModelMap[x.Sym] = true
+			}
 			for _, y := range x.Navigations {
-				requestModelMap[g.SymBaseType(y.Type)] = true
+				if !allRequestModelMap[g.SymBaseType(y.Type)] {
+					requestModelMap[g.SymBaseType(y.Type)] = true
+					allRequestModelMap[g.SymBaseType(y.Type)] = true
+				}
 			}
 		}
+
 		for _, x := range entitySetMap {
-			requestModelMap[g.SymBaseType(x.Type)] = true
+			if !allRequestModelMap[g.SymBaseType(x.Type)] {
+				requestModelMap[g.SymBaseType(x.Type)] = true
+				allRequestModelMap[g.SymBaseType(x.Type)] = true
+			}
 		}
 		for _, x := range singletonMap {
-			requestModelMap[g.SymBaseType(x.Type)] = true
+			if !allRequestModelMap[g.SymBaseType(x.Type)] {
+				requestModelMap[g.SymBaseType(x.Type)] = true
+				allRequestModelMap[g.SymBaseType(x.Type)] = true
+			}
 		}
 
 		keys = nil
 		for x := range requestModelMap {
 			keys = append(keys, x)
+
 		}
 		sort.Strings(keys)
 		for _, x := range keys {
@@ -422,6 +411,8 @@ func (g *Generator) Generate() error {
 			if err != nil {
 				return err
 			}
+			fmt.Println("e")
+			fmt.Println(x)
 			g.X = x
 			err := tmpl.ExecuteTemplate(out, "request_model.go.tmpl", g)
 			if err != nil {
@@ -472,9 +463,10 @@ func (g *Generator) Generate() error {
 			x := entityTypeMap[key]
 			actionRequestBuilderMap[x.Type] = append(actionRequestBuilderMap[x.Type], x.Sym)
 
-			//	if len(x.Navigations) == 0 {
-			//		continue
-			//	}
+			if len(x.Navigations) == 0 {
+				fmt.Printf(x.Name, x.Navigations)
+				continue
+			}
 			out, err = g.Create("Action", x.Sym)
 			if err != nil {
 				return err
@@ -531,6 +523,54 @@ func (g *Generator) Generate() error {
 				out.Close()
 			}
 		}
+	}
+	// Copy all *.go files without template processing
+	// Copy everything below the first "// BEGIN" line to the output
+	paths, err := filepath.Glob("templates/*.go")
+	if err != nil {
+		return err
+	}
+	for _, path := range paths {
+		err := func() error {
+			inFile, err := os.Open(path)
+			if err != nil {
+				return err
+			}
+			defer inFile.Close()
+			outFile, err := g.Create(filepath.Base(path), "")
+			if err != nil {
+				return err
+			}
+			defer outFile.Close()
+			scanner := bufio.NewScanner(inFile)
+			enabled := false
+			for scanner.Scan() {
+				line := scanner.Text()
+				if strings.HasPrefix(line, "// BEGIN") {
+					enabled = true
+					continue
+				}
+				if enabled {
+					fmt.Fprintln(outFile, line)
+				}
+			}
+			return scanner.Err()
+		}()
+		if err != nil {
+			return err
+		}
+	}
+	// Copy some *.go.tmpl files with template processing
+	for _, path := range []string{"const.go.tmpl"} {
+		out, err := g.Create(path[:len(path)-5], "")
+		if err != nil {
+			return err
+		}
+		err = tmpl.ExecuteTemplate(out, path, g)
+		if err != nil {
+			return err
+		}
+		out.Close()
 	}
 	return nil
 }

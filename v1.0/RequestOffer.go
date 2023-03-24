@@ -4,39 +4,6 @@ package msgraph
 
 import "context"
 
-// OfferShiftRequestRequestBuilder is request builder for OfferShiftRequest
-type OfferShiftRequestRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns OfferShiftRequestRequest
-func (b *OfferShiftRequestRequestBuilder) Request() *OfferShiftRequestRequest {
-	return &OfferShiftRequestRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// OfferShiftRequestRequest is request for OfferShiftRequest
-type OfferShiftRequestRequest struct{ BaseRequest }
-
-// Get performs GET request for OfferShiftRequest
-func (r *OfferShiftRequestRequest) Get(ctx context.Context) (resObj *OfferShiftRequest, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for OfferShiftRequest
-func (r *OfferShiftRequestRequest) Update(ctx context.Context, reqObj *OfferShiftRequest) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for OfferShiftRequest
-func (r *OfferShiftRequestRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // OfferShiftRequestObjectRequestBuilder is request builder for OfferShiftRequestObject
 type OfferShiftRequestObjectRequestBuilder struct{ BaseRequestBuilder }
 

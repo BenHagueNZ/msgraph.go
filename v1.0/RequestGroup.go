@@ -37,39 +37,6 @@ func (r *GroupRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// GroupAssignmentTargetRequestBuilder is request builder for GroupAssignmentTarget
-type GroupAssignmentTargetRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns GroupAssignmentTargetRequest
-func (b *GroupAssignmentTargetRequestBuilder) Request() *GroupAssignmentTargetRequest {
-	return &GroupAssignmentTargetRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// GroupAssignmentTargetRequest is request for GroupAssignmentTarget
-type GroupAssignmentTargetRequest struct{ BaseRequest }
-
-// Get performs GET request for GroupAssignmentTarget
-func (r *GroupAssignmentTargetRequest) Get(ctx context.Context) (resObj *GroupAssignmentTarget, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for GroupAssignmentTarget
-func (r *GroupAssignmentTargetRequest) Update(ctx context.Context, reqObj *GroupAssignmentTarget) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for GroupAssignmentTarget
-func (r *GroupAssignmentTargetRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // GroupLifecyclePolicyRequestBuilder is request builder for GroupLifecyclePolicy
 type GroupLifecyclePolicyRequestBuilder struct{ BaseRequestBuilder }
 
@@ -100,39 +67,6 @@ func (r *GroupLifecyclePolicyRequest) Update(ctx context.Context, reqObj *GroupL
 
 // Delete performs DELETE request for GroupLifecyclePolicy
 func (r *GroupLifecyclePolicyRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// GroupMembersRequestBuilder is request builder for GroupMembers
-type GroupMembersRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns GroupMembersRequest
-func (b *GroupMembersRequestBuilder) Request() *GroupMembersRequest {
-	return &GroupMembersRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// GroupMembersRequest is request for GroupMembers
-type GroupMembersRequest struct{ BaseRequest }
-
-// Get performs GET request for GroupMembers
-func (r *GroupMembersRequest) Get(ctx context.Context) (resObj *GroupMembers, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for GroupMembers
-func (r *GroupMembersRequest) Update(ctx context.Context, reqObj *GroupMembers) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for GroupMembers
-func (r *GroupMembersRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -199,38 +133,5 @@ func (r *GroupSettingTemplateRequest) Update(ctx context.Context, reqObj *GroupS
 
 // Delete performs DELETE request for GroupSettingTemplate
 func (r *GroupSettingTemplateRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// GroupRequestBuilder is request builder for Group
-type GroupRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns GroupRequest
-func (b *GroupRequestBuilder) Request() *GroupRequest {
-	return &GroupRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// GroupRequest is request for Group
-type GroupRequest struct{ BaseRequest }
-
-// Get performs GET request for Group
-func (r *GroupRequest) Get(ctx context.Context) (resObj *Group, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for Group
-func (r *GroupRequest) Update(ctx context.Context, reqObj *Group) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for Group
-func (r *GroupRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

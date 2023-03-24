@@ -18,8 +18,8 @@ type File struct {
 
 // FileAssessmentRequestObject undocumented
 type FileAssessmentRequestObject struct {
-	// ThreatAssessmentRequest is the base model of FileAssessmentRequestObject
-	ThreatAssessmentRequest
+	// ThreatAssessmentRequestObject is the base model of FileAssessmentRequestObject
+	ThreatAssessmentRequestObject
 	// ContentData undocumented
 	ContentData *string `json:"contentData,omitempty"`
 	// FileName undocumented

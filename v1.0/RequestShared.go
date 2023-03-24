@@ -4,39 +4,6 @@ package msgraph
 
 import "context"
 
-// SharedRequestBuilder is request builder for Shared
-type SharedRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns SharedRequest
-func (b *SharedRequestBuilder) Request() *SharedRequest {
-	return &SharedRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// SharedRequest is request for Shared
-type SharedRequest struct{ BaseRequest }
-
-// Get performs GET request for Shared
-func (r *SharedRequest) Get(ctx context.Context) (resObj *Shared, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for Shared
-func (r *SharedRequest) Update(ctx context.Context, reqObj *Shared) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for Shared
-func (r *SharedRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // SharedDriveItemRequestBuilder is request builder for SharedDriveItem
 type SharedDriveItemRequestBuilder struct{ BaseRequestBuilder }
 
@@ -100,72 +67,6 @@ func (r *SharedInsightRequest) Update(ctx context.Context, reqObj *SharedInsight
 
 // Delete performs DELETE request for SharedInsight
 func (r *SharedInsightRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// SharedPCAccountManagerPolicyRequestBuilder is request builder for SharedPCAccountManagerPolicy
-type SharedPCAccountManagerPolicyRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns SharedPCAccountManagerPolicyRequest
-func (b *SharedPCAccountManagerPolicyRequestBuilder) Request() *SharedPCAccountManagerPolicyRequest {
-	return &SharedPCAccountManagerPolicyRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// SharedPCAccountManagerPolicyRequest is request for SharedPCAccountManagerPolicy
-type SharedPCAccountManagerPolicyRequest struct{ BaseRequest }
-
-// Get performs GET request for SharedPCAccountManagerPolicy
-func (r *SharedPCAccountManagerPolicyRequest) Get(ctx context.Context) (resObj *SharedPCAccountManagerPolicy, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for SharedPCAccountManagerPolicy
-func (r *SharedPCAccountManagerPolicyRequest) Update(ctx context.Context, reqObj *SharedPCAccountManagerPolicy) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for SharedPCAccountManagerPolicy
-func (r *SharedPCAccountManagerPolicyRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// SharedPCConfigurationRequestBuilder is request builder for SharedPCConfiguration
-type SharedPCConfigurationRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns SharedPCConfigurationRequest
-func (b *SharedPCConfigurationRequestBuilder) Request() *SharedPCConfigurationRequest {
-	return &SharedPCConfigurationRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// SharedPCConfigurationRequest is request for SharedPCConfiguration
-type SharedPCConfigurationRequest struct{ BaseRequest }
-
-// Get performs GET request for SharedPCConfiguration
-func (r *SharedPCConfigurationRequest) Get(ctx context.Context) (resObj *SharedPCConfiguration, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for SharedPCConfiguration
-func (r *SharedPCConfigurationRequest) Update(ctx context.Context, reqObj *SharedPCConfiguration) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for SharedPCConfiguration
-func (r *SharedPCConfigurationRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

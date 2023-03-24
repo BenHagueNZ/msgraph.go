@@ -37,39 +37,6 @@ func (r *PrintRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// PrintCertificateSigningRequestObjectRequestBuilder is request builder for PrintCertificateSigningRequestObject
-type PrintCertificateSigningRequestObjectRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns PrintCertificateSigningRequestObjectRequest
-func (b *PrintCertificateSigningRequestObjectRequestBuilder) Request() *PrintCertificateSigningRequestObjectRequest {
-	return &PrintCertificateSigningRequestObjectRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// PrintCertificateSigningRequestObjectRequest is request for PrintCertificateSigningRequestObject
-type PrintCertificateSigningRequestObjectRequest struct{ BaseRequest }
-
-// Get performs GET request for PrintCertificateSigningRequestObject
-func (r *PrintCertificateSigningRequestObjectRequest) Get(ctx context.Context) (resObj *PrintCertificateSigningRequestObject, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for PrintCertificateSigningRequestObject
-func (r *PrintCertificateSigningRequestObjectRequest) Update(ctx context.Context, reqObj *PrintCertificateSigningRequestObject) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for PrintCertificateSigningRequestObject
-func (r *PrintCertificateSigningRequestObjectRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // PrintConnectorRequestBuilder is request builder for PrintConnector
 type PrintConnectorRequestBuilder struct{ BaseRequestBuilder }
 
@@ -136,39 +103,6 @@ func (r *PrintDocumentRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// PrintDocumentUploadPropertiesRequestBuilder is request builder for PrintDocumentUploadProperties
-type PrintDocumentUploadPropertiesRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns PrintDocumentUploadPropertiesRequest
-func (b *PrintDocumentUploadPropertiesRequestBuilder) Request() *PrintDocumentUploadPropertiesRequest {
-	return &PrintDocumentUploadPropertiesRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// PrintDocumentUploadPropertiesRequest is request for PrintDocumentUploadProperties
-type PrintDocumentUploadPropertiesRequest struct{ BaseRequest }
-
-// Get performs GET request for PrintDocumentUploadProperties
-func (r *PrintDocumentUploadPropertiesRequest) Get(ctx context.Context) (resObj *PrintDocumentUploadProperties, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for PrintDocumentUploadProperties
-func (r *PrintDocumentUploadPropertiesRequest) Update(ctx context.Context, reqObj *PrintDocumentUploadProperties) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for PrintDocumentUploadProperties
-func (r *PrintDocumentUploadPropertiesRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // PrintJobRequestBuilder is request builder for PrintJob
 type PrintJobRequestBuilder struct{ BaseRequestBuilder }
 
@@ -202,105 +136,6 @@ func (r *PrintJobRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// PrintJobConfigurationRequestBuilder is request builder for PrintJobConfiguration
-type PrintJobConfigurationRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns PrintJobConfigurationRequest
-func (b *PrintJobConfigurationRequestBuilder) Request() *PrintJobConfigurationRequest {
-	return &PrintJobConfigurationRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// PrintJobConfigurationRequest is request for PrintJobConfiguration
-type PrintJobConfigurationRequest struct{ BaseRequest }
-
-// Get performs GET request for PrintJobConfiguration
-func (r *PrintJobConfigurationRequest) Get(ctx context.Context) (resObj *PrintJobConfiguration, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for PrintJobConfiguration
-func (r *PrintJobConfigurationRequest) Update(ctx context.Context, reqObj *PrintJobConfiguration) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for PrintJobConfiguration
-func (r *PrintJobConfigurationRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// PrintJobStatusRequestBuilder is request builder for PrintJobStatus
-type PrintJobStatusRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns PrintJobStatusRequest
-func (b *PrintJobStatusRequestBuilder) Request() *PrintJobStatusRequest {
-	return &PrintJobStatusRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// PrintJobStatusRequest is request for PrintJobStatus
-type PrintJobStatusRequest struct{ BaseRequest }
-
-// Get performs GET request for PrintJobStatus
-func (r *PrintJobStatusRequest) Get(ctx context.Context) (resObj *PrintJobStatus, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for PrintJobStatus
-func (r *PrintJobStatusRequest) Update(ctx context.Context, reqObj *PrintJobStatus) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for PrintJobStatus
-func (r *PrintJobStatusRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// PrintMarginRequestBuilder is request builder for PrintMargin
-type PrintMarginRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns PrintMarginRequest
-func (b *PrintMarginRequestBuilder) Request() *PrintMarginRequest {
-	return &PrintMarginRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// PrintMarginRequest is request for PrintMargin
-type PrintMarginRequest struct{ BaseRequest }
-
-// Get performs GET request for PrintMargin
-func (r *PrintMarginRequest) Get(ctx context.Context) (resObj *PrintMargin, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for PrintMargin
-func (r *PrintMarginRequest) Update(ctx context.Context, reqObj *PrintMargin) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for PrintMargin
-func (r *PrintMarginRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // PrintOperationRequestBuilder is request builder for PrintOperation
 type PrintOperationRequestBuilder struct{ BaseRequestBuilder }
 
@@ -331,39 +166,6 @@ func (r *PrintOperationRequest) Update(ctx context.Context, reqObj *PrintOperati
 
 // Delete performs DELETE request for PrintOperation
 func (r *PrintOperationRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// PrintOperationStatusRequestBuilder is request builder for PrintOperationStatus
-type PrintOperationStatusRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns PrintOperationStatusRequest
-func (b *PrintOperationStatusRequestBuilder) Request() *PrintOperationStatusRequest {
-	return &PrintOperationStatusRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// PrintOperationStatusRequest is request for PrintOperationStatus
-type PrintOperationStatusRequest struct{ BaseRequest }
-
-// Get performs GET request for PrintOperationStatus
-func (r *PrintOperationStatusRequest) Get(ctx context.Context) (resObj *PrintOperationStatus, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for PrintOperationStatus
-func (r *PrintOperationStatusRequest) Update(ctx context.Context, reqObj *PrintOperationStatus) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for PrintOperationStatus
-func (r *PrintOperationStatusRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -433,39 +235,6 @@ func (r *PrintServiceEndpointRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// PrintSettingsRequestBuilder is request builder for PrintSettings
-type PrintSettingsRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns PrintSettingsRequest
-func (b *PrintSettingsRequestBuilder) Request() *PrintSettingsRequest {
-	return &PrintSettingsRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// PrintSettingsRequest is request for PrintSettings
-type PrintSettingsRequest struct{ BaseRequest }
-
-// Get performs GET request for PrintSettings
-func (r *PrintSettingsRequest) Get(ctx context.Context) (resObj *PrintSettings, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for PrintSettings
-func (r *PrintSettingsRequest) Update(ctx context.Context, reqObj *PrintSettings) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for PrintSettings
-func (r *PrintSettingsRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // PrintTaskRequestBuilder is request builder for PrintTask
 type PrintTaskRequestBuilder struct{ BaseRequestBuilder }
 
@@ -532,39 +301,6 @@ func (r *PrintTaskDefinitionRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// PrintTaskStatusRequestBuilder is request builder for PrintTaskStatus
-type PrintTaskStatusRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns PrintTaskStatusRequest
-func (b *PrintTaskStatusRequestBuilder) Request() *PrintTaskStatusRequest {
-	return &PrintTaskStatusRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// PrintTaskStatusRequest is request for PrintTaskStatus
-type PrintTaskStatusRequest struct{ BaseRequest }
-
-// Get performs GET request for PrintTaskStatus
-func (r *PrintTaskStatusRequest) Get(ctx context.Context) (resObj *PrintTaskStatus, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for PrintTaskStatus
-func (r *PrintTaskStatusRequest) Update(ctx context.Context, reqObj *PrintTaskStatus) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for PrintTaskStatus
-func (r *PrintTaskStatusRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // PrintTaskTriggerRequestBuilder is request builder for PrintTaskTrigger
 type PrintTaskTriggerRequestBuilder struct{ BaseRequestBuilder }
 
@@ -595,39 +331,6 @@ func (r *PrintTaskTriggerRequest) Update(ctx context.Context, reqObj *PrintTaskT
 
 // Delete performs DELETE request for PrintTaskTrigger
 func (r *PrintTaskTriggerRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// PrintUsageRequestBuilder is request builder for PrintUsage
-type PrintUsageRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns PrintUsageRequest
-func (b *PrintUsageRequestBuilder) Request() *PrintUsageRequest {
-	return &PrintUsageRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// PrintUsageRequest is request for PrintUsage
-type PrintUsageRequest struct{ BaseRequest }
-
-// Get performs GET request for PrintUsage
-func (r *PrintUsageRequest) Get(ctx context.Context) (resObj *PrintUsage, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for PrintUsage
-func (r *PrintUsageRequest) Update(ctx context.Context, reqObj *PrintUsage) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for PrintUsage
-func (r *PrintUsageRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

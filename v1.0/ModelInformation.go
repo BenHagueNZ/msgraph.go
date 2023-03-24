@@ -9,5 +9,5 @@ type InformationProtection struct {
 	// Bitlocker undocumented
 	Bitlocker *Bitlocker `json:"bitlocker,omitempty"`
 	// ThreatAssessmentRequests undocumented
-	ThreatAssessmentRequests []ThreatAssessmentRequest `json:"threatAssessmentRequests,omitempty"`
+	ThreatAssessmentRequests []ThreatAssessmentRequestObject `json:"threatAssessmentRequests,omitempty"`
 }

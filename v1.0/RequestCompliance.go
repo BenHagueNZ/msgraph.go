@@ -37,39 +37,6 @@ func (r *ComplianceRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// ComplianceInformationRequestBuilder is request builder for ComplianceInformation
-type ComplianceInformationRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns ComplianceInformationRequest
-func (b *ComplianceInformationRequestBuilder) Request() *ComplianceInformationRequest {
-	return &ComplianceInformationRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// ComplianceInformationRequest is request for ComplianceInformation
-type ComplianceInformationRequest struct{ BaseRequest }
-
-// Get performs GET request for ComplianceInformation
-func (r *ComplianceInformationRequest) Get(ctx context.Context) (resObj *ComplianceInformation, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for ComplianceInformation
-func (r *ComplianceInformationRequest) Update(ctx context.Context, reqObj *ComplianceInformation) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for ComplianceInformation
-func (r *ComplianceInformationRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // ComplianceManagementPartnerRequestBuilder is request builder for ComplianceManagementPartner
 type ComplianceManagementPartnerRequestBuilder struct{ BaseRequestBuilder }
 
@@ -100,38 +67,5 @@ func (r *ComplianceManagementPartnerRequest) Update(ctx context.Context, reqObj 
 
 // Delete performs DELETE request for ComplianceManagementPartner
 func (r *ComplianceManagementPartnerRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// ComplianceManagementPartnerAssignmentRequestBuilder is request builder for ComplianceManagementPartnerAssignment
-type ComplianceManagementPartnerAssignmentRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns ComplianceManagementPartnerAssignmentRequest
-func (b *ComplianceManagementPartnerAssignmentRequestBuilder) Request() *ComplianceManagementPartnerAssignmentRequest {
-	return &ComplianceManagementPartnerAssignmentRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// ComplianceManagementPartnerAssignmentRequest is request for ComplianceManagementPartnerAssignment
-type ComplianceManagementPartnerAssignmentRequest struct{ BaseRequest }
-
-// Get performs GET request for ComplianceManagementPartnerAssignment
-func (r *ComplianceManagementPartnerAssignmentRequest) Get(ctx context.Context) (resObj *ComplianceManagementPartnerAssignment, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for ComplianceManagementPartnerAssignment
-func (r *ComplianceManagementPartnerAssignmentRequest) Update(ctx context.Context, reqObj *ComplianceManagementPartnerAssignment) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for ComplianceManagementPartnerAssignment
-func (r *ComplianceManagementPartnerAssignmentRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

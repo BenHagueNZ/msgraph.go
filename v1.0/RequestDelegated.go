@@ -37,72 +37,6 @@ func (r *DelegatedAdminAccessAssignmentRequest) Delete(ctx context.Context) erro
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// DelegatedAdminAccessContainerRequestBuilder is request builder for DelegatedAdminAccessContainer
-type DelegatedAdminAccessContainerRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns DelegatedAdminAccessContainerRequest
-func (b *DelegatedAdminAccessContainerRequestBuilder) Request() *DelegatedAdminAccessContainerRequest {
-	return &DelegatedAdminAccessContainerRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// DelegatedAdminAccessContainerRequest is request for DelegatedAdminAccessContainer
-type DelegatedAdminAccessContainerRequest struct{ BaseRequest }
-
-// Get performs GET request for DelegatedAdminAccessContainer
-func (r *DelegatedAdminAccessContainerRequest) Get(ctx context.Context) (resObj *DelegatedAdminAccessContainer, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for DelegatedAdminAccessContainer
-func (r *DelegatedAdminAccessContainerRequest) Update(ctx context.Context, reqObj *DelegatedAdminAccessContainer) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for DelegatedAdminAccessContainer
-func (r *DelegatedAdminAccessContainerRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// DelegatedAdminAccessDetailsRequestBuilder is request builder for DelegatedAdminAccessDetails
-type DelegatedAdminAccessDetailsRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns DelegatedAdminAccessDetailsRequest
-func (b *DelegatedAdminAccessDetailsRequestBuilder) Request() *DelegatedAdminAccessDetailsRequest {
-	return &DelegatedAdminAccessDetailsRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// DelegatedAdminAccessDetailsRequest is request for DelegatedAdminAccessDetails
-type DelegatedAdminAccessDetailsRequest struct{ BaseRequest }
-
-// Get performs GET request for DelegatedAdminAccessDetails
-func (r *DelegatedAdminAccessDetailsRequest) Get(ctx context.Context) (resObj *DelegatedAdminAccessDetails, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for DelegatedAdminAccessDetails
-func (r *DelegatedAdminAccessDetailsRequest) Update(ctx context.Context, reqObj *DelegatedAdminAccessDetails) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for DelegatedAdminAccessDetails
-func (r *DelegatedAdminAccessDetailsRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // DelegatedAdminCustomerRequestBuilder is request builder for DelegatedAdminCustomer
 type DelegatedAdminCustomerRequestBuilder struct{ BaseRequestBuilder }
 
@@ -169,39 +103,6 @@ func (r *DelegatedAdminRelationshipRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// DelegatedAdminRelationshipCustomerParticipantRequestBuilder is request builder for DelegatedAdminRelationshipCustomerParticipant
-type DelegatedAdminRelationshipCustomerParticipantRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns DelegatedAdminRelationshipCustomerParticipantRequest
-func (b *DelegatedAdminRelationshipCustomerParticipantRequestBuilder) Request() *DelegatedAdminRelationshipCustomerParticipantRequest {
-	return &DelegatedAdminRelationshipCustomerParticipantRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// DelegatedAdminRelationshipCustomerParticipantRequest is request for DelegatedAdminRelationshipCustomerParticipant
-type DelegatedAdminRelationshipCustomerParticipantRequest struct{ BaseRequest }
-
-// Get performs GET request for DelegatedAdminRelationshipCustomerParticipant
-func (r *DelegatedAdminRelationshipCustomerParticipantRequest) Get(ctx context.Context) (resObj *DelegatedAdminRelationshipCustomerParticipant, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for DelegatedAdminRelationshipCustomerParticipant
-func (r *DelegatedAdminRelationshipCustomerParticipantRequest) Update(ctx context.Context, reqObj *DelegatedAdminRelationshipCustomerParticipant) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for DelegatedAdminRelationshipCustomerParticipant
-func (r *DelegatedAdminRelationshipCustomerParticipantRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // DelegatedAdminRelationshipOperationRequestBuilder is request builder for DelegatedAdminRelationshipOperation
 type DelegatedAdminRelationshipOperationRequestBuilder struct{ BaseRequestBuilder }
 
@@ -232,39 +133,6 @@ func (r *DelegatedAdminRelationshipOperationRequest) Update(ctx context.Context,
 
 // Delete performs DELETE request for DelegatedAdminRelationshipOperation
 func (r *DelegatedAdminRelationshipOperationRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// DelegatedAdminRelationshipRequestRequestBuilder is request builder for DelegatedAdminRelationshipRequest
-type DelegatedAdminRelationshipRequestRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns DelegatedAdminRelationshipRequestRequest
-func (b *DelegatedAdminRelationshipRequestRequestBuilder) Request() *DelegatedAdminRelationshipRequestRequest {
-	return &DelegatedAdminRelationshipRequestRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// DelegatedAdminRelationshipRequestRequest is request for DelegatedAdminRelationshipRequest
-type DelegatedAdminRelationshipRequestRequest struct{ BaseRequest }
-
-// Get performs GET request for DelegatedAdminRelationshipRequest
-func (r *DelegatedAdminRelationshipRequestRequest) Get(ctx context.Context) (resObj *DelegatedAdminRelationshipRequest, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for DelegatedAdminRelationshipRequest
-func (r *DelegatedAdminRelationshipRequestRequest) Update(ctx context.Context, reqObj *DelegatedAdminRelationshipRequest) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for DelegatedAdminRelationshipRequest
-func (r *DelegatedAdminRelationshipRequestRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

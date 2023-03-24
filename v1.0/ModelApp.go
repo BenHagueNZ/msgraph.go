@@ -29,7 +29,7 @@ type AppConsentApprovalRoute struct {
 	// Entity is the base model of AppConsentApprovalRoute
 	Entity
 	// AppConsentRequests undocumented
-	AppConsentRequests []AppConsentRequest `json:"appConsentRequests,omitempty"`
+	AppConsentRequests []AppConsentRequestObject `json:"appConsentRequests,omitempty"`
 }
 
 // AppConsentRequestObject undocumented
@@ -43,7 +43,7 @@ type AppConsentRequestObject struct {
 	// PendingScopes undocumented
 	PendingScopes []AppConsentRequestScope `json:"pendingScopes,omitempty"`
 	// UserConsentRequests undocumented
-	UserConsentRequests []UserConsentRequest `json:"userConsentRequests,omitempty"`
+	UserConsentRequests []UserConsentRequestObject `json:"userConsentRequests,omitempty"`
 }
 
 // AppConsentRequestScope undocumented

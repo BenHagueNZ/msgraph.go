@@ -103,39 +103,6 @@ func (r *AgreementFileRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// AgreementFileDataRequestBuilder is request builder for AgreementFileData
-type AgreementFileDataRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns AgreementFileDataRequest
-func (b *AgreementFileDataRequestBuilder) Request() *AgreementFileDataRequest {
-	return &AgreementFileDataRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// AgreementFileDataRequest is request for AgreementFileData
-type AgreementFileDataRequest struct{ BaseRequest }
-
-// Get performs GET request for AgreementFileData
-func (r *AgreementFileDataRequest) Get(ctx context.Context) (resObj *AgreementFileData, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for AgreementFileData
-func (r *AgreementFileDataRequest) Update(ctx context.Context, reqObj *AgreementFileData) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for AgreementFileData
-func (r *AgreementFileDataRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // AgreementFileLocalizationRequestBuilder is request builder for AgreementFileLocalization
 type AgreementFileLocalizationRequestBuilder struct{ BaseRequestBuilder }
 
@@ -166,39 +133,6 @@ func (r *AgreementFileLocalizationRequest) Update(ctx context.Context, reqObj *A
 
 // Delete performs DELETE request for AgreementFileLocalization
 func (r *AgreementFileLocalizationRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// AgreementFilePropertiesRequestBuilder is request builder for AgreementFileProperties
-type AgreementFilePropertiesRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns AgreementFilePropertiesRequest
-func (b *AgreementFilePropertiesRequestBuilder) Request() *AgreementFilePropertiesRequest {
-	return &AgreementFilePropertiesRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// AgreementFilePropertiesRequest is request for AgreementFileProperties
-type AgreementFilePropertiesRequest struct{ BaseRequest }
-
-// Get performs GET request for AgreementFileProperties
-func (r *AgreementFilePropertiesRequest) Get(ctx context.Context) (resObj *AgreementFileProperties, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for AgreementFileProperties
-func (r *AgreementFilePropertiesRequest) Update(ctx context.Context, reqObj *AgreementFileProperties) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for AgreementFileProperties
-func (r *AgreementFilePropertiesRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

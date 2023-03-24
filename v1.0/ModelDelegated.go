@@ -77,7 +77,7 @@ type DelegatedAdminRelationship struct {
 	// Operations undocumented
 	Operations []DelegatedAdminRelationshipOperation `json:"operations,omitempty"`
 	// Requests undocumented
-	Requests []DelegatedAdminRelationshipRequest `json:"requests,omitempty"`
+	Requests []DelegatedAdminRelationshipRequestObject `json:"requests,omitempty"`
 }
 
 // DelegatedAdminRelationshipCustomerParticipant undocumented

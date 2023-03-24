@@ -299,8 +299,8 @@ type UserAttributeValuesItem struct {
 
 // UserConsentRequestObject undocumented
 type UserConsentRequestObject struct {
-	// Request is the base model of UserConsentRequestObject
-	Request
+	// RequestObject is the base model of UserConsentRequestObject
+	RequestObject
 	// Reason undocumented
 	Reason *string `json:"reason,omitempty"`
 	// Approval undocumented

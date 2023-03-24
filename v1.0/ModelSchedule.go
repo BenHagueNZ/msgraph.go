@@ -29,9 +29,9 @@ type Schedule struct {
 	// WorkforceIntegrationIDs undocumented
 	WorkforceIntegrationIDs []string `json:"workforceIntegrationIds,omitempty"`
 	// OfferShiftRequests undocumented
-	OfferShiftRequests []OfferShiftRequest `json:"offerShiftRequests,omitempty"`
+	OfferShiftRequests []OfferShiftRequestObject `json:"offerShiftRequests,omitempty"`
 	// OpenShiftChangeRequests undocumented
-	OpenShiftChangeRequests []OpenShiftChangeRequest `json:"openShiftChangeRequests,omitempty"`
+	OpenShiftChangeRequests []OpenShiftChangeRequestObject `json:"openShiftChangeRequests,omitempty"`
 	// OpenShifts undocumented
 	OpenShifts []OpenShift `json:"openShifts,omitempty"`
 	// SchedulingGroups undocumented
@@ -39,11 +39,11 @@ type Schedule struct {
 	// Shifts undocumented
 	Shifts []Shift `json:"shifts,omitempty"`
 	// SwapShiftsChangeRequests undocumented
-	SwapShiftsChangeRequests []SwapShiftsChangeRequest `json:"swapShiftsChangeRequests,omitempty"`
+	SwapShiftsChangeRequests []SwapShiftsChangeRequestObject `json:"swapShiftsChangeRequests,omitempty"`
 	// TimeOffReasons undocumented
 	TimeOffReasons []TimeOffReason `json:"timeOffReasons,omitempty"`
 	// TimeOffRequests undocumented
-	TimeOffRequests []TimeOffRequest `json:"timeOffRequests,omitempty"`
+	TimeOffRequests []TimeOffRequestObject `json:"timeOffRequests,omitempty"`
 	// TimesOff undocumented
 	TimesOff []TimeOff `json:"timesOff,omitempty"`
 }

@@ -6,8 +6,8 @@ import "time"
 
 // OfferShiftRequestObject undocumented
 type OfferShiftRequestObject struct {
-	// ScheduleChangeRequest is the base model of OfferShiftRequestObject
-	ScheduleChangeRequest
+	// ScheduleChangeRequestObject is the base model of OfferShiftRequestObject
+	ScheduleChangeRequestObject
 	// RecipientActionDateTime undocumented
 	RecipientActionDateTime *time.Time `json:"recipientActionDateTime,omitempty"`
 	// RecipientActionMessage undocumented

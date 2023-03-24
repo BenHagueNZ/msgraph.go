@@ -114,35 +114,35 @@ func (r *RbacApplicationRoleAssignmentScheduleInstancesCollectionRequest) Add(ct
 	return
 }
 
-// RoleAssignmentScheduleRequests returns request builder for UnifiedRoleAssignmentScheduleRequest collection
+// RoleAssignmentScheduleRequests returns request builder for UnifiedRoleAssignmentScheduleRequestObject collection
 func (b *RbacApplicationRequestBuilder) RoleAssignmentScheduleRequests() *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder {
 	bb := &RbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleAssignmentScheduleRequests"
 	return bb
 }
 
-// RbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder is request builder for UnifiedRoleAssignmentScheduleRequest collection
+// RbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder is request builder for UnifiedRoleAssignmentScheduleRequestObject collection
 type RbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for UnifiedRoleAssignmentScheduleRequest collection
+// Request returns request for UnifiedRoleAssignmentScheduleRequestObject collection
 func (b *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder) Request() *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest {
 	return &RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for UnifiedRoleAssignmentScheduleRequest item
-func (b *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder) ID(id string) *UnifiedRoleAssignmentScheduleRequestRequestBuilder {
-	bb := &UnifiedRoleAssignmentScheduleRequestRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for UnifiedRoleAssignmentScheduleRequestObject item
+func (b *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder) ID(id string) *UnifiedRoleAssignmentScheduleRequestObjectRequestBuilder {
+	bb := &UnifiedRoleAssignmentScheduleRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest is request for UnifiedRoleAssignmentScheduleRequest collection
+// RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest is request for UnifiedRoleAssignmentScheduleRequestObject collection
 type RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for UnifiedRoleAssignmentScheduleRequest collection
-func (r *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnifiedRoleAssignmentScheduleRequest, error) {
+// Paging perfoms paging operation for UnifiedRoleAssignmentScheduleRequestObject collection
+func (r *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnifiedRoleAssignmentScheduleRequestObject, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -154,7 +154,7 @@ func (r *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest) Paging(
 	if err != nil {
 		return nil, err
 	}
-	var values []UnifiedRoleAssignmentScheduleRequest
+	var values []UnifiedRoleAssignmentScheduleRequestObject
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -168,7 +168,7 @@ func (r *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest) Paging(
 		}
 		var (
 			paging Paging
-			value  []UnifiedRoleAssignmentScheduleRequest
+			value  []UnifiedRoleAssignmentScheduleRequestObject
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -197,8 +197,8 @@ func (r *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest) Paging(
 	}
 }
 
-// GetN performs GET request for UnifiedRoleAssignmentScheduleRequest collection, max N pages
-func (r *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]UnifiedRoleAssignmentScheduleRequest, error) {
+// GetN performs GET request for UnifiedRoleAssignmentScheduleRequestObject collection, max N pages
+func (r *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]UnifiedRoleAssignmentScheduleRequestObject, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -206,13 +206,13 @@ func (r *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest) GetN(ct
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for UnifiedRoleAssignmentScheduleRequest collection
-func (r *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest) Get(ctx context.Context) ([]UnifiedRoleAssignmentScheduleRequest, error) {
+// Get performs GET request for UnifiedRoleAssignmentScheduleRequestObject collection
+func (r *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest) Get(ctx context.Context) ([]UnifiedRoleAssignmentScheduleRequestObject, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for UnifiedRoleAssignmentScheduleRequest collection
-func (r *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleAssignmentScheduleRequest) (resObj *UnifiedRoleAssignmentScheduleRequest, err error) {
+// Add performs POST request for UnifiedRoleAssignmentScheduleRequestObject collection
+func (r *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleAssignmentScheduleRequestObject) (resObj *UnifiedRoleAssignmentScheduleRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -629,35 +629,35 @@ func (r *RbacApplicationRoleEligibilityScheduleInstancesCollectionRequest) Add(c
 	return
 }
 
-// RoleEligibilityScheduleRequests returns request builder for UnifiedRoleEligibilityScheduleRequest collection
+// RoleEligibilityScheduleRequests returns request builder for UnifiedRoleEligibilityScheduleRequestObject collection
 func (b *RbacApplicationRequestBuilder) RoleEligibilityScheduleRequests() *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder {
 	bb := &RbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleEligibilityScheduleRequests"
 	return bb
 }
 
-// RbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder is request builder for UnifiedRoleEligibilityScheduleRequest collection
+// RbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder is request builder for UnifiedRoleEligibilityScheduleRequestObject collection
 type RbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for UnifiedRoleEligibilityScheduleRequest collection
+// Request returns request for UnifiedRoleEligibilityScheduleRequestObject collection
 func (b *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder) Request() *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest {
 	return &RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for UnifiedRoleEligibilityScheduleRequest item
-func (b *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder) ID(id string) *UnifiedRoleEligibilityScheduleRequestRequestBuilder {
-	bb := &UnifiedRoleEligibilityScheduleRequestRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for UnifiedRoleEligibilityScheduleRequestObject item
+func (b *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder) ID(id string) *UnifiedRoleEligibilityScheduleRequestObjectRequestBuilder {
+	bb := &UnifiedRoleEligibilityScheduleRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest is request for UnifiedRoleEligibilityScheduleRequest collection
+// RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest is request for UnifiedRoleEligibilityScheduleRequestObject collection
 type RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for UnifiedRoleEligibilityScheduleRequest collection
-func (r *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnifiedRoleEligibilityScheduleRequest, error) {
+// Paging perfoms paging operation for UnifiedRoleEligibilityScheduleRequestObject collection
+func (r *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnifiedRoleEligibilityScheduleRequestObject, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -669,7 +669,7 @@ func (r *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest) Paging
 	if err != nil {
 		return nil, err
 	}
-	var values []UnifiedRoleEligibilityScheduleRequest
+	var values []UnifiedRoleEligibilityScheduleRequestObject
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -683,7 +683,7 @@ func (r *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest) Paging
 		}
 		var (
 			paging Paging
-			value  []UnifiedRoleEligibilityScheduleRequest
+			value  []UnifiedRoleEligibilityScheduleRequestObject
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -712,8 +712,8 @@ func (r *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest) Paging
 	}
 }
 
-// GetN performs GET request for UnifiedRoleEligibilityScheduleRequest collection, max N pages
-func (r *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]UnifiedRoleEligibilityScheduleRequest, error) {
+// GetN performs GET request for UnifiedRoleEligibilityScheduleRequestObject collection, max N pages
+func (r *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]UnifiedRoleEligibilityScheduleRequestObject, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -721,13 +721,13 @@ func (r *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest) GetN(c
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for UnifiedRoleEligibilityScheduleRequest collection
-func (r *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest) Get(ctx context.Context) ([]UnifiedRoleEligibilityScheduleRequest, error) {
+// Get performs GET request for UnifiedRoleEligibilityScheduleRequestObject collection
+func (r *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest) Get(ctx context.Context) ([]UnifiedRoleEligibilityScheduleRequestObject, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for UnifiedRoleEligibilityScheduleRequest collection
-func (r *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleEligibilityScheduleRequest) (resObj *UnifiedRoleEligibilityScheduleRequest, err error) {
+// Add performs POST request for UnifiedRoleEligibilityScheduleRequestObject collection
+func (r *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleEligibilityScheduleRequestObject) (resObj *UnifiedRoleEligibilityScheduleRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

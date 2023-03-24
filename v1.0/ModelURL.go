@@ -4,8 +4,8 @@ package msgraph
 
 // URLAssessmentRequestObject undocumented
 type URLAssessmentRequestObject struct {
-	// ThreatAssessmentRequest is the base model of URLAssessmentRequestObject
-	ThreatAssessmentRequest
+	// ThreatAssessmentRequestObject is the base model of URLAssessmentRequestObject
+	ThreatAssessmentRequestObject
 	// URL undocumented
 	URL *string `json:"url,omitempty"`
 }

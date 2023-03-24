@@ -4,39 +4,6 @@ package msgraph
 
 import "context"
 
-// IdentityRequestBuilder is request builder for Identity
-type IdentityRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns IdentityRequest
-func (b *IdentityRequestBuilder) Request() *IdentityRequest {
-	return &IdentityRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// IdentityRequest is request for Identity
-type IdentityRequest struct{ BaseRequest }
-
-// Get performs GET request for Identity
-func (r *IdentityRequest) Get(ctx context.Context) (resObj *Identity, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for Identity
-func (r *IdentityRequest) Update(ctx context.Context, reqObj *Identity) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for Identity
-func (r *IdentityRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // IdentityAPIConnectorRequestBuilder is request builder for IdentityAPIConnector
 type IdentityAPIConnectorRequestBuilder struct{ BaseRequestBuilder }
 
@@ -70,39 +37,6 @@ func (r *IdentityAPIConnectorRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// IdentityBuiltInUserFlowAttributeRequestBuilder is request builder for IdentityBuiltInUserFlowAttribute
-type IdentityBuiltInUserFlowAttributeRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns IdentityBuiltInUserFlowAttributeRequest
-func (b *IdentityBuiltInUserFlowAttributeRequestBuilder) Request() *IdentityBuiltInUserFlowAttributeRequest {
-	return &IdentityBuiltInUserFlowAttributeRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// IdentityBuiltInUserFlowAttributeRequest is request for IdentityBuiltInUserFlowAttribute
-type IdentityBuiltInUserFlowAttributeRequest struct{ BaseRequest }
-
-// Get performs GET request for IdentityBuiltInUserFlowAttribute
-func (r *IdentityBuiltInUserFlowAttributeRequest) Get(ctx context.Context) (resObj *IdentityBuiltInUserFlowAttribute, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for IdentityBuiltInUserFlowAttribute
-func (r *IdentityBuiltInUserFlowAttributeRequest) Update(ctx context.Context, reqObj *IdentityBuiltInUserFlowAttribute) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for IdentityBuiltInUserFlowAttribute
-func (r *IdentityBuiltInUserFlowAttributeRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // IdentityContainerRequestBuilder is request builder for IdentityContainer
 type IdentityContainerRequestBuilder struct{ BaseRequestBuilder }
 
@@ -133,39 +67,6 @@ func (r *IdentityContainerRequest) Update(ctx context.Context, reqObj *IdentityC
 
 // Delete performs DELETE request for IdentityContainer
 func (r *IdentityContainerRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// IdentityCustomUserFlowAttributeRequestBuilder is request builder for IdentityCustomUserFlowAttribute
-type IdentityCustomUserFlowAttributeRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns IdentityCustomUserFlowAttributeRequest
-func (b *IdentityCustomUserFlowAttributeRequestBuilder) Request() *IdentityCustomUserFlowAttributeRequest {
-	return &IdentityCustomUserFlowAttributeRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// IdentityCustomUserFlowAttributeRequest is request for IdentityCustomUserFlowAttribute
-type IdentityCustomUserFlowAttributeRequest struct{ BaseRequest }
-
-// Get performs GET request for IdentityCustomUserFlowAttribute
-func (r *IdentityCustomUserFlowAttributeRequest) Get(ctx context.Context) (resObj *IdentityCustomUserFlowAttribute, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for IdentityCustomUserFlowAttribute
-func (r *IdentityCustomUserFlowAttributeRequest) Update(ctx context.Context, reqObj *IdentityCustomUserFlowAttribute) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for IdentityCustomUserFlowAttribute
-func (r *IdentityCustomUserFlowAttributeRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -331,105 +232,6 @@ func (r *IdentitySecurityDefaultsEnforcementPolicyRequest) Update(ctx context.Co
 
 // Delete performs DELETE request for IdentitySecurityDefaultsEnforcementPolicy
 func (r *IdentitySecurityDefaultsEnforcementPolicyRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// IdentitySetRequestBuilder is request builder for IdentitySet
-type IdentitySetRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns IdentitySetRequest
-func (b *IdentitySetRequestBuilder) Request() *IdentitySetRequest {
-	return &IdentitySetRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// IdentitySetRequest is request for IdentitySet
-type IdentitySetRequest struct{ BaseRequest }
-
-// Get performs GET request for IdentitySet
-func (r *IdentitySetRequest) Get(ctx context.Context) (resObj *IdentitySet, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for IdentitySet
-func (r *IdentitySetRequest) Update(ctx context.Context, reqObj *IdentitySet) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for IdentitySet
-func (r *IdentitySetRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// IdentitySourceRequestBuilder is request builder for IdentitySource
-type IdentitySourceRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns IdentitySourceRequest
-func (b *IdentitySourceRequestBuilder) Request() *IdentitySourceRequest {
-	return &IdentitySourceRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// IdentitySourceRequest is request for IdentitySource
-type IdentitySourceRequest struct{ BaseRequest }
-
-// Get performs GET request for IdentitySource
-func (r *IdentitySourceRequest) Get(ctx context.Context) (resObj *IdentitySource, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for IdentitySource
-func (r *IdentitySourceRequest) Update(ctx context.Context, reqObj *IdentitySource) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for IdentitySource
-func (r *IdentitySourceRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// IdentityUserFlowRequestBuilder is request builder for IdentityUserFlow
-type IdentityUserFlowRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns IdentityUserFlowRequest
-func (b *IdentityUserFlowRequestBuilder) Request() *IdentityUserFlowRequest {
-	return &IdentityUserFlowRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// IdentityUserFlowRequest is request for IdentityUserFlow
-type IdentityUserFlowRequest struct{ BaseRequest }
-
-// Get performs GET request for IdentityUserFlow
-func (r *IdentityUserFlowRequest) Get(ctx context.Context) (resObj *IdentityUserFlow, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for IdentityUserFlow
-func (r *IdentityUserFlowRequest) Update(ctx context.Context, reqObj *IdentityUserFlow) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for IdentityUserFlow
-func (r *IdentityUserFlowRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

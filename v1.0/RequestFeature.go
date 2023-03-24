@@ -36,36 +36,3 @@ func (r *FeatureRolloutPolicyRequest) Update(ctx context.Context, reqObj *Featur
 func (r *FeatureRolloutPolicyRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
-
-// FeatureTargetRequestBuilder is request builder for FeatureTarget
-type FeatureTargetRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns FeatureTargetRequest
-func (b *FeatureTargetRequestBuilder) Request() *FeatureTargetRequest {
-	return &FeatureTargetRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// FeatureTargetRequest is request for FeatureTarget
-type FeatureTargetRequest struct{ BaseRequest }
-
-// Get performs GET request for FeatureTarget
-func (r *FeatureTargetRequest) Get(ctx context.Context) (resObj *FeatureTarget, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for FeatureTarget
-func (r *FeatureTargetRequest) Update(ctx context.Context, reqObj *FeatureTarget) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for FeatureTarget
-func (r *FeatureTargetRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}

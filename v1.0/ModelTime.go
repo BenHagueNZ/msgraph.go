@@ -48,8 +48,8 @@ type TimeOffReason struct {
 
 // TimeOffRequestObject undocumented
 type TimeOffRequestObject struct {
-	// ScheduleChangeRequest is the base model of TimeOffRequestObject
-	ScheduleChangeRequest
+	// ScheduleChangeRequestObject is the base model of TimeOffRequestObject
+	ScheduleChangeRequestObject
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// StartDateTime undocumented

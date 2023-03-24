@@ -895,72 +895,6 @@ func (r *WorkbookFilterRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// WorkbookFilterCriteriaRequestBuilder is request builder for WorkbookFilterCriteria
-type WorkbookFilterCriteriaRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns WorkbookFilterCriteriaRequest
-func (b *WorkbookFilterCriteriaRequestBuilder) Request() *WorkbookFilterCriteriaRequest {
-	return &WorkbookFilterCriteriaRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// WorkbookFilterCriteriaRequest is request for WorkbookFilterCriteria
-type WorkbookFilterCriteriaRequest struct{ BaseRequest }
-
-// Get performs GET request for WorkbookFilterCriteria
-func (r *WorkbookFilterCriteriaRequest) Get(ctx context.Context) (resObj *WorkbookFilterCriteria, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for WorkbookFilterCriteria
-func (r *WorkbookFilterCriteriaRequest) Update(ctx context.Context, reqObj *WorkbookFilterCriteria) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for WorkbookFilterCriteria
-func (r *WorkbookFilterCriteriaRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// WorkbookFilterDatetimeRequestBuilder is request builder for WorkbookFilterDatetime
-type WorkbookFilterDatetimeRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns WorkbookFilterDatetimeRequest
-func (b *WorkbookFilterDatetimeRequestBuilder) Request() *WorkbookFilterDatetimeRequest {
-	return &WorkbookFilterDatetimeRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// WorkbookFilterDatetimeRequest is request for WorkbookFilterDatetime
-type WorkbookFilterDatetimeRequest struct{ BaseRequest }
-
-// Get performs GET request for WorkbookFilterDatetime
-func (r *WorkbookFilterDatetimeRequest) Get(ctx context.Context) (resObj *WorkbookFilterDatetime, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for WorkbookFilterDatetime
-func (r *WorkbookFilterDatetimeRequest) Update(ctx context.Context, reqObj *WorkbookFilterDatetime) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for WorkbookFilterDatetime
-func (r *WorkbookFilterDatetimeRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // WorkbookFormatProtectionRequestBuilder is request builder for WorkbookFormatProtection
 type WorkbookFormatProtectionRequestBuilder struct{ BaseRequestBuilder }
 
@@ -991,72 +925,6 @@ func (r *WorkbookFormatProtectionRequest) Update(ctx context.Context, reqObj *Wo
 
 // Delete performs DELETE request for WorkbookFormatProtection
 func (r *WorkbookFormatProtectionRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// WorkbookFunctionResultRequestBuilder is request builder for WorkbookFunctionResult
-type WorkbookFunctionResultRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns WorkbookFunctionResultRequest
-func (b *WorkbookFunctionResultRequestBuilder) Request() *WorkbookFunctionResultRequest {
-	return &WorkbookFunctionResultRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// WorkbookFunctionResultRequest is request for WorkbookFunctionResult
-type WorkbookFunctionResultRequest struct{ BaseRequest }
-
-// Get performs GET request for WorkbookFunctionResult
-func (r *WorkbookFunctionResultRequest) Get(ctx context.Context) (resObj *WorkbookFunctionResult, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for WorkbookFunctionResult
-func (r *WorkbookFunctionResultRequest) Update(ctx context.Context, reqObj *WorkbookFunctionResult) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for WorkbookFunctionResult
-func (r *WorkbookFunctionResultRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// WorkbookIconRequestBuilder is request builder for WorkbookIcon
-type WorkbookIconRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns WorkbookIconRequest
-func (b *WorkbookIconRequestBuilder) Request() *WorkbookIconRequest {
-	return &WorkbookIconRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// WorkbookIconRequest is request for WorkbookIcon
-type WorkbookIconRequest struct{ BaseRequest }
-
-// Get performs GET request for WorkbookIcon
-func (r *WorkbookIconRequest) Get(ctx context.Context) (resObj *WorkbookIcon, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for WorkbookIcon
-func (r *WorkbookIconRequest) Update(ctx context.Context, reqObj *WorkbookIcon) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for WorkbookIcon
-func (r *WorkbookIconRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -1123,39 +991,6 @@ func (r *WorkbookOperationRequest) Update(ctx context.Context, reqObj *WorkbookO
 
 // Delete performs DELETE request for WorkbookOperation
 func (r *WorkbookOperationRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// WorkbookOperationErrorRequestBuilder is request builder for WorkbookOperationError
-type WorkbookOperationErrorRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns WorkbookOperationErrorRequest
-func (b *WorkbookOperationErrorRequestBuilder) Request() *WorkbookOperationErrorRequest {
-	return &WorkbookOperationErrorRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// WorkbookOperationErrorRequest is request for WorkbookOperationError
-type WorkbookOperationErrorRequest struct{ BaseRequest }
-
-// Get performs GET request for WorkbookOperationError
-func (r *WorkbookOperationErrorRequest) Get(ctx context.Context) (resObj *WorkbookOperationError, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for WorkbookOperationError
-func (r *WorkbookOperationErrorRequest) Update(ctx context.Context, reqObj *WorkbookOperationError) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for WorkbookOperationError
-func (r *WorkbookOperationErrorRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -1357,39 +1192,6 @@ func (r *WorkbookRangeFormatRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// WorkbookRangeReferenceRequestBuilder is request builder for WorkbookRangeReference
-type WorkbookRangeReferenceRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns WorkbookRangeReferenceRequest
-func (b *WorkbookRangeReferenceRequestBuilder) Request() *WorkbookRangeReferenceRequest {
-	return &WorkbookRangeReferenceRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// WorkbookRangeReferenceRequest is request for WorkbookRangeReference
-type WorkbookRangeReferenceRequest struct{ BaseRequest }
-
-// Get performs GET request for WorkbookRangeReference
-func (r *WorkbookRangeReferenceRequest) Get(ctx context.Context) (resObj *WorkbookRangeReference, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for WorkbookRangeReference
-func (r *WorkbookRangeReferenceRequest) Update(ctx context.Context, reqObj *WorkbookRangeReference) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for WorkbookRangeReference
-func (r *WorkbookRangeReferenceRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // WorkbookRangeSortRequestBuilder is request builder for WorkbookRangeSort
 type WorkbookRangeSortRequestBuilder struct{ BaseRequestBuilder }
 
@@ -1453,72 +1255,6 @@ func (r *WorkbookRangeViewRequest) Update(ctx context.Context, reqObj *WorkbookR
 
 // Delete performs DELETE request for WorkbookRangeView
 func (r *WorkbookRangeViewRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// WorkbookSessionInfoRequestBuilder is request builder for WorkbookSessionInfo
-type WorkbookSessionInfoRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns WorkbookSessionInfoRequest
-func (b *WorkbookSessionInfoRequestBuilder) Request() *WorkbookSessionInfoRequest {
-	return &WorkbookSessionInfoRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// WorkbookSessionInfoRequest is request for WorkbookSessionInfo
-type WorkbookSessionInfoRequest struct{ BaseRequest }
-
-// Get performs GET request for WorkbookSessionInfo
-func (r *WorkbookSessionInfoRequest) Get(ctx context.Context) (resObj *WorkbookSessionInfo, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for WorkbookSessionInfo
-func (r *WorkbookSessionInfoRequest) Update(ctx context.Context, reqObj *WorkbookSessionInfo) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for WorkbookSessionInfo
-func (r *WorkbookSessionInfoRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// WorkbookSortFieldRequestBuilder is request builder for WorkbookSortField
-type WorkbookSortFieldRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns WorkbookSortFieldRequest
-func (b *WorkbookSortFieldRequestBuilder) Request() *WorkbookSortFieldRequest {
-	return &WorkbookSortFieldRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// WorkbookSortFieldRequest is request for WorkbookSortField
-type WorkbookSortFieldRequest struct{ BaseRequest }
-
-// Get performs GET request for WorkbookSortField
-func (r *WorkbookSortFieldRequest) Get(ctx context.Context) (resObj *WorkbookSortField, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for WorkbookSortField
-func (r *WorkbookSortFieldRequest) Update(ctx context.Context, reqObj *WorkbookSortField) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for WorkbookSortField
-func (r *WorkbookSortFieldRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -1717,39 +1453,6 @@ func (r *WorkbookWorksheetProtectionRequest) Update(ctx context.Context, reqObj 
 
 // Delete performs DELETE request for WorkbookWorksheetProtection
 func (r *WorkbookWorksheetProtectionRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// WorkbookWorksheetProtectionOptionsRequestBuilder is request builder for WorkbookWorksheetProtectionOptions
-type WorkbookWorksheetProtectionOptionsRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns WorkbookWorksheetProtectionOptionsRequest
-func (b *WorkbookWorksheetProtectionOptionsRequestBuilder) Request() *WorkbookWorksheetProtectionOptionsRequest {
-	return &WorkbookWorksheetProtectionOptionsRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// WorkbookWorksheetProtectionOptionsRequest is request for WorkbookWorksheetProtectionOptions
-type WorkbookWorksheetProtectionOptionsRequest struct{ BaseRequest }
-
-// Get performs GET request for WorkbookWorksheetProtectionOptions
-func (r *WorkbookWorksheetProtectionOptionsRequest) Get(ctx context.Context) (resObj *WorkbookWorksheetProtectionOptions, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for WorkbookWorksheetProtectionOptions
-func (r *WorkbookWorksheetProtectionOptionsRequest) Update(ctx context.Context, reqObj *WorkbookWorksheetProtectionOptions) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for WorkbookWorksheetProtectionOptions
-func (r *WorkbookWorksheetProtectionOptionsRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

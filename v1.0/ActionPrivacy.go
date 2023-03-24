@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// SubjectRightsRequests returns request builder for SubjectRightsRequest collection
+// SubjectRightsRequests returns request builder for SubjectRightsRequestObject collection
 func (b *PrivacyRequestBuilder) SubjectRightsRequests() *PrivacySubjectRightsRequestsCollectionRequestBuilder {
 	bb := &PrivacySubjectRightsRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/subjectRightsRequests"
 	return bb
 }
 
-// PrivacySubjectRightsRequestsCollectionRequestBuilder is request builder for SubjectRightsRequest collection
+// PrivacySubjectRightsRequestsCollectionRequestBuilder is request builder for SubjectRightsRequestObject collection
 type PrivacySubjectRightsRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for SubjectRightsRequest collection
+// Request returns request for SubjectRightsRequestObject collection
 func (b *PrivacySubjectRightsRequestsCollectionRequestBuilder) Request() *PrivacySubjectRightsRequestsCollectionRequest {
 	return &PrivacySubjectRightsRequestsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for SubjectRightsRequest item
-func (b *PrivacySubjectRightsRequestsCollectionRequestBuilder) ID(id string) *SubjectRightsRequestRequestBuilder {
-	bb := &SubjectRightsRequestRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SubjectRightsRequestObject item
+func (b *PrivacySubjectRightsRequestsCollectionRequestBuilder) ID(id string) *SubjectRightsRequestObjectRequestBuilder {
+	bb := &SubjectRightsRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// PrivacySubjectRightsRequestsCollectionRequest is request for SubjectRightsRequest collection
+// PrivacySubjectRightsRequestsCollectionRequest is request for SubjectRightsRequestObject collection
 type PrivacySubjectRightsRequestsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for SubjectRightsRequest collection
-func (r *PrivacySubjectRightsRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SubjectRightsRequest, error) {
+// Paging perfoms paging operation for SubjectRightsRequestObject collection
+func (r *PrivacySubjectRightsRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SubjectRightsRequestObject, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *PrivacySubjectRightsRequestsCollectionRequest) Paging(ctx context.Conte
 	if err != nil {
 		return nil, err
 	}
-	var values []SubjectRightsRequest
+	var values []SubjectRightsRequestObject
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *PrivacySubjectRightsRequestsCollectionRequest) Paging(ctx context.Conte
 		}
 		var (
 			paging Paging
-			value  []SubjectRightsRequest
+			value  []SubjectRightsRequestObject
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *PrivacySubjectRightsRequestsCollectionRequest) Paging(ctx context.Conte
 	}
 }
 
-// GetN performs GET request for SubjectRightsRequest collection, max N pages
-func (r *PrivacySubjectRightsRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]SubjectRightsRequest, error) {
+// GetN performs GET request for SubjectRightsRequestObject collection, max N pages
+func (r *PrivacySubjectRightsRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]SubjectRightsRequestObject, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *PrivacySubjectRightsRequestsCollectionRequest) GetN(ctx context.Context
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for SubjectRightsRequest collection
-func (r *PrivacySubjectRightsRequestsCollectionRequest) Get(ctx context.Context) ([]SubjectRightsRequest, error) {
+// Get performs GET request for SubjectRightsRequestObject collection
+func (r *PrivacySubjectRightsRequestsCollectionRequest) Get(ctx context.Context) ([]SubjectRightsRequestObject, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for SubjectRightsRequest collection
-func (r *PrivacySubjectRightsRequestsCollectionRequest) Add(ctx context.Context, reqObj *SubjectRightsRequest) (resObj *SubjectRightsRequest, err error) {
+// Add performs POST request for SubjectRightsRequestObject collection
+func (r *PrivacySubjectRightsRequestsCollectionRequest) Add(ctx context.Context, reqObj *SubjectRightsRequestObject) (resObj *SubjectRightsRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

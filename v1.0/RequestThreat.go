@@ -4,39 +4,6 @@ package msgraph
 
 import "context"
 
-// ThreatAssessmentRequestRequestBuilder is request builder for ThreatAssessmentRequest
-type ThreatAssessmentRequestRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns ThreatAssessmentRequestRequest
-func (b *ThreatAssessmentRequestRequestBuilder) Request() *ThreatAssessmentRequestRequest {
-	return &ThreatAssessmentRequestRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// ThreatAssessmentRequestRequest is request for ThreatAssessmentRequest
-type ThreatAssessmentRequestRequest struct{ BaseRequest }
-
-// Get performs GET request for ThreatAssessmentRequest
-func (r *ThreatAssessmentRequestRequest) Get(ctx context.Context) (resObj *ThreatAssessmentRequest, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for ThreatAssessmentRequest
-func (r *ThreatAssessmentRequestRequest) Update(ctx context.Context, reqObj *ThreatAssessmentRequest) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for ThreatAssessmentRequest
-func (r *ThreatAssessmentRequestRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // ThreatAssessmentRequestObjectRequestBuilder is request builder for ThreatAssessmentRequestObject
 type ThreatAssessmentRequestObjectRequestBuilder struct{ BaseRequestBuilder }
 

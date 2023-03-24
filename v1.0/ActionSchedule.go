@@ -22,47 +22,47 @@ type ScheduleShareRequestParameter struct {
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 }
 
-// ScheduleChangeRequestDeclineRequestParameter undocumented
-type ScheduleChangeRequestDeclineRequestParameter struct {
+// ScheduleChangeRequestObjectDeclineRequestParameter undocumented
+type ScheduleChangeRequestObjectDeclineRequestParameter struct {
 	// Message undocumented
 	Message *string `json:"message,omitempty"`
 }
 
-// ScheduleChangeRequestApproveRequestParameter undocumented
-type ScheduleChangeRequestApproveRequestParameter struct {
+// ScheduleChangeRequestObjectApproveRequestParameter undocumented
+type ScheduleChangeRequestObjectApproveRequestParameter struct {
 	// Message undocumented
 	Message *string `json:"message,omitempty"`
 }
 
-// OfferShiftRequests returns request builder for OfferShiftRequest collection
+// OfferShiftRequests returns request builder for OfferShiftRequestObject collection
 func (b *ScheduleRequestBuilder) OfferShiftRequests() *ScheduleOfferShiftRequestsCollectionRequestBuilder {
 	bb := &ScheduleOfferShiftRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/offerShiftRequests"
 	return bb
 }
 
-// ScheduleOfferShiftRequestsCollectionRequestBuilder is request builder for OfferShiftRequest collection
+// ScheduleOfferShiftRequestsCollectionRequestBuilder is request builder for OfferShiftRequestObject collection
 type ScheduleOfferShiftRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for OfferShiftRequest collection
+// Request returns request for OfferShiftRequestObject collection
 func (b *ScheduleOfferShiftRequestsCollectionRequestBuilder) Request() *ScheduleOfferShiftRequestsCollectionRequest {
 	return &ScheduleOfferShiftRequestsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for OfferShiftRequest item
-func (b *ScheduleOfferShiftRequestsCollectionRequestBuilder) ID(id string) *OfferShiftRequestRequestBuilder {
-	bb := &OfferShiftRequestRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for OfferShiftRequestObject item
+func (b *ScheduleOfferShiftRequestsCollectionRequestBuilder) ID(id string) *OfferShiftRequestObjectRequestBuilder {
+	bb := &OfferShiftRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ScheduleOfferShiftRequestsCollectionRequest is request for OfferShiftRequest collection
+// ScheduleOfferShiftRequestsCollectionRequest is request for OfferShiftRequestObject collection
 type ScheduleOfferShiftRequestsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for OfferShiftRequest collection
-func (r *ScheduleOfferShiftRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]OfferShiftRequest, error) {
+// Paging perfoms paging operation for OfferShiftRequestObject collection
+func (r *ScheduleOfferShiftRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]OfferShiftRequestObject, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -74,7 +74,7 @@ func (r *ScheduleOfferShiftRequestsCollectionRequest) Paging(ctx context.Context
 	if err != nil {
 		return nil, err
 	}
-	var values []OfferShiftRequest
+	var values []OfferShiftRequestObject
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -88,7 +88,7 @@ func (r *ScheduleOfferShiftRequestsCollectionRequest) Paging(ctx context.Context
 		}
 		var (
 			paging Paging
-			value  []OfferShiftRequest
+			value  []OfferShiftRequestObject
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -117,8 +117,8 @@ func (r *ScheduleOfferShiftRequestsCollectionRequest) Paging(ctx context.Context
 	}
 }
 
-// GetN performs GET request for OfferShiftRequest collection, max N pages
-func (r *ScheduleOfferShiftRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]OfferShiftRequest, error) {
+// GetN performs GET request for OfferShiftRequestObject collection, max N pages
+func (r *ScheduleOfferShiftRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]OfferShiftRequestObject, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -126,46 +126,46 @@ func (r *ScheduleOfferShiftRequestsCollectionRequest) GetN(ctx context.Context, 
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for OfferShiftRequest collection
-func (r *ScheduleOfferShiftRequestsCollectionRequest) Get(ctx context.Context) ([]OfferShiftRequest, error) {
+// Get performs GET request for OfferShiftRequestObject collection
+func (r *ScheduleOfferShiftRequestsCollectionRequest) Get(ctx context.Context) ([]OfferShiftRequestObject, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for OfferShiftRequest collection
-func (r *ScheduleOfferShiftRequestsCollectionRequest) Add(ctx context.Context, reqObj *OfferShiftRequest) (resObj *OfferShiftRequest, err error) {
+// Add performs POST request for OfferShiftRequestObject collection
+func (r *ScheduleOfferShiftRequestsCollectionRequest) Add(ctx context.Context, reqObj *OfferShiftRequestObject) (resObj *OfferShiftRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// OpenShiftChangeRequests returns request builder for OpenShiftChangeRequest collection
+// OpenShiftChangeRequests returns request builder for OpenShiftChangeRequestObject collection
 func (b *ScheduleRequestBuilder) OpenShiftChangeRequests() *ScheduleOpenShiftChangeRequestsCollectionRequestBuilder {
 	bb := &ScheduleOpenShiftChangeRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/openShiftChangeRequests"
 	return bb
 }
 
-// ScheduleOpenShiftChangeRequestsCollectionRequestBuilder is request builder for OpenShiftChangeRequest collection
+// ScheduleOpenShiftChangeRequestsCollectionRequestBuilder is request builder for OpenShiftChangeRequestObject collection
 type ScheduleOpenShiftChangeRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for OpenShiftChangeRequest collection
+// Request returns request for OpenShiftChangeRequestObject collection
 func (b *ScheduleOpenShiftChangeRequestsCollectionRequestBuilder) Request() *ScheduleOpenShiftChangeRequestsCollectionRequest {
 	return &ScheduleOpenShiftChangeRequestsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for OpenShiftChangeRequest item
-func (b *ScheduleOpenShiftChangeRequestsCollectionRequestBuilder) ID(id string) *OpenShiftChangeRequestRequestBuilder {
-	bb := &OpenShiftChangeRequestRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for OpenShiftChangeRequestObject item
+func (b *ScheduleOpenShiftChangeRequestsCollectionRequestBuilder) ID(id string) *OpenShiftChangeRequestObjectRequestBuilder {
+	bb := &OpenShiftChangeRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ScheduleOpenShiftChangeRequestsCollectionRequest is request for OpenShiftChangeRequest collection
+// ScheduleOpenShiftChangeRequestsCollectionRequest is request for OpenShiftChangeRequestObject collection
 type ScheduleOpenShiftChangeRequestsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for OpenShiftChangeRequest collection
-func (r *ScheduleOpenShiftChangeRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]OpenShiftChangeRequest, error) {
+// Paging perfoms paging operation for OpenShiftChangeRequestObject collection
+func (r *ScheduleOpenShiftChangeRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]OpenShiftChangeRequestObject, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -177,7 +177,7 @@ func (r *ScheduleOpenShiftChangeRequestsCollectionRequest) Paging(ctx context.Co
 	if err != nil {
 		return nil, err
 	}
-	var values []OpenShiftChangeRequest
+	var values []OpenShiftChangeRequestObject
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -191,7 +191,7 @@ func (r *ScheduleOpenShiftChangeRequestsCollectionRequest) Paging(ctx context.Co
 		}
 		var (
 			paging Paging
-			value  []OpenShiftChangeRequest
+			value  []OpenShiftChangeRequestObject
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -220,8 +220,8 @@ func (r *ScheduleOpenShiftChangeRequestsCollectionRequest) Paging(ctx context.Co
 	}
 }
 
-// GetN performs GET request for OpenShiftChangeRequest collection, max N pages
-func (r *ScheduleOpenShiftChangeRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]OpenShiftChangeRequest, error) {
+// GetN performs GET request for OpenShiftChangeRequestObject collection, max N pages
+func (r *ScheduleOpenShiftChangeRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]OpenShiftChangeRequestObject, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -229,13 +229,13 @@ func (r *ScheduleOpenShiftChangeRequestsCollectionRequest) GetN(ctx context.Cont
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for OpenShiftChangeRequest collection
-func (r *ScheduleOpenShiftChangeRequestsCollectionRequest) Get(ctx context.Context) ([]OpenShiftChangeRequest, error) {
+// Get performs GET request for OpenShiftChangeRequestObject collection
+func (r *ScheduleOpenShiftChangeRequestsCollectionRequest) Get(ctx context.Context) ([]OpenShiftChangeRequestObject, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for OpenShiftChangeRequest collection
-func (r *ScheduleOpenShiftChangeRequestsCollectionRequest) Add(ctx context.Context, reqObj *OpenShiftChangeRequest) (resObj *OpenShiftChangeRequest, err error) {
+// Add performs POST request for OpenShiftChangeRequestObject collection
+func (r *ScheduleOpenShiftChangeRequestsCollectionRequest) Add(ctx context.Context, reqObj *OpenShiftChangeRequestObject) (resObj *OpenShiftChangeRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -549,35 +549,35 @@ func (r *ScheduleShiftsCollectionRequest) Add(ctx context.Context, reqObj *Shift
 	return
 }
 
-// SwapShiftsChangeRequests returns request builder for SwapShiftsChangeRequest collection
+// SwapShiftsChangeRequests returns request builder for SwapShiftsChangeRequestObject collection
 func (b *ScheduleRequestBuilder) SwapShiftsChangeRequests() *ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder {
 	bb := &ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/swapShiftsChangeRequests"
 	return bb
 }
 
-// ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder is request builder for SwapShiftsChangeRequest collection
+// ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder is request builder for SwapShiftsChangeRequestObject collection
 type ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for SwapShiftsChangeRequest collection
+// Request returns request for SwapShiftsChangeRequestObject collection
 func (b *ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder) Request() *ScheduleSwapShiftsChangeRequestsCollectionRequest {
 	return &ScheduleSwapShiftsChangeRequestsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for SwapShiftsChangeRequest item
-func (b *ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder) ID(id string) *SwapShiftsChangeRequestRequestBuilder {
-	bb := &SwapShiftsChangeRequestRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SwapShiftsChangeRequestObject item
+func (b *ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder) ID(id string) *SwapShiftsChangeRequestObjectRequestBuilder {
+	bb := &SwapShiftsChangeRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ScheduleSwapShiftsChangeRequestsCollectionRequest is request for SwapShiftsChangeRequest collection
+// ScheduleSwapShiftsChangeRequestsCollectionRequest is request for SwapShiftsChangeRequestObject collection
 type ScheduleSwapShiftsChangeRequestsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for SwapShiftsChangeRequest collection
-func (r *ScheduleSwapShiftsChangeRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SwapShiftsChangeRequest, error) {
+// Paging perfoms paging operation for SwapShiftsChangeRequestObject collection
+func (r *ScheduleSwapShiftsChangeRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SwapShiftsChangeRequestObject, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -589,7 +589,7 @@ func (r *ScheduleSwapShiftsChangeRequestsCollectionRequest) Paging(ctx context.C
 	if err != nil {
 		return nil, err
 	}
-	var values []SwapShiftsChangeRequest
+	var values []SwapShiftsChangeRequestObject
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -603,7 +603,7 @@ func (r *ScheduleSwapShiftsChangeRequestsCollectionRequest) Paging(ctx context.C
 		}
 		var (
 			paging Paging
-			value  []SwapShiftsChangeRequest
+			value  []SwapShiftsChangeRequestObject
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -632,8 +632,8 @@ func (r *ScheduleSwapShiftsChangeRequestsCollectionRequest) Paging(ctx context.C
 	}
 }
 
-// GetN performs GET request for SwapShiftsChangeRequest collection, max N pages
-func (r *ScheduleSwapShiftsChangeRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]SwapShiftsChangeRequest, error) {
+// GetN performs GET request for SwapShiftsChangeRequestObject collection, max N pages
+func (r *ScheduleSwapShiftsChangeRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]SwapShiftsChangeRequestObject, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -641,13 +641,13 @@ func (r *ScheduleSwapShiftsChangeRequestsCollectionRequest) GetN(ctx context.Con
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for SwapShiftsChangeRequest collection
-func (r *ScheduleSwapShiftsChangeRequestsCollectionRequest) Get(ctx context.Context) ([]SwapShiftsChangeRequest, error) {
+// Get performs GET request for SwapShiftsChangeRequestObject collection
+func (r *ScheduleSwapShiftsChangeRequestsCollectionRequest) Get(ctx context.Context) ([]SwapShiftsChangeRequestObject, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for SwapShiftsChangeRequest collection
-func (r *ScheduleSwapShiftsChangeRequestsCollectionRequest) Add(ctx context.Context, reqObj *SwapShiftsChangeRequest) (resObj *SwapShiftsChangeRequest, err error) {
+// Add performs POST request for SwapShiftsChangeRequestObject collection
+func (r *ScheduleSwapShiftsChangeRequestsCollectionRequest) Add(ctx context.Context, reqObj *SwapShiftsChangeRequestObject) (resObj *SwapShiftsChangeRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -755,35 +755,35 @@ func (r *ScheduleTimeOffReasonsCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// TimeOffRequests returns request builder for TimeOffRequest collection
+// TimeOffRequests returns request builder for TimeOffRequestObject collection
 func (b *ScheduleRequestBuilder) TimeOffRequests() *ScheduleTimeOffRequestsCollectionRequestBuilder {
 	bb := &ScheduleTimeOffRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/timeOffRequests"
 	return bb
 }
 
-// ScheduleTimeOffRequestsCollectionRequestBuilder is request builder for TimeOffRequest collection
+// ScheduleTimeOffRequestsCollectionRequestBuilder is request builder for TimeOffRequestObject collection
 type ScheduleTimeOffRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for TimeOffRequest collection
+// Request returns request for TimeOffRequestObject collection
 func (b *ScheduleTimeOffRequestsCollectionRequestBuilder) Request() *ScheduleTimeOffRequestsCollectionRequest {
 	return &ScheduleTimeOffRequestsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for TimeOffRequest item
-func (b *ScheduleTimeOffRequestsCollectionRequestBuilder) ID(id string) *TimeOffRequestRequestBuilder {
-	bb := &TimeOffRequestRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for TimeOffRequestObject item
+func (b *ScheduleTimeOffRequestsCollectionRequestBuilder) ID(id string) *TimeOffRequestObjectRequestBuilder {
+	bb := &TimeOffRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ScheduleTimeOffRequestsCollectionRequest is request for TimeOffRequest collection
+// ScheduleTimeOffRequestsCollectionRequest is request for TimeOffRequestObject collection
 type ScheduleTimeOffRequestsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for TimeOffRequest collection
-func (r *ScheduleTimeOffRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TimeOffRequest, error) {
+// Paging perfoms paging operation for TimeOffRequestObject collection
+func (r *ScheduleTimeOffRequestsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TimeOffRequestObject, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -795,7 +795,7 @@ func (r *ScheduleTimeOffRequestsCollectionRequest) Paging(ctx context.Context, m
 	if err != nil {
 		return nil, err
 	}
-	var values []TimeOffRequest
+	var values []TimeOffRequestObject
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -809,7 +809,7 @@ func (r *ScheduleTimeOffRequestsCollectionRequest) Paging(ctx context.Context, m
 		}
 		var (
 			paging Paging
-			value  []TimeOffRequest
+			value  []TimeOffRequestObject
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -838,8 +838,8 @@ func (r *ScheduleTimeOffRequestsCollectionRequest) Paging(ctx context.Context, m
 	}
 }
 
-// GetN performs GET request for TimeOffRequest collection, max N pages
-func (r *ScheduleTimeOffRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]TimeOffRequest, error) {
+// GetN performs GET request for TimeOffRequestObject collection, max N pages
+func (r *ScheduleTimeOffRequestsCollectionRequest) GetN(ctx context.Context, n int) ([]TimeOffRequestObject, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -847,13 +847,13 @@ func (r *ScheduleTimeOffRequestsCollectionRequest) GetN(ctx context.Context, n i
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for TimeOffRequest collection
-func (r *ScheduleTimeOffRequestsCollectionRequest) Get(ctx context.Context) ([]TimeOffRequest, error) {
+// Get performs GET request for TimeOffRequestObject collection
+func (r *ScheduleTimeOffRequestsCollectionRequest) Get(ctx context.Context) ([]TimeOffRequestObject, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for TimeOffRequest collection
-func (r *ScheduleTimeOffRequestsCollectionRequest) Add(ctx context.Context, reqObj *TimeOffRequest) (resObj *TimeOffRequest, err error) {
+// Add performs POST request for TimeOffRequestObject collection
+func (r *ScheduleTimeOffRequestsCollectionRequest) Add(ctx context.Context, reqObj *TimeOffRequestObject) (resObj *TimeOffRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

@@ -102,36 +102,3 @@ func (r *RoleManagementRequest) Update(ctx context.Context, reqObj *RoleManageme
 func (r *RoleManagementRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
-
-// RolePermissionRequestBuilder is request builder for RolePermission
-type RolePermissionRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns RolePermissionRequest
-func (b *RolePermissionRequestBuilder) Request() *RolePermissionRequest {
-	return &RolePermissionRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// RolePermissionRequest is request for RolePermission
-type RolePermissionRequest struct{ BaseRequest }
-
-// Get performs GET request for RolePermission
-func (r *RolePermissionRequest) Get(ctx context.Context) (resObj *RolePermission, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for RolePermission
-func (r *RolePermissionRequest) Update(ctx context.Context, reqObj *RolePermission) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for RolePermission
-func (r *RolePermissionRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}

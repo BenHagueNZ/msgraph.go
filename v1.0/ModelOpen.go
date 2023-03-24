@@ -16,8 +16,8 @@ type OpenShift struct {
 
 // OpenShiftChangeRequestObject undocumented
 type OpenShiftChangeRequestObject struct {
-	// ScheduleChangeRequest is the base model of OpenShiftChangeRequestObject
-	ScheduleChangeRequest
+	// ScheduleChangeRequestObject is the base model of OpenShiftChangeRequestObject
+	ScheduleChangeRequestObject
 	// OpenShiftID undocumented
 	OpenShiftID *string `json:"openShiftId,omitempty"`
 }

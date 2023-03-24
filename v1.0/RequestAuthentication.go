@@ -169,39 +169,6 @@ func (r *AuthenticationMethodConfigurationRequest) Delete(ctx context.Context) e
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// AuthenticationMethodFeatureConfigurationRequestBuilder is request builder for AuthenticationMethodFeatureConfiguration
-type AuthenticationMethodFeatureConfigurationRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns AuthenticationMethodFeatureConfigurationRequest
-func (b *AuthenticationMethodFeatureConfigurationRequestBuilder) Request() *AuthenticationMethodFeatureConfigurationRequest {
-	return &AuthenticationMethodFeatureConfigurationRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// AuthenticationMethodFeatureConfigurationRequest is request for AuthenticationMethodFeatureConfiguration
-type AuthenticationMethodFeatureConfigurationRequest struct{ BaseRequest }
-
-// Get performs GET request for AuthenticationMethodFeatureConfiguration
-func (r *AuthenticationMethodFeatureConfigurationRequest) Get(ctx context.Context) (resObj *AuthenticationMethodFeatureConfiguration, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for AuthenticationMethodFeatureConfiguration
-func (r *AuthenticationMethodFeatureConfigurationRequest) Update(ctx context.Context, reqObj *AuthenticationMethodFeatureConfiguration) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for AuthenticationMethodFeatureConfiguration
-func (r *AuthenticationMethodFeatureConfigurationRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // AuthenticationMethodTargetRequestBuilder is request builder for AuthenticationMethodTarget
 type AuthenticationMethodTargetRequestBuilder struct{ BaseRequestBuilder }
 
@@ -265,71 +232,5 @@ func (r *AuthenticationMethodsPolicyRequest) Update(ctx context.Context, reqObj 
 
 // Delete performs DELETE request for AuthenticationMethodsPolicy
 func (r *AuthenticationMethodsPolicyRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// AuthenticationMethodsRegistrationCampaignRequestBuilder is request builder for AuthenticationMethodsRegistrationCampaign
-type AuthenticationMethodsRegistrationCampaignRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns AuthenticationMethodsRegistrationCampaignRequest
-func (b *AuthenticationMethodsRegistrationCampaignRequestBuilder) Request() *AuthenticationMethodsRegistrationCampaignRequest {
-	return &AuthenticationMethodsRegistrationCampaignRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// AuthenticationMethodsRegistrationCampaignRequest is request for AuthenticationMethodsRegistrationCampaign
-type AuthenticationMethodsRegistrationCampaignRequest struct{ BaseRequest }
-
-// Get performs GET request for AuthenticationMethodsRegistrationCampaign
-func (r *AuthenticationMethodsRegistrationCampaignRequest) Get(ctx context.Context) (resObj *AuthenticationMethodsRegistrationCampaign, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for AuthenticationMethodsRegistrationCampaign
-func (r *AuthenticationMethodsRegistrationCampaignRequest) Update(ctx context.Context, reqObj *AuthenticationMethodsRegistrationCampaign) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for AuthenticationMethodsRegistrationCampaign
-func (r *AuthenticationMethodsRegistrationCampaignRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// AuthenticationMethodsRegistrationCampaignIncludeTargetRequestBuilder is request builder for AuthenticationMethodsRegistrationCampaignIncludeTarget
-type AuthenticationMethodsRegistrationCampaignIncludeTargetRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns AuthenticationMethodsRegistrationCampaignIncludeTargetRequest
-func (b *AuthenticationMethodsRegistrationCampaignIncludeTargetRequestBuilder) Request() *AuthenticationMethodsRegistrationCampaignIncludeTargetRequest {
-	return &AuthenticationMethodsRegistrationCampaignIncludeTargetRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// AuthenticationMethodsRegistrationCampaignIncludeTargetRequest is request for AuthenticationMethodsRegistrationCampaignIncludeTarget
-type AuthenticationMethodsRegistrationCampaignIncludeTargetRequest struct{ BaseRequest }
-
-// Get performs GET request for AuthenticationMethodsRegistrationCampaignIncludeTarget
-func (r *AuthenticationMethodsRegistrationCampaignIncludeTargetRequest) Get(ctx context.Context) (resObj *AuthenticationMethodsRegistrationCampaignIncludeTarget, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for AuthenticationMethodsRegistrationCampaignIncludeTarget
-func (r *AuthenticationMethodsRegistrationCampaignIncludeTargetRequest) Update(ctx context.Context, reqObj *AuthenticationMethodsRegistrationCampaignIncludeTarget) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for AuthenticationMethodsRegistrationCampaignIncludeTarget
-func (r *AuthenticationMethodsRegistrationCampaignIncludeTargetRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

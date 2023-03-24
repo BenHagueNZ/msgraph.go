@@ -4,39 +4,6 @@ package msgraph
 
 import "context"
 
-// ContentApprovalStatusColumnRequestBuilder is request builder for ContentApprovalStatusColumn
-type ContentApprovalStatusColumnRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns ContentApprovalStatusColumnRequest
-func (b *ContentApprovalStatusColumnRequestBuilder) Request() *ContentApprovalStatusColumnRequest {
-	return &ContentApprovalStatusColumnRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// ContentApprovalStatusColumnRequest is request for ContentApprovalStatusColumn
-type ContentApprovalStatusColumnRequest struct{ BaseRequest }
-
-// Get performs GET request for ContentApprovalStatusColumn
-func (r *ContentApprovalStatusColumnRequest) Get(ctx context.Context) (resObj *ContentApprovalStatusColumn, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for ContentApprovalStatusColumn
-func (r *ContentApprovalStatusColumnRequest) Update(ctx context.Context, reqObj *ContentApprovalStatusColumn) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for ContentApprovalStatusColumn
-func (r *ContentApprovalStatusColumnRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // ContentSharingSessionRequestBuilder is request builder for ContentSharingSession
 type ContentSharingSessionRequestBuilder struct{ BaseRequestBuilder }
 
@@ -100,72 +67,6 @@ func (r *ContentTypeRequest) Update(ctx context.Context, reqObj *ContentType) er
 
 // Delete performs DELETE request for ContentType
 func (r *ContentTypeRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// ContentTypeInfoRequestBuilder is request builder for ContentTypeInfo
-type ContentTypeInfoRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns ContentTypeInfoRequest
-func (b *ContentTypeInfoRequestBuilder) Request() *ContentTypeInfoRequest {
-	return &ContentTypeInfoRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// ContentTypeInfoRequest is request for ContentTypeInfo
-type ContentTypeInfoRequest struct{ BaseRequest }
-
-// Get performs GET request for ContentTypeInfo
-func (r *ContentTypeInfoRequest) Get(ctx context.Context) (resObj *ContentTypeInfo, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for ContentTypeInfo
-func (r *ContentTypeInfoRequest) Update(ctx context.Context, reqObj *ContentTypeInfo) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for ContentTypeInfo
-func (r *ContentTypeInfoRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// ContentTypeOrderRequestBuilder is request builder for ContentTypeOrder
-type ContentTypeOrderRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns ContentTypeOrderRequest
-func (b *ContentTypeOrderRequestBuilder) Request() *ContentTypeOrderRequest {
-	return &ContentTypeOrderRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// ContentTypeOrderRequest is request for ContentTypeOrder
-type ContentTypeOrderRequest struct{ BaseRequest }
-
-// Get performs GET request for ContentTypeOrder
-func (r *ContentTypeOrderRequest) Get(ctx context.Context) (resObj *ContentTypeOrder, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for ContentTypeOrder
-func (r *ContentTypeOrderRequest) Update(ctx context.Context, reqObj *ContentTypeOrder) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for ContentTypeOrder
-func (r *ContentTypeOrderRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

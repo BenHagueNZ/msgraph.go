@@ -110,39 +110,6 @@ func (r *DirectoryObjectRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// DirectoryObjectPartnerReferenceRequestBuilder is request builder for DirectoryObjectPartnerReference
-type DirectoryObjectPartnerReferenceRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns DirectoryObjectPartnerReferenceRequest
-func (b *DirectoryObjectPartnerReferenceRequestBuilder) Request() *DirectoryObjectPartnerReferenceRequest {
-	return &DirectoryObjectPartnerReferenceRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// DirectoryObjectPartnerReferenceRequest is request for DirectoryObjectPartnerReference
-type DirectoryObjectPartnerReferenceRequest struct{ BaseRequest }
-
-// Get performs GET request for DirectoryObjectPartnerReference
-func (r *DirectoryObjectPartnerReferenceRequest) Get(ctx context.Context) (resObj *DirectoryObjectPartnerReference, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for DirectoryObjectPartnerReference
-func (r *DirectoryObjectPartnerReferenceRequest) Update(ctx context.Context, reqObj *DirectoryObjectPartnerReference) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for DirectoryObjectPartnerReference
-func (r *DirectoryObjectPartnerReferenceRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // DirectoryRoleRequestBuilder is request builder for DirectoryRole
 type DirectoryRoleRequestBuilder struct{ BaseRequestBuilder }
 

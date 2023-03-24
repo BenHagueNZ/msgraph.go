@@ -4,39 +4,6 @@ package msgraph
 
 import "context"
 
-// LicenseAssignmentStateRequestBuilder is request builder for LicenseAssignmentState
-type LicenseAssignmentStateRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns LicenseAssignmentStateRequest
-func (b *LicenseAssignmentStateRequestBuilder) Request() *LicenseAssignmentStateRequest {
-	return &LicenseAssignmentStateRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// LicenseAssignmentStateRequest is request for LicenseAssignmentState
-type LicenseAssignmentStateRequest struct{ BaseRequest }
-
-// Get performs GET request for LicenseAssignmentState
-func (r *LicenseAssignmentStateRequest) Get(ctx context.Context) (resObj *LicenseAssignmentState, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for LicenseAssignmentState
-func (r *LicenseAssignmentStateRequest) Update(ctx context.Context, reqObj *LicenseAssignmentState) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for LicenseAssignmentState
-func (r *LicenseAssignmentStateRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
 // LicenseDetailsRequestBuilder is request builder for LicenseDetails
 type LicenseDetailsRequestBuilder struct{ BaseRequestBuilder }
 
@@ -67,71 +34,5 @@ func (r *LicenseDetailsRequest) Update(ctx context.Context, reqObj *LicenseDetai
 
 // Delete performs DELETE request for LicenseDetails
 func (r *LicenseDetailsRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// LicenseProcessingStateRequestBuilder is request builder for LicenseProcessingState
-type LicenseProcessingStateRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns LicenseProcessingStateRequest
-func (b *LicenseProcessingStateRequestBuilder) Request() *LicenseProcessingStateRequest {
-	return &LicenseProcessingStateRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// LicenseProcessingStateRequest is request for LicenseProcessingState
-type LicenseProcessingStateRequest struct{ BaseRequest }
-
-// Get performs GET request for LicenseProcessingState
-func (r *LicenseProcessingStateRequest) Get(ctx context.Context) (resObj *LicenseProcessingState, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for LicenseProcessingState
-func (r *LicenseProcessingStateRequest) Update(ctx context.Context, reqObj *LicenseProcessingState) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for LicenseProcessingState
-func (r *LicenseProcessingStateRequest) Delete(ctx context.Context) error {
-	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
-}
-
-// LicenseUnitsDetailRequestBuilder is request builder for LicenseUnitsDetail
-type LicenseUnitsDetailRequestBuilder struct{ BaseRequestBuilder }
-
-// Request returns LicenseUnitsDetailRequest
-func (b *LicenseUnitsDetailRequestBuilder) Request() *LicenseUnitsDetailRequest {
-	return &LicenseUnitsDetailRequest{
-		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
-	}
-}
-
-// LicenseUnitsDetailRequest is request for LicenseUnitsDetail
-type LicenseUnitsDetailRequest struct{ BaseRequest }
-
-// Get performs GET request for LicenseUnitsDetail
-func (r *LicenseUnitsDetailRequest) Get(ctx context.Context) (resObj *LicenseUnitsDetail, err error) {
-	var query string
-	if r.query != nil {
-		query = "?" + r.query.Encode()
-	}
-	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
-	return
-}
-
-// Update performs PATCH request for LicenseUnitsDetail
-func (r *LicenseUnitsDetailRequest) Update(ctx context.Context, reqObj *LicenseUnitsDetail) error {
-	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
-}
-
-// Delete performs DELETE request for LicenseUnitsDetail
-func (r *LicenseUnitsDetailRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
