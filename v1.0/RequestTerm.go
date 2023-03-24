@@ -169,6 +169,105 @@ func (r *TermStoreGroupRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// TermStoreLocalizedDescriptionRequestBuilder is request builder for TermStoreLocalizedDescription
+type TermStoreLocalizedDescriptionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TermStoreLocalizedDescriptionRequest
+func (b *TermStoreLocalizedDescriptionRequestBuilder) Request() *TermStoreLocalizedDescriptionRequest {
+	return &TermStoreLocalizedDescriptionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TermStoreLocalizedDescriptionRequest is request for TermStoreLocalizedDescription
+type TermStoreLocalizedDescriptionRequest struct{ BaseRequest }
+
+// Get performs GET request for TermStoreLocalizedDescription
+func (r *TermStoreLocalizedDescriptionRequest) Get(ctx context.Context) (resObj *TermStoreLocalizedDescription, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TermStoreLocalizedDescription
+func (r *TermStoreLocalizedDescriptionRequest) Update(ctx context.Context, reqObj *TermStoreLocalizedDescription) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TermStoreLocalizedDescription
+func (r *TermStoreLocalizedDescriptionRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// TermStoreLocalizedLabelRequestBuilder is request builder for TermStoreLocalizedLabel
+type TermStoreLocalizedLabelRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TermStoreLocalizedLabelRequest
+func (b *TermStoreLocalizedLabelRequestBuilder) Request() *TermStoreLocalizedLabelRequest {
+	return &TermStoreLocalizedLabelRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TermStoreLocalizedLabelRequest is request for TermStoreLocalizedLabel
+type TermStoreLocalizedLabelRequest struct{ BaseRequest }
+
+// Get performs GET request for TermStoreLocalizedLabel
+func (r *TermStoreLocalizedLabelRequest) Get(ctx context.Context) (resObj *TermStoreLocalizedLabel, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TermStoreLocalizedLabel
+func (r *TermStoreLocalizedLabelRequest) Update(ctx context.Context, reqObj *TermStoreLocalizedLabel) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TermStoreLocalizedLabel
+func (r *TermStoreLocalizedLabelRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// TermStoreLocalizedNameRequestBuilder is request builder for TermStoreLocalizedName
+type TermStoreLocalizedNameRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TermStoreLocalizedNameRequest
+func (b *TermStoreLocalizedNameRequestBuilder) Request() *TermStoreLocalizedNameRequest {
+	return &TermStoreLocalizedNameRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TermStoreLocalizedNameRequest is request for TermStoreLocalizedName
+type TermStoreLocalizedNameRequest struct{ BaseRequest }
+
+// Get performs GET request for TermStoreLocalizedName
+func (r *TermStoreLocalizedNameRequest) Get(ctx context.Context) (resObj *TermStoreLocalizedName, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TermStoreLocalizedName
+func (r *TermStoreLocalizedNameRequest) Update(ctx context.Context, reqObj *TermStoreLocalizedName) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TermStoreLocalizedName
+func (r *TermStoreLocalizedNameRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // TermStoreRelationRequestBuilder is request builder for TermStoreRelation
 type TermStoreRelationRequestBuilder struct{ BaseRequestBuilder }
 

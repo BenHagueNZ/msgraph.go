@@ -70,6 +70,39 @@ func (r *ServiceAnnouncementAttachmentRequest) Delete(ctx context.Context) error
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// ServiceAnnouncementBaseRequestBuilder is request builder for ServiceAnnouncementBase
+type ServiceAnnouncementBaseRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ServiceAnnouncementBaseRequest
+func (b *ServiceAnnouncementBaseRequestBuilder) Request() *ServiceAnnouncementBaseRequest {
+	return &ServiceAnnouncementBaseRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ServiceAnnouncementBaseRequest is request for ServiceAnnouncementBase
+type ServiceAnnouncementBaseRequest struct{ BaseRequest }
+
+// Get performs GET request for ServiceAnnouncementBase
+func (r *ServiceAnnouncementBaseRequest) Get(ctx context.Context) (resObj *ServiceAnnouncementBase, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ServiceAnnouncementBase
+func (r *ServiceAnnouncementBaseRequest) Update(ctx context.Context, reqObj *ServiceAnnouncementBase) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ServiceAnnouncementBase
+func (r *ServiceAnnouncementBaseRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // ServiceHealthRequestBuilder is request builder for ServiceHealth
 type ServiceHealthRequestBuilder struct{ BaseRequestBuilder }
 
@@ -136,6 +169,105 @@ func (r *ServiceHealthIssueRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// ServiceHealthIssuePostRequestBuilder is request builder for ServiceHealthIssuePost
+type ServiceHealthIssuePostRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ServiceHealthIssuePostRequest
+func (b *ServiceHealthIssuePostRequestBuilder) Request() *ServiceHealthIssuePostRequest {
+	return &ServiceHealthIssuePostRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ServiceHealthIssuePostRequest is request for ServiceHealthIssuePost
+type ServiceHealthIssuePostRequest struct{ BaseRequest }
+
+// Get performs GET request for ServiceHealthIssuePost
+func (r *ServiceHealthIssuePostRequest) Get(ctx context.Context) (resObj *ServiceHealthIssuePost, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ServiceHealthIssuePost
+func (r *ServiceHealthIssuePostRequest) Update(ctx context.Context, reqObj *ServiceHealthIssuePost) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ServiceHealthIssuePost
+func (r *ServiceHealthIssuePostRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ServiceHostedMediaConfigRequestBuilder is request builder for ServiceHostedMediaConfig
+type ServiceHostedMediaConfigRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ServiceHostedMediaConfigRequest
+func (b *ServiceHostedMediaConfigRequestBuilder) Request() *ServiceHostedMediaConfigRequest {
+	return &ServiceHostedMediaConfigRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ServiceHostedMediaConfigRequest is request for ServiceHostedMediaConfig
+type ServiceHostedMediaConfigRequest struct{ BaseRequest }
+
+// Get performs GET request for ServiceHostedMediaConfig
+func (r *ServiceHostedMediaConfigRequest) Get(ctx context.Context) (resObj *ServiceHostedMediaConfig, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ServiceHostedMediaConfig
+func (r *ServiceHostedMediaConfigRequest) Update(ctx context.Context, reqObj *ServiceHostedMediaConfig) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ServiceHostedMediaConfig
+func (r *ServiceHostedMediaConfigRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ServicePlanInfoRequestBuilder is request builder for ServicePlanInfo
+type ServicePlanInfoRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ServicePlanInfoRequest
+func (b *ServicePlanInfoRequestBuilder) Request() *ServicePlanInfoRequest {
+	return &ServicePlanInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ServicePlanInfoRequest is request for ServicePlanInfo
+type ServicePlanInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for ServicePlanInfo
+func (r *ServicePlanInfoRequest) Get(ctx context.Context) (resObj *ServicePlanInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ServicePlanInfo
+func (r *ServicePlanInfoRequest) Update(ctx context.Context, reqObj *ServicePlanInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ServicePlanInfo
+func (r *ServicePlanInfoRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // ServicePrincipalRequestBuilder is request builder for ServicePrincipal
 type ServicePrincipalRequestBuilder struct{ BaseRequestBuilder }
 
@@ -166,6 +298,39 @@ func (r *ServicePrincipalRequest) Update(ctx context.Context, reqObj *ServicePri
 
 // Delete performs DELETE request for ServicePrincipal
 func (r *ServicePrincipalRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ServicePrincipalIdentityRequestBuilder is request builder for ServicePrincipalIdentity
+type ServicePrincipalIdentityRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ServicePrincipalIdentityRequest
+func (b *ServicePrincipalIdentityRequestBuilder) Request() *ServicePrincipalIdentityRequest {
+	return &ServicePrincipalIdentityRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ServicePrincipalIdentityRequest is request for ServicePrincipalIdentity
+type ServicePrincipalIdentityRequest struct{ BaseRequest }
+
+// Get performs GET request for ServicePrincipalIdentity
+func (r *ServicePrincipalIdentityRequest) Get(ctx context.Context) (resObj *ServicePrincipalIdentity, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ServicePrincipalIdentity
+func (r *ServicePrincipalIdentityRequest) Update(ctx context.Context, reqObj *ServicePrincipalIdentity) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ServicePrincipalIdentity
+func (r *ServicePrincipalIdentityRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -232,6 +397,39 @@ func (r *ServiceUpdateMessageRequest) Update(ctx context.Context, reqObj *Servic
 
 // Delete performs DELETE request for ServiceUpdateMessage
 func (r *ServiceUpdateMessageRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ServiceUpdateMessageViewpointRequestBuilder is request builder for ServiceUpdateMessageViewpoint
+type ServiceUpdateMessageViewpointRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ServiceUpdateMessageViewpointRequest
+func (b *ServiceUpdateMessageViewpointRequestBuilder) Request() *ServiceUpdateMessageViewpointRequest {
+	return &ServiceUpdateMessageViewpointRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ServiceUpdateMessageViewpointRequest is request for ServiceUpdateMessageViewpoint
+type ServiceUpdateMessageViewpointRequest struct{ BaseRequest }
+
+// Get performs GET request for ServiceUpdateMessageViewpoint
+func (r *ServiceUpdateMessageViewpointRequest) Get(ctx context.Context) (resObj *ServiceUpdateMessageViewpoint, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ServiceUpdateMessageViewpoint
+func (r *ServiceUpdateMessageViewpointRequest) Update(ctx context.Context, reqObj *ServiceUpdateMessageViewpoint) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ServiceUpdateMessageViewpoint
+func (r *ServiceUpdateMessageViewpointRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

@@ -36,3 +36,201 @@ func (r *MeetingAttendanceReportRequest) Update(ctx context.Context, reqObj *Mee
 func (r *MeetingAttendanceReportRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+// MeetingInfoRequestBuilder is request builder for MeetingInfo
+type MeetingInfoRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns MeetingInfoRequest
+func (b *MeetingInfoRequestBuilder) Request() *MeetingInfoRequest {
+	return &MeetingInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// MeetingInfoRequest is request for MeetingInfo
+type MeetingInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for MeetingInfo
+func (r *MeetingInfoRequest) Get(ctx context.Context) (resObj *MeetingInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for MeetingInfo
+func (r *MeetingInfoRequest) Update(ctx context.Context, reqObj *MeetingInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for MeetingInfo
+func (r *MeetingInfoRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// MeetingParticipantInfoRequestBuilder is request builder for MeetingParticipantInfo
+type MeetingParticipantInfoRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns MeetingParticipantInfoRequest
+func (b *MeetingParticipantInfoRequestBuilder) Request() *MeetingParticipantInfoRequest {
+	return &MeetingParticipantInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// MeetingParticipantInfoRequest is request for MeetingParticipantInfo
+type MeetingParticipantInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for MeetingParticipantInfo
+func (r *MeetingParticipantInfoRequest) Get(ctx context.Context) (resObj *MeetingParticipantInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for MeetingParticipantInfo
+func (r *MeetingParticipantInfoRequest) Update(ctx context.Context, reqObj *MeetingParticipantInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for MeetingParticipantInfo
+func (r *MeetingParticipantInfoRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// MeetingParticipantsRequestBuilder is request builder for MeetingParticipants
+type MeetingParticipantsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns MeetingParticipantsRequest
+func (b *MeetingParticipantsRequestBuilder) Request() *MeetingParticipantsRequest {
+	return &MeetingParticipantsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// MeetingParticipantsRequest is request for MeetingParticipants
+type MeetingParticipantsRequest struct{ BaseRequest }
+
+// Get performs GET request for MeetingParticipants
+func (r *MeetingParticipantsRequest) Get(ctx context.Context) (resObj *MeetingParticipants, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for MeetingParticipants
+func (r *MeetingParticipantsRequest) Update(ctx context.Context, reqObj *MeetingParticipants) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for MeetingParticipants
+func (r *MeetingParticipantsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// MeetingPolicyUpdatedEventMessageDetailRequestBuilder is request builder for MeetingPolicyUpdatedEventMessageDetail
+type MeetingPolicyUpdatedEventMessageDetailRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns MeetingPolicyUpdatedEventMessageDetailRequest
+func (b *MeetingPolicyUpdatedEventMessageDetailRequestBuilder) Request() *MeetingPolicyUpdatedEventMessageDetailRequest {
+	return &MeetingPolicyUpdatedEventMessageDetailRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// MeetingPolicyUpdatedEventMessageDetailRequest is request for MeetingPolicyUpdatedEventMessageDetail
+type MeetingPolicyUpdatedEventMessageDetailRequest struct{ BaseRequest }
+
+// Get performs GET request for MeetingPolicyUpdatedEventMessageDetail
+func (r *MeetingPolicyUpdatedEventMessageDetailRequest) Get(ctx context.Context) (resObj *MeetingPolicyUpdatedEventMessageDetail, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for MeetingPolicyUpdatedEventMessageDetail
+func (r *MeetingPolicyUpdatedEventMessageDetailRequest) Update(ctx context.Context, reqObj *MeetingPolicyUpdatedEventMessageDetail) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for MeetingPolicyUpdatedEventMessageDetail
+func (r *MeetingPolicyUpdatedEventMessageDetailRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// MeetingTimeSuggestionRequestBuilder is request builder for MeetingTimeSuggestion
+type MeetingTimeSuggestionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns MeetingTimeSuggestionRequest
+func (b *MeetingTimeSuggestionRequestBuilder) Request() *MeetingTimeSuggestionRequest {
+	return &MeetingTimeSuggestionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// MeetingTimeSuggestionRequest is request for MeetingTimeSuggestion
+type MeetingTimeSuggestionRequest struct{ BaseRequest }
+
+// Get performs GET request for MeetingTimeSuggestion
+func (r *MeetingTimeSuggestionRequest) Get(ctx context.Context) (resObj *MeetingTimeSuggestion, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for MeetingTimeSuggestion
+func (r *MeetingTimeSuggestionRequest) Update(ctx context.Context, reqObj *MeetingTimeSuggestion) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for MeetingTimeSuggestion
+func (r *MeetingTimeSuggestionRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// MeetingTimeSuggestionsResultRequestBuilder is request builder for MeetingTimeSuggestionsResult
+type MeetingTimeSuggestionsResultRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns MeetingTimeSuggestionsResultRequest
+func (b *MeetingTimeSuggestionsResultRequestBuilder) Request() *MeetingTimeSuggestionsResultRequest {
+	return &MeetingTimeSuggestionsResultRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// MeetingTimeSuggestionsResultRequest is request for MeetingTimeSuggestionsResult
+type MeetingTimeSuggestionsResultRequest struct{ BaseRequest }
+
+// Get performs GET request for MeetingTimeSuggestionsResult
+func (r *MeetingTimeSuggestionsResultRequest) Get(ctx context.Context) (resObj *MeetingTimeSuggestionsResult, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for MeetingTimeSuggestionsResult
+func (r *MeetingTimeSuggestionsResultRequest) Update(ctx context.Context, reqObj *MeetingTimeSuggestionsResult) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for MeetingTimeSuggestionsResult
+func (r *MeetingTimeSuggestionsResultRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}

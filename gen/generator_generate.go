@@ -372,9 +372,11 @@ func (g *Generator) Generate() error {
 			out.Close()
 		}
 		for _, x := range entityTypeMap {
-			if len(x.Navigations) == 0 {
-				continue
-			}
+			//	if len(x.Navigations) == 0 {
+			//		fmt.Println("a")
+			//		fmt.Println(x.Sym)
+			//		continue
+			//	}
 			if !allRequestModelMap[x.Sym] {
 				requestModelMap[x.Sym] = true
 				allRequestModelMap[x.Sym] = true

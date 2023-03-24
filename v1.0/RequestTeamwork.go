@@ -37,6 +37,72 @@ func (r *TeamworkRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// TeamworkActivityTopicRequestBuilder is request builder for TeamworkActivityTopic
+type TeamworkActivityTopicRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TeamworkActivityTopicRequest
+func (b *TeamworkActivityTopicRequestBuilder) Request() *TeamworkActivityTopicRequest {
+	return &TeamworkActivityTopicRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TeamworkActivityTopicRequest is request for TeamworkActivityTopic
+type TeamworkActivityTopicRequest struct{ BaseRequest }
+
+// Get performs GET request for TeamworkActivityTopic
+func (r *TeamworkActivityTopicRequest) Get(ctx context.Context) (resObj *TeamworkActivityTopic, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TeamworkActivityTopic
+func (r *TeamworkActivityTopicRequest) Update(ctx context.Context, reqObj *TeamworkActivityTopic) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TeamworkActivityTopic
+func (r *TeamworkActivityTopicRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// TeamworkApplicationIdentityRequestBuilder is request builder for TeamworkApplicationIdentity
+type TeamworkApplicationIdentityRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TeamworkApplicationIdentityRequest
+func (b *TeamworkApplicationIdentityRequestBuilder) Request() *TeamworkApplicationIdentityRequest {
+	return &TeamworkApplicationIdentityRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TeamworkApplicationIdentityRequest is request for TeamworkApplicationIdentity
+type TeamworkApplicationIdentityRequest struct{ BaseRequest }
+
+// Get performs GET request for TeamworkApplicationIdentity
+func (r *TeamworkApplicationIdentityRequest) Get(ctx context.Context) (resObj *TeamworkApplicationIdentity, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TeamworkApplicationIdentity
+func (r *TeamworkApplicationIdentityRequest) Update(ctx context.Context, reqObj *TeamworkApplicationIdentity) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TeamworkApplicationIdentity
+func (r *TeamworkApplicationIdentityRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // TeamworkBotRequestBuilder is request builder for TeamworkBot
 type TeamworkBotRequestBuilder struct{ BaseRequestBuilder }
 
@@ -67,6 +133,138 @@ func (r *TeamworkBotRequest) Update(ctx context.Context, reqObj *TeamworkBot) er
 
 // Delete performs DELETE request for TeamworkBot
 func (r *TeamworkBotRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// TeamworkConversationIdentityRequestBuilder is request builder for TeamworkConversationIdentity
+type TeamworkConversationIdentityRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TeamworkConversationIdentityRequest
+func (b *TeamworkConversationIdentityRequestBuilder) Request() *TeamworkConversationIdentityRequest {
+	return &TeamworkConversationIdentityRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TeamworkConversationIdentityRequest is request for TeamworkConversationIdentity
+type TeamworkConversationIdentityRequest struct{ BaseRequest }
+
+// Get performs GET request for TeamworkConversationIdentity
+func (r *TeamworkConversationIdentityRequest) Get(ctx context.Context) (resObj *TeamworkConversationIdentity, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TeamworkConversationIdentity
+func (r *TeamworkConversationIdentityRequest) Update(ctx context.Context, reqObj *TeamworkConversationIdentity) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TeamworkConversationIdentity
+func (r *TeamworkConversationIdentityRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// TeamworkHostedContentRequestBuilder is request builder for TeamworkHostedContent
+type TeamworkHostedContentRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TeamworkHostedContentRequest
+func (b *TeamworkHostedContentRequestBuilder) Request() *TeamworkHostedContentRequest {
+	return &TeamworkHostedContentRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TeamworkHostedContentRequest is request for TeamworkHostedContent
+type TeamworkHostedContentRequest struct{ BaseRequest }
+
+// Get performs GET request for TeamworkHostedContent
+func (r *TeamworkHostedContentRequest) Get(ctx context.Context) (resObj *TeamworkHostedContent, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TeamworkHostedContent
+func (r *TeamworkHostedContentRequest) Update(ctx context.Context, reqObj *TeamworkHostedContent) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TeamworkHostedContent
+func (r *TeamworkHostedContentRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// TeamworkNotificationRecipientRequestBuilder is request builder for TeamworkNotificationRecipient
+type TeamworkNotificationRecipientRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TeamworkNotificationRecipientRequest
+func (b *TeamworkNotificationRecipientRequestBuilder) Request() *TeamworkNotificationRecipientRequest {
+	return &TeamworkNotificationRecipientRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TeamworkNotificationRecipientRequest is request for TeamworkNotificationRecipient
+type TeamworkNotificationRecipientRequest struct{ BaseRequest }
+
+// Get performs GET request for TeamworkNotificationRecipient
+func (r *TeamworkNotificationRecipientRequest) Get(ctx context.Context) (resObj *TeamworkNotificationRecipient, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TeamworkNotificationRecipient
+func (r *TeamworkNotificationRecipientRequest) Update(ctx context.Context, reqObj *TeamworkNotificationRecipient) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TeamworkNotificationRecipient
+func (r *TeamworkNotificationRecipientRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// TeamworkOnlineMeetingInfoRequestBuilder is request builder for TeamworkOnlineMeetingInfo
+type TeamworkOnlineMeetingInfoRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TeamworkOnlineMeetingInfoRequest
+func (b *TeamworkOnlineMeetingInfoRequestBuilder) Request() *TeamworkOnlineMeetingInfoRequest {
+	return &TeamworkOnlineMeetingInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TeamworkOnlineMeetingInfoRequest is request for TeamworkOnlineMeetingInfo
+type TeamworkOnlineMeetingInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for TeamworkOnlineMeetingInfo
+func (r *TeamworkOnlineMeetingInfoRequest) Get(ctx context.Context) (resObj *TeamworkOnlineMeetingInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TeamworkOnlineMeetingInfo
+func (r *TeamworkOnlineMeetingInfoRequest) Update(ctx context.Context, reqObj *TeamworkOnlineMeetingInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TeamworkOnlineMeetingInfo
+func (r *TeamworkOnlineMeetingInfoRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -103,6 +301,39 @@ func (r *TeamworkTagRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// TeamworkTagIdentityRequestBuilder is request builder for TeamworkTagIdentity
+type TeamworkTagIdentityRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TeamworkTagIdentityRequest
+func (b *TeamworkTagIdentityRequestBuilder) Request() *TeamworkTagIdentityRequest {
+	return &TeamworkTagIdentityRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TeamworkTagIdentityRequest is request for TeamworkTagIdentity
+type TeamworkTagIdentityRequest struct{ BaseRequest }
+
+// Get performs GET request for TeamworkTagIdentity
+func (r *TeamworkTagIdentityRequest) Get(ctx context.Context) (resObj *TeamworkTagIdentity, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TeamworkTagIdentity
+func (r *TeamworkTagIdentityRequest) Update(ctx context.Context, reqObj *TeamworkTagIdentity) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TeamworkTagIdentity
+func (r *TeamworkTagIdentityRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // TeamworkTagMemberRequestBuilder is request builder for TeamworkTagMember
 type TeamworkTagMemberRequestBuilder struct{ BaseRequestBuilder }
 
@@ -133,5 +364,38 @@ func (r *TeamworkTagMemberRequest) Update(ctx context.Context, reqObj *TeamworkT
 
 // Delete performs DELETE request for TeamworkTagMember
 func (r *TeamworkTagMemberRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// TeamworkUserIdentityRequestBuilder is request builder for TeamworkUserIdentity
+type TeamworkUserIdentityRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TeamworkUserIdentityRequest
+func (b *TeamworkUserIdentityRequestBuilder) Request() *TeamworkUserIdentityRequest {
+	return &TeamworkUserIdentityRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TeamworkUserIdentityRequest is request for TeamworkUserIdentity
+type TeamworkUserIdentityRequest struct{ BaseRequest }
+
+// Get performs GET request for TeamworkUserIdentity
+func (r *TeamworkUserIdentityRequest) Get(ctx context.Context) (resObj *TeamworkUserIdentity, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TeamworkUserIdentity
+func (r *TeamworkUserIdentityRequest) Update(ctx context.Context, reqObj *TeamworkUserIdentity) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TeamworkUserIdentity
+func (r *TeamworkUserIdentityRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

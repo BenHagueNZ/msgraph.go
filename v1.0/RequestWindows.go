@@ -4,6 +4,39 @@ package msgraph
 
 import "context"
 
+// WindowsAppXAppAssignmentSettingsRequestBuilder is request builder for WindowsAppXAppAssignmentSettings
+type WindowsAppXAppAssignmentSettingsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsAppXAppAssignmentSettingsRequest
+func (b *WindowsAppXAppAssignmentSettingsRequestBuilder) Request() *WindowsAppXAppAssignmentSettingsRequest {
+	return &WindowsAppXAppAssignmentSettingsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsAppXAppAssignmentSettingsRequest is request for WindowsAppXAppAssignmentSettings
+type WindowsAppXAppAssignmentSettingsRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsAppXAppAssignmentSettings
+func (r *WindowsAppXAppAssignmentSettingsRequest) Get(ctx context.Context) (resObj *WindowsAppXAppAssignmentSettings, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsAppXAppAssignmentSettings
+func (r *WindowsAppXAppAssignmentSettingsRequest) Update(ctx context.Context, reqObj *WindowsAppXAppAssignmentSettings) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsAppXAppAssignmentSettings
+func (r *WindowsAppXAppAssignmentSettingsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // WindowsAutopilotDeviceIdentityRequestBuilder is request builder for WindowsAutopilotDeviceIdentity
 type WindowsAutopilotDeviceIdentityRequestBuilder struct{ BaseRequestBuilder }
 
@@ -34,6 +67,204 @@ func (r *WindowsAutopilotDeviceIdentityRequest) Update(ctx context.Context, reqO
 
 // Delete performs DELETE request for WindowsAutopilotDeviceIdentity
 func (r *WindowsAutopilotDeviceIdentityRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsDefenderAdvancedThreatProtectionConfigurationRequestBuilder is request builder for WindowsDefenderAdvancedThreatProtectionConfiguration
+type WindowsDefenderAdvancedThreatProtectionConfigurationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsDefenderAdvancedThreatProtectionConfigurationRequest
+func (b *WindowsDefenderAdvancedThreatProtectionConfigurationRequestBuilder) Request() *WindowsDefenderAdvancedThreatProtectionConfigurationRequest {
+	return &WindowsDefenderAdvancedThreatProtectionConfigurationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsDefenderAdvancedThreatProtectionConfigurationRequest is request for WindowsDefenderAdvancedThreatProtectionConfiguration
+type WindowsDefenderAdvancedThreatProtectionConfigurationRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsDefenderAdvancedThreatProtectionConfiguration
+func (r *WindowsDefenderAdvancedThreatProtectionConfigurationRequest) Get(ctx context.Context) (resObj *WindowsDefenderAdvancedThreatProtectionConfiguration, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsDefenderAdvancedThreatProtectionConfiguration
+func (r *WindowsDefenderAdvancedThreatProtectionConfigurationRequest) Update(ctx context.Context, reqObj *WindowsDefenderAdvancedThreatProtectionConfiguration) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsDefenderAdvancedThreatProtectionConfiguration
+func (r *WindowsDefenderAdvancedThreatProtectionConfigurationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsDefenderScanActionResultRequestBuilder is request builder for WindowsDefenderScanActionResult
+type WindowsDefenderScanActionResultRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsDefenderScanActionResultRequest
+func (b *WindowsDefenderScanActionResultRequestBuilder) Request() *WindowsDefenderScanActionResultRequest {
+	return &WindowsDefenderScanActionResultRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsDefenderScanActionResultRequest is request for WindowsDefenderScanActionResult
+type WindowsDefenderScanActionResultRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsDefenderScanActionResult
+func (r *WindowsDefenderScanActionResultRequest) Get(ctx context.Context) (resObj *WindowsDefenderScanActionResult, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsDefenderScanActionResult
+func (r *WindowsDefenderScanActionResultRequest) Update(ctx context.Context, reqObj *WindowsDefenderScanActionResult) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsDefenderScanActionResult
+func (r *WindowsDefenderScanActionResultRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsDeviceADAccountRequestBuilder is request builder for WindowsDeviceADAccount
+type WindowsDeviceADAccountRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsDeviceADAccountRequest
+func (b *WindowsDeviceADAccountRequestBuilder) Request() *WindowsDeviceADAccountRequest {
+	return &WindowsDeviceADAccountRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsDeviceADAccountRequest is request for WindowsDeviceADAccount
+type WindowsDeviceADAccountRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsDeviceADAccount
+func (r *WindowsDeviceADAccountRequest) Get(ctx context.Context) (resObj *WindowsDeviceADAccount, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsDeviceADAccount
+func (r *WindowsDeviceADAccountRequest) Update(ctx context.Context, reqObj *WindowsDeviceADAccount) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsDeviceADAccount
+func (r *WindowsDeviceADAccountRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsDeviceAccountRequestBuilder is request builder for WindowsDeviceAccount
+type WindowsDeviceAccountRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsDeviceAccountRequest
+func (b *WindowsDeviceAccountRequestBuilder) Request() *WindowsDeviceAccountRequest {
+	return &WindowsDeviceAccountRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsDeviceAccountRequest is request for WindowsDeviceAccount
+type WindowsDeviceAccountRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsDeviceAccount
+func (r *WindowsDeviceAccountRequest) Get(ctx context.Context) (resObj *WindowsDeviceAccount, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsDeviceAccount
+func (r *WindowsDeviceAccountRequest) Update(ctx context.Context, reqObj *WindowsDeviceAccount) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsDeviceAccount
+func (r *WindowsDeviceAccountRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsDeviceAzureADAccountRequestBuilder is request builder for WindowsDeviceAzureADAccount
+type WindowsDeviceAzureADAccountRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsDeviceAzureADAccountRequest
+func (b *WindowsDeviceAzureADAccountRequestBuilder) Request() *WindowsDeviceAzureADAccountRequest {
+	return &WindowsDeviceAzureADAccountRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsDeviceAzureADAccountRequest is request for WindowsDeviceAzureADAccount
+type WindowsDeviceAzureADAccountRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsDeviceAzureADAccount
+func (r *WindowsDeviceAzureADAccountRequest) Get(ctx context.Context) (resObj *WindowsDeviceAzureADAccount, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsDeviceAzureADAccount
+func (r *WindowsDeviceAzureADAccountRequest) Update(ctx context.Context, reqObj *WindowsDeviceAzureADAccount) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsDeviceAzureADAccount
+func (r *WindowsDeviceAzureADAccountRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsFirewallNetworkProfileRequestBuilder is request builder for WindowsFirewallNetworkProfile
+type WindowsFirewallNetworkProfileRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsFirewallNetworkProfileRequest
+func (b *WindowsFirewallNetworkProfileRequestBuilder) Request() *WindowsFirewallNetworkProfileRequest {
+	return &WindowsFirewallNetworkProfileRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsFirewallNetworkProfileRequest is request for WindowsFirewallNetworkProfile
+type WindowsFirewallNetworkProfileRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsFirewallNetworkProfile
+func (r *WindowsFirewallNetworkProfileRequest) Get(ctx context.Context) (resObj *WindowsFirewallNetworkProfile, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsFirewallNetworkProfile
+func (r *WindowsFirewallNetworkProfileRequest) Update(ctx context.Context, reqObj *WindowsFirewallNetworkProfile) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsFirewallNetworkProfile
+func (r *WindowsFirewallNetworkProfileRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -103,6 +334,39 @@ func (r *WindowsInformationProtectionRequest) Delete(ctx context.Context) error 
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// WindowsInformationProtectionAppRequestBuilder is request builder for WindowsInformationProtectionApp
+type WindowsInformationProtectionAppRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsInformationProtectionAppRequest
+func (b *WindowsInformationProtectionAppRequestBuilder) Request() *WindowsInformationProtectionAppRequest {
+	return &WindowsInformationProtectionAppRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsInformationProtectionAppRequest is request for WindowsInformationProtectionApp
+type WindowsInformationProtectionAppRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsInformationProtectionApp
+func (r *WindowsInformationProtectionAppRequest) Get(ctx context.Context) (resObj *WindowsInformationProtectionApp, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsInformationProtectionApp
+func (r *WindowsInformationProtectionAppRequest) Update(ctx context.Context, reqObj *WindowsInformationProtectionApp) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsInformationProtectionApp
+func (r *WindowsInformationProtectionAppRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // WindowsInformationProtectionAppLearningSummaryRequestBuilder is request builder for WindowsInformationProtectionAppLearningSummary
 type WindowsInformationProtectionAppLearningSummaryRequestBuilder struct{ BaseRequestBuilder }
 
@@ -166,6 +430,105 @@ func (r *WindowsInformationProtectionAppLockerFileRequest) Update(ctx context.Co
 
 // Delete performs DELETE request for WindowsInformationProtectionAppLockerFile
 func (r *WindowsInformationProtectionAppLockerFileRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsInformationProtectionDataRecoveryCertificateRequestBuilder is request builder for WindowsInformationProtectionDataRecoveryCertificate
+type WindowsInformationProtectionDataRecoveryCertificateRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsInformationProtectionDataRecoveryCertificateRequest
+func (b *WindowsInformationProtectionDataRecoveryCertificateRequestBuilder) Request() *WindowsInformationProtectionDataRecoveryCertificateRequest {
+	return &WindowsInformationProtectionDataRecoveryCertificateRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsInformationProtectionDataRecoveryCertificateRequest is request for WindowsInformationProtectionDataRecoveryCertificate
+type WindowsInformationProtectionDataRecoveryCertificateRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsInformationProtectionDataRecoveryCertificate
+func (r *WindowsInformationProtectionDataRecoveryCertificateRequest) Get(ctx context.Context) (resObj *WindowsInformationProtectionDataRecoveryCertificate, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsInformationProtectionDataRecoveryCertificate
+func (r *WindowsInformationProtectionDataRecoveryCertificateRequest) Update(ctx context.Context, reqObj *WindowsInformationProtectionDataRecoveryCertificate) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsInformationProtectionDataRecoveryCertificate
+func (r *WindowsInformationProtectionDataRecoveryCertificateRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsInformationProtectionDesktopAppRequestBuilder is request builder for WindowsInformationProtectionDesktopApp
+type WindowsInformationProtectionDesktopAppRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsInformationProtectionDesktopAppRequest
+func (b *WindowsInformationProtectionDesktopAppRequestBuilder) Request() *WindowsInformationProtectionDesktopAppRequest {
+	return &WindowsInformationProtectionDesktopAppRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsInformationProtectionDesktopAppRequest is request for WindowsInformationProtectionDesktopApp
+type WindowsInformationProtectionDesktopAppRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsInformationProtectionDesktopApp
+func (r *WindowsInformationProtectionDesktopAppRequest) Get(ctx context.Context) (resObj *WindowsInformationProtectionDesktopApp, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsInformationProtectionDesktopApp
+func (r *WindowsInformationProtectionDesktopAppRequest) Update(ctx context.Context, reqObj *WindowsInformationProtectionDesktopApp) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsInformationProtectionDesktopApp
+func (r *WindowsInformationProtectionDesktopAppRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsInformationProtectionIPRangeCollectionRequestBuilder is request builder for WindowsInformationProtectionIPRangeCollection
+type WindowsInformationProtectionIPRangeCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsInformationProtectionIPRangeCollectionRequest
+func (b *WindowsInformationProtectionIPRangeCollectionRequestBuilder) Request() *WindowsInformationProtectionIPRangeCollectionRequest {
+	return &WindowsInformationProtectionIPRangeCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsInformationProtectionIPRangeCollectionRequest is request for WindowsInformationProtectionIPRangeCollection
+type WindowsInformationProtectionIPRangeCollectionRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsInformationProtectionIPRangeCollection
+func (r *WindowsInformationProtectionIPRangeCollectionRequest) Get(ctx context.Context) (resObj *WindowsInformationProtectionIPRangeCollection, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsInformationProtectionIPRangeCollection
+func (r *WindowsInformationProtectionIPRangeCollectionRequest) Update(ctx context.Context, reqObj *WindowsInformationProtectionIPRangeCollection) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsInformationProtectionIPRangeCollection
+func (r *WindowsInformationProtectionIPRangeCollectionRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -235,6 +598,303 @@ func (r *WindowsInformationProtectionPolicyRequest) Delete(ctx context.Context) 
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// WindowsInformationProtectionProxiedDomainCollectionRequestBuilder is request builder for WindowsInformationProtectionProxiedDomainCollection
+type WindowsInformationProtectionProxiedDomainCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsInformationProtectionProxiedDomainCollectionRequest
+func (b *WindowsInformationProtectionProxiedDomainCollectionRequestBuilder) Request() *WindowsInformationProtectionProxiedDomainCollectionRequest {
+	return &WindowsInformationProtectionProxiedDomainCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsInformationProtectionProxiedDomainCollectionRequest is request for WindowsInformationProtectionProxiedDomainCollection
+type WindowsInformationProtectionProxiedDomainCollectionRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsInformationProtectionProxiedDomainCollection
+func (r *WindowsInformationProtectionProxiedDomainCollectionRequest) Get(ctx context.Context) (resObj *WindowsInformationProtectionProxiedDomainCollection, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsInformationProtectionProxiedDomainCollection
+func (r *WindowsInformationProtectionProxiedDomainCollectionRequest) Update(ctx context.Context, reqObj *WindowsInformationProtectionProxiedDomainCollection) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsInformationProtectionProxiedDomainCollection
+func (r *WindowsInformationProtectionProxiedDomainCollectionRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsInformationProtectionResourceCollectionRequestBuilder is request builder for WindowsInformationProtectionResourceCollection
+type WindowsInformationProtectionResourceCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsInformationProtectionResourceCollectionRequest
+func (b *WindowsInformationProtectionResourceCollectionRequestBuilder) Request() *WindowsInformationProtectionResourceCollectionRequest {
+	return &WindowsInformationProtectionResourceCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsInformationProtectionResourceCollectionRequest is request for WindowsInformationProtectionResourceCollection
+type WindowsInformationProtectionResourceCollectionRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsInformationProtectionResourceCollection
+func (r *WindowsInformationProtectionResourceCollectionRequest) Get(ctx context.Context) (resObj *WindowsInformationProtectionResourceCollection, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsInformationProtectionResourceCollection
+func (r *WindowsInformationProtectionResourceCollectionRequest) Update(ctx context.Context, reqObj *WindowsInformationProtectionResourceCollection) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsInformationProtectionResourceCollection
+func (r *WindowsInformationProtectionResourceCollectionRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsInformationProtectionStoreAppRequestBuilder is request builder for WindowsInformationProtectionStoreApp
+type WindowsInformationProtectionStoreAppRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsInformationProtectionStoreAppRequest
+func (b *WindowsInformationProtectionStoreAppRequestBuilder) Request() *WindowsInformationProtectionStoreAppRequest {
+	return &WindowsInformationProtectionStoreAppRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsInformationProtectionStoreAppRequest is request for WindowsInformationProtectionStoreApp
+type WindowsInformationProtectionStoreAppRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsInformationProtectionStoreApp
+func (r *WindowsInformationProtectionStoreAppRequest) Get(ctx context.Context) (resObj *WindowsInformationProtectionStoreApp, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsInformationProtectionStoreApp
+func (r *WindowsInformationProtectionStoreAppRequest) Update(ctx context.Context, reqObj *WindowsInformationProtectionStoreApp) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsInformationProtectionStoreApp
+func (r *WindowsInformationProtectionStoreAppRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsMicrosoftEdgeAppRequestBuilder is request builder for WindowsMicrosoftEdgeApp
+type WindowsMicrosoftEdgeAppRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsMicrosoftEdgeAppRequest
+func (b *WindowsMicrosoftEdgeAppRequestBuilder) Request() *WindowsMicrosoftEdgeAppRequest {
+	return &WindowsMicrosoftEdgeAppRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsMicrosoftEdgeAppRequest is request for WindowsMicrosoftEdgeApp
+type WindowsMicrosoftEdgeAppRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsMicrosoftEdgeApp
+func (r *WindowsMicrosoftEdgeAppRequest) Get(ctx context.Context) (resObj *WindowsMicrosoftEdgeApp, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsMicrosoftEdgeApp
+func (r *WindowsMicrosoftEdgeAppRequest) Update(ctx context.Context, reqObj *WindowsMicrosoftEdgeApp) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsMicrosoftEdgeApp
+func (r *WindowsMicrosoftEdgeAppRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsMinimumOperatingSystemRequestBuilder is request builder for WindowsMinimumOperatingSystem
+type WindowsMinimumOperatingSystemRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsMinimumOperatingSystemRequest
+func (b *WindowsMinimumOperatingSystemRequestBuilder) Request() *WindowsMinimumOperatingSystemRequest {
+	return &WindowsMinimumOperatingSystemRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsMinimumOperatingSystemRequest is request for WindowsMinimumOperatingSystem
+type WindowsMinimumOperatingSystemRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsMinimumOperatingSystem
+func (r *WindowsMinimumOperatingSystemRequest) Get(ctx context.Context) (resObj *WindowsMinimumOperatingSystem, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsMinimumOperatingSystem
+func (r *WindowsMinimumOperatingSystemRequest) Update(ctx context.Context, reqObj *WindowsMinimumOperatingSystem) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsMinimumOperatingSystem
+func (r *WindowsMinimumOperatingSystemRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsMobileMSIRequestBuilder is request builder for WindowsMobileMSI
+type WindowsMobileMSIRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsMobileMSIRequest
+func (b *WindowsMobileMSIRequestBuilder) Request() *WindowsMobileMSIRequest {
+	return &WindowsMobileMSIRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsMobileMSIRequest is request for WindowsMobileMSI
+type WindowsMobileMSIRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsMobileMSI
+func (r *WindowsMobileMSIRequest) Get(ctx context.Context) (resObj *WindowsMobileMSI, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsMobileMSI
+func (r *WindowsMobileMSIRequest) Update(ctx context.Context, reqObj *WindowsMobileMSI) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsMobileMSI
+func (r *WindowsMobileMSIRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsPhone81CompliancePolicyRequestBuilder is request builder for WindowsPhone81CompliancePolicy
+type WindowsPhone81CompliancePolicyRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsPhone81CompliancePolicyRequest
+func (b *WindowsPhone81CompliancePolicyRequestBuilder) Request() *WindowsPhone81CompliancePolicyRequest {
+	return &WindowsPhone81CompliancePolicyRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsPhone81CompliancePolicyRequest is request for WindowsPhone81CompliancePolicy
+type WindowsPhone81CompliancePolicyRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsPhone81CompliancePolicy
+func (r *WindowsPhone81CompliancePolicyRequest) Get(ctx context.Context) (resObj *WindowsPhone81CompliancePolicy, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsPhone81CompliancePolicy
+func (r *WindowsPhone81CompliancePolicyRequest) Update(ctx context.Context, reqObj *WindowsPhone81CompliancePolicy) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsPhone81CompliancePolicy
+func (r *WindowsPhone81CompliancePolicyRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsPhone81CustomConfigurationRequestBuilder is request builder for WindowsPhone81CustomConfiguration
+type WindowsPhone81CustomConfigurationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsPhone81CustomConfigurationRequest
+func (b *WindowsPhone81CustomConfigurationRequestBuilder) Request() *WindowsPhone81CustomConfigurationRequest {
+	return &WindowsPhone81CustomConfigurationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsPhone81CustomConfigurationRequest is request for WindowsPhone81CustomConfiguration
+type WindowsPhone81CustomConfigurationRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsPhone81CustomConfiguration
+func (r *WindowsPhone81CustomConfigurationRequest) Get(ctx context.Context) (resObj *WindowsPhone81CustomConfiguration, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsPhone81CustomConfiguration
+func (r *WindowsPhone81CustomConfigurationRequest) Update(ctx context.Context, reqObj *WindowsPhone81CustomConfiguration) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsPhone81CustomConfiguration
+func (r *WindowsPhone81CustomConfigurationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsPhone81GeneralConfigurationRequestBuilder is request builder for WindowsPhone81GeneralConfiguration
+type WindowsPhone81GeneralConfigurationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsPhone81GeneralConfigurationRequest
+func (b *WindowsPhone81GeneralConfigurationRequestBuilder) Request() *WindowsPhone81GeneralConfigurationRequest {
+	return &WindowsPhone81GeneralConfigurationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsPhone81GeneralConfigurationRequest is request for WindowsPhone81GeneralConfiguration
+type WindowsPhone81GeneralConfigurationRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsPhone81GeneralConfiguration
+func (r *WindowsPhone81GeneralConfigurationRequest) Get(ctx context.Context) (resObj *WindowsPhone81GeneralConfiguration, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsPhone81GeneralConfiguration
+func (r *WindowsPhone81GeneralConfigurationRequest) Update(ctx context.Context, reqObj *WindowsPhone81GeneralConfiguration) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsPhone81GeneralConfiguration
+func (r *WindowsPhone81GeneralConfigurationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // WindowsUniversalAppXRequestBuilder is request builder for WindowsUniversalAppX
 type WindowsUniversalAppXRequestBuilder struct{ BaseRequestBuilder }
 
@@ -265,5 +925,236 @@ func (r *WindowsUniversalAppXRequest) Update(ctx context.Context, reqObj *Window
 
 // Delete performs DELETE request for WindowsUniversalAppX
 func (r *WindowsUniversalAppXRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsUniversalAppXAppAssignmentSettingsRequestBuilder is request builder for WindowsUniversalAppXAppAssignmentSettings
+type WindowsUniversalAppXAppAssignmentSettingsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsUniversalAppXAppAssignmentSettingsRequest
+func (b *WindowsUniversalAppXAppAssignmentSettingsRequestBuilder) Request() *WindowsUniversalAppXAppAssignmentSettingsRequest {
+	return &WindowsUniversalAppXAppAssignmentSettingsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsUniversalAppXAppAssignmentSettingsRequest is request for WindowsUniversalAppXAppAssignmentSettings
+type WindowsUniversalAppXAppAssignmentSettingsRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsUniversalAppXAppAssignmentSettings
+func (r *WindowsUniversalAppXAppAssignmentSettingsRequest) Get(ctx context.Context) (resObj *WindowsUniversalAppXAppAssignmentSettings, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsUniversalAppXAppAssignmentSettings
+func (r *WindowsUniversalAppXAppAssignmentSettingsRequest) Update(ctx context.Context, reqObj *WindowsUniversalAppXAppAssignmentSettings) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsUniversalAppXAppAssignmentSettings
+func (r *WindowsUniversalAppXAppAssignmentSettingsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsUniversalAppXContainedAppRequestBuilder is request builder for WindowsUniversalAppXContainedApp
+type WindowsUniversalAppXContainedAppRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsUniversalAppXContainedAppRequest
+func (b *WindowsUniversalAppXContainedAppRequestBuilder) Request() *WindowsUniversalAppXContainedAppRequest {
+	return &WindowsUniversalAppXContainedAppRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsUniversalAppXContainedAppRequest is request for WindowsUniversalAppXContainedApp
+type WindowsUniversalAppXContainedAppRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsUniversalAppXContainedApp
+func (r *WindowsUniversalAppXContainedAppRequest) Get(ctx context.Context) (resObj *WindowsUniversalAppXContainedApp, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsUniversalAppXContainedApp
+func (r *WindowsUniversalAppXContainedAppRequest) Update(ctx context.Context, reqObj *WindowsUniversalAppXContainedApp) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsUniversalAppXContainedApp
+func (r *WindowsUniversalAppXContainedAppRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsUpdateActiveHoursInstallRequestBuilder is request builder for WindowsUpdateActiveHoursInstall
+type WindowsUpdateActiveHoursInstallRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsUpdateActiveHoursInstallRequest
+func (b *WindowsUpdateActiveHoursInstallRequestBuilder) Request() *WindowsUpdateActiveHoursInstallRequest {
+	return &WindowsUpdateActiveHoursInstallRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsUpdateActiveHoursInstallRequest is request for WindowsUpdateActiveHoursInstall
+type WindowsUpdateActiveHoursInstallRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsUpdateActiveHoursInstall
+func (r *WindowsUpdateActiveHoursInstallRequest) Get(ctx context.Context) (resObj *WindowsUpdateActiveHoursInstall, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsUpdateActiveHoursInstall
+func (r *WindowsUpdateActiveHoursInstallRequest) Update(ctx context.Context, reqObj *WindowsUpdateActiveHoursInstall) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsUpdateActiveHoursInstall
+func (r *WindowsUpdateActiveHoursInstallRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsUpdateForBusinessConfigurationRequestBuilder is request builder for WindowsUpdateForBusinessConfiguration
+type WindowsUpdateForBusinessConfigurationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsUpdateForBusinessConfigurationRequest
+func (b *WindowsUpdateForBusinessConfigurationRequestBuilder) Request() *WindowsUpdateForBusinessConfigurationRequest {
+	return &WindowsUpdateForBusinessConfigurationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsUpdateForBusinessConfigurationRequest is request for WindowsUpdateForBusinessConfiguration
+type WindowsUpdateForBusinessConfigurationRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsUpdateForBusinessConfiguration
+func (r *WindowsUpdateForBusinessConfigurationRequest) Get(ctx context.Context) (resObj *WindowsUpdateForBusinessConfiguration, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsUpdateForBusinessConfiguration
+func (r *WindowsUpdateForBusinessConfigurationRequest) Update(ctx context.Context, reqObj *WindowsUpdateForBusinessConfiguration) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsUpdateForBusinessConfiguration
+func (r *WindowsUpdateForBusinessConfigurationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsUpdateInstallScheduleTypeRequestBuilder is request builder for WindowsUpdateInstallScheduleType
+type WindowsUpdateInstallScheduleTypeRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsUpdateInstallScheduleTypeRequest
+func (b *WindowsUpdateInstallScheduleTypeRequestBuilder) Request() *WindowsUpdateInstallScheduleTypeRequest {
+	return &WindowsUpdateInstallScheduleTypeRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsUpdateInstallScheduleTypeRequest is request for WindowsUpdateInstallScheduleType
+type WindowsUpdateInstallScheduleTypeRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsUpdateInstallScheduleType
+func (r *WindowsUpdateInstallScheduleTypeRequest) Get(ctx context.Context) (resObj *WindowsUpdateInstallScheduleType, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsUpdateInstallScheduleType
+func (r *WindowsUpdateInstallScheduleTypeRequest) Update(ctx context.Context, reqObj *WindowsUpdateInstallScheduleType) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsUpdateInstallScheduleType
+func (r *WindowsUpdateInstallScheduleTypeRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsUpdateScheduledInstallRequestBuilder is request builder for WindowsUpdateScheduledInstall
+type WindowsUpdateScheduledInstallRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsUpdateScheduledInstallRequest
+func (b *WindowsUpdateScheduledInstallRequestBuilder) Request() *WindowsUpdateScheduledInstallRequest {
+	return &WindowsUpdateScheduledInstallRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsUpdateScheduledInstallRequest is request for WindowsUpdateScheduledInstall
+type WindowsUpdateScheduledInstallRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsUpdateScheduledInstall
+func (r *WindowsUpdateScheduledInstallRequest) Get(ctx context.Context) (resObj *WindowsUpdateScheduledInstall, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsUpdateScheduledInstall
+func (r *WindowsUpdateScheduledInstallRequest) Update(ctx context.Context, reqObj *WindowsUpdateScheduledInstall) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsUpdateScheduledInstall
+func (r *WindowsUpdateScheduledInstallRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// WindowsWebAppRequestBuilder is request builder for WindowsWebApp
+type WindowsWebAppRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns WindowsWebAppRequest
+func (b *WindowsWebAppRequestBuilder) Request() *WindowsWebAppRequest {
+	return &WindowsWebAppRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// WindowsWebAppRequest is request for WindowsWebApp
+type WindowsWebAppRequest struct{ BaseRequest }
+
+// Get performs GET request for WindowsWebApp
+func (r *WindowsWebAppRequest) Get(ctx context.Context) (resObj *WindowsWebApp, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for WindowsWebApp
+func (r *WindowsWebAppRequest) Update(ctx context.Context, reqObj *WindowsWebApp) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for WindowsWebApp
+func (r *WindowsWebAppRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

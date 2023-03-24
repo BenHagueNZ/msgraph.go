@@ -102,3 +102,36 @@ func (r *PermissionGrantPolicyRequest) Update(ctx context.Context, reqObj *Permi
 func (r *PermissionGrantPolicyRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+// PermissionScopeRequestBuilder is request builder for PermissionScope
+type PermissionScopeRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PermissionScopeRequest
+func (b *PermissionScopeRequestBuilder) Request() *PermissionScopeRequest {
+	return &PermissionScopeRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PermissionScopeRequest is request for PermissionScope
+type PermissionScopeRequest struct{ BaseRequest }
+
+// Get performs GET request for PermissionScope
+func (r *PermissionScopeRequest) Get(ctx context.Context) (resObj *PermissionScope, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for PermissionScope
+func (r *PermissionScopeRequest) Update(ctx context.Context, reqObj *PermissionScope) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for PermissionScope
+func (r *PermissionScopeRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}

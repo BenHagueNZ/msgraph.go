@@ -4,6 +4,39 @@ package msgraph
 
 import "context"
 
+// PhoneRequestBuilder is request builder for Phone
+type PhoneRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PhoneRequest
+func (b *PhoneRequestBuilder) Request() *PhoneRequest {
+	return &PhoneRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PhoneRequest is request for Phone
+type PhoneRequest struct{ BaseRequest }
+
+// Get performs GET request for Phone
+func (r *PhoneRequest) Get(ctx context.Context) (resObj *Phone, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for Phone
+func (r *PhoneRequest) Update(ctx context.Context, reqObj *Phone) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for Phone
+func (r *PhoneRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // PhoneAuthenticationMethodRequestBuilder is request builder for PhoneAuthenticationMethod
 type PhoneAuthenticationMethodRequestBuilder struct{ BaseRequestBuilder }
 

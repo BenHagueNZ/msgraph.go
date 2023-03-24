@@ -36,3 +36,36 @@ func (r *PrivacyRequest) Update(ctx context.Context, reqObj *Privacy) error {
 func (r *PrivacyRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+// PrivacyProfileRequestBuilder is request builder for PrivacyProfile
+type PrivacyProfileRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns PrivacyProfileRequest
+func (b *PrivacyProfileRequestBuilder) Request() *PrivacyProfileRequest {
+	return &PrivacyProfileRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// PrivacyProfileRequest is request for PrivacyProfile
+type PrivacyProfileRequest struct{ BaseRequest }
+
+// Get performs GET request for PrivacyProfile
+func (r *PrivacyProfileRequest) Get(ctx context.Context) (resObj *PrivacyProfile, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for PrivacyProfile
+func (r *PrivacyProfileRequest) Update(ctx context.Context, reqObj *PrivacyProfile) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for PrivacyProfile
+func (r *PrivacyProfileRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}

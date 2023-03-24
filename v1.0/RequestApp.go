@@ -37,6 +37,39 @@ func (r *AppCatalogsRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// AppConfigurationSettingItemRequestBuilder is request builder for AppConfigurationSettingItem
+type AppConfigurationSettingItemRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AppConfigurationSettingItemRequest
+func (b *AppConfigurationSettingItemRequestBuilder) Request() *AppConfigurationSettingItemRequest {
+	return &AppConfigurationSettingItemRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AppConfigurationSettingItemRequest is request for AppConfigurationSettingItem
+type AppConfigurationSettingItemRequest struct{ BaseRequest }
+
+// Get performs GET request for AppConfigurationSettingItem
+func (r *AppConfigurationSettingItemRequest) Get(ctx context.Context) (resObj *AppConfigurationSettingItem, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AppConfigurationSettingItem
+func (r *AppConfigurationSettingItemRequest) Update(ctx context.Context, reqObj *AppConfigurationSettingItem) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AppConfigurationSettingItem
+func (r *AppConfigurationSettingItemRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // AppConsentApprovalRouteRequestBuilder is request builder for AppConsentApprovalRoute
 type AppConsentApprovalRouteRequestBuilder struct{ BaseRequestBuilder }
 
@@ -103,6 +136,171 @@ func (r *AppConsentRequestObjectRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// AppConsentRequestScopeRequestBuilder is request builder for AppConsentRequestScope
+type AppConsentRequestScopeRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AppConsentRequestScopeRequest
+func (b *AppConsentRequestScopeRequestBuilder) Request() *AppConsentRequestScopeRequest {
+	return &AppConsentRequestScopeRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AppConsentRequestScopeRequest is request for AppConsentRequestScope
+type AppConsentRequestScopeRequest struct{ BaseRequest }
+
+// Get performs GET request for AppConsentRequestScope
+func (r *AppConsentRequestScopeRequest) Get(ctx context.Context) (resObj *AppConsentRequestScope, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AppConsentRequestScope
+func (r *AppConsentRequestScopeRequest) Update(ctx context.Context, reqObj *AppConsentRequestScope) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AppConsentRequestScope
+func (r *AppConsentRequestScopeRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AppHostedMediaConfigRequestBuilder is request builder for AppHostedMediaConfig
+type AppHostedMediaConfigRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AppHostedMediaConfigRequest
+func (b *AppHostedMediaConfigRequestBuilder) Request() *AppHostedMediaConfigRequest {
+	return &AppHostedMediaConfigRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AppHostedMediaConfigRequest is request for AppHostedMediaConfig
+type AppHostedMediaConfigRequest struct{ BaseRequest }
+
+// Get performs GET request for AppHostedMediaConfig
+func (r *AppHostedMediaConfigRequest) Get(ctx context.Context) (resObj *AppHostedMediaConfig, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AppHostedMediaConfig
+func (r *AppHostedMediaConfigRequest) Update(ctx context.Context, reqObj *AppHostedMediaConfig) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AppHostedMediaConfig
+func (r *AppHostedMediaConfigRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AppIdentityRequestBuilder is request builder for AppIdentity
+type AppIdentityRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AppIdentityRequest
+func (b *AppIdentityRequestBuilder) Request() *AppIdentityRequest {
+	return &AppIdentityRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AppIdentityRequest is request for AppIdentity
+type AppIdentityRequest struct{ BaseRequest }
+
+// Get performs GET request for AppIdentity
+func (r *AppIdentityRequest) Get(ctx context.Context) (resObj *AppIdentity, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AppIdentity
+func (r *AppIdentityRequest) Update(ctx context.Context, reqObj *AppIdentity) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AppIdentity
+func (r *AppIdentityRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AppListItemRequestBuilder is request builder for AppListItem
+type AppListItemRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AppListItemRequest
+func (b *AppListItemRequestBuilder) Request() *AppListItemRequest {
+	return &AppListItemRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AppListItemRequest is request for AppListItem
+type AppListItemRequest struct{ BaseRequest }
+
+// Get performs GET request for AppListItem
+func (r *AppListItemRequest) Get(ctx context.Context) (resObj *AppListItem, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AppListItem
+func (r *AppListItemRequest) Update(ctx context.Context, reqObj *AppListItem) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AppListItem
+func (r *AppListItemRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AppManagementConfigurationRequestBuilder is request builder for AppManagementConfiguration
+type AppManagementConfigurationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AppManagementConfigurationRequest
+func (b *AppManagementConfigurationRequestBuilder) Request() *AppManagementConfigurationRequest {
+	return &AppManagementConfigurationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AppManagementConfigurationRequest is request for AppManagementConfiguration
+type AppManagementConfigurationRequest struct{ BaseRequest }
+
+// Get performs GET request for AppManagementConfiguration
+func (r *AppManagementConfigurationRequest) Get(ctx context.Context) (resObj *AppManagementConfiguration, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AppManagementConfiguration
+func (r *AppManagementConfigurationRequest) Update(ctx context.Context, reqObj *AppManagementConfiguration) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AppManagementConfiguration
+func (r *AppManagementConfigurationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // AppManagementPolicyRequestBuilder is request builder for AppManagementPolicy
 type AppManagementPolicyRequestBuilder struct{ BaseRequestBuilder }
 
@@ -133,6 +331,39 @@ func (r *AppManagementPolicyRequest) Update(ctx context.Context, reqObj *AppMana
 
 // Delete performs DELETE request for AppManagementPolicy
 func (r *AppManagementPolicyRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AppRoleRequestBuilder is request builder for AppRole
+type AppRoleRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AppRoleRequest
+func (b *AppRoleRequestBuilder) Request() *AppRoleRequest {
+	return &AppRoleRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AppRoleRequest is request for AppRole
+type AppRoleRequest struct{ BaseRequest }
+
+// Get performs GET request for AppRole
+func (r *AppRoleRequest) Get(ctx context.Context) (resObj *AppRole, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AppRole
+func (r *AppRoleRequest) Update(ctx context.Context, reqObj *AppRole) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AppRole
+func (r *AppRoleRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

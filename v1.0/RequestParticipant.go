@@ -37,6 +37,39 @@ func (r *ParticipantRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// ParticipantInfoRequestBuilder is request builder for ParticipantInfo
+type ParticipantInfoRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ParticipantInfoRequest
+func (b *ParticipantInfoRequestBuilder) Request() *ParticipantInfoRequest {
+	return &ParticipantInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ParticipantInfoRequest is request for ParticipantInfo
+type ParticipantInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for ParticipantInfo
+func (r *ParticipantInfoRequest) Get(ctx context.Context) (resObj *ParticipantInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ParticipantInfo
+func (r *ParticipantInfoRequest) Update(ctx context.Context, reqObj *ParticipantInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ParticipantInfo
+func (r *ParticipantInfoRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // ParticipantJoiningNotificationRequestBuilder is request builder for ParticipantJoiningNotification
 type ParticipantJoiningNotificationRequestBuilder struct{ BaseRequestBuilder }
 
@@ -67,6 +100,39 @@ func (r *ParticipantJoiningNotificationRequest) Update(ctx context.Context, reqO
 
 // Delete performs DELETE request for ParticipantJoiningNotification
 func (r *ParticipantJoiningNotificationRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// ParticipantJoiningResponseRequestBuilder is request builder for ParticipantJoiningResponse
+type ParticipantJoiningResponseRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ParticipantJoiningResponseRequest
+func (b *ParticipantJoiningResponseRequestBuilder) Request() *ParticipantJoiningResponseRequest {
+	return &ParticipantJoiningResponseRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ParticipantJoiningResponseRequest is request for ParticipantJoiningResponse
+type ParticipantJoiningResponseRequest struct{ BaseRequest }
+
+// Get performs GET request for ParticipantJoiningResponse
+func (r *ParticipantJoiningResponseRequest) Get(ctx context.Context) (resObj *ParticipantJoiningResponse, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ParticipantJoiningResponse
+func (r *ParticipantJoiningResponseRequest) Update(ctx context.Context, reqObj *ParticipantJoiningResponse) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ParticipantJoiningResponse
+func (r *ParticipantJoiningResponseRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

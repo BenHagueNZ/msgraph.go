@@ -37,6 +37,39 @@ func (r *NotebookRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// NotebookLinksRequestBuilder is request builder for NotebookLinks
+type NotebookLinksRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns NotebookLinksRequest
+func (b *NotebookLinksRequestBuilder) Request() *NotebookLinksRequest {
+	return &NotebookLinksRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// NotebookLinksRequest is request for NotebookLinks
+type NotebookLinksRequest struct{ BaseRequest }
+
+// Get performs GET request for NotebookLinks
+func (r *NotebookLinksRequest) Get(ctx context.Context) (resObj *NotebookLinks, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for NotebookLinks
+func (r *NotebookLinksRequest) Update(ctx context.Context, reqObj *NotebookLinks) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for NotebookLinks
+func (r *NotebookLinksRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 type NotebookCollectionGetNotebookFromWebURLRequestBuilder struct{ BaseRequestBuilder }
 
 // GetNotebookFromWebURL action undocumented

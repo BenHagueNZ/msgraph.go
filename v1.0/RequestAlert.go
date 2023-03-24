@@ -36,3 +36,102 @@ func (r *AlertRequest) Update(ctx context.Context, reqObj *Alert) error {
 func (r *AlertRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+// AlertDetectionRequestBuilder is request builder for AlertDetection
+type AlertDetectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AlertDetectionRequest
+func (b *AlertDetectionRequestBuilder) Request() *AlertDetectionRequest {
+	return &AlertDetectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AlertDetectionRequest is request for AlertDetection
+type AlertDetectionRequest struct{ BaseRequest }
+
+// Get performs GET request for AlertDetection
+func (r *AlertDetectionRequest) Get(ctx context.Context) (resObj *AlertDetection, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AlertDetection
+func (r *AlertDetectionRequest) Update(ctx context.Context, reqObj *AlertDetection) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AlertDetection
+func (r *AlertDetectionRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AlertHistoryStateRequestBuilder is request builder for AlertHistoryState
+type AlertHistoryStateRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AlertHistoryStateRequest
+func (b *AlertHistoryStateRequestBuilder) Request() *AlertHistoryStateRequest {
+	return &AlertHistoryStateRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AlertHistoryStateRequest is request for AlertHistoryState
+type AlertHistoryStateRequest struct{ BaseRequest }
+
+// Get performs GET request for AlertHistoryState
+func (r *AlertHistoryStateRequest) Get(ctx context.Context) (resObj *AlertHistoryState, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AlertHistoryState
+func (r *AlertHistoryStateRequest) Update(ctx context.Context, reqObj *AlertHistoryState) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AlertHistoryState
+func (r *AlertHistoryStateRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AlertTriggerRequestBuilder is request builder for AlertTrigger
+type AlertTriggerRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AlertTriggerRequest
+func (b *AlertTriggerRequestBuilder) Request() *AlertTriggerRequest {
+	return &AlertTriggerRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AlertTriggerRequest is request for AlertTrigger
+type AlertTriggerRequest struct{ BaseRequest }
+
+// Get performs GET request for AlertTrigger
+func (r *AlertTriggerRequest) Get(ctx context.Context) (resObj *AlertTrigger, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AlertTrigger
+func (r *AlertTriggerRequest) Update(ctx context.Context, reqObj *AlertTrigger) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AlertTrigger
+func (r *AlertTriggerRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}

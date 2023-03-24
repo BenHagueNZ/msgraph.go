@@ -4,6 +4,72 @@ package msgraph
 
 import "context"
 
+// AuditActivityInitiatorRequestBuilder is request builder for AuditActivityInitiator
+type AuditActivityInitiatorRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AuditActivityInitiatorRequest
+func (b *AuditActivityInitiatorRequestBuilder) Request() *AuditActivityInitiatorRequest {
+	return &AuditActivityInitiatorRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AuditActivityInitiatorRequest is request for AuditActivityInitiator
+type AuditActivityInitiatorRequest struct{ BaseRequest }
+
+// Get performs GET request for AuditActivityInitiator
+func (r *AuditActivityInitiatorRequest) Get(ctx context.Context) (resObj *AuditActivityInitiator, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AuditActivityInitiator
+func (r *AuditActivityInitiatorRequest) Update(ctx context.Context, reqObj *AuditActivityInitiator) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AuditActivityInitiator
+func (r *AuditActivityInitiatorRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AuditActorRequestBuilder is request builder for AuditActor
+type AuditActorRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AuditActorRequest
+func (b *AuditActorRequestBuilder) Request() *AuditActorRequest {
+	return &AuditActorRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AuditActorRequest is request for AuditActor
+type AuditActorRequest struct{ BaseRequest }
+
+// Get performs GET request for AuditActor
+func (r *AuditActorRequest) Get(ctx context.Context) (resObj *AuditActor, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AuditActor
+func (r *AuditActorRequest) Update(ctx context.Context, reqObj *AuditActor) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AuditActor
+func (r *AuditActorRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // AuditEventRequestBuilder is request builder for AuditEvent
 type AuditEventRequestBuilder struct{ BaseRequestBuilder }
 
@@ -67,5 +133,71 @@ func (r *AuditLogRootRequest) Update(ctx context.Context, reqObj *AuditLogRoot) 
 
 // Delete performs DELETE request for AuditLogRoot
 func (r *AuditLogRootRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AuditPropertyRequestBuilder is request builder for AuditProperty
+type AuditPropertyRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AuditPropertyRequest
+func (b *AuditPropertyRequestBuilder) Request() *AuditPropertyRequest {
+	return &AuditPropertyRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AuditPropertyRequest is request for AuditProperty
+type AuditPropertyRequest struct{ BaseRequest }
+
+// Get performs GET request for AuditProperty
+func (r *AuditPropertyRequest) Get(ctx context.Context) (resObj *AuditProperty, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AuditProperty
+func (r *AuditPropertyRequest) Update(ctx context.Context, reqObj *AuditProperty) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AuditProperty
+func (r *AuditPropertyRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AuditResourceRequestBuilder is request builder for AuditResource
+type AuditResourceRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AuditResourceRequest
+func (b *AuditResourceRequestBuilder) Request() *AuditResourceRequest {
+	return &AuditResourceRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AuditResourceRequest is request for AuditResource
+type AuditResourceRequest struct{ BaseRequest }
+
+// Get performs GET request for AuditResource
+func (r *AuditResourceRequest) Get(ctx context.Context) (resObj *AuditResource, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AuditResource
+func (r *AuditResourceRequest) Update(ctx context.Context, reqObj *AuditResource) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AuditResource
+func (r *AuditResourceRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

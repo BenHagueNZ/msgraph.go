@@ -70,6 +70,72 @@ func (r *AttachmentBaseRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// AttachmentInfoRequestBuilder is request builder for AttachmentInfo
+type AttachmentInfoRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AttachmentInfoRequest
+func (b *AttachmentInfoRequestBuilder) Request() *AttachmentInfoRequest {
+	return &AttachmentInfoRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AttachmentInfoRequest is request for AttachmentInfo
+type AttachmentInfoRequest struct{ BaseRequest }
+
+// Get performs GET request for AttachmentInfo
+func (r *AttachmentInfoRequest) Get(ctx context.Context) (resObj *AttachmentInfo, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AttachmentInfo
+func (r *AttachmentInfoRequest) Update(ctx context.Context, reqObj *AttachmentInfo) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AttachmentInfo
+func (r *AttachmentInfoRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// AttachmentItemRequestBuilder is request builder for AttachmentItem
+type AttachmentItemRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AttachmentItemRequest
+func (b *AttachmentItemRequestBuilder) Request() *AttachmentItemRequest {
+	return &AttachmentItemRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AttachmentItemRequest is request for AttachmentItem
+type AttachmentItemRequest struct{ BaseRequest }
+
+// Get performs GET request for AttachmentItem
+func (r *AttachmentItemRequest) Get(ctx context.Context) (resObj *AttachmentItem, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AttachmentItem
+func (r *AttachmentItemRequest) Update(ctx context.Context, reqObj *AttachmentItem) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AttachmentItem
+func (r *AttachmentItemRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // AttachmentSessionRequestBuilder is request builder for AttachmentSession
 type AttachmentSessionRequestBuilder struct{ BaseRequestBuilder }
 

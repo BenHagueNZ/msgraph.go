@@ -37,6 +37,39 @@ func (r *ApprovalRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// ApprovalSettingsRequestBuilder is request builder for ApprovalSettings
+type ApprovalSettingsRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns ApprovalSettingsRequest
+func (b *ApprovalSettingsRequestBuilder) Request() *ApprovalSettingsRequest {
+	return &ApprovalSettingsRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ApprovalSettingsRequest is request for ApprovalSettings
+type ApprovalSettingsRequest struct{ BaseRequest }
+
+// Get performs GET request for ApprovalSettings
+func (r *ApprovalSettingsRequest) Get(ctx context.Context) (resObj *ApprovalSettings, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for ApprovalSettings
+func (r *ApprovalSettingsRequest) Update(ctx context.Context, reqObj *ApprovalSettings) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for ApprovalSettings
+func (r *ApprovalSettingsRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // ApprovalStageRequestBuilder is request builder for ApprovalStage
 type ApprovalStageRequestBuilder struct{ BaseRequestBuilder }
 

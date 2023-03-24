@@ -37,6 +37,105 @@ func (r *OnenoteRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// OnenoteEntityBaseModelRequestBuilder is request builder for OnenoteEntityBaseModel
+type OnenoteEntityBaseModelRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns OnenoteEntityBaseModelRequest
+func (b *OnenoteEntityBaseModelRequestBuilder) Request() *OnenoteEntityBaseModelRequest {
+	return &OnenoteEntityBaseModelRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// OnenoteEntityBaseModelRequest is request for OnenoteEntityBaseModel
+type OnenoteEntityBaseModelRequest struct{ BaseRequest }
+
+// Get performs GET request for OnenoteEntityBaseModel
+func (r *OnenoteEntityBaseModelRequest) Get(ctx context.Context) (resObj *OnenoteEntityBaseModel, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for OnenoteEntityBaseModel
+func (r *OnenoteEntityBaseModelRequest) Update(ctx context.Context, reqObj *OnenoteEntityBaseModel) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for OnenoteEntityBaseModel
+func (r *OnenoteEntityBaseModelRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// OnenoteEntityHierarchyModelRequestBuilder is request builder for OnenoteEntityHierarchyModel
+type OnenoteEntityHierarchyModelRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns OnenoteEntityHierarchyModelRequest
+func (b *OnenoteEntityHierarchyModelRequestBuilder) Request() *OnenoteEntityHierarchyModelRequest {
+	return &OnenoteEntityHierarchyModelRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// OnenoteEntityHierarchyModelRequest is request for OnenoteEntityHierarchyModel
+type OnenoteEntityHierarchyModelRequest struct{ BaseRequest }
+
+// Get performs GET request for OnenoteEntityHierarchyModel
+func (r *OnenoteEntityHierarchyModelRequest) Get(ctx context.Context) (resObj *OnenoteEntityHierarchyModel, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for OnenoteEntityHierarchyModel
+func (r *OnenoteEntityHierarchyModelRequest) Update(ctx context.Context, reqObj *OnenoteEntityHierarchyModel) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for OnenoteEntityHierarchyModel
+func (r *OnenoteEntityHierarchyModelRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// OnenoteEntitySchemaObjectModelRequestBuilder is request builder for OnenoteEntitySchemaObjectModel
+type OnenoteEntitySchemaObjectModelRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns OnenoteEntitySchemaObjectModelRequest
+func (b *OnenoteEntitySchemaObjectModelRequestBuilder) Request() *OnenoteEntitySchemaObjectModelRequest {
+	return &OnenoteEntitySchemaObjectModelRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// OnenoteEntitySchemaObjectModelRequest is request for OnenoteEntitySchemaObjectModel
+type OnenoteEntitySchemaObjectModelRequest struct{ BaseRequest }
+
+// Get performs GET request for OnenoteEntitySchemaObjectModel
+func (r *OnenoteEntitySchemaObjectModelRequest) Get(ctx context.Context) (resObj *OnenoteEntitySchemaObjectModel, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for OnenoteEntitySchemaObjectModel
+func (r *OnenoteEntitySchemaObjectModelRequest) Update(ctx context.Context, reqObj *OnenoteEntitySchemaObjectModel) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for OnenoteEntitySchemaObjectModel
+func (r *OnenoteEntitySchemaObjectModelRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // OnenoteOperationRequestBuilder is request builder for OnenoteOperation
 type OnenoteOperationRequestBuilder struct{ BaseRequestBuilder }
 
@@ -70,6 +169,39 @@ func (r *OnenoteOperationRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+// OnenoteOperationErrorRequestBuilder is request builder for OnenoteOperationError
+type OnenoteOperationErrorRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns OnenoteOperationErrorRequest
+func (b *OnenoteOperationErrorRequestBuilder) Request() *OnenoteOperationErrorRequest {
+	return &OnenoteOperationErrorRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// OnenoteOperationErrorRequest is request for OnenoteOperationError
+type OnenoteOperationErrorRequest struct{ BaseRequest }
+
+// Get performs GET request for OnenoteOperationError
+func (r *OnenoteOperationErrorRequest) Get(ctx context.Context) (resObj *OnenoteOperationError, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for OnenoteOperationError
+func (r *OnenoteOperationErrorRequest) Update(ctx context.Context, reqObj *OnenoteOperationError) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for OnenoteOperationError
+func (r *OnenoteOperationErrorRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // OnenotePageRequestBuilder is request builder for OnenotePage
 type OnenotePageRequestBuilder struct{ BaseRequestBuilder }
 
@@ -100,6 +232,105 @@ func (r *OnenotePageRequest) Update(ctx context.Context, reqObj *OnenotePage) er
 
 // Delete performs DELETE request for OnenotePage
 func (r *OnenotePageRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// OnenotePagePreviewRequestBuilder is request builder for OnenotePagePreview
+type OnenotePagePreviewRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns OnenotePagePreviewRequest
+func (b *OnenotePagePreviewRequestBuilder) Request() *OnenotePagePreviewRequest {
+	return &OnenotePagePreviewRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// OnenotePagePreviewRequest is request for OnenotePagePreview
+type OnenotePagePreviewRequest struct{ BaseRequest }
+
+// Get performs GET request for OnenotePagePreview
+func (r *OnenotePagePreviewRequest) Get(ctx context.Context) (resObj *OnenotePagePreview, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for OnenotePagePreview
+func (r *OnenotePagePreviewRequest) Update(ctx context.Context, reqObj *OnenotePagePreview) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for OnenotePagePreview
+func (r *OnenotePagePreviewRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// OnenotePagePreviewLinksRequestBuilder is request builder for OnenotePagePreviewLinks
+type OnenotePagePreviewLinksRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns OnenotePagePreviewLinksRequest
+func (b *OnenotePagePreviewLinksRequestBuilder) Request() *OnenotePagePreviewLinksRequest {
+	return &OnenotePagePreviewLinksRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// OnenotePagePreviewLinksRequest is request for OnenotePagePreviewLinks
+type OnenotePagePreviewLinksRequest struct{ BaseRequest }
+
+// Get performs GET request for OnenotePagePreviewLinks
+func (r *OnenotePagePreviewLinksRequest) Get(ctx context.Context) (resObj *OnenotePagePreviewLinks, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for OnenotePagePreviewLinks
+func (r *OnenotePagePreviewLinksRequest) Update(ctx context.Context, reqObj *OnenotePagePreviewLinks) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for OnenotePagePreviewLinks
+func (r *OnenotePagePreviewLinksRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// OnenotePatchContentCommandRequestBuilder is request builder for OnenotePatchContentCommand
+type OnenotePatchContentCommandRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns OnenotePatchContentCommandRequest
+func (b *OnenotePatchContentCommandRequestBuilder) Request() *OnenotePatchContentCommandRequest {
+	return &OnenotePatchContentCommandRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// OnenotePatchContentCommandRequest is request for OnenotePatchContentCommand
+type OnenotePatchContentCommandRequest struct{ BaseRequest }
+
+// Get performs GET request for OnenotePatchContentCommand
+func (r *OnenotePatchContentCommandRequest) Get(ctx context.Context) (resObj *OnenotePatchContentCommand, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for OnenotePatchContentCommand
+func (r *OnenotePatchContentCommandRequest) Update(ctx context.Context, reqObj *OnenotePatchContentCommand) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for OnenotePatchContentCommand
+func (r *OnenotePatchContentCommandRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

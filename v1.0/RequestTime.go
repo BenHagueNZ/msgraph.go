@@ -4,6 +4,39 @@ package msgraph
 
 import "context"
 
+// TimeConstraintRequestBuilder is request builder for TimeConstraint
+type TimeConstraintRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TimeConstraintRequest
+func (b *TimeConstraintRequestBuilder) Request() *TimeConstraintRequest {
+	return &TimeConstraintRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TimeConstraintRequest is request for TimeConstraint
+type TimeConstraintRequest struct{ BaseRequest }
+
+// Get performs GET request for TimeConstraint
+func (r *TimeConstraintRequest) Get(ctx context.Context) (resObj *TimeConstraint, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TimeConstraint
+func (r *TimeConstraintRequest) Update(ctx context.Context, reqObj *TimeConstraint) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TimeConstraint
+func (r *TimeConstraintRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // TimeOffRequestBuilder is request builder for TimeOff
 type TimeOffRequestBuilder struct{ BaseRequestBuilder }
 
@@ -34,6 +67,39 @@ func (r *TimeOffRequest) Update(ctx context.Context, reqObj *TimeOff) error {
 
 // Delete performs DELETE request for TimeOff
 func (r *TimeOffRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// TimeOffItemRequestBuilder is request builder for TimeOffItem
+type TimeOffItemRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TimeOffItemRequest
+func (b *TimeOffItemRequestBuilder) Request() *TimeOffItemRequest {
+	return &TimeOffItemRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TimeOffItemRequest is request for TimeOffItem
+type TimeOffItemRequest struct{ BaseRequest }
+
+// Get performs GET request for TimeOffItem
+func (r *TimeOffItemRequest) Get(ctx context.Context) (resObj *TimeOffItem, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TimeOffItem
+func (r *TimeOffItemRequest) Update(ctx context.Context, reqObj *TimeOffItem) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TimeOffItem
+func (r *TimeOffItemRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -100,5 +166,137 @@ func (r *TimeOffRequestObjectRequest) Update(ctx context.Context, reqObj *TimeOf
 
 // Delete performs DELETE request for TimeOffRequestObject
 func (r *TimeOffRequestObjectRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// TimeRangeRequestBuilder is request builder for TimeRange
+type TimeRangeRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TimeRangeRequest
+func (b *TimeRangeRequestBuilder) Request() *TimeRangeRequest {
+	return &TimeRangeRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TimeRangeRequest is request for TimeRange
+type TimeRangeRequest struct{ BaseRequest }
+
+// Get performs GET request for TimeRange
+func (r *TimeRangeRequest) Get(ctx context.Context) (resObj *TimeRange, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TimeRange
+func (r *TimeRangeRequest) Update(ctx context.Context, reqObj *TimeRange) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TimeRange
+func (r *TimeRangeRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// TimeSlotRequestBuilder is request builder for TimeSlot
+type TimeSlotRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TimeSlotRequest
+func (b *TimeSlotRequestBuilder) Request() *TimeSlotRequest {
+	return &TimeSlotRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TimeSlotRequest is request for TimeSlot
+type TimeSlotRequest struct{ BaseRequest }
+
+// Get performs GET request for TimeSlot
+func (r *TimeSlotRequest) Get(ctx context.Context) (resObj *TimeSlot, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TimeSlot
+func (r *TimeSlotRequest) Update(ctx context.Context, reqObj *TimeSlot) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TimeSlot
+func (r *TimeSlotRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// TimeZoneBaseRequestBuilder is request builder for TimeZoneBase
+type TimeZoneBaseRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TimeZoneBaseRequest
+func (b *TimeZoneBaseRequestBuilder) Request() *TimeZoneBaseRequest {
+	return &TimeZoneBaseRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TimeZoneBaseRequest is request for TimeZoneBase
+type TimeZoneBaseRequest struct{ BaseRequest }
+
+// Get performs GET request for TimeZoneBase
+func (r *TimeZoneBaseRequest) Get(ctx context.Context) (resObj *TimeZoneBase, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TimeZoneBase
+func (r *TimeZoneBaseRequest) Update(ctx context.Context, reqObj *TimeZoneBase) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TimeZoneBase
+func (r *TimeZoneBaseRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+// TimeZoneInformationRequestBuilder is request builder for TimeZoneInformation
+type TimeZoneInformationRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns TimeZoneInformationRequest
+func (b *TimeZoneInformationRequestBuilder) Request() *TimeZoneInformationRequest {
+	return &TimeZoneInformationRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// TimeZoneInformationRequest is request for TimeZoneInformation
+type TimeZoneInformationRequest struct{ BaseRequest }
+
+// Get performs GET request for TimeZoneInformation
+func (r *TimeZoneInformationRequest) Get(ctx context.Context) (resObj *TimeZoneInformation, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for TimeZoneInformation
+func (r *TimeZoneInformationRequest) Update(ctx context.Context, reqObj *TimeZoneInformation) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for TimeZoneInformation
+func (r *TimeZoneInformationRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

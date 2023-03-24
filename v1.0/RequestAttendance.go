@@ -4,6 +4,39 @@ package msgraph
 
 import "context"
 
+// AttendanceIntervalRequestBuilder is request builder for AttendanceInterval
+type AttendanceIntervalRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns AttendanceIntervalRequest
+func (b *AttendanceIntervalRequestBuilder) Request() *AttendanceIntervalRequest {
+	return &AttendanceIntervalRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// AttendanceIntervalRequest is request for AttendanceInterval
+type AttendanceIntervalRequest struct{ BaseRequest }
+
+// Get performs GET request for AttendanceInterval
+func (r *AttendanceIntervalRequest) Get(ctx context.Context) (resObj *AttendanceInterval, err error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	err = r.JSONRequest(ctx, "GET", query, nil, &resObj)
+	return
+}
+
+// Update performs PATCH request for AttendanceInterval
+func (r *AttendanceIntervalRequest) Update(ctx context.Context, reqObj *AttendanceInterval) error {
+	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
+}
+
+// Delete performs DELETE request for AttendanceInterval
+func (r *AttendanceIntervalRequest) Delete(ctx context.Context) error {
+	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
 // AttendanceRecordRequestBuilder is request builder for AttendanceRecord
 type AttendanceRecordRequestBuilder struct{ BaseRequestBuilder }
 
