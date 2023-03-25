@@ -326,9 +326,19 @@ type GraphServiceRequestBuilder struct {
 	BaseRequestBuilder
 }
 
-// NewClient returns GraphService request builder with default base URL
-func NewClient(cli *http.Client) *GraphServiceRequestBuilder {
-	return &GraphServiceRequestBuilder{
-		BaseRequestBuilder: BaseRequestBuilder{baseURL: defaultBaseURL, client: cli},
-	}
+type Builders struct {
+	g GraphServiceRequestBuilder
+	c CountryNamedLocationRequestBuilder
 }
+
+// NewClient returns GraphService request builder with default base URL
+func NewClient(cli *http.Client) *Builders {
+	allBuilders := Builders{ g: GraphServiceRequestBuilder{
+		BaseRequestBuilder: BaseRequestBuilder{baseURL: defaultBaseURL, client: cli},
+	},c: CountryNamedLocationRequestBuilder{
+		BaseRequestBuilder: BaseRequestBuilder{baseURL: defaultBaseURL, client: cli},
+	},
+	}
+	return &allBuilders
+}
+
