@@ -12,7 +12,7 @@ import (
 )
 
 // CountryNamedLocation returns request builder for CountryNamedLocation collection rcn
-func (b *NamedLocationRequestBuilder) CountryNamedLocation() *NamedLocationCountryNamedLocationCollectionRequestBuilder {
+func (b *ConditionalAccessRootRequestBuilder) CountryNamedLocation() *NamedLocationCountryNamedLocationCollectionRequestBuilder {
 	bb := &NamedLocationCountryNamedLocationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/NamedLocation"
 	return bb
