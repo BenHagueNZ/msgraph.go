@@ -820,15 +820,15 @@ func (b *TeamInfoRequestBuilder) Team() *TeamRequestBuilder {
 	return bb
 }
 
-// Team is navigation property rn
-func (b *TeamRequestBuilder) Team() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TeamRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TeamInfo is navigation property rn
-func (b *TeamInfoRequestBuilder) TeamInfo() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TeamInfoRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

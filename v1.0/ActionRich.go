@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// RichLongRunningOperation returns request builder for LongRunningOperation collection rcn
-func (b *RichLongRunningOperationRequestBuilder) RichLongRunningOperation() *RichLongRunningOperationRichLongRunningOperationCollectionRequestBuilder {
-	bb := &RichLongRunningOperationRichLongRunningOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/LongRunningOperation"
+// RichLongRunningOperation returns request builder for RichLongRunningOperation collection rcn
+func (b *LongRunningOperationRequestBuilder) RichLongRunningOperation() *LongRunningOperationRichLongRunningOperationCollectionRequestBuilder {
+	bb := &LongRunningOperationRichLongRunningOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/RichLongRunningOperation"
 	return bb
 }
 
-// RichLongRunningOperationRichLongRunningOperationCollectionRequestBuilder is request builder for LongRunningOperation collection
-type RichLongRunningOperationRichLongRunningOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// LongRunningOperationRichLongRunningOperationCollectionRequestBuilder is request builder for RichLongRunningOperation collection
+type LongRunningOperationRichLongRunningOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for LongRunningOperation collection
-func (b *RichLongRunningOperationRichLongRunningOperationCollectionRequestBuilder) Request() *RichLongRunningOperationRichLongRunningOperationCollectionRequest {
-	return &RichLongRunningOperationRichLongRunningOperationCollectionRequest{
+// Request returns request for RichLongRunningOperation collection
+func (b *LongRunningOperationRichLongRunningOperationCollectionRequestBuilder) Request() *LongRunningOperationRichLongRunningOperationCollectionRequest {
+	return &LongRunningOperationRichLongRunningOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for LongRunningOperation item
-func (b *RichLongRunningOperationRichLongRunningOperationCollectionRequestBuilder) ID(id string) *LongRunningOperationRequestBuilder {
-	bb := &LongRunningOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for RichLongRunningOperation item
+func (b *LongRunningOperationRichLongRunningOperationCollectionRequestBuilder) ID(id string) *RichLongRunningOperationRequestBuilder {
+	bb := &RichLongRunningOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// RichLongRunningOperationRichLongRunningOperationCollectionRequest is request for LongRunningOperation collection
-type RichLongRunningOperationRichLongRunningOperationCollectionRequest struct{ BaseRequest }
+// LongRunningOperationRichLongRunningOperationCollectionRequest is request for RichLongRunningOperation collection
+type LongRunningOperationRichLongRunningOperationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for LongRunningOperation collection
-func (r *RichLongRunningOperationRichLongRunningOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]LongRunningOperation, error) {
+// Paging perfoms paging operation for RichLongRunningOperation collection
+func (r *LongRunningOperationRichLongRunningOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RichLongRunningOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *RichLongRunningOperationRichLongRunningOperationCollectionRequest) Pagi
 	if err != nil {
 		return nil, err
 	}
-	var values []LongRunningOperation
+	var values []RichLongRunningOperation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *RichLongRunningOperationRichLongRunningOperationCollectionRequest) Pagi
 		}
 		var (
 			paging Paging
-			value  []LongRunningOperation
+			value  []RichLongRunningOperation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *RichLongRunningOperationRichLongRunningOperationCollectionRequest) Pagi
 	}
 }
 
-// GetN performs GET request for LongRunningOperation collection, max N pages
-func (r *RichLongRunningOperationRichLongRunningOperationCollectionRequest) GetN(ctx context.Context, n int) ([]LongRunningOperation, error) {
+// GetN performs GET request for RichLongRunningOperation collection, max N pages
+func (r *LongRunningOperationRichLongRunningOperationCollectionRequest) GetN(ctx context.Context, n int) ([]RichLongRunningOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *RichLongRunningOperationRichLongRunningOperationCollectionRequest) GetN
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for LongRunningOperation collection
-func (r *RichLongRunningOperationRichLongRunningOperationCollectionRequest) Get(ctx context.Context) ([]LongRunningOperation, error) {
+// Get performs GET request for RichLongRunningOperation collection
+func (r *LongRunningOperationRichLongRunningOperationCollectionRequest) Get(ctx context.Context) ([]RichLongRunningOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for LongRunningOperation collection
-func (r *RichLongRunningOperationRichLongRunningOperationCollectionRequest) Add(ctx context.Context, reqObj *LongRunningOperation) (resObj *LongRunningOperation, err error) {
+// Add performs POST request for RichLongRunningOperation collection
+func (r *LongRunningOperationRichLongRunningOperationCollectionRequest) Add(ctx context.Context, reqObj *RichLongRunningOperation) (resObj *RichLongRunningOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

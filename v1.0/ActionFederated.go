@@ -2,8 +2,8 @@
 
 package msgraph
 
-// FederatedIdentityCredential is navigation property rn
-func (b *FederatedIdentityCredentialRequestBuilder) FederatedIdentityCredential() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *FederatedIdentityCredentialRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

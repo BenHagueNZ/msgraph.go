@@ -114,8 +114,8 @@ func (r *FeatureRolloutPolicyAppliesToCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// FeatureRolloutPolicy is navigation property rn
-func (b *FeatureRolloutPolicyRequestBuilder) FeatureRolloutPolicy() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *FeatureRolloutPolicyRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

@@ -1090,71 +1090,71 @@ func (b *PrintTaskTriggerRequestBuilder) Definition() *PrintTaskDefinitionReques
 	return bb
 }
 
-// PrintConnector is navigation property rn
-func (b *PrintConnectorRequestBuilder) PrintConnector() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PrintConnectorRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PrintDocument is navigation property rn
-func (b *PrintDocumentRequestBuilder) PrintDocument() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PrintDocumentRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PrintJob is navigation property rn
-func (b *PrintJobRequestBuilder) PrintJob() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PrintJobRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PrintOperation is navigation property rn
-func (b *PrintOperationRequestBuilder) PrintOperation() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PrintOperationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PrintService is navigation property rn
-func (b *PrintServiceRequestBuilder) PrintService() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PrintServiceRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PrintServiceEndpoint is navigation property rn
-func (b *PrintServiceEndpointRequestBuilder) PrintServiceEndpoint() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PrintServiceEndpointRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PrintTask is navigation property rn
-func (b *PrintTaskRequestBuilder) PrintTask() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PrintTaskRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PrintTaskDefinition is navigation property rn
-func (b *PrintTaskDefinitionRequestBuilder) PrintTaskDefinition() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PrintTaskDefinitionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PrintTaskTrigger is navigation property rn
-func (b *PrintTaskTriggerRequestBuilder) PrintTaskTrigger() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PrintTaskTriggerRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PrintUsage is navigation property rn
-func (b *PrintUsageRequestBuilder) PrintUsage() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PrintUsageRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

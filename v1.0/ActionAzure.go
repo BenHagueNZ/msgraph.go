@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AzureCommunicationServicesUserConversationMember returns request builder for ConversationMember collection rcn
-func (b *AzureCommunicationServicesUserConversationMemberRequestBuilder) AzureCommunicationServicesUserConversationMember() *AzureCommunicationServicesUserConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequestBuilder {
-	bb := &AzureCommunicationServicesUserConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ConversationMember"
+// AzureCommunicationServicesUserConversationMember returns request builder for AzureCommunicationServicesUserConversationMember collection rcn
+func (b *ConversationMemberRequestBuilder) AzureCommunicationServicesUserConversationMember() *ConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequestBuilder {
+	bb := &ConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AzureCommunicationServicesUserConversationMember"
 	return bb
 }
 
-// AzureCommunicationServicesUserConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequestBuilder is request builder for ConversationMember collection
-type AzureCommunicationServicesUserConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequestBuilder is request builder for AzureCommunicationServicesUserConversationMember collection
+type ConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for ConversationMember collection
-func (b *AzureCommunicationServicesUserConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequestBuilder) Request() *AzureCommunicationServicesUserConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest {
-	return &AzureCommunicationServicesUserConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest{
+// Request returns request for AzureCommunicationServicesUserConversationMember collection
+func (b *ConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequestBuilder) Request() *ConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest {
+	return &ConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for ConversationMember item
-func (b *AzureCommunicationServicesUserConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequestBuilder) ID(id string) *ConversationMemberRequestBuilder {
-	bb := &ConversationMemberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for AzureCommunicationServicesUserConversationMember item
+func (b *ConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequestBuilder) ID(id string) *AzureCommunicationServicesUserConversationMemberRequestBuilder {
+	bb := &AzureCommunicationServicesUserConversationMemberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AzureCommunicationServicesUserConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest is request for ConversationMember collection
-type AzureCommunicationServicesUserConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest struct{ BaseRequest }
+// ConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest is request for AzureCommunicationServicesUserConversationMember collection
+type ConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for ConversationMember collection
-func (r *AzureCommunicationServicesUserConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ConversationMember, error) {
+// Paging perfoms paging operation for AzureCommunicationServicesUserConversationMember collection
+func (r *ConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AzureCommunicationServicesUserConversationMember, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *AzureCommunicationServicesUserConversationMemberAzureCommunicationServi
 	if err != nil {
 		return nil, err
 	}
-	var values []ConversationMember
+	var values []AzureCommunicationServicesUserConversationMember
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *AzureCommunicationServicesUserConversationMemberAzureCommunicationServi
 		}
 		var (
 			paging Paging
-			value  []ConversationMember
+			value  []AzureCommunicationServicesUserConversationMember
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *AzureCommunicationServicesUserConversationMemberAzureCommunicationServi
 	}
 }
 
-// GetN performs GET request for ConversationMember collection, max N pages
-func (r *AzureCommunicationServicesUserConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest) GetN(ctx context.Context, n int) ([]ConversationMember, error) {
+// GetN performs GET request for AzureCommunicationServicesUserConversationMember collection, max N pages
+func (r *ConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest) GetN(ctx context.Context, n int) ([]AzureCommunicationServicesUserConversationMember, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *AzureCommunicationServicesUserConversationMemberAzureCommunicationServi
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for ConversationMember collection
-func (r *AzureCommunicationServicesUserConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest) Get(ctx context.Context) ([]ConversationMember, error) {
+// Get performs GET request for AzureCommunicationServicesUserConversationMember collection
+func (r *ConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest) Get(ctx context.Context) ([]AzureCommunicationServicesUserConversationMember, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for ConversationMember collection
-func (r *AzureCommunicationServicesUserConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest) Add(ctx context.Context, reqObj *ConversationMember) (resObj *ConversationMember, err error) {
+// Add performs POST request for AzureCommunicationServicesUserConversationMember collection
+func (r *ConversationMemberAzureCommunicationServicesUserConversationMemberCollectionRequest) Add(ctx context.Context, reqObj *AzureCommunicationServicesUserConversationMember) (resObj *AzureCommunicationServicesUserConversationMember, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

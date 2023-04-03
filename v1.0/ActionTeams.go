@@ -146,43 +146,43 @@ func (b *TeamsTabRequestBuilder) TeamsApp() *TeamsAppRequestBuilder {
 	return bb
 }
 
-// TeamsApp is navigation property rn
-func (b *TeamsAppRequestBuilder) TeamsApp() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TeamsAppRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TeamsAppDefinition is navigation property rn
-func (b *TeamsAppDefinitionRequestBuilder) TeamsAppDefinition() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TeamsAppDefinitionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TeamsAppInstallation is navigation property rn
-func (b *TeamsAppInstallationRequestBuilder) TeamsAppInstallation() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TeamsAppInstallationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TeamsAsyncOperation is navigation property rn
-func (b *TeamsAsyncOperationRequestBuilder) TeamsAsyncOperation() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TeamsAsyncOperationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TeamsTab is navigation property rn
-func (b *TeamsTabRequestBuilder) TeamsTab() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TeamsTabRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TeamsTemplate is navigation property rn
-func (b *TeamsTemplateRequestBuilder) TeamsTemplate() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TeamsTemplateRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

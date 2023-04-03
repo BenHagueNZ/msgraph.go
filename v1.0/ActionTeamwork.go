@@ -338,36 +338,36 @@ func (r *TeamworkTagMembersCollectionRequest) Add(ctx context.Context, reqObj *T
 	return
 }
 
-// Teamwork is navigation property rn
-func (b *TeamworkRequestBuilder) Teamwork() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TeamworkRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TeamworkBot is navigation property rn
-func (b *TeamworkBotRequestBuilder) TeamworkBot() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TeamworkBotRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TeamworkHostedContent is navigation property rn
-func (b *TeamworkHostedContentRequestBuilder) TeamworkHostedContent() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TeamworkHostedContentRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TeamworkTag is navigation property rn
-func (b *TeamworkTagRequestBuilder) TeamworkTag() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TeamworkTagRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TeamworkTagMember is navigation property rn
-func (b *TeamworkTagMemberRequestBuilder) TeamworkTagMember() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TeamworkTagMemberRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

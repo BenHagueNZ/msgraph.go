@@ -114,22 +114,22 @@ func (r *SimulationAutomationRunsCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// Simulation is navigation property rn
-func (b *SimulationRequestBuilder) Simulation() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *SimulationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// SimulationAutomation is navigation property rn
-func (b *SimulationAutomationRequestBuilder) SimulationAutomation() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *SimulationAutomationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// SimulationAutomationRun is navigation property rn
-func (b *SimulationAutomationRunRequestBuilder) SimulationAutomationRun() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *SimulationAutomationRunRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

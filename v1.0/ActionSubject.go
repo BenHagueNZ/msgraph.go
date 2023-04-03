@@ -121,8 +121,8 @@ func (b *SubjectRightsRequestObjectRequestBuilder) Team() *TeamRequestBuilder {
 	return bb
 }
 
-// SubjectRightsRequestObject is navigation property rn
-func (b *SubjectRightsRequestObjectRequestBuilder) SubjectRightsRequestObject() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *SubjectRightsRequestObjectRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

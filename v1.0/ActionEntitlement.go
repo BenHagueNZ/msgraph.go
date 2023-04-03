@@ -739,15 +739,15 @@ func (b *EntitlementManagementRequestBuilder) Settings() *EntitlementManagementS
 	return bb
 }
 
-// EntitlementManagement is navigation property rn
-func (b *EntitlementManagementRequestBuilder) EntitlementManagement() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *EntitlementManagementRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// EntitlementManagementSettings is navigation property rn
-func (b *EntitlementManagementSettingsRequestBuilder) EntitlementManagementSettings() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *EntitlementManagementSettingsRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

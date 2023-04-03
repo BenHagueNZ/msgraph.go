@@ -114,8 +114,8 @@ func (r *MeetingAttendanceReportAttendanceRecordsCollectionRequest) Add(ctx cont
 	return
 }
 
-// MeetingAttendanceReport is navigation property rn
-func (b *MeetingAttendanceReportRequestBuilder) MeetingAttendanceReport() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *MeetingAttendanceReportRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

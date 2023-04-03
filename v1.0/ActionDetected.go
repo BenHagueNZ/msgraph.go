@@ -114,8 +114,8 @@ func (r *DetectedAppManagedDevicesCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// DetectedApp is navigation property rn
-func (b *DetectedAppRequestBuilder) DetectedApp() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DetectedAppRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

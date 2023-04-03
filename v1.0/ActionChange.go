@@ -2,8 +2,8 @@
 
 package msgraph
 
-// ChangeTrackedEntity is navigation property rn
-func (b *ChangeTrackedEntityRequestBuilder) ChangeTrackedEntity() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ChangeTrackedEntityRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

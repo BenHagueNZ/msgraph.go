@@ -806,15 +806,15 @@ func (b *OnenoteSectionRequestBuilder) ParentSectionGroup() *SectionGroupRequest
 	return bb
 }
 
-// Onenote is navigation property rn
-func (b *OnenoteRequestBuilder) Onenote() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *OnenoteRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// OnenoteEntityBaseModel is navigation property rn
-func (b *OnenoteEntityBaseModelRequestBuilder) OnenoteEntityBaseModel() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *OnenoteEntityBaseModelRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

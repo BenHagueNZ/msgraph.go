@@ -9,8 +9,8 @@ func (b *ActivityHistoryItemRequestBuilder) Activity() *UserActivityRequestBuild
 	return bb
 }
 
-// ActivityHistoryItem is navigation property rn
-func (b *ActivityHistoryItemRequestBuilder) ActivityHistoryItem() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ActivityHistoryItemRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

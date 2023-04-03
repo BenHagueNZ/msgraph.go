@@ -217,8 +217,8 @@ func (r *AttackSimulationRootSimulationsCollectionRequest) Add(ctx context.Conte
 	return
 }
 
-// AttackSimulationRoot is navigation property rn
-func (b *AttackSimulationRootRequestBuilder) AttackSimulationRoot() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AttackSimulationRootRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

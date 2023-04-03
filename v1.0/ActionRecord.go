@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// RecordOperation returns request builder for CommsOperation collection rcn
-func (b *RecordOperationRequestBuilder) RecordOperation() *RecordOperationRecordOperationCollectionRequestBuilder {
-	bb := &RecordOperationRecordOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/CommsOperation"
+// RecordOperation returns request builder for RecordOperation collection rcn
+func (b *CommsOperationRequestBuilder) RecordOperation() *CommsOperationRecordOperationCollectionRequestBuilder {
+	bb := &CommsOperationRecordOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/RecordOperation"
 	return bb
 }
 
-// RecordOperationRecordOperationCollectionRequestBuilder is request builder for CommsOperation collection
-type RecordOperationRecordOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// CommsOperationRecordOperationCollectionRequestBuilder is request builder for RecordOperation collection
+type CommsOperationRecordOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for CommsOperation collection
-func (b *RecordOperationRecordOperationCollectionRequestBuilder) Request() *RecordOperationRecordOperationCollectionRequest {
-	return &RecordOperationRecordOperationCollectionRequest{
+// Request returns request for RecordOperation collection
+func (b *CommsOperationRecordOperationCollectionRequestBuilder) Request() *CommsOperationRecordOperationCollectionRequest {
+	return &CommsOperationRecordOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for CommsOperation item
-func (b *RecordOperationRecordOperationCollectionRequestBuilder) ID(id string) *CommsOperationRequestBuilder {
-	bb := &CommsOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for RecordOperation item
+func (b *CommsOperationRecordOperationCollectionRequestBuilder) ID(id string) *RecordOperationRequestBuilder {
+	bb := &RecordOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// RecordOperationRecordOperationCollectionRequest is request for CommsOperation collection
-type RecordOperationRecordOperationCollectionRequest struct{ BaseRequest }
+// CommsOperationRecordOperationCollectionRequest is request for RecordOperation collection
+type CommsOperationRecordOperationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for CommsOperation collection
-func (r *RecordOperationRecordOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CommsOperation, error) {
+// Paging perfoms paging operation for RecordOperation collection
+func (r *CommsOperationRecordOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RecordOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *RecordOperationRecordOperationCollectionRequest) Paging(ctx context.Con
 	if err != nil {
 		return nil, err
 	}
-	var values []CommsOperation
+	var values []RecordOperation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *RecordOperationRecordOperationCollectionRequest) Paging(ctx context.Con
 		}
 		var (
 			paging Paging
-			value  []CommsOperation
+			value  []RecordOperation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *RecordOperationRecordOperationCollectionRequest) Paging(ctx context.Con
 	}
 }
 
-// GetN performs GET request for CommsOperation collection, max N pages
-func (r *RecordOperationRecordOperationCollectionRequest) GetN(ctx context.Context, n int) ([]CommsOperation, error) {
+// GetN performs GET request for RecordOperation collection, max N pages
+func (r *CommsOperationRecordOperationCollectionRequest) GetN(ctx context.Context, n int) ([]RecordOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *RecordOperationRecordOperationCollectionRequest) GetN(ctx context.Conte
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for CommsOperation collection
-func (r *RecordOperationRecordOperationCollectionRequest) Get(ctx context.Context) ([]CommsOperation, error) {
+// Get performs GET request for RecordOperation collection
+func (r *CommsOperationRecordOperationCollectionRequest) Get(ctx context.Context) ([]RecordOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for CommsOperation collection
-func (r *RecordOperationRecordOperationCollectionRequest) Add(ctx context.Context, reqObj *CommsOperation) (resObj *CommsOperation, err error) {
+// Add performs POST request for RecordOperation collection
+func (r *CommsOperationRecordOperationCollectionRequest) Add(ctx context.Context, reqObj *RecordOperation) (resObj *RecordOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// TaskFileAttachment returns request builder for AttachmentBase collection rcn
-func (b *TaskFileAttachmentRequestBuilder) TaskFileAttachment() *TaskFileAttachmentTaskFileAttachmentCollectionRequestBuilder {
-	bb := &TaskFileAttachmentTaskFileAttachmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/AttachmentBase"
+// TaskFileAttachment returns request builder for TaskFileAttachment collection rcn
+func (b *AttachmentBaseRequestBuilder) TaskFileAttachment() *AttachmentBaseTaskFileAttachmentCollectionRequestBuilder {
+	bb := &AttachmentBaseTaskFileAttachmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/TaskFileAttachment"
 	return bb
 }
 
-// TaskFileAttachmentTaskFileAttachmentCollectionRequestBuilder is request builder for AttachmentBase collection
-type TaskFileAttachmentTaskFileAttachmentCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AttachmentBaseTaskFileAttachmentCollectionRequestBuilder is request builder for TaskFileAttachment collection
+type AttachmentBaseTaskFileAttachmentCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for AttachmentBase collection
-func (b *TaskFileAttachmentTaskFileAttachmentCollectionRequestBuilder) Request() *TaskFileAttachmentTaskFileAttachmentCollectionRequest {
-	return &TaskFileAttachmentTaskFileAttachmentCollectionRequest{
+// Request returns request for TaskFileAttachment collection
+func (b *AttachmentBaseTaskFileAttachmentCollectionRequestBuilder) Request() *AttachmentBaseTaskFileAttachmentCollectionRequest {
+	return &AttachmentBaseTaskFileAttachmentCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for AttachmentBase item
-func (b *TaskFileAttachmentTaskFileAttachmentCollectionRequestBuilder) ID(id string) *AttachmentBaseRequestBuilder {
-	bb := &AttachmentBaseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for TaskFileAttachment item
+func (b *AttachmentBaseTaskFileAttachmentCollectionRequestBuilder) ID(id string) *TaskFileAttachmentRequestBuilder {
+	bb := &TaskFileAttachmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// TaskFileAttachmentTaskFileAttachmentCollectionRequest is request for AttachmentBase collection
-type TaskFileAttachmentTaskFileAttachmentCollectionRequest struct{ BaseRequest }
+// AttachmentBaseTaskFileAttachmentCollectionRequest is request for TaskFileAttachment collection
+type AttachmentBaseTaskFileAttachmentCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for AttachmentBase collection
-func (r *TaskFileAttachmentTaskFileAttachmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AttachmentBase, error) {
+// Paging perfoms paging operation for TaskFileAttachment collection
+func (r *AttachmentBaseTaskFileAttachmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TaskFileAttachment, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *TaskFileAttachmentTaskFileAttachmentCollectionRequest) Paging(ctx conte
 	if err != nil {
 		return nil, err
 	}
-	var values []AttachmentBase
+	var values []TaskFileAttachment
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *TaskFileAttachmentTaskFileAttachmentCollectionRequest) Paging(ctx conte
 		}
 		var (
 			paging Paging
-			value  []AttachmentBase
+			value  []TaskFileAttachment
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *TaskFileAttachmentTaskFileAttachmentCollectionRequest) Paging(ctx conte
 	}
 }
 
-// GetN performs GET request for AttachmentBase collection, max N pages
-func (r *TaskFileAttachmentTaskFileAttachmentCollectionRequest) GetN(ctx context.Context, n int) ([]AttachmentBase, error) {
+// GetN performs GET request for TaskFileAttachment collection, max N pages
+func (r *AttachmentBaseTaskFileAttachmentCollectionRequest) GetN(ctx context.Context, n int) ([]TaskFileAttachment, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *TaskFileAttachmentTaskFileAttachmentCollectionRequest) GetN(ctx context
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for AttachmentBase collection
-func (r *TaskFileAttachmentTaskFileAttachmentCollectionRequest) Get(ctx context.Context) ([]AttachmentBase, error) {
+// Get performs GET request for TaskFileAttachment collection
+func (r *AttachmentBaseTaskFileAttachmentCollectionRequest) Get(ctx context.Context) ([]TaskFileAttachment, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for AttachmentBase collection
-func (r *TaskFileAttachmentTaskFileAttachmentCollectionRequest) Add(ctx context.Context, reqObj *AttachmentBase) (resObj *AttachmentBase, err error) {
+// Add performs POST request for TaskFileAttachment collection
+func (r *AttachmentBaseTaskFileAttachmentCollectionRequest) Add(ctx context.Context, reqObj *TaskFileAttachment) (resObj *TaskFileAttachment, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

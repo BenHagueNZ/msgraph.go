@@ -2,8 +2,8 @@
 
 package msgraph
 
-// ScopedRoleMembership is navigation property rn
-func (b *ScopedRoleMembershipRequestBuilder) ScopedRoleMembership() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ScopedRoleMembershipRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

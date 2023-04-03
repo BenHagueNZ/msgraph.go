@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// SkypeForBusinessUserConversationMember returns request builder for ConversationMember collection rcn
-func (b *SkypeForBusinessUserConversationMemberRequestBuilder) SkypeForBusinessUserConversationMember() *SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationMemberCollectionRequestBuilder {
-	bb := &SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ConversationMember"
+// SkypeForBusinessUserConversationMember returns request builder for SkypeForBusinessUserConversationMember collection rcn
+func (b *ConversationMemberRequestBuilder) SkypeForBusinessUserConversationMember() *ConversationMemberSkypeForBusinessUserConversationMemberCollectionRequestBuilder {
+	bb := &ConversationMemberSkypeForBusinessUserConversationMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/SkypeForBusinessUserConversationMember"
 	return bb
 }
 
-// SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationMemberCollectionRequestBuilder is request builder for ConversationMember collection
-type SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ConversationMemberSkypeForBusinessUserConversationMemberCollectionRequestBuilder is request builder for SkypeForBusinessUserConversationMember collection
+type ConversationMemberSkypeForBusinessUserConversationMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for ConversationMember collection
-func (b *SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationMemberCollectionRequestBuilder) Request() *SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest {
-	return &SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest{
+// Request returns request for SkypeForBusinessUserConversationMember collection
+func (b *ConversationMemberSkypeForBusinessUserConversationMemberCollectionRequestBuilder) Request() *ConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest {
+	return &ConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for ConversationMember item
-func (b *SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationMemberCollectionRequestBuilder) ID(id string) *ConversationMemberRequestBuilder {
-	bb := &ConversationMemberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SkypeForBusinessUserConversationMember item
+func (b *ConversationMemberSkypeForBusinessUserConversationMemberCollectionRequestBuilder) ID(id string) *SkypeForBusinessUserConversationMemberRequestBuilder {
+	bb := &SkypeForBusinessUserConversationMemberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest is request for ConversationMember collection
-type SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest struct{ BaseRequest }
+// ConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest is request for SkypeForBusinessUserConversationMember collection
+type ConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for ConversationMember collection
-func (r *SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ConversationMember, error) {
+// Paging perfoms paging operation for SkypeForBusinessUserConversationMember collection
+func (r *ConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SkypeForBusinessUserConversationMember, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationM
 	if err != nil {
 		return nil, err
 	}
-	var values []ConversationMember
+	var values []SkypeForBusinessUserConversationMember
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationM
 		}
 		var (
 			paging Paging
-			value  []ConversationMember
+			value  []SkypeForBusinessUserConversationMember
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationM
 	}
 }
 
-// GetN performs GET request for ConversationMember collection, max N pages
-func (r *SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest) GetN(ctx context.Context, n int) ([]ConversationMember, error) {
+// GetN performs GET request for SkypeForBusinessUserConversationMember collection, max N pages
+func (r *ConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest) GetN(ctx context.Context, n int) ([]SkypeForBusinessUserConversationMember, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,46 +103,46 @@ func (r *SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationM
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for ConversationMember collection
-func (r *SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest) Get(ctx context.Context) ([]ConversationMember, error) {
+// Get performs GET request for SkypeForBusinessUserConversationMember collection
+func (r *ConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest) Get(ctx context.Context) ([]SkypeForBusinessUserConversationMember, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for ConversationMember collection
-func (r *SkypeForBusinessUserConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest) Add(ctx context.Context, reqObj *ConversationMember) (resObj *ConversationMember, err error) {
+// Add performs POST request for SkypeForBusinessUserConversationMember collection
+func (r *ConversationMemberSkypeForBusinessUserConversationMemberCollectionRequest) Add(ctx context.Context, reqObj *SkypeForBusinessUserConversationMember) (resObj *SkypeForBusinessUserConversationMember, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// SkypeUserConversationMember returns request builder for ConversationMember collection rcn
-func (b *SkypeUserConversationMemberRequestBuilder) SkypeUserConversationMember() *SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequestBuilder {
-	bb := &SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ConversationMember"
+// SkypeUserConversationMember returns request builder for SkypeUserConversationMember collection rcn
+func (b *ConversationMemberRequestBuilder) SkypeUserConversationMember() *ConversationMemberSkypeUserConversationMemberCollectionRequestBuilder {
+	bb := &ConversationMemberSkypeUserConversationMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/SkypeUserConversationMember"
 	return bb
 }
 
-// SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequestBuilder is request builder for ConversationMember collection
-type SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ConversationMemberSkypeUserConversationMemberCollectionRequestBuilder is request builder for SkypeUserConversationMember collection
+type ConversationMemberSkypeUserConversationMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for ConversationMember collection
-func (b *SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequestBuilder) Request() *SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequest {
-	return &SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequest{
+// Request returns request for SkypeUserConversationMember collection
+func (b *ConversationMemberSkypeUserConversationMemberCollectionRequestBuilder) Request() *ConversationMemberSkypeUserConversationMemberCollectionRequest {
+	return &ConversationMemberSkypeUserConversationMemberCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for ConversationMember item
-func (b *SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequestBuilder) ID(id string) *ConversationMemberRequestBuilder {
-	bb := &ConversationMemberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SkypeUserConversationMember item
+func (b *ConversationMemberSkypeUserConversationMemberCollectionRequestBuilder) ID(id string) *SkypeUserConversationMemberRequestBuilder {
+	bb := &SkypeUserConversationMemberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequest is request for ConversationMember collection
-type SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequest struct{ BaseRequest }
+// ConversationMemberSkypeUserConversationMemberCollectionRequest is request for SkypeUserConversationMember collection
+type ConversationMemberSkypeUserConversationMemberCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for ConversationMember collection
-func (r *SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ConversationMember, error) {
+// Paging perfoms paging operation for SkypeUserConversationMember collection
+func (r *ConversationMemberSkypeUserConversationMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SkypeUserConversationMember, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -154,7 +154,7 @@ func (r *SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequest
 	if err != nil {
 		return nil, err
 	}
-	var values []ConversationMember
+	var values []SkypeUserConversationMember
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -168,7 +168,7 @@ func (r *SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequest
 		}
 		var (
 			paging Paging
-			value  []ConversationMember
+			value  []SkypeUserConversationMember
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -197,8 +197,8 @@ func (r *SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequest
 	}
 }
 
-// GetN performs GET request for ConversationMember collection, max N pages
-func (r *SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequest) GetN(ctx context.Context, n int) ([]ConversationMember, error) {
+// GetN performs GET request for SkypeUserConversationMember collection, max N pages
+func (r *ConversationMemberSkypeUserConversationMemberCollectionRequest) GetN(ctx context.Context, n int) ([]SkypeUserConversationMember, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -206,13 +206,13 @@ func (r *SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequest
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for ConversationMember collection
-func (r *SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequest) Get(ctx context.Context) ([]ConversationMember, error) {
+// Get performs GET request for SkypeUserConversationMember collection
+func (r *ConversationMemberSkypeUserConversationMemberCollectionRequest) Get(ctx context.Context) ([]SkypeUserConversationMember, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for ConversationMember collection
-func (r *SkypeUserConversationMemberSkypeUserConversationMemberCollectionRequest) Add(ctx context.Context, reqObj *ConversationMember) (resObj *ConversationMember, err error) {
+// Add performs POST request for SkypeUserConversationMember collection
+func (r *ConversationMemberSkypeUserConversationMemberCollectionRequest) Add(ctx context.Context, reqObj *SkypeUserConversationMember) (resObj *SkypeUserConversationMember, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

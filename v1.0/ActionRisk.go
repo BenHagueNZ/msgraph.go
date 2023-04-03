@@ -2,8 +2,8 @@
 
 package msgraph
 
-// RiskDetection is navigation property rn
-func (b *RiskDetectionRequestBuilder) RiskDetection() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *RiskDetectionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

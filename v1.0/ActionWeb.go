@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// WebApp returns request builder for MobileApp collection rcn
-func (b *WebAppRequestBuilder) WebApp() *WebAppWebAppCollectionRequestBuilder {
-	bb := &WebAppWebAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/MobileApp"
+// WebApp returns request builder for WebApp collection rcn
+func (b *MobileAppRequestBuilder) WebApp() *MobileAppWebAppCollectionRequestBuilder {
+	bb := &MobileAppWebAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/WebApp"
 	return bb
 }
 
-// WebAppWebAppCollectionRequestBuilder is request builder for MobileApp collection
-type WebAppWebAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+// MobileAppWebAppCollectionRequestBuilder is request builder for WebApp collection
+type MobileAppWebAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for MobileApp collection
-func (b *WebAppWebAppCollectionRequestBuilder) Request() *WebAppWebAppCollectionRequest {
-	return &WebAppWebAppCollectionRequest{
+// Request returns request for WebApp collection
+func (b *MobileAppWebAppCollectionRequestBuilder) Request() *MobileAppWebAppCollectionRequest {
+	return &MobileAppWebAppCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for MobileApp item
-func (b *WebAppWebAppCollectionRequestBuilder) ID(id string) *MobileAppRequestBuilder {
-	bb := &MobileAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for WebApp item
+func (b *MobileAppWebAppCollectionRequestBuilder) ID(id string) *WebAppRequestBuilder {
+	bb := &WebAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WebAppWebAppCollectionRequest is request for MobileApp collection
-type WebAppWebAppCollectionRequest struct{ BaseRequest }
+// MobileAppWebAppCollectionRequest is request for WebApp collection
+type MobileAppWebAppCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for MobileApp collection
-func (r *WebAppWebAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MobileApp, error) {
+// Paging perfoms paging operation for WebApp collection
+func (r *MobileAppWebAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]WebApp, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *WebAppWebAppCollectionRequest) Paging(ctx context.Context, method, path
 	if err != nil {
 		return nil, err
 	}
-	var values []MobileApp
+	var values []WebApp
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *WebAppWebAppCollectionRequest) Paging(ctx context.Context, method, path
 		}
 		var (
 			paging Paging
-			value  []MobileApp
+			value  []WebApp
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *WebAppWebAppCollectionRequest) Paging(ctx context.Context, method, path
 	}
 }
 
-// GetN performs GET request for MobileApp collection, max N pages
-func (r *WebAppWebAppCollectionRequest) GetN(ctx context.Context, n int) ([]MobileApp, error) {
+// GetN performs GET request for WebApp collection, max N pages
+func (r *MobileAppWebAppCollectionRequest) GetN(ctx context.Context, n int) ([]WebApp, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *WebAppWebAppCollectionRequest) GetN(ctx context.Context, n int) ([]Mobi
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for MobileApp collection
-func (r *WebAppWebAppCollectionRequest) Get(ctx context.Context) ([]MobileApp, error) {
+// Get performs GET request for WebApp collection
+func (r *MobileAppWebAppCollectionRequest) Get(ctx context.Context) ([]WebApp, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for MobileApp collection
-func (r *WebAppWebAppCollectionRequest) Add(ctx context.Context, reqObj *MobileApp) (resObj *MobileApp, err error) {
+// Add performs POST request for WebApp collection
+func (r *MobileAppWebAppCollectionRequest) Add(ctx context.Context, reqObj *WebApp) (resObj *WebApp, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

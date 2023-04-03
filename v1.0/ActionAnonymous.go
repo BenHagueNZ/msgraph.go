@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AnonymousGuestConversationMember returns request builder for ConversationMember collection rcn
-func (b *AnonymousGuestConversationMemberRequestBuilder) AnonymousGuestConversationMember() *AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollectionRequestBuilder {
-	bb := &AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ConversationMember"
+// AnonymousGuestConversationMember returns request builder for AnonymousGuestConversationMember collection rcn
+func (b *ConversationMemberRequestBuilder) AnonymousGuestConversationMember() *ConversationMemberAnonymousGuestConversationMemberCollectionRequestBuilder {
+	bb := &ConversationMemberAnonymousGuestConversationMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AnonymousGuestConversationMember"
 	return bb
 }
 
-// AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollectionRequestBuilder is request builder for ConversationMember collection
-type AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ConversationMemberAnonymousGuestConversationMemberCollectionRequestBuilder is request builder for AnonymousGuestConversationMember collection
+type ConversationMemberAnonymousGuestConversationMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for ConversationMember collection
-func (b *AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollectionRequestBuilder) Request() *AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollectionRequest {
-	return &AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollectionRequest{
+// Request returns request for AnonymousGuestConversationMember collection
+func (b *ConversationMemberAnonymousGuestConversationMemberCollectionRequestBuilder) Request() *ConversationMemberAnonymousGuestConversationMemberCollectionRequest {
+	return &ConversationMemberAnonymousGuestConversationMemberCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for ConversationMember item
-func (b *AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollectionRequestBuilder) ID(id string) *ConversationMemberRequestBuilder {
-	bb := &ConversationMemberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for AnonymousGuestConversationMember item
+func (b *ConversationMemberAnonymousGuestConversationMemberCollectionRequestBuilder) ID(id string) *AnonymousGuestConversationMemberRequestBuilder {
+	bb := &AnonymousGuestConversationMemberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollectionRequest is request for ConversationMember collection
-type AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollectionRequest struct{ BaseRequest }
+// ConversationMemberAnonymousGuestConversationMemberCollectionRequest is request for AnonymousGuestConversationMember collection
+type ConversationMemberAnonymousGuestConversationMemberCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for ConversationMember collection
-func (r *AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ConversationMember, error) {
+// Paging perfoms paging operation for AnonymousGuestConversationMember collection
+func (r *ConversationMemberAnonymousGuestConversationMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AnonymousGuestConversationMember, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollect
 	if err != nil {
 		return nil, err
 	}
-	var values []ConversationMember
+	var values []AnonymousGuestConversationMember
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollect
 		}
 		var (
 			paging Paging
-			value  []ConversationMember
+			value  []AnonymousGuestConversationMember
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollect
 	}
 }
 
-// GetN performs GET request for ConversationMember collection, max N pages
-func (r *AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollectionRequest) GetN(ctx context.Context, n int) ([]ConversationMember, error) {
+// GetN performs GET request for AnonymousGuestConversationMember collection, max N pages
+func (r *ConversationMemberAnonymousGuestConversationMemberCollectionRequest) GetN(ctx context.Context, n int) ([]AnonymousGuestConversationMember, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollect
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for ConversationMember collection
-func (r *AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollectionRequest) Get(ctx context.Context) ([]ConversationMember, error) {
+// Get performs GET request for AnonymousGuestConversationMember collection
+func (r *ConversationMemberAnonymousGuestConversationMemberCollectionRequest) Get(ctx context.Context) ([]AnonymousGuestConversationMember, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for ConversationMember collection
-func (r *AnonymousGuestConversationMemberAnonymousGuestConversationMemberCollectionRequest) Add(ctx context.Context, reqObj *ConversationMember) (resObj *ConversationMember, err error) {
+// Add performs POST request for AnonymousGuestConversationMember collection
+func (r *ConversationMemberAnonymousGuestConversationMemberCollectionRequest) Add(ctx context.Context, reqObj *AnonymousGuestConversationMember) (resObj *AnonymousGuestConversationMember, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

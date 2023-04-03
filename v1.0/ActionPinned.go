@@ -9,8 +9,8 @@ func (b *PinnedChatMessageInfoRequestBuilder) Message() *ChatMessageRequestBuild
 	return bb
 }
 
-// PinnedChatMessageInfo is navigation property rn
-func (b *PinnedChatMessageInfoRequestBuilder) PinnedChatMessageInfo() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PinnedChatMessageInfoRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

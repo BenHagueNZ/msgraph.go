@@ -131,8 +131,8 @@ func (r *OnlineMeetingAttendanceReportsCollectionRequest) Add(ctx context.Contex
 	return
 }
 
-// OnlineMeeting is navigation property rn
-func (b *OnlineMeetingRequestBuilder) OnlineMeeting() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *OnlineMeetingRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

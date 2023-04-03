@@ -2,8 +2,8 @@
 
 package msgraph
 
-// Alert is navigation property rn
-func (b *AlertRequestBuilder) Alert() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AlertRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

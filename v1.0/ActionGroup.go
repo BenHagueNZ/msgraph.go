@@ -2178,35 +2178,35 @@ func (r *GroupTransitiveMembersCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Group returns request builder for DirectoryObject collection rcn
-func (b *GroupRequestBuilder) Group() *GroupGroupCollectionRequestBuilder {
-	bb := &GroupGroupCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryObject"
+// Group returns request builder for Group collection rcn
+func (b *DirectoryObjectRequestBuilder) Group() *DirectoryObjectGroupCollectionRequestBuilder {
+	bb := &DirectoryObjectGroupCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Group"
 	return bb
 }
 
-// GroupGroupCollectionRequestBuilder is request builder for DirectoryObject collection
-type GroupGroupCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DirectoryObjectGroupCollectionRequestBuilder is request builder for Group collection
+type DirectoryObjectGroupCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DirectoryObject collection
-func (b *GroupGroupCollectionRequestBuilder) Request() *GroupGroupCollectionRequest {
-	return &GroupGroupCollectionRequest{
+// Request returns request for Group collection
+func (b *DirectoryObjectGroupCollectionRequestBuilder) Request() *DirectoryObjectGroupCollectionRequest {
+	return &DirectoryObjectGroupCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DirectoryObject item
-func (b *GroupGroupCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
-	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Group item
+func (b *DirectoryObjectGroupCollectionRequestBuilder) ID(id string) *GroupRequestBuilder {
+	bb := &GroupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// GroupGroupCollectionRequest is request for DirectoryObject collection
-type GroupGroupCollectionRequest struct{ BaseRequest }
+// DirectoryObjectGroupCollectionRequest is request for Group collection
+type DirectoryObjectGroupCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DirectoryObject collection
-func (r *GroupGroupCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+// Paging perfoms paging operation for Group collection
+func (r *DirectoryObjectGroupCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Group, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -2218,7 +2218,7 @@ func (r *GroupGroupCollectionRequest) Paging(ctx context.Context, method, path s
 	if err != nil {
 		return nil, err
 	}
-	var values []DirectoryObject
+	var values []Group
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -2232,7 +2232,7 @@ func (r *GroupGroupCollectionRequest) Paging(ctx context.Context, method, path s
 		}
 		var (
 			paging Paging
-			value  []DirectoryObject
+			value  []Group
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -2261,8 +2261,8 @@ func (r *GroupGroupCollectionRequest) Paging(ctx context.Context, method, path s
 	}
 }
 
-// GetN performs GET request for DirectoryObject collection, max N pages
-func (r *GroupGroupCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+// GetN performs GET request for Group collection, max N pages
+func (r *DirectoryObjectGroupCollectionRequest) GetN(ctx context.Context, n int) ([]Group, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -2270,60 +2270,60 @@ func (r *GroupGroupCollectionRequest) GetN(ctx context.Context, n int) ([]Direct
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DirectoryObject collection
-func (r *GroupGroupCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+// Get performs GET request for Group collection
+func (r *DirectoryObjectGroupCollectionRequest) Get(ctx context.Context) ([]Group, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DirectoryObject collection
-func (r *GroupGroupCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+// Add performs POST request for Group collection
+func (r *DirectoryObjectGroupCollectionRequest) Add(ctx context.Context, reqObj *Group) (resObj *Group, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// GroupLifecyclePolicy is navigation property rn
-func (b *GroupLifecyclePolicyRequestBuilder) GroupLifecyclePolicy() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *GroupLifecyclePolicyRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// GroupSetting is navigation property rn
-func (b *GroupSettingRequestBuilder) GroupSetting() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *GroupSettingRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// GroupSettingTemplate returns request builder for DirectoryObject collection rcn
-func (b *GroupSettingTemplateRequestBuilder) GroupSettingTemplate() *GroupSettingTemplateGroupSettingTemplateCollectionRequestBuilder {
-	bb := &GroupSettingTemplateGroupSettingTemplateCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryObject"
+// GroupSettingTemplate returns request builder for GroupSettingTemplate collection rcn
+func (b *DirectoryObjectRequestBuilder) GroupSettingTemplate() *DirectoryObjectGroupSettingTemplateCollectionRequestBuilder {
+	bb := &DirectoryObjectGroupSettingTemplateCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/GroupSettingTemplate"
 	return bb
 }
 
-// GroupSettingTemplateGroupSettingTemplateCollectionRequestBuilder is request builder for DirectoryObject collection
-type GroupSettingTemplateGroupSettingTemplateCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DirectoryObjectGroupSettingTemplateCollectionRequestBuilder is request builder for GroupSettingTemplate collection
+type DirectoryObjectGroupSettingTemplateCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DirectoryObject collection
-func (b *GroupSettingTemplateGroupSettingTemplateCollectionRequestBuilder) Request() *GroupSettingTemplateGroupSettingTemplateCollectionRequest {
-	return &GroupSettingTemplateGroupSettingTemplateCollectionRequest{
+// Request returns request for GroupSettingTemplate collection
+func (b *DirectoryObjectGroupSettingTemplateCollectionRequestBuilder) Request() *DirectoryObjectGroupSettingTemplateCollectionRequest {
+	return &DirectoryObjectGroupSettingTemplateCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DirectoryObject item
-func (b *GroupSettingTemplateGroupSettingTemplateCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
-	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for GroupSettingTemplate item
+func (b *DirectoryObjectGroupSettingTemplateCollectionRequestBuilder) ID(id string) *GroupSettingTemplateRequestBuilder {
+	bb := &GroupSettingTemplateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// GroupSettingTemplateGroupSettingTemplateCollectionRequest is request for DirectoryObject collection
-type GroupSettingTemplateGroupSettingTemplateCollectionRequest struct{ BaseRequest }
+// DirectoryObjectGroupSettingTemplateCollectionRequest is request for GroupSettingTemplate collection
+type DirectoryObjectGroupSettingTemplateCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DirectoryObject collection
-func (r *GroupSettingTemplateGroupSettingTemplateCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+// Paging perfoms paging operation for GroupSettingTemplate collection
+func (r *DirectoryObjectGroupSettingTemplateCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]GroupSettingTemplate, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -2335,7 +2335,7 @@ func (r *GroupSettingTemplateGroupSettingTemplateCollectionRequest) Paging(ctx c
 	if err != nil {
 		return nil, err
 	}
-	var values []DirectoryObject
+	var values []GroupSettingTemplate
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -2349,7 +2349,7 @@ func (r *GroupSettingTemplateGroupSettingTemplateCollectionRequest) Paging(ctx c
 		}
 		var (
 			paging Paging
-			value  []DirectoryObject
+			value  []GroupSettingTemplate
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -2378,8 +2378,8 @@ func (r *GroupSettingTemplateGroupSettingTemplateCollectionRequest) Paging(ctx c
 	}
 }
 
-// GetN performs GET request for DirectoryObject collection, max N pages
-func (r *GroupSettingTemplateGroupSettingTemplateCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+// GetN performs GET request for GroupSettingTemplate collection, max N pages
+func (r *DirectoryObjectGroupSettingTemplateCollectionRequest) GetN(ctx context.Context, n int) ([]GroupSettingTemplate, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -2387,13 +2387,13 @@ func (r *GroupSettingTemplateGroupSettingTemplateCollectionRequest) GetN(ctx con
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DirectoryObject collection
-func (r *GroupSettingTemplateGroupSettingTemplateCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+// Get performs GET request for GroupSettingTemplate collection
+func (r *DirectoryObjectGroupSettingTemplateCollectionRequest) Get(ctx context.Context) ([]GroupSettingTemplate, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DirectoryObject collection
-func (r *GroupSettingTemplateGroupSettingTemplateCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+// Add performs POST request for GroupSettingTemplate collection
+func (r *DirectoryObjectGroupSettingTemplateCollectionRequest) Add(ctx context.Context, reqObj *GroupSettingTemplate) (resObj *GroupSettingTemplate, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

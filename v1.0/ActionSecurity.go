@@ -540,15 +540,15 @@ func (r *SecuritySecureScoresCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// Security is navigation property rn
-func (b *SecurityRequestBuilder) Security() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *SecurityRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// SecurityReportsRoot is navigation property rn
-func (b *SecurityReportsRootRequestBuilder) SecurityReportsRoot() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *SecurityReportsRootRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
@@ -2392,35 +2392,35 @@ func (b *SecurityUnifiedGroupSourceRequestBuilder) Group() *GroupRequestBuilder 
 	return bb
 }
 
-// SecurityEdiscoveryAddToReviewSetOperation returns request builder for SecurityCaseOperation collection rcn
-func (b *SecurityEdiscoveryAddToReviewSetOperationRequestBuilder) SecurityEdiscoveryAddToReviewSetOperation() *SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder {
-	bb := &SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityCaseOperation"
+// SecurityEdiscoveryAddToReviewSetOperation returns request builder for SecurityEdiscoveryAddToReviewSetOperation collection rcn
+func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryAddToReviewSetOperation() *SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder {
+	bb := &SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/SecurityEdiscoveryAddToReviewSetOperation"
 	return bb
 }
 
-// SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder is request builder for SecurityCaseOperation collection
-type SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryAddToReviewSetOperation collection
+type SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for SecurityCaseOperation collection
-func (b *SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder) Request() *SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest {
-	return &SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest{
+// Request returns request for SecurityEdiscoveryAddToReviewSetOperation collection
+func (b *SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder) Request() *SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest {
+	return &SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for SecurityCaseOperation item
-func (b *SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder) ID(id string) *SecurityCaseOperationRequestBuilder {
-	bb := &SecurityCaseOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SecurityEdiscoveryAddToReviewSetOperation item
+func (b *SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder) ID(id string) *SecurityEdiscoveryAddToReviewSetOperationRequestBuilder {
+	bb := &SecurityEdiscoveryAddToReviewSetOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest is request for SecurityCaseOperation collection
-type SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest struct{ BaseRequest }
+// SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest is request for SecurityEdiscoveryAddToReviewSetOperation collection
+type SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityCaseOperation, error) {
+// Paging perfoms paging operation for SecurityEdiscoveryAddToReviewSetOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityEdiscoveryAddToReviewSetOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -2432,7 +2432,7 @@ func (r *SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewS
 	if err != nil {
 		return nil, err
 	}
-	var values []SecurityCaseOperation
+	var values []SecurityEdiscoveryAddToReviewSetOperation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -2446,7 +2446,7 @@ func (r *SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewS
 		}
 		var (
 			paging Paging
-			value  []SecurityCaseOperation
+			value  []SecurityEdiscoveryAddToReviewSetOperation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -2475,8 +2475,8 @@ func (r *SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewS
 	}
 }
 
-// GetN performs GET request for SecurityCaseOperation collection, max N pages
-func (r *SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityCaseOperation, error) {
+// GetN performs GET request for SecurityEdiscoveryAddToReviewSetOperation collection, max N pages
+func (r *SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityEdiscoveryAddToReviewSetOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -2484,46 +2484,46 @@ func (r *SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewS
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest) Get(ctx context.Context) ([]SecurityCaseOperation, error) {
+// Get performs GET request for SecurityEdiscoveryAddToReviewSetOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest) Get(ctx context.Context) ([]SecurityEdiscoveryAddToReviewSetOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryAddToReviewSetOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest) Add(ctx context.Context, reqObj *SecurityCaseOperation) (resObj *SecurityCaseOperation, err error) {
+// Add performs POST request for SecurityEdiscoveryAddToReviewSetOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequest) Add(ctx context.Context, reqObj *SecurityEdiscoveryAddToReviewSetOperation) (resObj *SecurityEdiscoveryAddToReviewSetOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// SecurityEdiscoveryEstimateOperation returns request builder for SecurityCaseOperation collection rcn
-func (b *SecurityEdiscoveryEstimateOperationRequestBuilder) SecurityEdiscoveryEstimateOperation() *SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder {
-	bb := &SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityCaseOperation"
+// SecurityEdiscoveryEstimateOperation returns request builder for SecurityEdiscoveryEstimateOperation collection rcn
+func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryEstimateOperation() *SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder {
+	bb := &SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/SecurityEdiscoveryEstimateOperation"
 	return bb
 }
 
-// SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder is request builder for SecurityCaseOperation collection
-type SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryEstimateOperation collection
+type SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for SecurityCaseOperation collection
-func (b *SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder) Request() *SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationCollectionRequest {
-	return &SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationCollectionRequest{
+// Request returns request for SecurityEdiscoveryEstimateOperation collection
+func (b *SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder) Request() *SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequest {
+	return &SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for SecurityCaseOperation item
-func (b *SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder) ID(id string) *SecurityCaseOperationRequestBuilder {
-	bb := &SecurityCaseOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SecurityEdiscoveryEstimateOperation item
+func (b *SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder) ID(id string) *SecurityEdiscoveryEstimateOperationRequestBuilder {
+	bb := &SecurityEdiscoveryEstimateOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationCollectionRequest is request for SecurityCaseOperation collection
-type SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationCollectionRequest struct{ BaseRequest }
+// SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequest is request for SecurityEdiscoveryEstimateOperation collection
+type SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityCaseOperation, error) {
+// Paging perfoms paging operation for SecurityEdiscoveryEstimateOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityEdiscoveryEstimateOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -2535,7 +2535,7 @@ func (r *SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationC
 	if err != nil {
 		return nil, err
 	}
-	var values []SecurityCaseOperation
+	var values []SecurityEdiscoveryEstimateOperation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -2549,7 +2549,7 @@ func (r *SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationC
 		}
 		var (
 			paging Paging
-			value  []SecurityCaseOperation
+			value  []SecurityEdiscoveryEstimateOperation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -2578,8 +2578,8 @@ func (r *SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationC
 	}
 }
 
-// GetN performs GET request for SecurityCaseOperation collection, max N pages
-func (r *SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityCaseOperation, error) {
+// GetN performs GET request for SecurityEdiscoveryEstimateOperation collection, max N pages
+func (r *SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityEdiscoveryEstimateOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -2587,46 +2587,46 @@ func (r *SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationC
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationCollectionRequest) Get(ctx context.Context) ([]SecurityCaseOperation, error) {
+// Get performs GET request for SecurityEdiscoveryEstimateOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequest) Get(ctx context.Context) ([]SecurityEdiscoveryEstimateOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryEstimateOperationSecurityEdiscoveryEstimateOperationCollectionRequest) Add(ctx context.Context, reqObj *SecurityCaseOperation) (resObj *SecurityCaseOperation, err error) {
+// Add performs POST request for SecurityEdiscoveryEstimateOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequest) Add(ctx context.Context, reqObj *SecurityEdiscoveryEstimateOperation) (resObj *SecurityEdiscoveryEstimateOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// SecurityEdiscoveryHoldOperation returns request builder for SecurityCaseOperation collection rcn
-func (b *SecurityEdiscoveryHoldOperationRequestBuilder) SecurityEdiscoveryHoldOperation() *SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder {
-	bb := &SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityCaseOperation"
+// SecurityEdiscoveryHoldOperation returns request builder for SecurityEdiscoveryHoldOperation collection rcn
+func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryHoldOperation() *SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder {
+	bb := &SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/SecurityEdiscoveryHoldOperation"
 	return bb
 }
 
-// SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder is request builder for SecurityCaseOperation collection
-type SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryHoldOperation collection
+type SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for SecurityCaseOperation collection
-func (b *SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder) Request() *SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectionRequest {
-	return &SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectionRequest{
+// Request returns request for SecurityEdiscoveryHoldOperation collection
+func (b *SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder) Request() *SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequest {
+	return &SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for SecurityCaseOperation item
-func (b *SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder) ID(id string) *SecurityCaseOperationRequestBuilder {
-	bb := &SecurityCaseOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SecurityEdiscoveryHoldOperation item
+func (b *SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder) ID(id string) *SecurityEdiscoveryHoldOperationRequestBuilder {
+	bb := &SecurityEdiscoveryHoldOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectionRequest is request for SecurityCaseOperation collection
-type SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectionRequest struct{ BaseRequest }
+// SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequest is request for SecurityEdiscoveryHoldOperation collection
+type SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityCaseOperation, error) {
+// Paging perfoms paging operation for SecurityEdiscoveryHoldOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityEdiscoveryHoldOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -2638,7 +2638,7 @@ func (r *SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectio
 	if err != nil {
 		return nil, err
 	}
-	var values []SecurityCaseOperation
+	var values []SecurityEdiscoveryHoldOperation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -2652,7 +2652,7 @@ func (r *SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectio
 		}
 		var (
 			paging Paging
-			value  []SecurityCaseOperation
+			value  []SecurityEdiscoveryHoldOperation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -2681,8 +2681,8 @@ func (r *SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectio
 	}
 }
 
-// GetN performs GET request for SecurityCaseOperation collection, max N pages
-func (r *SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityCaseOperation, error) {
+// GetN performs GET request for SecurityEdiscoveryHoldOperation collection, max N pages
+func (r *SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityEdiscoveryHoldOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -2690,46 +2690,46 @@ func (r *SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectio
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectionRequest) Get(ctx context.Context) ([]SecurityCaseOperation, error) {
+// Get performs GET request for SecurityEdiscoveryHoldOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequest) Get(ctx context.Context) ([]SecurityEdiscoveryHoldOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryHoldOperationSecurityEdiscoveryHoldOperationCollectionRequest) Add(ctx context.Context, reqObj *SecurityCaseOperation) (resObj *SecurityCaseOperation, err error) {
+// Add performs POST request for SecurityEdiscoveryHoldOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequest) Add(ctx context.Context, reqObj *SecurityEdiscoveryHoldOperation) (resObj *SecurityEdiscoveryHoldOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// SecurityEdiscoveryIndexOperation returns request builder for SecurityCaseOperation collection rcn
-func (b *SecurityEdiscoveryIndexOperationRequestBuilder) SecurityEdiscoveryIndexOperation() *SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder {
-	bb := &SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityCaseOperation"
+// SecurityEdiscoveryIndexOperation returns request builder for SecurityEdiscoveryIndexOperation collection rcn
+func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryIndexOperation() *SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder {
+	bb := &SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/SecurityEdiscoveryIndexOperation"
 	return bb
 }
 
-// SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder is request builder for SecurityCaseOperation collection
-type SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryIndexOperation collection
+type SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for SecurityCaseOperation collection
-func (b *SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder) Request() *SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollectionRequest {
-	return &SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollectionRequest{
+// Request returns request for SecurityEdiscoveryIndexOperation collection
+func (b *SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder) Request() *SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequest {
+	return &SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for SecurityCaseOperation item
-func (b *SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder) ID(id string) *SecurityCaseOperationRequestBuilder {
-	bb := &SecurityCaseOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SecurityEdiscoveryIndexOperation item
+func (b *SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder) ID(id string) *SecurityEdiscoveryIndexOperationRequestBuilder {
+	bb := &SecurityEdiscoveryIndexOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollectionRequest is request for SecurityCaseOperation collection
-type SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollectionRequest struct{ BaseRequest }
+// SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequest is request for SecurityEdiscoveryIndexOperation collection
+type SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityCaseOperation, error) {
+// Paging perfoms paging operation for SecurityEdiscoveryIndexOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityEdiscoveryIndexOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -2741,7 +2741,7 @@ func (r *SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollect
 	if err != nil {
 		return nil, err
 	}
-	var values []SecurityCaseOperation
+	var values []SecurityEdiscoveryIndexOperation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -2755,7 +2755,7 @@ func (r *SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollect
 		}
 		var (
 			paging Paging
-			value  []SecurityCaseOperation
+			value  []SecurityEdiscoveryIndexOperation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -2784,8 +2784,8 @@ func (r *SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollect
 	}
 }
 
-// GetN performs GET request for SecurityCaseOperation collection, max N pages
-func (r *SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityCaseOperation, error) {
+// GetN performs GET request for SecurityEdiscoveryIndexOperation collection, max N pages
+func (r *SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityEdiscoveryIndexOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -2793,46 +2793,46 @@ func (r *SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollect
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollectionRequest) Get(ctx context.Context) ([]SecurityCaseOperation, error) {
+// Get performs GET request for SecurityEdiscoveryIndexOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequest) Get(ctx context.Context) ([]SecurityEdiscoveryIndexOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryIndexOperationSecurityEdiscoveryIndexOperationCollectionRequest) Add(ctx context.Context, reqObj *SecurityCaseOperation) (resObj *SecurityCaseOperation, err error) {
+// Add performs POST request for SecurityEdiscoveryIndexOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequest) Add(ctx context.Context, reqObj *SecurityEdiscoveryIndexOperation) (resObj *SecurityEdiscoveryIndexOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// SecurityEdiscoveryPurgeDataOperation returns request builder for SecurityCaseOperation collection rcn
-func (b *SecurityEdiscoveryPurgeDataOperationRequestBuilder) SecurityEdiscoveryPurgeDataOperation() *SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder {
-	bb := &SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityCaseOperation"
+// SecurityEdiscoveryPurgeDataOperation returns request builder for SecurityEdiscoveryPurgeDataOperation collection rcn
+func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryPurgeDataOperation() *SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder {
+	bb := &SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/SecurityEdiscoveryPurgeDataOperation"
 	return bb
 }
 
-// SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder is request builder for SecurityCaseOperation collection
-type SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryPurgeDataOperation collection
+type SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for SecurityCaseOperation collection
-func (b *SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder) Request() *SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest {
-	return &SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest{
+// Request returns request for SecurityEdiscoveryPurgeDataOperation collection
+func (b *SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder) Request() *SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest {
+	return &SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for SecurityCaseOperation item
-func (b *SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder) ID(id string) *SecurityCaseOperationRequestBuilder {
-	bb := &SecurityCaseOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SecurityEdiscoveryPurgeDataOperation item
+func (b *SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder) ID(id string) *SecurityEdiscoveryPurgeDataOperationRequestBuilder {
+	bb := &SecurityEdiscoveryPurgeDataOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest is request for SecurityCaseOperation collection
-type SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest struct{ BaseRequest }
+// SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest is request for SecurityEdiscoveryPurgeDataOperation collection
+type SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityCaseOperation, error) {
+// Paging perfoms paging operation for SecurityEdiscoveryPurgeDataOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityEdiscoveryPurgeDataOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -2844,7 +2844,7 @@ func (r *SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperatio
 	if err != nil {
 		return nil, err
 	}
-	var values []SecurityCaseOperation
+	var values []SecurityEdiscoveryPurgeDataOperation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -2858,7 +2858,7 @@ func (r *SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperatio
 		}
 		var (
 			paging Paging
-			value  []SecurityCaseOperation
+			value  []SecurityEdiscoveryPurgeDataOperation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -2887,8 +2887,8 @@ func (r *SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperatio
 	}
 }
 
-// GetN performs GET request for SecurityCaseOperation collection, max N pages
-func (r *SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityCaseOperation, error) {
+// GetN performs GET request for SecurityEdiscoveryPurgeDataOperation collection, max N pages
+func (r *SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityEdiscoveryPurgeDataOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -2896,46 +2896,46 @@ func (r *SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperatio
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest) Get(ctx context.Context) ([]SecurityCaseOperation, error) {
+// Get performs GET request for SecurityEdiscoveryPurgeDataOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest) Get(ctx context.Context) ([]SecurityEdiscoveryPurgeDataOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryPurgeDataOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest) Add(ctx context.Context, reqObj *SecurityCaseOperation) (resObj *SecurityCaseOperation, err error) {
+// Add performs POST request for SecurityEdiscoveryPurgeDataOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequest) Add(ctx context.Context, reqObj *SecurityEdiscoveryPurgeDataOperation) (resObj *SecurityEdiscoveryPurgeDataOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// SecurityEdiscoveryTagOperation returns request builder for SecurityCaseOperation collection rcn
-func (b *SecurityEdiscoveryTagOperationRequestBuilder) SecurityEdiscoveryTagOperation() *SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder {
-	bb := &SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityCaseOperation"
+// SecurityEdiscoveryTagOperation returns request builder for SecurityEdiscoveryTagOperation collection rcn
+func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryTagOperation() *SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder {
+	bb := &SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/SecurityEdiscoveryTagOperation"
 	return bb
 }
 
-// SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder is request builder for SecurityCaseOperation collection
-type SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryTagOperation collection
+type SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for SecurityCaseOperation collection
-func (b *SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder) Request() *SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionRequest {
-	return &SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionRequest{
+// Request returns request for SecurityEdiscoveryTagOperation collection
+func (b *SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder) Request() *SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequest {
+	return &SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for SecurityCaseOperation item
-func (b *SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder) ID(id string) *SecurityCaseOperationRequestBuilder {
-	bb := &SecurityCaseOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SecurityEdiscoveryTagOperation item
+func (b *SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder) ID(id string) *SecurityEdiscoveryTagOperationRequestBuilder {
+	bb := &SecurityEdiscoveryTagOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionRequest is request for SecurityCaseOperation collection
-type SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionRequest struct{ BaseRequest }
+// SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequest is request for SecurityEdiscoveryTagOperation collection
+type SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityCaseOperation, error) {
+// Paging perfoms paging operation for SecurityEdiscoveryTagOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityEdiscoveryTagOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -2947,7 +2947,7 @@ func (r *SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionR
 	if err != nil {
 		return nil, err
 	}
-	var values []SecurityCaseOperation
+	var values []SecurityEdiscoveryTagOperation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -2961,7 +2961,7 @@ func (r *SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionR
 		}
 		var (
 			paging Paging
-			value  []SecurityCaseOperation
+			value  []SecurityEdiscoveryTagOperation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -2990,8 +2990,8 @@ func (r *SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionR
 	}
 }
 
-// GetN performs GET request for SecurityCaseOperation collection, max N pages
-func (r *SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityCaseOperation, error) {
+// GetN performs GET request for SecurityEdiscoveryTagOperation collection, max N pages
+func (r *SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityEdiscoveryTagOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -2999,46 +2999,46 @@ func (r *SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionR
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionRequest) Get(ctx context.Context) ([]SecurityCaseOperation, error) {
+// Get performs GET request for SecurityEdiscoveryTagOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequest) Get(ctx context.Context) ([]SecurityEdiscoveryTagOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for SecurityCaseOperation collection
-func (r *SecurityEdiscoveryTagOperationSecurityEdiscoveryTagOperationCollectionRequest) Add(ctx context.Context, reqObj *SecurityCaseOperation) (resObj *SecurityCaseOperation, err error) {
+// Add performs POST request for SecurityEdiscoveryTagOperation collection
+func (r *SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequest) Add(ctx context.Context, reqObj *SecurityEdiscoveryTagOperation) (resObj *SecurityEdiscoveryTagOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// SecuritySiteSource returns request builder for SecurityDataSource collection rcn
-func (b *SecuritySiteSourceRequestBuilder) SecuritySiteSource() *SecuritySiteSourceSecuritySiteSourceCollectionRequestBuilder {
-	bb := &SecuritySiteSourceSecuritySiteSourceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityDataSource"
+// SecuritySiteSource returns request builder for SecuritySiteSource collection rcn
+func (b *SecurityDataSourceRequestBuilder) SecuritySiteSource() *SecurityDataSourceSecuritySiteSourceCollectionRequestBuilder {
+	bb := &SecurityDataSourceSecuritySiteSourceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/SecuritySiteSource"
 	return bb
 }
 
-// SecuritySiteSourceSecuritySiteSourceCollectionRequestBuilder is request builder for SecurityDataSource collection
-type SecuritySiteSourceSecuritySiteSourceCollectionRequestBuilder struct{ BaseRequestBuilder }
+// SecurityDataSourceSecuritySiteSourceCollectionRequestBuilder is request builder for SecuritySiteSource collection
+type SecurityDataSourceSecuritySiteSourceCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for SecurityDataSource collection
-func (b *SecuritySiteSourceSecuritySiteSourceCollectionRequestBuilder) Request() *SecuritySiteSourceSecuritySiteSourceCollectionRequest {
-	return &SecuritySiteSourceSecuritySiteSourceCollectionRequest{
+// Request returns request for SecuritySiteSource collection
+func (b *SecurityDataSourceSecuritySiteSourceCollectionRequestBuilder) Request() *SecurityDataSourceSecuritySiteSourceCollectionRequest {
+	return &SecurityDataSourceSecuritySiteSourceCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for SecurityDataSource item
-func (b *SecuritySiteSourceSecuritySiteSourceCollectionRequestBuilder) ID(id string) *SecurityDataSourceRequestBuilder {
-	bb := &SecurityDataSourceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SecuritySiteSource item
+func (b *SecurityDataSourceSecuritySiteSourceCollectionRequestBuilder) ID(id string) *SecuritySiteSourceRequestBuilder {
+	bb := &SecuritySiteSourceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SecuritySiteSourceSecuritySiteSourceCollectionRequest is request for SecurityDataSource collection
-type SecuritySiteSourceSecuritySiteSourceCollectionRequest struct{ BaseRequest }
+// SecurityDataSourceSecuritySiteSourceCollectionRequest is request for SecuritySiteSource collection
+type SecurityDataSourceSecuritySiteSourceCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for SecurityDataSource collection
-func (r *SecuritySiteSourceSecuritySiteSourceCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityDataSource, error) {
+// Paging perfoms paging operation for SecuritySiteSource collection
+func (r *SecurityDataSourceSecuritySiteSourceCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecuritySiteSource, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -3050,7 +3050,7 @@ func (r *SecuritySiteSourceSecuritySiteSourceCollectionRequest) Paging(ctx conte
 	if err != nil {
 		return nil, err
 	}
-	var values []SecurityDataSource
+	var values []SecuritySiteSource
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -3064,7 +3064,7 @@ func (r *SecuritySiteSourceSecuritySiteSourceCollectionRequest) Paging(ctx conte
 		}
 		var (
 			paging Paging
-			value  []SecurityDataSource
+			value  []SecuritySiteSource
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -3093,8 +3093,8 @@ func (r *SecuritySiteSourceSecuritySiteSourceCollectionRequest) Paging(ctx conte
 	}
 }
 
-// GetN performs GET request for SecurityDataSource collection, max N pages
-func (r *SecuritySiteSourceSecuritySiteSourceCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityDataSource, error) {
+// GetN performs GET request for SecuritySiteSource collection, max N pages
+func (r *SecurityDataSourceSecuritySiteSourceCollectionRequest) GetN(ctx context.Context, n int) ([]SecuritySiteSource, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -3102,46 +3102,46 @@ func (r *SecuritySiteSourceSecuritySiteSourceCollectionRequest) GetN(ctx context
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for SecurityDataSource collection
-func (r *SecuritySiteSourceSecuritySiteSourceCollectionRequest) Get(ctx context.Context) ([]SecurityDataSource, error) {
+// Get performs GET request for SecuritySiteSource collection
+func (r *SecurityDataSourceSecuritySiteSourceCollectionRequest) Get(ctx context.Context) ([]SecuritySiteSource, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for SecurityDataSource collection
-func (r *SecuritySiteSourceSecuritySiteSourceCollectionRequest) Add(ctx context.Context, reqObj *SecurityDataSource) (resObj *SecurityDataSource, err error) {
+// Add performs POST request for SecuritySiteSource collection
+func (r *SecurityDataSourceSecuritySiteSourceCollectionRequest) Add(ctx context.Context, reqObj *SecuritySiteSource) (resObj *SecuritySiteSource, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// SecurityUnifiedGroupSource returns request builder for SecurityDataSource collection rcn
-func (b *SecurityUnifiedGroupSourceRequestBuilder) SecurityUnifiedGroupSource() *SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequestBuilder {
-	bb := &SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityDataSource"
+// SecurityUnifiedGroupSource returns request builder for SecurityUnifiedGroupSource collection rcn
+func (b *SecurityDataSourceRequestBuilder) SecurityUnifiedGroupSource() *SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequestBuilder {
+	bb := &SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/SecurityUnifiedGroupSource"
 	return bb
 }
 
-// SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequestBuilder is request builder for SecurityDataSource collection
-type SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequestBuilder struct{ BaseRequestBuilder }
+// SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequestBuilder is request builder for SecurityUnifiedGroupSource collection
+type SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for SecurityDataSource collection
-func (b *SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequestBuilder) Request() *SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequest {
-	return &SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequest{
+// Request returns request for SecurityUnifiedGroupSource collection
+func (b *SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequestBuilder) Request() *SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequest {
+	return &SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for SecurityDataSource item
-func (b *SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequestBuilder) ID(id string) *SecurityDataSourceRequestBuilder {
-	bb := &SecurityDataSourceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SecurityUnifiedGroupSource item
+func (b *SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequestBuilder) ID(id string) *SecurityUnifiedGroupSourceRequestBuilder {
+	bb := &SecurityUnifiedGroupSourceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequest is request for SecurityDataSource collection
-type SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequest struct{ BaseRequest }
+// SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequest is request for SecurityUnifiedGroupSource collection
+type SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for SecurityDataSource collection
-func (r *SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityDataSource, error) {
+// Paging perfoms paging operation for SecurityUnifiedGroupSource collection
+func (r *SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityUnifiedGroupSource, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -3153,7 +3153,7 @@ func (r *SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequest) 
 	if err != nil {
 		return nil, err
 	}
-	var values []SecurityDataSource
+	var values []SecurityUnifiedGroupSource
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -3167,7 +3167,7 @@ func (r *SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequest) 
 		}
 		var (
 			paging Paging
-			value  []SecurityDataSource
+			value  []SecurityUnifiedGroupSource
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -3196,8 +3196,8 @@ func (r *SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequest) 
 	}
 }
 
-// GetN performs GET request for SecurityDataSource collection, max N pages
-func (r *SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityDataSource, error) {
+// GetN performs GET request for SecurityUnifiedGroupSource collection, max N pages
+func (r *SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityUnifiedGroupSource, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -3205,46 +3205,46 @@ func (r *SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequest) 
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for SecurityDataSource collection
-func (r *SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequest) Get(ctx context.Context) ([]SecurityDataSource, error) {
+// Get performs GET request for SecurityUnifiedGroupSource collection
+func (r *SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequest) Get(ctx context.Context) ([]SecurityUnifiedGroupSource, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for SecurityDataSource collection
-func (r *SecurityUnifiedGroupSourceSecurityUnifiedGroupSourceCollectionRequest) Add(ctx context.Context, reqObj *SecurityDataSource) (resObj *SecurityDataSource, err error) {
+// Add performs POST request for SecurityUnifiedGroupSource collection
+func (r *SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequest) Add(ctx context.Context, reqObj *SecurityUnifiedGroupSource) (resObj *SecurityUnifiedGroupSource, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// SecurityUserSource returns request builder for SecurityDataSource collection rcn
-func (b *SecurityUserSourceRequestBuilder) SecurityUserSource() *SecurityUserSourceSecurityUserSourceCollectionRequestBuilder {
-	bb := &SecurityUserSourceSecurityUserSourceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityDataSource"
+// SecurityUserSource returns request builder for SecurityUserSource collection rcn
+func (b *SecurityDataSourceRequestBuilder) SecurityUserSource() *SecurityDataSourceSecurityUserSourceCollectionRequestBuilder {
+	bb := &SecurityDataSourceSecurityUserSourceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/SecurityUserSource"
 	return bb
 }
 
-// SecurityUserSourceSecurityUserSourceCollectionRequestBuilder is request builder for SecurityDataSource collection
-type SecurityUserSourceSecurityUserSourceCollectionRequestBuilder struct{ BaseRequestBuilder }
+// SecurityDataSourceSecurityUserSourceCollectionRequestBuilder is request builder for SecurityUserSource collection
+type SecurityDataSourceSecurityUserSourceCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for SecurityDataSource collection
-func (b *SecurityUserSourceSecurityUserSourceCollectionRequestBuilder) Request() *SecurityUserSourceSecurityUserSourceCollectionRequest {
-	return &SecurityUserSourceSecurityUserSourceCollectionRequest{
+// Request returns request for SecurityUserSource collection
+func (b *SecurityDataSourceSecurityUserSourceCollectionRequestBuilder) Request() *SecurityDataSourceSecurityUserSourceCollectionRequest {
+	return &SecurityDataSourceSecurityUserSourceCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for SecurityDataSource item
-func (b *SecurityUserSourceSecurityUserSourceCollectionRequestBuilder) ID(id string) *SecurityDataSourceRequestBuilder {
-	bb := &SecurityDataSourceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SecurityUserSource item
+func (b *SecurityDataSourceSecurityUserSourceCollectionRequestBuilder) ID(id string) *SecurityUserSourceRequestBuilder {
+	bb := &SecurityUserSourceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SecurityUserSourceSecurityUserSourceCollectionRequest is request for SecurityDataSource collection
-type SecurityUserSourceSecurityUserSourceCollectionRequest struct{ BaseRequest }
+// SecurityDataSourceSecurityUserSourceCollectionRequest is request for SecurityUserSource collection
+type SecurityDataSourceSecurityUserSourceCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for SecurityDataSource collection
-func (r *SecurityUserSourceSecurityUserSourceCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityDataSource, error) {
+// Paging perfoms paging operation for SecurityUserSource collection
+func (r *SecurityDataSourceSecurityUserSourceCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityUserSource, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -3256,7 +3256,7 @@ func (r *SecurityUserSourceSecurityUserSourceCollectionRequest) Paging(ctx conte
 	if err != nil {
 		return nil, err
 	}
-	var values []SecurityDataSource
+	var values []SecurityUserSource
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -3270,7 +3270,7 @@ func (r *SecurityUserSourceSecurityUserSourceCollectionRequest) Paging(ctx conte
 		}
 		var (
 			paging Paging
-			value  []SecurityDataSource
+			value  []SecurityUserSource
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -3299,8 +3299,8 @@ func (r *SecurityUserSourceSecurityUserSourceCollectionRequest) Paging(ctx conte
 	}
 }
 
-// GetN performs GET request for SecurityDataSource collection, max N pages
-func (r *SecurityUserSourceSecurityUserSourceCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityDataSource, error) {
+// GetN performs GET request for SecurityUserSource collection, max N pages
+func (r *SecurityDataSourceSecurityUserSourceCollectionRequest) GetN(ctx context.Context, n int) ([]SecurityUserSource, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -3308,13 +3308,13 @@ func (r *SecurityUserSourceSecurityUserSourceCollectionRequest) GetN(ctx context
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for SecurityDataSource collection
-func (r *SecurityUserSourceSecurityUserSourceCollectionRequest) Get(ctx context.Context) ([]SecurityDataSource, error) {
+// Get performs GET request for SecurityUserSource collection
+func (r *SecurityDataSourceSecurityUserSourceCollectionRequest) Get(ctx context.Context) ([]SecurityUserSource, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for SecurityDataSource collection
-func (r *SecurityUserSourceSecurityUserSourceCollectionRequest) Add(ctx context.Context, reqObj *SecurityDataSource) (resObj *SecurityDataSource, err error) {
+// Add performs POST request for SecurityUserSource collection
+func (r *SecurityDataSourceSecurityUserSourceCollectionRequest) Add(ctx context.Context, reqObj *SecurityUserSource) (resObj *SecurityUserSource, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

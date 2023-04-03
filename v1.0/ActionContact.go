@@ -739,15 +739,15 @@ func (r *ContactFolderSingleValueExtendedPropertiesCollectionRequest) Add(ctx co
 	return
 }
 
-// Contact is navigation property rn
-func (b *ContactRequestBuilder) Contact() *OutlookItemRequestBuilder {
+// OutlookItem is navigation property rn
+func (b *ContactRequestBuilder) OutlookItem() *OutlookItemRequestBuilder {
 	bb := &OutlookItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/OutlookItem"
 	return bb
 }
 
-// ContactFolder is navigation property rn
-func (b *ContactFolderRequestBuilder) ContactFolder() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ContactFolderRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

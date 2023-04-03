@@ -799,35 +799,35 @@ func (b *ApplicationServicePrincipalRequestBuilder) ServicePrincipal() *ServiceP
 	return bb
 }
 
-// Application returns request builder for DirectoryObject collection rcn
-func (b *ApplicationRequestBuilder) Application() *ApplicationApplicationCollectionRequestBuilder {
-	bb := &ApplicationApplicationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryObject"
+// Application returns request builder for Application collection rcn
+func (b *DirectoryObjectRequestBuilder) Application() *DirectoryObjectApplicationCollectionRequestBuilder {
+	bb := &DirectoryObjectApplicationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Application"
 	return bb
 }
 
-// ApplicationApplicationCollectionRequestBuilder is request builder for DirectoryObject collection
-type ApplicationApplicationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DirectoryObjectApplicationCollectionRequestBuilder is request builder for Application collection
+type DirectoryObjectApplicationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DirectoryObject collection
-func (b *ApplicationApplicationCollectionRequestBuilder) Request() *ApplicationApplicationCollectionRequest {
-	return &ApplicationApplicationCollectionRequest{
+// Request returns request for Application collection
+func (b *DirectoryObjectApplicationCollectionRequestBuilder) Request() *DirectoryObjectApplicationCollectionRequest {
+	return &DirectoryObjectApplicationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DirectoryObject item
-func (b *ApplicationApplicationCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
-	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Application item
+func (b *DirectoryObjectApplicationCollectionRequestBuilder) ID(id string) *ApplicationRequestBuilder {
+	bb := &ApplicationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ApplicationApplicationCollectionRequest is request for DirectoryObject collection
-type ApplicationApplicationCollectionRequest struct{ BaseRequest }
+// DirectoryObjectApplicationCollectionRequest is request for Application collection
+type DirectoryObjectApplicationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DirectoryObject collection
-func (r *ApplicationApplicationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+// Paging perfoms paging operation for Application collection
+func (r *DirectoryObjectApplicationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Application, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -839,7 +839,7 @@ func (r *ApplicationApplicationCollectionRequest) Paging(ctx context.Context, me
 	if err != nil {
 		return nil, err
 	}
-	var values []DirectoryObject
+	var values []Application
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -853,7 +853,7 @@ func (r *ApplicationApplicationCollectionRequest) Paging(ctx context.Context, me
 		}
 		var (
 			paging Paging
-			value  []DirectoryObject
+			value  []Application
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -882,8 +882,8 @@ func (r *ApplicationApplicationCollectionRequest) Paging(ctx context.Context, me
 	}
 }
 
-// GetN performs GET request for DirectoryObject collection, max N pages
-func (r *ApplicationApplicationCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+// GetN performs GET request for Application collection, max N pages
+func (r *DirectoryObjectApplicationCollectionRequest) GetN(ctx context.Context, n int) ([]Application, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -891,19 +891,19 @@ func (r *ApplicationApplicationCollectionRequest) GetN(ctx context.Context, n in
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DirectoryObject collection
-func (r *ApplicationApplicationCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+// Get performs GET request for Application collection
+func (r *DirectoryObjectApplicationCollectionRequest) Get(ctx context.Context) ([]Application, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DirectoryObject collection
-func (r *ApplicationApplicationCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+// Add performs POST request for Application collection
+func (r *DirectoryObjectApplicationCollectionRequest) Add(ctx context.Context, reqObj *Application) (resObj *Application, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// ApplicationTemplate is navigation property rn
-func (b *ApplicationTemplateRequestBuilder) ApplicationTemplate() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ApplicationTemplateRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

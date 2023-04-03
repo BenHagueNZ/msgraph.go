@@ -2,8 +2,8 @@
 
 package msgraph
 
-// AuthoredNote is navigation property rn
-func (b *AuthoredNoteRequestBuilder) AuthoredNote() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AuthoredNoteRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

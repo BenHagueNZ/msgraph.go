@@ -114,8 +114,8 @@ func (r *OrganizationalBrandingLocalizationsCollectionRequest) Add(ctx context.C
 	return
 }
 
-// OrganizationalBrandingProperties is navigation property rn
-func (b *OrganizationalBrandingPropertiesRequestBuilder) OrganizationalBrandingProperties() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *OrganizationalBrandingPropertiesRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

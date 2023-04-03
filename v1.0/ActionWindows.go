@@ -460,42 +460,42 @@ func (r *WindowsUniversalAppXCommittedContainedAppsCollectionRequest) Add(ctx co
 	return
 }
 
-// WindowsAutopilotDeviceIdentity is navigation property rn
-func (b *WindowsAutopilotDeviceIdentityRequestBuilder) WindowsAutopilotDeviceIdentity() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WindowsAutopilotDeviceIdentityRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WindowsDefenderAdvancedThreatProtectionConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *WindowsDefenderAdvancedThreatProtectionConfigurationRequestBuilder) WindowsDefenderAdvancedThreatProtectionConfiguration() *WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder {
-	bb := &WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// WindowsDefenderAdvancedThreatProtectionConfiguration returns request builder for WindowsDefenderAdvancedThreatProtectionConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) WindowsDefenderAdvancedThreatProtectionConfiguration() *DeviceConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/WindowsDefenderAdvancedThreatProtectionConfiguration"
 	return bb
 }
 
-// WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder is request builder for WindowsDefenderAdvancedThreatProtectionConfiguration collection
+type DeviceConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder) Request() *WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest {
-	return &WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest{
+// Request returns request for WindowsDefenderAdvancedThreatProtectionConfiguration collection
+func (b *DeviceConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest {
+	return &DeviceConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for WindowsDefenderAdvancedThreatProtectionConfiguration item
+func (b *DeviceConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder) ID(id string) *WindowsDefenderAdvancedThreatProtectionConfigurationRequestBuilder {
+	bb := &WindowsDefenderAdvancedThreatProtectionConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest is request for DeviceConfiguration collection
-type WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest is request for WindowsDefenderAdvancedThreatProtectionConfiguration collection
+type DeviceConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for WindowsDefenderAdvancedThreatProtectionConfiguration collection
+func (r *DeviceConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]WindowsDefenderAdvancedThreatProtectionConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -507,7 +507,7 @@ func (r *WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdva
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []WindowsDefenderAdvancedThreatProtectionConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -521,7 +521,7 @@ func (r *WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdva
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []WindowsDefenderAdvancedThreatProtectionConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -550,8 +550,8 @@ func (r *WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdva
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for WindowsDefenderAdvancedThreatProtectionConfiguration collection, max N pages
+func (r *DeviceConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]WindowsDefenderAdvancedThreatProtectionConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -559,46 +559,46 @@ func (r *WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdva
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for WindowsDefenderAdvancedThreatProtectionConfiguration collection
+func (r *DeviceConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest) Get(ctx context.Context) ([]WindowsDefenderAdvancedThreatProtectionConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *WindowsDefenderAdvancedThreatProtectionConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for WindowsDefenderAdvancedThreatProtectionConfiguration collection
+func (r *DeviceConfigurationWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequest) Add(ctx context.Context, reqObj *WindowsDefenderAdvancedThreatProtectionConfiguration) (resObj *WindowsDefenderAdvancedThreatProtectionConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// WindowsHelloForBusinessAuthenticationMethod returns request builder for AuthenticationMethod collection rcn
-func (b *WindowsHelloForBusinessAuthenticationMethodRequestBuilder) WindowsHelloForBusinessAuthenticationMethod() *WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder {
-	bb := &WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/AuthenticationMethod"
+// WindowsHelloForBusinessAuthenticationMethod returns request builder for WindowsHelloForBusinessAuthenticationMethod collection rcn
+func (b *AuthenticationMethodRequestBuilder) WindowsHelloForBusinessAuthenticationMethod() *AuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder {
+	bb := &AuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/WindowsHelloForBusinessAuthenticationMethod"
 	return bb
 }
 
-// WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder is request builder for AuthenticationMethod collection
-type WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder is request builder for WindowsHelloForBusinessAuthenticationMethod collection
+type AuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for AuthenticationMethod collection
-func (b *WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder) Request() *WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest {
-	return &WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest{
+// Request returns request for WindowsHelloForBusinessAuthenticationMethod collection
+func (b *AuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest {
+	return &AuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for AuthenticationMethod item
-func (b *WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder) ID(id string) *AuthenticationMethodRequestBuilder {
-	bb := &AuthenticationMethodRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for WindowsHelloForBusinessAuthenticationMethod item
+func (b *AuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder) ID(id string) *WindowsHelloForBusinessAuthenticationMethodRequestBuilder {
+	bb := &WindowsHelloForBusinessAuthenticationMethodRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest is request for AuthenticationMethod collection
-type WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest struct{ BaseRequest }
+// AuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest is request for WindowsHelloForBusinessAuthenticationMethod collection
+type AuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for AuthenticationMethod collection
-func (r *WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AuthenticationMethod, error) {
+// Paging perfoms paging operation for WindowsHelloForBusinessAuthenticationMethod collection
+func (r *AuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]WindowsHelloForBusinessAuthenticationMethod, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -610,7 +610,7 @@ func (r *WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthe
 	if err != nil {
 		return nil, err
 	}
-	var values []AuthenticationMethod
+	var values []WindowsHelloForBusinessAuthenticationMethod
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -624,7 +624,7 @@ func (r *WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthe
 		}
 		var (
 			paging Paging
-			value  []AuthenticationMethod
+			value  []WindowsHelloForBusinessAuthenticationMethod
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -653,8 +653,8 @@ func (r *WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthe
 	}
 }
 
-// GetN performs GET request for AuthenticationMethod collection, max N pages
-func (r *WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]AuthenticationMethod, error) {
+// GetN performs GET request for WindowsHelloForBusinessAuthenticationMethod collection, max N pages
+func (r *AuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]WindowsHelloForBusinessAuthenticationMethod, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -662,46 +662,46 @@ func (r *WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthe
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for AuthenticationMethod collection
-func (r *WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]AuthenticationMethod, error) {
+// Get performs GET request for WindowsHelloForBusinessAuthenticationMethod collection
+func (r *AuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]WindowsHelloForBusinessAuthenticationMethod, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for AuthenticationMethod collection
-func (r *WindowsHelloForBusinessAuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *AuthenticationMethod) (resObj *AuthenticationMethod, err error) {
+// Add performs POST request for WindowsHelloForBusinessAuthenticationMethod collection
+func (r *AuthenticationMethodWindowsHelloForBusinessAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *WindowsHelloForBusinessAuthenticationMethod) (resObj *WindowsHelloForBusinessAuthenticationMethod, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// WindowsInformationProtection returns request builder for ManagedAppPolicy collection rcn
-func (b *WindowsInformationProtectionRequestBuilder) WindowsInformationProtection() *WindowsInformationProtectionWindowsInformationProtectionCollectionRequestBuilder {
-	bb := &WindowsInformationProtectionWindowsInformationProtectionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ManagedAppPolicy"
+// WindowsInformationProtection returns request builder for WindowsInformationProtection collection rcn
+func (b *ManagedAppPolicyRequestBuilder) WindowsInformationProtection() *ManagedAppPolicyWindowsInformationProtectionCollectionRequestBuilder {
+	bb := &ManagedAppPolicyWindowsInformationProtectionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/WindowsInformationProtection"
 	return bb
 }
 
-// WindowsInformationProtectionWindowsInformationProtectionCollectionRequestBuilder is request builder for ManagedAppPolicy collection
-type WindowsInformationProtectionWindowsInformationProtectionCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ManagedAppPolicyWindowsInformationProtectionCollectionRequestBuilder is request builder for WindowsInformationProtection collection
+type ManagedAppPolicyWindowsInformationProtectionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for ManagedAppPolicy collection
-func (b *WindowsInformationProtectionWindowsInformationProtectionCollectionRequestBuilder) Request() *WindowsInformationProtectionWindowsInformationProtectionCollectionRequest {
-	return &WindowsInformationProtectionWindowsInformationProtectionCollectionRequest{
+// Request returns request for WindowsInformationProtection collection
+func (b *ManagedAppPolicyWindowsInformationProtectionCollectionRequestBuilder) Request() *ManagedAppPolicyWindowsInformationProtectionCollectionRequest {
+	return &ManagedAppPolicyWindowsInformationProtectionCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for ManagedAppPolicy item
-func (b *WindowsInformationProtectionWindowsInformationProtectionCollectionRequestBuilder) ID(id string) *ManagedAppPolicyRequestBuilder {
-	bb := &ManagedAppPolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for WindowsInformationProtection item
+func (b *ManagedAppPolicyWindowsInformationProtectionCollectionRequestBuilder) ID(id string) *WindowsInformationProtectionRequestBuilder {
+	bb := &WindowsInformationProtectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WindowsInformationProtectionWindowsInformationProtectionCollectionRequest is request for ManagedAppPolicy collection
-type WindowsInformationProtectionWindowsInformationProtectionCollectionRequest struct{ BaseRequest }
+// ManagedAppPolicyWindowsInformationProtectionCollectionRequest is request for WindowsInformationProtection collection
+type ManagedAppPolicyWindowsInformationProtectionCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for ManagedAppPolicy collection
-func (r *WindowsInformationProtectionWindowsInformationProtectionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ManagedAppPolicy, error) {
+// Paging perfoms paging operation for WindowsInformationProtection collection
+func (r *ManagedAppPolicyWindowsInformationProtectionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]WindowsInformationProtection, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -713,7 +713,7 @@ func (r *WindowsInformationProtectionWindowsInformationProtectionCollectionReque
 	if err != nil {
 		return nil, err
 	}
-	var values []ManagedAppPolicy
+	var values []WindowsInformationProtection
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -727,7 +727,7 @@ func (r *WindowsInformationProtectionWindowsInformationProtectionCollectionReque
 		}
 		var (
 			paging Paging
-			value  []ManagedAppPolicy
+			value  []WindowsInformationProtection
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -756,8 +756,8 @@ func (r *WindowsInformationProtectionWindowsInformationProtectionCollectionReque
 	}
 }
 
-// GetN performs GET request for ManagedAppPolicy collection, max N pages
-func (r *WindowsInformationProtectionWindowsInformationProtectionCollectionRequest) GetN(ctx context.Context, n int) ([]ManagedAppPolicy, error) {
+// GetN performs GET request for WindowsInformationProtection collection, max N pages
+func (r *ManagedAppPolicyWindowsInformationProtectionCollectionRequest) GetN(ctx context.Context, n int) ([]WindowsInformationProtection, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -765,67 +765,67 @@ func (r *WindowsInformationProtectionWindowsInformationProtectionCollectionReque
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for ManagedAppPolicy collection
-func (r *WindowsInformationProtectionWindowsInformationProtectionCollectionRequest) Get(ctx context.Context) ([]ManagedAppPolicy, error) {
+// Get performs GET request for WindowsInformationProtection collection
+func (r *ManagedAppPolicyWindowsInformationProtectionCollectionRequest) Get(ctx context.Context) ([]WindowsInformationProtection, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for ManagedAppPolicy collection
-func (r *WindowsInformationProtectionWindowsInformationProtectionCollectionRequest) Add(ctx context.Context, reqObj *ManagedAppPolicy) (resObj *ManagedAppPolicy, err error) {
+// Add performs POST request for WindowsInformationProtection collection
+func (r *ManagedAppPolicyWindowsInformationProtectionCollectionRequest) Add(ctx context.Context, reqObj *WindowsInformationProtection) (resObj *WindowsInformationProtection, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// WindowsInformationProtectionAppLearningSummary is navigation property rn
-func (b *WindowsInformationProtectionAppLearningSummaryRequestBuilder) WindowsInformationProtectionAppLearningSummary() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WindowsInformationProtectionAppLearningSummaryRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WindowsInformationProtectionAppLockerFile is navigation property rn
-func (b *WindowsInformationProtectionAppLockerFileRequestBuilder) WindowsInformationProtectionAppLockerFile() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WindowsInformationProtectionAppLockerFileRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WindowsInformationProtectionNetworkLearningSummary is navigation property rn
-func (b *WindowsInformationProtectionNetworkLearningSummaryRequestBuilder) WindowsInformationProtectionNetworkLearningSummary() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WindowsInformationProtectionNetworkLearningSummaryRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WindowsMicrosoftEdgeApp returns request builder for MobileApp collection rcn
-func (b *WindowsMicrosoftEdgeAppRequestBuilder) WindowsMicrosoftEdgeApp() *WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequestBuilder {
-	bb := &WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/MobileApp"
+// WindowsMicrosoftEdgeApp returns request builder for WindowsMicrosoftEdgeApp collection rcn
+func (b *MobileAppRequestBuilder) WindowsMicrosoftEdgeApp() *MobileAppWindowsMicrosoftEdgeAppCollectionRequestBuilder {
+	bb := &MobileAppWindowsMicrosoftEdgeAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/WindowsMicrosoftEdgeApp"
 	return bb
 }
 
-// WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequestBuilder is request builder for MobileApp collection
-type WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+// MobileAppWindowsMicrosoftEdgeAppCollectionRequestBuilder is request builder for WindowsMicrosoftEdgeApp collection
+type MobileAppWindowsMicrosoftEdgeAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for MobileApp collection
-func (b *WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequestBuilder) Request() *WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequest {
-	return &WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequest{
+// Request returns request for WindowsMicrosoftEdgeApp collection
+func (b *MobileAppWindowsMicrosoftEdgeAppCollectionRequestBuilder) Request() *MobileAppWindowsMicrosoftEdgeAppCollectionRequest {
+	return &MobileAppWindowsMicrosoftEdgeAppCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for MobileApp item
-func (b *WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequestBuilder) ID(id string) *MobileAppRequestBuilder {
-	bb := &MobileAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for WindowsMicrosoftEdgeApp item
+func (b *MobileAppWindowsMicrosoftEdgeAppCollectionRequestBuilder) ID(id string) *WindowsMicrosoftEdgeAppRequestBuilder {
+	bb := &WindowsMicrosoftEdgeAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequest is request for MobileApp collection
-type WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequest struct{ BaseRequest }
+// MobileAppWindowsMicrosoftEdgeAppCollectionRequest is request for WindowsMicrosoftEdgeApp collection
+type MobileAppWindowsMicrosoftEdgeAppCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for MobileApp collection
-func (r *WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MobileApp, error) {
+// Paging perfoms paging operation for WindowsMicrosoftEdgeApp collection
+func (r *MobileAppWindowsMicrosoftEdgeAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]WindowsMicrosoftEdgeApp, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -837,7 +837,7 @@ func (r *WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequest) Paging
 	if err != nil {
 		return nil, err
 	}
-	var values []MobileApp
+	var values []WindowsMicrosoftEdgeApp
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -851,7 +851,7 @@ func (r *WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequest) Paging
 		}
 		var (
 			paging Paging
-			value  []MobileApp
+			value  []WindowsMicrosoftEdgeApp
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -880,8 +880,8 @@ func (r *WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequest) Paging
 	}
 }
 
-// GetN performs GET request for MobileApp collection, max N pages
-func (r *WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequest) GetN(ctx context.Context, n int) ([]MobileApp, error) {
+// GetN performs GET request for WindowsMicrosoftEdgeApp collection, max N pages
+func (r *MobileAppWindowsMicrosoftEdgeAppCollectionRequest) GetN(ctx context.Context, n int) ([]WindowsMicrosoftEdgeApp, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -889,46 +889,46 @@ func (r *WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequest) GetN(c
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for MobileApp collection
-func (r *WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequest) Get(ctx context.Context) ([]MobileApp, error) {
+// Get performs GET request for WindowsMicrosoftEdgeApp collection
+func (r *MobileAppWindowsMicrosoftEdgeAppCollectionRequest) Get(ctx context.Context) ([]WindowsMicrosoftEdgeApp, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for MobileApp collection
-func (r *WindowsMicrosoftEdgeAppWindowsMicrosoftEdgeAppCollectionRequest) Add(ctx context.Context, reqObj *MobileApp) (resObj *MobileApp, err error) {
+// Add performs POST request for WindowsMicrosoftEdgeApp collection
+func (r *MobileAppWindowsMicrosoftEdgeAppCollectionRequest) Add(ctx context.Context, reqObj *WindowsMicrosoftEdgeApp) (resObj *WindowsMicrosoftEdgeApp, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// WindowsPhone81CompliancePolicy returns request builder for DeviceCompliancePolicy collection rcn
-func (b *WindowsPhone81CompliancePolicyRequestBuilder) WindowsPhone81CompliancePolicy() *WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionRequestBuilder {
-	bb := &WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceCompliancePolicy"
+// WindowsPhone81CompliancePolicy returns request builder for WindowsPhone81CompliancePolicy collection rcn
+func (b *DeviceCompliancePolicyRequestBuilder) WindowsPhone81CompliancePolicy() *DeviceCompliancePolicyWindowsPhone81CompliancePolicyCollectionRequestBuilder {
+	bb := &DeviceCompliancePolicyWindowsPhone81CompliancePolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/WindowsPhone81CompliancePolicy"
 	return bb
 }
 
-// WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionRequestBuilder is request builder for DeviceCompliancePolicy collection
-type WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceCompliancePolicyWindowsPhone81CompliancePolicyCollectionRequestBuilder is request builder for WindowsPhone81CompliancePolicy collection
+type DeviceCompliancePolicyWindowsPhone81CompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceCompliancePolicy collection
-func (b *WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionRequestBuilder) Request() *WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest {
-	return &WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest{
+// Request returns request for WindowsPhone81CompliancePolicy collection
+func (b *DeviceCompliancePolicyWindowsPhone81CompliancePolicyCollectionRequestBuilder) Request() *DeviceCompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest {
+	return &DeviceCompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceCompliancePolicy item
-func (b *WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionRequestBuilder) ID(id string) *DeviceCompliancePolicyRequestBuilder {
-	bb := &DeviceCompliancePolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for WindowsPhone81CompliancePolicy item
+func (b *DeviceCompliancePolicyWindowsPhone81CompliancePolicyCollectionRequestBuilder) ID(id string) *WindowsPhone81CompliancePolicyRequestBuilder {
+	bb := &WindowsPhone81CompliancePolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest is request for DeviceCompliancePolicy collection
-type WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest struct{ BaseRequest }
+// DeviceCompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest is request for WindowsPhone81CompliancePolicy collection
+type DeviceCompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceCompliancePolicy collection
-func (r *WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceCompliancePolicy, error) {
+// Paging perfoms paging operation for WindowsPhone81CompliancePolicy collection
+func (r *DeviceCompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]WindowsPhone81CompliancePolicy, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -940,7 +940,7 @@ func (r *WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionR
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceCompliancePolicy
+	var values []WindowsPhone81CompliancePolicy
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -954,7 +954,7 @@ func (r *WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionR
 		}
 		var (
 			paging Paging
-			value  []DeviceCompliancePolicy
+			value  []WindowsPhone81CompliancePolicy
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -983,8 +983,8 @@ func (r *WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionR
 	}
 }
 
-// GetN performs GET request for DeviceCompliancePolicy collection, max N pages
-func (r *WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceCompliancePolicy, error) {
+// GetN performs GET request for WindowsPhone81CompliancePolicy collection, max N pages
+func (r *DeviceCompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest) GetN(ctx context.Context, n int) ([]WindowsPhone81CompliancePolicy, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -992,46 +992,46 @@ func (r *WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionR
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceCompliancePolicy collection
-func (r *WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest) Get(ctx context.Context) ([]DeviceCompliancePolicy, error) {
+// Get performs GET request for WindowsPhone81CompliancePolicy collection
+func (r *DeviceCompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest) Get(ctx context.Context) ([]WindowsPhone81CompliancePolicy, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceCompliancePolicy collection
-func (r *WindowsPhone81CompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest) Add(ctx context.Context, reqObj *DeviceCompliancePolicy) (resObj *DeviceCompliancePolicy, err error) {
+// Add performs POST request for WindowsPhone81CompliancePolicy collection
+func (r *DeviceCompliancePolicyWindowsPhone81CompliancePolicyCollectionRequest) Add(ctx context.Context, reqObj *WindowsPhone81CompliancePolicy) (resObj *WindowsPhone81CompliancePolicy, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// WindowsPhone81CustomConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *WindowsPhone81CustomConfigurationRequestBuilder) WindowsPhone81CustomConfiguration() *WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationCollectionRequestBuilder {
-	bb := &WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// WindowsPhone81CustomConfiguration returns request builder for WindowsPhone81CustomConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) WindowsPhone81CustomConfiguration() *DeviceConfigurationWindowsPhone81CustomConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationWindowsPhone81CustomConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/WindowsPhone81CustomConfiguration"
 	return bb
 }
 
-// WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationWindowsPhone81CustomConfigurationCollectionRequestBuilder is request builder for WindowsPhone81CustomConfiguration collection
+type DeviceConfigurationWindowsPhone81CustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationCollectionRequestBuilder) Request() *WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationCollectionRequest {
-	return &WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationCollectionRequest{
+// Request returns request for WindowsPhone81CustomConfiguration collection
+func (b *DeviceConfigurationWindowsPhone81CustomConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationWindowsPhone81CustomConfigurationCollectionRequest {
+	return &DeviceConfigurationWindowsPhone81CustomConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for WindowsPhone81CustomConfiguration item
+func (b *DeviceConfigurationWindowsPhone81CustomConfigurationCollectionRequestBuilder) ID(id string) *WindowsPhone81CustomConfigurationRequestBuilder {
+	bb := &WindowsPhone81CustomConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationCollectionRequest is request for DeviceConfiguration collection
-type WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationWindowsPhone81CustomConfigurationCollectionRequest is request for WindowsPhone81CustomConfiguration collection
+type DeviceConfigurationWindowsPhone81CustomConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for WindowsPhone81CustomConfiguration collection
+func (r *DeviceConfigurationWindowsPhone81CustomConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]WindowsPhone81CustomConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1043,7 +1043,7 @@ func (r *WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationColle
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []WindowsPhone81CustomConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1057,7 +1057,7 @@ func (r *WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationColle
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []WindowsPhone81CustomConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1086,8 +1086,8 @@ func (r *WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationColle
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for WindowsPhone81CustomConfiguration collection, max N pages
+func (r *DeviceConfigurationWindowsPhone81CustomConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]WindowsPhone81CustomConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1095,46 +1095,46 @@ func (r *WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationColle
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for WindowsPhone81CustomConfiguration collection
+func (r *DeviceConfigurationWindowsPhone81CustomConfigurationCollectionRequest) Get(ctx context.Context) ([]WindowsPhone81CustomConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *WindowsPhone81CustomConfigurationWindowsPhone81CustomConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for WindowsPhone81CustomConfiguration collection
+func (r *DeviceConfigurationWindowsPhone81CustomConfigurationCollectionRequest) Add(ctx context.Context, reqObj *WindowsPhone81CustomConfiguration) (resObj *WindowsPhone81CustomConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// WindowsPhone81GeneralConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *WindowsPhone81GeneralConfigurationRequestBuilder) WindowsPhone81GeneralConfiguration() *WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCollectionRequestBuilder {
-	bb := &WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// WindowsPhone81GeneralConfiguration returns request builder for WindowsPhone81GeneralConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) WindowsPhone81GeneralConfiguration() *DeviceConfigurationWindowsPhone81GeneralConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationWindowsPhone81GeneralConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/WindowsPhone81GeneralConfiguration"
 	return bb
 }
 
-// WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationWindowsPhone81GeneralConfigurationCollectionRequestBuilder is request builder for WindowsPhone81GeneralConfiguration collection
+type DeviceConfigurationWindowsPhone81GeneralConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCollectionRequestBuilder) Request() *WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCollectionRequest {
-	return &WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCollectionRequest{
+// Request returns request for WindowsPhone81GeneralConfiguration collection
+func (b *DeviceConfigurationWindowsPhone81GeneralConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationWindowsPhone81GeneralConfigurationCollectionRequest {
+	return &DeviceConfigurationWindowsPhone81GeneralConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for WindowsPhone81GeneralConfiguration item
+func (b *DeviceConfigurationWindowsPhone81GeneralConfigurationCollectionRequestBuilder) ID(id string) *WindowsPhone81GeneralConfigurationRequestBuilder {
+	bb := &WindowsPhone81GeneralConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCollectionRequest is request for DeviceConfiguration collection
-type WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationWindowsPhone81GeneralConfigurationCollectionRequest is request for WindowsPhone81GeneralConfiguration collection
+type DeviceConfigurationWindowsPhone81GeneralConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for WindowsPhone81GeneralConfiguration collection
+func (r *DeviceConfigurationWindowsPhone81GeneralConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]WindowsPhone81GeneralConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1146,7 +1146,7 @@ func (r *WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCol
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []WindowsPhone81GeneralConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1160,7 +1160,7 @@ func (r *WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCol
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []WindowsPhone81GeneralConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1189,8 +1189,8 @@ func (r *WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCol
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for WindowsPhone81GeneralConfiguration collection, max N pages
+func (r *DeviceConfigurationWindowsPhone81GeneralConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]WindowsPhone81GeneralConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1198,46 +1198,46 @@ func (r *WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCol
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for WindowsPhone81GeneralConfiguration collection
+func (r *DeviceConfigurationWindowsPhone81GeneralConfigurationCollectionRequest) Get(ctx context.Context) ([]WindowsPhone81GeneralConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *WindowsPhone81GeneralConfigurationWindowsPhone81GeneralConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for WindowsPhone81GeneralConfiguration collection
+func (r *DeviceConfigurationWindowsPhone81GeneralConfigurationCollectionRequest) Add(ctx context.Context, reqObj *WindowsPhone81GeneralConfiguration) (resObj *WindowsPhone81GeneralConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// WindowsUniversalAppXContainedApp returns request builder for MobileContainedApp collection rcn
-func (b *WindowsUniversalAppXContainedAppRequestBuilder) WindowsUniversalAppXContainedApp() *WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollectionRequestBuilder {
-	bb := &WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/MobileContainedApp"
+// WindowsUniversalAppXContainedApp returns request builder for WindowsUniversalAppXContainedApp collection rcn
+func (b *MobileContainedAppRequestBuilder) WindowsUniversalAppXContainedApp() *MobileContainedAppWindowsUniversalAppXContainedAppCollectionRequestBuilder {
+	bb := &MobileContainedAppWindowsUniversalAppXContainedAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/WindowsUniversalAppXContainedApp"
 	return bb
 }
 
-// WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollectionRequestBuilder is request builder for MobileContainedApp collection
-type WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+// MobileContainedAppWindowsUniversalAppXContainedAppCollectionRequestBuilder is request builder for WindowsUniversalAppXContainedApp collection
+type MobileContainedAppWindowsUniversalAppXContainedAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for MobileContainedApp collection
-func (b *WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollectionRequestBuilder) Request() *WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollectionRequest {
-	return &WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollectionRequest{
+// Request returns request for WindowsUniversalAppXContainedApp collection
+func (b *MobileContainedAppWindowsUniversalAppXContainedAppCollectionRequestBuilder) Request() *MobileContainedAppWindowsUniversalAppXContainedAppCollectionRequest {
+	return &MobileContainedAppWindowsUniversalAppXContainedAppCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for MobileContainedApp item
-func (b *WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollectionRequestBuilder) ID(id string) *MobileContainedAppRequestBuilder {
-	bb := &MobileContainedAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for WindowsUniversalAppXContainedApp item
+func (b *MobileContainedAppWindowsUniversalAppXContainedAppCollectionRequestBuilder) ID(id string) *WindowsUniversalAppXContainedAppRequestBuilder {
+	bb := &WindowsUniversalAppXContainedAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollectionRequest is request for MobileContainedApp collection
-type WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollectionRequest struct{ BaseRequest }
+// MobileContainedAppWindowsUniversalAppXContainedAppCollectionRequest is request for WindowsUniversalAppXContainedApp collection
+type MobileContainedAppWindowsUniversalAppXContainedAppCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for MobileContainedApp collection
-func (r *WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MobileContainedApp, error) {
+// Paging perfoms paging operation for WindowsUniversalAppXContainedApp collection
+func (r *MobileContainedAppWindowsUniversalAppXContainedAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]WindowsUniversalAppXContainedApp, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1249,7 +1249,7 @@ func (r *WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollect
 	if err != nil {
 		return nil, err
 	}
-	var values []MobileContainedApp
+	var values []WindowsUniversalAppXContainedApp
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1263,7 +1263,7 @@ func (r *WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollect
 		}
 		var (
 			paging Paging
-			value  []MobileContainedApp
+			value  []WindowsUniversalAppXContainedApp
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1292,8 +1292,8 @@ func (r *WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollect
 	}
 }
 
-// GetN performs GET request for MobileContainedApp collection, max N pages
-func (r *WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollectionRequest) GetN(ctx context.Context, n int) ([]MobileContainedApp, error) {
+// GetN performs GET request for WindowsUniversalAppXContainedApp collection, max N pages
+func (r *MobileContainedAppWindowsUniversalAppXContainedAppCollectionRequest) GetN(ctx context.Context, n int) ([]WindowsUniversalAppXContainedApp, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1301,46 +1301,46 @@ func (r *WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollect
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for MobileContainedApp collection
-func (r *WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollectionRequest) Get(ctx context.Context) ([]MobileContainedApp, error) {
+// Get performs GET request for WindowsUniversalAppXContainedApp collection
+func (r *MobileContainedAppWindowsUniversalAppXContainedAppCollectionRequest) Get(ctx context.Context) ([]WindowsUniversalAppXContainedApp, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for MobileContainedApp collection
-func (r *WindowsUniversalAppXContainedAppWindowsUniversalAppXContainedAppCollectionRequest) Add(ctx context.Context, reqObj *MobileContainedApp) (resObj *MobileContainedApp, err error) {
+// Add performs POST request for WindowsUniversalAppXContainedApp collection
+func (r *MobileContainedAppWindowsUniversalAppXContainedAppCollectionRequest) Add(ctx context.Context, reqObj *WindowsUniversalAppXContainedApp) (resObj *WindowsUniversalAppXContainedApp, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// WindowsUpdateForBusinessConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *WindowsUpdateForBusinessConfigurationRequestBuilder) WindowsUpdateForBusinessConfiguration() *WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurationCollectionRequestBuilder {
-	bb := &WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// WindowsUpdateForBusinessConfiguration returns request builder for WindowsUpdateForBusinessConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) WindowsUpdateForBusinessConfiguration() *DeviceConfigurationWindowsUpdateForBusinessConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationWindowsUpdateForBusinessConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/WindowsUpdateForBusinessConfiguration"
 	return bb
 }
 
-// WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationWindowsUpdateForBusinessConfigurationCollectionRequestBuilder is request builder for WindowsUpdateForBusinessConfiguration collection
+type DeviceConfigurationWindowsUpdateForBusinessConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurationCollectionRequestBuilder) Request() *WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest {
-	return &WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest{
+// Request returns request for WindowsUpdateForBusinessConfiguration collection
+func (b *DeviceConfigurationWindowsUpdateForBusinessConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest {
+	return &DeviceConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for WindowsUpdateForBusinessConfiguration item
+func (b *DeviceConfigurationWindowsUpdateForBusinessConfigurationCollectionRequestBuilder) ID(id string) *WindowsUpdateForBusinessConfigurationRequestBuilder {
+	bb := &WindowsUpdateForBusinessConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest is request for DeviceConfiguration collection
-type WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest is request for WindowsUpdateForBusinessConfiguration collection
+type DeviceConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for WindowsUpdateForBusinessConfiguration collection
+func (r *DeviceConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]WindowsUpdateForBusinessConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1352,7 +1352,7 @@ func (r *WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurat
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []WindowsUpdateForBusinessConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1366,7 +1366,7 @@ func (r *WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurat
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []WindowsUpdateForBusinessConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1395,8 +1395,8 @@ func (r *WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurat
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for WindowsUpdateForBusinessConfiguration collection, max N pages
+func (r *DeviceConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]WindowsUpdateForBusinessConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1404,46 +1404,46 @@ func (r *WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurat
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for WindowsUpdateForBusinessConfiguration collection
+func (r *DeviceConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest) Get(ctx context.Context) ([]WindowsUpdateForBusinessConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *WindowsUpdateForBusinessConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for WindowsUpdateForBusinessConfiguration collection
+func (r *DeviceConfigurationWindowsUpdateForBusinessConfigurationCollectionRequest) Add(ctx context.Context, reqObj *WindowsUpdateForBusinessConfiguration) (resObj *WindowsUpdateForBusinessConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// WindowsWebApp returns request builder for MobileApp collection rcn
-func (b *WindowsWebAppRequestBuilder) WindowsWebApp() *WindowsWebAppWindowsWebAppCollectionRequestBuilder {
-	bb := &WindowsWebAppWindowsWebAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/MobileApp"
+// WindowsWebApp returns request builder for WindowsWebApp collection rcn
+func (b *MobileAppRequestBuilder) WindowsWebApp() *MobileAppWindowsWebAppCollectionRequestBuilder {
+	bb := &MobileAppWindowsWebAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/WindowsWebApp"
 	return bb
 }
 
-// WindowsWebAppWindowsWebAppCollectionRequestBuilder is request builder for MobileApp collection
-type WindowsWebAppWindowsWebAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+// MobileAppWindowsWebAppCollectionRequestBuilder is request builder for WindowsWebApp collection
+type MobileAppWindowsWebAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for MobileApp collection
-func (b *WindowsWebAppWindowsWebAppCollectionRequestBuilder) Request() *WindowsWebAppWindowsWebAppCollectionRequest {
-	return &WindowsWebAppWindowsWebAppCollectionRequest{
+// Request returns request for WindowsWebApp collection
+func (b *MobileAppWindowsWebAppCollectionRequestBuilder) Request() *MobileAppWindowsWebAppCollectionRequest {
+	return &MobileAppWindowsWebAppCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for MobileApp item
-func (b *WindowsWebAppWindowsWebAppCollectionRequestBuilder) ID(id string) *MobileAppRequestBuilder {
-	bb := &MobileAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for WindowsWebApp item
+func (b *MobileAppWindowsWebAppCollectionRequestBuilder) ID(id string) *WindowsWebAppRequestBuilder {
+	bb := &WindowsWebAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// WindowsWebAppWindowsWebAppCollectionRequest is request for MobileApp collection
-type WindowsWebAppWindowsWebAppCollectionRequest struct{ BaseRequest }
+// MobileAppWindowsWebAppCollectionRequest is request for WindowsWebApp collection
+type MobileAppWindowsWebAppCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for MobileApp collection
-func (r *WindowsWebAppWindowsWebAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MobileApp, error) {
+// Paging perfoms paging operation for WindowsWebApp collection
+func (r *MobileAppWindowsWebAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]WindowsWebApp, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1455,7 +1455,7 @@ func (r *WindowsWebAppWindowsWebAppCollectionRequest) Paging(ctx context.Context
 	if err != nil {
 		return nil, err
 	}
-	var values []MobileApp
+	var values []WindowsWebApp
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1469,7 +1469,7 @@ func (r *WindowsWebAppWindowsWebAppCollectionRequest) Paging(ctx context.Context
 		}
 		var (
 			paging Paging
-			value  []MobileApp
+			value  []WindowsWebApp
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1498,8 +1498,8 @@ func (r *WindowsWebAppWindowsWebAppCollectionRequest) Paging(ctx context.Context
 	}
 }
 
-// GetN performs GET request for MobileApp collection, max N pages
-func (r *WindowsWebAppWindowsWebAppCollectionRequest) GetN(ctx context.Context, n int) ([]MobileApp, error) {
+// GetN performs GET request for WindowsWebApp collection, max N pages
+func (r *MobileAppWindowsWebAppCollectionRequest) GetN(ctx context.Context, n int) ([]WindowsWebApp, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1507,13 +1507,13 @@ func (r *WindowsWebAppWindowsWebAppCollectionRequest) GetN(ctx context.Context, 
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for MobileApp collection
-func (r *WindowsWebAppWindowsWebAppCollectionRequest) Get(ctx context.Context) ([]MobileApp, error) {
+// Get performs GET request for WindowsWebApp collection
+func (r *MobileAppWindowsWebAppCollectionRequest) Get(ctx context.Context) ([]WindowsWebApp, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for MobileApp collection
-func (r *WindowsWebAppWindowsWebAppCollectionRequest) Add(ctx context.Context, reqObj *MobileApp) (resObj *MobileApp, err error) {
+// Add performs POST request for WindowsWebApp collection
+func (r *MobileAppWindowsWebAppCollectionRequest) Add(ctx context.Context, reqObj *WindowsWebApp) (resObj *WindowsWebApp, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

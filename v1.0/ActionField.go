@@ -2,8 +2,8 @@
 
 package msgraph
 
-// FieldValueSet is navigation property rn
-func (b *FieldValueSetRequestBuilder) FieldValueSet() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *FieldValueSetRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

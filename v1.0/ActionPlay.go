@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// PlayPromptOperation returns request builder for CommsOperation collection rcn
-func (b *PlayPromptOperationRequestBuilder) PlayPromptOperation() *PlayPromptOperationPlayPromptOperationCollectionRequestBuilder {
-	bb := &PlayPromptOperationPlayPromptOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/CommsOperation"
+// PlayPromptOperation returns request builder for PlayPromptOperation collection rcn
+func (b *CommsOperationRequestBuilder) PlayPromptOperation() *CommsOperationPlayPromptOperationCollectionRequestBuilder {
+	bb := &CommsOperationPlayPromptOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/PlayPromptOperation"
 	return bb
 }
 
-// PlayPromptOperationPlayPromptOperationCollectionRequestBuilder is request builder for CommsOperation collection
-type PlayPromptOperationPlayPromptOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// CommsOperationPlayPromptOperationCollectionRequestBuilder is request builder for PlayPromptOperation collection
+type CommsOperationPlayPromptOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for CommsOperation collection
-func (b *PlayPromptOperationPlayPromptOperationCollectionRequestBuilder) Request() *PlayPromptOperationPlayPromptOperationCollectionRequest {
-	return &PlayPromptOperationPlayPromptOperationCollectionRequest{
+// Request returns request for PlayPromptOperation collection
+func (b *CommsOperationPlayPromptOperationCollectionRequestBuilder) Request() *CommsOperationPlayPromptOperationCollectionRequest {
+	return &CommsOperationPlayPromptOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for CommsOperation item
-func (b *PlayPromptOperationPlayPromptOperationCollectionRequestBuilder) ID(id string) *CommsOperationRequestBuilder {
-	bb := &CommsOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for PlayPromptOperation item
+func (b *CommsOperationPlayPromptOperationCollectionRequestBuilder) ID(id string) *PlayPromptOperationRequestBuilder {
+	bb := &PlayPromptOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// PlayPromptOperationPlayPromptOperationCollectionRequest is request for CommsOperation collection
-type PlayPromptOperationPlayPromptOperationCollectionRequest struct{ BaseRequest }
+// CommsOperationPlayPromptOperationCollectionRequest is request for PlayPromptOperation collection
+type CommsOperationPlayPromptOperationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for CommsOperation collection
-func (r *PlayPromptOperationPlayPromptOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CommsOperation, error) {
+// Paging perfoms paging operation for PlayPromptOperation collection
+func (r *CommsOperationPlayPromptOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]PlayPromptOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *PlayPromptOperationPlayPromptOperationCollectionRequest) Paging(ctx con
 	if err != nil {
 		return nil, err
 	}
-	var values []CommsOperation
+	var values []PlayPromptOperation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *PlayPromptOperationPlayPromptOperationCollectionRequest) Paging(ctx con
 		}
 		var (
 			paging Paging
-			value  []CommsOperation
+			value  []PlayPromptOperation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *PlayPromptOperationPlayPromptOperationCollectionRequest) Paging(ctx con
 	}
 }
 
-// GetN performs GET request for CommsOperation collection, max N pages
-func (r *PlayPromptOperationPlayPromptOperationCollectionRequest) GetN(ctx context.Context, n int) ([]CommsOperation, error) {
+// GetN performs GET request for PlayPromptOperation collection, max N pages
+func (r *CommsOperationPlayPromptOperationCollectionRequest) GetN(ctx context.Context, n int) ([]PlayPromptOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *PlayPromptOperationPlayPromptOperationCollectionRequest) GetN(ctx conte
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for CommsOperation collection
-func (r *PlayPromptOperationPlayPromptOperationCollectionRequest) Get(ctx context.Context) ([]CommsOperation, error) {
+// Get performs GET request for PlayPromptOperation collection
+func (r *CommsOperationPlayPromptOperationCollectionRequest) Get(ctx context.Context) ([]PlayPromptOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for CommsOperation collection
-func (r *PlayPromptOperationPlayPromptOperationCollectionRequest) Add(ctx context.Context, reqObj *CommsOperation) (resObj *CommsOperation, err error) {
+// Add performs POST request for PlayPromptOperation collection
+func (r *CommsOperationPlayPromptOperationCollectionRequest) Add(ctx context.Context, reqObj *PlayPromptOperation) (resObj *PlayPromptOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

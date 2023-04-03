@@ -2,8 +2,8 @@
 
 package msgraph
 
-// LocalizedNotificationMessage is navigation property rn
-func (b *LocalizedNotificationMessageRequestBuilder) LocalizedNotificationMessage() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *LocalizedNotificationMessageRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

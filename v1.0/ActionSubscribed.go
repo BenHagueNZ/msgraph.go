@@ -2,8 +2,8 @@
 
 package msgraph
 
-// SubscribedSKU is navigation property rn
-func (b *SubscribedSKURequestBuilder) SubscribedSKU() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *SubscribedSKURequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

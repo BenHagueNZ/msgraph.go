@@ -114,15 +114,15 @@ func (r *OutlookUserMasterCategoriesCollectionRequest) Add(ctx context.Context, 
 	return
 }
 
-// OutlookCategory is navigation property rn
-func (b *OutlookCategoryRequestBuilder) OutlookCategory() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *OutlookCategoryRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// OutlookUser is navigation property rn
-func (b *OutlookUserRequestBuilder) OutlookUser() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *OutlookUserRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

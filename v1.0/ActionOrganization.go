@@ -228,35 +228,35 @@ func (r *OrganizationExtensionsCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Organization returns request builder for DirectoryObject collection rcn
-func (b *OrganizationRequestBuilder) Organization() *OrganizationOrganizationCollectionRequestBuilder {
-	bb := &OrganizationOrganizationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryObject"
+// Organization returns request builder for Organization collection rcn
+func (b *DirectoryObjectRequestBuilder) Organization() *DirectoryObjectOrganizationCollectionRequestBuilder {
+	bb := &DirectoryObjectOrganizationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Organization"
 	return bb
 }
 
-// OrganizationOrganizationCollectionRequestBuilder is request builder for DirectoryObject collection
-type OrganizationOrganizationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DirectoryObjectOrganizationCollectionRequestBuilder is request builder for Organization collection
+type DirectoryObjectOrganizationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DirectoryObject collection
-func (b *OrganizationOrganizationCollectionRequestBuilder) Request() *OrganizationOrganizationCollectionRequest {
-	return &OrganizationOrganizationCollectionRequest{
+// Request returns request for Organization collection
+func (b *DirectoryObjectOrganizationCollectionRequestBuilder) Request() *DirectoryObjectOrganizationCollectionRequest {
+	return &DirectoryObjectOrganizationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DirectoryObject item
-func (b *OrganizationOrganizationCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
-	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Organization item
+func (b *DirectoryObjectOrganizationCollectionRequestBuilder) ID(id string) *OrganizationRequestBuilder {
+	bb := &OrganizationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// OrganizationOrganizationCollectionRequest is request for DirectoryObject collection
-type OrganizationOrganizationCollectionRequest struct{ BaseRequest }
+// DirectoryObjectOrganizationCollectionRequest is request for Organization collection
+type DirectoryObjectOrganizationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DirectoryObject collection
-func (r *OrganizationOrganizationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+// Paging perfoms paging operation for Organization collection
+func (r *DirectoryObjectOrganizationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Organization, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -268,7 +268,7 @@ func (r *OrganizationOrganizationCollectionRequest) Paging(ctx context.Context, 
 	if err != nil {
 		return nil, err
 	}
-	var values []DirectoryObject
+	var values []Organization
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -282,7 +282,7 @@ func (r *OrganizationOrganizationCollectionRequest) Paging(ctx context.Context, 
 		}
 		var (
 			paging Paging
-			value  []DirectoryObject
+			value  []Organization
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -311,8 +311,8 @@ func (r *OrganizationOrganizationCollectionRequest) Paging(ctx context.Context, 
 	}
 }
 
-// GetN performs GET request for DirectoryObject collection, max N pages
-func (r *OrganizationOrganizationCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+// GetN performs GET request for Organization collection, max N pages
+func (r *DirectoryObjectOrganizationCollectionRequest) GetN(ctx context.Context, n int) ([]Organization, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -320,13 +320,13 @@ func (r *OrganizationOrganizationCollectionRequest) GetN(ctx context.Context, n 
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DirectoryObject collection
-func (r *OrganizationOrganizationCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+// Get performs GET request for Organization collection
+func (r *DirectoryObjectOrganizationCollectionRequest) Get(ctx context.Context) ([]Organization, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DirectoryObject collection
-func (r *OrganizationOrganizationCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+// Add performs POST request for Organization collection
+func (r *DirectoryObjectOrganizationCollectionRequest) Add(ctx context.Context, reqObj *Organization) (resObj *Organization, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

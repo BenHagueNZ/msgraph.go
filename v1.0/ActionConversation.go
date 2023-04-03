@@ -229,15 +229,15 @@ func (r *ConversationThreadPostsCollectionRequest) Add(ctx context.Context, reqO
 	return
 }
 
-// Conversation is navigation property rn
-func (b *ConversationRequestBuilder) Conversation() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ConversationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ConversationThread is navigation property rn
-func (b *ConversationThreadRequestBuilder) ConversationThread() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ConversationThreadRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

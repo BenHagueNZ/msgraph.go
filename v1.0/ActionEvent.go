@@ -592,42 +592,42 @@ func (b *EventMessageRequestBuilder) Event() *EventRequestBuilder {
 	return bb
 }
 
-// Event is navigation property rn
-func (b *EventRequestBuilder) Event() *OutlookItemRequestBuilder {
+// OutlookItem is navigation property rn
+func (b *EventRequestBuilder) OutlookItem() *OutlookItemRequestBuilder {
 	bb := &OutlookItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/OutlookItem"
 	return bb
 }
 
-// EventMessage returns request builder for Message collection rcn
-func (b *EventMessageRequestBuilder) EventMessage() *EventMessageEventMessageCollectionRequestBuilder {
-	bb := &EventMessageEventMessageCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/Message"
+// EventMessage returns request builder for EventMessage collection rcn
+func (b *MessageRequestBuilder) EventMessage() *MessageEventMessageCollectionRequestBuilder {
+	bb := &MessageEventMessageCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/EventMessage"
 	return bb
 }
 
-// EventMessageEventMessageCollectionRequestBuilder is request builder for Message collection
-type EventMessageEventMessageCollectionRequestBuilder struct{ BaseRequestBuilder }
+// MessageEventMessageCollectionRequestBuilder is request builder for EventMessage collection
+type MessageEventMessageCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for Message collection
-func (b *EventMessageEventMessageCollectionRequestBuilder) Request() *EventMessageEventMessageCollectionRequest {
-	return &EventMessageEventMessageCollectionRequest{
+// Request returns request for EventMessage collection
+func (b *MessageEventMessageCollectionRequestBuilder) Request() *MessageEventMessageCollectionRequest {
+	return &MessageEventMessageCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for Message item
-func (b *EventMessageEventMessageCollectionRequestBuilder) ID(id string) *MessageRequestBuilder {
-	bb := &MessageRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for EventMessage item
+func (b *MessageEventMessageCollectionRequestBuilder) ID(id string) *EventMessageRequestBuilder {
+	bb := &EventMessageRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// EventMessageEventMessageCollectionRequest is request for Message collection
-type EventMessageEventMessageCollectionRequest struct{ BaseRequest }
+// MessageEventMessageCollectionRequest is request for EventMessage collection
+type MessageEventMessageCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for Message collection
-func (r *EventMessageEventMessageCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Message, error) {
+// Paging perfoms paging operation for EventMessage collection
+func (r *MessageEventMessageCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EventMessage, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -639,7 +639,7 @@ func (r *EventMessageEventMessageCollectionRequest) Paging(ctx context.Context, 
 	if err != nil {
 		return nil, err
 	}
-	var values []Message
+	var values []EventMessage
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -653,7 +653,7 @@ func (r *EventMessageEventMessageCollectionRequest) Paging(ctx context.Context, 
 		}
 		var (
 			paging Paging
-			value  []Message
+			value  []EventMessage
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -682,8 +682,8 @@ func (r *EventMessageEventMessageCollectionRequest) Paging(ctx context.Context, 
 	}
 }
 
-// GetN performs GET request for Message collection, max N pages
-func (r *EventMessageEventMessageCollectionRequest) GetN(ctx context.Context, n int) ([]Message, error) {
+// GetN performs GET request for EventMessage collection, max N pages
+func (r *MessageEventMessageCollectionRequest) GetN(ctx context.Context, n int) ([]EventMessage, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -691,13 +691,13 @@ func (r *EventMessageEventMessageCollectionRequest) GetN(ctx context.Context, n 
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for Message collection
-func (r *EventMessageEventMessageCollectionRequest) Get(ctx context.Context) ([]Message, error) {
+// Get performs GET request for EventMessage collection
+func (r *MessageEventMessageCollectionRequest) Get(ctx context.Context) ([]EventMessage, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for Message collection
-func (r *EventMessageEventMessageCollectionRequest) Add(ctx context.Context, reqObj *Message) (resObj *Message, err error) {
+// Add performs POST request for EventMessage collection
+func (r *MessageEventMessageCollectionRequest) Add(ctx context.Context, reqObj *EventMessage) (resObj *EventMessage, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

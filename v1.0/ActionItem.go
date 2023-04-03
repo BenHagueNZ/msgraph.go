@@ -245,56 +245,56 @@ func (b *ItemAttachmentRequestBuilder) Item() *OutlookItemRequestBuilder {
 	return bb
 }
 
-// ItemActivity is navigation property rn
-func (b *ItemActivityRequestBuilder) ItemActivity() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ItemActivityRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ItemActivityStat is navigation property rn
-func (b *ItemActivityStatRequestBuilder) ItemActivityStat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ItemActivityStatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ItemAnalytics is navigation property rn
-func (b *ItemAnalyticsRequestBuilder) ItemAnalytics() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ItemAnalyticsRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ItemAttachment returns request builder for Attachment collection rcn
-func (b *ItemAttachmentRequestBuilder) ItemAttachment() *ItemAttachmentItemAttachmentCollectionRequestBuilder {
-	bb := &ItemAttachmentItemAttachmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/Attachment"
+// ItemAttachment returns request builder for ItemAttachment collection rcn
+func (b *AttachmentRequestBuilder) ItemAttachment() *AttachmentItemAttachmentCollectionRequestBuilder {
+	bb := &AttachmentItemAttachmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/ItemAttachment"
 	return bb
 }
 
-// ItemAttachmentItemAttachmentCollectionRequestBuilder is request builder for Attachment collection
-type ItemAttachmentItemAttachmentCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AttachmentItemAttachmentCollectionRequestBuilder is request builder for ItemAttachment collection
+type AttachmentItemAttachmentCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for Attachment collection
-func (b *ItemAttachmentItemAttachmentCollectionRequestBuilder) Request() *ItemAttachmentItemAttachmentCollectionRequest {
-	return &ItemAttachmentItemAttachmentCollectionRequest{
+// Request returns request for ItemAttachment collection
+func (b *AttachmentItemAttachmentCollectionRequestBuilder) Request() *AttachmentItemAttachmentCollectionRequest {
+	return &AttachmentItemAttachmentCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for Attachment item
-func (b *ItemAttachmentItemAttachmentCollectionRequestBuilder) ID(id string) *AttachmentRequestBuilder {
-	bb := &AttachmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for ItemAttachment item
+func (b *AttachmentItemAttachmentCollectionRequestBuilder) ID(id string) *ItemAttachmentRequestBuilder {
+	bb := &ItemAttachmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ItemAttachmentItemAttachmentCollectionRequest is request for Attachment collection
-type ItemAttachmentItemAttachmentCollectionRequest struct{ BaseRequest }
+// AttachmentItemAttachmentCollectionRequest is request for ItemAttachment collection
+type AttachmentItemAttachmentCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for Attachment collection
-func (r *ItemAttachmentItemAttachmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Attachment, error) {
+// Paging perfoms paging operation for ItemAttachment collection
+func (r *AttachmentItemAttachmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ItemAttachment, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -306,7 +306,7 @@ func (r *ItemAttachmentItemAttachmentCollectionRequest) Paging(ctx context.Conte
 	if err != nil {
 		return nil, err
 	}
-	var values []Attachment
+	var values []ItemAttachment
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -320,7 +320,7 @@ func (r *ItemAttachmentItemAttachmentCollectionRequest) Paging(ctx context.Conte
 		}
 		var (
 			paging Paging
-			value  []Attachment
+			value  []ItemAttachment
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -349,8 +349,8 @@ func (r *ItemAttachmentItemAttachmentCollectionRequest) Paging(ctx context.Conte
 	}
 }
 
-// GetN performs GET request for Attachment collection, max N pages
-func (r *ItemAttachmentItemAttachmentCollectionRequest) GetN(ctx context.Context, n int) ([]Attachment, error) {
+// GetN performs GET request for ItemAttachment collection, max N pages
+func (r *AttachmentItemAttachmentCollectionRequest) GetN(ctx context.Context, n int) ([]ItemAttachment, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -358,13 +358,13 @@ func (r *ItemAttachmentItemAttachmentCollectionRequest) GetN(ctx context.Context
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for Attachment collection
-func (r *ItemAttachmentItemAttachmentCollectionRequest) Get(ctx context.Context) ([]Attachment, error) {
+// Get performs GET request for ItemAttachment collection
+func (r *AttachmentItemAttachmentCollectionRequest) Get(ctx context.Context) ([]ItemAttachment, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for Attachment collection
-func (r *ItemAttachmentItemAttachmentCollectionRequest) Add(ctx context.Context, reqObj *Attachment) (resObj *Attachment, err error) {
+// Add performs POST request for ItemAttachment collection
+func (r *AttachmentItemAttachmentCollectionRequest) Add(ctx context.Context, reqObj *ItemAttachment) (resObj *ItemAttachment, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

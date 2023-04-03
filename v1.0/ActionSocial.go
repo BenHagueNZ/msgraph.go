@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// SocialIdentityProvider returns request builder for IdentityProviderBase collection rcn
-func (b *SocialIdentityProviderRequestBuilder) SocialIdentityProvider() *SocialIdentityProviderSocialIdentityProviderCollectionRequestBuilder {
-	bb := &SocialIdentityProviderSocialIdentityProviderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/IdentityProviderBase"
+// SocialIdentityProvider returns request builder for SocialIdentityProvider collection rcn
+func (b *IdentityProviderBaseRequestBuilder) SocialIdentityProvider() *IdentityProviderBaseSocialIdentityProviderCollectionRequestBuilder {
+	bb := &IdentityProviderBaseSocialIdentityProviderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/SocialIdentityProvider"
 	return bb
 }
 
-// SocialIdentityProviderSocialIdentityProviderCollectionRequestBuilder is request builder for IdentityProviderBase collection
-type SocialIdentityProviderSocialIdentityProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
+// IdentityProviderBaseSocialIdentityProviderCollectionRequestBuilder is request builder for SocialIdentityProvider collection
+type IdentityProviderBaseSocialIdentityProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityProviderBase collection
-func (b *SocialIdentityProviderSocialIdentityProviderCollectionRequestBuilder) Request() *SocialIdentityProviderSocialIdentityProviderCollectionRequest {
-	return &SocialIdentityProviderSocialIdentityProviderCollectionRequest{
+// Request returns request for SocialIdentityProvider collection
+func (b *IdentityProviderBaseSocialIdentityProviderCollectionRequestBuilder) Request() *IdentityProviderBaseSocialIdentityProviderCollectionRequest {
+	return &IdentityProviderBaseSocialIdentityProviderCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityProviderBase item
-func (b *SocialIdentityProviderSocialIdentityProviderCollectionRequestBuilder) ID(id string) *IdentityProviderBaseRequestBuilder {
-	bb := &IdentityProviderBaseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SocialIdentityProvider item
+func (b *IdentityProviderBaseSocialIdentityProviderCollectionRequestBuilder) ID(id string) *SocialIdentityProviderRequestBuilder {
+	bb := &SocialIdentityProviderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SocialIdentityProviderSocialIdentityProviderCollectionRequest is request for IdentityProviderBase collection
-type SocialIdentityProviderSocialIdentityProviderCollectionRequest struct{ BaseRequest }
+// IdentityProviderBaseSocialIdentityProviderCollectionRequest is request for SocialIdentityProvider collection
+type IdentityProviderBaseSocialIdentityProviderCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityProviderBase collection
-func (r *SocialIdentityProviderSocialIdentityProviderCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityProviderBase, error) {
+// Paging perfoms paging operation for SocialIdentityProvider collection
+func (r *IdentityProviderBaseSocialIdentityProviderCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SocialIdentityProvider, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *SocialIdentityProviderSocialIdentityProviderCollectionRequest) Paging(c
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityProviderBase
+	var values []SocialIdentityProvider
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *SocialIdentityProviderSocialIdentityProviderCollectionRequest) Paging(c
 		}
 		var (
 			paging Paging
-			value  []IdentityProviderBase
+			value  []SocialIdentityProvider
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *SocialIdentityProviderSocialIdentityProviderCollectionRequest) Paging(c
 	}
 }
 
-// GetN performs GET request for IdentityProviderBase collection, max N pages
-func (r *SocialIdentityProviderSocialIdentityProviderCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityProviderBase, error) {
+// GetN performs GET request for SocialIdentityProvider collection, max N pages
+func (r *IdentityProviderBaseSocialIdentityProviderCollectionRequest) GetN(ctx context.Context, n int) ([]SocialIdentityProvider, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *SocialIdentityProviderSocialIdentityProviderCollectionRequest) GetN(ctx
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityProviderBase collection
-func (r *SocialIdentityProviderSocialIdentityProviderCollectionRequest) Get(ctx context.Context) ([]IdentityProviderBase, error) {
+// Get performs GET request for SocialIdentityProvider collection
+func (r *IdentityProviderBaseSocialIdentityProviderCollectionRequest) Get(ctx context.Context) ([]SocialIdentityProvider, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityProviderBase collection
-func (r *SocialIdentityProviderSocialIdentityProviderCollectionRequest) Add(ctx context.Context, reqObj *IdentityProviderBase) (resObj *IdentityProviderBase, err error) {
+// Add performs POST request for SocialIdentityProvider collection
+func (r *IdentityProviderBaseSocialIdentityProviderCollectionRequest) Add(ctx context.Context, reqObj *SocialIdentityProvider) (resObj *SocialIdentityProvider, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

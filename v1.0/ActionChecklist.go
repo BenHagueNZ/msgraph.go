@@ -2,8 +2,8 @@
 
 package msgraph
 
-// ChecklistItem is navigation property rn
-func (b *ChecklistItemRequestBuilder) ChecklistItem() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ChecklistItemRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

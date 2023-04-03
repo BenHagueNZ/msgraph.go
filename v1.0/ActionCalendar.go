@@ -645,56 +645,56 @@ func (r *CalendarGroupCalendarsCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Calendar is navigation property rn
-func (b *CalendarRequestBuilder) Calendar() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *CalendarRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// CalendarGroup is navigation property rn
-func (b *CalendarGroupRequestBuilder) CalendarGroup() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *CalendarGroupRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// CalendarPermission is navigation property rn
-func (b *CalendarPermissionRequestBuilder) CalendarPermission() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *CalendarPermissionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// CalendarSharingMessage returns request builder for Message collection rcn
-func (b *CalendarSharingMessageRequestBuilder) CalendarSharingMessage() *CalendarSharingMessageCalendarSharingMessageCollectionRequestBuilder {
-	bb := &CalendarSharingMessageCalendarSharingMessageCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/Message"
+// CalendarSharingMessage returns request builder for CalendarSharingMessage collection rcn
+func (b *MessageRequestBuilder) CalendarSharingMessage() *MessageCalendarSharingMessageCollectionRequestBuilder {
+	bb := &MessageCalendarSharingMessageCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/CalendarSharingMessage"
 	return bb
 }
 
-// CalendarSharingMessageCalendarSharingMessageCollectionRequestBuilder is request builder for Message collection
-type CalendarSharingMessageCalendarSharingMessageCollectionRequestBuilder struct{ BaseRequestBuilder }
+// MessageCalendarSharingMessageCollectionRequestBuilder is request builder for CalendarSharingMessage collection
+type MessageCalendarSharingMessageCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for Message collection
-func (b *CalendarSharingMessageCalendarSharingMessageCollectionRequestBuilder) Request() *CalendarSharingMessageCalendarSharingMessageCollectionRequest {
-	return &CalendarSharingMessageCalendarSharingMessageCollectionRequest{
+// Request returns request for CalendarSharingMessage collection
+func (b *MessageCalendarSharingMessageCollectionRequestBuilder) Request() *MessageCalendarSharingMessageCollectionRequest {
+	return &MessageCalendarSharingMessageCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for Message item
-func (b *CalendarSharingMessageCalendarSharingMessageCollectionRequestBuilder) ID(id string) *MessageRequestBuilder {
-	bb := &MessageRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for CalendarSharingMessage item
+func (b *MessageCalendarSharingMessageCollectionRequestBuilder) ID(id string) *CalendarSharingMessageRequestBuilder {
+	bb := &CalendarSharingMessageRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// CalendarSharingMessageCalendarSharingMessageCollectionRequest is request for Message collection
-type CalendarSharingMessageCalendarSharingMessageCollectionRequest struct{ BaseRequest }
+// MessageCalendarSharingMessageCollectionRequest is request for CalendarSharingMessage collection
+type MessageCalendarSharingMessageCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for Message collection
-func (r *CalendarSharingMessageCalendarSharingMessageCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Message, error) {
+// Paging perfoms paging operation for CalendarSharingMessage collection
+func (r *MessageCalendarSharingMessageCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CalendarSharingMessage, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -706,7 +706,7 @@ func (r *CalendarSharingMessageCalendarSharingMessageCollectionRequest) Paging(c
 	if err != nil {
 		return nil, err
 	}
-	var values []Message
+	var values []CalendarSharingMessage
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -720,7 +720,7 @@ func (r *CalendarSharingMessageCalendarSharingMessageCollectionRequest) Paging(c
 		}
 		var (
 			paging Paging
-			value  []Message
+			value  []CalendarSharingMessage
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -749,8 +749,8 @@ func (r *CalendarSharingMessageCalendarSharingMessageCollectionRequest) Paging(c
 	}
 }
 
-// GetN performs GET request for Message collection, max N pages
-func (r *CalendarSharingMessageCalendarSharingMessageCollectionRequest) GetN(ctx context.Context, n int) ([]Message, error) {
+// GetN performs GET request for CalendarSharingMessage collection, max N pages
+func (r *MessageCalendarSharingMessageCollectionRequest) GetN(ctx context.Context, n int) ([]CalendarSharingMessage, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -758,13 +758,13 @@ func (r *CalendarSharingMessageCalendarSharingMessageCollectionRequest) GetN(ctx
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for Message collection
-func (r *CalendarSharingMessageCalendarSharingMessageCollectionRequest) Get(ctx context.Context) ([]Message, error) {
+// Get performs GET request for CalendarSharingMessage collection
+func (r *MessageCalendarSharingMessageCollectionRequest) Get(ctx context.Context) ([]CalendarSharingMessage, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for Message collection
-func (r *CalendarSharingMessageCalendarSharingMessageCollectionRequest) Add(ctx context.Context, reqObj *Message) (resObj *Message, err error) {
+// Add performs POST request for CalendarSharingMessage collection
+func (r *MessageCalendarSharingMessageCollectionRequest) Add(ctx context.Context, reqObj *CalendarSharingMessage) (resObj *CalendarSharingMessage, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

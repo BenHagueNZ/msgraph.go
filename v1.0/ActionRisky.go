@@ -241,42 +241,42 @@ func (r *RiskyUserHistoryCollectionRequest) Add(ctx context.Context, reqObj *Ris
 	return
 }
 
-// RiskyServicePrincipal is navigation property rn
-func (b *RiskyServicePrincipalRequestBuilder) RiskyServicePrincipal() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *RiskyServicePrincipalRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// RiskyServicePrincipalHistoryItem returns request builder for RiskyServicePrincipal collection rcn
-func (b *RiskyServicePrincipalHistoryItemRequestBuilder) RiskyServicePrincipalHistoryItem() *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequestBuilder {
-	bb := &RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/RiskyServicePrincipal"
+// RiskyServicePrincipalHistoryItem returns request builder for RiskyServicePrincipalHistoryItem collection rcn
+func (b *RiskyServicePrincipalRequestBuilder) RiskyServicePrincipalHistoryItem() *RiskyServicePrincipalRiskyServicePrincipalHistoryItemCollectionRequestBuilder {
+	bb := &RiskyServicePrincipalRiskyServicePrincipalHistoryItemCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/RiskyServicePrincipalHistoryItem"
 	return bb
 }
 
-// RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequestBuilder is request builder for RiskyServicePrincipal collection
-type RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequestBuilder struct{ BaseRequestBuilder }
+// RiskyServicePrincipalRiskyServicePrincipalHistoryItemCollectionRequestBuilder is request builder for RiskyServicePrincipalHistoryItem collection
+type RiskyServicePrincipalRiskyServicePrincipalHistoryItemCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for RiskyServicePrincipal collection
-func (b *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequestBuilder) Request() *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest {
-	return &RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest{
+// Request returns request for RiskyServicePrincipalHistoryItem collection
+func (b *RiskyServicePrincipalRiskyServicePrincipalHistoryItemCollectionRequestBuilder) Request() *RiskyServicePrincipalRiskyServicePrincipalHistoryItemCollectionRequest {
+	return &RiskyServicePrincipalRiskyServicePrincipalHistoryItemCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for RiskyServicePrincipal item
-func (b *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequestBuilder) ID(id string) *RiskyServicePrincipalRequestBuilder {
-	bb := &RiskyServicePrincipalRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for RiskyServicePrincipalHistoryItem item
+func (b *RiskyServicePrincipalRiskyServicePrincipalHistoryItemCollectionRequestBuilder) ID(id string) *RiskyServicePrincipalHistoryItemRequestBuilder {
+	bb := &RiskyServicePrincipalHistoryItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest is request for RiskyServicePrincipal collection
-type RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest struct{ BaseRequest }
+// RiskyServicePrincipalRiskyServicePrincipalHistoryItemCollectionRequest is request for RiskyServicePrincipalHistoryItem collection
+type RiskyServicePrincipalRiskyServicePrincipalHistoryItemCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for RiskyServicePrincipal collection
-func (r *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RiskyServicePrincipal, error) {
+// Paging perfoms paging operation for RiskyServicePrincipalHistoryItem collection
+func (r *RiskyServicePrincipalRiskyServicePrincipalHistoryItemCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RiskyServicePrincipalHistoryItem, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -288,7 +288,7 @@ func (r *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollect
 	if err != nil {
 		return nil, err
 	}
-	var values []RiskyServicePrincipal
+	var values []RiskyServicePrincipalHistoryItem
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -302,7 +302,7 @@ func (r *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollect
 		}
 		var (
 			paging Paging
-			value  []RiskyServicePrincipal
+			value  []RiskyServicePrincipalHistoryItem
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -331,8 +331,8 @@ func (r *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollect
 	}
 }
 
-// GetN performs GET request for RiskyServicePrincipal collection, max N pages
-func (r *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest) GetN(ctx context.Context, n int) ([]RiskyServicePrincipal, error) {
+// GetN performs GET request for RiskyServicePrincipalHistoryItem collection, max N pages
+func (r *RiskyServicePrincipalRiskyServicePrincipalHistoryItemCollectionRequest) GetN(ctx context.Context, n int) ([]RiskyServicePrincipalHistoryItem, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -340,53 +340,53 @@ func (r *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollect
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for RiskyServicePrincipal collection
-func (r *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest) Get(ctx context.Context) ([]RiskyServicePrincipal, error) {
+// Get performs GET request for RiskyServicePrincipalHistoryItem collection
+func (r *RiskyServicePrincipalRiskyServicePrincipalHistoryItemCollectionRequest) Get(ctx context.Context) ([]RiskyServicePrincipalHistoryItem, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for RiskyServicePrincipal collection
-func (r *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest) Add(ctx context.Context, reqObj *RiskyServicePrincipal) (resObj *RiskyServicePrincipal, err error) {
+// Add performs POST request for RiskyServicePrincipalHistoryItem collection
+func (r *RiskyServicePrincipalRiskyServicePrincipalHistoryItemCollectionRequest) Add(ctx context.Context, reqObj *RiskyServicePrincipalHistoryItem) (resObj *RiskyServicePrincipalHistoryItem, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// RiskyUser is navigation property rn
-func (b *RiskyUserRequestBuilder) RiskyUser() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *RiskyUserRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// RiskyUserHistoryItem returns request builder for RiskyUser collection rcn
-func (b *RiskyUserHistoryItemRequestBuilder) RiskyUserHistoryItem() *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequestBuilder {
-	bb := &RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/RiskyUser"
+// RiskyUserHistoryItem returns request builder for RiskyUserHistoryItem collection rcn
+func (b *RiskyUserRequestBuilder) RiskyUserHistoryItem() *RiskyUserRiskyUserHistoryItemCollectionRequestBuilder {
+	bb := &RiskyUserRiskyUserHistoryItemCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/RiskyUserHistoryItem"
 	return bb
 }
 
-// RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequestBuilder is request builder for RiskyUser collection
-type RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequestBuilder struct{ BaseRequestBuilder }
+// RiskyUserRiskyUserHistoryItemCollectionRequestBuilder is request builder for RiskyUserHistoryItem collection
+type RiskyUserRiskyUserHistoryItemCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for RiskyUser collection
-func (b *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequestBuilder) Request() *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest {
-	return &RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest{
+// Request returns request for RiskyUserHistoryItem collection
+func (b *RiskyUserRiskyUserHistoryItemCollectionRequestBuilder) Request() *RiskyUserRiskyUserHistoryItemCollectionRequest {
+	return &RiskyUserRiskyUserHistoryItemCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for RiskyUser item
-func (b *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequestBuilder) ID(id string) *RiskyUserRequestBuilder {
-	bb := &RiskyUserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for RiskyUserHistoryItem item
+func (b *RiskyUserRiskyUserHistoryItemCollectionRequestBuilder) ID(id string) *RiskyUserHistoryItemRequestBuilder {
+	bb := &RiskyUserHistoryItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest is request for RiskyUser collection
-type RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest struct{ BaseRequest }
+// RiskyUserRiskyUserHistoryItemCollectionRequest is request for RiskyUserHistoryItem collection
+type RiskyUserRiskyUserHistoryItemCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for RiskyUser collection
-func (r *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RiskyUser, error) {
+// Paging perfoms paging operation for RiskyUserHistoryItem collection
+func (r *RiskyUserRiskyUserHistoryItemCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RiskyUserHistoryItem, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -398,7 +398,7 @@ func (r *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest) Paging(ctx c
 	if err != nil {
 		return nil, err
 	}
-	var values []RiskyUser
+	var values []RiskyUserHistoryItem
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -412,7 +412,7 @@ func (r *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest) Paging(ctx c
 		}
 		var (
 			paging Paging
-			value  []RiskyUser
+			value  []RiskyUserHistoryItem
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -441,8 +441,8 @@ func (r *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest) Paging(ctx c
 	}
 }
 
-// GetN performs GET request for RiskyUser collection, max N pages
-func (r *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest) GetN(ctx context.Context, n int) ([]RiskyUser, error) {
+// GetN performs GET request for RiskyUserHistoryItem collection, max N pages
+func (r *RiskyUserRiskyUserHistoryItemCollectionRequest) GetN(ctx context.Context, n int) ([]RiskyUserHistoryItem, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -450,13 +450,13 @@ func (r *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest) GetN(ctx con
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for RiskyUser collection
-func (r *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest) Get(ctx context.Context) ([]RiskyUser, error) {
+// Get performs GET request for RiskyUserHistoryItem collection
+func (r *RiskyUserRiskyUserHistoryItemCollectionRequest) Get(ctx context.Context) ([]RiskyUserHistoryItem, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for RiskyUser collection
-func (r *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest) Add(ctx context.Context, reqObj *RiskyUser) (resObj *RiskyUser, err error) {
+// Add performs POST request for RiskyUserHistoryItem collection
+func (r *RiskyUserRiskyUserHistoryItemCollectionRequest) Add(ctx context.Context, reqObj *RiskyUserHistoryItem) (resObj *RiskyUserHistoryItem, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

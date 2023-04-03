@@ -2,8 +2,8 @@
 
 package msgraph
 
-// AudioRoutingGroup is navigation property rn
-func (b *AudioRoutingGroupRequestBuilder) AudioRoutingGroup() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AudioRoutingGroupRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

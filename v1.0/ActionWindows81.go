@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Windows81CompliancePolicy returns request builder for DeviceCompliancePolicy collection rcn
-func (b *Windows81CompliancePolicyRequestBuilder) Windows81CompliancePolicy() *Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequestBuilder {
-	bb := &Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceCompliancePolicy"
+// Windows81CompliancePolicy returns request builder for Windows81CompliancePolicy collection rcn
+func (b *DeviceCompliancePolicyRequestBuilder) Windows81CompliancePolicy() *DeviceCompliancePolicyWindows81CompliancePolicyCollectionRequestBuilder {
+	bb := &DeviceCompliancePolicyWindows81CompliancePolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Windows81CompliancePolicy"
 	return bb
 }
 
-// Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequestBuilder is request builder for DeviceCompliancePolicy collection
-type Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceCompliancePolicyWindows81CompliancePolicyCollectionRequestBuilder is request builder for Windows81CompliancePolicy collection
+type DeviceCompliancePolicyWindows81CompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceCompliancePolicy collection
-func (b *Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequestBuilder) Request() *Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequest {
-	return &Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequest{
+// Request returns request for Windows81CompliancePolicy collection
+func (b *DeviceCompliancePolicyWindows81CompliancePolicyCollectionRequestBuilder) Request() *DeviceCompliancePolicyWindows81CompliancePolicyCollectionRequest {
+	return &DeviceCompliancePolicyWindows81CompliancePolicyCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceCompliancePolicy item
-func (b *Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequestBuilder) ID(id string) *DeviceCompliancePolicyRequestBuilder {
-	bb := &DeviceCompliancePolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Windows81CompliancePolicy item
+func (b *DeviceCompliancePolicyWindows81CompliancePolicyCollectionRequestBuilder) ID(id string) *Windows81CompliancePolicyRequestBuilder {
+	bb := &Windows81CompliancePolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequest is request for DeviceCompliancePolicy collection
-type Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequest struct{ BaseRequest }
+// DeviceCompliancePolicyWindows81CompliancePolicyCollectionRequest is request for Windows81CompliancePolicy collection
+type DeviceCompliancePolicyWindows81CompliancePolicyCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceCompliancePolicy collection
-func (r *Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceCompliancePolicy, error) {
+// Paging perfoms paging operation for Windows81CompliancePolicy collection
+func (r *DeviceCompliancePolicyWindows81CompliancePolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Windows81CompliancePolicy, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequest) Pa
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceCompliancePolicy
+	var values []Windows81CompliancePolicy
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequest) Pa
 		}
 		var (
 			paging Paging
-			value  []DeviceCompliancePolicy
+			value  []Windows81CompliancePolicy
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequest) Pa
 	}
 }
 
-// GetN performs GET request for DeviceCompliancePolicy collection, max N pages
-func (r *Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceCompliancePolicy, error) {
+// GetN performs GET request for Windows81CompliancePolicy collection, max N pages
+func (r *DeviceCompliancePolicyWindows81CompliancePolicyCollectionRequest) GetN(ctx context.Context, n int) ([]Windows81CompliancePolicy, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,46 +103,46 @@ func (r *Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequest) Ge
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceCompliancePolicy collection
-func (r *Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequest) Get(ctx context.Context) ([]DeviceCompliancePolicy, error) {
+// Get performs GET request for Windows81CompliancePolicy collection
+func (r *DeviceCompliancePolicyWindows81CompliancePolicyCollectionRequest) Get(ctx context.Context) ([]Windows81CompliancePolicy, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceCompliancePolicy collection
-func (r *Windows81CompliancePolicyWindows81CompliancePolicyCollectionRequest) Add(ctx context.Context, reqObj *DeviceCompliancePolicy) (resObj *DeviceCompliancePolicy, err error) {
+// Add performs POST request for Windows81CompliancePolicy collection
+func (r *DeviceCompliancePolicyWindows81CompliancePolicyCollectionRequest) Add(ctx context.Context, reqObj *Windows81CompliancePolicy) (resObj *Windows81CompliancePolicy, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// Windows81GeneralConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *Windows81GeneralConfigurationRequestBuilder) Windows81GeneralConfiguration() *Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionRequestBuilder {
-	bb := &Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// Windows81GeneralConfiguration returns request builder for Windows81GeneralConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) Windows81GeneralConfiguration() *DeviceConfigurationWindows81GeneralConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationWindows81GeneralConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Windows81GeneralConfiguration"
 	return bb
 }
 
-// Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationWindows81GeneralConfigurationCollectionRequestBuilder is request builder for Windows81GeneralConfiguration collection
+type DeviceConfigurationWindows81GeneralConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionRequestBuilder) Request() *Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionRequest {
-	return &Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionRequest{
+// Request returns request for Windows81GeneralConfiguration collection
+func (b *DeviceConfigurationWindows81GeneralConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationWindows81GeneralConfigurationCollectionRequest {
+	return &DeviceConfigurationWindows81GeneralConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Windows81GeneralConfiguration item
+func (b *DeviceConfigurationWindows81GeneralConfigurationCollectionRequestBuilder) ID(id string) *Windows81GeneralConfigurationRequestBuilder {
+	bb := &Windows81GeneralConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionRequest is request for DeviceConfiguration collection
-type Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationWindows81GeneralConfigurationCollectionRequest is request for Windows81GeneralConfiguration collection
+type DeviceConfigurationWindows81GeneralConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for Windows81GeneralConfiguration collection
+func (r *DeviceConfigurationWindows81GeneralConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Windows81GeneralConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -154,7 +154,7 @@ func (r *Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionReq
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []Windows81GeneralConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -168,7 +168,7 @@ func (r *Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionReq
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []Windows81GeneralConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -197,8 +197,8 @@ func (r *Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionReq
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for Windows81GeneralConfiguration collection, max N pages
+func (r *DeviceConfigurationWindows81GeneralConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]Windows81GeneralConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -206,13 +206,13 @@ func (r *Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionReq
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for Windows81GeneralConfiguration collection
+func (r *DeviceConfigurationWindows81GeneralConfigurationCollectionRequest) Get(ctx context.Context) ([]Windows81GeneralConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *Windows81GeneralConfigurationWindows81GeneralConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for Windows81GeneralConfiguration collection
+func (r *DeviceConfigurationWindows81GeneralConfigurationCollectionRequest) Add(ctx context.Context, reqObj *Windows81GeneralConfiguration) (resObj *Windows81GeneralConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

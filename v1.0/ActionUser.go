@@ -4158,35 +4158,35 @@ func (r *UserTeamworkInstalledAppsCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// User returns request builder for DirectoryObject collection rcn
-func (b *UserRequestBuilder) User() *UserUserCollectionRequestBuilder {
-	bb := &UserUserCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryObject"
+// User returns request builder for User collection rcn
+func (b *DirectoryObjectRequestBuilder) User() *DirectoryObjectUserCollectionRequestBuilder {
+	bb := &DirectoryObjectUserCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/User"
 	return bb
 }
 
-// UserUserCollectionRequestBuilder is request builder for DirectoryObject collection
-type UserUserCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DirectoryObjectUserCollectionRequestBuilder is request builder for User collection
+type DirectoryObjectUserCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DirectoryObject collection
-func (b *UserUserCollectionRequestBuilder) Request() *UserUserCollectionRequest {
-	return &UserUserCollectionRequest{
+// Request returns request for User collection
+func (b *DirectoryObjectUserCollectionRequestBuilder) Request() *DirectoryObjectUserCollectionRequest {
+	return &DirectoryObjectUserCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DirectoryObject item
-func (b *UserUserCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
-	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for User item
+func (b *DirectoryObjectUserCollectionRequestBuilder) ID(id string) *UserRequestBuilder {
+	bb := &UserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// UserUserCollectionRequest is request for DirectoryObject collection
-type UserUserCollectionRequest struct{ BaseRequest }
+// DirectoryObjectUserCollectionRequest is request for User collection
+type DirectoryObjectUserCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DirectoryObject collection
-func (r *UserUserCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+// Paging perfoms paging operation for User collection
+func (r *DirectoryObjectUserCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]User, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -4198,7 +4198,7 @@ func (r *UserUserCollectionRequest) Paging(ctx context.Context, method, path str
 	if err != nil {
 		return nil, err
 	}
-	var values []DirectoryObject
+	var values []User
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -4212,7 +4212,7 @@ func (r *UserUserCollectionRequest) Paging(ctx context.Context, method, path str
 		}
 		var (
 			paging Paging
-			value  []DirectoryObject
+			value  []User
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -4241,8 +4241,8 @@ func (r *UserUserCollectionRequest) Paging(ctx context.Context, method, path str
 	}
 }
 
-// GetN performs GET request for DirectoryObject collection, max N pages
-func (r *UserUserCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+// GetN performs GET request for User collection, max N pages
+func (r *DirectoryObjectUserCollectionRequest) GetN(ctx context.Context, n int) ([]User, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -4250,81 +4250,81 @@ func (r *UserUserCollectionRequest) GetN(ctx context.Context, n int) ([]Director
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DirectoryObject collection
-func (r *UserUserCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+// Get performs GET request for User collection
+func (r *DirectoryObjectUserCollectionRequest) Get(ctx context.Context) ([]User, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DirectoryObject collection
-func (r *UserUserCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+// Add performs POST request for User collection
+func (r *DirectoryObjectUserCollectionRequest) Add(ctx context.Context, reqObj *User) (resObj *User, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// UserActivity is navigation property rn
-func (b *UserActivityRequestBuilder) UserActivity() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *UserActivityRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// UserExperienceAnalyticsDevicePerformance is navigation property rn
-func (b *UserExperienceAnalyticsDevicePerformanceRequestBuilder) UserExperienceAnalyticsDevicePerformance() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *UserExperienceAnalyticsDevicePerformanceRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// UserFlowLanguageConfiguration is navigation property rn
-func (b *UserFlowLanguageConfigurationRequestBuilder) UserFlowLanguageConfiguration() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *UserFlowLanguageConfigurationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// UserFlowLanguagePage is navigation property rn
-func (b *UserFlowLanguagePageRequestBuilder) UserFlowLanguagePage() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *UserFlowLanguagePageRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// UserInstallStateSummary is navigation property rn
-func (b *UserInstallStateSummaryRequestBuilder) UserInstallStateSummary() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *UserInstallStateSummaryRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// UserScopeTeamsAppInstallation returns request builder for TeamsAppInstallation collection rcn
-func (b *UserScopeTeamsAppInstallationRequestBuilder) UserScopeTeamsAppInstallation() *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder {
-	bb := &UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/TeamsAppInstallation"
+// UserScopeTeamsAppInstallation returns request builder for UserScopeTeamsAppInstallation collection rcn
+func (b *TeamsAppInstallationRequestBuilder) UserScopeTeamsAppInstallation() *TeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder {
+	bb := &TeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/UserScopeTeamsAppInstallation"
 	return bb
 }
 
-// UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder is request builder for TeamsAppInstallation collection
-type UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// TeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder is request builder for UserScopeTeamsAppInstallation collection
+type TeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for TeamsAppInstallation collection
-func (b *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder) Request() *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest {
-	return &UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest{
+// Request returns request for UserScopeTeamsAppInstallation collection
+func (b *TeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder) Request() *TeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest {
+	return &TeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for TeamsAppInstallation item
-func (b *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder) ID(id string) *TeamsAppInstallationRequestBuilder {
-	bb := &TeamsAppInstallationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for UserScopeTeamsAppInstallation item
+func (b *TeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder) ID(id string) *UserScopeTeamsAppInstallationRequestBuilder {
+	bb := &UserScopeTeamsAppInstallationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest is request for TeamsAppInstallation collection
-type UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest struct{ BaseRequest }
+// TeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest is request for UserScopeTeamsAppInstallation collection
+type TeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for TeamsAppInstallation collection
-func (r *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TeamsAppInstallation, error) {
+// Paging perfoms paging operation for UserScopeTeamsAppInstallation collection
+func (r *TeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UserScopeTeamsAppInstallation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -4336,7 +4336,7 @@ func (r *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionReq
 	if err != nil {
 		return nil, err
 	}
-	var values []TeamsAppInstallation
+	var values []UserScopeTeamsAppInstallation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -4350,7 +4350,7 @@ func (r *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionReq
 		}
 		var (
 			paging Paging
-			value  []TeamsAppInstallation
+			value  []UserScopeTeamsAppInstallation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -4379,8 +4379,8 @@ func (r *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionReq
 	}
 }
 
-// GetN performs GET request for TeamsAppInstallation collection, max N pages
-func (r *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest) GetN(ctx context.Context, n int) ([]TeamsAppInstallation, error) {
+// GetN performs GET request for UserScopeTeamsAppInstallation collection, max N pages
+func (r *TeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest) GetN(ctx context.Context, n int) ([]UserScopeTeamsAppInstallation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -4388,26 +4388,26 @@ func (r *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionReq
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for TeamsAppInstallation collection
-func (r *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest) Get(ctx context.Context) ([]TeamsAppInstallation, error) {
+// Get performs GET request for UserScopeTeamsAppInstallation collection
+func (r *TeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest) Get(ctx context.Context) ([]UserScopeTeamsAppInstallation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for TeamsAppInstallation collection
-func (r *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest) Add(ctx context.Context, reqObj *TeamsAppInstallation) (resObj *TeamsAppInstallation, err error) {
+// Add performs POST request for UserScopeTeamsAppInstallation collection
+func (r *TeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest) Add(ctx context.Context, reqObj *UserScopeTeamsAppInstallation) (resObj *UserScopeTeamsAppInstallation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// UserSettings is navigation property rn
-func (b *UserSettingsRequestBuilder) UserSettings() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *UserSettingsRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// UserTeamwork is navigation property rn
-func (b *UserTeamworkRequestBuilder) UserTeamwork() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *UserTeamworkRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// UpdateRecordingStatusOperation returns request builder for CommsOperation collection rcn
-func (b *UpdateRecordingStatusOperationRequestBuilder) UpdateRecordingStatusOperation() *UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionRequestBuilder {
-	bb := &UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/CommsOperation"
+// UpdateRecordingStatusOperation returns request builder for UpdateRecordingStatusOperation collection rcn
+func (b *CommsOperationRequestBuilder) UpdateRecordingStatusOperation() *CommsOperationUpdateRecordingStatusOperationCollectionRequestBuilder {
+	bb := &CommsOperationUpdateRecordingStatusOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/UpdateRecordingStatusOperation"
 	return bb
 }
 
-// UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionRequestBuilder is request builder for CommsOperation collection
-type UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// CommsOperationUpdateRecordingStatusOperationCollectionRequestBuilder is request builder for UpdateRecordingStatusOperation collection
+type CommsOperationUpdateRecordingStatusOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for CommsOperation collection
-func (b *UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionRequestBuilder) Request() *UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionRequest {
-	return &UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionRequest{
+// Request returns request for UpdateRecordingStatusOperation collection
+func (b *CommsOperationUpdateRecordingStatusOperationCollectionRequestBuilder) Request() *CommsOperationUpdateRecordingStatusOperationCollectionRequest {
+	return &CommsOperationUpdateRecordingStatusOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for CommsOperation item
-func (b *UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionRequestBuilder) ID(id string) *CommsOperationRequestBuilder {
-	bb := &CommsOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for UpdateRecordingStatusOperation item
+func (b *CommsOperationUpdateRecordingStatusOperationCollectionRequestBuilder) ID(id string) *UpdateRecordingStatusOperationRequestBuilder {
+	bb := &UpdateRecordingStatusOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionRequest is request for CommsOperation collection
-type UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionRequest struct{ BaseRequest }
+// CommsOperationUpdateRecordingStatusOperationCollectionRequest is request for UpdateRecordingStatusOperation collection
+type CommsOperationUpdateRecordingStatusOperationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for CommsOperation collection
-func (r *UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CommsOperation, error) {
+// Paging perfoms paging operation for UpdateRecordingStatusOperation collection
+func (r *CommsOperationUpdateRecordingStatusOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UpdateRecordingStatusOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionR
 	if err != nil {
 		return nil, err
 	}
-	var values []CommsOperation
+	var values []UpdateRecordingStatusOperation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionR
 		}
 		var (
 			paging Paging
-			value  []CommsOperation
+			value  []UpdateRecordingStatusOperation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionR
 	}
 }
 
-// GetN performs GET request for CommsOperation collection, max N pages
-func (r *UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionRequest) GetN(ctx context.Context, n int) ([]CommsOperation, error) {
+// GetN performs GET request for UpdateRecordingStatusOperation collection, max N pages
+func (r *CommsOperationUpdateRecordingStatusOperationCollectionRequest) GetN(ctx context.Context, n int) ([]UpdateRecordingStatusOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionR
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for CommsOperation collection
-func (r *UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionRequest) Get(ctx context.Context) ([]CommsOperation, error) {
+// Get performs GET request for UpdateRecordingStatusOperation collection
+func (r *CommsOperationUpdateRecordingStatusOperationCollectionRequest) Get(ctx context.Context) ([]UpdateRecordingStatusOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for CommsOperation collection
-func (r *UpdateRecordingStatusOperationUpdateRecordingStatusOperationCollectionRequest) Add(ctx context.Context, reqObj *CommsOperation) (resObj *CommsOperation, err error) {
+// Add performs POST request for UpdateRecordingStatusOperation collection
+func (r *CommsOperationUpdateRecordingStatusOperationCollectionRequest) Add(ctx context.Context, reqObj *UpdateRecordingStatusOperation) (resObj *UpdateRecordingStatusOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

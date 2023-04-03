@@ -2,15 +2,15 @@
 
 package msgraph
 
-// SecureScore is navigation property rn
-func (b *SecureScoreRequestBuilder) SecureScore() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *SecureScoreRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// SecureScoreControlProfile is navigation property rn
-func (b *SecureScoreControlProfileRequestBuilder) SecureScoreControlProfile() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *SecureScoreControlProfileRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

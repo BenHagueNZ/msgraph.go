@@ -2,8 +2,8 @@
 
 package msgraph
 
-// LinkedResource is navigation property rn
-func (b *LinkedResourceRequestBuilder) LinkedResource() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *LinkedResourceRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

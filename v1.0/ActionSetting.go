@@ -2,8 +2,8 @@
 
 package msgraph
 
-// SettingStateDeviceSummary is navigation property rn
-func (b *SettingStateDeviceSummaryRequestBuilder) SettingStateDeviceSummary() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *SettingStateDeviceSummaryRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

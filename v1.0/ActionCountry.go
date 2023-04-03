@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// CountryNamedLocation returns request builder for NamedLocation collection rcn
-func (b *CountryNamedLocationRequestBuilder) CountryNamedLocation() *CountryNamedLocationCountryNamedLocationCollectionRequestBuilder {
-	bb := &CountryNamedLocationCountryNamedLocationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// CountryNamedLocation returns request builder for CountryNamedLocation collection rcn
+func (b *NamedLocationRequestBuilder) CountryNamedLocation() *NamedLocationCountryNamedLocationCollectionRequestBuilder {
+	bb := &NamedLocationCountryNamedLocationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/NamedLocation"
 	return bb
 }
 
-// CountryNamedLocationCountryNamedLocationCollectionRequestBuilder is request builder for NamedLocation collection
-type CountryNamedLocationCountryNamedLocationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// NamedLocationCountryNamedLocationCollectionRequestBuilder is request builder for CountryNamedLocation collection
+type NamedLocationCountryNamedLocationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for NamedLocation collection
-func (b *CountryNamedLocationCountryNamedLocationCollectionRequestBuilder) Request() *CountryNamedLocationCountryNamedLocationCollectionRequest {
-	return &CountryNamedLocationCountryNamedLocationCollectionRequest{
+// Request returns request for CountryNamedLocation collection
+func (b *NamedLocationCountryNamedLocationCollectionRequestBuilder) Request() *NamedLocationCountryNamedLocationCollectionRequest {
+	return &NamedLocationCountryNamedLocationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for NamedLocation item
-func (b *CountryNamedLocationCountryNamedLocationCollectionRequestBuilder) ID(id string) *NamedLocationRequestBuilder {
-	bb := &NamedLocationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for CountryNamedLocation item
+func (b *NamedLocationCountryNamedLocationCollectionRequestBuilder) ID(id string) *CountryNamedLocationRequestBuilder {
+	bb := &CountryNamedLocationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// CountryNamedLocationCountryNamedLocationCollectionRequest is request for NamedLocation collection
-type CountryNamedLocationCountryNamedLocationCollectionRequest struct{ BaseRequest }
+// NamedLocationCountryNamedLocationCollectionRequest is request for CountryNamedLocation collection
+type NamedLocationCountryNamedLocationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for NamedLocation collection
-func (r *CountryNamedLocationCountryNamedLocationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]NamedLocation, error) {
+// Paging perfoms paging operation for CountryNamedLocation collection
+func (r *NamedLocationCountryNamedLocationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CountryNamedLocation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *CountryNamedLocationCountryNamedLocationCollectionRequest) Paging(ctx c
 	if err != nil {
 		return nil, err
 	}
-	var values []NamedLocation
+	var values []CountryNamedLocation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *CountryNamedLocationCountryNamedLocationCollectionRequest) Paging(ctx c
 		}
 		var (
 			paging Paging
-			value  []NamedLocation
+			value  []CountryNamedLocation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *CountryNamedLocationCountryNamedLocationCollectionRequest) Paging(ctx c
 	}
 }
 
-// GetN performs GET request for NamedLocation collection, max N pages
-func (r *CountryNamedLocationCountryNamedLocationCollectionRequest) GetN(ctx context.Context, n int) ([]NamedLocation, error) {
+// GetN performs GET request for CountryNamedLocation collection, max N pages
+func (r *NamedLocationCountryNamedLocationCollectionRequest) GetN(ctx context.Context, n int) ([]CountryNamedLocation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *CountryNamedLocationCountryNamedLocationCollectionRequest) GetN(ctx con
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for NamedLocation collection
-func (r *CountryNamedLocationCountryNamedLocationCollectionRequest) Get(ctx context.Context) ([]NamedLocation, error) {
+// Get performs GET request for CountryNamedLocation collection
+func (r *NamedLocationCountryNamedLocationCollectionRequest) Get(ctx context.Context) ([]CountryNamedLocation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for NamedLocation collection
-func (r *CountryNamedLocationCountryNamedLocationCollectionRequest) Add(ctx context.Context, reqObj *NamedLocation) (resObj *NamedLocation, err error) {
+// Add performs POST request for CountryNamedLocation collection
+func (r *NamedLocationCountryNamedLocationCollectionRequest) Add(ctx context.Context, reqObj *CountryNamedLocation) (resObj *CountryNamedLocation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

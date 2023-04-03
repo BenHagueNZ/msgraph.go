@@ -430,29 +430,29 @@ func (r *TermsOfUseContainerAgreementsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// TermsAndConditions is navigation property rn
-func (b *TermsAndConditionsRequestBuilder) TermsAndConditions() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TermsAndConditionsRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TermsAndConditionsAcceptanceStatus is navigation property rn
-func (b *TermsAndConditionsAcceptanceStatusRequestBuilder) TermsAndConditionsAcceptanceStatus() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TermsAndConditionsAcceptanceStatusRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TermsAndConditionsAssignment is navigation property rn
-func (b *TermsAndConditionsAssignmentRequestBuilder) TermsAndConditionsAssignment() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TermsAndConditionsAssignmentRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TermsOfUseContainer is navigation property rn
-func (b *TermsOfUseContainerRequestBuilder) TermsOfUseContainer() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TermsOfUseContainerRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

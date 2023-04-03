@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Contract returns request builder for DirectoryObject collection rcn
-func (b *ContractRequestBuilder) Contract() *ContractContractCollectionRequestBuilder {
-	bb := &ContractContractCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryObject"
+// Contract returns request builder for Contract collection rcn
+func (b *DirectoryObjectRequestBuilder) Contract() *DirectoryObjectContractCollectionRequestBuilder {
+	bb := &DirectoryObjectContractCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Contract"
 	return bb
 }
 
-// ContractContractCollectionRequestBuilder is request builder for DirectoryObject collection
-type ContractContractCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DirectoryObjectContractCollectionRequestBuilder is request builder for Contract collection
+type DirectoryObjectContractCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DirectoryObject collection
-func (b *ContractContractCollectionRequestBuilder) Request() *ContractContractCollectionRequest {
-	return &ContractContractCollectionRequest{
+// Request returns request for Contract collection
+func (b *DirectoryObjectContractCollectionRequestBuilder) Request() *DirectoryObjectContractCollectionRequest {
+	return &DirectoryObjectContractCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DirectoryObject item
-func (b *ContractContractCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
-	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Contract item
+func (b *DirectoryObjectContractCollectionRequestBuilder) ID(id string) *ContractRequestBuilder {
+	bb := &ContractRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ContractContractCollectionRequest is request for DirectoryObject collection
-type ContractContractCollectionRequest struct{ BaseRequest }
+// DirectoryObjectContractCollectionRequest is request for Contract collection
+type DirectoryObjectContractCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DirectoryObject collection
-func (r *ContractContractCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+// Paging perfoms paging operation for Contract collection
+func (r *DirectoryObjectContractCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Contract, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *ContractContractCollectionRequest) Paging(ctx context.Context, method, 
 	if err != nil {
 		return nil, err
 	}
-	var values []DirectoryObject
+	var values []Contract
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *ContractContractCollectionRequest) Paging(ctx context.Context, method, 
 		}
 		var (
 			paging Paging
-			value  []DirectoryObject
+			value  []Contract
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *ContractContractCollectionRequest) Paging(ctx context.Context, method, 
 	}
 }
 
-// GetN performs GET request for DirectoryObject collection, max N pages
-func (r *ContractContractCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+// GetN performs GET request for Contract collection, max N pages
+func (r *DirectoryObjectContractCollectionRequest) GetN(ctx context.Context, n int) ([]Contract, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *ContractContractCollectionRequest) GetN(ctx context.Context, n int) ([]
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DirectoryObject collection
-func (r *ContractContractCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+// Get performs GET request for Contract collection
+func (r *DirectoryObjectContractCollectionRequest) Get(ctx context.Context) ([]Contract, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DirectoryObject collection
-func (r *ContractContractCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+// Add performs POST request for Contract collection
+func (r *DirectoryObjectContractCollectionRequest) Add(ctx context.Context, reqObj *Contract) (resObj *Contract, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

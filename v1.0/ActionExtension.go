@@ -11,42 +11,42 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Extension is navigation property rn
-func (b *ExtensionRequestBuilder) Extension() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ExtensionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ExtensionProperty returns request builder for DirectoryObject collection rcn
-func (b *ExtensionPropertyRequestBuilder) ExtensionProperty() *ExtensionPropertyExtensionPropertyCollectionRequestBuilder {
-	bb := &ExtensionPropertyExtensionPropertyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryObject"
+// ExtensionProperty returns request builder for ExtensionProperty collection rcn
+func (b *DirectoryObjectRequestBuilder) ExtensionProperty() *DirectoryObjectExtensionPropertyCollectionRequestBuilder {
+	bb := &DirectoryObjectExtensionPropertyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/ExtensionProperty"
 	return bb
 }
 
-// ExtensionPropertyExtensionPropertyCollectionRequestBuilder is request builder for DirectoryObject collection
-type ExtensionPropertyExtensionPropertyCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DirectoryObjectExtensionPropertyCollectionRequestBuilder is request builder for ExtensionProperty collection
+type DirectoryObjectExtensionPropertyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DirectoryObject collection
-func (b *ExtensionPropertyExtensionPropertyCollectionRequestBuilder) Request() *ExtensionPropertyExtensionPropertyCollectionRequest {
-	return &ExtensionPropertyExtensionPropertyCollectionRequest{
+// Request returns request for ExtensionProperty collection
+func (b *DirectoryObjectExtensionPropertyCollectionRequestBuilder) Request() *DirectoryObjectExtensionPropertyCollectionRequest {
+	return &DirectoryObjectExtensionPropertyCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DirectoryObject item
-func (b *ExtensionPropertyExtensionPropertyCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
-	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for ExtensionProperty item
+func (b *DirectoryObjectExtensionPropertyCollectionRequestBuilder) ID(id string) *ExtensionPropertyRequestBuilder {
+	bb := &ExtensionPropertyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ExtensionPropertyExtensionPropertyCollectionRequest is request for DirectoryObject collection
-type ExtensionPropertyExtensionPropertyCollectionRequest struct{ BaseRequest }
+// DirectoryObjectExtensionPropertyCollectionRequest is request for ExtensionProperty collection
+type DirectoryObjectExtensionPropertyCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DirectoryObject collection
-func (r *ExtensionPropertyExtensionPropertyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+// Paging perfoms paging operation for ExtensionProperty collection
+func (r *DirectoryObjectExtensionPropertyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ExtensionProperty, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -58,7 +58,7 @@ func (r *ExtensionPropertyExtensionPropertyCollectionRequest) Paging(ctx context
 	if err != nil {
 		return nil, err
 	}
-	var values []DirectoryObject
+	var values []ExtensionProperty
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -72,7 +72,7 @@ func (r *ExtensionPropertyExtensionPropertyCollectionRequest) Paging(ctx context
 		}
 		var (
 			paging Paging
-			value  []DirectoryObject
+			value  []ExtensionProperty
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -101,8 +101,8 @@ func (r *ExtensionPropertyExtensionPropertyCollectionRequest) Paging(ctx context
 	}
 }
 
-// GetN performs GET request for DirectoryObject collection, max N pages
-func (r *ExtensionPropertyExtensionPropertyCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+// GetN performs GET request for ExtensionProperty collection, max N pages
+func (r *DirectoryObjectExtensionPropertyCollectionRequest) GetN(ctx context.Context, n int) ([]ExtensionProperty, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -110,13 +110,13 @@ func (r *ExtensionPropertyExtensionPropertyCollectionRequest) GetN(ctx context.C
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DirectoryObject collection
-func (r *ExtensionPropertyExtensionPropertyCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+// Get performs GET request for ExtensionProperty collection
+func (r *DirectoryObjectExtensionPropertyCollectionRequest) Get(ctx context.Context) ([]ExtensionProperty, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DirectoryObject collection
-func (r *ExtensionPropertyExtensionPropertyCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+// Add performs POST request for ExtensionProperty collection
+func (r *DirectoryObjectExtensionPropertyCollectionRequest) Add(ctx context.Context, reqObj *ExtensionProperty) (resObj *ExtensionProperty, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

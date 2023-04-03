@@ -1193,35 +1193,35 @@ func (r *PolicyRootTokenLifetimePoliciesCollectionRequest) Add(ctx context.Conte
 	return
 }
 
-// PolicyBase returns request builder for DirectoryObject collection rcn
-func (b *PolicyBaseRequestBuilder) PolicyBase() *PolicyBasePolicyBaseCollectionRequestBuilder {
-	bb := &PolicyBasePolicyBaseCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryObject"
+// PolicyBase returns request builder for PolicyBase collection rcn
+func (b *DirectoryObjectRequestBuilder) PolicyBase() *DirectoryObjectPolicyBaseCollectionRequestBuilder {
+	bb := &DirectoryObjectPolicyBaseCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/PolicyBase"
 	return bb
 }
 
-// PolicyBasePolicyBaseCollectionRequestBuilder is request builder for DirectoryObject collection
-type PolicyBasePolicyBaseCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DirectoryObjectPolicyBaseCollectionRequestBuilder is request builder for PolicyBase collection
+type DirectoryObjectPolicyBaseCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DirectoryObject collection
-func (b *PolicyBasePolicyBaseCollectionRequestBuilder) Request() *PolicyBasePolicyBaseCollectionRequest {
-	return &PolicyBasePolicyBaseCollectionRequest{
+// Request returns request for PolicyBase collection
+func (b *DirectoryObjectPolicyBaseCollectionRequestBuilder) Request() *DirectoryObjectPolicyBaseCollectionRequest {
+	return &DirectoryObjectPolicyBaseCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DirectoryObject item
-func (b *PolicyBasePolicyBaseCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
-	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for PolicyBase item
+func (b *DirectoryObjectPolicyBaseCollectionRequestBuilder) ID(id string) *PolicyBaseRequestBuilder {
+	bb := &PolicyBaseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// PolicyBasePolicyBaseCollectionRequest is request for DirectoryObject collection
-type PolicyBasePolicyBaseCollectionRequest struct{ BaseRequest }
+// DirectoryObjectPolicyBaseCollectionRequest is request for PolicyBase collection
+type DirectoryObjectPolicyBaseCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DirectoryObject collection
-func (r *PolicyBasePolicyBaseCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+// Paging perfoms paging operation for PolicyBase collection
+func (r *DirectoryObjectPolicyBaseCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]PolicyBase, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1233,7 +1233,7 @@ func (r *PolicyBasePolicyBaseCollectionRequest) Paging(ctx context.Context, meth
 	if err != nil {
 		return nil, err
 	}
-	var values []DirectoryObject
+	var values []PolicyBase
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1247,7 +1247,7 @@ func (r *PolicyBasePolicyBaseCollectionRequest) Paging(ctx context.Context, meth
 		}
 		var (
 			paging Paging
-			value  []DirectoryObject
+			value  []PolicyBase
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1276,8 +1276,8 @@ func (r *PolicyBasePolicyBaseCollectionRequest) Paging(ctx context.Context, meth
 	}
 }
 
-// GetN performs GET request for DirectoryObject collection, max N pages
-func (r *PolicyBasePolicyBaseCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+// GetN performs GET request for PolicyBase collection, max N pages
+func (r *DirectoryObjectPolicyBaseCollectionRequest) GetN(ctx context.Context, n int) ([]PolicyBase, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1285,19 +1285,19 @@ func (r *PolicyBasePolicyBaseCollectionRequest) GetN(ctx context.Context, n int)
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DirectoryObject collection
-func (r *PolicyBasePolicyBaseCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+// Get performs GET request for PolicyBase collection
+func (r *DirectoryObjectPolicyBaseCollectionRequest) Get(ctx context.Context) ([]PolicyBase, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DirectoryObject collection
-func (r *PolicyBasePolicyBaseCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+// Add performs POST request for PolicyBase collection
+func (r *DirectoryObjectPolicyBaseCollectionRequest) Add(ctx context.Context, reqObj *PolicyBase) (resObj *PolicyBase, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// PolicyRoot is navigation property rn
-func (b *PolicyRootRequestBuilder) PolicyRoot() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PolicyRootRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

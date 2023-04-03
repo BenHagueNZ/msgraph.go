@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// SubscribeToToneOperation returns request builder for CommsOperation collection rcn
-func (b *SubscribeToToneOperationRequestBuilder) SubscribeToToneOperation() *SubscribeToToneOperationSubscribeToToneOperationCollectionRequestBuilder {
-	bb := &SubscribeToToneOperationSubscribeToToneOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/CommsOperation"
+// SubscribeToToneOperation returns request builder for SubscribeToToneOperation collection rcn
+func (b *CommsOperationRequestBuilder) SubscribeToToneOperation() *CommsOperationSubscribeToToneOperationCollectionRequestBuilder {
+	bb := &CommsOperationSubscribeToToneOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/SubscribeToToneOperation"
 	return bb
 }
 
-// SubscribeToToneOperationSubscribeToToneOperationCollectionRequestBuilder is request builder for CommsOperation collection
-type SubscribeToToneOperationSubscribeToToneOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// CommsOperationSubscribeToToneOperationCollectionRequestBuilder is request builder for SubscribeToToneOperation collection
+type CommsOperationSubscribeToToneOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for CommsOperation collection
-func (b *SubscribeToToneOperationSubscribeToToneOperationCollectionRequestBuilder) Request() *SubscribeToToneOperationSubscribeToToneOperationCollectionRequest {
-	return &SubscribeToToneOperationSubscribeToToneOperationCollectionRequest{
+// Request returns request for SubscribeToToneOperation collection
+func (b *CommsOperationSubscribeToToneOperationCollectionRequestBuilder) Request() *CommsOperationSubscribeToToneOperationCollectionRequest {
+	return &CommsOperationSubscribeToToneOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for CommsOperation item
-func (b *SubscribeToToneOperationSubscribeToToneOperationCollectionRequestBuilder) ID(id string) *CommsOperationRequestBuilder {
-	bb := &CommsOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SubscribeToToneOperation item
+func (b *CommsOperationSubscribeToToneOperationCollectionRequestBuilder) ID(id string) *SubscribeToToneOperationRequestBuilder {
+	bb := &SubscribeToToneOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SubscribeToToneOperationSubscribeToToneOperationCollectionRequest is request for CommsOperation collection
-type SubscribeToToneOperationSubscribeToToneOperationCollectionRequest struct{ BaseRequest }
+// CommsOperationSubscribeToToneOperationCollectionRequest is request for SubscribeToToneOperation collection
+type CommsOperationSubscribeToToneOperationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for CommsOperation collection
-func (r *SubscribeToToneOperationSubscribeToToneOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CommsOperation, error) {
+// Paging perfoms paging operation for SubscribeToToneOperation collection
+func (r *CommsOperationSubscribeToToneOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SubscribeToToneOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *SubscribeToToneOperationSubscribeToToneOperationCollectionRequest) Pagi
 	if err != nil {
 		return nil, err
 	}
-	var values []CommsOperation
+	var values []SubscribeToToneOperation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *SubscribeToToneOperationSubscribeToToneOperationCollectionRequest) Pagi
 		}
 		var (
 			paging Paging
-			value  []CommsOperation
+			value  []SubscribeToToneOperation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *SubscribeToToneOperationSubscribeToToneOperationCollectionRequest) Pagi
 	}
 }
 
-// GetN performs GET request for CommsOperation collection, max N pages
-func (r *SubscribeToToneOperationSubscribeToToneOperationCollectionRequest) GetN(ctx context.Context, n int) ([]CommsOperation, error) {
+// GetN performs GET request for SubscribeToToneOperation collection, max N pages
+func (r *CommsOperationSubscribeToToneOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SubscribeToToneOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *SubscribeToToneOperationSubscribeToToneOperationCollectionRequest) GetN
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for CommsOperation collection
-func (r *SubscribeToToneOperationSubscribeToToneOperationCollectionRequest) Get(ctx context.Context) ([]CommsOperation, error) {
+// Get performs GET request for SubscribeToToneOperation collection
+func (r *CommsOperationSubscribeToToneOperationCollectionRequest) Get(ctx context.Context) ([]SubscribeToToneOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for CommsOperation collection
-func (r *SubscribeToToneOperationSubscribeToToneOperationCollectionRequest) Add(ctx context.Context, reqObj *CommsOperation) (resObj *CommsOperation, err error) {
+// Add performs POST request for SubscribeToToneOperation collection
+func (r *CommsOperationSubscribeToToneOperationCollectionRequest) Add(ctx context.Context, reqObj *SubscribeToToneOperation) (resObj *SubscribeToToneOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

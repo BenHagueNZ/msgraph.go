@@ -891,42 +891,42 @@ func (b *IdentityUserFlowAttributeAssignmentRequestBuilder) UserAttribute() *Ide
 	return bb
 }
 
-// IdentityAPIConnector is navigation property rn
-func (b *IdentityAPIConnectorRequestBuilder) IdentityAPIConnector() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *IdentityAPIConnectorRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// IdentityBuiltInUserFlowAttribute returns request builder for IdentityUserFlowAttribute collection rcn
-func (b *IdentityBuiltInUserFlowAttributeRequestBuilder) IdentityBuiltInUserFlowAttribute() *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder {
-	bb := &IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/IdentityUserFlowAttribute"
+// IdentityBuiltInUserFlowAttribute returns request builder for IdentityBuiltInUserFlowAttribute collection rcn
+func (b *IdentityUserFlowAttributeRequestBuilder) IdentityBuiltInUserFlowAttribute() *IdentityUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder {
+	bb := &IdentityUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/IdentityBuiltInUserFlowAttribute"
 	return bb
 }
 
-// IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder is request builder for IdentityUserFlowAttribute collection
-type IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder struct{ BaseRequestBuilder }
+// IdentityUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder is request builder for IdentityBuiltInUserFlowAttribute collection
+type IdentityUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityUserFlowAttribute collection
-func (b *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder) Request() *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest {
-	return &IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest{
+// Request returns request for IdentityBuiltInUserFlowAttribute collection
+func (b *IdentityUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder) Request() *IdentityUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest {
+	return &IdentityUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityUserFlowAttribute item
-func (b *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder) ID(id string) *IdentityUserFlowAttributeRequestBuilder {
-	bb := &IdentityUserFlowAttributeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for IdentityBuiltInUserFlowAttribute item
+func (b *IdentityUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder) ID(id string) *IdentityBuiltInUserFlowAttributeRequestBuilder {
+	bb := &IdentityBuiltInUserFlowAttributeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest is request for IdentityUserFlowAttribute collection
-type IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest struct{ BaseRequest }
+// IdentityUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest is request for IdentityBuiltInUserFlowAttribute collection
+type IdentityUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityUserFlowAttribute collection
-func (r *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityUserFlowAttribute, error) {
+// Paging perfoms paging operation for IdentityBuiltInUserFlowAttribute collection
+func (r *IdentityUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityBuiltInUserFlowAttribute, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -938,7 +938,7 @@ func (r *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollect
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityUserFlowAttribute
+	var values []IdentityBuiltInUserFlowAttribute
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -952,7 +952,7 @@ func (r *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollect
 		}
 		var (
 			paging Paging
-			value  []IdentityUserFlowAttribute
+			value  []IdentityBuiltInUserFlowAttribute
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -981,8 +981,8 @@ func (r *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollect
 	}
 }
 
-// GetN performs GET request for IdentityUserFlowAttribute collection, max N pages
-func (r *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityUserFlowAttribute, error) {
+// GetN performs GET request for IdentityBuiltInUserFlowAttribute collection, max N pages
+func (r *IdentityUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityBuiltInUserFlowAttribute, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -990,53 +990,53 @@ func (r *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollect
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityUserFlowAttribute collection
-func (r *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest) Get(ctx context.Context) ([]IdentityUserFlowAttribute, error) {
+// Get performs GET request for IdentityBuiltInUserFlowAttribute collection
+func (r *IdentityUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest) Get(ctx context.Context) ([]IdentityBuiltInUserFlowAttribute, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityUserFlowAttribute collection
-func (r *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest) Add(ctx context.Context, reqObj *IdentityUserFlowAttribute) (resObj *IdentityUserFlowAttribute, err error) {
+// Add performs POST request for IdentityBuiltInUserFlowAttribute collection
+func (r *IdentityUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest) Add(ctx context.Context, reqObj *IdentityBuiltInUserFlowAttribute) (resObj *IdentityBuiltInUserFlowAttribute, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// IdentityContainer is navigation property rn
-func (b *IdentityContainerRequestBuilder) IdentityContainer() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *IdentityContainerRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// IdentityCustomUserFlowAttribute returns request builder for IdentityUserFlowAttribute collection rcn
-func (b *IdentityCustomUserFlowAttributeRequestBuilder) IdentityCustomUserFlowAttribute() *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder {
-	bb := &IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/IdentityUserFlowAttribute"
+// IdentityCustomUserFlowAttribute returns request builder for IdentityCustomUserFlowAttribute collection rcn
+func (b *IdentityUserFlowAttributeRequestBuilder) IdentityCustomUserFlowAttribute() *IdentityUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder {
+	bb := &IdentityUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/IdentityCustomUserFlowAttribute"
 	return bb
 }
 
-// IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder is request builder for IdentityUserFlowAttribute collection
-type IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder struct{ BaseRequestBuilder }
+// IdentityUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder is request builder for IdentityCustomUserFlowAttribute collection
+type IdentityUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityUserFlowAttribute collection
-func (b *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder) Request() *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest {
-	return &IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest{
+// Request returns request for IdentityCustomUserFlowAttribute collection
+func (b *IdentityUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder) Request() *IdentityUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest {
+	return &IdentityUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityUserFlowAttribute item
-func (b *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder) ID(id string) *IdentityUserFlowAttributeRequestBuilder {
-	bb := &IdentityUserFlowAttributeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for IdentityCustomUserFlowAttribute item
+func (b *IdentityUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder) ID(id string) *IdentityCustomUserFlowAttributeRequestBuilder {
+	bb := &IdentityCustomUserFlowAttributeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest is request for IdentityUserFlowAttribute collection
-type IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest struct{ BaseRequest }
+// IdentityUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest is request for IdentityCustomUserFlowAttribute collection
+type IdentityUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityUserFlowAttribute collection
-func (r *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityUserFlowAttribute, error) {
+// Paging perfoms paging operation for IdentityCustomUserFlowAttribute collection
+func (r *IdentityUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityCustomUserFlowAttribute, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1048,7 +1048,7 @@ func (r *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectio
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityUserFlowAttribute
+	var values []IdentityCustomUserFlowAttribute
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1062,7 +1062,7 @@ func (r *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectio
 		}
 		var (
 			paging Paging
-			value  []IdentityUserFlowAttribute
+			value  []IdentityCustomUserFlowAttribute
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1091,8 +1091,8 @@ func (r *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectio
 	}
 }
 
-// GetN performs GET request for IdentityUserFlowAttribute collection, max N pages
-func (r *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityUserFlowAttribute, error) {
+// GetN performs GET request for IdentityCustomUserFlowAttribute collection, max N pages
+func (r *IdentityUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityCustomUserFlowAttribute, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1100,33 +1100,33 @@ func (r *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectio
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityUserFlowAttribute collection
-func (r *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest) Get(ctx context.Context) ([]IdentityUserFlowAttribute, error) {
+// Get performs GET request for IdentityCustomUserFlowAttribute collection
+func (r *IdentityUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest) Get(ctx context.Context) ([]IdentityCustomUserFlowAttribute, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityUserFlowAttribute collection
-func (r *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest) Add(ctx context.Context, reqObj *IdentityUserFlowAttribute) (resObj *IdentityUserFlowAttribute, err error) {
+// Add performs POST request for IdentityCustomUserFlowAttribute collection
+func (r *IdentityUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest) Add(ctx context.Context, reqObj *IdentityCustomUserFlowAttribute) (resObj *IdentityCustomUserFlowAttribute, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// IdentityProvider is navigation property rn
-func (b *IdentityProviderRequestBuilder) IdentityProvider() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *IdentityProviderRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// IdentityUserFlow is navigation property rn
-func (b *IdentityUserFlowRequestBuilder) IdentityUserFlow() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *IdentityUserFlowRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// IdentityUserFlowAttributeAssignment is navigation property rn
-func (b *IdentityUserFlowAttributeAssignmentRequestBuilder) IdentityUserFlowAttributeAssignment() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *IdentityUserFlowAttributeAssignmentRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

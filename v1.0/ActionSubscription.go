@@ -6,8 +6,8 @@ package msgraph
 type SubscriptionReauthorizeRequestParameter struct {
 }
 
-// Subscription is navigation property rn
-func (b *SubscriptionRequestBuilder) Subscription() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *SubscriptionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

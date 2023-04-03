@@ -1081,35 +1081,35 @@ func (r *SiteTermStoresCollectionRequest) Add(ctx context.Context, reqObj *TermS
 	return
 }
 
-// Site returns request builder for BaseItem collection rcn
-func (b *SiteRequestBuilder) Site() *SiteSiteCollectionRequestBuilder {
-	bb := &SiteSiteCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/BaseItem"
+// Site returns request builder for Site collection rcn
+func (b *BaseItemRequestBuilder) Site() *BaseItemSiteCollectionRequestBuilder {
+	bb := &BaseItemSiteCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Site"
 	return bb
 }
 
-// SiteSiteCollectionRequestBuilder is request builder for BaseItem collection
-type SiteSiteCollectionRequestBuilder struct{ BaseRequestBuilder }
+// BaseItemSiteCollectionRequestBuilder is request builder for Site collection
+type BaseItemSiteCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for BaseItem collection
-func (b *SiteSiteCollectionRequestBuilder) Request() *SiteSiteCollectionRequest {
-	return &SiteSiteCollectionRequest{
+// Request returns request for Site collection
+func (b *BaseItemSiteCollectionRequestBuilder) Request() *BaseItemSiteCollectionRequest {
+	return &BaseItemSiteCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for BaseItem item
-func (b *SiteSiteCollectionRequestBuilder) ID(id string) *BaseItemRequestBuilder {
-	bb := &BaseItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Site item
+func (b *BaseItemSiteCollectionRequestBuilder) ID(id string) *SiteRequestBuilder {
+	bb := &SiteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SiteSiteCollectionRequest is request for BaseItem collection
-type SiteSiteCollectionRequest struct{ BaseRequest }
+// BaseItemSiteCollectionRequest is request for Site collection
+type BaseItemSiteCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for BaseItem collection
-func (r *SiteSiteCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]BaseItem, error) {
+// Paging perfoms paging operation for Site collection
+func (r *BaseItemSiteCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Site, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1121,7 +1121,7 @@ func (r *SiteSiteCollectionRequest) Paging(ctx context.Context, method, path str
 	if err != nil {
 		return nil, err
 	}
-	var values []BaseItem
+	var values []Site
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1135,7 +1135,7 @@ func (r *SiteSiteCollectionRequest) Paging(ctx context.Context, method, path str
 		}
 		var (
 			paging Paging
-			value  []BaseItem
+			value  []Site
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1164,8 +1164,8 @@ func (r *SiteSiteCollectionRequest) Paging(ctx context.Context, method, path str
 	}
 }
 
-// GetN performs GET request for BaseItem collection, max N pages
-func (r *SiteSiteCollectionRequest) GetN(ctx context.Context, n int) ([]BaseItem, error) {
+// GetN performs GET request for Site collection, max N pages
+func (r *BaseItemSiteCollectionRequest) GetN(ctx context.Context, n int) ([]Site, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1173,13 +1173,13 @@ func (r *SiteSiteCollectionRequest) GetN(ctx context.Context, n int) ([]BaseItem
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for BaseItem collection
-func (r *SiteSiteCollectionRequest) Get(ctx context.Context) ([]BaseItem, error) {
+// Get performs GET request for Site collection
+func (r *BaseItemSiteCollectionRequest) Get(ctx context.Context) ([]Site, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for BaseItem collection
-func (r *SiteSiteCollectionRequest) Add(ctx context.Context, reqObj *BaseItem) (resObj *BaseItem, err error) {
+// Add performs POST request for Site collection
+func (r *BaseItemSiteCollectionRequest) Add(ctx context.Context, reqObj *Site) (resObj *Site, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

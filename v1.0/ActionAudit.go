@@ -320,15 +320,15 @@ func (r *AuditLogRootSignInsCollectionRequest) Add(ctx context.Context, reqObj *
 	return
 }
 
-// AuditEvent is navigation property rn
-func (b *AuditEventRequestBuilder) AuditEvent() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AuditEventRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// AuditLogRoot is navigation property rn
-func (b *AuditLogRootRequestBuilder) AuditLogRoot() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AuditLogRootRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

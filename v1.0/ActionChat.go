@@ -790,22 +790,22 @@ func (r *ChatMessageRepliesCollectionRequest) Add(ctx context.Context, reqObj *C
 	return
 }
 
-// Chat is navigation property rn
-func (b *ChatRequestBuilder) Chat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ChatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ChatMessage is navigation property rn
-func (b *ChatMessageRequestBuilder) ChatMessage() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ChatMessageRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ChatMessageInfo is navigation property rn
-func (b *ChatMessageInfoRequestBuilder) ChatMessageInfo() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ChatMessageInfoRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

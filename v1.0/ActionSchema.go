@@ -2,8 +2,8 @@
 
 package msgraph
 
-// SchemaExtension is navigation property rn
-func (b *SchemaExtensionRequestBuilder) SchemaExtension() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *SchemaExtensionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

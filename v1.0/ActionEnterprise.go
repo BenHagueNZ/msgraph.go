@@ -2,8 +2,8 @@
 
 package msgraph
 
-// EnterpriseCodeSigningCertificate is navigation property rn
-func (b *EnterpriseCodeSigningCertificateRequestBuilder) EnterpriseCodeSigningCertificate() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *EnterpriseCodeSigningCertificateRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

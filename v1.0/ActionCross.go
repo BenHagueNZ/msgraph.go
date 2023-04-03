@@ -125,8 +125,8 @@ func (r *CrossTenantAccessPolicyPartnersCollectionRequest) Add(ctx context.Conte
 	return
 }
 
-// CrossTenantAccessPolicyConfigurationDefault is navigation property rn
-func (b *CrossTenantAccessPolicyConfigurationDefaultRequestBuilder) CrossTenantAccessPolicyConfigurationDefault() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *CrossTenantAccessPolicyConfigurationDefaultRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

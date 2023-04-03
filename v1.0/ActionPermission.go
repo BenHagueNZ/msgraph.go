@@ -225,15 +225,15 @@ func (r *PermissionGrantPolicyIncludesCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Permission is navigation property rn
-func (b *PermissionRequestBuilder) Permission() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PermissionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PermissionGrantConditionSet is navigation property rn
-func (b *PermissionGrantConditionSetRequestBuilder) PermissionGrantConditionSet() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PermissionGrantConditionSetRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

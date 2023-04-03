@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Endpoint returns request builder for DirectoryObject collection rcn
-func (b *EndpointRequestBuilder) Endpoint() *EndpointEndpointCollectionRequestBuilder {
-	bb := &EndpointEndpointCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryObject"
+// Endpoint returns request builder for Endpoint collection rcn
+func (b *DirectoryObjectRequestBuilder) Endpoint() *DirectoryObjectEndpointCollectionRequestBuilder {
+	bb := &DirectoryObjectEndpointCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Endpoint"
 	return bb
 }
 
-// EndpointEndpointCollectionRequestBuilder is request builder for DirectoryObject collection
-type EndpointEndpointCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DirectoryObjectEndpointCollectionRequestBuilder is request builder for Endpoint collection
+type DirectoryObjectEndpointCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DirectoryObject collection
-func (b *EndpointEndpointCollectionRequestBuilder) Request() *EndpointEndpointCollectionRequest {
-	return &EndpointEndpointCollectionRequest{
+// Request returns request for Endpoint collection
+func (b *DirectoryObjectEndpointCollectionRequestBuilder) Request() *DirectoryObjectEndpointCollectionRequest {
+	return &DirectoryObjectEndpointCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DirectoryObject item
-func (b *EndpointEndpointCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
-	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Endpoint item
+func (b *DirectoryObjectEndpointCollectionRequestBuilder) ID(id string) *EndpointRequestBuilder {
+	bb := &EndpointRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// EndpointEndpointCollectionRequest is request for DirectoryObject collection
-type EndpointEndpointCollectionRequest struct{ BaseRequest }
+// DirectoryObjectEndpointCollectionRequest is request for Endpoint collection
+type DirectoryObjectEndpointCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DirectoryObject collection
-func (r *EndpointEndpointCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+// Paging perfoms paging operation for Endpoint collection
+func (r *DirectoryObjectEndpointCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Endpoint, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *EndpointEndpointCollectionRequest) Paging(ctx context.Context, method, 
 	if err != nil {
 		return nil, err
 	}
-	var values []DirectoryObject
+	var values []Endpoint
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *EndpointEndpointCollectionRequest) Paging(ctx context.Context, method, 
 		}
 		var (
 			paging Paging
-			value  []DirectoryObject
+			value  []Endpoint
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *EndpointEndpointCollectionRequest) Paging(ctx context.Context, method, 
 	}
 }
 
-// GetN performs GET request for DirectoryObject collection, max N pages
-func (r *EndpointEndpointCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+// GetN performs GET request for Endpoint collection, max N pages
+func (r *DirectoryObjectEndpointCollectionRequest) GetN(ctx context.Context, n int) ([]Endpoint, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *EndpointEndpointCollectionRequest) GetN(ctx context.Context, n int) ([]
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DirectoryObject collection
-func (r *EndpointEndpointCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+// Get performs GET request for Endpoint collection
+func (r *DirectoryObjectEndpointCollectionRequest) Get(ctx context.Context) ([]Endpoint, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DirectoryObject collection
-func (r *EndpointEndpointCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+// Add performs POST request for Endpoint collection
+func (r *DirectoryObjectEndpointCollectionRequest) Add(ctx context.Context, reqObj *Endpoint) (resObj *Endpoint, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

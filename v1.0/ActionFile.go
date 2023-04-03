@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// FileAssessmentRequestObject returns request builder for ThreatAssessmentRequestObject collection rcn
-func (b *FileAssessmentRequestObjectRequestBuilder) FileAssessmentRequestObject() *FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequestBuilder {
-	bb := &FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ThreatAssessmentRequest"
+// FileAssessmentRequestObject returns request builder for FileAssessmentRequestObject collection rcn
+func (b *ThreatAssessmentRequestObjectRequestBuilder) FileAssessmentRequestObject() *ThreatAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequestBuilder {
+	bb := &ThreatAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/FileAssessmentRequest"
 	return bb
 }
 
-// FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequestBuilder is request builder for ThreatAssessmentRequestObject collection
-type FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ThreatAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequestBuilder is request builder for FileAssessmentRequestObject collection
+type ThreatAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for ThreatAssessmentRequestObject collection
-func (b *FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequestBuilder) Request() *FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest {
-	return &FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest{
+// Request returns request for FileAssessmentRequestObject collection
+func (b *ThreatAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequestBuilder) Request() *ThreatAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest {
+	return &ThreatAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for ThreatAssessmentRequestObject item
-func (b *FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequestBuilder) ID(id string) *ThreatAssessmentRequestObjectRequestBuilder {
-	bb := &ThreatAssessmentRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for FileAssessmentRequestObject item
+func (b *ThreatAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequestBuilder) ID(id string) *FileAssessmentRequestObjectRequestBuilder {
+	bb := &FileAssessmentRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest is request for ThreatAssessmentRequestObject collection
-type FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest struct{ BaseRequest }
+// ThreatAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest is request for FileAssessmentRequestObject collection
+type ThreatAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for ThreatAssessmentRequestObject collection
-func (r *FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ThreatAssessmentRequestObject, error) {
+// Paging perfoms paging operation for FileAssessmentRequestObject collection
+func (r *ThreatAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]FileAssessmentRequestObject, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest
 	if err != nil {
 		return nil, err
 	}
-	var values []ThreatAssessmentRequestObject
+	var values []FileAssessmentRequestObject
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest
 		}
 		var (
 			paging Paging
-			value  []ThreatAssessmentRequestObject
+			value  []FileAssessmentRequestObject
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest
 	}
 }
 
-// GetN performs GET request for ThreatAssessmentRequestObject collection, max N pages
-func (r *FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest) GetN(ctx context.Context, n int) ([]ThreatAssessmentRequestObject, error) {
+// GetN performs GET request for FileAssessmentRequestObject collection, max N pages
+func (r *ThreatAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest) GetN(ctx context.Context, n int) ([]FileAssessmentRequestObject, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,46 +103,46 @@ func (r *FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for ThreatAssessmentRequestObject collection
-func (r *FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest) Get(ctx context.Context) ([]ThreatAssessmentRequestObject, error) {
+// Get performs GET request for FileAssessmentRequestObject collection
+func (r *ThreatAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest) Get(ctx context.Context) ([]FileAssessmentRequestObject, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for ThreatAssessmentRequestObject collection
-func (r *FileAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest) Add(ctx context.Context, reqObj *ThreatAssessmentRequestObject) (resObj *ThreatAssessmentRequestObject, err error) {
+// Add performs POST request for FileAssessmentRequestObject collection
+func (r *ThreatAssessmentRequestObjectFileAssessmentRequestObjectCollectionRequest) Add(ctx context.Context, reqObj *FileAssessmentRequestObject) (resObj *FileAssessmentRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// FileAttachment returns request builder for Attachment collection rcn
-func (b *FileAttachmentRequestBuilder) FileAttachment() *FileAttachmentFileAttachmentCollectionRequestBuilder {
-	bb := &FileAttachmentFileAttachmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/Attachment"
+// FileAttachment returns request builder for FileAttachment collection rcn
+func (b *AttachmentRequestBuilder) FileAttachment() *AttachmentFileAttachmentCollectionRequestBuilder {
+	bb := &AttachmentFileAttachmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/FileAttachment"
 	return bb
 }
 
-// FileAttachmentFileAttachmentCollectionRequestBuilder is request builder for Attachment collection
-type FileAttachmentFileAttachmentCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AttachmentFileAttachmentCollectionRequestBuilder is request builder for FileAttachment collection
+type AttachmentFileAttachmentCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for Attachment collection
-func (b *FileAttachmentFileAttachmentCollectionRequestBuilder) Request() *FileAttachmentFileAttachmentCollectionRequest {
-	return &FileAttachmentFileAttachmentCollectionRequest{
+// Request returns request for FileAttachment collection
+func (b *AttachmentFileAttachmentCollectionRequestBuilder) Request() *AttachmentFileAttachmentCollectionRequest {
+	return &AttachmentFileAttachmentCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for Attachment item
-func (b *FileAttachmentFileAttachmentCollectionRequestBuilder) ID(id string) *AttachmentRequestBuilder {
-	bb := &AttachmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for FileAttachment item
+func (b *AttachmentFileAttachmentCollectionRequestBuilder) ID(id string) *FileAttachmentRequestBuilder {
+	bb := &FileAttachmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// FileAttachmentFileAttachmentCollectionRequest is request for Attachment collection
-type FileAttachmentFileAttachmentCollectionRequest struct{ BaseRequest }
+// AttachmentFileAttachmentCollectionRequest is request for FileAttachment collection
+type AttachmentFileAttachmentCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for Attachment collection
-func (r *FileAttachmentFileAttachmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Attachment, error) {
+// Paging perfoms paging operation for FileAttachment collection
+func (r *AttachmentFileAttachmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]FileAttachment, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -154,7 +154,7 @@ func (r *FileAttachmentFileAttachmentCollectionRequest) Paging(ctx context.Conte
 	if err != nil {
 		return nil, err
 	}
-	var values []Attachment
+	var values []FileAttachment
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -168,7 +168,7 @@ func (r *FileAttachmentFileAttachmentCollectionRequest) Paging(ctx context.Conte
 		}
 		var (
 			paging Paging
-			value  []Attachment
+			value  []FileAttachment
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -197,8 +197,8 @@ func (r *FileAttachmentFileAttachmentCollectionRequest) Paging(ctx context.Conte
 	}
 }
 
-// GetN performs GET request for Attachment collection, max N pages
-func (r *FileAttachmentFileAttachmentCollectionRequest) GetN(ctx context.Context, n int) ([]Attachment, error) {
+// GetN performs GET request for FileAttachment collection, max N pages
+func (r *AttachmentFileAttachmentCollectionRequest) GetN(ctx context.Context, n int) ([]FileAttachment, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -206,13 +206,13 @@ func (r *FileAttachmentFileAttachmentCollectionRequest) GetN(ctx context.Context
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for Attachment collection
-func (r *FileAttachmentFileAttachmentCollectionRequest) Get(ctx context.Context) ([]Attachment, error) {
+// Get performs GET request for FileAttachment collection
+func (r *AttachmentFileAttachmentCollectionRequest) Get(ctx context.Context) ([]FileAttachment, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for Attachment collection
-func (r *FileAttachmentFileAttachmentCollectionRequest) Add(ctx context.Context, reqObj *Attachment) (resObj *Attachment, err error) {
+// Add performs POST request for FileAttachment collection
+func (r *AttachmentFileAttachmentCollectionRequest) Add(ctx context.Context, reqObj *FileAttachment) (resObj *FileAttachment, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

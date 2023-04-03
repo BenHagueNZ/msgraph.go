@@ -2,8 +2,8 @@
 
 package msgraph
 
-// ProvisioningObjectSummary is navigation property rn
-func (b *ProvisioningObjectSummaryRequestBuilder) ProvisioningObjectSummary() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ProvisioningObjectSummaryRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

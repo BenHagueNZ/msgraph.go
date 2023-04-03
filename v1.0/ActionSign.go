@@ -2,8 +2,8 @@
 
 package msgraph
 
-// SignIn is navigation property rn
-func (b *SignInRequestBuilder) SignIn() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *SignInRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

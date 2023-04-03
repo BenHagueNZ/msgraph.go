@@ -466,15 +466,15 @@ func (r *ContentTypeColumnsCollectionRequest) Add(ctx context.Context, reqObj *C
 	return
 }
 
-// ContentSharingSession is navigation property rn
-func (b *ContentSharingSessionRequestBuilder) ContentSharingSession() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ContentSharingSessionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ContentType is navigation property rn
-func (b *ContentTypeRequestBuilder) ContentType() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ContentTypeRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

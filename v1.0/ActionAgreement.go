@@ -430,22 +430,22 @@ func (r *AgreementFileLocalizationVersionsCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// Agreement is navigation property rn
-func (b *AgreementRequestBuilder) Agreement() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AgreementRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// AgreementAcceptance is navigation property rn
-func (b *AgreementAcceptanceRequestBuilder) AgreementAcceptance() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AgreementAcceptanceRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// AgreementFileProperties is navigation property rn
-func (b *AgreementFilePropertiesRequestBuilder) AgreementFileProperties() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AgreementFilePropertiesRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

@@ -1150,50 +1150,50 @@ func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollection
 	return
 }
 
-// Authentication is navigation property rn
-func (b *AuthenticationRequestBuilder) Authentication() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AuthenticationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// AuthenticationContextClassReference is navigation property rn
-func (b *AuthenticationContextClassReferenceRequestBuilder) AuthenticationContextClassReference() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AuthenticationContextClassReferenceRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// AuthenticationFlowsPolicy is navigation property rn
-func (b *AuthenticationFlowsPolicyRequestBuilder) AuthenticationFlowsPolicy() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AuthenticationFlowsPolicyRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// AuthenticationMethod is navigation property rn
-func (b *AuthenticationMethodRequestBuilder) AuthenticationMethod() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AuthenticationMethodRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// AuthenticationMethodConfiguration is navigation property rn
-func (b *AuthenticationMethodConfigurationRequestBuilder) AuthenticationMethodConfiguration() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AuthenticationMethodConfigurationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// AuthenticationMethodTarget is navigation property rn
-func (b *AuthenticationMethodTargetRequestBuilder) AuthenticationMethodTarget() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AuthenticationMethodTargetRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// AuthenticationMethodsPolicy is navigation property rn
-func (b *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodsPolicy() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AuthenticationMethodsPolicyRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

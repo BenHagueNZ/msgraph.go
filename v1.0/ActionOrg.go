@@ -327,35 +327,35 @@ func (r *OrgContactTransitiveMemberOfCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// OrgContact returns request builder for DirectoryObject collection rcn
-func (b *OrgContactRequestBuilder) OrgContact() *OrgContactOrgContactCollectionRequestBuilder {
-	bb := &OrgContactOrgContactCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryObject"
+// OrgContact returns request builder for OrgContact collection rcn
+func (b *DirectoryObjectRequestBuilder) OrgContact() *DirectoryObjectOrgContactCollectionRequestBuilder {
+	bb := &DirectoryObjectOrgContactCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/OrgContact"
 	return bb
 }
 
-// OrgContactOrgContactCollectionRequestBuilder is request builder for DirectoryObject collection
-type OrgContactOrgContactCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DirectoryObjectOrgContactCollectionRequestBuilder is request builder for OrgContact collection
+type DirectoryObjectOrgContactCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DirectoryObject collection
-func (b *OrgContactOrgContactCollectionRequestBuilder) Request() *OrgContactOrgContactCollectionRequest {
-	return &OrgContactOrgContactCollectionRequest{
+// Request returns request for OrgContact collection
+func (b *DirectoryObjectOrgContactCollectionRequestBuilder) Request() *DirectoryObjectOrgContactCollectionRequest {
+	return &DirectoryObjectOrgContactCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DirectoryObject item
-func (b *OrgContactOrgContactCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
-	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for OrgContact item
+func (b *DirectoryObjectOrgContactCollectionRequestBuilder) ID(id string) *OrgContactRequestBuilder {
+	bb := &OrgContactRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// OrgContactOrgContactCollectionRequest is request for DirectoryObject collection
-type OrgContactOrgContactCollectionRequest struct{ BaseRequest }
+// DirectoryObjectOrgContactCollectionRequest is request for OrgContact collection
+type DirectoryObjectOrgContactCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DirectoryObject collection
-func (r *OrgContactOrgContactCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+// Paging perfoms paging operation for OrgContact collection
+func (r *DirectoryObjectOrgContactCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]OrgContact, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -367,7 +367,7 @@ func (r *OrgContactOrgContactCollectionRequest) Paging(ctx context.Context, meth
 	if err != nil {
 		return nil, err
 	}
-	var values []DirectoryObject
+	var values []OrgContact
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -381,7 +381,7 @@ func (r *OrgContactOrgContactCollectionRequest) Paging(ctx context.Context, meth
 		}
 		var (
 			paging Paging
-			value  []DirectoryObject
+			value  []OrgContact
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -410,8 +410,8 @@ func (r *OrgContactOrgContactCollectionRequest) Paging(ctx context.Context, meth
 	}
 }
 
-// GetN performs GET request for DirectoryObject collection, max N pages
-func (r *OrgContactOrgContactCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+// GetN performs GET request for OrgContact collection, max N pages
+func (r *DirectoryObjectOrgContactCollectionRequest) GetN(ctx context.Context, n int) ([]OrgContact, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -419,13 +419,13 @@ func (r *OrgContactOrgContactCollectionRequest) GetN(ctx context.Context, n int)
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DirectoryObject collection
-func (r *OrgContactOrgContactCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+// Get performs GET request for OrgContact collection
+func (r *DirectoryObjectOrgContactCollectionRequest) Get(ctx context.Context) ([]OrgContact, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DirectoryObject collection
-func (r *OrgContactOrgContactCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+// Add performs POST request for OrgContact collection
+func (r *DirectoryObjectOrgContactCollectionRequest) Add(ctx context.Context, reqObj *OrgContact) (resObj *OrgContact, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

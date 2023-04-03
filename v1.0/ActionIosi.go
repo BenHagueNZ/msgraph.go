@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// IosiPadOSWebClip returns request builder for MobileApp collection rcn
-func (b *IosiPadOSWebClipRequestBuilder) IosiPadOSWebClip() *IosiPadOSWebClipIosiPadOSWebClipCollectionRequestBuilder {
-	bb := &IosiPadOSWebClipIosiPadOSWebClipCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/MobileApp"
+// IosiPadOSWebClip returns request builder for IosiPadOSWebClip collection rcn
+func (b *MobileAppRequestBuilder) IosiPadOSWebClip() *MobileAppIosiPadOSWebClipCollectionRequestBuilder {
+	bb := &MobileAppIosiPadOSWebClipCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/IosiPadOSWebClip"
 	return bb
 }
 
-// IosiPadOSWebClipIosiPadOSWebClipCollectionRequestBuilder is request builder for MobileApp collection
-type IosiPadOSWebClipIosiPadOSWebClipCollectionRequestBuilder struct{ BaseRequestBuilder }
+// MobileAppIosiPadOSWebClipCollectionRequestBuilder is request builder for IosiPadOSWebClip collection
+type MobileAppIosiPadOSWebClipCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for MobileApp collection
-func (b *IosiPadOSWebClipIosiPadOSWebClipCollectionRequestBuilder) Request() *IosiPadOSWebClipIosiPadOSWebClipCollectionRequest {
-	return &IosiPadOSWebClipIosiPadOSWebClipCollectionRequest{
+// Request returns request for IosiPadOSWebClip collection
+func (b *MobileAppIosiPadOSWebClipCollectionRequestBuilder) Request() *MobileAppIosiPadOSWebClipCollectionRequest {
+	return &MobileAppIosiPadOSWebClipCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for MobileApp item
-func (b *IosiPadOSWebClipIosiPadOSWebClipCollectionRequestBuilder) ID(id string) *MobileAppRequestBuilder {
-	bb := &MobileAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for IosiPadOSWebClip item
+func (b *MobileAppIosiPadOSWebClipCollectionRequestBuilder) ID(id string) *IosiPadOSWebClipRequestBuilder {
+	bb := &IosiPadOSWebClipRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// IosiPadOSWebClipIosiPadOSWebClipCollectionRequest is request for MobileApp collection
-type IosiPadOSWebClipIosiPadOSWebClipCollectionRequest struct{ BaseRequest }
+// MobileAppIosiPadOSWebClipCollectionRequest is request for IosiPadOSWebClip collection
+type MobileAppIosiPadOSWebClipCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for MobileApp collection
-func (r *IosiPadOSWebClipIosiPadOSWebClipCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MobileApp, error) {
+// Paging perfoms paging operation for IosiPadOSWebClip collection
+func (r *MobileAppIosiPadOSWebClipCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IosiPadOSWebClip, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *IosiPadOSWebClipIosiPadOSWebClipCollectionRequest) Paging(ctx context.C
 	if err != nil {
 		return nil, err
 	}
-	var values []MobileApp
+	var values []IosiPadOSWebClip
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *IosiPadOSWebClipIosiPadOSWebClipCollectionRequest) Paging(ctx context.C
 		}
 		var (
 			paging Paging
-			value  []MobileApp
+			value  []IosiPadOSWebClip
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *IosiPadOSWebClipIosiPadOSWebClipCollectionRequest) Paging(ctx context.C
 	}
 }
 
-// GetN performs GET request for MobileApp collection, max N pages
-func (r *IosiPadOSWebClipIosiPadOSWebClipCollectionRequest) GetN(ctx context.Context, n int) ([]MobileApp, error) {
+// GetN performs GET request for IosiPadOSWebClip collection, max N pages
+func (r *MobileAppIosiPadOSWebClipCollectionRequest) GetN(ctx context.Context, n int) ([]IosiPadOSWebClip, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *IosiPadOSWebClipIosiPadOSWebClipCollectionRequest) GetN(ctx context.Con
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for MobileApp collection
-func (r *IosiPadOSWebClipIosiPadOSWebClipCollectionRequest) Get(ctx context.Context) ([]MobileApp, error) {
+// Get performs GET request for IosiPadOSWebClip collection
+func (r *MobileAppIosiPadOSWebClipCollectionRequest) Get(ctx context.Context) ([]IosiPadOSWebClip, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for MobileApp collection
-func (r *IosiPadOSWebClipIosiPadOSWebClipCollectionRequest) Add(ctx context.Context, reqObj *MobileApp) (resObj *MobileApp, err error) {
+// Add performs POST request for IosiPadOSWebClip collection
+func (r *MobileAppIosiPadOSWebClipCollectionRequest) Add(ctx context.Context, reqObj *IosiPadOSWebClip) (resObj *IosiPadOSWebClip, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

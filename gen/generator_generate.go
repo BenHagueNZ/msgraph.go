@@ -523,10 +523,10 @@ func (g *Generator) Generate() error {
 				}
 				if !complete[x.Sym] {
 					if navigations["Collection("+x.Base+")"] {
-						g.X = x
+						g.Y = x
 						y := entityTypeMap[baseType]
-						y.Sym = x.Sym
-						g.Y = y
+						//y.Sym = x.Sym
+						g.X = y
 						complete[y.Sym] = true
 						fmt.Println("c")
 						fmt.Println(y.Sym)
@@ -541,7 +541,7 @@ func (g *Generator) Generate() error {
 						if navigations[x.Base] {
 							g.X = x
 							y := entityTypeMap[baseType]
-							y.Sym = x.Sym
+							//y.Sym = x.Sym
 							g.Y = y
 							complete[y.Sym] = true
 							fmt.Println("b")

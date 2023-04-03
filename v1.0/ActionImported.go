@@ -120,15 +120,15 @@ func (r *ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionR
 	return
 }
 
-// ImportedWindowsAutopilotDeviceIdentity is navigation property rn
-func (b *ImportedWindowsAutopilotDeviceIdentityRequestBuilder) ImportedWindowsAutopilotDeviceIdentity() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ImportedWindowsAutopilotDeviceIdentityRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ImportedWindowsAutopilotDeviceIdentityUpload is navigation property rn
-func (b *ImportedWindowsAutopilotDeviceIdentityUploadRequestBuilder) ImportedWindowsAutopilotDeviceIdentityUpload() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ImportedWindowsAutopilotDeviceIdentityUploadRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

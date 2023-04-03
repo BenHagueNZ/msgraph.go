@@ -6393,35 +6393,35 @@ func (r *DeviceManagementReportsExportJobsCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// Device returns request builder for DirectoryObject collection rcn
-func (b *DeviceRequestBuilder) Device() *DeviceDeviceCollectionRequestBuilder {
-	bb := &DeviceDeviceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryObject"
+// Device returns request builder for Device collection rcn
+func (b *DirectoryObjectRequestBuilder) Device() *DirectoryObjectDeviceCollectionRequestBuilder {
+	bb := &DirectoryObjectDeviceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Device"
 	return bb
 }
 
-// DeviceDeviceCollectionRequestBuilder is request builder for DirectoryObject collection
-type DeviceDeviceCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DirectoryObjectDeviceCollectionRequestBuilder is request builder for Device collection
+type DirectoryObjectDeviceCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DirectoryObject collection
-func (b *DeviceDeviceCollectionRequestBuilder) Request() *DeviceDeviceCollectionRequest {
-	return &DeviceDeviceCollectionRequest{
+// Request returns request for Device collection
+func (b *DirectoryObjectDeviceCollectionRequestBuilder) Request() *DirectoryObjectDeviceCollectionRequest {
+	return &DirectoryObjectDeviceCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DirectoryObject item
-func (b *DeviceDeviceCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
-	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Device item
+func (b *DirectoryObjectDeviceCollectionRequestBuilder) ID(id string) *DeviceRequestBuilder {
+	bb := &DeviceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DeviceDeviceCollectionRequest is request for DirectoryObject collection
-type DeviceDeviceCollectionRequest struct{ BaseRequest }
+// DirectoryObjectDeviceCollectionRequest is request for Device collection
+type DirectoryObjectDeviceCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DirectoryObject collection
-func (r *DeviceDeviceCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+// Paging perfoms paging operation for Device collection
+func (r *DirectoryObjectDeviceCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Device, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -6433,7 +6433,7 @@ func (r *DeviceDeviceCollectionRequest) Paging(ctx context.Context, method, path
 	if err != nil {
 		return nil, err
 	}
-	var values []DirectoryObject
+	var values []Device
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -6447,7 +6447,7 @@ func (r *DeviceDeviceCollectionRequest) Paging(ctx context.Context, method, path
 		}
 		var (
 			paging Paging
-			value  []DirectoryObject
+			value  []Device
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -6476,8 +6476,8 @@ func (r *DeviceDeviceCollectionRequest) Paging(ctx context.Context, method, path
 	}
 }
 
-// GetN performs GET request for DirectoryObject collection, max N pages
-func (r *DeviceDeviceCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+// GetN performs GET request for Device collection, max N pages
+func (r *DirectoryObjectDeviceCollectionRequest) GetN(ctx context.Context, n int) ([]Device, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -6485,46 +6485,46 @@ func (r *DeviceDeviceCollectionRequest) GetN(ctx context.Context, n int) ([]Dire
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DirectoryObject collection
-func (r *DeviceDeviceCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+// Get performs GET request for Device collection
+func (r *DirectoryObjectDeviceCollectionRequest) Get(ctx context.Context) ([]Device, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DirectoryObject collection
-func (r *DeviceDeviceCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+// Add performs POST request for Device collection
+func (r *DirectoryObjectDeviceCollectionRequest) Add(ctx context.Context, reqObj *Device) (resObj *Device, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// DeviceAndAppManagementRoleAssignment returns request builder for RoleAssignment collection rcn
-func (b *DeviceAndAppManagementRoleAssignmentRequestBuilder) DeviceAndAppManagementRoleAssignment() *DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder {
-	bb := &DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/RoleAssignment"
+// DeviceAndAppManagementRoleAssignment returns request builder for DeviceAndAppManagementRoleAssignment collection rcn
+func (b *RoleAssignmentRequestBuilder) DeviceAndAppManagementRoleAssignment() *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder {
+	bb := &RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DeviceAndAppManagementRoleAssignment"
 	return bb
 }
 
-// DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder is request builder for RoleAssignment collection
-type DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder struct{ BaseRequestBuilder }
+// RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder is request builder for DeviceAndAppManagementRoleAssignment collection
+type RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for RoleAssignment collection
-func (b *DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder) Request() *DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest {
-	return &DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest{
+// Request returns request for DeviceAndAppManagementRoleAssignment collection
+func (b *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder) Request() *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest {
+	return &RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for RoleAssignment item
-func (b *DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder) ID(id string) *RoleAssignmentRequestBuilder {
-	bb := &RoleAssignmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for DeviceAndAppManagementRoleAssignment item
+func (b *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder) ID(id string) *DeviceAndAppManagementRoleAssignmentRequestBuilder {
+	bb := &DeviceAndAppManagementRoleAssignmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest is request for RoleAssignment collection
-type DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest struct{ BaseRequest }
+// RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest is request for DeviceAndAppManagementRoleAssignment collection
+type RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for RoleAssignment collection
-func (r *DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RoleAssignment, error) {
+// Paging perfoms paging operation for DeviceAndAppManagementRoleAssignment collection
+func (r *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceAndAppManagementRoleAssignment, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -6536,7 +6536,7 @@ func (r *DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmen
 	if err != nil {
 		return nil, err
 	}
-	var values []RoleAssignment
+	var values []DeviceAndAppManagementRoleAssignment
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -6550,7 +6550,7 @@ func (r *DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmen
 		}
 		var (
 			paging Paging
-			value  []RoleAssignment
+			value  []DeviceAndAppManagementRoleAssignment
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -6579,8 +6579,8 @@ func (r *DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmen
 	}
 }
 
-// GetN performs GET request for RoleAssignment collection, max N pages
-func (r *DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest) GetN(ctx context.Context, n int) ([]RoleAssignment, error) {
+// GetN performs GET request for DeviceAndAppManagementRoleAssignment collection, max N pages
+func (r *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceAndAppManagementRoleAssignment, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -6588,46 +6588,46 @@ func (r *DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmen
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for RoleAssignment collection
-func (r *DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest) Get(ctx context.Context) ([]RoleAssignment, error) {
+// Get performs GET request for DeviceAndAppManagementRoleAssignment collection
+func (r *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest) Get(ctx context.Context) ([]DeviceAndAppManagementRoleAssignment, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for RoleAssignment collection
-func (r *DeviceAndAppManagementRoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest) Add(ctx context.Context, reqObj *RoleAssignment) (resObj *RoleAssignment, err error) {
+// Add performs POST request for DeviceAndAppManagementRoleAssignment collection
+func (r *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest) Add(ctx context.Context, reqObj *DeviceAndAppManagementRoleAssignment) (resObj *DeviceAndAppManagementRoleAssignment, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// DeviceAndAppManagementRoleDefinition returns request builder for RoleDefinition collection rcn
-func (b *DeviceAndAppManagementRoleDefinitionRequestBuilder) DeviceAndAppManagementRoleDefinition() *DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder {
-	bb := &DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/RoleDefinition"
+// DeviceAndAppManagementRoleDefinition returns request builder for DeviceAndAppManagementRoleDefinition collection rcn
+func (b *RoleDefinitionRequestBuilder) DeviceAndAppManagementRoleDefinition() *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder {
+	bb := &RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DeviceAndAppManagementRoleDefinition"
 	return bb
 }
 
-// DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder is request builder for RoleDefinition collection
-type DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder struct{ BaseRequestBuilder }
+// RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder is request builder for DeviceAndAppManagementRoleDefinition collection
+type RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for RoleDefinition collection
-func (b *DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder) Request() *DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest {
-	return &DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest{
+// Request returns request for DeviceAndAppManagementRoleDefinition collection
+func (b *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder) Request() *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest {
+	return &RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for RoleDefinition item
-func (b *DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder) ID(id string) *RoleDefinitionRequestBuilder {
-	bb := &RoleDefinitionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for DeviceAndAppManagementRoleDefinition item
+func (b *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder) ID(id string) *DeviceAndAppManagementRoleDefinitionRequestBuilder {
+	bb := &DeviceAndAppManagementRoleDefinitionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest is request for RoleDefinition collection
-type DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest struct{ BaseRequest }
+// RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest is request for DeviceAndAppManagementRoleDefinition collection
+type RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for RoleDefinition collection
-func (r *DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RoleDefinition, error) {
+// Paging perfoms paging operation for DeviceAndAppManagementRoleDefinition collection
+func (r *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceAndAppManagementRoleDefinition, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -6639,7 +6639,7 @@ func (r *DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitio
 	if err != nil {
 		return nil, err
 	}
-	var values []RoleDefinition
+	var values []DeviceAndAppManagementRoleDefinition
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -6653,7 +6653,7 @@ func (r *DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitio
 		}
 		var (
 			paging Paging
-			value  []RoleDefinition
+			value  []DeviceAndAppManagementRoleDefinition
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -6682,8 +6682,8 @@ func (r *DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitio
 	}
 }
 
-// GetN performs GET request for RoleDefinition collection, max N pages
-func (r *DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest) GetN(ctx context.Context, n int) ([]RoleDefinition, error) {
+// GetN performs GET request for DeviceAndAppManagementRoleDefinition collection, max N pages
+func (r *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceAndAppManagementRoleDefinition, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -6691,193 +6691,193 @@ func (r *DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitio
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for RoleDefinition collection
-func (r *DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest) Get(ctx context.Context) ([]RoleDefinition, error) {
+// Get performs GET request for DeviceAndAppManagementRoleDefinition collection
+func (r *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest) Get(ctx context.Context) ([]DeviceAndAppManagementRoleDefinition, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for RoleDefinition collection
-func (r *DeviceAndAppManagementRoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest) Add(ctx context.Context, reqObj *RoleDefinition) (resObj *RoleDefinition, err error) {
+// Add performs POST request for DeviceAndAppManagementRoleDefinition collection
+func (r *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest) Add(ctx context.Context, reqObj *DeviceAndAppManagementRoleDefinition) (resObj *DeviceAndAppManagementRoleDefinition, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// DeviceAppManagement is navigation property rn
-func (b *DeviceAppManagementRequestBuilder) DeviceAppManagement() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceAppManagementRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceCategory is navigation property rn
-func (b *DeviceCategoryRequestBuilder) DeviceCategory() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceCategoryRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceComplianceActionItem is navigation property rn
-func (b *DeviceComplianceActionItemRequestBuilder) DeviceComplianceActionItem() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceComplianceActionItemRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceComplianceDeviceOverview is navigation property rn
-func (b *DeviceComplianceDeviceOverviewRequestBuilder) DeviceComplianceDeviceOverview() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceComplianceDeviceOverviewRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceComplianceDeviceStatus is navigation property rn
-func (b *DeviceComplianceDeviceStatusRequestBuilder) DeviceComplianceDeviceStatus() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceComplianceDeviceStatusRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceCompliancePolicyAssignment is navigation property rn
-func (b *DeviceCompliancePolicyAssignmentRequestBuilder) DeviceCompliancePolicyAssignment() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceCompliancePolicyAssignmentRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceCompliancePolicyDeviceStateSummary is navigation property rn
-func (b *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) DeviceCompliancePolicyDeviceStateSummary() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceCompliancePolicyDeviceStateSummaryRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceCompliancePolicySettingStateSummary is navigation property rn
-func (b *DeviceCompliancePolicySettingStateSummaryRequestBuilder) DeviceCompliancePolicySettingStateSummary() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceCompliancePolicySettingStateSummaryRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceCompliancePolicyState is navigation property rn
-func (b *DeviceCompliancePolicyStateRequestBuilder) DeviceCompliancePolicyState() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceCompliancePolicyStateRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceComplianceScheduledActionForRule is navigation property rn
-func (b *DeviceComplianceScheduledActionForRuleRequestBuilder) DeviceComplianceScheduledActionForRule() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceComplianceScheduledActionForRuleRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceComplianceSettingState is navigation property rn
-func (b *DeviceComplianceSettingStateRequestBuilder) DeviceComplianceSettingState() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceComplianceSettingStateRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceComplianceUserOverview is navigation property rn
-func (b *DeviceComplianceUserOverviewRequestBuilder) DeviceComplianceUserOverview() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceComplianceUserOverviewRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceComplianceUserStatus is navigation property rn
-func (b *DeviceComplianceUserStatusRequestBuilder) DeviceComplianceUserStatus() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceComplianceUserStatusRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceConfigurationAssignment is navigation property rn
-func (b *DeviceConfigurationAssignmentRequestBuilder) DeviceConfigurationAssignment() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceConfigurationAssignmentRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceConfigurationDeviceOverview is navigation property rn
-func (b *DeviceConfigurationDeviceOverviewRequestBuilder) DeviceConfigurationDeviceOverview() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceConfigurationDeviceOverviewRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceConfigurationDeviceStateSummary is navigation property rn
-func (b *DeviceConfigurationDeviceStateSummaryRequestBuilder) DeviceConfigurationDeviceStateSummary() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceConfigurationDeviceStateSummaryRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceConfigurationDeviceStatus is navigation property rn
-func (b *DeviceConfigurationDeviceStatusRequestBuilder) DeviceConfigurationDeviceStatus() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceConfigurationDeviceStatusRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceConfigurationState is navigation property rn
-func (b *DeviceConfigurationStateRequestBuilder) DeviceConfigurationState() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceConfigurationStateRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceConfigurationUserOverview is navigation property rn
-func (b *DeviceConfigurationUserOverviewRequestBuilder) DeviceConfigurationUserOverview() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceConfigurationUserOverviewRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceConfigurationUserStatus is navigation property rn
-func (b *DeviceConfigurationUserStatusRequestBuilder) DeviceConfigurationUserStatus() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceConfigurationUserStatusRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceEnrollmentConfiguration is navigation property rn
-func (b *DeviceEnrollmentConfigurationRequestBuilder) DeviceEnrollmentConfiguration() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceEnrollmentConfigurationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceEnrollmentLimitConfiguration returns request builder for DeviceEnrollmentConfiguration collection rcn
-func (b *DeviceEnrollmentLimitConfigurationRequestBuilder) DeviceEnrollmentLimitConfiguration() *DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder {
-	bb := &DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceEnrollmentConfiguration"
+// DeviceEnrollmentLimitConfiguration returns request builder for DeviceEnrollmentLimitConfiguration collection rcn
+func (b *DeviceEnrollmentConfigurationRequestBuilder) DeviceEnrollmentLimitConfiguration() *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder {
+	bb := &DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DeviceEnrollmentLimitConfiguration"
 	return bb
 }
 
-// DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentConfiguration collection
-type DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentLimitConfiguration collection
+type DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceEnrollmentConfiguration collection
-func (b *DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder) Request() *DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest {
-	return &DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest{
+// Request returns request for DeviceEnrollmentLimitConfiguration collection
+func (b *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder) Request() *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest {
+	return &DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceEnrollmentConfiguration item
-func (b *DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder) ID(id string) *DeviceEnrollmentConfigurationRequestBuilder {
-	bb := &DeviceEnrollmentConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for DeviceEnrollmentLimitConfiguration item
+func (b *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder) ID(id string) *DeviceEnrollmentLimitConfigurationRequestBuilder {
+	bb := &DeviceEnrollmentLimitConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest is request for DeviceEnrollmentConfiguration collection
-type DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest is request for DeviceEnrollmentLimitConfiguration collection
+type DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceEnrollmentConfiguration collection
-func (r *DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceEnrollmentConfiguration, error) {
+// Paging perfoms paging operation for DeviceEnrollmentLimitConfiguration collection
+func (r *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceEnrollmentLimitConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -6889,7 +6889,7 @@ func (r *DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCol
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceEnrollmentConfiguration
+	var values []DeviceEnrollmentLimitConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -6903,7 +6903,7 @@ func (r *DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCol
 		}
 		var (
 			paging Paging
-			value  []DeviceEnrollmentConfiguration
+			value  []DeviceEnrollmentLimitConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -6932,8 +6932,8 @@ func (r *DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCol
 	}
 }
 
-// GetN performs GET request for DeviceEnrollmentConfiguration collection, max N pages
-func (r *DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceEnrollmentConfiguration, error) {
+// GetN performs GET request for DeviceEnrollmentLimitConfiguration collection, max N pages
+func (r *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceEnrollmentLimitConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -6941,46 +6941,46 @@ func (r *DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCol
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceEnrollmentConfiguration collection
-func (r *DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceEnrollmentConfiguration, error) {
+// Get performs GET request for DeviceEnrollmentLimitConfiguration collection
+func (r *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceEnrollmentLimitConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceEnrollmentConfiguration collection
-func (r *DeviceEnrollmentLimitConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceEnrollmentConfiguration) (resObj *DeviceEnrollmentConfiguration, err error) {
+// Add performs POST request for DeviceEnrollmentLimitConfiguration collection
+func (r *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceEnrollmentLimitConfiguration) (resObj *DeviceEnrollmentLimitConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// DeviceEnrollmentPlatformRestrictionsConfiguration returns request builder for DeviceEnrollmentConfiguration collection rcn
-func (b *DeviceEnrollmentPlatformRestrictionsConfigurationRequestBuilder) DeviceEnrollmentPlatformRestrictionsConfiguration() *DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder {
-	bb := &DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceEnrollmentConfiguration"
+// DeviceEnrollmentPlatformRestrictionsConfiguration returns request builder for DeviceEnrollmentPlatformRestrictionsConfiguration collection rcn
+func (b *DeviceEnrollmentConfigurationRequestBuilder) DeviceEnrollmentPlatformRestrictionsConfiguration() *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder {
+	bb := &DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DeviceEnrollmentPlatformRestrictionsConfiguration"
 	return bb
 }
 
-// DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentConfiguration collection
-type DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentPlatformRestrictionsConfiguration collection
+type DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceEnrollmentConfiguration collection
-func (b *DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder) Request() *DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest {
-	return &DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest{
+// Request returns request for DeviceEnrollmentPlatformRestrictionsConfiguration collection
+func (b *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder) Request() *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest {
+	return &DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceEnrollmentConfiguration item
-func (b *DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder) ID(id string) *DeviceEnrollmentConfigurationRequestBuilder {
-	bb := &DeviceEnrollmentConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for DeviceEnrollmentPlatformRestrictionsConfiguration item
+func (b *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder) ID(id string) *DeviceEnrollmentPlatformRestrictionsConfigurationRequestBuilder {
+	bb := &DeviceEnrollmentPlatformRestrictionsConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest is request for DeviceEnrollmentConfiguration collection
-type DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest is request for DeviceEnrollmentPlatformRestrictionsConfiguration collection
+type DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceEnrollmentConfiguration collection
-func (r *DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceEnrollmentConfiguration, error) {
+// Paging perfoms paging operation for DeviceEnrollmentPlatformRestrictionsConfiguration collection
+func (r *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceEnrollmentPlatformRestrictionsConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -6992,7 +6992,7 @@ func (r *DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatfo
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceEnrollmentConfiguration
+	var values []DeviceEnrollmentPlatformRestrictionsConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -7006,7 +7006,7 @@ func (r *DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatfo
 		}
 		var (
 			paging Paging
-			value  []DeviceEnrollmentConfiguration
+			value  []DeviceEnrollmentPlatformRestrictionsConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -7035,8 +7035,8 @@ func (r *DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatfo
 	}
 }
 
-// GetN performs GET request for DeviceEnrollmentConfiguration collection, max N pages
-func (r *DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceEnrollmentConfiguration, error) {
+// GetN performs GET request for DeviceEnrollmentPlatformRestrictionsConfiguration collection, max N pages
+func (r *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceEnrollmentPlatformRestrictionsConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -7044,46 +7044,46 @@ func (r *DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatfo
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceEnrollmentConfiguration collection
-func (r *DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceEnrollmentConfiguration, error) {
+// Get performs GET request for DeviceEnrollmentPlatformRestrictionsConfiguration collection
+func (r *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceEnrollmentPlatformRestrictionsConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceEnrollmentConfiguration collection
-func (r *DeviceEnrollmentPlatformRestrictionsConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceEnrollmentConfiguration) (resObj *DeviceEnrollmentConfiguration, err error) {
+// Add performs POST request for DeviceEnrollmentPlatformRestrictionsConfiguration collection
+func (r *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceEnrollmentPlatformRestrictionsConfiguration) (resObj *DeviceEnrollmentPlatformRestrictionsConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// DeviceEnrollmentWindowsHelloForBusinessConfiguration returns request builder for DeviceEnrollmentConfiguration collection rcn
-func (b *DeviceEnrollmentWindowsHelloForBusinessConfigurationRequestBuilder) DeviceEnrollmentWindowsHelloForBusinessConfiguration() *DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder {
-	bb := &DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceEnrollmentConfiguration"
+// DeviceEnrollmentWindowsHelloForBusinessConfiguration returns request builder for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection rcn
+func (b *DeviceEnrollmentConfigurationRequestBuilder) DeviceEnrollmentWindowsHelloForBusinessConfiguration() *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder {
+	bb := &DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DeviceEnrollmentWindowsHelloForBusinessConfiguration"
 	return bb
 }
 
-// DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentConfiguration collection
-type DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
+type DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceEnrollmentConfiguration collection
-func (b *DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder) Request() *DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest {
-	return &DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest{
+// Request returns request for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
+func (b *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder) Request() *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest {
+	return &DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceEnrollmentConfiguration item
-func (b *DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder) ID(id string) *DeviceEnrollmentConfigurationRequestBuilder {
-	bb := &DeviceEnrollmentConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for DeviceEnrollmentWindowsHelloForBusinessConfiguration item
+func (b *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder) ID(id string) *DeviceEnrollmentWindowsHelloForBusinessConfigurationRequestBuilder {
+	bb := &DeviceEnrollmentWindowsHelloForBusinessConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest is request for DeviceEnrollmentConfiguration collection
-type DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest is request for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
+type DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceEnrollmentConfiguration collection
-func (r *DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceEnrollmentConfiguration, error) {
+// Paging perfoms paging operation for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
+func (r *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceEnrollmentWindowsHelloForBusinessConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -7095,7 +7095,7 @@ func (r *DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWin
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceEnrollmentConfiguration
+	var values []DeviceEnrollmentWindowsHelloForBusinessConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -7109,7 +7109,7 @@ func (r *DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWin
 		}
 		var (
 			paging Paging
-			value  []DeviceEnrollmentConfiguration
+			value  []DeviceEnrollmentWindowsHelloForBusinessConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -7138,8 +7138,8 @@ func (r *DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWin
 	}
 }
 
-// GetN performs GET request for DeviceEnrollmentConfiguration collection, max N pages
-func (r *DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceEnrollmentConfiguration, error) {
+// GetN performs GET request for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection, max N pages
+func (r *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceEnrollmentWindowsHelloForBusinessConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -7147,61 +7147,61 @@ func (r *DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWin
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceEnrollmentConfiguration collection
-func (r *DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceEnrollmentConfiguration, error) {
+// Get performs GET request for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
+func (r *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceEnrollmentWindowsHelloForBusinessConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceEnrollmentConfiguration collection
-func (r *DeviceEnrollmentWindowsHelloForBusinessConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceEnrollmentConfiguration) (resObj *DeviceEnrollmentConfiguration, err error) {
+// Add performs POST request for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
+func (r *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceEnrollmentWindowsHelloForBusinessConfiguration) (resObj *DeviceEnrollmentWindowsHelloForBusinessConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// DeviceInstallState is navigation property rn
-func (b *DeviceInstallStateRequestBuilder) DeviceInstallState() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceInstallStateRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceManagement is navigation property rn
-func (b *DeviceManagementRequestBuilder) DeviceManagement() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceManagementRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceManagementExchangeConnector is navigation property rn
-func (b *DeviceManagementExchangeConnectorRequestBuilder) DeviceManagementExchangeConnector() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceManagementExchangeConnectorRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceManagementExportJob is navigation property rn
-func (b *DeviceManagementExportJobRequestBuilder) DeviceManagementExportJob() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceManagementExportJobRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceManagementPartner is navigation property rn
-func (b *DeviceManagementPartnerRequestBuilder) DeviceManagementPartner() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceManagementPartnerRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceManagementReports is navigation property rn
-func (b *DeviceManagementReportsRequestBuilder) DeviceManagementReports() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceManagementReportsRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DeviceManagementTroubleshootingEvent is navigation property rn
-func (b *DeviceManagementTroubleshootingEventRequestBuilder) DeviceManagementTroubleshootingEvent() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeviceManagementTroubleshootingEventRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

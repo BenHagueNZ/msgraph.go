@@ -114,35 +114,35 @@ func (r *SamlOrWsFedExternalDomainFederationDomainsCollectionRequest) Add(ctx co
 	return
 }
 
-// SamlOrWsFedProvider returns request builder for IdentityProviderBase collection rcn
-func (b *SamlOrWsFedProviderRequestBuilder) SamlOrWsFedProvider() *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequestBuilder {
-	bb := &SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/IdentityProviderBase"
+// SamlOrWsFedProvider returns request builder for SamlOrWsFedProvider collection rcn
+func (b *IdentityProviderBaseRequestBuilder) SamlOrWsFedProvider() *IdentityProviderBaseSamlOrWsFedProviderCollectionRequestBuilder {
+	bb := &IdentityProviderBaseSamlOrWsFedProviderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/SamlOrWsFedProvider"
 	return bb
 }
 
-// SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequestBuilder is request builder for IdentityProviderBase collection
-type SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
+// IdentityProviderBaseSamlOrWsFedProviderCollectionRequestBuilder is request builder for SamlOrWsFedProvider collection
+type IdentityProviderBaseSamlOrWsFedProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityProviderBase collection
-func (b *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequestBuilder) Request() *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest {
-	return &SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest{
+// Request returns request for SamlOrWsFedProvider collection
+func (b *IdentityProviderBaseSamlOrWsFedProviderCollectionRequestBuilder) Request() *IdentityProviderBaseSamlOrWsFedProviderCollectionRequest {
+	return &IdentityProviderBaseSamlOrWsFedProviderCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityProviderBase item
-func (b *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequestBuilder) ID(id string) *IdentityProviderBaseRequestBuilder {
-	bb := &IdentityProviderBaseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for SamlOrWsFedProvider item
+func (b *IdentityProviderBaseSamlOrWsFedProviderCollectionRequestBuilder) ID(id string) *SamlOrWsFedProviderRequestBuilder {
+	bb := &SamlOrWsFedProviderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest is request for IdentityProviderBase collection
-type SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest struct{ BaseRequest }
+// IdentityProviderBaseSamlOrWsFedProviderCollectionRequest is request for SamlOrWsFedProvider collection
+type IdentityProviderBaseSamlOrWsFedProviderCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityProviderBase collection
-func (r *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityProviderBase, error) {
+// Paging perfoms paging operation for SamlOrWsFedProvider collection
+func (r *IdentityProviderBaseSamlOrWsFedProviderCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SamlOrWsFedProvider, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -154,7 +154,7 @@ func (r *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest) Paging(ctx con
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityProviderBase
+	var values []SamlOrWsFedProvider
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -168,7 +168,7 @@ func (r *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest) Paging(ctx con
 		}
 		var (
 			paging Paging
-			value  []IdentityProviderBase
+			value  []SamlOrWsFedProvider
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -197,8 +197,8 @@ func (r *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest) Paging(ctx con
 	}
 }
 
-// GetN performs GET request for IdentityProviderBase collection, max N pages
-func (r *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityProviderBase, error) {
+// GetN performs GET request for SamlOrWsFedProvider collection, max N pages
+func (r *IdentityProviderBaseSamlOrWsFedProviderCollectionRequest) GetN(ctx context.Context, n int) ([]SamlOrWsFedProvider, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -206,13 +206,13 @@ func (r *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest) GetN(ctx conte
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityProviderBase collection
-func (r *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest) Get(ctx context.Context) ([]IdentityProviderBase, error) {
+// Get performs GET request for SamlOrWsFedProvider collection
+func (r *IdentityProviderBaseSamlOrWsFedProviderCollectionRequest) Get(ctx context.Context) ([]SamlOrWsFedProvider, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityProviderBase collection
-func (r *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest) Add(ctx context.Context, reqObj *IdentityProviderBase) (resObj *IdentityProviderBase, err error) {
+// Add performs POST request for SamlOrWsFedProvider collection
+func (r *IdentityProviderBaseSamlOrWsFedProviderCollectionRequest) Add(ctx context.Context, reqObj *SamlOrWsFedProvider) (resObj *SamlOrWsFedProvider, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

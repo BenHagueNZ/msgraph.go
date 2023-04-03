@@ -2,8 +2,8 @@
 
 package msgraph
 
-// TelecomExpenseManagementPartner is navigation property rn
-func (b *TelecomExpenseManagementPartnerRequestBuilder) TelecomExpenseManagementPartner() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TelecomExpenseManagementPartnerRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

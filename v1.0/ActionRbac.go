@@ -835,8 +835,8 @@ func (r *RbacApplicationRoleEligibilitySchedulesCollectionRequest) Add(ctx conte
 	return
 }
 
-// RbacApplication is navigation property rn
-func (b *RbacApplicationRequestBuilder) RbacApplication() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *RbacApplicationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

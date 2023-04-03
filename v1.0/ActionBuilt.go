@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// BuiltInIdentityProvider returns request builder for IdentityProviderBase collection rcn
-func (b *BuiltInIdentityProviderRequestBuilder) BuiltInIdentityProvider() *BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequestBuilder {
-	bb := &BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/IdentityProviderBase"
+// BuiltInIdentityProvider returns request builder for BuiltInIdentityProvider collection rcn
+func (b *IdentityProviderBaseRequestBuilder) BuiltInIdentityProvider() *IdentityProviderBaseBuiltInIdentityProviderCollectionRequestBuilder {
+	bb := &IdentityProviderBaseBuiltInIdentityProviderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/BuiltInIdentityProvider"
 	return bb
 }
 
-// BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequestBuilder is request builder for IdentityProviderBase collection
-type BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
+// IdentityProviderBaseBuiltInIdentityProviderCollectionRequestBuilder is request builder for BuiltInIdentityProvider collection
+type IdentityProviderBaseBuiltInIdentityProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for IdentityProviderBase collection
-func (b *BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequestBuilder) Request() *BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequest {
-	return &BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequest{
+// Request returns request for BuiltInIdentityProvider collection
+func (b *IdentityProviderBaseBuiltInIdentityProviderCollectionRequestBuilder) Request() *IdentityProviderBaseBuiltInIdentityProviderCollectionRequest {
+	return &IdentityProviderBaseBuiltInIdentityProviderCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for IdentityProviderBase item
-func (b *BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequestBuilder) ID(id string) *IdentityProviderBaseRequestBuilder {
-	bb := &IdentityProviderBaseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for BuiltInIdentityProvider item
+func (b *IdentityProviderBaseBuiltInIdentityProviderCollectionRequestBuilder) ID(id string) *BuiltInIdentityProviderRequestBuilder {
+	bb := &BuiltInIdentityProviderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequest is request for IdentityProviderBase collection
-type BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequest struct{ BaseRequest }
+// IdentityProviderBaseBuiltInIdentityProviderCollectionRequest is request for BuiltInIdentityProvider collection
+type IdentityProviderBaseBuiltInIdentityProviderCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for IdentityProviderBase collection
-func (r *BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityProviderBase, error) {
+// Paging perfoms paging operation for BuiltInIdentityProvider collection
+func (r *IdentityProviderBaseBuiltInIdentityProviderCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]BuiltInIdentityProvider, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequest) Paging
 	if err != nil {
 		return nil, err
 	}
-	var values []IdentityProviderBase
+	var values []BuiltInIdentityProvider
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequest) Paging
 		}
 		var (
 			paging Paging
-			value  []IdentityProviderBase
+			value  []BuiltInIdentityProvider
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequest) Paging
 	}
 }
 
-// GetN performs GET request for IdentityProviderBase collection, max N pages
-func (r *BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityProviderBase, error) {
+// GetN performs GET request for BuiltInIdentityProvider collection, max N pages
+func (r *IdentityProviderBaseBuiltInIdentityProviderCollectionRequest) GetN(ctx context.Context, n int) ([]BuiltInIdentityProvider, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequest) GetN(c
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for IdentityProviderBase collection
-func (r *BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequest) Get(ctx context.Context) ([]IdentityProviderBase, error) {
+// Get performs GET request for BuiltInIdentityProvider collection
+func (r *IdentityProviderBaseBuiltInIdentityProviderCollectionRequest) Get(ctx context.Context) ([]BuiltInIdentityProvider, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for IdentityProviderBase collection
-func (r *BuiltInIdentityProviderBuiltInIdentityProviderCollectionRequest) Add(ctx context.Context, reqObj *IdentityProviderBase) (resObj *IdentityProviderBase, err error) {
+// Add performs POST request for BuiltInIdentityProvider collection
+func (r *IdentityProviderBaseBuiltInIdentityProviderCollectionRequest) Add(ctx context.Context, reqObj *BuiltInIdentityProvider) (resObj *BuiltInIdentityProvider, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

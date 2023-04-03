@@ -11,8 +11,8 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// ExternalDomainName is navigation property rn
-func (b *ExternalDomainNameRequestBuilder) ExternalDomainName() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ExternalDomainNameRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

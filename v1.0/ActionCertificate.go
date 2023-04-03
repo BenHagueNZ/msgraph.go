@@ -2,8 +2,8 @@
 
 package msgraph
 
-// CertificateBasedAuthConfiguration is navigation property rn
-func (b *CertificateBasedAuthConfigurationRequestBuilder) CertificateBasedAuthConfiguration() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *CertificateBasedAuthConfigurationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

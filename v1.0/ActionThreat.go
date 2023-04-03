@@ -114,8 +114,8 @@ func (r *ThreatAssessmentRequestObjectResultsCollectionRequest) Add(ctx context.
 	return
 }
 
-// ThreatAssessmentResult is navigation property rn
-func (b *ThreatAssessmentResultRequestBuilder) ThreatAssessmentResult() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ThreatAssessmentResultRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

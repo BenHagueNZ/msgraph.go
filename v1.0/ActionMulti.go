@@ -2,8 +2,8 @@
 
 package msgraph
 
-// MultiValueLegacyExtendedProperty is navigation property rn
-func (b *MultiValueLegacyExtendedPropertyRequestBuilder) MultiValueLegacyExtendedProperty() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *MultiValueLegacyExtendedPropertyRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

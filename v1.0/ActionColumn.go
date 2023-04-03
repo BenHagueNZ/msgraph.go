@@ -9,15 +9,15 @@ func (b *ColumnDefinitionRequestBuilder) SourceColumn() *ColumnDefinitionRequest
 	return bb
 }
 
-// ColumnDefinition is navigation property rn
-func (b *ColumnDefinitionRequestBuilder) ColumnDefinition() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ColumnDefinitionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ColumnLink is navigation property rn
-func (b *ColumnLinkRequestBuilder) ColumnLink() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ColumnLinkRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

@@ -444,8 +444,8 @@ func (r *PostSingleValueExtendedPropertiesCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// Post is navigation property rn
-func (b *PostRequestBuilder) Post() *OutlookItemRequestBuilder {
+// OutlookItem is navigation property rn
+func (b *PostRequestBuilder) OutlookItem() *OutlookItemRequestBuilder {
 	bb := &OutlookItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/OutlookItem"
 	return bb

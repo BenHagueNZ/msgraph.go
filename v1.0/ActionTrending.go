@@ -9,8 +9,8 @@ func (b *TrendingRequestBuilder) Resource() *EntityRequestBuilder {
 	return bb
 }
 
-// Trending is navigation property rn
-func (b *TrendingRequestBuilder) Trending() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TrendingRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

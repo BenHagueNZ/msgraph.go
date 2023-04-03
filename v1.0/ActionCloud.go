@@ -429,8 +429,8 @@ func (r *CloudCommunicationsPresencesCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// CloudCommunications is navigation property rn
-func (b *CloudCommunicationsRequestBuilder) CloudCommunications() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *CloudCommunicationsRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

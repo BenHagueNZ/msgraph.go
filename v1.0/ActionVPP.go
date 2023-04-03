@@ -6,8 +6,8 @@ package msgraph
 type VPPTokenSyncLicensesRequestParameter struct {
 }
 
-// VPPToken is navigation property rn
-func (b *VPPTokenRequestBuilder) VPPToken() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *VPPTokenRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

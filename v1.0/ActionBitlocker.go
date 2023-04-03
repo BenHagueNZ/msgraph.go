@@ -114,15 +114,15 @@ func (r *BitlockerRecoveryKeysCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// Bitlocker is navigation property rn
-func (b *BitlockerRequestBuilder) Bitlocker() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *BitlockerRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// BitlockerRecoveryKey is navigation property rn
-func (b *BitlockerRecoveryKeyRequestBuilder) BitlockerRecoveryKey() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *BitlockerRecoveryKeyRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

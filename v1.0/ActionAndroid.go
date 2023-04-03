@@ -121,35 +121,35 @@ func (b *AndroidManagedAppProtectionRequestBuilder) DeploymentSummary() *Managed
 	return bb
 }
 
-// AndroidCompliancePolicy returns request builder for DeviceCompliancePolicy collection rcn
-func (b *AndroidCompliancePolicyRequestBuilder) AndroidCompliancePolicy() *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder {
-	bb := &AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceCompliancePolicy"
+// AndroidCompliancePolicy returns request builder for AndroidCompliancePolicy collection rcn
+func (b *DeviceCompliancePolicyRequestBuilder) AndroidCompliancePolicy() *DeviceCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder {
+	bb := &DeviceCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AndroidCompliancePolicy"
 	return bb
 }
 
-// AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder is request builder for DeviceCompliancePolicy collection
-type AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder is request builder for AndroidCompliancePolicy collection
+type DeviceCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceCompliancePolicy collection
-func (b *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder) Request() *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest {
-	return &AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest{
+// Request returns request for AndroidCompliancePolicy collection
+func (b *DeviceCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder) Request() *DeviceCompliancePolicyAndroidCompliancePolicyCollectionRequest {
+	return &DeviceCompliancePolicyAndroidCompliancePolicyCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceCompliancePolicy item
-func (b *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder) ID(id string) *DeviceCompliancePolicyRequestBuilder {
-	bb := &DeviceCompliancePolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for AndroidCompliancePolicy item
+func (b *DeviceCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder) ID(id string) *AndroidCompliancePolicyRequestBuilder {
+	bb := &AndroidCompliancePolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest is request for DeviceCompliancePolicy collection
-type AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest struct{ BaseRequest }
+// DeviceCompliancePolicyAndroidCompliancePolicyCollectionRequest is request for AndroidCompliancePolicy collection
+type DeviceCompliancePolicyAndroidCompliancePolicyCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceCompliancePolicy collection
-func (r *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceCompliancePolicy, error) {
+// Paging perfoms paging operation for AndroidCompliancePolicy collection
+func (r *DeviceCompliancePolicyAndroidCompliancePolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AndroidCompliancePolicy, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -161,7 +161,7 @@ func (r *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest) Paging
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceCompliancePolicy
+	var values []AndroidCompliancePolicy
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -175,7 +175,7 @@ func (r *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest) Paging
 		}
 		var (
 			paging Paging
-			value  []DeviceCompliancePolicy
+			value  []AndroidCompliancePolicy
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -204,8 +204,8 @@ func (r *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest) Paging
 	}
 }
 
-// GetN performs GET request for DeviceCompliancePolicy collection, max N pages
-func (r *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceCompliancePolicy, error) {
+// GetN performs GET request for AndroidCompliancePolicy collection, max N pages
+func (r *DeviceCompliancePolicyAndroidCompliancePolicyCollectionRequest) GetN(ctx context.Context, n int) ([]AndroidCompliancePolicy, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -213,46 +213,46 @@ func (r *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest) GetN(c
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceCompliancePolicy collection
-func (r *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest) Get(ctx context.Context) ([]DeviceCompliancePolicy, error) {
+// Get performs GET request for AndroidCompliancePolicy collection
+func (r *DeviceCompliancePolicyAndroidCompliancePolicyCollectionRequest) Get(ctx context.Context) ([]AndroidCompliancePolicy, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceCompliancePolicy collection
-func (r *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest) Add(ctx context.Context, reqObj *DeviceCompliancePolicy) (resObj *DeviceCompliancePolicy, err error) {
+// Add performs POST request for AndroidCompliancePolicy collection
+func (r *DeviceCompliancePolicyAndroidCompliancePolicyCollectionRequest) Add(ctx context.Context, reqObj *AndroidCompliancePolicy) (resObj *AndroidCompliancePolicy, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// AndroidCustomConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *AndroidCustomConfigurationRequestBuilder) AndroidCustomConfiguration() *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequestBuilder {
-	bb := &AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// AndroidCustomConfiguration returns request builder for AndroidCustomConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) AndroidCustomConfiguration() *DeviceConfigurationAndroidCustomConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationAndroidCustomConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AndroidCustomConfiguration"
 	return bb
 }
 
-// AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationAndroidCustomConfigurationCollectionRequestBuilder is request builder for AndroidCustomConfiguration collection
+type DeviceConfigurationAndroidCustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequestBuilder) Request() *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest {
-	return &AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest{
+// Request returns request for AndroidCustomConfiguration collection
+func (b *DeviceConfigurationAndroidCustomConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationAndroidCustomConfigurationCollectionRequest {
+	return &DeviceConfigurationAndroidCustomConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for AndroidCustomConfiguration item
+func (b *DeviceConfigurationAndroidCustomConfigurationCollectionRequestBuilder) ID(id string) *AndroidCustomConfigurationRequestBuilder {
+	bb := &AndroidCustomConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest is request for DeviceConfiguration collection
-type AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationAndroidCustomConfigurationCollectionRequest is request for AndroidCustomConfiguration collection
+type DeviceConfigurationAndroidCustomConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for AndroidCustomConfiguration collection
+func (r *DeviceConfigurationAndroidCustomConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AndroidCustomConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -264,7 +264,7 @@ func (r *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest) 
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []AndroidCustomConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -278,7 +278,7 @@ func (r *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest) 
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []AndroidCustomConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -307,8 +307,8 @@ func (r *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest) 
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for AndroidCustomConfiguration collection, max N pages
+func (r *DeviceConfigurationAndroidCustomConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]AndroidCustomConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -316,46 +316,46 @@ func (r *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest) 
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for AndroidCustomConfiguration collection
+func (r *DeviceConfigurationAndroidCustomConfigurationCollectionRequest) Get(ctx context.Context) ([]AndroidCustomConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for AndroidCustomConfiguration collection
+func (r *DeviceConfigurationAndroidCustomConfigurationCollectionRequest) Add(ctx context.Context, reqObj *AndroidCustomConfiguration) (resObj *AndroidCustomConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// AndroidGeneralDeviceConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *AndroidGeneralDeviceConfigurationRequestBuilder) AndroidGeneralDeviceConfiguration() *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder {
-	bb := &AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// AndroidGeneralDeviceConfiguration returns request builder for AndroidGeneralDeviceConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) AndroidGeneralDeviceConfiguration() *DeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AndroidGeneralDeviceConfiguration"
 	return bb
 }
 
-// AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder is request builder for AndroidGeneralDeviceConfiguration collection
+type DeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder) Request() *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest {
-	return &AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest{
+// Request returns request for AndroidGeneralDeviceConfiguration collection
+func (b *DeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest {
+	return &DeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for AndroidGeneralDeviceConfiguration item
+func (b *DeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder) ID(id string) *AndroidGeneralDeviceConfigurationRequestBuilder {
+	bb := &AndroidGeneralDeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest is request for DeviceConfiguration collection
-type AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest is request for AndroidGeneralDeviceConfiguration collection
+type DeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for AndroidGeneralDeviceConfiguration collection
+func (r *DeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AndroidGeneralDeviceConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -367,7 +367,7 @@ func (r *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationColle
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []AndroidGeneralDeviceConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -381,7 +381,7 @@ func (r *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationColle
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []AndroidGeneralDeviceConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -410,8 +410,8 @@ func (r *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationColle
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for AndroidGeneralDeviceConfiguration collection, max N pages
+func (r *DeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]AndroidGeneralDeviceConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -419,46 +419,46 @@ func (r *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationColle
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for AndroidGeneralDeviceConfiguration collection
+func (r *DeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest) Get(ctx context.Context) ([]AndroidGeneralDeviceConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for AndroidGeneralDeviceConfiguration collection
+func (r *DeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest) Add(ctx context.Context, reqObj *AndroidGeneralDeviceConfiguration) (resObj *AndroidGeneralDeviceConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// AndroidManagedAppRegistration returns request builder for ManagedAppRegistration collection rcn
-func (b *AndroidManagedAppRegistrationRequestBuilder) AndroidManagedAppRegistration() *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder {
-	bb := &AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ManagedAppRegistration"
+// AndroidManagedAppRegistration returns request builder for AndroidManagedAppRegistration collection rcn
+func (b *ManagedAppRegistrationRequestBuilder) AndroidManagedAppRegistration() *ManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder {
+	bb := &ManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AndroidManagedAppRegistration"
 	return bb
 }
 
-// AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder is request builder for ManagedAppRegistration collection
-type AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder is request builder for AndroidManagedAppRegistration collection
+type ManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for ManagedAppRegistration collection
-func (b *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder) Request() *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest {
-	return &AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest{
+// Request returns request for AndroidManagedAppRegistration collection
+func (b *ManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder) Request() *ManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest {
+	return &ManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for ManagedAppRegistration item
-func (b *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder) ID(id string) *ManagedAppRegistrationRequestBuilder {
-	bb := &ManagedAppRegistrationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for AndroidManagedAppRegistration item
+func (b *ManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder) ID(id string) *AndroidManagedAppRegistrationRequestBuilder {
+	bb := &AndroidManagedAppRegistrationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest is request for ManagedAppRegistration collection
-type AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest struct{ BaseRequest }
+// ManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest is request for AndroidManagedAppRegistration collection
+type ManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for ManagedAppRegistration collection
-func (r *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ManagedAppRegistration, error) {
+// Paging perfoms paging operation for AndroidManagedAppRegistration collection
+func (r *ManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AndroidManagedAppRegistration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -470,7 +470,7 @@ func (r *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionReq
 	if err != nil {
 		return nil, err
 	}
-	var values []ManagedAppRegistration
+	var values []AndroidManagedAppRegistration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -484,7 +484,7 @@ func (r *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionReq
 		}
 		var (
 			paging Paging
-			value  []ManagedAppRegistration
+			value  []AndroidManagedAppRegistration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -513,8 +513,8 @@ func (r *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionReq
 	}
 }
 
-// GetN performs GET request for ManagedAppRegistration collection, max N pages
-func (r *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest) GetN(ctx context.Context, n int) ([]ManagedAppRegistration, error) {
+// GetN performs GET request for AndroidManagedAppRegistration collection, max N pages
+func (r *ManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest) GetN(ctx context.Context, n int) ([]AndroidManagedAppRegistration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -522,46 +522,46 @@ func (r *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionReq
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for ManagedAppRegistration collection
-func (r *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest) Get(ctx context.Context) ([]ManagedAppRegistration, error) {
+// Get performs GET request for AndroidManagedAppRegistration collection
+func (r *ManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest) Get(ctx context.Context) ([]AndroidManagedAppRegistration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for ManagedAppRegistration collection
-func (r *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest) Add(ctx context.Context, reqObj *ManagedAppRegistration) (resObj *ManagedAppRegistration, err error) {
+// Add performs POST request for AndroidManagedAppRegistration collection
+func (r *ManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest) Add(ctx context.Context, reqObj *AndroidManagedAppRegistration) (resObj *AndroidManagedAppRegistration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// AndroidStoreApp returns request builder for MobileApp collection rcn
-func (b *AndroidStoreAppRequestBuilder) AndroidStoreApp() *AndroidStoreAppAndroidStoreAppCollectionRequestBuilder {
-	bb := &AndroidStoreAppAndroidStoreAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/MobileApp"
+// AndroidStoreApp returns request builder for AndroidStoreApp collection rcn
+func (b *MobileAppRequestBuilder) AndroidStoreApp() *MobileAppAndroidStoreAppCollectionRequestBuilder {
+	bb := &MobileAppAndroidStoreAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AndroidStoreApp"
 	return bb
 }
 
-// AndroidStoreAppAndroidStoreAppCollectionRequestBuilder is request builder for MobileApp collection
-type AndroidStoreAppAndroidStoreAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+// MobileAppAndroidStoreAppCollectionRequestBuilder is request builder for AndroidStoreApp collection
+type MobileAppAndroidStoreAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for MobileApp collection
-func (b *AndroidStoreAppAndroidStoreAppCollectionRequestBuilder) Request() *AndroidStoreAppAndroidStoreAppCollectionRequest {
-	return &AndroidStoreAppAndroidStoreAppCollectionRequest{
+// Request returns request for AndroidStoreApp collection
+func (b *MobileAppAndroidStoreAppCollectionRequestBuilder) Request() *MobileAppAndroidStoreAppCollectionRequest {
+	return &MobileAppAndroidStoreAppCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for MobileApp item
-func (b *AndroidStoreAppAndroidStoreAppCollectionRequestBuilder) ID(id string) *MobileAppRequestBuilder {
-	bb := &MobileAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for AndroidStoreApp item
+func (b *MobileAppAndroidStoreAppCollectionRequestBuilder) ID(id string) *AndroidStoreAppRequestBuilder {
+	bb := &AndroidStoreAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AndroidStoreAppAndroidStoreAppCollectionRequest is request for MobileApp collection
-type AndroidStoreAppAndroidStoreAppCollectionRequest struct{ BaseRequest }
+// MobileAppAndroidStoreAppCollectionRequest is request for AndroidStoreApp collection
+type MobileAppAndroidStoreAppCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for MobileApp collection
-func (r *AndroidStoreAppAndroidStoreAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MobileApp, error) {
+// Paging perfoms paging operation for AndroidStoreApp collection
+func (r *MobileAppAndroidStoreAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AndroidStoreApp, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -573,7 +573,7 @@ func (r *AndroidStoreAppAndroidStoreAppCollectionRequest) Paging(ctx context.Con
 	if err != nil {
 		return nil, err
 	}
-	var values []MobileApp
+	var values []AndroidStoreApp
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -587,7 +587,7 @@ func (r *AndroidStoreAppAndroidStoreAppCollectionRequest) Paging(ctx context.Con
 		}
 		var (
 			paging Paging
-			value  []MobileApp
+			value  []AndroidStoreApp
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -616,8 +616,8 @@ func (r *AndroidStoreAppAndroidStoreAppCollectionRequest) Paging(ctx context.Con
 	}
 }
 
-// GetN performs GET request for MobileApp collection, max N pages
-func (r *AndroidStoreAppAndroidStoreAppCollectionRequest) GetN(ctx context.Context, n int) ([]MobileApp, error) {
+// GetN performs GET request for AndroidStoreApp collection, max N pages
+func (r *MobileAppAndroidStoreAppCollectionRequest) GetN(ctx context.Context, n int) ([]AndroidStoreApp, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -625,46 +625,46 @@ func (r *AndroidStoreAppAndroidStoreAppCollectionRequest) GetN(ctx context.Conte
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for MobileApp collection
-func (r *AndroidStoreAppAndroidStoreAppCollectionRequest) Get(ctx context.Context) ([]MobileApp, error) {
+// Get performs GET request for AndroidStoreApp collection
+func (r *MobileAppAndroidStoreAppCollectionRequest) Get(ctx context.Context) ([]AndroidStoreApp, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for MobileApp collection
-func (r *AndroidStoreAppAndroidStoreAppCollectionRequest) Add(ctx context.Context, reqObj *MobileApp) (resObj *MobileApp, err error) {
+// Add performs POST request for AndroidStoreApp collection
+func (r *MobileAppAndroidStoreAppCollectionRequest) Add(ctx context.Context, reqObj *AndroidStoreApp) (resObj *AndroidStoreApp, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// AndroidWorkProfileCompliancePolicy returns request builder for DeviceCompliancePolicy collection rcn
-func (b *AndroidWorkProfileCompliancePolicyRequestBuilder) AndroidWorkProfileCompliancePolicy() *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder {
-	bb := &AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceCompliancePolicy"
+// AndroidWorkProfileCompliancePolicy returns request builder for AndroidWorkProfileCompliancePolicy collection rcn
+func (b *DeviceCompliancePolicyRequestBuilder) AndroidWorkProfileCompliancePolicy() *DeviceCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder {
+	bb := &DeviceCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AndroidWorkProfileCompliancePolicy"
 	return bb
 }
 
-// AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder is request builder for DeviceCompliancePolicy collection
-type AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder is request builder for AndroidWorkProfileCompliancePolicy collection
+type DeviceCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceCompliancePolicy collection
-func (b *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder) Request() *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest {
-	return &AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest{
+// Request returns request for AndroidWorkProfileCompliancePolicy collection
+func (b *DeviceCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder) Request() *DeviceCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest {
+	return &DeviceCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceCompliancePolicy item
-func (b *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder) ID(id string) *DeviceCompliancePolicyRequestBuilder {
-	bb := &DeviceCompliancePolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for AndroidWorkProfileCompliancePolicy item
+func (b *DeviceCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder) ID(id string) *AndroidWorkProfileCompliancePolicyRequestBuilder {
+	bb := &AndroidWorkProfileCompliancePolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest is request for DeviceCompliancePolicy collection
-type AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest struct{ BaseRequest }
+// DeviceCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest is request for AndroidWorkProfileCompliancePolicy collection
+type DeviceCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceCompliancePolicy collection
-func (r *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceCompliancePolicy, error) {
+// Paging perfoms paging operation for AndroidWorkProfileCompliancePolicy collection
+func (r *DeviceCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AndroidWorkProfileCompliancePolicy, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -676,7 +676,7 @@ func (r *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCol
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceCompliancePolicy
+	var values []AndroidWorkProfileCompliancePolicy
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -690,7 +690,7 @@ func (r *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCol
 		}
 		var (
 			paging Paging
-			value  []DeviceCompliancePolicy
+			value  []AndroidWorkProfileCompliancePolicy
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -719,8 +719,8 @@ func (r *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCol
 	}
 }
 
-// GetN performs GET request for DeviceCompliancePolicy collection, max N pages
-func (r *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceCompliancePolicy, error) {
+// GetN performs GET request for AndroidWorkProfileCompliancePolicy collection, max N pages
+func (r *DeviceCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest) GetN(ctx context.Context, n int) ([]AndroidWorkProfileCompliancePolicy, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -728,46 +728,46 @@ func (r *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCol
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceCompliancePolicy collection
-func (r *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest) Get(ctx context.Context) ([]DeviceCompliancePolicy, error) {
+// Get performs GET request for AndroidWorkProfileCompliancePolicy collection
+func (r *DeviceCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest) Get(ctx context.Context) ([]AndroidWorkProfileCompliancePolicy, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceCompliancePolicy collection
-func (r *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest) Add(ctx context.Context, reqObj *DeviceCompliancePolicy) (resObj *DeviceCompliancePolicy, err error) {
+// Add performs POST request for AndroidWorkProfileCompliancePolicy collection
+func (r *DeviceCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest) Add(ctx context.Context, reqObj *AndroidWorkProfileCompliancePolicy) (resObj *AndroidWorkProfileCompliancePolicy, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// AndroidWorkProfileCustomConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *AndroidWorkProfileCustomConfigurationRequestBuilder) AndroidWorkProfileCustomConfiguration() *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder {
-	bb := &AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// AndroidWorkProfileCustomConfiguration returns request builder for AndroidWorkProfileCustomConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) AndroidWorkProfileCustomConfiguration() *DeviceConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AndroidWorkProfileCustomConfiguration"
 	return bb
 }
 
-// AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder is request builder for AndroidWorkProfileCustomConfiguration collection
+type DeviceConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder) Request() *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest {
-	return &AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest{
+// Request returns request for AndroidWorkProfileCustomConfiguration collection
+func (b *DeviceConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest {
+	return &DeviceConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for AndroidWorkProfileCustomConfiguration item
+func (b *DeviceConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder) ID(id string) *AndroidWorkProfileCustomConfigurationRequestBuilder {
+	bb := &AndroidWorkProfileCustomConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest is request for DeviceConfiguration collection
-type AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest is request for AndroidWorkProfileCustomConfiguration collection
+type DeviceConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for AndroidWorkProfileCustomConfiguration collection
+func (r *DeviceConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AndroidWorkProfileCustomConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -779,7 +779,7 @@ func (r *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurat
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []AndroidWorkProfileCustomConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -793,7 +793,7 @@ func (r *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurat
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []AndroidWorkProfileCustomConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -822,8 +822,8 @@ func (r *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurat
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for AndroidWorkProfileCustomConfiguration collection, max N pages
+func (r *DeviceConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]AndroidWorkProfileCustomConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -831,46 +831,46 @@ func (r *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurat
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for AndroidWorkProfileCustomConfiguration collection
+func (r *DeviceConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest) Get(ctx context.Context) ([]AndroidWorkProfileCustomConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for AndroidWorkProfileCustomConfiguration collection
+func (r *DeviceConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest) Add(ctx context.Context, reqObj *AndroidWorkProfileCustomConfiguration) (resObj *AndroidWorkProfileCustomConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// AndroidWorkProfileGeneralDeviceConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *AndroidWorkProfileGeneralDeviceConfigurationRequestBuilder) AndroidWorkProfileGeneralDeviceConfiguration() *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder {
-	bb := &AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// AndroidWorkProfileGeneralDeviceConfiguration returns request builder for AndroidWorkProfileGeneralDeviceConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) AndroidWorkProfileGeneralDeviceConfiguration() *DeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AndroidWorkProfileGeneralDeviceConfiguration"
 	return bb
 }
 
-// AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder is request builder for AndroidWorkProfileGeneralDeviceConfiguration collection
+type DeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder) Request() *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest {
-	return &AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest{
+// Request returns request for AndroidWorkProfileGeneralDeviceConfiguration collection
+func (b *DeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest {
+	return &DeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for AndroidWorkProfileGeneralDeviceConfiguration item
+func (b *DeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder) ID(id string) *AndroidWorkProfileGeneralDeviceConfigurationRequestBuilder {
+	bb := &AndroidWorkProfileGeneralDeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest is request for DeviceConfiguration collection
-type AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest is request for AndroidWorkProfileGeneralDeviceConfiguration collection
+type DeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for AndroidWorkProfileGeneralDeviceConfiguration collection
+func (r *DeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AndroidWorkProfileGeneralDeviceConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -882,7 +882,7 @@ func (r *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDe
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []AndroidWorkProfileGeneralDeviceConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -896,7 +896,7 @@ func (r *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDe
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []AndroidWorkProfileGeneralDeviceConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -925,8 +925,8 @@ func (r *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDe
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for AndroidWorkProfileGeneralDeviceConfiguration collection, max N pages
+func (r *DeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]AndroidWorkProfileGeneralDeviceConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -934,13 +934,13 @@ func (r *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDe
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for AndroidWorkProfileGeneralDeviceConfiguration collection
+func (r *DeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest) Get(ctx context.Context) ([]AndroidWorkProfileGeneralDeviceConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for AndroidWorkProfileGeneralDeviceConfiguration collection
+func (r *DeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest) Add(ctx context.Context, reqObj *AndroidWorkProfileGeneralDeviceConfiguration) (resObj *AndroidWorkProfileGeneralDeviceConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

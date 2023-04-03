@@ -961,8 +961,8 @@ func (r *ScheduleTimesOffCollectionRequest) Add(ctx context.Context, reqObj *Tim
 	return
 }
 
-// Schedule is navigation property rn
-func (b *ScheduleRequestBuilder) Schedule() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ScheduleRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

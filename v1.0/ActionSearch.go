@@ -15,8 +15,8 @@ func (b *SearchHitRequestBuilder) Resource() *EntityRequestBuilder {
 	return bb
 }
 
-// SearchEntity is navigation property rn
-func (b *SearchEntityRequestBuilder) SearchEntity() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *SearchEntityRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

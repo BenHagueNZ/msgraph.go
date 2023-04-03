@@ -2249,63 +2249,63 @@ func (r *ServiceUpdateMessageAttachmentsCollectionRequest) Add(ctx context.Conte
 	return
 }
 
-// ServiceAnnouncement is navigation property rn
-func (b *ServiceAnnouncementRequestBuilder) ServiceAnnouncement() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ServiceAnnouncementRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ServiceAnnouncementAttachment is navigation property rn
-func (b *ServiceAnnouncementAttachmentRequestBuilder) ServiceAnnouncementAttachment() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ServiceAnnouncementAttachmentRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ServiceAnnouncementBase is navigation property rn
-func (b *ServiceAnnouncementBaseRequestBuilder) ServiceAnnouncementBase() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ServiceAnnouncementBaseRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ServiceHealth is navigation property rn
-func (b *ServiceHealthRequestBuilder) ServiceHealth() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ServiceHealthRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ServicePrincipal returns request builder for DirectoryObject collection rcn
-func (b *ServicePrincipalRequestBuilder) ServicePrincipal() *ServicePrincipalServicePrincipalCollectionRequestBuilder {
-	bb := &ServicePrincipalServicePrincipalCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryObject"
+// ServicePrincipal returns request builder for ServicePrincipal collection rcn
+func (b *DirectoryObjectRequestBuilder) ServicePrincipal() *DirectoryObjectServicePrincipalCollectionRequestBuilder {
+	bb := &DirectoryObjectServicePrincipalCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/ServicePrincipal"
 	return bb
 }
 
-// ServicePrincipalServicePrincipalCollectionRequestBuilder is request builder for DirectoryObject collection
-type ServicePrincipalServicePrincipalCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DirectoryObjectServicePrincipalCollectionRequestBuilder is request builder for ServicePrincipal collection
+type DirectoryObjectServicePrincipalCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DirectoryObject collection
-func (b *ServicePrincipalServicePrincipalCollectionRequestBuilder) Request() *ServicePrincipalServicePrincipalCollectionRequest {
-	return &ServicePrincipalServicePrincipalCollectionRequest{
+// Request returns request for ServicePrincipal collection
+func (b *DirectoryObjectServicePrincipalCollectionRequestBuilder) Request() *DirectoryObjectServicePrincipalCollectionRequest {
+	return &DirectoryObjectServicePrincipalCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DirectoryObject item
-func (b *ServicePrincipalServicePrincipalCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
-	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for ServicePrincipal item
+func (b *DirectoryObjectServicePrincipalCollectionRequestBuilder) ID(id string) *ServicePrincipalRequestBuilder {
+	bb := &ServicePrincipalRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ServicePrincipalServicePrincipalCollectionRequest is request for DirectoryObject collection
-type ServicePrincipalServicePrincipalCollectionRequest struct{ BaseRequest }
+// DirectoryObjectServicePrincipalCollectionRequest is request for ServicePrincipal collection
+type DirectoryObjectServicePrincipalCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DirectoryObject collection
-func (r *ServicePrincipalServicePrincipalCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+// Paging perfoms paging operation for ServicePrincipal collection
+func (r *DirectoryObjectServicePrincipalCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ServicePrincipal, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -2317,7 +2317,7 @@ func (r *ServicePrincipalServicePrincipalCollectionRequest) Paging(ctx context.C
 	if err != nil {
 		return nil, err
 	}
-	var values []DirectoryObject
+	var values []ServicePrincipal
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -2331,7 +2331,7 @@ func (r *ServicePrincipalServicePrincipalCollectionRequest) Paging(ctx context.C
 		}
 		var (
 			paging Paging
-			value  []DirectoryObject
+			value  []ServicePrincipal
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -2360,8 +2360,8 @@ func (r *ServicePrincipalServicePrincipalCollectionRequest) Paging(ctx context.C
 	}
 }
 
-// GetN performs GET request for DirectoryObject collection, max N pages
-func (r *ServicePrincipalServicePrincipalCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+// GetN performs GET request for ServicePrincipal collection, max N pages
+func (r *DirectoryObjectServicePrincipalCollectionRequest) GetN(ctx context.Context, n int) ([]ServicePrincipal, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -2369,19 +2369,19 @@ func (r *ServicePrincipalServicePrincipalCollectionRequest) GetN(ctx context.Con
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DirectoryObject collection
-func (r *ServicePrincipalServicePrincipalCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+// Get performs GET request for ServicePrincipal collection
+func (r *DirectoryObjectServicePrincipalCollectionRequest) Get(ctx context.Context) ([]ServicePrincipal, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DirectoryObject collection
-func (r *ServicePrincipalServicePrincipalCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+// Add performs POST request for ServicePrincipal collection
+func (r *DirectoryObjectServicePrincipalCollectionRequest) Add(ctx context.Context, reqObj *ServicePrincipal) (resObj *ServicePrincipal, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// ServicePrincipalRiskDetection is navigation property rn
-func (b *ServicePrincipalRiskDetectionRequestBuilder) ServicePrincipalRiskDetection() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ServicePrincipalRiskDetectionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

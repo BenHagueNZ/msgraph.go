@@ -114,8 +114,8 @@ func (r *DeletedTeamChannelsCollectionRequest) Add(ctx context.Context, reqObj *
 	return
 }
 
-// DeletedTeam is navigation property rn
-func (b *DeletedTeamRequestBuilder) DeletedTeam() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DeletedTeamRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

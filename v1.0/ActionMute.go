@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// MuteParticipantOperation returns request builder for CommsOperation collection rcn
-func (b *MuteParticipantOperationRequestBuilder) MuteParticipantOperation() *MuteParticipantOperationMuteParticipantOperationCollectionRequestBuilder {
-	bb := &MuteParticipantOperationMuteParticipantOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/CommsOperation"
+// MuteParticipantOperation returns request builder for MuteParticipantOperation collection rcn
+func (b *CommsOperationRequestBuilder) MuteParticipantOperation() *CommsOperationMuteParticipantOperationCollectionRequestBuilder {
+	bb := &CommsOperationMuteParticipantOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/MuteParticipantOperation"
 	return bb
 }
 
-// MuteParticipantOperationMuteParticipantOperationCollectionRequestBuilder is request builder for CommsOperation collection
-type MuteParticipantOperationMuteParticipantOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// CommsOperationMuteParticipantOperationCollectionRequestBuilder is request builder for MuteParticipantOperation collection
+type CommsOperationMuteParticipantOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for CommsOperation collection
-func (b *MuteParticipantOperationMuteParticipantOperationCollectionRequestBuilder) Request() *MuteParticipantOperationMuteParticipantOperationCollectionRequest {
-	return &MuteParticipantOperationMuteParticipantOperationCollectionRequest{
+// Request returns request for MuteParticipantOperation collection
+func (b *CommsOperationMuteParticipantOperationCollectionRequestBuilder) Request() *CommsOperationMuteParticipantOperationCollectionRequest {
+	return &CommsOperationMuteParticipantOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for CommsOperation item
-func (b *MuteParticipantOperationMuteParticipantOperationCollectionRequestBuilder) ID(id string) *CommsOperationRequestBuilder {
-	bb := &CommsOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for MuteParticipantOperation item
+func (b *CommsOperationMuteParticipantOperationCollectionRequestBuilder) ID(id string) *MuteParticipantOperationRequestBuilder {
+	bb := &MuteParticipantOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// MuteParticipantOperationMuteParticipantOperationCollectionRequest is request for CommsOperation collection
-type MuteParticipantOperationMuteParticipantOperationCollectionRequest struct{ BaseRequest }
+// CommsOperationMuteParticipantOperationCollectionRequest is request for MuteParticipantOperation collection
+type CommsOperationMuteParticipantOperationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for CommsOperation collection
-func (r *MuteParticipantOperationMuteParticipantOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CommsOperation, error) {
+// Paging perfoms paging operation for MuteParticipantOperation collection
+func (r *CommsOperationMuteParticipantOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MuteParticipantOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *MuteParticipantOperationMuteParticipantOperationCollectionRequest) Pagi
 	if err != nil {
 		return nil, err
 	}
-	var values []CommsOperation
+	var values []MuteParticipantOperation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *MuteParticipantOperationMuteParticipantOperationCollectionRequest) Pagi
 		}
 		var (
 			paging Paging
-			value  []CommsOperation
+			value  []MuteParticipantOperation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *MuteParticipantOperationMuteParticipantOperationCollectionRequest) Pagi
 	}
 }
 
-// GetN performs GET request for CommsOperation collection, max N pages
-func (r *MuteParticipantOperationMuteParticipantOperationCollectionRequest) GetN(ctx context.Context, n int) ([]CommsOperation, error) {
+// GetN performs GET request for MuteParticipantOperation collection, max N pages
+func (r *CommsOperationMuteParticipantOperationCollectionRequest) GetN(ctx context.Context, n int) ([]MuteParticipantOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *MuteParticipantOperationMuteParticipantOperationCollectionRequest) GetN
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for CommsOperation collection
-func (r *MuteParticipantOperationMuteParticipantOperationCollectionRequest) Get(ctx context.Context) ([]CommsOperation, error) {
+// Get performs GET request for MuteParticipantOperation collection
+func (r *CommsOperationMuteParticipantOperationCollectionRequest) Get(ctx context.Context) ([]MuteParticipantOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for CommsOperation collection
-func (r *MuteParticipantOperationMuteParticipantOperationCollectionRequest) Add(ctx context.Context, reqObj *CommsOperation) (resObj *CommsOperation, err error) {
+// Add performs POST request for MuteParticipantOperation collection
+func (r *CommsOperationMuteParticipantOperationCollectionRequest) Add(ctx context.Context, reqObj *MuteParticipantOperation) (resObj *MuteParticipantOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

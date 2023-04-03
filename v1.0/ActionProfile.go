@@ -2,8 +2,8 @@
 
 package msgraph
 
-// ProfilePhoto is navigation property rn
-func (b *ProfilePhotoRequestBuilder) ProfilePhoto() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ProfilePhotoRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

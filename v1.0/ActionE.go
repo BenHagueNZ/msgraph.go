@@ -2,8 +2,8 @@
 
 package msgraph
 
-// EBookInstallSummary is navigation property rn
-func (b *EBookInstallSummaryRequestBuilder) EBookInstallSummary() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *EBookInstallSummaryRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

@@ -44,22 +44,22 @@ func (b *ParticipantLeftNotificationRequestBuilder) Call() *CallRequestBuilder {
 	return bb
 }
 
-// Participant is navigation property rn
-func (b *ParticipantRequestBuilder) Participant() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ParticipantRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ParticipantJoiningNotification is navigation property rn
-func (b *ParticipantJoiningNotificationRequestBuilder) ParticipantJoiningNotification() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ParticipantJoiningNotificationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ParticipantLeftNotification is navigation property rn
-func (b *ParticipantLeftNotificationRequestBuilder) ParticipantLeftNotification() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ParticipantLeftNotificationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

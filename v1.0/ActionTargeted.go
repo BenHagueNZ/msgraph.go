@@ -355,8 +355,8 @@ func (r *TargetedManagedAppProtectionAssignmentsCollectionRequest) Add(ctx conte
 	return
 }
 
-// TargetedManagedAppPolicyAssignment is navigation property rn
-func (b *TargetedManagedAppPolicyAssignmentRequestBuilder) TargetedManagedAppPolicyAssignment() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TargetedManagedAppPolicyAssignmentRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

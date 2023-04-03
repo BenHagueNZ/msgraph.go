@@ -9,8 +9,8 @@ func (b *AdminRequestBuilder) ServiceAnnouncement() *ServiceAnnouncementRequestB
 	return bb
 }
 
-// AdminConsentRequestPolicy is navigation property rn
-func (b *AdminConsentRequestPolicyRequestBuilder) AdminConsentRequestPolicy() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AdminConsentRequestPolicyRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

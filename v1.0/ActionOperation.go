@@ -2,8 +2,8 @@
 
 package msgraph
 
-// Operation is navigation property rn
-func (b *OperationRequestBuilder) Operation() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *OperationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

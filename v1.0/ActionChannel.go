@@ -442,8 +442,8 @@ func (r *ChannelTabsCollectionRequest) Add(ctx context.Context, reqObj *TeamsTab
 	return
 }
 
-// Channel is navigation property rn
-func (b *ChannelRequestBuilder) Channel() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ChannelRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

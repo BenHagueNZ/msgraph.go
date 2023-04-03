@@ -2,15 +2,15 @@
 
 package msgraph
 
-// OnPremisesConditionalAccessSettings is navigation property rn
-func (b *OnPremisesConditionalAccessSettingsRequestBuilder) OnPremisesConditionalAccessSettings() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *OnPremisesConditionalAccessSettingsRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// OnPremisesDirectorySynchronization is navigation property rn
-func (b *OnPremisesDirectorySynchronizationRequestBuilder) OnPremisesDirectorySynchronization() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *OnPremisesDirectorySynchronizationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

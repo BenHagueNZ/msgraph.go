@@ -320,8 +320,8 @@ func (r *OfficeGraphInsightsUsedCollectionRequest) Add(ctx context.Context, reqO
 	return
 }
 
-// OfficeGraphInsights is navigation property rn
-func (b *OfficeGraphInsightsRequestBuilder) OfficeGraphInsights() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *OfficeGraphInsightsRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

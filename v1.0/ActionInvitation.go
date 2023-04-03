@@ -9,8 +9,8 @@ func (b *InvitationRequestBuilder) InvitedUser() *UserRequestBuilder {
 	return bb
 }
 
-// Invitation is navigation property rn
-func (b *InvitationRequestBuilder) Invitation() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *InvitationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

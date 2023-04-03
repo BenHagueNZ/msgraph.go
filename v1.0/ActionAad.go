@@ -18,35 +18,35 @@ func (b *AadUserConversationMemberRequestBuilder) User() *UserRequestBuilder {
 	return bb
 }
 
-// AadUserConversationMember returns request builder for ConversationMember collection rcn
-func (b *AadUserConversationMemberRequestBuilder) AadUserConversationMember() *AadUserConversationMemberAadUserConversationMemberCollectionRequestBuilder {
-	bb := &AadUserConversationMemberAadUserConversationMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ConversationMember"
+// AadUserConversationMember returns request builder for AadUserConversationMember collection rcn
+func (b *ConversationMemberRequestBuilder) AadUserConversationMember() *ConversationMemberAadUserConversationMemberCollectionRequestBuilder {
+	bb := &ConversationMemberAadUserConversationMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AadUserConversationMember"
 	return bb
 }
 
-// AadUserConversationMemberAadUserConversationMemberCollectionRequestBuilder is request builder for ConversationMember collection
-type AadUserConversationMemberAadUserConversationMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ConversationMemberAadUserConversationMemberCollectionRequestBuilder is request builder for AadUserConversationMember collection
+type ConversationMemberAadUserConversationMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for ConversationMember collection
-func (b *AadUserConversationMemberAadUserConversationMemberCollectionRequestBuilder) Request() *AadUserConversationMemberAadUserConversationMemberCollectionRequest {
-	return &AadUserConversationMemberAadUserConversationMemberCollectionRequest{
+// Request returns request for AadUserConversationMember collection
+func (b *ConversationMemberAadUserConversationMemberCollectionRequestBuilder) Request() *ConversationMemberAadUserConversationMemberCollectionRequest {
+	return &ConversationMemberAadUserConversationMemberCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for ConversationMember item
-func (b *AadUserConversationMemberAadUserConversationMemberCollectionRequestBuilder) ID(id string) *ConversationMemberRequestBuilder {
-	bb := &ConversationMemberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for AadUserConversationMember item
+func (b *ConversationMemberAadUserConversationMemberCollectionRequestBuilder) ID(id string) *AadUserConversationMemberRequestBuilder {
+	bb := &AadUserConversationMemberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AadUserConversationMemberAadUserConversationMemberCollectionRequest is request for ConversationMember collection
-type AadUserConversationMemberAadUserConversationMemberCollectionRequest struct{ BaseRequest }
+// ConversationMemberAadUserConversationMemberCollectionRequest is request for AadUserConversationMember collection
+type ConversationMemberAadUserConversationMemberCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for ConversationMember collection
-func (r *AadUserConversationMemberAadUserConversationMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ConversationMember, error) {
+// Paging perfoms paging operation for AadUserConversationMember collection
+func (r *ConversationMemberAadUserConversationMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AadUserConversationMember, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -58,7 +58,7 @@ func (r *AadUserConversationMemberAadUserConversationMemberCollectionRequest) Pa
 	if err != nil {
 		return nil, err
 	}
-	var values []ConversationMember
+	var values []AadUserConversationMember
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -72,7 +72,7 @@ func (r *AadUserConversationMemberAadUserConversationMemberCollectionRequest) Pa
 		}
 		var (
 			paging Paging
-			value  []ConversationMember
+			value  []AadUserConversationMember
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -101,8 +101,8 @@ func (r *AadUserConversationMemberAadUserConversationMemberCollectionRequest) Pa
 	}
 }
 
-// GetN performs GET request for ConversationMember collection, max N pages
-func (r *AadUserConversationMemberAadUserConversationMemberCollectionRequest) GetN(ctx context.Context, n int) ([]ConversationMember, error) {
+// GetN performs GET request for AadUserConversationMember collection, max N pages
+func (r *ConversationMemberAadUserConversationMemberCollectionRequest) GetN(ctx context.Context, n int) ([]AadUserConversationMember, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -110,13 +110,13 @@ func (r *AadUserConversationMemberAadUserConversationMemberCollectionRequest) Ge
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for ConversationMember collection
-func (r *AadUserConversationMemberAadUserConversationMemberCollectionRequest) Get(ctx context.Context) ([]ConversationMember, error) {
+// Get performs GET request for AadUserConversationMember collection
+func (r *ConversationMemberAadUserConversationMemberCollectionRequest) Get(ctx context.Context) ([]AadUserConversationMember, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for ConversationMember collection
-func (r *AadUserConversationMemberAadUserConversationMemberCollectionRequest) Add(ctx context.Context, reqObj *ConversationMember) (resObj *ConversationMember, err error) {
+// Add performs POST request for AadUserConversationMember collection
+func (r *ConversationMemberAadUserConversationMemberCollectionRequest) Add(ctx context.Context, reqObj *AadUserConversationMember) (resObj *AadUserConversationMember, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

@@ -217,8 +217,8 @@ func (r *ConnectedOrganizationInternalSponsorsCollectionRequest) Add(ctx context
 	return
 }
 
-// ConnectedOrganization is navigation property rn
-func (b *ConnectedOrganizationRequestBuilder) ConnectedOrganization() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ConnectedOrganizationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

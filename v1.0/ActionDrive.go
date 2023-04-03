@@ -1074,35 +1074,35 @@ func (b *DriveItemRequestBuilder) Workbook() *WorkbookRequestBuilder {
 	return bb
 }
 
-// Drive returns request builder for BaseItem collection rcn
-func (b *DriveRequestBuilder) Drive() *DriveDriveCollectionRequestBuilder {
-	bb := &DriveDriveCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/BaseItem"
+// Drive returns request builder for Drive collection rcn
+func (b *BaseItemRequestBuilder) Drive() *BaseItemDriveCollectionRequestBuilder {
+	bb := &BaseItemDriveCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Drive"
 	return bb
 }
 
-// DriveDriveCollectionRequestBuilder is request builder for BaseItem collection
-type DriveDriveCollectionRequestBuilder struct{ BaseRequestBuilder }
+// BaseItemDriveCollectionRequestBuilder is request builder for Drive collection
+type BaseItemDriveCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for BaseItem collection
-func (b *DriveDriveCollectionRequestBuilder) Request() *DriveDriveCollectionRequest {
-	return &DriveDriveCollectionRequest{
+// Request returns request for Drive collection
+func (b *BaseItemDriveCollectionRequestBuilder) Request() *BaseItemDriveCollectionRequest {
+	return &BaseItemDriveCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for BaseItem item
-func (b *DriveDriveCollectionRequestBuilder) ID(id string) *BaseItemRequestBuilder {
-	bb := &BaseItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Drive item
+func (b *BaseItemDriveCollectionRequestBuilder) ID(id string) *DriveRequestBuilder {
+	bb := &DriveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DriveDriveCollectionRequest is request for BaseItem collection
-type DriveDriveCollectionRequest struct{ BaseRequest }
+// BaseItemDriveCollectionRequest is request for Drive collection
+type BaseItemDriveCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for BaseItem collection
-func (r *DriveDriveCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]BaseItem, error) {
+// Paging perfoms paging operation for Drive collection
+func (r *BaseItemDriveCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Drive, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1114,7 +1114,7 @@ func (r *DriveDriveCollectionRequest) Paging(ctx context.Context, method, path s
 	if err != nil {
 		return nil, err
 	}
-	var values []BaseItem
+	var values []Drive
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1128,7 +1128,7 @@ func (r *DriveDriveCollectionRequest) Paging(ctx context.Context, method, path s
 		}
 		var (
 			paging Paging
-			value  []BaseItem
+			value  []Drive
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1157,8 +1157,8 @@ func (r *DriveDriveCollectionRequest) Paging(ctx context.Context, method, path s
 	}
 }
 
-// GetN performs GET request for BaseItem collection, max N pages
-func (r *DriveDriveCollectionRequest) GetN(ctx context.Context, n int) ([]BaseItem, error) {
+// GetN performs GET request for Drive collection, max N pages
+func (r *BaseItemDriveCollectionRequest) GetN(ctx context.Context, n int) ([]Drive, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1166,46 +1166,46 @@ func (r *DriveDriveCollectionRequest) GetN(ctx context.Context, n int) ([]BaseIt
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for BaseItem collection
-func (r *DriveDriveCollectionRequest) Get(ctx context.Context) ([]BaseItem, error) {
+// Get performs GET request for Drive collection
+func (r *BaseItemDriveCollectionRequest) Get(ctx context.Context) ([]Drive, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for BaseItem collection
-func (r *DriveDriveCollectionRequest) Add(ctx context.Context, reqObj *BaseItem) (resObj *BaseItem, err error) {
+// Add performs POST request for Drive collection
+func (r *BaseItemDriveCollectionRequest) Add(ctx context.Context, reqObj *Drive) (resObj *Drive, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// DriveItem returns request builder for BaseItem collection rcn
-func (b *DriveItemRequestBuilder) DriveItem() *DriveItemDriveItemCollectionRequestBuilder {
-	bb := &DriveItemDriveItemCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/BaseItem"
+// DriveItem returns request builder for DriveItem collection rcn
+func (b *BaseItemRequestBuilder) DriveItem() *BaseItemDriveItemCollectionRequestBuilder {
+	bb := &BaseItemDriveItemCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DriveItem"
 	return bb
 }
 
-// DriveItemDriveItemCollectionRequestBuilder is request builder for BaseItem collection
-type DriveItemDriveItemCollectionRequestBuilder struct{ BaseRequestBuilder }
+// BaseItemDriveItemCollectionRequestBuilder is request builder for DriveItem collection
+type BaseItemDriveItemCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for BaseItem collection
-func (b *DriveItemDriveItemCollectionRequestBuilder) Request() *DriveItemDriveItemCollectionRequest {
-	return &DriveItemDriveItemCollectionRequest{
+// Request returns request for DriveItem collection
+func (b *BaseItemDriveItemCollectionRequestBuilder) Request() *BaseItemDriveItemCollectionRequest {
+	return &BaseItemDriveItemCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for BaseItem item
-func (b *DriveItemDriveItemCollectionRequestBuilder) ID(id string) *BaseItemRequestBuilder {
-	bb := &BaseItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for DriveItem item
+func (b *BaseItemDriveItemCollectionRequestBuilder) ID(id string) *DriveItemRequestBuilder {
+	bb := &DriveItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DriveItemDriveItemCollectionRequest is request for BaseItem collection
-type DriveItemDriveItemCollectionRequest struct{ BaseRequest }
+// BaseItemDriveItemCollectionRequest is request for DriveItem collection
+type BaseItemDriveItemCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for BaseItem collection
-func (r *DriveItemDriveItemCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]BaseItem, error) {
+// Paging perfoms paging operation for DriveItem collection
+func (r *BaseItemDriveItemCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DriveItem, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1217,7 +1217,7 @@ func (r *DriveItemDriveItemCollectionRequest) Paging(ctx context.Context, method
 	if err != nil {
 		return nil, err
 	}
-	var values []BaseItem
+	var values []DriveItem
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1231,7 +1231,7 @@ func (r *DriveItemDriveItemCollectionRequest) Paging(ctx context.Context, method
 		}
 		var (
 			paging Paging
-			value  []BaseItem
+			value  []DriveItem
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1260,8 +1260,8 @@ func (r *DriveItemDriveItemCollectionRequest) Paging(ctx context.Context, method
 	}
 }
 
-// GetN performs GET request for BaseItem collection, max N pages
-func (r *DriveItemDriveItemCollectionRequest) GetN(ctx context.Context, n int) ([]BaseItem, error) {
+// GetN performs GET request for DriveItem collection, max N pages
+func (r *BaseItemDriveItemCollectionRequest) GetN(ctx context.Context, n int) ([]DriveItem, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1269,13 +1269,13 @@ func (r *DriveItemDriveItemCollectionRequest) GetN(ctx context.Context, n int) (
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for BaseItem collection
-func (r *DriveItemDriveItemCollectionRequest) Get(ctx context.Context) ([]BaseItem, error) {
+// Get performs GET request for DriveItem collection
+func (r *BaseItemDriveItemCollectionRequest) Get(ctx context.Context) ([]DriveItem, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for BaseItem collection
-func (r *DriveItemDriveItemCollectionRequest) Add(ctx context.Context, reqObj *BaseItem) (resObj *BaseItem, err error) {
+// Add performs POST request for DriveItem collection
+func (r *BaseItemDriveItemCollectionRequest) Add(ctx context.Context, reqObj *DriveItem) (resObj *DriveItem, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

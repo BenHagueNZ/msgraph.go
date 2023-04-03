@@ -973,78 +973,78 @@ func (r *PlannerUserTasksCollectionRequest) Add(ctx context.Context, reqObj *Pla
 	return
 }
 
-// Planner is navigation property rn
-func (b *PlannerRequestBuilder) Planner() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PlannerRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PlannerAssignedToTaskBoardTaskFormat is navigation property rn
-func (b *PlannerAssignedToTaskBoardTaskFormatRequestBuilder) PlannerAssignedToTaskBoardTaskFormat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PlannerAssignedToTaskBoardTaskFormatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PlannerBucket is navigation property rn
-func (b *PlannerBucketRequestBuilder) PlannerBucket() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PlannerBucketRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PlannerBucketTaskBoardTaskFormat is navigation property rn
-func (b *PlannerBucketTaskBoardTaskFormatRequestBuilder) PlannerBucketTaskBoardTaskFormat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PlannerBucketTaskBoardTaskFormatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PlannerGroup is navigation property rn
-func (b *PlannerGroupRequestBuilder) PlannerGroup() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PlannerGroupRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PlannerPlan is navigation property rn
-func (b *PlannerPlanRequestBuilder) PlannerPlan() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PlannerPlanRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PlannerPlanDetails is navigation property rn
-func (b *PlannerPlanDetailsRequestBuilder) PlannerPlanDetails() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PlannerPlanDetailsRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PlannerProgressTaskBoardTaskFormat is navigation property rn
-func (b *PlannerProgressTaskBoardTaskFormatRequestBuilder) PlannerProgressTaskBoardTaskFormat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PlannerProgressTaskBoardTaskFormatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PlannerTask is navigation property rn
-func (b *PlannerTaskRequestBuilder) PlannerTask() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PlannerTaskRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PlannerTaskDetails is navigation property rn
-func (b *PlannerTaskDetailsRequestBuilder) PlannerTaskDetails() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PlannerTaskDetailsRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// PlannerUser is navigation property rn
-func (b *PlannerUserRequestBuilder) PlannerUser() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *PlannerUserRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

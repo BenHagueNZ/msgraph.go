@@ -11,42 +11,42 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// EnrollmentConfigurationAssignment is navigation property rn
-func (b *EnrollmentConfigurationAssignmentRequestBuilder) EnrollmentConfigurationAssignment() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *EnrollmentConfigurationAssignmentRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// EnrollmentTroubleshootingEvent returns request builder for DeviceManagementTroubleshootingEvent collection rcn
-func (b *EnrollmentTroubleshootingEventRequestBuilder) EnrollmentTroubleshootingEvent() *EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequestBuilder {
-	bb := &EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceManagementTroubleshootingEvent"
+// EnrollmentTroubleshootingEvent returns request builder for EnrollmentTroubleshootingEvent collection rcn
+func (b *DeviceManagementTroubleshootingEventRequestBuilder) EnrollmentTroubleshootingEvent() *DeviceManagementTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequestBuilder {
+	bb := &DeviceManagementTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/EnrollmentTroubleshootingEvent"
 	return bb
 }
 
-// EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequestBuilder is request builder for DeviceManagementTroubleshootingEvent collection
-type EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceManagementTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequestBuilder is request builder for EnrollmentTroubleshootingEvent collection
+type DeviceManagementTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceManagementTroubleshootingEvent collection
-func (b *EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequestBuilder) Request() *EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest {
-	return &EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest{
+// Request returns request for EnrollmentTroubleshootingEvent collection
+func (b *DeviceManagementTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequestBuilder) Request() *DeviceManagementTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest {
+	return &DeviceManagementTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceManagementTroubleshootingEvent item
-func (b *EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequestBuilder) ID(id string) *DeviceManagementTroubleshootingEventRequestBuilder {
-	bb := &DeviceManagementTroubleshootingEventRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for EnrollmentTroubleshootingEvent item
+func (b *DeviceManagementTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequestBuilder) ID(id string) *EnrollmentTroubleshootingEventRequestBuilder {
+	bb := &EnrollmentTroubleshootingEventRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest is request for DeviceManagementTroubleshootingEvent collection
-type EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest struct{ BaseRequest }
+// DeviceManagementTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest is request for EnrollmentTroubleshootingEvent collection
+type DeviceManagementTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceManagementTroubleshootingEvent collection
-func (r *EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceManagementTroubleshootingEvent, error) {
+// Paging perfoms paging operation for EnrollmentTroubleshootingEvent collection
+func (r *DeviceManagementTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EnrollmentTroubleshootingEvent, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -58,7 +58,7 @@ func (r *EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionR
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceManagementTroubleshootingEvent
+	var values []EnrollmentTroubleshootingEvent
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -72,7 +72,7 @@ func (r *EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionR
 		}
 		var (
 			paging Paging
-			value  []DeviceManagementTroubleshootingEvent
+			value  []EnrollmentTroubleshootingEvent
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -101,8 +101,8 @@ func (r *EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionR
 	}
 }
 
-// GetN performs GET request for DeviceManagementTroubleshootingEvent collection, max N pages
-func (r *EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceManagementTroubleshootingEvent, error) {
+// GetN performs GET request for EnrollmentTroubleshootingEvent collection, max N pages
+func (r *DeviceManagementTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest) GetN(ctx context.Context, n int) ([]EnrollmentTroubleshootingEvent, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -110,13 +110,13 @@ func (r *EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionR
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceManagementTroubleshootingEvent collection
-func (r *EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest) Get(ctx context.Context) ([]DeviceManagementTroubleshootingEvent, error) {
+// Get performs GET request for EnrollmentTroubleshootingEvent collection
+func (r *DeviceManagementTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest) Get(ctx context.Context) ([]EnrollmentTroubleshootingEvent, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceManagementTroubleshootingEvent collection
-func (r *EnrollmentTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest) Add(ctx context.Context, reqObj *DeviceManagementTroubleshootingEvent) (resObj *DeviceManagementTroubleshootingEvent, err error) {
+// Add performs POST request for EnrollmentTroubleshootingEvent collection
+func (r *DeviceManagementTroubleshootingEventEnrollmentTroubleshootingEventCollectionRequest) Add(ctx context.Context, reqObj *EnrollmentTroubleshootingEvent) (resObj *EnrollmentTroubleshootingEvent, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

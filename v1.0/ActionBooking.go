@@ -653,63 +653,63 @@ func (r *BookingBusinessStaffMembersCollectionRequest) Add(ctx context.Context, 
 	return
 }
 
-// BookingAppointment is navigation property rn
-func (b *BookingAppointmentRequestBuilder) BookingAppointment() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *BookingAppointmentRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// BookingBusiness is navigation property rn
-func (b *BookingBusinessRequestBuilder) BookingBusiness() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *BookingBusinessRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// BookingCurrency is navigation property rn
-func (b *BookingCurrencyRequestBuilder) BookingCurrency() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *BookingCurrencyRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// BookingCustomQuestion is navigation property rn
-func (b *BookingCustomQuestionRequestBuilder) BookingCustomQuestion() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *BookingCustomQuestionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// BookingCustomer returns request builder for BookingCustomerBase collection rcn
-func (b *BookingCustomerRequestBuilder) BookingCustomer() *BookingCustomerBookingCustomerCollectionRequestBuilder {
-	bb := &BookingCustomerBookingCustomerCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/BookingCustomerBase"
+// BookingCustomer returns request builder for BookingCustomer collection rcn
+func (b *BookingCustomerBaseRequestBuilder) BookingCustomer() *BookingCustomerBaseBookingCustomerCollectionRequestBuilder {
+	bb := &BookingCustomerBaseBookingCustomerCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/BookingCustomer"
 	return bb
 }
 
-// BookingCustomerBookingCustomerCollectionRequestBuilder is request builder for BookingCustomerBase collection
-type BookingCustomerBookingCustomerCollectionRequestBuilder struct{ BaseRequestBuilder }
+// BookingCustomerBaseBookingCustomerCollectionRequestBuilder is request builder for BookingCustomer collection
+type BookingCustomerBaseBookingCustomerCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for BookingCustomerBase collection
-func (b *BookingCustomerBookingCustomerCollectionRequestBuilder) Request() *BookingCustomerBookingCustomerCollectionRequest {
-	return &BookingCustomerBookingCustomerCollectionRequest{
+// Request returns request for BookingCustomer collection
+func (b *BookingCustomerBaseBookingCustomerCollectionRequestBuilder) Request() *BookingCustomerBaseBookingCustomerCollectionRequest {
+	return &BookingCustomerBaseBookingCustomerCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for BookingCustomerBase item
-func (b *BookingCustomerBookingCustomerCollectionRequestBuilder) ID(id string) *BookingCustomerBaseRequestBuilder {
-	bb := &BookingCustomerBaseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for BookingCustomer item
+func (b *BookingCustomerBaseBookingCustomerCollectionRequestBuilder) ID(id string) *BookingCustomerRequestBuilder {
+	bb := &BookingCustomerRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// BookingCustomerBookingCustomerCollectionRequest is request for BookingCustomerBase collection
-type BookingCustomerBookingCustomerCollectionRequest struct{ BaseRequest }
+// BookingCustomerBaseBookingCustomerCollectionRequest is request for BookingCustomer collection
+type BookingCustomerBaseBookingCustomerCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for BookingCustomerBase collection
-func (r *BookingCustomerBookingCustomerCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]BookingCustomerBase, error) {
+// Paging perfoms paging operation for BookingCustomer collection
+func (r *BookingCustomerBaseBookingCustomerCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]BookingCustomer, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -721,7 +721,7 @@ func (r *BookingCustomerBookingCustomerCollectionRequest) Paging(ctx context.Con
 	if err != nil {
 		return nil, err
 	}
-	var values []BookingCustomerBase
+	var values []BookingCustomer
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -735,7 +735,7 @@ func (r *BookingCustomerBookingCustomerCollectionRequest) Paging(ctx context.Con
 		}
 		var (
 			paging Paging
-			value  []BookingCustomerBase
+			value  []BookingCustomer
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -764,8 +764,8 @@ func (r *BookingCustomerBookingCustomerCollectionRequest) Paging(ctx context.Con
 	}
 }
 
-// GetN performs GET request for BookingCustomerBase collection, max N pages
-func (r *BookingCustomerBookingCustomerCollectionRequest) GetN(ctx context.Context, n int) ([]BookingCustomerBase, error) {
+// GetN performs GET request for BookingCustomer collection, max N pages
+func (r *BookingCustomerBaseBookingCustomerCollectionRequest) GetN(ctx context.Context, n int) ([]BookingCustomer, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -773,53 +773,53 @@ func (r *BookingCustomerBookingCustomerCollectionRequest) GetN(ctx context.Conte
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for BookingCustomerBase collection
-func (r *BookingCustomerBookingCustomerCollectionRequest) Get(ctx context.Context) ([]BookingCustomerBase, error) {
+// Get performs GET request for BookingCustomer collection
+func (r *BookingCustomerBaseBookingCustomerCollectionRequest) Get(ctx context.Context) ([]BookingCustomer, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for BookingCustomerBase collection
-func (r *BookingCustomerBookingCustomerCollectionRequest) Add(ctx context.Context, reqObj *BookingCustomerBase) (resObj *BookingCustomerBase, err error) {
+// Add performs POST request for BookingCustomer collection
+func (r *BookingCustomerBaseBookingCustomerCollectionRequest) Add(ctx context.Context, reqObj *BookingCustomer) (resObj *BookingCustomer, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// BookingService is navigation property rn
-func (b *BookingServiceRequestBuilder) BookingService() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *BookingServiceRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// BookingStaffMember returns request builder for BookingStaffMemberBase collection rcn
-func (b *BookingStaffMemberRequestBuilder) BookingStaffMember() *BookingStaffMemberBookingStaffMemberCollectionRequestBuilder {
-	bb := &BookingStaffMemberBookingStaffMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/BookingStaffMemberBase"
+// BookingStaffMember returns request builder for BookingStaffMember collection rcn
+func (b *BookingStaffMemberBaseRequestBuilder) BookingStaffMember() *BookingStaffMemberBaseBookingStaffMemberCollectionRequestBuilder {
+	bb := &BookingStaffMemberBaseBookingStaffMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/BookingStaffMember"
 	return bb
 }
 
-// BookingStaffMemberBookingStaffMemberCollectionRequestBuilder is request builder for BookingStaffMemberBase collection
-type BookingStaffMemberBookingStaffMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
+// BookingStaffMemberBaseBookingStaffMemberCollectionRequestBuilder is request builder for BookingStaffMember collection
+type BookingStaffMemberBaseBookingStaffMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for BookingStaffMemberBase collection
-func (b *BookingStaffMemberBookingStaffMemberCollectionRequestBuilder) Request() *BookingStaffMemberBookingStaffMemberCollectionRequest {
-	return &BookingStaffMemberBookingStaffMemberCollectionRequest{
+// Request returns request for BookingStaffMember collection
+func (b *BookingStaffMemberBaseBookingStaffMemberCollectionRequestBuilder) Request() *BookingStaffMemberBaseBookingStaffMemberCollectionRequest {
+	return &BookingStaffMemberBaseBookingStaffMemberCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for BookingStaffMemberBase item
-func (b *BookingStaffMemberBookingStaffMemberCollectionRequestBuilder) ID(id string) *BookingStaffMemberBaseRequestBuilder {
-	bb := &BookingStaffMemberBaseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for BookingStaffMember item
+func (b *BookingStaffMemberBaseBookingStaffMemberCollectionRequestBuilder) ID(id string) *BookingStaffMemberRequestBuilder {
+	bb := &BookingStaffMemberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// BookingStaffMemberBookingStaffMemberCollectionRequest is request for BookingStaffMemberBase collection
-type BookingStaffMemberBookingStaffMemberCollectionRequest struct{ BaseRequest }
+// BookingStaffMemberBaseBookingStaffMemberCollectionRequest is request for BookingStaffMember collection
+type BookingStaffMemberBaseBookingStaffMemberCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for BookingStaffMemberBase collection
-func (r *BookingStaffMemberBookingStaffMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]BookingStaffMemberBase, error) {
+// Paging perfoms paging operation for BookingStaffMember collection
+func (r *BookingStaffMemberBaseBookingStaffMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]BookingStaffMember, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -831,7 +831,7 @@ func (r *BookingStaffMemberBookingStaffMemberCollectionRequest) Paging(ctx conte
 	if err != nil {
 		return nil, err
 	}
-	var values []BookingStaffMemberBase
+	var values []BookingStaffMember
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -845,7 +845,7 @@ func (r *BookingStaffMemberBookingStaffMemberCollectionRequest) Paging(ctx conte
 		}
 		var (
 			paging Paging
-			value  []BookingStaffMemberBase
+			value  []BookingStaffMember
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -874,8 +874,8 @@ func (r *BookingStaffMemberBookingStaffMemberCollectionRequest) Paging(ctx conte
 	}
 }
 
-// GetN performs GET request for BookingStaffMemberBase collection, max N pages
-func (r *BookingStaffMemberBookingStaffMemberCollectionRequest) GetN(ctx context.Context, n int) ([]BookingStaffMemberBase, error) {
+// GetN performs GET request for BookingStaffMember collection, max N pages
+func (r *BookingStaffMemberBaseBookingStaffMemberCollectionRequest) GetN(ctx context.Context, n int) ([]BookingStaffMember, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -883,13 +883,13 @@ func (r *BookingStaffMemberBookingStaffMemberCollectionRequest) GetN(ctx context
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for BookingStaffMemberBase collection
-func (r *BookingStaffMemberBookingStaffMemberCollectionRequest) Get(ctx context.Context) ([]BookingStaffMemberBase, error) {
+// Get performs GET request for BookingStaffMember collection
+func (r *BookingStaffMemberBaseBookingStaffMemberCollectionRequest) Get(ctx context.Context) ([]BookingStaffMember, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for BookingStaffMemberBase collection
-func (r *BookingStaffMemberBookingStaffMemberCollectionRequest) Add(ctx context.Context, reqObj *BookingStaffMemberBase) (resObj *BookingStaffMemberBase, err error) {
+// Add performs POST request for BookingStaffMember collection
+func (r *BookingStaffMemberBaseBookingStaffMemberCollectionRequest) Add(ctx context.Context, reqObj *BookingStaffMember) (resObj *BookingStaffMember, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

@@ -423,22 +423,22 @@ func (r *ConditionalAccessRootTemplatesCollectionRequest) Add(ctx context.Contex
 	return
 }
 
-// ConditionalAccessPolicy is navigation property rn
-func (b *ConditionalAccessPolicyRequestBuilder) ConditionalAccessPolicy() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ConditionalAccessPolicyRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ConditionalAccessRoot is navigation property rn
-func (b *ConditionalAccessRootRequestBuilder) ConditionalAccessRoot() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ConditionalAccessRootRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ConditionalAccessTemplate is navigation property rn
-func (b *ConditionalAccessTemplateRequestBuilder) ConditionalAccessTemplate() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ConditionalAccessTemplateRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

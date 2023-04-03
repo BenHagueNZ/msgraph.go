@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// IPNamedLocation returns request builder for NamedLocation collection rcn
-func (b *IPNamedLocationRequestBuilder) IPNamedLocation() *IPNamedLocationIPNamedLocationCollectionRequestBuilder {
-	bb := &IPNamedLocationIPNamedLocationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/NamedLocation"
+// IPNamedLocation returns request builder for IPNamedLocation collection rcn
+func (b *NamedLocationRequestBuilder) IPNamedLocation() *NamedLocationIPNamedLocationCollectionRequestBuilder {
+	bb := &NamedLocationIPNamedLocationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/IpNamedLocation"
 	return bb
 }
 
-// IPNamedLocationIPNamedLocationCollectionRequestBuilder is request builder for NamedLocation collection
-type IPNamedLocationIPNamedLocationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// NamedLocationIPNamedLocationCollectionRequestBuilder is request builder for IPNamedLocation collection
+type NamedLocationIPNamedLocationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for NamedLocation collection
-func (b *IPNamedLocationIPNamedLocationCollectionRequestBuilder) Request() *IPNamedLocationIPNamedLocationCollectionRequest {
-	return &IPNamedLocationIPNamedLocationCollectionRequest{
+// Request returns request for IPNamedLocation collection
+func (b *NamedLocationIPNamedLocationCollectionRequestBuilder) Request() *NamedLocationIPNamedLocationCollectionRequest {
+	return &NamedLocationIPNamedLocationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for NamedLocation item
-func (b *IPNamedLocationIPNamedLocationCollectionRequestBuilder) ID(id string) *NamedLocationRequestBuilder {
-	bb := &NamedLocationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for IPNamedLocation item
+func (b *NamedLocationIPNamedLocationCollectionRequestBuilder) ID(id string) *IPNamedLocationRequestBuilder {
+	bb := &IPNamedLocationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// IPNamedLocationIPNamedLocationCollectionRequest is request for NamedLocation collection
-type IPNamedLocationIPNamedLocationCollectionRequest struct{ BaseRequest }
+// NamedLocationIPNamedLocationCollectionRequest is request for IPNamedLocation collection
+type NamedLocationIPNamedLocationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for NamedLocation collection
-func (r *IPNamedLocationIPNamedLocationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]NamedLocation, error) {
+// Paging perfoms paging operation for IPNamedLocation collection
+func (r *NamedLocationIPNamedLocationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IPNamedLocation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *IPNamedLocationIPNamedLocationCollectionRequest) Paging(ctx context.Con
 	if err != nil {
 		return nil, err
 	}
-	var values []NamedLocation
+	var values []IPNamedLocation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *IPNamedLocationIPNamedLocationCollectionRequest) Paging(ctx context.Con
 		}
 		var (
 			paging Paging
-			value  []NamedLocation
+			value  []IPNamedLocation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *IPNamedLocationIPNamedLocationCollectionRequest) Paging(ctx context.Con
 	}
 }
 
-// GetN performs GET request for NamedLocation collection, max N pages
-func (r *IPNamedLocationIPNamedLocationCollectionRequest) GetN(ctx context.Context, n int) ([]NamedLocation, error) {
+// GetN performs GET request for IPNamedLocation collection, max N pages
+func (r *NamedLocationIPNamedLocationCollectionRequest) GetN(ctx context.Context, n int) ([]IPNamedLocation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *IPNamedLocationIPNamedLocationCollectionRequest) GetN(ctx context.Conte
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for NamedLocation collection
-func (r *IPNamedLocationIPNamedLocationCollectionRequest) Get(ctx context.Context) ([]NamedLocation, error) {
+// Get performs GET request for IPNamedLocation collection
+func (r *NamedLocationIPNamedLocationCollectionRequest) Get(ctx context.Context) ([]IPNamedLocation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for NamedLocation collection
-func (r *IPNamedLocationIPNamedLocationCollectionRequest) Add(ctx context.Context, reqObj *NamedLocation) (resObj *NamedLocation, err error) {
+// Add performs POST request for IPNamedLocation collection
+func (r *NamedLocationIPNamedLocationCollectionRequest) Add(ctx context.Context, reqObj *IPNamedLocation) (resObj *IPNamedLocation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

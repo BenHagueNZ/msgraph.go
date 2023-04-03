@@ -545,8 +545,8 @@ func (r *CallParticipantsCollectionRequest) Add(ctx context.Context, reqObj *Par
 	return
 }
 
-// Call is navigation property rn
-func (b *CallRequestBuilder) Call() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *CallRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

@@ -118,8 +118,8 @@ func (r *NotificationMessageTemplateLocalizedNotificationMessagesCollectionReque
 	return
 }
 
-// NotificationMessageTemplate is navigation property rn
-func (b *NotificationMessageTemplateRequestBuilder) NotificationMessageTemplate() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *NotificationMessageTemplateRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

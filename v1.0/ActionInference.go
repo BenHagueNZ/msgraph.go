@@ -114,15 +114,15 @@ func (r *InferenceClassificationOverridesCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// InferenceClassification is navigation property rn
-func (b *InferenceClassificationRequestBuilder) InferenceClassification() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *InferenceClassificationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// InferenceClassificationOverride is navigation property rn
-func (b *InferenceClassificationOverrideRequestBuilder) InferenceClassificationOverride() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *InferenceClassificationOverrideRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

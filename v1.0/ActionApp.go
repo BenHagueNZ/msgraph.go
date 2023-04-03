@@ -423,56 +423,56 @@ func (r *AppManagementPolicyAppliesToCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// AppCatalogs is navigation property rn
-func (b *AppCatalogsRequestBuilder) AppCatalogs() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AppCatalogsRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// AppConsentApprovalRoute is navigation property rn
-func (b *AppConsentApprovalRouteRequestBuilder) AppConsentApprovalRoute() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AppConsentApprovalRouteRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// AppConsentRequestObject is navigation property rn
-func (b *AppConsentRequestObjectRequestBuilder) AppConsentRequestObject() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AppConsentRequestObjectRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// AppRoleAssignment returns request builder for DirectoryObject collection rcn
-func (b *AppRoleAssignmentRequestBuilder) AppRoleAssignment() *AppRoleAssignmentAppRoleAssignmentCollectionRequestBuilder {
-	bb := &AppRoleAssignmentAppRoleAssignmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryObject"
+// AppRoleAssignment returns request builder for AppRoleAssignment collection rcn
+func (b *DirectoryObjectRequestBuilder) AppRoleAssignment() *DirectoryObjectAppRoleAssignmentCollectionRequestBuilder {
+	bb := &DirectoryObjectAppRoleAssignmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AppRoleAssignment"
 	return bb
 }
 
-// AppRoleAssignmentAppRoleAssignmentCollectionRequestBuilder is request builder for DirectoryObject collection
-type AppRoleAssignmentAppRoleAssignmentCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DirectoryObjectAppRoleAssignmentCollectionRequestBuilder is request builder for AppRoleAssignment collection
+type DirectoryObjectAppRoleAssignmentCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DirectoryObject collection
-func (b *AppRoleAssignmentAppRoleAssignmentCollectionRequestBuilder) Request() *AppRoleAssignmentAppRoleAssignmentCollectionRequest {
-	return &AppRoleAssignmentAppRoleAssignmentCollectionRequest{
+// Request returns request for AppRoleAssignment collection
+func (b *DirectoryObjectAppRoleAssignmentCollectionRequestBuilder) Request() *DirectoryObjectAppRoleAssignmentCollectionRequest {
+	return &DirectoryObjectAppRoleAssignmentCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DirectoryObject item
-func (b *AppRoleAssignmentAppRoleAssignmentCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
-	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for AppRoleAssignment item
+func (b *DirectoryObjectAppRoleAssignmentCollectionRequestBuilder) ID(id string) *AppRoleAssignmentRequestBuilder {
+	bb := &AppRoleAssignmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AppRoleAssignmentAppRoleAssignmentCollectionRequest is request for DirectoryObject collection
-type AppRoleAssignmentAppRoleAssignmentCollectionRequest struct{ BaseRequest }
+// DirectoryObjectAppRoleAssignmentCollectionRequest is request for AppRoleAssignment collection
+type DirectoryObjectAppRoleAssignmentCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DirectoryObject collection
-func (r *AppRoleAssignmentAppRoleAssignmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+// Paging perfoms paging operation for AppRoleAssignment collection
+func (r *DirectoryObjectAppRoleAssignmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AppRoleAssignment, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -484,7 +484,7 @@ func (r *AppRoleAssignmentAppRoleAssignmentCollectionRequest) Paging(ctx context
 	if err != nil {
 		return nil, err
 	}
-	var values []DirectoryObject
+	var values []AppRoleAssignment
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -498,7 +498,7 @@ func (r *AppRoleAssignmentAppRoleAssignmentCollectionRequest) Paging(ctx context
 		}
 		var (
 			paging Paging
-			value  []DirectoryObject
+			value  []AppRoleAssignment
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -527,8 +527,8 @@ func (r *AppRoleAssignmentAppRoleAssignmentCollectionRequest) Paging(ctx context
 	}
 }
 
-// GetN performs GET request for DirectoryObject collection, max N pages
-func (r *AppRoleAssignmentAppRoleAssignmentCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+// GetN performs GET request for AppRoleAssignment collection, max N pages
+func (r *DirectoryObjectAppRoleAssignmentCollectionRequest) GetN(ctx context.Context, n int) ([]AppRoleAssignment, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -536,19 +536,19 @@ func (r *AppRoleAssignmentAppRoleAssignmentCollectionRequest) GetN(ctx context.C
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DirectoryObject collection
-func (r *AppRoleAssignmentAppRoleAssignmentCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+// Get performs GET request for AppRoleAssignment collection
+func (r *DirectoryObjectAppRoleAssignmentCollectionRequest) Get(ctx context.Context) ([]AppRoleAssignment, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DirectoryObject collection
-func (r *AppRoleAssignmentAppRoleAssignmentCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+// Add performs POST request for AppRoleAssignment collection
+func (r *DirectoryObjectAppRoleAssignmentCollectionRequest) Add(ctx context.Context, reqObj *AppRoleAssignment) (resObj *AppRoleAssignment, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// AppScope is navigation property rn
-func (b *AppScopeRequestBuilder) AppScope() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *AppScopeRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

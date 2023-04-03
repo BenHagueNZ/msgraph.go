@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Windows10CompliancePolicy returns request builder for DeviceCompliancePolicy collection rcn
-func (b *Windows10CompliancePolicyRequestBuilder) Windows10CompliancePolicy() *Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequestBuilder {
-	bb := &Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceCompliancePolicy"
+// Windows10CompliancePolicy returns request builder for Windows10CompliancePolicy collection rcn
+func (b *DeviceCompliancePolicyRequestBuilder) Windows10CompliancePolicy() *DeviceCompliancePolicyWindows10CompliancePolicyCollectionRequestBuilder {
+	bb := &DeviceCompliancePolicyWindows10CompliancePolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Windows10CompliancePolicy"
 	return bb
 }
 
-// Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequestBuilder is request builder for DeviceCompliancePolicy collection
-type Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceCompliancePolicyWindows10CompliancePolicyCollectionRequestBuilder is request builder for Windows10CompliancePolicy collection
+type DeviceCompliancePolicyWindows10CompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceCompliancePolicy collection
-func (b *Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequestBuilder) Request() *Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequest {
-	return &Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequest{
+// Request returns request for Windows10CompliancePolicy collection
+func (b *DeviceCompliancePolicyWindows10CompliancePolicyCollectionRequestBuilder) Request() *DeviceCompliancePolicyWindows10CompliancePolicyCollectionRequest {
+	return &DeviceCompliancePolicyWindows10CompliancePolicyCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceCompliancePolicy item
-func (b *Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequestBuilder) ID(id string) *DeviceCompliancePolicyRequestBuilder {
-	bb := &DeviceCompliancePolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Windows10CompliancePolicy item
+func (b *DeviceCompliancePolicyWindows10CompliancePolicyCollectionRequestBuilder) ID(id string) *Windows10CompliancePolicyRequestBuilder {
+	bb := &Windows10CompliancePolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequest is request for DeviceCompliancePolicy collection
-type Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequest struct{ BaseRequest }
+// DeviceCompliancePolicyWindows10CompliancePolicyCollectionRequest is request for Windows10CompliancePolicy collection
+type DeviceCompliancePolicyWindows10CompliancePolicyCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceCompliancePolicy collection
-func (r *Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceCompliancePolicy, error) {
+// Paging perfoms paging operation for Windows10CompliancePolicy collection
+func (r *DeviceCompliancePolicyWindows10CompliancePolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Windows10CompliancePolicy, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequest) Pa
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceCompliancePolicy
+	var values []Windows10CompliancePolicy
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequest) Pa
 		}
 		var (
 			paging Paging
-			value  []DeviceCompliancePolicy
+			value  []Windows10CompliancePolicy
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequest) Pa
 	}
 }
 
-// GetN performs GET request for DeviceCompliancePolicy collection, max N pages
-func (r *Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceCompliancePolicy, error) {
+// GetN performs GET request for Windows10CompliancePolicy collection, max N pages
+func (r *DeviceCompliancePolicyWindows10CompliancePolicyCollectionRequest) GetN(ctx context.Context, n int) ([]Windows10CompliancePolicy, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,46 +103,46 @@ func (r *Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequest) Ge
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceCompliancePolicy collection
-func (r *Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequest) Get(ctx context.Context) ([]DeviceCompliancePolicy, error) {
+// Get performs GET request for Windows10CompliancePolicy collection
+func (r *DeviceCompliancePolicyWindows10CompliancePolicyCollectionRequest) Get(ctx context.Context) ([]Windows10CompliancePolicy, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceCompliancePolicy collection
-func (r *Windows10CompliancePolicyWindows10CompliancePolicyCollectionRequest) Add(ctx context.Context, reqObj *DeviceCompliancePolicy) (resObj *DeviceCompliancePolicy, err error) {
+// Add performs POST request for Windows10CompliancePolicy collection
+func (r *DeviceCompliancePolicyWindows10CompliancePolicyCollectionRequest) Add(ctx context.Context, reqObj *Windows10CompliancePolicy) (resObj *Windows10CompliancePolicy, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// Windows10CustomConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *Windows10CustomConfigurationRequestBuilder) Windows10CustomConfiguration() *Windows10CustomConfigurationWindows10CustomConfigurationCollectionRequestBuilder {
-	bb := &Windows10CustomConfigurationWindows10CustomConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// Windows10CustomConfiguration returns request builder for Windows10CustomConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) Windows10CustomConfiguration() *DeviceConfigurationWindows10CustomConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationWindows10CustomConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Windows10CustomConfiguration"
 	return bb
 }
 
-// Windows10CustomConfigurationWindows10CustomConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type Windows10CustomConfigurationWindows10CustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationWindows10CustomConfigurationCollectionRequestBuilder is request builder for Windows10CustomConfiguration collection
+type DeviceConfigurationWindows10CustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *Windows10CustomConfigurationWindows10CustomConfigurationCollectionRequestBuilder) Request() *Windows10CustomConfigurationWindows10CustomConfigurationCollectionRequest {
-	return &Windows10CustomConfigurationWindows10CustomConfigurationCollectionRequest{
+// Request returns request for Windows10CustomConfiguration collection
+func (b *DeviceConfigurationWindows10CustomConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationWindows10CustomConfigurationCollectionRequest {
+	return &DeviceConfigurationWindows10CustomConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *Windows10CustomConfigurationWindows10CustomConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Windows10CustomConfiguration item
+func (b *DeviceConfigurationWindows10CustomConfigurationCollectionRequestBuilder) ID(id string) *Windows10CustomConfigurationRequestBuilder {
+	bb := &Windows10CustomConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// Windows10CustomConfigurationWindows10CustomConfigurationCollectionRequest is request for DeviceConfiguration collection
-type Windows10CustomConfigurationWindows10CustomConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationWindows10CustomConfigurationCollectionRequest is request for Windows10CustomConfiguration collection
+type DeviceConfigurationWindows10CustomConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *Windows10CustomConfigurationWindows10CustomConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for Windows10CustomConfiguration collection
+func (r *DeviceConfigurationWindows10CustomConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Windows10CustomConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -154,7 +154,7 @@ func (r *Windows10CustomConfigurationWindows10CustomConfigurationCollectionReque
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []Windows10CustomConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -168,7 +168,7 @@ func (r *Windows10CustomConfigurationWindows10CustomConfigurationCollectionReque
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []Windows10CustomConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -197,8 +197,8 @@ func (r *Windows10CustomConfigurationWindows10CustomConfigurationCollectionReque
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *Windows10CustomConfigurationWindows10CustomConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for Windows10CustomConfiguration collection, max N pages
+func (r *DeviceConfigurationWindows10CustomConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]Windows10CustomConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -206,46 +206,46 @@ func (r *Windows10CustomConfigurationWindows10CustomConfigurationCollectionReque
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *Windows10CustomConfigurationWindows10CustomConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for Windows10CustomConfiguration collection
+func (r *DeviceConfigurationWindows10CustomConfigurationCollectionRequest) Get(ctx context.Context) ([]Windows10CustomConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *Windows10CustomConfigurationWindows10CustomConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for Windows10CustomConfiguration collection
+func (r *DeviceConfigurationWindows10CustomConfigurationCollectionRequest) Add(ctx context.Context, reqObj *Windows10CustomConfiguration) (resObj *Windows10CustomConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// Windows10EndpointProtectionConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *Windows10EndpointProtectionConfigurationRequestBuilder) Windows10EndpointProtectionConfiguration() *Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConfigurationCollectionRequestBuilder {
-	bb := &Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// Windows10EndpointProtectionConfiguration returns request builder for Windows10EndpointProtectionConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) Windows10EndpointProtectionConfiguration() *DeviceConfigurationWindows10EndpointProtectionConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationWindows10EndpointProtectionConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Windows10EndpointProtectionConfiguration"
 	return bb
 }
 
-// Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationWindows10EndpointProtectionConfigurationCollectionRequestBuilder is request builder for Windows10EndpointProtectionConfiguration collection
+type DeviceConfigurationWindows10EndpointProtectionConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConfigurationCollectionRequestBuilder) Request() *Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConfigurationCollectionRequest {
-	return &Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConfigurationCollectionRequest{
+// Request returns request for Windows10EndpointProtectionConfiguration collection
+func (b *DeviceConfigurationWindows10EndpointProtectionConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationWindows10EndpointProtectionConfigurationCollectionRequest {
+	return &DeviceConfigurationWindows10EndpointProtectionConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Windows10EndpointProtectionConfiguration item
+func (b *DeviceConfigurationWindows10EndpointProtectionConfigurationCollectionRequestBuilder) ID(id string) *Windows10EndpointProtectionConfigurationRequestBuilder {
+	bb := &Windows10EndpointProtectionConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConfigurationCollectionRequest is request for DeviceConfiguration collection
-type Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationWindows10EndpointProtectionConfigurationCollectionRequest is request for Windows10EndpointProtectionConfiguration collection
+type DeviceConfigurationWindows10EndpointProtectionConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for Windows10EndpointProtectionConfiguration collection
+func (r *DeviceConfigurationWindows10EndpointProtectionConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Windows10EndpointProtectionConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -257,7 +257,7 @@ func (r *Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConf
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []Windows10EndpointProtectionConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -271,7 +271,7 @@ func (r *Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConf
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []Windows10EndpointProtectionConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -300,8 +300,8 @@ func (r *Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConf
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for Windows10EndpointProtectionConfiguration collection, max N pages
+func (r *DeviceConfigurationWindows10EndpointProtectionConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]Windows10EndpointProtectionConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -309,46 +309,46 @@ func (r *Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConf
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for Windows10EndpointProtectionConfiguration collection
+func (r *DeviceConfigurationWindows10EndpointProtectionConfigurationCollectionRequest) Get(ctx context.Context) ([]Windows10EndpointProtectionConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *Windows10EndpointProtectionConfigurationWindows10EndpointProtectionConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for Windows10EndpointProtectionConfiguration collection
+func (r *DeviceConfigurationWindows10EndpointProtectionConfigurationCollectionRequest) Add(ctx context.Context, reqObj *Windows10EndpointProtectionConfiguration) (resObj *Windows10EndpointProtectionConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// Windows10EnterpriseModernAppManagementConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *Windows10EnterpriseModernAppManagementConfigurationRequestBuilder) Windows10EnterpriseModernAppManagementConfiguration() *Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder {
-	bb := &Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// Windows10EnterpriseModernAppManagementConfiguration returns request builder for Windows10EnterpriseModernAppManagementConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) Windows10EnterpriseModernAppManagementConfiguration() *DeviceConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Windows10EnterpriseModernAppManagementConfiguration"
 	return bb
 }
 
-// Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder is request builder for Windows10EnterpriseModernAppManagementConfiguration collection
+type DeviceConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder) Request() *Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest {
-	return &Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest{
+// Request returns request for Windows10EnterpriseModernAppManagementConfiguration collection
+func (b *DeviceConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest {
+	return &DeviceConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Windows10EnterpriseModernAppManagementConfiguration item
+func (b *DeviceConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder) ID(id string) *Windows10EnterpriseModernAppManagementConfigurationRequestBuilder {
+	bb := &Windows10EnterpriseModernAppManagementConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest is request for DeviceConfiguration collection
-type Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest is request for Windows10EnterpriseModernAppManagementConfiguration collection
+type DeviceConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for Windows10EnterpriseModernAppManagementConfiguration collection
+func (r *DeviceConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Windows10EnterpriseModernAppManagementConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -360,7 +360,7 @@ func (r *Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseM
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []Windows10EnterpriseModernAppManagementConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -374,7 +374,7 @@ func (r *Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseM
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []Windows10EnterpriseModernAppManagementConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -403,8 +403,8 @@ func (r *Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseM
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for Windows10EnterpriseModernAppManagementConfiguration collection, max N pages
+func (r *DeviceConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]Windows10EnterpriseModernAppManagementConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -412,46 +412,46 @@ func (r *Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseM
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for Windows10EnterpriseModernAppManagementConfiguration collection
+func (r *DeviceConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest) Get(ctx context.Context) ([]Windows10EnterpriseModernAppManagementConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *Windows10EnterpriseModernAppManagementConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for Windows10EnterpriseModernAppManagementConfiguration collection
+func (r *DeviceConfigurationWindows10EnterpriseModernAppManagementConfigurationCollectionRequest) Add(ctx context.Context, reqObj *Windows10EnterpriseModernAppManagementConfiguration) (resObj *Windows10EnterpriseModernAppManagementConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// Windows10GeneralConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *Windows10GeneralConfigurationRequestBuilder) Windows10GeneralConfiguration() *Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionRequestBuilder {
-	bb := &Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// Windows10GeneralConfiguration returns request builder for Windows10GeneralConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) Windows10GeneralConfiguration() *DeviceConfigurationWindows10GeneralConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationWindows10GeneralConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Windows10GeneralConfiguration"
 	return bb
 }
 
-// Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationWindows10GeneralConfigurationCollectionRequestBuilder is request builder for Windows10GeneralConfiguration collection
+type DeviceConfigurationWindows10GeneralConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionRequestBuilder) Request() *Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionRequest {
-	return &Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionRequest{
+// Request returns request for Windows10GeneralConfiguration collection
+func (b *DeviceConfigurationWindows10GeneralConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationWindows10GeneralConfigurationCollectionRequest {
+	return &DeviceConfigurationWindows10GeneralConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Windows10GeneralConfiguration item
+func (b *DeviceConfigurationWindows10GeneralConfigurationCollectionRequestBuilder) ID(id string) *Windows10GeneralConfigurationRequestBuilder {
+	bb := &Windows10GeneralConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionRequest is request for DeviceConfiguration collection
-type Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationWindows10GeneralConfigurationCollectionRequest is request for Windows10GeneralConfiguration collection
+type DeviceConfigurationWindows10GeneralConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for Windows10GeneralConfiguration collection
+func (r *DeviceConfigurationWindows10GeneralConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Windows10GeneralConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -463,7 +463,7 @@ func (r *Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionReq
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []Windows10GeneralConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -477,7 +477,7 @@ func (r *Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionReq
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []Windows10GeneralConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -506,8 +506,8 @@ func (r *Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionReq
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for Windows10GeneralConfiguration collection, max N pages
+func (r *DeviceConfigurationWindows10GeneralConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]Windows10GeneralConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -515,46 +515,46 @@ func (r *Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionReq
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for Windows10GeneralConfiguration collection
+func (r *DeviceConfigurationWindows10GeneralConfigurationCollectionRequest) Get(ctx context.Context) ([]Windows10GeneralConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *Windows10GeneralConfigurationWindows10GeneralConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for Windows10GeneralConfiguration collection
+func (r *DeviceConfigurationWindows10GeneralConfigurationCollectionRequest) Add(ctx context.Context, reqObj *Windows10GeneralConfiguration) (resObj *Windows10GeneralConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// Windows10MobileCompliancePolicy returns request builder for DeviceCompliancePolicy collection rcn
-func (b *Windows10MobileCompliancePolicyRequestBuilder) Windows10MobileCompliancePolicy() *Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectionRequestBuilder {
-	bb := &Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceCompliancePolicy"
+// Windows10MobileCompliancePolicy returns request builder for Windows10MobileCompliancePolicy collection rcn
+func (b *DeviceCompliancePolicyRequestBuilder) Windows10MobileCompliancePolicy() *DeviceCompliancePolicyWindows10MobileCompliancePolicyCollectionRequestBuilder {
+	bb := &DeviceCompliancePolicyWindows10MobileCompliancePolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Windows10MobileCompliancePolicy"
 	return bb
 }
 
-// Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectionRequestBuilder is request builder for DeviceCompliancePolicy collection
-type Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceCompliancePolicyWindows10MobileCompliancePolicyCollectionRequestBuilder is request builder for Windows10MobileCompliancePolicy collection
+type DeviceCompliancePolicyWindows10MobileCompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceCompliancePolicy collection
-func (b *Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectionRequestBuilder) Request() *Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest {
-	return &Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest{
+// Request returns request for Windows10MobileCompliancePolicy collection
+func (b *DeviceCompliancePolicyWindows10MobileCompliancePolicyCollectionRequestBuilder) Request() *DeviceCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest {
+	return &DeviceCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceCompliancePolicy item
-func (b *Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectionRequestBuilder) ID(id string) *DeviceCompliancePolicyRequestBuilder {
-	bb := &DeviceCompliancePolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Windows10MobileCompliancePolicy item
+func (b *DeviceCompliancePolicyWindows10MobileCompliancePolicyCollectionRequestBuilder) ID(id string) *Windows10MobileCompliancePolicyRequestBuilder {
+	bb := &Windows10MobileCompliancePolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest is request for DeviceCompliancePolicy collection
-type Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest struct{ BaseRequest }
+// DeviceCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest is request for Windows10MobileCompliancePolicy collection
+type DeviceCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceCompliancePolicy collection
-func (r *Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceCompliancePolicy, error) {
+// Paging perfoms paging operation for Windows10MobileCompliancePolicy collection
+func (r *DeviceCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Windows10MobileCompliancePolicy, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -566,7 +566,7 @@ func (r *Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectio
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceCompliancePolicy
+	var values []Windows10MobileCompliancePolicy
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -580,7 +580,7 @@ func (r *Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectio
 		}
 		var (
 			paging Paging
-			value  []DeviceCompliancePolicy
+			value  []Windows10MobileCompliancePolicy
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -609,8 +609,8 @@ func (r *Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectio
 	}
 }
 
-// GetN performs GET request for DeviceCompliancePolicy collection, max N pages
-func (r *Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceCompliancePolicy, error) {
+// GetN performs GET request for Windows10MobileCompliancePolicy collection, max N pages
+func (r *DeviceCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest) GetN(ctx context.Context, n int) ([]Windows10MobileCompliancePolicy, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -618,46 +618,46 @@ func (r *Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectio
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceCompliancePolicy collection
-func (r *Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest) Get(ctx context.Context) ([]DeviceCompliancePolicy, error) {
+// Get performs GET request for Windows10MobileCompliancePolicy collection
+func (r *DeviceCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest) Get(ctx context.Context) ([]Windows10MobileCompliancePolicy, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceCompliancePolicy collection
-func (r *Windows10MobileCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest) Add(ctx context.Context, reqObj *DeviceCompliancePolicy) (resObj *DeviceCompliancePolicy, err error) {
+// Add performs POST request for Windows10MobileCompliancePolicy collection
+func (r *DeviceCompliancePolicyWindows10MobileCompliancePolicyCollectionRequest) Add(ctx context.Context, reqObj *Windows10MobileCompliancePolicy) (resObj *Windows10MobileCompliancePolicy, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// Windows10SecureAssessmentConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *Windows10SecureAssessmentConfigurationRequestBuilder) Windows10SecureAssessmentConfiguration() *Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigurationCollectionRequestBuilder {
-	bb := &Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// Windows10SecureAssessmentConfiguration returns request builder for Windows10SecureAssessmentConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) Windows10SecureAssessmentConfiguration() *DeviceConfigurationWindows10SecureAssessmentConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationWindows10SecureAssessmentConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Windows10SecureAssessmentConfiguration"
 	return bb
 }
 
-// Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationWindows10SecureAssessmentConfigurationCollectionRequestBuilder is request builder for Windows10SecureAssessmentConfiguration collection
+type DeviceConfigurationWindows10SecureAssessmentConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigurationCollectionRequestBuilder) Request() *Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigurationCollectionRequest {
-	return &Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigurationCollectionRequest{
+// Request returns request for Windows10SecureAssessmentConfiguration collection
+func (b *DeviceConfigurationWindows10SecureAssessmentConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationWindows10SecureAssessmentConfigurationCollectionRequest {
+	return &DeviceConfigurationWindows10SecureAssessmentConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Windows10SecureAssessmentConfiguration item
+func (b *DeviceConfigurationWindows10SecureAssessmentConfigurationCollectionRequestBuilder) ID(id string) *Windows10SecureAssessmentConfigurationRequestBuilder {
+	bb := &Windows10SecureAssessmentConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigurationCollectionRequest is request for DeviceConfiguration collection
-type Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationWindows10SecureAssessmentConfigurationCollectionRequest is request for Windows10SecureAssessmentConfiguration collection
+type DeviceConfigurationWindows10SecureAssessmentConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for Windows10SecureAssessmentConfiguration collection
+func (r *DeviceConfigurationWindows10SecureAssessmentConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Windows10SecureAssessmentConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -669,7 +669,7 @@ func (r *Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigur
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []Windows10SecureAssessmentConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -683,7 +683,7 @@ func (r *Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigur
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []Windows10SecureAssessmentConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -712,8 +712,8 @@ func (r *Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigur
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for Windows10SecureAssessmentConfiguration collection, max N pages
+func (r *DeviceConfigurationWindows10SecureAssessmentConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]Windows10SecureAssessmentConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -721,46 +721,46 @@ func (r *Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigur
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for Windows10SecureAssessmentConfiguration collection
+func (r *DeviceConfigurationWindows10SecureAssessmentConfigurationCollectionRequest) Get(ctx context.Context) ([]Windows10SecureAssessmentConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *Windows10SecureAssessmentConfigurationWindows10SecureAssessmentConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for Windows10SecureAssessmentConfiguration collection
+func (r *DeviceConfigurationWindows10SecureAssessmentConfigurationCollectionRequest) Add(ctx context.Context, reqObj *Windows10SecureAssessmentConfiguration) (resObj *Windows10SecureAssessmentConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// Windows10TeamGeneralConfiguration returns request builder for DeviceConfiguration collection rcn
-func (b *Windows10TeamGeneralConfigurationRequestBuilder) Windows10TeamGeneralConfiguration() *Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationCollectionRequestBuilder {
-	bb := &Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceConfiguration"
+// Windows10TeamGeneralConfiguration returns request builder for Windows10TeamGeneralConfiguration collection rcn
+func (b *DeviceConfigurationRequestBuilder) Windows10TeamGeneralConfiguration() *DeviceConfigurationWindows10TeamGeneralConfigurationCollectionRequestBuilder {
+	bb := &DeviceConfigurationWindows10TeamGeneralConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Windows10TeamGeneralConfiguration"
 	return bb
 }
 
-// Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
-type Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceConfigurationWindows10TeamGeneralConfigurationCollectionRequestBuilder is request builder for Windows10TeamGeneralConfiguration collection
+type DeviceConfigurationWindows10TeamGeneralConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DeviceConfiguration collection
-func (b *Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationCollectionRequestBuilder) Request() *Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationCollectionRequest {
-	return &Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationCollectionRequest{
+// Request returns request for Windows10TeamGeneralConfiguration collection
+func (b *DeviceConfigurationWindows10TeamGeneralConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationWindows10TeamGeneralConfigurationCollectionRequest {
+	return &DeviceConfigurationWindows10TeamGeneralConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DeviceConfiguration item
-func (b *Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
-	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for Windows10TeamGeneralConfiguration item
+func (b *DeviceConfigurationWindows10TeamGeneralConfigurationCollectionRequestBuilder) ID(id string) *Windows10TeamGeneralConfigurationRequestBuilder {
+	bb := &Windows10TeamGeneralConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationCollectionRequest is request for DeviceConfiguration collection
-type Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceConfigurationWindows10TeamGeneralConfigurationCollectionRequest is request for Windows10TeamGeneralConfiguration collection
+type DeviceConfigurationWindows10TeamGeneralConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DeviceConfiguration collection
-func (r *Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+// Paging perfoms paging operation for Windows10TeamGeneralConfiguration collection
+func (r *DeviceConfigurationWindows10TeamGeneralConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Windows10TeamGeneralConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -772,7 +772,7 @@ func (r *Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationColle
 	if err != nil {
 		return nil, err
 	}
-	var values []DeviceConfiguration
+	var values []Windows10TeamGeneralConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -786,7 +786,7 @@ func (r *Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationColle
 		}
 		var (
 			paging Paging
-			value  []DeviceConfiguration
+			value  []Windows10TeamGeneralConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -815,8 +815,8 @@ func (r *Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationColle
 	}
 }
 
-// GetN performs GET request for DeviceConfiguration collection, max N pages
-func (r *Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+// GetN performs GET request for Windows10TeamGeneralConfiguration collection, max N pages
+func (r *DeviceConfigurationWindows10TeamGeneralConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]Windows10TeamGeneralConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -824,13 +824,13 @@ func (r *Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationColle
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DeviceConfiguration collection
-func (r *Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+// Get performs GET request for Windows10TeamGeneralConfiguration collection
+func (r *DeviceConfigurationWindows10TeamGeneralConfigurationCollectionRequest) Get(ctx context.Context) ([]Windows10TeamGeneralConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DeviceConfiguration collection
-func (r *Windows10TeamGeneralConfigurationWindows10TeamGeneralConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+// Add performs POST request for Windows10TeamGeneralConfiguration collection
+func (r *DeviceConfigurationWindows10TeamGeneralConfigurationCollectionRequest) Add(ctx context.Context, reqObj *Windows10TeamGeneralConfiguration) (resObj *Windows10TeamGeneralConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

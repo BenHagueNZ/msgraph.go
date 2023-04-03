@@ -114,15 +114,15 @@ func (r *ApprovalStagesCollectionRequest) Add(ctx context.Context, reqObj *Appro
 	return
 }
 
-// Approval is navigation property rn
-func (b *ApprovalRequestBuilder) Approval() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ApprovalRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ApprovalStage is navigation property rn
-func (b *ApprovalStageRequestBuilder) ApprovalStage() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ApprovalStageRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

@@ -835,22 +835,22 @@ func (r *TodoTaskListTasksCollectionRequest) Add(ctx context.Context, reqObj *To
 	return
 }
 
-// Todo is navigation property rn
-func (b *TodoRequestBuilder) Todo() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TodoRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TodoTask is navigation property rn
-func (b *TodoTaskRequestBuilder) TodoTask() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TodoTaskRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// TodoTaskList is navigation property rn
-func (b *TodoTaskListRequestBuilder) TodoTaskList() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *TodoTaskListRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

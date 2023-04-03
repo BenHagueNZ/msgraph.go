@@ -16,15 +16,15 @@ func (b *BaseItemRequestBuilder) LastModifiedByUser() *UserRequestBuilder {
 	return bb
 }
 
-// BaseItem is navigation property rn
-func (b *BaseItemRequestBuilder) BaseItem() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *BaseItemRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// BaseItemVersion is navigation property rn
-func (b *BaseItemVersionRequestBuilder) BaseItemVersion() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *BaseItemVersionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

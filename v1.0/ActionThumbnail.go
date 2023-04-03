@@ -2,8 +2,8 @@
 
 package msgraph
 
-// ThumbnailSet is navigation property rn
-func (b *ThumbnailSetRequestBuilder) ThumbnailSet() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ThumbnailSetRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

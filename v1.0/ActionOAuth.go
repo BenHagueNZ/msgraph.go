@@ -2,8 +2,8 @@
 
 package msgraph
 
-// OAuth2PermissionGrant is navigation property rn
-func (b *OAuth2PermissionGrantRequestBuilder) OAuth2PermissionGrant() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *OAuth2PermissionGrantRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

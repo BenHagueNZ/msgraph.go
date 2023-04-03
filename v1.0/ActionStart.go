@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// StartHoldMusicOperation returns request builder for CommsOperation collection rcn
-func (b *StartHoldMusicOperationRequestBuilder) StartHoldMusicOperation() *StartHoldMusicOperationStartHoldMusicOperationCollectionRequestBuilder {
-	bb := &StartHoldMusicOperationStartHoldMusicOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/CommsOperation"
+// StartHoldMusicOperation returns request builder for StartHoldMusicOperation collection rcn
+func (b *CommsOperationRequestBuilder) StartHoldMusicOperation() *CommsOperationStartHoldMusicOperationCollectionRequestBuilder {
+	bb := &CommsOperationStartHoldMusicOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/StartHoldMusicOperation"
 	return bb
 }
 
-// StartHoldMusicOperationStartHoldMusicOperationCollectionRequestBuilder is request builder for CommsOperation collection
-type StartHoldMusicOperationStartHoldMusicOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// CommsOperationStartHoldMusicOperationCollectionRequestBuilder is request builder for StartHoldMusicOperation collection
+type CommsOperationStartHoldMusicOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for CommsOperation collection
-func (b *StartHoldMusicOperationStartHoldMusicOperationCollectionRequestBuilder) Request() *StartHoldMusicOperationStartHoldMusicOperationCollectionRequest {
-	return &StartHoldMusicOperationStartHoldMusicOperationCollectionRequest{
+// Request returns request for StartHoldMusicOperation collection
+func (b *CommsOperationStartHoldMusicOperationCollectionRequestBuilder) Request() *CommsOperationStartHoldMusicOperationCollectionRequest {
+	return &CommsOperationStartHoldMusicOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for CommsOperation item
-func (b *StartHoldMusicOperationStartHoldMusicOperationCollectionRequestBuilder) ID(id string) *CommsOperationRequestBuilder {
-	bb := &CommsOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for StartHoldMusicOperation item
+func (b *CommsOperationStartHoldMusicOperationCollectionRequestBuilder) ID(id string) *StartHoldMusicOperationRequestBuilder {
+	bb := &StartHoldMusicOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// StartHoldMusicOperationStartHoldMusicOperationCollectionRequest is request for CommsOperation collection
-type StartHoldMusicOperationStartHoldMusicOperationCollectionRequest struct{ BaseRequest }
+// CommsOperationStartHoldMusicOperationCollectionRequest is request for StartHoldMusicOperation collection
+type CommsOperationStartHoldMusicOperationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for CommsOperation collection
-func (r *StartHoldMusicOperationStartHoldMusicOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CommsOperation, error) {
+// Paging perfoms paging operation for StartHoldMusicOperation collection
+func (r *CommsOperationStartHoldMusicOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]StartHoldMusicOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *StartHoldMusicOperationStartHoldMusicOperationCollectionRequest) Paging
 	if err != nil {
 		return nil, err
 	}
-	var values []CommsOperation
+	var values []StartHoldMusicOperation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *StartHoldMusicOperationStartHoldMusicOperationCollectionRequest) Paging
 		}
 		var (
 			paging Paging
-			value  []CommsOperation
+			value  []StartHoldMusicOperation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *StartHoldMusicOperationStartHoldMusicOperationCollectionRequest) Paging
 	}
 }
 
-// GetN performs GET request for CommsOperation collection, max N pages
-func (r *StartHoldMusicOperationStartHoldMusicOperationCollectionRequest) GetN(ctx context.Context, n int) ([]CommsOperation, error) {
+// GetN performs GET request for StartHoldMusicOperation collection, max N pages
+func (r *CommsOperationStartHoldMusicOperationCollectionRequest) GetN(ctx context.Context, n int) ([]StartHoldMusicOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *StartHoldMusicOperationStartHoldMusicOperationCollectionRequest) GetN(c
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for CommsOperation collection
-func (r *StartHoldMusicOperationStartHoldMusicOperationCollectionRequest) Get(ctx context.Context) ([]CommsOperation, error) {
+// Get performs GET request for StartHoldMusicOperation collection
+func (r *CommsOperationStartHoldMusicOperationCollectionRequest) Get(ctx context.Context) ([]StartHoldMusicOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for CommsOperation collection
-func (r *StartHoldMusicOperationStartHoldMusicOperationCollectionRequest) Add(ctx context.Context, reqObj *CommsOperation) (resObj *CommsOperation, err error) {
+// Add performs POST request for StartHoldMusicOperation collection
+func (r *CommsOperationStartHoldMusicOperationCollectionRequest) Add(ctx context.Context, reqObj *StartHoldMusicOperation) (resObj *StartHoldMusicOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

@@ -423,50 +423,50 @@ func (r *DelegatedAdminRelationshipRequestsCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// DelegatedAdminAccessAssignment is navigation property rn
-func (b *DelegatedAdminAccessAssignmentRequestBuilder) DelegatedAdminAccessAssignment() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DelegatedAdminAccessAssignmentRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DelegatedAdminCustomer is navigation property rn
-func (b *DelegatedAdminCustomerRequestBuilder) DelegatedAdminCustomer() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DelegatedAdminCustomerRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DelegatedAdminRelationship is navigation property rn
-func (b *DelegatedAdminRelationshipRequestBuilder) DelegatedAdminRelationship() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DelegatedAdminRelationshipRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DelegatedAdminRelationshipOperation is navigation property rn
-func (b *DelegatedAdminRelationshipOperationRequestBuilder) DelegatedAdminRelationshipOperation() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DelegatedAdminRelationshipOperationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DelegatedAdminRelationshipRequestObject is navigation property rn
-func (b *DelegatedAdminRelationshipRequestObjectRequestBuilder) DelegatedAdminRelationshipRequestObject() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DelegatedAdminRelationshipRequestObjectRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DelegatedAdminServiceManagementDetail is navigation property rn
-func (b *DelegatedAdminServiceManagementDetailRequestBuilder) DelegatedAdminServiceManagementDetail() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DelegatedAdminServiceManagementDetailRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// DelegatedPermissionClassification is navigation property rn
-func (b *DelegatedPermissionClassificationRequestBuilder) DelegatedPermissionClassification() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *DelegatedPermissionClassificationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

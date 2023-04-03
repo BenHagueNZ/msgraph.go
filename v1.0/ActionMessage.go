@@ -491,8 +491,8 @@ func (r *MessageSingleValueExtendedPropertiesCollectionRequest) Add(ctx context.
 	return
 }
 
-// MessageRule is navigation property rn
-func (b *MessageRuleRequestBuilder) MessageRule() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *MessageRuleRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

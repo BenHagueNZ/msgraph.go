@@ -1490,35 +1490,35 @@ func (r *ManagedMobileLobAppContentVersionsCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// ManagedApp returns request builder for MobileApp collection rcn
-func (b *ManagedAppRequestBuilder) ManagedApp() *ManagedAppManagedAppCollectionRequestBuilder {
-	bb := &ManagedAppManagedAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/MobileApp"
+// ManagedApp returns request builder for ManagedApp collection rcn
+func (b *MobileAppRequestBuilder) ManagedApp() *MobileAppManagedAppCollectionRequestBuilder {
+	bb := &MobileAppManagedAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/ManagedApp"
 	return bb
 }
 
-// ManagedAppManagedAppCollectionRequestBuilder is request builder for MobileApp collection
-type ManagedAppManagedAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+// MobileAppManagedAppCollectionRequestBuilder is request builder for ManagedApp collection
+type MobileAppManagedAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for MobileApp collection
-func (b *ManagedAppManagedAppCollectionRequestBuilder) Request() *ManagedAppManagedAppCollectionRequest {
-	return &ManagedAppManagedAppCollectionRequest{
+// Request returns request for ManagedApp collection
+func (b *MobileAppManagedAppCollectionRequestBuilder) Request() *MobileAppManagedAppCollectionRequest {
+	return &MobileAppManagedAppCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for MobileApp item
-func (b *ManagedAppManagedAppCollectionRequestBuilder) ID(id string) *MobileAppRequestBuilder {
-	bb := &MobileAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for ManagedApp item
+func (b *MobileAppManagedAppCollectionRequestBuilder) ID(id string) *ManagedAppRequestBuilder {
+	bb := &ManagedAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ManagedAppManagedAppCollectionRequest is request for MobileApp collection
-type ManagedAppManagedAppCollectionRequest struct{ BaseRequest }
+// MobileAppManagedAppCollectionRequest is request for ManagedApp collection
+type MobileAppManagedAppCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for MobileApp collection
-func (r *ManagedAppManagedAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MobileApp, error) {
+// Paging perfoms paging operation for ManagedApp collection
+func (r *MobileAppManagedAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ManagedApp, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1530,7 +1530,7 @@ func (r *ManagedAppManagedAppCollectionRequest) Paging(ctx context.Context, meth
 	if err != nil {
 		return nil, err
 	}
-	var values []MobileApp
+	var values []ManagedApp
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1544,7 +1544,7 @@ func (r *ManagedAppManagedAppCollectionRequest) Paging(ctx context.Context, meth
 		}
 		var (
 			paging Paging
-			value  []MobileApp
+			value  []ManagedApp
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1573,8 +1573,8 @@ func (r *ManagedAppManagedAppCollectionRequest) Paging(ctx context.Context, meth
 	}
 }
 
-// GetN performs GET request for MobileApp collection, max N pages
-func (r *ManagedAppManagedAppCollectionRequest) GetN(ctx context.Context, n int) ([]MobileApp, error) {
+// GetN performs GET request for ManagedApp collection, max N pages
+func (r *MobileAppManagedAppCollectionRequest) GetN(ctx context.Context, n int) ([]ManagedApp, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1582,46 +1582,46 @@ func (r *ManagedAppManagedAppCollectionRequest) GetN(ctx context.Context, n int)
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for MobileApp collection
-func (r *ManagedAppManagedAppCollectionRequest) Get(ctx context.Context) ([]MobileApp, error) {
+// Get performs GET request for ManagedApp collection
+func (r *MobileAppManagedAppCollectionRequest) Get(ctx context.Context) ([]ManagedApp, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for MobileApp collection
-func (r *ManagedAppManagedAppCollectionRequest) Add(ctx context.Context, reqObj *MobileApp) (resObj *MobileApp, err error) {
+// Add performs POST request for ManagedApp collection
+func (r *MobileAppManagedAppCollectionRequest) Add(ctx context.Context, reqObj *ManagedApp) (resObj *ManagedApp, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// ManagedAppConfiguration returns request builder for ManagedAppPolicy collection rcn
-func (b *ManagedAppConfigurationRequestBuilder) ManagedAppConfiguration() *ManagedAppConfigurationManagedAppConfigurationCollectionRequestBuilder {
-	bb := &ManagedAppConfigurationManagedAppConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ManagedAppPolicy"
+// ManagedAppConfiguration returns request builder for ManagedAppConfiguration collection rcn
+func (b *ManagedAppPolicyRequestBuilder) ManagedAppConfiguration() *ManagedAppPolicyManagedAppConfigurationCollectionRequestBuilder {
+	bb := &ManagedAppPolicyManagedAppConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/ManagedAppConfiguration"
 	return bb
 }
 
-// ManagedAppConfigurationManagedAppConfigurationCollectionRequestBuilder is request builder for ManagedAppPolicy collection
-type ManagedAppConfigurationManagedAppConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ManagedAppPolicyManagedAppConfigurationCollectionRequestBuilder is request builder for ManagedAppConfiguration collection
+type ManagedAppPolicyManagedAppConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for ManagedAppPolicy collection
-func (b *ManagedAppConfigurationManagedAppConfigurationCollectionRequestBuilder) Request() *ManagedAppConfigurationManagedAppConfigurationCollectionRequest {
-	return &ManagedAppConfigurationManagedAppConfigurationCollectionRequest{
+// Request returns request for ManagedAppConfiguration collection
+func (b *ManagedAppPolicyManagedAppConfigurationCollectionRequestBuilder) Request() *ManagedAppPolicyManagedAppConfigurationCollectionRequest {
+	return &ManagedAppPolicyManagedAppConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for ManagedAppPolicy item
-func (b *ManagedAppConfigurationManagedAppConfigurationCollectionRequestBuilder) ID(id string) *ManagedAppPolicyRequestBuilder {
-	bb := &ManagedAppPolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for ManagedAppConfiguration item
+func (b *ManagedAppPolicyManagedAppConfigurationCollectionRequestBuilder) ID(id string) *ManagedAppConfigurationRequestBuilder {
+	bb := &ManagedAppConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ManagedAppConfigurationManagedAppConfigurationCollectionRequest is request for ManagedAppPolicy collection
-type ManagedAppConfigurationManagedAppConfigurationCollectionRequest struct{ BaseRequest }
+// ManagedAppPolicyManagedAppConfigurationCollectionRequest is request for ManagedAppConfiguration collection
+type ManagedAppPolicyManagedAppConfigurationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for ManagedAppPolicy collection
-func (r *ManagedAppConfigurationManagedAppConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ManagedAppPolicy, error) {
+// Paging perfoms paging operation for ManagedAppConfiguration collection
+func (r *ManagedAppPolicyManagedAppConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ManagedAppConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1633,7 +1633,7 @@ func (r *ManagedAppConfigurationManagedAppConfigurationCollectionRequest) Paging
 	if err != nil {
 		return nil, err
 	}
-	var values []ManagedAppPolicy
+	var values []ManagedAppConfiguration
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1647,7 +1647,7 @@ func (r *ManagedAppConfigurationManagedAppConfigurationCollectionRequest) Paging
 		}
 		var (
 			paging Paging
-			value  []ManagedAppPolicy
+			value  []ManagedAppConfiguration
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1676,8 +1676,8 @@ func (r *ManagedAppConfigurationManagedAppConfigurationCollectionRequest) Paging
 	}
 }
 
-// GetN performs GET request for ManagedAppPolicy collection, max N pages
-func (r *ManagedAppConfigurationManagedAppConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]ManagedAppPolicy, error) {
+// GetN performs GET request for ManagedAppConfiguration collection, max N pages
+func (r *ManagedAppPolicyManagedAppConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]ManagedAppConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1685,60 +1685,60 @@ func (r *ManagedAppConfigurationManagedAppConfigurationCollectionRequest) GetN(c
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for ManagedAppPolicy collection
-func (r *ManagedAppConfigurationManagedAppConfigurationCollectionRequest) Get(ctx context.Context) ([]ManagedAppPolicy, error) {
+// Get performs GET request for ManagedAppConfiguration collection
+func (r *ManagedAppPolicyManagedAppConfigurationCollectionRequest) Get(ctx context.Context) ([]ManagedAppConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for ManagedAppPolicy collection
-func (r *ManagedAppConfigurationManagedAppConfigurationCollectionRequest) Add(ctx context.Context, reqObj *ManagedAppPolicy) (resObj *ManagedAppPolicy, err error) {
+// Add performs POST request for ManagedAppConfiguration collection
+func (r *ManagedAppPolicyManagedAppConfigurationCollectionRequest) Add(ctx context.Context, reqObj *ManagedAppConfiguration) (resObj *ManagedAppConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// ManagedAppOperation is navigation property rn
-func (b *ManagedAppOperationRequestBuilder) ManagedAppOperation() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ManagedAppOperationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ManagedAppPolicyDeploymentSummary is navigation property rn
-func (b *ManagedAppPolicyDeploymentSummaryRequestBuilder) ManagedAppPolicyDeploymentSummary() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ManagedAppPolicyDeploymentSummaryRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ManagedAppProtection returns request builder for ManagedAppPolicy collection rcn
-func (b *ManagedAppProtectionRequestBuilder) ManagedAppProtection() *ManagedAppProtectionManagedAppProtectionCollectionRequestBuilder {
-	bb := &ManagedAppProtectionManagedAppProtectionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ManagedAppPolicy"
+// ManagedAppProtection returns request builder for ManagedAppProtection collection rcn
+func (b *ManagedAppPolicyRequestBuilder) ManagedAppProtection() *ManagedAppPolicyManagedAppProtectionCollectionRequestBuilder {
+	bb := &ManagedAppPolicyManagedAppProtectionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/ManagedAppProtection"
 	return bb
 }
 
-// ManagedAppProtectionManagedAppProtectionCollectionRequestBuilder is request builder for ManagedAppPolicy collection
-type ManagedAppProtectionManagedAppProtectionCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ManagedAppPolicyManagedAppProtectionCollectionRequestBuilder is request builder for ManagedAppProtection collection
+type ManagedAppPolicyManagedAppProtectionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for ManagedAppPolicy collection
-func (b *ManagedAppProtectionManagedAppProtectionCollectionRequestBuilder) Request() *ManagedAppProtectionManagedAppProtectionCollectionRequest {
-	return &ManagedAppProtectionManagedAppProtectionCollectionRequest{
+// Request returns request for ManagedAppProtection collection
+func (b *ManagedAppPolicyManagedAppProtectionCollectionRequestBuilder) Request() *ManagedAppPolicyManagedAppProtectionCollectionRequest {
+	return &ManagedAppPolicyManagedAppProtectionCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for ManagedAppPolicy item
-func (b *ManagedAppProtectionManagedAppProtectionCollectionRequestBuilder) ID(id string) *ManagedAppPolicyRequestBuilder {
-	bb := &ManagedAppPolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for ManagedAppProtection item
+func (b *ManagedAppPolicyManagedAppProtectionCollectionRequestBuilder) ID(id string) *ManagedAppProtectionRequestBuilder {
+	bb := &ManagedAppProtectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ManagedAppProtectionManagedAppProtectionCollectionRequest is request for ManagedAppPolicy collection
-type ManagedAppProtectionManagedAppProtectionCollectionRequest struct{ BaseRequest }
+// ManagedAppPolicyManagedAppProtectionCollectionRequest is request for ManagedAppProtection collection
+type ManagedAppPolicyManagedAppProtectionCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for ManagedAppPolicy collection
-func (r *ManagedAppProtectionManagedAppProtectionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ManagedAppPolicy, error) {
+// Paging perfoms paging operation for ManagedAppProtection collection
+func (r *ManagedAppPolicyManagedAppProtectionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ManagedAppProtection, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1750,7 +1750,7 @@ func (r *ManagedAppProtectionManagedAppProtectionCollectionRequest) Paging(ctx c
 	if err != nil {
 		return nil, err
 	}
-	var values []ManagedAppPolicy
+	var values []ManagedAppProtection
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1764,7 +1764,7 @@ func (r *ManagedAppProtectionManagedAppProtectionCollectionRequest) Paging(ctx c
 		}
 		var (
 			paging Paging
-			value  []ManagedAppPolicy
+			value  []ManagedAppProtection
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1793,8 +1793,8 @@ func (r *ManagedAppProtectionManagedAppProtectionCollectionRequest) Paging(ctx c
 	}
 }
 
-// GetN performs GET request for ManagedAppPolicy collection, max N pages
-func (r *ManagedAppProtectionManagedAppProtectionCollectionRequest) GetN(ctx context.Context, n int) ([]ManagedAppPolicy, error) {
+// GetN performs GET request for ManagedAppProtection collection, max N pages
+func (r *ManagedAppPolicyManagedAppProtectionCollectionRequest) GetN(ctx context.Context, n int) ([]ManagedAppProtection, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1802,53 +1802,53 @@ func (r *ManagedAppProtectionManagedAppProtectionCollectionRequest) GetN(ctx con
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for ManagedAppPolicy collection
-func (r *ManagedAppProtectionManagedAppProtectionCollectionRequest) Get(ctx context.Context) ([]ManagedAppPolicy, error) {
+// Get performs GET request for ManagedAppProtection collection
+func (r *ManagedAppPolicyManagedAppProtectionCollectionRequest) Get(ctx context.Context) ([]ManagedAppProtection, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for ManagedAppPolicy collection
-func (r *ManagedAppProtectionManagedAppProtectionCollectionRequest) Add(ctx context.Context, reqObj *ManagedAppPolicy) (resObj *ManagedAppPolicy, err error) {
+// Add performs POST request for ManagedAppProtection collection
+func (r *ManagedAppPolicyManagedAppProtectionCollectionRequest) Add(ctx context.Context, reqObj *ManagedAppProtection) (resObj *ManagedAppProtection, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// ManagedAppStatus is navigation property rn
-func (b *ManagedAppStatusRequestBuilder) ManagedAppStatus() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ManagedAppStatusRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ManagedAppStatusRaw returns request builder for ManagedAppStatus collection rcn
-func (b *ManagedAppStatusRawRequestBuilder) ManagedAppStatusRaw() *ManagedAppStatusRawManagedAppStatusRawCollectionRequestBuilder {
-	bb := &ManagedAppStatusRawManagedAppStatusRawCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ManagedAppStatus"
+// ManagedAppStatusRaw returns request builder for ManagedAppStatusRaw collection rcn
+func (b *ManagedAppStatusRequestBuilder) ManagedAppStatusRaw() *ManagedAppStatusManagedAppStatusRawCollectionRequestBuilder {
+	bb := &ManagedAppStatusManagedAppStatusRawCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/ManagedAppStatusRaw"
 	return bb
 }
 
-// ManagedAppStatusRawManagedAppStatusRawCollectionRequestBuilder is request builder for ManagedAppStatus collection
-type ManagedAppStatusRawManagedAppStatusRawCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ManagedAppStatusManagedAppStatusRawCollectionRequestBuilder is request builder for ManagedAppStatusRaw collection
+type ManagedAppStatusManagedAppStatusRawCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for ManagedAppStatus collection
-func (b *ManagedAppStatusRawManagedAppStatusRawCollectionRequestBuilder) Request() *ManagedAppStatusRawManagedAppStatusRawCollectionRequest {
-	return &ManagedAppStatusRawManagedAppStatusRawCollectionRequest{
+// Request returns request for ManagedAppStatusRaw collection
+func (b *ManagedAppStatusManagedAppStatusRawCollectionRequestBuilder) Request() *ManagedAppStatusManagedAppStatusRawCollectionRequest {
+	return &ManagedAppStatusManagedAppStatusRawCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for ManagedAppStatus item
-func (b *ManagedAppStatusRawManagedAppStatusRawCollectionRequestBuilder) ID(id string) *ManagedAppStatusRequestBuilder {
-	bb := &ManagedAppStatusRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for ManagedAppStatusRaw item
+func (b *ManagedAppStatusManagedAppStatusRawCollectionRequestBuilder) ID(id string) *ManagedAppStatusRawRequestBuilder {
+	bb := &ManagedAppStatusRawRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ManagedAppStatusRawManagedAppStatusRawCollectionRequest is request for ManagedAppStatus collection
-type ManagedAppStatusRawManagedAppStatusRawCollectionRequest struct{ BaseRequest }
+// ManagedAppStatusManagedAppStatusRawCollectionRequest is request for ManagedAppStatusRaw collection
+type ManagedAppStatusManagedAppStatusRawCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for ManagedAppStatus collection
-func (r *ManagedAppStatusRawManagedAppStatusRawCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ManagedAppStatus, error) {
+// Paging perfoms paging operation for ManagedAppStatusRaw collection
+func (r *ManagedAppStatusManagedAppStatusRawCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ManagedAppStatusRaw, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1860,7 +1860,7 @@ func (r *ManagedAppStatusRawManagedAppStatusRawCollectionRequest) Paging(ctx con
 	if err != nil {
 		return nil, err
 	}
-	var values []ManagedAppStatus
+	var values []ManagedAppStatusRaw
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1874,7 +1874,7 @@ func (r *ManagedAppStatusRawManagedAppStatusRawCollectionRequest) Paging(ctx con
 		}
 		var (
 			paging Paging
-			value  []ManagedAppStatus
+			value  []ManagedAppStatusRaw
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1903,8 +1903,8 @@ func (r *ManagedAppStatusRawManagedAppStatusRawCollectionRequest) Paging(ctx con
 	}
 }
 
-// GetN performs GET request for ManagedAppStatus collection, max N pages
-func (r *ManagedAppStatusRawManagedAppStatusRawCollectionRequest) GetN(ctx context.Context, n int) ([]ManagedAppStatus, error) {
+// GetN performs GET request for ManagedAppStatusRaw collection, max N pages
+func (r *ManagedAppStatusManagedAppStatusRawCollectionRequest) GetN(ctx context.Context, n int) ([]ManagedAppStatusRaw, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1912,68 +1912,68 @@ func (r *ManagedAppStatusRawManagedAppStatusRawCollectionRequest) GetN(ctx conte
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for ManagedAppStatus collection
-func (r *ManagedAppStatusRawManagedAppStatusRawCollectionRequest) Get(ctx context.Context) ([]ManagedAppStatus, error) {
+// Get performs GET request for ManagedAppStatusRaw collection
+func (r *ManagedAppStatusManagedAppStatusRawCollectionRequest) Get(ctx context.Context) ([]ManagedAppStatusRaw, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for ManagedAppStatus collection
-func (r *ManagedAppStatusRawManagedAppStatusRawCollectionRequest) Add(ctx context.Context, reqObj *ManagedAppStatus) (resObj *ManagedAppStatus, err error) {
+// Add performs POST request for ManagedAppStatusRaw collection
+func (r *ManagedAppStatusManagedAppStatusRawCollectionRequest) Add(ctx context.Context, reqObj *ManagedAppStatusRaw) (resObj *ManagedAppStatusRaw, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// ManagedDevice is navigation property rn
-func (b *ManagedDeviceRequestBuilder) ManagedDevice() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ManagedDeviceRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ManagedDeviceMobileAppConfigurationAssignment is navigation property rn
-func (b *ManagedDeviceMobileAppConfigurationAssignmentRequestBuilder) ManagedDeviceMobileAppConfigurationAssignment() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ManagedDeviceMobileAppConfigurationAssignmentRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ManagedDeviceMobileAppConfigurationDeviceStatus is navigation property rn
-func (b *ManagedDeviceMobileAppConfigurationDeviceStatusRequestBuilder) ManagedDeviceMobileAppConfigurationDeviceStatus() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ManagedDeviceMobileAppConfigurationDeviceStatusRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ManagedDeviceMobileAppConfigurationDeviceSummary is navigation property rn
-func (b *ManagedDeviceMobileAppConfigurationDeviceSummaryRequestBuilder) ManagedDeviceMobileAppConfigurationDeviceSummary() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ManagedDeviceMobileAppConfigurationDeviceSummaryRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ManagedDeviceMobileAppConfigurationUserStatus is navigation property rn
-func (b *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) ManagedDeviceMobileAppConfigurationUserStatus() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ManagedDeviceMobileAppConfigurationUserStatusRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ManagedDeviceMobileAppConfigurationUserSummary is navigation property rn
-func (b *ManagedDeviceMobileAppConfigurationUserSummaryRequestBuilder) ManagedDeviceMobileAppConfigurationUserSummary() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ManagedDeviceMobileAppConfigurationUserSummaryRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ManagedDeviceOverview is navigation property rn
-func (b *ManagedDeviceOverviewRequestBuilder) ManagedDeviceOverview() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ManagedDeviceOverviewRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// ManagedMobileApp is navigation property rn
-func (b *ManagedMobileAppRequestBuilder) ManagedMobileApp() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *ManagedMobileAppRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

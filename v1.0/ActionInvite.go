@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// InviteParticipantsOperation returns request builder for CommsOperation collection rcn
-func (b *InviteParticipantsOperationRequestBuilder) InviteParticipantsOperation() *InviteParticipantsOperationInviteParticipantsOperationCollectionRequestBuilder {
-	bb := &InviteParticipantsOperationInviteParticipantsOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/CommsOperation"
+// InviteParticipantsOperation returns request builder for InviteParticipantsOperation collection rcn
+func (b *CommsOperationRequestBuilder) InviteParticipantsOperation() *CommsOperationInviteParticipantsOperationCollectionRequestBuilder {
+	bb := &CommsOperationInviteParticipantsOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/InviteParticipantsOperation"
 	return bb
 }
 
-// InviteParticipantsOperationInviteParticipantsOperationCollectionRequestBuilder is request builder for CommsOperation collection
-type InviteParticipantsOperationInviteParticipantsOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// CommsOperationInviteParticipantsOperationCollectionRequestBuilder is request builder for InviteParticipantsOperation collection
+type CommsOperationInviteParticipantsOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for CommsOperation collection
-func (b *InviteParticipantsOperationInviteParticipantsOperationCollectionRequestBuilder) Request() *InviteParticipantsOperationInviteParticipantsOperationCollectionRequest {
-	return &InviteParticipantsOperationInviteParticipantsOperationCollectionRequest{
+// Request returns request for InviteParticipantsOperation collection
+func (b *CommsOperationInviteParticipantsOperationCollectionRequestBuilder) Request() *CommsOperationInviteParticipantsOperationCollectionRequest {
+	return &CommsOperationInviteParticipantsOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for CommsOperation item
-func (b *InviteParticipantsOperationInviteParticipantsOperationCollectionRequestBuilder) ID(id string) *CommsOperationRequestBuilder {
-	bb := &CommsOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for InviteParticipantsOperation item
+func (b *CommsOperationInviteParticipantsOperationCollectionRequestBuilder) ID(id string) *InviteParticipantsOperationRequestBuilder {
+	bb := &InviteParticipantsOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// InviteParticipantsOperationInviteParticipantsOperationCollectionRequest is request for CommsOperation collection
-type InviteParticipantsOperationInviteParticipantsOperationCollectionRequest struct{ BaseRequest }
+// CommsOperationInviteParticipantsOperationCollectionRequest is request for InviteParticipantsOperation collection
+type CommsOperationInviteParticipantsOperationCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for CommsOperation collection
-func (r *InviteParticipantsOperationInviteParticipantsOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CommsOperation, error) {
+// Paging perfoms paging operation for InviteParticipantsOperation collection
+func (r *CommsOperationInviteParticipantsOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]InviteParticipantsOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -51,7 +51,7 @@ func (r *InviteParticipantsOperationInviteParticipantsOperationCollectionRequest
 	if err != nil {
 		return nil, err
 	}
-	var values []CommsOperation
+	var values []InviteParticipantsOperation
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -65,7 +65,7 @@ func (r *InviteParticipantsOperationInviteParticipantsOperationCollectionRequest
 		}
 		var (
 			paging Paging
-			value  []CommsOperation
+			value  []InviteParticipantsOperation
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -94,8 +94,8 @@ func (r *InviteParticipantsOperationInviteParticipantsOperationCollectionRequest
 	}
 }
 
-// GetN performs GET request for CommsOperation collection, max N pages
-func (r *InviteParticipantsOperationInviteParticipantsOperationCollectionRequest) GetN(ctx context.Context, n int) ([]CommsOperation, error) {
+// GetN performs GET request for InviteParticipantsOperation collection, max N pages
+func (r *CommsOperationInviteParticipantsOperationCollectionRequest) GetN(ctx context.Context, n int) ([]InviteParticipantsOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -103,13 +103,13 @@ func (r *InviteParticipantsOperationInviteParticipantsOperationCollectionRequest
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for CommsOperation collection
-func (r *InviteParticipantsOperationInviteParticipantsOperationCollectionRequest) Get(ctx context.Context) ([]CommsOperation, error) {
+// Get performs GET request for InviteParticipantsOperation collection
+func (r *CommsOperationInviteParticipantsOperationCollectionRequest) Get(ctx context.Context) ([]InviteParticipantsOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for CommsOperation collection
-func (r *InviteParticipantsOperationInviteParticipantsOperationCollectionRequest) Add(ctx context.Context, reqObj *CommsOperation) (resObj *CommsOperation, err error) {
+// Add performs POST request for InviteParticipantsOperation collection
+func (r *CommsOperationInviteParticipantsOperationCollectionRequest) Add(ctx context.Context, reqObj *InviteParticipantsOperation) (resObj *InviteParticipantsOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

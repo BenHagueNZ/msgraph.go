@@ -5385,323 +5385,323 @@ func (r *WorkbookWorksheetTablesCollectionRequest) Add(ctx context.Context, reqO
 	return
 }
 
-// Workbook is navigation property rn
-func (b *WorkbookRequestBuilder) Workbook() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookApplication is navigation property rn
-func (b *WorkbookApplicationRequestBuilder) WorkbookApplication() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookApplicationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChart is navigation property rn
-func (b *WorkbookChartRequestBuilder) WorkbookChart() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartAreaFormat is navigation property rn
-func (b *WorkbookChartAreaFormatRequestBuilder) WorkbookChartAreaFormat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartAreaFormatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartAxes is navigation property rn
-func (b *WorkbookChartAxesRequestBuilder) WorkbookChartAxes() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartAxesRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartAxis is navigation property rn
-func (b *WorkbookChartAxisRequestBuilder) WorkbookChartAxis() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartAxisRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartAxisFormat is navigation property rn
-func (b *WorkbookChartAxisFormatRequestBuilder) WorkbookChartAxisFormat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartAxisFormatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartAxisTitle is navigation property rn
-func (b *WorkbookChartAxisTitleRequestBuilder) WorkbookChartAxisTitle() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartAxisTitleRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartAxisTitleFormat is navigation property rn
-func (b *WorkbookChartAxisTitleFormatRequestBuilder) WorkbookChartAxisTitleFormat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartAxisTitleFormatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartDataLabelFormat is navigation property rn
-func (b *WorkbookChartDataLabelFormatRequestBuilder) WorkbookChartDataLabelFormat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartDataLabelFormatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartDataLabels is navigation property rn
-func (b *WorkbookChartDataLabelsRequestBuilder) WorkbookChartDataLabels() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartDataLabelsRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartFill is navigation property rn
-func (b *WorkbookChartFillRequestBuilder) WorkbookChartFill() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartFillRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartFont is navigation property rn
-func (b *WorkbookChartFontRequestBuilder) WorkbookChartFont() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartFontRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartGridlines is navigation property rn
-func (b *WorkbookChartGridlinesRequestBuilder) WorkbookChartGridlines() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartGridlinesRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartGridlinesFormat is navigation property rn
-func (b *WorkbookChartGridlinesFormatRequestBuilder) WorkbookChartGridlinesFormat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartGridlinesFormatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartLegend is navigation property rn
-func (b *WorkbookChartLegendRequestBuilder) WorkbookChartLegend() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartLegendRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartLegendFormat is navigation property rn
-func (b *WorkbookChartLegendFormatRequestBuilder) WorkbookChartLegendFormat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartLegendFormatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartLineFormat is navigation property rn
-func (b *WorkbookChartLineFormatRequestBuilder) WorkbookChartLineFormat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartLineFormatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartPoint is navigation property rn
-func (b *WorkbookChartPointRequestBuilder) WorkbookChartPoint() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartPointRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartPointFormat is navigation property rn
-func (b *WorkbookChartPointFormatRequestBuilder) WorkbookChartPointFormat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartPointFormatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartSeries is navigation property rn
-func (b *WorkbookChartSeriesRequestBuilder) WorkbookChartSeries() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartSeriesRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartSeriesFormat is navigation property rn
-func (b *WorkbookChartSeriesFormatRequestBuilder) WorkbookChartSeriesFormat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartSeriesFormatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartTitle is navigation property rn
-func (b *WorkbookChartTitleRequestBuilder) WorkbookChartTitle() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartTitleRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookChartTitleFormat is navigation property rn
-func (b *WorkbookChartTitleFormatRequestBuilder) WorkbookChartTitleFormat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookChartTitleFormatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookComment is navigation property rn
-func (b *WorkbookCommentRequestBuilder) WorkbookComment() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookCommentRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookCommentReply is navigation property rn
-func (b *WorkbookCommentReplyRequestBuilder) WorkbookCommentReply() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookCommentReplyRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookFilter is navigation property rn
-func (b *WorkbookFilterRequestBuilder) WorkbookFilter() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookFilterRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookFormatProtection is navigation property rn
-func (b *WorkbookFormatProtectionRequestBuilder) WorkbookFormatProtection() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookFormatProtectionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookFunctionResult is navigation property rn
-func (b *WorkbookFunctionResultRequestBuilder) WorkbookFunctionResult() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookFunctionResultRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookFunctions is navigation property rn
-func (b *WorkbookFunctionsRequestBuilder) WorkbookFunctions() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookFunctionsRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookNamedItem is navigation property rn
-func (b *WorkbookNamedItemRequestBuilder) WorkbookNamedItem() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookNamedItemRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookOperation is navigation property rn
-func (b *WorkbookOperationRequestBuilder) WorkbookOperation() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookOperationRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookPivotTable is navigation property rn
-func (b *WorkbookPivotTableRequestBuilder) WorkbookPivotTable() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookPivotTableRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookRange is navigation property rn
-func (b *WorkbookRangeRequestBuilder) WorkbookRange() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookRangeRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookRangeBorder is navigation property rn
-func (b *WorkbookRangeBorderRequestBuilder) WorkbookRangeBorder() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookRangeBorderRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookRangeFill is navigation property rn
-func (b *WorkbookRangeFillRequestBuilder) WorkbookRangeFill() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookRangeFillRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookRangeFont is navigation property rn
-func (b *WorkbookRangeFontRequestBuilder) WorkbookRangeFont() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookRangeFontRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookRangeFormat is navigation property rn
-func (b *WorkbookRangeFormatRequestBuilder) WorkbookRangeFormat() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookRangeFormatRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookRangeSort is navigation property rn
-func (b *WorkbookRangeSortRequestBuilder) WorkbookRangeSort() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookRangeSortRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookRangeView is navigation property rn
-func (b *WorkbookRangeViewRequestBuilder) WorkbookRangeView() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookRangeViewRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookTable is navigation property rn
-func (b *WorkbookTableRequestBuilder) WorkbookTable() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookTableRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookTableColumn is navigation property rn
-func (b *WorkbookTableColumnRequestBuilder) WorkbookTableColumn() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookTableColumnRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookTableRow is navigation property rn
-func (b *WorkbookTableRowRequestBuilder) WorkbookTableRow() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookTableRowRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookTableSort is navigation property rn
-func (b *WorkbookTableSortRequestBuilder) WorkbookTableSort() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookTableSortRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookWorksheet is navigation property rn
-func (b *WorkbookWorksheetRequestBuilder) WorkbookWorksheet() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookWorksheetRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
 }
 
-// WorkbookWorksheetProtection is navigation property rn
-func (b *WorkbookWorksheetProtectionRequestBuilder) WorkbookWorksheetProtection() *EntityRequestBuilder {
+// Entity is navigation property rn
+func (b *WorkbookWorksheetProtectionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
