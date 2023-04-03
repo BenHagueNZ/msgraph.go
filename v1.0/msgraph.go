@@ -328,14 +328,14 @@ type GraphServiceRequestBuilder struct {
 
 type Builders struct {
 	g GraphServiceRequestBuilder
-	c CountryNamedLocationRequestBuilder
+	c NamedLocationCountryNamedLocationCollectionRequestBuilder
 }
 
 func GetGSRB(b *Builders) *GraphServiceRequestBuilder {
 	return &b.g
 }
 
-func GetCNLRB(b *Builders) *CountryNamedLocationRequestBuilder {
+func GetCNLRB(b *Builders) *NamedLocationCountryNamedLocationCollectionRequestBuilder {
 	return &b.c
 }
 
@@ -343,7 +343,7 @@ func GetCNLRB(b *Builders) *CountryNamedLocationRequestBuilder {
 func NewClient(cli *http.Client) *Builders {
 	allBuilders := Builders{g: GraphServiceRequestBuilder{
 		BaseRequestBuilder: BaseRequestBuilder{baseURL: defaultBaseURL, client: cli},
-	}, c: CountryNamedLocationRequestBuilder{
+	}, c: NamedLocationCountryNamedLocationCollectionRequestBuilder{
 		BaseRequestBuilder: BaseRequestBuilder{baseURL: defaultBaseURL, client: cli},
 	},
 	}
