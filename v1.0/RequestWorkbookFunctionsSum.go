@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSumRequestBuilder struct{ BaseRequestBuilder }
 
-// Sum action undocumented
+// Sum action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Sum(reqObj *WorkbookFunctionsSumRequestParameter) *WorkbookFunctionsSumRequestBuilder {
 	bb := &WorkbookFunctionsSumRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Sum"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsSumRequest) Post(ctx context.Context) (resObj *Workboo
 
 type WorkbookFunctionsSumIfRequestBuilder struct{ BaseRequestBuilder }
 
-// SumIf action undocumented
+// SumIf action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) SumIf(reqObj *WorkbookFunctionsSumIfRequestParameter) *WorkbookFunctionsSumIfRequestBuilder {
 	bb := &WorkbookFunctionsSumIfRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SumIf"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsSumIfRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsSumIfsRequestBuilder struct{ BaseRequestBuilder }
 
-// SumIfs action undocumented
+// SumIfs action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) SumIfs(reqObj *WorkbookFunctionsSumIfsRequestParameter) *WorkbookFunctionsSumIfsRequestBuilder {
 	bb := &WorkbookFunctionsSumIfsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SumIfs"
@@ -75,7 +75,7 @@ func (r *WorkbookFunctionsSumIfsRequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsSumSqRequestBuilder struct{ BaseRequestBuilder }
 
-// SumSq action undocumented
+// SumSq action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) SumSq(reqObj *WorkbookFunctionsSumSqRequestParameter) *WorkbookFunctionsSumSqRequestBuilder {
 	bb := &WorkbookFunctionsSumSqRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SumSq"

@@ -33,3 +33,10 @@ type PresenceSetUserPreferredPresenceRequestParameter struct {
 	// ExpirationDuration undocumented
 	ExpirationDuration *Duration `json:"expirationDuration,omitempty"`
 }
+
+// Presence is navigation property rn
+func (b *PresenceRequestBuilder) Presence() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}

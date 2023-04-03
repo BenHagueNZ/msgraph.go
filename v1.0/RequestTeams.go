@@ -336,7 +336,7 @@ func (r *TeamsTemplateRequest) Delete(ctx context.Context) error {
 
 type TeamsAppInstallationUpgradeRequestBuilder struct{ BaseRequestBuilder }
 
-// Upgrade action undocumented
+// Upgrade action undocumentedrav
 func (b *TeamsAppInstallationRequestBuilder) Upgrade(reqObj *TeamsAppInstallationUpgradeRequestParameter) *TeamsAppInstallationUpgradeRequestBuilder {
 	bb := &TeamsAppInstallationUpgradeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Upgrade"

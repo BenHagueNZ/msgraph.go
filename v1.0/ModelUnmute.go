@@ -6,4 +6,13 @@ package msgraph
 type UnmuteParticipantOperation struct {
 	// CommsOperation is the base model of UnmuteParticipantOperation
 	CommsOperation
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewUnmuteParticipantOperation() (*UnmuteParticipantOperation, error) {
+	newUnmuteParticipantOperation := &UnmuteParticipantOperation{
+		ODataType: "#microsoft.graph.UnmuteParticipantOperation",
+	}
+	return newUnmuteParticipantOperation, nil
 }

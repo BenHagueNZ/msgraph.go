@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsPermutationaRequestBuilder struct{ BaseRequestBuilder }
 
-// Permutationa action undocumented
+// Permutationa action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Permutationa(reqObj *WorkbookFunctionsPermutationaRequestParameter) *WorkbookFunctionsPermutationaRequestBuilder {
 	bb := &WorkbookFunctionsPermutationaRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Permutationa"

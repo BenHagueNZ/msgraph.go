@@ -1432,7 +1432,7 @@ func (r *AccessReviewStageSettingsRequest) Delete(ctx context.Context) error {
 
 type AccessPackageGetApplicablePolicyRequirementsRequestBuilder struct{ BaseRequestBuilder }
 
-// GetApplicablePolicyRequirements action undocumented
+// GetApplicablePolicyRequirements action undocumentedrac
 func (b *AccessPackageRequestBuilder) GetApplicablePolicyRequirements(reqObj *AccessPackageGetApplicablePolicyRequirementsRequestParameter) *AccessPackageGetApplicablePolicyRequirementsRequestBuilder {
 	bb := &AccessPackageGetApplicablePolicyRequirementsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetApplicablePolicyRequirements"
@@ -1513,7 +1513,7 @@ func (r *AccessPackageGetApplicablePolicyRequirementsRequest) Post(ctx context.C
 
 type AccessPackageAssignmentReprocessRequestBuilder struct{ BaseRequestBuilder }
 
-// Reprocess action undocumented
+// Reprocess action undocumentedrav
 func (b *AccessPackageAssignmentRequestBuilder) Reprocess(reqObj *AccessPackageAssignmentReprocessRequestParameter) *AccessPackageAssignmentReprocessRequestBuilder {
 	bb := &AccessPackageAssignmentReprocessRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Reprocess"
@@ -1535,7 +1535,7 @@ func (r *AccessPackageAssignmentReprocessRequest) Post(ctx context.Context) erro
 
 type AccessPackageAssignmentRequestObjectCancelRequestBuilder struct{ BaseRequestBuilder }
 
-// Cancel action undocumented
+// Cancel action undocumentedrav
 func (b *AccessPackageAssignmentRequestObjectRequestBuilder) Cancel(reqObj *AccessPackageAssignmentRequestObjectCancelRequestParameter) *AccessPackageAssignmentRequestObjectCancelRequestBuilder {
 	bb := &AccessPackageAssignmentRequestObjectCancelRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Cancel"
@@ -1557,7 +1557,7 @@ func (r *AccessPackageAssignmentRequestObjectCancelRequest) Post(ctx context.Con
 
 type AccessPackageAssignmentRequestObjectReprocessRequestBuilder struct{ BaseRequestBuilder }
 
-// Reprocess action undocumented
+// Reprocess action undocumentedrav
 func (b *AccessPackageAssignmentRequestObjectRequestBuilder) Reprocess(reqObj *AccessPackageAssignmentRequestObjectReprocessRequestParameter) *AccessPackageAssignmentRequestObjectReprocessRequestBuilder {
 	bb := &AccessPackageAssignmentRequestObjectReprocessRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Reprocess"
@@ -1579,7 +1579,7 @@ func (r *AccessPackageAssignmentRequestObjectReprocessRequest) Post(ctx context.
 
 type AccessReviewHistoryInstanceGenerateDownloadURIRequestBuilder struct{ BaseRequestBuilder }
 
-// GenerateDownloadURI action undocumented
+// GenerateDownloadURI action undocumentedras
 func (b *AccessReviewHistoryInstanceRequestBuilder) GenerateDownloadURI(reqObj *AccessReviewHistoryInstanceGenerateDownloadURIRequestParameter) *AccessReviewHistoryInstanceGenerateDownloadURIRequestBuilder {
 	bb := &AccessReviewHistoryInstanceGenerateDownloadURIRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GenerateDownloadUri"
@@ -1602,7 +1602,7 @@ func (r *AccessReviewHistoryInstanceGenerateDownloadURIRequest) Post(ctx context
 
 type AccessReviewInstanceAcceptRecommendationsRequestBuilder struct{ BaseRequestBuilder }
 
-// AcceptRecommendations action undocumented
+// AcceptRecommendations action undocumentedrav
 func (b *AccessReviewInstanceRequestBuilder) AcceptRecommendations(reqObj *AccessReviewInstanceAcceptRecommendationsRequestParameter) *AccessReviewInstanceAcceptRecommendationsRequestBuilder {
 	bb := &AccessReviewInstanceAcceptRecommendationsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AcceptRecommendations"
@@ -1624,7 +1624,7 @@ func (r *AccessReviewInstanceAcceptRecommendationsRequest) Post(ctx context.Cont
 
 type AccessReviewInstanceApplyDecisionsRequestBuilder struct{ BaseRequestBuilder }
 
-// ApplyDecisions action undocumented
+// ApplyDecisions action undocumentedrav
 func (b *AccessReviewInstanceRequestBuilder) ApplyDecisions(reqObj *AccessReviewInstanceApplyDecisionsRequestParameter) *AccessReviewInstanceApplyDecisionsRequestBuilder {
 	bb := &AccessReviewInstanceApplyDecisionsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ApplyDecisions"
@@ -1646,7 +1646,7 @@ func (r *AccessReviewInstanceApplyDecisionsRequest) Post(ctx context.Context) er
 
 type AccessReviewInstanceBatchRecordDecisionsRequestBuilder struct{ BaseRequestBuilder }
 
-// BatchRecordDecisions action undocumented
+// BatchRecordDecisions action undocumentedrav
 func (b *AccessReviewInstanceRequestBuilder) BatchRecordDecisions(reqObj *AccessReviewInstanceBatchRecordDecisionsRequestParameter) *AccessReviewInstanceBatchRecordDecisionsRequestBuilder {
 	bb := &AccessReviewInstanceBatchRecordDecisionsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/BatchRecordDecisions"
@@ -1668,7 +1668,7 @@ func (r *AccessReviewInstanceBatchRecordDecisionsRequest) Post(ctx context.Conte
 
 type AccessReviewInstanceResetDecisionsRequestBuilder struct{ BaseRequestBuilder }
 
-// ResetDecisions action undocumented
+// ResetDecisions action undocumentedrav
 func (b *AccessReviewInstanceRequestBuilder) ResetDecisions(reqObj *AccessReviewInstanceResetDecisionsRequestParameter) *AccessReviewInstanceResetDecisionsRequestBuilder {
 	bb := &AccessReviewInstanceResetDecisionsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ResetDecisions"
@@ -1690,7 +1690,7 @@ func (r *AccessReviewInstanceResetDecisionsRequest) Post(ctx context.Context) er
 
 type AccessReviewInstanceSendReminderRequestBuilder struct{ BaseRequestBuilder }
 
-// SendReminder action undocumented
+// SendReminder action undocumentedrav
 func (b *AccessReviewInstanceRequestBuilder) SendReminder(reqObj *AccessReviewInstanceSendReminderRequestParameter) *AccessReviewInstanceSendReminderRequestBuilder {
 	bb := &AccessReviewInstanceSendReminderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SendReminder"
@@ -1712,7 +1712,7 @@ func (r *AccessReviewInstanceSendReminderRequest) Post(ctx context.Context) erro
 
 type AccessReviewInstanceStopRequestBuilder struct{ BaseRequestBuilder }
 
-// Stop action undocumented
+// Stop action undocumentedrav
 func (b *AccessReviewInstanceRequestBuilder) Stop(reqObj *AccessReviewInstanceStopRequestParameter) *AccessReviewInstanceStopRequestBuilder {
 	bb := &AccessReviewInstanceStopRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Stop"
@@ -1734,7 +1734,7 @@ func (r *AccessReviewInstanceStopRequest) Post(ctx context.Context) error {
 
 type AccessReviewScheduleDefinitionStopRequestBuilder struct{ BaseRequestBuilder }
 
-// Stop action undocumented
+// Stop action undocumentedrav
 func (b *AccessReviewScheduleDefinitionRequestBuilder) Stop(reqObj *AccessReviewScheduleDefinitionStopRequestParameter) *AccessReviewScheduleDefinitionStopRequestBuilder {
 	bb := &AccessReviewScheduleDefinitionStopRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Stop"
@@ -1756,7 +1756,7 @@ func (r *AccessReviewScheduleDefinitionStopRequest) Post(ctx context.Context) er
 
 type AccessReviewStageStopRequestBuilder struct{ BaseRequestBuilder }
 
-// Stop action undocumented
+// Stop action undocumentedrav
 func (b *AccessReviewStageRequestBuilder) Stop(reqObj *AccessReviewStageStopRequestParameter) *AccessReviewStageStopRequestBuilder {
 	bb := &AccessReviewStageStopRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Stop"

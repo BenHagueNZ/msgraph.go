@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsNominalRequestBuilder struct{ BaseRequestBuilder }
 
-// Nominal action undocumented
+// Nominal action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Nominal(reqObj *WorkbookFunctionsNominalRequestParameter) *WorkbookFunctionsNominalRequestBuilder {
 	bb := &WorkbookFunctionsNominalRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Nominal"

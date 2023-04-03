@@ -6,4 +6,13 @@ package msgraph
 type MDMWindowsInformationProtectionPolicy struct {
 	// WindowsInformationProtection is the base model of MDMWindowsInformationProtectionPolicy
 	WindowsInformationProtection
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewMDMWindowsInformationProtectionPolicy() (*MDMWindowsInformationProtectionPolicy, error) {
+	newMDMWindowsInformationProtectionPolicy := &MDMWindowsInformationProtectionPolicy{
+		ODataType: "#microsoft.graph.MdmWindowsInformationProtectionPolicy",
+	}
+	return newMDMWindowsInformationProtectionPolicy, nil
 }

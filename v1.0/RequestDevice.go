@@ -1630,7 +1630,7 @@ func (r *DeviceOperatingSystemSummaryRequest) Delete(ctx context.Context) error 
 
 type DeviceAppManagementSyncMicrosoftStoreForBusinessAppsRequestBuilder struct{ BaseRequestBuilder }
 
-// SyncMicrosoftStoreForBusinessApps action undocumented
+// SyncMicrosoftStoreForBusinessApps action undocumentedrav
 func (b *DeviceAppManagementRequestBuilder) SyncMicrosoftStoreForBusinessApps(reqObj *DeviceAppManagementSyncMicrosoftStoreForBusinessAppsRequestParameter) *DeviceAppManagementSyncMicrosoftStoreForBusinessAppsRequestBuilder {
 	bb := &DeviceAppManagementSyncMicrosoftStoreForBusinessAppsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SyncMicrosoftStoreForBusinessApps"
@@ -1652,7 +1652,7 @@ func (r *DeviceAppManagementSyncMicrosoftStoreForBusinessAppsRequest) Post(ctx c
 
 type DeviceCompliancePolicyAssignRequestBuilder struct{ BaseRequestBuilder }
 
-// Assign action undocumented
+// Assign action undocumentedrac
 func (b *DeviceCompliancePolicyRequestBuilder) Assign(reqObj *DeviceCompliancePolicyAssignRequestParameter) *DeviceCompliancePolicyAssignRequestBuilder {
 	bb := &DeviceCompliancePolicyAssignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Assign"
@@ -1733,7 +1733,7 @@ func (r *DeviceCompliancePolicyAssignRequest) Post(ctx context.Context) ([]Devic
 
 type DeviceCompliancePolicyScheduleActionsForRulesRequestBuilder struct{ BaseRequestBuilder }
 
-// ScheduleActionsForRules action undocumented
+// ScheduleActionsForRules action undocumentedrav
 func (b *DeviceCompliancePolicyRequestBuilder) ScheduleActionsForRules(reqObj *DeviceCompliancePolicyScheduleActionsForRulesRequestParameter) *DeviceCompliancePolicyScheduleActionsForRulesRequestBuilder {
 	bb := &DeviceCompliancePolicyScheduleActionsForRulesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ScheduleActionsForRules"
@@ -1755,7 +1755,7 @@ func (r *DeviceCompliancePolicyScheduleActionsForRulesRequest) Post(ctx context.
 
 type DeviceConfigurationAssignRequestBuilder struct{ BaseRequestBuilder }
 
-// Assign action undocumented
+// Assign action undocumentedrac
 func (b *DeviceConfigurationRequestBuilder) Assign(reqObj *DeviceConfigurationAssignRequestParameter) *DeviceConfigurationAssignRequestBuilder {
 	bb := &DeviceConfigurationAssignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Assign"
@@ -1836,7 +1836,7 @@ func (r *DeviceConfigurationAssignRequest) Post(ctx context.Context) ([]DeviceCo
 
 type DeviceEnrollmentConfigurationAssignRequestBuilder struct{ BaseRequestBuilder }
 
-// Assign action undocumented
+// Assign action undocumentedrav
 func (b *DeviceEnrollmentConfigurationRequestBuilder) Assign(reqObj *DeviceEnrollmentConfigurationAssignRequestParameter) *DeviceEnrollmentConfigurationAssignRequestBuilder {
 	bb := &DeviceEnrollmentConfigurationAssignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Assign"
@@ -1858,7 +1858,7 @@ func (r *DeviceEnrollmentConfigurationAssignRequest) Post(ctx context.Context) e
 
 type DeviceEnrollmentConfigurationSetPriorityRequestBuilder struct{ BaseRequestBuilder }
 
-// SetPriority action undocumented
+// SetPriority action undocumentedrav
 func (b *DeviceEnrollmentConfigurationRequestBuilder) SetPriority(reqObj *DeviceEnrollmentConfigurationSetPriorityRequestParameter) *DeviceEnrollmentConfigurationSetPriorityRequestBuilder {
 	bb := &DeviceEnrollmentConfigurationSetPriorityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SetPriority"
@@ -1880,7 +1880,7 @@ func (r *DeviceEnrollmentConfigurationSetPriorityRequest) Post(ctx context.Conte
 
 type DeviceManagementExchangeConnectorSyncRequestBuilder struct{ BaseRequestBuilder }
 
-// Sync action undocumented
+// Sync action undocumentedrav
 func (b *DeviceManagementExchangeConnectorRequestBuilder) Sync(reqObj *DeviceManagementExchangeConnectorSyncRequestParameter) *DeviceManagementExchangeConnectorSyncRequestBuilder {
 	bb := &DeviceManagementExchangeConnectorSyncRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Sync"
@@ -1902,7 +1902,7 @@ func (r *DeviceManagementExchangeConnectorSyncRequest) Post(ctx context.Context)
 
 type DeviceManagementPartnerTerminateRequestBuilder struct{ BaseRequestBuilder }
 
-// Terminate action undocumented
+// Terminate action undocumentedrav
 func (b *DeviceManagementPartnerRequestBuilder) Terminate(reqObj *DeviceManagementPartnerTerminateRequestParameter) *DeviceManagementPartnerTerminateRequestBuilder {
 	bb := &DeviceManagementPartnerTerminateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Terminate"
@@ -1924,7 +1924,7 @@ func (r *DeviceManagementPartnerTerminateRequest) Post(ctx context.Context) erro
 
 type DeviceManagementReportsGetCachedReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetCachedReport action undocumented
+// GetCachedReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetCachedReport(reqObj *DeviceManagementReportsGetCachedReportRequestParameter) *DeviceManagementReportsGetCachedReportRequestBuilder {
 	bb := &DeviceManagementReportsGetCachedReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetCachedReport"
@@ -1947,7 +1947,7 @@ func (r *DeviceManagementReportsGetCachedReportRequest) Post(ctx context.Context
 
 type DeviceManagementReportsGetCompliancePolicyNonComplianceReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetCompliancePolicyNonComplianceReport action undocumented
+// GetCompliancePolicyNonComplianceReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetCompliancePolicyNonComplianceReport(reqObj *DeviceManagementReportsGetCompliancePolicyNonComplianceReportRequestParameter) *DeviceManagementReportsGetCompliancePolicyNonComplianceReportRequestBuilder {
 	bb := &DeviceManagementReportsGetCompliancePolicyNonComplianceReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetCompliancePolicyNonComplianceReport"
@@ -1970,7 +1970,7 @@ func (r *DeviceManagementReportsGetCompliancePolicyNonComplianceReportRequest) P
 
 type DeviceManagementReportsGetCompliancePolicyNonComplianceSummaryReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetCompliancePolicyNonComplianceSummaryReport action undocumented
+// GetCompliancePolicyNonComplianceSummaryReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetCompliancePolicyNonComplianceSummaryReport(reqObj *DeviceManagementReportsGetCompliancePolicyNonComplianceSummaryReportRequestParameter) *DeviceManagementReportsGetCompliancePolicyNonComplianceSummaryReportRequestBuilder {
 	bb := &DeviceManagementReportsGetCompliancePolicyNonComplianceSummaryReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetCompliancePolicyNonComplianceSummaryReport"
@@ -1993,7 +1993,7 @@ func (r *DeviceManagementReportsGetCompliancePolicyNonComplianceSummaryReportReq
 
 type DeviceManagementReportsGetComplianceSettingNonComplianceReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetComplianceSettingNonComplianceReport action undocumented
+// GetComplianceSettingNonComplianceReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetComplianceSettingNonComplianceReport(reqObj *DeviceManagementReportsGetComplianceSettingNonComplianceReportRequestParameter) *DeviceManagementReportsGetComplianceSettingNonComplianceReportRequestBuilder {
 	bb := &DeviceManagementReportsGetComplianceSettingNonComplianceReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetComplianceSettingNonComplianceReport"
@@ -2016,7 +2016,7 @@ func (r *DeviceManagementReportsGetComplianceSettingNonComplianceReportRequest) 
 
 type DeviceManagementReportsGetConfigurationPolicyNonComplianceReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetConfigurationPolicyNonComplianceReport action undocumented
+// GetConfigurationPolicyNonComplianceReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetConfigurationPolicyNonComplianceReport(reqObj *DeviceManagementReportsGetConfigurationPolicyNonComplianceReportRequestParameter) *DeviceManagementReportsGetConfigurationPolicyNonComplianceReportRequestBuilder {
 	bb := &DeviceManagementReportsGetConfigurationPolicyNonComplianceReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetConfigurationPolicyNonComplianceReport"
@@ -2039,7 +2039,7 @@ func (r *DeviceManagementReportsGetConfigurationPolicyNonComplianceReportRequest
 
 type DeviceManagementReportsGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetConfigurationPolicyNonComplianceSummaryReport action undocumented
+// GetConfigurationPolicyNonComplianceSummaryReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetConfigurationPolicyNonComplianceSummaryReport(reqObj *DeviceManagementReportsGetConfigurationPolicyNonComplianceSummaryReportRequestParameter) *DeviceManagementReportsGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder {
 	bb := &DeviceManagementReportsGetConfigurationPolicyNonComplianceSummaryReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetConfigurationPolicyNonComplianceSummaryReport"
@@ -2062,7 +2062,7 @@ func (r *DeviceManagementReportsGetConfigurationPolicyNonComplianceSummaryReport
 
 type DeviceManagementReportsGetConfigurationSettingNonComplianceReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetConfigurationSettingNonComplianceReport action undocumented
+// GetConfigurationSettingNonComplianceReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetConfigurationSettingNonComplianceReport(reqObj *DeviceManagementReportsGetConfigurationSettingNonComplianceReportRequestParameter) *DeviceManagementReportsGetConfigurationSettingNonComplianceReportRequestBuilder {
 	bb := &DeviceManagementReportsGetConfigurationSettingNonComplianceReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetConfigurationSettingNonComplianceReport"
@@ -2085,7 +2085,7 @@ func (r *DeviceManagementReportsGetConfigurationSettingNonComplianceReportReques
 
 type DeviceManagementReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder struct{ BaseRequestBuilder }
 
-// GetDeviceManagementIntentPerSettingContributingProfiles action undocumented
+// GetDeviceManagementIntentPerSettingContributingProfiles action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetDeviceManagementIntentPerSettingContributingProfiles(reqObj *DeviceManagementReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestParameter) *DeviceManagementReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder {
 	bb := &DeviceManagementReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetDeviceManagementIntentPerSettingContributingProfiles"
@@ -2108,7 +2108,7 @@ func (r *DeviceManagementReportsGetDeviceManagementIntentPerSettingContributingP
 
 type DeviceManagementReportsGetDeviceManagementIntentSettingsReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetDeviceManagementIntentSettingsReport action undocumented
+// GetDeviceManagementIntentSettingsReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetDeviceManagementIntentSettingsReport(reqObj *DeviceManagementReportsGetDeviceManagementIntentSettingsReportRequestParameter) *DeviceManagementReportsGetDeviceManagementIntentSettingsReportRequestBuilder {
 	bb := &DeviceManagementReportsGetDeviceManagementIntentSettingsReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetDeviceManagementIntentSettingsReport"
@@ -2131,7 +2131,7 @@ func (r *DeviceManagementReportsGetDeviceManagementIntentSettingsReportRequest) 
 
 type DeviceManagementReportsGetDeviceNonComplianceReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetDeviceNonComplianceReport action undocumented
+// GetDeviceNonComplianceReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetDeviceNonComplianceReport(reqObj *DeviceManagementReportsGetDeviceNonComplianceReportRequestParameter) *DeviceManagementReportsGetDeviceNonComplianceReportRequestBuilder {
 	bb := &DeviceManagementReportsGetDeviceNonComplianceReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetDeviceNonComplianceReport"
@@ -2154,7 +2154,7 @@ func (r *DeviceManagementReportsGetDeviceNonComplianceReportRequest) Post(ctx co
 
 type DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetDevicesWithoutCompliancePolicyReport action undocumented
+// GetDevicesWithoutCompliancePolicyReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetDevicesWithoutCompliancePolicyReport(reqObj *DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequestParameter) *DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequestBuilder {
 	bb := &DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetDevicesWithoutCompliancePolicyReport"
@@ -2177,7 +2177,7 @@ func (r *DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequest) 
 
 type DeviceManagementReportsGetHistoricalReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetHistoricalReport action undocumented
+// GetHistoricalReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetHistoricalReport(reqObj *DeviceManagementReportsGetHistoricalReportRequestParameter) *DeviceManagementReportsGetHistoricalReportRequestBuilder {
 	bb := &DeviceManagementReportsGetHistoricalReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetHistoricalReport"
@@ -2200,7 +2200,7 @@ func (r *DeviceManagementReportsGetHistoricalReportRequest) Post(ctx context.Con
 
 type DeviceManagementReportsGetNoncompliantDevicesAndSettingsReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetNoncompliantDevicesAndSettingsReport action undocumented
+// GetNoncompliantDevicesAndSettingsReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetNoncompliantDevicesAndSettingsReport(reqObj *DeviceManagementReportsGetNoncompliantDevicesAndSettingsReportRequestParameter) *DeviceManagementReportsGetNoncompliantDevicesAndSettingsReportRequestBuilder {
 	bb := &DeviceManagementReportsGetNoncompliantDevicesAndSettingsReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetNoncompliantDevicesAndSettingsReport"
@@ -2223,7 +2223,7 @@ func (r *DeviceManagementReportsGetNoncompliantDevicesAndSettingsReportRequest) 
 
 type DeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder struct{ BaseRequestBuilder }
 
-// GetPolicyNonComplianceMetadata action undocumented
+// GetPolicyNonComplianceMetadata action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetPolicyNonComplianceMetadata(reqObj *DeviceManagementReportsGetPolicyNonComplianceMetadataRequestParameter) *DeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder {
 	bb := &DeviceManagementReportsGetPolicyNonComplianceMetadataRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetPolicyNonComplianceMetadata"
@@ -2246,7 +2246,7 @@ func (r *DeviceManagementReportsGetPolicyNonComplianceMetadataRequest) Post(ctx 
 
 type DeviceManagementReportsGetPolicyNonComplianceReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetPolicyNonComplianceReport action undocumented
+// GetPolicyNonComplianceReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetPolicyNonComplianceReport(reqObj *DeviceManagementReportsGetPolicyNonComplianceReportRequestParameter) *DeviceManagementReportsGetPolicyNonComplianceReportRequestBuilder {
 	bb := &DeviceManagementReportsGetPolicyNonComplianceReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetPolicyNonComplianceReport"
@@ -2269,7 +2269,7 @@ func (r *DeviceManagementReportsGetPolicyNonComplianceReportRequest) Post(ctx co
 
 type DeviceManagementReportsGetPolicyNonComplianceSummaryReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetPolicyNonComplianceSummaryReport action undocumented
+// GetPolicyNonComplianceSummaryReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetPolicyNonComplianceSummaryReport(reqObj *DeviceManagementReportsGetPolicyNonComplianceSummaryReportRequestParameter) *DeviceManagementReportsGetPolicyNonComplianceSummaryReportRequestBuilder {
 	bb := &DeviceManagementReportsGetPolicyNonComplianceSummaryReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetPolicyNonComplianceSummaryReport"
@@ -2292,7 +2292,7 @@ func (r *DeviceManagementReportsGetPolicyNonComplianceSummaryReportRequest) Post
 
 type DeviceManagementReportsGetReportFiltersRequestBuilder struct{ BaseRequestBuilder }
 
-// GetReportFilters action undocumented
+// GetReportFilters action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetReportFilters(reqObj *DeviceManagementReportsGetReportFiltersRequestParameter) *DeviceManagementReportsGetReportFiltersRequestBuilder {
 	bb := &DeviceManagementReportsGetReportFiltersRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetReportFilters"
@@ -2315,7 +2315,7 @@ func (r *DeviceManagementReportsGetReportFiltersRequest) Post(ctx context.Contex
 
 type DeviceManagementReportsGetSettingNonComplianceReportRequestBuilder struct{ BaseRequestBuilder }
 
-// GetSettingNonComplianceReport action undocumented
+// GetSettingNonComplianceReport action undocumentedras
 func (b *DeviceManagementReportsRequestBuilder) GetSettingNonComplianceReport(reqObj *DeviceManagementReportsGetSettingNonComplianceReportRequestParameter) *DeviceManagementReportsGetSettingNonComplianceReportRequestBuilder {
 	bb := &DeviceManagementReportsGetSettingNonComplianceReportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetSettingNonComplianceReport"

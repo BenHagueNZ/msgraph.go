@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsImAbsRequestBuilder struct{ BaseRequestBuilder }
 
-// ImAbs action undocumented
+// ImAbs action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImAbs(reqObj *WorkbookFunctionsImAbsRequestParameter) *WorkbookFunctionsImAbsRequestBuilder {
 	bb := &WorkbookFunctionsImAbsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImAbs"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsImAbsRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsImArgumentRequestBuilder struct{ BaseRequestBuilder }
 
-// ImArgument action undocumented
+// ImArgument action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImArgument(reqObj *WorkbookFunctionsImArgumentRequestParameter) *WorkbookFunctionsImArgumentRequestBuilder {
 	bb := &WorkbookFunctionsImArgumentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImArgument"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsImArgumentRequest) Post(ctx context.Context) (resObj *
 
 type WorkbookFunctionsImConjugateRequestBuilder struct{ BaseRequestBuilder }
 
-// ImConjugate action undocumented
+// ImConjugate action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImConjugate(reqObj *WorkbookFunctionsImConjugateRequestParameter) *WorkbookFunctionsImConjugateRequestBuilder {
 	bb := &WorkbookFunctionsImConjugateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImConjugate"
@@ -75,7 +75,7 @@ func (r *WorkbookFunctionsImConjugateRequest) Post(ctx context.Context) (resObj 
 
 type WorkbookFunctionsImCosRequestBuilder struct{ BaseRequestBuilder }
 
-// ImCos action undocumented
+// ImCos action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImCos(reqObj *WorkbookFunctionsImCosRequestParameter) *WorkbookFunctionsImCosRequestBuilder {
 	bb := &WorkbookFunctionsImCosRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImCos"
@@ -98,7 +98,7 @@ func (r *WorkbookFunctionsImCosRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsImCoshRequestBuilder struct{ BaseRequestBuilder }
 
-// ImCosh action undocumented
+// ImCosh action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImCosh(reqObj *WorkbookFunctionsImCoshRequestParameter) *WorkbookFunctionsImCoshRequestBuilder {
 	bb := &WorkbookFunctionsImCoshRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImCosh"
@@ -121,7 +121,7 @@ func (r *WorkbookFunctionsImCoshRequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsImCotRequestBuilder struct{ BaseRequestBuilder }
 
-// ImCot action undocumented
+// ImCot action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImCot(reqObj *WorkbookFunctionsImCotRequestParameter) *WorkbookFunctionsImCotRequestBuilder {
 	bb := &WorkbookFunctionsImCotRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImCot"
@@ -144,7 +144,7 @@ func (r *WorkbookFunctionsImCotRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsImCscRequestBuilder struct{ BaseRequestBuilder }
 
-// ImCsc action undocumented
+// ImCsc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImCsc(reqObj *WorkbookFunctionsImCscRequestParameter) *WorkbookFunctionsImCscRequestBuilder {
 	bb := &WorkbookFunctionsImCscRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImCsc"
@@ -167,7 +167,7 @@ func (r *WorkbookFunctionsImCscRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsImCschRequestBuilder struct{ BaseRequestBuilder }
 
-// ImCsch action undocumented
+// ImCsch action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImCsch(reqObj *WorkbookFunctionsImCschRequestParameter) *WorkbookFunctionsImCschRequestBuilder {
 	bb := &WorkbookFunctionsImCschRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImCsch"
@@ -190,7 +190,7 @@ func (r *WorkbookFunctionsImCschRequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsImDivRequestBuilder struct{ BaseRequestBuilder }
 
-// ImDiv action undocumented
+// ImDiv action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImDiv(reqObj *WorkbookFunctionsImDivRequestParameter) *WorkbookFunctionsImDivRequestBuilder {
 	bb := &WorkbookFunctionsImDivRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImDiv"
@@ -213,7 +213,7 @@ func (r *WorkbookFunctionsImDivRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsImExpRequestBuilder struct{ BaseRequestBuilder }
 
-// ImExp action undocumented
+// ImExp action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImExp(reqObj *WorkbookFunctionsImExpRequestParameter) *WorkbookFunctionsImExpRequestBuilder {
 	bb := &WorkbookFunctionsImExpRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImExp"
@@ -236,7 +236,7 @@ func (r *WorkbookFunctionsImExpRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsImLnRequestBuilder struct{ BaseRequestBuilder }
 
-// ImLn action undocumented
+// ImLn action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImLn(reqObj *WorkbookFunctionsImLnRequestParameter) *WorkbookFunctionsImLnRequestBuilder {
 	bb := &WorkbookFunctionsImLnRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImLn"
@@ -259,7 +259,7 @@ func (r *WorkbookFunctionsImLnRequest) Post(ctx context.Context) (resObj *Workbo
 
 type WorkbookFunctionsImLog10RequestBuilder struct{ BaseRequestBuilder }
 
-// ImLog10 action undocumented
+// ImLog10 action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImLog10(reqObj *WorkbookFunctionsImLog10RequestParameter) *WorkbookFunctionsImLog10RequestBuilder {
 	bb := &WorkbookFunctionsImLog10RequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImLog10"
@@ -282,7 +282,7 @@ func (r *WorkbookFunctionsImLog10Request) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsImLog2RequestBuilder struct{ BaseRequestBuilder }
 
-// ImLog2 action undocumented
+// ImLog2 action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImLog2(reqObj *WorkbookFunctionsImLog2RequestParameter) *WorkbookFunctionsImLog2RequestBuilder {
 	bb := &WorkbookFunctionsImLog2RequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImLog2"
@@ -305,7 +305,7 @@ func (r *WorkbookFunctionsImLog2Request) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsImPowerRequestBuilder struct{ BaseRequestBuilder }
 
-// ImPower action undocumented
+// ImPower action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImPower(reqObj *WorkbookFunctionsImPowerRequestParameter) *WorkbookFunctionsImPowerRequestBuilder {
 	bb := &WorkbookFunctionsImPowerRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImPower"
@@ -328,7 +328,7 @@ func (r *WorkbookFunctionsImPowerRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsImProductRequestBuilder struct{ BaseRequestBuilder }
 
-// ImProduct action undocumented
+// ImProduct action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImProduct(reqObj *WorkbookFunctionsImProductRequestParameter) *WorkbookFunctionsImProductRequestBuilder {
 	bb := &WorkbookFunctionsImProductRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImProduct"
@@ -351,7 +351,7 @@ func (r *WorkbookFunctionsImProductRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsImRealRequestBuilder struct{ BaseRequestBuilder }
 
-// ImReal action undocumented
+// ImReal action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImReal(reqObj *WorkbookFunctionsImRealRequestParameter) *WorkbookFunctionsImRealRequestBuilder {
 	bb := &WorkbookFunctionsImRealRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImReal"
@@ -374,7 +374,7 @@ func (r *WorkbookFunctionsImRealRequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsImSecRequestBuilder struct{ BaseRequestBuilder }
 
-// ImSec action undocumented
+// ImSec action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImSec(reqObj *WorkbookFunctionsImSecRequestParameter) *WorkbookFunctionsImSecRequestBuilder {
 	bb := &WorkbookFunctionsImSecRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImSec"
@@ -397,7 +397,7 @@ func (r *WorkbookFunctionsImSecRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsImSechRequestBuilder struct{ BaseRequestBuilder }
 
-// ImSech action undocumented
+// ImSech action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImSech(reqObj *WorkbookFunctionsImSechRequestParameter) *WorkbookFunctionsImSechRequestBuilder {
 	bb := &WorkbookFunctionsImSechRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImSech"
@@ -420,7 +420,7 @@ func (r *WorkbookFunctionsImSechRequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsImSinRequestBuilder struct{ BaseRequestBuilder }
 
-// ImSin action undocumented
+// ImSin action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImSin(reqObj *WorkbookFunctionsImSinRequestParameter) *WorkbookFunctionsImSinRequestBuilder {
 	bb := &WorkbookFunctionsImSinRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImSin"
@@ -443,7 +443,7 @@ func (r *WorkbookFunctionsImSinRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsImSinhRequestBuilder struct{ BaseRequestBuilder }
 
-// ImSinh action undocumented
+// ImSinh action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImSinh(reqObj *WorkbookFunctionsImSinhRequestParameter) *WorkbookFunctionsImSinhRequestBuilder {
 	bb := &WorkbookFunctionsImSinhRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImSinh"
@@ -466,7 +466,7 @@ func (r *WorkbookFunctionsImSinhRequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsImSqrtRequestBuilder struct{ BaseRequestBuilder }
 
-// ImSqrt action undocumented
+// ImSqrt action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImSqrt(reqObj *WorkbookFunctionsImSqrtRequestParameter) *WorkbookFunctionsImSqrtRequestBuilder {
 	bb := &WorkbookFunctionsImSqrtRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImSqrt"
@@ -489,7 +489,7 @@ func (r *WorkbookFunctionsImSqrtRequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsImSubRequestBuilder struct{ BaseRequestBuilder }
 
-// ImSub action undocumented
+// ImSub action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImSub(reqObj *WorkbookFunctionsImSubRequestParameter) *WorkbookFunctionsImSubRequestBuilder {
 	bb := &WorkbookFunctionsImSubRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImSub"
@@ -512,7 +512,7 @@ func (r *WorkbookFunctionsImSubRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsImSumRequestBuilder struct{ BaseRequestBuilder }
 
-// ImSum action undocumented
+// ImSum action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImSum(reqObj *WorkbookFunctionsImSumRequestParameter) *WorkbookFunctionsImSumRequestBuilder {
 	bb := &WorkbookFunctionsImSumRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImSum"
@@ -535,7 +535,7 @@ func (r *WorkbookFunctionsImSumRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsImTanRequestBuilder struct{ BaseRequestBuilder }
 
-// ImTan action undocumented
+// ImTan action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ImTan(reqObj *WorkbookFunctionsImTanRequestParameter) *WorkbookFunctionsImTanRequestBuilder {
 	bb := &WorkbookFunctionsImTanRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ImTan"

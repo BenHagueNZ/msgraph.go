@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsRadiansRequestBuilder struct{ BaseRequestBuilder }
 
-// Radians action undocumented
+// Radians action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Radians(reqObj *WorkbookFunctionsRadiansRequestParameter) *WorkbookFunctionsRadiansRequestBuilder {
 	bb := &WorkbookFunctionsRadiansRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Radians"

@@ -6,6 +6,8 @@ package msgraph
 type TargetedManagedAppConfiguration struct {
 	// ManagedAppConfiguration is the base model of TargetedManagedAppConfiguration
 	ManagedAppConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// DeployedAppCount undocumented
 	DeployedAppCount *int `json:"deployedAppCount,omitempty"`
 	// IsAssigned undocumented
@@ -18,20 +20,45 @@ type TargetedManagedAppConfiguration struct {
 	DeploymentSummary *ManagedAppPolicyDeploymentSummary `json:"deploymentSummary,omitempty"`
 }
 
+func NewTargetedManagedAppConfiguration() (*TargetedManagedAppConfiguration, error) {
+	newTargetedManagedAppConfiguration := &TargetedManagedAppConfiguration{
+		ODataType: "#microsoft.graph.TargetedManagedAppConfiguration",
+	}
+	return newTargetedManagedAppConfiguration, nil
+}
+
 // TargetedManagedAppPolicyAssignment undocumented
 type TargetedManagedAppPolicyAssignment struct {
 	// Entity is the base model of TargetedManagedAppPolicyAssignment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
+}
+
+func NewTargetedManagedAppPolicyAssignment() (*TargetedManagedAppPolicyAssignment, error) {
+	newTargetedManagedAppPolicyAssignment := &TargetedManagedAppPolicyAssignment{
+		ODataType: "#microsoft.graph.TargetedManagedAppPolicyAssignment",
+	}
+	return newTargetedManagedAppPolicyAssignment, nil
 }
 
 // TargetedManagedAppProtection undocumented
 type TargetedManagedAppProtection struct {
 	// ManagedAppProtection is the base model of TargetedManagedAppProtection
 	ManagedAppProtection
+
+	ODataType string `json:"@odata.type"`
 	// IsAssigned undocumented
 	IsAssigned *bool `json:"isAssigned,omitempty"`
 	// Assignments undocumented
 	Assignments []TargetedManagedAppPolicyAssignment `json:"assignments,omitempty"`
+}
+
+func NewTargetedManagedAppProtection() (*TargetedManagedAppProtection, error) {
+	newTargetedManagedAppProtection := &TargetedManagedAppProtection{
+		ODataType: "#microsoft.graph.TargetedManagedAppProtection",
+	}
+	return newTargetedManagedAppProtection, nil
 }

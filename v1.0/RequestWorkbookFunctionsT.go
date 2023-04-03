@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsTRequestBuilder struct{ BaseRequestBuilder }
 
-// T action undocumented
+// T action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) T(reqObj *WorkbookFunctionsTRequestParameter) *WorkbookFunctionsTRequestBuilder {
 	bb := &WorkbookFunctionsTRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/T"

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDvarRequestBuilder struct{ BaseRequestBuilder }
 
-// Dvar action undocumented
+// Dvar action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Dvar(reqObj *WorkbookFunctionsDvarRequestParameter) *WorkbookFunctionsDvarRequestBuilder {
 	bb := &WorkbookFunctionsDvarRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Dvar"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsDvarRequest) Post(ctx context.Context) (resObj *Workbo
 
 type WorkbookFunctionsDvarPRequestBuilder struct{ BaseRequestBuilder }
 
-// DvarP action undocumented
+// DvarP action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) DvarP(reqObj *WorkbookFunctionsDvarPRequestParameter) *WorkbookFunctionsDvarPRequestBuilder {
 	bb := &WorkbookFunctionsDvarPRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/DvarP"

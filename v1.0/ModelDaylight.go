@@ -6,6 +6,15 @@ package msgraph
 type DaylightTimeZoneOffset struct {
 	// StandardTimeZoneOffset is the base model of DaylightTimeZoneOffset
 	StandardTimeZoneOffset
+
+	ODataType string `json:"@odata.type"`
 	// DaylightBias undocumented
 	DaylightBias *int `json:"daylightBias,omitempty"`
+}
+
+func NewDaylightTimeZoneOffset() (*DaylightTimeZoneOffset, error) {
+	newDaylightTimeZoneOffset := &DaylightTimeZoneOffset{
+		ODataType: "#microsoft.graph.DaylightTimeZoneOffset",
+	}
+	return newDaylightTimeZoneOffset, nil
 }

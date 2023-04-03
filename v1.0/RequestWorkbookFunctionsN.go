@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsNRequestBuilder struct{ BaseRequestBuilder }
 
-// N action undocumented
+// N action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) N(reqObj *WorkbookFunctionsNRequestParameter) *WorkbookFunctionsNRequestBuilder {
 	bb := &WorkbookFunctionsNRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/N"

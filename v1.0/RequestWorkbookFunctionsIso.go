@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsIsoWeekNumRequestBuilder struct{ BaseRequestBuilder }
 
-// IsoWeekNum action undocumented
+// IsoWeekNum action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) IsoWeekNum(reqObj *WorkbookFunctionsIsoWeekNumRequestParameter) *WorkbookFunctionsIsoWeekNumRequestBuilder {
 	bb := &WorkbookFunctionsIsoWeekNumRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/IsoWeekNum"

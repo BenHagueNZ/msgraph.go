@@ -6,6 +6,8 @@ package msgraph
 type ConfigurationManagerClientEnabledFeatures struct {
 	// Object is the base model of ConfigurationManagerClientEnabledFeatures
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CompliancePolicy undocumented
 	CompliancePolicy *bool `json:"compliancePolicy,omitempty"`
 	// DeviceConfiguration undocumented
@@ -20,10 +22,26 @@ type ConfigurationManagerClientEnabledFeatures struct {
 	WindowsUpdateForBusiness *bool `json:"windowsUpdateForBusiness,omitempty"`
 }
 
+func NewConfigurationManagerClientEnabledFeatures() (*ConfigurationManagerClientEnabledFeatures, error) {
+	newConfigurationManagerClientEnabledFeatures := &ConfigurationManagerClientEnabledFeatures{
+		ODataType: "#microsoft.graph.ConfigurationManagerClientEnabledFeatures",
+	}
+	return newConfigurationManagerClientEnabledFeatures, nil
+}
+
 // ConfigurationManagerCollectionAssignmentTarget undocumented
 type ConfigurationManagerCollectionAssignmentTarget struct {
 	// DeviceAndAppManagementAssignmentTarget is the base model of ConfigurationManagerCollectionAssignmentTarget
 	DeviceAndAppManagementAssignmentTarget
+
+	ODataType string `json:"@odata.type"`
 	// CollectionID undocumented
 	CollectionID *string `json:"collectionId,omitempty"`
+}
+
+func NewConfigurationManagerCollectionAssignmentTarget() (*ConfigurationManagerCollectionAssignmentTarget, error) {
+	newConfigurationManagerCollectionAssignmentTarget := &ConfigurationManagerCollectionAssignmentTarget{
+		ODataType: "#microsoft.graph.ConfigurationManagerCollectionAssignmentTarget",
+	}
+	return newConfigurationManagerCollectionAssignmentTarget, nil
 }

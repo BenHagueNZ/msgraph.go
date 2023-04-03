@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsBinom_DistRequestBuilder struct{ BaseRequestBuilder }
 
-// Binom_Dist action undocumented
+// Binom_Dist action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Binom_Dist(reqObj *WorkbookFunctionsBinom_DistRequestParameter) *WorkbookFunctionsBinom_DistRequestBuilder {
 	bb := &WorkbookFunctionsBinom_DistRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Binom_Dist"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsBinom_DistRequest) Post(ctx context.Context) (resObj *
 
 type WorkbookFunctionsBinom_Dist_RangeRequestBuilder struct{ BaseRequestBuilder }
 
-// Binom_Dist_Range action undocumented
+// Binom_Dist_Range action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Binom_Dist_Range(reqObj *WorkbookFunctionsBinom_Dist_RangeRequestParameter) *WorkbookFunctionsBinom_Dist_RangeRequestBuilder {
 	bb := &WorkbookFunctionsBinom_Dist_RangeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Binom_Dist_Range"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsBinom_Dist_RangeRequest) Post(ctx context.Context) (re
 
 type WorkbookFunctionsBinom_InvRequestBuilder struct{ BaseRequestBuilder }
 
-// Binom_Inv action undocumented
+// Binom_Inv action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Binom_Inv(reqObj *WorkbookFunctionsBinom_InvRequestParameter) *WorkbookFunctionsBinom_InvRequestBuilder {
 	bb := &WorkbookFunctionsBinom_InvRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Binom_Inv"

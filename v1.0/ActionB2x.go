@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// IdentityProviders returns request builder for IdentityProvider collection
+// IdentityProviders returns request builder for IdentityProvider collection rcn
 func (b *B2xIdentityUserFlowRequestBuilder) IdentityProviders() *B2xIdentityUserFlowIdentityProvidersCollectionRequestBuilder {
 	bb := &B2xIdentityUserFlowIdentityProvidersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/identityProviders"
@@ -114,7 +114,7 @@ func (r *B2xIdentityUserFlowIdentityProvidersCollectionRequest) Add(ctx context.
 	return
 }
 
-// Languages returns request builder for UserFlowLanguageConfiguration collection
+// Languages returns request builder for UserFlowLanguageConfiguration collection rcn
 func (b *B2xIdentityUserFlowRequestBuilder) Languages() *B2xIdentityUserFlowLanguagesCollectionRequestBuilder {
 	bb := &B2xIdentityUserFlowLanguagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/languages"
@@ -217,7 +217,7 @@ func (r *B2xIdentityUserFlowLanguagesCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// UserAttributeAssignments returns request builder for IdentityUserFlowAttributeAssignment collection
+// UserAttributeAssignments returns request builder for IdentityUserFlowAttributeAssignment collection rcn
 func (b *B2xIdentityUserFlowRequestBuilder) UserAttributeAssignments() *B2xIdentityUserFlowUserAttributeAssignmentsCollectionRequestBuilder {
 	bb := &B2xIdentityUserFlowUserAttributeAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/userAttributeAssignments"
@@ -320,7 +320,7 @@ func (r *B2xIdentityUserFlowUserAttributeAssignmentsCollectionRequest) Add(ctx c
 	return
 }
 
-// UserFlowIdentityProviders returns request builder for IdentityProviderBase collection
+// UserFlowIdentityProviders returns request builder for IdentityProviderBase collection rcn
 func (b *B2xIdentityUserFlowRequestBuilder) UserFlowIdentityProviders() *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionRequestBuilder {
 	bb := &B2xIdentityUserFlowUserFlowIdentityProvidersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/userFlowIdentityProviders"

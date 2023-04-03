@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsTextRequestBuilder struct{ BaseRequestBuilder }
 
-// Text action undocumented
+// Text action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Text(reqObj *WorkbookFunctionsTextRequestParameter) *WorkbookFunctionsTextRequestBuilder {
 	bb := &WorkbookFunctionsTextRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Text"

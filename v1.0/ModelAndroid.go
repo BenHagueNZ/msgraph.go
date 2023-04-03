@@ -6,6 +6,8 @@ package msgraph
 type AndroidCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of AndroidCompliancePolicy
 	DeviceCompliancePolicy
+
+	ODataType string `json:"@odata.type"`
 	// DeviceThreatProtectionEnabled undocumented
 	DeviceThreatProtectionEnabled *bool `json:"deviceThreatProtectionEnabled,omitempty"`
 	// DeviceThreatProtectionRequiredSecurityLevel undocumented
@@ -50,18 +52,36 @@ type AndroidCompliancePolicy struct {
 	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
 }
 
+func NewAndroidCompliancePolicy() (*AndroidCompliancePolicy, error) {
+	newAndroidCompliancePolicy := &AndroidCompliancePolicy{
+		ODataType: "#microsoft.graph.AndroidCompliancePolicy",
+	}
+	return newAndroidCompliancePolicy, nil
+}
+
 // AndroidCustomConfiguration undocumented
 type AndroidCustomConfiguration struct {
 	// DeviceConfiguration is the base model of AndroidCustomConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// OMASettings undocumented
 	OMASettings []OMASetting `json:"omaSettings,omitempty"`
+}
+
+func NewAndroidCustomConfiguration() (*AndroidCustomConfiguration, error) {
+	newAndroidCustomConfiguration := &AndroidCustomConfiguration{
+		ODataType: "#microsoft.graph.AndroidCustomConfiguration",
+	}
+	return newAndroidCustomConfiguration, nil
 }
 
 // AndroidGeneralDeviceConfiguration undocumented
 type AndroidGeneralDeviceConfiguration struct {
 	// DeviceConfiguration is the base model of AndroidGeneralDeviceConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// AppsBlockClipboardSharing undocumented
 	AppsBlockClipboardSharing *bool `json:"appsBlockClipboardSharing,omitempty"`
 	// AppsBlockCopyPaste undocumented
@@ -160,10 +180,19 @@ type AndroidGeneralDeviceConfiguration struct {
 	WiFiBlocked *bool `json:"wiFiBlocked,omitempty"`
 }
 
+func NewAndroidGeneralDeviceConfiguration() (*AndroidGeneralDeviceConfiguration, error) {
+	newAndroidGeneralDeviceConfiguration := &AndroidGeneralDeviceConfiguration{
+		ODataType: "#microsoft.graph.AndroidGeneralDeviceConfiguration",
+	}
+	return newAndroidGeneralDeviceConfiguration, nil
+}
+
 // AndroidLobApp undocumented
 type AndroidLobApp struct {
 	// MobileLobApp is the base model of AndroidLobApp
 	MobileLobApp
+
+	ODataType string `json:"@odata.type"`
 	// MinimumSupportedOperatingSystem undocumented
 	MinimumSupportedOperatingSystem *AndroidMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
 	// PackageID undocumented
@@ -174,10 +203,19 @@ type AndroidLobApp struct {
 	VersionName *string `json:"versionName,omitempty"`
 }
 
+func NewAndroidLobApp() (*AndroidLobApp, error) {
+	newAndroidLobApp := &AndroidLobApp{
+		ODataType: "#microsoft.graph.AndroidLobApp",
+	}
+	return newAndroidLobApp, nil
+}
+
 // AndroidManagedAppProtection undocumented
 type AndroidManagedAppProtection struct {
 	// TargetedManagedAppProtection is the base model of AndroidManagedAppProtection
 	TargetedManagedAppProtection
+
+	ODataType string `json:"@odata.type"`
 	// CustomBrowserDisplayName undocumented
 	CustomBrowserDisplayName *string `json:"customBrowserDisplayName,omitempty"`
 	// CustomBrowserPackageID undocumented
@@ -200,16 +238,34 @@ type AndroidManagedAppProtection struct {
 	DeploymentSummary *ManagedAppPolicyDeploymentSummary `json:"deploymentSummary,omitempty"`
 }
 
+func NewAndroidManagedAppProtection() (*AndroidManagedAppProtection, error) {
+	newAndroidManagedAppProtection := &AndroidManagedAppProtection{
+		ODataType: "#microsoft.graph.AndroidManagedAppProtection",
+	}
+	return newAndroidManagedAppProtection, nil
+}
+
 // AndroidManagedAppRegistration undocumented
 type AndroidManagedAppRegistration struct {
 	// ManagedAppRegistration is the base model of AndroidManagedAppRegistration
 	ManagedAppRegistration
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewAndroidManagedAppRegistration() (*AndroidManagedAppRegistration, error) {
+	newAndroidManagedAppRegistration := &AndroidManagedAppRegistration{
+		ODataType: "#microsoft.graph.AndroidManagedAppRegistration",
+	}
+	return newAndroidManagedAppRegistration, nil
 }
 
 // AndroidMinimumOperatingSystem undocumented
 type AndroidMinimumOperatingSystem struct {
 	// Object is the base model of AndroidMinimumOperatingSystem
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// V10_0 undocumented
 	V10_0 *bool `json:"v10_0,omitempty"`
 	// V11_0 undocumented
@@ -244,18 +300,36 @@ type AndroidMinimumOperatingSystem struct {
 	V9_0 *bool `json:"v9_0,omitempty"`
 }
 
+func NewAndroidMinimumOperatingSystem() (*AndroidMinimumOperatingSystem, error) {
+	newAndroidMinimumOperatingSystem := &AndroidMinimumOperatingSystem{
+		ODataType: "#microsoft.graph.AndroidMinimumOperatingSystem",
+	}
+	return newAndroidMinimumOperatingSystem, nil
+}
+
 // AndroidMobileAppIdentifier undocumented
 type AndroidMobileAppIdentifier struct {
 	// MobileAppIdentifier is the base model of AndroidMobileAppIdentifier
 	MobileAppIdentifier
+
+	ODataType string `json:"@odata.type"`
 	// PackageID undocumented
 	PackageID *string `json:"packageId,omitempty"`
+}
+
+func NewAndroidMobileAppIdentifier() (*AndroidMobileAppIdentifier, error) {
+	newAndroidMobileAppIdentifier := &AndroidMobileAppIdentifier{
+		ODataType: "#microsoft.graph.AndroidMobileAppIdentifier",
+	}
+	return newAndroidMobileAppIdentifier, nil
 }
 
 // AndroidStoreApp undocumented
 type AndroidStoreApp struct {
 	// MobileApp is the base model of AndroidStoreApp
 	MobileApp
+
+	ODataType string `json:"@odata.type"`
 	// AppStoreURL undocumented
 	AppStoreURL *string `json:"appStoreUrl,omitempty"`
 	// MinimumSupportedOperatingSystem undocumented
@@ -264,10 +338,19 @@ type AndroidStoreApp struct {
 	PackageID *string `json:"packageId,omitempty"`
 }
 
+func NewAndroidStoreApp() (*AndroidStoreApp, error) {
+	newAndroidStoreApp := &AndroidStoreApp{
+		ODataType: "#microsoft.graph.AndroidStoreApp",
+	}
+	return newAndroidStoreApp, nil
+}
+
 // AndroidWorkProfileCompliancePolicy undocumented
 type AndroidWorkProfileCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of AndroidWorkProfileCompliancePolicy
 	DeviceCompliancePolicy
+
+	ODataType string `json:"@odata.type"`
 	// DeviceThreatProtectionEnabled undocumented
 	DeviceThreatProtectionEnabled *bool `json:"deviceThreatProtectionEnabled,omitempty"`
 	// DeviceThreatProtectionRequiredSecurityLevel undocumented
@@ -312,18 +395,36 @@ type AndroidWorkProfileCompliancePolicy struct {
 	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
 }
 
+func NewAndroidWorkProfileCompliancePolicy() (*AndroidWorkProfileCompliancePolicy, error) {
+	newAndroidWorkProfileCompliancePolicy := &AndroidWorkProfileCompliancePolicy{
+		ODataType: "#microsoft.graph.AndroidWorkProfileCompliancePolicy",
+	}
+	return newAndroidWorkProfileCompliancePolicy, nil
+}
+
 // AndroidWorkProfileCustomConfiguration undocumented
 type AndroidWorkProfileCustomConfiguration struct {
 	// DeviceConfiguration is the base model of AndroidWorkProfileCustomConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// OMASettings undocumented
 	OMASettings []OMASetting `json:"omaSettings,omitempty"`
+}
+
+func NewAndroidWorkProfileCustomConfiguration() (*AndroidWorkProfileCustomConfiguration, error) {
+	newAndroidWorkProfileCustomConfiguration := &AndroidWorkProfileCustomConfiguration{
+		ODataType: "#microsoft.graph.AndroidWorkProfileCustomConfiguration",
+	}
+	return newAndroidWorkProfileCustomConfiguration, nil
 }
 
 // AndroidWorkProfileGeneralDeviceConfiguration undocumented
 type AndroidWorkProfileGeneralDeviceConfiguration struct {
 	// DeviceConfiguration is the base model of AndroidWorkProfileGeneralDeviceConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// PasswordBlockFingerprintUnlock undocumented
 	PasswordBlockFingerprintUnlock *bool `json:"passwordBlockFingerprintUnlock,omitempty"`
 	// PasswordBlockTrustAgents undocumented
@@ -392,4 +493,11 @@ type AndroidWorkProfileGeneralDeviceConfiguration struct {
 	WorkProfilePasswordSignInFailureCountBeforeFactoryReset *int `json:"workProfilePasswordSignInFailureCountBeforeFactoryReset,omitempty"`
 	// WorkProfileRequirePassword undocumented
 	WorkProfileRequirePassword *bool `json:"workProfileRequirePassword,omitempty"`
+}
+
+func NewAndroidWorkProfileGeneralDeviceConfiguration() (*AndroidWorkProfileGeneralDeviceConfiguration, error) {
+	newAndroidWorkProfileGeneralDeviceConfiguration := &AndroidWorkProfileGeneralDeviceConfiguration{
+		ODataType: "#microsoft.graph.AndroidWorkProfileGeneralDeviceConfiguration",
+	}
+	return newAndroidWorkProfileGeneralDeviceConfiguration, nil
 }

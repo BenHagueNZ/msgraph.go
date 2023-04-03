@@ -23,14 +23,14 @@ type ChannelProvisionEmailRequestParameter struct {
 type ChannelRemoveEmailRequestParameter struct {
 }
 
-// FilesFolder is navigation property
+// FilesFolder is navigation property rn
 func (b *ChannelRequestBuilder) FilesFolder() *DriveItemRequestBuilder {
 	bb := &DriveItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/filesFolder"
 	return bb
 }
 
-// Members returns request builder for ConversationMember collection
+// Members returns request builder for ConversationMember collection rcn
 func (b *ChannelRequestBuilder) Members() *ChannelMembersCollectionRequestBuilder {
 	bb := &ChannelMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"
@@ -133,7 +133,7 @@ func (r *ChannelMembersCollectionRequest) Add(ctx context.Context, reqObj *Conve
 	return
 }
 
-// Messages returns request builder for ChatMessage collection
+// Messages returns request builder for ChatMessage collection rcn
 func (b *ChannelRequestBuilder) Messages() *ChannelMessagesCollectionRequestBuilder {
 	bb := &ChannelMessagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/messages"
@@ -236,7 +236,7 @@ func (r *ChannelMessagesCollectionRequest) Add(ctx context.Context, reqObj *Chat
 	return
 }
 
-// SharedWithTeams returns request builder for SharedWithChannelTeamInfo collection
+// SharedWithTeams returns request builder for SharedWithChannelTeamInfo collection rcn
 func (b *ChannelRequestBuilder) SharedWithTeams() *ChannelSharedWithTeamsCollectionRequestBuilder {
 	bb := &ChannelSharedWithTeamsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sharedWithTeams"
@@ -339,7 +339,7 @@ func (r *ChannelSharedWithTeamsCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Tabs returns request builder for TeamsTab collection
+// Tabs returns request builder for TeamsTab collection rcn
 func (b *ChannelRequestBuilder) Tabs() *ChannelTabsCollectionRequestBuilder {
 	bb := &ChannelTabsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tabs"
@@ -440,4 +440,11 @@ func (r *ChannelTabsCollectionRequest) Get(ctx context.Context) ([]TeamsTab, err
 func (r *ChannelTabsCollectionRequest) Add(ctx context.Context, reqObj *TeamsTab) (resObj *TeamsTab, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Channel is navigation property rn
+func (b *ChannelRequestBuilder) Channel() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

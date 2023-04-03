@@ -8,12 +8,23 @@ import "time"
 type ActivityBasedTimeoutPolicy struct {
 	// StsPolicy is the base model of ActivityBasedTimeoutPolicy
 	StsPolicy
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewActivityBasedTimeoutPolicy() (*ActivityBasedTimeoutPolicy, error) {
+	newActivityBasedTimeoutPolicy := &ActivityBasedTimeoutPolicy{
+		ODataType: "#microsoft.graph.ActivityBasedTimeoutPolicy",
+	}
+	return newActivityBasedTimeoutPolicy, nil
 }
 
 // ActivityHistoryItem undocumented
 type ActivityHistoryItem struct {
 	// Entity is the base model of ActivityHistoryItem
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ActiveDurationSeconds undocumented
 	ActiveDurationSeconds *int `json:"activeDurationSeconds,omitempty"`
 	// CreatedDateTime undocumented
@@ -32,4 +43,11 @@ type ActivityHistoryItem struct {
 	UserTimezone *string `json:"userTimezone,omitempty"`
 	// Activity undocumented
 	Activity *UserActivity `json:"activity,omitempty"`
+}
+
+func NewActivityHistoryItem() (*ActivityHistoryItem, error) {
+	newActivityHistoryItem := &ActivityHistoryItem{
+		ODataType: "#microsoft.graph.ActivityHistoryItem",
+	}
+	return newActivityHistoryItem, nil
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsNaRequestBuilder struct{ BaseRequestBuilder }
 
-// Na action undocumented
+// Na action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Na(reqObj *WorkbookFunctionsNaRequestParameter) *WorkbookFunctionsNaRequestBuilder {
 	bb := &WorkbookFunctionsNaRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Na"

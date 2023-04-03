@@ -178,7 +178,7 @@ func (r *CalendarSharingMessageActionRequest) Delete(ctx context.Context) error 
 
 type CalendarGetScheduleRequestBuilder struct{ BaseRequestBuilder }
 
-// GetSchedule action undocumented
+// GetSchedule action undocumentedrac
 func (b *CalendarRequestBuilder) GetSchedule(reqObj *CalendarGetScheduleRequestParameter) *CalendarGetScheduleRequestBuilder {
 	bb := &CalendarGetScheduleRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetSchedule"
@@ -259,7 +259,7 @@ func (r *CalendarGetScheduleRequest) Post(ctx context.Context) ([]ScheduleInform
 
 type CalendarSharingMessageAcceptRequestBuilder struct{ BaseRequestBuilder }
 
-// Accept action undocumented
+// Accept action undocumentedras
 func (b *CalendarSharingMessageRequestBuilder) Accept(reqObj *CalendarSharingMessageAcceptRequestParameter) *CalendarSharingMessageAcceptRequestBuilder {
 	bb := &CalendarSharingMessageAcceptRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Accept"

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsBahtTextRequestBuilder struct{ BaseRequestBuilder }
 
-// BahtText action undocumented
+// BahtText action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) BahtText(reqObj *WorkbookFunctionsBahtTextRequestParameter) *WorkbookFunctionsBahtTextRequestBuilder {
 	bb := &WorkbookFunctionsBahtTextRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/BahtText"

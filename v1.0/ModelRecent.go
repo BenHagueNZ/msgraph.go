@@ -8,6 +8,8 @@ import "time"
 type RecentNotebook struct {
 	// Object is the base model of RecentNotebook
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// LastAccessedTime undocumented
@@ -18,12 +20,28 @@ type RecentNotebook struct {
 	SourceService *OnenoteSourceService `json:"sourceService,omitempty"`
 }
 
+func NewRecentNotebook() (*RecentNotebook, error) {
+	newRecentNotebook := &RecentNotebook{
+		ODataType: "#microsoft.graph.RecentNotebook",
+	}
+	return newRecentNotebook, nil
+}
+
 // RecentNotebookLinks undocumented
 type RecentNotebookLinks struct {
 	// Object is the base model of RecentNotebookLinks
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// OneNoteClientURL undocumented
 	OneNoteClientURL *ExternalLink `json:"oneNoteClientUrl,omitempty"`
 	// OneNoteWebURL undocumented
 	OneNoteWebURL *ExternalLink `json:"oneNoteWebUrl,omitempty"`
+}
+
+func NewRecentNotebookLinks() (*RecentNotebookLinks, error) {
+	newRecentNotebookLinks := &RecentNotebookLinks{
+		ODataType: "#microsoft.graph.RecentNotebookLinks",
+	}
+	return newRecentNotebookLinks, nil
 }

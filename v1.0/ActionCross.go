@@ -15,14 +15,14 @@ import (
 type CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestParameter struct {
 }
 
-// Default is navigation property
+// Default is navigation property rn
 func (b *CrossTenantAccessPolicyRequestBuilder) Default() *CrossTenantAccessPolicyConfigurationDefaultRequestBuilder {
 	bb := &CrossTenantAccessPolicyConfigurationDefaultRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/default"
 	return bb
 }
 
-// Partners returns request builder for CrossTenantAccessPolicyConfigurationPartner collection
+// Partners returns request builder for CrossTenantAccessPolicyConfigurationPartner collection rcn
 func (b *CrossTenantAccessPolicyRequestBuilder) Partners() *CrossTenantAccessPolicyPartnersCollectionRequestBuilder {
 	bb := &CrossTenantAccessPolicyPartnersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/partners"
@@ -123,4 +123,11 @@ func (r *CrossTenantAccessPolicyPartnersCollectionRequest) Get(ctx context.Conte
 func (r *CrossTenantAccessPolicyPartnersCollectionRequest) Add(ctx context.Context, reqObj *CrossTenantAccessPolicyConfigurationPartner) (resObj *CrossTenantAccessPolicyConfigurationPartner, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// CrossTenantAccessPolicyConfigurationDefault is navigation property rn
+func (b *CrossTenantAccessPolicyConfigurationDefaultRequestBuilder) CrossTenantAccessPolicyConfigurationDefault() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

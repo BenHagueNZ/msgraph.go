@@ -6,6 +6,8 @@ package msgraph
 type TenantAppManagementPolicy struct {
 	// PolicyBase is the base model of TenantAppManagementPolicy
 	PolicyBase
+
+	ODataType string `json:"@odata.type"`
 	// ApplicationRestrictions undocumented
 	ApplicationRestrictions *AppManagementConfiguration `json:"applicationRestrictions,omitempty"`
 	// IsEnabled undocumented
@@ -14,12 +16,28 @@ type TenantAppManagementPolicy struct {
 	ServicePrincipalRestrictions *AppManagementConfiguration `json:"servicePrincipalRestrictions,omitempty"`
 }
 
+func NewTenantAppManagementPolicy() (*TenantAppManagementPolicy, error) {
+	newTenantAppManagementPolicy := &TenantAppManagementPolicy{
+		ODataType: "#microsoft.graph.TenantAppManagementPolicy",
+	}
+	return newTenantAppManagementPolicy, nil
+}
+
 // TenantRelationship undocumented
 type TenantRelationship struct {
 	// Object is the base model of TenantRelationship
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DelegatedAdminCustomers undocumented
 	DelegatedAdminCustomers []DelegatedAdminCustomer `json:"delegatedAdminCustomers,omitempty"`
 	// DelegatedAdminRelationships undocumented
 	DelegatedAdminRelationships []DelegatedAdminRelationship `json:"delegatedAdminRelationships,omitempty"`
+}
+
+func NewTenantRelationship() (*TenantRelationship, error) {
+	newTenantRelationship := &TenantRelationship{
+		ODataType: "#microsoft.graph.TenantRelationship",
+	}
+	return newTenantRelationship, nil
 }

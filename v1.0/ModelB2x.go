@@ -6,6 +6,8 @@ package msgraph
 type B2xIdentityUserFlow struct {
 	// IdentityUserFlow is the base model of B2xIdentityUserFlow
 	IdentityUserFlow
+
+	ODataType string `json:"@odata.type"`
 	// APIConnectorConfiguration undocumented
 	APIConnectorConfiguration *UserFlowAPIConnectorConfiguration `json:"apiConnectorConfiguration,omitempty"`
 	// IdentityProviders undocumented
@@ -16,4 +18,11 @@ type B2xIdentityUserFlow struct {
 	UserAttributeAssignments []IdentityUserFlowAttributeAssignment `json:"userAttributeAssignments,omitempty"`
 	// UserFlowIdentityProviders undocumented
 	UserFlowIdentityProviders []IdentityProviderBase `json:"userFlowIdentityProviders,omitempty"`
+}
+
+func NewB2xIdentityUserFlow() (*B2xIdentityUserFlow, error) {
+	newB2xIdentityUserFlow := &B2xIdentityUserFlow{
+		ODataType: "#microsoft.graph.B2xIdentityUserFlow",
+	}
+	return newB2xIdentityUserFlow, nil
 }

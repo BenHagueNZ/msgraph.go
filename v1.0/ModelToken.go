@@ -6,18 +6,45 @@ package msgraph
 type TokenIssuancePolicy struct {
 	// StsPolicy is the base model of TokenIssuancePolicy
 	StsPolicy
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewTokenIssuancePolicy() (*TokenIssuancePolicy, error) {
+	newTokenIssuancePolicy := &TokenIssuancePolicy{
+		ODataType: "#microsoft.graph.TokenIssuancePolicy",
+	}
+	return newTokenIssuancePolicy, nil
 }
 
 // TokenLifetimePolicy undocumented
 type TokenLifetimePolicy struct {
 	// StsPolicy is the base model of TokenLifetimePolicy
 	StsPolicy
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewTokenLifetimePolicy() (*TokenLifetimePolicy, error) {
+	newTokenLifetimePolicy := &TokenLifetimePolicy{
+		ODataType: "#microsoft.graph.TokenLifetimePolicy",
+	}
+	return newTokenLifetimePolicy, nil
 }
 
 // TokenMeetingInfo undocumented
 type TokenMeetingInfo struct {
 	// MeetingInfo is the base model of TokenMeetingInfo
 	MeetingInfo
+
+	ODataType string `json:"@odata.type"`
 	// Token undocumented
 	Token *string `json:"token,omitempty"`
+}
+
+func NewTokenMeetingInfo() (*TokenMeetingInfo, error) {
+	newTokenMeetingInfo := &TokenMeetingInfo{
+		ODataType: "#microsoft.graph.TokenMeetingInfo",
+	}
+	return newTokenMeetingInfo, nil
 }

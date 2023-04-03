@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Extensions returns request builder for Extension collection
+// Extensions returns request builder for Extension collection rcn
 func (b *ContactRequestBuilder) Extensions() *ContactExtensionsCollectionRequestBuilder {
 	bb := &ContactExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensions"
@@ -114,7 +114,7 @@ func (r *ContactExtensionsCollectionRequest) Add(ctx context.Context, reqObj *Ex
 	return
 }
 
-// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection
+// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection rcn
 func (b *ContactRequestBuilder) MultiValueExtendedProperties() *ContactMultiValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &ContactMultiValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/multiValueExtendedProperties"
@@ -217,14 +217,14 @@ func (r *ContactMultiValueExtendedPropertiesCollectionRequest) Add(ctx context.C
 	return
 }
 
-// Photo is navigation property
+// Photo is navigation property rn
 func (b *ContactRequestBuilder) Photo() *ProfilePhotoRequestBuilder {
 	bb := &ProfilePhotoRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/photo"
 	return bb
 }
 
-// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection
+// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection rcn
 func (b *ContactRequestBuilder) SingleValueExtendedProperties() *ContactSingleValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &ContactSingleValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/singleValueExtendedProperties"
@@ -327,7 +327,7 @@ func (r *ContactSingleValueExtendedPropertiesCollectionRequest) Add(ctx context.
 	return
 }
 
-// ChildFolders returns request builder for ContactFolder collection
+// ChildFolders returns request builder for ContactFolder collection rcn
 func (b *ContactFolderRequestBuilder) ChildFolders() *ContactFolderChildFoldersCollectionRequestBuilder {
 	bb := &ContactFolderChildFoldersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/childFolders"
@@ -430,7 +430,7 @@ func (r *ContactFolderChildFoldersCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// Contacts returns request builder for Contact collection
+// Contacts returns request builder for Contact collection rcn
 func (b *ContactFolderRequestBuilder) Contacts() *ContactFolderContactsCollectionRequestBuilder {
 	bb := &ContactFolderContactsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/contacts"
@@ -533,7 +533,7 @@ func (r *ContactFolderContactsCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection
+// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection rcn
 func (b *ContactFolderRequestBuilder) MultiValueExtendedProperties() *ContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &ContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/multiValueExtendedProperties"
@@ -636,7 +636,7 @@ func (r *ContactFolderMultiValueExtendedPropertiesCollectionRequest) Add(ctx con
 	return
 }
 
-// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection
+// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection rcn
 func (b *ContactFolderRequestBuilder) SingleValueExtendedProperties() *ContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &ContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/singleValueExtendedProperties"
@@ -737,4 +737,18 @@ func (r *ContactFolderSingleValueExtendedPropertiesCollectionRequest) Get(ctx co
 func (r *ContactFolderSingleValueExtendedPropertiesCollectionRequest) Add(ctx context.Context, reqObj *SingleValueLegacyExtendedProperty) (resObj *SingleValueLegacyExtendedProperty, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Contact is navigation property rn
+func (b *ContactRequestBuilder) Contact() *OutlookItemRequestBuilder {
+	bb := &OutlookItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/OutlookItem"
+	return bb
+}
+
+// ContactFolder is navigation property rn
+func (b *ContactFolderRequestBuilder) ContactFolder() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

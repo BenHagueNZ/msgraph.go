@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsWorkDayRequestBuilder struct{ BaseRequestBuilder }
 
-// WorkDay action undocumented
+// WorkDay action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) WorkDay(reqObj *WorkbookFunctionsWorkDayRequestParameter) *WorkbookFunctionsWorkDayRequestBuilder {
 	bb := &WorkbookFunctionsWorkDayRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/WorkDay"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsWorkDayRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsWorkDay_IntlRequestBuilder struct{ BaseRequestBuilder }
 
-// WorkDay_Intl action undocumented
+// WorkDay_Intl action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) WorkDay_Intl(reqObj *WorkbookFunctionsWorkDay_IntlRequestParameter) *WorkbookFunctionsWorkDay_IntlRequestBuilder {
 	bb := &WorkbookFunctionsWorkDay_IntlRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/WorkDay_Intl"

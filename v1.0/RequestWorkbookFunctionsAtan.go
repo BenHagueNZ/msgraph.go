@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsAtanRequestBuilder struct{ BaseRequestBuilder }
 
-// Atan action undocumented
+// Atan action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Atan(reqObj *WorkbookFunctionsAtanRequestParameter) *WorkbookFunctionsAtanRequestBuilder {
 	bb := &WorkbookFunctionsAtanRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Atan"

@@ -6,6 +6,8 @@ package msgraph
 type InformationalURL struct {
 	// Object is the base model of InformationalURL
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// LogoURL undocumented
 	LogoURL *string `json:"logoUrl,omitempty"`
 	// MarketingURL undocumented
@@ -16,4 +18,11 @@ type InformationalURL struct {
 	SupportURL *string `json:"supportUrl,omitempty"`
 	// TermsOfServiceURL undocumented
 	TermsOfServiceURL *string `json:"termsOfServiceUrl,omitempty"`
+}
+
+func NewInformationalURL() (*InformationalURL, error) {
+	newInformationalURL := &InformationalURL{
+		ODataType: "#microsoft.graph.InformationalUrl",
+	}
+	return newInformationalURL, nil
 }

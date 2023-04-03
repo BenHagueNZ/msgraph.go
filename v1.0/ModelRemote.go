@@ -8,6 +8,8 @@ import "time"
 type RemoteAssistancePartner struct {
 	// Entity is the base model of RemoteAssistancePartner
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// LastConnectionDateTime undocumented
@@ -18,10 +20,19 @@ type RemoteAssistancePartner struct {
 	OnboardingURL *string `json:"onboardingUrl,omitempty"`
 }
 
+func NewRemoteAssistancePartner() (*RemoteAssistancePartner, error) {
+	newRemoteAssistancePartner := &RemoteAssistancePartner{
+		ODataType: "#microsoft.graph.RemoteAssistancePartner",
+	}
+	return newRemoteAssistancePartner, nil
+}
+
 // RemoteItem undocumented
 type RemoteItem struct {
 	// Object is the base model of RemoteItem
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -62,10 +73,26 @@ type RemoteItem struct {
 	WebURL *string `json:"webUrl,omitempty"`
 }
 
+func NewRemoteItem() (*RemoteItem, error) {
+	newRemoteItem := &RemoteItem{
+		ODataType: "#microsoft.graph.RemoteItem",
+	}
+	return newRemoteItem, nil
+}
+
 // RemoteLockActionResult undocumented
 type RemoteLockActionResult struct {
 	// DeviceActionResult is the base model of RemoteLockActionResult
 	DeviceActionResult
+
+	ODataType string `json:"@odata.type"`
 	// UnlockPin undocumented
 	UnlockPin *string `json:"unlockPin,omitempty"`
+}
+
+func NewRemoteLockActionResult() (*RemoteLockActionResult, error) {
+	newRemoteLockActionResult := &RemoteLockActionResult{
+		ODataType: "#microsoft.graph.RemoteLockActionResult",
+	}
+	return newRemoteLockActionResult, nil
 }

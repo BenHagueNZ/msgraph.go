@@ -17,7 +17,7 @@ type ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestParameter stru
 	ImportedWindowsAutopilotDeviceIdentities []ImportedWindowsAutopilotDeviceIdentity `json:"importedWindowsAutopilotDeviceIdentities,omitempty"`
 }
 
-// DeviceIdentities returns request builder for ImportedWindowsAutopilotDeviceIdentity collection
+// DeviceIdentities returns request builder for ImportedWindowsAutopilotDeviceIdentity collection rcn
 func (b *ImportedWindowsAutopilotDeviceIdentityUploadRequestBuilder) DeviceIdentities() *ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionRequestBuilder {
 	bb := &ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceIdentities"
@@ -118,4 +118,18 @@ func (r *ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionR
 func (r *ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionRequest) Add(ctx context.Context, reqObj *ImportedWindowsAutopilotDeviceIdentity) (resObj *ImportedWindowsAutopilotDeviceIdentity, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// ImportedWindowsAutopilotDeviceIdentity is navigation property rn
+func (b *ImportedWindowsAutopilotDeviceIdentityRequestBuilder) ImportedWindowsAutopilotDeviceIdentity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ImportedWindowsAutopilotDeviceIdentityUpload is navigation property rn
+func (b *ImportedWindowsAutopilotDeviceIdentityUploadRequestBuilder) ImportedWindowsAutopilotDeviceIdentityUpload() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

@@ -6,6 +6,8 @@ package msgraph
 type Quota struct {
 	// Object is the base model of Quota
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Deleted undocumented
 	Deleted *int `json:"deleted,omitempty"`
 	// Remaining undocumented
@@ -18,4 +20,11 @@ type Quota struct {
 	Total *int `json:"total,omitempty"`
 	// Used undocumented
 	Used *int `json:"used,omitempty"`
+}
+
+func NewQuota() (*Quota, error) {
+	newQuota := &Quota{
+		ODataType: "#microsoft.graph.Quota",
+	}
+	return newQuota, nil
 }

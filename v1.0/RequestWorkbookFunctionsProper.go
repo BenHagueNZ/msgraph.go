@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsProperRequestBuilder struct{ BaseRequestBuilder }
 
-// Proper action undocumented
+// Proper action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Proper(reqObj *WorkbookFunctionsProperRequestParameter) *WorkbookFunctionsProperRequestBuilder {
 	bb := &WorkbookFunctionsProperRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Proper"

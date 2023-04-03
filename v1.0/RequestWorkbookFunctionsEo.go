@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsEoMonthRequestBuilder struct{ BaseRequestBuilder }
 
-// EoMonth action undocumented
+// EoMonth action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) EoMonth(reqObj *WorkbookFunctionsEoMonthRequestParameter) *WorkbookFunctionsEoMonthRequestBuilder {
 	bb := &WorkbookFunctionsEoMonthRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/EoMonth"

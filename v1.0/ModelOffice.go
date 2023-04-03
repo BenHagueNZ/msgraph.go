@@ -6,10 +6,19 @@ package msgraph
 type OfficeGraphInsights struct {
 	// Entity is the base model of OfficeGraphInsights
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Shared undocumented
 	Shared []SharedInsight `json:"shared,omitempty"`
 	// Trending undocumented
 	Trending []Trending `json:"trending,omitempty"`
 	// Used undocumented
 	Used []UsedInsight `json:"used,omitempty"`
+}
+
+func NewOfficeGraphInsights() (*OfficeGraphInsights, error) {
+	newOfficeGraphInsights := &OfficeGraphInsights{
+		ODataType: "#microsoft.graph.OfficeGraphInsights",
+	}
+	return newOfficeGraphInsights, nil
 }

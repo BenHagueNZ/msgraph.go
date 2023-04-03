@@ -11,14 +11,14 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// RoleDefinition is navigation property
+// RoleDefinition is navigation property rn
 func (b *RoleAssignmentRequestBuilder) RoleDefinition() *RoleDefinitionRequestBuilder {
 	bb := &RoleDefinitionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleDefinition"
 	return bb
 }
 
-// RoleAssignments returns request builder for RoleAssignment collection
+// RoleAssignments returns request builder for RoleAssignment collection rcn
 func (b *RoleDefinitionRequestBuilder) RoleAssignments() *RoleDefinitionRoleAssignmentsCollectionRequestBuilder {
 	bb := &RoleDefinitionRoleAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleAssignments"
@@ -121,14 +121,14 @@ func (r *RoleDefinitionRoleAssignmentsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Directory is navigation property
+// Directory is navigation property rn
 func (b *RoleManagementRequestBuilder) Directory() *RbacApplicationRequestBuilder {
 	bb := &RbacApplicationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/directory"
 	return bb
 }
 
-// EntitlementManagement is navigation property
+// EntitlementManagement is navigation property rn
 func (b *RoleManagementRequestBuilder) EntitlementManagement() *RbacApplicationRequestBuilder {
 	bb := &RbacApplicationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/entitlementManagement"

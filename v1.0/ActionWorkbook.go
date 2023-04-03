@@ -3394,14 +3394,14 @@ type WorkbookWorksheetProtectionProtectRequestParameter struct {
 type WorkbookWorksheetProtectionUnprotectRequestParameter struct {
 }
 
-// Application is navigation property
+// Application is navigation property rn
 func (b *WorkbookRequestBuilder) Application() *WorkbookApplicationRequestBuilder {
 	bb := &WorkbookApplicationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/application"
 	return bb
 }
 
-// Comments returns request builder for WorkbookComment collection
+// Comments returns request builder for WorkbookComment collection rcn
 func (b *WorkbookRequestBuilder) Comments() *WorkbookCommentsCollectionRequestBuilder {
 	bb := &WorkbookCommentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/comments"
@@ -3504,14 +3504,14 @@ func (r *WorkbookCommentsCollectionRequest) Add(ctx context.Context, reqObj *Wor
 	return
 }
 
-// Functions is navigation property
+// Functions is navigation property rn
 func (b *WorkbookRequestBuilder) Functions() *WorkbookFunctionsRequestBuilder {
 	bb := &WorkbookFunctionsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/functions"
 	return bb
 }
 
-// Names returns request builder for WorkbookNamedItem collection
+// Names returns request builder for WorkbookNamedItem collection rcn
 func (b *WorkbookRequestBuilder) Names() *WorkbookNamesCollectionRequestBuilder {
 	bb := &WorkbookNamesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/names"
@@ -3614,7 +3614,7 @@ func (r *WorkbookNamesCollectionRequest) Add(ctx context.Context, reqObj *Workbo
 	return
 }
 
-// Operations returns request builder for WorkbookOperation collection
+// Operations returns request builder for WorkbookOperation collection rcn
 func (b *WorkbookRequestBuilder) Operations() *WorkbookOperationsCollectionRequestBuilder {
 	bb := &WorkbookOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -3717,7 +3717,7 @@ func (r *WorkbookOperationsCollectionRequest) Add(ctx context.Context, reqObj *W
 	return
 }
 
-// Tables returns request builder for WorkbookTable collection
+// Tables returns request builder for WorkbookTable collection rcn
 func (b *WorkbookRequestBuilder) Tables() *WorkbookTablesCollectionRequestBuilder {
 	bb := &WorkbookTablesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tables"
@@ -3820,7 +3820,7 @@ func (r *WorkbookTablesCollectionRequest) Add(ctx context.Context, reqObj *Workb
 	return
 }
 
-// Worksheets returns request builder for WorkbookWorksheet collection
+// Worksheets returns request builder for WorkbookWorksheet collection rcn
 func (b *WorkbookRequestBuilder) Worksheets() *WorkbookWorksheetsCollectionRequestBuilder {
 	bb := &WorkbookWorksheetsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/worksheets"
@@ -3923,35 +3923,35 @@ func (r *WorkbookWorksheetsCollectionRequest) Add(ctx context.Context, reqObj *W
 	return
 }
 
-// Axes is navigation property
+// Axes is navigation property rn
 func (b *WorkbookChartRequestBuilder) Axes() *WorkbookChartAxesRequestBuilder {
 	bb := &WorkbookChartAxesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/axes"
 	return bb
 }
 
-// DataLabels is navigation property
+// DataLabels is navigation property rn
 func (b *WorkbookChartRequestBuilder) DataLabels() *WorkbookChartDataLabelsRequestBuilder {
 	bb := &WorkbookChartDataLabelsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/dataLabels"
 	return bb
 }
 
-// Format is navigation property
+// Format is navigation property rn
 func (b *WorkbookChartRequestBuilder) Format() *WorkbookChartAreaFormatRequestBuilder {
 	bb := &WorkbookChartAreaFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/format"
 	return bb
 }
 
-// Legend is navigation property
+// Legend is navigation property rn
 func (b *WorkbookChartRequestBuilder) Legend() *WorkbookChartLegendRequestBuilder {
 	bb := &WorkbookChartLegendRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/legend"
 	return bb
 }
 
-// Series returns request builder for WorkbookChartSeries collection
+// Series returns request builder for WorkbookChartSeries collection rcn
 func (b *WorkbookChartRequestBuilder) Series() *WorkbookChartSeriesCollectionRequestBuilder {
 	bb := &WorkbookChartSeriesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/series"
@@ -4054,189 +4054,189 @@ func (r *WorkbookChartSeriesCollectionRequest) Add(ctx context.Context, reqObj *
 	return
 }
 
-// Title is navigation property
+// Title is navigation property rn
 func (b *WorkbookChartRequestBuilder) Title() *WorkbookChartTitleRequestBuilder {
 	bb := &WorkbookChartTitleRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/title"
 	return bb
 }
 
-// Worksheet is navigation property
+// Worksheet is navigation property rn
 func (b *WorkbookChartRequestBuilder) Worksheet() *WorkbookWorksheetRequestBuilder {
 	bb := &WorkbookWorksheetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/worksheet"
 	return bb
 }
 
-// Fill is navigation property
+// Fill is navigation property rn
 func (b *WorkbookChartAreaFormatRequestBuilder) Fill() *WorkbookChartFillRequestBuilder {
 	bb := &WorkbookChartFillRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/fill"
 	return bb
 }
 
-// Font is navigation property
+// Font is navigation property rn
 func (b *WorkbookChartAreaFormatRequestBuilder) Font() *WorkbookChartFontRequestBuilder {
 	bb := &WorkbookChartFontRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/font"
 	return bb
 }
 
-// CategoryAxis is navigation property
+// CategoryAxis is navigation property rn
 func (b *WorkbookChartAxesRequestBuilder) CategoryAxis() *WorkbookChartAxisRequestBuilder {
 	bb := &WorkbookChartAxisRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/categoryAxis"
 	return bb
 }
 
-// SeriesAxis is navigation property
+// SeriesAxis is navigation property rn
 func (b *WorkbookChartAxesRequestBuilder) SeriesAxis() *WorkbookChartAxisRequestBuilder {
 	bb := &WorkbookChartAxisRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/seriesAxis"
 	return bb
 }
 
-// ValueAxis is navigation property
+// ValueAxis is navigation property rn
 func (b *WorkbookChartAxesRequestBuilder) ValueAxis() *WorkbookChartAxisRequestBuilder {
 	bb := &WorkbookChartAxisRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/valueAxis"
 	return bb
 }
 
-// Format is navigation property
+// Format is navigation property rn
 func (b *WorkbookChartAxisRequestBuilder) Format() *WorkbookChartAxisFormatRequestBuilder {
 	bb := &WorkbookChartAxisFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/format"
 	return bb
 }
 
-// MajorGridlines is navigation property
+// MajorGridlines is navigation property rn
 func (b *WorkbookChartAxisRequestBuilder) MajorGridlines() *WorkbookChartGridlinesRequestBuilder {
 	bb := &WorkbookChartGridlinesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/majorGridlines"
 	return bb
 }
 
-// MinorGridlines is navigation property
+// MinorGridlines is navigation property rn
 func (b *WorkbookChartAxisRequestBuilder) MinorGridlines() *WorkbookChartGridlinesRequestBuilder {
 	bb := &WorkbookChartGridlinesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/minorGridlines"
 	return bb
 }
 
-// Title is navigation property
+// Title is navigation property rn
 func (b *WorkbookChartAxisRequestBuilder) Title() *WorkbookChartAxisTitleRequestBuilder {
 	bb := &WorkbookChartAxisTitleRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/title"
 	return bb
 }
 
-// Font is navigation property
+// Font is navigation property rn
 func (b *WorkbookChartAxisFormatRequestBuilder) Font() *WorkbookChartFontRequestBuilder {
 	bb := &WorkbookChartFontRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/font"
 	return bb
 }
 
-// Line is navigation property
+// Line is navigation property rn
 func (b *WorkbookChartAxisFormatRequestBuilder) Line() *WorkbookChartLineFormatRequestBuilder {
 	bb := &WorkbookChartLineFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/line"
 	return bb
 }
 
-// Format is navigation property
+// Format is navigation property rn
 func (b *WorkbookChartAxisTitleRequestBuilder) Format() *WorkbookChartAxisTitleFormatRequestBuilder {
 	bb := &WorkbookChartAxisTitleFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/format"
 	return bb
 }
 
-// Font is navigation property
+// Font is navigation property rn
 func (b *WorkbookChartAxisTitleFormatRequestBuilder) Font() *WorkbookChartFontRequestBuilder {
 	bb := &WorkbookChartFontRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/font"
 	return bb
 }
 
-// Fill is navigation property
+// Fill is navigation property rn
 func (b *WorkbookChartDataLabelFormatRequestBuilder) Fill() *WorkbookChartFillRequestBuilder {
 	bb := &WorkbookChartFillRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/fill"
 	return bb
 }
 
-// Font is navigation property
+// Font is navigation property rn
 func (b *WorkbookChartDataLabelFormatRequestBuilder) Font() *WorkbookChartFontRequestBuilder {
 	bb := &WorkbookChartFontRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/font"
 	return bb
 }
 
-// Format is navigation property
+// Format is navigation property rn
 func (b *WorkbookChartDataLabelsRequestBuilder) Format() *WorkbookChartDataLabelFormatRequestBuilder {
 	bb := &WorkbookChartDataLabelFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/format"
 	return bb
 }
 
-// Format is navigation property
+// Format is navigation property rn
 func (b *WorkbookChartGridlinesRequestBuilder) Format() *WorkbookChartGridlinesFormatRequestBuilder {
 	bb := &WorkbookChartGridlinesFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/format"
 	return bb
 }
 
-// Line is navigation property
+// Line is navigation property rn
 func (b *WorkbookChartGridlinesFormatRequestBuilder) Line() *WorkbookChartLineFormatRequestBuilder {
 	bb := &WorkbookChartLineFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/line"
 	return bb
 }
 
-// Format is navigation property
+// Format is navigation property rn
 func (b *WorkbookChartLegendRequestBuilder) Format() *WorkbookChartLegendFormatRequestBuilder {
 	bb := &WorkbookChartLegendFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/format"
 	return bb
 }
 
-// Fill is navigation property
+// Fill is navigation property rn
 func (b *WorkbookChartLegendFormatRequestBuilder) Fill() *WorkbookChartFillRequestBuilder {
 	bb := &WorkbookChartFillRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/fill"
 	return bb
 }
 
-// Font is navigation property
+// Font is navigation property rn
 func (b *WorkbookChartLegendFormatRequestBuilder) Font() *WorkbookChartFontRequestBuilder {
 	bb := &WorkbookChartFontRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/font"
 	return bb
 }
 
-// Format is navigation property
+// Format is navigation property rn
 func (b *WorkbookChartPointRequestBuilder) Format() *WorkbookChartPointFormatRequestBuilder {
 	bb := &WorkbookChartPointFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/format"
 	return bb
 }
 
-// Fill is navigation property
+// Fill is navigation property rn
 func (b *WorkbookChartPointFormatRequestBuilder) Fill() *WorkbookChartFillRequestBuilder {
 	bb := &WorkbookChartFillRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/fill"
 	return bb
 }
 
-// Format is navigation property
+// Format is navigation property rn
 func (b *WorkbookChartSeriesRequestBuilder) Format() *WorkbookChartSeriesFormatRequestBuilder {
 	bb := &WorkbookChartSeriesFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/format"
 	return bb
 }
 
-// Points returns request builder for WorkbookChartPoint collection
+// Points returns request builder for WorkbookChartPoint collection rcn
 func (b *WorkbookChartSeriesRequestBuilder) Points() *WorkbookChartSeriesPointsCollectionRequestBuilder {
 	bb := &WorkbookChartSeriesPointsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/points"
@@ -4339,42 +4339,42 @@ func (r *WorkbookChartSeriesPointsCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// Fill is navigation property
+// Fill is navigation property rn
 func (b *WorkbookChartSeriesFormatRequestBuilder) Fill() *WorkbookChartFillRequestBuilder {
 	bb := &WorkbookChartFillRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/fill"
 	return bb
 }
 
-// Line is navigation property
+// Line is navigation property rn
 func (b *WorkbookChartSeriesFormatRequestBuilder) Line() *WorkbookChartLineFormatRequestBuilder {
 	bb := &WorkbookChartLineFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/line"
 	return bb
 }
 
-// Format is navigation property
+// Format is navigation property rn
 func (b *WorkbookChartTitleRequestBuilder) Format() *WorkbookChartTitleFormatRequestBuilder {
 	bb := &WorkbookChartTitleFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/format"
 	return bb
 }
 
-// Fill is navigation property
+// Fill is navigation property rn
 func (b *WorkbookChartTitleFormatRequestBuilder) Fill() *WorkbookChartFillRequestBuilder {
 	bb := &WorkbookChartFillRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/fill"
 	return bb
 }
 
-// Font is navigation property
+// Font is navigation property rn
 func (b *WorkbookChartTitleFormatRequestBuilder) Font() *WorkbookChartFontRequestBuilder {
 	bb := &WorkbookChartFontRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/font"
 	return bb
 }
 
-// Replies returns request builder for WorkbookCommentReply collection
+// Replies returns request builder for WorkbookCommentReply collection rcn
 func (b *WorkbookCommentRequestBuilder) Replies() *WorkbookCommentRepliesCollectionRequestBuilder {
 	bb := &WorkbookCommentRepliesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/replies"
@@ -4477,42 +4477,42 @@ func (r *WorkbookCommentRepliesCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Worksheet is navigation property
+// Worksheet is navigation property rn
 func (b *WorkbookNamedItemRequestBuilder) Worksheet() *WorkbookWorksheetRequestBuilder {
 	bb := &WorkbookWorksheetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/worksheet"
 	return bb
 }
 
-// Worksheet is navigation property
+// Worksheet is navigation property rn
 func (b *WorkbookPivotTableRequestBuilder) Worksheet() *WorkbookWorksheetRequestBuilder {
 	bb := &WorkbookWorksheetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/worksheet"
 	return bb
 }
 
-// Format is navigation property
+// Format is navigation property rn
 func (b *WorkbookRangeRequestBuilder) Format() *WorkbookRangeFormatRequestBuilder {
 	bb := &WorkbookRangeFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/format"
 	return bb
 }
 
-// Sort is navigation property
+// Sort is navigation property rn
 func (b *WorkbookRangeRequestBuilder) Sort() *WorkbookRangeSortRequestBuilder {
 	bb := &WorkbookRangeSortRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sort"
 	return bb
 }
 
-// Worksheet is navigation property
+// Worksheet is navigation property rn
 func (b *WorkbookRangeRequestBuilder) Worksheet() *WorkbookWorksheetRequestBuilder {
 	bb := &WorkbookWorksheetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/worksheet"
 	return bb
 }
 
-// Borders returns request builder for WorkbookRangeBorder collection
+// Borders returns request builder for WorkbookRangeBorder collection rcn
 func (b *WorkbookRangeFormatRequestBuilder) Borders() *WorkbookRangeFormatBordersCollectionRequestBuilder {
 	bb := &WorkbookRangeFormatBordersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/borders"
@@ -4615,28 +4615,28 @@ func (r *WorkbookRangeFormatBordersCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// Fill is navigation property
+// Fill is navigation property rn
 func (b *WorkbookRangeFormatRequestBuilder) Fill() *WorkbookRangeFillRequestBuilder {
 	bb := &WorkbookRangeFillRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/fill"
 	return bb
 }
 
-// Font is navigation property
+// Font is navigation property rn
 func (b *WorkbookRangeFormatRequestBuilder) Font() *WorkbookRangeFontRequestBuilder {
 	bb := &WorkbookRangeFontRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/font"
 	return bb
 }
 
-// Protection is navigation property
+// Protection is navigation property rn
 func (b *WorkbookRangeFormatRequestBuilder) Protection() *WorkbookFormatProtectionRequestBuilder {
 	bb := &WorkbookFormatProtectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/protection"
 	return bb
 }
 
-// Rows returns request builder for WorkbookRangeView collection
+// Rows returns request builder for WorkbookRangeView collection rcn
 func (b *WorkbookRangeViewRequestBuilder) Rows() *WorkbookRangeViewRowsCollectionRequestBuilder {
 	bb := &WorkbookRangeViewRowsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/rows"
@@ -4739,7 +4739,7 @@ func (r *WorkbookRangeViewRowsCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// Columns returns request builder for WorkbookTableColumn collection
+// Columns returns request builder for WorkbookTableColumn collection rcn
 func (b *WorkbookTableRequestBuilder) Columns() *WorkbookTableColumnsCollectionRequestBuilder {
 	bb := &WorkbookTableColumnsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/columns"
@@ -4842,7 +4842,7 @@ func (r *WorkbookTableColumnsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// Rows returns request builder for WorkbookTableRow collection
+// Rows returns request builder for WorkbookTableRow collection rcn
 func (b *WorkbookTableRequestBuilder) Rows() *WorkbookTableRowsCollectionRequestBuilder {
 	bb := &WorkbookTableRowsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/rows"
@@ -4945,28 +4945,28 @@ func (r *WorkbookTableRowsCollectionRequest) Add(ctx context.Context, reqObj *Wo
 	return
 }
 
-// Sort is navigation property
+// Sort is navigation property rn
 func (b *WorkbookTableRequestBuilder) Sort() *WorkbookTableSortRequestBuilder {
 	bb := &WorkbookTableSortRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sort"
 	return bb
 }
 
-// Worksheet is navigation property
+// Worksheet is navigation property rn
 func (b *WorkbookTableRequestBuilder) Worksheet() *WorkbookWorksheetRequestBuilder {
 	bb := &WorkbookWorksheetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/worksheet"
 	return bb
 }
 
-// Filter is navigation property
+// Filter is navigation property rn
 func (b *WorkbookTableColumnRequestBuilder) Filter() *WorkbookFilterRequestBuilder {
 	bb := &WorkbookFilterRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/filter"
 	return bb
 }
 
-// Charts returns request builder for WorkbookChart collection
+// Charts returns request builder for WorkbookChart collection rcn
 func (b *WorkbookWorksheetRequestBuilder) Charts() *WorkbookWorksheetChartsCollectionRequestBuilder {
 	bb := &WorkbookWorksheetChartsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/charts"
@@ -5069,7 +5069,7 @@ func (r *WorkbookWorksheetChartsCollectionRequest) Add(ctx context.Context, reqO
 	return
 }
 
-// Names returns request builder for WorkbookNamedItem collection
+// Names returns request builder for WorkbookNamedItem collection rcn
 func (b *WorkbookWorksheetRequestBuilder) Names() *WorkbookWorksheetNamesCollectionRequestBuilder {
 	bb := &WorkbookWorksheetNamesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/names"
@@ -5172,7 +5172,7 @@ func (r *WorkbookWorksheetNamesCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// PivotTables returns request builder for WorkbookPivotTable collection
+// PivotTables returns request builder for WorkbookPivotTable collection rcn
 func (b *WorkbookWorksheetRequestBuilder) PivotTables() *WorkbookWorksheetPivotTablesCollectionRequestBuilder {
 	bb := &WorkbookWorksheetPivotTablesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/pivotTables"
@@ -5275,14 +5275,14 @@ func (r *WorkbookWorksheetPivotTablesCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// Protection is navigation property
+// Protection is navigation property rn
 func (b *WorkbookWorksheetRequestBuilder) Protection() *WorkbookWorksheetProtectionRequestBuilder {
 	bb := &WorkbookWorksheetProtectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/protection"
 	return bb
 }
 
-// Tables returns request builder for WorkbookTable collection
+// Tables returns request builder for WorkbookTable collection rcn
 func (b *WorkbookWorksheetRequestBuilder) Tables() *WorkbookWorksheetTablesCollectionRequestBuilder {
 	bb := &WorkbookWorksheetTablesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tables"
@@ -5383,4 +5383,326 @@ func (r *WorkbookWorksheetTablesCollectionRequest) Get(ctx context.Context) ([]W
 func (r *WorkbookWorksheetTablesCollectionRequest) Add(ctx context.Context, reqObj *WorkbookTable) (resObj *WorkbookTable, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Workbook is navigation property rn
+func (b *WorkbookRequestBuilder) Workbook() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookApplication is navigation property rn
+func (b *WorkbookApplicationRequestBuilder) WorkbookApplication() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChart is navigation property rn
+func (b *WorkbookChartRequestBuilder) WorkbookChart() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartAreaFormat is navigation property rn
+func (b *WorkbookChartAreaFormatRequestBuilder) WorkbookChartAreaFormat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartAxes is navigation property rn
+func (b *WorkbookChartAxesRequestBuilder) WorkbookChartAxes() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartAxis is navigation property rn
+func (b *WorkbookChartAxisRequestBuilder) WorkbookChartAxis() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartAxisFormat is navigation property rn
+func (b *WorkbookChartAxisFormatRequestBuilder) WorkbookChartAxisFormat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartAxisTitle is navigation property rn
+func (b *WorkbookChartAxisTitleRequestBuilder) WorkbookChartAxisTitle() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartAxisTitleFormat is navigation property rn
+func (b *WorkbookChartAxisTitleFormatRequestBuilder) WorkbookChartAxisTitleFormat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartDataLabelFormat is navigation property rn
+func (b *WorkbookChartDataLabelFormatRequestBuilder) WorkbookChartDataLabelFormat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartDataLabels is navigation property rn
+func (b *WorkbookChartDataLabelsRequestBuilder) WorkbookChartDataLabels() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartFill is navigation property rn
+func (b *WorkbookChartFillRequestBuilder) WorkbookChartFill() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartFont is navigation property rn
+func (b *WorkbookChartFontRequestBuilder) WorkbookChartFont() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartGridlines is navigation property rn
+func (b *WorkbookChartGridlinesRequestBuilder) WorkbookChartGridlines() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartGridlinesFormat is navigation property rn
+func (b *WorkbookChartGridlinesFormatRequestBuilder) WorkbookChartGridlinesFormat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartLegend is navigation property rn
+func (b *WorkbookChartLegendRequestBuilder) WorkbookChartLegend() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartLegendFormat is navigation property rn
+func (b *WorkbookChartLegendFormatRequestBuilder) WorkbookChartLegendFormat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartLineFormat is navigation property rn
+func (b *WorkbookChartLineFormatRequestBuilder) WorkbookChartLineFormat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartPoint is navigation property rn
+func (b *WorkbookChartPointRequestBuilder) WorkbookChartPoint() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartPointFormat is navigation property rn
+func (b *WorkbookChartPointFormatRequestBuilder) WorkbookChartPointFormat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartSeries is navigation property rn
+func (b *WorkbookChartSeriesRequestBuilder) WorkbookChartSeries() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartSeriesFormat is navigation property rn
+func (b *WorkbookChartSeriesFormatRequestBuilder) WorkbookChartSeriesFormat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartTitle is navigation property rn
+func (b *WorkbookChartTitleRequestBuilder) WorkbookChartTitle() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookChartTitleFormat is navigation property rn
+func (b *WorkbookChartTitleFormatRequestBuilder) WorkbookChartTitleFormat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookComment is navigation property rn
+func (b *WorkbookCommentRequestBuilder) WorkbookComment() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookCommentReply is navigation property rn
+func (b *WorkbookCommentReplyRequestBuilder) WorkbookCommentReply() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookFilter is navigation property rn
+func (b *WorkbookFilterRequestBuilder) WorkbookFilter() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookFormatProtection is navigation property rn
+func (b *WorkbookFormatProtectionRequestBuilder) WorkbookFormatProtection() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookFunctionResult is navigation property rn
+func (b *WorkbookFunctionResultRequestBuilder) WorkbookFunctionResult() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookFunctions is navigation property rn
+func (b *WorkbookFunctionsRequestBuilder) WorkbookFunctions() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookNamedItem is navigation property rn
+func (b *WorkbookNamedItemRequestBuilder) WorkbookNamedItem() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookOperation is navigation property rn
+func (b *WorkbookOperationRequestBuilder) WorkbookOperation() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookPivotTable is navigation property rn
+func (b *WorkbookPivotTableRequestBuilder) WorkbookPivotTable() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookRange is navigation property rn
+func (b *WorkbookRangeRequestBuilder) WorkbookRange() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookRangeBorder is navigation property rn
+func (b *WorkbookRangeBorderRequestBuilder) WorkbookRangeBorder() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookRangeFill is navigation property rn
+func (b *WorkbookRangeFillRequestBuilder) WorkbookRangeFill() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookRangeFont is navigation property rn
+func (b *WorkbookRangeFontRequestBuilder) WorkbookRangeFont() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookRangeFormat is navigation property rn
+func (b *WorkbookRangeFormatRequestBuilder) WorkbookRangeFormat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookRangeSort is navigation property rn
+func (b *WorkbookRangeSortRequestBuilder) WorkbookRangeSort() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookRangeView is navigation property rn
+func (b *WorkbookRangeViewRequestBuilder) WorkbookRangeView() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookTable is navigation property rn
+func (b *WorkbookTableRequestBuilder) WorkbookTable() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookTableColumn is navigation property rn
+func (b *WorkbookTableColumnRequestBuilder) WorkbookTableColumn() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookTableRow is navigation property rn
+func (b *WorkbookTableRowRequestBuilder) WorkbookTableRow() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookTableSort is navigation property rn
+func (b *WorkbookTableSortRequestBuilder) WorkbookTableSort() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookWorksheet is navigation property rn
+func (b *WorkbookWorksheetRequestBuilder) WorkbookWorksheet() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// WorkbookWorksheetProtection is navigation property rn
+func (b *WorkbookWorksheetProtectionRequestBuilder) WorkbookWorksheetProtection() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

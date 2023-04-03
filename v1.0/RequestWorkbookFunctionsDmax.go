@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDmaxRequestBuilder struct{ BaseRequestBuilder }
 
-// Dmax action undocumented
+// Dmax action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Dmax(reqObj *WorkbookFunctionsDmaxRequestParameter) *WorkbookFunctionsDmaxRequestBuilder {
 	bb := &WorkbookFunctionsDmaxRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Dmax"

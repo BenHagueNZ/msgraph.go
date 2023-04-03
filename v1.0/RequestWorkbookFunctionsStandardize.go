@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsStandardizeRequestBuilder struct{ BaseRequestBuilder }
 
-// Standardize action undocumented
+// Standardize action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Standardize(reqObj *WorkbookFunctionsStandardizeRequestParameter) *WorkbookFunctionsStandardizeRequestBuilder {
 	bb := &WorkbookFunctionsStandardizeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Standardize"

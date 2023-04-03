@@ -11,6 +11,8 @@ import (
 type ManagedAndroidLobApp struct {
 	// ManagedMobileLobApp is the base model of ManagedAndroidLobApp
 	ManagedMobileLobApp
+
+	ODataType string `json:"@odata.type"`
 	// MinimumSupportedOperatingSystem undocumented
 	MinimumSupportedOperatingSystem *AndroidMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
 	// PackageID undocumented
@@ -21,10 +23,19 @@ type ManagedAndroidLobApp struct {
 	VersionName *string `json:"versionName,omitempty"`
 }
 
+func NewManagedAndroidLobApp() (*ManagedAndroidLobApp, error) {
+	newManagedAndroidLobApp := &ManagedAndroidLobApp{
+		ODataType: "#microsoft.graph.ManagedAndroidLobApp",
+	}
+	return newManagedAndroidLobApp, nil
+}
+
 // ManagedAndroidStoreApp undocumented
 type ManagedAndroidStoreApp struct {
 	// ManagedApp is the base model of ManagedAndroidStoreApp
 	ManagedApp
+
+	ODataType string `json:"@odata.type"`
 	// AppStoreURL undocumented
 	AppStoreURL *string `json:"appStoreUrl,omitempty"`
 	// MinimumSupportedOperatingSystem undocumented
@@ -33,28 +44,55 @@ type ManagedAndroidStoreApp struct {
 	PackageID *string `json:"packageId,omitempty"`
 }
 
+func NewManagedAndroidStoreApp() (*ManagedAndroidStoreApp, error) {
+	newManagedAndroidStoreApp := &ManagedAndroidStoreApp{
+		ODataType: "#microsoft.graph.ManagedAndroidStoreApp",
+	}
+	return newManagedAndroidStoreApp, nil
+}
+
 // ManagedApp undocumented
 type ManagedApp struct {
 	// MobileApp is the base model of ManagedApp
 	MobileApp
+
+	ODataType string `json:"@odata.type"`
 	// AppAvailability undocumented
 	AppAvailability *ManagedAppAvailability `json:"appAvailability,omitempty"`
 	// Version undocumented
 	Version *string `json:"version,omitempty"`
 }
 
+func NewManagedApp() (*ManagedApp, error) {
+	newManagedApp := &ManagedApp{
+		ODataType: "#microsoft.graph.ManagedApp",
+	}
+	return newManagedApp, nil
+}
+
 // ManagedAppConfiguration undocumented
 type ManagedAppConfiguration struct {
 	// ManagedAppPolicy is the base model of ManagedAppConfiguration
 	ManagedAppPolicy
+
+	ODataType string `json:"@odata.type"`
 	// CustomSettings undocumented
 	CustomSettings []KeyValuePair `json:"customSettings,omitempty"`
+}
+
+func NewManagedAppConfiguration() (*ManagedAppConfiguration, error) {
+	newManagedAppConfiguration := &ManagedAppConfiguration{
+		ODataType: "#microsoft.graph.ManagedAppConfiguration",
+	}
+	return newManagedAppConfiguration, nil
 }
 
 // ManagedAppDiagnosticStatus undocumented
 type ManagedAppDiagnosticStatus struct {
 	// Object is the base model of ManagedAppDiagnosticStatus
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// MitigationInstruction undocumented
 	MitigationInstruction *string `json:"mitigationInstruction,omitempty"`
 	// State undocumented
@@ -63,10 +101,19 @@ type ManagedAppDiagnosticStatus struct {
 	ValidationName *string `json:"validationName,omitempty"`
 }
 
+func NewManagedAppDiagnosticStatus() (*ManagedAppDiagnosticStatus, error) {
+	newManagedAppDiagnosticStatus := &ManagedAppDiagnosticStatus{
+		ODataType: "#microsoft.graph.ManagedAppDiagnosticStatus",
+	}
+	return newManagedAppDiagnosticStatus, nil
+}
+
 // ManagedAppOperation undocumented
 type ManagedAppOperation struct {
 	// Entity is the base model of ManagedAppOperation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// LastModifiedDateTime undocumented
@@ -77,10 +124,19 @@ type ManagedAppOperation struct {
 	Version *string `json:"version,omitempty"`
 }
 
+func NewManagedAppOperation() (*ManagedAppOperation, error) {
+	newManagedAppOperation := &ManagedAppOperation{
+		ODataType: "#microsoft.graph.ManagedAppOperation",
+	}
+	return newManagedAppOperation, nil
+}
+
 // ManagedAppPolicy undocumented
 type ManagedAppPolicy struct {
 	// Entity is the base model of ManagedAppPolicy
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -93,10 +149,19 @@ type ManagedAppPolicy struct {
 	Version *string `json:"version,omitempty"`
 }
 
+func NewManagedAppPolicy() (*ManagedAppPolicy, error) {
+	newManagedAppPolicy := &ManagedAppPolicy{
+		ODataType: "#microsoft.graph.ManagedAppPolicy",
+	}
+	return newManagedAppPolicy, nil
+}
+
 // ManagedAppPolicyDeploymentSummary undocumented
 type ManagedAppPolicyDeploymentSummary struct {
 	// Entity is the base model of ManagedAppPolicyDeploymentSummary
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ConfigurationDeployedUserCount undocumented
 	ConfigurationDeployedUserCount *int `json:"configurationDeployedUserCount,omitempty"`
 	// ConfigurationDeploymentSummaryPerApp undocumented
@@ -109,20 +174,38 @@ type ManagedAppPolicyDeploymentSummary struct {
 	Version *string `json:"version,omitempty"`
 }
 
+func NewManagedAppPolicyDeploymentSummary() (*ManagedAppPolicyDeploymentSummary, error) {
+	newManagedAppPolicyDeploymentSummary := &ManagedAppPolicyDeploymentSummary{
+		ODataType: "#microsoft.graph.ManagedAppPolicyDeploymentSummary",
+	}
+	return newManagedAppPolicyDeploymentSummary, nil
+}
+
 // ManagedAppPolicyDeploymentSummaryPerApp undocumented
 type ManagedAppPolicyDeploymentSummaryPerApp struct {
 	// Object is the base model of ManagedAppPolicyDeploymentSummaryPerApp
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ConfigurationAppliedUserCount undocumented
 	ConfigurationAppliedUserCount *int `json:"configurationAppliedUserCount,omitempty"`
 	// MobileAppIdentifier undocumented
 	MobileAppIdentifier *MobileAppIdentifier `json:"mobileAppIdentifier,omitempty"`
 }
 
+func NewManagedAppPolicyDeploymentSummaryPerApp() (*ManagedAppPolicyDeploymentSummaryPerApp, error) {
+	newManagedAppPolicyDeploymentSummaryPerApp := &ManagedAppPolicyDeploymentSummaryPerApp{
+		ODataType: "#microsoft.graph.ManagedAppPolicyDeploymentSummaryPerApp",
+	}
+	return newManagedAppPolicyDeploymentSummaryPerApp, nil
+}
+
 // ManagedAppProtection undocumented
 type ManagedAppProtection struct {
 	// ManagedAppPolicy is the base model of ManagedAppProtection
 	ManagedAppPolicy
+
+	ODataType string `json:"@odata.type"`
 	// AllowedDataStorageLocations undocumented
 	AllowedDataStorageLocations []ManagedAppDataStorageLocation `json:"allowedDataStorageLocations,omitempty"`
 	// AllowedInboundDataTransferSources undocumented
@@ -179,10 +262,19 @@ type ManagedAppProtection struct {
 	SimplePinBlocked *bool `json:"simplePinBlocked,omitempty"`
 }
 
+func NewManagedAppProtection() (*ManagedAppProtection, error) {
+	newManagedAppProtection := &ManagedAppProtection{
+		ODataType: "#microsoft.graph.ManagedAppProtection",
+	}
+	return newManagedAppProtection, nil
+}
+
 // ManagedAppRegistration undocumented
 type ManagedAppRegistration struct {
 	// Entity is the base model of ManagedAppRegistration
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AppIdentifier undocumented
 	AppIdentifier *MobileAppIdentifier `json:"appIdentifier,omitempty"`
 	// ApplicationVersion undocumented
@@ -215,28 +307,55 @@ type ManagedAppRegistration struct {
 	Operations []ManagedAppOperation `json:"operations,omitempty"`
 }
 
+func NewManagedAppRegistration() (*ManagedAppRegistration, error) {
+	newManagedAppRegistration := &ManagedAppRegistration{
+		ODataType: "#microsoft.graph.ManagedAppRegistration",
+	}
+	return newManagedAppRegistration, nil
+}
+
 // ManagedAppStatus undocumented
 type ManagedAppStatus struct {
 	// Entity is the base model of ManagedAppStatus
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Version undocumented
 	Version *string `json:"version,omitempty"`
 }
 
+func NewManagedAppStatus() (*ManagedAppStatus, error) {
+	newManagedAppStatus := &ManagedAppStatus{
+		ODataType: "#microsoft.graph.ManagedAppStatus",
+	}
+	return newManagedAppStatus, nil
+}
+
 // ManagedAppStatusRaw undocumented
 type ManagedAppStatusRaw struct {
 	// ManagedAppStatus is the base model of ManagedAppStatusRaw
 	ManagedAppStatus
+
+	ODataType string `json:"@odata.type"`
 	// Content undocumented
 	Content json.RawMessage `json:"content,omitempty"`
+}
+
+func NewManagedAppStatusRaw() (*ManagedAppStatusRaw, error) {
+	newManagedAppStatusRaw := &ManagedAppStatusRaw{
+		ODataType: "#microsoft.graph.ManagedAppStatusRaw",
+	}
+	return newManagedAppStatusRaw, nil
 }
 
 // ManagedDevice undocumented
 type ManagedDevice struct {
 	// Entity is the base model of ManagedDevice
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ActivationLockBypassCode undocumented
 	ActivationLockBypassCode *string `json:"activationLockBypassCode,omitempty"`
 	// AndroidSecurityPatchLevel undocumented
@@ -353,10 +472,19 @@ type ManagedDevice struct {
 	Users []User `json:"users,omitempty"`
 }
 
+func NewManagedDevice() (*ManagedDevice, error) {
+	newManagedDevice := &ManagedDevice{
+		ODataType: "#microsoft.graph.ManagedDevice",
+	}
+	return newManagedDevice, nil
+}
+
 // ManagedDeviceMobileAppConfiguration undocumented
 type ManagedDeviceMobileAppConfiguration struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfiguration
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -381,18 +509,36 @@ type ManagedDeviceMobileAppConfiguration struct {
 	UserStatusSummary *ManagedDeviceMobileAppConfigurationUserSummary `json:"userStatusSummary,omitempty"`
 }
 
+func NewManagedDeviceMobileAppConfiguration() (*ManagedDeviceMobileAppConfiguration, error) {
+	newManagedDeviceMobileAppConfiguration := &ManagedDeviceMobileAppConfiguration{
+		ODataType: "#microsoft.graph.ManagedDeviceMobileAppConfiguration",
+	}
+	return newManagedDeviceMobileAppConfiguration, nil
+}
+
 // ManagedDeviceMobileAppConfigurationAssignment undocumented
 type ManagedDeviceMobileAppConfigurationAssignment struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationAssignment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
+}
+
+func NewManagedDeviceMobileAppConfigurationAssignment() (*ManagedDeviceMobileAppConfigurationAssignment, error) {
+	newManagedDeviceMobileAppConfigurationAssignment := &ManagedDeviceMobileAppConfigurationAssignment{
+		ODataType: "#microsoft.graph.ManagedDeviceMobileAppConfigurationAssignment",
+	}
+	return newManagedDeviceMobileAppConfigurationAssignment, nil
 }
 
 // ManagedDeviceMobileAppConfigurationDeviceStatus undocumented
 type ManagedDeviceMobileAppConfigurationDeviceStatus struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationDeviceStatus
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ComplianceGracePeriodExpirationDateTime undocumented
 	ComplianceGracePeriodExpirationDateTime *time.Time `json:"complianceGracePeriodExpirationDateTime,omitempty"`
 	// DeviceDisplayName undocumented
@@ -409,10 +555,19 @@ type ManagedDeviceMobileAppConfigurationDeviceStatus struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewManagedDeviceMobileAppConfigurationDeviceStatus() (*ManagedDeviceMobileAppConfigurationDeviceStatus, error) {
+	newManagedDeviceMobileAppConfigurationDeviceStatus := &ManagedDeviceMobileAppConfigurationDeviceStatus{
+		ODataType: "#microsoft.graph.ManagedDeviceMobileAppConfigurationDeviceStatus",
+	}
+	return newManagedDeviceMobileAppConfigurationDeviceStatus, nil
+}
+
 // ManagedDeviceMobileAppConfigurationDeviceSummary undocumented
 type ManagedDeviceMobileAppConfigurationDeviceSummary struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationDeviceSummary
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ConfigurationVersion undocumented
 	ConfigurationVersion *int `json:"configurationVersion,omitempty"`
 	// ErrorCount undocumented
@@ -429,10 +584,19 @@ type ManagedDeviceMobileAppConfigurationDeviceSummary struct {
 	SuccessCount *int `json:"successCount,omitempty"`
 }
 
+func NewManagedDeviceMobileAppConfigurationDeviceSummary() (*ManagedDeviceMobileAppConfigurationDeviceSummary, error) {
+	newManagedDeviceMobileAppConfigurationDeviceSummary := &ManagedDeviceMobileAppConfigurationDeviceSummary{
+		ODataType: "#microsoft.graph.ManagedDeviceMobileAppConfigurationDeviceSummary",
+	}
+	return newManagedDeviceMobileAppConfigurationDeviceSummary, nil
+}
+
 // ManagedDeviceMobileAppConfigurationUserStatus undocumented
 type ManagedDeviceMobileAppConfigurationUserStatus struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationUserStatus
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DevicesCount undocumented
 	DevicesCount *int `json:"devicesCount,omitempty"`
 	// LastReportedDateTime undocumented
@@ -445,10 +609,19 @@ type ManagedDeviceMobileAppConfigurationUserStatus struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewManagedDeviceMobileAppConfigurationUserStatus() (*ManagedDeviceMobileAppConfigurationUserStatus, error) {
+	newManagedDeviceMobileAppConfigurationUserStatus := &ManagedDeviceMobileAppConfigurationUserStatus{
+		ODataType: "#microsoft.graph.ManagedDeviceMobileAppConfigurationUserStatus",
+	}
+	return newManagedDeviceMobileAppConfigurationUserStatus, nil
+}
+
 // ManagedDeviceMobileAppConfigurationUserSummary undocumented
 type ManagedDeviceMobileAppConfigurationUserSummary struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationUserSummary
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ConfigurationVersion undocumented
 	ConfigurationVersion *int `json:"configurationVersion,omitempty"`
 	// ErrorCount undocumented
@@ -465,10 +638,19 @@ type ManagedDeviceMobileAppConfigurationUserSummary struct {
 	SuccessCount *int `json:"successCount,omitempty"`
 }
 
+func NewManagedDeviceMobileAppConfigurationUserSummary() (*ManagedDeviceMobileAppConfigurationUserSummary, error) {
+	newManagedDeviceMobileAppConfigurationUserSummary := &ManagedDeviceMobileAppConfigurationUserSummary{
+		ODataType: "#microsoft.graph.ManagedDeviceMobileAppConfigurationUserSummary",
+	}
+	return newManagedDeviceMobileAppConfigurationUserSummary, nil
+}
+
 // ManagedDeviceOverview undocumented
 type ManagedDeviceOverview struct {
 	// Entity is the base model of ManagedDeviceOverview
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DeviceExchangeAccessStateSummary undocumented
 	DeviceExchangeAccessStateSummary *DeviceExchangeAccessStateSummary `json:"deviceExchangeAccessStateSummary,omitempty"`
 	// DeviceOperatingSystemSummary undocumented
@@ -481,10 +663,19 @@ type ManagedDeviceOverview struct {
 	MDMEnrolledCount *int `json:"mdmEnrolledCount,omitempty"`
 }
 
+func NewManagedDeviceOverview() (*ManagedDeviceOverview, error) {
+	newManagedDeviceOverview := &ManagedDeviceOverview{
+		ODataType: "#microsoft.graph.ManagedDeviceOverview",
+	}
+	return newManagedDeviceOverview, nil
+}
+
 // ManagedEBook undocumented
 type ManagedEBook struct {
 	// Entity is the base model of ManagedEBook
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -513,20 +704,38 @@ type ManagedEBook struct {
 	UserStateSummary []UserInstallStateSummary `json:"userStateSummary,omitempty"`
 }
 
+func NewManagedEBook() (*ManagedEBook, error) {
+	newManagedEBook := &ManagedEBook{
+		ODataType: "#microsoft.graph.ManagedEBook",
+	}
+	return newManagedEBook, nil
+}
+
 // ManagedEBookAssignment undocumented
 type ManagedEBookAssignment struct {
 	// Entity is the base model of ManagedEBookAssignment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// InstallIntent undocumented
 	InstallIntent *InstallIntent `json:"installIntent,omitempty"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
 
+func NewManagedEBookAssignment() (*ManagedEBookAssignment, error) {
+	newManagedEBookAssignment := &ManagedEBookAssignment{
+		ODataType: "#microsoft.graph.ManagedEBookAssignment",
+	}
+	return newManagedEBookAssignment, nil
+}
+
 // ManagedIOSLobApp undocumented
 type ManagedIOSLobApp struct {
 	// ManagedMobileLobApp is the base model of ManagedIOSLobApp
 	ManagedMobileLobApp
+
+	ODataType string `json:"@odata.type"`
 	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
 	// BuildNumber undocumented
@@ -541,10 +750,19 @@ type ManagedIOSLobApp struct {
 	VersionNumber *string `json:"versionNumber,omitempty"`
 }
 
+func NewManagedIOSLobApp() (*ManagedIOSLobApp, error) {
+	newManagedIOSLobApp := &ManagedIOSLobApp{
+		ODataType: "#microsoft.graph.ManagedIOSLobApp",
+	}
+	return newManagedIOSLobApp, nil
+}
+
 // ManagedIOSStoreApp undocumented
 type ManagedIOSStoreApp struct {
 	// ManagedApp is the base model of ManagedIOSStoreApp
 	ManagedApp
+
+	ODataType string `json:"@odata.type"`
 	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
 	// AppStoreURL undocumented
@@ -555,20 +773,38 @@ type ManagedIOSStoreApp struct {
 	MinimumSupportedOperatingSystem *IOSMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
 }
 
+func NewManagedIOSStoreApp() (*ManagedIOSStoreApp, error) {
+	newManagedIOSStoreApp := &ManagedIOSStoreApp{
+		ODataType: "#microsoft.graph.ManagedIOSStoreApp",
+	}
+	return newManagedIOSStoreApp, nil
+}
+
 // ManagedMobileApp undocumented
 type ManagedMobileApp struct {
 	// Entity is the base model of ManagedMobileApp
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// MobileAppIdentifier undocumented
 	MobileAppIdentifier *MobileAppIdentifier `json:"mobileAppIdentifier,omitempty"`
 	// Version undocumented
 	Version *string `json:"version,omitempty"`
 }
 
+func NewManagedMobileApp() (*ManagedMobileApp, error) {
+	newManagedMobileApp := &ManagedMobileApp{
+		ODataType: "#microsoft.graph.ManagedMobileApp",
+	}
+	return newManagedMobileApp, nil
+}
+
 // ManagedMobileLobApp undocumented
 type ManagedMobileLobApp struct {
 	// ManagedApp is the base model of ManagedMobileLobApp
 	ManagedApp
+
+	ODataType string `json:"@odata.type"`
 	// CommittedContentVersion undocumented
 	CommittedContentVersion *string `json:"committedContentVersion,omitempty"`
 	// FileName undocumented
@@ -577,4 +813,11 @@ type ManagedMobileLobApp struct {
 	Size *int `json:"size,omitempty"`
 	// ContentVersions undocumented
 	ContentVersions []MobileAppContent `json:"contentVersions,omitempty"`
+}
+
+func NewManagedMobileLobApp() (*ManagedMobileLobApp, error) {
+	newManagedMobileLobApp := &ManagedMobileLobApp{
+		ODataType: "#microsoft.graph.ManagedMobileLobApp",
+	}
+	return newManagedMobileLobApp, nil
 }

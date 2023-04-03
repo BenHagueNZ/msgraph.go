@@ -8,6 +8,8 @@ import "time"
 type ArchivedPrintJob struct {
 	// Object is the base model of ArchivedPrintJob
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AcquiredByPrinter undocumented
 	AcquiredByPrinter *bool `json:"acquiredByPrinter,omitempty"`
 	// AcquiredDateTime undocumented
@@ -26,4 +28,11 @@ type ArchivedPrintJob struct {
 	PrinterID *string `json:"printerId,omitempty"`
 	// ProcessingState undocumented
 	ProcessingState *PrintJobProcessingState `json:"processingState,omitempty"`
+}
+
+func NewArchivedPrintJob() (*ArchivedPrintJob, error) {
+	newArchivedPrintJob := &ArchivedPrintJob{
+		ODataType: "#microsoft.graph.ArchivedPrintJob",
+	}
+	return newArchivedPrintJob, nil
 }

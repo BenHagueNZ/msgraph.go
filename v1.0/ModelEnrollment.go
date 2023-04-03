@@ -6,14 +6,25 @@ package msgraph
 type EnrollmentConfigurationAssignment struct {
 	// Entity is the base model of EnrollmentConfigurationAssignment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
+}
+
+func NewEnrollmentConfigurationAssignment() (*EnrollmentConfigurationAssignment, error) {
+	newEnrollmentConfigurationAssignment := &EnrollmentConfigurationAssignment{
+		ODataType: "#microsoft.graph.EnrollmentConfigurationAssignment",
+	}
+	return newEnrollmentConfigurationAssignment, nil
 }
 
 // EnrollmentTroubleshootingEvent undocumented
 type EnrollmentTroubleshootingEvent struct {
 	// DeviceManagementTroubleshootingEvent is the base model of EnrollmentTroubleshootingEvent
 	DeviceManagementTroubleshootingEvent
+
+	ODataType string `json:"@odata.type"`
 	// DeviceID undocumented
 	DeviceID *string `json:"deviceId,omitempty"`
 	// EnrollmentType undocumented
@@ -30,4 +41,11 @@ type EnrollmentTroubleshootingEvent struct {
 	OsVersion *string `json:"osVersion,omitempty"`
 	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
+}
+
+func NewEnrollmentTroubleshootingEvent() (*EnrollmentTroubleshootingEvent, error) {
+	newEnrollmentTroubleshootingEvent := &EnrollmentTroubleshootingEvent{
+		ODataType: "#microsoft.graph.EnrollmentTroubleshootingEvent",
+	}
+	return newEnrollmentTroubleshootingEvent, nil
 }

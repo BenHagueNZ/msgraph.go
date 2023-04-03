@@ -8,6 +8,8 @@ import "time"
 type Simulation struct {
 	// Entity is the base model of Simulation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AttackTechnique undocumented
 	AttackTechnique *SimulationAttackTechnique `json:"attackTechnique,omitempty"`
 	// AttackType undocumented
@@ -40,10 +42,19 @@ type Simulation struct {
 	Status *SimulationStatus `json:"status,omitempty"`
 }
 
+func NewSimulation() (*Simulation, error) {
+	newSimulation := &Simulation{
+		ODataType: "#microsoft.graph.Simulation",
+	}
+	return newSimulation, nil
+}
+
 // SimulationAutomation undocumented
 type SimulationAutomation struct {
 	// Entity is the base model of SimulationAutomation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedBy undocumented
 	CreatedBy *EmailIdentity `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -66,10 +77,19 @@ type SimulationAutomation struct {
 	Runs []SimulationAutomationRun `json:"runs,omitempty"`
 }
 
+func NewSimulationAutomation() (*SimulationAutomation, error) {
+	newSimulationAutomation := &SimulationAutomation{
+		ODataType: "#microsoft.graph.SimulationAutomation",
+	}
+	return newSimulationAutomation, nil
+}
+
 // SimulationAutomationRun undocumented
 type SimulationAutomationRun struct {
 	// Entity is the base model of SimulationAutomationRun
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// SimulationID undocumented
@@ -80,40 +100,76 @@ type SimulationAutomationRun struct {
 	Status *SimulationAutomationRunStatus `json:"status,omitempty"`
 }
 
+func NewSimulationAutomationRun() (*SimulationAutomationRun, error) {
+	newSimulationAutomationRun := &SimulationAutomationRun{
+		ODataType: "#microsoft.graph.SimulationAutomationRun",
+	}
+	return newSimulationAutomationRun, nil
+}
+
 // SimulationEvent undocumented
 type SimulationEvent struct {
 	// Object is the base model of SimulationEvent
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Count undocumented
 	Count *int `json:"count,omitempty"`
 	// EventName undocumented
 	EventName *string `json:"eventName,omitempty"`
 }
 
+func NewSimulationEvent() (*SimulationEvent, error) {
+	newSimulationEvent := &SimulationEvent{
+		ODataType: "#microsoft.graph.SimulationEvent",
+	}
+	return newSimulationEvent, nil
+}
+
 // SimulationEventsContent undocumented
 type SimulationEventsContent struct {
 	// Object is the base model of SimulationEventsContent
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CompromisedRate undocumented
 	CompromisedRate *float64 `json:"compromisedRate,omitempty"`
 	// Events undocumented
 	Events []SimulationEvent `json:"events,omitempty"`
 }
 
+func NewSimulationEventsContent() (*SimulationEventsContent, error) {
+	newSimulationEventsContent := &SimulationEventsContent{
+		ODataType: "#microsoft.graph.SimulationEventsContent",
+	}
+	return newSimulationEventsContent, nil
+}
+
 // SimulationReport undocumented
 type SimulationReport struct {
 	// Object is the base model of SimulationReport
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Overview undocumented
 	Overview *SimulationReportOverview `json:"overview,omitempty"`
 	// SimulationUsers undocumented
 	SimulationUsers []UserSimulationDetails `json:"simulationUsers,omitempty"`
 }
 
+func NewSimulationReport() (*SimulationReport, error) {
+	newSimulationReport := &SimulationReport{
+		ODataType: "#microsoft.graph.SimulationReport",
+	}
+	return newSimulationReport, nil
+}
+
 // SimulationReportOverview undocumented
 type SimulationReportOverview struct {
 	// Object is the base model of SimulationReportOverview
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// RecommendedActions undocumented
 	RecommendedActions []RecommendedAction `json:"recommendedActions,omitempty"`
 	// ResolvedTargetsCount undocumented
@@ -122,4 +178,11 @@ type SimulationReportOverview struct {
 	SimulationEventsContent *SimulationEventsContent `json:"simulationEventsContent,omitempty"`
 	// TrainingEventsContent undocumented
 	TrainingEventsContent *TrainingEventsContent `json:"trainingEventsContent,omitempty"`
+}
+
+func NewSimulationReportOverview() (*SimulationReportOverview, error) {
+	newSimulationReportOverview := &SimulationReportOverview{
+		ODataType: "#microsoft.graph.SimulationReportOverview",
+	}
+	return newSimulationReportOverview, nil
 }

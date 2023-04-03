@@ -39,7 +39,7 @@ func (r *NotificationMessageTemplateRequest) Delete(ctx context.Context) error {
 
 type NotificationMessageTemplateSendTestMessageRequestBuilder struct{ BaseRequestBuilder }
 
-// SendTestMessage action undocumented
+// SendTestMessage action undocumentedrav
 func (b *NotificationMessageTemplateRequestBuilder) SendTestMessage(reqObj *NotificationMessageTemplateSendTestMessageRequestParameter) *NotificationMessageTemplateSendTestMessageRequestBuilder {
 	bb := &NotificationMessageTemplateSendTestMessageRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SendTestMessage"

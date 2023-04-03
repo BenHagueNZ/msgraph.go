@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDstDevRequestBuilder struct{ BaseRequestBuilder }
 
-// DstDev action undocumented
+// DstDev action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) DstDev(reqObj *WorkbookFunctionsDstDevRequestParameter) *WorkbookFunctionsDstDevRequestBuilder {
 	bb := &WorkbookFunctionsDstDevRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/DstDev"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsDstDevRequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsDstDevPRequestBuilder struct{ BaseRequestBuilder }
 
-// DstDevP action undocumented
+// DstDevP action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) DstDevP(reqObj *WorkbookFunctionsDstDevPRequestParameter) *WorkbookFunctionsDstDevPRequestBuilder {
 	bb := &WorkbookFunctionsDstDevPRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/DstDevP"

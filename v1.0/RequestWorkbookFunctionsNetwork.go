@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsNetworkDaysRequestBuilder struct{ BaseRequestBuilder }
 
-// NetworkDays action undocumented
+// NetworkDays action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) NetworkDays(reqObj *WorkbookFunctionsNetworkDaysRequestParameter) *WorkbookFunctionsNetworkDaysRequestBuilder {
 	bb := &WorkbookFunctionsNetworkDaysRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/NetworkDays"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsNetworkDaysRequest) Post(ctx context.Context) (resObj 
 
 type WorkbookFunctionsNetworkDays_IntlRequestBuilder struct{ BaseRequestBuilder }
 
-// NetworkDays_Intl action undocumented
+// NetworkDays_Intl action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) NetworkDays_Intl(reqObj *WorkbookFunctionsNetworkDays_IntlRequestParameter) *WorkbookFunctionsNetworkDays_IntlRequestBuilder {
 	bb := &WorkbookFunctionsNetworkDays_IntlRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/NetworkDays_Intl"

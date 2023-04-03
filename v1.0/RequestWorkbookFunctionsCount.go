@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsCountRequestBuilder struct{ BaseRequestBuilder }
 
-// Count action undocumented
+// Count action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Count(reqObj *WorkbookFunctionsCountRequestParameter) *WorkbookFunctionsCountRequestBuilder {
 	bb := &WorkbookFunctionsCountRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Count"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsCountRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsCountARequestBuilder struct{ BaseRequestBuilder }
 
-// CountA action undocumented
+// CountA action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) CountA(reqObj *WorkbookFunctionsCountARequestParameter) *WorkbookFunctionsCountARequestBuilder {
 	bb := &WorkbookFunctionsCountARequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CountA"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsCountARequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsCountBlankRequestBuilder struct{ BaseRequestBuilder }
 
-// CountBlank action undocumented
+// CountBlank action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) CountBlank(reqObj *WorkbookFunctionsCountBlankRequestParameter) *WorkbookFunctionsCountBlankRequestBuilder {
 	bb := &WorkbookFunctionsCountBlankRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CountBlank"
@@ -75,7 +75,7 @@ func (r *WorkbookFunctionsCountBlankRequest) Post(ctx context.Context) (resObj *
 
 type WorkbookFunctionsCountIfRequestBuilder struct{ BaseRequestBuilder }
 
-// CountIf action undocumented
+// CountIf action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) CountIf(reqObj *WorkbookFunctionsCountIfRequestParameter) *WorkbookFunctionsCountIfRequestBuilder {
 	bb := &WorkbookFunctionsCountIfRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CountIf"
@@ -98,7 +98,7 @@ func (r *WorkbookFunctionsCountIfRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsCountIfsRequestBuilder struct{ BaseRequestBuilder }
 
-// CountIfs action undocumented
+// CountIfs action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) CountIfs(reqObj *WorkbookFunctionsCountIfsRequestParameter) *WorkbookFunctionsCountIfsRequestBuilder {
 	bb := &WorkbookFunctionsCountIfsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CountIfs"

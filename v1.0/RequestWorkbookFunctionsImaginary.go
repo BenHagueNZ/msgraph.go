@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsImaginaryRequestBuilder struct{ BaseRequestBuilder }
 
-// Imaginary action undocumented
+// Imaginary action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Imaginary(reqObj *WorkbookFunctionsImaginaryRequestParameter) *WorkbookFunctionsImaginaryRequestBuilder {
 	bb := &WorkbookFunctionsImaginaryRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Imaginary"

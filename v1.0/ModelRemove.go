@@ -6,4 +6,13 @@ package msgraph
 type RemoveAccessApplyAction struct {
 	// AccessReviewApplyAction is the base model of RemoveAccessApplyAction
 	AccessReviewApplyAction
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewRemoveAccessApplyAction() (*RemoveAccessApplyAction, error) {
+	newRemoveAccessApplyAction := &RemoveAccessApplyAction{
+		ODataType: "#microsoft.graph.RemoveAccessApplyAction",
+	}
+	return newRemoveAccessApplyAction, nil
 }

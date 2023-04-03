@@ -6,6 +6,15 @@ package msgraph
 type Recipient struct {
 	// Object is the base model of Recipient
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// EmailAddress undocumented
 	EmailAddress *EmailAddress `json:"emailAddress,omitempty"`
+}
+
+func NewRecipient() (*Recipient, error) {
+	newRecipient := &Recipient{
+		ODataType: "#microsoft.graph.Recipient",
+	}
+	return newRecipient, nil
 }

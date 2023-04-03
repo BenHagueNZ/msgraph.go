@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsVar_PRequestBuilder struct{ BaseRequestBuilder }
 
-// Var_P action undocumented
+// Var_P action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Var_P(reqObj *WorkbookFunctionsVar_PRequestParameter) *WorkbookFunctionsVar_PRequestBuilder {
 	bb := &WorkbookFunctionsVar_PRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Var_P"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsVar_PRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsVar_SRequestBuilder struct{ BaseRequestBuilder }
 
-// Var_S action undocumented
+// Var_S action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Var_S(reqObj *WorkbookFunctionsVar_SRequestParameter) *WorkbookFunctionsVar_SRequestBuilder {
 	bb := &WorkbookFunctionsVar_SRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Var_S"

@@ -640,7 +640,7 @@ func (r *UserTrainingStatusInfoRequest) Delete(ctx context.Context) error {
 
 type UserAssignLicenseRequestBuilder struct{ BaseRequestBuilder }
 
-// AssignLicense action undocumented
+// AssignLicense action undocumentedras
 func (b *UserRequestBuilder) AssignLicense(reqObj *UserAssignLicenseRequestParameter) *UserAssignLicenseRequestBuilder {
 	bb := &UserAssignLicenseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AssignLicense"
@@ -663,7 +663,7 @@ func (r *UserAssignLicenseRequest) Post(ctx context.Context) (resObj *User, err 
 
 type UserChangePasswordRequestBuilder struct{ BaseRequestBuilder }
 
-// ChangePassword action undocumented
+// ChangePassword action undocumentedrav
 func (b *UserRequestBuilder) ChangePassword(reqObj *UserChangePasswordRequestParameter) *UserChangePasswordRequestBuilder {
 	bb := &UserChangePasswordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ChangePassword"
@@ -685,7 +685,7 @@ func (r *UserChangePasswordRequest) Post(ctx context.Context) error {
 
 type UserReprocessLicenseAssignmentRequestBuilder struct{ BaseRequestBuilder }
 
-// ReprocessLicenseAssignment action undocumented
+// ReprocessLicenseAssignment action undocumentedras
 func (b *UserRequestBuilder) ReprocessLicenseAssignment(reqObj *UserReprocessLicenseAssignmentRequestParameter) *UserReprocessLicenseAssignmentRequestBuilder {
 	bb := &UserReprocessLicenseAssignmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ReprocessLicenseAssignment"
@@ -708,7 +708,7 @@ func (r *UserReprocessLicenseAssignmentRequest) Post(ctx context.Context) (resOb
 
 type UserRevokeSignInSessionsRequestBuilder struct{ BaseRequestBuilder }
 
-// RevokeSignInSessions action undocumented
+// RevokeSignInSessions action undocumentedras
 func (b *UserRequestBuilder) RevokeSignInSessions(reqObj *UserRevokeSignInSessionsRequestParameter) *UserRevokeSignInSessionsRequestBuilder {
 	bb := &UserRevokeSignInSessionsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RevokeSignInSessions"
@@ -731,7 +731,7 @@ func (r *UserRevokeSignInSessionsRequest) Post(ctx context.Context) (resObj *boo
 
 type UserFindMeetingTimesRequestBuilder struct{ BaseRequestBuilder }
 
-// FindMeetingTimes action undocumented
+// FindMeetingTimes action undocumentedras
 func (b *UserRequestBuilder) FindMeetingTimes(reqObj *UserFindMeetingTimesRequestParameter) *UserFindMeetingTimesRequestBuilder {
 	bb := &UserFindMeetingTimesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/FindMeetingTimes"
@@ -754,7 +754,7 @@ func (r *UserFindMeetingTimesRequest) Post(ctx context.Context) (resObj *Meeting
 
 type UserGetMailTipsRequestBuilder struct{ BaseRequestBuilder }
 
-// GetMailTips action undocumented
+// GetMailTips action undocumentedrac
 func (b *UserRequestBuilder) GetMailTips(reqObj *UserGetMailTipsRequestParameter) *UserGetMailTipsRequestBuilder {
 	bb := &UserGetMailTipsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetMailTips"
@@ -835,7 +835,7 @@ func (r *UserGetMailTipsRequest) Post(ctx context.Context) ([]MailTips, error) {
 
 type UserSendMailRequestBuilder struct{ BaseRequestBuilder }
 
-// SendMail action undocumented
+// SendMail action undocumentedrav
 func (b *UserRequestBuilder) SendMail(reqObj *UserSendMailRequestParameter) *UserSendMailRequestBuilder {
 	bb := &UserSendMailRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SendMail"
@@ -857,7 +857,7 @@ func (r *UserSendMailRequest) Post(ctx context.Context) error {
 
 type UserTranslateExchangeIDsRequestBuilder struct{ BaseRequestBuilder }
 
-// TranslateExchangeIDs action undocumented
+// TranslateExchangeIDs action undocumentedrac
 func (b *UserRequestBuilder) TranslateExchangeIDs(reqObj *UserTranslateExchangeIDsRequestParameter) *UserTranslateExchangeIDsRequestBuilder {
 	bb := &UserTranslateExchangeIDsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/TranslateExchangeIds"
@@ -938,7 +938,7 @@ func (r *UserTranslateExchangeIDsRequest) Post(ctx context.Context) ([]ConvertID
 
 type UserRemoveAllDevicesFromManagementRequestBuilder struct{ BaseRequestBuilder }
 
-// RemoveAllDevicesFromManagement action undocumented
+// RemoveAllDevicesFromManagement action undocumentedrav
 func (b *UserRequestBuilder) RemoveAllDevicesFromManagement(reqObj *UserRemoveAllDevicesFromManagementRequestParameter) *UserRemoveAllDevicesFromManagementRequestBuilder {
 	bb := &UserRemoveAllDevicesFromManagementRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RemoveAllDevicesFromManagement"
@@ -960,7 +960,7 @@ func (r *UserRemoveAllDevicesFromManagementRequest) Post(ctx context.Context) er
 
 type UserWipeManagedAppRegistrationsByDeviceTagRequestBuilder struct{ BaseRequestBuilder }
 
-// WipeManagedAppRegistrationsByDeviceTag action undocumented
+// WipeManagedAppRegistrationsByDeviceTag action undocumentedrav
 func (b *UserRequestBuilder) WipeManagedAppRegistrationsByDeviceTag(reqObj *UserWipeManagedAppRegistrationsByDeviceTagRequestParameter) *UserWipeManagedAppRegistrationsByDeviceTagRequestBuilder {
 	bb := &UserWipeManagedAppRegistrationsByDeviceTagRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/WipeManagedAppRegistrationsByDeviceTag"
@@ -982,7 +982,7 @@ func (r *UserWipeManagedAppRegistrationsByDeviceTagRequest) Post(ctx context.Con
 
 type UserExportPersonalDataRequestBuilder struct{ BaseRequestBuilder }
 
-// ExportPersonalData action undocumented
+// ExportPersonalData action undocumentedrav
 func (b *UserRequestBuilder) ExportPersonalData(reqObj *UserExportPersonalDataRequestParameter) *UserExportPersonalDataRequestBuilder {
 	bb := &UserExportPersonalDataRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ExportPersonalData"
@@ -1004,7 +1004,7 @@ func (r *UserExportPersonalDataRequest) Post(ctx context.Context) error {
 
 type UserTeamworkSendActivityNotificationRequestBuilder struct{ BaseRequestBuilder }
 
-// SendActivityNotification action undocumented
+// SendActivityNotification action undocumentedrav
 func (b *UserTeamworkRequestBuilder) SendActivityNotification(reqObj *UserTeamworkSendActivityNotificationRequestParameter) *UserTeamworkSendActivityNotificationRequestBuilder {
 	bb := &UserTeamworkSendActivityNotificationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SendActivityNotification"

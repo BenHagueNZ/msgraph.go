@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDcountRequestBuilder struct{ BaseRequestBuilder }
 
-// Dcount action undocumented
+// Dcount action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Dcount(reqObj *WorkbookFunctionsDcountRequestParameter) *WorkbookFunctionsDcountRequestBuilder {
 	bb := &WorkbookFunctionsDcountRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Dcount"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsDcountRequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsDcountARequestBuilder struct{ BaseRequestBuilder }
 
-// DcountA action undocumented
+// DcountA action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) DcountA(reqObj *WorkbookFunctionsDcountARequestParameter) *WorkbookFunctionsDcountARequestBuilder {
 	bb := &WorkbookFunctionsDcountARequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/DcountA"

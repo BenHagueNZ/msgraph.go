@@ -6,26 +6,53 @@ package msgraph
 type SingleServicePrincipal struct {
 	// SubjectSet is the base model of SingleServicePrincipal
 	SubjectSet
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// ServicePrincipalID undocumented
 	ServicePrincipalID *string `json:"servicePrincipalId,omitempty"`
 }
 
+func NewSingleServicePrincipal() (*SingleServicePrincipal, error) {
+	newSingleServicePrincipal := &SingleServicePrincipal{
+		ODataType: "#microsoft.graph.SingleServicePrincipal",
+	}
+	return newSingleServicePrincipal, nil
+}
+
 // SingleUser undocumented
 type SingleUser struct {
 	// SubjectSet is the base model of SingleUser
 	SubjectSet
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
 }
 
+func NewSingleUser() (*SingleUser, error) {
+	newSingleUser := &SingleUser{
+		ODataType: "#microsoft.graph.SingleUser",
+	}
+	return newSingleUser, nil
+}
+
 // SingleValueLegacyExtendedProperty undocumented
 type SingleValueLegacyExtendedProperty struct {
 	// Entity is the base model of SingleValueLegacyExtendedProperty
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Value undocumented
 	Value *string `json:"value,omitempty"`
+}
+
+func NewSingleValueLegacyExtendedProperty() (*SingleValueLegacyExtendedProperty, error) {
+	newSingleValueLegacyExtendedProperty := &SingleValueLegacyExtendedProperty{
+		ODataType: "#microsoft.graph.SingleValueLegacyExtendedProperty",
+	}
+	return newSingleValueLegacyExtendedProperty, nil
 }

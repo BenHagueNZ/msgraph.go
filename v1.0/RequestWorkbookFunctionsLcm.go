@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsLcmRequestBuilder struct{ BaseRequestBuilder }
 
-// Lcm action undocumented
+// Lcm action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Lcm(reqObj *WorkbookFunctionsLcmRequestParameter) *WorkbookFunctionsLcmRequestBuilder {
 	bb := &WorkbookFunctionsLcmRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Lcm"

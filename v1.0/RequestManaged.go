@@ -897,7 +897,7 @@ func (r *ManagedMobileLobAppRequest) Delete(ctx context.Context) error {
 
 type ManagedAppPolicyTargetAppsRequestBuilder struct{ BaseRequestBuilder }
 
-// TargetApps action undocumented
+// TargetApps action undocumentedrav
 func (b *ManagedAppPolicyRequestBuilder) TargetApps(reqObj *ManagedAppPolicyTargetAppsRequestParameter) *ManagedAppPolicyTargetAppsRequestBuilder {
 	bb := &ManagedAppPolicyTargetAppsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/TargetApps"
@@ -919,7 +919,7 @@ func (r *ManagedAppPolicyTargetAppsRequest) Post(ctx context.Context) error {
 
 type ManagedAppProtectionTargetAppsRequestBuilder struct{ BaseRequestBuilder }
 
-// TargetApps action undocumented
+// TargetApps action undocumentedrav
 func (b *ManagedAppProtectionRequestBuilder) TargetApps(reqObj *ManagedAppProtectionTargetAppsRequestParameter) *ManagedAppProtectionTargetAppsRequestBuilder {
 	bb := &ManagedAppProtectionTargetAppsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/TargetApps"
@@ -941,7 +941,7 @@ func (r *ManagedAppProtectionTargetAppsRequest) Post(ctx context.Context) error 
 
 type ManagedDeviceBypassActivationLockRequestBuilder struct{ BaseRequestBuilder }
 
-// BypassActivationLock action undocumented
+// BypassActivationLock action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) BypassActivationLock(reqObj *ManagedDeviceBypassActivationLockRequestParameter) *ManagedDeviceBypassActivationLockRequestBuilder {
 	bb := &ManagedDeviceBypassActivationLockRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/BypassActivationLock"
@@ -963,7 +963,7 @@ func (r *ManagedDeviceBypassActivationLockRequest) Post(ctx context.Context) err
 
 type ManagedDeviceCleanWindowsDeviceRequestBuilder struct{ BaseRequestBuilder }
 
-// CleanWindowsDevice action undocumented
+// CleanWindowsDevice action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) CleanWindowsDevice(reqObj *ManagedDeviceCleanWindowsDeviceRequestParameter) *ManagedDeviceCleanWindowsDeviceRequestBuilder {
 	bb := &ManagedDeviceCleanWindowsDeviceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CleanWindowsDevice"
@@ -985,7 +985,7 @@ func (r *ManagedDeviceCleanWindowsDeviceRequest) Post(ctx context.Context) error
 
 type ManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder struct{ BaseRequestBuilder }
 
-// DeleteUserFromSharedAppleDevice action undocumented
+// DeleteUserFromSharedAppleDevice action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) DeleteUserFromSharedAppleDevice(reqObj *ManagedDeviceDeleteUserFromSharedAppleDeviceRequestParameter) *ManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder {
 	bb := &ManagedDeviceDeleteUserFromSharedAppleDeviceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/DeleteUserFromSharedAppleDevice"
@@ -1007,7 +1007,7 @@ func (r *ManagedDeviceDeleteUserFromSharedAppleDeviceRequest) Post(ctx context.C
 
 type ManagedDeviceDisableLostModeRequestBuilder struct{ BaseRequestBuilder }
 
-// DisableLostMode action undocumented
+// DisableLostMode action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) DisableLostMode(reqObj *ManagedDeviceDisableLostModeRequestParameter) *ManagedDeviceDisableLostModeRequestBuilder {
 	bb := &ManagedDeviceDisableLostModeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/DisableLostMode"
@@ -1029,7 +1029,7 @@ func (r *ManagedDeviceDisableLostModeRequest) Post(ctx context.Context) error {
 
 type ManagedDeviceLocateDeviceRequestBuilder struct{ BaseRequestBuilder }
 
-// LocateDevice action undocumented
+// LocateDevice action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) LocateDevice(reqObj *ManagedDeviceLocateDeviceRequestParameter) *ManagedDeviceLocateDeviceRequestBuilder {
 	bb := &ManagedDeviceLocateDeviceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/LocateDevice"
@@ -1051,7 +1051,7 @@ func (r *ManagedDeviceLocateDeviceRequest) Post(ctx context.Context) error {
 
 type ManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder struct{ BaseRequestBuilder }
 
-// LogoutSharedAppleDeviceActiveUser action undocumented
+// LogoutSharedAppleDeviceActiveUser action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) LogoutSharedAppleDeviceActiveUser(reqObj *ManagedDeviceLogoutSharedAppleDeviceActiveUserRequestParameter) *ManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder {
 	bb := &ManagedDeviceLogoutSharedAppleDeviceActiveUserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/LogoutSharedAppleDeviceActiveUser"
@@ -1073,7 +1073,7 @@ func (r *ManagedDeviceLogoutSharedAppleDeviceActiveUserRequest) Post(ctx context
 
 type ManagedDeviceRebootNowRequestBuilder struct{ BaseRequestBuilder }
 
-// RebootNow action undocumented
+// RebootNow action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) RebootNow(reqObj *ManagedDeviceRebootNowRequestParameter) *ManagedDeviceRebootNowRequestBuilder {
 	bb := &ManagedDeviceRebootNowRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RebootNow"
@@ -1095,7 +1095,7 @@ func (r *ManagedDeviceRebootNowRequest) Post(ctx context.Context) error {
 
 type ManagedDeviceRecoverPasscodeRequestBuilder struct{ BaseRequestBuilder }
 
-// RecoverPasscode action undocumented
+// RecoverPasscode action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) RecoverPasscode(reqObj *ManagedDeviceRecoverPasscodeRequestParameter) *ManagedDeviceRecoverPasscodeRequestBuilder {
 	bb := &ManagedDeviceRecoverPasscodeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RecoverPasscode"
@@ -1117,7 +1117,7 @@ func (r *ManagedDeviceRecoverPasscodeRequest) Post(ctx context.Context) error {
 
 type ManagedDeviceRemoteLockRequestBuilder struct{ BaseRequestBuilder }
 
-// RemoteLock action undocumented
+// RemoteLock action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) RemoteLock(reqObj *ManagedDeviceRemoteLockRequestParameter) *ManagedDeviceRemoteLockRequestBuilder {
 	bb := &ManagedDeviceRemoteLockRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RemoteLock"
@@ -1139,7 +1139,7 @@ func (r *ManagedDeviceRemoteLockRequest) Post(ctx context.Context) error {
 
 type ManagedDeviceRequestRemoteAssistanceRequestBuilder struct{ BaseRequestBuilder }
 
-// RequestRemoteAssistance action undocumented
+// RequestRemoteAssistance action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) RequestRemoteAssistance(reqObj *ManagedDeviceRequestRemoteAssistanceRequestParameter) *ManagedDeviceRequestRemoteAssistanceRequestBuilder {
 	bb := &ManagedDeviceRequestRemoteAssistanceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RequestRemoteAssistance"
@@ -1161,7 +1161,7 @@ func (r *ManagedDeviceRequestRemoteAssistanceRequest) Post(ctx context.Context) 
 
 type ManagedDeviceResetPasscodeRequestBuilder struct{ BaseRequestBuilder }
 
-// ResetPasscode action undocumented
+// ResetPasscode action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) ResetPasscode(reqObj *ManagedDeviceResetPasscodeRequestParameter) *ManagedDeviceResetPasscodeRequestBuilder {
 	bb := &ManagedDeviceResetPasscodeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ResetPasscode"
@@ -1183,7 +1183,7 @@ func (r *ManagedDeviceResetPasscodeRequest) Post(ctx context.Context) error {
 
 type ManagedDeviceRetireRequestBuilder struct{ BaseRequestBuilder }
 
-// Retire action undocumented
+// Retire action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) Retire(reqObj *ManagedDeviceRetireRequestParameter) *ManagedDeviceRetireRequestBuilder {
 	bb := &ManagedDeviceRetireRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Retire"
@@ -1205,7 +1205,7 @@ func (r *ManagedDeviceRetireRequest) Post(ctx context.Context) error {
 
 type ManagedDeviceShutDownRequestBuilder struct{ BaseRequestBuilder }
 
-// ShutDown action undocumented
+// ShutDown action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) ShutDown(reqObj *ManagedDeviceShutDownRequestParameter) *ManagedDeviceShutDownRequestBuilder {
 	bb := &ManagedDeviceShutDownRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ShutDown"
@@ -1227,7 +1227,7 @@ func (r *ManagedDeviceShutDownRequest) Post(ctx context.Context) error {
 
 type ManagedDeviceSyncDeviceRequestBuilder struct{ BaseRequestBuilder }
 
-// SyncDevice action undocumented
+// SyncDevice action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) SyncDevice(reqObj *ManagedDeviceSyncDeviceRequestParameter) *ManagedDeviceSyncDeviceRequestBuilder {
 	bb := &ManagedDeviceSyncDeviceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SyncDevice"
@@ -1249,7 +1249,7 @@ func (r *ManagedDeviceSyncDeviceRequest) Post(ctx context.Context) error {
 
 type ManagedDeviceUpdateWindowsDeviceAccountRequestBuilder struct{ BaseRequestBuilder }
 
-// UpdateWindowsDeviceAccount action undocumented
+// UpdateWindowsDeviceAccount action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) UpdateWindowsDeviceAccount(reqObj *ManagedDeviceUpdateWindowsDeviceAccountRequestParameter) *ManagedDeviceUpdateWindowsDeviceAccountRequestBuilder {
 	bb := &ManagedDeviceUpdateWindowsDeviceAccountRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/UpdateWindowsDeviceAccount"
@@ -1271,7 +1271,7 @@ func (r *ManagedDeviceUpdateWindowsDeviceAccountRequest) Post(ctx context.Contex
 
 type ManagedDeviceWindowsDefenderScanRequestBuilder struct{ BaseRequestBuilder }
 
-// WindowsDefenderScan action undocumented
+// WindowsDefenderScan action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) WindowsDefenderScan(reqObj *ManagedDeviceWindowsDefenderScanRequestParameter) *ManagedDeviceWindowsDefenderScanRequestBuilder {
 	bb := &ManagedDeviceWindowsDefenderScanRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/WindowsDefenderScan"
@@ -1293,7 +1293,7 @@ func (r *ManagedDeviceWindowsDefenderScanRequest) Post(ctx context.Context) erro
 
 type ManagedDeviceWindowsDefenderUpdateSignaturesRequestBuilder struct{ BaseRequestBuilder }
 
-// WindowsDefenderUpdateSignatures action undocumented
+// WindowsDefenderUpdateSignatures action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) WindowsDefenderUpdateSignatures(reqObj *ManagedDeviceWindowsDefenderUpdateSignaturesRequestParameter) *ManagedDeviceWindowsDefenderUpdateSignaturesRequestBuilder {
 	bb := &ManagedDeviceWindowsDefenderUpdateSignaturesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/WindowsDefenderUpdateSignatures"
@@ -1315,7 +1315,7 @@ func (r *ManagedDeviceWindowsDefenderUpdateSignaturesRequest) Post(ctx context.C
 
 type ManagedDeviceWipeRequestBuilder struct{ BaseRequestBuilder }
 
-// Wipe action undocumented
+// Wipe action undocumentedrav
 func (b *ManagedDeviceRequestBuilder) Wipe(reqObj *ManagedDeviceWipeRequestParameter) *ManagedDeviceWipeRequestBuilder {
 	bb := &ManagedDeviceWipeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Wipe"
@@ -1337,7 +1337,7 @@ func (r *ManagedDeviceWipeRequest) Post(ctx context.Context) error {
 
 type ManagedDeviceMobileAppConfigurationAssignRequestBuilder struct{ BaseRequestBuilder }
 
-// Assign action undocumented
+// Assign action undocumentedrav
 func (b *ManagedDeviceMobileAppConfigurationRequestBuilder) Assign(reqObj *ManagedDeviceMobileAppConfigurationAssignRequestParameter) *ManagedDeviceMobileAppConfigurationAssignRequestBuilder {
 	bb := &ManagedDeviceMobileAppConfigurationAssignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Assign"
@@ -1359,7 +1359,7 @@ func (r *ManagedDeviceMobileAppConfigurationAssignRequest) Post(ctx context.Cont
 
 type ManagedEBookAssignRequestBuilder struct{ BaseRequestBuilder }
 
-// Assign action undocumented
+// Assign action undocumentedrav
 func (b *ManagedEBookRequestBuilder) Assign(reqObj *ManagedEBookAssignRequestParameter) *ManagedEBookAssignRequestBuilder {
 	bb := &ManagedEBookAssignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Assign"

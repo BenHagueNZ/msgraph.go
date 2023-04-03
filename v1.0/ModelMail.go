@@ -6,6 +6,8 @@ package msgraph
 type MailAssessmentRequestObject struct {
 	// ThreatAssessmentRequestObject is the base model of MailAssessmentRequestObject
 	ThreatAssessmentRequestObject
+
+	ODataType string `json:"@odata.type"`
 	// DestinationRoutingReason undocumented
 	DestinationRoutingReason *MailDestinationRoutingReason `json:"destinationRoutingReason,omitempty"`
 	// MessageURI undocumented
@@ -14,10 +16,19 @@ type MailAssessmentRequestObject struct {
 	RecipientEmail *string `json:"recipientEmail,omitempty"`
 }
 
+func NewMailAssessmentRequestObject() (*MailAssessmentRequestObject, error) {
+	newMailAssessmentRequestObject := &MailAssessmentRequestObject{
+		ODataType: "#microsoft.graph.MailAssessmentRequestObject",
+	}
+	return newMailAssessmentRequestObject, nil
+}
+
 // MailFolder undocumented
 type MailFolder struct {
 	// Entity is the base model of MailFolder
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ChildFolderCount undocumented
 	ChildFolderCount *int `json:"childFolderCount,omitempty"`
 	// DisplayName undocumented
@@ -42,10 +53,19 @@ type MailFolder struct {
 	SingleValueExtendedProperties []SingleValueLegacyExtendedProperty `json:"singleValueExtendedProperties,omitempty"`
 }
 
+func NewMailFolder() (*MailFolder, error) {
+	newMailFolder := &MailFolder{
+		ODataType: "#microsoft.graph.MailFolder",
+	}
+	return newMailFolder, nil
+}
+
 // MailSearchFolder undocumented
 type MailSearchFolder struct {
 	// MailFolder is the base model of MailSearchFolder
 	MailFolder
+
+	ODataType string `json:"@odata.type"`
 	// FilterQuery undocumented
 	FilterQuery *string `json:"filterQuery,omitempty"`
 	// IncludeNestedFolders undocumented
@@ -56,10 +76,19 @@ type MailSearchFolder struct {
 	SourceFolderIDs []string `json:"sourceFolderIds,omitempty"`
 }
 
+func NewMailSearchFolder() (*MailSearchFolder, error) {
+	newMailSearchFolder := &MailSearchFolder{
+		ODataType: "#microsoft.graph.MailSearchFolder",
+	}
+	return newMailSearchFolder, nil
+}
+
 // MailTips undocumented
 type MailTips struct {
 	// Object is the base model of MailTips
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AutomaticReplies undocumented
 	AutomaticReplies *AutomaticRepliesMailTips `json:"automaticReplies,omitempty"`
 	// CustomMailTip undocumented
@@ -86,12 +115,28 @@ type MailTips struct {
 	TotalMemberCount *int `json:"totalMemberCount,omitempty"`
 }
 
+func NewMailTips() (*MailTips, error) {
+	newMailTips := &MailTips{
+		ODataType: "#microsoft.graph.MailTips",
+	}
+	return newMailTips, nil
+}
+
 // MailTipsError undocumented
 type MailTipsError struct {
 	// Object is the base model of MailTipsError
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
 	// Message undocumented
 	Message *string `json:"message,omitempty"`
+}
+
+func NewMailTipsError() (*MailTipsError, error) {
+	newMailTipsError := &MailTipsError{
+		ODataType: "#microsoft.graph.MailTipsError",
+	}
+	return newMailTipsError, nil
 }

@@ -8,6 +8,8 @@ import "time"
 type Chat struct {
 	// Entity is the base model of Chat
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ChatType undocumented
 	ChatType *ChatType `json:"chatType,omitempty"`
 	// CreatedDateTime undocumented
@@ -38,10 +40,19 @@ type Chat struct {
 	Tabs []TeamsTab `json:"tabs,omitempty"`
 }
 
+func NewChat() (*Chat, error) {
+	newChat := &Chat{
+		ODataType: "#microsoft.graph.Chat",
+	}
+	return newChat, nil
+}
+
 // ChatInfo undocumented
 type ChatInfo struct {
 	// Object is the base model of ChatInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// MessageID undocumented
 	MessageID *string `json:"messageId,omitempty"`
 	// ReplyChainMessageID undocumented
@@ -50,18 +61,36 @@ type ChatInfo struct {
 	ThreadID *string `json:"threadId,omitempty"`
 }
 
+func NewChatInfo() (*ChatInfo, error) {
+	newChatInfo := &ChatInfo{
+		ODataType: "#microsoft.graph.ChatInfo",
+	}
+	return newChatInfo, nil
+}
+
 // ChatMembersNotificationRecipient undocumented
 type ChatMembersNotificationRecipient struct {
 	// TeamworkNotificationRecipient is the base model of ChatMembersNotificationRecipient
 	TeamworkNotificationRecipient
+
+	ODataType string `json:"@odata.type"`
 	// ChatID undocumented
 	ChatID *string `json:"chatId,omitempty"`
+}
+
+func NewChatMembersNotificationRecipient() (*ChatMembersNotificationRecipient, error) {
+	newChatMembersNotificationRecipient := &ChatMembersNotificationRecipient{
+		ODataType: "#microsoft.graph.ChatMembersNotificationRecipient",
+	}
+	return newChatMembersNotificationRecipient, nil
 }
 
 // ChatMessage undocumented
 type ChatMessage struct {
 	// Entity is the base model of ChatMessage
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Attachments undocumented
 	Attachments []ChatMessageAttachment `json:"attachments,omitempty"`
 	// Body undocumented
@@ -110,10 +139,19 @@ type ChatMessage struct {
 	Replies []ChatMessage `json:"replies,omitempty"`
 }
 
+func NewChatMessage() (*ChatMessage, error) {
+	newChatMessage := &ChatMessage{
+		ODataType: "#microsoft.graph.ChatMessage",
+	}
+	return newChatMessage, nil
+}
+
 // ChatMessageAttachment undocumented
 type ChatMessageAttachment struct {
 	// Object is the base model of ChatMessageAttachment
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Content undocumented
 	Content *string `json:"content,omitempty"`
 	// ContentType undocumented
@@ -130,22 +168,49 @@ type ChatMessageAttachment struct {
 	ThumbnailURL *string `json:"thumbnailUrl,omitempty"`
 }
 
+func NewChatMessageAttachment() (*ChatMessageAttachment, error) {
+	newChatMessageAttachment := &ChatMessageAttachment{
+		ODataType: "#microsoft.graph.ChatMessageAttachment",
+	}
+	return newChatMessageAttachment, nil
+}
+
 // ChatMessageFromIdentitySet undocumented
 type ChatMessageFromIdentitySet struct {
 	// IdentitySet is the base model of ChatMessageFromIdentitySet
 	IdentitySet
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewChatMessageFromIdentitySet() (*ChatMessageFromIdentitySet, error) {
+	newChatMessageFromIdentitySet := &ChatMessageFromIdentitySet{
+		ODataType: "#microsoft.graph.ChatMessageFromIdentitySet",
+	}
+	return newChatMessageFromIdentitySet, nil
 }
 
 // ChatMessageHostedContent undocumented
 type ChatMessageHostedContent struct {
 	// TeamworkHostedContent is the base model of ChatMessageHostedContent
 	TeamworkHostedContent
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewChatMessageHostedContent() (*ChatMessageHostedContent, error) {
+	newChatMessageHostedContent := &ChatMessageHostedContent{
+		ODataType: "#microsoft.graph.ChatMessageHostedContent",
+	}
+	return newChatMessageHostedContent, nil
 }
 
 // ChatMessageInfo undocumented
 type ChatMessageInfo struct {
 	// Entity is the base model of ChatMessageInfo
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Body undocumented
 	Body *ItemBody `json:"body,omitempty"`
 	// CreatedDateTime undocumented
@@ -160,10 +225,19 @@ type ChatMessageInfo struct {
 	MessageType *ChatMessageType `json:"messageType,omitempty"`
 }
 
+func NewChatMessageInfo() (*ChatMessageInfo, error) {
+	newChatMessageInfo := &ChatMessageInfo{
+		ODataType: "#microsoft.graph.ChatMessageInfo",
+	}
+	return newChatMessageInfo, nil
+}
+
 // ChatMessageMention undocumented
 type ChatMessageMention struct {
 	// Object is the base model of ChatMessageMention
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ID undocumented
 	ID *int `json:"id,omitempty"`
 	// Mentioned undocumented
@@ -172,18 +246,36 @@ type ChatMessageMention struct {
 	MentionText *string `json:"mentionText,omitempty"`
 }
 
+func NewChatMessageMention() (*ChatMessageMention, error) {
+	newChatMessageMention := &ChatMessageMention{
+		ODataType: "#microsoft.graph.ChatMessageMention",
+	}
+	return newChatMessageMention, nil
+}
+
 // ChatMessageMentionedIdentitySet undocumented
 type ChatMessageMentionedIdentitySet struct {
 	// IdentitySet is the base model of ChatMessageMentionedIdentitySet
 	IdentitySet
+
+	ODataType string `json:"@odata.type"`
 	// Conversation undocumented
 	Conversation *TeamworkConversationIdentity `json:"conversation,omitempty"`
+}
+
+func NewChatMessageMentionedIdentitySet() (*ChatMessageMentionedIdentitySet, error) {
+	newChatMessageMentionedIdentitySet := &ChatMessageMentionedIdentitySet{
+		ODataType: "#microsoft.graph.ChatMessageMentionedIdentitySet",
+	}
+	return newChatMessageMentionedIdentitySet, nil
 }
 
 // ChatMessagePolicyViolation undocumented
 type ChatMessagePolicyViolation struct {
 	// Object is the base model of ChatMessagePolicyViolation
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DlpAction undocumented
 	DlpAction *ChatMessagePolicyViolationDlpActionTypes `json:"dlpAction,omitempty"`
 	// JustificationText undocumented
@@ -196,10 +288,19 @@ type ChatMessagePolicyViolation struct {
 	VerdictDetails *ChatMessagePolicyViolationVerdictDetailsTypes `json:"verdictDetails,omitempty"`
 }
 
+func NewChatMessagePolicyViolation() (*ChatMessagePolicyViolation, error) {
+	newChatMessagePolicyViolation := &ChatMessagePolicyViolation{
+		ODataType: "#microsoft.graph.ChatMessagePolicyViolation",
+	}
+	return newChatMessagePolicyViolation, nil
+}
+
 // ChatMessagePolicyViolationPolicyTip undocumented
 type ChatMessagePolicyViolationPolicyTip struct {
 	// Object is the base model of ChatMessagePolicyViolationPolicyTip
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ComplianceURL undocumented
 	ComplianceURL *string `json:"complianceUrl,omitempty"`
 	// GeneralText undocumented
@@ -208,10 +309,19 @@ type ChatMessagePolicyViolationPolicyTip struct {
 	MatchedConditionDescriptions []string `json:"matchedConditionDescriptions,omitempty"`
 }
 
+func NewChatMessagePolicyViolationPolicyTip() (*ChatMessagePolicyViolationPolicyTip, error) {
+	newChatMessagePolicyViolationPolicyTip := &ChatMessagePolicyViolationPolicyTip{
+		ODataType: "#microsoft.graph.ChatMessagePolicyViolationPolicyTip",
+	}
+	return newChatMessagePolicyViolationPolicyTip, nil
+}
+
 // ChatMessageReaction undocumented
 type ChatMessageReaction struct {
 	// Object is the base model of ChatMessageReaction
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// ReactionType undocumented
@@ -220,16 +330,34 @@ type ChatMessageReaction struct {
 	User *ChatMessageReactionIdentitySet `json:"user,omitempty"`
 }
 
+func NewChatMessageReaction() (*ChatMessageReaction, error) {
+	newChatMessageReaction := &ChatMessageReaction{
+		ODataType: "#microsoft.graph.ChatMessageReaction",
+	}
+	return newChatMessageReaction, nil
+}
+
 // ChatMessageReactionIdentitySet undocumented
 type ChatMessageReactionIdentitySet struct {
 	// IdentitySet is the base model of ChatMessageReactionIdentitySet
 	IdentitySet
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewChatMessageReactionIdentitySet() (*ChatMessageReactionIdentitySet, error) {
+	newChatMessageReactionIdentitySet := &ChatMessageReactionIdentitySet{
+		ODataType: "#microsoft.graph.ChatMessageReactionIdentitySet",
+	}
+	return newChatMessageReactionIdentitySet, nil
 }
 
 // ChatRenamedEventMessageDetail undocumented
 type ChatRenamedEventMessageDetail struct {
 	// EventMessageDetail is the base model of ChatRenamedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// ChatDisplayName undocumented
 	ChatDisplayName *string `json:"chatDisplayName,omitempty"`
 	// ChatID undocumented
@@ -238,12 +366,28 @@ type ChatRenamedEventMessageDetail struct {
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 }
 
+func NewChatRenamedEventMessageDetail() (*ChatRenamedEventMessageDetail, error) {
+	newChatRenamedEventMessageDetail := &ChatRenamedEventMessageDetail{
+		ODataType: "#microsoft.graph.ChatRenamedEventMessageDetail",
+	}
+	return newChatRenamedEventMessageDetail, nil
+}
+
 // ChatViewpoint undocumented
 type ChatViewpoint struct {
 	// Object is the base model of ChatViewpoint
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsHidden undocumented
 	IsHidden *bool `json:"isHidden,omitempty"`
 	// LastMessageReadDateTime undocumented
 	LastMessageReadDateTime *time.Time `json:"lastMessageReadDateTime,omitempty"`
+}
+
+func NewChatViewpoint() (*ChatViewpoint, error) {
+	newChatViewpoint := &ChatViewpoint{
+		ODataType: "#microsoft.graph.ChatViewpoint",
+	}
+	return newChatViewpoint, nil
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsModRequestBuilder struct{ BaseRequestBuilder }
 
-// Mod action undocumented
+// Mod action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Mod(reqObj *WorkbookFunctionsModRequestParameter) *WorkbookFunctionsModRequestBuilder {
 	bb := &WorkbookFunctionsModRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Mod"

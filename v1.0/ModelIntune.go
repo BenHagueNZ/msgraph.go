@@ -6,6 +6,8 @@ package msgraph
 type IntuneBrand struct {
 	// Object is the base model of IntuneBrand
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ContactITEmailAddress undocumented
 	ContactITEmailAddress *string `json:"contactITEmailAddress,omitempty"`
 	// ContactITName undocumented
@@ -34,4 +36,11 @@ type IntuneBrand struct {
 	ShowNameNextToLogo *bool `json:"showNameNextToLogo,omitempty"`
 	// ThemeColor undocumented
 	ThemeColor *RgbColor `json:"themeColor,omitempty"`
+}
+
+func NewIntuneBrand() (*IntuneBrand, error) {
+	newIntuneBrand := &IntuneBrand{
+		ODataType: "#microsoft.graph.IntuneBrand",
+	}
+	return newIntuneBrand, nil
 }

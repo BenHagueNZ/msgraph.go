@@ -6,6 +6,8 @@ package msgraph
 type EditionUpgradeConfiguration struct {
 	// DeviceConfiguration is the base model of EditionUpgradeConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// License undocumented
 	License *string `json:"license,omitempty"`
 	// LicenseType undocumented
@@ -14,4 +16,11 @@ type EditionUpgradeConfiguration struct {
 	ProductKey *string `json:"productKey,omitempty"`
 	// TargetEdition undocumented
 	TargetEdition *Windows10EditionType `json:"targetEdition,omitempty"`
+}
+
+func NewEditionUpgradeConfiguration() (*EditionUpgradeConfiguration, error) {
+	newEditionUpgradeConfiguration := &EditionUpgradeConfiguration{
+		ODataType: "#microsoft.graph.EditionUpgradeConfiguration",
+	}
+	return newEditionUpgradeConfiguration, nil
 }

@@ -6,6 +6,15 @@ package msgraph
 type AnonymousGuestConversationMember struct {
 	// ConversationMember is the base model of AnonymousGuestConversationMember
 	ConversationMember
+
+	ODataType string `json:"@odata.type"`
 	// AnonymousGuestID undocumented
 	AnonymousGuestID *string `json:"anonymousGuestId,omitempty"`
+}
+
+func NewAnonymousGuestConversationMember() (*AnonymousGuestConversationMember, error) {
+	newAnonymousGuestConversationMember := &AnonymousGuestConversationMember{
+		ODataType: "#microsoft.graph.AnonymousGuestConversationMember",
+	}
+	return newAnonymousGuestConversationMember, nil
 }

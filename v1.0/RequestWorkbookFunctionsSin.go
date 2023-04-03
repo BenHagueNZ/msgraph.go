@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSinRequestBuilder struct{ BaseRequestBuilder }
 
-// Sin action undocumented
+// Sin action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Sin(reqObj *WorkbookFunctionsSinRequestParameter) *WorkbookFunctionsSinRequestBuilder {
 	bb := &WorkbookFunctionsSinRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Sin"

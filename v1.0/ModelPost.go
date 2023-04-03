@@ -8,6 +8,8 @@ import "time"
 type Post struct {
 	// OutlookItem is the base model of Post
 	OutlookItem
+
+	ODataType string `json:"@odata.type"`
 	// Body undocumented
 	Body *ItemBody `json:"body,omitempty"`
 	// ConversationID undocumented
@@ -34,4 +36,11 @@ type Post struct {
 	MultiValueExtendedProperties []MultiValueLegacyExtendedProperty `json:"multiValueExtendedProperties,omitempty"`
 	// SingleValueExtendedProperties undocumented
 	SingleValueExtendedProperties []SingleValueLegacyExtendedProperty `json:"singleValueExtendedProperties,omitempty"`
+}
+
+func NewPost() (*Post, error) {
+	newPost := &Post{
+		ODataType: "#microsoft.graph.Post",
+	}
+	return newPost, nil
 }

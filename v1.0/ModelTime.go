@@ -8,16 +8,27 @@ import "time"
 type TimeConstraint struct {
 	// Object is the base model of TimeConstraint
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ActivityDomain undocumented
 	ActivityDomain *ActivityDomain `json:"activityDomain,omitempty"`
 	// TimeSlots undocumented
 	TimeSlots []TimeSlot `json:"timeSlots,omitempty"`
 }
 
+func NewTimeConstraint() (*TimeConstraint, error) {
+	newTimeConstraint := &TimeConstraint{
+		ODataType: "#microsoft.graph.TimeConstraint",
+	}
+	return newTimeConstraint, nil
+}
+
 // TimeOff undocumented
 type TimeOff struct {
 	// ChangeTrackedEntity is the base model of TimeOff
 	ChangeTrackedEntity
+
+	ODataType string `json:"@odata.type"`
 	// DraftTimeOff undocumented
 	DraftTimeOff *TimeOffItem `json:"draftTimeOff,omitempty"`
 	// SharedTimeOff undocumented
@@ -26,18 +37,36 @@ type TimeOff struct {
 	UserID *string `json:"userId,omitempty"`
 }
 
+func NewTimeOff() (*TimeOff, error) {
+	newTimeOff := &TimeOff{
+		ODataType: "#microsoft.graph.TimeOff",
+	}
+	return newTimeOff, nil
+}
+
 // TimeOffItem undocumented
 type TimeOffItem struct {
 	// ScheduleEntity is the base model of TimeOffItem
 	ScheduleEntity
+
+	ODataType string `json:"@odata.type"`
 	// TimeOffReasonID undocumented
 	TimeOffReasonID *string `json:"timeOffReasonId,omitempty"`
+}
+
+func NewTimeOffItem() (*TimeOffItem, error) {
+	newTimeOffItem := &TimeOffItem{
+		ODataType: "#microsoft.graph.TimeOffItem",
+	}
+	return newTimeOffItem, nil
 }
 
 // TimeOffReason undocumented
 type TimeOffReason struct {
 	// ChangeTrackedEntity is the base model of TimeOffReason
 	ChangeTrackedEntity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// IconType undocumented
@@ -46,10 +75,19 @@ type TimeOffReason struct {
 	IsActive *bool `json:"isActive,omitempty"`
 }
 
+func NewTimeOffReason() (*TimeOffReason, error) {
+	newTimeOffReason := &TimeOffReason{
+		ODataType: "#microsoft.graph.TimeOffReason",
+	}
+	return newTimeOffReason, nil
+}
+
 // TimeOffRequestObject undocumented
 type TimeOffRequestObject struct {
 	// ScheduleChangeRequestObject is the base model of TimeOffRequestObject
 	ScheduleChangeRequestObject
+
+	ODataType string `json:"@odata.type"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// StartDateTime undocumented
@@ -58,40 +96,83 @@ type TimeOffRequestObject struct {
 	TimeOffReasonID *string `json:"timeOffReasonId,omitempty"`
 }
 
+func NewTimeOffRequestObject() (*TimeOffRequestObject, error) {
+	newTimeOffRequestObject := &TimeOffRequestObject{
+		ODataType: "#microsoft.graph.TimeOffRequestObject",
+	}
+	return newTimeOffRequestObject, nil
+}
+
 // TimeRange undocumented
 type TimeRange struct {
 	// Object is the base model of TimeRange
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// EndTime undocumented
 	EndTime *TimeOfDay `json:"endTime,omitempty"`
 	// StartTime undocumented
 	StartTime *TimeOfDay `json:"startTime,omitempty"`
 }
 
+func NewTimeRange() (*TimeRange, error) {
+	newTimeRange := &TimeRange{
+		ODataType: "#microsoft.graph.TimeRange",
+	}
+	return newTimeRange, nil
+}
+
 // TimeSlot undocumented
 type TimeSlot struct {
 	// Object is the base model of TimeSlot
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// End undocumented
 	End *DateTimeTimeZone `json:"end,omitempty"`
 	// Start undocumented
 	Start *DateTimeTimeZone `json:"start,omitempty"`
 }
 
+func NewTimeSlot() (*TimeSlot, error) {
+	newTimeSlot := &TimeSlot{
+		ODataType: "#microsoft.graph.TimeSlot",
+	}
+	return newTimeSlot, nil
+}
+
 // TimeZoneBase undocumented
 type TimeZoneBase struct {
 	// Object is the base model of TimeZoneBase
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
+}
+
+func NewTimeZoneBase() (*TimeZoneBase, error) {
+	newTimeZoneBase := &TimeZoneBase{
+		ODataType: "#microsoft.graph.TimeZoneBase",
+	}
+	return newTimeZoneBase, nil
 }
 
 // TimeZoneInformation undocumented
 type TimeZoneInformation struct {
 	// Object is the base model of TimeZoneInformation
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Alias undocumented
 	Alias *string `json:"alias,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
+}
+
+func NewTimeZoneInformation() (*TimeZoneInformation, error) {
+	newTimeZoneInformation := &TimeZoneInformation{
+		ODataType: "#microsoft.graph.TimeZoneInformation",
+	}
+	return newTimeZoneInformation, nil
 }

@@ -6,8 +6,17 @@ package msgraph
 type RequiredResourceAccess struct {
 	// Object is the base model of RequiredResourceAccess
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ResourceAccess undocumented
 	ResourceAccess []ResourceAccess `json:"resourceAccess,omitempty"`
 	// ResourceAppID undocumented
 	ResourceAppID *string `json:"resourceAppId,omitempty"`
+}
+
+func NewRequiredResourceAccess() (*RequiredResourceAccess, error) {
+	newRequiredResourceAccess := &RequiredResourceAccess{
+		ODataType: "#microsoft.graph.RequiredResourceAccess",
+	}
+	return newRequiredResourceAccess, nil
 }

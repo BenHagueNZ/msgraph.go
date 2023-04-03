@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AcceptanceStatuses returns request builder for TermsAndConditionsAcceptanceStatus collection
+// AcceptanceStatuses returns request builder for TermsAndConditionsAcceptanceStatus collection rcn
 func (b *TermsAndConditionsRequestBuilder) AcceptanceStatuses() *TermsAndConditionsAcceptanceStatusesCollectionRequestBuilder {
 	bb := &TermsAndConditionsAcceptanceStatusesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/acceptanceStatuses"
@@ -114,7 +114,7 @@ func (r *TermsAndConditionsAcceptanceStatusesCollectionRequest) Add(ctx context.
 	return
 }
 
-// Assignments returns request builder for TermsAndConditionsAssignment collection
+// Assignments returns request builder for TermsAndConditionsAssignment collection rcn
 func (b *TermsAndConditionsRequestBuilder) Assignments() *TermsAndConditionsAssignmentsCollectionRequestBuilder {
 	bb := &TermsAndConditionsAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignments"
@@ -217,14 +217,14 @@ func (r *TermsAndConditionsAssignmentsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// TermsAndConditions is navigation property
+// TermsAndConditions is navigation property rn
 func (b *TermsAndConditionsAcceptanceStatusRequestBuilder) TermsAndConditions() *TermsAndConditionsRequestBuilder {
 	bb := &TermsAndConditionsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/termsAndConditions"
 	return bb
 }
 
-// AgreementAcceptances returns request builder for AgreementAcceptance collection
+// AgreementAcceptances returns request builder for AgreementAcceptance collection rcn
 func (b *TermsOfUseContainerRequestBuilder) AgreementAcceptances() *TermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder {
 	bb := &TermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/agreementAcceptances"
@@ -327,7 +327,7 @@ func (r *TermsOfUseContainerAgreementAcceptancesCollectionRequest) Add(ctx conte
 	return
 }
 
-// Agreements returns request builder for Agreement collection
+// Agreements returns request builder for Agreement collection rcn
 func (b *TermsOfUseContainerRequestBuilder) Agreements() *TermsOfUseContainerAgreementsCollectionRequestBuilder {
 	bb := &TermsOfUseContainerAgreementsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/agreements"
@@ -428,4 +428,32 @@ func (r *TermsOfUseContainerAgreementsCollectionRequest) Get(ctx context.Context
 func (r *TermsOfUseContainerAgreementsCollectionRequest) Add(ctx context.Context, reqObj *Agreement) (resObj *Agreement, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// TermsAndConditions is navigation property rn
+func (b *TermsAndConditionsRequestBuilder) TermsAndConditions() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TermsAndConditionsAcceptanceStatus is navigation property rn
+func (b *TermsAndConditionsAcceptanceStatusRequestBuilder) TermsAndConditionsAcceptanceStatus() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TermsAndConditionsAssignment is navigation property rn
+func (b *TermsAndConditionsAssignmentRequestBuilder) TermsAndConditionsAssignment() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TermsOfUseContainer is navigation property rn
+func (b *TermsOfUseContainerRequestBuilder) TermsOfUseContainer() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

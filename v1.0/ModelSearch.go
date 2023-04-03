@@ -6,16 +6,27 @@ package msgraph
 type SearchAggregation struct {
 	// Object is the base model of SearchAggregation
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Buckets undocumented
 	Buckets []SearchBucket `json:"buckets,omitempty"`
 	// Field undocumented
 	Field *string `json:"field,omitempty"`
 }
 
+func NewSearchAggregation() (*SearchAggregation, error) {
+	newSearchAggregation := &SearchAggregation{
+		ODataType: "#microsoft.graph.SearchAggregation",
+	}
+	return newSearchAggregation, nil
+}
+
 // SearchAlteration undocumented
 type SearchAlteration struct {
 	// Object is the base model of SearchAlteration
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AlteredHighlightedQueryString undocumented
 	AlteredHighlightedQueryString *string `json:"alteredHighlightedQueryString,omitempty"`
 	// AlteredQueryString undocumented
@@ -24,20 +35,38 @@ type SearchAlteration struct {
 	AlteredQueryTokens []AlteredQueryToken `json:"alteredQueryTokens,omitempty"`
 }
 
+func NewSearchAlteration() (*SearchAlteration, error) {
+	newSearchAlteration := &SearchAlteration{
+		ODataType: "#microsoft.graph.SearchAlteration",
+	}
+	return newSearchAlteration, nil
+}
+
 // SearchAlterationOptions undocumented
 type SearchAlterationOptions struct {
 	// Object is the base model of SearchAlterationOptions
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// EnableModification undocumented
 	EnableModification *bool `json:"enableModification,omitempty"`
 	// EnableSuggestion undocumented
 	EnableSuggestion *bool `json:"enableSuggestion,omitempty"`
 }
 
+func NewSearchAlterationOptions() (*SearchAlterationOptions, error) {
+	newSearchAlterationOptions := &SearchAlterationOptions{
+		ODataType: "#microsoft.graph.SearchAlterationOptions",
+	}
+	return newSearchAlterationOptions, nil
+}
+
 // SearchBucket undocumented
 type SearchBucket struct {
 	// Object is the base model of SearchBucket
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AggregationFilterToken undocumented
 	AggregationFilterToken *string `json:"aggregationFilterToken,omitempty"`
 	// Count undocumented
@@ -46,16 +75,34 @@ type SearchBucket struct {
 	Key *string `json:"key,omitempty"`
 }
 
+func NewSearchBucket() (*SearchBucket, error) {
+	newSearchBucket := &SearchBucket{
+		ODataType: "#microsoft.graph.SearchBucket",
+	}
+	return newSearchBucket, nil
+}
+
 // SearchEntity undocumented
 type SearchEntity struct {
 	// Entity is the base model of SearchEntity
 	Entity
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewSearchEntity() (*SearchEntity, error) {
+	newSearchEntity := &SearchEntity{
+		ODataType: "#microsoft.graph.SearchEntity",
+	}
+	return newSearchEntity, nil
 }
 
 // SearchHit undocumented
 type SearchHit struct {
 	// Object is the base model of SearchHit
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ContentSource undocumented
 	ContentSource *string `json:"contentSource,omitempty"`
 	// HitID undocumented
@@ -70,10 +117,19 @@ type SearchHit struct {
 	Resource *Entity `json:"resource,omitempty"`
 }
 
+func NewSearchHit() (*SearchHit, error) {
+	newSearchHit := &SearchHit{
+		ODataType: "#microsoft.graph.SearchHit",
+	}
+	return newSearchHit, nil
+}
+
 // SearchHitsContainer undocumented
 type SearchHitsContainer struct {
 	// Object is the base model of SearchHitsContainer
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Aggregations undocumented
 	Aggregations []SearchAggregation `json:"aggregations,omitempty"`
 	// Hits undocumented
@@ -84,18 +140,36 @@ type SearchHitsContainer struct {
 	Total *int `json:"total,omitempty"`
 }
 
+func NewSearchHitsContainer() (*SearchHitsContainer, error) {
+	newSearchHitsContainer := &SearchHitsContainer{
+		ODataType: "#microsoft.graph.SearchHitsContainer",
+	}
+	return newSearchHitsContainer, nil
+}
+
 // SearchQuery undocumented
 type SearchQuery struct {
 	// Object is the base model of SearchQuery
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// QueryString undocumented
 	QueryString *string `json:"queryString,omitempty"`
+}
+
+func NewSearchQuery() (*SearchQuery, error) {
+	newSearchQuery := &SearchQuery{
+		ODataType: "#microsoft.graph.SearchQuery",
+	}
+	return newSearchQuery, nil
 }
 
 // SearchRequestObject undocumented
 type SearchRequestObject struct {
 	// Object is the base model of SearchRequestObject
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AggregationFilters undocumented
 	AggregationFilters []string `json:"aggregationFilters,omitempty"`
 	// Aggregations undocumented
@@ -126,10 +200,19 @@ type SearchRequestObject struct {
 	SortProperties []SortProperty `json:"sortProperties,omitempty"`
 }
 
+func NewSearchRequestObject() (*SearchRequestObject, error) {
+	newSearchRequestObject := &SearchRequestObject{
+		ODataType: "#microsoft.graph.SearchRequestObject",
+	}
+	return newSearchRequestObject, nil
+}
+
 // SearchResponse undocumented
 type SearchResponse struct {
 	// Object is the base model of SearchResponse
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// HitsContainers undocumented
 	HitsContainers []SearchHitsContainer `json:"hitsContainers,omitempty"`
 	// QueryAlterationResponse undocumented
@@ -140,10 +223,26 @@ type SearchResponse struct {
 	SearchTerms []string `json:"searchTerms,omitempty"`
 }
 
+func NewSearchResponse() (*SearchResponse, error) {
+	newSearchResponse := &SearchResponse{
+		ODataType: "#microsoft.graph.SearchResponse",
+	}
+	return newSearchResponse, nil
+}
+
 // SearchResult undocumented
 type SearchResult struct {
 	// Object is the base model of SearchResult
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// OnClickTelemetryURL undocumented
 	OnClickTelemetryURL *string `json:"onClickTelemetryUrl,omitempty"`
+}
+
+func NewSearchResult() (*SearchResult, error) {
+	newSearchResult := &SearchResult{
+		ODataType: "#microsoft.graph.SearchResult",
+	}
+	return newSearchResult, nil
 }

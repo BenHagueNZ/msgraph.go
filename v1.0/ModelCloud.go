@@ -6,14 +6,25 @@ package msgraph
 type CloudAppSecuritySessionControl struct {
 	// ConditionalAccessSessionControl is the base model of CloudAppSecuritySessionControl
 	ConditionalAccessSessionControl
+
+	ODataType string `json:"@odata.type"`
 	// CloudAppSecurityType undocumented
 	CloudAppSecurityType *CloudAppSecuritySessionControlType `json:"cloudAppSecurityType,omitempty"`
+}
+
+func NewCloudAppSecuritySessionControl() (*CloudAppSecuritySessionControl, error) {
+	newCloudAppSecuritySessionControl := &CloudAppSecuritySessionControl{
+		ODataType: "#microsoft.graph.CloudAppSecuritySessionControl",
+	}
+	return newCloudAppSecuritySessionControl, nil
 }
 
 // CloudAppSecurityState undocumented
 type CloudAppSecurityState struct {
 	// Object is the base model of CloudAppSecurityState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DestinationServiceIP undocumented
 	DestinationServiceIP *string `json:"destinationServiceIp,omitempty"`
 	// DestinationServiceName undocumented
@@ -22,10 +33,19 @@ type CloudAppSecurityState struct {
 	RiskScore *string `json:"riskScore,omitempty"`
 }
 
+func NewCloudAppSecurityState() (*CloudAppSecurityState, error) {
+	newCloudAppSecurityState := &CloudAppSecurityState{
+		ODataType: "#microsoft.graph.CloudAppSecurityState",
+	}
+	return newCloudAppSecurityState, nil
+}
+
 // CloudCommunications undocumented
 type CloudCommunications struct {
 	// Entity is the base model of CloudCommunications
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Calls undocumented
 	Calls []Call `json:"calls,omitempty"`
 	// CallRecords undocumented
@@ -34,4 +54,11 @@ type CloudCommunications struct {
 	OnlineMeetings []OnlineMeeting `json:"onlineMeetings,omitempty"`
 	// Presences undocumented
 	Presences []Presence `json:"presences,omitempty"`
+}
+
+func NewCloudCommunications() (*CloudCommunications, error) {
+	newCloudCommunications := &CloudCommunications{
+		ODataType: "#microsoft.graph.CloudCommunications",
+	}
+	return newCloudCommunications, nil
 }

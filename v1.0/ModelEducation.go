@@ -8,6 +8,8 @@ import "time"
 type EducationAssignment struct {
 	// Entity is the base model of EducationAssignment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AddedStudentAction undocumented
 	AddedStudentAction *EducationAddedStudentAction `json:"addedStudentAction,omitempty"`
 	// AddToCalendarAction undocumented
@@ -62,16 +64,34 @@ type EducationAssignment struct {
 	Submissions []EducationSubmission `json:"submissions,omitempty"`
 }
 
+func NewEducationAssignment() (*EducationAssignment, error) {
+	newEducationAssignment := &EducationAssignment{
+		ODataType: "#microsoft.graph.EducationAssignment",
+	}
+	return newEducationAssignment, nil
+}
+
 // EducationAssignmentClassRecipient undocumented
 type EducationAssignmentClassRecipient struct {
 	// EducationAssignmentRecipient is the base model of EducationAssignmentClassRecipient
 	EducationAssignmentRecipient
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewEducationAssignmentClassRecipient() (*EducationAssignmentClassRecipient, error) {
+	newEducationAssignmentClassRecipient := &EducationAssignmentClassRecipient{
+		ODataType: "#microsoft.graph.EducationAssignmentClassRecipient",
+	}
+	return newEducationAssignmentClassRecipient, nil
 }
 
 // EducationAssignmentDefaults undocumented
 type EducationAssignmentDefaults struct {
 	// Entity is the base model of EducationAssignmentDefaults
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AddedStudentAction undocumented
 	AddedStudentAction *EducationAddedStudentAction `json:"addedStudentAction,omitempty"`
 	// AddToCalendarAction undocumented
@@ -82,88 +102,187 @@ type EducationAssignmentDefaults struct {
 	NotificationChannelURL *string `json:"notificationChannelUrl,omitempty"`
 }
 
+func NewEducationAssignmentDefaults() (*EducationAssignmentDefaults, error) {
+	newEducationAssignmentDefaults := &EducationAssignmentDefaults{
+		ODataType: "#microsoft.graph.EducationAssignmentDefaults",
+	}
+	return newEducationAssignmentDefaults, nil
+}
+
 // EducationAssignmentGrade undocumented
 type EducationAssignmentGrade struct {
 	// Object is the base model of EducationAssignmentGrade
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// GradedBy undocumented
 	GradedBy *IdentitySet `json:"gradedBy,omitempty"`
 	// GradedDateTime undocumented
 	GradedDateTime *time.Time `json:"gradedDateTime,omitempty"`
 }
 
+func NewEducationAssignmentGrade() (*EducationAssignmentGrade, error) {
+	newEducationAssignmentGrade := &EducationAssignmentGrade{
+		ODataType: "#microsoft.graph.EducationAssignmentGrade",
+	}
+	return newEducationAssignmentGrade, nil
+}
+
 // EducationAssignmentGradeType undocumented
 type EducationAssignmentGradeType struct {
 	// Object is the base model of EducationAssignmentGradeType
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewEducationAssignmentGradeType() (*EducationAssignmentGradeType, error) {
+	newEducationAssignmentGradeType := &EducationAssignmentGradeType{
+		ODataType: "#microsoft.graph.EducationAssignmentGradeType",
+	}
+	return newEducationAssignmentGradeType, nil
 }
 
 // EducationAssignmentGroupRecipient undocumented
 type EducationAssignmentGroupRecipient struct {
 	// EducationAssignmentRecipient is the base model of EducationAssignmentGroupRecipient
 	EducationAssignmentRecipient
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewEducationAssignmentGroupRecipient() (*EducationAssignmentGroupRecipient, error) {
+	newEducationAssignmentGroupRecipient := &EducationAssignmentGroupRecipient{
+		ODataType: "#microsoft.graph.EducationAssignmentGroupRecipient",
+	}
+	return newEducationAssignmentGroupRecipient, nil
 }
 
 // EducationAssignmentIndividualRecipient undocumented
 type EducationAssignmentIndividualRecipient struct {
 	// EducationAssignmentRecipient is the base model of EducationAssignmentIndividualRecipient
 	EducationAssignmentRecipient
+
+	ODataType string `json:"@odata.type"`
 	// Recipients undocumented
 	Recipients []string `json:"recipients,omitempty"`
+}
+
+func NewEducationAssignmentIndividualRecipient() (*EducationAssignmentIndividualRecipient, error) {
+	newEducationAssignmentIndividualRecipient := &EducationAssignmentIndividualRecipient{
+		ODataType: "#microsoft.graph.EducationAssignmentIndividualRecipient",
+	}
+	return newEducationAssignmentIndividualRecipient, nil
 }
 
 // EducationAssignmentPointsGrade undocumented
 type EducationAssignmentPointsGrade struct {
 	// EducationAssignmentGrade is the base model of EducationAssignmentPointsGrade
 	EducationAssignmentGrade
+
+	ODataType string `json:"@odata.type"`
 	// Points undocumented
 	Points *float64 `json:"points,omitempty"`
+}
+
+func NewEducationAssignmentPointsGrade() (*EducationAssignmentPointsGrade, error) {
+	newEducationAssignmentPointsGrade := &EducationAssignmentPointsGrade{
+		ODataType: "#microsoft.graph.EducationAssignmentPointsGrade",
+	}
+	return newEducationAssignmentPointsGrade, nil
 }
 
 // EducationAssignmentPointsGradeType undocumented
 type EducationAssignmentPointsGradeType struct {
 	// EducationAssignmentGradeType is the base model of EducationAssignmentPointsGradeType
 	EducationAssignmentGradeType
+
+	ODataType string `json:"@odata.type"`
 	// MaxPoints undocumented
 	MaxPoints *float64 `json:"maxPoints,omitempty"`
+}
+
+func NewEducationAssignmentPointsGradeType() (*EducationAssignmentPointsGradeType, error) {
+	newEducationAssignmentPointsGradeType := &EducationAssignmentPointsGradeType{
+		ODataType: "#microsoft.graph.EducationAssignmentPointsGradeType",
+	}
+	return newEducationAssignmentPointsGradeType, nil
 }
 
 // EducationAssignmentRecipient undocumented
 type EducationAssignmentRecipient struct {
 	// Object is the base model of EducationAssignmentRecipient
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewEducationAssignmentRecipient() (*EducationAssignmentRecipient, error) {
+	newEducationAssignmentRecipient := &EducationAssignmentRecipient{
+		ODataType: "#microsoft.graph.EducationAssignmentRecipient",
+	}
+	return newEducationAssignmentRecipient, nil
 }
 
 // EducationAssignmentResource undocumented
 type EducationAssignmentResource struct {
 	// Entity is the base model of EducationAssignmentResource
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DistributeForStudentWork undocumented
 	DistributeForStudentWork *bool `json:"distributeForStudentWork,omitempty"`
 	// Resource undocumented
 	Resource *EducationResource `json:"resource,omitempty"`
 }
 
+func NewEducationAssignmentResource() (*EducationAssignmentResource, error) {
+	newEducationAssignmentResource := &EducationAssignmentResource{
+		ODataType: "#microsoft.graph.EducationAssignmentResource",
+	}
+	return newEducationAssignmentResource, nil
+}
+
 // EducationAssignmentSettings undocumented
 type EducationAssignmentSettings struct {
 	// Entity is the base model of EducationAssignmentSettings
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// SubmissionAnimationDisabled undocumented
 	SubmissionAnimationDisabled *bool `json:"submissionAnimationDisabled,omitempty"`
+}
+
+func NewEducationAssignmentSettings() (*EducationAssignmentSettings, error) {
+	newEducationAssignmentSettings := &EducationAssignmentSettings{
+		ODataType: "#microsoft.graph.EducationAssignmentSettings",
+	}
+	return newEducationAssignmentSettings, nil
 }
 
 // EducationCategory undocumented
 type EducationCategory struct {
 	// Entity is the base model of EducationCategory
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
+}
+
+func NewEducationCategory() (*EducationCategory, error) {
+	newEducationCategory := &EducationCategory{
+		ODataType: "#microsoft.graph.EducationCategory",
+	}
+	return newEducationCategory, nil
 }
 
 // EducationClass undocumented
 type EducationClass struct {
 	// Entity is the base model of EducationClass
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ClassCode undocumented
 	ClassCode *string `json:"classCode,omitempty"`
 	// Course undocumented
@@ -206,10 +325,19 @@ type EducationClass struct {
 	Teachers []EducationUser `json:"teachers,omitempty"`
 }
 
+func NewEducationClass() (*EducationClass, error) {
+	newEducationClass := &EducationClass{
+		ODataType: "#microsoft.graph.EducationClass",
+	}
+	return newEducationClass, nil
+}
+
 // EducationCourse undocumented
 type EducationCourse struct {
 	// Object is the base model of EducationCourse
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CourseNumber undocumented
 	CourseNumber *string `json:"courseNumber,omitempty"`
 	// Description undocumented
@@ -222,26 +350,53 @@ type EducationCourse struct {
 	Subject *string `json:"subject,omitempty"`
 }
 
+func NewEducationCourse() (*EducationCourse, error) {
+	newEducationCourse := &EducationCourse{
+		ODataType: "#microsoft.graph.EducationCourse",
+	}
+	return newEducationCourse, nil
+}
+
 // EducationExcelResource undocumented
 type EducationExcelResource struct {
 	// EducationResource is the base model of EducationExcelResource
 	EducationResource
+
+	ODataType string `json:"@odata.type"`
 	// FileURL undocumented
 	FileURL *string `json:"fileUrl,omitempty"`
+}
+
+func NewEducationExcelResource() (*EducationExcelResource, error) {
+	newEducationExcelResource := &EducationExcelResource{
+		ODataType: "#microsoft.graph.EducationExcelResource",
+	}
+	return newEducationExcelResource, nil
 }
 
 // EducationExternalResource undocumented
 type EducationExternalResource struct {
 	// EducationResource is the base model of EducationExternalResource
 	EducationResource
+
+	ODataType string `json:"@odata.type"`
 	// WebURL undocumented
 	WebURL *string `json:"webUrl,omitempty"`
+}
+
+func NewEducationExternalResource() (*EducationExternalResource, error) {
+	newEducationExternalResource := &EducationExternalResource{
+		ODataType: "#microsoft.graph.EducationExternalResource",
+	}
+	return newEducationExternalResource, nil
 }
 
 // EducationFeedback undocumented
 type EducationFeedback struct {
 	// Object is the base model of EducationFeedback
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// FeedbackBy undocumented
 	FeedbackBy *IdentitySet `json:"feedbackBy,omitempty"`
 	// FeedbackDateTime undocumented
@@ -250,72 +405,144 @@ type EducationFeedback struct {
 	Text *EducationItemBody `json:"text,omitempty"`
 }
 
+func NewEducationFeedback() (*EducationFeedback, error) {
+	newEducationFeedback := &EducationFeedback{
+		ODataType: "#microsoft.graph.EducationFeedback",
+	}
+	return newEducationFeedback, nil
+}
+
 // EducationFeedbackOutcome undocumented
 type EducationFeedbackOutcome struct {
 	// EducationOutcome is the base model of EducationFeedbackOutcome
 	EducationOutcome
+
+	ODataType string `json:"@odata.type"`
 	// Feedback undocumented
 	Feedback *EducationFeedback `json:"feedback,omitempty"`
 	// PublishedFeedback undocumented
 	PublishedFeedback *EducationFeedback `json:"publishedFeedback,omitempty"`
 }
 
+func NewEducationFeedbackOutcome() (*EducationFeedbackOutcome, error) {
+	newEducationFeedbackOutcome := &EducationFeedbackOutcome{
+		ODataType: "#microsoft.graph.EducationFeedbackOutcome",
+	}
+	return newEducationFeedbackOutcome, nil
+}
+
 // EducationFeedbackResourceOutcome undocumented
 type EducationFeedbackResourceOutcome struct {
 	// EducationOutcome is the base model of EducationFeedbackResourceOutcome
 	EducationOutcome
+
+	ODataType string `json:"@odata.type"`
 	// FeedbackResource undocumented
 	FeedbackResource *EducationResource `json:"feedbackResource,omitempty"`
 	// ResourceStatus undocumented
 	ResourceStatus *EducationFeedbackResourceOutcomeStatus `json:"resourceStatus,omitempty"`
 }
 
+func NewEducationFeedbackResourceOutcome() (*EducationFeedbackResourceOutcome, error) {
+	newEducationFeedbackResourceOutcome := &EducationFeedbackResourceOutcome{
+		ODataType: "#microsoft.graph.EducationFeedbackResourceOutcome",
+	}
+	return newEducationFeedbackResourceOutcome, nil
+}
+
 // EducationFileResource undocumented
 type EducationFileResource struct {
 	// EducationResource is the base model of EducationFileResource
 	EducationResource
+
+	ODataType string `json:"@odata.type"`
 	// FileURL undocumented
 	FileURL *string `json:"fileUrl,omitempty"`
+}
+
+func NewEducationFileResource() (*EducationFileResource, error) {
+	newEducationFileResource := &EducationFileResource{
+		ODataType: "#microsoft.graph.EducationFileResource",
+	}
+	return newEducationFileResource, nil
 }
 
 // EducationItemBody undocumented
 type EducationItemBody struct {
 	// Object is the base model of EducationItemBody
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Content undocumented
 	Content *string `json:"content,omitempty"`
 	// ContentType undocumented
 	ContentType *BodyType `json:"contentType,omitempty"`
 }
 
+func NewEducationItemBody() (*EducationItemBody, error) {
+	newEducationItemBody := &EducationItemBody{
+		ODataType: "#microsoft.graph.EducationItemBody",
+	}
+	return newEducationItemBody, nil
+}
+
 // EducationLinkResource undocumented
 type EducationLinkResource struct {
 	// EducationResource is the base model of EducationLinkResource
 	EducationResource
+
+	ODataType string `json:"@odata.type"`
 	// Link undocumented
 	Link *string `json:"link,omitempty"`
+}
+
+func NewEducationLinkResource() (*EducationLinkResource, error) {
+	newEducationLinkResource := &EducationLinkResource{
+		ODataType: "#microsoft.graph.EducationLinkResource",
+	}
+	return newEducationLinkResource, nil
 }
 
 // EducationMediaResource undocumented
 type EducationMediaResource struct {
 	// EducationResource is the base model of EducationMediaResource
 	EducationResource
+
+	ODataType string `json:"@odata.type"`
 	// FileURL undocumented
 	FileURL *string `json:"fileUrl,omitempty"`
+}
+
+func NewEducationMediaResource() (*EducationMediaResource, error) {
+	newEducationMediaResource := &EducationMediaResource{
+		ODataType: "#microsoft.graph.EducationMediaResource",
+	}
+	return newEducationMediaResource, nil
 }
 
 // EducationOnPremisesInfo undocumented
 type EducationOnPremisesInfo struct {
 	// Object is the base model of EducationOnPremisesInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ImmutableID undocumented
 	ImmutableID *string `json:"immutableId,omitempty"`
+}
+
+func NewEducationOnPremisesInfo() (*EducationOnPremisesInfo, error) {
+	newEducationOnPremisesInfo := &EducationOnPremisesInfo{
+		ODataType: "#microsoft.graph.EducationOnPremisesInfo",
+	}
+	return newEducationOnPremisesInfo, nil
 }
 
 // EducationOrganization undocumented
 type EducationOrganization struct {
 	// Entity is the base model of EducationOrganization
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -326,38 +553,74 @@ type EducationOrganization struct {
 	ExternalSourceDetail *string `json:"externalSourceDetail,omitempty"`
 }
 
+func NewEducationOrganization() (*EducationOrganization, error) {
+	newEducationOrganization := &EducationOrganization{
+		ODataType: "#microsoft.graph.EducationOrganization",
+	}
+	return newEducationOrganization, nil
+}
+
 // EducationOutcome undocumented
 type EducationOutcome struct {
 	// Entity is the base model of EducationOutcome
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// LastModifiedBy undocumented
 	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 }
 
+func NewEducationOutcome() (*EducationOutcome, error) {
+	newEducationOutcome := &EducationOutcome{
+		ODataType: "#microsoft.graph.EducationOutcome",
+	}
+	return newEducationOutcome, nil
+}
+
 // EducationPointsOutcome undocumented
 type EducationPointsOutcome struct {
 	// EducationOutcome is the base model of EducationPointsOutcome
 	EducationOutcome
+
+	ODataType string `json:"@odata.type"`
 	// Points undocumented
 	Points *EducationAssignmentPointsGrade `json:"points,omitempty"`
 	// PublishedPoints undocumented
 	PublishedPoints *EducationAssignmentPointsGrade `json:"publishedPoints,omitempty"`
 }
 
+func NewEducationPointsOutcome() (*EducationPointsOutcome, error) {
+	newEducationPointsOutcome := &EducationPointsOutcome{
+		ODataType: "#microsoft.graph.EducationPointsOutcome",
+	}
+	return newEducationPointsOutcome, nil
+}
+
 // EducationPowerPointResource undocumented
 type EducationPowerPointResource struct {
 	// EducationResource is the base model of EducationPowerPointResource
 	EducationResource
+
+	ODataType string `json:"@odata.type"`
 	// FileURL undocumented
 	FileURL *string `json:"fileUrl,omitempty"`
+}
+
+func NewEducationPowerPointResource() (*EducationPowerPointResource, error) {
+	newEducationPowerPointResource := &EducationPowerPointResource{
+		ODataType: "#microsoft.graph.EducationPowerPointResource",
+	}
+	return newEducationPowerPointResource, nil
 }
 
 // EducationResource undocumented
 type EducationResource struct {
 	// Object is the base model of EducationResource
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -370,10 +633,19 @@ type EducationResource struct {
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 }
 
+func NewEducationResource() (*EducationResource, error) {
+	newEducationResource := &EducationResource{
+		ODataType: "#microsoft.graph.EducationResource",
+	}
+	return newEducationResource, nil
+}
+
 // EducationRoot undocumented
 type EducationRoot struct {
 	// Object is the base model of EducationRoot
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Classes undocumented
 	Classes []EducationClass `json:"classes,omitempty"`
 	// Me undocumented
@@ -384,10 +656,19 @@ type EducationRoot struct {
 	Users []EducationUser `json:"users,omitempty"`
 }
 
+func NewEducationRoot() (*EducationRoot, error) {
+	newEducationRoot := &EducationRoot{
+		ODataType: "#microsoft.graph.EducationRoot",
+	}
+	return newEducationRoot, nil
+}
+
 // EducationRubric undocumented
 type EducationRubric struct {
 	// Entity is the base model of EducationRubric
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -408,10 +689,19 @@ type EducationRubric struct {
 	Qualities []RubricQuality `json:"qualities,omitempty"`
 }
 
+func NewEducationRubric() (*EducationRubric, error) {
+	newEducationRubric := &EducationRubric{
+		ODataType: "#microsoft.graph.EducationRubric",
+	}
+	return newEducationRubric, nil
+}
+
 // EducationRubricOutcome undocumented
 type EducationRubricOutcome struct {
 	// EducationOutcome is the base model of EducationRubricOutcome
 	EducationOutcome
+
+	ODataType string `json:"@odata.type"`
 	// PublishedRubricQualityFeedback undocumented
 	PublishedRubricQualityFeedback []RubricQualityFeedbackModel `json:"publishedRubricQualityFeedback,omitempty"`
 	// PublishedRubricQualitySelectedLevels undocumented
@@ -422,10 +712,19 @@ type EducationRubricOutcome struct {
 	RubricQualitySelectedLevels []RubricQualitySelectedColumnModel `json:"rubricQualitySelectedLevels,omitempty"`
 }
 
+func NewEducationRubricOutcome() (*EducationRubricOutcome, error) {
+	newEducationRubricOutcome := &EducationRubricOutcome{
+		ODataType: "#microsoft.graph.EducationRubricOutcome",
+	}
+	return newEducationRubricOutcome, nil
+}
+
 // EducationSchool undocumented
 type EducationSchool struct {
 	// EducationOrganization is the base model of EducationSchool
 	EducationOrganization
+
+	ODataType string `json:"@odata.type"`
 	// Address undocumented
 	Address *PhysicalAddress `json:"address,omitempty"`
 	// CreatedBy undocumented
@@ -456,10 +755,19 @@ type EducationSchool struct {
 	Users []EducationUser `json:"users,omitempty"`
 }
 
+func NewEducationSchool() (*EducationSchool, error) {
+	newEducationSchool := &EducationSchool{
+		ODataType: "#microsoft.graph.EducationSchool",
+	}
+	return newEducationSchool, nil
+}
+
 // EducationStudent undocumented
 type EducationStudent struct {
 	// Object is the base model of EducationStudent
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// BirthDate undocumented
 	BirthDate *Date `json:"birthDate,omitempty"`
 	// ExternalID undocumented
@@ -474,10 +782,19 @@ type EducationStudent struct {
 	StudentNumber *string `json:"studentNumber,omitempty"`
 }
 
+func NewEducationStudent() (*EducationStudent, error) {
+	newEducationStudent := &EducationStudent{
+		ODataType: "#microsoft.graph.EducationStudent",
+	}
+	return newEducationStudent, nil
+}
+
 // EducationSubmission undocumented
 type EducationSubmission struct {
 	// Entity is the base model of EducationSubmission
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ReassignedBy undocumented
 	ReassignedBy *IdentitySet `json:"reassignedBy,omitempty"`
 	// ReassignedDateTime undocumented
@@ -508,44 +825,89 @@ type EducationSubmission struct {
 	SubmittedResources []EducationSubmissionResource `json:"submittedResources,omitempty"`
 }
 
+func NewEducationSubmission() (*EducationSubmission, error) {
+	newEducationSubmission := &EducationSubmission{
+		ODataType: "#microsoft.graph.EducationSubmission",
+	}
+	return newEducationSubmission, nil
+}
+
 // EducationSubmissionIndividualRecipient undocumented
 type EducationSubmissionIndividualRecipient struct {
 	// EducationSubmissionRecipient is the base model of EducationSubmissionIndividualRecipient
 	EducationSubmissionRecipient
+
+	ODataType string `json:"@odata.type"`
 	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
+}
+
+func NewEducationSubmissionIndividualRecipient() (*EducationSubmissionIndividualRecipient, error) {
+	newEducationSubmissionIndividualRecipient := &EducationSubmissionIndividualRecipient{
+		ODataType: "#microsoft.graph.EducationSubmissionIndividualRecipient",
+	}
+	return newEducationSubmissionIndividualRecipient, nil
 }
 
 // EducationSubmissionRecipient undocumented
 type EducationSubmissionRecipient struct {
 	// Object is the base model of EducationSubmissionRecipient
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewEducationSubmissionRecipient() (*EducationSubmissionRecipient, error) {
+	newEducationSubmissionRecipient := &EducationSubmissionRecipient{
+		ODataType: "#microsoft.graph.EducationSubmissionRecipient",
+	}
+	return newEducationSubmissionRecipient, nil
 }
 
 // EducationSubmissionResource undocumented
 type EducationSubmissionResource struct {
 	// Entity is the base model of EducationSubmissionResource
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AssignmentResourceURL undocumented
 	AssignmentResourceURL *string `json:"assignmentResourceUrl,omitempty"`
 	// Resource undocumented
 	Resource *EducationResource `json:"resource,omitempty"`
 }
 
+func NewEducationSubmissionResource() (*EducationSubmissionResource, error) {
+	newEducationSubmissionResource := &EducationSubmissionResource{
+		ODataType: "#microsoft.graph.EducationSubmissionResource",
+	}
+	return newEducationSubmissionResource, nil
+}
+
 // EducationTeacher undocumented
 type EducationTeacher struct {
 	// Object is the base model of EducationTeacher
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ExternalID undocumented
 	ExternalID *string `json:"externalId,omitempty"`
 	// TeacherNumber undocumented
 	TeacherNumber *string `json:"teacherNumber,omitempty"`
 }
 
+func NewEducationTeacher() (*EducationTeacher, error) {
+	newEducationTeacher := &EducationTeacher{
+		ODataType: "#microsoft.graph.EducationTeacher",
+	}
+	return newEducationTeacher, nil
+}
+
 // EducationTeamsAppResource undocumented
 type EducationTeamsAppResource struct {
 	// EducationResource is the base model of EducationTeamsAppResource
 	EducationResource
+
+	ODataType string `json:"@odata.type"`
 	// AppIconWebURL undocumented
 	AppIconWebURL *string `json:"appIconWebUrl,omitempty"`
 	// AppID undocumented
@@ -556,10 +918,19 @@ type EducationTeamsAppResource struct {
 	WebURL *string `json:"webUrl,omitempty"`
 }
 
+func NewEducationTeamsAppResource() (*EducationTeamsAppResource, error) {
+	newEducationTeamsAppResource := &EducationTeamsAppResource{
+		ODataType: "#microsoft.graph.EducationTeamsAppResource",
+	}
+	return newEducationTeamsAppResource, nil
+}
+
 // EducationTerm undocumented
 type EducationTerm struct {
 	// Object is the base model of EducationTerm
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// EndDate undocumented
@@ -570,10 +941,19 @@ type EducationTerm struct {
 	StartDate *Date `json:"startDate,omitempty"`
 }
 
+func NewEducationTerm() (*EducationTerm, error) {
+	newEducationTerm := &EducationTerm{
+		ODataType: "#microsoft.graph.EducationTerm",
+	}
+	return newEducationTerm, nil
+}
+
 // EducationUser undocumented
 type EducationUser struct {
 	// Entity is the base model of EducationUser
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// RelatedContacts undocumented
 	RelatedContacts []RelatedContact `json:"relatedContacts,omitempty"`
 	// AccountEnabled undocumented
@@ -652,10 +1032,26 @@ type EducationUser struct {
 	User *User `json:"user,omitempty"`
 }
 
+func NewEducationUser() (*EducationUser, error) {
+	newEducationUser := &EducationUser{
+		ODataType: "#microsoft.graph.EducationUser",
+	}
+	return newEducationUser, nil
+}
+
 // EducationWordResource undocumented
 type EducationWordResource struct {
 	// EducationResource is the base model of EducationWordResource
 	EducationResource
+
+	ODataType string `json:"@odata.type"`
 	// FileURL undocumented
 	FileURL *string `json:"fileUrl,omitempty"`
+}
+
+func NewEducationWordResource() (*EducationWordResource, error) {
+	newEducationWordResource := &EducationWordResource{
+		ODataType: "#microsoft.graph.EducationWordResource",
+	}
+	return newEducationWordResource, nil
 }

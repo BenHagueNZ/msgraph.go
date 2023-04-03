@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsFisherRequestBuilder struct{ BaseRequestBuilder }
 
-// Fisher action undocumented
+// Fisher action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Fisher(reqObj *WorkbookFunctionsFisherRequestParameter) *WorkbookFunctionsFisherRequestBuilder {
 	bb := &WorkbookFunctionsFisherRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Fisher"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsFisherRequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsFisherInvRequestBuilder struct{ BaseRequestBuilder }
 
-// FisherInv action undocumented
+// FisherInv action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) FisherInv(reqObj *WorkbookFunctionsFisherInvRequestParameter) *WorkbookFunctionsFisherInvRequestBuilder {
 	bb := &WorkbookFunctionsFisherInvRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/FisherInv"

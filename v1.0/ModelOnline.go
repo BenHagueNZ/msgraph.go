@@ -8,6 +8,8 @@ import "time"
 type OnlineMeeting struct {
 	// Entity is the base model of OnlineMeeting
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AllowAttendeeToEnableCamera undocumented
 	AllowAttendeeToEnableCamera *bool `json:"allowAttendeeToEnableCamera,omitempty"`
 	// AllowAttendeeToEnableMic undocumented
@@ -58,10 +60,19 @@ type OnlineMeeting struct {
 	AttendanceReports []MeetingAttendanceReport `json:"attendanceReports,omitempty"`
 }
 
+func NewOnlineMeeting() (*OnlineMeeting, error) {
+	newOnlineMeeting := &OnlineMeeting{
+		ODataType: "#microsoft.graph.OnlineMeeting",
+	}
+	return newOnlineMeeting, nil
+}
+
 // OnlineMeetingInfo undocumented
 type OnlineMeetingInfo struct {
 	// Object is the base model of OnlineMeetingInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ConferenceID undocumented
 	ConferenceID *string `json:"conferenceId,omitempty"`
 	// JoinURL undocumented
@@ -74,4 +85,11 @@ type OnlineMeetingInfo struct {
 	TollFreeNumbers []string `json:"tollFreeNumbers,omitempty"`
 	// TollNumber undocumented
 	TollNumber *string `json:"tollNumber,omitempty"`
+}
+
+func NewOnlineMeetingInfo() (*OnlineMeetingInfo, error) {
+	newOnlineMeetingInfo := &OnlineMeetingInfo{
+		ODataType: "#microsoft.graph.OnlineMeetingInfo",
+	}
+	return newOnlineMeetingInfo, nil
 }

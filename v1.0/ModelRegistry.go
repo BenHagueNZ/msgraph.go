@@ -6,6 +6,8 @@ package msgraph
 type RegistryKeyState struct {
 	// Object is the base model of RegistryKeyState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Hive undocumented
 	Hive *RegistryHive `json:"hive,omitempty"`
 	// Key undocumented
@@ -26,4 +28,11 @@ type RegistryKeyState struct {
 	ValueName *string `json:"valueName,omitempty"`
 	// ValueType undocumented
 	ValueType *RegistryValueType `json:"valueType,omitempty"`
+}
+
+func NewRegistryKeyState() (*RegistryKeyState, error) {
+	newRegistryKeyState := &RegistryKeyState{
+		ODataType: "#microsoft.graph.RegistryKeyState",
+	}
+	return newRegistryKeyState, nil
 }

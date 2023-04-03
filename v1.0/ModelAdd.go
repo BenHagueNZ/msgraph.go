@@ -6,6 +6,8 @@ package msgraph
 type AddIn struct {
 	// Object is the base model of AddIn
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ID undocumented
 	ID *UUID `json:"id,omitempty"`
 	// Properties undocumented
@@ -14,8 +16,24 @@ type AddIn struct {
 	Type *string `json:"type,omitempty"`
 }
 
+func NewAddIn() (*AddIn, error) {
+	newAddIn := &AddIn{
+		ODataType: "#microsoft.graph.AddIn",
+	}
+	return newAddIn, nil
+}
+
 // AddLargeGalleryViewOperation undocumented
 type AddLargeGalleryViewOperation struct {
 	// CommsOperation is the base model of AddLargeGalleryViewOperation
 	CommsOperation
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewAddLargeGalleryViewOperation() (*AddLargeGalleryViewOperation, error) {
+	newAddLargeGalleryViewOperation := &AddLargeGalleryViewOperation{
+		ODataType: "#microsoft.graph.AddLargeGalleryViewOperation",
+	}
+	return newAddLargeGalleryViewOperation, nil
 }

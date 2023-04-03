@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsError_TypeRequestBuilder struct{ BaseRequestBuilder }
 
-// Error_Type action undocumented
+// Error_Type action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Error_Type(reqObj *WorkbookFunctionsError_TypeRequestParameter) *WorkbookFunctionsError_TypeRequestBuilder {
 	bb := &WorkbookFunctionsError_TypeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Error_Type"

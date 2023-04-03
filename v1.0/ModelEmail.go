@@ -6,34 +6,63 @@ package msgraph
 type EmailAddress struct {
 	// Object is the base model of EmailAddress
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Address undocumented
 	Address *string `json:"address,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 }
 
+func NewEmailAddress() (*EmailAddress, error) {
+	newEmailAddress := &EmailAddress{
+		ODataType: "#microsoft.graph.EmailAddress",
+	}
+	return newEmailAddress, nil
+}
+
 // EmailAuthenticationMethod undocumented
 type EmailAuthenticationMethod struct {
 	// AuthenticationMethod is the base model of EmailAuthenticationMethod
 	AuthenticationMethod
+
+	ODataType string `json:"@odata.type"`
 	// EmailAddress undocumented
 	EmailAddress *string `json:"emailAddress,omitempty"`
+}
+
+func NewEmailAuthenticationMethod() (*EmailAuthenticationMethod, error) {
+	newEmailAuthenticationMethod := &EmailAuthenticationMethod{
+		ODataType: "#microsoft.graph.EmailAuthenticationMethod",
+	}
+	return newEmailAuthenticationMethod, nil
 }
 
 // EmailAuthenticationMethodConfiguration undocumented
 type EmailAuthenticationMethodConfiguration struct {
 	// AuthenticationMethodConfiguration is the base model of EmailAuthenticationMethodConfiguration
 	AuthenticationMethodConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// AllowExternalIDToUseEmailOtp undocumented
 	AllowExternalIDToUseEmailOtp *ExternalEmailOtpState `json:"allowExternalIdToUseEmailOtp,omitempty"`
 	// IncludeTargets undocumented
 	IncludeTargets []AuthenticationMethodTarget `json:"includeTargets,omitempty"`
 }
 
+func NewEmailAuthenticationMethodConfiguration() (*EmailAuthenticationMethodConfiguration, error) {
+	newEmailAuthenticationMethodConfiguration := &EmailAuthenticationMethodConfiguration{
+		ODataType: "#microsoft.graph.EmailAuthenticationMethodConfiguration",
+	}
+	return newEmailAuthenticationMethodConfiguration, nil
+}
+
 // EmailFileAssessmentRequestObject undocumented
 type EmailFileAssessmentRequestObject struct {
 	// ThreatAssessmentRequestObject is the base model of EmailFileAssessmentRequestObject
 	ThreatAssessmentRequestObject
+
+	ODataType string `json:"@odata.type"`
 	// ContentData undocumented
 	ContentData *string `json:"contentData,omitempty"`
 	// DestinationRoutingReason undocumented
@@ -42,10 +71,26 @@ type EmailFileAssessmentRequestObject struct {
 	RecipientEmail *string `json:"recipientEmail,omitempty"`
 }
 
+func NewEmailFileAssessmentRequestObject() (*EmailFileAssessmentRequestObject, error) {
+	newEmailFileAssessmentRequestObject := &EmailFileAssessmentRequestObject{
+		ODataType: "#microsoft.graph.EmailFileAssessmentRequestObject",
+	}
+	return newEmailFileAssessmentRequestObject, nil
+}
+
 // EmailIdentity undocumented
 type EmailIdentity struct {
 	// Identity is the base model of EmailIdentity
 	Identity
+
+	ODataType string `json:"@odata.type"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
+}
+
+func NewEmailIdentity() (*EmailIdentity, error) {
+	newEmailIdentity := &EmailIdentity{
+		ODataType: "#microsoft.graph.EmailIdentity",
+	}
+	return newEmailIdentity, nil
 }

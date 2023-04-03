@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsPercentile_ExcRequestBuilder struct{ BaseRequestBuilder }
 
-// Percentile_Exc action undocumented
+// Percentile_Exc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Percentile_Exc(reqObj *WorkbookFunctionsPercentile_ExcRequestParameter) *WorkbookFunctionsPercentile_ExcRequestBuilder {
 	bb := &WorkbookFunctionsPercentile_ExcRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Percentile_Exc"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsPercentile_ExcRequest) Post(ctx context.Context) (resO
 
 type WorkbookFunctionsPercentile_IncRequestBuilder struct{ BaseRequestBuilder }
 
-// Percentile_Inc action undocumented
+// Percentile_Inc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Percentile_Inc(reqObj *WorkbookFunctionsPercentile_IncRequestParameter) *WorkbookFunctionsPercentile_IncRequestBuilder {
 	bb := &WorkbookFunctionsPercentile_IncRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Percentile_Inc"

@@ -8,6 +8,8 @@ import "time"
 type Domain struct {
 	// Entity is the base model of Domain
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AuthenticationType undocumented
 	AuthenticationType *string `json:"authenticationType,omitempty"`
 	// AvailabilityStatus undocumented
@@ -39,33 +41,60 @@ type Domain struct {
 	// FederationConfiguration undocumented
 	FederationConfiguration []InternalDomainFederation `json:"federationConfiguration,omitempty"`
 	// ServiceConfigurationRecords undocumented
-	ServiceConfigurationRecords []DomainDNSRecord `json:"serviceConfigurationRecords,omitempty"`
-	// VerificationDNSRecords undocumented
-	VerificationDNSRecords []DomainDNSRecord `json:"verificationDnsRecords,omitempty"`
+	ServiceConfigurationRecords []DomainDnsRecord `json:"serviceConfigurationRecords,omitempty"`
+	// VerificationDnsRecords undocumented
+	VerificationDnsRecords []DomainDnsRecord `json:"verificationDnsRecords,omitempty"`
 }
 
-// DomainDNSCnameRecord undocumented
-type DomainDNSCnameRecord struct {
-	// DomainDNSRecord is the base model of DomainDNSCnameRecord
-	DomainDNSRecord
+func NewDomain() (*Domain, error) {
+	newDomain := &Domain{
+		ODataType: "#microsoft.graph.Domain",
+	}
+	return newDomain, nil
+}
+
+// DomainDnsCnameRecord undocumented
+type DomainDnsCnameRecord struct {
+	// DomainDnsRecord is the base model of DomainDnsCnameRecord
+	DomainDnsRecord
+
+	ODataType string `json:"@odata.type"`
 	// CanonicalName undocumented
 	CanonicalName *string `json:"canonicalName,omitempty"`
 }
 
-// DomainDNSMxRecord undocumented
-type DomainDNSMxRecord struct {
-	// DomainDNSRecord is the base model of DomainDNSMxRecord
-	DomainDNSRecord
+func NewDomainDnsCnameRecord() (*DomainDnsCnameRecord, error) {
+	newDomainDnsCnameRecord := &DomainDnsCnameRecord{
+		ODataType: "#microsoft.graph.DomainDnsCnameRecord",
+	}
+	return newDomainDnsCnameRecord, nil
+}
+
+// DomainDnsMxRecord undocumented
+type DomainDnsMxRecord struct {
+	// DomainDnsRecord is the base model of DomainDnsMxRecord
+	DomainDnsRecord
+
+	ODataType string `json:"@odata.type"`
 	// MailExchange undocumented
 	MailExchange *string `json:"mailExchange,omitempty"`
 	// Preference undocumented
 	Preference *int `json:"preference,omitempty"`
 }
 
-// DomainDNSRecord undocumented
-type DomainDNSRecord struct {
-	// Entity is the base model of DomainDNSRecord
+func NewDomainDnsMxRecord() (*DomainDnsMxRecord, error) {
+	newDomainDnsMxRecord := &DomainDnsMxRecord{
+		ODataType: "#microsoft.graph.DomainDnsMxRecord",
+	}
+	return newDomainDnsMxRecord, nil
+}
+
+// DomainDnsRecord undocumented
+type DomainDnsRecord struct {
+	// Entity is the base model of DomainDnsRecord
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// IsOptional undocumented
 	IsOptional *bool `json:"isOptional,omitempty"`
 	// Label undocumented
@@ -78,10 +107,19 @@ type DomainDNSRecord struct {
 	TTL *int `json:"ttl,omitempty"`
 }
 
-// DomainDNSSrvRecord undocumented
-type DomainDNSSrvRecord struct {
-	// DomainDNSRecord is the base model of DomainDNSSrvRecord
-	DomainDNSRecord
+func NewDomainDnsRecord() (*DomainDnsRecord, error) {
+	newDomainDnsRecord := &DomainDnsRecord{
+		ODataType: "#microsoft.graph.DomainDnsRecord",
+	}
+	return newDomainDnsRecord, nil
+}
+
+// DomainDnsSrvRecord undocumented
+type DomainDnsSrvRecord struct {
+	// DomainDnsRecord is the base model of DomainDnsSrvRecord
+	DomainDnsRecord
+
+	ODataType string `json:"@odata.type"`
 	// NameTarget undocumented
 	NameTarget *string `json:"nameTarget,omitempty"`
 	// Port undocumented
@@ -96,40 +134,83 @@ type DomainDNSSrvRecord struct {
 	Weight *int `json:"weight,omitempty"`
 }
 
-// DomainDNSTxtRecord undocumented
-type DomainDNSTxtRecord struct {
-	// DomainDNSRecord is the base model of DomainDNSTxtRecord
-	DomainDNSRecord
+func NewDomainDnsSrvRecord() (*DomainDnsSrvRecord, error) {
+	newDomainDnsSrvRecord := &DomainDnsSrvRecord{
+		ODataType: "#microsoft.graph.DomainDnsSrvRecord",
+	}
+	return newDomainDnsSrvRecord, nil
+}
+
+// DomainDnsTxtRecord undocumented
+type DomainDnsTxtRecord struct {
+	// DomainDnsRecord is the base model of DomainDnsTxtRecord
+	DomainDnsRecord
+
+	ODataType string `json:"@odata.type"`
 	// Text undocumented
 	Text *string `json:"text,omitempty"`
 }
 
-// DomainDNSUnavailableRecord undocumented
-type DomainDNSUnavailableRecord struct {
-	// DomainDNSRecord is the base model of DomainDNSUnavailableRecord
-	DomainDNSRecord
+func NewDomainDnsTxtRecord() (*DomainDnsTxtRecord, error) {
+	newDomainDnsTxtRecord := &DomainDnsTxtRecord{
+		ODataType: "#microsoft.graph.DomainDnsTxtRecord",
+	}
+	return newDomainDnsTxtRecord, nil
+}
+
+// DomainDnsUnavailableRecord undocumented
+type DomainDnsUnavailableRecord struct {
+	// DomainDnsRecord is the base model of DomainDnsUnavailableRecord
+	DomainDnsRecord
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
+}
+
+func NewDomainDnsUnavailableRecord() (*DomainDnsUnavailableRecord, error) {
+	newDomainDnsUnavailableRecord := &DomainDnsUnavailableRecord{
+		ODataType: "#microsoft.graph.DomainDnsUnavailableRecord",
+	}
+	return newDomainDnsUnavailableRecord, nil
 }
 
 // DomainIdentitySource undocumented
 type DomainIdentitySource struct {
 	// IdentitySource is the base model of DomainIdentitySource
 	IdentitySource
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// DomainName undocumented
 	DomainName *string `json:"domainName,omitempty"`
 }
 
+func NewDomainIdentitySource() (*DomainIdentitySource, error) {
+	newDomainIdentitySource := &DomainIdentitySource{
+		ODataType: "#microsoft.graph.DomainIdentitySource",
+	}
+	return newDomainIdentitySource, nil
+}
+
 // DomainState undocumented
 type DomainState struct {
 	// Object is the base model of DomainState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// LastActionDateTime undocumented
 	LastActionDateTime *time.Time `json:"lastActionDateTime,omitempty"`
 	// Operation undocumented
 	Operation *string `json:"operation,omitempty"`
 	// Status undocumented
 	Status *string `json:"status,omitempty"`
+}
+
+func NewDomainState() (*DomainState, error) {
+	newDomainState := &DomainState{
+		ODataType: "#microsoft.graph.DomainState",
+	}
+	return newDomainState, nil
 }

@@ -8,6 +8,8 @@ import "time"
 type ChecklistItem struct {
 	// Entity is the base model of ChecklistItem
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CheckedDateTime undocumented
 	CheckedDateTime *time.Time `json:"checkedDateTime,omitempty"`
 	// CreatedDateTime undocumented
@@ -16,4 +18,11 @@ type ChecklistItem struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// IsChecked undocumented
 	IsChecked *bool `json:"isChecked,omitempty"`
+}
+
+func NewChecklistItem() (*ChecklistItem, error) {
+	newChecklistItem := &ChecklistItem{
+		ODataType: "#microsoft.graph.ChecklistItem",
+	}
+	return newChecklistItem, nil
 }

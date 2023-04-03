@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// RecoveryKeys returns request builder for BitlockerRecoveryKey collection
+// RecoveryKeys returns request builder for BitlockerRecoveryKey collection rcn
 func (b *BitlockerRequestBuilder) RecoveryKeys() *BitlockerRecoveryKeysCollectionRequestBuilder {
 	bb := &BitlockerRecoveryKeysCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/recoveryKeys"
@@ -112,4 +112,18 @@ func (r *BitlockerRecoveryKeysCollectionRequest) Get(ctx context.Context) ([]Bit
 func (r *BitlockerRecoveryKeysCollectionRequest) Add(ctx context.Context, reqObj *BitlockerRecoveryKey) (resObj *BitlockerRecoveryKey, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Bitlocker is navigation property rn
+func (b *BitlockerRequestBuilder) Bitlocker() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// BitlockerRecoveryKey is navigation property rn
+func (b *BitlockerRecoveryKeyRequestBuilder) BitlockerRecoveryKey() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

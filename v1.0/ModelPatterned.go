@@ -6,8 +6,17 @@ package msgraph
 type PatternedRecurrence struct {
 	// Object is the base model of PatternedRecurrence
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Pattern undocumented
 	Pattern *RecurrencePattern `json:"pattern,omitempty"`
 	// Range undocumented
 	Range *RecurrenceRange `json:"range,omitempty"`
+}
+
+func NewPatternedRecurrence() (*PatternedRecurrence, error) {
+	newPatternedRecurrence := &PatternedRecurrence{
+		ODataType: "#microsoft.graph.PatternedRecurrence",
+	}
+	return newPatternedRecurrence, nil
 }

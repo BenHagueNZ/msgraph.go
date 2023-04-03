@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsTanhRequestBuilder struct{ BaseRequestBuilder }
 
-// Tanh action undocumented
+// Tanh action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Tanh(reqObj *WorkbookFunctionsTanhRequestParameter) *WorkbookFunctionsTanhRequestBuilder {
 	bb := &WorkbookFunctionsTanhRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Tanh"

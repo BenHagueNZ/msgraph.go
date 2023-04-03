@@ -6,6 +6,8 @@ package msgraph
 type FollowupFlag struct {
 	// Object is the base model of FollowupFlag
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CompletedDateTime undocumented
 	CompletedDateTime *DateTimeTimeZone `json:"completedDateTime,omitempty"`
 	// DueDateTime undocumented
@@ -14,4 +16,11 @@ type FollowupFlag struct {
 	FlagStatus *FollowupFlagStatus `json:"flagStatus,omitempty"`
 	// StartDateTime undocumented
 	StartDateTime *DateTimeTimeZone `json:"startDateTime,omitempty"`
+}
+
+func NewFollowupFlag() (*FollowupFlag, error) {
+	newFollowupFlag := &FollowupFlag{
+		ODataType: "#microsoft.graph.FollowupFlag",
+	}
+	return newFollowupFlag, nil
 }

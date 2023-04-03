@@ -8,6 +8,8 @@ import "time"
 type Trending struct {
 	// Entity is the base model of Trending
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 	// ResourceReference undocumented
@@ -18,4 +20,11 @@ type Trending struct {
 	Weight *float64 `json:"weight,omitempty"`
 	// Resource undocumented
 	Resource *Entity `json:"resource,omitempty"`
+}
+
+func NewTrending() (*Trending, error) {
+	newTrending := &Trending{
+		ODataType: "#microsoft.graph.Trending",
+	}
+	return newTrending, nil
 }

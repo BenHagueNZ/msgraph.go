@@ -6,10 +6,19 @@ package msgraph
 type ObjectIdentity struct {
 	// Object is the base model of ObjectIdentity
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Issuer undocumented
 	Issuer *string `json:"issuer,omitempty"`
 	// IssuerAssignedID undocumented
 	IssuerAssignedID *string `json:"issuerAssignedId,omitempty"`
 	// SignInType undocumented
 	SignInType *string `json:"signInType,omitempty"`
+}
+
+func NewObjectIdentity() (*ObjectIdentity, error) {
+	newObjectIdentity := &ObjectIdentity{
+		ODataType: "#microsoft.graph.ObjectIdentity",
+	}
+	return newObjectIdentity, nil
 }

@@ -62,7 +62,7 @@ type ChatMessageSoftDeleteRequestParameter struct {
 type ChatMessageUndoSoftDeleteRequestParameter struct {
 }
 
-// InstalledApps returns request builder for TeamsAppInstallation collection
+// InstalledApps returns request builder for TeamsAppInstallation collection rcn
 func (b *ChatRequestBuilder) InstalledApps() *ChatInstalledAppsCollectionRequestBuilder {
 	bb := &ChatInstalledAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/installedApps"
@@ -165,14 +165,14 @@ func (r *ChatInstalledAppsCollectionRequest) Add(ctx context.Context, reqObj *Te
 	return
 }
 
-// LastMessagePreview is navigation property
+// LastMessagePreview is navigation property rn
 func (b *ChatRequestBuilder) LastMessagePreview() *ChatMessageInfoRequestBuilder {
 	bb := &ChatMessageInfoRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/lastMessagePreview"
 	return bb
 }
 
-// Members returns request builder for ConversationMember collection
+// Members returns request builder for ConversationMember collection rcn
 func (b *ChatRequestBuilder) Members() *ChatMembersCollectionRequestBuilder {
 	bb := &ChatMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"
@@ -275,7 +275,7 @@ func (r *ChatMembersCollectionRequest) Add(ctx context.Context, reqObj *Conversa
 	return
 }
 
-// Messages returns request builder for ChatMessage collection
+// Messages returns request builder for ChatMessage collection rcn
 func (b *ChatRequestBuilder) Messages() *ChatMessagesCollectionRequestBuilder {
 	bb := &ChatMessagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/messages"
@@ -378,7 +378,7 @@ func (r *ChatMessagesCollectionRequest) Add(ctx context.Context, reqObj *ChatMes
 	return
 }
 
-// PinnedMessages returns request builder for PinnedChatMessageInfo collection
+// PinnedMessages returns request builder for PinnedChatMessageInfo collection rcn
 func (b *ChatRequestBuilder) PinnedMessages() *ChatPinnedMessagesCollectionRequestBuilder {
 	bb := &ChatPinnedMessagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/pinnedMessages"
@@ -481,7 +481,7 @@ func (r *ChatPinnedMessagesCollectionRequest) Add(ctx context.Context, reqObj *P
 	return
 }
 
-// Tabs returns request builder for TeamsTab collection
+// Tabs returns request builder for TeamsTab collection rcn
 func (b *ChatRequestBuilder) Tabs() *ChatTabsCollectionRequestBuilder {
 	bb := &ChatTabsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tabs"
@@ -584,7 +584,7 @@ func (r *ChatTabsCollectionRequest) Add(ctx context.Context, reqObj *TeamsTab) (
 	return
 }
 
-// HostedContents returns request builder for ChatMessageHostedContent collection
+// HostedContents returns request builder for ChatMessageHostedContent collection rcn
 func (b *ChatMessageRequestBuilder) HostedContents() *ChatMessageHostedContentsCollectionRequestBuilder {
 	bb := &ChatMessageHostedContentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/hostedContents"
@@ -687,7 +687,7 @@ func (r *ChatMessageHostedContentsCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// Replies returns request builder for ChatMessage collection
+// Replies returns request builder for ChatMessage collection rcn
 func (b *ChatMessageRequestBuilder) Replies() *ChatMessageRepliesCollectionRequestBuilder {
 	bb := &ChatMessageRepliesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/replies"
@@ -788,4 +788,25 @@ func (r *ChatMessageRepliesCollectionRequest) Get(ctx context.Context) ([]ChatMe
 func (r *ChatMessageRepliesCollectionRequest) Add(ctx context.Context, reqObj *ChatMessage) (resObj *ChatMessage, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Chat is navigation property rn
+func (b *ChatRequestBuilder) Chat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ChatMessage is navigation property rn
+func (b *ChatMessageRequestBuilder) ChatMessage() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ChatMessageInfo is navigation property rn
+func (b *ChatMessageInfoRequestBuilder) ChatMessageInfo() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

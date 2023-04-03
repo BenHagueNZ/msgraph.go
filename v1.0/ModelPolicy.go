@@ -6,16 +6,27 @@ package msgraph
 type PolicyBase struct {
 	// DirectoryObject is the base model of PolicyBase
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 }
 
+func NewPolicyBase() (*PolicyBase, error) {
+	newPolicyBase := &PolicyBase{
+		ODataType: "#microsoft.graph.PolicyBase",
+	}
+	return newPolicyBase, nil
+}
+
 // PolicyRoot undocumented
 type PolicyRoot struct {
 	// Entity is the base model of PolicyRoot
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AuthenticationMethodsPolicy undocumented
 	AuthenticationMethodsPolicy *AuthenticationMethodsPolicy `json:"authenticationMethodsPolicy,omitempty"`
 	// AuthenticationFlowsPolicy undocumented
@@ -52,4 +63,11 @@ type PolicyRoot struct {
 	RoleManagementPolicies []UnifiedRoleManagementPolicy `json:"roleManagementPolicies,omitempty"`
 	// RoleManagementPolicyAssignments undocumented
 	RoleManagementPolicyAssignments []UnifiedRoleManagementPolicyAssignment `json:"roleManagementPolicyAssignments,omitempty"`
+}
+
+func NewPolicyRoot() (*PolicyRoot, error) {
+	newPolicyRoot := &PolicyRoot{
+		ODataType: "#microsoft.graph.PolicyRoot",
+	}
+	return newPolicyRoot, nil
 }

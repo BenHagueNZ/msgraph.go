@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsXorRequestBuilder struct{ BaseRequestBuilder }
 
-// Xor action undocumented
+// Xor action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Xor(reqObj *WorkbookFunctionsXorRequestParameter) *WorkbookFunctionsXorRequestBuilder {
 	bb := &WorkbookFunctionsXorRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Xor"

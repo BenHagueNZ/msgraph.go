@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// ServiceManagementDetails returns request builder for DelegatedAdminServiceManagementDetail collection
+// ServiceManagementDetails returns request builder for DelegatedAdminServiceManagementDetail collection rcn
 func (b *DelegatedAdminCustomerRequestBuilder) ServiceManagementDetails() *DelegatedAdminCustomerServiceManagementDetailsCollectionRequestBuilder {
 	bb := &DelegatedAdminCustomerServiceManagementDetailsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/serviceManagementDetails"
@@ -114,7 +114,7 @@ func (r *DelegatedAdminCustomerServiceManagementDetailsCollectionRequest) Add(ct
 	return
 }
 
-// AccessAssignments returns request builder for DelegatedAdminAccessAssignment collection
+// AccessAssignments returns request builder for DelegatedAdminAccessAssignment collection rcn
 func (b *DelegatedAdminRelationshipRequestBuilder) AccessAssignments() *DelegatedAdminRelationshipAccessAssignmentsCollectionRequestBuilder {
 	bb := &DelegatedAdminRelationshipAccessAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/accessAssignments"
@@ -217,7 +217,7 @@ func (r *DelegatedAdminRelationshipAccessAssignmentsCollectionRequest) Add(ctx c
 	return
 }
 
-// Operations returns request builder for DelegatedAdminRelationshipOperation collection
+// Operations returns request builder for DelegatedAdminRelationshipOperation collection rcn
 func (b *DelegatedAdminRelationshipRequestBuilder) Operations() *DelegatedAdminRelationshipOperationsCollectionRequestBuilder {
 	bb := &DelegatedAdminRelationshipOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -320,7 +320,7 @@ func (r *DelegatedAdminRelationshipOperationsCollectionRequest) Add(ctx context.
 	return
 }
 
-// Requests returns request builder for DelegatedAdminRelationshipRequestObject collection
+// Requests returns request builder for DelegatedAdminRelationshipRequestObject collection rcn
 func (b *DelegatedAdminRelationshipRequestBuilder) Requests() *DelegatedAdminRelationshipRequestsCollectionRequestBuilder {
 	bb := &DelegatedAdminRelationshipRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/requests"
@@ -421,4 +421,53 @@ func (r *DelegatedAdminRelationshipRequestsCollectionRequest) Get(ctx context.Co
 func (r *DelegatedAdminRelationshipRequestsCollectionRequest) Add(ctx context.Context, reqObj *DelegatedAdminRelationshipRequestObject) (resObj *DelegatedAdminRelationshipRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// DelegatedAdminAccessAssignment is navigation property rn
+func (b *DelegatedAdminAccessAssignmentRequestBuilder) DelegatedAdminAccessAssignment() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// DelegatedAdminCustomer is navigation property rn
+func (b *DelegatedAdminCustomerRequestBuilder) DelegatedAdminCustomer() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// DelegatedAdminRelationship is navigation property rn
+func (b *DelegatedAdminRelationshipRequestBuilder) DelegatedAdminRelationship() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// DelegatedAdminRelationshipOperation is navigation property rn
+func (b *DelegatedAdminRelationshipOperationRequestBuilder) DelegatedAdminRelationshipOperation() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// DelegatedAdminRelationshipRequestObject is navigation property rn
+func (b *DelegatedAdminRelationshipRequestObjectRequestBuilder) DelegatedAdminRelationshipRequestObject() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// DelegatedAdminServiceManagementDetail is navigation property rn
+func (b *DelegatedAdminServiceManagementDetailRequestBuilder) DelegatedAdminServiceManagementDetail() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// DelegatedPermissionClassification is navigation property rn
+func (b *DelegatedPermissionClassificationRequestBuilder) DelegatedPermissionClassification() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

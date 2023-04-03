@@ -8,6 +8,8 @@ import "time"
 type RiskDetection struct {
 	// Entity is the base model of RiskDetection
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Activity undocumented
 	Activity *ActivityType `json:"activity,omitempty"`
 	// ActivityDateTime undocumented
@@ -48,22 +50,47 @@ type RiskDetection struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewRiskDetection() (*RiskDetection, error) {
+	newRiskDetection := &RiskDetection{
+		ODataType: "#microsoft.graph.RiskDetection",
+	}
+	return newRiskDetection, nil
+}
+
 // RiskServicePrincipalActivity undocumented
 type RiskServicePrincipalActivity struct {
 	// Object is the base model of RiskServicePrincipalActivity
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Detail undocumented
 	Detail *RiskDetail `json:"detail,omitempty"`
 	// RiskEventTypes undocumented
 	RiskEventTypes []string `json:"riskEventTypes,omitempty"`
 }
 
+func NewRiskServicePrincipalActivity() (*RiskServicePrincipalActivity, error) {
+	newRiskServicePrincipalActivity := &RiskServicePrincipalActivity{
+		ODataType: "#microsoft.graph.RiskServicePrincipalActivity",
+	}
+	return newRiskServicePrincipalActivity, nil
+}
+
 // RiskUserActivity undocumented
 type RiskUserActivity struct {
 	// Object is the base model of RiskUserActivity
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Detail undocumented
 	Detail *RiskDetail `json:"detail,omitempty"`
 	// RiskEventTypes undocumented
 	RiskEventTypes []string `json:"riskEventTypes,omitempty"`
+}
+
+func NewRiskUserActivity() (*RiskUserActivity, error) {
+	newRiskUserActivity := &RiskUserActivity{
+		ODataType: "#microsoft.graph.RiskUserActivity",
+	}
+	return newRiskUserActivity, nil
 }

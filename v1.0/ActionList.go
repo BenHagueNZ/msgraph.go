@@ -15,7 +15,7 @@ import (
 type ListItemVersionRestoreVersionRequestParameter struct {
 }
 
-// Columns returns request builder for ColumnDefinition collection
+// Columns returns request builder for ColumnDefinition collection rcn
 func (b *ListRequestBuilder) Columns() *ListColumnsCollectionRequestBuilder {
 	bb := &ListColumnsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/columns"
@@ -118,7 +118,7 @@ func (r *ListColumnsCollectionRequest) Add(ctx context.Context, reqObj *ColumnDe
 	return
 }
 
-// ContentTypes returns request builder for ContentType collection
+// ContentTypes returns request builder for ContentType collection rcn
 func (b *ListRequestBuilder) ContentTypes() *ListContentTypesCollectionRequestBuilder {
 	bb := &ListContentTypesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/contentTypes"
@@ -221,14 +221,14 @@ func (r *ListContentTypesCollectionRequest) Add(ctx context.Context, reqObj *Con
 	return
 }
 
-// Drive is navigation property
+// Drive is navigation property rn
 func (b *ListRequestBuilder) Drive() *DriveRequestBuilder {
 	bb := &DriveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/drive"
 	return bb
 }
 
-// Items returns request builder for ListItem collection
+// Items returns request builder for ListItem collection rcn
 func (b *ListRequestBuilder) Items() *ListItemsCollectionRequestBuilder {
 	bb := &ListItemsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/items"
@@ -331,7 +331,7 @@ func (r *ListItemsCollectionRequest) Add(ctx context.Context, reqObj *ListItem) 
 	return
 }
 
-// Operations returns request builder for RichLongRunningOperation collection
+// Operations returns request builder for RichLongRunningOperation collection rcn
 func (b *ListRequestBuilder) Operations() *ListOperationsCollectionRequestBuilder {
 	bb := &ListOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -434,7 +434,7 @@ func (r *ListOperationsCollectionRequest) Add(ctx context.Context, reqObj *RichL
 	return
 }
 
-// Subscriptions returns request builder for Subscription collection
+// Subscriptions returns request builder for Subscription collection rcn
 func (b *ListRequestBuilder) Subscriptions() *ListSubscriptionsCollectionRequestBuilder {
 	bb := &ListSubscriptionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/subscriptions"
@@ -537,14 +537,14 @@ func (r *ListSubscriptionsCollectionRequest) Add(ctx context.Context, reqObj *Su
 	return
 }
 
-// Analytics is navigation property
+// Analytics is navigation property rn
 func (b *ListItemRequestBuilder) Analytics() *ItemAnalyticsRequestBuilder {
 	bb := &ItemAnalyticsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/analytics"
 	return bb
 }
 
-// DocumentSetVersions returns request builder for DocumentSetVersion collection
+// DocumentSetVersions returns request builder for DocumentSetVersion collection rcn
 func (b *ListItemRequestBuilder) DocumentSetVersions() *ListItemDocumentSetVersionsCollectionRequestBuilder {
 	bb := &ListItemDocumentSetVersionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/documentSetVersions"
@@ -647,21 +647,21 @@ func (r *ListItemDocumentSetVersionsCollectionRequest) Add(ctx context.Context, 
 	return
 }
 
-// DriveItem is navigation property
+// DriveItem is navigation property rn
 func (b *ListItemRequestBuilder) DriveItem() *DriveItemRequestBuilder {
 	bb := &DriveItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/driveItem"
 	return bb
 }
 
-// Fields is navigation property
+// Fields is navigation property rn
 func (b *ListItemRequestBuilder) Fields() *FieldValueSetRequestBuilder {
 	bb := &FieldValueSetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/fields"
 	return bb
 }
 
-// Versions returns request builder for ListItemVersion collection
+// Versions returns request builder for ListItemVersion collection rcn
 func (b *ListItemRequestBuilder) Versions() *ListItemVersionsCollectionRequestBuilder {
 	bb := &ListItemVersionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/versions"
@@ -764,9 +764,215 @@ func (r *ListItemVersionsCollectionRequest) Add(ctx context.Context, reqObj *Lis
 	return
 }
 
-// Fields is navigation property
+// Fields is navigation property rn
 func (b *ListItemVersionRequestBuilder) Fields() *FieldValueSetRequestBuilder {
 	bb := &FieldValueSetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/fields"
 	return bb
+}
+
+// List returns request builder for BaseItem collection rcn
+func (b *ListRequestBuilder) List() *ListListCollectionRequestBuilder {
+	bb := &ListListCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/BaseItem"
+	return bb
+}
+
+// ListListCollectionRequestBuilder is request builder for BaseItem collection
+type ListListCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for BaseItem collection
+func (b *ListListCollectionRequestBuilder) Request() *ListListCollectionRequest {
+	return &ListListCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for BaseItem item
+func (b *ListListCollectionRequestBuilder) ID(id string) *BaseItemRequestBuilder {
+	bb := &BaseItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// ListListCollectionRequest is request for BaseItem collection
+type ListListCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for BaseItem collection
+func (r *ListListCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]BaseItem, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []BaseItem
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []BaseItem
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for BaseItem collection, max N pages
+func (r *ListListCollectionRequest) GetN(ctx context.Context, n int) ([]BaseItem, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for BaseItem collection
+func (r *ListListCollectionRequest) Get(ctx context.Context) ([]BaseItem, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for BaseItem collection
+func (r *ListListCollectionRequest) Add(ctx context.Context, reqObj *BaseItem) (resObj *BaseItem, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// ListItem returns request builder for BaseItem collection rcn
+func (b *ListItemRequestBuilder) ListItem() *ListItemListItemCollectionRequestBuilder {
+	bb := &ListItemListItemCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/BaseItem"
+	return bb
+}
+
+// ListItemListItemCollectionRequestBuilder is request builder for BaseItem collection
+type ListItemListItemCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for BaseItem collection
+func (b *ListItemListItemCollectionRequestBuilder) Request() *ListItemListItemCollectionRequest {
+	return &ListItemListItemCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for BaseItem item
+func (b *ListItemListItemCollectionRequestBuilder) ID(id string) *BaseItemRequestBuilder {
+	bb := &BaseItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// ListItemListItemCollectionRequest is request for BaseItem collection
+type ListItemListItemCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for BaseItem collection
+func (r *ListItemListItemCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]BaseItem, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []BaseItem
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []BaseItem
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for BaseItem collection, max N pages
+func (r *ListItemListItemCollectionRequest) GetN(ctx context.Context, n int) ([]BaseItem, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for BaseItem collection
+func (r *ListItemListItemCollectionRequest) Get(ctx context.Context) ([]BaseItem, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for BaseItem collection
+func (r *ListItemListItemCollectionRequest) Add(ctx context.Context, reqObj *BaseItem) (resObj *BaseItem, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
 }

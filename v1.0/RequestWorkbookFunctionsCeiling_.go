@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsCeiling_MathRequestBuilder struct{ BaseRequestBuilder }
 
-// Ceiling_Math action undocumented
+// Ceiling_Math action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Ceiling_Math(reqObj *WorkbookFunctionsCeiling_MathRequestParameter) *WorkbookFunctionsCeiling_MathRequestBuilder {
 	bb := &WorkbookFunctionsCeiling_MathRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Ceiling_Math"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsCeiling_MathRequest) Post(ctx context.Context) (resObj
 
 type WorkbookFunctionsCeiling_PreciseRequestBuilder struct{ BaseRequestBuilder }
 
-// Ceiling_Precise action undocumented
+// Ceiling_Precise action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Ceiling_Precise(reqObj *WorkbookFunctionsCeiling_PreciseRequestParameter) *WorkbookFunctionsCeiling_PreciseRequestBuilder {
 	bb := &WorkbookFunctionsCeiling_PreciseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Ceiling_Precise"

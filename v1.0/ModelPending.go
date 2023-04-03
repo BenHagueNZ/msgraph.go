@@ -8,14 +8,32 @@ import "time"
 type PendingContentUpdate struct {
 	// Object is the base model of PendingContentUpdate
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// QueuedDateTime undocumented
 	QueuedDateTime *time.Time `json:"queuedDateTime,omitempty"`
+}
+
+func NewPendingContentUpdate() (*PendingContentUpdate, error) {
+	newPendingContentUpdate := &PendingContentUpdate{
+		ODataType: "#microsoft.graph.PendingContentUpdate",
+	}
+	return newPendingContentUpdate, nil
 }
 
 // PendingOperations undocumented
 type PendingOperations struct {
 	// Object is the base model of PendingOperations
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// PendingContentUpdate undocumented
 	PendingContentUpdate *PendingContentUpdate `json:"pendingContentUpdate,omitempty"`
+}
+
+func NewPendingOperations() (*PendingOperations, error) {
+	newPendingOperations := &PendingOperations{
+		ODataType: "#microsoft.graph.PendingOperations",
+	}
+	return newPendingOperations, nil
 }

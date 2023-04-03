@@ -8,10 +8,19 @@ import "time"
 type NamedLocation struct {
 	// Entity is the base model of NamedLocation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// ModifiedDateTime undocumented
 	ModifiedDateTime *time.Time `json:"modifiedDateTime,omitempty"`
+}
+
+func NewNamedLocation() (*NamedLocation, error) {
+	newNamedLocation := &NamedLocation{
+		ODataType: "#microsoft.graph.NamedLocation",
+	}
+	return newNamedLocation, nil
 }

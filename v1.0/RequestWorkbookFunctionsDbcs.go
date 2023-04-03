@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDbcsRequestBuilder struct{ BaseRequestBuilder }
 
-// Dbcs action undocumented
+// Dbcs action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Dbcs(reqObj *WorkbookFunctionsDbcsRequestParameter) *WorkbookFunctionsDbcsRequestBuilder {
 	bb := &WorkbookFunctionsDbcsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Dbcs"

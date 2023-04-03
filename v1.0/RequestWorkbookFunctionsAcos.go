@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsAcosRequestBuilder struct{ BaseRequestBuilder }
 
-// Acos action undocumented
+// Acos action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Acos(reqObj *WorkbookFunctionsAcosRequestParameter) *WorkbookFunctionsAcosRequestBuilder {
 	bb := &WorkbookFunctionsAcosRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Acos"

@@ -8,6 +8,8 @@ import "time"
 type SignIn struct {
 	// Entity is the base model of SignIn
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AppDisplayName undocumented
 	AppDisplayName *string `json:"appDisplayName,omitempty"`
 	// AppID undocumented
@@ -56,10 +58,19 @@ type SignIn struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewSignIn() (*SignIn, error) {
+	newSignIn := &SignIn{
+		ODataType: "#microsoft.graph.SignIn",
+	}
+	return newSignIn, nil
+}
+
 // SignInFrequencySessionControl undocumented
 type SignInFrequencySessionControl struct {
 	// ConditionalAccessSessionControl is the base model of SignInFrequencySessionControl
 	ConditionalAccessSessionControl
+
+	ODataType string `json:"@odata.type"`
 	// AuthenticationType undocumented
 	AuthenticationType *SignInFrequencyAuthenticationType `json:"authenticationType,omitempty"`
 	// FrequencyInterval undocumented
@@ -70,10 +81,19 @@ type SignInFrequencySessionControl struct {
 	Value *int `json:"value,omitempty"`
 }
 
+func NewSignInFrequencySessionControl() (*SignInFrequencySessionControl, error) {
+	newSignInFrequencySessionControl := &SignInFrequencySessionControl{
+		ODataType: "#microsoft.graph.SignInFrequencySessionControl",
+	}
+	return newSignInFrequencySessionControl, nil
+}
+
 // SignInLocation undocumented
 type SignInLocation struct {
 	// Object is the base model of SignInLocation
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// City undocumented
 	City *string `json:"city,omitempty"`
 	// CountryOrRegion undocumented
@@ -84,14 +104,30 @@ type SignInLocation struct {
 	State *string `json:"state,omitempty"`
 }
 
+func NewSignInLocation() (*SignInLocation, error) {
+	newSignInLocation := &SignInLocation{
+		ODataType: "#microsoft.graph.SignInLocation",
+	}
+	return newSignInLocation, nil
+}
+
 // SignInStatus undocumented
 type SignInStatus struct {
 	// Object is the base model of SignInStatus
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AdditionalDetails undocumented
 	AdditionalDetails *string `json:"additionalDetails,omitempty"`
 	// ErrorCode undocumented
 	ErrorCode *int `json:"errorCode,omitempty"`
 	// FailureReason undocumented
 	FailureReason *string `json:"failureReason,omitempty"`
+}
+
+func NewSignInStatus() (*SignInStatus, error) {
+	newSignInStatus := &SignInStatus{
+		ODataType: "#microsoft.graph.SignInStatus",
+	}
+	return newSignInStatus, nil
 }

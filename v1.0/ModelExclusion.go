@@ -6,4 +6,13 @@ package msgraph
 type ExclusionGroupAssignmentTarget struct {
 	// GroupAssignmentTarget is the base model of ExclusionGroupAssignmentTarget
 	GroupAssignmentTarget
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewExclusionGroupAssignmentTarget() (*ExclusionGroupAssignmentTarget, error) {
+	newExclusionGroupAssignmentTarget := &ExclusionGroupAssignmentTarget{
+		ODataType: "#microsoft.graph.ExclusionGroupAssignmentTarget",
+	}
+	return newExclusionGroupAssignmentTarget, nil
 }

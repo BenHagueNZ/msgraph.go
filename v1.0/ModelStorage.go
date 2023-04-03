@@ -6,6 +6,15 @@ package msgraph
 type StoragePlanInformation struct {
 	// Object is the base model of StoragePlanInformation
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// UpgradeAvailable undocumented
 	UpgradeAvailable *bool `json:"upgradeAvailable,omitempty"`
+}
+
+func NewStoragePlanInformation() (*StoragePlanInformation, error) {
+	newStoragePlanInformation := &StoragePlanInformation{
+		ODataType: "#microsoft.graph.StoragePlanInformation",
+	}
+	return newStoragePlanInformation, nil
 }

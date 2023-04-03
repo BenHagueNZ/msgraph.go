@@ -171,7 +171,7 @@ func (r *ScheduleItemRequest) Delete(ctx context.Context) error {
 
 type ScheduleShareRequestBuilder struct{ BaseRequestBuilder }
 
-// Share action undocumented
+// Share action undocumentedrav
 func (b *ScheduleRequestBuilder) Share(reqObj *ScheduleShareRequestParameter) *ScheduleShareRequestBuilder {
 	bb := &ScheduleShareRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Share"
@@ -193,7 +193,7 @@ func (r *ScheduleShareRequest) Post(ctx context.Context) error {
 
 type ScheduleChangeRequestObjectDeclineRequestBuilder struct{ BaseRequestBuilder }
 
-// Decline action undocumented
+// Decline action undocumentedrav
 func (b *ScheduleChangeRequestObjectRequestBuilder) Decline(reqObj *ScheduleChangeRequestObjectDeclineRequestParameter) *ScheduleChangeRequestObjectDeclineRequestBuilder {
 	bb := &ScheduleChangeRequestObjectDeclineRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Decline"
@@ -215,7 +215,7 @@ func (r *ScheduleChangeRequestObjectDeclineRequest) Post(ctx context.Context) er
 
 type ScheduleChangeRequestObjectApproveRequestBuilder struct{ BaseRequestBuilder }
 
-// Approve action undocumented
+// Approve action undocumentedrav
 func (b *ScheduleChangeRequestObjectRequestBuilder) Approve(reqObj *ScheduleChangeRequestObjectApproveRequestParameter) *ScheduleChangeRequestObjectApproveRequestBuilder {
 	bb := &ScheduleChangeRequestObjectApproveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Approve"

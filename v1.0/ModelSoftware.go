@@ -6,14 +6,25 @@ package msgraph
 type SoftwareOathAuthenticationMethod struct {
 	// AuthenticationMethod is the base model of SoftwareOathAuthenticationMethod
 	AuthenticationMethod
+
+	ODataType string `json:"@odata.type"`
 	// SecretKey undocumented
 	SecretKey *string `json:"secretKey,omitempty"`
+}
+
+func NewSoftwareOathAuthenticationMethod() (*SoftwareOathAuthenticationMethod, error) {
+	newSoftwareOathAuthenticationMethod := &SoftwareOathAuthenticationMethod{
+		ODataType: "#microsoft.graph.SoftwareOathAuthenticationMethod",
+	}
+	return newSoftwareOathAuthenticationMethod, nil
 }
 
 // SoftwareUpdateStatusSummary undocumented
 type SoftwareUpdateStatusSummary struct {
 	// Entity is the base model of SoftwareUpdateStatusSummary
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CompliantDeviceCount undocumented
 	CompliantDeviceCount *int `json:"compliantDeviceCount,omitempty"`
 	// CompliantUserCount undocumented
@@ -44,4 +55,11 @@ type SoftwareUpdateStatusSummary struct {
 	UnknownDeviceCount *int `json:"unknownDeviceCount,omitempty"`
 	// UnknownUserCount undocumented
 	UnknownUserCount *int `json:"unknownUserCount,omitempty"`
+}
+
+func NewSoftwareUpdateStatusSummary() (*SoftwareUpdateStatusSummary, error) {
+	newSoftwareUpdateStatusSummary := &SoftwareUpdateStatusSummary{
+		ODataType: "#microsoft.graph.SoftwareUpdateStatusSummary",
+	}
+	return newSoftwareUpdateStatusSummary, nil
 }

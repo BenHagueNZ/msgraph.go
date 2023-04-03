@@ -2,7 +2,7 @@
 {{- $x := .X }}
 {{- $y := .Y }}
 {{- $ySymType := $.SymBaseType $y.Type }}
-// {{$y.Sym}} returns request builder for {{$ySymType}} collection
+// {{$y.Sym}} returns request builder for {{$ySymType}} collection rcn
 func (b *{{$x.Sym}}RequestBuilder) {{$y.Sym}}() *{{$x.Sym}}{{$y.Sym}}CollectionRequestBuilder {
 	bb := &{{$x.Sym}}{{$y.Sym}}CollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/{{$y.Name}}"

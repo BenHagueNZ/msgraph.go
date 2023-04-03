@@ -9,3 +9,10 @@ type RemoteAssistancePartnerBeginOnboardingRequestParameter struct {
 // RemoteAssistancePartnerDisconnectRequestParameter undocumented
 type RemoteAssistancePartnerDisconnectRequestParameter struct {
 }
+
+// RemoteAssistancePartner is navigation property rn
+func (b *RemoteAssistancePartnerRequestBuilder) RemoteAssistancePartner() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}

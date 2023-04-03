@@ -57,7 +57,7 @@ type ApplicationTemplateInstantiateRequestParameter struct {
 	DisplayName *string `json:"displayName,omitempty"`
 }
 
-// AppManagementPolicies returns request builder for AppManagementPolicy collection
+// AppManagementPolicies returns request builder for AppManagementPolicy collection rcn
 func (b *ApplicationRequestBuilder) AppManagementPolicies() *ApplicationAppManagementPoliciesCollectionRequestBuilder {
 	bb := &ApplicationAppManagementPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appManagementPolicies"
@@ -160,14 +160,14 @@ func (r *ApplicationAppManagementPoliciesCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// CreatedOnBehalfOf is navigation property
+// CreatedOnBehalfOf is navigation property rn
 func (b *ApplicationRequestBuilder) CreatedOnBehalfOf() *DirectoryObjectRequestBuilder {
 	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/createdOnBehalfOf"
 	return bb
 }
 
-// ExtensionProperties returns request builder for ExtensionProperty collection
+// ExtensionProperties returns request builder for ExtensionProperty collection rcn
 func (b *ApplicationRequestBuilder) ExtensionProperties() *ApplicationExtensionPropertiesCollectionRequestBuilder {
 	bb := &ApplicationExtensionPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensionProperties"
@@ -270,7 +270,7 @@ func (r *ApplicationExtensionPropertiesCollectionRequest) Add(ctx context.Contex
 	return
 }
 
-// FederatedIdentityCredentials returns request builder for FederatedIdentityCredential collection
+// FederatedIdentityCredentials returns request builder for FederatedIdentityCredential collection rcn
 func (b *ApplicationRequestBuilder) FederatedIdentityCredentials() *ApplicationFederatedIdentityCredentialsCollectionRequestBuilder {
 	bb := &ApplicationFederatedIdentityCredentialsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/federatedIdentityCredentials"
@@ -373,7 +373,7 @@ func (r *ApplicationFederatedIdentityCredentialsCollectionRequest) Add(ctx conte
 	return
 }
 
-// HomeRealmDiscoveryPolicies returns request builder for HomeRealmDiscoveryPolicy collection
+// HomeRealmDiscoveryPolicies returns request builder for HomeRealmDiscoveryPolicy collection rcn
 func (b *ApplicationRequestBuilder) HomeRealmDiscoveryPolicies() *ApplicationHomeRealmDiscoveryPoliciesCollectionRequestBuilder {
 	bb := &ApplicationHomeRealmDiscoveryPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/homeRealmDiscoveryPolicies"
@@ -476,7 +476,7 @@ func (r *ApplicationHomeRealmDiscoveryPoliciesCollectionRequest) Add(ctx context
 	return
 }
 
-// Owners returns request builder for DirectoryObject collection
+// Owners returns request builder for DirectoryObject collection rcn
 func (b *ApplicationRequestBuilder) Owners() *ApplicationOwnersCollectionRequestBuilder {
 	bb := &ApplicationOwnersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/owners"
@@ -579,7 +579,7 @@ func (r *ApplicationOwnersCollectionRequest) Add(ctx context.Context, reqObj *Di
 	return
 }
 
-// TokenIssuancePolicies returns request builder for TokenIssuancePolicy collection
+// TokenIssuancePolicies returns request builder for TokenIssuancePolicy collection rcn
 func (b *ApplicationRequestBuilder) TokenIssuancePolicies() *ApplicationTokenIssuancePoliciesCollectionRequestBuilder {
 	bb := &ApplicationTokenIssuancePoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tokenIssuancePolicies"
@@ -682,7 +682,7 @@ func (r *ApplicationTokenIssuancePoliciesCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// TokenLifetimePolicies returns request builder for TokenLifetimePolicy collection
+// TokenLifetimePolicies returns request builder for TokenLifetimePolicy collection rcn
 func (b *ApplicationRequestBuilder) TokenLifetimePolicies() *ApplicationTokenLifetimePoliciesCollectionRequestBuilder {
 	bb := &ApplicationTokenLifetimePoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tokenLifetimePolicies"
@@ -785,16 +785,126 @@ func (r *ApplicationTokenLifetimePoliciesCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// Application is navigation property
+// Application is navigation property rn
 func (b *ApplicationServicePrincipalRequestBuilder) Application() *ApplicationRequestBuilder {
 	bb := &ApplicationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/application"
 	return bb
 }
 
-// ServicePrincipal is navigation property
+// ServicePrincipal is navigation property rn
 func (b *ApplicationServicePrincipalRequestBuilder) ServicePrincipal() *ServicePrincipalRequestBuilder {
 	bb := &ServicePrincipalRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/servicePrincipal"
+	return bb
+}
+
+// Application returns request builder for DirectoryObject collection rcn
+func (b *ApplicationRequestBuilder) Application() *ApplicationApplicationCollectionRequestBuilder {
+	bb := &ApplicationApplicationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DirectoryObject"
+	return bb
+}
+
+// ApplicationApplicationCollectionRequestBuilder is request builder for DirectoryObject collection
+type ApplicationApplicationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DirectoryObject collection
+func (b *ApplicationApplicationCollectionRequestBuilder) Request() *ApplicationApplicationCollectionRequest {
+	return &ApplicationApplicationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DirectoryObject item
+func (b *ApplicationApplicationCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
+	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// ApplicationApplicationCollectionRequest is request for DirectoryObject collection
+type ApplicationApplicationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DirectoryObject collection
+func (r *ApplicationApplicationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DirectoryObject
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DirectoryObject
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DirectoryObject collection, max N pages
+func (r *ApplicationApplicationCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DirectoryObject collection
+func (r *ApplicationApplicationCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DirectoryObject collection
+func (r *ApplicationApplicationCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// ApplicationTemplate is navigation property rn
+func (b *ApplicationTemplateRequestBuilder) ApplicationTemplate() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

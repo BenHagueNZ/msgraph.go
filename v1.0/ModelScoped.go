@@ -6,10 +6,19 @@ package msgraph
 type ScopedRoleMembership struct {
 	// Entity is the base model of ScopedRoleMembership
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AdministrativeUnitID undocumented
 	AdministrativeUnitID *string `json:"administrativeUnitId,omitempty"`
 	// RoleID undocumented
 	RoleID *string `json:"roleId,omitempty"`
 	// RoleMemberInfo undocumented
 	RoleMemberInfo *Identity `json:"roleMemberInfo,omitempty"`
+}
+
+func NewScopedRoleMembership() (*ScopedRoleMembership, error) {
+	newScopedRoleMembership := &ScopedRoleMembership{
+		ODataType: "#microsoft.graph.ScopedRoleMembership",
+	}
+	return newScopedRoleMembership, nil
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsReplaceRequestBuilder struct{ BaseRequestBuilder }
 
-// Replace action undocumented
+// Replace action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Replace(reqObj *WorkbookFunctionsReplaceRequestParameter) *WorkbookFunctionsReplaceRequestBuilder {
 	bb := &WorkbookFunctionsReplaceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Replace"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsReplaceRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsReplaceBRequestBuilder struct{ BaseRequestBuilder }
 
-// ReplaceB action undocumented
+// ReplaceB action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ReplaceB(reqObj *WorkbookFunctionsReplaceBRequestParameter) *WorkbookFunctionsReplaceBRequestBuilder {
 	bb := &WorkbookFunctionsReplaceBRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ReplaceB"

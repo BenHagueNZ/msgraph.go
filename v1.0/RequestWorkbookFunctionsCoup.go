@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsCoupDayBsRequestBuilder struct{ BaseRequestBuilder }
 
-// CoupDayBs action undocumented
+// CoupDayBs action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) CoupDayBs(reqObj *WorkbookFunctionsCoupDayBsRequestParameter) *WorkbookFunctionsCoupDayBsRequestBuilder {
 	bb := &WorkbookFunctionsCoupDayBsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CoupDayBs"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsCoupDayBsRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsCoupDaysRequestBuilder struct{ BaseRequestBuilder }
 
-// CoupDays action undocumented
+// CoupDays action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) CoupDays(reqObj *WorkbookFunctionsCoupDaysRequestParameter) *WorkbookFunctionsCoupDaysRequestBuilder {
 	bb := &WorkbookFunctionsCoupDaysRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CoupDays"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsCoupDaysRequest) Post(ctx context.Context) (resObj *Wo
 
 type WorkbookFunctionsCoupDaysNcRequestBuilder struct{ BaseRequestBuilder }
 
-// CoupDaysNc action undocumented
+// CoupDaysNc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) CoupDaysNc(reqObj *WorkbookFunctionsCoupDaysNcRequestParameter) *WorkbookFunctionsCoupDaysNcRequestBuilder {
 	bb := &WorkbookFunctionsCoupDaysNcRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CoupDaysNc"
@@ -75,7 +75,7 @@ func (r *WorkbookFunctionsCoupDaysNcRequest) Post(ctx context.Context) (resObj *
 
 type WorkbookFunctionsCoupNcdRequestBuilder struct{ BaseRequestBuilder }
 
-// CoupNcd action undocumented
+// CoupNcd action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) CoupNcd(reqObj *WorkbookFunctionsCoupNcdRequestParameter) *WorkbookFunctionsCoupNcdRequestBuilder {
 	bb := &WorkbookFunctionsCoupNcdRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CoupNcd"
@@ -98,7 +98,7 @@ func (r *WorkbookFunctionsCoupNcdRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsCoupNumRequestBuilder struct{ BaseRequestBuilder }
 
-// CoupNum action undocumented
+// CoupNum action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) CoupNum(reqObj *WorkbookFunctionsCoupNumRequestParameter) *WorkbookFunctionsCoupNumRequestBuilder {
 	bb := &WorkbookFunctionsCoupNumRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CoupNum"
@@ -121,7 +121,7 @@ func (r *WorkbookFunctionsCoupNumRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsCoupPcdRequestBuilder struct{ BaseRequestBuilder }
 
-// CoupPcd action undocumented
+// CoupPcd action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) CoupPcd(reqObj *WorkbookFunctionsCoupPcdRequestParameter) *WorkbookFunctionsCoupPcdRequestBuilder {
 	bb := &WorkbookFunctionsCoupPcdRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CoupPcd"

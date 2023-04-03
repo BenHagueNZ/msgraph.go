@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsLenRequestBuilder struct{ BaseRequestBuilder }
 
-// Len action undocumented
+// Len action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Len(reqObj *WorkbookFunctionsLenRequestParameter) *WorkbookFunctionsLenRequestBuilder {
 	bb := &WorkbookFunctionsLenRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Len"

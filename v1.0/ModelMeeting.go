@@ -8,6 +8,8 @@ import "time"
 type MeetingAttendanceReport struct {
 	// Entity is the base model of MeetingAttendanceReport
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// MeetingEndDateTime undocumented
 	MeetingEndDateTime *time.Time `json:"meetingEndDateTime,omitempty"`
 	// MeetingStartDateTime undocumented
@@ -18,16 +20,34 @@ type MeetingAttendanceReport struct {
 	AttendanceRecords []AttendanceRecord `json:"attendanceRecords,omitempty"`
 }
 
+func NewMeetingAttendanceReport() (*MeetingAttendanceReport, error) {
+	newMeetingAttendanceReport := &MeetingAttendanceReport{
+		ODataType: "#microsoft.graph.MeetingAttendanceReport",
+	}
+	return newMeetingAttendanceReport, nil
+}
+
 // MeetingInfo undocumented
 type MeetingInfo struct {
 	// Object is the base model of MeetingInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewMeetingInfo() (*MeetingInfo, error) {
+	newMeetingInfo := &MeetingInfo{
+		ODataType: "#microsoft.graph.MeetingInfo",
+	}
+	return newMeetingInfo, nil
 }
 
 // MeetingParticipantInfo undocumented
 type MeetingParticipantInfo struct {
 	// Object is the base model of MeetingParticipantInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Identity undocumented
 	Identity *IdentitySet `json:"identity,omitempty"`
 	// Role undocumented
@@ -36,20 +56,38 @@ type MeetingParticipantInfo struct {
 	Upn *string `json:"upn,omitempty"`
 }
 
+func NewMeetingParticipantInfo() (*MeetingParticipantInfo, error) {
+	newMeetingParticipantInfo := &MeetingParticipantInfo{
+		ODataType: "#microsoft.graph.MeetingParticipantInfo",
+	}
+	return newMeetingParticipantInfo, nil
+}
+
 // MeetingParticipants undocumented
 type MeetingParticipants struct {
 	// Object is the base model of MeetingParticipants
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Attendees undocumented
 	Attendees []MeetingParticipantInfo `json:"attendees,omitempty"`
 	// Organizer undocumented
 	Organizer *MeetingParticipantInfo `json:"organizer,omitempty"`
 }
 
+func NewMeetingParticipants() (*MeetingParticipants, error) {
+	newMeetingParticipants := &MeetingParticipants{
+		ODataType: "#microsoft.graph.MeetingParticipants",
+	}
+	return newMeetingParticipants, nil
+}
+
 // MeetingPolicyUpdatedEventMessageDetail undocumented
 type MeetingPolicyUpdatedEventMessageDetail struct {
 	// EventMessageDetail is the base model of MeetingPolicyUpdatedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// MeetingChatEnabled undocumented
@@ -58,10 +96,19 @@ type MeetingPolicyUpdatedEventMessageDetail struct {
 	MeetingChatID *string `json:"meetingChatId,omitempty"`
 }
 
+func NewMeetingPolicyUpdatedEventMessageDetail() (*MeetingPolicyUpdatedEventMessageDetail, error) {
+	newMeetingPolicyUpdatedEventMessageDetail := &MeetingPolicyUpdatedEventMessageDetail{
+		ODataType: "#microsoft.graph.MeetingPolicyUpdatedEventMessageDetail",
+	}
+	return newMeetingPolicyUpdatedEventMessageDetail, nil
+}
+
 // MeetingTimeSuggestion undocumented
 type MeetingTimeSuggestion struct {
 	// Object is the base model of MeetingTimeSuggestion
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AttendeeAvailability undocumented
 	AttendeeAvailability []AttendeeAvailability `json:"attendeeAvailability,omitempty"`
 	// Confidence undocumented
@@ -78,12 +125,28 @@ type MeetingTimeSuggestion struct {
 	SuggestionReason *string `json:"suggestionReason,omitempty"`
 }
 
+func NewMeetingTimeSuggestion() (*MeetingTimeSuggestion, error) {
+	newMeetingTimeSuggestion := &MeetingTimeSuggestion{
+		ODataType: "#microsoft.graph.MeetingTimeSuggestion",
+	}
+	return newMeetingTimeSuggestion, nil
+}
+
 // MeetingTimeSuggestionsResult undocumented
 type MeetingTimeSuggestionsResult struct {
 	// Object is the base model of MeetingTimeSuggestionsResult
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// EmptySuggestionsReason undocumented
 	EmptySuggestionsReason *string `json:"emptySuggestionsReason,omitempty"`
 	// MeetingTimeSuggestions undocumented
 	MeetingTimeSuggestions []MeetingTimeSuggestion `json:"meetingTimeSuggestions,omitempty"`
+}
+
+func NewMeetingTimeSuggestionsResult() (*MeetingTimeSuggestionsResult, error) {
+	newMeetingTimeSuggestionsResult := &MeetingTimeSuggestionsResult{
+		ODataType: "#microsoft.graph.MeetingTimeSuggestionsResult",
+	}
+	return newMeetingTimeSuggestionsResult, nil
 }

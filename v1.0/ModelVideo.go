@@ -6,6 +6,8 @@ package msgraph
 type Video struct {
 	// Object is the base model of Video
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AudioBitsPerSample undocumented
 	AudioBitsPerSample *int `json:"audioBitsPerSample,omitempty"`
 	// AudioChannels undocumented
@@ -26,4 +28,11 @@ type Video struct {
 	Height *int `json:"height,omitempty"`
 	// Width undocumented
 	Width *int `json:"width,omitempty"`
+}
+
+func NewVideo() (*Video, error) {
+	newVideo := &Video{
+		ODataType: "#microsoft.graph.Video",
+	}
+	return newVideo, nil
 }

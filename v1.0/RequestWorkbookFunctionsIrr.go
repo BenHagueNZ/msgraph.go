@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsIrrRequestBuilder struct{ BaseRequestBuilder }
 
-// Irr action undocumented
+// Irr action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Irr(reqObj *WorkbookFunctionsIrrRequestParameter) *WorkbookFunctionsIrrRequestBuilder {
 	bb := &WorkbookFunctionsIrrRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Irr"

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsExpon_DistRequestBuilder struct{ BaseRequestBuilder }
 
-// Expon_Dist action undocumented
+// Expon_Dist action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Expon_Dist(reqObj *WorkbookFunctionsExpon_DistRequestParameter) *WorkbookFunctionsExpon_DistRequestBuilder {
 	bb := &WorkbookFunctionsExpon_DistRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Expon_Dist"

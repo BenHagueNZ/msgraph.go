@@ -29,7 +29,7 @@ type TeamworkSendActivityNotificationToRecipientsRequestParameter struct {
 	Recipients []TeamworkNotificationRecipient `json:"recipients,omitempty"`
 }
 
-// DeletedTeams returns request builder for DeletedTeam collection
+// DeletedTeams returns request builder for DeletedTeam collection rcn
 func (b *TeamworkRequestBuilder) DeletedTeams() *TeamworkDeletedTeamsCollectionRequestBuilder {
 	bb := &TeamworkDeletedTeamsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deletedTeams"
@@ -132,7 +132,7 @@ func (r *TeamworkDeletedTeamsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// WorkforceIntegrations returns request builder for WorkforceIntegration collection
+// WorkforceIntegrations returns request builder for WorkforceIntegration collection rcn
 func (b *TeamworkRequestBuilder) WorkforceIntegrations() *TeamworkWorkforceIntegrationsCollectionRequestBuilder {
 	bb := &TeamworkWorkforceIntegrationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/workforceIntegrations"
@@ -235,7 +235,7 @@ func (r *TeamworkWorkforceIntegrationsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Members returns request builder for TeamworkTagMember collection
+// Members returns request builder for TeamworkTagMember collection rcn
 func (b *TeamworkTagRequestBuilder) Members() *TeamworkTagMembersCollectionRequestBuilder {
 	bb := &TeamworkTagMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"
@@ -336,4 +336,39 @@ func (r *TeamworkTagMembersCollectionRequest) Get(ctx context.Context) ([]Teamwo
 func (r *TeamworkTagMembersCollectionRequest) Add(ctx context.Context, reqObj *TeamworkTagMember) (resObj *TeamworkTagMember, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Teamwork is navigation property rn
+func (b *TeamworkRequestBuilder) Teamwork() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TeamworkBot is navigation property rn
+func (b *TeamworkBotRequestBuilder) TeamworkBot() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TeamworkHostedContent is navigation property rn
+func (b *TeamworkHostedContentRequestBuilder) TeamworkHostedContent() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TeamworkTag is navigation property rn
+func (b *TeamworkTagRequestBuilder) TeamworkTag() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TeamworkTagMember is navigation property rn
+func (b *TeamworkTagMemberRequestBuilder) TeamworkTagMember() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

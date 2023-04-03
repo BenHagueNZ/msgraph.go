@@ -6,6 +6,8 @@ package msgraph
 type ExternalDomainFederation struct {
 	// IdentitySource is the base model of ExternalDomainFederation
 	IdentitySource
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// DomainName undocumented
@@ -14,30 +16,66 @@ type ExternalDomainFederation struct {
 	IssuerURI *string `json:"issuerUri,omitempty"`
 }
 
+func NewExternalDomainFederation() (*ExternalDomainFederation, error) {
+	newExternalDomainFederation := &ExternalDomainFederation{
+		ODataType: "#microsoft.graph.ExternalDomainFederation",
+	}
+	return newExternalDomainFederation, nil
+}
+
 // ExternalDomainName undocumented
 type ExternalDomainName struct {
 	// Entity is the base model of ExternalDomainName
 	Entity
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewExternalDomainName() (*ExternalDomainName, error) {
+	newExternalDomainName := &ExternalDomainName{
+		ODataType: "#microsoft.graph.ExternalDomainName",
+	}
+	return newExternalDomainName, nil
 }
 
 // ExternalLink undocumented
 type ExternalLink struct {
 	// Object is the base model of ExternalLink
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Href undocumented
 	Href *string `json:"href,omitempty"`
+}
+
+func NewExternalLink() (*ExternalLink, error) {
+	newExternalLink := &ExternalLink{
+		ODataType: "#microsoft.graph.ExternalLink",
+	}
+	return newExternalLink, nil
 }
 
 // ExternalSponsors undocumented
 type ExternalSponsors struct {
 	// SubjectSet is the base model of ExternalSponsors
 	SubjectSet
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewExternalSponsors() (*ExternalSponsors, error) {
+	newExternalSponsors := &ExternalSponsors{
+		ODataType: "#microsoft.graph.ExternalSponsors",
+	}
+	return newExternalSponsors, nil
 }
 
 // ExternalConnectorsACL undocumented
 type ExternalConnectorsACL struct {
 	// Object is the base model of ExternalConnectorsACL
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AccessType undocumented
 	AccessType *ExternalConnectorsAccessType `json:"accessType,omitempty"`
 	// Type undocumented
@@ -46,36 +84,72 @@ type ExternalConnectorsACL struct {
 	Value *string `json:"value,omitempty"`
 }
 
+func NewExternalConnectorsACL() (*ExternalConnectorsACL, error) {
+	newExternalConnectorsACL := &ExternalConnectorsACL{
+		ODataType: "#microsoft.graph.ExternalConnectorsAcl",
+	}
+	return newExternalConnectorsACL, nil
+}
+
 // ExternalConnectorsConfiguration undocumented
 type ExternalConnectorsConfiguration struct {
 	// Object is the base model of ExternalConnectorsConfiguration
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AuthorizedAppIDs undocumented
 	AuthorizedAppIDs []string `json:"authorizedAppIds,omitempty"`
+}
+
+func NewExternalConnectorsConfiguration() (*ExternalConnectorsConfiguration, error) {
+	newExternalConnectorsConfiguration := &ExternalConnectorsConfiguration{
+		ODataType: "#microsoft.graph.ExternalConnectorsConfiguration",
+	}
+	return newExternalConnectorsConfiguration, nil
 }
 
 // ExternalConnectorsConnectionOperation undocumented
 type ExternalConnectorsConnectionOperation struct {
 	// Entity is the base model of ExternalConnectorsConnectionOperation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Error undocumented
 	Error *PublicError `json:"error,omitempty"`
 	// Status undocumented
 	Status *ExternalConnectorsConnectionOperationStatus `json:"status,omitempty"`
 }
 
+func NewExternalConnectorsConnectionOperation() (*ExternalConnectorsConnectionOperation, error) {
+	newExternalConnectorsConnectionOperation := &ExternalConnectorsConnectionOperation{
+		ODataType: "#microsoft.graph.ExternalConnectorsConnectionOperation",
+	}
+	return newExternalConnectorsConnectionOperation, nil
+}
+
 // ExternalConnectorsExternal undocumented
 type ExternalConnectorsExternal struct {
 	// Object is the base model of ExternalConnectorsExternal
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Connections undocumented
 	Connections []ExternalConnectorsExternalConnection `json:"connections,omitempty"`
+}
+
+func NewExternalConnectorsExternal() (*ExternalConnectorsExternal, error) {
+	newExternalConnectorsExternal := &ExternalConnectorsExternal{
+		ODataType: "#microsoft.graph.ExternalConnectorsExternal",
+	}
+	return newExternalConnectorsExternal, nil
 }
 
 // ExternalConnectorsExternalConnection undocumented
 type ExternalConnectorsExternalConnection struct {
 	// Entity is the base model of ExternalConnectorsExternalConnection
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Configuration undocumented
 	Configuration *ExternalConnectorsConfiguration `json:"configuration,omitempty"`
 	// Description undocumented
@@ -94,10 +168,19 @@ type ExternalConnectorsExternalConnection struct {
 	Schema *ExternalConnectorsSchema `json:"schema,omitempty"`
 }
 
+func NewExternalConnectorsExternalConnection() (*ExternalConnectorsExternalConnection, error) {
+	newExternalConnectorsExternalConnection := &ExternalConnectorsExternalConnection{
+		ODataType: "#microsoft.graph.ExternalConnectorsExternalConnection",
+	}
+	return newExternalConnectorsExternalConnection, nil
+}
+
 // ExternalConnectorsExternalGroup undocumented
 type ExternalConnectorsExternalGroup struct {
 	// Entity is the base model of ExternalConnectorsExternalGroup
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -106,10 +189,19 @@ type ExternalConnectorsExternalGroup struct {
 	Members []ExternalConnectorsIdentity `json:"members,omitempty"`
 }
 
+func NewExternalConnectorsExternalGroup() (*ExternalConnectorsExternalGroup, error) {
+	newExternalConnectorsExternalGroup := &ExternalConnectorsExternalGroup{
+		ODataType: "#microsoft.graph.ExternalConnectorsExternalGroup",
+	}
+	return newExternalConnectorsExternalGroup, nil
+}
+
 // ExternalConnectorsExternalItem undocumented
 type ExternalConnectorsExternalItem struct {
 	// Entity is the base model of ExternalConnectorsExternalItem
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ACL undocumented
 	ACL []ExternalConnectorsACL `json:"acl,omitempty"`
 	// Content undocumented
@@ -118,34 +210,70 @@ type ExternalConnectorsExternalItem struct {
 	Properties *ExternalConnectorsProperties `json:"properties,omitempty"`
 }
 
+func NewExternalConnectorsExternalItem() (*ExternalConnectorsExternalItem, error) {
+	newExternalConnectorsExternalItem := &ExternalConnectorsExternalItem{
+		ODataType: "#microsoft.graph.ExternalConnectorsExternalItem",
+	}
+	return newExternalConnectorsExternalItem, nil
+}
+
 // ExternalConnectorsExternalItemContent undocumented
 type ExternalConnectorsExternalItemContent struct {
 	// Object is the base model of ExternalConnectorsExternalItemContent
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Type undocumented
 	Type *ExternalConnectorsExternalItemContentType `json:"type,omitempty"`
 	// Value undocumented
 	Value *string `json:"value,omitempty"`
 }
 
+func NewExternalConnectorsExternalItemContent() (*ExternalConnectorsExternalItemContent, error) {
+	newExternalConnectorsExternalItemContent := &ExternalConnectorsExternalItemContent{
+		ODataType: "#microsoft.graph.ExternalConnectorsExternalItemContent",
+	}
+	return newExternalConnectorsExternalItemContent, nil
+}
+
 // ExternalConnectorsIdentity undocumented
 type ExternalConnectorsIdentity struct {
 	// Entity is the base model of ExternalConnectorsIdentity
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Type undocumented
 	Type *ExternalConnectorsIdentityType `json:"type,omitempty"`
+}
+
+func NewExternalConnectorsIdentity() (*ExternalConnectorsIdentity, error) {
+	newExternalConnectorsIdentity := &ExternalConnectorsIdentity{
+		ODataType: "#microsoft.graph.ExternalConnectorsIdentity",
+	}
+	return newExternalConnectorsIdentity, nil
 }
 
 // ExternalConnectorsProperties undocumented
 type ExternalConnectorsProperties struct {
 	// Object is the base model of ExternalConnectorsProperties
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewExternalConnectorsProperties() (*ExternalConnectorsProperties, error) {
+	newExternalConnectorsProperties := &ExternalConnectorsProperties{
+		ODataType: "#microsoft.graph.ExternalConnectorsProperties",
+	}
+	return newExternalConnectorsProperties, nil
 }
 
 // ExternalConnectorsProperty undocumented
 type ExternalConnectorsProperty struct {
 	// Object is the base model of ExternalConnectorsProperty
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Aliases undocumented
 	Aliases []string `json:"aliases,omitempty"`
 	// IsQueryable undocumented
@@ -164,12 +292,28 @@ type ExternalConnectorsProperty struct {
 	Type *ExternalConnectorsPropertyType `json:"type,omitempty"`
 }
 
+func NewExternalConnectorsProperty() (*ExternalConnectorsProperty, error) {
+	newExternalConnectorsProperty := &ExternalConnectorsProperty{
+		ODataType: "#microsoft.graph.ExternalConnectorsProperty",
+	}
+	return newExternalConnectorsProperty, nil
+}
+
 // ExternalConnectorsSchema undocumented
 type ExternalConnectorsSchema struct {
 	// Entity is the base model of ExternalConnectorsSchema
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// BaseType undocumented
 	BaseType *string `json:"baseType,omitempty"`
 	// Properties undocumented
 	Properties []ExternalConnectorsProperty `json:"properties,omitempty"`
+}
+
+func NewExternalConnectorsSchema() (*ExternalConnectorsSchema, error) {
+	newExternalConnectorsSchema := &ExternalConnectorsSchema{
+		ODataType: "#microsoft.graph.ExternalConnectorsSchema",
+	}
+	return newExternalConnectorsSchema, nil
 }

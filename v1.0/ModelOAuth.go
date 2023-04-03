@@ -6,6 +6,8 @@ package msgraph
 type OAuth2PermissionGrant struct {
 	// Entity is the base model of OAuth2PermissionGrant
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ClientID undocumented
 	ClientID *string `json:"clientId,omitempty"`
 	// ConsentType undocumented
@@ -16,4 +18,11 @@ type OAuth2PermissionGrant struct {
 	ResourceID *string `json:"resourceId,omitempty"`
 	// Scope undocumented
 	Scope *string `json:"scope,omitempty"`
+}
+
+func NewOAuth2PermissionGrant() (*OAuth2PermissionGrant, error) {
+	newOAuth2PermissionGrant := &OAuth2PermissionGrant{
+		ODataType: "#microsoft.graph.OAuth2PermissionGrant",
+	}
+	return newOAuth2PermissionGrant, nil
 }

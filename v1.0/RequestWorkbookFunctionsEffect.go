@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsEffectRequestBuilder struct{ BaseRequestBuilder }
 
-// Effect action undocumented
+// Effect action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Effect(reqObj *WorkbookFunctionsEffectRequestParameter) *WorkbookFunctionsEffectRequestBuilder {
 	bb := &WorkbookFunctionsEffectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Effect"

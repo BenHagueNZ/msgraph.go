@@ -8,6 +8,8 @@ import "time"
 type ChangeNotification struct {
 	// Object is the base model of ChangeNotification
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ChangeType undocumented
 	ChangeType *ChangeType `json:"changeType,omitempty"`
 	// ClientState undocumented
@@ -30,20 +32,38 @@ type ChangeNotification struct {
 	TenantID *UUID `json:"tenantId,omitempty"`
 }
 
+func NewChangeNotification() (*ChangeNotification, error) {
+	newChangeNotification := &ChangeNotification{
+		ODataType: "#microsoft.graph.ChangeNotification",
+	}
+	return newChangeNotification, nil
+}
+
 // ChangeNotificationCollection undocumented
 type ChangeNotificationCollection struct {
 	// Object is the base model of ChangeNotificationCollection
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ValidationTokens undocumented
 	ValidationTokens []string `json:"validationTokens,omitempty"`
 	// Value undocumented
 	Value []ChangeNotification `json:"value,omitempty"`
 }
 
+func NewChangeNotificationCollection() (*ChangeNotificationCollection, error) {
+	newChangeNotificationCollection := &ChangeNotificationCollection{
+		ODataType: "#microsoft.graph.ChangeNotificationCollection",
+	}
+	return newChangeNotificationCollection, nil
+}
+
 // ChangeNotificationEncryptedContent undocumented
 type ChangeNotificationEncryptedContent struct {
 	// Object is the base model of ChangeNotificationEncryptedContent
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Data undocumented
 	Data *string `json:"data,omitempty"`
 	// DataKey undocumented
@@ -56,14 +76,30 @@ type ChangeNotificationEncryptedContent struct {
 	EncryptionCertificateThumbprint *string `json:"encryptionCertificateThumbprint,omitempty"`
 }
 
+func NewChangeNotificationEncryptedContent() (*ChangeNotificationEncryptedContent, error) {
+	newChangeNotificationEncryptedContent := &ChangeNotificationEncryptedContent{
+		ODataType: "#microsoft.graph.ChangeNotificationEncryptedContent",
+	}
+	return newChangeNotificationEncryptedContent, nil
+}
+
 // ChangeTrackedEntity undocumented
 type ChangeTrackedEntity struct {
 	// Entity is the base model of ChangeTrackedEntity
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// LastModifiedBy undocumented
 	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+}
+
+func NewChangeTrackedEntity() (*ChangeTrackedEntity, error) {
+	newChangeTrackedEntity := &ChangeTrackedEntity{
+		ODataType: "#microsoft.graph.ChangeTrackedEntity",
+	}
+	return newChangeTrackedEntity, nil
 }

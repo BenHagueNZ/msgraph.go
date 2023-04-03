@@ -376,7 +376,7 @@ func (r *SearchResultRequest) Delete(ctx context.Context) error {
 
 type SearchEntityQueryRequestBuilder struct{ BaseRequestBuilder }
 
-// Query action undocumented
+// Query action undocumentedrac
 func (b *SearchEntityRequestBuilder) Query(reqObj *SearchEntityQueryRequestParameter) *SearchEntityQueryRequestBuilder {
 	bb := &SearchEntityQueryRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Query"

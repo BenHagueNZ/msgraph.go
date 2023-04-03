@@ -6,8 +6,17 @@ package msgraph
 type PrincipalResourceMembershipsScope struct {
 	// AccessReviewScope is the base model of PrincipalResourceMembershipsScope
 	AccessReviewScope
+
+	ODataType string `json:"@odata.type"`
 	// PrincipalScopes undocumented
 	PrincipalScopes []AccessReviewScope `json:"principalScopes,omitempty"`
 	// ResourceScopes undocumented
 	ResourceScopes []AccessReviewScope `json:"resourceScopes,omitempty"`
+}
+
+func NewPrincipalResourceMembershipsScope() (*PrincipalResourceMembershipsScope, error) {
+	newPrincipalResourceMembershipsScope := &PrincipalResourceMembershipsScope{
+		ODataType: "#microsoft.graph.PrincipalResourceMembershipsScope",
+	}
+	return newPrincipalResourceMembershipsScope, nil
 }

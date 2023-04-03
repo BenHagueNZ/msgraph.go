@@ -6,20 +6,38 @@ package msgraph
 type Folder struct {
 	// Object is the base model of Folder
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ChildCount undocumented
 	ChildCount *int `json:"childCount,omitempty"`
 	// View undocumented
 	View *FolderView `json:"view,omitempty"`
 }
 
+func NewFolder() (*Folder, error) {
+	newFolder := &Folder{
+		ODataType: "#microsoft.graph.Folder",
+	}
+	return newFolder, nil
+}
+
 // FolderView undocumented
 type FolderView struct {
 	// Object is the base model of FolderView
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// SortBy undocumented
 	SortBy *string `json:"sortBy,omitempty"`
 	// SortOrder undocumented
 	SortOrder *string `json:"sortOrder,omitempty"`
 	// ViewType undocumented
 	ViewType *string `json:"viewType,omitempty"`
+}
+
+func NewFolderView() (*FolderView, error) {
+	newFolderView := &FolderView{
+		ODataType: "#microsoft.graph.FolderView",
+	}
+	return newFolderView, nil
 }

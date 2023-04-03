@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsAscRequestBuilder struct{ BaseRequestBuilder }
 
-// Asc action undocumented
+// Asc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Asc(reqObj *WorkbookFunctionsAscRequestParameter) *WorkbookFunctionsAscRequestBuilder {
 	bb := &WorkbookFunctionsAscRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Asc"

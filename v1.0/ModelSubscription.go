@@ -8,6 +8,8 @@ import "time"
 type Subscription struct {
 	// Entity is the base model of Subscription
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ApplicationID undocumented
 	ApplicationID *string `json:"applicationId,omitempty"`
 	// ChangeType undocumented
@@ -36,4 +38,11 @@ type Subscription struct {
 	NotificationURLAppID *string `json:"notificationUrlAppId,omitempty"`
 	// Resource undocumented
 	Resource *string `json:"resource,omitempty"`
+}
+
+func NewSubscription() (*Subscription, error) {
+	newSubscription := &Subscription{
+		ODataType: "#microsoft.graph.Subscription",
+	}
+	return newSubscription, nil
 }

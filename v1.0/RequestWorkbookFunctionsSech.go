@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSechRequestBuilder struct{ BaseRequestBuilder }
 
-// Sech action undocumented
+// Sech action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Sech(reqObj *WorkbookFunctionsSechRequestParameter) *WorkbookFunctionsSechRequestBuilder {
 	bb := &WorkbookFunctionsSechRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Sech"

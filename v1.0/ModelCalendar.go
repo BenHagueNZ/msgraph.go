@@ -6,6 +6,8 @@ package msgraph
 type Calendar struct {
 	// Entity is the base model of Calendar
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AllowedOnlineMeetingProviders undocumented
 	AllowedOnlineMeetingProviders []OnlineMeetingProviderType `json:"allowedOnlineMeetingProviders,omitempty"`
 	// CanEdit undocumented
@@ -44,10 +46,19 @@ type Calendar struct {
 	SingleValueExtendedProperties []SingleValueLegacyExtendedProperty `json:"singleValueExtendedProperties,omitempty"`
 }
 
+func NewCalendar() (*Calendar, error) {
+	newCalendar := &Calendar{
+		ODataType: "#microsoft.graph.Calendar",
+	}
+	return newCalendar, nil
+}
+
 // CalendarGroup undocumented
 type CalendarGroup struct {
 	// Entity is the base model of CalendarGroup
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ChangeKey undocumented
 	ChangeKey *string `json:"changeKey,omitempty"`
 	// ClassID undocumented
@@ -58,10 +69,19 @@ type CalendarGroup struct {
 	Calendars []Calendar `json:"calendars,omitempty"`
 }
 
+func NewCalendarGroup() (*CalendarGroup, error) {
+	newCalendarGroup := &CalendarGroup{
+		ODataType: "#microsoft.graph.CalendarGroup",
+	}
+	return newCalendarGroup, nil
+}
+
 // CalendarPermission undocumented
 type CalendarPermission struct {
 	// Entity is the base model of CalendarPermission
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AllowedRoles undocumented
 	AllowedRoles []CalendarRoleType `json:"allowedRoles,omitempty"`
 	// EmailAddress undocumented
@@ -74,10 +94,19 @@ type CalendarPermission struct {
 	Role *CalendarRoleType `json:"role,omitempty"`
 }
 
+func NewCalendarPermission() (*CalendarPermission, error) {
+	newCalendarPermission := &CalendarPermission{
+		ODataType: "#microsoft.graph.CalendarPermission",
+	}
+	return newCalendarPermission, nil
+}
+
 // CalendarSharingMessage undocumented
 type CalendarSharingMessage struct {
 	// Message is the base model of CalendarSharingMessage
 	Message
+
+	ODataType string `json:"@odata.type"`
 	// CanAccept undocumented
 	CanAccept *bool `json:"canAccept,omitempty"`
 	// SharingMessageAction undocumented
@@ -88,14 +117,30 @@ type CalendarSharingMessage struct {
 	SuggestedCalendarName *string `json:"suggestedCalendarName,omitempty"`
 }
 
+func NewCalendarSharingMessage() (*CalendarSharingMessage, error) {
+	newCalendarSharingMessage := &CalendarSharingMessage{
+		ODataType: "#microsoft.graph.CalendarSharingMessage",
+	}
+	return newCalendarSharingMessage, nil
+}
+
 // CalendarSharingMessageAction undocumented
 type CalendarSharingMessageAction struct {
 	// Object is the base model of CalendarSharingMessageAction
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Action undocumented
 	Action *CalendarSharingAction `json:"action,omitempty"`
 	// ActionType undocumented
 	ActionType *CalendarSharingActionType `json:"actionType,omitempty"`
 	// Importance undocumented
 	Importance *CalendarSharingActionImportance `json:"importance,omitempty"`
+}
+
+func NewCalendarSharingMessageAction() (*CalendarSharingMessageAction, error) {
+	newCalendarSharingMessageAction := &CalendarSharingMessageAction{
+		ODataType: "#microsoft.graph.CalendarSharingMessageAction",
+	}
+	return newCalendarSharingMessageAction, nil
 }

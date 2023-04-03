@@ -6,8 +6,17 @@ package msgraph
 type AttributeRuleMembers struct {
 	// SubjectSet is the base model of AttributeRuleMembers
 	SubjectSet
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// MembershipRule undocumented
 	MembershipRule *string `json:"membershipRule,omitempty"`
+}
+
+func NewAttributeRuleMembers() (*AttributeRuleMembers, error) {
+	newAttributeRuleMembers := &AttributeRuleMembers{
+		ODataType: "#microsoft.graph.AttributeRuleMembers",
+	}
+	return newAttributeRuleMembers, nil
 }

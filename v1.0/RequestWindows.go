@@ -1161,7 +1161,7 @@ func (r *WindowsWebAppRequest) Delete(ctx context.Context) error {
 
 type WindowsAutopilotDeviceIdentityAssignUserToDeviceRequestBuilder struct{ BaseRequestBuilder }
 
-// AssignUserToDevice action undocumented
+// AssignUserToDevice action undocumentedrav
 func (b *WindowsAutopilotDeviceIdentityRequestBuilder) AssignUserToDevice(reqObj *WindowsAutopilotDeviceIdentityAssignUserToDeviceRequestParameter) *WindowsAutopilotDeviceIdentityAssignUserToDeviceRequestBuilder {
 	bb := &WindowsAutopilotDeviceIdentityAssignUserToDeviceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AssignUserToDevice"
@@ -1183,7 +1183,7 @@ func (r *WindowsAutopilotDeviceIdentityAssignUserToDeviceRequest) Post(ctx conte
 
 type WindowsAutopilotDeviceIdentityUnassignUserFromDeviceRequestBuilder struct{ BaseRequestBuilder }
 
-// UnassignUserFromDevice action undocumented
+// UnassignUserFromDevice action undocumentedrav
 func (b *WindowsAutopilotDeviceIdentityRequestBuilder) UnassignUserFromDevice(reqObj *WindowsAutopilotDeviceIdentityUnassignUserFromDeviceRequestParameter) *WindowsAutopilotDeviceIdentityUnassignUserFromDeviceRequestBuilder {
 	bb := &WindowsAutopilotDeviceIdentityUnassignUserFromDeviceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/UnassignUserFromDevice"
@@ -1205,7 +1205,7 @@ func (r *WindowsAutopilotDeviceIdentityUnassignUserFromDeviceRequest) Post(ctx c
 
 type WindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequestBuilder struct{ BaseRequestBuilder }
 
-// UpdateDeviceProperties action undocumented
+// UpdateDeviceProperties action undocumentedrav
 func (b *WindowsAutopilotDeviceIdentityRequestBuilder) UpdateDeviceProperties(reqObj *WindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequestParameter) *WindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequestBuilder {
 	bb := &WindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/UpdateDeviceProperties"
@@ -1227,7 +1227,7 @@ func (r *WindowsAutopilotDeviceIdentityUpdateDevicePropertiesRequest) Post(ctx c
 
 type WindowsInformationProtectionAssignRequestBuilder struct{ BaseRequestBuilder }
 
-// Assign action undocumented
+// Assign action undocumentedrav
 func (b *WindowsInformationProtectionRequestBuilder) Assign(reqObj *WindowsInformationProtectionAssignRequestParameter) *WindowsInformationProtectionAssignRequestBuilder {
 	bb := &WindowsInformationProtectionAssignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Assign"

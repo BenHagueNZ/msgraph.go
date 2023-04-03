@@ -6,16 +6,34 @@ package msgraph
 type InferenceClassification struct {
 	// Entity is the base model of InferenceClassification
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Overrides undocumented
 	Overrides []InferenceClassificationOverride `json:"overrides,omitempty"`
+}
+
+func NewInferenceClassification() (*InferenceClassification, error) {
+	newInferenceClassification := &InferenceClassification{
+		ODataType: "#microsoft.graph.InferenceClassification",
+	}
+	return newInferenceClassification, nil
 }
 
 // InferenceClassificationOverride undocumented
 type InferenceClassificationOverride struct {
 	// Entity is the base model of InferenceClassificationOverride
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ClassifyAs undocumented
 	ClassifyAs *InferenceClassificationType `json:"classifyAs,omitempty"`
 	// SenderEmailAddress undocumented
 	SenderEmailAddress *EmailAddress `json:"senderEmailAddress,omitempty"`
+}
+
+func NewInferenceClassificationOverride() (*InferenceClassificationOverride, error) {
+	newInferenceClassificationOverride := &InferenceClassificationOverride{
+		ODataType: "#microsoft.graph.InferenceClassificationOverride",
+	}
+	return newInferenceClassificationOverride, nil
 }

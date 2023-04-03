@@ -8,6 +8,8 @@ import "time"
 type SubjectRightsRequestObject struct {
 	// Entity is the base model of SubjectRightsRequestObject
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AssignedTo undocumented
 	AssignedTo *Identity `json:"assignedTo,omitempty"`
 	// ClosedDateTime undocumented
@@ -48,10 +50,19 @@ type SubjectRightsRequestObject struct {
 	Team *Team `json:"team,omitempty"`
 }
 
+func NewSubjectRightsRequestObject() (*SubjectRightsRequestObject, error) {
+	newSubjectRightsRequestObject := &SubjectRightsRequestObject{
+		ODataType: "#microsoft.graph.SubjectRightsRequestObject",
+	}
+	return newSubjectRightsRequestObject, nil
+}
+
 // SubjectRightsRequestDetail undocumented
 type SubjectRightsRequestDetail struct {
 	// Object is the base model of SubjectRightsRequestDetail
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ExcludedItemCount undocumented
 	ExcludedItemCount *int `json:"excludedItemCount,omitempty"`
 	// InsightCounts undocumented
@@ -68,10 +79,19 @@ type SubjectRightsRequestDetail struct {
 	TotalItemSize *int `json:"totalItemSize,omitempty"`
 }
 
+func NewSubjectRightsRequestDetail() (*SubjectRightsRequestDetail, error) {
+	newSubjectRightsRequestDetail := &SubjectRightsRequestDetail{
+		ODataType: "#microsoft.graph.SubjectRightsRequestDetail",
+	}
+	return newSubjectRightsRequestDetail, nil
+}
+
 // SubjectRightsRequestHistory undocumented
 type SubjectRightsRequestHistory struct {
 	// Object is the base model of SubjectRightsRequestHistory
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ChangedBy undocumented
 	ChangedBy *IdentitySet `json:"changedBy,omitempty"`
 	// EventDateTime undocumented
@@ -84,10 +104,19 @@ type SubjectRightsRequestHistory struct {
 	Type *string `json:"type,omitempty"`
 }
 
+func NewSubjectRightsRequestHistory() (*SubjectRightsRequestHistory, error) {
+	newSubjectRightsRequestHistory := &SubjectRightsRequestHistory{
+		ODataType: "#microsoft.graph.SubjectRightsRequestHistory",
+	}
+	return newSubjectRightsRequestHistory, nil
+}
+
 // SubjectRightsRequestStageDetail undocumented
 type SubjectRightsRequestStageDetail struct {
 	// Object is the base model of SubjectRightsRequestStageDetail
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Error undocumented
 	Error *PublicError `json:"error,omitempty"`
 	// Stage undocumented
@@ -96,8 +125,24 @@ type SubjectRightsRequestStageDetail struct {
 	Status *SubjectRightsRequestStageStatus `json:"status,omitempty"`
 }
 
+func NewSubjectRightsRequestStageDetail() (*SubjectRightsRequestStageDetail, error) {
+	newSubjectRightsRequestStageDetail := &SubjectRightsRequestStageDetail{
+		ODataType: "#microsoft.graph.SubjectRightsRequestStageDetail",
+	}
+	return newSubjectRightsRequestStageDetail, nil
+}
+
 // SubjectSet undocumented
 type SubjectSet struct {
 	// Object is the base model of SubjectSet
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewSubjectSet() (*SubjectSet, error) {
+	newSubjectSet := &SubjectSet{
+		ODataType: "#microsoft.graph.SubjectSet",
+	}
+	return newSubjectSet, nil
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsFixedRequestBuilder struct{ BaseRequestBuilder }
 
-// Fixed action undocumented
+// Fixed action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Fixed(reqObj *WorkbookFunctionsFixedRequestParameter) *WorkbookFunctionsFixedRequestBuilder {
 	bb := &WorkbookFunctionsFixedRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Fixed"

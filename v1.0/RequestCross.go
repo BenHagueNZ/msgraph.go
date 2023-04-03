@@ -270,7 +270,7 @@ func (r *CrossTenantAccessPolicyTargetConfigurationRequest) Delete(ctx context.C
 
 type CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestBuilder struct{ BaseRequestBuilder }
 
-// ResetToSystemDefault action undocumented
+// ResetToSystemDefault action undocumentedrav
 func (b *CrossTenantAccessPolicyConfigurationDefaultRequestBuilder) ResetToSystemDefault(reqObj *CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestParameter) *CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestBuilder {
 	bb := &CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ResetToSystemDefault"

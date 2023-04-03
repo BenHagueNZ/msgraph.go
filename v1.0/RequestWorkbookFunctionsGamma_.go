@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsGamma_DistRequestBuilder struct{ BaseRequestBuilder }
 
-// Gamma_Dist action undocumented
+// Gamma_Dist action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Gamma_Dist(reqObj *WorkbookFunctionsGamma_DistRequestParameter) *WorkbookFunctionsGamma_DistRequestBuilder {
 	bb := &WorkbookFunctionsGamma_DistRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Gamma_Dist"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsGamma_DistRequest) Post(ctx context.Context) (resObj *
 
 type WorkbookFunctionsGamma_InvRequestBuilder struct{ BaseRequestBuilder }
 
-// Gamma_Inv action undocumented
+// Gamma_Inv action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Gamma_Inv(reqObj *WorkbookFunctionsGamma_InvRequestParameter) *WorkbookFunctionsGamma_InvRequestBuilder {
 	bb := &WorkbookFunctionsGamma_InvRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Gamma_Inv"

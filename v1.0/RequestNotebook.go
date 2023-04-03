@@ -72,7 +72,7 @@ func (r *NotebookLinksRequest) Delete(ctx context.Context) error {
 
 type NotebookCopyNotebookRequestBuilder struct{ BaseRequestBuilder }
 
-// CopyNotebook action undocumented
+// CopyNotebook action undocumentedras
 func (b *NotebookRequestBuilder) CopyNotebook(reqObj *NotebookCopyNotebookRequestParameter) *NotebookCopyNotebookRequestBuilder {
 	bb := &NotebookCopyNotebookRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CopyNotebook"

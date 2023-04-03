@@ -6,6 +6,8 @@ package msgraph
 type RoleAssignment struct {
 	// Entity is the base model of RoleAssignment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -16,10 +18,19 @@ type RoleAssignment struct {
 	RoleDefinition *RoleDefinition `json:"roleDefinition,omitempty"`
 }
 
+func NewRoleAssignment() (*RoleAssignment, error) {
+	newRoleAssignment := &RoleAssignment{
+		ODataType: "#microsoft.graph.RoleAssignment",
+	}
+	return newRoleAssignment, nil
+}
+
 // RoleDefinition undocumented
 type RoleDefinition struct {
 	// Entity is the base model of RoleDefinition
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -32,20 +43,45 @@ type RoleDefinition struct {
 	RoleAssignments []RoleAssignment `json:"roleAssignments,omitempty"`
 }
 
+func NewRoleDefinition() (*RoleDefinition, error) {
+	newRoleDefinition := &RoleDefinition{
+		ODataType: "#microsoft.graph.RoleDefinition",
+	}
+	return newRoleDefinition, nil
+}
+
 // RoleManagement undocumented
 type RoleManagement struct {
 	// Object is the base model of RoleManagement
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Directory undocumented
 	Directory *RbacApplication `json:"directory,omitempty"`
 	// EntitlementManagement undocumented
 	EntitlementManagement *RbacApplication `json:"entitlementManagement,omitempty"`
 }
 
+func NewRoleManagement() (*RoleManagement, error) {
+	newRoleManagement := &RoleManagement{
+		ODataType: "#microsoft.graph.RoleManagement",
+	}
+	return newRoleManagement, nil
+}
+
 // RolePermission undocumented
 type RolePermission struct {
 	// Object is the base model of RolePermission
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ResourceActions undocumented
 	ResourceActions []ResourceAction `json:"resourceActions,omitempty"`
+}
+
+func NewRolePermission() (*RolePermission, error) {
+	newRolePermission := &RolePermission{
+		ODataType: "#microsoft.graph.RolePermission",
+	}
+	return newRolePermission, nil
 }

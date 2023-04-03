@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsUsdollarRequestBuilder struct{ BaseRequestBuilder }
 
-// Usdollar action undocumented
+// Usdollar action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Usdollar(reqObj *WorkbookFunctionsUsdollarRequestParameter) *WorkbookFunctionsUsdollarRequestBuilder {
 	bb := &WorkbookFunctionsUsdollarRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Usdollar"

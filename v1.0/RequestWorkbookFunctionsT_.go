@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsT_DistRequestBuilder struct{ BaseRequestBuilder }
 
-// T_Dist action undocumented
+// T_Dist action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) T_Dist(reqObj *WorkbookFunctionsT_DistRequestParameter) *WorkbookFunctionsT_DistRequestBuilder {
 	bb := &WorkbookFunctionsT_DistRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/T_Dist"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsT_DistRequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsT_Dist_2TRequestBuilder struct{ BaseRequestBuilder }
 
-// T_Dist_2T action undocumented
+// T_Dist_2T action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) T_Dist_2T(reqObj *WorkbookFunctionsT_Dist_2TRequestParameter) *WorkbookFunctionsT_Dist_2TRequestBuilder {
 	bb := &WorkbookFunctionsT_Dist_2TRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/T_Dist_2T"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsT_Dist_2TRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsT_Dist_RTRequestBuilder struct{ BaseRequestBuilder }
 
-// T_Dist_RT action undocumented
+// T_Dist_RT action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) T_Dist_RT(reqObj *WorkbookFunctionsT_Dist_RTRequestParameter) *WorkbookFunctionsT_Dist_RTRequestBuilder {
 	bb := &WorkbookFunctionsT_Dist_RTRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/T_Dist_RT"
@@ -75,7 +75,7 @@ func (r *WorkbookFunctionsT_Dist_RTRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsT_InvRequestBuilder struct{ BaseRequestBuilder }
 
-// T_Inv action undocumented
+// T_Inv action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) T_Inv(reqObj *WorkbookFunctionsT_InvRequestParameter) *WorkbookFunctionsT_InvRequestBuilder {
 	bb := &WorkbookFunctionsT_InvRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/T_Inv"
@@ -98,7 +98,7 @@ func (r *WorkbookFunctionsT_InvRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsT_Inv_2TRequestBuilder struct{ BaseRequestBuilder }
 
-// T_Inv_2T action undocumented
+// T_Inv_2T action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) T_Inv_2T(reqObj *WorkbookFunctionsT_Inv_2TRequestParameter) *WorkbookFunctionsT_Inv_2TRequestBuilder {
 	bb := &WorkbookFunctionsT_Inv_2TRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/T_Inv_2T"

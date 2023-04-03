@@ -5,3 +5,10 @@ package msgraph
 // SubscriptionReauthorizeRequestParameter undocumented
 type SubscriptionReauthorizeRequestParameter struct {
 }
+
+// Subscription is navigation property rn
+func (b *SubscriptionRequestBuilder) Subscription() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}

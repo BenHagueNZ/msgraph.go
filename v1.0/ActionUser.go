@@ -111,7 +111,7 @@ type UserTeamworkSendActivityNotificationRequestParameter struct {
 	TemplateParameters []KeyValuePair `json:"templateParameters,omitempty"`
 }
 
-// Activities returns request builder for UserActivity collection
+// Activities returns request builder for UserActivity collection rcn
 func (b *UserRequestBuilder) Activities() *UserActivitiesCollectionRequestBuilder {
 	bb := &UserActivitiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/activities"
@@ -214,7 +214,7 @@ func (r *UserActivitiesCollectionRequest) Add(ctx context.Context, reqObj *UserA
 	return
 }
 
-// AgreementAcceptances returns request builder for AgreementAcceptance collection
+// AgreementAcceptances returns request builder for AgreementAcceptance collection rcn
 func (b *UserRequestBuilder) AgreementAcceptances() *UserAgreementAcceptancesCollectionRequestBuilder {
 	bb := &UserAgreementAcceptancesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/agreementAcceptances"
@@ -317,7 +317,7 @@ func (r *UserAgreementAcceptancesCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// AppRoleAssignments returns request builder for AppRoleAssignment collection
+// AppRoleAssignments returns request builder for AppRoleAssignment collection rcn
 func (b *UserRequestBuilder) AppRoleAssignments() *UserAppRoleAssignmentsCollectionRequestBuilder {
 	bb := &UserAppRoleAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appRoleAssignments"
@@ -420,21 +420,21 @@ func (r *UserAppRoleAssignmentsCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Authentication is navigation property
+// Authentication is navigation property rn
 func (b *UserRequestBuilder) Authentication() *AuthenticationRequestBuilder {
 	bb := &AuthenticationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/authentication"
 	return bb
 }
 
-// Calendar is navigation property
+// Calendar is navigation property rn
 func (b *UserRequestBuilder) Calendar() *CalendarRequestBuilder {
 	bb := &CalendarRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/calendar"
 	return bb
 }
 
-// CalendarGroups returns request builder for CalendarGroup collection
+// CalendarGroups returns request builder for CalendarGroup collection rcn
 func (b *UserRequestBuilder) CalendarGroups() *UserCalendarGroupsCollectionRequestBuilder {
 	bb := &UserCalendarGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/calendarGroups"
@@ -537,7 +537,7 @@ func (r *UserCalendarGroupsCollectionRequest) Add(ctx context.Context, reqObj *C
 	return
 }
 
-// CalendarView returns request builder for Event collection
+// CalendarView returns request builder for Event collection rcn
 func (b *UserRequestBuilder) CalendarView() *UserCalendarViewCollectionRequestBuilder {
 	bb := &UserCalendarViewCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/calendarView"
@@ -640,7 +640,7 @@ func (r *UserCalendarViewCollectionRequest) Add(ctx context.Context, reqObj *Eve
 	return
 }
 
-// Calendars returns request builder for Calendar collection
+// Calendars returns request builder for Calendar collection rcn
 func (b *UserRequestBuilder) Calendars() *UserCalendarsCollectionRequestBuilder {
 	bb := &UserCalendarsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/calendars"
@@ -743,7 +743,7 @@ func (r *UserCalendarsCollectionRequest) Add(ctx context.Context, reqObj *Calend
 	return
 }
 
-// Chats returns request builder for Chat collection
+// Chats returns request builder for Chat collection rcn
 func (b *UserRequestBuilder) Chats() *UserChatsCollectionRequestBuilder {
 	bb := &UserChatsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/chats"
@@ -846,7 +846,7 @@ func (r *UserChatsCollectionRequest) Add(ctx context.Context, reqObj *Chat) (res
 	return
 }
 
-// ContactFolders returns request builder for ContactFolder collection
+// ContactFolders returns request builder for ContactFolder collection rcn
 func (b *UserRequestBuilder) ContactFolders() *UserContactFoldersCollectionRequestBuilder {
 	bb := &UserContactFoldersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/contactFolders"
@@ -949,7 +949,7 @@ func (r *UserContactFoldersCollectionRequest) Add(ctx context.Context, reqObj *C
 	return
 }
 
-// Contacts returns request builder for Contact collection
+// Contacts returns request builder for Contact collection rcn
 func (b *UserRequestBuilder) Contacts() *UserContactsCollectionRequestBuilder {
 	bb := &UserContactsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/contacts"
@@ -1052,7 +1052,7 @@ func (r *UserContactsCollectionRequest) Add(ctx context.Context, reqObj *Contact
 	return
 }
 
-// CreatedObjects returns request builder for DirectoryObject collection
+// CreatedObjects returns request builder for DirectoryObject collection rcn
 func (b *UserRequestBuilder) CreatedObjects() *UserCreatedObjectsCollectionRequestBuilder {
 	bb := &UserCreatedObjectsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/createdObjects"
@@ -1155,7 +1155,7 @@ func (r *UserCreatedObjectsCollectionRequest) Add(ctx context.Context, reqObj *D
 	return
 }
 
-// DeviceManagementTroubleshootingEvents returns request builder for DeviceManagementTroubleshootingEvent collection
+// DeviceManagementTroubleshootingEvents returns request builder for DeviceManagementTroubleshootingEvent collection rcn
 func (b *UserRequestBuilder) DeviceManagementTroubleshootingEvents() *UserDeviceManagementTroubleshootingEventsCollectionRequestBuilder {
 	bb := &UserDeviceManagementTroubleshootingEventsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceManagementTroubleshootingEvents"
@@ -1258,7 +1258,7 @@ func (r *UserDeviceManagementTroubleshootingEventsCollectionRequest) Add(ctx con
 	return
 }
 
-// DirectReports returns request builder for DirectoryObject collection
+// DirectReports returns request builder for DirectoryObject collection rcn
 func (b *UserRequestBuilder) DirectReports() *UserDirectReportsCollectionRequestBuilder {
 	bb := &UserDirectReportsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/directReports"
@@ -1361,14 +1361,14 @@ func (r *UserDirectReportsCollectionRequest) Add(ctx context.Context, reqObj *Di
 	return
 }
 
-// Drive is navigation property
+// Drive is navigation property rn
 func (b *UserRequestBuilder) Drive() *DriveRequestBuilder {
 	bb := &DriveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/drive"
 	return bb
 }
 
-// Drives returns request builder for Drive collection
+// Drives returns request builder for Drive collection rcn
 func (b *UserRequestBuilder) Drives() *UserDrivesCollectionRequestBuilder {
 	bb := &UserDrivesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/drives"
@@ -1471,7 +1471,7 @@ func (r *UserDrivesCollectionRequest) Add(ctx context.Context, reqObj *Drive) (r
 	return
 }
 
-// Events returns request builder for Event collection
+// Events returns request builder for Event collection rcn
 func (b *UserRequestBuilder) Events() *UserEventsCollectionRequestBuilder {
 	bb := &UserEventsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/events"
@@ -1574,7 +1574,7 @@ func (r *UserEventsCollectionRequest) Add(ctx context.Context, reqObj *Event) (r
 	return
 }
 
-// Extensions returns request builder for Extension collection
+// Extensions returns request builder for Extension collection rcn
 func (b *UserRequestBuilder) Extensions() *UserExtensionsCollectionRequestBuilder {
 	bb := &UserExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensions"
@@ -1677,7 +1677,7 @@ func (r *UserExtensionsCollectionRequest) Add(ctx context.Context, reqObj *Exten
 	return
 }
 
-// FollowedSites returns request builder for Site collection
+// FollowedSites returns request builder for Site collection rcn
 func (b *UserRequestBuilder) FollowedSites() *UserFollowedSitesCollectionRequestBuilder {
 	bb := &UserFollowedSitesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/followedSites"
@@ -1780,21 +1780,21 @@ func (r *UserFollowedSitesCollectionRequest) Add(ctx context.Context, reqObj *Si
 	return
 }
 
-// InferenceClassification is navigation property
+// InferenceClassification is navigation property rn
 func (b *UserRequestBuilder) InferenceClassification() *InferenceClassificationRequestBuilder {
 	bb := &InferenceClassificationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/inferenceClassification"
 	return bb
 }
 
-// Insights is navigation property
+// Insights is navigation property rn
 func (b *UserRequestBuilder) Insights() *OfficeGraphInsightsRequestBuilder {
 	bb := &OfficeGraphInsightsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/insights"
 	return bb
 }
 
-// JoinedTeams returns request builder for Team collection
+// JoinedTeams returns request builder for Team collection rcn
 func (b *UserRequestBuilder) JoinedTeams() *UserJoinedTeamsCollectionRequestBuilder {
 	bb := &UserJoinedTeamsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/joinedTeams"
@@ -1897,7 +1897,7 @@ func (r *UserJoinedTeamsCollectionRequest) Add(ctx context.Context, reqObj *Team
 	return
 }
 
-// LicenseDetails returns request builder for LicenseDetails collection
+// LicenseDetails returns request builder for LicenseDetails collection rcn
 func (b *UserRequestBuilder) LicenseDetails() *UserLicenseDetailsCollectionRequestBuilder {
 	bb := &UserLicenseDetailsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/licenseDetails"
@@ -2000,7 +2000,7 @@ func (r *UserLicenseDetailsCollectionRequest) Add(ctx context.Context, reqObj *L
 	return
 }
 
-// MailFolders returns request builder for MailFolder collection
+// MailFolders returns request builder for MailFolder collection rcn
 func (b *UserRequestBuilder) MailFolders() *UserMailFoldersCollectionRequestBuilder {
 	bb := &UserMailFoldersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/mailFolders"
@@ -2103,7 +2103,7 @@ func (r *UserMailFoldersCollectionRequest) Add(ctx context.Context, reqObj *Mail
 	return
 }
 
-// ManagedAppRegistrations returns request builder for ManagedAppRegistration collection
+// ManagedAppRegistrations returns request builder for ManagedAppRegistration collection rcn
 func (b *UserRequestBuilder) ManagedAppRegistrations() *UserManagedAppRegistrationsCollectionRequestBuilder {
 	bb := &UserManagedAppRegistrationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/managedAppRegistrations"
@@ -2206,7 +2206,7 @@ func (r *UserManagedAppRegistrationsCollectionRequest) Add(ctx context.Context, 
 	return
 }
 
-// ManagedDevices returns request builder for ManagedDevice collection
+// ManagedDevices returns request builder for ManagedDevice collection rcn
 func (b *UserRequestBuilder) ManagedDevices() *UserManagedDevicesCollectionRequestBuilder {
 	bb := &UserManagedDevicesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/managedDevices"
@@ -2309,14 +2309,14 @@ func (r *UserManagedDevicesCollectionRequest) Add(ctx context.Context, reqObj *M
 	return
 }
 
-// Manager is navigation property
+// Manager is navigation property rn
 func (b *UserRequestBuilder) Manager() *DirectoryObjectRequestBuilder {
 	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/manager"
 	return bb
 }
 
-// MemberOf returns request builder for DirectoryObject collection
+// MemberOf returns request builder for DirectoryObject collection rcn
 func (b *UserRequestBuilder) MemberOf() *UserMemberOfCollectionRequestBuilder {
 	bb := &UserMemberOfCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/memberOf"
@@ -2419,7 +2419,7 @@ func (r *UserMemberOfCollectionRequest) Add(ctx context.Context, reqObj *Directo
 	return
 }
 
-// Messages returns request builder for Message collection
+// Messages returns request builder for Message collection rcn
 func (b *UserRequestBuilder) Messages() *UserMessagesCollectionRequestBuilder {
 	bb := &UserMessagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/messages"
@@ -2522,7 +2522,7 @@ func (r *UserMessagesCollectionRequest) Add(ctx context.Context, reqObj *Message
 	return
 }
 
-// OAuth2PermissionGrants returns request builder for OAuth2PermissionGrant collection
+// OAuth2PermissionGrants returns request builder for OAuth2PermissionGrant collection rcn
 func (b *UserRequestBuilder) OAuth2PermissionGrants() *UserOAuth2PermissionGrantsCollectionRequestBuilder {
 	bb := &UserOAuth2PermissionGrantsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/oauth2PermissionGrants"
@@ -2625,14 +2625,14 @@ func (r *UserOAuth2PermissionGrantsCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// Onenote is navigation property
+// Onenote is navigation property rn
 func (b *UserRequestBuilder) Onenote() *OnenoteRequestBuilder {
 	bb := &OnenoteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/onenote"
 	return bb
 }
 
-// OnlineMeetings returns request builder for OnlineMeeting collection
+// OnlineMeetings returns request builder for OnlineMeeting collection rcn
 func (b *UserRequestBuilder) OnlineMeetings() *UserOnlineMeetingsCollectionRequestBuilder {
 	bb := &UserOnlineMeetingsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/onlineMeetings"
@@ -2735,14 +2735,14 @@ func (r *UserOnlineMeetingsCollectionRequest) Add(ctx context.Context, reqObj *O
 	return
 }
 
-// Outlook is navigation property
+// Outlook is navigation property rn
 func (b *UserRequestBuilder) Outlook() *OutlookUserRequestBuilder {
 	bb := &OutlookUserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/outlook"
 	return bb
 }
 
-// OwnedDevices returns request builder for DirectoryObject collection
+// OwnedDevices returns request builder for DirectoryObject collection rcn
 func (b *UserRequestBuilder) OwnedDevices() *UserOwnedDevicesCollectionRequestBuilder {
 	bb := &UserOwnedDevicesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/ownedDevices"
@@ -2845,7 +2845,7 @@ func (r *UserOwnedDevicesCollectionRequest) Add(ctx context.Context, reqObj *Dir
 	return
 }
 
-// OwnedObjects returns request builder for DirectoryObject collection
+// OwnedObjects returns request builder for DirectoryObject collection rcn
 func (b *UserRequestBuilder) OwnedObjects() *UserOwnedObjectsCollectionRequestBuilder {
 	bb := &UserOwnedObjectsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/ownedObjects"
@@ -2948,7 +2948,7 @@ func (r *UserOwnedObjectsCollectionRequest) Add(ctx context.Context, reqObj *Dir
 	return
 }
 
-// People returns request builder for Person collection
+// People returns request builder for Person collection rcn
 func (b *UserRequestBuilder) People() *UserPeopleCollectionRequestBuilder {
 	bb := &UserPeopleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/people"
@@ -3051,14 +3051,14 @@ func (r *UserPeopleCollectionRequest) Add(ctx context.Context, reqObj *Person) (
 	return
 }
 
-// Photo is navigation property
+// Photo is navigation property rn
 func (b *UserRequestBuilder) Photo() *ProfilePhotoRequestBuilder {
 	bb := &ProfilePhotoRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/photo"
 	return bb
 }
 
-// Photos returns request builder for ProfilePhoto collection
+// Photos returns request builder for ProfilePhoto collection rcn
 func (b *UserRequestBuilder) Photos() *UserPhotosCollectionRequestBuilder {
 	bb := &UserPhotosCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/photos"
@@ -3161,21 +3161,21 @@ func (r *UserPhotosCollectionRequest) Add(ctx context.Context, reqObj *ProfilePh
 	return
 }
 
-// Planner is navigation property
+// Planner is navigation property rn
 func (b *UserRequestBuilder) Planner() *PlannerUserRequestBuilder {
 	bb := &PlannerUserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/planner"
 	return bb
 }
 
-// Presence is navigation property
+// Presence is navigation property rn
 func (b *UserRequestBuilder) Presence() *PresenceRequestBuilder {
 	bb := &PresenceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/presence"
 	return bb
 }
 
-// RegisteredDevices returns request builder for DirectoryObject collection
+// RegisteredDevices returns request builder for DirectoryObject collection rcn
 func (b *UserRequestBuilder) RegisteredDevices() *UserRegisteredDevicesCollectionRequestBuilder {
 	bb := &UserRegisteredDevicesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/registeredDevices"
@@ -3278,7 +3278,7 @@ func (r *UserRegisteredDevicesCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// ScopedRoleMemberOf returns request builder for ScopedRoleMembership collection
+// ScopedRoleMemberOf returns request builder for ScopedRoleMembership collection rcn
 func (b *UserRequestBuilder) ScopedRoleMemberOf() *UserScopedRoleMemberOfCollectionRequestBuilder {
 	bb := &UserScopedRoleMemberOfCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/scopedRoleMemberOf"
@@ -3381,28 +3381,28 @@ func (r *UserScopedRoleMemberOfCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Settings is navigation property
+// Settings is navigation property rn
 func (b *UserRequestBuilder) Settings() *UserSettingsRequestBuilder {
 	bb := &UserSettingsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/settings"
 	return bb
 }
 
-// Teamwork is navigation property
+// Teamwork is navigation property rn
 func (b *UserRequestBuilder) Teamwork() *UserTeamworkRequestBuilder {
 	bb := &UserTeamworkRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/teamwork"
 	return bb
 }
 
-// Todo is navigation property
+// Todo is navigation property rn
 func (b *UserRequestBuilder) Todo() *TodoRequestBuilder {
 	bb := &TodoRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/todo"
 	return bb
 }
 
-// TransitiveMemberOf returns request builder for DirectoryObject collection
+// TransitiveMemberOf returns request builder for DirectoryObject collection rcn
 func (b *UserRequestBuilder) TransitiveMemberOf() *UserTransitiveMemberOfCollectionRequestBuilder {
 	bb := &UserTransitiveMemberOfCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/transitiveMemberOf"
@@ -3505,7 +3505,7 @@ func (r *UserTransitiveMemberOfCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// HistoryItems returns request builder for ActivityHistoryItem collection
+// HistoryItems returns request builder for ActivityHistoryItem collection rcn
 func (b *UserActivityRequestBuilder) HistoryItems() *UserActivityHistoryItemsCollectionRequestBuilder {
 	bb := &UserActivityHistoryItemsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/historyItems"
@@ -3608,28 +3608,28 @@ func (r *UserActivityHistoryItemsCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// Approval is navigation property
+// Approval is navigation property rn
 func (b *UserConsentRequestObjectRequestBuilder) Approval() *ApprovalRequestBuilder {
 	bb := &ApprovalRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/approval"
 	return bb
 }
 
-// PostAttributeCollection is navigation property
+// PostAttributeCollection is navigation property rn
 func (b *UserFlowAPIConnectorConfigurationRequestBuilder) PostAttributeCollection() *IdentityAPIConnectorRequestBuilder {
 	bb := &IdentityAPIConnectorRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/postAttributeCollection"
 	return bb
 }
 
-// PostFederationSignup is navigation property
+// PostFederationSignup is navigation property rn
 func (b *UserFlowAPIConnectorConfigurationRequestBuilder) PostFederationSignup() *IdentityAPIConnectorRequestBuilder {
 	bb := &IdentityAPIConnectorRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/postFederationSignup"
 	return bb
 }
 
-// DefaultPages returns request builder for UserFlowLanguagePage collection
+// DefaultPages returns request builder for UserFlowLanguagePage collection rcn
 func (b *UserFlowLanguageConfigurationRequestBuilder) DefaultPages() *UserFlowLanguageConfigurationDefaultPagesCollectionRequestBuilder {
 	bb := &UserFlowLanguageConfigurationDefaultPagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/defaultPages"
@@ -3732,7 +3732,7 @@ func (r *UserFlowLanguageConfigurationDefaultPagesCollectionRequest) Add(ctx con
 	return
 }
 
-// OverridesPages returns request builder for UserFlowLanguagePage collection
+// OverridesPages returns request builder for UserFlowLanguagePage collection rcn
 func (b *UserFlowLanguageConfigurationRequestBuilder) OverridesPages() *UserFlowLanguageConfigurationOverridesPagesCollectionRequestBuilder {
 	bb := &UserFlowLanguageConfigurationOverridesPagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/overridesPages"
@@ -3835,7 +3835,7 @@ func (r *UserFlowLanguageConfigurationOverridesPagesCollectionRequest) Add(ctx c
 	return
 }
 
-// DeviceStates returns request builder for DeviceInstallState collection
+// DeviceStates returns request builder for DeviceInstallState collection rcn
 func (b *UserInstallStateSummaryRequestBuilder) DeviceStates() *UserInstallStateSummaryDeviceStatesCollectionRequestBuilder {
 	bb := &UserInstallStateSummaryDeviceStatesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceStates"
@@ -3938,21 +3938,21 @@ func (r *UserInstallStateSummaryDeviceStatesCollectionRequest) Add(ctx context.C
 	return
 }
 
-// Chat is navigation property
+// Chat is navigation property rn
 func (b *UserScopeTeamsAppInstallationRequestBuilder) Chat() *ChatRequestBuilder {
 	bb := &ChatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/chat"
 	return bb
 }
 
-// ShiftPreferences is navigation property
+// ShiftPreferences is navigation property rn
 func (b *UserSettingsRequestBuilder) ShiftPreferences() *ShiftPreferencesRequestBuilder {
 	bb := &ShiftPreferencesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/shiftPreferences"
 	return bb
 }
 
-// AssociatedTeams returns request builder for AssociatedTeamInfo collection
+// AssociatedTeams returns request builder for AssociatedTeamInfo collection rcn
 func (b *UserTeamworkRequestBuilder) AssociatedTeams() *UserTeamworkAssociatedTeamsCollectionRequestBuilder {
 	bb := &UserTeamworkAssociatedTeamsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/associatedTeams"
@@ -4055,7 +4055,7 @@ func (r *UserTeamworkAssociatedTeamsCollectionRequest) Add(ctx context.Context, 
 	return
 }
 
-// InstalledApps returns request builder for UserScopeTeamsAppInstallation collection
+// InstalledApps returns request builder for UserScopeTeamsAppInstallation collection rcn
 func (b *UserTeamworkRequestBuilder) InstalledApps() *UserTeamworkInstalledAppsCollectionRequestBuilder {
 	bb := &UserTeamworkInstalledAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/installedApps"
@@ -4156,4 +4156,259 @@ func (r *UserTeamworkInstalledAppsCollectionRequest) Get(ctx context.Context) ([
 func (r *UserTeamworkInstalledAppsCollectionRequest) Add(ctx context.Context, reqObj *UserScopeTeamsAppInstallation) (resObj *UserScopeTeamsAppInstallation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// User returns request builder for DirectoryObject collection rcn
+func (b *UserRequestBuilder) User() *UserUserCollectionRequestBuilder {
+	bb := &UserUserCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DirectoryObject"
+	return bb
+}
+
+// UserUserCollectionRequestBuilder is request builder for DirectoryObject collection
+type UserUserCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DirectoryObject collection
+func (b *UserUserCollectionRequestBuilder) Request() *UserUserCollectionRequest {
+	return &UserUserCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DirectoryObject item
+func (b *UserUserCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
+	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// UserUserCollectionRequest is request for DirectoryObject collection
+type UserUserCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DirectoryObject collection
+func (r *UserUserCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DirectoryObject
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DirectoryObject
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DirectoryObject collection, max N pages
+func (r *UserUserCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DirectoryObject collection
+func (r *UserUserCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DirectoryObject collection
+func (r *UserUserCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// UserActivity is navigation property rn
+func (b *UserActivityRequestBuilder) UserActivity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// UserExperienceAnalyticsDevicePerformance is navigation property rn
+func (b *UserExperienceAnalyticsDevicePerformanceRequestBuilder) UserExperienceAnalyticsDevicePerformance() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// UserFlowLanguageConfiguration is navigation property rn
+func (b *UserFlowLanguageConfigurationRequestBuilder) UserFlowLanguageConfiguration() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// UserFlowLanguagePage is navigation property rn
+func (b *UserFlowLanguagePageRequestBuilder) UserFlowLanguagePage() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// UserInstallStateSummary is navigation property rn
+func (b *UserInstallStateSummaryRequestBuilder) UserInstallStateSummary() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// UserScopeTeamsAppInstallation returns request builder for TeamsAppInstallation collection rcn
+func (b *UserScopeTeamsAppInstallationRequestBuilder) UserScopeTeamsAppInstallation() *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder {
+	bb := &UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/TeamsAppInstallation"
+	return bb
+}
+
+// UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder is request builder for TeamsAppInstallation collection
+type UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for TeamsAppInstallation collection
+func (b *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder) Request() *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest {
+	return &UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for TeamsAppInstallation item
+func (b *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequestBuilder) ID(id string) *TeamsAppInstallationRequestBuilder {
+	bb := &TeamsAppInstallationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest is request for TeamsAppInstallation collection
+type UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for TeamsAppInstallation collection
+func (r *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TeamsAppInstallation, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []TeamsAppInstallation
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []TeamsAppInstallation
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for TeamsAppInstallation collection, max N pages
+func (r *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest) GetN(ctx context.Context, n int) ([]TeamsAppInstallation, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for TeamsAppInstallation collection
+func (r *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest) Get(ctx context.Context) ([]TeamsAppInstallation, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for TeamsAppInstallation collection
+func (r *UserScopeTeamsAppInstallationUserScopeTeamsAppInstallationCollectionRequest) Add(ctx context.Context, reqObj *TeamsAppInstallation) (resObj *TeamsAppInstallation, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// UserSettings is navigation property rn
+func (b *UserSettingsRequestBuilder) UserSettings() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// UserTeamwork is navigation property rn
+func (b *UserTeamworkRequestBuilder) UserTeamwork() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

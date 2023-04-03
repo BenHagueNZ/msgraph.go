@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsCleanRequestBuilder struct{ BaseRequestBuilder }
 
-// Clean action undocumented
+// Clean action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Clean(reqObj *WorkbookFunctionsCleanRequestParameter) *WorkbookFunctionsCleanRequestBuilder {
 	bb := &WorkbookFunctionsCleanRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Clean"

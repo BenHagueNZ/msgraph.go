@@ -11,6 +11,8 @@ import (
 type User struct {
 	// DirectoryObject is the base model of User
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// AccountEnabled undocumented
 	AccountEnabled *bool `json:"accountEnabled,omitempty"`
 	// AgeGroup undocumented
@@ -251,10 +253,19 @@ type User struct {
 	Todo *Todo `json:"todo,omitempty"`
 }
 
+func NewUser() (*User, error) {
+	newUser := &User{
+		ODataType: "#microsoft.graph.User",
+	}
+	return newUser, nil
+}
+
 // UserActivity undocumented
 type UserActivity struct {
 	// Entity is the base model of UserActivity
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ActivationURL undocumented
 	ActivationURL *string `json:"activationUrl,omitempty"`
 	// ActivitySourceHost undocumented
@@ -285,10 +296,19 @@ type UserActivity struct {
 	HistoryItems []ActivityHistoryItem `json:"historyItems,omitempty"`
 }
 
+func NewUserActivity() (*UserActivity, error) {
+	newUserActivity := &UserActivity{
+		ODataType: "#microsoft.graph.UserActivity",
+	}
+	return newUserActivity, nil
+}
+
 // UserAttributeValuesItem undocumented
 type UserAttributeValuesItem struct {
 	// Object is the base model of UserAttributeValuesItem
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsDefault undocumented
 	IsDefault *bool `json:"isDefault,omitempty"`
 	// Name undocumented
@@ -297,20 +317,38 @@ type UserAttributeValuesItem struct {
 	Value *string `json:"value,omitempty"`
 }
 
+func NewUserAttributeValuesItem() (*UserAttributeValuesItem, error) {
+	newUserAttributeValuesItem := &UserAttributeValuesItem{
+		ODataType: "#microsoft.graph.UserAttributeValuesItem",
+	}
+	return newUserAttributeValuesItem, nil
+}
+
 // UserConsentRequestObject undocumented
 type UserConsentRequestObject struct {
 	// RequestObject is the base model of UserConsentRequestObject
 	RequestObject
+
+	ODataType string `json:"@odata.type"`
 	// Reason undocumented
 	Reason *string `json:"reason,omitempty"`
 	// Approval undocumented
 	Approval *Approval `json:"approval,omitempty"`
 }
 
+func NewUserConsentRequestObject() (*UserConsentRequestObject, error) {
+	newUserConsentRequestObject := &UserConsentRequestObject{
+		ODataType: "#microsoft.graph.UserConsentRequestObject",
+	}
+	return newUserConsentRequestObject, nil
+}
+
 // UserExperienceAnalyticsDevicePerformance undocumented
 type UserExperienceAnalyticsDevicePerformance struct {
 	// Entity is the base model of UserExperienceAnalyticsDevicePerformance
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AverageBlueScreens undocumented
 	AverageBlueScreens *float64 `json:"averageBlueScreens,omitempty"`
 	// AverageRestarts undocumented
@@ -353,20 +391,38 @@ type UserExperienceAnalyticsDevicePerformance struct {
 	StartupPerformanceScore *float64 `json:"startupPerformanceScore,omitempty"`
 }
 
+func NewUserExperienceAnalyticsDevicePerformance() (*UserExperienceAnalyticsDevicePerformance, error) {
+	newUserExperienceAnalyticsDevicePerformance := &UserExperienceAnalyticsDevicePerformance{
+		ODataType: "#microsoft.graph.UserExperienceAnalyticsDevicePerformance",
+	}
+	return newUserExperienceAnalyticsDevicePerformance, nil
+}
+
 // UserFlowAPIConnectorConfiguration undocumented
 type UserFlowAPIConnectorConfiguration struct {
 	// Object is the base model of UserFlowAPIConnectorConfiguration
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// PostAttributeCollection undocumented
 	PostAttributeCollection *IdentityAPIConnector `json:"postAttributeCollection,omitempty"`
 	// PostFederationSignup undocumented
 	PostFederationSignup *IdentityAPIConnector `json:"postFederationSignup,omitempty"`
 }
 
+func NewUserFlowAPIConnectorConfiguration() (*UserFlowAPIConnectorConfiguration, error) {
+	newUserFlowAPIConnectorConfiguration := &UserFlowAPIConnectorConfiguration{
+		ODataType: "#microsoft.graph.UserFlowApiConnectorConfiguration",
+	}
+	return newUserFlowAPIConnectorConfiguration, nil
+}
+
 // UserFlowLanguageConfiguration undocumented
 type UserFlowLanguageConfiguration struct {
 	// Entity is the base model of UserFlowLanguageConfiguration
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// IsEnabled undocumented
@@ -377,26 +433,53 @@ type UserFlowLanguageConfiguration struct {
 	OverridesPages []UserFlowLanguagePage `json:"overridesPages,omitempty"`
 }
 
+func NewUserFlowLanguageConfiguration() (*UserFlowLanguageConfiguration, error) {
+	newUserFlowLanguageConfiguration := &UserFlowLanguageConfiguration{
+		ODataType: "#microsoft.graph.UserFlowLanguageConfiguration",
+	}
+	return newUserFlowLanguageConfiguration, nil
+}
+
 // UserFlowLanguagePage undocumented
 type UserFlowLanguagePage struct {
 	// Entity is the base model of UserFlowLanguagePage
 	Entity
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewUserFlowLanguagePage() (*UserFlowLanguagePage, error) {
+	newUserFlowLanguagePage := &UserFlowLanguagePage{
+		ODataType: "#microsoft.graph.UserFlowLanguagePage",
+	}
+	return newUserFlowLanguagePage, nil
 }
 
 // UserIdentity undocumented
 type UserIdentity struct {
 	// Identity is the base model of UserIdentity
 	Identity
+
+	ODataType string `json:"@odata.type"`
 	// IPAddress undocumented
 	IPAddress *string `json:"ipAddress,omitempty"`
 	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewUserIdentity() (*UserIdentity, error) {
+	newUserIdentity := &UserIdentity{
+		ODataType: "#microsoft.graph.UserIdentity",
+	}
+	return newUserIdentity, nil
+}
+
 // UserInstallStateSummary undocumented
 type UserInstallStateSummary struct {
 	// Entity is the base model of UserInstallStateSummary
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// FailedDeviceCount undocumented
 	FailedDeviceCount *int `json:"failedDeviceCount,omitempty"`
 	// InstalledDeviceCount undocumented
@@ -409,18 +492,36 @@ type UserInstallStateSummary struct {
 	DeviceStates []DeviceInstallState `json:"deviceStates,omitempty"`
 }
 
+func NewUserInstallStateSummary() (*UserInstallStateSummary, error) {
+	newUserInstallStateSummary := &UserInstallStateSummary{
+		ODataType: "#microsoft.graph.UserInstallStateSummary",
+	}
+	return newUserInstallStateSummary, nil
+}
+
 // UserScopeTeamsAppInstallation undocumented
 type UserScopeTeamsAppInstallation struct {
 	// TeamsAppInstallation is the base model of UserScopeTeamsAppInstallation
 	TeamsAppInstallation
+
+	ODataType string `json:"@odata.type"`
 	// Chat undocumented
 	Chat *Chat `json:"chat,omitempty"`
+}
+
+func NewUserScopeTeamsAppInstallation() (*UserScopeTeamsAppInstallation, error) {
+	newUserScopeTeamsAppInstallation := &UserScopeTeamsAppInstallation{
+		ODataType: "#microsoft.graph.UserScopeTeamsAppInstallation",
+	}
+	return newUserScopeTeamsAppInstallation, nil
 }
 
 // UserSecurityState undocumented
 type UserSecurityState struct {
 	// Object is the base model of UserSecurityState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AadUserID undocumented
 	AadUserID *string `json:"aadUserId,omitempty"`
 	// AccountName undocumented
@@ -451,10 +552,19 @@ type UserSecurityState struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewUserSecurityState() (*UserSecurityState, error) {
+	newUserSecurityState := &UserSecurityState{
+		ODataType: "#microsoft.graph.UserSecurityState",
+	}
+	return newUserSecurityState, nil
+}
+
 // UserSettings undocumented
 type UserSettings struct {
 	// Entity is the base model of UserSettings
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ContributionToContentDiscoveryAsOrganizationDisabled undocumented
 	ContributionToContentDiscoveryAsOrganizationDisabled *bool `json:"contributionToContentDiscoveryAsOrganizationDisabled,omitempty"`
 	// ContributionToContentDiscoveryDisabled undocumented
@@ -463,10 +573,19 @@ type UserSettings struct {
 	ShiftPreferences *ShiftPreferences `json:"shiftPreferences,omitempty"`
 }
 
+func NewUserSettings() (*UserSettings, error) {
+	newUserSettings := &UserSettings{
+		ODataType: "#microsoft.graph.UserSettings",
+	}
+	return newUserSettings, nil
+}
+
 // UserSimulationDetails undocumented
 type UserSimulationDetails struct {
 	// Object is the base model of UserSimulationDetails
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AssignedTrainingsCount undocumented
 	AssignedTrainingsCount *int `json:"assignedTrainingsCount,omitempty"`
 	// CompletedTrainingsCount undocumented
@@ -487,10 +606,19 @@ type UserSimulationDetails struct {
 	TrainingEvents []UserTrainingEventInfo `json:"trainingEvents,omitempty"`
 }
 
+func NewUserSimulationDetails() (*UserSimulationDetails, error) {
+	newUserSimulationDetails := &UserSimulationDetails{
+		ODataType: "#microsoft.graph.UserSimulationDetails",
+	}
+	return newUserSimulationDetails, nil
+}
+
 // UserSimulationEventInfo undocumented
 type UserSimulationEventInfo struct {
 	// Object is the base model of UserSimulationEventInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Browser undocumented
 	Browser *string `json:"browser,omitempty"`
 	// EventDateTime undocumented
@@ -503,20 +631,38 @@ type UserSimulationEventInfo struct {
 	OsPlatformDeviceDetails *string `json:"osPlatformDeviceDetails,omitempty"`
 }
 
+func NewUserSimulationEventInfo() (*UserSimulationEventInfo, error) {
+	newUserSimulationEventInfo := &UserSimulationEventInfo{
+		ODataType: "#microsoft.graph.UserSimulationEventInfo",
+	}
+	return newUserSimulationEventInfo, nil
+}
+
 // UserTeamwork undocumented
 type UserTeamwork struct {
 	// Entity is the base model of UserTeamwork
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AssociatedTeams undocumented
 	AssociatedTeams []AssociatedTeamInfo `json:"associatedTeams,omitempty"`
 	// InstalledApps undocumented
 	InstalledApps []UserScopeTeamsAppInstallation `json:"installedApps,omitempty"`
 }
 
+func NewUserTeamwork() (*UserTeamwork, error) {
+	newUserTeamwork := &UserTeamwork{
+		ODataType: "#microsoft.graph.UserTeamwork",
+	}
+	return newUserTeamwork, nil
+}
+
 // UserTrainingContentEventInfo undocumented
 type UserTrainingContentEventInfo struct {
 	// Object is the base model of UserTrainingContentEventInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Browser undocumented
 	Browser *string `json:"browser,omitempty"`
 	// ContentDateTime undocumented
@@ -529,10 +675,19 @@ type UserTrainingContentEventInfo struct {
 	PotentialScoreImpact *float64 `json:"potentialScoreImpact,omitempty"`
 }
 
+func NewUserTrainingContentEventInfo() (*UserTrainingContentEventInfo, error) {
+	newUserTrainingContentEventInfo := &UserTrainingContentEventInfo{
+		ODataType: "#microsoft.graph.UserTrainingContentEventInfo",
+	}
+	return newUserTrainingContentEventInfo, nil
+}
+
 // UserTrainingEventInfo undocumented
 type UserTrainingEventInfo struct {
 	// Object is the base model of UserTrainingEventInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// LatestTrainingStatus undocumented
@@ -545,10 +700,19 @@ type UserTrainingEventInfo struct {
 	TrainingUpdatedProperties *UserTrainingContentEventInfo `json:"trainingUpdatedProperties,omitempty"`
 }
 
+func NewUserTrainingEventInfo() (*UserTrainingEventInfo, error) {
+	newUserTrainingEventInfo := &UserTrainingEventInfo{
+		ODataType: "#microsoft.graph.UserTrainingEventInfo",
+	}
+	return newUserTrainingEventInfo, nil
+}
+
 // UserTrainingStatusInfo undocumented
 type UserTrainingStatusInfo struct {
 	// Object is the base model of UserTrainingStatusInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AssignedDateTime undocumented
 	AssignedDateTime *time.Time `json:"assignedDateTime,omitempty"`
 	// CompletionDateTime undocumented
@@ -557,4 +721,11 @@ type UserTrainingStatusInfo struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// TrainingStatus undocumented
 	TrainingStatus *TrainingStatus `json:"trainingStatus,omitempty"`
+}
+
+func NewUserTrainingStatusInfo() (*UserTrainingStatusInfo, error) {
+	newUserTrainingStatusInfo := &UserTrainingStatusInfo{
+		ODataType: "#microsoft.graph.UserTrainingStatusInfo",
+	}
+	return newUserTrainingStatusInfo, nil
 }

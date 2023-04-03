@@ -171,7 +171,7 @@ func (r *ParticipantLeftNotificationRequest) Delete(ctx context.Context) error {
 
 type ParticipantMuteRequestBuilder struct{ BaseRequestBuilder }
 
-// Mute action undocumented
+// Mute action undocumentedras
 func (b *ParticipantRequestBuilder) Mute(reqObj *ParticipantMuteRequestParameter) *ParticipantMuteRequestBuilder {
 	bb := &ParticipantMuteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Mute"
@@ -194,7 +194,7 @@ func (r *ParticipantMuteRequest) Post(ctx context.Context) (resObj *MuteParticip
 
 type ParticipantStartHoldMusicRequestBuilder struct{ BaseRequestBuilder }
 
-// StartHoldMusic action undocumented
+// StartHoldMusic action undocumentedras
 func (b *ParticipantRequestBuilder) StartHoldMusic(reqObj *ParticipantStartHoldMusicRequestParameter) *ParticipantStartHoldMusicRequestBuilder {
 	bb := &ParticipantStartHoldMusicRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/StartHoldMusic"
@@ -217,7 +217,7 @@ func (r *ParticipantStartHoldMusicRequest) Post(ctx context.Context) (resObj *St
 
 type ParticipantStopHoldMusicRequestBuilder struct{ BaseRequestBuilder }
 
-// StopHoldMusic action undocumented
+// StopHoldMusic action undocumentedras
 func (b *ParticipantRequestBuilder) StopHoldMusic(reqObj *ParticipantStopHoldMusicRequestParameter) *ParticipantStopHoldMusicRequestBuilder {
 	bb := &ParticipantStopHoldMusicRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/StopHoldMusic"

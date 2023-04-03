@@ -6,6 +6,8 @@ package msgraph
 type ColumnDefinition struct {
 	// Entity is the base model of ColumnDefinition
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Boolean undocumented
 	Boolean *BooleanColumn `json:"boolean,omitempty"`
 	// Calculated undocumented
@@ -72,22 +74,47 @@ type ColumnDefinition struct {
 	SourceColumn *ColumnDefinition `json:"sourceColumn,omitempty"`
 }
 
+func NewColumnDefinition() (*ColumnDefinition, error) {
+	newColumnDefinition := &ColumnDefinition{
+		ODataType: "#microsoft.graph.ColumnDefinition",
+	}
+	return newColumnDefinition, nil
+}
+
 // ColumnLink undocumented
 type ColumnLink struct {
 	// Entity is the base model of ColumnLink
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
+}
+
+func NewColumnLink() (*ColumnLink, error) {
+	newColumnLink := &ColumnLink{
+		ODataType: "#microsoft.graph.ColumnLink",
+	}
+	return newColumnLink, nil
 }
 
 // ColumnValidation undocumented
 type ColumnValidation struct {
 	// Object is the base model of ColumnValidation
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DefaultLanguage undocumented
 	DefaultLanguage *string `json:"defaultLanguage,omitempty"`
 	// Descriptions undocumented
 	Descriptions []DisplayNameLocalization `json:"descriptions,omitempty"`
 	// Formula undocumented
 	Formula *string `json:"formula,omitempty"`
+}
+
+func NewColumnValidation() (*ColumnValidation, error) {
+	newColumnValidation := &ColumnValidation{
+		ODataType: "#microsoft.graph.ColumnValidation",
+	}
+	return newColumnValidation, nil
 }

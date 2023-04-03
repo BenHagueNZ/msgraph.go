@@ -11,14 +11,14 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Bitlocker is navigation property
+// Bitlocker is navigation property rn
 func (b *InformationProtectionRequestBuilder) Bitlocker() *BitlockerRequestBuilder {
 	bb := &BitlockerRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/bitlocker"
 	return bb
 }
 
-// ThreatAssessmentRequests returns request builder for ThreatAssessmentRequestObject collection
+// ThreatAssessmentRequests returns request builder for ThreatAssessmentRequestObject collection rcn
 func (b *InformationProtectionRequestBuilder) ThreatAssessmentRequests() *InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder {
 	bb := &InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/threatAssessmentRequests"

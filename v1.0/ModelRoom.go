@@ -6,6 +6,8 @@ package msgraph
 type Room struct {
 	// Place is the base model of Room
 	Place
+
+	ODataType string `json:"@odata.type"`
 	// AudioDeviceName undocumented
 	AudioDeviceName *string `json:"audioDeviceName,omitempty"`
 	// BookingType undocumented
@@ -34,12 +36,28 @@ type Room struct {
 	VideoDeviceName *string `json:"videoDeviceName,omitempty"`
 }
 
+func NewRoom() (*Room, error) {
+	newRoom := &Room{
+		ODataType: "#microsoft.graph.Room",
+	}
+	return newRoom, nil
+}
+
 // RoomList undocumented
 type RoomList struct {
 	// Place is the base model of RoomList
 	Place
+
+	ODataType string `json:"@odata.type"`
 	// EmailAddress undocumented
 	EmailAddress *string `json:"emailAddress,omitempty"`
 	// Rooms undocumented
 	Rooms []Room `json:"rooms,omitempty"`
+}
+
+func NewRoomList() (*RoomList, error) {
+	newRoomList := &RoomList{
+		ODataType: "#microsoft.graph.RoomList",
+	}
+	return newRoomList, nil
 }

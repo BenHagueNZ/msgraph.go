@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsFindRequestBuilder struct{ BaseRequestBuilder }
 
-// Find action undocumented
+// Find action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Find(reqObj *WorkbookFunctionsFindRequestParameter) *WorkbookFunctionsFindRequestBuilder {
 	bb := &WorkbookFunctionsFindRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Find"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsFindRequest) Post(ctx context.Context) (resObj *Workbo
 
 type WorkbookFunctionsFindBRequestBuilder struct{ BaseRequestBuilder }
 
-// FindB action undocumented
+// FindB action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) FindB(reqObj *WorkbookFunctionsFindBRequestParameter) *WorkbookFunctionsFindBRequestBuilder {
 	bb := &WorkbookFunctionsFindBRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/FindB"

@@ -8,16 +8,27 @@ import "time"
 type AuditActivityInitiator struct {
 	// Object is the base model of AuditActivityInitiator
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// App undocumented
 	App *AppIdentity `json:"app,omitempty"`
 	// User undocumented
 	User *UserIdentity `json:"user,omitempty"`
 }
 
+func NewAuditActivityInitiator() (*AuditActivityInitiator, error) {
+	newAuditActivityInitiator := &AuditActivityInitiator{
+		ODataType: "#microsoft.graph.AuditActivityInitiator",
+	}
+	return newAuditActivityInitiator, nil
+}
+
 // AuditActor undocumented
 type AuditActor struct {
 	// Object is the base model of AuditActor
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ApplicationDisplayName undocumented
 	ApplicationDisplayName *string `json:"applicationDisplayName,omitempty"`
 	// ApplicationID undocumented
@@ -36,10 +47,19 @@ type AuditActor struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewAuditActor() (*AuditActor, error) {
+	newAuditActor := &AuditActor{
+		ODataType: "#microsoft.graph.AuditActor",
+	}
+	return newAuditActor, nil
+}
+
 // AuditEvent undocumented
 type AuditEvent struct {
 	// Entity is the base model of AuditEvent
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Activity undocumented
 	Activity *string `json:"activity,omitempty"`
 	// ActivityDateTime undocumented
@@ -64,10 +84,19 @@ type AuditEvent struct {
 	Resources []AuditResource `json:"resources,omitempty"`
 }
 
+func NewAuditEvent() (*AuditEvent, error) {
+	newAuditEvent := &AuditEvent{
+		ODataType: "#microsoft.graph.AuditEvent",
+	}
+	return newAuditEvent, nil
+}
+
 // AuditLogRoot undocumented
 type AuditLogRoot struct {
 	// Entity is the base model of AuditLogRoot
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DirectoryAudits undocumented
 	DirectoryAudits []DirectoryAudit `json:"directoryAudits,omitempty"`
 	// Provisioning undocumented
@@ -76,10 +105,19 @@ type AuditLogRoot struct {
 	SignIns []SignIn `json:"signIns,omitempty"`
 }
 
+func NewAuditLogRoot() (*AuditLogRoot, error) {
+	newAuditLogRoot := &AuditLogRoot{
+		ODataType: "#microsoft.graph.AuditLogRoot",
+	}
+	return newAuditLogRoot, nil
+}
+
 // AuditProperty undocumented
 type AuditProperty struct {
 	// Object is the base model of AuditProperty
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// NewValue undocumented
@@ -88,10 +126,19 @@ type AuditProperty struct {
 	OldValue *string `json:"oldValue,omitempty"`
 }
 
+func NewAuditProperty() (*AuditProperty, error) {
+	newAuditProperty := &AuditProperty{
+		ODataType: "#microsoft.graph.AuditProperty",
+	}
+	return newAuditProperty, nil
+}
+
 // AuditResource undocumented
 type AuditResource struct {
 	// Object is the base model of AuditResource
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AuditResourceType undocumented
 	AuditResourceType *string `json:"auditResourceType,omitempty"`
 	// DisplayName undocumented
@@ -100,4 +147,11 @@ type AuditResource struct {
 	ModifiedProperties []AuditProperty `json:"modifiedProperties,omitempty"`
 	// ResourceID undocumented
 	ResourceID *string `json:"resourceId,omitempty"`
+}
+
+func NewAuditResource() (*AuditResource, error) {
+	newAuditResource := &AuditResource{
+		ODataType: "#microsoft.graph.AuditResource",
+	}
+	return newAuditResource, nil
 }

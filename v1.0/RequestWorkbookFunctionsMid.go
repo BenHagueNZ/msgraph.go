@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsMidRequestBuilder struct{ BaseRequestBuilder }
 
-// Mid action undocumented
+// Mid action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Mid(reqObj *WorkbookFunctionsMidRequestParameter) *WorkbookFunctionsMidRequestBuilder {
 	bb := &WorkbookFunctionsMidRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Mid"

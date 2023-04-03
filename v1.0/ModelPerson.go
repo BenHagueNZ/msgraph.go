@@ -6,6 +6,8 @@ package msgraph
 type Person struct {
 	// Entity is the base model of Person
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Birthday undocumented
 	Birthday *string `json:"birthday,omitempty"`
 	// CompanyName undocumented
@@ -46,10 +48,19 @@ type Person struct {
 	YomiCompany *string `json:"yomiCompany,omitempty"`
 }
 
+func NewPerson() (*Person, error) {
+	newPerson := &Person{
+		ODataType: "#microsoft.graph.Person",
+	}
+	return newPerson, nil
+}
+
 // PersonOrGroupColumn undocumented
 type PersonOrGroupColumn struct {
 	// Object is the base model of PersonOrGroupColumn
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowMultipleSelection undocumented
 	AllowMultipleSelection *bool `json:"allowMultipleSelection,omitempty"`
 	// ChooseFromType undocumented
@@ -58,12 +69,28 @@ type PersonOrGroupColumn struct {
 	DisplayAs *string `json:"displayAs,omitempty"`
 }
 
+func NewPersonOrGroupColumn() (*PersonOrGroupColumn, error) {
+	newPersonOrGroupColumn := &PersonOrGroupColumn{
+		ODataType: "#microsoft.graph.PersonOrGroupColumn",
+	}
+	return newPersonOrGroupColumn, nil
+}
+
 // PersonType undocumented
 type PersonType struct {
 	// Object is the base model of PersonType
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Class undocumented
 	Class *string `json:"class,omitempty"`
 	// Subclass undocumented
 	Subclass *string `json:"subclass,omitempty"`
+}
+
+func NewPersonType() (*PersonType, error) {
+	newPersonType := &PersonType{
+		ODataType: "#microsoft.graph.PersonType",
+	}
+	return newPersonType, nil
 }

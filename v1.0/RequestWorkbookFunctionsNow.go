@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsNowRequestBuilder struct{ BaseRequestBuilder }
 
-// Now action undocumented
+// Now action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Now(reqObj *WorkbookFunctionsNowRequestParameter) *WorkbookFunctionsNowRequestBuilder {
 	bb := &WorkbookFunctionsNowRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Now"

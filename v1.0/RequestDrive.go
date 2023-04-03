@@ -178,7 +178,7 @@ func (r *DriveRecipientRequest) Delete(ctx context.Context) error {
 
 type DriveItemRestoreRequestBuilder struct{ BaseRequestBuilder }
 
-// Restore action undocumented
+// Restore action undocumentedras
 func (b *DriveItemRequestBuilder) Restore(reqObj *DriveItemRestoreRequestParameter) *DriveItemRestoreRequestBuilder {
 	bb := &DriveItemRestoreRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Restore"
@@ -201,7 +201,7 @@ func (r *DriveItemRestoreRequest) Post(ctx context.Context) (resObj *DriveItem, 
 
 type DriveItemCopyRequestBuilder struct{ BaseRequestBuilder }
 
-// Copy action undocumented
+// Copy action undocumentedras
 func (b *DriveItemRequestBuilder) Copy(reqObj *DriveItemCopyRequestParameter) *DriveItemCopyRequestBuilder {
 	bb := &DriveItemCopyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Copy"
@@ -224,7 +224,7 @@ func (r *DriveItemCopyRequest) Post(ctx context.Context) (resObj *DriveItem, err
 
 type DriveItemCreateUploadSessionRequestBuilder struct{ BaseRequestBuilder }
 
-// CreateUploadSession action undocumented
+// CreateUploadSession action undocumentedras
 func (b *DriveItemRequestBuilder) CreateUploadSession(reqObj *DriveItemCreateUploadSessionRequestParameter) *DriveItemCreateUploadSessionRequestBuilder {
 	bb := &DriveItemCreateUploadSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CreateUploadSession"
@@ -247,7 +247,7 @@ func (r *DriveItemCreateUploadSessionRequest) Post(ctx context.Context) (resObj 
 
 type DriveItemCheckinRequestBuilder struct{ BaseRequestBuilder }
 
-// Checkin action undocumented
+// Checkin action undocumentedrav
 func (b *DriveItemRequestBuilder) Checkin(reqObj *DriveItemCheckinRequestParameter) *DriveItemCheckinRequestBuilder {
 	bb := &DriveItemCheckinRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Checkin"
@@ -269,7 +269,7 @@ func (r *DriveItemCheckinRequest) Post(ctx context.Context) error {
 
 type DriveItemCheckoutRequestBuilder struct{ BaseRequestBuilder }
 
-// Checkout action undocumented
+// Checkout action undocumentedrav
 func (b *DriveItemRequestBuilder) Checkout(reqObj *DriveItemCheckoutRequestParameter) *DriveItemCheckoutRequestBuilder {
 	bb := &DriveItemCheckoutRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Checkout"
@@ -291,7 +291,7 @@ func (r *DriveItemCheckoutRequest) Post(ctx context.Context) error {
 
 type DriveItemCreateLinkRequestBuilder struct{ BaseRequestBuilder }
 
-// CreateLink action undocumented
+// CreateLink action undocumentedras
 func (b *DriveItemRequestBuilder) CreateLink(reqObj *DriveItemCreateLinkRequestParameter) *DriveItemCreateLinkRequestBuilder {
 	bb := &DriveItemCreateLinkRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CreateLink"
@@ -314,7 +314,7 @@ func (r *DriveItemCreateLinkRequest) Post(ctx context.Context) (resObj *Permissi
 
 type DriveItemFollowRequestBuilder struct{ BaseRequestBuilder }
 
-// Follow action undocumented
+// Follow action undocumentedras
 func (b *DriveItemRequestBuilder) Follow(reqObj *DriveItemFollowRequestParameter) *DriveItemFollowRequestBuilder {
 	bb := &DriveItemFollowRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Follow"
@@ -337,7 +337,7 @@ func (r *DriveItemFollowRequest) Post(ctx context.Context) (resObj *DriveItem, e
 
 type DriveItemInviteRequestBuilder struct{ BaseRequestBuilder }
 
-// Invite action undocumented
+// Invite action undocumentedrac
 func (b *DriveItemRequestBuilder) Invite(reqObj *DriveItemInviteRequestParameter) *DriveItemInviteRequestBuilder {
 	bb := &DriveItemInviteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Invite"
@@ -418,7 +418,7 @@ func (r *DriveItemInviteRequest) Post(ctx context.Context) ([]Permission, error)
 
 type DriveItemPreviewRequestBuilder struct{ BaseRequestBuilder }
 
-// Preview action undocumented
+// Preview action undocumentedras
 func (b *DriveItemRequestBuilder) Preview(reqObj *DriveItemPreviewRequestParameter) *DriveItemPreviewRequestBuilder {
 	bb := &DriveItemPreviewRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Preview"
@@ -441,7 +441,7 @@ func (r *DriveItemPreviewRequest) Post(ctx context.Context) (resObj *ItemPreview
 
 type DriveItemUnfollowRequestBuilder struct{ BaseRequestBuilder }
 
-// Unfollow action undocumented
+// Unfollow action undocumentedrav
 func (b *DriveItemRequestBuilder) Unfollow(reqObj *DriveItemUnfollowRequestParameter) *DriveItemUnfollowRequestBuilder {
 	bb := &DriveItemUnfollowRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Unfollow"
@@ -463,7 +463,7 @@ func (r *DriveItemUnfollowRequest) Post(ctx context.Context) error {
 
 type DriveItemValidatePermissionRequestBuilder struct{ BaseRequestBuilder }
 
-// ValidatePermission action undocumented
+// ValidatePermission action undocumentedrav
 func (b *DriveItemRequestBuilder) ValidatePermission(reqObj *DriveItemValidatePermissionRequestParameter) *DriveItemValidatePermissionRequestBuilder {
 	bb := &DriveItemValidatePermissionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ValidatePermission"
@@ -485,7 +485,7 @@ func (r *DriveItemValidatePermissionRequest) Post(ctx context.Context) error {
 
 type DriveItemVersionRestoreVersionRequestBuilder struct{ BaseRequestBuilder }
 
-// RestoreVersion action undocumented
+// RestoreVersion action undocumentedrav
 func (b *DriveItemVersionRequestBuilder) RestoreVersion(reqObj *DriveItemVersionRestoreVersionRequestParameter) *DriveItemVersionRestoreVersionRequestBuilder {
 	bb := &DriveItemVersionRestoreVersionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RestoreVersion"

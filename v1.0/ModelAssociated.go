@@ -6,4 +6,13 @@ package msgraph
 type AssociatedTeamInfo struct {
 	// TeamInfo is the base model of AssociatedTeamInfo
 	TeamInfo
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewAssociatedTeamInfo() (*AssociatedTeamInfo, error) {
+	newAssociatedTeamInfo := &AssociatedTeamInfo{
+		ODataType: "#microsoft.graph.AssociatedTeamInfo",
+	}
+	return newAssociatedTeamInfo, nil
 }

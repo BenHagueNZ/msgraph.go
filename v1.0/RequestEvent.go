@@ -171,7 +171,7 @@ func (r *EventMessageResponseRequest) Delete(ctx context.Context) error {
 
 type EventCancelRequestBuilder struct{ BaseRequestBuilder }
 
-// Cancel action undocumented
+// Cancel action undocumentedrav
 func (b *EventRequestBuilder) Cancel(reqObj *EventCancelRequestParameter) *EventCancelRequestBuilder {
 	bb := &EventCancelRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Cancel"
@@ -193,7 +193,7 @@ func (r *EventCancelRequest) Post(ctx context.Context) error {
 
 type EventAcceptRequestBuilder struct{ BaseRequestBuilder }
 
-// Accept action undocumented
+// Accept action undocumentedrav
 func (b *EventRequestBuilder) Accept(reqObj *EventAcceptRequestParameter) *EventAcceptRequestBuilder {
 	bb := &EventAcceptRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Accept"
@@ -215,7 +215,7 @@ func (r *EventAcceptRequest) Post(ctx context.Context) error {
 
 type EventDeclineRequestBuilder struct{ BaseRequestBuilder }
 
-// Decline action undocumented
+// Decline action undocumentedrav
 func (b *EventRequestBuilder) Decline(reqObj *EventDeclineRequestParameter) *EventDeclineRequestBuilder {
 	bb := &EventDeclineRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Decline"
@@ -237,7 +237,7 @@ func (r *EventDeclineRequest) Post(ctx context.Context) error {
 
 type EventDismissReminderRequestBuilder struct{ BaseRequestBuilder }
 
-// DismissReminder action undocumented
+// DismissReminder action undocumentedrav
 func (b *EventRequestBuilder) DismissReminder(reqObj *EventDismissReminderRequestParameter) *EventDismissReminderRequestBuilder {
 	bb := &EventDismissReminderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/DismissReminder"
@@ -259,7 +259,7 @@ func (r *EventDismissReminderRequest) Post(ctx context.Context) error {
 
 type EventForwardRequestBuilder struct{ BaseRequestBuilder }
 
-// Forward action undocumented
+// Forward action undocumentedrav
 func (b *EventRequestBuilder) Forward(reqObj *EventForwardRequestParameter) *EventForwardRequestBuilder {
 	bb := &EventForwardRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Forward"
@@ -281,7 +281,7 @@ func (r *EventForwardRequest) Post(ctx context.Context) error {
 
 type EventSnoozeReminderRequestBuilder struct{ BaseRequestBuilder }
 
-// SnoozeReminder action undocumented
+// SnoozeReminder action undocumentedrav
 func (b *EventRequestBuilder) SnoozeReminder(reqObj *EventSnoozeReminderRequestParameter) *EventSnoozeReminderRequestBuilder {
 	bb := &EventSnoozeReminderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SnoozeReminder"
@@ -303,7 +303,7 @@ func (r *EventSnoozeReminderRequest) Post(ctx context.Context) error {
 
 type EventTentativelyAcceptRequestBuilder struct{ BaseRequestBuilder }
 
-// TentativelyAccept action undocumented
+// TentativelyAccept action undocumentedrav
 func (b *EventRequestBuilder) TentativelyAccept(reqObj *EventTentativelyAcceptRequestParameter) *EventTentativelyAcceptRequestBuilder {
 	bb := &EventTentativelyAcceptRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/TentativelyAccept"

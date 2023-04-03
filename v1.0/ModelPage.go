@@ -6,8 +6,17 @@ package msgraph
 type PageLinks struct {
 	// Object is the base model of PageLinks
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// OneNoteClientURL undocumented
 	OneNoteClientURL *ExternalLink `json:"oneNoteClientUrl,omitempty"`
 	// OneNoteWebURL undocumented
 	OneNoteWebURL *ExternalLink `json:"oneNoteWebUrl,omitempty"`
+}
+
+func NewPageLinks() (*PageLinks, error) {
+	newPageLinks := &PageLinks{
+		ODataType: "#microsoft.graph.PageLinks",
+	}
+	return newPageLinks, nil
 }

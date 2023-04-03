@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsCotRequestBuilder struct{ BaseRequestBuilder }
 
-// Cot action undocumented
+// Cot action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Cot(reqObj *WorkbookFunctionsCotRequestParameter) *WorkbookFunctionsCotRequestBuilder {
 	bb := &WorkbookFunctionsCotRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Cot"

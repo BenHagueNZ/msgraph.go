@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsTrimRequestBuilder struct{ BaseRequestBuilder }
 
-// Trim action undocumented
+// Trim action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Trim(reqObj *WorkbookFunctionsTrimRequestParameter) *WorkbookFunctionsTrimRequestBuilder {
 	bb := &WorkbookFunctionsTrimRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Trim"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsTrimRequest) Post(ctx context.Context) (resObj *Workbo
 
 type WorkbookFunctionsTrimMeanRequestBuilder struct{ BaseRequestBuilder }
 
-// TrimMean action undocumented
+// TrimMean action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) TrimMean(reqObj *WorkbookFunctionsTrimMeanRequestParameter) *WorkbookFunctionsTrimMeanRequestBuilder {
 	bb := &WorkbookFunctionsTrimMeanRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/TrimMean"

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsRightRequestBuilder struct{ BaseRequestBuilder }
 
-// Right action undocumented
+// Right action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Right(reqObj *WorkbookFunctionsRightRequestParameter) *WorkbookFunctionsRightRequestBuilder {
 	bb := &WorkbookFunctionsRightRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Right"

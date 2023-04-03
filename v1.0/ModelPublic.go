@@ -6,14 +6,25 @@ package msgraph
 type PublicClientApplication struct {
 	// Object is the base model of PublicClientApplication
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// RedirectUris undocumented
 	RedirectUris []string `json:"redirectUris,omitempty"`
+}
+
+func NewPublicClientApplication() (*PublicClientApplication, error) {
+	newPublicClientApplication := &PublicClientApplication{
+		ODataType: "#microsoft.graph.PublicClientApplication",
+	}
+	return newPublicClientApplication, nil
 }
 
 // PublicError undocumented
 type PublicError struct {
 	// Object is the base model of PublicError
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
 	// Details undocumented
@@ -26,10 +37,19 @@ type PublicError struct {
 	Target *string `json:"target,omitempty"`
 }
 
+func NewPublicError() (*PublicError, error) {
+	newPublicError := &PublicError{
+		ODataType: "#microsoft.graph.PublicError",
+	}
+	return newPublicError, nil
+}
+
 // PublicErrorDetail undocumented
 type PublicErrorDetail struct {
 	// Object is the base model of PublicErrorDetail
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
 	// Message undocumented
@@ -38,10 +58,19 @@ type PublicErrorDetail struct {
 	Target *string `json:"target,omitempty"`
 }
 
+func NewPublicErrorDetail() (*PublicErrorDetail, error) {
+	newPublicErrorDetail := &PublicErrorDetail{
+		ODataType: "#microsoft.graph.PublicErrorDetail",
+	}
+	return newPublicErrorDetail, nil
+}
+
 // PublicInnerError undocumented
 type PublicInnerError struct {
 	// Object is the base model of PublicInnerError
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
 	// Details undocumented
@@ -50,4 +79,11 @@ type PublicInnerError struct {
 	Message *string `json:"message,omitempty"`
 	// Target undocumented
 	Target *string `json:"target,omitempty"`
+}
+
+func NewPublicInnerError() (*PublicInnerError, error) {
+	newPublicInnerError := &PublicInnerError{
+		ODataType: "#microsoft.graph.PublicInnerError",
+	}
+	return newPublicInnerError, nil
 }

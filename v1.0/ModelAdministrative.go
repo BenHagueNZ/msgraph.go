@@ -6,6 +6,8 @@ package msgraph
 type AdministrativeUnit struct {
 	// DirectoryObject is the base model of AdministrativeUnit
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -18,4 +20,11 @@ type AdministrativeUnit struct {
 	ScopedRoleMembers []ScopedRoleMembership `json:"scopedRoleMembers,omitempty"`
 	// Extensions undocumented
 	Extensions []Extension `json:"extensions,omitempty"`
+}
+
+func NewAdministrativeUnit() (*AdministrativeUnit, error) {
+	newAdministrativeUnit := &AdministrativeUnit{
+		ODataType: "#microsoft.graph.AdministrativeUnit",
+	}
+	return newAdministrativeUnit, nil
 }

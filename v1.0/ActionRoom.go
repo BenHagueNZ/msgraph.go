@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Rooms returns request builder for Room collection
+// Rooms returns request builder for Room collection rcn
 func (b *RoomListRequestBuilder) Rooms() *RoomListRoomsCollectionRequestBuilder {
 	bb := &RoomListRoomsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/rooms"

@@ -6,6 +6,8 @@ package msgraph
 type BookingAppointment struct {
 	// Entity is the base model of BookingAppointment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AdditionalInformation undocumented
 	AdditionalInformation *string `json:"additionalInformation,omitempty"`
 	// AnonymousJoinWebURL undocumented
@@ -56,10 +58,19 @@ type BookingAppointment struct {
 	StartDateTime *DateTimeTimeZone `json:"startDateTime,omitempty"`
 }
 
+func NewBookingAppointment() (*BookingAppointment, error) {
+	newBookingAppointment := &BookingAppointment{
+		ODataType: "#microsoft.graph.BookingAppointment",
+	}
+	return newBookingAppointment, nil
+}
+
 // BookingBusiness undocumented
 type BookingBusiness struct {
 	// Entity is the base model of BookingBusiness
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Address undocumented
 	Address *PhysicalAddress `json:"address,omitempty"`
 	// BusinessHours undocumented
@@ -98,18 +109,36 @@ type BookingBusiness struct {
 	StaffMembers []BookingStaffMemberBase `json:"staffMembers,omitempty"`
 }
 
+func NewBookingBusiness() (*BookingBusiness, error) {
+	newBookingBusiness := &BookingBusiness{
+		ODataType: "#microsoft.graph.BookingBusiness",
+	}
+	return newBookingBusiness, nil
+}
+
 // BookingCurrency undocumented
 type BookingCurrency struct {
 	// Entity is the base model of BookingCurrency
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Symbol undocumented
 	Symbol *string `json:"symbol,omitempty"`
+}
+
+func NewBookingCurrency() (*BookingCurrency, error) {
+	newBookingCurrency := &BookingCurrency{
+		ODataType: "#microsoft.graph.BookingCurrency",
+	}
+	return newBookingCurrency, nil
 }
 
 // BookingCustomQuestion undocumented
 type BookingCustomQuestion struct {
 	// Entity is the base model of BookingCustomQuestion
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AnswerInputType undocumented
 	AnswerInputType *AnswerInputType `json:"answerInputType,omitempty"`
 	// AnswerOptions undocumented
@@ -118,10 +147,19 @@ type BookingCustomQuestion struct {
 	DisplayName *string `json:"displayName,omitempty"`
 }
 
+func NewBookingCustomQuestion() (*BookingCustomQuestion, error) {
+	newBookingCustomQuestion := &BookingCustomQuestion{
+		ODataType: "#microsoft.graph.BookingCustomQuestion",
+	}
+	return newBookingCustomQuestion, nil
+}
+
 // BookingCustomer undocumented
 type BookingCustomer struct {
 	// BookingCustomerBase is the base model of BookingCustomer
 	BookingCustomerBase
+
+	ODataType string `json:"@odata.type"`
 	// Addresses undocumented
 	Addresses []PhysicalAddress `json:"addresses,omitempty"`
 	// DisplayName undocumented
@@ -132,16 +170,34 @@ type BookingCustomer struct {
 	Phones []Phone `json:"phones,omitempty"`
 }
 
+func NewBookingCustomer() (*BookingCustomer, error) {
+	newBookingCustomer := &BookingCustomer{
+		ODataType: "#microsoft.graph.BookingCustomer",
+	}
+	return newBookingCustomer, nil
+}
+
 // BookingCustomerBase undocumented
 type BookingCustomerBase struct {
 	// Entity is the base model of BookingCustomerBase
 	Entity
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewBookingCustomerBase() (*BookingCustomerBase, error) {
+	newBookingCustomerBase := &BookingCustomerBase{
+		ODataType: "#microsoft.graph.BookingCustomerBase",
+	}
+	return newBookingCustomerBase, nil
 }
 
 // BookingCustomerInformation undocumented
 type BookingCustomerInformation struct {
 	// BookingCustomerInformationBase is the base model of BookingCustomerInformation
 	BookingCustomerInformationBase
+
+	ODataType string `json:"@odata.type"`
 	// CustomerID undocumented
 	CustomerID *string `json:"customerId,omitempty"`
 	// CustomQuestionAnswers undocumented
@@ -160,16 +216,34 @@ type BookingCustomerInformation struct {
 	TimeZone *string `json:"timeZone,omitempty"`
 }
 
+func NewBookingCustomerInformation() (*BookingCustomerInformation, error) {
+	newBookingCustomerInformation := &BookingCustomerInformation{
+		ODataType: "#microsoft.graph.BookingCustomerInformation",
+	}
+	return newBookingCustomerInformation, nil
+}
+
 // BookingCustomerInformationBase undocumented
 type BookingCustomerInformationBase struct {
 	// Object is the base model of BookingCustomerInformationBase
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewBookingCustomerInformationBase() (*BookingCustomerInformationBase, error) {
+	newBookingCustomerInformationBase := &BookingCustomerInformationBase{
+		ODataType: "#microsoft.graph.BookingCustomerInformationBase",
+	}
+	return newBookingCustomerInformationBase, nil
 }
 
 // BookingQuestionAnswer undocumented
 type BookingQuestionAnswer struct {
 	// Object is the base model of BookingQuestionAnswer
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Answer undocumented
 	Answer *string `json:"answer,omitempty"`
 	// AnswerInputType undocumented
@@ -186,20 +260,38 @@ type BookingQuestionAnswer struct {
 	SelectedOptions []string `json:"selectedOptions,omitempty"`
 }
 
+func NewBookingQuestionAnswer() (*BookingQuestionAnswer, error) {
+	newBookingQuestionAnswer := &BookingQuestionAnswer{
+		ODataType: "#microsoft.graph.BookingQuestionAnswer",
+	}
+	return newBookingQuestionAnswer, nil
+}
+
 // BookingQuestionAssignment undocumented
 type BookingQuestionAssignment struct {
 	// Object is the base model of BookingQuestionAssignment
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsRequired undocumented
 	IsRequired *bool `json:"isRequired,omitempty"`
 	// QuestionID undocumented
 	QuestionID *string `json:"questionId,omitempty"`
 }
 
+func NewBookingQuestionAssignment() (*BookingQuestionAssignment, error) {
+	newBookingQuestionAssignment := &BookingQuestionAssignment{
+		ODataType: "#microsoft.graph.BookingQuestionAssignment",
+	}
+	return newBookingQuestionAssignment, nil
+}
+
 // BookingReminder undocumented
 type BookingReminder struct {
 	// Object is the base model of BookingReminder
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Message undocumented
 	Message *string `json:"message,omitempty"`
 	// Offset undocumented
@@ -208,10 +300,19 @@ type BookingReminder struct {
 	Recipients *BookingReminderRecipients `json:"recipients,omitempty"`
 }
 
+func NewBookingReminder() (*BookingReminder, error) {
+	newBookingReminder := &BookingReminder{
+		ODataType: "#microsoft.graph.BookingReminder",
+	}
+	return newBookingReminder, nil
+}
+
 // BookingSchedulingPolicy undocumented
 type BookingSchedulingPolicy struct {
 	// Object is the base model of BookingSchedulingPolicy
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowStaffSelection undocumented
 	AllowStaffSelection *bool `json:"allowStaffSelection,omitempty"`
 	// MaximumAdvance undocumented
@@ -224,10 +325,19 @@ type BookingSchedulingPolicy struct {
 	TimeSlotInterval *Duration `json:"timeSlotInterval,omitempty"`
 }
 
+func NewBookingSchedulingPolicy() (*BookingSchedulingPolicy, error) {
+	newBookingSchedulingPolicy := &BookingSchedulingPolicy{
+		ODataType: "#microsoft.graph.BookingSchedulingPolicy",
+	}
+	return newBookingSchedulingPolicy, nil
+}
+
 // BookingService undocumented
 type BookingService struct {
 	// Entity is the base model of BookingService
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AdditionalInformation undocumented
 	AdditionalInformation *string `json:"additionalInformation,omitempty"`
 	// CustomQuestions undocumented
@@ -272,10 +382,19 @@ type BookingService struct {
 	WebURL *string `json:"webUrl,omitempty"`
 }
 
+func NewBookingService() (*BookingService, error) {
+	newBookingService := &BookingService{
+		ODataType: "#microsoft.graph.BookingService",
+	}
+	return newBookingService, nil
+}
+
 // BookingStaffMember undocumented
 type BookingStaffMember struct {
 	// BookingStaffMemberBase is the base model of BookingStaffMember
 	BookingStaffMemberBase
+
+	ODataType string `json:"@odata.type"`
 	// AvailabilityIsAffectedByPersonalCalendar undocumented
 	AvailabilityIsAffectedByPersonalCalendar *bool `json:"availabilityIsAffectedByPersonalCalendar,omitempty"`
 	// DisplayName undocumented
@@ -294,28 +413,62 @@ type BookingStaffMember struct {
 	WorkingHours []BookingWorkHours `json:"workingHours,omitempty"`
 }
 
+func NewBookingStaffMember() (*BookingStaffMember, error) {
+	newBookingStaffMember := &BookingStaffMember{
+		ODataType: "#microsoft.graph.BookingStaffMember",
+	}
+	return newBookingStaffMember, nil
+}
+
 // BookingStaffMemberBase undocumented
 type BookingStaffMemberBase struct {
 	// Entity is the base model of BookingStaffMemberBase
 	Entity
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewBookingStaffMemberBase() (*BookingStaffMemberBase, error) {
+	newBookingStaffMemberBase := &BookingStaffMemberBase{
+		ODataType: "#microsoft.graph.BookingStaffMemberBase",
+	}
+	return newBookingStaffMemberBase, nil
 }
 
 // BookingWorkHours undocumented
 type BookingWorkHours struct {
 	// Object is the base model of BookingWorkHours
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Day undocumented
 	Day *DayOfWeek `json:"day,omitempty"`
 	// TimeSlots undocumented
 	TimeSlots []BookingWorkTimeSlot `json:"timeSlots,omitempty"`
 }
 
+func NewBookingWorkHours() (*BookingWorkHours, error) {
+	newBookingWorkHours := &BookingWorkHours{
+		ODataType: "#microsoft.graph.BookingWorkHours",
+	}
+	return newBookingWorkHours, nil
+}
+
 // BookingWorkTimeSlot undocumented
 type BookingWorkTimeSlot struct {
 	// Object is the base model of BookingWorkTimeSlot
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// EndTime undocumented
 	EndTime *TimeOfDay `json:"endTime,omitempty"`
 	// StartTime undocumented
 	StartTime *TimeOfDay `json:"startTime,omitempty"`
+}
+
+func NewBookingWorkTimeSlot() (*BookingWorkTimeSlot, error) {
+	newBookingWorkTimeSlot := &BookingWorkTimeSlot{
+		ODataType: "#microsoft.graph.BookingWorkTimeSlot",
+	}
+	return newBookingWorkTimeSlot, nil
 }

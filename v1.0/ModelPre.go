@@ -6,8 +6,17 @@ package msgraph
 type PreAuthorizedApplication struct {
 	// Object is the base model of PreAuthorizedApplication
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
 	// DelegatedPermissionIDs undocumented
 	DelegatedPermissionIDs []string `json:"delegatedPermissionIds,omitempty"`
+}
+
+func NewPreAuthorizedApplication() (*PreAuthorizedApplication, error) {
+	newPreAuthorizedApplication := &PreAuthorizedApplication{
+		ODataType: "#microsoft.graph.PreAuthorizedApplication",
+	}
+	return newPreAuthorizedApplication, nil
 }

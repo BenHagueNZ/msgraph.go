@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Shared returns request builder for SharedInsight collection
+// Shared returns request builder for SharedInsight collection rcn
 func (b *OfficeGraphInsightsRequestBuilder) Shared() *OfficeGraphInsightsSharedCollectionRequestBuilder {
 	bb := &OfficeGraphInsightsSharedCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/shared"
@@ -114,7 +114,7 @@ func (r *OfficeGraphInsightsSharedCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// Trending returns request builder for Trending collection
+// Trending returns request builder for Trending collection rcn
 func (b *OfficeGraphInsightsRequestBuilder) Trending() *OfficeGraphInsightsTrendingCollectionRequestBuilder {
 	bb := &OfficeGraphInsightsTrendingCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/trending"
@@ -217,7 +217,7 @@ func (r *OfficeGraphInsightsTrendingCollectionRequest) Add(ctx context.Context, 
 	return
 }
 
-// Used returns request builder for UsedInsight collection
+// Used returns request builder for UsedInsight collection rcn
 func (b *OfficeGraphInsightsRequestBuilder) Used() *OfficeGraphInsightsUsedCollectionRequestBuilder {
 	bb := &OfficeGraphInsightsUsedCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/used"
@@ -318,4 +318,11 @@ func (r *OfficeGraphInsightsUsedCollectionRequest) Get(ctx context.Context) ([]U
 func (r *OfficeGraphInsightsUsedCollectionRequest) Add(ctx context.Context, reqObj *UsedInsight) (resObj *UsedInsight, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// OfficeGraphInsights is navigation property rn
+func (b *OfficeGraphInsightsRequestBuilder) OfficeGraphInsights() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

@@ -5,3 +5,10 @@ package msgraph
 // VPPTokenSyncLicensesRequestParameter undocumented
 type VPPTokenSyncLicensesRequestParameter struct {
 }
+
+// VPPToken is navigation property rn
+func (b *VPPTokenRequestBuilder) VPPToken() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}

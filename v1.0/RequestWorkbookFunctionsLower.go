@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsLowerRequestBuilder struct{ BaseRequestBuilder }
 
-// Lower action undocumented
+// Lower action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Lower(reqObj *WorkbookFunctionsLowerRequestParameter) *WorkbookFunctionsLowerRequestBuilder {
 	bb := &WorkbookFunctionsLowerRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Lower"

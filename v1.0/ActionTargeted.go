@@ -39,7 +39,7 @@ type TargetedManagedAppProtectionTargetAppsRequestParameter struct {
 	AppGroupType *TargetedManagedAppGroupType `json:"appGroupType,omitempty"`
 }
 
-// Apps returns request builder for ManagedMobileApp collection
+// Apps returns request builder for ManagedMobileApp collection rcn
 func (b *TargetedManagedAppConfigurationRequestBuilder) Apps() *TargetedManagedAppConfigurationAppsCollectionRequestBuilder {
 	bb := &TargetedManagedAppConfigurationAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/apps"
@@ -142,7 +142,7 @@ func (r *TargetedManagedAppConfigurationAppsCollectionRequest) Add(ctx context.C
 	return
 }
 
-// Assignments returns request builder for TargetedManagedAppPolicyAssignment collection
+// Assignments returns request builder for TargetedManagedAppPolicyAssignment collection rcn
 func (b *TargetedManagedAppConfigurationRequestBuilder) Assignments() *TargetedManagedAppConfigurationAssignmentsCollectionRequestBuilder {
 	bb := &TargetedManagedAppConfigurationAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignments"
@@ -245,14 +245,14 @@ func (r *TargetedManagedAppConfigurationAssignmentsCollectionRequest) Add(ctx co
 	return
 }
 
-// DeploymentSummary is navigation property
+// DeploymentSummary is navigation property rn
 func (b *TargetedManagedAppConfigurationRequestBuilder) DeploymentSummary() *ManagedAppPolicyDeploymentSummaryRequestBuilder {
 	bb := &ManagedAppPolicyDeploymentSummaryRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deploymentSummary"
 	return bb
 }
 
-// Assignments returns request builder for TargetedManagedAppPolicyAssignment collection
+// Assignments returns request builder for TargetedManagedAppPolicyAssignment collection rcn
 func (b *TargetedManagedAppProtectionRequestBuilder) Assignments() *TargetedManagedAppProtectionAssignmentsCollectionRequestBuilder {
 	bb := &TargetedManagedAppProtectionAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignments"
@@ -353,4 +353,11 @@ func (r *TargetedManagedAppProtectionAssignmentsCollectionRequest) Get(ctx conte
 func (r *TargetedManagedAppProtectionAssignmentsCollectionRequest) Add(ctx context.Context, reqObj *TargetedManagedAppPolicyAssignment) (resObj *TargetedManagedAppPolicyAssignment, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// TargetedManagedAppPolicyAssignment is navigation property rn
+func (b *TargetedManagedAppPolicyAssignmentRequestBuilder) TargetedManagedAppPolicyAssignment() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

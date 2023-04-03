@@ -6,4 +6,13 @@ package msgraph
 type Dictionary struct {
 	// Object is the base model of Dictionary
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewDictionary() (*Dictionary, error) {
+	newDictionary := &Dictionary{
+		ODataType: "#microsoft.graph.Dictionary",
+	}
+	return newDictionary, nil
 }

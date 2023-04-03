@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDaverageRequestBuilder struct{ BaseRequestBuilder }
 
-// Daverage action undocumented
+// Daverage action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Daverage(reqObj *WorkbookFunctionsDaverageRequestParameter) *WorkbookFunctionsDaverageRequestBuilder {
 	bb := &WorkbookFunctionsDaverageRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Daverage"

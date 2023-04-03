@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsNorm_DistRequestBuilder struct{ BaseRequestBuilder }
 
-// Norm_Dist action undocumented
+// Norm_Dist action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Norm_Dist(reqObj *WorkbookFunctionsNorm_DistRequestParameter) *WorkbookFunctionsNorm_DistRequestBuilder {
 	bb := &WorkbookFunctionsNorm_DistRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Norm_Dist"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsNorm_DistRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsNorm_InvRequestBuilder struct{ BaseRequestBuilder }
 
-// Norm_Inv action undocumented
+// Norm_Inv action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Norm_Inv(reqObj *WorkbookFunctionsNorm_InvRequestParameter) *WorkbookFunctionsNorm_InvRequestBuilder {
 	bb := &WorkbookFunctionsNorm_InvRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Norm_Inv"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsNorm_InvRequest) Post(ctx context.Context) (resObj *Wo
 
 type WorkbookFunctionsNorm_S_DistRequestBuilder struct{ BaseRequestBuilder }
 
-// Norm_S_Dist action undocumented
+// Norm_S_Dist action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Norm_S_Dist(reqObj *WorkbookFunctionsNorm_S_DistRequestParameter) *WorkbookFunctionsNorm_S_DistRequestBuilder {
 	bb := &WorkbookFunctionsNorm_S_DistRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Norm_S_Dist"
@@ -75,7 +75,7 @@ func (r *WorkbookFunctionsNorm_S_DistRequest) Post(ctx context.Context) (resObj 
 
 type WorkbookFunctionsNorm_S_InvRequestBuilder struct{ BaseRequestBuilder }
 
-// Norm_S_Inv action undocumented
+// Norm_S_Inv action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Norm_S_Inv(reqObj *WorkbookFunctionsNorm_S_InvRequestParameter) *WorkbookFunctionsNorm_S_InvRequestBuilder {
 	bb := &WorkbookFunctionsNorm_S_InvRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Norm_S_Inv"

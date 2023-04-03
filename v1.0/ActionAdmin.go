@@ -2,9 +2,16 @@
 
 package msgraph
 
-// ServiceAnnouncement is navigation property
+// ServiceAnnouncement is navigation property rn
 func (b *AdminRequestBuilder) ServiceAnnouncement() *ServiceAnnouncementRequestBuilder {
 	bb := &ServiceAnnouncementRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/serviceAnnouncement"
+	return bb
+}
+
+// AdminConsentRequestPolicy is navigation property rn
+func (b *AdminConsentRequestPolicyRequestBuilder) AdminConsentRequestPolicy() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

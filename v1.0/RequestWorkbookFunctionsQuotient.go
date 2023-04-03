@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsQuotientRequestBuilder struct{ BaseRequestBuilder }
 
-// Quotient action undocumented
+// Quotient action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Quotient(reqObj *WorkbookFunctionsQuotientRequestParameter) *WorkbookFunctionsQuotientRequestBuilder {
 	bb := &WorkbookFunctionsQuotientRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Quotient"

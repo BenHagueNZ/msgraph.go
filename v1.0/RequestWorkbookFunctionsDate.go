@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDateRequestBuilder struct{ BaseRequestBuilder }
 
-// Date action undocumented
+// Date action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Date(reqObj *WorkbookFunctionsDateRequestParameter) *WorkbookFunctionsDateRequestBuilder {
 	bb := &WorkbookFunctionsDateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Date"

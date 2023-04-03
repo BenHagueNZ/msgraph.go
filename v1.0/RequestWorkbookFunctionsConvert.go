@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsConvertRequestBuilder struct{ BaseRequestBuilder }
 
-// Convert action undocumented
+// Convert action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Convert(reqObj *WorkbookFunctionsConvertRequestParameter) *WorkbookFunctionsConvertRequestBuilder {
 	bb := &WorkbookFunctionsConvertRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Convert"

@@ -6,10 +6,19 @@ package msgraph
 type CustomTimeZone struct {
 	// TimeZoneBase is the base model of CustomTimeZone
 	TimeZoneBase
+
+	ODataType string `json:"@odata.type"`
 	// Bias undocumented
 	Bias *int `json:"bias,omitempty"`
 	// DaylightOffset undocumented
 	DaylightOffset *DaylightTimeZoneOffset `json:"daylightOffset,omitempty"`
 	// StandardOffset undocumented
 	StandardOffset *StandardTimeZoneOffset `json:"standardOffset,omitempty"`
+}
+
+func NewCustomTimeZone() (*CustomTimeZone, error) {
+	newCustomTimeZone := &CustomTimeZone{
+		ODataType: "#microsoft.graph.CustomTimeZone",
+	}
+	return newCustomTimeZone, nil
 }

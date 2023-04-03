@@ -8,6 +8,8 @@ import "time"
 type SharingDetail struct {
 	// Object is the base model of SharingDetail
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// SharedBy undocumented
 	SharedBy *InsightIdentity `json:"sharedBy,omitempty"`
 	// SharedDateTime undocumented
@@ -20,10 +22,19 @@ type SharingDetail struct {
 	SharingType *string `json:"sharingType,omitempty"`
 }
 
+func NewSharingDetail() (*SharingDetail, error) {
+	newSharingDetail := &SharingDetail{
+		ODataType: "#microsoft.graph.SharingDetail",
+	}
+	return newSharingDetail, nil
+}
+
 // SharingInvitation undocumented
 type SharingInvitation struct {
 	// Object is the base model of SharingInvitation
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
 	// InvitedBy undocumented
@@ -34,10 +45,19 @@ type SharingInvitation struct {
 	SignInRequired *bool `json:"signInRequired,omitempty"`
 }
 
+func NewSharingInvitation() (*SharingInvitation, error) {
+	newSharingInvitation := &SharingInvitation{
+		ODataType: "#microsoft.graph.SharingInvitation",
+	}
+	return newSharingInvitation, nil
+}
+
 // SharingLink undocumented
 type SharingLink struct {
 	// Object is the base model of SharingLink
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Application undocumented
 	Application *Identity `json:"application,omitempty"`
 	// PreventsDownload undocumented
@@ -50,4 +70,11 @@ type SharingLink struct {
 	WebHTML *string `json:"webHtml,omitempty"`
 	// WebURL undocumented
 	WebURL *string `json:"webUrl,omitempty"`
+}
+
+func NewSharingLink() (*SharingLink, error) {
+	newSharingLink := &SharingLink{
+		ODataType: "#microsoft.graph.SharingLink",
+	}
+	return newSharingLink, nil
 }

@@ -732,7 +732,7 @@ func (r *UnifiedRoleScheduleInstanceBaseRequest) Delete(ctx context.Context) err
 
 type UnifiedRoleAssignmentScheduleRequestObjectCancelRequestBuilder struct{ BaseRequestBuilder }
 
-// Cancel action undocumented
+// Cancel action undocumentedrav
 func (b *UnifiedRoleAssignmentScheduleRequestObjectRequestBuilder) Cancel(reqObj *UnifiedRoleAssignmentScheduleRequestObjectCancelRequestParameter) *UnifiedRoleAssignmentScheduleRequestObjectCancelRequestBuilder {
 	bb := &UnifiedRoleAssignmentScheduleRequestObjectCancelRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Cancel"
@@ -754,7 +754,7 @@ func (r *UnifiedRoleAssignmentScheduleRequestObjectCancelRequest) Post(ctx conte
 
 type UnifiedRoleEligibilityScheduleRequestObjectCancelRequestBuilder struct{ BaseRequestBuilder }
 
-// Cancel action undocumented
+// Cancel action undocumentedrav
 func (b *UnifiedRoleEligibilityScheduleRequestObjectRequestBuilder) Cancel(reqObj *UnifiedRoleEligibilityScheduleRequestObjectCancelRequestParameter) *UnifiedRoleEligibilityScheduleRequestObjectCancelRequestBuilder {
 	bb := &UnifiedRoleEligibilityScheduleRequestObjectCancelRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Cancel"

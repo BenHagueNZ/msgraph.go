@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsRandRequestBuilder struct{ BaseRequestBuilder }
 
-// Rand action undocumented
+// Rand action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Rand(reqObj *WorkbookFunctionsRandRequestParameter) *WorkbookFunctionsRandRequestBuilder {
 	bb := &WorkbookFunctionsRandRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Rand"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsRandRequest) Post(ctx context.Context) (resObj *Workbo
 
 type WorkbookFunctionsRandBetweenRequestBuilder struct{ BaseRequestBuilder }
 
-// RandBetween action undocumented
+// RandBetween action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) RandBetween(reqObj *WorkbookFunctionsRandBetweenRequestParameter) *WorkbookFunctionsRandBetweenRequestBuilder {
 	bb := &WorkbookFunctionsRandBetweenRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RandBetween"

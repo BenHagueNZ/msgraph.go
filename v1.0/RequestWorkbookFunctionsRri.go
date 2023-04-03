@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsRriRequestBuilder struct{ BaseRequestBuilder }
 
-// Rri action undocumented
+// Rri action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Rri(reqObj *WorkbookFunctionsRriRequestParameter) *WorkbookFunctionsRriRequestBuilder {
 	bb := &WorkbookFunctionsRriRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Rri"

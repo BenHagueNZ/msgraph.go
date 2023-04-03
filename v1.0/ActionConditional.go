@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AuthenticationContextClassReferences returns request builder for AuthenticationContextClassReference collection
+// AuthenticationContextClassReferences returns request builder for AuthenticationContextClassReference collection rcn
 func (b *ConditionalAccessRootRequestBuilder) AuthenticationContextClassReferences() *ConditionalAccessRootAuthenticationContextClassReferencesCollectionRequestBuilder {
 	bb := &ConditionalAccessRootAuthenticationContextClassReferencesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/authenticationContextClassReferences"
@@ -114,7 +114,7 @@ func (r *ConditionalAccessRootAuthenticationContextClassReferencesCollectionRequ
 	return
 }
 
-// NamedLocations returns request builder for NamedLocation collection
+// NamedLocations returns request builder for NamedLocation collection rcn
 func (b *ConditionalAccessRootRequestBuilder) NamedLocations() *ConditionalAccessRootNamedLocationsCollectionRequestBuilder {
 	bb := &ConditionalAccessRootNamedLocationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/namedLocations"
@@ -217,7 +217,7 @@ func (r *ConditionalAccessRootNamedLocationsCollectionRequest) Add(ctx context.C
 	return
 }
 
-// Policies returns request builder for ConditionalAccessPolicy collection
+// Policies returns request builder for ConditionalAccessPolicy collection rcn
 func (b *ConditionalAccessRootRequestBuilder) Policies() *ConditionalAccessRootPoliciesCollectionRequestBuilder {
 	bb := &ConditionalAccessRootPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/policies"
@@ -320,7 +320,7 @@ func (r *ConditionalAccessRootPoliciesCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Templates returns request builder for ConditionalAccessTemplate collection
+// Templates returns request builder for ConditionalAccessTemplate collection rcn
 func (b *ConditionalAccessRootRequestBuilder) Templates() *ConditionalAccessRootTemplatesCollectionRequestBuilder {
 	bb := &ConditionalAccessRootTemplatesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/templates"
@@ -421,4 +421,25 @@ func (r *ConditionalAccessRootTemplatesCollectionRequest) Get(ctx context.Contex
 func (r *ConditionalAccessRootTemplatesCollectionRequest) Add(ctx context.Context, reqObj *ConditionalAccessTemplate) (resObj *ConditionalAccessTemplate, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// ConditionalAccessPolicy is navigation property rn
+func (b *ConditionalAccessPolicyRequestBuilder) ConditionalAccessPolicy() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ConditionalAccessRoot is navigation property rn
+func (b *ConditionalAccessRootRequestBuilder) ConditionalAccessRoot() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ConditionalAccessTemplate is navigation property rn
+func (b *ConditionalAccessTemplateRequestBuilder) ConditionalAccessTemplate() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

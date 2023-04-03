@@ -6,8 +6,17 @@ package msgraph
 type StaffAvailabilityItem struct {
 	// Object is the base model of StaffAvailabilityItem
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AvailabilityItems undocumented
 	AvailabilityItems []AvailabilityItem `json:"availabilityItems,omitempty"`
 	// StaffID undocumented
 	StaffID *string `json:"staffId,omitempty"`
+}
+
+func NewStaffAvailabilityItem() (*StaffAvailabilityItem, error) {
+	newStaffAvailabilityItem := &StaffAvailabilityItem{
+		ODataType: "#microsoft.graph.StaffAvailabilityItem",
+	}
+	return newStaffAvailabilityItem, nil
 }

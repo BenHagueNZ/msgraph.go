@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsMinRequestBuilder struct{ BaseRequestBuilder }
 
-// Min action undocumented
+// Min action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Min(reqObj *WorkbookFunctionsMinRequestParameter) *WorkbookFunctionsMinRequestBuilder {
 	bb := &WorkbookFunctionsMinRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Min"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsMinRequest) Post(ctx context.Context) (resObj *Workboo
 
 type WorkbookFunctionsMinARequestBuilder struct{ BaseRequestBuilder }
 
-// MinA action undocumented
+// MinA action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) MinA(reqObj *WorkbookFunctionsMinARequestParameter) *WorkbookFunctionsMinARequestBuilder {
 	bb := &WorkbookFunctionsMinARequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/MinA"

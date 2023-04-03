@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDurationRequestBuilder struct{ BaseRequestBuilder }
 
-// Duration action undocumented
+// Duration action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Duration(reqObj *WorkbookFunctionsDurationRequestParameter) *WorkbookFunctionsDurationRequestBuilder {
 	bb := &WorkbookFunctionsDurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Duration"

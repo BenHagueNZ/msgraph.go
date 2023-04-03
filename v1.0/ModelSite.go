@@ -6,6 +6,8 @@ package msgraph
 type Site struct {
 	// BaseItem is the base model of Site
 	BaseItem
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Error undocumented
@@ -46,14 +48,30 @@ type Site struct {
 	Onenote *Onenote `json:"onenote,omitempty"`
 }
 
+func NewSite() (*Site, error) {
+	newSite := &Site{
+		ODataType: "#microsoft.graph.Site",
+	}
+	return newSite, nil
+}
+
 // SiteCollection undocumented
 type SiteCollection struct {
 	// Object is the base model of SiteCollection
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DataLocationCode undocumented
 	DataLocationCode *string `json:"dataLocationCode,omitempty"`
 	// Hostname undocumented
 	Hostname *string `json:"hostname,omitempty"`
 	// Root undocumented
 	Root *Root `json:"root,omitempty"`
+}
+
+func NewSiteCollection() (*SiteCollection, error) {
+	newSiteCollection := &SiteCollection{
+		ODataType: "#microsoft.graph.SiteCollection",
+	}
+	return newSiteCollection, nil
 }

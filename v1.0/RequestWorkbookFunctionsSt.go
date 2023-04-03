@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsStDevARequestBuilder struct{ BaseRequestBuilder }
 
-// StDevA action undocumented
+// StDevA action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) StDevA(reqObj *WorkbookFunctionsStDevARequestParameter) *WorkbookFunctionsStDevARequestBuilder {
 	bb := &WorkbookFunctionsStDevARequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/StDevA"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsStDevARequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsStDevPARequestBuilder struct{ BaseRequestBuilder }
 
-// StDevPA action undocumented
+// StDevPA action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) StDevPA(reqObj *WorkbookFunctionsStDevPARequestParameter) *WorkbookFunctionsStDevPARequestBuilder {
 	bb := &WorkbookFunctionsStDevPARequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/StDevPA"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsStDevPARequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsStDev_PRequestBuilder struct{ BaseRequestBuilder }
 
-// StDev_P action undocumented
+// StDev_P action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) StDev_P(reqObj *WorkbookFunctionsStDev_PRequestParameter) *WorkbookFunctionsStDev_PRequestBuilder {
 	bb := &WorkbookFunctionsStDev_PRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/StDev_P"
@@ -75,7 +75,7 @@ func (r *WorkbookFunctionsStDev_PRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsStDev_SRequestBuilder struct{ BaseRequestBuilder }
 
-// StDev_S action undocumented
+// StDev_S action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) StDev_S(reqObj *WorkbookFunctionsStDev_SRequestParameter) *WorkbookFunctionsStDev_SRequestBuilder {
 	bb := &WorkbookFunctionsStDev_SRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/StDev_S"

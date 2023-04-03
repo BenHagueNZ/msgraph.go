@@ -6,10 +6,19 @@ package msgraph
 type AlteredQueryToken struct {
 	// Object is the base model of AlteredQueryToken
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Length undocumented
 	Length *int `json:"length,omitempty"`
 	// Offset undocumented
 	Offset *int `json:"offset,omitempty"`
 	// Suggestion undocumented
 	Suggestion *string `json:"suggestion,omitempty"`
+}
+
+func NewAlteredQueryToken() (*AlteredQueryToken, error) {
+	newAlteredQueryToken := &AlteredQueryToken{
+		ODataType: "#microsoft.graph.AlteredQueryToken",
+	}
+	return newAlteredQueryToken, nil
 }

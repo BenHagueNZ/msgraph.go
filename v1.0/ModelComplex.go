@@ -6,4 +6,13 @@ package msgraph
 type ComplexExtensionValue struct {
 	// Object is the base model of ComplexExtensionValue
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewComplexExtensionValue() (*ComplexExtensionValue, error) {
+	newComplexExtensionValue := &ComplexExtensionValue{
+		ODataType: "#microsoft.graph.ComplexExtensionValue",
+	}
+	return newComplexExtensionValue, nil
 }

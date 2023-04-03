@@ -6,8 +6,17 @@ package msgraph
 type TicketInfo struct {
 	// Object is the base model of TicketInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// TicketNumber undocumented
 	TicketNumber *string `json:"ticketNumber,omitempty"`
 	// TicketSystem undocumented
 	TicketSystem *string `json:"ticketSystem,omitempty"`
+}
+
+func NewTicketInfo() (*TicketInfo, error) {
+	newTicketInfo := &TicketInfo{
+		ODataType: "#microsoft.graph.TicketInfo",
+	}
+	return newTicketInfo, nil
 }

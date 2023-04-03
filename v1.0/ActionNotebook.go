@@ -31,7 +31,7 @@ type NotebookCopyNotebookRequestParameter struct {
 	SiteID *string `json:"siteId,omitempty"`
 }
 
-// SectionGroups returns request builder for SectionGroup collection
+// SectionGroups returns request builder for SectionGroup collection rcn
 func (b *NotebookRequestBuilder) SectionGroups() *NotebookSectionGroupsCollectionRequestBuilder {
 	bb := &NotebookSectionGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sectionGroups"
@@ -134,7 +134,7 @@ func (r *NotebookSectionGroupsCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// Sections returns request builder for OnenoteSection collection
+// Sections returns request builder for OnenoteSection collection rcn
 func (b *NotebookRequestBuilder) Sections() *NotebookSectionsCollectionRequestBuilder {
 	bb := &NotebookSectionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sections"

@@ -6,14 +6,32 @@ package msgraph
 type IPNamedLocation struct {
 	// NamedLocation is the base model of IPNamedLocation
 	NamedLocation
+
+	ODataType string `json:"@odata.type"`
 	// IPRanges undocumented
 	IPRanges []IPRange `json:"ipRanges,omitempty"`
 	// IsTrusted undocumented
 	IsTrusted *bool `json:"isTrusted,omitempty"`
 }
 
+func NewIPNamedLocation() (*IPNamedLocation, error) {
+	newIPNamedLocation := &IPNamedLocation{
+		ODataType: "#microsoft.graph.IpNamedLocation",
+	}
+	return newIPNamedLocation, nil
+}
+
 // IPRange undocumented
 type IPRange struct {
 	// Object is the base model of IPRange
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewIPRange() (*IPRange, error) {
+	newIPRange := &IPRange{
+		ODataType: "#microsoft.graph.IpRange",
+	}
+	return newIPRange, nil
 }

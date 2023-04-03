@@ -8,6 +8,8 @@ import "time"
 type Message struct {
 	// OutlookItem is the base model of Message
 	OutlookItem
+
+	ODataType string `json:"@odata.type"`
 	// BccRecipients undocumented
 	BccRecipients []Recipient `json:"bccRecipients,omitempty"`
 	// Body undocumented
@@ -70,20 +72,38 @@ type Message struct {
 	SingleValueExtendedProperties []SingleValueLegacyExtendedProperty `json:"singleValueExtendedProperties,omitempty"`
 }
 
+func NewMessage() (*Message, error) {
+	newMessage := &Message{
+		ODataType: "#microsoft.graph.Message",
+	}
+	return newMessage, nil
+}
+
 // MessagePinnedEventMessageDetail undocumented
 type MessagePinnedEventMessageDetail struct {
 	// EventMessageDetail is the base model of MessagePinnedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// EventDateTime undocumented
 	EventDateTime *time.Time `json:"eventDateTime,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 }
 
+func NewMessagePinnedEventMessageDetail() (*MessagePinnedEventMessageDetail, error) {
+	newMessagePinnedEventMessageDetail := &MessagePinnedEventMessageDetail{
+		ODataType: "#microsoft.graph.MessagePinnedEventMessageDetail",
+	}
+	return newMessagePinnedEventMessageDetail, nil
+}
+
 // MessageRule undocumented
 type MessageRule struct {
 	// Entity is the base model of MessageRule
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Actions undocumented
 	Actions *MessageRuleActions `json:"actions,omitempty"`
 	// Conditions undocumented
@@ -102,10 +122,19 @@ type MessageRule struct {
 	Sequence *int `json:"sequence,omitempty"`
 }
 
+func NewMessageRule() (*MessageRule, error) {
+	newMessageRule := &MessageRule{
+		ODataType: "#microsoft.graph.MessageRule",
+	}
+	return newMessageRule, nil
+}
+
 // MessageRuleActions undocumented
 type MessageRuleActions struct {
 	// Object is the base model of MessageRuleActions
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AssignCategories undocumented
 	AssignCategories []string `json:"assignCategories,omitempty"`
 	// CopyToFolder undocumented
@@ -130,10 +159,19 @@ type MessageRuleActions struct {
 	StopProcessingRules *bool `json:"stopProcessingRules,omitempty"`
 }
 
+func NewMessageRuleActions() (*MessageRuleActions, error) {
+	newMessageRuleActions := &MessageRuleActions{
+		ODataType: "#microsoft.graph.MessageRuleActions",
+	}
+	return newMessageRuleActions, nil
+}
+
 // MessageRulePredicates undocumented
 type MessageRulePredicates struct {
 	// Object is the base model of MessageRulePredicates
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// BodyContains undocumented
 	BodyContains []string `json:"bodyContains,omitempty"`
 	// BodyOrSubjectContains undocumented
@@ -196,10 +234,19 @@ type MessageRulePredicates struct {
 	WithinSizeRange *SizeRange `json:"withinSizeRange,omitempty"`
 }
 
+func NewMessageRulePredicates() (*MessageRulePredicates, error) {
+	newMessageRulePredicates := &MessageRulePredicates{
+		ODataType: "#microsoft.graph.MessageRulePredicates",
+	}
+	return newMessageRulePredicates, nil
+}
+
 // MessageSecurityState undocumented
 type MessageSecurityState struct {
 	// Object is the base model of MessageSecurityState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ConnectingIP undocumented
 	ConnectingIP *string `json:"connectingIP,omitempty"`
 	// DeliveryAction undocumented
@@ -220,12 +267,28 @@ type MessageSecurityState struct {
 	NetworkMessageID *string `json:"networkMessageId,omitempty"`
 }
 
+func NewMessageSecurityState() (*MessageSecurityState, error) {
+	newMessageSecurityState := &MessageSecurityState{
+		ODataType: "#microsoft.graph.MessageSecurityState",
+	}
+	return newMessageSecurityState, nil
+}
+
 // MessageUnpinnedEventMessageDetail undocumented
 type MessageUnpinnedEventMessageDetail struct {
 	// EventMessageDetail is the base model of MessageUnpinnedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// EventDateTime undocumented
 	EventDateTime *time.Time `json:"eventDateTime,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
+}
+
+func NewMessageUnpinnedEventMessageDetail() (*MessageUnpinnedEventMessageDetail, error) {
+	newMessageUnpinnedEventMessageDetail := &MessageUnpinnedEventMessageDetail{
+		ODataType: "#microsoft.graph.MessageUnpinnedEventMessageDetail",
+	}
+	return newMessageUnpinnedEventMessageDetail, nil
 }

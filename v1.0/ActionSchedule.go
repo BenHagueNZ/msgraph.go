@@ -34,7 +34,7 @@ type ScheduleChangeRequestObjectApproveRequestParameter struct {
 	Message *string `json:"message,omitempty"`
 }
 
-// OfferShiftRequests returns request builder for OfferShiftRequestObject collection
+// OfferShiftRequests returns request builder for OfferShiftRequestObject collection rcn
 func (b *ScheduleRequestBuilder) OfferShiftRequests() *ScheduleOfferShiftRequestsCollectionRequestBuilder {
 	bb := &ScheduleOfferShiftRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/offerShiftRequests"
@@ -137,7 +137,7 @@ func (r *ScheduleOfferShiftRequestsCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// OpenShiftChangeRequests returns request builder for OpenShiftChangeRequestObject collection
+// OpenShiftChangeRequests returns request builder for OpenShiftChangeRequestObject collection rcn
 func (b *ScheduleRequestBuilder) OpenShiftChangeRequests() *ScheduleOpenShiftChangeRequestsCollectionRequestBuilder {
 	bb := &ScheduleOpenShiftChangeRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/openShiftChangeRequests"
@@ -240,7 +240,7 @@ func (r *ScheduleOpenShiftChangeRequestsCollectionRequest) Add(ctx context.Conte
 	return
 }
 
-// OpenShifts returns request builder for OpenShift collection
+// OpenShifts returns request builder for OpenShift collection rcn
 func (b *ScheduleRequestBuilder) OpenShifts() *ScheduleOpenShiftsCollectionRequestBuilder {
 	bb := &ScheduleOpenShiftsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/openShifts"
@@ -343,7 +343,7 @@ func (r *ScheduleOpenShiftsCollectionRequest) Add(ctx context.Context, reqObj *O
 	return
 }
 
-// SchedulingGroups returns request builder for SchedulingGroup collection
+// SchedulingGroups returns request builder for SchedulingGroup collection rcn
 func (b *ScheduleRequestBuilder) SchedulingGroups() *ScheduleSchedulingGroupsCollectionRequestBuilder {
 	bb := &ScheduleSchedulingGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/schedulingGroups"
@@ -446,7 +446,7 @@ func (r *ScheduleSchedulingGroupsCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// Shifts returns request builder for Shift collection
+// Shifts returns request builder for Shift collection rcn
 func (b *ScheduleRequestBuilder) Shifts() *ScheduleShiftsCollectionRequestBuilder {
 	bb := &ScheduleShiftsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/shifts"
@@ -549,7 +549,7 @@ func (r *ScheduleShiftsCollectionRequest) Add(ctx context.Context, reqObj *Shift
 	return
 }
 
-// SwapShiftsChangeRequests returns request builder for SwapShiftsChangeRequestObject collection
+// SwapShiftsChangeRequests returns request builder for SwapShiftsChangeRequestObject collection rcn
 func (b *ScheduleRequestBuilder) SwapShiftsChangeRequests() *ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder {
 	bb := &ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/swapShiftsChangeRequests"
@@ -652,7 +652,7 @@ func (r *ScheduleSwapShiftsChangeRequestsCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// TimeOffReasons returns request builder for TimeOffReason collection
+// TimeOffReasons returns request builder for TimeOffReason collection rcn
 func (b *ScheduleRequestBuilder) TimeOffReasons() *ScheduleTimeOffReasonsCollectionRequestBuilder {
 	bb := &ScheduleTimeOffReasonsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/timeOffReasons"
@@ -755,7 +755,7 @@ func (r *ScheduleTimeOffReasonsCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// TimeOffRequests returns request builder for TimeOffRequestObject collection
+// TimeOffRequests returns request builder for TimeOffRequestObject collection rcn
 func (b *ScheduleRequestBuilder) TimeOffRequests() *ScheduleTimeOffRequestsCollectionRequestBuilder {
 	bb := &ScheduleTimeOffRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/timeOffRequests"
@@ -858,7 +858,7 @@ func (r *ScheduleTimeOffRequestsCollectionRequest) Add(ctx context.Context, reqO
 	return
 }
 
-// TimesOff returns request builder for TimeOff collection
+// TimesOff returns request builder for TimeOff collection rcn
 func (b *ScheduleRequestBuilder) TimesOff() *ScheduleTimesOffCollectionRequestBuilder {
 	bb := &ScheduleTimesOffCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/timesOff"
@@ -959,4 +959,11 @@ func (r *ScheduleTimesOffCollectionRequest) Get(ctx context.Context) ([]TimeOff,
 func (r *ScheduleTimesOffCollectionRequest) Add(ctx context.Context, reqObj *TimeOff) (resObj *TimeOff, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Schedule is navigation property rn
+func (b *ScheduleRequestBuilder) Schedule() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

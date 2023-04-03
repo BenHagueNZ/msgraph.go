@@ -574,7 +574,7 @@ func (r *BookingWorkTimeSlotRequest) Delete(ctx context.Context) error {
 
 type BookingAppointmentCancelRequestBuilder struct{ BaseRequestBuilder }
 
-// Cancel action undocumented
+// Cancel action undocumentedrav
 func (b *BookingAppointmentRequestBuilder) Cancel(reqObj *BookingAppointmentCancelRequestParameter) *BookingAppointmentCancelRequestBuilder {
 	bb := &BookingAppointmentCancelRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Cancel"
@@ -596,7 +596,7 @@ func (r *BookingAppointmentCancelRequest) Post(ctx context.Context) error {
 
 type BookingBusinessGetStaffAvailabilityRequestBuilder struct{ BaseRequestBuilder }
 
-// GetStaffAvailability action undocumented
+// GetStaffAvailability action undocumentedrac
 func (b *BookingBusinessRequestBuilder) GetStaffAvailability(reqObj *BookingBusinessGetStaffAvailabilityRequestParameter) *BookingBusinessGetStaffAvailabilityRequestBuilder {
 	bb := &BookingBusinessGetStaffAvailabilityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetStaffAvailability"
@@ -677,7 +677,7 @@ func (r *BookingBusinessGetStaffAvailabilityRequest) Post(ctx context.Context) (
 
 type BookingBusinessPublishRequestBuilder struct{ BaseRequestBuilder }
 
-// Publish action undocumented
+// Publish action undocumentedrav
 func (b *BookingBusinessRequestBuilder) Publish(reqObj *BookingBusinessPublishRequestParameter) *BookingBusinessPublishRequestBuilder {
 	bb := &BookingBusinessPublishRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Publish"
@@ -699,7 +699,7 @@ func (r *BookingBusinessPublishRequest) Post(ctx context.Context) error {
 
 type BookingBusinessUnpublishRequestBuilder struct{ BaseRequestBuilder }
 
-// Unpublish action undocumented
+// Unpublish action undocumentedrav
 func (b *BookingBusinessRequestBuilder) Unpublish(reqObj *BookingBusinessUnpublishRequestParameter) *BookingBusinessUnpublishRequestBuilder {
 	bb := &BookingBusinessUnpublishRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Unpublish"

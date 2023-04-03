@@ -6,8 +6,17 @@ package msgraph
 type IntegerRange struct {
 	// Object is the base model of IntegerRange
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// End undocumented
 	End *int `json:"end,omitempty"`
 	// Start undocumented
 	Start *int `json:"start,omitempty"`
+}
+
+func NewIntegerRange() (*IntegerRange, error) {
+	newIntegerRange := &IntegerRange{
+		ODataType: "#microsoft.graph.IntegerRange",
+	}
+	return newIntegerRange, nil
 }

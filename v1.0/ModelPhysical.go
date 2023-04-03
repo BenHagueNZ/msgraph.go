@@ -6,6 +6,8 @@ package msgraph
 type PhysicalAddress struct {
 	// Object is the base model of PhysicalAddress
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// City undocumented
 	City *string `json:"city,omitempty"`
 	// CountryOrRegion undocumented
@@ -18,10 +20,19 @@ type PhysicalAddress struct {
 	Street *string `json:"street,omitempty"`
 }
 
+func NewPhysicalAddress() (*PhysicalAddress, error) {
+	newPhysicalAddress := &PhysicalAddress{
+		ODataType: "#microsoft.graph.PhysicalAddress",
+	}
+	return newPhysicalAddress, nil
+}
+
 // PhysicalOfficeAddress undocumented
 type PhysicalOfficeAddress struct {
 	// Object is the base model of PhysicalOfficeAddress
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// City undocumented
 	City *string `json:"city,omitempty"`
 	// CountryOrRegion undocumented
@@ -34,4 +45,11 @@ type PhysicalOfficeAddress struct {
 	State *string `json:"state,omitempty"`
 	// Street undocumented
 	Street *string `json:"street,omitempty"`
+}
+
+func NewPhysicalOfficeAddress() (*PhysicalOfficeAddress, error) {
+	newPhysicalOfficeAddress := &PhysicalOfficeAddress{
+		ODataType: "#microsoft.graph.PhysicalOfficeAddress",
+	}
+	return newPhysicalOfficeAddress, nil
 }

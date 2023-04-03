@@ -8,6 +8,8 @@ import "time"
 type TeamsApp struct {
 	// Entity is the base model of TeamsApp
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// DistributionMethod undocumented
@@ -18,10 +20,19 @@ type TeamsApp struct {
 	AppDefinitions []TeamsAppDefinition `json:"appDefinitions,omitempty"`
 }
 
+func NewTeamsApp() (*TeamsApp, error) {
+	newTeamsApp := &TeamsApp{
+		ODataType: "#microsoft.graph.TeamsApp",
+	}
+	return newTeamsApp, nil
+}
+
 // TeamsAppDefinition undocumented
 type TeamsAppDefinition struct {
 	// Entity is the base model of TeamsAppDefinition
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// Description undocumented
@@ -42,44 +53,80 @@ type TeamsAppDefinition struct {
 	Bot *TeamworkBot `json:"bot,omitempty"`
 }
 
+func NewTeamsAppDefinition() (*TeamsAppDefinition, error) {
+	newTeamsAppDefinition := &TeamsAppDefinition{
+		ODataType: "#microsoft.graph.TeamsAppDefinition",
+	}
+	return newTeamsAppDefinition, nil
+}
+
 // TeamsAppInstallation undocumented
 type TeamsAppInstallation struct {
 	// Entity is the base model of TeamsAppInstallation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// TeamsApp undocumented
 	TeamsApp *TeamsApp `json:"teamsApp,omitempty"`
 	// TeamsAppDefinition undocumented
 	TeamsAppDefinition *TeamsAppDefinition `json:"teamsAppDefinition,omitempty"`
 }
 
+func NewTeamsAppInstallation() (*TeamsAppInstallation, error) {
+	newTeamsAppInstallation := &TeamsAppInstallation{
+		ODataType: "#microsoft.graph.TeamsAppInstallation",
+	}
+	return newTeamsAppInstallation, nil
+}
+
 // TeamsAppInstalledEventMessageDetail undocumented
 type TeamsAppInstalledEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamsAppInstalledEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamsAppDisplayName undocumented
 	TeamsAppDisplayName *string `json:"teamsAppDisplayName,omitempty"`
 	// TeamsAppID undocumented
 	TeamsAppID *string `json:"teamsAppId,omitempty"`
+}
+
+func NewTeamsAppInstalledEventMessageDetail() (*TeamsAppInstalledEventMessageDetail, error) {
+	newTeamsAppInstalledEventMessageDetail := &TeamsAppInstalledEventMessageDetail{
+		ODataType: "#microsoft.graph.TeamsAppInstalledEventMessageDetail",
+	}
+	return newTeamsAppInstalledEventMessageDetail, nil
 }
 
 // TeamsAppRemovedEventMessageDetail undocumented
 type TeamsAppRemovedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamsAppRemovedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamsAppDisplayName undocumented
 	TeamsAppDisplayName *string `json:"teamsAppDisplayName,omitempty"`
 	// TeamsAppID undocumented
 	TeamsAppID *string `json:"teamsAppId,omitempty"`
+}
+
+func NewTeamsAppRemovedEventMessageDetail() (*TeamsAppRemovedEventMessageDetail, error) {
+	newTeamsAppRemovedEventMessageDetail := &TeamsAppRemovedEventMessageDetail{
+		ODataType: "#microsoft.graph.TeamsAppRemovedEventMessageDetail",
+	}
+	return newTeamsAppRemovedEventMessageDetail, nil
 }
 
 // TeamsAppUpgradedEventMessageDetail undocumented
 type TeamsAppUpgradedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamsAppUpgradedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamsAppDisplayName undocumented
@@ -88,10 +135,19 @@ type TeamsAppUpgradedEventMessageDetail struct {
 	TeamsAppID *string `json:"teamsAppId,omitempty"`
 }
 
+func NewTeamsAppUpgradedEventMessageDetail() (*TeamsAppUpgradedEventMessageDetail, error) {
+	newTeamsAppUpgradedEventMessageDetail := &TeamsAppUpgradedEventMessageDetail{
+		ODataType: "#microsoft.graph.TeamsAppUpgradedEventMessageDetail",
+	}
+	return newTeamsAppUpgradedEventMessageDetail, nil
+}
+
 // TeamsAsyncOperation undocumented
 type TeamsAsyncOperation struct {
 	// Entity is the base model of TeamsAsyncOperation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AttemptsCount undocumented
 	AttemptsCount *int `json:"attemptsCount,omitempty"`
 	// CreatedDateTime undocumented
@@ -110,10 +166,19 @@ type TeamsAsyncOperation struct {
 	TargetResourceLocation *string `json:"targetResourceLocation,omitempty"`
 }
 
+func NewTeamsAsyncOperation() (*TeamsAsyncOperation, error) {
+	newTeamsAsyncOperation := &TeamsAsyncOperation{
+		ODataType: "#microsoft.graph.TeamsAsyncOperation",
+	}
+	return newTeamsAsyncOperation, nil
+}
+
 // TeamsTab undocumented
 type TeamsTab struct {
 	// Entity is the base model of TeamsTab
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Configuration undocumented
 	Configuration *TeamsTabConfiguration `json:"configuration,omitempty"`
 	// DisplayName undocumented
@@ -124,10 +189,19 @@ type TeamsTab struct {
 	TeamsApp *TeamsApp `json:"teamsApp,omitempty"`
 }
 
+func NewTeamsTab() (*TeamsTab, error) {
+	newTeamsTab := &TeamsTab{
+		ODataType: "#microsoft.graph.TeamsTab",
+	}
+	return newTeamsTab, nil
+}
+
 // TeamsTabConfiguration undocumented
 type TeamsTabConfiguration struct {
 	// Object is the base model of TeamsTabConfiguration
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ContentURL undocumented
 	ContentURL *string `json:"contentUrl,omitempty"`
 	// EntityID undocumented
@@ -138,8 +212,24 @@ type TeamsTabConfiguration struct {
 	WebsiteURL *string `json:"websiteUrl,omitempty"`
 }
 
+func NewTeamsTabConfiguration() (*TeamsTabConfiguration, error) {
+	newTeamsTabConfiguration := &TeamsTabConfiguration{
+		ODataType: "#microsoft.graph.TeamsTabConfiguration",
+	}
+	return newTeamsTabConfiguration, nil
+}
+
 // TeamsTemplate undocumented
 type TeamsTemplate struct {
 	// Entity is the base model of TeamsTemplate
 	Entity
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewTeamsTemplate() (*TeamsTemplate, error) {
+	newTeamsTemplate := &TeamsTemplate{
+		ODataType: "#microsoft.graph.TeamsTemplate",
+	}
+	return newTeamsTemplate, nil
 }

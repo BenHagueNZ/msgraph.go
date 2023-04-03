@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsNpvRequestBuilder struct{ BaseRequestBuilder }
 
-// Npv action undocumented
+// Npv action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Npv(reqObj *WorkbookFunctionsNpvRequestParameter) *WorkbookFunctionsNpvRequestBuilder {
 	bb := &WorkbookFunctionsNpvRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Npv"

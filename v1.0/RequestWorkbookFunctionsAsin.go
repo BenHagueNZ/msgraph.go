@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsAsinRequestBuilder struct{ BaseRequestBuilder }
 
-// Asin action undocumented
+// Asin action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Asin(reqObj *WorkbookFunctionsAsinRequestParameter) *WorkbookFunctionsAsinRequestBuilder {
 	bb := &WorkbookFunctionsAsinRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Asin"

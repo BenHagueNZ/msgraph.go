@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsEcma_CeilingRequestBuilder struct{ BaseRequestBuilder }
 
-// Ecma_Ceiling action undocumented
+// Ecma_Ceiling action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Ecma_Ceiling(reqObj *WorkbookFunctionsEcma_CeilingRequestParameter) *WorkbookFunctionsEcma_CeilingRequestBuilder {
 	bb := &WorkbookFunctionsEcma_CeilingRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Ecma_Ceiling"

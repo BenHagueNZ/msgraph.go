@@ -6,6 +6,15 @@ package msgraph
 type MultiValueLegacyExtendedProperty struct {
 	// Entity is the base model of MultiValueLegacyExtendedProperty
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Value undocumented
 	Value []string `json:"value,omitempty"`
+}
+
+func NewMultiValueLegacyExtendedProperty() (*MultiValueLegacyExtendedProperty, error) {
+	newMultiValueLegacyExtendedProperty := &MultiValueLegacyExtendedProperty{
+		ODataType: "#microsoft.graph.MultiValueLegacyExtendedProperty",
+	}
+	return newMultiValueLegacyExtendedProperty, nil
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsPmtRequestBuilder struct{ BaseRequestBuilder }
 
-// Pmt action undocumented
+// Pmt action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Pmt(reqObj *WorkbookFunctionsPmtRequestParameter) *WorkbookFunctionsPmtRequestBuilder {
 	bb := &WorkbookFunctionsPmtRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Pmt"

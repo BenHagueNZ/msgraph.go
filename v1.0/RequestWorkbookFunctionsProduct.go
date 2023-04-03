@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsProductRequestBuilder struct{ BaseRequestBuilder }
 
-// Product action undocumented
+// Product action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Product(reqObj *WorkbookFunctionsProductRequestParameter) *WorkbookFunctionsProductRequestBuilder {
 	bb := &WorkbookFunctionsProductRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Product"

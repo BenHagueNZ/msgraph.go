@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDollarRequestBuilder struct{ BaseRequestBuilder }
 
-// Dollar action undocumented
+// Dollar action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Dollar(reqObj *WorkbookFunctionsDollarRequestParameter) *WorkbookFunctionsDollarRequestBuilder {
 	bb := &WorkbookFunctionsDollarRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Dollar"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsDollarRequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsDollarDeRequestBuilder struct{ BaseRequestBuilder }
 
-// DollarDe action undocumented
+// DollarDe action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) DollarDe(reqObj *WorkbookFunctionsDollarDeRequestParameter) *WorkbookFunctionsDollarDeRequestBuilder {
 	bb := &WorkbookFunctionsDollarDeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/DollarDe"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsDollarDeRequest) Post(ctx context.Context) (resObj *Wo
 
 type WorkbookFunctionsDollarFrRequestBuilder struct{ BaseRequestBuilder }
 
-// DollarFr action undocumented
+// DollarFr action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) DollarFr(reqObj *WorkbookFunctionsDollarFrRequestParameter) *WorkbookFunctionsDollarFrRequestBuilder {
 	bb := &WorkbookFunctionsDollarFrRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/DollarFr"

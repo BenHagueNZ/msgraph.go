@@ -6,8 +6,17 @@ package msgraph
 type RecordingInfo struct {
 	// Object is the base model of RecordingInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// RecordingStatus undocumented
 	RecordingStatus *RecordingStatus `json:"recordingStatus,omitempty"`
+}
+
+func NewRecordingInfo() (*RecordingInfo, error) {
+	newRecordingInfo := &RecordingInfo{
+		ODataType: "#microsoft.graph.RecordingInfo",
+	}
+	return newRecordingInfo, nil
 }

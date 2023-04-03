@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsQuartile_ExcRequestBuilder struct{ BaseRequestBuilder }
 
-// Quartile_Exc action undocumented
+// Quartile_Exc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Quartile_Exc(reqObj *WorkbookFunctionsQuartile_ExcRequestParameter) *WorkbookFunctionsQuartile_ExcRequestBuilder {
 	bb := &WorkbookFunctionsQuartile_ExcRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Quartile_Exc"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsQuartile_ExcRequest) Post(ctx context.Context) (resObj
 
 type WorkbookFunctionsQuartile_IncRequestBuilder struct{ BaseRequestBuilder }
 
-// Quartile_Inc action undocumented
+// Quartile_Inc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Quartile_Inc(reqObj *WorkbookFunctionsQuartile_IncRequestParameter) *WorkbookFunctionsQuartile_IncRequestBuilder {
 	bb := &WorkbookFunctionsQuartile_IncRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Quartile_Inc"

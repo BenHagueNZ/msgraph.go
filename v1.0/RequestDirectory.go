@@ -211,7 +211,7 @@ func (r *DirectoryRoleTemplateRequest) Delete(ctx context.Context) error {
 
 type DirectoryObjectCheckMemberGroupsRequestBuilder struct{ BaseRequestBuilder }
 
-// CheckMemberGroups action undocumented
+// CheckMemberGroups action undocumentedrac
 func (b *DirectoryObjectRequestBuilder) CheckMemberGroups(reqObj *DirectoryObjectCheckMemberGroupsRequestParameter) *DirectoryObjectCheckMemberGroupsRequestBuilder {
 	bb := &DirectoryObjectCheckMemberGroupsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CheckMemberGroups"
@@ -292,7 +292,7 @@ func (r *DirectoryObjectCheckMemberGroupsRequest) Post(ctx context.Context) ([]s
 
 type DirectoryObjectCheckMemberObjectsRequestBuilder struct{ BaseRequestBuilder }
 
-// CheckMemberObjects action undocumented
+// CheckMemberObjects action undocumentedrac
 func (b *DirectoryObjectRequestBuilder) CheckMemberObjects(reqObj *DirectoryObjectCheckMemberObjectsRequestParameter) *DirectoryObjectCheckMemberObjectsRequestBuilder {
 	bb := &DirectoryObjectCheckMemberObjectsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CheckMemberObjects"
@@ -373,7 +373,7 @@ func (r *DirectoryObjectCheckMemberObjectsRequest) Post(ctx context.Context) ([]
 
 type DirectoryObjectGetMemberGroupsRequestBuilder struct{ BaseRequestBuilder }
 
-// GetMemberGroups action undocumented
+// GetMemberGroups action undocumentedrac
 func (b *DirectoryObjectRequestBuilder) GetMemberGroups(reqObj *DirectoryObjectGetMemberGroupsRequestParameter) *DirectoryObjectGetMemberGroupsRequestBuilder {
 	bb := &DirectoryObjectGetMemberGroupsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetMemberGroups"
@@ -454,7 +454,7 @@ func (r *DirectoryObjectGetMemberGroupsRequest) Post(ctx context.Context) ([]str
 
 type DirectoryObjectGetMemberObjectsRequestBuilder struct{ BaseRequestBuilder }
 
-// GetMemberObjects action undocumented
+// GetMemberObjects action undocumentedrac
 func (b *DirectoryObjectRequestBuilder) GetMemberObjects(reqObj *DirectoryObjectGetMemberObjectsRequestParameter) *DirectoryObjectGetMemberObjectsRequestBuilder {
 	bb := &DirectoryObjectGetMemberObjectsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetMemberObjects"
@@ -535,7 +535,7 @@ func (r *DirectoryObjectGetMemberObjectsRequest) Post(ctx context.Context) ([]st
 
 type DirectoryObjectRestoreRequestBuilder struct{ BaseRequestBuilder }
 
-// Restore action undocumented
+// Restore action undocumentedras
 func (b *DirectoryObjectRequestBuilder) Restore(reqObj *DirectoryObjectRestoreRequestParameter) *DirectoryObjectRestoreRequestBuilder {
 	bb := &DirectoryObjectRestoreRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Restore"

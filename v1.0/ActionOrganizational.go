@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Localizations returns request builder for OrganizationalBrandingLocalization collection
+// Localizations returns request builder for OrganizationalBrandingLocalization collection rcn
 func (b *OrganizationalBrandingRequestBuilder) Localizations() *OrganizationalBrandingLocalizationsCollectionRequestBuilder {
 	bb := &OrganizationalBrandingLocalizationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/localizations"
@@ -112,4 +112,11 @@ func (r *OrganizationalBrandingLocalizationsCollectionRequest) Get(ctx context.C
 func (r *OrganizationalBrandingLocalizationsCollectionRequest) Add(ctx context.Context, reqObj *OrganizationalBrandingLocalization) (resObj *OrganizationalBrandingLocalization, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// OrganizationalBrandingProperties is navigation property rn
+func (b *OrganizationalBrandingPropertiesRequestBuilder) OrganizationalBrandingProperties() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

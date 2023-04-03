@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsTbillEqRequestBuilder struct{ BaseRequestBuilder }
 
-// TbillEq action undocumented
+// TbillEq action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) TbillEq(reqObj *WorkbookFunctionsTbillEqRequestParameter) *WorkbookFunctionsTbillEqRequestBuilder {
 	bb := &WorkbookFunctionsTbillEqRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/TbillEq"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsTbillEqRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsTbillPriceRequestBuilder struct{ BaseRequestBuilder }
 
-// TbillPrice action undocumented
+// TbillPrice action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) TbillPrice(reqObj *WorkbookFunctionsTbillPriceRequestParameter) *WorkbookFunctionsTbillPriceRequestBuilder {
 	bb := &WorkbookFunctionsTbillPriceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/TbillPrice"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsTbillPriceRequest) Post(ctx context.Context) (resObj *
 
 type WorkbookFunctionsTbillYieldRequestBuilder struct{ BaseRequestBuilder }
 
-// TbillYield action undocumented
+// TbillYield action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) TbillYield(reqObj *WorkbookFunctionsTbillYieldRequestParameter) *WorkbookFunctionsTbillYieldRequestBuilder {
 	bb := &WorkbookFunctionsTbillYieldRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/TbillYield"

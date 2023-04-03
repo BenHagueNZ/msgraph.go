@@ -6,8 +6,17 @@ package msgraph
 type LocaleInfo struct {
 	// Object is the base model of LocaleInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Locale undocumented
 	Locale *string `json:"locale,omitempty"`
+}
+
+func NewLocaleInfo() (*LocaleInfo, error) {
+	newLocaleInfo := &LocaleInfo{
+		ODataType: "#microsoft.graph.LocaleInfo",
+	}
+	return newLocaleInfo, nil
 }

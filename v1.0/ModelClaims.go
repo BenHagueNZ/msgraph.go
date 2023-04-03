@@ -6,4 +6,13 @@ package msgraph
 type ClaimsMappingPolicy struct {
 	// StsPolicy is the base model of ClaimsMappingPolicy
 	StsPolicy
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewClaimsMappingPolicy() (*ClaimsMappingPolicy, error) {
+	newClaimsMappingPolicy := &ClaimsMappingPolicy{
+		ODataType: "#microsoft.graph.ClaimsMappingPolicy",
+	}
+	return newClaimsMappingPolicy, nil
 }

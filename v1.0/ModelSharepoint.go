@@ -6,6 +6,8 @@ package msgraph
 type SharepointIDs struct {
 	// Object is the base model of SharepointIDs
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ListID undocumented
 	ListID *string `json:"listId,omitempty"`
 	// ListItemID undocumented
@@ -20,4 +22,11 @@ type SharepointIDs struct {
 	TenantID *string `json:"tenantId,omitempty"`
 	// WebID undocumented
 	WebID *string `json:"webId,omitempty"`
+}
+
+func NewSharepointIDs() (*SharepointIDs, error) {
+	newSharepointIDs := &SharepointIDs{
+		ODataType: "#microsoft.graph.SharepointIds",
+	}
+	return newSharepointIDs, nil
 }

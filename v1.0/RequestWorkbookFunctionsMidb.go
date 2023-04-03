@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsMidbRequestBuilder struct{ BaseRequestBuilder }
 
-// Midb action undocumented
+// Midb action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Midb(reqObj *WorkbookFunctionsMidbRequestParameter) *WorkbookFunctionsMidbRequestBuilder {
 	bb := &WorkbookFunctionsMidbRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Midb"

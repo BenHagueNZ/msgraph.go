@@ -6,4 +6,13 @@ package msgraph
 type CancelMediaProcessingOperation struct {
 	// CommsOperation is the base model of CancelMediaProcessingOperation
 	CommsOperation
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewCancelMediaProcessingOperation() (*CancelMediaProcessingOperation, error) {
+	newCancelMediaProcessingOperation := &CancelMediaProcessingOperation{
+		ODataType: "#microsoft.graph.CancelMediaProcessingOperation",
+	}
+	return newCancelMediaProcessingOperation, nil
 }

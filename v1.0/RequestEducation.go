@@ -1458,7 +1458,7 @@ func (r *EducationWordResourceRequest) Delete(ctx context.Context) error {
 
 type EducationAssignmentPublishRequestBuilder struct{ BaseRequestBuilder }
 
-// Publish action undocumented
+// Publish action undocumentedras
 func (b *EducationAssignmentRequestBuilder) Publish(reqObj *EducationAssignmentPublishRequestParameter) *EducationAssignmentPublishRequestBuilder {
 	bb := &EducationAssignmentPublishRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Publish"
@@ -1481,7 +1481,7 @@ func (r *EducationAssignmentPublishRequest) Post(ctx context.Context) (resObj *E
 
 type EducationAssignmentSetUpFeedbackResourcesFolderRequestBuilder struct{ BaseRequestBuilder }
 
-// SetUpFeedbackResourcesFolder action undocumented
+// SetUpFeedbackResourcesFolder action undocumentedras
 func (b *EducationAssignmentRequestBuilder) SetUpFeedbackResourcesFolder(reqObj *EducationAssignmentSetUpFeedbackResourcesFolderRequestParameter) *EducationAssignmentSetUpFeedbackResourcesFolderRequestBuilder {
 	bb := &EducationAssignmentSetUpFeedbackResourcesFolderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SetUpFeedbackResourcesFolder"
@@ -1504,7 +1504,7 @@ func (r *EducationAssignmentSetUpFeedbackResourcesFolderRequest) Post(ctx contex
 
 type EducationAssignmentSetUpResourcesFolderRequestBuilder struct{ BaseRequestBuilder }
 
-// SetUpResourcesFolder action undocumented
+// SetUpResourcesFolder action undocumentedras
 func (b *EducationAssignmentRequestBuilder) SetUpResourcesFolder(reqObj *EducationAssignmentSetUpResourcesFolderRequestParameter) *EducationAssignmentSetUpResourcesFolderRequestBuilder {
 	bb := &EducationAssignmentSetUpResourcesFolderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SetUpResourcesFolder"
@@ -1527,7 +1527,7 @@ func (r *EducationAssignmentSetUpResourcesFolderRequest) Post(ctx context.Contex
 
 type EducationSubmissionSetUpResourcesFolderRequestBuilder struct{ BaseRequestBuilder }
 
-// SetUpResourcesFolder action undocumented
+// SetUpResourcesFolder action undocumentedras
 func (b *EducationSubmissionRequestBuilder) SetUpResourcesFolder(reqObj *EducationSubmissionSetUpResourcesFolderRequestParameter) *EducationSubmissionSetUpResourcesFolderRequestBuilder {
 	bb := &EducationSubmissionSetUpResourcesFolderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SetUpResourcesFolder"
@@ -1550,7 +1550,7 @@ func (r *EducationSubmissionSetUpResourcesFolderRequest) Post(ctx context.Contex
 
 type EducationSubmissionReassignRequestBuilder struct{ BaseRequestBuilder }
 
-// Reassign action undocumented
+// Reassign action undocumentedras
 func (b *EducationSubmissionRequestBuilder) Reassign(reqObj *EducationSubmissionReassignRequestParameter) *EducationSubmissionReassignRequestBuilder {
 	bb := &EducationSubmissionReassignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Reassign"
@@ -1573,7 +1573,7 @@ func (r *EducationSubmissionReassignRequest) Post(ctx context.Context) (resObj *
 
 type EducationSubmissionReturnRequestBuilder struct{ BaseRequestBuilder }
 
-// Return action undocumented
+// Return action undocumentedras
 func (b *EducationSubmissionRequestBuilder) Return(reqObj *EducationSubmissionReturnRequestParameter) *EducationSubmissionReturnRequestBuilder {
 	bb := &EducationSubmissionReturnRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Return"
@@ -1596,7 +1596,7 @@ func (r *EducationSubmissionReturnRequest) Post(ctx context.Context) (resObj *Ed
 
 type EducationSubmissionSubmitRequestBuilder struct{ BaseRequestBuilder }
 
-// Submit action undocumented
+// Submit action undocumentedras
 func (b *EducationSubmissionRequestBuilder) Submit(reqObj *EducationSubmissionSubmitRequestParameter) *EducationSubmissionSubmitRequestBuilder {
 	bb := &EducationSubmissionSubmitRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Submit"
@@ -1619,7 +1619,7 @@ func (r *EducationSubmissionSubmitRequest) Post(ctx context.Context) (resObj *Ed
 
 type EducationSubmissionUnsubmitRequestBuilder struct{ BaseRequestBuilder }
 
-// Unsubmit action undocumented
+// Unsubmit action undocumentedras
 func (b *EducationSubmissionRequestBuilder) Unsubmit(reqObj *EducationSubmissionUnsubmitRequestParameter) *EducationSubmissionUnsubmitRequestBuilder {
 	bb := &EducationSubmissionUnsubmitRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Unsubmit"

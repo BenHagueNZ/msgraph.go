@@ -1,3 +1,4 @@
+//go:build templates
 // +build templates
 
 // This file is a part of msgraph.go/gen/templates.
@@ -17,8 +18,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/rickb777/date/period"
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
+	"github.com/rickb777/date/period"
 )
 
 // BEGIN - everything below this line will be copied to the output
@@ -331,9 +332,26 @@ type GraphServiceRequestBuilder struct {
 	BaseRequestBuilder
 }
 
+type Builders struct {
+	g GraphServiceRequestBuilder
+	c CountryNamedLocationRequestBuilder
+}
+
+func GetGSRB(b *Builders) *GraphServiceRequestBuilder {
+	return &b.g
+}
+
+func GetCNLRB(b *Builders) *CountryNamedLocationRequestBuilder {
+	return &b.c
+}
+
 // NewClient returns GraphService request builder with default base URL
-func NewClient(cli *http.Client) *GraphServiceRequestBuilder {
-	return &GraphServiceRequestBuilder{
+func NewClient(cli *http.Client) *Builders {
+	allBuilders := Builders{g: GraphServiceRequestBuilder{
 		BaseRequestBuilder: BaseRequestBuilder{baseURL: defaultBaseURL, client: cli},
+	}, c: CountryNamedLocationRequestBuilder{
+		BaseRequestBuilder: BaseRequestBuilder{baseURL: defaultBaseURL, client: cli},
+	},
 	}
+	return &allBuilders
 }

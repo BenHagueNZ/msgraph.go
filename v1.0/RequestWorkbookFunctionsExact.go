@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsExactRequestBuilder struct{ BaseRequestBuilder }
 
-// Exact action undocumented
+// Exact action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Exact(reqObj *WorkbookFunctionsExactRequestParameter) *WorkbookFunctionsExactRequestBuilder {
 	bb := &WorkbookFunctionsExactRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Exact"

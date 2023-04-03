@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsAccrIntRequestBuilder struct{ BaseRequestBuilder }
 
-// AccrInt action undocumented
+// AccrInt action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) AccrInt(reqObj *WorkbookFunctionsAccrIntRequestParameter) *WorkbookFunctionsAccrIntRequestBuilder {
 	bb := &WorkbookFunctionsAccrIntRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AccrInt"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsAccrIntRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsAccrIntMRequestBuilder struct{ BaseRequestBuilder }
 
-// AccrIntM action undocumented
+// AccrIntM action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) AccrIntM(reqObj *WorkbookFunctionsAccrIntMRequestParameter) *WorkbookFunctionsAccrIntMRequestBuilder {
 	bb := &WorkbookFunctionsAccrIntMRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AccrIntM"

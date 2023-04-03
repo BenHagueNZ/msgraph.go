@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsBitrshiftRequestBuilder struct{ BaseRequestBuilder }
 
-// Bitrshift action undocumented
+// Bitrshift action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Bitrshift(reqObj *WorkbookFunctionsBitrshiftRequestParameter) *WorkbookFunctionsBitrshiftRequestBuilder {
 	bb := &WorkbookFunctionsBitrshiftRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Bitrshift"

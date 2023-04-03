@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsLogRequestBuilder struct{ BaseRequestBuilder }
 
-// Log action undocumented
+// Log action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Log(reqObj *WorkbookFunctionsLogRequestParameter) *WorkbookFunctionsLogRequestBuilder {
 	bb := &WorkbookFunctionsLogRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Log"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsLogRequest) Post(ctx context.Context) (resObj *Workboo
 
 type WorkbookFunctionsLogNorm_DistRequestBuilder struct{ BaseRequestBuilder }
 
-// LogNorm_Dist action undocumented
+// LogNorm_Dist action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) LogNorm_Dist(reqObj *WorkbookFunctionsLogNorm_DistRequestParameter) *WorkbookFunctionsLogNorm_DistRequestBuilder {
 	bb := &WorkbookFunctionsLogNorm_DistRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/LogNorm_Dist"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsLogNorm_DistRequest) Post(ctx context.Context) (resObj
 
 type WorkbookFunctionsLogNorm_InvRequestBuilder struct{ BaseRequestBuilder }
 
-// LogNorm_Inv action undocumented
+// LogNorm_Inv action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) LogNorm_Inv(reqObj *WorkbookFunctionsLogNorm_InvRequestParameter) *WorkbookFunctionsLogNorm_InvRequestBuilder {
 	bb := &WorkbookFunctionsLogNorm_InvRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/LogNorm_Inv"

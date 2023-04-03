@@ -8,22 +8,42 @@ import "time"
 type Compliance struct {
 	// Object is the base model of Compliance
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewCompliance() (*Compliance, error) {
+	newCompliance := &Compliance{
+		ODataType: "#microsoft.graph.Compliance",
+	}
+	return newCompliance, nil
 }
 
 // ComplianceInformation undocumented
 type ComplianceInformation struct {
 	// Object is the base model of ComplianceInformation
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CertificationControls undocumented
 	CertificationControls []CertificationControl `json:"certificationControls,omitempty"`
 	// CertificationName undocumented
 	CertificationName *string `json:"certificationName,omitempty"`
 }
 
+func NewComplianceInformation() (*ComplianceInformation, error) {
+	newComplianceInformation := &ComplianceInformation{
+		ODataType: "#microsoft.graph.ComplianceInformation",
+	}
+	return newComplianceInformation, nil
+}
+
 // ComplianceManagementPartner undocumented
 type ComplianceManagementPartner struct {
 	// Entity is the base model of ComplianceManagementPartner
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AndroidEnrollmentAssignments undocumented
 	AndroidEnrollmentAssignments []ComplianceManagementPartnerAssignment `json:"androidEnrollmentAssignments,omitempty"`
 	// AndroidOnboarded undocumented
@@ -44,10 +64,26 @@ type ComplianceManagementPartner struct {
 	PartnerState *DeviceManagementPartnerTenantState `json:"partnerState,omitempty"`
 }
 
+func NewComplianceManagementPartner() (*ComplianceManagementPartner, error) {
+	newComplianceManagementPartner := &ComplianceManagementPartner{
+		ODataType: "#microsoft.graph.ComplianceManagementPartner",
+	}
+	return newComplianceManagementPartner, nil
+}
+
 // ComplianceManagementPartnerAssignment undocumented
 type ComplianceManagementPartnerAssignment struct {
 	// Object is the base model of ComplianceManagementPartnerAssignment
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
+}
+
+func NewComplianceManagementPartnerAssignment() (*ComplianceManagementPartnerAssignment, error) {
+	newComplianceManagementPartnerAssignment := &ComplianceManagementPartnerAssignment{
+		ODataType: "#microsoft.graph.ComplianceManagementPartnerAssignment",
+	}
+	return newComplianceManagementPartnerAssignment, nil
 }

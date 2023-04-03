@@ -25,7 +25,7 @@ type DomainPromoteRequestParameter struct {
 type DomainVerifyRequestParameter struct {
 }
 
-// DomainNameReferences returns request builder for DirectoryObject collection
+// DomainNameReferences returns request builder for DirectoryObject collection rcn
 func (b *DomainRequestBuilder) DomainNameReferences() *DomainDomainNameReferencesCollectionRequestBuilder {
 	bb := &DomainDomainNameReferencesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/domainNameReferences"
@@ -128,7 +128,7 @@ func (r *DomainDomainNameReferencesCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// FederationConfiguration returns request builder for InternalDomainFederation collection
+// FederationConfiguration returns request builder for InternalDomainFederation collection rcn
 func (b *DomainRequestBuilder) FederationConfiguration() *DomainFederationConfigurationCollectionRequestBuilder {
 	bb := &DomainFederationConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/federationConfiguration"
@@ -231,35 +231,35 @@ func (r *DomainFederationConfigurationCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// ServiceConfigurationRecords returns request builder for DomainDNSRecord collection
+// ServiceConfigurationRecords returns request builder for DomainDnsRecord collection rcn
 func (b *DomainRequestBuilder) ServiceConfigurationRecords() *DomainServiceConfigurationRecordsCollectionRequestBuilder {
 	bb := &DomainServiceConfigurationRecordsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/serviceConfigurationRecords"
 	return bb
 }
 
-// DomainServiceConfigurationRecordsCollectionRequestBuilder is request builder for DomainDNSRecord collection
+// DomainServiceConfigurationRecordsCollectionRequestBuilder is request builder for DomainDnsRecord collection
 type DomainServiceConfigurationRecordsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DomainDNSRecord collection
+// Request returns request for DomainDnsRecord collection
 func (b *DomainServiceConfigurationRecordsCollectionRequestBuilder) Request() *DomainServiceConfigurationRecordsCollectionRequest {
 	return &DomainServiceConfigurationRecordsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DomainDNSRecord item
-func (b *DomainServiceConfigurationRecordsCollectionRequestBuilder) ID(id string) *DomainDNSRecordRequestBuilder {
-	bb := &DomainDNSRecordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for DomainDnsRecord item
+func (b *DomainServiceConfigurationRecordsCollectionRequestBuilder) ID(id string) *DomainDnsRecordRequestBuilder {
+	bb := &DomainDnsRecordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DomainServiceConfigurationRecordsCollectionRequest is request for DomainDNSRecord collection
+// DomainServiceConfigurationRecordsCollectionRequest is request for DomainDnsRecord collection
 type DomainServiceConfigurationRecordsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DomainDNSRecord collection
-func (r *DomainServiceConfigurationRecordsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DomainDNSRecord, error) {
+// Paging perfoms paging operation for DomainDnsRecord collection
+func (r *DomainServiceConfigurationRecordsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DomainDnsRecord, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -271,7 +271,7 @@ func (r *DomainServiceConfigurationRecordsCollectionRequest) Paging(ctx context.
 	if err != nil {
 		return nil, err
 	}
-	var values []DomainDNSRecord
+	var values []DomainDnsRecord
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -285,7 +285,7 @@ func (r *DomainServiceConfigurationRecordsCollectionRequest) Paging(ctx context.
 		}
 		var (
 			paging Paging
-			value  []DomainDNSRecord
+			value  []DomainDnsRecord
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -314,8 +314,8 @@ func (r *DomainServiceConfigurationRecordsCollectionRequest) Paging(ctx context.
 	}
 }
 
-// GetN performs GET request for DomainDNSRecord collection, max N pages
-func (r *DomainServiceConfigurationRecordsCollectionRequest) GetN(ctx context.Context, n int) ([]DomainDNSRecord, error) {
+// GetN performs GET request for DomainDnsRecord collection, max N pages
+func (r *DomainServiceConfigurationRecordsCollectionRequest) GetN(ctx context.Context, n int) ([]DomainDnsRecord, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -323,46 +323,46 @@ func (r *DomainServiceConfigurationRecordsCollectionRequest) GetN(ctx context.Co
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DomainDNSRecord collection
-func (r *DomainServiceConfigurationRecordsCollectionRequest) Get(ctx context.Context) ([]DomainDNSRecord, error) {
+// Get performs GET request for DomainDnsRecord collection
+func (r *DomainServiceConfigurationRecordsCollectionRequest) Get(ctx context.Context) ([]DomainDnsRecord, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DomainDNSRecord collection
-func (r *DomainServiceConfigurationRecordsCollectionRequest) Add(ctx context.Context, reqObj *DomainDNSRecord) (resObj *DomainDNSRecord, err error) {
+// Add performs POST request for DomainDnsRecord collection
+func (r *DomainServiceConfigurationRecordsCollectionRequest) Add(ctx context.Context, reqObj *DomainDnsRecord) (resObj *DomainDnsRecord, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// VerificationDNSRecords returns request builder for DomainDNSRecord collection
-func (b *DomainRequestBuilder) VerificationDNSRecords() *DomainVerificationDNSRecordsCollectionRequestBuilder {
-	bb := &DomainVerificationDNSRecordsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// VerificationDnsRecords returns request builder for DomainDnsRecord collection rcn
+func (b *DomainRequestBuilder) VerificationDnsRecords() *DomainVerificationDnsRecordsCollectionRequestBuilder {
+	bb := &DomainVerificationDnsRecordsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/verificationDnsRecords"
 	return bb
 }
 
-// DomainVerificationDNSRecordsCollectionRequestBuilder is request builder for DomainDNSRecord collection
-type DomainVerificationDNSRecordsCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DomainVerificationDnsRecordsCollectionRequestBuilder is request builder for DomainDnsRecord collection
+type DomainVerificationDnsRecordsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DomainDNSRecord collection
-func (b *DomainVerificationDNSRecordsCollectionRequestBuilder) Request() *DomainVerificationDNSRecordsCollectionRequest {
-	return &DomainVerificationDNSRecordsCollectionRequest{
+// Request returns request for DomainDnsRecord collection
+func (b *DomainVerificationDnsRecordsCollectionRequestBuilder) Request() *DomainVerificationDnsRecordsCollectionRequest {
+	return &DomainVerificationDnsRecordsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DomainDNSRecord item
-func (b *DomainVerificationDNSRecordsCollectionRequestBuilder) ID(id string) *DomainDNSRecordRequestBuilder {
-	bb := &DomainDNSRecordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for DomainDnsRecord item
+func (b *DomainVerificationDnsRecordsCollectionRequestBuilder) ID(id string) *DomainDnsRecordRequestBuilder {
+	bb := &DomainDnsRecordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DomainVerificationDNSRecordsCollectionRequest is request for DomainDNSRecord collection
-type DomainVerificationDNSRecordsCollectionRequest struct{ BaseRequest }
+// DomainVerificationDnsRecordsCollectionRequest is request for DomainDnsRecord collection
+type DomainVerificationDnsRecordsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DomainDNSRecord collection
-func (r *DomainVerificationDNSRecordsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DomainDNSRecord, error) {
+// Paging perfoms paging operation for DomainDnsRecord collection
+func (r *DomainVerificationDnsRecordsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DomainDnsRecord, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -374,7 +374,7 @@ func (r *DomainVerificationDNSRecordsCollectionRequest) Paging(ctx context.Conte
 	if err != nil {
 		return nil, err
 	}
-	var values []DomainDNSRecord
+	var values []DomainDnsRecord
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -388,7 +388,7 @@ func (r *DomainVerificationDNSRecordsCollectionRequest) Paging(ctx context.Conte
 		}
 		var (
 			paging Paging
-			value  []DomainDNSRecord
+			value  []DomainDnsRecord
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -417,8 +417,8 @@ func (r *DomainVerificationDNSRecordsCollectionRequest) Paging(ctx context.Conte
 	}
 }
 
-// GetN performs GET request for DomainDNSRecord collection, max N pages
-func (r *DomainVerificationDNSRecordsCollectionRequest) GetN(ctx context.Context, n int) ([]DomainDNSRecord, error) {
+// GetN performs GET request for DomainDnsRecord collection, max N pages
+func (r *DomainVerificationDnsRecordsCollectionRequest) GetN(ctx context.Context, n int) ([]DomainDnsRecord, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -426,13 +426,535 @@ func (r *DomainVerificationDNSRecordsCollectionRequest) GetN(ctx context.Context
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DomainDNSRecord collection
-func (r *DomainVerificationDNSRecordsCollectionRequest) Get(ctx context.Context) ([]DomainDNSRecord, error) {
+// Get performs GET request for DomainDnsRecord collection
+func (r *DomainVerificationDnsRecordsCollectionRequest) Get(ctx context.Context) ([]DomainDnsRecord, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DomainDNSRecord collection
-func (r *DomainVerificationDNSRecordsCollectionRequest) Add(ctx context.Context, reqObj *DomainDNSRecord) (resObj *DomainDNSRecord, err error) {
+// Add performs POST request for DomainDnsRecord collection
+func (r *DomainVerificationDnsRecordsCollectionRequest) Add(ctx context.Context, reqObj *DomainDnsRecord) (resObj *DomainDnsRecord, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Domain is navigation property rn
+func (b *DomainRequestBuilder) Domain() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// DomainDnsCnameRecord returns request builder for DomainDnsRecord collection rcn
+func (b *DomainDnsCnameRecordRequestBuilder) DomainDnsCnameRecord() *DomainDnsCnameRecordDomainDnsCnameRecordCollectionRequestBuilder {
+	bb := &DomainDnsCnameRecordDomainDnsCnameRecordCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DomainDnsRecord"
+	return bb
+}
+
+// DomainDnsCnameRecordDomainDnsCnameRecordCollectionRequestBuilder is request builder for DomainDnsRecord collection
+type DomainDnsCnameRecordDomainDnsCnameRecordCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DomainDnsRecord collection
+func (b *DomainDnsCnameRecordDomainDnsCnameRecordCollectionRequestBuilder) Request() *DomainDnsCnameRecordDomainDnsCnameRecordCollectionRequest {
+	return &DomainDnsCnameRecordDomainDnsCnameRecordCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DomainDnsRecord item
+func (b *DomainDnsCnameRecordDomainDnsCnameRecordCollectionRequestBuilder) ID(id string) *DomainDnsRecordRequestBuilder {
+	bb := &DomainDnsRecordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DomainDnsCnameRecordDomainDnsCnameRecordCollectionRequest is request for DomainDnsRecord collection
+type DomainDnsCnameRecordDomainDnsCnameRecordCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DomainDnsRecord collection
+func (r *DomainDnsCnameRecordDomainDnsCnameRecordCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DomainDnsRecord, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DomainDnsRecord
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DomainDnsRecord
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DomainDnsRecord collection, max N pages
+func (r *DomainDnsCnameRecordDomainDnsCnameRecordCollectionRequest) GetN(ctx context.Context, n int) ([]DomainDnsRecord, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DomainDnsRecord collection
+func (r *DomainDnsCnameRecordDomainDnsCnameRecordCollectionRequest) Get(ctx context.Context) ([]DomainDnsRecord, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DomainDnsRecord collection
+func (r *DomainDnsCnameRecordDomainDnsCnameRecordCollectionRequest) Add(ctx context.Context, reqObj *DomainDnsRecord) (resObj *DomainDnsRecord, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// DomainDnsMxRecord returns request builder for DomainDnsRecord collection rcn
+func (b *DomainDnsMxRecordRequestBuilder) DomainDnsMxRecord() *DomainDnsMxRecordDomainDnsMxRecordCollectionRequestBuilder {
+	bb := &DomainDnsMxRecordDomainDnsMxRecordCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DomainDnsRecord"
+	return bb
+}
+
+// DomainDnsMxRecordDomainDnsMxRecordCollectionRequestBuilder is request builder for DomainDnsRecord collection
+type DomainDnsMxRecordDomainDnsMxRecordCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DomainDnsRecord collection
+func (b *DomainDnsMxRecordDomainDnsMxRecordCollectionRequestBuilder) Request() *DomainDnsMxRecordDomainDnsMxRecordCollectionRequest {
+	return &DomainDnsMxRecordDomainDnsMxRecordCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DomainDnsRecord item
+func (b *DomainDnsMxRecordDomainDnsMxRecordCollectionRequestBuilder) ID(id string) *DomainDnsRecordRequestBuilder {
+	bb := &DomainDnsRecordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DomainDnsMxRecordDomainDnsMxRecordCollectionRequest is request for DomainDnsRecord collection
+type DomainDnsMxRecordDomainDnsMxRecordCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DomainDnsRecord collection
+func (r *DomainDnsMxRecordDomainDnsMxRecordCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DomainDnsRecord, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DomainDnsRecord
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DomainDnsRecord
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DomainDnsRecord collection, max N pages
+func (r *DomainDnsMxRecordDomainDnsMxRecordCollectionRequest) GetN(ctx context.Context, n int) ([]DomainDnsRecord, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DomainDnsRecord collection
+func (r *DomainDnsMxRecordDomainDnsMxRecordCollectionRequest) Get(ctx context.Context) ([]DomainDnsRecord, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DomainDnsRecord collection
+func (r *DomainDnsMxRecordDomainDnsMxRecordCollectionRequest) Add(ctx context.Context, reqObj *DomainDnsRecord) (resObj *DomainDnsRecord, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// DomainDnsSrvRecord returns request builder for DomainDnsRecord collection rcn
+func (b *DomainDnsSrvRecordRequestBuilder) DomainDnsSrvRecord() *DomainDnsSrvRecordDomainDnsSrvRecordCollectionRequestBuilder {
+	bb := &DomainDnsSrvRecordDomainDnsSrvRecordCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DomainDnsRecord"
+	return bb
+}
+
+// DomainDnsSrvRecordDomainDnsSrvRecordCollectionRequestBuilder is request builder for DomainDnsRecord collection
+type DomainDnsSrvRecordDomainDnsSrvRecordCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DomainDnsRecord collection
+func (b *DomainDnsSrvRecordDomainDnsSrvRecordCollectionRequestBuilder) Request() *DomainDnsSrvRecordDomainDnsSrvRecordCollectionRequest {
+	return &DomainDnsSrvRecordDomainDnsSrvRecordCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DomainDnsRecord item
+func (b *DomainDnsSrvRecordDomainDnsSrvRecordCollectionRequestBuilder) ID(id string) *DomainDnsRecordRequestBuilder {
+	bb := &DomainDnsRecordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DomainDnsSrvRecordDomainDnsSrvRecordCollectionRequest is request for DomainDnsRecord collection
+type DomainDnsSrvRecordDomainDnsSrvRecordCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DomainDnsRecord collection
+func (r *DomainDnsSrvRecordDomainDnsSrvRecordCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DomainDnsRecord, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DomainDnsRecord
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DomainDnsRecord
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DomainDnsRecord collection, max N pages
+func (r *DomainDnsSrvRecordDomainDnsSrvRecordCollectionRequest) GetN(ctx context.Context, n int) ([]DomainDnsRecord, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DomainDnsRecord collection
+func (r *DomainDnsSrvRecordDomainDnsSrvRecordCollectionRequest) Get(ctx context.Context) ([]DomainDnsRecord, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DomainDnsRecord collection
+func (r *DomainDnsSrvRecordDomainDnsSrvRecordCollectionRequest) Add(ctx context.Context, reqObj *DomainDnsRecord) (resObj *DomainDnsRecord, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// DomainDnsTxtRecord returns request builder for DomainDnsRecord collection rcn
+func (b *DomainDnsTxtRecordRequestBuilder) DomainDnsTxtRecord() *DomainDnsTxtRecordDomainDnsTxtRecordCollectionRequestBuilder {
+	bb := &DomainDnsTxtRecordDomainDnsTxtRecordCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DomainDnsRecord"
+	return bb
+}
+
+// DomainDnsTxtRecordDomainDnsTxtRecordCollectionRequestBuilder is request builder for DomainDnsRecord collection
+type DomainDnsTxtRecordDomainDnsTxtRecordCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DomainDnsRecord collection
+func (b *DomainDnsTxtRecordDomainDnsTxtRecordCollectionRequestBuilder) Request() *DomainDnsTxtRecordDomainDnsTxtRecordCollectionRequest {
+	return &DomainDnsTxtRecordDomainDnsTxtRecordCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DomainDnsRecord item
+func (b *DomainDnsTxtRecordDomainDnsTxtRecordCollectionRequestBuilder) ID(id string) *DomainDnsRecordRequestBuilder {
+	bb := &DomainDnsRecordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DomainDnsTxtRecordDomainDnsTxtRecordCollectionRequest is request for DomainDnsRecord collection
+type DomainDnsTxtRecordDomainDnsTxtRecordCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DomainDnsRecord collection
+func (r *DomainDnsTxtRecordDomainDnsTxtRecordCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DomainDnsRecord, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DomainDnsRecord
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DomainDnsRecord
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DomainDnsRecord collection, max N pages
+func (r *DomainDnsTxtRecordDomainDnsTxtRecordCollectionRequest) GetN(ctx context.Context, n int) ([]DomainDnsRecord, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DomainDnsRecord collection
+func (r *DomainDnsTxtRecordDomainDnsTxtRecordCollectionRequest) Get(ctx context.Context) ([]DomainDnsRecord, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DomainDnsRecord collection
+func (r *DomainDnsTxtRecordDomainDnsTxtRecordCollectionRequest) Add(ctx context.Context, reqObj *DomainDnsRecord) (resObj *DomainDnsRecord, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// DomainDnsUnavailableRecord returns request builder for DomainDnsRecord collection rcn
+func (b *DomainDnsUnavailableRecordRequestBuilder) DomainDnsUnavailableRecord() *DomainDnsUnavailableRecordDomainDnsUnavailableRecordCollectionRequestBuilder {
+	bb := &DomainDnsUnavailableRecordDomainDnsUnavailableRecordCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DomainDnsRecord"
+	return bb
+}
+
+// DomainDnsUnavailableRecordDomainDnsUnavailableRecordCollectionRequestBuilder is request builder for DomainDnsRecord collection
+type DomainDnsUnavailableRecordDomainDnsUnavailableRecordCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DomainDnsRecord collection
+func (b *DomainDnsUnavailableRecordDomainDnsUnavailableRecordCollectionRequestBuilder) Request() *DomainDnsUnavailableRecordDomainDnsUnavailableRecordCollectionRequest {
+	return &DomainDnsUnavailableRecordDomainDnsUnavailableRecordCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DomainDnsRecord item
+func (b *DomainDnsUnavailableRecordDomainDnsUnavailableRecordCollectionRequestBuilder) ID(id string) *DomainDnsRecordRequestBuilder {
+	bb := &DomainDnsRecordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DomainDnsUnavailableRecordDomainDnsUnavailableRecordCollectionRequest is request for DomainDnsRecord collection
+type DomainDnsUnavailableRecordDomainDnsUnavailableRecordCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DomainDnsRecord collection
+func (r *DomainDnsUnavailableRecordDomainDnsUnavailableRecordCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DomainDnsRecord, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DomainDnsRecord
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DomainDnsRecord
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DomainDnsRecord collection, max N pages
+func (r *DomainDnsUnavailableRecordDomainDnsUnavailableRecordCollectionRequest) GetN(ctx context.Context, n int) ([]DomainDnsRecord, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DomainDnsRecord collection
+func (r *DomainDnsUnavailableRecordDomainDnsUnavailableRecordCollectionRequest) Get(ctx context.Context) ([]DomainDnsRecord, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DomainDnsRecord collection
+func (r *DomainDnsUnavailableRecordDomainDnsUnavailableRecordCollectionRequest) Add(ctx context.Context, reqObj *DomainDnsRecord) (resObj *DomainDnsRecord, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

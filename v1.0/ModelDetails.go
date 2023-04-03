@@ -6,4 +6,13 @@ package msgraph
 type DetailsInfo struct {
 	// Object is the base model of DetailsInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewDetailsInfo() (*DetailsInfo, error) {
+	newDetailsInfo := &DetailsInfo{
+		ODataType: "#microsoft.graph.DetailsInfo",
+	}
+	return newDetailsInfo, nil
 }

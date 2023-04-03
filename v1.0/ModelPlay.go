@@ -6,4 +6,13 @@ package msgraph
 type PlayPromptOperation struct {
 	// CommsOperation is the base model of PlayPromptOperation
 	CommsOperation
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewPlayPromptOperation() (*PlayPromptOperation, error) {
+	newPlayPromptOperation := &PlayPromptOperation{
+		ODataType: "#microsoft.graph.PlayPromptOperation",
+	}
+	return newPlayPromptOperation, nil
 }

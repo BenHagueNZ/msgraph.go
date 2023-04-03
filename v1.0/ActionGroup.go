@@ -69,7 +69,7 @@ type GroupLifecyclePolicyRemoveGroupRequestParameter struct {
 	GroupID *string `json:"groupId,omitempty"`
 }
 
-// AcceptedSenders returns request builder for DirectoryObject collection
+// AcceptedSenders returns request builder for DirectoryObject collection rcn
 func (b *GroupRequestBuilder) AcceptedSenders() *GroupAcceptedSendersCollectionRequestBuilder {
 	bb := &GroupAcceptedSendersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/acceptedSenders"
@@ -172,7 +172,7 @@ func (r *GroupAcceptedSendersCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// AppRoleAssignments returns request builder for AppRoleAssignment collection
+// AppRoleAssignments returns request builder for AppRoleAssignment collection rcn
 func (b *GroupRequestBuilder) AppRoleAssignments() *GroupAppRoleAssignmentsCollectionRequestBuilder {
 	bb := &GroupAppRoleAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appRoleAssignments"
@@ -275,14 +275,14 @@ func (r *GroupAppRoleAssignmentsCollectionRequest) Add(ctx context.Context, reqO
 	return
 }
 
-// Calendar is navigation property
+// Calendar is navigation property rn
 func (b *GroupRequestBuilder) Calendar() *CalendarRequestBuilder {
 	bb := &CalendarRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/calendar"
 	return bb
 }
 
-// CalendarView returns request builder for Event collection
+// CalendarView returns request builder for Event collection rcn
 func (b *GroupRequestBuilder) CalendarView() *GroupCalendarViewCollectionRequestBuilder {
 	bb := &GroupCalendarViewCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/calendarView"
@@ -385,7 +385,7 @@ func (r *GroupCalendarViewCollectionRequest) Add(ctx context.Context, reqObj *Ev
 	return
 }
 
-// Conversations returns request builder for Conversation collection
+// Conversations returns request builder for Conversation collection rcn
 func (b *GroupRequestBuilder) Conversations() *GroupConversationsCollectionRequestBuilder {
 	bb := &GroupConversationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/conversations"
@@ -488,21 +488,21 @@ func (r *GroupConversationsCollectionRequest) Add(ctx context.Context, reqObj *C
 	return
 }
 
-// CreatedOnBehalfOf is navigation property
+// CreatedOnBehalfOf is navigation property rn
 func (b *GroupRequestBuilder) CreatedOnBehalfOf() *DirectoryObjectRequestBuilder {
 	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/createdOnBehalfOf"
 	return bb
 }
 
-// Drive is navigation property
+// Drive is navigation property rn
 func (b *GroupRequestBuilder) Drive() *DriveRequestBuilder {
 	bb := &DriveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/drive"
 	return bb
 }
 
-// Drives returns request builder for Drive collection
+// Drives returns request builder for Drive collection rcn
 func (b *GroupRequestBuilder) Drives() *GroupDrivesCollectionRequestBuilder {
 	bb := &GroupDrivesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/drives"
@@ -605,7 +605,7 @@ func (r *GroupDrivesCollectionRequest) Add(ctx context.Context, reqObj *Drive) (
 	return
 }
 
-// Events returns request builder for Event collection
+// Events returns request builder for Event collection rcn
 func (b *GroupRequestBuilder) Events() *GroupEventsCollectionRequestBuilder {
 	bb := &GroupEventsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/events"
@@ -708,7 +708,7 @@ func (r *GroupEventsCollectionRequest) Add(ctx context.Context, reqObj *Event) (
 	return
 }
 
-// Extensions returns request builder for Extension collection
+// Extensions returns request builder for Extension collection rcn
 func (b *GroupRequestBuilder) Extensions() *GroupExtensionsCollectionRequestBuilder {
 	bb := &GroupExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensions"
@@ -811,7 +811,7 @@ func (r *GroupExtensionsCollectionRequest) Add(ctx context.Context, reqObj *Exte
 	return
 }
 
-// GroupLifecyclePolicies returns request builder for GroupLifecyclePolicy collection
+// GroupLifecyclePolicies returns request builder for GroupLifecyclePolicy collection rcn
 func (b *GroupRequestBuilder) GroupLifecyclePolicies() *GroupGroupLifecyclePoliciesCollectionRequestBuilder {
 	bb := &GroupGroupLifecyclePoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/groupLifecyclePolicies"
@@ -914,7 +914,7 @@ func (r *GroupGroupLifecyclePoliciesCollectionRequest) Add(ctx context.Context, 
 	return
 }
 
-// MemberOf returns request builder for DirectoryObject collection
+// MemberOf returns request builder for DirectoryObject collection rcn
 func (b *GroupRequestBuilder) MemberOf() *GroupMemberOfCollectionRequestBuilder {
 	bb := &GroupMemberOfCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/memberOf"
@@ -1017,7 +1017,7 @@ func (r *GroupMemberOfCollectionRequest) Add(ctx context.Context, reqObj *Direct
 	return
 }
 
-// Members returns request builder for DirectoryObject collection
+// Members returns request builder for DirectoryObject collection rcn
 func (b *GroupRequestBuilder) Members() *GroupMembersCollectionRequestBuilder {
 	bb := &GroupMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"
@@ -1120,7 +1120,7 @@ func (r *GroupMembersCollectionRequest) Add(ctx context.Context, reqObj *Directo
 	return
 }
 
-// MembersWithLicenseErrors returns request builder for DirectoryObject collection
+// MembersWithLicenseErrors returns request builder for DirectoryObject collection rcn
 func (b *GroupRequestBuilder) MembersWithLicenseErrors() *GroupMembersWithLicenseErrorsCollectionRequestBuilder {
 	bb := &GroupMembersWithLicenseErrorsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/membersWithLicenseErrors"
@@ -1223,14 +1223,14 @@ func (r *GroupMembersWithLicenseErrorsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Onenote is navigation property
+// Onenote is navigation property rn
 func (b *GroupRequestBuilder) Onenote() *OnenoteRequestBuilder {
 	bb := &OnenoteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/onenote"
 	return bb
 }
 
-// Owners returns request builder for DirectoryObject collection
+// Owners returns request builder for DirectoryObject collection rcn
 func (b *GroupRequestBuilder) Owners() *GroupOwnersCollectionRequestBuilder {
 	bb := &GroupOwnersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/owners"
@@ -1333,7 +1333,7 @@ func (r *GroupOwnersCollectionRequest) Add(ctx context.Context, reqObj *Director
 	return
 }
 
-// PermissionGrants returns request builder for ResourceSpecificPermissionGrant collection
+// PermissionGrants returns request builder for ResourceSpecificPermissionGrant collection rcn
 func (b *GroupRequestBuilder) PermissionGrants() *GroupPermissionGrantsCollectionRequestBuilder {
 	bb := &GroupPermissionGrantsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/permissionGrants"
@@ -1436,14 +1436,14 @@ func (r *GroupPermissionGrantsCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// Photo is navigation property
+// Photo is navigation property rn
 func (b *GroupRequestBuilder) Photo() *ProfilePhotoRequestBuilder {
 	bb := &ProfilePhotoRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/photo"
 	return bb
 }
 
-// Photos returns request builder for ProfilePhoto collection
+// Photos returns request builder for ProfilePhoto collection rcn
 func (b *GroupRequestBuilder) Photos() *GroupPhotosCollectionRequestBuilder {
 	bb := &GroupPhotosCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/photos"
@@ -1546,14 +1546,14 @@ func (r *GroupPhotosCollectionRequest) Add(ctx context.Context, reqObj *ProfileP
 	return
 }
 
-// Planner is navigation property
+// Planner is navigation property rn
 func (b *GroupRequestBuilder) Planner() *PlannerGroupRequestBuilder {
 	bb := &PlannerGroupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/planner"
 	return bb
 }
 
-// RejectedSenders returns request builder for DirectoryObject collection
+// RejectedSenders returns request builder for DirectoryObject collection rcn
 func (b *GroupRequestBuilder) RejectedSenders() *GroupRejectedSendersCollectionRequestBuilder {
 	bb := &GroupRejectedSendersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/rejectedSenders"
@@ -1656,7 +1656,7 @@ func (r *GroupRejectedSendersCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// Settings returns request builder for GroupSetting collection
+// Settings returns request builder for GroupSetting collection rcn
 func (b *GroupRequestBuilder) Settings() *GroupSettingsCollectionRequestBuilder {
 	bb := &GroupSettingsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/settings"
@@ -1759,7 +1759,7 @@ func (r *GroupSettingsCollectionRequest) Add(ctx context.Context, reqObj *GroupS
 	return
 }
 
-// Sites returns request builder for Site collection
+// Sites returns request builder for Site collection rcn
 func (b *GroupRequestBuilder) Sites() *GroupSitesCollectionRequestBuilder {
 	bb := &GroupSitesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sites"
@@ -1862,14 +1862,14 @@ func (r *GroupSitesCollectionRequest) Add(ctx context.Context, reqObj *Site) (re
 	return
 }
 
-// Team is navigation property
+// Team is navigation property rn
 func (b *GroupRequestBuilder) Team() *TeamRequestBuilder {
 	bb := &TeamRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/team"
 	return bb
 }
 
-// Threads returns request builder for ConversationThread collection
+// Threads returns request builder for ConversationThread collection rcn
 func (b *GroupRequestBuilder) Threads() *GroupThreadsCollectionRequestBuilder {
 	bb := &GroupThreadsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/threads"
@@ -1972,7 +1972,7 @@ func (r *GroupThreadsCollectionRequest) Add(ctx context.Context, reqObj *Convers
 	return
 }
 
-// TransitiveMemberOf returns request builder for DirectoryObject collection
+// TransitiveMemberOf returns request builder for DirectoryObject collection rcn
 func (b *GroupRequestBuilder) TransitiveMemberOf() *GroupTransitiveMemberOfCollectionRequestBuilder {
 	bb := &GroupTransitiveMemberOfCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/transitiveMemberOf"
@@ -2075,7 +2075,7 @@ func (r *GroupTransitiveMemberOfCollectionRequest) Add(ctx context.Context, reqO
 	return
 }
 
-// TransitiveMembers returns request builder for DirectoryObject collection
+// TransitiveMembers returns request builder for DirectoryObject collection rcn
 func (b *GroupRequestBuilder) TransitiveMembers() *GroupTransitiveMembersCollectionRequestBuilder {
 	bb := &GroupTransitiveMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/transitiveMembers"
@@ -2174,6 +2174,226 @@ func (r *GroupTransitiveMembersCollectionRequest) Get(ctx context.Context) ([]Di
 
 // Add performs POST request for DirectoryObject collection
 func (r *GroupTransitiveMembersCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Group returns request builder for DirectoryObject collection rcn
+func (b *GroupRequestBuilder) Group() *GroupGroupCollectionRequestBuilder {
+	bb := &GroupGroupCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DirectoryObject"
+	return bb
+}
+
+// GroupGroupCollectionRequestBuilder is request builder for DirectoryObject collection
+type GroupGroupCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DirectoryObject collection
+func (b *GroupGroupCollectionRequestBuilder) Request() *GroupGroupCollectionRequest {
+	return &GroupGroupCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DirectoryObject item
+func (b *GroupGroupCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
+	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GroupGroupCollectionRequest is request for DirectoryObject collection
+type GroupGroupCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DirectoryObject collection
+func (r *GroupGroupCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DirectoryObject
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DirectoryObject
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DirectoryObject collection, max N pages
+func (r *GroupGroupCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DirectoryObject collection
+func (r *GroupGroupCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DirectoryObject collection
+func (r *GroupGroupCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// GroupLifecyclePolicy is navigation property rn
+func (b *GroupLifecyclePolicyRequestBuilder) GroupLifecyclePolicy() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// GroupSetting is navigation property rn
+func (b *GroupSettingRequestBuilder) GroupSetting() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// GroupSettingTemplate returns request builder for DirectoryObject collection rcn
+func (b *GroupSettingTemplateRequestBuilder) GroupSettingTemplate() *GroupSettingTemplateGroupSettingTemplateCollectionRequestBuilder {
+	bb := &GroupSettingTemplateGroupSettingTemplateCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DirectoryObject"
+	return bb
+}
+
+// GroupSettingTemplateGroupSettingTemplateCollectionRequestBuilder is request builder for DirectoryObject collection
+type GroupSettingTemplateGroupSettingTemplateCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DirectoryObject collection
+func (b *GroupSettingTemplateGroupSettingTemplateCollectionRequestBuilder) Request() *GroupSettingTemplateGroupSettingTemplateCollectionRequest {
+	return &GroupSettingTemplateGroupSettingTemplateCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DirectoryObject item
+func (b *GroupSettingTemplateGroupSettingTemplateCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
+	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// GroupSettingTemplateGroupSettingTemplateCollectionRequest is request for DirectoryObject collection
+type GroupSettingTemplateGroupSettingTemplateCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DirectoryObject collection
+func (r *GroupSettingTemplateGroupSettingTemplateCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DirectoryObject
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DirectoryObject
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DirectoryObject collection, max N pages
+func (r *GroupSettingTemplateGroupSettingTemplateCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DirectoryObject collection
+func (r *GroupSettingTemplateGroupSettingTemplateCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DirectoryObject collection
+func (r *GroupSettingTemplateGroupSettingTemplateCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

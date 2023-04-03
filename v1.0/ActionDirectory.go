@@ -65,7 +65,7 @@ type DirectoryObjectGetMemberObjectsRequestParameter struct {
 type DirectoryObjectRestoreRequestParameter struct {
 }
 
-// AdministrativeUnits returns request builder for AdministrativeUnit collection
+// AdministrativeUnits returns request builder for AdministrativeUnit collection rcn
 func (b *DirectoryRequestBuilder) AdministrativeUnits() *DirectoryAdministrativeUnitsCollectionRequestBuilder {
 	bb := &DirectoryAdministrativeUnitsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/administrativeUnits"
@@ -168,7 +168,7 @@ func (r *DirectoryAdministrativeUnitsCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// DeletedItems returns request builder for DirectoryObject collection
+// DeletedItems returns request builder for DirectoryObject collection rcn
 func (b *DirectoryRequestBuilder) DeletedItems() *DirectoryDeletedItemsCollectionRequestBuilder {
 	bb := &DirectoryDeletedItemsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deletedItems"
@@ -271,7 +271,7 @@ func (r *DirectoryDeletedItemsCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// FederationConfigurations returns request builder for IdentityProviderBase collection
+// FederationConfigurations returns request builder for IdentityProviderBase collection rcn
 func (b *DirectoryRequestBuilder) FederationConfigurations() *DirectoryFederationConfigurationsCollectionRequestBuilder {
 	bb := &DirectoryFederationConfigurationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/federationConfigurations"
@@ -374,7 +374,7 @@ func (r *DirectoryFederationConfigurationsCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// OnPremisesSynchronization returns request builder for OnPremisesDirectorySynchronization collection
+// OnPremisesSynchronization returns request builder for OnPremisesDirectorySynchronization collection rcn
 func (b *DirectoryRequestBuilder) OnPremisesSynchronization() *DirectoryOnPremisesSynchronizationCollectionRequestBuilder {
 	bb := &DirectoryOnPremisesSynchronizationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/onPremisesSynchronization"
@@ -477,7 +477,7 @@ func (r *DirectoryOnPremisesSynchronizationCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// Members returns request builder for DirectoryObject collection
+// Members returns request builder for DirectoryObject collection rcn
 func (b *DirectoryRoleRequestBuilder) Members() *DirectoryRoleMembersCollectionRequestBuilder {
 	bb := &DirectoryRoleMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"
@@ -580,7 +580,7 @@ func (r *DirectoryRoleMembersCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// ScopedMembers returns request builder for ScopedRoleMembership collection
+// ScopedMembers returns request builder for ScopedRoleMembership collection rcn
 func (b *DirectoryRoleRequestBuilder) ScopedMembers() *DirectoryRoleScopedMembersCollectionRequestBuilder {
 	bb := &DirectoryRoleScopedMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/scopedMembers"
@@ -679,6 +679,329 @@ func (r *DirectoryRoleScopedMembersCollectionRequest) Get(ctx context.Context) (
 
 // Add performs POST request for ScopedRoleMembership collection
 func (r *DirectoryRoleScopedMembersCollectionRequest) Add(ctx context.Context, reqObj *ScopedRoleMembership) (resObj *ScopedRoleMembership, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Directory is navigation property rn
+func (b *DirectoryRequestBuilder) Directory() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// DirectoryAudit is navigation property rn
+func (b *DirectoryAuditRequestBuilder) DirectoryAudit() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// DirectoryObjectPartnerReference returns request builder for DirectoryObject collection rcn
+func (b *DirectoryObjectPartnerReferenceRequestBuilder) DirectoryObjectPartnerReference() *DirectoryObjectPartnerReferenceDirectoryObjectPartnerReferenceCollectionRequestBuilder {
+	bb := &DirectoryObjectPartnerReferenceDirectoryObjectPartnerReferenceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DirectoryObject"
+	return bb
+}
+
+// DirectoryObjectPartnerReferenceDirectoryObjectPartnerReferenceCollectionRequestBuilder is request builder for DirectoryObject collection
+type DirectoryObjectPartnerReferenceDirectoryObjectPartnerReferenceCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DirectoryObject collection
+func (b *DirectoryObjectPartnerReferenceDirectoryObjectPartnerReferenceCollectionRequestBuilder) Request() *DirectoryObjectPartnerReferenceDirectoryObjectPartnerReferenceCollectionRequest {
+	return &DirectoryObjectPartnerReferenceDirectoryObjectPartnerReferenceCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DirectoryObject item
+func (b *DirectoryObjectPartnerReferenceDirectoryObjectPartnerReferenceCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
+	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DirectoryObjectPartnerReferenceDirectoryObjectPartnerReferenceCollectionRequest is request for DirectoryObject collection
+type DirectoryObjectPartnerReferenceDirectoryObjectPartnerReferenceCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DirectoryObject collection
+func (r *DirectoryObjectPartnerReferenceDirectoryObjectPartnerReferenceCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DirectoryObject
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DirectoryObject
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DirectoryObject collection, max N pages
+func (r *DirectoryObjectPartnerReferenceDirectoryObjectPartnerReferenceCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DirectoryObject collection
+func (r *DirectoryObjectPartnerReferenceDirectoryObjectPartnerReferenceCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DirectoryObject collection
+func (r *DirectoryObjectPartnerReferenceDirectoryObjectPartnerReferenceCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// DirectoryRole returns request builder for DirectoryObject collection rcn
+func (b *DirectoryRoleRequestBuilder) DirectoryRole() *DirectoryRoleDirectoryRoleCollectionRequestBuilder {
+	bb := &DirectoryRoleDirectoryRoleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DirectoryObject"
+	return bb
+}
+
+// DirectoryRoleDirectoryRoleCollectionRequestBuilder is request builder for DirectoryObject collection
+type DirectoryRoleDirectoryRoleCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DirectoryObject collection
+func (b *DirectoryRoleDirectoryRoleCollectionRequestBuilder) Request() *DirectoryRoleDirectoryRoleCollectionRequest {
+	return &DirectoryRoleDirectoryRoleCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DirectoryObject item
+func (b *DirectoryRoleDirectoryRoleCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
+	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DirectoryRoleDirectoryRoleCollectionRequest is request for DirectoryObject collection
+type DirectoryRoleDirectoryRoleCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DirectoryObject collection
+func (r *DirectoryRoleDirectoryRoleCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DirectoryObject
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DirectoryObject
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DirectoryObject collection, max N pages
+func (r *DirectoryRoleDirectoryRoleCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DirectoryObject collection
+func (r *DirectoryRoleDirectoryRoleCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DirectoryObject collection
+func (r *DirectoryRoleDirectoryRoleCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// DirectoryRoleTemplate returns request builder for DirectoryObject collection rcn
+func (b *DirectoryRoleTemplateRequestBuilder) DirectoryRoleTemplate() *DirectoryRoleTemplateDirectoryRoleTemplateCollectionRequestBuilder {
+	bb := &DirectoryRoleTemplateDirectoryRoleTemplateCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DirectoryObject"
+	return bb
+}
+
+// DirectoryRoleTemplateDirectoryRoleTemplateCollectionRequestBuilder is request builder for DirectoryObject collection
+type DirectoryRoleTemplateDirectoryRoleTemplateCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DirectoryObject collection
+func (b *DirectoryRoleTemplateDirectoryRoleTemplateCollectionRequestBuilder) Request() *DirectoryRoleTemplateDirectoryRoleTemplateCollectionRequest {
+	return &DirectoryRoleTemplateDirectoryRoleTemplateCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DirectoryObject item
+func (b *DirectoryRoleTemplateDirectoryRoleTemplateCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
+	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DirectoryRoleTemplateDirectoryRoleTemplateCollectionRequest is request for DirectoryObject collection
+type DirectoryRoleTemplateDirectoryRoleTemplateCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DirectoryObject collection
+func (r *DirectoryRoleTemplateDirectoryRoleTemplateCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DirectoryObject
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DirectoryObject
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DirectoryObject collection, max N pages
+func (r *DirectoryRoleTemplateDirectoryRoleTemplateCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DirectoryObject collection
+func (r *DirectoryRoleTemplateDirectoryRoleTemplateCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DirectoryObject collection
+func (r *DirectoryRoleTemplateDirectoryRoleTemplateCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

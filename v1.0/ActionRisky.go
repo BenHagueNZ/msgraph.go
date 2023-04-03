@@ -35,7 +35,7 @@ type RiskyUserCollectionDismissRequestParameter struct {
 	UserIDs []string `json:"userIds,omitempty"`
 }
 
-// History returns request builder for RiskyServicePrincipalHistoryItem collection
+// History returns request builder for RiskyServicePrincipalHistoryItem collection rcn
 func (b *RiskyServicePrincipalRequestBuilder) History() *RiskyServicePrincipalHistoryCollectionRequestBuilder {
 	bb := &RiskyServicePrincipalHistoryCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/history"
@@ -138,7 +138,7 @@ func (r *RiskyServicePrincipalHistoryCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// History returns request builder for RiskyUserHistoryItem collection
+// History returns request builder for RiskyUserHistoryItem collection rcn
 func (b *RiskyUserRequestBuilder) History() *RiskyUserHistoryCollectionRequestBuilder {
 	bb := &RiskyUserHistoryCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/history"
@@ -237,6 +237,226 @@ func (r *RiskyUserHistoryCollectionRequest) Get(ctx context.Context) ([]RiskyUse
 
 // Add performs POST request for RiskyUserHistoryItem collection
 func (r *RiskyUserHistoryCollectionRequest) Add(ctx context.Context, reqObj *RiskyUserHistoryItem) (resObj *RiskyUserHistoryItem, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// RiskyServicePrincipal is navigation property rn
+func (b *RiskyServicePrincipalRequestBuilder) RiskyServicePrincipal() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// RiskyServicePrincipalHistoryItem returns request builder for RiskyServicePrincipal collection rcn
+func (b *RiskyServicePrincipalHistoryItemRequestBuilder) RiskyServicePrincipalHistoryItem() *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequestBuilder {
+	bb := &RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/RiskyServicePrincipal"
+	return bb
+}
+
+// RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequestBuilder is request builder for RiskyServicePrincipal collection
+type RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for RiskyServicePrincipal collection
+func (b *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequestBuilder) Request() *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest {
+	return &RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for RiskyServicePrincipal item
+func (b *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequestBuilder) ID(id string) *RiskyServicePrincipalRequestBuilder {
+	bb := &RiskyServicePrincipalRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest is request for RiskyServicePrincipal collection
+type RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for RiskyServicePrincipal collection
+func (r *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RiskyServicePrincipal, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []RiskyServicePrincipal
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []RiskyServicePrincipal
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for RiskyServicePrincipal collection, max N pages
+func (r *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest) GetN(ctx context.Context, n int) ([]RiskyServicePrincipal, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for RiskyServicePrincipal collection
+func (r *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest) Get(ctx context.Context) ([]RiskyServicePrincipal, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for RiskyServicePrincipal collection
+func (r *RiskyServicePrincipalHistoryItemRiskyServicePrincipalHistoryItemCollectionRequest) Add(ctx context.Context, reqObj *RiskyServicePrincipal) (resObj *RiskyServicePrincipal, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// RiskyUser is navigation property rn
+func (b *RiskyUserRequestBuilder) RiskyUser() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// RiskyUserHistoryItem returns request builder for RiskyUser collection rcn
+func (b *RiskyUserHistoryItemRequestBuilder) RiskyUserHistoryItem() *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequestBuilder {
+	bb := &RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/RiskyUser"
+	return bb
+}
+
+// RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequestBuilder is request builder for RiskyUser collection
+type RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for RiskyUser collection
+func (b *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequestBuilder) Request() *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest {
+	return &RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for RiskyUser item
+func (b *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequestBuilder) ID(id string) *RiskyUserRequestBuilder {
+	bb := &RiskyUserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest is request for RiskyUser collection
+type RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for RiskyUser collection
+func (r *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RiskyUser, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []RiskyUser
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []RiskyUser
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for RiskyUser collection, max N pages
+func (r *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest) GetN(ctx context.Context, n int) ([]RiskyUser, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for RiskyUser collection
+func (r *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest) Get(ctx context.Context) ([]RiskyUser, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for RiskyUser collection
+func (r *RiskyUserHistoryItemRiskyUserHistoryItemCollectionRequest) Add(ctx context.Context, reqObj *RiskyUser) (resObj *RiskyUser, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

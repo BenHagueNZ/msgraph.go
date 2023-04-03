@@ -8,6 +8,8 @@ import "time"
 type Team struct {
 	// Entity is the base model of Team
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Classification undocumented
 	Classification *string `json:"classification,omitempty"`
 	// CreatedDateTime undocumented
@@ -64,28 +66,55 @@ type Team struct {
 	Schedule *Schedule `json:"schedule,omitempty"`
 }
 
+func NewTeam() (*Team, error) {
+	newTeam := &Team{
+		ODataType: "#microsoft.graph.Team",
+	}
+	return newTeam, nil
+}
+
 // TeamArchivedEventMessageDetail undocumented
 type TeamArchivedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamArchivedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamID undocumented
 	TeamID *string `json:"teamId,omitempty"`
 }
 
+func NewTeamArchivedEventMessageDetail() (*TeamArchivedEventMessageDetail, error) {
+	newTeamArchivedEventMessageDetail := &TeamArchivedEventMessageDetail{
+		ODataType: "#microsoft.graph.TeamArchivedEventMessageDetail",
+	}
+	return newTeamArchivedEventMessageDetail, nil
+}
+
 // TeamClassSettings undocumented
 type TeamClassSettings struct {
 	// Object is the base model of TeamClassSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// NotifyGuardiansAboutAssignments undocumented
 	NotifyGuardiansAboutAssignments *bool `json:"notifyGuardiansAboutAssignments,omitempty"`
+}
+
+func NewTeamClassSettings() (*TeamClassSettings, error) {
+	newTeamClassSettings := &TeamClassSettings{
+		ODataType: "#microsoft.graph.TeamClassSettings",
+	}
+	return newTeamClassSettings, nil
 }
 
 // TeamCreatedEventMessageDetail undocumented
 type TeamCreatedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamCreatedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamDescription undocumented
@@ -96,10 +125,19 @@ type TeamCreatedEventMessageDetail struct {
 	TeamID *string `json:"teamId,omitempty"`
 }
 
+func NewTeamCreatedEventMessageDetail() (*TeamCreatedEventMessageDetail, error) {
+	newTeamCreatedEventMessageDetail := &TeamCreatedEventMessageDetail{
+		ODataType: "#microsoft.graph.TeamCreatedEventMessageDetail",
+	}
+	return newTeamCreatedEventMessageDetail, nil
+}
+
 // TeamDescriptionUpdatedEventMessageDetail undocumented
 type TeamDescriptionUpdatedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamDescriptionUpdatedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamDescription undocumented
@@ -108,10 +146,19 @@ type TeamDescriptionUpdatedEventMessageDetail struct {
 	TeamID *string `json:"teamId,omitempty"`
 }
 
+func NewTeamDescriptionUpdatedEventMessageDetail() (*TeamDescriptionUpdatedEventMessageDetail, error) {
+	newTeamDescriptionUpdatedEventMessageDetail := &TeamDescriptionUpdatedEventMessageDetail{
+		ODataType: "#microsoft.graph.TeamDescriptionUpdatedEventMessageDetail",
+	}
+	return newTeamDescriptionUpdatedEventMessageDetail, nil
+}
+
 // TeamFunSettings undocumented
 type TeamFunSettings struct {
 	// Object is the base model of TeamFunSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowCustomMemes undocumented
 	AllowCustomMemes *bool `json:"allowCustomMemes,omitempty"`
 	// AllowGiphy undocumented
@@ -122,20 +169,38 @@ type TeamFunSettings struct {
 	GiphyContentRating *GiphyRatingType `json:"giphyContentRating,omitempty"`
 }
 
+func NewTeamFunSettings() (*TeamFunSettings, error) {
+	newTeamFunSettings := &TeamFunSettings{
+		ODataType: "#microsoft.graph.TeamFunSettings",
+	}
+	return newTeamFunSettings, nil
+}
+
 // TeamGuestSettings undocumented
 type TeamGuestSettings struct {
 	// Object is the base model of TeamGuestSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowCreateUpdateChannels undocumented
 	AllowCreateUpdateChannels *bool `json:"allowCreateUpdateChannels,omitempty"`
 	// AllowDeleteChannels undocumented
 	AllowDeleteChannels *bool `json:"allowDeleteChannels,omitempty"`
 }
 
+func NewTeamGuestSettings() (*TeamGuestSettings, error) {
+	newTeamGuestSettings := &TeamGuestSettings{
+		ODataType: "#microsoft.graph.TeamGuestSettings",
+	}
+	return newTeamGuestSettings, nil
+}
+
 // TeamInfo undocumented
 type TeamInfo struct {
 	// Entity is the base model of TeamInfo
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// TenantID undocumented
@@ -144,30 +209,57 @@ type TeamInfo struct {
 	Team *Team `json:"team,omitempty"`
 }
 
+func NewTeamInfo() (*TeamInfo, error) {
+	newTeamInfo := &TeamInfo{
+		ODataType: "#microsoft.graph.TeamInfo",
+	}
+	return newTeamInfo, nil
+}
+
 // TeamJoiningDisabledEventMessageDetail undocumented
 type TeamJoiningDisabledEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamJoiningDisabledEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamID undocumented
 	TeamID *string `json:"teamId,omitempty"`
+}
+
+func NewTeamJoiningDisabledEventMessageDetail() (*TeamJoiningDisabledEventMessageDetail, error) {
+	newTeamJoiningDisabledEventMessageDetail := &TeamJoiningDisabledEventMessageDetail{
+		ODataType: "#microsoft.graph.TeamJoiningDisabledEventMessageDetail",
+	}
+	return newTeamJoiningDisabledEventMessageDetail, nil
 }
 
 // TeamJoiningEnabledEventMessageDetail undocumented
 type TeamJoiningEnabledEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamJoiningEnabledEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamID undocumented
 	TeamID *string `json:"teamId,omitempty"`
 }
 
+func NewTeamJoiningEnabledEventMessageDetail() (*TeamJoiningEnabledEventMessageDetail, error) {
+	newTeamJoiningEnabledEventMessageDetail := &TeamJoiningEnabledEventMessageDetail{
+		ODataType: "#microsoft.graph.TeamJoiningEnabledEventMessageDetail",
+	}
+	return newTeamJoiningEnabledEventMessageDetail, nil
+}
+
 // TeamMemberSettings undocumented
 type TeamMemberSettings struct {
 	// Object is the base model of TeamMemberSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowAddRemoveApps undocumented
 	AllowAddRemoveApps *bool `json:"allowAddRemoveApps,omitempty"`
 	// AllowCreatePrivateChannels undocumented
@@ -182,18 +274,36 @@ type TeamMemberSettings struct {
 	AllowDeleteChannels *bool `json:"allowDeleteChannels,omitempty"`
 }
 
+func NewTeamMemberSettings() (*TeamMemberSettings, error) {
+	newTeamMemberSettings := &TeamMemberSettings{
+		ODataType: "#microsoft.graph.TeamMemberSettings",
+	}
+	return newTeamMemberSettings, nil
+}
+
 // TeamMembersNotificationRecipient undocumented
 type TeamMembersNotificationRecipient struct {
 	// TeamworkNotificationRecipient is the base model of TeamMembersNotificationRecipient
 	TeamworkNotificationRecipient
+
+	ODataType string `json:"@odata.type"`
 	// TeamID undocumented
 	TeamID *string `json:"teamId,omitempty"`
+}
+
+func NewTeamMembersNotificationRecipient() (*TeamMembersNotificationRecipient, error) {
+	newTeamMembersNotificationRecipient := &TeamMembersNotificationRecipient{
+		ODataType: "#microsoft.graph.TeamMembersNotificationRecipient",
+	}
+	return newTeamMembersNotificationRecipient, nil
 }
 
 // TeamMessagingSettings undocumented
 type TeamMessagingSettings struct {
 	// Object is the base model of TeamMessagingSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowChannelMentions undocumented
 	AllowChannelMentions *bool `json:"allowChannelMentions,omitempty"`
 	// AllowOwnerDeleteMessages undocumented
@@ -206,10 +316,19 @@ type TeamMessagingSettings struct {
 	AllowUserEditMessages *bool `json:"allowUserEditMessages,omitempty"`
 }
 
+func NewTeamMessagingSettings() (*TeamMessagingSettings, error) {
+	newTeamMessagingSettings := &TeamMessagingSettings{
+		ODataType: "#microsoft.graph.TeamMessagingSettings",
+	}
+	return newTeamMessagingSettings, nil
+}
+
 // TeamRenamedEventMessageDetail undocumented
 type TeamRenamedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamRenamedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamDisplayName undocumented
@@ -218,10 +337,19 @@ type TeamRenamedEventMessageDetail struct {
 	TeamID *string `json:"teamId,omitempty"`
 }
 
+func NewTeamRenamedEventMessageDetail() (*TeamRenamedEventMessageDetail, error) {
+	newTeamRenamedEventMessageDetail := &TeamRenamedEventMessageDetail{
+		ODataType: "#microsoft.graph.TeamRenamedEventMessageDetail",
+	}
+	return newTeamRenamedEventMessageDetail, nil
+}
+
 // TeamSummary undocumented
 type TeamSummary struct {
 	// Object is the base model of TeamSummary
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// GuestsCount undocumented
 	GuestsCount *int `json:"guestsCount,omitempty"`
 	// MembersCount undocumented
@@ -230,12 +358,28 @@ type TeamSummary struct {
 	OwnersCount *int `json:"ownersCount,omitempty"`
 }
 
+func NewTeamSummary() (*TeamSummary, error) {
+	newTeamSummary := &TeamSummary{
+		ODataType: "#microsoft.graph.TeamSummary",
+	}
+	return newTeamSummary, nil
+}
+
 // TeamUnarchivedEventMessageDetail undocumented
 type TeamUnarchivedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamUnarchivedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamID undocumented
 	TeamID *string `json:"teamId,omitempty"`
+}
+
+func NewTeamUnarchivedEventMessageDetail() (*TeamUnarchivedEventMessageDetail, error) {
+	newTeamUnarchivedEventMessageDetail := &TeamUnarchivedEventMessageDetail{
+		ODataType: "#microsoft.graph.TeamUnarchivedEventMessageDetail",
+	}
+	return newTeamUnarchivedEventMessageDetail, nil
 }

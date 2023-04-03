@@ -6,6 +6,8 @@ package msgraph
 type WorkingHours struct {
 	// Object is the base model of WorkingHours
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DaysOfWeek undocumented
 	DaysOfWeek []DayOfWeek `json:"daysOfWeek,omitempty"`
 	// EndTime undocumented
@@ -14,4 +16,11 @@ type WorkingHours struct {
 	StartTime *TimeOfDay `json:"startTime,omitempty"`
 	// TimeZone undocumented
 	TimeZone *TimeZoneBase `json:"timeZone,omitempty"`
+}
+
+func NewWorkingHours() (*WorkingHours, error) {
+	newWorkingHours := &WorkingHours{
+		ODataType: "#microsoft.graph.WorkingHours",
+	}
+	return newWorkingHours, nil
 }

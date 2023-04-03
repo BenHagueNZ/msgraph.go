@@ -8,6 +8,8 @@ import "time"
 type Schedule struct {
 	// Entity is the base model of Schedule
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Enabled undocumented
 	Enabled *bool `json:"enabled,omitempty"`
 	// OfferShiftRequestsEnabled undocumented
@@ -48,10 +50,19 @@ type Schedule struct {
 	TimesOff []TimeOff `json:"timesOff,omitempty"`
 }
 
+func NewSchedule() (*Schedule, error) {
+	newSchedule := &Schedule{
+		ODataType: "#microsoft.graph.Schedule",
+	}
+	return newSchedule, nil
+}
+
 // ScheduleChangeRequestObject undocumented
 type ScheduleChangeRequestObject struct {
 	// ChangeTrackedEntity is the base model of ScheduleChangeRequestObject
 	ChangeTrackedEntity
+
+	ODataType string `json:"@odata.type"`
 	// AssignedTo undocumented
 	AssignedTo *ScheduleChangeRequestActor `json:"assignedTo,omitempty"`
 	// ManagerActionDateTime undocumented
@@ -70,10 +81,19 @@ type ScheduleChangeRequestObject struct {
 	State *ScheduleChangeState `json:"state,omitempty"`
 }
 
+func NewScheduleChangeRequestObject() (*ScheduleChangeRequestObject, error) {
+	newScheduleChangeRequestObject := &ScheduleChangeRequestObject{
+		ODataType: "#microsoft.graph.ScheduleChangeRequestObject",
+	}
+	return newScheduleChangeRequestObject, nil
+}
+
 // ScheduleEntity undocumented
 type ScheduleEntity struct {
 	// Object is the base model of ScheduleEntity
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// StartDateTime undocumented
@@ -82,10 +102,19 @@ type ScheduleEntity struct {
 	Theme *ScheduleEntityTheme `json:"theme,omitempty"`
 }
 
+func NewScheduleEntity() (*ScheduleEntity, error) {
+	newScheduleEntity := &ScheduleEntity{
+		ODataType: "#microsoft.graph.ScheduleEntity",
+	}
+	return newScheduleEntity, nil
+}
+
 // ScheduleInformation undocumented
 type ScheduleInformation struct {
 	// Object is the base model of ScheduleInformation
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AvailabilityView undocumented
 	AvailabilityView *string `json:"availabilityView,omitempty"`
 	// Error undocumented
@@ -98,10 +127,19 @@ type ScheduleInformation struct {
 	WorkingHours *WorkingHours `json:"workingHours,omitempty"`
 }
 
+func NewScheduleInformation() (*ScheduleInformation, error) {
+	newScheduleInformation := &ScheduleInformation{
+		ODataType: "#microsoft.graph.ScheduleInformation",
+	}
+	return newScheduleInformation, nil
+}
+
 // ScheduleItem undocumented
 type ScheduleItem struct {
 	// Object is the base model of ScheduleItem
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// End undocumented
 	End *DateTimeTimeZone `json:"end,omitempty"`
 	// IsPrivate undocumented
@@ -114,4 +152,11 @@ type ScheduleItem struct {
 	Status *FreeBusyStatus `json:"status,omitempty"`
 	// Subject undocumented
 	Subject *string `json:"subject,omitempty"`
+}
+
+func NewScheduleItem() (*ScheduleItem, error) {
+	newScheduleItem := &ScheduleItem{
+		ODataType: "#microsoft.graph.ScheduleItem",
+	}
+	return newScheduleItem, nil
 }

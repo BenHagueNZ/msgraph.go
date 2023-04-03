@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsIntRequestBuilder struct{ BaseRequestBuilder }
 
-// Int action undocumented
+// Int action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Int(reqObj *WorkbookFunctionsIntRequestParameter) *WorkbookFunctionsIntRequestBuilder {
 	bb := &WorkbookFunctionsIntRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Int"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsIntRequest) Post(ctx context.Context) (resObj *Workboo
 
 type WorkbookFunctionsIntRateRequestBuilder struct{ BaseRequestBuilder }
 
-// IntRate action undocumented
+// IntRate action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) IntRate(reqObj *WorkbookFunctionsIntRateRequestParameter) *WorkbookFunctionsIntRateRequestBuilder {
 	bb := &WorkbookFunctionsIntRateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/IntRate"

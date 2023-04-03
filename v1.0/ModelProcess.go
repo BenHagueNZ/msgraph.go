@@ -8,6 +8,8 @@ import "time"
 type Process struct {
 	// Object is the base model of Process
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AccountName undocumented
 	AccountName *string `json:"accountName,omitempty"`
 	// CommandLine undocumented
@@ -32,4 +34,11 @@ type Process struct {
 	Path *string `json:"path,omitempty"`
 	// ProcessID undocumented
 	ProcessID *int `json:"processId,omitempty"`
+}
+
+func NewProcess() (*Process, error) {
+	newProcess := &Process{
+		ODataType: "#microsoft.graph.Process",
+	}
+	return newProcess, nil
 }

@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AppliesTo returns request builder for DirectoryObject collection
+// AppliesTo returns request builder for DirectoryObject collection rcn
 func (b *StsPolicyRequestBuilder) AppliesTo() *StsPolicyAppliesToCollectionRequestBuilder {
 	bb := &StsPolicyAppliesToCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appliesTo"

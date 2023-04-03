@@ -8,6 +8,8 @@ import "time"
 type TemporaryAccessPassAuthenticationMethod struct {
 	// AuthenticationMethod is the base model of TemporaryAccessPassAuthenticationMethod
 	AuthenticationMethod
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// IsUsable undocumented
@@ -24,10 +26,19 @@ type TemporaryAccessPassAuthenticationMethod struct {
 	TemporaryAccessPass *string `json:"temporaryAccessPass,omitempty"`
 }
 
+func NewTemporaryAccessPassAuthenticationMethod() (*TemporaryAccessPassAuthenticationMethod, error) {
+	newTemporaryAccessPassAuthenticationMethod := &TemporaryAccessPassAuthenticationMethod{
+		ODataType: "#microsoft.graph.TemporaryAccessPassAuthenticationMethod",
+	}
+	return newTemporaryAccessPassAuthenticationMethod, nil
+}
+
 // TemporaryAccessPassAuthenticationMethodConfiguration undocumented
 type TemporaryAccessPassAuthenticationMethodConfiguration struct {
 	// AuthenticationMethodConfiguration is the base model of TemporaryAccessPassAuthenticationMethodConfiguration
 	AuthenticationMethodConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// DefaultLength undocumented
 	DefaultLength *int `json:"defaultLength,omitempty"`
 	// DefaultLifetimeInMinutes undocumented
@@ -40,4 +51,11 @@ type TemporaryAccessPassAuthenticationMethodConfiguration struct {
 	MinimumLifetimeInMinutes *int `json:"minimumLifetimeInMinutes,omitempty"`
 	// IncludeTargets undocumented
 	IncludeTargets []AuthenticationMethodTarget `json:"includeTargets,omitempty"`
+}
+
+func NewTemporaryAccessPassAuthenticationMethodConfiguration() (*TemporaryAccessPassAuthenticationMethodConfiguration, error) {
+	newTemporaryAccessPassAuthenticationMethodConfiguration := &TemporaryAccessPassAuthenticationMethodConfiguration{
+		ODataType: "#microsoft.graph.TemporaryAccessPassAuthenticationMethodConfiguration",
+	}
+	return newTemporaryAccessPassAuthenticationMethodConfiguration, nil
 }

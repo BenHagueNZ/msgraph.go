@@ -8,9 +8,16 @@ type SearchEntityQueryRequestParameter struct {
 	Requests []SearchRequestObject `json:"requests,omitempty"`
 }
 
-// Resource is navigation property
+// Resource is navigation property rn
 func (b *SearchHitRequestBuilder) Resource() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/resource"
+	return bb
+}
+
+// SearchEntity is navigation property rn
+func (b *SearchEntityRequestBuilder) SearchEntity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

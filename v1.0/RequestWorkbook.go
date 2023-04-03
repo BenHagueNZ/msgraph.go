@@ -1755,7 +1755,7 @@ func (r *WorkbookWorksheetProtectionOptionsRequest) Delete(ctx context.Context) 
 
 type WorkbookCloseSessionRequestBuilder struct{ BaseRequestBuilder }
 
-// CloseSession action undocumented
+// CloseSession action undocumentedrav
 func (b *WorkbookRequestBuilder) CloseSession(reqObj *WorkbookCloseSessionRequestParameter) *WorkbookCloseSessionRequestBuilder {
 	bb := &WorkbookCloseSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CloseSession"
@@ -1777,7 +1777,7 @@ func (r *WorkbookCloseSessionRequest) Post(ctx context.Context) error {
 
 type WorkbookCreateSessionRequestBuilder struct{ BaseRequestBuilder }
 
-// CreateSession action undocumented
+// CreateSession action undocumentedras
 func (b *WorkbookRequestBuilder) CreateSession(reqObj *WorkbookCreateSessionRequestParameter) *WorkbookCreateSessionRequestBuilder {
 	bb := &WorkbookCreateSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CreateSession"
@@ -1800,7 +1800,7 @@ func (r *WorkbookCreateSessionRequest) Post(ctx context.Context) (resObj *Workbo
 
 type WorkbookRefreshSessionRequestBuilder struct{ BaseRequestBuilder }
 
-// RefreshSession action undocumented
+// RefreshSession action undocumentedrav
 func (b *WorkbookRequestBuilder) RefreshSession(reqObj *WorkbookRefreshSessionRequestParameter) *WorkbookRefreshSessionRequestBuilder {
 	bb := &WorkbookRefreshSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RefreshSession"
@@ -1822,7 +1822,7 @@ func (r *WorkbookRefreshSessionRequest) Post(ctx context.Context) error {
 
 type WorkbookApplicationCalculateRequestBuilder struct{ BaseRequestBuilder }
 
-// Calculate action undocumented
+// Calculate action undocumentedrav
 func (b *WorkbookApplicationRequestBuilder) Calculate(reqObj *WorkbookApplicationCalculateRequestParameter) *WorkbookApplicationCalculateRequestBuilder {
 	bb := &WorkbookApplicationCalculateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Calculate"
@@ -1844,7 +1844,7 @@ func (r *WorkbookApplicationCalculateRequest) Post(ctx context.Context) error {
 
 type WorkbookChartSetDataRequestBuilder struct{ BaseRequestBuilder }
 
-// SetData action undocumented
+// SetData action undocumentedrav
 func (b *WorkbookChartRequestBuilder) SetData(reqObj *WorkbookChartSetDataRequestParameter) *WorkbookChartSetDataRequestBuilder {
 	bb := &WorkbookChartSetDataRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SetData"
@@ -1866,7 +1866,7 @@ func (r *WorkbookChartSetDataRequest) Post(ctx context.Context) error {
 
 type WorkbookChartSetPositionRequestBuilder struct{ BaseRequestBuilder }
 
-// SetPosition action undocumented
+// SetPosition action undocumentedrav
 func (b *WorkbookChartRequestBuilder) SetPosition(reqObj *WorkbookChartSetPositionRequestParameter) *WorkbookChartSetPositionRequestBuilder {
 	bb := &WorkbookChartSetPositionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SetPosition"
@@ -1888,7 +1888,7 @@ func (r *WorkbookChartSetPositionRequest) Post(ctx context.Context) error {
 
 type WorkbookChartFillClearRequestBuilder struct{ BaseRequestBuilder }
 
-// Clear action undocumented
+// Clear action undocumentedrav
 func (b *WorkbookChartFillRequestBuilder) Clear(reqObj *WorkbookChartFillClearRequestParameter) *WorkbookChartFillClearRequestBuilder {
 	bb := &WorkbookChartFillClearRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Clear"
@@ -1910,7 +1910,7 @@ func (r *WorkbookChartFillClearRequest) Post(ctx context.Context) error {
 
 type WorkbookChartFillSetSolidColorRequestBuilder struct{ BaseRequestBuilder }
 
-// SetSolidColor action undocumented
+// SetSolidColor action undocumentedrav
 func (b *WorkbookChartFillRequestBuilder) SetSolidColor(reqObj *WorkbookChartFillSetSolidColorRequestParameter) *WorkbookChartFillSetSolidColorRequestBuilder {
 	bb := &WorkbookChartFillSetSolidColorRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SetSolidColor"
@@ -1932,7 +1932,7 @@ func (r *WorkbookChartFillSetSolidColorRequest) Post(ctx context.Context) error 
 
 type WorkbookChartLineFormatClearRequestBuilder struct{ BaseRequestBuilder }
 
-// Clear action undocumented
+// Clear action undocumentedrav
 func (b *WorkbookChartLineFormatRequestBuilder) Clear(reqObj *WorkbookChartLineFormatClearRequestParameter) *WorkbookChartLineFormatClearRequestBuilder {
 	bb := &WorkbookChartLineFormatClearRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Clear"
@@ -1954,7 +1954,7 @@ func (r *WorkbookChartLineFormatClearRequest) Post(ctx context.Context) error {
 
 type WorkbookFilterApplyRequestBuilder struct{ BaseRequestBuilder }
 
-// Apply action undocumented
+// Apply action undocumentedrav
 func (b *WorkbookFilterRequestBuilder) Apply(reqObj *WorkbookFilterApplyRequestParameter) *WorkbookFilterApplyRequestBuilder {
 	bb := &WorkbookFilterApplyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Apply"
@@ -1976,7 +1976,7 @@ func (r *WorkbookFilterApplyRequest) Post(ctx context.Context) error {
 
 type WorkbookFilterApplyBottomItemsFilterRequestBuilder struct{ BaseRequestBuilder }
 
-// ApplyBottomItemsFilter action undocumented
+// ApplyBottomItemsFilter action undocumentedrav
 func (b *WorkbookFilterRequestBuilder) ApplyBottomItemsFilter(reqObj *WorkbookFilterApplyBottomItemsFilterRequestParameter) *WorkbookFilterApplyBottomItemsFilterRequestBuilder {
 	bb := &WorkbookFilterApplyBottomItemsFilterRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ApplyBottomItemsFilter"
@@ -1998,7 +1998,7 @@ func (r *WorkbookFilterApplyBottomItemsFilterRequest) Post(ctx context.Context) 
 
 type WorkbookFilterApplyBottomPercentFilterRequestBuilder struct{ BaseRequestBuilder }
 
-// ApplyBottomPercentFilter action undocumented
+// ApplyBottomPercentFilter action undocumentedrav
 func (b *WorkbookFilterRequestBuilder) ApplyBottomPercentFilter(reqObj *WorkbookFilterApplyBottomPercentFilterRequestParameter) *WorkbookFilterApplyBottomPercentFilterRequestBuilder {
 	bb := &WorkbookFilterApplyBottomPercentFilterRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ApplyBottomPercentFilter"
@@ -2020,7 +2020,7 @@ func (r *WorkbookFilterApplyBottomPercentFilterRequest) Post(ctx context.Context
 
 type WorkbookFilterApplyCellColorFilterRequestBuilder struct{ BaseRequestBuilder }
 
-// ApplyCellColorFilter action undocumented
+// ApplyCellColorFilter action undocumentedrav
 func (b *WorkbookFilterRequestBuilder) ApplyCellColorFilter(reqObj *WorkbookFilterApplyCellColorFilterRequestParameter) *WorkbookFilterApplyCellColorFilterRequestBuilder {
 	bb := &WorkbookFilterApplyCellColorFilterRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ApplyCellColorFilter"
@@ -2042,7 +2042,7 @@ func (r *WorkbookFilterApplyCellColorFilterRequest) Post(ctx context.Context) er
 
 type WorkbookFilterApplyCustomFilterRequestBuilder struct{ BaseRequestBuilder }
 
-// ApplyCustomFilter action undocumented
+// ApplyCustomFilter action undocumentedrav
 func (b *WorkbookFilterRequestBuilder) ApplyCustomFilter(reqObj *WorkbookFilterApplyCustomFilterRequestParameter) *WorkbookFilterApplyCustomFilterRequestBuilder {
 	bb := &WorkbookFilterApplyCustomFilterRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ApplyCustomFilter"
@@ -2064,7 +2064,7 @@ func (r *WorkbookFilterApplyCustomFilterRequest) Post(ctx context.Context) error
 
 type WorkbookFilterApplyDynamicFilterRequestBuilder struct{ BaseRequestBuilder }
 
-// ApplyDynamicFilter action undocumented
+// ApplyDynamicFilter action undocumentedrav
 func (b *WorkbookFilterRequestBuilder) ApplyDynamicFilter(reqObj *WorkbookFilterApplyDynamicFilterRequestParameter) *WorkbookFilterApplyDynamicFilterRequestBuilder {
 	bb := &WorkbookFilterApplyDynamicFilterRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ApplyDynamicFilter"
@@ -2086,7 +2086,7 @@ func (r *WorkbookFilterApplyDynamicFilterRequest) Post(ctx context.Context) erro
 
 type WorkbookFilterApplyFontColorFilterRequestBuilder struct{ BaseRequestBuilder }
 
-// ApplyFontColorFilter action undocumented
+// ApplyFontColorFilter action undocumentedrav
 func (b *WorkbookFilterRequestBuilder) ApplyFontColorFilter(reqObj *WorkbookFilterApplyFontColorFilterRequestParameter) *WorkbookFilterApplyFontColorFilterRequestBuilder {
 	bb := &WorkbookFilterApplyFontColorFilterRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ApplyFontColorFilter"
@@ -2108,7 +2108,7 @@ func (r *WorkbookFilterApplyFontColorFilterRequest) Post(ctx context.Context) er
 
 type WorkbookFilterApplyIconFilterRequestBuilder struct{ BaseRequestBuilder }
 
-// ApplyIconFilter action undocumented
+// ApplyIconFilter action undocumentedrav
 func (b *WorkbookFilterRequestBuilder) ApplyIconFilter(reqObj *WorkbookFilterApplyIconFilterRequestParameter) *WorkbookFilterApplyIconFilterRequestBuilder {
 	bb := &WorkbookFilterApplyIconFilterRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ApplyIconFilter"
@@ -2130,7 +2130,7 @@ func (r *WorkbookFilterApplyIconFilterRequest) Post(ctx context.Context) error {
 
 type WorkbookFilterApplyTopItemsFilterRequestBuilder struct{ BaseRequestBuilder }
 
-// ApplyTopItemsFilter action undocumented
+// ApplyTopItemsFilter action undocumentedrav
 func (b *WorkbookFilterRequestBuilder) ApplyTopItemsFilter(reqObj *WorkbookFilterApplyTopItemsFilterRequestParameter) *WorkbookFilterApplyTopItemsFilterRequestBuilder {
 	bb := &WorkbookFilterApplyTopItemsFilterRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ApplyTopItemsFilter"
@@ -2152,7 +2152,7 @@ func (r *WorkbookFilterApplyTopItemsFilterRequest) Post(ctx context.Context) err
 
 type WorkbookFilterApplyTopPercentFilterRequestBuilder struct{ BaseRequestBuilder }
 
-// ApplyTopPercentFilter action undocumented
+// ApplyTopPercentFilter action undocumentedrav
 func (b *WorkbookFilterRequestBuilder) ApplyTopPercentFilter(reqObj *WorkbookFilterApplyTopPercentFilterRequestParameter) *WorkbookFilterApplyTopPercentFilterRequestBuilder {
 	bb := &WorkbookFilterApplyTopPercentFilterRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ApplyTopPercentFilter"
@@ -2174,7 +2174,7 @@ func (r *WorkbookFilterApplyTopPercentFilterRequest) Post(ctx context.Context) e
 
 type WorkbookFilterApplyValuesFilterRequestBuilder struct{ BaseRequestBuilder }
 
-// ApplyValuesFilter action undocumented
+// ApplyValuesFilter action undocumentedrav
 func (b *WorkbookFilterRequestBuilder) ApplyValuesFilter(reqObj *WorkbookFilterApplyValuesFilterRequestParameter) *WorkbookFilterApplyValuesFilterRequestBuilder {
 	bb := &WorkbookFilterApplyValuesFilterRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ApplyValuesFilter"
@@ -2196,7 +2196,7 @@ func (r *WorkbookFilterApplyValuesFilterRequest) Post(ctx context.Context) error
 
 type WorkbookFilterClearRequestBuilder struct{ BaseRequestBuilder }
 
-// Clear action undocumented
+// Clear action undocumentedrav
 func (b *WorkbookFilterRequestBuilder) Clear(reqObj *WorkbookFilterClearRequestParameter) *WorkbookFilterClearRequestBuilder {
 	bb := &WorkbookFilterClearRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Clear"
@@ -2218,7 +2218,7 @@ func (r *WorkbookFilterClearRequest) Post(ctx context.Context) error {
 
 type WorkbookPivotTableRefreshRequestBuilder struct{ BaseRequestBuilder }
 
-// Refresh action undocumented
+// Refresh action undocumentedrav
 func (b *WorkbookPivotTableRequestBuilder) Refresh(reqObj *WorkbookPivotTableRefreshRequestParameter) *WorkbookPivotTableRefreshRequestBuilder {
 	bb := &WorkbookPivotTableRefreshRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Refresh"
@@ -2240,7 +2240,7 @@ func (r *WorkbookPivotTableRefreshRequest) Post(ctx context.Context) error {
 
 type WorkbookRangeClearRequestBuilder struct{ BaseRequestBuilder }
 
-// Clear action undocumented
+// Clear action undocumentedrav
 func (b *WorkbookRangeRequestBuilder) Clear(reqObj *WorkbookRangeClearRequestParameter) *WorkbookRangeClearRequestBuilder {
 	bb := &WorkbookRangeClearRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Clear"
@@ -2262,7 +2262,7 @@ func (r *WorkbookRangeClearRequest) Post(ctx context.Context) error {
 
 type WorkbookRangeDeleteRequestBuilder struct{ BaseRequestBuilder }
 
-// Delete action undocumented
+// Delete action undocumentedrav
 func (b *WorkbookRangeRequestBuilder) Delete(reqObj *WorkbookRangeDeleteRequestParameter) *WorkbookRangeDeleteRequestBuilder {
 	bb := &WorkbookRangeDeleteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Delete"
@@ -2284,7 +2284,7 @@ func (r *WorkbookRangeDeleteRequest) Post(ctx context.Context) error {
 
 type WorkbookRangeInsertRequestBuilder struct{ BaseRequestBuilder }
 
-// Insert action undocumented
+// Insert action undocumentedras
 func (b *WorkbookRangeRequestBuilder) Insert(reqObj *WorkbookRangeInsertRequestParameter) *WorkbookRangeInsertRequestBuilder {
 	bb := &WorkbookRangeInsertRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Insert"
@@ -2307,7 +2307,7 @@ func (r *WorkbookRangeInsertRequest) Post(ctx context.Context) (resObj *Workbook
 
 type WorkbookRangeMergeRequestBuilder struct{ BaseRequestBuilder }
 
-// Merge action undocumented
+// Merge action undocumentedrav
 func (b *WorkbookRangeRequestBuilder) Merge(reqObj *WorkbookRangeMergeRequestParameter) *WorkbookRangeMergeRequestBuilder {
 	bb := &WorkbookRangeMergeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Merge"
@@ -2329,7 +2329,7 @@ func (r *WorkbookRangeMergeRequest) Post(ctx context.Context) error {
 
 type WorkbookRangeUnmergeRequestBuilder struct{ BaseRequestBuilder }
 
-// Unmerge action undocumented
+// Unmerge action undocumentedrav
 func (b *WorkbookRangeRequestBuilder) Unmerge(reqObj *WorkbookRangeUnmergeRequestParameter) *WorkbookRangeUnmergeRequestBuilder {
 	bb := &WorkbookRangeUnmergeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Unmerge"
@@ -2351,7 +2351,7 @@ func (r *WorkbookRangeUnmergeRequest) Post(ctx context.Context) error {
 
 type WorkbookRangeFillClearRequestBuilder struct{ BaseRequestBuilder }
 
-// Clear action undocumented
+// Clear action undocumentedrav
 func (b *WorkbookRangeFillRequestBuilder) Clear(reqObj *WorkbookRangeFillClearRequestParameter) *WorkbookRangeFillClearRequestBuilder {
 	bb := &WorkbookRangeFillClearRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Clear"
@@ -2373,7 +2373,7 @@ func (r *WorkbookRangeFillClearRequest) Post(ctx context.Context) error {
 
 type WorkbookRangeFormatAutofitColumnsRequestBuilder struct{ BaseRequestBuilder }
 
-// AutofitColumns action undocumented
+// AutofitColumns action undocumentedrav
 func (b *WorkbookRangeFormatRequestBuilder) AutofitColumns(reqObj *WorkbookRangeFormatAutofitColumnsRequestParameter) *WorkbookRangeFormatAutofitColumnsRequestBuilder {
 	bb := &WorkbookRangeFormatAutofitColumnsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AutofitColumns"
@@ -2395,7 +2395,7 @@ func (r *WorkbookRangeFormatAutofitColumnsRequest) Post(ctx context.Context) err
 
 type WorkbookRangeFormatAutofitRowsRequestBuilder struct{ BaseRequestBuilder }
 
-// AutofitRows action undocumented
+// AutofitRows action undocumentedrav
 func (b *WorkbookRangeFormatRequestBuilder) AutofitRows(reqObj *WorkbookRangeFormatAutofitRowsRequestParameter) *WorkbookRangeFormatAutofitRowsRequestBuilder {
 	bb := &WorkbookRangeFormatAutofitRowsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AutofitRows"
@@ -2417,7 +2417,7 @@ func (r *WorkbookRangeFormatAutofitRowsRequest) Post(ctx context.Context) error 
 
 type WorkbookRangeSortApplyRequestBuilder struct{ BaseRequestBuilder }
 
-// Apply action undocumented
+// Apply action undocumentedrav
 func (b *WorkbookRangeSortRequestBuilder) Apply(reqObj *WorkbookRangeSortApplyRequestParameter) *WorkbookRangeSortApplyRequestBuilder {
 	bb := &WorkbookRangeSortApplyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Apply"
@@ -2439,7 +2439,7 @@ func (r *WorkbookRangeSortApplyRequest) Post(ctx context.Context) error {
 
 type WorkbookTableClearFiltersRequestBuilder struct{ BaseRequestBuilder }
 
-// ClearFilters action undocumented
+// ClearFilters action undocumentedrav
 func (b *WorkbookTableRequestBuilder) ClearFilters(reqObj *WorkbookTableClearFiltersRequestParameter) *WorkbookTableClearFiltersRequestBuilder {
 	bb := &WorkbookTableClearFiltersRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ClearFilters"
@@ -2461,7 +2461,7 @@ func (r *WorkbookTableClearFiltersRequest) Post(ctx context.Context) error {
 
 type WorkbookTableConvertToRangeRequestBuilder struct{ BaseRequestBuilder }
 
-// ConvertToRange action undocumented
+// ConvertToRange action undocumentedras
 func (b *WorkbookTableRequestBuilder) ConvertToRange(reqObj *WorkbookTableConvertToRangeRequestParameter) *WorkbookTableConvertToRangeRequestBuilder {
 	bb := &WorkbookTableConvertToRangeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ConvertToRange"
@@ -2484,7 +2484,7 @@ func (r *WorkbookTableConvertToRangeRequest) Post(ctx context.Context) (resObj *
 
 type WorkbookTableReapplyFiltersRequestBuilder struct{ BaseRequestBuilder }
 
-// ReapplyFilters action undocumented
+// ReapplyFilters action undocumentedrav
 func (b *WorkbookTableRequestBuilder) ReapplyFilters(reqObj *WorkbookTableReapplyFiltersRequestParameter) *WorkbookTableReapplyFiltersRequestBuilder {
 	bb := &WorkbookTableReapplyFiltersRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ReapplyFilters"
@@ -2506,7 +2506,7 @@ func (r *WorkbookTableReapplyFiltersRequest) Post(ctx context.Context) error {
 
 type WorkbookTableSortApplyRequestBuilder struct{ BaseRequestBuilder }
 
-// Apply action undocumented
+// Apply action undocumentedrav
 func (b *WorkbookTableSortRequestBuilder) Apply(reqObj *WorkbookTableSortApplyRequestParameter) *WorkbookTableSortApplyRequestBuilder {
 	bb := &WorkbookTableSortApplyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Apply"
@@ -2528,7 +2528,7 @@ func (r *WorkbookTableSortApplyRequest) Post(ctx context.Context) error {
 
 type WorkbookTableSortClearRequestBuilder struct{ BaseRequestBuilder }
 
-// Clear action undocumented
+// Clear action undocumentedrav
 func (b *WorkbookTableSortRequestBuilder) Clear(reqObj *WorkbookTableSortClearRequestParameter) *WorkbookTableSortClearRequestBuilder {
 	bb := &WorkbookTableSortClearRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Clear"
@@ -2550,7 +2550,7 @@ func (r *WorkbookTableSortClearRequest) Post(ctx context.Context) error {
 
 type WorkbookTableSortReapplyRequestBuilder struct{ BaseRequestBuilder }
 
-// Reapply action undocumented
+// Reapply action undocumentedrav
 func (b *WorkbookTableSortRequestBuilder) Reapply(reqObj *WorkbookTableSortReapplyRequestParameter) *WorkbookTableSortReapplyRequestBuilder {
 	bb := &WorkbookTableSortReapplyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Reapply"
@@ -2572,7 +2572,7 @@ func (r *WorkbookTableSortReapplyRequest) Post(ctx context.Context) error {
 
 type WorkbookWorksheetProtectionProtectRequestBuilder struct{ BaseRequestBuilder }
 
-// Protect action undocumented
+// Protect action undocumentedrav
 func (b *WorkbookWorksheetProtectionRequestBuilder) Protect(reqObj *WorkbookWorksheetProtectionProtectRequestParameter) *WorkbookWorksheetProtectionProtectRequestBuilder {
 	bb := &WorkbookWorksheetProtectionProtectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Protect"
@@ -2594,7 +2594,7 @@ func (r *WorkbookWorksheetProtectionProtectRequest) Post(ctx context.Context) er
 
 type WorkbookWorksheetProtectionUnprotectRequestBuilder struct{ BaseRequestBuilder }
 
-// Unprotect action undocumented
+// Unprotect action undocumentedrav
 func (b *WorkbookWorksheetProtectionRequestBuilder) Unprotect(reqObj *WorkbookWorksheetProtectionUnprotectRequestParameter) *WorkbookWorksheetProtectionUnprotectRequestBuilder {
 	bb := &WorkbookWorksheetProtectionUnprotectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Unprotect"

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsCosRequestBuilder struct{ BaseRequestBuilder }
 
-// Cos action undocumented
+// Cos action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Cos(reqObj *WorkbookFunctionsCosRequestParameter) *WorkbookFunctionsCosRequestBuilder {
 	bb := &WorkbookFunctionsCosRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Cos"

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsGeoMeanRequestBuilder struct{ BaseRequestBuilder }
 
-// GeoMean action undocumented
+// GeoMean action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) GeoMean(reqObj *WorkbookFunctionsGeoMeanRequestParameter) *WorkbookFunctionsGeoMeanRequestBuilder {
 	bb := &WorkbookFunctionsGeoMeanRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GeoMean"

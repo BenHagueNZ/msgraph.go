@@ -8,8 +8,17 @@ import "time"
 type IncompleteData struct {
 	// Object is the base model of IncompleteData
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// MissingDataBeforeDateTime undocumented
 	MissingDataBeforeDateTime *time.Time `json:"missingDataBeforeDateTime,omitempty"`
 	// WasThrottled undocumented
 	WasThrottled *bool `json:"wasThrottled,omitempty"`
+}
+
+func NewIncompleteData() (*IncompleteData, error) {
+	newIncompleteData := &IncompleteData{
+		ODataType: "#microsoft.graph.IncompleteData",
+	}
+	return newIncompleteData, nil
 }

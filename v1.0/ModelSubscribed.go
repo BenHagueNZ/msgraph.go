@@ -6,6 +6,8 @@ package msgraph
 type SubscribedSKU struct {
 	// Entity is the base model of SubscribedSKU
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AppliesTo undocumented
 	AppliesTo *string `json:"appliesTo,omitempty"`
 	// CapabilityStatus undocumented
@@ -20,4 +22,11 @@ type SubscribedSKU struct {
 	SKUID *UUID `json:"skuId,omitempty"`
 	// SKUPartNumber undocumented
 	SKUPartNumber *string `json:"skuPartNumber,omitempty"`
+}
+
+func NewSubscribedSKU() (*SubscribedSKU, error) {
+	newSubscribedSKU := &SubscribedSKU{
+		ODataType: "#microsoft.graph.SubscribedSku",
+	}
+	return newSubscribedSKU, nil
 }

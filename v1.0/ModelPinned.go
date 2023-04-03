@@ -6,6 +6,15 @@ package msgraph
 type PinnedChatMessageInfo struct {
 	// Entity is the base model of PinnedChatMessageInfo
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Message undocumented
 	Message *ChatMessage `json:"message,omitempty"`
+}
+
+func NewPinnedChatMessageInfo() (*PinnedChatMessageInfo, error) {
+	newPinnedChatMessageInfo := &PinnedChatMessageInfo{
+		ODataType: "#microsoft.graph.PinnedChatMessageInfo",
+	}
+	return newPinnedChatMessageInfo, nil
 }

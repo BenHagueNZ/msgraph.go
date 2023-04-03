@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsHex2BinRequestBuilder struct{ BaseRequestBuilder }
 
-// Hex2Bin action undocumented
+// Hex2Bin action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Hex2Bin(reqObj *WorkbookFunctionsHex2BinRequestParameter) *WorkbookFunctionsHex2BinRequestBuilder {
 	bb := &WorkbookFunctionsHex2BinRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Hex2Bin"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsHex2BinRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsHex2DecRequestBuilder struct{ BaseRequestBuilder }
 
-// Hex2Dec action undocumented
+// Hex2Dec action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Hex2Dec(reqObj *WorkbookFunctionsHex2DecRequestParameter) *WorkbookFunctionsHex2DecRequestBuilder {
 	bb := &WorkbookFunctionsHex2DecRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Hex2Dec"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsHex2DecRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsHex2OctRequestBuilder struct{ BaseRequestBuilder }
 
-// Hex2Oct action undocumented
+// Hex2Oct action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Hex2Oct(reqObj *WorkbookFunctionsHex2OctRequestParameter) *WorkbookFunctionsHex2OctRequestBuilder {
 	bb := &WorkbookFunctionsHex2OctRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Hex2Oct"

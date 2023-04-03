@@ -6,6 +6,8 @@ package msgraph
 type Place struct {
 	// Entity is the base model of Place
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Address undocumented
 	Address *PhysicalAddress `json:"address,omitempty"`
 	// DisplayName undocumented
@@ -14,4 +16,11 @@ type Place struct {
 	GeoCoordinates *OutlookGeoCoordinates `json:"geoCoordinates,omitempty"`
 	// Phone undocumented
 	Phone *string `json:"phone,omitempty"`
+}
+
+func NewPlace() (*Place, error) {
+	newPlace := &Place{
+		ODataType: "#microsoft.graph.Place",
+	}
+	return newPlace, nil
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsCharRequestBuilder struct{ BaseRequestBuilder }
 
-// Char action undocumented
+// Char action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Char(reqObj *WorkbookFunctionsCharRequestParameter) *WorkbookFunctionsCharRequestBuilder {
 	bb := &WorkbookFunctionsCharRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Char"

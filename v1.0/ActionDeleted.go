@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Channels returns request builder for Channel collection
+// Channels returns request builder for Channel collection rcn
 func (b *DeletedTeamRequestBuilder) Channels() *DeletedTeamChannelsCollectionRequestBuilder {
 	bb := &DeletedTeamChannelsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/channels"
@@ -112,4 +112,11 @@ func (r *DeletedTeamChannelsCollectionRequest) Get(ctx context.Context) ([]Chann
 func (r *DeletedTeamChannelsCollectionRequest) Add(ctx context.Context, reqObj *Channel) (resObj *Channel, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// DeletedTeam is navigation property rn
+func (b *DeletedTeamRequestBuilder) DeletedTeam() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

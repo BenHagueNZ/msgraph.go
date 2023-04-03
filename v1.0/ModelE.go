@@ -6,6 +6,8 @@ package msgraph
 type EBookInstallSummary struct {
 	// Entity is the base model of EBookInstallSummary
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// FailedDeviceCount undocumented
 	FailedDeviceCount *int `json:"failedDeviceCount,omitempty"`
 	// FailedUserCount undocumented
@@ -18,4 +20,11 @@ type EBookInstallSummary struct {
 	NotInstalledDeviceCount *int `json:"notInstalledDeviceCount,omitempty"`
 	// NotInstalledUserCount undocumented
 	NotInstalledUserCount *int `json:"notInstalledUserCount,omitempty"`
+}
+
+func NewEBookInstallSummary() (*EBookInstallSummary, error) {
+	newEBookInstallSummary := &EBookInstallSummary{
+		ODataType: "#microsoft.graph.EBookInstallSummary",
+	}
+	return newEBookInstallSummary, nil
 }

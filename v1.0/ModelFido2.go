@@ -8,6 +8,8 @@ import "time"
 type Fido2AuthenticationMethod struct {
 	// AuthenticationMethod is the base model of Fido2AuthenticationMethod
 	AuthenticationMethod
+
+	ODataType string `json:"@odata.type"`
 	// AaGUID undocumented
 	AaGUID *string `json:"aaGuid,omitempty"`
 	// AttestationCertificates undocumented
@@ -22,10 +24,19 @@ type Fido2AuthenticationMethod struct {
 	Model *string `json:"model,omitempty"`
 }
 
+func NewFido2AuthenticationMethod() (*Fido2AuthenticationMethod, error) {
+	newFido2AuthenticationMethod := &Fido2AuthenticationMethod{
+		ODataType: "#microsoft.graph.Fido2AuthenticationMethod",
+	}
+	return newFido2AuthenticationMethod, nil
+}
+
 // Fido2AuthenticationMethodConfiguration undocumented
 type Fido2AuthenticationMethodConfiguration struct {
 	// AuthenticationMethodConfiguration is the base model of Fido2AuthenticationMethodConfiguration
 	AuthenticationMethodConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// IsAttestationEnforced undocumented
 	IsAttestationEnforced *bool `json:"isAttestationEnforced,omitempty"`
 	// IsSelfServiceRegistrationAllowed undocumented
@@ -36,14 +47,30 @@ type Fido2AuthenticationMethodConfiguration struct {
 	IncludeTargets []AuthenticationMethodTarget `json:"includeTargets,omitempty"`
 }
 
+func NewFido2AuthenticationMethodConfiguration() (*Fido2AuthenticationMethodConfiguration, error) {
+	newFido2AuthenticationMethodConfiguration := &Fido2AuthenticationMethodConfiguration{
+		ODataType: "#microsoft.graph.Fido2AuthenticationMethodConfiguration",
+	}
+	return newFido2AuthenticationMethodConfiguration, nil
+}
+
 // Fido2KeyRestrictions undocumented
 type Fido2KeyRestrictions struct {
 	// Object is the base model of Fido2KeyRestrictions
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AaGuids undocumented
 	AaGuids []string `json:"aaGuids,omitempty"`
 	// EnforcementType undocumented
 	EnforcementType *Fido2RestrictionEnforcementType `json:"enforcementType,omitempty"`
 	// IsEnforced undocumented
 	IsEnforced *bool `json:"isEnforced,omitempty"`
+}
+
+func NewFido2KeyRestrictions() (*Fido2KeyRestrictions, error) {
+	newFido2KeyRestrictions := &Fido2KeyRestrictions{
+		ODataType: "#microsoft.graph.Fido2KeyRestrictions",
+	}
+	return newFido2KeyRestrictions, nil
 }

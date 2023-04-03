@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// DirectoryAudits returns request builder for DirectoryAudit collection
+// DirectoryAudits returns request builder for DirectoryAudit collection rcn
 func (b *AuditLogRootRequestBuilder) DirectoryAudits() *AuditLogRootDirectoryAuditsCollectionRequestBuilder {
 	bb := &AuditLogRootDirectoryAuditsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/directoryAudits"
@@ -114,7 +114,7 @@ func (r *AuditLogRootDirectoryAuditsCollectionRequest) Add(ctx context.Context, 
 	return
 }
 
-// Provisioning returns request builder for ProvisioningObjectSummary collection
+// Provisioning returns request builder for ProvisioningObjectSummary collection rcn
 func (b *AuditLogRootRequestBuilder) Provisioning() *AuditLogRootProvisioningCollectionRequestBuilder {
 	bb := &AuditLogRootProvisioningCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/provisioning"
@@ -217,7 +217,7 @@ func (r *AuditLogRootProvisioningCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// SignIns returns request builder for SignIn collection
+// SignIns returns request builder for SignIn collection rcn
 func (b *AuditLogRootRequestBuilder) SignIns() *AuditLogRootSignInsCollectionRequestBuilder {
 	bb := &AuditLogRootSignInsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/signIns"
@@ -318,4 +318,18 @@ func (r *AuditLogRootSignInsCollectionRequest) Get(ctx context.Context) ([]SignI
 func (r *AuditLogRootSignInsCollectionRequest) Add(ctx context.Context, reqObj *SignIn) (resObj *SignIn, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// AuditEvent is navigation property rn
+func (b *AuditEventRequestBuilder) AuditEvent() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// AuditLogRoot is navigation property rn
+func (b *AuditLogRootRequestBuilder) AuditLogRoot() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

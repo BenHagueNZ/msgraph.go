@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsMirrRequestBuilder struct{ BaseRequestBuilder }
 
-// Mirr action undocumented
+// Mirr action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Mirr(reqObj *WorkbookFunctionsMirrRequestParameter) *WorkbookFunctionsMirrRequestBuilder {
 	bb := &WorkbookFunctionsMirrRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Mirr"

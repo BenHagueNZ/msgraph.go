@@ -534,7 +534,7 @@ func (r *TeamUnarchivedEventMessageDetailRequest) Delete(ctx context.Context) er
 
 type TeamArchiveRequestBuilder struct{ BaseRequestBuilder }
 
-// Archive action undocumented
+// Archive action undocumentedrav
 func (b *TeamRequestBuilder) Archive(reqObj *TeamArchiveRequestParameter) *TeamArchiveRequestBuilder {
 	bb := &TeamArchiveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Archive"
@@ -556,7 +556,7 @@ func (r *TeamArchiveRequest) Post(ctx context.Context) error {
 
 type TeamUnarchiveRequestBuilder struct{ BaseRequestBuilder }
 
-// Unarchive action undocumented
+// Unarchive action undocumentedrav
 func (b *TeamRequestBuilder) Unarchive(reqObj *TeamUnarchiveRequestParameter) *TeamUnarchiveRequestBuilder {
 	bb := &TeamUnarchiveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Unarchive"
@@ -578,7 +578,7 @@ func (r *TeamUnarchiveRequest) Post(ctx context.Context) error {
 
 type TeamCloneRequestBuilder struct{ BaseRequestBuilder }
 
-// Clone action undocumented
+// Clone action undocumentedrav
 func (b *TeamRequestBuilder) Clone(reqObj *TeamCloneRequestParameter) *TeamCloneRequestBuilder {
 	bb := &TeamCloneRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Clone"
@@ -600,7 +600,7 @@ func (r *TeamCloneRequest) Post(ctx context.Context) error {
 
 type TeamCompleteMigrationRequestBuilder struct{ BaseRequestBuilder }
 
-// CompleteMigration action undocumented
+// CompleteMigration action undocumentedrav
 func (b *TeamRequestBuilder) CompleteMigration(reqObj *TeamCompleteMigrationRequestParameter) *TeamCompleteMigrationRequestBuilder {
 	bb := &TeamCompleteMigrationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CompleteMigration"
@@ -622,7 +622,7 @@ func (r *TeamCompleteMigrationRequest) Post(ctx context.Context) error {
 
 type TeamSendActivityNotificationRequestBuilder struct{ BaseRequestBuilder }
 
-// SendActivityNotification action undocumented
+// SendActivityNotification action undocumentedrav
 func (b *TeamRequestBuilder) SendActivityNotification(reqObj *TeamSendActivityNotificationRequestParameter) *TeamSendActivityNotificationRequestBuilder {
 	bb := &TeamSendActivityNotificationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SendActivityNotification"

@@ -8,6 +8,8 @@ import "time"
 type NotificationMessageTemplate struct {
 	// Entity is the base model of NotificationMessageTemplate
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// BrandingOptions undocumented
 	BrandingOptions *NotificationTemplateBrandingOptions `json:"brandingOptions,omitempty"`
 	// DefaultLocale undocumented
@@ -20,4 +22,11 @@ type NotificationMessageTemplate struct {
 	RoleScopeTagIDs []string `json:"roleScopeTagIds,omitempty"`
 	// LocalizedNotificationMessages undocumented
 	LocalizedNotificationMessages []LocalizedNotificationMessage `json:"localizedNotificationMessages,omitempty"`
+}
+
+func NewNotificationMessageTemplate() (*NotificationMessageTemplate, error) {
+	newNotificationMessageTemplate := &NotificationMessageTemplate{
+		ODataType: "#microsoft.graph.NotificationMessageTemplate",
+	}
+	return newNotificationMessageTemplate, nil
 }

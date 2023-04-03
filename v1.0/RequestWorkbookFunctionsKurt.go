@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsKurtRequestBuilder struct{ BaseRequestBuilder }
 
-// Kurt action undocumented
+// Kurt action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Kurt(reqObj *WorkbookFunctionsKurtRequestParameter) *WorkbookFunctionsKurtRequestBuilder {
 	bb := &WorkbookFunctionsKurtRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Kurt"

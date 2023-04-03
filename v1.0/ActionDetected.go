@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// ManagedDevices returns request builder for ManagedDevice collection
+// ManagedDevices returns request builder for ManagedDevice collection rcn
 func (b *DetectedAppRequestBuilder) ManagedDevices() *DetectedAppManagedDevicesCollectionRequestBuilder {
 	bb := &DetectedAppManagedDevicesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/managedDevices"
@@ -112,4 +112,11 @@ func (r *DetectedAppManagedDevicesCollectionRequest) Get(ctx context.Context) ([
 func (r *DetectedAppManagedDevicesCollectionRequest) Add(ctx context.Context, reqObj *ManagedDevice) (resObj *ManagedDevice, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// DetectedApp is navigation property rn
+func (b *DetectedAppRequestBuilder) DetectedApp() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

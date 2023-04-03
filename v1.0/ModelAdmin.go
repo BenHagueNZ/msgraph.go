@@ -6,14 +6,25 @@ package msgraph
 type Admin struct {
 	// Object is the base model of Admin
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ServiceAnnouncement undocumented
 	ServiceAnnouncement *ServiceAnnouncement `json:"serviceAnnouncement,omitempty"`
+}
+
+func NewAdmin() (*Admin, error) {
+	newAdmin := &Admin{
+		ODataType: "#microsoft.graph.Admin",
+	}
+	return newAdmin, nil
 }
 
 // AdminConsentRequestPolicy undocumented
 type AdminConsentRequestPolicy struct {
 	// Entity is the base model of AdminConsentRequestPolicy
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// IsEnabled undocumented
 	IsEnabled *bool `json:"isEnabled,omitempty"`
 	// NotifyReviewers undocumented
@@ -26,4 +37,11 @@ type AdminConsentRequestPolicy struct {
 	Reviewers []AccessReviewReviewerScope `json:"reviewers,omitempty"`
 	// Version undocumented
 	Version *int `json:"version,omitempty"`
+}
+
+func NewAdminConsentRequestPolicy() (*AdminConsentRequestPolicy, error) {
+	newAdminConsentRequestPolicy := &AdminConsentRequestPolicy{
+		ODataType: "#microsoft.graph.AdminConsentRequestPolicy",
+	}
+	return newAdminConsentRequestPolicy, nil
 }

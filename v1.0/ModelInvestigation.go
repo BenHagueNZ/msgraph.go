@@ -6,8 +6,17 @@ package msgraph
 type InvestigationSecurityState struct {
 	// Object is the base model of InvestigationSecurityState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Status undocumented
 	Status *string `json:"status,omitempty"`
+}
+
+func NewInvestigationSecurityState() (*InvestigationSecurityState, error) {
+	newInvestigationSecurityState := &InvestigationSecurityState{
+		ODataType: "#microsoft.graph.InvestigationSecurityState",
+	}
+	return newInvestigationSecurityState, nil
 }

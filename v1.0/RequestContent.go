@@ -171,7 +171,7 @@ func (r *ContentTypeOrderRequest) Delete(ctx context.Context) error {
 
 type ContentTypePublishRequestBuilder struct{ BaseRequestBuilder }
 
-// Publish action undocumented
+// Publish action undocumentedrav
 func (b *ContentTypeRequestBuilder) Publish(reqObj *ContentTypePublishRequestParameter) *ContentTypePublishRequestBuilder {
 	bb := &ContentTypePublishRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Publish"
@@ -193,7 +193,7 @@ func (r *ContentTypePublishRequest) Post(ctx context.Context) error {
 
 type ContentTypeUnpublishRequestBuilder struct{ BaseRequestBuilder }
 
-// Unpublish action undocumented
+// Unpublish action undocumentedrav
 func (b *ContentTypeRequestBuilder) Unpublish(reqObj *ContentTypeUnpublishRequestParameter) *ContentTypeUnpublishRequestBuilder {
 	bb := &ContentTypeUnpublishRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Unpublish"
@@ -215,7 +215,7 @@ func (r *ContentTypeUnpublishRequest) Post(ctx context.Context) error {
 
 type ContentTypeAssociateWithHubSitesRequestBuilder struct{ BaseRequestBuilder }
 
-// AssociateWithHubSites action undocumented
+// AssociateWithHubSites action undocumentedrav
 func (b *ContentTypeRequestBuilder) AssociateWithHubSites(reqObj *ContentTypeAssociateWithHubSitesRequestParameter) *ContentTypeAssociateWithHubSitesRequestBuilder {
 	bb := &ContentTypeAssociateWithHubSitesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AssociateWithHubSites"
@@ -237,7 +237,7 @@ func (r *ContentTypeAssociateWithHubSitesRequest) Post(ctx context.Context) erro
 
 type ContentTypeCopyToDefaultContentLocationRequestBuilder struct{ BaseRequestBuilder }
 
-// CopyToDefaultContentLocation action undocumented
+// CopyToDefaultContentLocation action undocumentedrav
 func (b *ContentTypeRequestBuilder) CopyToDefaultContentLocation(reqObj *ContentTypeCopyToDefaultContentLocationRequestParameter) *ContentTypeCopyToDefaultContentLocationRequestBuilder {
 	bb := &ContentTypeCopyToDefaultContentLocationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CopyToDefaultContentLocation"

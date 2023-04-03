@@ -6,6 +6,8 @@ package msgraph
 type List struct {
 	// BaseItem is the base model of List
 	BaseItem
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// List undocumented
@@ -28,10 +30,19 @@ type List struct {
 	Subscriptions []Subscription `json:"subscriptions,omitempty"`
 }
 
+func NewList() (*List, error) {
+	newList := &List{
+		ODataType: "#microsoft.graph.List",
+	}
+	return newList, nil
+}
+
 // ListInfo undocumented
 type ListInfo struct {
 	// Object is the base model of ListInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ContentTypesEnabled undocumented
 	ContentTypesEnabled *bool `json:"contentTypesEnabled,omitempty"`
 	// Hidden undocumented
@@ -40,10 +51,19 @@ type ListInfo struct {
 	Template *string `json:"template,omitempty"`
 }
 
+func NewListInfo() (*ListInfo, error) {
+	newListInfo := &ListInfo{
+		ODataType: "#microsoft.graph.ListInfo",
+	}
+	return newListInfo, nil
+}
+
 // ListItem undocumented
 type ListItem struct {
 	// BaseItem is the base model of ListItem
 	BaseItem
+
+	ODataType string `json:"@odata.type"`
 	// ContentType undocumented
 	ContentType *ContentTypeInfo `json:"contentType,omitempty"`
 	// SharepointIDs undocumented
@@ -60,10 +80,26 @@ type ListItem struct {
 	Versions []ListItemVersion `json:"versions,omitempty"`
 }
 
+func NewListItem() (*ListItem, error) {
+	newListItem := &ListItem{
+		ODataType: "#microsoft.graph.ListItem",
+	}
+	return newListItem, nil
+}
+
 // ListItemVersion undocumented
 type ListItemVersion struct {
 	// BaseItemVersion is the base model of ListItemVersion
 	BaseItemVersion
+
+	ODataType string `json:"@odata.type"`
 	// Fields undocumented
 	Fields *FieldValueSet `json:"fields,omitempty"`
+}
+
+func NewListItemVersion() (*ListItemVersion, error) {
+	newListItemVersion := &ListItemVersion{
+		ODataType: "#microsoft.graph.ListItemVersion",
+	}
+	return newListItemVersion, nil
 }

@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Apps returns request builder for ManagedMobileApp collection
+// Apps returns request builder for ManagedMobileApp collection rcn
 func (b *AndroidManagedAppProtectionRequestBuilder) Apps() *AndroidManagedAppProtectionAppsCollectionRequestBuilder {
 	bb := &AndroidManagedAppProtectionAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/apps"
@@ -114,9 +114,833 @@ func (r *AndroidManagedAppProtectionAppsCollectionRequest) Add(ctx context.Conte
 	return
 }
 
-// DeploymentSummary is navigation property
+// DeploymentSummary is navigation property rn
 func (b *AndroidManagedAppProtectionRequestBuilder) DeploymentSummary() *ManagedAppPolicyDeploymentSummaryRequestBuilder {
 	bb := &ManagedAppPolicyDeploymentSummaryRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deploymentSummary"
 	return bb
+}
+
+// AndroidCompliancePolicy returns request builder for DeviceCompliancePolicy collection rcn
+func (b *AndroidCompliancePolicyRequestBuilder) AndroidCompliancePolicy() *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder {
+	bb := &AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DeviceCompliancePolicy"
+	return bb
+}
+
+// AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder is request builder for DeviceCompliancePolicy collection
+type AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DeviceCompliancePolicy collection
+func (b *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder) Request() *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest {
+	return &AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DeviceCompliancePolicy item
+func (b *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequestBuilder) ID(id string) *DeviceCompliancePolicyRequestBuilder {
+	bb := &DeviceCompliancePolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest is request for DeviceCompliancePolicy collection
+type AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DeviceCompliancePolicy collection
+func (r *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceCompliancePolicy, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DeviceCompliancePolicy
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DeviceCompliancePolicy
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DeviceCompliancePolicy collection, max N pages
+func (r *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceCompliancePolicy, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DeviceCompliancePolicy collection
+func (r *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest) Get(ctx context.Context) ([]DeviceCompliancePolicy, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DeviceCompliancePolicy collection
+func (r *AndroidCompliancePolicyAndroidCompliancePolicyCollectionRequest) Add(ctx context.Context, reqObj *DeviceCompliancePolicy) (resObj *DeviceCompliancePolicy, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// AndroidCustomConfiguration returns request builder for DeviceConfiguration collection rcn
+func (b *AndroidCustomConfigurationRequestBuilder) AndroidCustomConfiguration() *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequestBuilder {
+	bb := &AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DeviceConfiguration"
+	return bb
+}
+
+// AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
+type AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DeviceConfiguration collection
+func (b *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequestBuilder) Request() *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest {
+	return &AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DeviceConfiguration item
+func (b *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
+	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest is request for DeviceConfiguration collection
+type AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DeviceConfiguration collection
+func (r *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DeviceConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DeviceConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DeviceConfiguration collection, max N pages
+func (r *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DeviceConfiguration collection
+func (r *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DeviceConfiguration collection
+func (r *AndroidCustomConfigurationAndroidCustomConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// AndroidGeneralDeviceConfiguration returns request builder for DeviceConfiguration collection rcn
+func (b *AndroidGeneralDeviceConfigurationRequestBuilder) AndroidGeneralDeviceConfiguration() *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder {
+	bb := &AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DeviceConfiguration"
+	return bb
+}
+
+// AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
+type AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DeviceConfiguration collection
+func (b *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder) Request() *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest {
+	return &AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DeviceConfiguration item
+func (b *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
+	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest is request for DeviceConfiguration collection
+type AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DeviceConfiguration collection
+func (r *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DeviceConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DeviceConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DeviceConfiguration collection, max N pages
+func (r *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DeviceConfiguration collection
+func (r *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DeviceConfiguration collection
+func (r *AndroidGeneralDeviceConfigurationAndroidGeneralDeviceConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// AndroidManagedAppRegistration returns request builder for ManagedAppRegistration collection rcn
+func (b *AndroidManagedAppRegistrationRequestBuilder) AndroidManagedAppRegistration() *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder {
+	bb := &AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/ManagedAppRegistration"
+	return bb
+}
+
+// AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder is request builder for ManagedAppRegistration collection
+type AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ManagedAppRegistration collection
+func (b *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder) Request() *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest {
+	return &AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ManagedAppRegistration item
+func (b *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequestBuilder) ID(id string) *ManagedAppRegistrationRequestBuilder {
+	bb := &ManagedAppRegistrationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest is request for ManagedAppRegistration collection
+type AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ManagedAppRegistration collection
+func (r *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ManagedAppRegistration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ManagedAppRegistration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ManagedAppRegistration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ManagedAppRegistration collection, max N pages
+func (r *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest) GetN(ctx context.Context, n int) ([]ManagedAppRegistration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ManagedAppRegistration collection
+func (r *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest) Get(ctx context.Context) ([]ManagedAppRegistration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ManagedAppRegistration collection
+func (r *AndroidManagedAppRegistrationAndroidManagedAppRegistrationCollectionRequest) Add(ctx context.Context, reqObj *ManagedAppRegistration) (resObj *ManagedAppRegistration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// AndroidStoreApp returns request builder for MobileApp collection rcn
+func (b *AndroidStoreAppRequestBuilder) AndroidStoreApp() *AndroidStoreAppAndroidStoreAppCollectionRequestBuilder {
+	bb := &AndroidStoreAppAndroidStoreAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/MobileApp"
+	return bb
+}
+
+// AndroidStoreAppAndroidStoreAppCollectionRequestBuilder is request builder for MobileApp collection
+type AndroidStoreAppAndroidStoreAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for MobileApp collection
+func (b *AndroidStoreAppAndroidStoreAppCollectionRequestBuilder) Request() *AndroidStoreAppAndroidStoreAppCollectionRequest {
+	return &AndroidStoreAppAndroidStoreAppCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for MobileApp item
+func (b *AndroidStoreAppAndroidStoreAppCollectionRequestBuilder) ID(id string) *MobileAppRequestBuilder {
+	bb := &MobileAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// AndroidStoreAppAndroidStoreAppCollectionRequest is request for MobileApp collection
+type AndroidStoreAppAndroidStoreAppCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for MobileApp collection
+func (r *AndroidStoreAppAndroidStoreAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MobileApp, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []MobileApp
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []MobileApp
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for MobileApp collection, max N pages
+func (r *AndroidStoreAppAndroidStoreAppCollectionRequest) GetN(ctx context.Context, n int) ([]MobileApp, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for MobileApp collection
+func (r *AndroidStoreAppAndroidStoreAppCollectionRequest) Get(ctx context.Context) ([]MobileApp, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for MobileApp collection
+func (r *AndroidStoreAppAndroidStoreAppCollectionRequest) Add(ctx context.Context, reqObj *MobileApp) (resObj *MobileApp, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// AndroidWorkProfileCompliancePolicy returns request builder for DeviceCompliancePolicy collection rcn
+func (b *AndroidWorkProfileCompliancePolicyRequestBuilder) AndroidWorkProfileCompliancePolicy() *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder {
+	bb := &AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DeviceCompliancePolicy"
+	return bb
+}
+
+// AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder is request builder for DeviceCompliancePolicy collection
+type AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DeviceCompliancePolicy collection
+func (b *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder) Request() *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest {
+	return &AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DeviceCompliancePolicy item
+func (b *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequestBuilder) ID(id string) *DeviceCompliancePolicyRequestBuilder {
+	bb := &DeviceCompliancePolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest is request for DeviceCompliancePolicy collection
+type AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DeviceCompliancePolicy collection
+func (r *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceCompliancePolicy, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DeviceCompliancePolicy
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DeviceCompliancePolicy
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DeviceCompliancePolicy collection, max N pages
+func (r *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceCompliancePolicy, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DeviceCompliancePolicy collection
+func (r *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest) Get(ctx context.Context) ([]DeviceCompliancePolicy, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DeviceCompliancePolicy collection
+func (r *AndroidWorkProfileCompliancePolicyAndroidWorkProfileCompliancePolicyCollectionRequest) Add(ctx context.Context, reqObj *DeviceCompliancePolicy) (resObj *DeviceCompliancePolicy, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// AndroidWorkProfileCustomConfiguration returns request builder for DeviceConfiguration collection rcn
+func (b *AndroidWorkProfileCustomConfigurationRequestBuilder) AndroidWorkProfileCustomConfiguration() *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder {
+	bb := &AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DeviceConfiguration"
+	return bb
+}
+
+// AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
+type AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DeviceConfiguration collection
+func (b *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder) Request() *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest {
+	return &AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DeviceConfiguration item
+func (b *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
+	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest is request for DeviceConfiguration collection
+type AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DeviceConfiguration collection
+func (r *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DeviceConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DeviceConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DeviceConfiguration collection, max N pages
+func (r *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DeviceConfiguration collection
+func (r *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DeviceConfiguration collection
+func (r *AndroidWorkProfileCustomConfigurationAndroidWorkProfileCustomConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// AndroidWorkProfileGeneralDeviceConfiguration returns request builder for DeviceConfiguration collection rcn
+func (b *AndroidWorkProfileGeneralDeviceConfigurationRequestBuilder) AndroidWorkProfileGeneralDeviceConfiguration() *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder {
+	bb := &AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DeviceConfiguration"
+	return bb
+}
+
+// AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder is request builder for DeviceConfiguration collection
+type AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DeviceConfiguration collection
+func (b *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder) Request() *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest {
+	return &AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DeviceConfiguration item
+func (b *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder) ID(id string) *DeviceConfigurationRequestBuilder {
+	bb := &DeviceConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest is request for DeviceConfiguration collection
+type AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DeviceConfiguration collection
+func (r *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DeviceConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DeviceConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DeviceConfiguration collection, max N pages
+func (r *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DeviceConfiguration collection
+func (r *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DeviceConfiguration collection
+func (r *AndroidWorkProfileGeneralDeviceConfigurationAndroidWorkProfileGeneralDeviceConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceConfiguration) (resObj *DeviceConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
 }

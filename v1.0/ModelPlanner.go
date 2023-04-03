@@ -8,6 +8,8 @@ import "time"
 type Planner struct {
 	// Entity is the base model of Planner
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Buckets undocumented
 	Buckets []PlannerBucket `json:"buckets,omitempty"`
 	// Plans undocumented
@@ -16,26 +18,53 @@ type Planner struct {
 	Tasks []PlannerTask `json:"tasks,omitempty"`
 }
 
+func NewPlanner() (*Planner, error) {
+	newPlanner := &Planner{
+		ODataType: "#microsoft.graph.Planner",
+	}
+	return newPlanner, nil
+}
+
 // PlannerAppliedCategories undocumented
 type PlannerAppliedCategories struct {
 	// Object is the base model of PlannerAppliedCategories
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewPlannerAppliedCategories() (*PlannerAppliedCategories, error) {
+	newPlannerAppliedCategories := &PlannerAppliedCategories{
+		ODataType: "#microsoft.graph.PlannerAppliedCategories",
+	}
+	return newPlannerAppliedCategories, nil
 }
 
 // PlannerAssignedToTaskBoardTaskFormat undocumented
 type PlannerAssignedToTaskBoardTaskFormat struct {
 	// Entity is the base model of PlannerAssignedToTaskBoardTaskFormat
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// OrderHintsByAssignee undocumented
 	OrderHintsByAssignee *PlannerOrderHintsByAssignee `json:"orderHintsByAssignee,omitempty"`
 	// UnassignedOrderHint undocumented
 	UnassignedOrderHint *string `json:"unassignedOrderHint,omitempty"`
 }
 
+func NewPlannerAssignedToTaskBoardTaskFormat() (*PlannerAssignedToTaskBoardTaskFormat, error) {
+	newPlannerAssignedToTaskBoardTaskFormat := &PlannerAssignedToTaskBoardTaskFormat{
+		ODataType: "#microsoft.graph.PlannerAssignedToTaskBoardTaskFormat",
+	}
+	return newPlannerAssignedToTaskBoardTaskFormat, nil
+}
+
 // PlannerAssignment undocumented
 type PlannerAssignment struct {
 	// Object is the base model of PlannerAssignment
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AssignedBy undocumented
 	AssignedBy *IdentitySet `json:"assignedBy,omitempty"`
 	// AssignedDateTime undocumented
@@ -44,16 +73,34 @@ type PlannerAssignment struct {
 	OrderHint *string `json:"orderHint,omitempty"`
 }
 
+func NewPlannerAssignment() (*PlannerAssignment, error) {
+	newPlannerAssignment := &PlannerAssignment{
+		ODataType: "#microsoft.graph.PlannerAssignment",
+	}
+	return newPlannerAssignment, nil
+}
+
 // PlannerAssignments undocumented
 type PlannerAssignments struct {
 	// Object is the base model of PlannerAssignments
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewPlannerAssignments() (*PlannerAssignments, error) {
+	newPlannerAssignments := &PlannerAssignments{
+		ODataType: "#microsoft.graph.PlannerAssignments",
+	}
+	return newPlannerAssignments, nil
 }
 
 // PlannerBucket undocumented
 type PlannerBucket struct {
 	// Entity is the base model of PlannerBucket
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// OrderHint undocumented
@@ -64,18 +111,36 @@ type PlannerBucket struct {
 	Tasks []PlannerTask `json:"tasks,omitempty"`
 }
 
+func NewPlannerBucket() (*PlannerBucket, error) {
+	newPlannerBucket := &PlannerBucket{
+		ODataType: "#microsoft.graph.PlannerBucket",
+	}
+	return newPlannerBucket, nil
+}
+
 // PlannerBucketTaskBoardTaskFormat undocumented
 type PlannerBucketTaskBoardTaskFormat struct {
 	// Entity is the base model of PlannerBucketTaskBoardTaskFormat
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// OrderHint undocumented
 	OrderHint *string `json:"orderHint,omitempty"`
+}
+
+func NewPlannerBucketTaskBoardTaskFormat() (*PlannerBucketTaskBoardTaskFormat, error) {
+	newPlannerBucketTaskBoardTaskFormat := &PlannerBucketTaskBoardTaskFormat{
+		ODataType: "#microsoft.graph.PlannerBucketTaskBoardTaskFormat",
+	}
+	return newPlannerBucketTaskBoardTaskFormat, nil
 }
 
 // PlannerCategoryDescriptions undocumented
 type PlannerCategoryDescriptions struct {
 	// Object is the base model of PlannerCategoryDescriptions
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Category1 undocumented
 	Category1 *string `json:"category1,omitempty"`
 	// Category10 undocumented
@@ -128,10 +193,19 @@ type PlannerCategoryDescriptions struct {
 	Category9 *string `json:"category9,omitempty"`
 }
 
+func NewPlannerCategoryDescriptions() (*PlannerCategoryDescriptions, error) {
+	newPlannerCategoryDescriptions := &PlannerCategoryDescriptions{
+		ODataType: "#microsoft.graph.PlannerCategoryDescriptions",
+	}
+	return newPlannerCategoryDescriptions, nil
+}
+
 // PlannerChecklistItem undocumented
 type PlannerChecklistItem struct {
 	// Object is the base model of PlannerChecklistItem
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsChecked undocumented
 	IsChecked *bool `json:"isChecked,omitempty"`
 	// LastModifiedBy undocumented
@@ -144,16 +218,34 @@ type PlannerChecklistItem struct {
 	Title *string `json:"title,omitempty"`
 }
 
+func NewPlannerChecklistItem() (*PlannerChecklistItem, error) {
+	newPlannerChecklistItem := &PlannerChecklistItem{
+		ODataType: "#microsoft.graph.PlannerChecklistItem",
+	}
+	return newPlannerChecklistItem, nil
+}
+
 // PlannerChecklistItems undocumented
 type PlannerChecklistItems struct {
 	// Object is the base model of PlannerChecklistItems
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewPlannerChecklistItems() (*PlannerChecklistItems, error) {
+	newPlannerChecklistItems := &PlannerChecklistItems{
+		ODataType: "#microsoft.graph.PlannerChecklistItems",
+	}
+	return newPlannerChecklistItems, nil
 }
 
 // PlannerExternalReference undocumented
 type PlannerExternalReference struct {
 	// Object is the base model of PlannerExternalReference
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Alias undocumented
 	Alias *string `json:"alias,omitempty"`
 	// LastModifiedBy undocumented
@@ -166,30 +258,66 @@ type PlannerExternalReference struct {
 	Type *string `json:"type,omitempty"`
 }
 
+func NewPlannerExternalReference() (*PlannerExternalReference, error) {
+	newPlannerExternalReference := &PlannerExternalReference{
+		ODataType: "#microsoft.graph.PlannerExternalReference",
+	}
+	return newPlannerExternalReference, nil
+}
+
 // PlannerExternalReferences undocumented
 type PlannerExternalReferences struct {
 	// Object is the base model of PlannerExternalReferences
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewPlannerExternalReferences() (*PlannerExternalReferences, error) {
+	newPlannerExternalReferences := &PlannerExternalReferences{
+		ODataType: "#microsoft.graph.PlannerExternalReferences",
+	}
+	return newPlannerExternalReferences, nil
 }
 
 // PlannerGroup undocumented
 type PlannerGroup struct {
 	// Entity is the base model of PlannerGroup
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Plans undocumented
 	Plans []PlannerPlan `json:"plans,omitempty"`
+}
+
+func NewPlannerGroup() (*PlannerGroup, error) {
+	newPlannerGroup := &PlannerGroup{
+		ODataType: "#microsoft.graph.PlannerGroup",
+	}
+	return newPlannerGroup, nil
 }
 
 // PlannerOrderHintsByAssignee undocumented
 type PlannerOrderHintsByAssignee struct {
 	// Object is the base model of PlannerOrderHintsByAssignee
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewPlannerOrderHintsByAssignee() (*PlannerOrderHintsByAssignee, error) {
+	newPlannerOrderHintsByAssignee := &PlannerOrderHintsByAssignee{
+		ODataType: "#microsoft.graph.PlannerOrderHintsByAssignee",
+	}
+	return newPlannerOrderHintsByAssignee, nil
 }
 
 // PlannerPlan undocumented
 type PlannerPlan struct {
 	// Entity is the base model of PlannerPlan
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Container undocumented
 	Container *PlannerPlanContainer `json:"container,omitempty"`
 	// CreatedBy undocumented
@@ -208,10 +336,19 @@ type PlannerPlan struct {
 	Tasks []PlannerTask `json:"tasks,omitempty"`
 }
 
+func NewPlannerPlan() (*PlannerPlan, error) {
+	newPlannerPlan := &PlannerPlan{
+		ODataType: "#microsoft.graph.PlannerPlan",
+	}
+	return newPlannerPlan, nil
+}
+
 // PlannerPlanContainer undocumented
 type PlannerPlanContainer struct {
 	// Object is the base model of PlannerPlanContainer
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ContainerID undocumented
 	ContainerID *string `json:"containerId,omitempty"`
 	// Type undocumented
@@ -220,28 +357,55 @@ type PlannerPlanContainer struct {
 	URL *string `json:"url,omitempty"`
 }
 
+func NewPlannerPlanContainer() (*PlannerPlanContainer, error) {
+	newPlannerPlanContainer := &PlannerPlanContainer{
+		ODataType: "#microsoft.graph.PlannerPlanContainer",
+	}
+	return newPlannerPlanContainer, nil
+}
+
 // PlannerPlanDetails undocumented
 type PlannerPlanDetails struct {
 	// Entity is the base model of PlannerPlanDetails
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CategoryDescriptions undocumented
 	CategoryDescriptions *PlannerCategoryDescriptions `json:"categoryDescriptions,omitempty"`
 	// SharedWith undocumented
 	SharedWith *PlannerUserIDs `json:"sharedWith,omitempty"`
 }
 
+func NewPlannerPlanDetails() (*PlannerPlanDetails, error) {
+	newPlannerPlanDetails := &PlannerPlanDetails{
+		ODataType: "#microsoft.graph.PlannerPlanDetails",
+	}
+	return newPlannerPlanDetails, nil
+}
+
 // PlannerProgressTaskBoardTaskFormat undocumented
 type PlannerProgressTaskBoardTaskFormat struct {
 	// Entity is the base model of PlannerProgressTaskBoardTaskFormat
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// OrderHint undocumented
 	OrderHint *string `json:"orderHint,omitempty"`
+}
+
+func NewPlannerProgressTaskBoardTaskFormat() (*PlannerProgressTaskBoardTaskFormat, error) {
+	newPlannerProgressTaskBoardTaskFormat := &PlannerProgressTaskBoardTaskFormat{
+		ODataType: "#microsoft.graph.PlannerProgressTaskBoardTaskFormat",
+	}
+	return newPlannerProgressTaskBoardTaskFormat, nil
 }
 
 // PlannerTask undocumented
 type PlannerTask struct {
 	// Entity is the base model of PlannerTask
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ActiveChecklistItemCount undocumented
 	ActiveChecklistItemCount *int `json:"activeChecklistItemCount,omitempty"`
 	// AppliedCategories undocumented
@@ -294,10 +458,19 @@ type PlannerTask struct {
 	ProgressTaskBoardFormat *PlannerProgressTaskBoardTaskFormat `json:"progressTaskBoardFormat,omitempty"`
 }
 
+func NewPlannerTask() (*PlannerTask, error) {
+	newPlannerTask := &PlannerTask{
+		ODataType: "#microsoft.graph.PlannerTask",
+	}
+	return newPlannerTask, nil
+}
+
 // PlannerTaskDetails undocumented
 type PlannerTaskDetails struct {
 	// Entity is the base model of PlannerTaskDetails
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Checklist undocumented
 	Checklist *PlannerChecklistItems `json:"checklist,omitempty"`
 	// Description undocumented
@@ -308,18 +481,43 @@ type PlannerTaskDetails struct {
 	References *PlannerExternalReferences `json:"references,omitempty"`
 }
 
+func NewPlannerTaskDetails() (*PlannerTaskDetails, error) {
+	newPlannerTaskDetails := &PlannerTaskDetails{
+		ODataType: "#microsoft.graph.PlannerTaskDetails",
+	}
+	return newPlannerTaskDetails, nil
+}
+
 // PlannerUser undocumented
 type PlannerUser struct {
 	// Entity is the base model of PlannerUser
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Plans undocumented
 	Plans []PlannerPlan `json:"plans,omitempty"`
 	// Tasks undocumented
 	Tasks []PlannerTask `json:"tasks,omitempty"`
 }
 
+func NewPlannerUser() (*PlannerUser, error) {
+	newPlannerUser := &PlannerUser{
+		ODataType: "#microsoft.graph.PlannerUser",
+	}
+	return newPlannerUser, nil
+}
+
 // PlannerUserIDs undocumented
 type PlannerUserIDs struct {
 	// Object is the base model of PlannerUserIDs
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewPlannerUserIDs() (*PlannerUserIDs, error) {
+	newPlannerUserIDs := &PlannerUserIDs{
+		ODataType: "#microsoft.graph.PlannerUserIds",
+	}
+	return newPlannerUserIDs, nil
 }

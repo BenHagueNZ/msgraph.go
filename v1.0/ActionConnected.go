@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// ExternalSponsors returns request builder for DirectoryObject collection
+// ExternalSponsors returns request builder for DirectoryObject collection rcn
 func (b *ConnectedOrganizationRequestBuilder) ExternalSponsors() *ConnectedOrganizationExternalSponsorsCollectionRequestBuilder {
 	bb := &ConnectedOrganizationExternalSponsorsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/externalSponsors"
@@ -114,7 +114,7 @@ func (r *ConnectedOrganizationExternalSponsorsCollectionRequest) Add(ctx context
 	return
 }
 
-// InternalSponsors returns request builder for DirectoryObject collection
+// InternalSponsors returns request builder for DirectoryObject collection rcn
 func (b *ConnectedOrganizationRequestBuilder) InternalSponsors() *ConnectedOrganizationInternalSponsorsCollectionRequestBuilder {
 	bb := &ConnectedOrganizationInternalSponsorsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/internalSponsors"
@@ -215,4 +215,11 @@ func (r *ConnectedOrganizationInternalSponsorsCollectionRequest) Get(ctx context
 func (r *ConnectedOrganizationInternalSponsorsCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// ConnectedOrganization is navigation property rn
+func (b *ConnectedOrganizationRequestBuilder) ConnectedOrganization() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

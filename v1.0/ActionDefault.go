@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Apps returns request builder for ManagedMobileApp collection
+// Apps returns request builder for ManagedMobileApp collection rcn
 func (b *DefaultManagedAppProtectionRequestBuilder) Apps() *DefaultManagedAppProtectionAppsCollectionRequestBuilder {
 	bb := &DefaultManagedAppProtectionAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/apps"
@@ -114,7 +114,7 @@ func (r *DefaultManagedAppProtectionAppsCollectionRequest) Add(ctx context.Conte
 	return
 }
 
-// DeploymentSummary is navigation property
+// DeploymentSummary is navigation property rn
 func (b *DefaultManagedAppProtectionRequestBuilder) DeploymentSummary() *ManagedAppPolicyDeploymentSummaryRequestBuilder {
 	bb := &ManagedAppPolicyDeploymentSummaryRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deploymentSummary"

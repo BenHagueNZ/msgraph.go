@@ -8,6 +8,8 @@ import "time"
 type Contact struct {
 	// OutlookItem is the base model of Contact
 	OutlookItem
+
+	ODataType string `json:"@odata.type"`
 	// AssistantName undocumented
 	AssistantName *string `json:"assistantName,omitempty"`
 	// Birthday undocumented
@@ -84,10 +86,19 @@ type Contact struct {
 	SingleValueExtendedProperties []SingleValueLegacyExtendedProperty `json:"singleValueExtendedProperties,omitempty"`
 }
 
+func NewContact() (*Contact, error) {
+	newContact := &Contact{
+		ODataType: "#microsoft.graph.Contact",
+	}
+	return newContact, nil
+}
+
 // ContactFolder undocumented
 type ContactFolder struct {
 	// Entity is the base model of ContactFolder
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// ParentFolderID undocumented
@@ -100,4 +111,11 @@ type ContactFolder struct {
 	MultiValueExtendedProperties []MultiValueLegacyExtendedProperty `json:"multiValueExtendedProperties,omitempty"`
 	// SingleValueExtendedProperties undocumented
 	SingleValueExtendedProperties []SingleValueLegacyExtendedProperty `json:"singleValueExtendedProperties,omitempty"`
+}
+
+func NewContactFolder() (*ContactFolder, error) {
+	newContactFolder := &ContactFolder{
+		ODataType: "#microsoft.graph.ContactFolder",
+	}
+	return newContactFolder, nil
 }

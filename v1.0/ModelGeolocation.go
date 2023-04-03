@@ -6,4 +6,13 @@ package msgraph
 type GeolocationColumn struct {
 	// Object is the base model of GeolocationColumn
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewGeolocationColumn() (*GeolocationColumn, error) {
+	newGeolocationColumn := &GeolocationColumn{
+		ODataType: "#microsoft.graph.GeolocationColumn",
+	}
+	return newGeolocationColumn, nil
 }

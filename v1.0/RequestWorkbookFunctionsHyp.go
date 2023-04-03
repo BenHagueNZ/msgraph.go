@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsHypGeom_DistRequestBuilder struct{ BaseRequestBuilder }
 
-// HypGeom_Dist action undocumented
+// HypGeom_Dist action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) HypGeom_Dist(reqObj *WorkbookFunctionsHypGeom_DistRequestParameter) *WorkbookFunctionsHypGeom_DistRequestBuilder {
 	bb := &WorkbookFunctionsHypGeom_DistRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/HypGeom_Dist"

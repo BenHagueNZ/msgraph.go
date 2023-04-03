@@ -6,6 +6,8 @@ package msgraph
 type RichLongRunningOperation struct {
 	// LongRunningOperation is the base model of RichLongRunningOperation
 	LongRunningOperation
+
+	ODataType string `json:"@odata.type"`
 	// Error undocumented
 	Error *PublicError `json:"error,omitempty"`
 	// PercentageComplete undocumented
@@ -14,4 +16,11 @@ type RichLongRunningOperation struct {
 	ResourceID *string `json:"resourceId,omitempty"`
 	// Type undocumented
 	Type *string `json:"type,omitempty"`
+}
+
+func NewRichLongRunningOperation() (*RichLongRunningOperation, error) {
+	newRichLongRunningOperation := &RichLongRunningOperation{
+		ODataType: "#microsoft.graph.RichLongRunningOperation",
+	}
+	return newRichLongRunningOperation, nil
 }

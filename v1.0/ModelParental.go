@@ -6,8 +6,17 @@ package msgraph
 type ParentalControlSettings struct {
 	// Object is the base model of ParentalControlSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CountriesBlockedForMinors undocumented
 	CountriesBlockedForMinors []string `json:"countriesBlockedForMinors,omitempty"`
 	// LegalAgeGroupRule undocumented
 	LegalAgeGroupRule *string `json:"legalAgeGroupRule,omitempty"`
+}
+
+func NewParentalControlSettings() (*ParentalControlSettings, error) {
+	newParentalControlSettings := &ParentalControlSettings{
+		ODataType: "#microsoft.graph.ParentalControlSettings",
+	}
+	return newParentalControlSettings, nil
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsPoisson_DistRequestBuilder struct{ BaseRequestBuilder }
 
-// Poisson_Dist action undocumented
+// Poisson_Dist action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Poisson_Dist(reqObj *WorkbookFunctionsPoisson_DistRequestParameter) *WorkbookFunctionsPoisson_DistRequestBuilder {
 	bb := &WorkbookFunctionsPoisson_DistRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Poisson_Dist"

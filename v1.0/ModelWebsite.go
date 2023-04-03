@@ -6,10 +6,19 @@ package msgraph
 type Website struct {
 	// Object is the base model of Website
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Address undocumented
 	Address *string `json:"address,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Type undocumented
 	Type *WebsiteType `json:"type,omitempty"`
+}
+
+func NewWebsite() (*Website, error) {
+	newWebsite := &Website{
+		ODataType: "#microsoft.graph.Website",
+	}
+	return newWebsite, nil
 }

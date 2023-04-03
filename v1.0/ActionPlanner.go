@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Buckets returns request builder for PlannerBucket collection
+// Buckets returns request builder for PlannerBucket collection rcn
 func (b *PlannerRequestBuilder) Buckets() *PlannerBucketsCollectionRequestBuilder {
 	bb := &PlannerBucketsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/buckets"
@@ -114,7 +114,7 @@ func (r *PlannerBucketsCollectionRequest) Add(ctx context.Context, reqObj *Plann
 	return
 }
 
-// Plans returns request builder for PlannerPlan collection
+// Plans returns request builder for PlannerPlan collection rcn
 func (b *PlannerRequestBuilder) Plans() *PlannerPlansCollectionRequestBuilder {
 	bb := &PlannerPlansCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/plans"
@@ -217,7 +217,7 @@ func (r *PlannerPlansCollectionRequest) Add(ctx context.Context, reqObj *Planner
 	return
 }
 
-// Tasks returns request builder for PlannerTask collection
+// Tasks returns request builder for PlannerTask collection rcn
 func (b *PlannerRequestBuilder) Tasks() *PlannerTasksCollectionRequestBuilder {
 	bb := &PlannerTasksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tasks"
@@ -320,7 +320,7 @@ func (r *PlannerTasksCollectionRequest) Add(ctx context.Context, reqObj *Planner
 	return
 }
 
-// Tasks returns request builder for PlannerTask collection
+// Tasks returns request builder for PlannerTask collection rcn
 func (b *PlannerBucketRequestBuilder) Tasks() *PlannerBucketTasksCollectionRequestBuilder {
 	bb := &PlannerBucketTasksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tasks"
@@ -423,7 +423,7 @@ func (r *PlannerBucketTasksCollectionRequest) Add(ctx context.Context, reqObj *P
 	return
 }
 
-// Plans returns request builder for PlannerPlan collection
+// Plans returns request builder for PlannerPlan collection rcn
 func (b *PlannerGroupRequestBuilder) Plans() *PlannerGroupPlansCollectionRequestBuilder {
 	bb := &PlannerGroupPlansCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/plans"
@@ -526,7 +526,7 @@ func (r *PlannerGroupPlansCollectionRequest) Add(ctx context.Context, reqObj *Pl
 	return
 }
 
-// Buckets returns request builder for PlannerBucket collection
+// Buckets returns request builder for PlannerBucket collection rcn
 func (b *PlannerPlanRequestBuilder) Buckets() *PlannerPlanBucketsCollectionRequestBuilder {
 	bb := &PlannerPlanBucketsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/buckets"
@@ -629,14 +629,14 @@ func (r *PlannerPlanBucketsCollectionRequest) Add(ctx context.Context, reqObj *P
 	return
 }
 
-// Details is navigation property
+// Details is navigation property rn
 func (b *PlannerPlanRequestBuilder) Details() *PlannerPlanDetailsRequestBuilder {
 	bb := &PlannerPlanDetailsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/details"
 	return bb
 }
 
-// Tasks returns request builder for PlannerTask collection
+// Tasks returns request builder for PlannerTask collection rcn
 func (b *PlannerPlanRequestBuilder) Tasks() *PlannerPlanTasksCollectionRequestBuilder {
 	bb := &PlannerPlanTasksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tasks"
@@ -739,35 +739,35 @@ func (r *PlannerPlanTasksCollectionRequest) Add(ctx context.Context, reqObj *Pla
 	return
 }
 
-// AssignedToTaskBoardFormat is navigation property
+// AssignedToTaskBoardFormat is navigation property rn
 func (b *PlannerTaskRequestBuilder) AssignedToTaskBoardFormat() *PlannerAssignedToTaskBoardTaskFormatRequestBuilder {
 	bb := &PlannerAssignedToTaskBoardTaskFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignedToTaskBoardFormat"
 	return bb
 }
 
-// BucketTaskBoardFormat is navigation property
+// BucketTaskBoardFormat is navigation property rn
 func (b *PlannerTaskRequestBuilder) BucketTaskBoardFormat() *PlannerBucketTaskBoardTaskFormatRequestBuilder {
 	bb := &PlannerBucketTaskBoardTaskFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/bucketTaskBoardFormat"
 	return bb
 }
 
-// Details is navigation property
+// Details is navigation property rn
 func (b *PlannerTaskRequestBuilder) Details() *PlannerTaskDetailsRequestBuilder {
 	bb := &PlannerTaskDetailsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/details"
 	return bb
 }
 
-// ProgressTaskBoardFormat is navigation property
+// ProgressTaskBoardFormat is navigation property rn
 func (b *PlannerTaskRequestBuilder) ProgressTaskBoardFormat() *PlannerProgressTaskBoardTaskFormatRequestBuilder {
 	bb := &PlannerProgressTaskBoardTaskFormatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/progressTaskBoardFormat"
 	return bb
 }
 
-// Plans returns request builder for PlannerPlan collection
+// Plans returns request builder for PlannerPlan collection rcn
 func (b *PlannerUserRequestBuilder) Plans() *PlannerUserPlansCollectionRequestBuilder {
 	bb := &PlannerUserPlansCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/plans"
@@ -870,7 +870,7 @@ func (r *PlannerUserPlansCollectionRequest) Add(ctx context.Context, reqObj *Pla
 	return
 }
 
-// Tasks returns request builder for PlannerTask collection
+// Tasks returns request builder for PlannerTask collection rcn
 func (b *PlannerUserRequestBuilder) Tasks() *PlannerUserTasksCollectionRequestBuilder {
 	bb := &PlannerUserTasksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tasks"
@@ -971,4 +971,81 @@ func (r *PlannerUserTasksCollectionRequest) Get(ctx context.Context) ([]PlannerT
 func (r *PlannerUserTasksCollectionRequest) Add(ctx context.Context, reqObj *PlannerTask) (resObj *PlannerTask, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Planner is navigation property rn
+func (b *PlannerRequestBuilder) Planner() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PlannerAssignedToTaskBoardTaskFormat is navigation property rn
+func (b *PlannerAssignedToTaskBoardTaskFormatRequestBuilder) PlannerAssignedToTaskBoardTaskFormat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PlannerBucket is navigation property rn
+func (b *PlannerBucketRequestBuilder) PlannerBucket() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PlannerBucketTaskBoardTaskFormat is navigation property rn
+func (b *PlannerBucketTaskBoardTaskFormatRequestBuilder) PlannerBucketTaskBoardTaskFormat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PlannerGroup is navigation property rn
+func (b *PlannerGroupRequestBuilder) PlannerGroup() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PlannerPlan is navigation property rn
+func (b *PlannerPlanRequestBuilder) PlannerPlan() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PlannerPlanDetails is navigation property rn
+func (b *PlannerPlanDetailsRequestBuilder) PlannerPlanDetails() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PlannerProgressTaskBoardTaskFormat is navigation property rn
+func (b *PlannerProgressTaskBoardTaskFormatRequestBuilder) PlannerProgressTaskBoardTaskFormat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PlannerTask is navigation property rn
+func (b *PlannerTaskRequestBuilder) PlannerTask() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PlannerTaskDetails is navigation property rn
+func (b *PlannerTaskDetailsRequestBuilder) PlannerTaskDetails() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PlannerUser is navigation property rn
+func (b *PlannerUserRequestBuilder) PlannerUser() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

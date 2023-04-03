@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsWeibull_DistRequestBuilder struct{ BaseRequestBuilder }
 
-// Weibull_Dist action undocumented
+// Weibull_Dist action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Weibull_Dist(reqObj *WorkbookFunctionsWeibull_DistRequestParameter) *WorkbookFunctionsWeibull_DistRequestBuilder {
 	bb := &WorkbookFunctionsWeibull_DistRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Weibull_Dist"

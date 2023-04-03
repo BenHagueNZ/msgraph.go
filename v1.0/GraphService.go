@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AgreementAcceptances returns request builder for AgreementAcceptance collection
+// AgreementAcceptances returns request builder for AgreementAcceptance collection rcn
 func (b *GraphServiceRequestBuilder) AgreementAcceptances() *GraphServiceAgreementAcceptancesCollectionRequestBuilder {
 	bb := &GraphServiceAgreementAcceptancesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/agreementAcceptances"
@@ -114,7 +114,7 @@ func (r *GraphServiceAgreementAcceptancesCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// Agreements returns request builder for Agreement collection
+// Agreements returns request builder for Agreement collection rcn
 func (b *GraphServiceRequestBuilder) Agreements() *GraphServiceAgreementsCollectionRequestBuilder {
 	bb := &GraphServiceAgreementsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/agreements"
@@ -217,7 +217,7 @@ func (r *GraphServiceAgreementsCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// ApplicationTemplates returns request builder for ApplicationTemplate collection
+// ApplicationTemplates returns request builder for ApplicationTemplate collection rcn
 func (b *GraphServiceRequestBuilder) ApplicationTemplates() *GraphServiceApplicationTemplatesCollectionRequestBuilder {
 	bb := &GraphServiceApplicationTemplatesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/applicationTemplates"
@@ -320,7 +320,7 @@ func (r *GraphServiceApplicationTemplatesCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// Applications returns request builder for Application collection
+// Applications returns request builder for Application collection rcn
 func (b *GraphServiceRequestBuilder) Applications() *GraphServiceApplicationsCollectionRequestBuilder {
 	bb := &GraphServiceApplicationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/applications"
@@ -423,7 +423,7 @@ func (r *GraphServiceApplicationsCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// AuthenticationMethodConfigurations returns request builder for AuthenticationMethodConfiguration collection
+// AuthenticationMethodConfigurations returns request builder for AuthenticationMethodConfiguration collection rcn
 func (b *GraphServiceRequestBuilder) AuthenticationMethodConfigurations() *GraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder {
 	bb := &GraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/authenticationMethodConfigurations"
@@ -526,7 +526,7 @@ func (r *GraphServiceAuthenticationMethodConfigurationsCollectionRequest) Add(ct
 	return
 }
 
-// CertificateBasedAuthConfiguration returns request builder for CertificateBasedAuthConfiguration collection
+// CertificateBasedAuthConfiguration returns request builder for CertificateBasedAuthConfiguration collection rcn
 func (b *GraphServiceRequestBuilder) CertificateBasedAuthConfiguration() *GraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder {
 	bb := &GraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/certificateBasedAuthConfiguration"
@@ -629,7 +629,7 @@ func (r *GraphServiceCertificateBasedAuthConfigurationCollectionRequest) Add(ctx
 	return
 }
 
-// Chats returns request builder for Chat collection
+// Chats returns request builder for Chat collection rcn
 func (b *GraphServiceRequestBuilder) Chats() *GraphServiceChatsCollectionRequestBuilder {
 	bb := &GraphServiceChatsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/chats"
@@ -732,7 +732,7 @@ func (r *GraphServiceChatsCollectionRequest) Add(ctx context.Context, reqObj *Ch
 	return
 }
 
-// Connections returns request builder for ExternalConnectorsExternalConnection collection
+// Connections returns request builder for ExternalConnectorsExternalConnection collection rcn
 func (b *GraphServiceRequestBuilder) Connections() *GraphServiceConnectionsCollectionRequestBuilder {
 	bb := &GraphServiceConnectionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/connections"
@@ -835,7 +835,7 @@ func (r *GraphServiceConnectionsCollectionRequest) Add(ctx context.Context, reqO
 	return
 }
 
-// Contacts returns request builder for OrgContact collection
+// Contacts returns request builder for OrgContact collection rcn
 func (b *GraphServiceRequestBuilder) Contacts() *GraphServiceContactsCollectionRequestBuilder {
 	bb := &GraphServiceContactsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/contacts"
@@ -938,7 +938,7 @@ func (r *GraphServiceContactsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// Contracts returns request builder for Contract collection
+// Contracts returns request builder for Contract collection rcn
 func (b *GraphServiceRequestBuilder) Contracts() *GraphServiceContractsCollectionRequestBuilder {
 	bb := &GraphServiceContractsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/contracts"
@@ -1041,7 +1041,7 @@ func (r *GraphServiceContractsCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// DataPolicyOperations returns request builder for DataPolicyOperation collection
+// DataPolicyOperations returns request builder for DataPolicyOperation collection rcn
 func (b *GraphServiceRequestBuilder) DataPolicyOperations() *GraphServiceDataPolicyOperationsCollectionRequestBuilder {
 	bb := &GraphServiceDataPolicyOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/dataPolicyOperations"
@@ -1144,7 +1144,7 @@ func (r *GraphServiceDataPolicyOperationsCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// Devices returns request builder for Device collection
+// Devices returns request builder for Device collection rcn
 func (b *GraphServiceRequestBuilder) Devices() *GraphServiceDevicesCollectionRequestBuilder {
 	bb := &GraphServiceDevicesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/devices"
@@ -1247,7 +1247,7 @@ func (r *GraphServiceDevicesCollectionRequest) Add(ctx context.Context, reqObj *
 	return
 }
 
-// DirectoryObjects returns request builder for DirectoryObject collection
+// DirectoryObjects returns request builder for DirectoryObject collection rcn
 func (b *GraphServiceRequestBuilder) DirectoryObjects() *GraphServiceDirectoryObjectsCollectionRequestBuilder {
 	bb := &GraphServiceDirectoryObjectsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/directoryObjects"
@@ -1350,7 +1350,7 @@ func (r *GraphServiceDirectoryObjectsCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// DirectoryRoleTemplates returns request builder for DirectoryRoleTemplate collection
+// DirectoryRoleTemplates returns request builder for DirectoryRoleTemplate collection rcn
 func (b *GraphServiceRequestBuilder) DirectoryRoleTemplates() *GraphServiceDirectoryRoleTemplatesCollectionRequestBuilder {
 	bb := &GraphServiceDirectoryRoleTemplatesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/directoryRoleTemplates"
@@ -1453,7 +1453,7 @@ func (r *GraphServiceDirectoryRoleTemplatesCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// DirectoryRoles returns request builder for DirectoryRole collection
+// DirectoryRoles returns request builder for DirectoryRole collection rcn
 func (b *GraphServiceRequestBuilder) DirectoryRoles() *GraphServiceDirectoryRolesCollectionRequestBuilder {
 	bb := &GraphServiceDirectoryRolesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/directoryRoles"
@@ -1556,35 +1556,35 @@ func (r *GraphServiceDirectoryRolesCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// DomainDNSRecords returns request builder for DomainDNSRecord collection
-func (b *GraphServiceRequestBuilder) DomainDNSRecords() *GraphServiceDomainDNSRecordsCollectionRequestBuilder {
-	bb := &GraphServiceDomainDNSRecordsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// DomainDnsRecords returns request builder for DomainDnsRecord collection rcn
+func (b *GraphServiceRequestBuilder) DomainDnsRecords() *GraphServiceDomainDnsRecordsCollectionRequestBuilder {
+	bb := &GraphServiceDomainDnsRecordsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/domainDnsRecords"
 	return bb
 }
 
-// GraphServiceDomainDNSRecordsCollectionRequestBuilder is request builder for DomainDNSRecord collection
-type GraphServiceDomainDNSRecordsCollectionRequestBuilder struct{ BaseRequestBuilder }
+// GraphServiceDomainDnsRecordsCollectionRequestBuilder is request builder for DomainDnsRecord collection
+type GraphServiceDomainDnsRecordsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for DomainDNSRecord collection
-func (b *GraphServiceDomainDNSRecordsCollectionRequestBuilder) Request() *GraphServiceDomainDNSRecordsCollectionRequest {
-	return &GraphServiceDomainDNSRecordsCollectionRequest{
+// Request returns request for DomainDnsRecord collection
+func (b *GraphServiceDomainDnsRecordsCollectionRequestBuilder) Request() *GraphServiceDomainDnsRecordsCollectionRequest {
+	return &GraphServiceDomainDnsRecordsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for DomainDNSRecord item
-func (b *GraphServiceDomainDNSRecordsCollectionRequestBuilder) ID(id string) *DomainDNSRecordRequestBuilder {
-	bb := &DomainDNSRecordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for DomainDnsRecord item
+func (b *GraphServiceDomainDnsRecordsCollectionRequestBuilder) ID(id string) *DomainDnsRecordRequestBuilder {
+	bb := &DomainDnsRecordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// GraphServiceDomainDNSRecordsCollectionRequest is request for DomainDNSRecord collection
-type GraphServiceDomainDNSRecordsCollectionRequest struct{ BaseRequest }
+// GraphServiceDomainDnsRecordsCollectionRequest is request for DomainDnsRecord collection
+type GraphServiceDomainDnsRecordsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for DomainDNSRecord collection
-func (r *GraphServiceDomainDNSRecordsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DomainDNSRecord, error) {
+// Paging perfoms paging operation for DomainDnsRecord collection
+func (r *GraphServiceDomainDnsRecordsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DomainDnsRecord, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1596,7 +1596,7 @@ func (r *GraphServiceDomainDNSRecordsCollectionRequest) Paging(ctx context.Conte
 	if err != nil {
 		return nil, err
 	}
-	var values []DomainDNSRecord
+	var values []DomainDnsRecord
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -1610,7 +1610,7 @@ func (r *GraphServiceDomainDNSRecordsCollectionRequest) Paging(ctx context.Conte
 		}
 		var (
 			paging Paging
-			value  []DomainDNSRecord
+			value  []DomainDnsRecord
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -1639,8 +1639,8 @@ func (r *GraphServiceDomainDNSRecordsCollectionRequest) Paging(ctx context.Conte
 	}
 }
 
-// GetN performs GET request for DomainDNSRecord collection, max N pages
-func (r *GraphServiceDomainDNSRecordsCollectionRequest) GetN(ctx context.Context, n int) ([]DomainDNSRecord, error) {
+// GetN performs GET request for DomainDnsRecord collection, max N pages
+func (r *GraphServiceDomainDnsRecordsCollectionRequest) GetN(ctx context.Context, n int) ([]DomainDnsRecord, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1648,18 +1648,18 @@ func (r *GraphServiceDomainDNSRecordsCollectionRequest) GetN(ctx context.Context
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for DomainDNSRecord collection
-func (r *GraphServiceDomainDNSRecordsCollectionRequest) Get(ctx context.Context) ([]DomainDNSRecord, error) {
+// Get performs GET request for DomainDnsRecord collection
+func (r *GraphServiceDomainDnsRecordsCollectionRequest) Get(ctx context.Context) ([]DomainDnsRecord, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for DomainDNSRecord collection
-func (r *GraphServiceDomainDNSRecordsCollectionRequest) Add(ctx context.Context, reqObj *DomainDNSRecord) (resObj *DomainDNSRecord, err error) {
+// Add performs POST request for DomainDnsRecord collection
+func (r *GraphServiceDomainDnsRecordsCollectionRequest) Add(ctx context.Context, reqObj *DomainDnsRecord) (resObj *DomainDnsRecord, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// Domains returns request builder for Domain collection
+// Domains returns request builder for Domain collection rcn
 func (b *GraphServiceRequestBuilder) Domains() *GraphServiceDomainsCollectionRequestBuilder {
 	bb := &GraphServiceDomainsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/domains"
@@ -1762,7 +1762,7 @@ func (r *GraphServiceDomainsCollectionRequest) Add(ctx context.Context, reqObj *
 	return
 }
 
-// Drives returns request builder for Drive collection
+// Drives returns request builder for Drive collection rcn
 func (b *GraphServiceRequestBuilder) Drives() *GraphServiceDrivesCollectionRequestBuilder {
 	bb := &GraphServiceDrivesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/drives"
@@ -1865,7 +1865,7 @@ func (r *GraphServiceDrivesCollectionRequest) Add(ctx context.Context, reqObj *D
 	return
 }
 
-// GroupLifecyclePolicies returns request builder for GroupLifecyclePolicy collection
+// GroupLifecyclePolicies returns request builder for GroupLifecyclePolicy collection rcn
 func (b *GraphServiceRequestBuilder) GroupLifecyclePolicies() *GraphServiceGroupLifecyclePoliciesCollectionRequestBuilder {
 	bb := &GraphServiceGroupLifecyclePoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/groupLifecyclePolicies"
@@ -1968,7 +1968,7 @@ func (r *GraphServiceGroupLifecyclePoliciesCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// GroupSettingTemplates returns request builder for GroupSettingTemplate collection
+// GroupSettingTemplates returns request builder for GroupSettingTemplate collection rcn
 func (b *GraphServiceRequestBuilder) GroupSettingTemplates() *GraphServiceGroupSettingTemplatesCollectionRequestBuilder {
 	bb := &GraphServiceGroupSettingTemplatesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/groupSettingTemplates"
@@ -2071,7 +2071,7 @@ func (r *GraphServiceGroupSettingTemplatesCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// GroupSettings returns request builder for GroupSetting collection
+// GroupSettings returns request builder for GroupSetting collection rcn
 func (b *GraphServiceRequestBuilder) GroupSettings() *GraphServiceGroupSettingsCollectionRequestBuilder {
 	bb := &GraphServiceGroupSettingsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/groupSettings"
@@ -2174,7 +2174,7 @@ func (r *GraphServiceGroupSettingsCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// Groups returns request builder for Group collection
+// Groups returns request builder for Group collection rcn
 func (b *GraphServiceRequestBuilder) Groups() *GraphServiceGroupsCollectionRequestBuilder {
 	bb := &GraphServiceGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/groups"
@@ -2277,7 +2277,7 @@ func (r *GraphServiceGroupsCollectionRequest) Add(ctx context.Context, reqObj *G
 	return
 }
 
-// IdentityProviders returns request builder for IdentityProvider collection
+// IdentityProviders returns request builder for IdentityProvider collection rcn
 func (b *GraphServiceRequestBuilder) IdentityProviders() *GraphServiceIdentityProvidersCollectionRequestBuilder {
 	bb := &GraphServiceIdentityProvidersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/identityProviders"
@@ -2380,7 +2380,7 @@ func (r *GraphServiceIdentityProvidersCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Invitations returns request builder for Invitation collection
+// Invitations returns request builder for Invitation collection rcn
 func (b *GraphServiceRequestBuilder) Invitations() *GraphServiceInvitationsCollectionRequestBuilder {
 	bb := &GraphServiceInvitationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/invitations"
@@ -2483,7 +2483,7 @@ func (r *GraphServiceInvitationsCollectionRequest) Add(ctx context.Context, reqO
 	return
 }
 
-// Localizations returns request builder for OrganizationalBrandingLocalization collection
+// Localizations returns request builder for OrganizationalBrandingLocalization collection rcn
 func (b *GraphServiceRequestBuilder) Localizations() *GraphServiceLocalizationsCollectionRequestBuilder {
 	bb := &GraphServiceLocalizationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/localizations"
@@ -2586,7 +2586,7 @@ func (r *GraphServiceLocalizationsCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// OAuth2PermissionGrants returns request builder for OAuth2PermissionGrant collection
+// OAuth2PermissionGrants returns request builder for OAuth2PermissionGrant collection rcn
 func (b *GraphServiceRequestBuilder) OAuth2PermissionGrants() *GraphServiceOAuth2PermissionGrantsCollectionRequestBuilder {
 	bb := &GraphServiceOAuth2PermissionGrantsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/oauth2PermissionGrants"
@@ -2689,7 +2689,7 @@ func (r *GraphServiceOAuth2PermissionGrantsCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// Organization returns request builder for Organization collection
+// Organization returns request builder for Organization collection rcn
 func (b *GraphServiceRequestBuilder) Organization() *GraphServiceOrganizationCollectionRequestBuilder {
 	bb := &GraphServiceOrganizationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/organization"
@@ -2792,7 +2792,7 @@ func (r *GraphServiceOrganizationCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// PermissionGrants returns request builder for ResourceSpecificPermissionGrant collection
+// PermissionGrants returns request builder for ResourceSpecificPermissionGrant collection rcn
 func (b *GraphServiceRequestBuilder) PermissionGrants() *GraphServicePermissionGrantsCollectionRequestBuilder {
 	bb := &GraphServicePermissionGrantsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/permissionGrants"
@@ -2895,7 +2895,7 @@ func (r *GraphServicePermissionGrantsCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// Places returns request builder for Place collection
+// Places returns request builder for Place collection rcn
 func (b *GraphServiceRequestBuilder) Places() *GraphServicePlacesCollectionRequestBuilder {
 	bb := &GraphServicePlacesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/places"
@@ -2998,7 +2998,7 @@ func (r *GraphServicePlacesCollectionRequest) Add(ctx context.Context, reqObj *P
 	return
 }
 
-// SchemaExtensions returns request builder for SchemaExtension collection
+// SchemaExtensions returns request builder for SchemaExtension collection rcn
 func (b *GraphServiceRequestBuilder) SchemaExtensions() *GraphServiceSchemaExtensionsCollectionRequestBuilder {
 	bb := &GraphServiceSchemaExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/schemaExtensions"
@@ -3101,7 +3101,7 @@ func (r *GraphServiceSchemaExtensionsCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// ScopedRoleMemberships returns request builder for ScopedRoleMembership collection
+// ScopedRoleMemberships returns request builder for ScopedRoleMembership collection rcn
 func (b *GraphServiceRequestBuilder) ScopedRoleMemberships() *GraphServiceScopedRoleMembershipsCollectionRequestBuilder {
 	bb := &GraphServiceScopedRoleMembershipsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/scopedRoleMemberships"
@@ -3204,7 +3204,7 @@ func (r *GraphServiceScopedRoleMembershipsCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// ServicePrincipals returns request builder for ServicePrincipal collection
+// ServicePrincipals returns request builder for ServicePrincipal collection rcn
 func (b *GraphServiceRequestBuilder) ServicePrincipals() *GraphServiceServicePrincipalsCollectionRequestBuilder {
 	bb := &GraphServiceServicePrincipalsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/servicePrincipals"
@@ -3307,7 +3307,7 @@ func (r *GraphServiceServicePrincipalsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Shares returns request builder for SharedDriveItem collection
+// Shares returns request builder for SharedDriveItem collection rcn
 func (b *GraphServiceRequestBuilder) Shares() *GraphServiceSharesCollectionRequestBuilder {
 	bb := &GraphServiceSharesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/shares"
@@ -3410,7 +3410,7 @@ func (r *GraphServiceSharesCollectionRequest) Add(ctx context.Context, reqObj *S
 	return
 }
 
-// Sites returns request builder for Site collection
+// Sites returns request builder for Site collection rcn
 func (b *GraphServiceRequestBuilder) Sites() *GraphServiceSitesCollectionRequestBuilder {
 	bb := &GraphServiceSitesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sites"
@@ -3513,7 +3513,7 @@ func (r *GraphServiceSitesCollectionRequest) Add(ctx context.Context, reqObj *Si
 	return
 }
 
-// SubscribedSKUs returns request builder for SubscribedSKU collection
+// SubscribedSKUs returns request builder for SubscribedSKU collection rcn
 func (b *GraphServiceRequestBuilder) SubscribedSKUs() *GraphServiceSubscribedSKUsCollectionRequestBuilder {
 	bb := &GraphServiceSubscribedSKUsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/subscribedSkus"
@@ -3616,7 +3616,7 @@ func (r *GraphServiceSubscribedSKUsCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// Subscriptions returns request builder for Subscription collection
+// Subscriptions returns request builder for Subscription collection rcn
 func (b *GraphServiceRequestBuilder) Subscriptions() *GraphServiceSubscriptionsCollectionRequestBuilder {
 	bb := &GraphServiceSubscriptionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/subscriptions"
@@ -3719,7 +3719,7 @@ func (r *GraphServiceSubscriptionsCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// Teams returns request builder for Team collection
+// Teams returns request builder for Team collection rcn
 func (b *GraphServiceRequestBuilder) Teams() *GraphServiceTeamsCollectionRequestBuilder {
 	bb := &GraphServiceTeamsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/teams"
@@ -3822,7 +3822,7 @@ func (r *GraphServiceTeamsCollectionRequest) Add(ctx context.Context, reqObj *Te
 	return
 }
 
-// TeamsTemplates returns request builder for TeamsTemplate collection
+// TeamsTemplates returns request builder for TeamsTemplate collection rcn
 func (b *GraphServiceRequestBuilder) TeamsTemplates() *GraphServiceTeamsTemplatesCollectionRequestBuilder {
 	bb := &GraphServiceTeamsTemplatesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/teamsTemplates"
@@ -3925,7 +3925,7 @@ func (r *GraphServiceTeamsTemplatesCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// Users returns request builder for User collection
+// Users returns request builder for User collection rcn
 func (b *GraphServiceRequestBuilder) Users() *GraphServiceUsersCollectionRequestBuilder {
 	bb := &GraphServiceUsersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/users"
@@ -4028,203 +4028,203 @@ func (r *GraphServiceUsersCollectionRequest) Add(ctx context.Context, reqObj *Us
 	return
 }
 
-// Admin is navigation property
+// Admin is navigation property rn
 func (b *GraphServiceRequestBuilder) Admin() *AdminRequestBuilder {
 	bb := &AdminRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/admin"
 	return bb
 }
 
-// AppCatalogs is navigation property
+// AppCatalogs is navigation property rn
 func (b *GraphServiceRequestBuilder) AppCatalogs() *AppCatalogsRequestBuilder {
 	bb := &AppCatalogsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appCatalogs"
 	return bb
 }
 
-// AuditLogs is navigation property
+// AuditLogs is navigation property rn
 func (b *GraphServiceRequestBuilder) AuditLogs() *AuditLogRootRequestBuilder {
 	bb := &AuditLogRootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/auditLogs"
 	return bb
 }
 
-// AuthenticationMethodsPolicy is navigation property
+// AuthenticationMethodsPolicy is navigation property rn
 func (b *GraphServiceRequestBuilder) AuthenticationMethodsPolicy() *AuthenticationMethodsPolicyRequestBuilder {
 	bb := &AuthenticationMethodsPolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/authenticationMethodsPolicy"
 	return bb
 }
 
-// Branding is navigation property
+// Branding is navigation property rn
 func (b *GraphServiceRequestBuilder) Branding() *OrganizationalBrandingRequestBuilder {
 	bb := &OrganizationalBrandingRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/branding"
 	return bb
 }
 
-// Communications is navigation property
+// Communications is navigation property rn
 func (b *GraphServiceRequestBuilder) Communications() *CloudCommunicationsRequestBuilder {
 	bb := &CloudCommunicationsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/communications"
 	return bb
 }
 
-// Compliance is navigation property
+// Compliance is navigation property rn
 func (b *GraphServiceRequestBuilder) Compliance() *ComplianceRequestBuilder {
 	bb := &ComplianceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/compliance"
 	return bb
 }
 
-// DeviceAppManagement is navigation property
+// DeviceAppManagement is navigation property rn
 func (b *GraphServiceRequestBuilder) DeviceAppManagement() *DeviceAppManagementRequestBuilder {
 	bb := &DeviceAppManagementRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceAppManagement"
 	return bb
 }
 
-// DeviceManagement is navigation property
+// DeviceManagement is navigation property rn
 func (b *GraphServiceRequestBuilder) DeviceManagement() *DeviceManagementRequestBuilder {
 	bb := &DeviceManagementRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceManagement"
 	return bb
 }
 
-// Directory is navigation property
+// Directory is navigation property rn
 func (b *GraphServiceRequestBuilder) Directory() *DirectoryRequestBuilder {
 	bb := &DirectoryRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/directory"
 	return bb
 }
 
-// Drive is navigation property
+// Drive is navigation property rn
 func (b *GraphServiceRequestBuilder) Drive() *DriveRequestBuilder {
 	bb := &DriveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/drive"
 	return bb
 }
 
-// Education is navigation property
+// Education is navigation property rn
 func (b *GraphServiceRequestBuilder) Education() *EducationRootRequestBuilder {
 	bb := &EducationRootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/education"
 	return bb
 }
 
-// External is navigation property
+// External is navigation property rn
 func (b *GraphServiceRequestBuilder) External() *ExternalConnectorsExternalRequestBuilder {
 	bb := &ExternalConnectorsExternalRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/external"
 	return bb
 }
 
-// Identity is navigation property
+// Identity is navigation property rn
 func (b *GraphServiceRequestBuilder) Identity() *IdentityContainerRequestBuilder {
 	bb := &IdentityContainerRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/identity"
 	return bb
 }
 
-// IdentityGovernance is navigation property
+// IdentityGovernance is navigation property rn
 func (b *GraphServiceRequestBuilder) IdentityGovernance() *IdentityGovernanceRequestBuilder {
 	bb := &IdentityGovernanceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/identityGovernance"
 	return bb
 }
 
-// IdentityProtection is navigation property
+// IdentityProtection is navigation property rn
 func (b *GraphServiceRequestBuilder) IdentityProtection() *IdentityProtectionRootRequestBuilder {
 	bb := &IdentityProtectionRootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/identityProtection"
 	return bb
 }
 
-// InformationProtection is navigation property
+// InformationProtection is navigation property rn
 func (b *GraphServiceRequestBuilder) InformationProtection() *InformationProtectionRequestBuilder {
 	bb := &InformationProtectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/informationProtection"
 	return bb
 }
 
-// Me is navigation property
+// Me is navigation property rn
 func (b *GraphServiceRequestBuilder) Me() *UserRequestBuilder {
 	bb := &UserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/me"
 	return bb
 }
 
-// Planner is navigation property
+// Planner is navigation property rn
 func (b *GraphServiceRequestBuilder) Planner() *PlannerRequestBuilder {
 	bb := &PlannerRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/planner"
 	return bb
 }
 
-// Policies is navigation property
+// Policies is navigation property rn
 func (b *GraphServiceRequestBuilder) Policies() *PolicyRootRequestBuilder {
 	bb := &PolicyRootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/policies"
 	return bb
 }
 
-// Print is navigation property
+// Print is navigation property rn
 func (b *GraphServiceRequestBuilder) Print() *PrintRequestBuilder {
 	bb := &PrintRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/print"
 	return bb
 }
 
-// Privacy is navigation property
+// Privacy is navigation property rn
 func (b *GraphServiceRequestBuilder) Privacy() *PrivacyRequestBuilder {
 	bb := &PrivacyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/privacy"
 	return bb
 }
 
-// Reports is navigation property
+// Reports is navigation property rn
 func (b *GraphServiceRequestBuilder) Reports() *ReportRootRequestBuilder {
 	bb := &ReportRootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/reports"
 	return bb
 }
 
-// RoleManagement is navigation property
+// RoleManagement is navigation property rn
 func (b *GraphServiceRequestBuilder) RoleManagement() *RoleManagementRequestBuilder {
 	bb := &RoleManagementRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleManagement"
 	return bb
 }
 
-// Search is navigation property
+// Search is navigation property rn
 func (b *GraphServiceRequestBuilder) Search() *SearchEntityRequestBuilder {
 	bb := &SearchEntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/search"
 	return bb
 }
 
-// Security is navigation property
+// Security is navigation property rn
 func (b *GraphServiceRequestBuilder) Security() *SecurityRequestBuilder {
 	bb := &SecurityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/security"
 	return bb
 }
 
-// Solutions is navigation property
+// Solutions is navigation property rn
 func (b *GraphServiceRequestBuilder) Solutions() *SolutionsRootRequestBuilder {
 	bb := &SolutionsRootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/solutions"
 	return bb
 }
 
-// Teamwork is navigation property
+// Teamwork is navigation property rn
 func (b *GraphServiceRequestBuilder) Teamwork() *TeamworkRequestBuilder {
 	bb := &TeamworkRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/teamwork"
 	return bb
 }
 
-// TenantRelationships is navigation property
+// TenantRelationships is navigation property rn
 func (b *GraphServiceRequestBuilder) TenantRelationships() *TenantRelationshipRequestBuilder {
 	bb := &TenantRelationshipRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tenantRelationships"

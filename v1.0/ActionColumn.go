@@ -2,9 +2,23 @@
 
 package msgraph
 
-// SourceColumn is navigation property
+// SourceColumn is navigation property rn
 func (b *ColumnDefinitionRequestBuilder) SourceColumn() *ColumnDefinitionRequestBuilder {
 	bb := &ColumnDefinitionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sourceColumn"
+	return bb
+}
+
+// ColumnDefinition is navigation property rn
+func (b *ColumnDefinitionRequestBuilder) ColumnDefinition() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ColumnLink is navigation property rn
+func (b *ColumnLinkRequestBuilder) ColumnLink() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

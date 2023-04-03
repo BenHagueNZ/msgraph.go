@@ -8,6 +8,8 @@ import "time"
 type LocalizedNotificationMessage struct {
 	// Entity is the base model of LocalizedNotificationMessage
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// IsDefault undocumented
 	IsDefault *bool `json:"isDefault,omitempty"`
 	// LastModifiedDateTime undocumented
@@ -18,4 +20,11 @@ type LocalizedNotificationMessage struct {
 	MessageTemplate *string `json:"messageTemplate,omitempty"`
 	// Subject undocumented
 	Subject *string `json:"subject,omitempty"`
+}
+
+func NewLocalizedNotificationMessage() (*LocalizedNotificationMessage, error) {
+	newLocalizedNotificationMessage := &LocalizedNotificationMessage{
+		ODataType: "#microsoft.graph.LocalizedNotificationMessage",
+	}
+	return newLocalizedNotificationMessage, nil
 }

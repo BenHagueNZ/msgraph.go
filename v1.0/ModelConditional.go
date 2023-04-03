@@ -8,6 +8,8 @@ import "time"
 type ConditionalAccessApplications struct {
 	// Object is the base model of ConditionalAccessApplications
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ExcludeApplications undocumented
 	ExcludeApplications []string `json:"excludeApplications,omitempty"`
 	// IncludeApplications undocumented
@@ -18,20 +20,38 @@ type ConditionalAccessApplications struct {
 	IncludeUserActions []string `json:"includeUserActions,omitempty"`
 }
 
+func NewConditionalAccessApplications() (*ConditionalAccessApplications, error) {
+	newConditionalAccessApplications := &ConditionalAccessApplications{
+		ODataType: "#microsoft.graph.ConditionalAccessApplications",
+	}
+	return newConditionalAccessApplications, nil
+}
+
 // ConditionalAccessClientApplications undocumented
 type ConditionalAccessClientApplications struct {
 	// Object is the base model of ConditionalAccessClientApplications
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ExcludeServicePrincipals undocumented
 	ExcludeServicePrincipals []string `json:"excludeServicePrincipals,omitempty"`
 	// IncludeServicePrincipals undocumented
 	IncludeServicePrincipals []string `json:"includeServicePrincipals,omitempty"`
 }
 
+func NewConditionalAccessClientApplications() (*ConditionalAccessClientApplications, error) {
+	newConditionalAccessClientApplications := &ConditionalAccessClientApplications{
+		ODataType: "#microsoft.graph.ConditionalAccessClientApplications",
+	}
+	return newConditionalAccessClientApplications, nil
+}
+
 // ConditionalAccessConditionSet undocumented
 type ConditionalAccessConditionSet struct {
 	// Object is the base model of ConditionalAccessConditionSet
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Applications undocumented
 	Applications *ConditionalAccessApplications `json:"applications,omitempty"`
 	// ClientApplications undocumented
@@ -54,28 +74,55 @@ type ConditionalAccessConditionSet struct {
 	Users *ConditionalAccessUsers `json:"users,omitempty"`
 }
 
+func NewConditionalAccessConditionSet() (*ConditionalAccessConditionSet, error) {
+	newConditionalAccessConditionSet := &ConditionalAccessConditionSet{
+		ODataType: "#microsoft.graph.ConditionalAccessConditionSet",
+	}
+	return newConditionalAccessConditionSet, nil
+}
+
 // ConditionalAccessDevices undocumented
 type ConditionalAccessDevices struct {
 	// Object is the base model of ConditionalAccessDevices
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DeviceFilter undocumented
 	DeviceFilter *ConditionalAccessFilter `json:"deviceFilter,omitempty"`
+}
+
+func NewConditionalAccessDevices() (*ConditionalAccessDevices, error) {
+	newConditionalAccessDevices := &ConditionalAccessDevices{
+		ODataType: "#microsoft.graph.ConditionalAccessDevices",
+	}
+	return newConditionalAccessDevices, nil
 }
 
 // ConditionalAccessFilter undocumented
 type ConditionalAccessFilter struct {
 	// Object is the base model of ConditionalAccessFilter
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Mode undocumented
 	Mode *FilterMode `json:"mode,omitempty"`
 	// Rule undocumented
 	Rule *string `json:"rule,omitempty"`
 }
 
+func NewConditionalAccessFilter() (*ConditionalAccessFilter, error) {
+	newConditionalAccessFilter := &ConditionalAccessFilter{
+		ODataType: "#microsoft.graph.ConditionalAccessFilter",
+	}
+	return newConditionalAccessFilter, nil
+}
+
 // ConditionalAccessGrantControls undocumented
 type ConditionalAccessGrantControls struct {
 	// Object is the base model of ConditionalAccessGrantControls
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// BuiltInControls undocumented
 	BuiltInControls []ConditionalAccessGrantControl `json:"builtInControls,omitempty"`
 	// CustomAuthenticationFactors undocumented
@@ -86,30 +133,57 @@ type ConditionalAccessGrantControls struct {
 	TermsOfUse []string `json:"termsOfUse,omitempty"`
 }
 
+func NewConditionalAccessGrantControls() (*ConditionalAccessGrantControls, error) {
+	newConditionalAccessGrantControls := &ConditionalAccessGrantControls{
+		ODataType: "#microsoft.graph.ConditionalAccessGrantControls",
+	}
+	return newConditionalAccessGrantControls, nil
+}
+
 // ConditionalAccessLocations undocumented
 type ConditionalAccessLocations struct {
 	// Object is the base model of ConditionalAccessLocations
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ExcludeLocations undocumented
 	ExcludeLocations []string `json:"excludeLocations,omitempty"`
 	// IncludeLocations undocumented
 	IncludeLocations []string `json:"includeLocations,omitempty"`
 }
 
+func NewConditionalAccessLocations() (*ConditionalAccessLocations, error) {
+	newConditionalAccessLocations := &ConditionalAccessLocations{
+		ODataType: "#microsoft.graph.ConditionalAccessLocations",
+	}
+	return newConditionalAccessLocations, nil
+}
+
 // ConditionalAccessPlatforms undocumented
 type ConditionalAccessPlatforms struct {
 	// Object is the base model of ConditionalAccessPlatforms
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ExcludePlatforms undocumented
 	ExcludePlatforms []ConditionalAccessDevicePlatform `json:"excludePlatforms,omitempty"`
 	// IncludePlatforms undocumented
 	IncludePlatforms []ConditionalAccessDevicePlatform `json:"includePlatforms,omitempty"`
 }
 
+func NewConditionalAccessPlatforms() (*ConditionalAccessPlatforms, error) {
+	newConditionalAccessPlatforms := &ConditionalAccessPlatforms{
+		ODataType: "#microsoft.graph.ConditionalAccessPlatforms",
+	}
+	return newConditionalAccessPlatforms, nil
+}
+
 // ConditionalAccessPolicy undocumented
 type ConditionalAccessPolicy struct {
 	// Entity is the base model of ConditionalAccessPolicy
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Conditions undocumented
 	Conditions *ConditionalAccessConditionSet `json:"conditions,omitempty"`
 	// CreatedDateTime undocumented
@@ -128,10 +202,19 @@ type ConditionalAccessPolicy struct {
 	State *ConditionalAccessPolicyState `json:"state,omitempty"`
 }
 
+func NewConditionalAccessPolicy() (*ConditionalAccessPolicy, error) {
+	newConditionalAccessPolicy := &ConditionalAccessPolicy{
+		ODataType: "#microsoft.graph.ConditionalAccessPolicy",
+	}
+	return newConditionalAccessPolicy, nil
+}
+
 // ConditionalAccessPolicyDetail undocumented
 type ConditionalAccessPolicyDetail struct {
 	// Object is the base model of ConditionalAccessPolicyDetail
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Conditions undocumented
 	Conditions *ConditionalAccessConditionSet `json:"conditions,omitempty"`
 	// GrantControls undocumented
@@ -140,10 +223,19 @@ type ConditionalAccessPolicyDetail struct {
 	SessionControls *ConditionalAccessSessionControls `json:"sessionControls,omitempty"`
 }
 
+func NewConditionalAccessPolicyDetail() (*ConditionalAccessPolicyDetail, error) {
+	newConditionalAccessPolicyDetail := &ConditionalAccessPolicyDetail{
+		ODataType: "#microsoft.graph.ConditionalAccessPolicyDetail",
+	}
+	return newConditionalAccessPolicyDetail, nil
+}
+
 // ConditionalAccessRoot undocumented
 type ConditionalAccessRoot struct {
 	// Entity is the base model of ConditionalAccessRoot
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AuthenticationContextClassReferences undocumented
 	AuthenticationContextClassReferences []AuthenticationContextClassReference `json:"authenticationContextClassReferences,omitempty"`
 	// NamedLocations undocumented
@@ -154,18 +246,36 @@ type ConditionalAccessRoot struct {
 	Templates []ConditionalAccessTemplate `json:"templates,omitempty"`
 }
 
+func NewConditionalAccessRoot() (*ConditionalAccessRoot, error) {
+	newConditionalAccessRoot := &ConditionalAccessRoot{
+		ODataType: "#microsoft.graph.ConditionalAccessRoot",
+	}
+	return newConditionalAccessRoot, nil
+}
+
 // ConditionalAccessSessionControl undocumented
 type ConditionalAccessSessionControl struct {
 	// Object is the base model of ConditionalAccessSessionControl
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsEnabled undocumented
 	IsEnabled *bool `json:"isEnabled,omitempty"`
+}
+
+func NewConditionalAccessSessionControl() (*ConditionalAccessSessionControl, error) {
+	newConditionalAccessSessionControl := &ConditionalAccessSessionControl{
+		ODataType: "#microsoft.graph.ConditionalAccessSessionControl",
+	}
+	return newConditionalAccessSessionControl, nil
 }
 
 // ConditionalAccessSessionControls undocumented
 type ConditionalAccessSessionControls struct {
 	// Object is the base model of ConditionalAccessSessionControls
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ApplicationEnforcedRestrictions undocumented
 	ApplicationEnforcedRestrictions *ApplicationEnforcedRestrictionsSessionControl `json:"applicationEnforcedRestrictions,omitempty"`
 	// CloudAppSecurity undocumented
@@ -178,10 +288,19 @@ type ConditionalAccessSessionControls struct {
 	SignInFrequency *SignInFrequencySessionControl `json:"signInFrequency,omitempty"`
 }
 
+func NewConditionalAccessSessionControls() (*ConditionalAccessSessionControls, error) {
+	newConditionalAccessSessionControls := &ConditionalAccessSessionControls{
+		ODataType: "#microsoft.graph.ConditionalAccessSessionControls",
+	}
+	return newConditionalAccessSessionControls, nil
+}
+
 // ConditionalAccessTemplate undocumented
 type ConditionalAccessTemplate struct {
 	// Entity is the base model of ConditionalAccessTemplate
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// Details undocumented
@@ -192,10 +311,19 @@ type ConditionalAccessTemplate struct {
 	Scenarios *TemplateScenarios `json:"scenarios,omitempty"`
 }
 
+func NewConditionalAccessTemplate() (*ConditionalAccessTemplate, error) {
+	newConditionalAccessTemplate := &ConditionalAccessTemplate{
+		ODataType: "#microsoft.graph.ConditionalAccessTemplate",
+	}
+	return newConditionalAccessTemplate, nil
+}
+
 // ConditionalAccessUsers undocumented
 type ConditionalAccessUsers struct {
 	// Object is the base model of ConditionalAccessUsers
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ExcludeGroups undocumented
 	ExcludeGroups []string `json:"excludeGroups,omitempty"`
 	// ExcludeRoles undocumented
@@ -208,4 +336,11 @@ type ConditionalAccessUsers struct {
 	IncludeRoles []string `json:"includeRoles,omitempty"`
 	// IncludeUsers undocumented
 	IncludeUsers []string `json:"includeUsers,omitempty"`
+}
+
+func NewConditionalAccessUsers() (*ConditionalAccessUsers, error) {
+	newConditionalAccessUsers := &ConditionalAccessUsers{
+		ODataType: "#microsoft.graph.ConditionalAccessUsers",
+	}
+	return newConditionalAccessUsers, nil
 }

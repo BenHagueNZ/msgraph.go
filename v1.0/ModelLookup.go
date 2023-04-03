@@ -6,6 +6,8 @@ package msgraph
 type LookupColumn struct {
 	// Object is the base model of LookupColumn
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowMultipleValues undocumented
 	AllowMultipleValues *bool `json:"allowMultipleValues,omitempty"`
 	// AllowUnlimitedLength undocumented
@@ -16,4 +18,11 @@ type LookupColumn struct {
 	ListID *string `json:"listId,omitempty"`
 	// PrimaryLookupColumnID undocumented
 	PrimaryLookupColumnID *string `json:"primaryLookupColumnId,omitempty"`
+}
+
+func NewLookupColumn() (*LookupColumn, error) {
+	newLookupColumn := &LookupColumn{
+		ODataType: "#microsoft.graph.LookupColumn",
+	}
+	return newLookupColumn, nil
 }

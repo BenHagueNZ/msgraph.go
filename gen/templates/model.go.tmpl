@@ -9,6 +9,8 @@ type {{$x.Sym}} struct {
     // Object is the base model of {{$x.Sym}}
     Object
 {{- end }}
+
+    ODataType string `json:"@odata.type"`
 {{- range $y := .X.Members }}
 {{- $yTypeType := $.TypeFromType $y.Type }}
     // {{$y.Sym}} {{$y.Description}}
@@ -19,4 +21,10 @@ type {{$x.Sym}} struct {
     // {{$y.Sym}} {{$y.Description}}
     {{$y.Sym}} {{$yTypeType}} `json:"{{$y.Name}},omitempty"`
 {{- end }}
+}
+func New{{$x.Sym}}() (*{{$x.Sym}}, error) {
+	new{{$x.Sym}} := &{{$x.Sym}}{
+		ODataType: "#{{$x.Type}}", 
+	}
+	return new{{$x.Sym}}, nil
 }

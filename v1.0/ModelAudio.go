@@ -6,6 +6,8 @@ package msgraph
 type Audio struct {
 	// Object is the base model of Audio
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Album undocumented
 	Album *string `json:"album,omitempty"`
 	// AlbumArtist undocumented
@@ -40,10 +42,19 @@ type Audio struct {
 	Year *int `json:"year,omitempty"`
 }
 
+func NewAudio() (*Audio, error) {
+	newAudio := &Audio{
+		ODataType: "#microsoft.graph.Audio",
+	}
+	return newAudio, nil
+}
+
 // AudioConferencing undocumented
 type AudioConferencing struct {
 	// Object is the base model of AudioConferencing
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ConferenceID undocumented
 	ConferenceID *string `json:"conferenceId,omitempty"`
 	// DialinURL undocumented
@@ -58,14 +69,30 @@ type AudioConferencing struct {
 	TollNumbers []string `json:"tollNumbers,omitempty"`
 }
 
+func NewAudioConferencing() (*AudioConferencing, error) {
+	newAudioConferencing := &AudioConferencing{
+		ODataType: "#microsoft.graph.AudioConferencing",
+	}
+	return newAudioConferencing, nil
+}
+
 // AudioRoutingGroup undocumented
 type AudioRoutingGroup struct {
 	// Entity is the base model of AudioRoutingGroup
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Receivers undocumented
 	Receivers []string `json:"receivers,omitempty"`
 	// RoutingMode undocumented
 	RoutingMode *RoutingMode `json:"routingMode,omitempty"`
 	// Sources undocumented
 	Sources []string `json:"sources,omitempty"`
+}
+
+func NewAudioRoutingGroup() (*AudioRoutingGroup, error) {
+	newAudioRoutingGroup := &AudioRoutingGroup{
+		ODataType: "#microsoft.graph.AudioRoutingGroup",
+	}
+	return newAudioRoutingGroup, nil
 }

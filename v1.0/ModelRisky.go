@@ -8,6 +8,8 @@ import "time"
 type RiskyServicePrincipal struct {
 	// Entity is the base model of RiskyServicePrincipal
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
 	// DisplayName undocumented
@@ -30,20 +32,38 @@ type RiskyServicePrincipal struct {
 	History []RiskyServicePrincipalHistoryItem `json:"history,omitempty"`
 }
 
+func NewRiskyServicePrincipal() (*RiskyServicePrincipal, error) {
+	newRiskyServicePrincipal := &RiskyServicePrincipal{
+		ODataType: "#microsoft.graph.RiskyServicePrincipal",
+	}
+	return newRiskyServicePrincipal, nil
+}
+
 // RiskyServicePrincipalHistoryItem undocumented
 type RiskyServicePrincipalHistoryItem struct {
 	// RiskyServicePrincipal is the base model of RiskyServicePrincipalHistoryItem
 	RiskyServicePrincipal
+
+	ODataType string `json:"@odata.type"`
 	// Activity undocumented
 	Activity *RiskServicePrincipalActivity `json:"activity,omitempty"`
 	// InitiatedBy undocumented
 	InitiatedBy *string `json:"initiatedBy,omitempty"`
 }
 
+func NewRiskyServicePrincipalHistoryItem() (*RiskyServicePrincipalHistoryItem, error) {
+	newRiskyServicePrincipalHistoryItem := &RiskyServicePrincipalHistoryItem{
+		ODataType: "#microsoft.graph.RiskyServicePrincipalHistoryItem",
+	}
+	return newRiskyServicePrincipalHistoryItem, nil
+}
+
 // RiskyUser undocumented
 type RiskyUser struct {
 	// Entity is the base model of RiskyUser
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// IsDeleted undocumented
 	IsDeleted *bool `json:"isDeleted,omitempty"`
 	// IsProcessing undocumented
@@ -64,14 +84,30 @@ type RiskyUser struct {
 	History []RiskyUserHistoryItem `json:"history,omitempty"`
 }
 
+func NewRiskyUser() (*RiskyUser, error) {
+	newRiskyUser := &RiskyUser{
+		ODataType: "#microsoft.graph.RiskyUser",
+	}
+	return newRiskyUser, nil
+}
+
 // RiskyUserHistoryItem undocumented
 type RiskyUserHistoryItem struct {
 	// RiskyUser is the base model of RiskyUserHistoryItem
 	RiskyUser
+
+	ODataType string `json:"@odata.type"`
 	// Activity undocumented
 	Activity *RiskUserActivity `json:"activity,omitempty"`
 	// InitiatedBy undocumented
 	InitiatedBy *string `json:"initiatedBy,omitempty"`
 	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
+}
+
+func NewRiskyUserHistoryItem() (*RiskyUserHistoryItem, error) {
+	newRiskyUserHistoryItem := &RiskyUserHistoryItem{
+		ODataType: "#microsoft.graph.RiskyUserHistoryItem",
+	}
+	return newRiskyUserHistoryItem, nil
 }

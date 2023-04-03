@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSubtotalRequestBuilder struct{ BaseRequestBuilder }
 
-// Subtotal action undocumented
+// Subtotal action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Subtotal(reqObj *WorkbookFunctionsSubtotalRequestParameter) *WorkbookFunctionsSubtotalRequestBuilder {
 	bb := &WorkbookFunctionsSubtotalRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Subtotal"

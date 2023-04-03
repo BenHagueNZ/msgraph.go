@@ -112,7 +112,7 @@ func (r *CloudCommunicationsRequest) Delete(ctx context.Context) error {
 
 type CloudCommunicationsGetPresencesByUserIDRequestBuilder struct{ BaseRequestBuilder }
 
-// GetPresencesByUserID action undocumented
+// GetPresencesByUserID action undocumentedrac
 func (b *CloudCommunicationsRequestBuilder) GetPresencesByUserID(reqObj *CloudCommunicationsGetPresencesByUserIDRequestParameter) *CloudCommunicationsGetPresencesByUserIDRequestBuilder {
 	bb := &CloudCommunicationsGetPresencesByUserIDRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GetPresencesByUserId"

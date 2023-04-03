@@ -270,7 +270,7 @@ func (r *PrinterStatusRequest) Delete(ctx context.Context) error {
 
 type PrinterRestoreFactoryDefaultsRequestBuilder struct{ BaseRequestBuilder }
 
-// RestoreFactoryDefaults action undocumented
+// RestoreFactoryDefaults action undocumentedrav
 func (b *PrinterRequestBuilder) RestoreFactoryDefaults(reqObj *PrinterRestoreFactoryDefaultsRequestParameter) *PrinterRestoreFactoryDefaultsRequestBuilder {
 	bb := &PrinterRestoreFactoryDefaultsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RestoreFactoryDefaults"

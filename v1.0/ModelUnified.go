@@ -8,6 +8,8 @@ import "time"
 type UnifiedApprovalStage struct {
 	// Object is the base model of UnifiedApprovalStage
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ApprovalStageTimeOutInDays undocumented
 	ApprovalStageTimeOutInDays *int `json:"approvalStageTimeOutInDays,omitempty"`
 	// EscalationApprovers undocumented
@@ -22,18 +24,36 @@ type UnifiedApprovalStage struct {
 	PrimaryApprovers []SubjectSet `json:"primaryApprovers,omitempty"`
 }
 
+func NewUnifiedApprovalStage() (*UnifiedApprovalStage, error) {
+	newUnifiedApprovalStage := &UnifiedApprovalStage{
+		ODataType: "#microsoft.graph.UnifiedApprovalStage",
+	}
+	return newUnifiedApprovalStage, nil
+}
+
 // UnifiedRole undocumented
 type UnifiedRole struct {
 	// Object is the base model of UnifiedRole
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// RoleDefinitionID undocumented
 	RoleDefinitionID *string `json:"roleDefinitionId,omitempty"`
+}
+
+func NewUnifiedRole() (*UnifiedRole, error) {
+	newUnifiedRole := &UnifiedRole{
+		ODataType: "#microsoft.graph.UnifiedRole",
+	}
+	return newUnifiedRole, nil
 }
 
 // UnifiedRoleAssignment undocumented
 type UnifiedRoleAssignment struct {
 	// Entity is the base model of UnifiedRoleAssignment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AppScopeID undocumented
 	AppScopeID *string `json:"appScopeId,omitempty"`
 	// Condition undocumented
@@ -54,10 +74,19 @@ type UnifiedRoleAssignment struct {
 	RoleDefinition *UnifiedRoleDefinition `json:"roleDefinition,omitempty"`
 }
 
+func NewUnifiedRoleAssignment() (*UnifiedRoleAssignment, error) {
+	newUnifiedRoleAssignment := &UnifiedRoleAssignment{
+		ODataType: "#microsoft.graph.UnifiedRoleAssignment",
+	}
+	return newUnifiedRoleAssignment, nil
+}
+
 // UnifiedRoleAssignmentSchedule undocumented
 type UnifiedRoleAssignmentSchedule struct {
 	// UnifiedRoleScheduleBase is the base model of UnifiedRoleAssignmentSchedule
 	UnifiedRoleScheduleBase
+
+	ODataType string `json:"@odata.type"`
 	// AssignmentType undocumented
 	AssignmentType *string `json:"assignmentType,omitempty"`
 	// MemberType undocumented
@@ -68,10 +97,19 @@ type UnifiedRoleAssignmentSchedule struct {
 	ActivatedUsing *UnifiedRoleEligibilitySchedule `json:"activatedUsing,omitempty"`
 }
 
+func NewUnifiedRoleAssignmentSchedule() (*UnifiedRoleAssignmentSchedule, error) {
+	newUnifiedRoleAssignmentSchedule := &UnifiedRoleAssignmentSchedule{
+		ODataType: "#microsoft.graph.UnifiedRoleAssignmentSchedule",
+	}
+	return newUnifiedRoleAssignmentSchedule, nil
+}
+
 // UnifiedRoleAssignmentScheduleInstance undocumented
 type UnifiedRoleAssignmentScheduleInstance struct {
 	// UnifiedRoleScheduleInstanceBase is the base model of UnifiedRoleAssignmentScheduleInstance
 	UnifiedRoleScheduleInstanceBase
+
+	ODataType string `json:"@odata.type"`
 	// AssignmentType undocumented
 	AssignmentType *string `json:"assignmentType,omitempty"`
 	// EndDateTime undocumented
@@ -88,10 +126,19 @@ type UnifiedRoleAssignmentScheduleInstance struct {
 	ActivatedUsing *UnifiedRoleEligibilityScheduleInstance `json:"activatedUsing,omitempty"`
 }
 
+func NewUnifiedRoleAssignmentScheduleInstance() (*UnifiedRoleAssignmentScheduleInstance, error) {
+	newUnifiedRoleAssignmentScheduleInstance := &UnifiedRoleAssignmentScheduleInstance{
+		ODataType: "#microsoft.graph.UnifiedRoleAssignmentScheduleInstance",
+	}
+	return newUnifiedRoleAssignmentScheduleInstance, nil
+}
+
 // UnifiedRoleAssignmentScheduleRequestObject undocumented
 type UnifiedRoleAssignmentScheduleRequestObject struct {
 	// RequestObject is the base model of UnifiedRoleAssignmentScheduleRequestObject
 	RequestObject
+
+	ODataType string `json:"@odata.type"`
 	// Action undocumented
 	Action *UnifiedRoleScheduleRequestActions `json:"action,omitempty"`
 	// AppScopeID undocumented
@@ -126,10 +173,19 @@ type UnifiedRoleAssignmentScheduleRequestObject struct {
 	TargetSchedule *UnifiedRoleAssignmentSchedule `json:"targetSchedule,omitempty"`
 }
 
+func NewUnifiedRoleAssignmentScheduleRequestObject() (*UnifiedRoleAssignmentScheduleRequestObject, error) {
+	newUnifiedRoleAssignmentScheduleRequestObject := &UnifiedRoleAssignmentScheduleRequestObject{
+		ODataType: "#microsoft.graph.UnifiedRoleAssignmentScheduleRequestObject",
+	}
+	return newUnifiedRoleAssignmentScheduleRequestObject, nil
+}
+
 // UnifiedRoleDefinition undocumented
 type UnifiedRoleDefinition struct {
 	// Entity is the base model of UnifiedRoleDefinition
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -150,20 +206,38 @@ type UnifiedRoleDefinition struct {
 	InheritsPermissionsFrom []UnifiedRoleDefinition `json:"inheritsPermissionsFrom,omitempty"`
 }
 
+func NewUnifiedRoleDefinition() (*UnifiedRoleDefinition, error) {
+	newUnifiedRoleDefinition := &UnifiedRoleDefinition{
+		ODataType: "#microsoft.graph.UnifiedRoleDefinition",
+	}
+	return newUnifiedRoleDefinition, nil
+}
+
 // UnifiedRoleEligibilitySchedule undocumented
 type UnifiedRoleEligibilitySchedule struct {
 	// UnifiedRoleScheduleBase is the base model of UnifiedRoleEligibilitySchedule
 	UnifiedRoleScheduleBase
+
+	ODataType string `json:"@odata.type"`
 	// MemberType undocumented
 	MemberType *string `json:"memberType,omitempty"`
 	// ScheduleInfo undocumented
 	ScheduleInfo *RequestSchedule `json:"scheduleInfo,omitempty"`
 }
 
+func NewUnifiedRoleEligibilitySchedule() (*UnifiedRoleEligibilitySchedule, error) {
+	newUnifiedRoleEligibilitySchedule := &UnifiedRoleEligibilitySchedule{
+		ODataType: "#microsoft.graph.UnifiedRoleEligibilitySchedule",
+	}
+	return newUnifiedRoleEligibilitySchedule, nil
+}
+
 // UnifiedRoleEligibilityScheduleInstance undocumented
 type UnifiedRoleEligibilityScheduleInstance struct {
 	// UnifiedRoleScheduleInstanceBase is the base model of UnifiedRoleEligibilityScheduleInstance
 	UnifiedRoleScheduleInstanceBase
+
+	ODataType string `json:"@odata.type"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// MemberType undocumented
@@ -174,10 +248,19 @@ type UnifiedRoleEligibilityScheduleInstance struct {
 	StartDateTime *time.Time `json:"startDateTime,omitempty"`
 }
 
+func NewUnifiedRoleEligibilityScheduleInstance() (*UnifiedRoleEligibilityScheduleInstance, error) {
+	newUnifiedRoleEligibilityScheduleInstance := &UnifiedRoleEligibilityScheduleInstance{
+		ODataType: "#microsoft.graph.UnifiedRoleEligibilityScheduleInstance",
+	}
+	return newUnifiedRoleEligibilityScheduleInstance, nil
+}
+
 // UnifiedRoleEligibilityScheduleRequestObject undocumented
 type UnifiedRoleEligibilityScheduleRequestObject struct {
 	// RequestObject is the base model of UnifiedRoleEligibilityScheduleRequestObject
 	RequestObject
+
+	ODataType string `json:"@odata.type"`
 	// Action undocumented
 	Action *UnifiedRoleScheduleRequestActions `json:"action,omitempty"`
 	// AppScopeID undocumented
@@ -210,10 +293,19 @@ type UnifiedRoleEligibilityScheduleRequestObject struct {
 	TargetSchedule *UnifiedRoleEligibilitySchedule `json:"targetSchedule,omitempty"`
 }
 
+func NewUnifiedRoleEligibilityScheduleRequestObject() (*UnifiedRoleEligibilityScheduleRequestObject, error) {
+	newUnifiedRoleEligibilityScheduleRequestObject := &UnifiedRoleEligibilityScheduleRequestObject{
+		ODataType: "#microsoft.graph.UnifiedRoleEligibilityScheduleRequestObject",
+	}
+	return newUnifiedRoleEligibilityScheduleRequestObject, nil
+}
+
 // UnifiedRoleManagementPolicy undocumented
 type UnifiedRoleManagementPolicy struct {
 	// Entity is the base model of UnifiedRoleManagementPolicy
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -234,18 +326,36 @@ type UnifiedRoleManagementPolicy struct {
 	Rules []UnifiedRoleManagementPolicyRule `json:"rules,omitempty"`
 }
 
+func NewUnifiedRoleManagementPolicy() (*UnifiedRoleManagementPolicy, error) {
+	newUnifiedRoleManagementPolicy := &UnifiedRoleManagementPolicy{
+		ODataType: "#microsoft.graph.UnifiedRoleManagementPolicy",
+	}
+	return newUnifiedRoleManagementPolicy, nil
+}
+
 // UnifiedRoleManagementPolicyApprovalRule undocumented
 type UnifiedRoleManagementPolicyApprovalRule struct {
 	// UnifiedRoleManagementPolicyRule is the base model of UnifiedRoleManagementPolicyApprovalRule
 	UnifiedRoleManagementPolicyRule
+
+	ODataType string `json:"@odata.type"`
 	// Setting undocumented
 	Setting *ApprovalSettings `json:"setting,omitempty"`
+}
+
+func NewUnifiedRoleManagementPolicyApprovalRule() (*UnifiedRoleManagementPolicyApprovalRule, error) {
+	newUnifiedRoleManagementPolicyApprovalRule := &UnifiedRoleManagementPolicyApprovalRule{
+		ODataType: "#microsoft.graph.UnifiedRoleManagementPolicyApprovalRule",
+	}
+	return newUnifiedRoleManagementPolicyApprovalRule, nil
 }
 
 // UnifiedRoleManagementPolicyAssignment undocumented
 type UnifiedRoleManagementPolicyAssignment struct {
 	// Entity is the base model of UnifiedRoleManagementPolicyAssignment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// PolicyID undocumented
 	PolicyID *string `json:"policyId,omitempty"`
 	// RoleDefinitionID undocumented
@@ -258,38 +368,74 @@ type UnifiedRoleManagementPolicyAssignment struct {
 	Policy *UnifiedRoleManagementPolicy `json:"policy,omitempty"`
 }
 
+func NewUnifiedRoleManagementPolicyAssignment() (*UnifiedRoleManagementPolicyAssignment, error) {
+	newUnifiedRoleManagementPolicyAssignment := &UnifiedRoleManagementPolicyAssignment{
+		ODataType: "#microsoft.graph.UnifiedRoleManagementPolicyAssignment",
+	}
+	return newUnifiedRoleManagementPolicyAssignment, nil
+}
+
 // UnifiedRoleManagementPolicyAuthenticationContextRule undocumented
 type UnifiedRoleManagementPolicyAuthenticationContextRule struct {
 	// UnifiedRoleManagementPolicyRule is the base model of UnifiedRoleManagementPolicyAuthenticationContextRule
 	UnifiedRoleManagementPolicyRule
+
+	ODataType string `json:"@odata.type"`
 	// ClaimValue undocumented
 	ClaimValue *string `json:"claimValue,omitempty"`
 	// IsEnabled undocumented
 	IsEnabled *bool `json:"isEnabled,omitempty"`
 }
 
+func NewUnifiedRoleManagementPolicyAuthenticationContextRule() (*UnifiedRoleManagementPolicyAuthenticationContextRule, error) {
+	newUnifiedRoleManagementPolicyAuthenticationContextRule := &UnifiedRoleManagementPolicyAuthenticationContextRule{
+		ODataType: "#microsoft.graph.UnifiedRoleManagementPolicyAuthenticationContextRule",
+	}
+	return newUnifiedRoleManagementPolicyAuthenticationContextRule, nil
+}
+
 // UnifiedRoleManagementPolicyEnablementRule undocumented
 type UnifiedRoleManagementPolicyEnablementRule struct {
 	// UnifiedRoleManagementPolicyRule is the base model of UnifiedRoleManagementPolicyEnablementRule
 	UnifiedRoleManagementPolicyRule
+
+	ODataType string `json:"@odata.type"`
 	// EnabledRules undocumented
 	EnabledRules []string `json:"enabledRules,omitempty"`
+}
+
+func NewUnifiedRoleManagementPolicyEnablementRule() (*UnifiedRoleManagementPolicyEnablementRule, error) {
+	newUnifiedRoleManagementPolicyEnablementRule := &UnifiedRoleManagementPolicyEnablementRule{
+		ODataType: "#microsoft.graph.UnifiedRoleManagementPolicyEnablementRule",
+	}
+	return newUnifiedRoleManagementPolicyEnablementRule, nil
 }
 
 // UnifiedRoleManagementPolicyExpirationRule undocumented
 type UnifiedRoleManagementPolicyExpirationRule struct {
 	// UnifiedRoleManagementPolicyRule is the base model of UnifiedRoleManagementPolicyExpirationRule
 	UnifiedRoleManagementPolicyRule
+
+	ODataType string `json:"@odata.type"`
 	// IsExpirationRequired undocumented
 	IsExpirationRequired *bool `json:"isExpirationRequired,omitempty"`
 	// MaximumDuration undocumented
 	MaximumDuration *Duration `json:"maximumDuration,omitempty"`
 }
 
+func NewUnifiedRoleManagementPolicyExpirationRule() (*UnifiedRoleManagementPolicyExpirationRule, error) {
+	newUnifiedRoleManagementPolicyExpirationRule := &UnifiedRoleManagementPolicyExpirationRule{
+		ODataType: "#microsoft.graph.UnifiedRoleManagementPolicyExpirationRule",
+	}
+	return newUnifiedRoleManagementPolicyExpirationRule, nil
+}
+
 // UnifiedRoleManagementPolicyNotificationRule undocumented
 type UnifiedRoleManagementPolicyNotificationRule struct {
 	// UnifiedRoleManagementPolicyRule is the base model of UnifiedRoleManagementPolicyNotificationRule
 	UnifiedRoleManagementPolicyRule
+
+	ODataType string `json:"@odata.type"`
 	// IsDefaultRecipientsEnabled undocumented
 	IsDefaultRecipientsEnabled *bool `json:"isDefaultRecipientsEnabled,omitempty"`
 	// NotificationLevel undocumented
@@ -302,18 +448,36 @@ type UnifiedRoleManagementPolicyNotificationRule struct {
 	RecipientType *string `json:"recipientType,omitempty"`
 }
 
+func NewUnifiedRoleManagementPolicyNotificationRule() (*UnifiedRoleManagementPolicyNotificationRule, error) {
+	newUnifiedRoleManagementPolicyNotificationRule := &UnifiedRoleManagementPolicyNotificationRule{
+		ODataType: "#microsoft.graph.UnifiedRoleManagementPolicyNotificationRule",
+	}
+	return newUnifiedRoleManagementPolicyNotificationRule, nil
+}
+
 // UnifiedRoleManagementPolicyRule undocumented
 type UnifiedRoleManagementPolicyRule struct {
 	// Entity is the base model of UnifiedRoleManagementPolicyRule
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Target undocumented
 	Target *UnifiedRoleManagementPolicyRuleTarget `json:"target,omitempty"`
+}
+
+func NewUnifiedRoleManagementPolicyRule() (*UnifiedRoleManagementPolicyRule, error) {
+	newUnifiedRoleManagementPolicyRule := &UnifiedRoleManagementPolicyRule{
+		ODataType: "#microsoft.graph.UnifiedRoleManagementPolicyRule",
+	}
+	return newUnifiedRoleManagementPolicyRule, nil
 }
 
 // UnifiedRoleManagementPolicyRuleTarget undocumented
 type UnifiedRoleManagementPolicyRuleTarget struct {
 	// Object is the base model of UnifiedRoleManagementPolicyRuleTarget
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Caller undocumented
 	Caller *string `json:"caller,omitempty"`
 	// EnforcedSettings undocumented
@@ -328,10 +492,19 @@ type UnifiedRoleManagementPolicyRuleTarget struct {
 	TargetObjects []DirectoryObject `json:"targetObjects,omitempty"`
 }
 
+func NewUnifiedRoleManagementPolicyRuleTarget() (*UnifiedRoleManagementPolicyRuleTarget, error) {
+	newUnifiedRoleManagementPolicyRuleTarget := &UnifiedRoleManagementPolicyRuleTarget{
+		ODataType: "#microsoft.graph.UnifiedRoleManagementPolicyRuleTarget",
+	}
+	return newUnifiedRoleManagementPolicyRuleTarget, nil
+}
+
 // UnifiedRolePermission undocumented
 type UnifiedRolePermission struct {
 	// Object is the base model of UnifiedRolePermission
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowedResourceActions undocumented
 	AllowedResourceActions []string `json:"allowedResourceActions,omitempty"`
 	// Condition undocumented
@@ -340,10 +513,19 @@ type UnifiedRolePermission struct {
 	ExcludedResourceActions []string `json:"excludedResourceActions,omitempty"`
 }
 
+func NewUnifiedRolePermission() (*UnifiedRolePermission, error) {
+	newUnifiedRolePermission := &UnifiedRolePermission{
+		ODataType: "#microsoft.graph.UnifiedRolePermission",
+	}
+	return newUnifiedRolePermission, nil
+}
+
 // UnifiedRoleScheduleBase undocumented
 type UnifiedRoleScheduleBase struct {
 	// Entity is the base model of UnifiedRoleScheduleBase
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AppScopeID undocumented
 	AppScopeID *string `json:"appScopeId,omitempty"`
 	// CreatedDateTime undocumented
@@ -370,10 +552,19 @@ type UnifiedRoleScheduleBase struct {
 	RoleDefinition *UnifiedRoleDefinition `json:"roleDefinition,omitempty"`
 }
 
+func NewUnifiedRoleScheduleBase() (*UnifiedRoleScheduleBase, error) {
+	newUnifiedRoleScheduleBase := &UnifiedRoleScheduleBase{
+		ODataType: "#microsoft.graph.UnifiedRoleScheduleBase",
+	}
+	return newUnifiedRoleScheduleBase, nil
+}
+
 // UnifiedRoleScheduleInstanceBase undocumented
 type UnifiedRoleScheduleInstanceBase struct {
 	// Entity is the base model of UnifiedRoleScheduleInstanceBase
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AppScopeID undocumented
 	AppScopeID *string `json:"appScopeId,omitempty"`
 	// DirectoryScopeID undocumented
@@ -390,4 +581,11 @@ type UnifiedRoleScheduleInstanceBase struct {
 	Principal *DirectoryObject `json:"principal,omitempty"`
 	// RoleDefinition undocumented
 	RoleDefinition *UnifiedRoleDefinition `json:"roleDefinition,omitempty"`
+}
+
+func NewUnifiedRoleScheduleInstanceBase() (*UnifiedRoleScheduleInstanceBase, error) {
+	newUnifiedRoleScheduleInstanceBase := &UnifiedRoleScheduleInstanceBase{
+		ODataType: "#microsoft.graph.UnifiedRoleScheduleInstanceBase",
+	}
+	return newUnifiedRoleScheduleInstanceBase, nil
 }

@@ -2,9 +2,16 @@
 
 package msgraph
 
-// Message is navigation property
+// Message is navigation property rn
 func (b *PinnedChatMessageInfoRequestBuilder) Message() *ChatMessageRequestBuilder {
 	bb := &ChatMessageRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/message"
+	return bb
+}
+
+// PinnedChatMessageInfo is navigation property rn
+func (b *PinnedChatMessageInfoRequestBuilder) PinnedChatMessageInfo() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

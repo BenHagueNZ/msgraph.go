@@ -8,6 +8,8 @@ import "time"
 type BaseItem struct {
 	// Entity is the base model of BaseItem
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -32,14 +34,30 @@ type BaseItem struct {
 	LastModifiedByUser *User `json:"lastModifiedByUser,omitempty"`
 }
 
+func NewBaseItem() (*BaseItem, error) {
+	newBaseItem := &BaseItem{
+		ODataType: "#microsoft.graph.BaseItem",
+	}
+	return newBaseItem, nil
+}
+
 // BaseItemVersion undocumented
 type BaseItemVersion struct {
 	// Entity is the base model of BaseItemVersion
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// LastModifiedBy undocumented
 	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 	// Publication undocumented
 	Publication *PublicationFacet `json:"publication,omitempty"`
+}
+
+func NewBaseItemVersion() (*BaseItemVersion, error) {
+	newBaseItemVersion := &BaseItemVersion{
+		ODataType: "#microsoft.graph.BaseItemVersion",
+	}
+	return newBaseItemVersion, nil
 }

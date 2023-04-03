@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsExpRequestBuilder struct{ BaseRequestBuilder }
 
-// Exp action undocumented
+// Exp action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Exp(reqObj *WorkbookFunctionsExpRequestParameter) *WorkbookFunctionsExpRequestBuilder {
 	bb := &WorkbookFunctionsExpRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Exp"

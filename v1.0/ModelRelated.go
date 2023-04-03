@@ -6,6 +6,8 @@ package msgraph
 type RelatedContact struct {
 	// Object is the base model of RelatedContact
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AccessConsent undocumented
 	AccessConsent *bool `json:"accessConsent,omitempty"`
 	// DisplayName undocumented
@@ -16,4 +18,11 @@ type RelatedContact struct {
 	MobilePhone *string `json:"mobilePhone,omitempty"`
 	// Relationship undocumented
 	Relationship *ContactRelationship `json:"relationship,omitempty"`
+}
+
+func NewRelatedContact() (*RelatedContact, error) {
+	newRelatedContact := &RelatedContact{
+		ODataType: "#microsoft.graph.RelatedContact",
+	}
+	return newRelatedContact, nil
 }

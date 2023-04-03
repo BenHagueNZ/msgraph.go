@@ -6,4 +6,13 @@ package msgraph
 type AcceptJoinResponse struct {
 	// ParticipantJoiningResponse is the base model of AcceptJoinResponse
 	ParticipantJoiningResponse
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewAcceptJoinResponse() (*AcceptJoinResponse, error) {
+	newAcceptJoinResponse := &AcceptJoinResponse{
+		ODataType: "#microsoft.graph.AcceptJoinResponse",
+	}
+	return newAcceptJoinResponse, nil
 }

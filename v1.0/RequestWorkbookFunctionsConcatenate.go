@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsConcatenateRequestBuilder struct{ BaseRequestBuilder }
 
-// Concatenate action undocumented
+// Concatenate action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Concatenate(reqObj *WorkbookFunctionsConcatenateRequestParameter) *WorkbookFunctionsConcatenateRequestBuilder {
 	bb := &WorkbookFunctionsConcatenateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Concatenate"

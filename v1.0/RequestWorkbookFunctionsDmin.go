@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDminRequestBuilder struct{ BaseRequestBuilder }
 
-// Dmin action undocumented
+// Dmin action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Dmin(reqObj *WorkbookFunctionsDminRequestParameter) *WorkbookFunctionsDminRequestBuilder {
 	bb := &WorkbookFunctionsDminRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Dmin"

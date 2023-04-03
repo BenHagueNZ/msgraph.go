@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsAmorDegrcRequestBuilder struct{ BaseRequestBuilder }
 
-// AmorDegrc action undocumented
+// AmorDegrc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) AmorDegrc(reqObj *WorkbookFunctionsAmorDegrcRequestParameter) *WorkbookFunctionsAmorDegrcRequestBuilder {
 	bb := &WorkbookFunctionsAmorDegrcRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AmorDegrc"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsAmorDegrcRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsAmorLincRequestBuilder struct{ BaseRequestBuilder }
 
-// AmorLinc action undocumented
+// AmorLinc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) AmorLinc(reqObj *WorkbookFunctionsAmorLincRequestParameter) *WorkbookFunctionsAmorLincRequestBuilder {
 	bb := &WorkbookFunctionsAmorLincRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AmorLinc"

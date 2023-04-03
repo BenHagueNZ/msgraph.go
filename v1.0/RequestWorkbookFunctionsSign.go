@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSignRequestBuilder struct{ BaseRequestBuilder }
 
-// Sign action undocumented
+// Sign action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Sign(reqObj *WorkbookFunctionsSignRequestParameter) *WorkbookFunctionsSignRequestBuilder {
 	bb := &WorkbookFunctionsSignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Sign"

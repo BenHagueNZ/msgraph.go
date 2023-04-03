@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsNperRequestBuilder struct{ BaseRequestBuilder }
 
-// Nper action undocumented
+// Nper action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Nper(reqObj *WorkbookFunctionsNperRequestParameter) *WorkbookFunctionsNperRequestBuilder {
 	bb := &WorkbookFunctionsNperRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Nper"

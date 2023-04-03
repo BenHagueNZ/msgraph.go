@@ -8,6 +8,8 @@ import "time"
 type VerifiedDomain struct {
 	// Object is the base model of VerifiedDomain
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Capabilities undocumented
 	Capabilities *string `json:"capabilities,omitempty"`
 	// IsDefault undocumented
@@ -20,14 +22,30 @@ type VerifiedDomain struct {
 	Type *string `json:"type,omitempty"`
 }
 
+func NewVerifiedDomain() (*VerifiedDomain, error) {
+	newVerifiedDomain := &VerifiedDomain{
+		ODataType: "#microsoft.graph.VerifiedDomain",
+	}
+	return newVerifiedDomain, nil
+}
+
 // VerifiedPublisher undocumented
 type VerifiedPublisher struct {
 	// Object is the base model of VerifiedPublisher
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AddedDateTime undocumented
 	AddedDateTime *time.Time `json:"addedDateTime,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// VerifiedPublisherID undocumented
 	VerifiedPublisherID *string `json:"verifiedPublisherId,omitempty"`
+}
+
+func NewVerifiedPublisher() (*VerifiedPublisher, error) {
+	newVerifiedPublisher := &VerifiedPublisher{
+		ODataType: "#microsoft.graph.VerifiedPublisher",
+	}
+	return newVerifiedPublisher, nil
 }

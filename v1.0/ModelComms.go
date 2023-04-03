@@ -6,28 +6,55 @@ package msgraph
 type CommsNotification struct {
 	// Object is the base model of CommsNotification
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ChangeType undocumented
 	ChangeType *ChangeType `json:"changeType,omitempty"`
 	// ResourceURL undocumented
 	ResourceURL *string `json:"resourceUrl,omitempty"`
 }
 
+func NewCommsNotification() (*CommsNotification, error) {
+	newCommsNotification := &CommsNotification{
+		ODataType: "#microsoft.graph.CommsNotification",
+	}
+	return newCommsNotification, nil
+}
+
 // CommsNotifications undocumented
 type CommsNotifications struct {
 	// Object is the base model of CommsNotifications
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Value undocumented
 	Value []CommsNotification `json:"value,omitempty"`
+}
+
+func NewCommsNotifications() (*CommsNotifications, error) {
+	newCommsNotifications := &CommsNotifications{
+		ODataType: "#microsoft.graph.CommsNotifications",
+	}
+	return newCommsNotifications, nil
 }
 
 // CommsOperation undocumented
 type CommsOperation struct {
 	// Entity is the base model of CommsOperation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ClientContext undocumented
 	ClientContext *string `json:"clientContext,omitempty"`
 	// ResultInfo undocumented
 	ResultInfo *ResultInfo `json:"resultInfo,omitempty"`
 	// Status undocumented
 	Status *OperationStatus `json:"status,omitempty"`
+}
+
+func NewCommsOperation() (*CommsOperation, error) {
+	newCommsOperation := &CommsOperation{
+		ODataType: "#microsoft.graph.CommsOperation",
+	}
+	return newCommsOperation, nil
 }

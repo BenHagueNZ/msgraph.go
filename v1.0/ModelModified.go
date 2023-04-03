@@ -6,10 +6,19 @@ package msgraph
 type ModifiedProperty struct {
 	// Object is the base model of ModifiedProperty
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// NewValue undocumented
 	NewValue *string `json:"newValue,omitempty"`
 	// OldValue undocumented
 	OldValue *string `json:"oldValue,omitempty"`
+}
+
+func NewModifiedProperty() (*ModifiedProperty, error) {
+	newModifiedProperty := &ModifiedProperty{
+		ODataType: "#microsoft.graph.ModifiedProperty",
+	}
+	return newModifiedProperty, nil
 }

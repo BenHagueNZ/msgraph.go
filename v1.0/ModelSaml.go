@@ -6,14 +6,25 @@ package msgraph
 type SamlOrWsFedExternalDomainFederation struct {
 	// SamlOrWsFedProvider is the base model of SamlOrWsFedExternalDomainFederation
 	SamlOrWsFedProvider
+
+	ODataType string `json:"@odata.type"`
 	// Domains undocumented
 	Domains []ExternalDomainName `json:"domains,omitempty"`
+}
+
+func NewSamlOrWsFedExternalDomainFederation() (*SamlOrWsFedExternalDomainFederation, error) {
+	newSamlOrWsFedExternalDomainFederation := &SamlOrWsFedExternalDomainFederation{
+		ODataType: "#microsoft.graph.SamlOrWsFedExternalDomainFederation",
+	}
+	return newSamlOrWsFedExternalDomainFederation, nil
 }
 
 // SamlOrWsFedProvider undocumented
 type SamlOrWsFedProvider struct {
 	// IdentityProviderBase is the base model of SamlOrWsFedProvider
 	IdentityProviderBase
+
+	ODataType string `json:"@odata.type"`
 	// IssuerURI undocumented
 	IssuerURI *string `json:"issuerUri,omitempty"`
 	// MetadataExchangeURI undocumented
@@ -26,10 +37,26 @@ type SamlOrWsFedProvider struct {
 	SigningCertificate *string `json:"signingCertificate,omitempty"`
 }
 
+func NewSamlOrWsFedProvider() (*SamlOrWsFedProvider, error) {
+	newSamlOrWsFedProvider := &SamlOrWsFedProvider{
+		ODataType: "#microsoft.graph.SamlOrWsFedProvider",
+	}
+	return newSamlOrWsFedProvider, nil
+}
+
 // SamlSingleSignOnSettings undocumented
 type SamlSingleSignOnSettings struct {
 	// Object is the base model of SamlSingleSignOnSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// RelayState undocumented
 	RelayState *string `json:"relayState,omitempty"`
+}
+
+func NewSamlSingleSignOnSettings() (*SamlSingleSignOnSettings, error) {
+	newSamlSingleSignOnSettings := &SamlSingleSignOnSettings{
+		ODataType: "#microsoft.graph.SamlSingleSignOnSettings",
+	}
+	return newSamlSingleSignOnSettings, nil
 }

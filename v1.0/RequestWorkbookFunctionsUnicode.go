@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsUnicodeRequestBuilder struct{ BaseRequestBuilder }
 
-// Unicode action undocumented
+// Unicode action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Unicode(reqObj *WorkbookFunctionsUnicodeRequestParameter) *WorkbookFunctionsUnicodeRequestBuilder {
 	bb := &WorkbookFunctionsUnicodeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Unicode"

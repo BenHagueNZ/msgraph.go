@@ -6,18 +6,38 @@ package msgraph
 type ContentApprovalStatusColumn struct {
 	// Object is the base model of ContentApprovalStatusColumn
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewContentApprovalStatusColumn() (*ContentApprovalStatusColumn, error) {
+	newContentApprovalStatusColumn := &ContentApprovalStatusColumn{
+		ODataType: "#microsoft.graph.ContentApprovalStatusColumn",
+	}
+	return newContentApprovalStatusColumn, nil
 }
 
 // ContentSharingSession undocumented
 type ContentSharingSession struct {
 	// Entity is the base model of ContentSharingSession
 	Entity
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewContentSharingSession() (*ContentSharingSession, error) {
+	newContentSharingSession := &ContentSharingSession{
+		ODataType: "#microsoft.graph.ContentSharingSession",
+	}
+	return newContentSharingSession, nil
 }
 
 // ContentType undocumented
 type ContentType struct {
 	// Entity is the base model of ContentType
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AssociatedHubsUrls undocumented
 	AssociatedHubsUrls []string `json:"associatedHubsUrls,omitempty"`
 	// Description undocumented
@@ -58,22 +78,47 @@ type ContentType struct {
 	Columns []ColumnDefinition `json:"columns,omitempty"`
 }
 
+func NewContentType() (*ContentType, error) {
+	newContentType := &ContentType{
+		ODataType: "#microsoft.graph.ContentType",
+	}
+	return newContentType, nil
+}
+
 // ContentTypeInfo undocumented
 type ContentTypeInfo struct {
 	// Object is the base model of ContentTypeInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ID undocumented
 	ID *string `json:"id,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 }
 
+func NewContentTypeInfo() (*ContentTypeInfo, error) {
+	newContentTypeInfo := &ContentTypeInfo{
+		ODataType: "#microsoft.graph.ContentTypeInfo",
+	}
+	return newContentTypeInfo, nil
+}
+
 // ContentTypeOrder undocumented
 type ContentTypeOrder struct {
 	// Object is the base model of ContentTypeOrder
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Default undocumented
 	Default *bool `json:"default,omitempty"`
 	// Position undocumented
 	Position *int `json:"position,omitempty"`
+}
+
+func NewContentTypeOrder() (*ContentTypeOrder, error) {
+	newContentTypeOrder := &ContentTypeOrder{
+		ODataType: "#microsoft.graph.ContentTypeOrder",
+	}
+	return newContentTypeOrder, nil
 }

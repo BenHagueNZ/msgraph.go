@@ -369,7 +369,7 @@ func (r *MobileThreatDefenseConnectorRequest) Delete(ctx context.Context) error 
 
 type MobileAppAssignRequestBuilder struct{ BaseRequestBuilder }
 
-// Assign action undocumented
+// Assign action undocumentedrav
 func (b *MobileAppRequestBuilder) Assign(reqObj *MobileAppAssignRequestParameter) *MobileAppAssignRequestBuilder {
 	bb := &MobileAppAssignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Assign"
@@ -391,7 +391,7 @@ func (r *MobileAppAssignRequest) Post(ctx context.Context) error {
 
 type MobileAppContentFileCommitRequestBuilder struct{ BaseRequestBuilder }
 
-// Commit action undocumented
+// Commit action undocumentedrav
 func (b *MobileAppContentFileRequestBuilder) Commit(reqObj *MobileAppContentFileCommitRequestParameter) *MobileAppContentFileCommitRequestBuilder {
 	bb := &MobileAppContentFileCommitRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Commit"
@@ -413,7 +413,7 @@ func (r *MobileAppContentFileCommitRequest) Post(ctx context.Context) error {
 
 type MobileAppContentFileRenewUploadRequestBuilder struct{ BaseRequestBuilder }
 
-// RenewUpload action undocumented
+// RenewUpload action undocumentedrav
 func (b *MobileAppContentFileRequestBuilder) RenewUpload(reqObj *MobileAppContentFileRenewUploadRequestParameter) *MobileAppContentFileRenewUploadRequestBuilder {
 	bb := &MobileAppContentFileRenewUploadRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RenewUpload"

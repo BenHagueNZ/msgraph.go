@@ -6,4 +6,13 @@ package msgraph
 type SubscribeToToneOperation struct {
 	// CommsOperation is the base model of SubscribeToToneOperation
 	CommsOperation
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewSubscribeToToneOperation() (*SubscribeToToneOperation, error) {
+	newSubscribeToToneOperation := &SubscribeToToneOperation{
+		ODataType: "#microsoft.graph.SubscribeToToneOperation",
+	}
+	return newSubscribeToToneOperation, nil
 }

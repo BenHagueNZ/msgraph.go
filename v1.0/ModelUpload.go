@@ -8,10 +8,19 @@ import "time"
 type UploadSession struct {
 	// Object is the base model of UploadSession
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ExpirationDateTime undocumented
 	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
 	// NextExpectedRanges undocumented
 	NextExpectedRanges []string `json:"nextExpectedRanges,omitempty"`
 	// UploadURL undocumented
 	UploadURL *string `json:"uploadUrl,omitempty"`
+}
+
+func NewUploadSession() (*UploadSession, error) {
+	newUploadSession := &UploadSession{
+		ODataType: "#microsoft.graph.UploadSession",
+	}
+	return newUploadSession, nil
 }

@@ -6,6 +6,15 @@ package msgraph
 type ProvisionChannelEmailResult struct {
 	// Object is the base model of ProvisionChannelEmailResult
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
+}
+
+func NewProvisionChannelEmailResult() (*ProvisionChannelEmailResult, error) {
+	newProvisionChannelEmailResult := &ProvisionChannelEmailResult{
+		ODataType: "#microsoft.graph.ProvisionChannelEmailResult",
+	}
+	return newProvisionChannelEmailResult, nil
 }

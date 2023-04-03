@@ -402,7 +402,7 @@ func (r *OnenoteSectionRequest) Delete(ctx context.Context) error {
 
 type OnenotePageCopyToSectionRequestBuilder struct{ BaseRequestBuilder }
 
-// CopyToSection action undocumented
+// CopyToSection action undocumentedras
 func (b *OnenotePageRequestBuilder) CopyToSection(reqObj *OnenotePageCopyToSectionRequestParameter) *OnenotePageCopyToSectionRequestBuilder {
 	bb := &OnenotePageCopyToSectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CopyToSection"
@@ -425,7 +425,7 @@ func (r *OnenotePageCopyToSectionRequest) Post(ctx context.Context) (resObj *One
 
 type OnenotePageOnenotePatchContentRequestBuilder struct{ BaseRequestBuilder }
 
-// OnenotePatchContent action undocumented
+// OnenotePatchContent action undocumentedrav
 func (b *OnenotePageRequestBuilder) OnenotePatchContent(reqObj *OnenotePageOnenotePatchContentRequestParameter) *OnenotePageOnenotePatchContentRequestBuilder {
 	bb := &OnenotePageOnenotePatchContentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/OnenotePatchContent"
@@ -447,7 +447,7 @@ func (r *OnenotePageOnenotePatchContentRequest) Post(ctx context.Context) error 
 
 type OnenoteSectionCopyToNotebookRequestBuilder struct{ BaseRequestBuilder }
 
-// CopyToNotebook action undocumented
+// CopyToNotebook action undocumentedras
 func (b *OnenoteSectionRequestBuilder) CopyToNotebook(reqObj *OnenoteSectionCopyToNotebookRequestParameter) *OnenoteSectionCopyToNotebookRequestBuilder {
 	bb := &OnenoteSectionCopyToNotebookRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CopyToNotebook"
@@ -470,7 +470,7 @@ func (r *OnenoteSectionCopyToNotebookRequest) Post(ctx context.Context) (resObj 
 
 type OnenoteSectionCopyToSectionGroupRequestBuilder struct{ BaseRequestBuilder }
 
-// CopyToSectionGroup action undocumented
+// CopyToSectionGroup action undocumentedras
 func (b *OnenoteSectionRequestBuilder) CopyToSectionGroup(reqObj *OnenoteSectionCopyToSectionGroupRequestParameter) *OnenoteSectionCopyToSectionGroupRequestBuilder {
 	bb := &OnenoteSectionCopyToSectionGroupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CopyToSectionGroup"

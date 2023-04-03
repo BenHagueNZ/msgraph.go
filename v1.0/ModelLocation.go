@@ -6,6 +6,8 @@ package msgraph
 type Location struct {
 	// Object is the base model of Location
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Address undocumented
 	Address *PhysicalAddress `json:"address,omitempty"`
 	// Coordinates undocumented
@@ -24,10 +26,19 @@ type Location struct {
 	UniqueIDType *LocationUniqueIDType `json:"uniqueIdType,omitempty"`
 }
 
+func NewLocation() (*Location, error) {
+	newLocation := &Location{
+		ODataType: "#microsoft.graph.Location",
+	}
+	return newLocation, nil
+}
+
 // LocationConstraint undocumented
 type LocationConstraint struct {
 	// Object is the base model of LocationConstraint
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsRequired undocumented
 	IsRequired *bool `json:"isRequired,omitempty"`
 	// Locations undocumented
@@ -36,10 +47,26 @@ type LocationConstraint struct {
 	SuggestLocation *bool `json:"suggestLocation,omitempty"`
 }
 
+func NewLocationConstraint() (*LocationConstraint, error) {
+	newLocationConstraint := &LocationConstraint{
+		ODataType: "#microsoft.graph.LocationConstraint",
+	}
+	return newLocationConstraint, nil
+}
+
 // LocationConstraintItem undocumented
 type LocationConstraintItem struct {
 	// Location is the base model of LocationConstraintItem
 	Location
+
+	ODataType string `json:"@odata.type"`
 	// ResolveAvailability undocumented
 	ResolveAvailability *bool `json:"resolveAvailability,omitempty"`
+}
+
+func NewLocationConstraintItem() (*LocationConstraintItem, error) {
+	newLocationConstraintItem := &LocationConstraintItem{
+		ODataType: "#microsoft.graph.LocationConstraintItem",
+	}
+	return newLocationConstraintItem, nil
 }

@@ -6,8 +6,17 @@ package msgraph
 type TabUpdatedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TabUpdatedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TabID undocumented
 	TabID *string `json:"tabId,omitempty"`
+}
+
+func NewTabUpdatedEventMessageDetail() (*TabUpdatedEventMessageDetail, error) {
+	newTabUpdatedEventMessageDetail := &TabUpdatedEventMessageDetail{
+		ODataType: "#microsoft.graph.TabUpdatedEventMessageDetail",
+	}
+	return newTabUpdatedEventMessageDetail, nil
 }

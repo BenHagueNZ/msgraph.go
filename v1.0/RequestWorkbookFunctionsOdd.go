@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsOddRequestBuilder struct{ BaseRequestBuilder }
 
-// Odd action undocumented
+// Odd action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Odd(reqObj *WorkbookFunctionsOddRequestParameter) *WorkbookFunctionsOddRequestBuilder {
 	bb := &WorkbookFunctionsOddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Odd"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsOddRequest) Post(ctx context.Context) (resObj *Workboo
 
 type WorkbookFunctionsOddFPriceRequestBuilder struct{ BaseRequestBuilder }
 
-// OddFPrice action undocumented
+// OddFPrice action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) OddFPrice(reqObj *WorkbookFunctionsOddFPriceRequestParameter) *WorkbookFunctionsOddFPriceRequestBuilder {
 	bb := &WorkbookFunctionsOddFPriceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/OddFPrice"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsOddFPriceRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsOddFYieldRequestBuilder struct{ BaseRequestBuilder }
 
-// OddFYield action undocumented
+// OddFYield action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) OddFYield(reqObj *WorkbookFunctionsOddFYieldRequestParameter) *WorkbookFunctionsOddFYieldRequestBuilder {
 	bb := &WorkbookFunctionsOddFYieldRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/OddFYield"
@@ -75,7 +75,7 @@ func (r *WorkbookFunctionsOddFYieldRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsOddLPriceRequestBuilder struct{ BaseRequestBuilder }
 
-// OddLPrice action undocumented
+// OddLPrice action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) OddLPrice(reqObj *WorkbookFunctionsOddLPriceRequestParameter) *WorkbookFunctionsOddLPriceRequestBuilder {
 	bb := &WorkbookFunctionsOddLPriceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/OddLPrice"
@@ -98,7 +98,7 @@ func (r *WorkbookFunctionsOddLPriceRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsOddLYieldRequestBuilder struct{ BaseRequestBuilder }
 
-// OddLYield action undocumented
+// OddLYield action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) OddLYield(reqObj *WorkbookFunctionsOddLYieldRequestParameter) *WorkbookFunctionsOddLYieldRequestBuilder {
 	bb := &WorkbookFunctionsOddLYieldRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/OddLYield"

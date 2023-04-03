@@ -8,6 +8,8 @@ import "time"
 type EnterpriseCodeSigningCertificate struct {
 	// Entity is the base model of EnterpriseCodeSigningCertificate
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Content undocumented
 	Content *Binary `json:"content,omitempty"`
 	// ExpirationDateTime undocumented
@@ -24,4 +26,11 @@ type EnterpriseCodeSigningCertificate struct {
 	SubjectName *string `json:"subjectName,omitempty"`
 	// UploadDateTime undocumented
 	UploadDateTime *time.Time `json:"uploadDateTime,omitempty"`
+}
+
+func NewEnterpriseCodeSigningCertificate() (*EnterpriseCodeSigningCertificate, error) {
+	newEnterpriseCodeSigningCertificate := &EnterpriseCodeSigningCertificate{
+		ODataType: "#microsoft.graph.EnterpriseCodeSigningCertificate",
+	}
+	return newEnterpriseCodeSigningCertificate, nil
 }

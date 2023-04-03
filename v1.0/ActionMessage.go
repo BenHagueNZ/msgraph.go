@@ -79,7 +79,7 @@ type MessageReplyAllRequestParameter struct {
 type MessageSendRequestParameter struct {
 }
 
-// Attachments returns request builder for Attachment collection
+// Attachments returns request builder for Attachment collection rcn
 func (b *MessageRequestBuilder) Attachments() *MessageAttachmentsCollectionRequestBuilder {
 	bb := &MessageAttachmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/attachments"
@@ -182,7 +182,7 @@ func (r *MessageAttachmentsCollectionRequest) Add(ctx context.Context, reqObj *A
 	return
 }
 
-// Extensions returns request builder for Extension collection
+// Extensions returns request builder for Extension collection rcn
 func (b *MessageRequestBuilder) Extensions() *MessageExtensionsCollectionRequestBuilder {
 	bb := &MessageExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensions"
@@ -285,7 +285,7 @@ func (r *MessageExtensionsCollectionRequest) Add(ctx context.Context, reqObj *Ex
 	return
 }
 
-// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection
+// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection rcn
 func (b *MessageRequestBuilder) MultiValueExtendedProperties() *MessageMultiValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &MessageMultiValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/multiValueExtendedProperties"
@@ -388,7 +388,7 @@ func (r *MessageMultiValueExtendedPropertiesCollectionRequest) Add(ctx context.C
 	return
 }
 
-// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection
+// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection rcn
 func (b *MessageRequestBuilder) SingleValueExtendedProperties() *MessageSingleValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &MessageSingleValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/singleValueExtendedProperties"
@@ -489,4 +489,11 @@ func (r *MessageSingleValueExtendedPropertiesCollectionRequest) Get(ctx context.
 func (r *MessageSingleValueExtendedPropertiesCollectionRequest) Add(ctx context.Context, reqObj *SingleValueLegacyExtendedProperty) (resObj *SingleValueLegacyExtendedProperty, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// MessageRule is navigation property rn
+func (b *MessageRuleRequestBuilder) MessageRule() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

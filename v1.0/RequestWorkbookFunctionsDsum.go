@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDsumRequestBuilder struct{ BaseRequestBuilder }
 
-// Dsum action undocumented
+// Dsum action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Dsum(reqObj *WorkbookFunctionsDsumRequestParameter) *WorkbookFunctionsDsumRequestBuilder {
 	bb := &WorkbookFunctionsDsumRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Dsum"

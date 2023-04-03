@@ -8,6 +8,8 @@ import "time"
 type ConnectedOrganization struct {
 	// Entity is the base model of ConnectedOrganization
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -26,12 +28,28 @@ type ConnectedOrganization struct {
 	InternalSponsors []DirectoryObject `json:"internalSponsors,omitempty"`
 }
 
+func NewConnectedOrganization() (*ConnectedOrganization, error) {
+	newConnectedOrganization := &ConnectedOrganization{
+		ODataType: "#microsoft.graph.ConnectedOrganization",
+	}
+	return newConnectedOrganization, nil
+}
+
 // ConnectedOrganizationMembers undocumented
 type ConnectedOrganizationMembers struct {
 	// SubjectSet is the base model of ConnectedOrganizationMembers
 	SubjectSet
+
+	ODataType string `json:"@odata.type"`
 	// ConnectedOrganizationID undocumented
 	ConnectedOrganizationID *string `json:"connectedOrganizationId,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
+}
+
+func NewConnectedOrganizationMembers() (*ConnectedOrganizationMembers, error) {
+	newConnectedOrganizationMembers := &ConnectedOrganizationMembers{
+		ODataType: "#microsoft.graph.ConnectedOrganizationMembers",
+	}
+	return newConnectedOrganizationMembers, nil
 }

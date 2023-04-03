@@ -105,7 +105,7 @@ func (r *TargetedManagedAppProtectionRequest) Delete(ctx context.Context) error 
 
 type TargetedManagedAppConfigurationAssignRequestBuilder struct{ BaseRequestBuilder }
 
-// Assign action undocumented
+// Assign action undocumentedrav
 func (b *TargetedManagedAppConfigurationRequestBuilder) Assign(reqObj *TargetedManagedAppConfigurationAssignRequestParameter) *TargetedManagedAppConfigurationAssignRequestBuilder {
 	bb := &TargetedManagedAppConfigurationAssignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Assign"
@@ -127,7 +127,7 @@ func (r *TargetedManagedAppConfigurationAssignRequest) Post(ctx context.Context)
 
 type TargetedManagedAppConfigurationTargetAppsRequestBuilder struct{ BaseRequestBuilder }
 
-// TargetApps action undocumented
+// TargetApps action undocumentedrav
 func (b *TargetedManagedAppConfigurationRequestBuilder) TargetApps(reqObj *TargetedManagedAppConfigurationTargetAppsRequestParameter) *TargetedManagedAppConfigurationTargetAppsRequestBuilder {
 	bb := &TargetedManagedAppConfigurationTargetAppsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/TargetApps"
@@ -149,7 +149,7 @@ func (r *TargetedManagedAppConfigurationTargetAppsRequest) Post(ctx context.Cont
 
 type TargetedManagedAppProtectionAssignRequestBuilder struct{ BaseRequestBuilder }
 
-// Assign action undocumented
+// Assign action undocumentedrav
 func (b *TargetedManagedAppProtectionRequestBuilder) Assign(reqObj *TargetedManagedAppProtectionAssignRequestParameter) *TargetedManagedAppProtectionAssignRequestBuilder {
 	bb := &TargetedManagedAppProtectionAssignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Assign"
@@ -171,7 +171,7 @@ func (r *TargetedManagedAppProtectionAssignRequest) Post(ctx context.Context) er
 
 type TargetedManagedAppProtectionTargetAppsRequestBuilder struct{ BaseRequestBuilder }
 
-// TargetApps action undocumented
+// TargetApps action undocumentedrav
 func (b *TargetedManagedAppProtectionRequestBuilder) TargetApps(reqObj *TargetedManagedAppProtectionTargetAppsRequestParameter) *TargetedManagedAppProtectionTargetAppsRequestBuilder {
 	bb := &TargetedManagedAppProtectionTargetAppsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/TargetApps"

@@ -6,6 +6,8 @@ package msgraph
 type ScoredEmailAddress struct {
 	// Object is the base model of ScoredEmailAddress
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Address undocumented
 	Address *string `json:"address,omitempty"`
 	// ItemID undocumented
@@ -14,4 +16,11 @@ type ScoredEmailAddress struct {
 	RelevanceScore *float64 `json:"relevanceScore,omitempty"`
 	// SelectionLikelihood undocumented
 	SelectionLikelihood *SelectionLikelihoodInfo `json:"selectionLikelihood,omitempty"`
+}
+
+func NewScoredEmailAddress() (*ScoredEmailAddress, error) {
+	newScoredEmailAddress := &ScoredEmailAddress{
+		ODataType: "#microsoft.graph.ScoredEmailAddress",
+	}
+	return newScoredEmailAddress, nil
 }

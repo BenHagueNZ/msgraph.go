@@ -8,6 +8,8 @@ import "time"
 type Directory struct {
 	// Entity is the base model of Directory
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AdministrativeUnits undocumented
 	AdministrativeUnits []AdministrativeUnit `json:"administrativeUnits,omitempty"`
 	// DeletedItems undocumented
@@ -18,10 +20,19 @@ type Directory struct {
 	OnPremisesSynchronization []OnPremisesDirectorySynchronization `json:"onPremisesSynchronization,omitempty"`
 }
 
+func NewDirectory() (*Directory, error) {
+	newDirectory := &Directory{
+		ODataType: "#microsoft.graph.Directory",
+	}
+	return newDirectory, nil
+}
+
 // DirectoryAudit undocumented
 type DirectoryAudit struct {
 	// Entity is the base model of DirectoryAudit
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ActivityDateTime undocumented
 	ActivityDateTime *time.Time `json:"activityDateTime,omitempty"`
 	// ActivityDisplayName undocumented
@@ -46,18 +57,36 @@ type DirectoryAudit struct {
 	TargetResources []TargetResource `json:"targetResources,omitempty"`
 }
 
+func NewDirectoryAudit() (*DirectoryAudit, error) {
+	newDirectoryAudit := &DirectoryAudit{
+		ODataType: "#microsoft.graph.DirectoryAudit",
+	}
+	return newDirectoryAudit, nil
+}
+
 // DirectoryObject undocumented
 type DirectoryObject struct {
 	// Entity is the base model of DirectoryObject
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DeletedDateTime undocumented
 	DeletedDateTime *time.Time `json:"deletedDateTime,omitempty"`
+}
+
+func NewDirectoryObject() (*DirectoryObject, error) {
+	newDirectoryObject := &DirectoryObject{
+		ODataType: "#microsoft.graph.DirectoryObject",
+	}
+	return newDirectoryObject, nil
 }
 
 // DirectoryObjectPartnerReference undocumented
 type DirectoryObjectPartnerReference struct {
 	// DirectoryObject is the base model of DirectoryObjectPartnerReference
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -68,10 +97,19 @@ type DirectoryObjectPartnerReference struct {
 	ObjectType *string `json:"objectType,omitempty"`
 }
 
+func NewDirectoryObjectPartnerReference() (*DirectoryObjectPartnerReference, error) {
+	newDirectoryObjectPartnerReference := &DirectoryObjectPartnerReference{
+		ODataType: "#microsoft.graph.DirectoryObjectPartnerReference",
+	}
+	return newDirectoryObjectPartnerReference, nil
+}
+
 // DirectoryRole undocumented
 type DirectoryRole struct {
 	// DirectoryObject is the base model of DirectoryRole
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -84,12 +122,28 @@ type DirectoryRole struct {
 	ScopedMembers []ScopedRoleMembership `json:"scopedMembers,omitempty"`
 }
 
+func NewDirectoryRole() (*DirectoryRole, error) {
+	newDirectoryRole := &DirectoryRole{
+		ODataType: "#microsoft.graph.DirectoryRole",
+	}
+	return newDirectoryRole, nil
+}
+
 // DirectoryRoleTemplate undocumented
 type DirectoryRoleTemplate struct {
 	// DirectoryObject is the base model of DirectoryRoleTemplate
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
+}
+
+func NewDirectoryRoleTemplate() (*DirectoryRoleTemplate, error) {
+	newDirectoryRoleTemplate := &DirectoryRoleTemplate{
+		ODataType: "#microsoft.graph.DirectoryRoleTemplate",
+	}
+	return newDirectoryRoleTemplate, nil
 }

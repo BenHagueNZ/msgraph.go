@@ -6,8 +6,17 @@ package msgraph
 type InformationProtection struct {
 	// Object is the base model of InformationProtection
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Bitlocker undocumented
 	Bitlocker *Bitlocker `json:"bitlocker,omitempty"`
 	// ThreatAssessmentRequests undocumented
 	ThreatAssessmentRequests []ThreatAssessmentRequestObject `json:"threatAssessmentRequests,omitempty"`
+}
+
+func NewInformationProtection() (*InformationProtection, error) {
+	newInformationProtection := &InformationProtection{
+		ODataType: "#microsoft.graph.InformationProtection",
+	}
+	return newInformationProtection, nil
 }

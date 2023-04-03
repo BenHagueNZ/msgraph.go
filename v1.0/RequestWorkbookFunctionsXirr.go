@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsXirrRequestBuilder struct{ BaseRequestBuilder }
 
-// Xirr action undocumented
+// Xirr action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Xirr(reqObj *WorkbookFunctionsXirrRequestParameter) *WorkbookFunctionsXirrRequestBuilder {
 	bb := &WorkbookFunctionsXirrRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Xirr"

@@ -8,16 +8,27 @@ import "time"
 type OnPremisesAccidentalDeletionPrevention struct {
 	// Object is the base model of OnPremisesAccidentalDeletionPrevention
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AlertThreshold undocumented
 	AlertThreshold *int `json:"alertThreshold,omitempty"`
 	// SynchronizationPreventionType undocumented
 	SynchronizationPreventionType *OnPremisesDirectorySynchronizationDeletionPreventionType `json:"synchronizationPreventionType,omitempty"`
 }
 
+func NewOnPremisesAccidentalDeletionPrevention() (*OnPremisesAccidentalDeletionPrevention, error) {
+	newOnPremisesAccidentalDeletionPrevention := &OnPremisesAccidentalDeletionPrevention{
+		ODataType: "#microsoft.graph.OnPremisesAccidentalDeletionPrevention",
+	}
+	return newOnPremisesAccidentalDeletionPrevention, nil
+}
+
 // OnPremisesConditionalAccessSettings undocumented
 type OnPremisesConditionalAccessSettings struct {
 	// Entity is the base model of OnPremisesConditionalAccessSettings
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Enabled undocumented
 	Enabled *bool `json:"enabled,omitempty"`
 	// ExcludedGroups undocumented
@@ -28,28 +39,55 @@ type OnPremisesConditionalAccessSettings struct {
 	OverrideDefaultRule *bool `json:"overrideDefaultRule,omitempty"`
 }
 
+func NewOnPremisesConditionalAccessSettings() (*OnPremisesConditionalAccessSettings, error) {
+	newOnPremisesConditionalAccessSettings := &OnPremisesConditionalAccessSettings{
+		ODataType: "#microsoft.graph.OnPremisesConditionalAccessSettings",
+	}
+	return newOnPremisesConditionalAccessSettings, nil
+}
+
 // OnPremisesDirectorySynchronization undocumented
 type OnPremisesDirectorySynchronization struct {
 	// Entity is the base model of OnPremisesDirectorySynchronization
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Configuration undocumented
 	Configuration *OnPremisesDirectorySynchronizationConfiguration `json:"configuration,omitempty"`
 	// Features undocumented
 	Features *OnPremisesDirectorySynchronizationFeature `json:"features,omitempty"`
 }
 
+func NewOnPremisesDirectorySynchronization() (*OnPremisesDirectorySynchronization, error) {
+	newOnPremisesDirectorySynchronization := &OnPremisesDirectorySynchronization{
+		ODataType: "#microsoft.graph.OnPremisesDirectorySynchronization",
+	}
+	return newOnPremisesDirectorySynchronization, nil
+}
+
 // OnPremisesDirectorySynchronizationConfiguration undocumented
 type OnPremisesDirectorySynchronizationConfiguration struct {
 	// Object is the base model of OnPremisesDirectorySynchronizationConfiguration
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AccidentalDeletionPrevention undocumented
 	AccidentalDeletionPrevention *OnPremisesAccidentalDeletionPrevention `json:"accidentalDeletionPrevention,omitempty"`
+}
+
+func NewOnPremisesDirectorySynchronizationConfiguration() (*OnPremisesDirectorySynchronizationConfiguration, error) {
+	newOnPremisesDirectorySynchronizationConfiguration := &OnPremisesDirectorySynchronizationConfiguration{
+		ODataType: "#microsoft.graph.OnPremisesDirectorySynchronizationConfiguration",
+	}
+	return newOnPremisesDirectorySynchronizationConfiguration, nil
 }
 
 // OnPremisesDirectorySynchronizationFeature undocumented
 type OnPremisesDirectorySynchronizationFeature struct {
 	// Object is the base model of OnPremisesDirectorySynchronizationFeature
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// BlockCloudObjectTakeoverThroughHardMatchEnabled undocumented
 	BlockCloudObjectTakeoverThroughHardMatchEnabled *bool `json:"blockCloudObjectTakeoverThroughHardMatchEnabled,omitempty"`
 	// BlockSoftMatchEnabled undocumented
@@ -90,10 +128,19 @@ type OnPremisesDirectorySynchronizationFeature struct {
 	UserWritebackEnabled *bool `json:"userWritebackEnabled,omitempty"`
 }
 
+func NewOnPremisesDirectorySynchronizationFeature() (*OnPremisesDirectorySynchronizationFeature, error) {
+	newOnPremisesDirectorySynchronizationFeature := &OnPremisesDirectorySynchronizationFeature{
+		ODataType: "#microsoft.graph.OnPremisesDirectorySynchronizationFeature",
+	}
+	return newOnPremisesDirectorySynchronizationFeature, nil
+}
+
 // OnPremisesExtensionAttributes undocumented
 type OnPremisesExtensionAttributes struct {
 	// Object is the base model of OnPremisesExtensionAttributes
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ExtensionAttribute1 undocumented
 	ExtensionAttribute1 *string `json:"extensionAttribute1,omitempty"`
 	// ExtensionAttribute10 undocumented
@@ -126,10 +173,19 @@ type OnPremisesExtensionAttributes struct {
 	ExtensionAttribute9 *string `json:"extensionAttribute9,omitempty"`
 }
 
+func NewOnPremisesExtensionAttributes() (*OnPremisesExtensionAttributes, error) {
+	newOnPremisesExtensionAttributes := &OnPremisesExtensionAttributes{
+		ODataType: "#microsoft.graph.OnPremisesExtensionAttributes",
+	}
+	return newOnPremisesExtensionAttributes, nil
+}
+
 // OnPremisesProvisioningError undocumented
 type OnPremisesProvisioningError struct {
 	// Object is the base model of OnPremisesProvisioningError
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Category undocumented
 	Category *string `json:"category,omitempty"`
 	// OccurredDateTime undocumented
@@ -138,4 +194,11 @@ type OnPremisesProvisioningError struct {
 	PropertyCausingError *string `json:"propertyCausingError,omitempty"`
 	// Value undocumented
 	Value *string `json:"value,omitempty"`
+}
+
+func NewOnPremisesProvisioningError() (*OnPremisesProvisioningError, error) {
+	newOnPremisesProvisioningError := &OnPremisesProvisioningError{
+		ODataType: "#microsoft.graph.OnPremisesProvisioningError",
+	}
+	return newOnPremisesProvisioningError, nil
 }

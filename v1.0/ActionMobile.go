@@ -27,7 +27,7 @@ type MobileAppContentFileCommitRequestParameter struct {
 type MobileAppContentFileRenewUploadRequestParameter struct {
 }
 
-// Assignments returns request builder for MobileAppAssignment collection
+// Assignments returns request builder for MobileAppAssignment collection rcn
 func (b *MobileAppRequestBuilder) Assignments() *MobileAppAssignmentsCollectionRequestBuilder {
 	bb := &MobileAppAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignments"
@@ -130,7 +130,7 @@ func (r *MobileAppAssignmentsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// Categories returns request builder for MobileAppCategory collection
+// Categories returns request builder for MobileAppCategory collection rcn
 func (b *MobileAppRequestBuilder) Categories() *MobileAppCategoriesCollectionRequestBuilder {
 	bb := &MobileAppCategoriesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/categories"
@@ -233,7 +233,7 @@ func (r *MobileAppCategoriesCollectionRequest) Add(ctx context.Context, reqObj *
 	return
 }
 
-// ContainedApps returns request builder for MobileContainedApp collection
+// ContainedApps returns request builder for MobileContainedApp collection rcn
 func (b *MobileAppContentRequestBuilder) ContainedApps() *MobileAppContentContainedAppsCollectionRequestBuilder {
 	bb := &MobileAppContentContainedAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/containedApps"
@@ -336,7 +336,7 @@ func (r *MobileAppContentContainedAppsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Files returns request builder for MobileAppContentFile collection
+// Files returns request builder for MobileAppContentFile collection rcn
 func (b *MobileAppContentRequestBuilder) Files() *MobileAppContentFilesCollectionRequestBuilder {
 	bb := &MobileAppContentFilesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/files"
@@ -439,7 +439,7 @@ func (r *MobileAppContentFilesCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// ContentVersions returns request builder for MobileAppContent collection
+// ContentVersions returns request builder for MobileAppContent collection rcn
 func (b *MobileLobAppRequestBuilder) ContentVersions() *MobileLobAppContentVersionsCollectionRequestBuilder {
 	bb := &MobileLobAppContentVersionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/contentVersions"
@@ -540,4 +540,149 @@ func (r *MobileLobAppContentVersionsCollectionRequest) Get(ctx context.Context) 
 func (r *MobileLobAppContentVersionsCollectionRequest) Add(ctx context.Context, reqObj *MobileAppContent) (resObj *MobileAppContent, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// MobileAppAssignment is navigation property rn
+func (b *MobileAppAssignmentRequestBuilder) MobileAppAssignment() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// MobileAppCategory is navigation property rn
+func (b *MobileAppCategoryRequestBuilder) MobileAppCategory() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// MobileAppContent is navigation property rn
+func (b *MobileAppContentRequestBuilder) MobileAppContent() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// MobileAppContentFile is navigation property rn
+func (b *MobileAppContentFileRequestBuilder) MobileAppContentFile() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// MobileContainedApp is navigation property rn
+func (b *MobileContainedAppRequestBuilder) MobileContainedApp() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// MobileLobApp returns request builder for MobileApp collection rcn
+func (b *MobileLobAppRequestBuilder) MobileLobApp() *MobileLobAppMobileLobAppCollectionRequestBuilder {
+	bb := &MobileLobAppMobileLobAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/MobileApp"
+	return bb
+}
+
+// MobileLobAppMobileLobAppCollectionRequestBuilder is request builder for MobileApp collection
+type MobileLobAppMobileLobAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for MobileApp collection
+func (b *MobileLobAppMobileLobAppCollectionRequestBuilder) Request() *MobileLobAppMobileLobAppCollectionRequest {
+	return &MobileLobAppMobileLobAppCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for MobileApp item
+func (b *MobileLobAppMobileLobAppCollectionRequestBuilder) ID(id string) *MobileAppRequestBuilder {
+	bb := &MobileAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// MobileLobAppMobileLobAppCollectionRequest is request for MobileApp collection
+type MobileLobAppMobileLobAppCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for MobileApp collection
+func (r *MobileLobAppMobileLobAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MobileApp, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []MobileApp
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []MobileApp
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for MobileApp collection, max N pages
+func (r *MobileLobAppMobileLobAppCollectionRequest) GetN(ctx context.Context, n int) ([]MobileApp, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for MobileApp collection
+func (r *MobileLobAppMobileLobAppCollectionRequest) Get(ctx context.Context) ([]MobileApp, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for MobileApp collection
+func (r *MobileLobAppMobileLobAppCollectionRequest) Add(ctx context.Context, reqObj *MobileApp) (resObj *MobileApp, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// MobileThreatDefenseConnector is navigation property rn
+func (b *MobileThreatDefenseConnectorRequestBuilder) MobileThreatDefenseConnector() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

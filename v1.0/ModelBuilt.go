@@ -6,6 +6,15 @@ package msgraph
 type BuiltInIdentityProvider struct {
 	// IdentityProviderBase is the base model of BuiltInIdentityProvider
 	IdentityProviderBase
+
+	ODataType string `json:"@odata.type"`
 	// IdentityProviderType undocumented
 	IdentityProviderType *string `json:"identityProviderType,omitempty"`
+}
+
+func NewBuiltInIdentityProvider() (*BuiltInIdentityProvider, error) {
+	newBuiltInIdentityProvider := &BuiltInIdentityProvider{
+		ODataType: "#microsoft.graph.BuiltInIdentityProvider",
+	}
+	return newBuiltInIdentityProvider, nil
 }

@@ -6,16 +6,27 @@ package msgraph
 type Image struct {
 	// Object is the base model of Image
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Height undocumented
 	Height *int `json:"height,omitempty"`
 	// Width undocumented
 	Width *int `json:"width,omitempty"`
 }
 
+func NewImage() (*Image, error) {
+	newImage := &Image{
+		ODataType: "#microsoft.graph.Image",
+	}
+	return newImage, nil
+}
+
 // ImageInfo undocumented
 type ImageInfo struct {
 	// Object is the base model of ImageInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AddImageQuery undocumented
 	AddImageQuery *bool `json:"addImageQuery,omitempty"`
 	// AlternateText undocumented
@@ -24,4 +35,11 @@ type ImageInfo struct {
 	AlternativeText *string `json:"alternativeText,omitempty"`
 	// IconURL undocumented
 	IconURL *string `json:"iconUrl,omitempty"`
+}
+
+func NewImageInfo() (*ImageInfo, error) {
+	newImageInfo := &ImageInfo{
+		ODataType: "#microsoft.graph.ImageInfo",
+	}
+	return newImageInfo, nil
 }

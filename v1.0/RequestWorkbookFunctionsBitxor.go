@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsBitxorRequestBuilder struct{ BaseRequestBuilder }
 
-// Bitxor action undocumented
+// Bitxor action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Bitxor(reqObj *WorkbookFunctionsBitxorRequestParameter) *WorkbookFunctionsBitxorRequestBuilder {
 	bb := &WorkbookFunctionsBitxorRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Bitxor"

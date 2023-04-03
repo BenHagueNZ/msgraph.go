@@ -8,16 +8,27 @@ import "time"
 type PasswordAuthenticationMethod struct {
 	// AuthenticationMethod is the base model of PasswordAuthenticationMethod
 	AuthenticationMethod
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Password undocumented
 	Password *string `json:"password,omitempty"`
 }
 
+func NewPasswordAuthenticationMethod() (*PasswordAuthenticationMethod, error) {
+	newPasswordAuthenticationMethod := &PasswordAuthenticationMethod{
+		ODataType: "#microsoft.graph.PasswordAuthenticationMethod",
+	}
+	return newPasswordAuthenticationMethod, nil
+}
+
 // PasswordCredential undocumented
 type PasswordCredential struct {
 	// Object is the base model of PasswordCredential
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CustomKeyIdentifier undocumented
 	CustomKeyIdentifier *Binary `json:"customKeyIdentifier,omitempty"`
 	// DisplayName undocumented
@@ -34,10 +45,19 @@ type PasswordCredential struct {
 	StartDateTime *time.Time `json:"startDateTime,omitempty"`
 }
 
+func NewPasswordCredential() (*PasswordCredential, error) {
+	newPasswordCredential := &PasswordCredential{
+		ODataType: "#microsoft.graph.PasswordCredential",
+	}
+	return newPasswordCredential, nil
+}
+
 // PasswordCredentialConfiguration undocumented
 type PasswordCredentialConfiguration struct {
 	// Object is the base model of PasswordCredentialConfiguration
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// MaxLifetime undocumented
 	MaxLifetime *Duration `json:"maxLifetime,omitempty"`
 	// RestrictForAppsCreatedAfterDateTime undocumented
@@ -46,10 +66,19 @@ type PasswordCredentialConfiguration struct {
 	RestrictionType *AppCredentialRestrictionType `json:"restrictionType,omitempty"`
 }
 
+func NewPasswordCredentialConfiguration() (*PasswordCredentialConfiguration, error) {
+	newPasswordCredentialConfiguration := &PasswordCredentialConfiguration{
+		ODataType: "#microsoft.graph.PasswordCredentialConfiguration",
+	}
+	return newPasswordCredentialConfiguration, nil
+}
+
 // PasswordProfile undocumented
 type PasswordProfile struct {
 	// Object is the base model of PasswordProfile
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ForceChangePasswordNextSignIn undocumented
 	ForceChangePasswordNextSignIn *bool `json:"forceChangePasswordNextSignIn,omitempty"`
 	// ForceChangePasswordNextSignInWithMFA undocumented
@@ -58,10 +87,26 @@ type PasswordProfile struct {
 	Password *string `json:"password,omitempty"`
 }
 
+func NewPasswordProfile() (*PasswordProfile, error) {
+	newPasswordProfile := &PasswordProfile{
+		ODataType: "#microsoft.graph.PasswordProfile",
+	}
+	return newPasswordProfile, nil
+}
+
 // PasswordResetResponse undocumented
 type PasswordResetResponse struct {
 	// Object is the base model of PasswordResetResponse
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// NewPassword undocumented
 	NewPassword *string `json:"newPassword,omitempty"`
+}
+
+func NewPasswordResetResponse() (*PasswordResetResponse, error) {
+	newPasswordResetResponse := &PasswordResetResponse{
+		ODataType: "#microsoft.graph.PasswordResetResponse",
+	}
+	return newPasswordResetResponse, nil
 }

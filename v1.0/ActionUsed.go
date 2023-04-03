@@ -2,9 +2,16 @@
 
 package msgraph
 
-// Resource is navigation property
+// Resource is navigation property rn
 func (b *UsedInsightRequestBuilder) Resource() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/resource"
+	return bb
+}
+
+// UsedInsight is navigation property rn
+func (b *UsedInsightRequestBuilder) UsedInsight() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

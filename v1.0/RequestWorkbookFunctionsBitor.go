@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsBitorRequestBuilder struct{ BaseRequestBuilder }
 
-// Bitor action undocumented
+// Bitor action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Bitor(reqObj *WorkbookFunctionsBitorRequestParameter) *WorkbookFunctionsBitorRequestBuilder {
 	bb := &WorkbookFunctionsBitorRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Bitor"

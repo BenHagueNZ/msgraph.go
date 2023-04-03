@@ -6,10 +6,19 @@ package msgraph
 type ChoiceColumn struct {
 	// Object is the base model of ChoiceColumn
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowTextEntry undocumented
 	AllowTextEntry *bool `json:"allowTextEntry,omitempty"`
 	// Choices undocumented
 	Choices []string `json:"choices,omitempty"`
 	// DisplayAs undocumented
 	DisplayAs *string `json:"displayAs,omitempty"`
+}
+
+func NewChoiceColumn() (*ChoiceColumn, error) {
+	newChoiceColumn := &ChoiceColumn{
+		ODataType: "#microsoft.graph.ChoiceColumn",
+	}
+	return newChoiceColumn, nil
 }

@@ -6,18 +6,36 @@ package msgraph
 type DateTimeColumn struct {
 	// Object is the base model of DateTimeColumn
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayAs undocumented
 	DisplayAs *string `json:"displayAs,omitempty"`
 	// Format undocumented
 	Format *string `json:"format,omitempty"`
 }
 
+func NewDateTimeColumn() (*DateTimeColumn, error) {
+	newDateTimeColumn := &DateTimeColumn{
+		ODataType: "#microsoft.graph.DateTimeColumn",
+	}
+	return newDateTimeColumn, nil
+}
+
 // DateTimeTimeZone undocumented
 type DateTimeTimeZone struct {
 	// Object is the base model of DateTimeTimeZone
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DateTime undocumented
 	DateTime *string `json:"dateTime,omitempty"`
 	// TimeZone undocumented
 	TimeZone *string `json:"timeZone,omitempty"`
+}
+
+func NewDateTimeTimeZone() (*DateTimeTimeZone, error) {
+	newDateTimeTimeZone := &DateTimeTimeZone{
+		ODataType: "#microsoft.graph.DateTimeTimeZone",
+	}
+	return newDateTimeTimeZone, nil
 }

@@ -6,10 +6,19 @@ package msgraph
 type CountryNamedLocation struct {
 	// NamedLocation is the base model of CountryNamedLocation
 	NamedLocation
+
+	ODataType string `json:"@odata.type"`
 	// CountriesAndRegions undocumented
 	CountriesAndRegions []string `json:"countriesAndRegions,omitempty"`
 	// CountryLookupMethod undocumented
 	CountryLookupMethod *CountryLookupMethodType `json:"countryLookupMethod,omitempty"`
 	// IncludeUnknownCountriesAndRegions undocumented
 	IncludeUnknownCountriesAndRegions *bool `json:"includeUnknownCountriesAndRegions,omitempty"`
+}
+
+func NewCountryNamedLocation() (*CountryNamedLocation, error) {
+	newCountryNamedLocation := &CountryNamedLocation{
+		ODataType: "#microsoft.graph.CountryNamedLocation",
+	}
+	return newCountryNamedLocation, nil
 }

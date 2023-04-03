@@ -8,16 +8,27 @@ import "time"
 type VPPLicensingType struct {
 	// Object is the base model of VPPLicensingType
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// SupportsDeviceLicensing undocumented
 	SupportsDeviceLicensing *bool `json:"supportsDeviceLicensing,omitempty"`
 	// SupportsUserLicensing undocumented
 	SupportsUserLicensing *bool `json:"supportsUserLicensing,omitempty"`
 }
 
+func NewVPPLicensingType() (*VPPLicensingType, error) {
+	newVPPLicensingType := &VPPLicensingType{
+		ODataType: "#microsoft.graph.VppLicensingType",
+	}
+	return newVPPLicensingType, nil
+}
+
 // VPPToken undocumented
 type VPPToken struct {
 	// Entity is the base model of VPPToken
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AppleID undocumented
 	AppleID *string `json:"appleId,omitempty"`
 	// AutomaticallyUpdateApps undocumented
@@ -40,4 +51,11 @@ type VPPToken struct {
 	Token *string `json:"token,omitempty"`
 	// VPPTokenAccountType undocumented
 	VPPTokenAccountType *VPPTokenAccountType `json:"vppTokenAccountType,omitempty"`
+}
+
+func NewVPPToken() (*VPPToken, error) {
+	newVPPToken := &VPPToken{
+		ODataType: "#microsoft.graph.VppToken",
+	}
+	return newVPPToken, nil
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSlnRequestBuilder struct{ BaseRequestBuilder }
 
-// Sln action undocumented
+// Sln action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Sln(reqObj *WorkbookFunctionsSlnRequestParameter) *WorkbookFunctionsSlnRequestBuilder {
 	bb := &WorkbookFunctionsSlnRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Sln"

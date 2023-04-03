@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsNegBinom_DistRequestBuilder struct{ BaseRequestBuilder }
 
-// NegBinom_Dist action undocumented
+// NegBinom_Dist action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) NegBinom_Dist(reqObj *WorkbookFunctionsNegBinom_DistRequestParameter) *WorkbookFunctionsNegBinom_DistRequestBuilder {
 	bb := &WorkbookFunctionsNegBinom_DistRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/NegBinom_Dist"

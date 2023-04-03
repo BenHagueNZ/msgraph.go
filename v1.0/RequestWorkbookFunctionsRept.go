@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsReptRequestBuilder struct{ BaseRequestBuilder }
 
-// Rept action undocumented
+// Rept action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Rept(reqObj *WorkbookFunctionsReptRequestParameter) *WorkbookFunctionsReptRequestBuilder {
 	bb := &WorkbookFunctionsReptRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Rept"

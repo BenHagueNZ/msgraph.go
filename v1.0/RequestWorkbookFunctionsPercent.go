@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsPercentRank_ExcRequestBuilder struct{ BaseRequestBuilder }
 
-// PercentRank_Exc action undocumented
+// PercentRank_Exc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) PercentRank_Exc(reqObj *WorkbookFunctionsPercentRank_ExcRequestParameter) *WorkbookFunctionsPercentRank_ExcRequestBuilder {
 	bb := &WorkbookFunctionsPercentRank_ExcRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/PercentRank_Exc"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsPercentRank_ExcRequest) Post(ctx context.Context) (res
 
 type WorkbookFunctionsPercentRank_IncRequestBuilder struct{ BaseRequestBuilder }
 
-// PercentRank_Inc action undocumented
+// PercentRank_Inc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) PercentRank_Inc(reqObj *WorkbookFunctionsPercentRank_IncRequestParameter) *WorkbookFunctionsPercentRank_IncRequestBuilder {
 	bb := &WorkbookFunctionsPercentRank_IncRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/PercentRank_Inc"

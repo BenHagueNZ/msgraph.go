@@ -8,14 +8,25 @@ import "time"
 type Approval struct {
 	// Entity is the base model of Approval
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Stages undocumented
 	Stages []ApprovalStage `json:"stages,omitempty"`
+}
+
+func NewApproval() (*Approval, error) {
+	newApproval := &Approval{
+		ODataType: "#microsoft.graph.Approval",
+	}
+	return newApproval, nil
 }
 
 // ApprovalSettings undocumented
 type ApprovalSettings struct {
 	// Object is the base model of ApprovalSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ApprovalMode undocumented
 	ApprovalMode *string `json:"approvalMode,omitempty"`
 	// ApprovalStages undocumented
@@ -28,10 +39,19 @@ type ApprovalSettings struct {
 	IsRequestorJustificationRequired *bool `json:"isRequestorJustificationRequired,omitempty"`
 }
 
+func NewApprovalSettings() (*ApprovalSettings, error) {
+	newApprovalSettings := &ApprovalSettings{
+		ODataType: "#microsoft.graph.ApprovalSettings",
+	}
+	return newApprovalSettings, nil
+}
+
 // ApprovalStage undocumented
 type ApprovalStage struct {
 	// Entity is the base model of ApprovalStage
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AssignedToMe undocumented
 	AssignedToMe *bool `json:"assignedToMe,omitempty"`
 	// DisplayName undocumented
@@ -46,4 +66,11 @@ type ApprovalStage struct {
 	ReviewResult *string `json:"reviewResult,omitempty"`
 	// Status undocumented
 	Status *string `json:"status,omitempty"`
+}
+
+func NewApprovalStage() (*ApprovalStage, error) {
+	newApprovalStage := &ApprovalStage{
+		ODataType: "#microsoft.graph.ApprovalStage",
+	}
+	return newApprovalStage, nil
 }

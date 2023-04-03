@@ -6,4 +6,13 @@ package msgraph
 type Root struct {
 	// Object is the base model of Root
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewRoot() (*Root, error) {
+	newRoot := &Root{
+		ODataType: "#microsoft.graph.Root",
+	}
+	return newRoot, nil
 }

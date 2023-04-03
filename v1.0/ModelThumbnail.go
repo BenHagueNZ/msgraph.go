@@ -6,6 +6,8 @@ package msgraph
 type Thumbnail struct {
 	// Object is the base model of Thumbnail
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Content undocumented
 	Content *Stream `json:"content,omitempty"`
 	// Height undocumented
@@ -18,16 +20,34 @@ type Thumbnail struct {
 	Width *int `json:"width,omitempty"`
 }
 
+func NewThumbnail() (*Thumbnail, error) {
+	newThumbnail := &Thumbnail{
+		ODataType: "#microsoft.graph.Thumbnail",
+	}
+	return newThumbnail, nil
+}
+
 // ThumbnailColumn undocumented
 type ThumbnailColumn struct {
 	// Object is the base model of ThumbnailColumn
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewThumbnailColumn() (*ThumbnailColumn, error) {
+	newThumbnailColumn := &ThumbnailColumn{
+		ODataType: "#microsoft.graph.ThumbnailColumn",
+	}
+	return newThumbnailColumn, nil
 }
 
 // ThumbnailSet undocumented
 type ThumbnailSet struct {
 	// Entity is the base model of ThumbnailSet
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Large undocumented
 	Large *Thumbnail `json:"large,omitempty"`
 	// Medium undocumented
@@ -36,4 +56,11 @@ type ThumbnailSet struct {
 	Small *Thumbnail `json:"small,omitempty"`
 	// Source undocumented
 	Source *Thumbnail `json:"source,omitempty"`
+}
+
+func NewThumbnailSet() (*ThumbnailSet, error) {
+	newThumbnailSet := &ThumbnailSet{
+		ODataType: "#microsoft.graph.ThumbnailSet",
+	}
+	return newThumbnailSet, nil
 }

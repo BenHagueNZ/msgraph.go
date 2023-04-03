@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSkewRequestBuilder struct{ BaseRequestBuilder }
 
-// Skew action undocumented
+// Skew action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Skew(reqObj *WorkbookFunctionsSkewRequestParameter) *WorkbookFunctionsSkewRequestBuilder {
 	bb := &WorkbookFunctionsSkewRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Skew"

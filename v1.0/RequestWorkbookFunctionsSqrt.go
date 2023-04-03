@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSqrtRequestBuilder struct{ BaseRequestBuilder }
 
-// Sqrt action undocumented
+// Sqrt action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Sqrt(reqObj *WorkbookFunctionsSqrtRequestParameter) *WorkbookFunctionsSqrtRequestBuilder {
 	bb := &WorkbookFunctionsSqrtRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Sqrt"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsSqrtRequest) Post(ctx context.Context) (resObj *Workbo
 
 type WorkbookFunctionsSqrtPiRequestBuilder struct{ BaseRequestBuilder }
 
-// SqrtPi action undocumented
+// SqrtPi action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) SqrtPi(reqObj *WorkbookFunctionsSqrtPiRequestParameter) *WorkbookFunctionsSqrtPiRequestBuilder {
 	bb := &WorkbookFunctionsSqrtPiRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SqrtPi"

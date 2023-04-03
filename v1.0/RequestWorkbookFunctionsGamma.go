@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsGammaRequestBuilder struct{ BaseRequestBuilder }
 
-// Gamma action undocumented
+// Gamma action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Gamma(reqObj *WorkbookFunctionsGammaRequestParameter) *WorkbookFunctionsGammaRequestBuilder {
 	bb := &WorkbookFunctionsGammaRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Gamma"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsGammaRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsGammaLnRequestBuilder struct{ BaseRequestBuilder }
 
-// GammaLn action undocumented
+// GammaLn action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) GammaLn(reqObj *WorkbookFunctionsGammaLnRequestParameter) *WorkbookFunctionsGammaLnRequestBuilder {
 	bb := &WorkbookFunctionsGammaLnRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GammaLn"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsGammaLnRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsGammaLn_PreciseRequestBuilder struct{ BaseRequestBuilder }
 
-// GammaLn_Precise action undocumented
+// GammaLn_Precise action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) GammaLn_Precise(reqObj *WorkbookFunctionsGammaLn_PreciseRequestParameter) *WorkbookFunctionsGammaLn_PreciseRequestBuilder {
 	bb := &WorkbookFunctionsGammaLn_PreciseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GammaLn_Precise"

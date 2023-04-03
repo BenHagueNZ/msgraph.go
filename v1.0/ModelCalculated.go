@@ -6,10 +6,19 @@ package msgraph
 type CalculatedColumn struct {
 	// Object is the base model of CalculatedColumn
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Format undocumented
 	Format *string `json:"format,omitempty"`
 	// Formula undocumented
 	Formula *string `json:"formula,omitempty"`
 	// OutputType undocumented
 	OutputType *string `json:"outputType,omitempty"`
+}
+
+func NewCalculatedColumn() (*CalculatedColumn, error) {
+	newCalculatedColumn := &CalculatedColumn{
+		ODataType: "#microsoft.graph.CalculatedColumn",
+	}
+	return newCalculatedColumn, nil
 }

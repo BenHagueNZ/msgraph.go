@@ -402,7 +402,7 @@ func (r *TeamworkUserIdentityRequest) Delete(ctx context.Context) error {
 
 type TeamworkSendActivityNotificationToRecipientsRequestBuilder struct{ BaseRequestBuilder }
 
-// SendActivityNotificationToRecipients action undocumented
+// SendActivityNotificationToRecipients action undocumentedrav
 func (b *TeamworkRequestBuilder) SendActivityNotificationToRecipients(reqObj *TeamworkSendActivityNotificationToRecipientsRequestParameter) *TeamworkSendActivityNotificationToRecipientsRequestBuilder {
 	bb := &TeamworkSendActivityNotificationToRecipientsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SendActivityNotificationToRecipients"

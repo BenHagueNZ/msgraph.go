@@ -8,6 +8,8 @@ import "time"
 type AttendanceInterval struct {
 	// Object is the base model of AttendanceInterval
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DurationInSeconds undocumented
 	DurationInSeconds *int `json:"durationInSeconds,omitempty"`
 	// JoinDateTime undocumented
@@ -16,10 +18,19 @@ type AttendanceInterval struct {
 	LeaveDateTime *time.Time `json:"leaveDateTime,omitempty"`
 }
 
+func NewAttendanceInterval() (*AttendanceInterval, error) {
+	newAttendanceInterval := &AttendanceInterval{
+		ODataType: "#microsoft.graph.AttendanceInterval",
+	}
+	return newAttendanceInterval, nil
+}
+
 // AttendanceRecord undocumented
 type AttendanceRecord struct {
 	// Entity is the base model of AttendanceRecord
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AttendanceIntervals undocumented
 	AttendanceIntervals []AttendanceInterval `json:"attendanceIntervals,omitempty"`
 	// EmailAddress undocumented
@@ -30,4 +41,11 @@ type AttendanceRecord struct {
 	Role *string `json:"role,omitempty"`
 	// TotalAttendanceInSeconds undocumented
 	TotalAttendanceInSeconds *int `json:"totalAttendanceInSeconds,omitempty"`
+}
+
+func NewAttendanceRecord() (*AttendanceRecord, error) {
+	newAttendanceRecord := &AttendanceRecord{
+		ODataType: "#microsoft.graph.AttendanceRecord",
+	}
+	return newAttendanceRecord, nil
 }

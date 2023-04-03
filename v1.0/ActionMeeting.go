@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AttendanceRecords returns request builder for AttendanceRecord collection
+// AttendanceRecords returns request builder for AttendanceRecord collection rcn
 func (b *MeetingAttendanceReportRequestBuilder) AttendanceRecords() *MeetingAttendanceReportAttendanceRecordsCollectionRequestBuilder {
 	bb := &MeetingAttendanceReportAttendanceRecordsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/attendanceRecords"
@@ -112,4 +112,11 @@ func (r *MeetingAttendanceReportAttendanceRecordsCollectionRequest) Get(ctx cont
 func (r *MeetingAttendanceReportAttendanceRecordsCollectionRequest) Add(ctx context.Context, reqObj *AttendanceRecord) (resObj *AttendanceRecord, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// MeetingAttendanceReport is navigation property rn
+func (b *MeetingAttendanceReportRequestBuilder) MeetingAttendanceReport() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsLookupRequestBuilder struct{ BaseRequestBuilder }
 
-// Lookup action undocumented
+// Lookup action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Lookup(reqObj *WorkbookFunctionsLookupRequestParameter) *WorkbookFunctionsLookupRequestBuilder {
 	bb := &WorkbookFunctionsLookupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Lookup"

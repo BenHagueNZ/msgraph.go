@@ -39,7 +39,7 @@ func (r *SubscriptionRequest) Delete(ctx context.Context) error {
 
 type SubscriptionReauthorizeRequestBuilder struct{ BaseRequestBuilder }
 
-// Reauthorize action undocumented
+// Reauthorize action undocumentedrav
 func (b *SubscriptionRequestBuilder) Reauthorize(reqObj *SubscriptionReauthorizeRequestParameter) *SubscriptionReauthorizeRequestBuilder {
 	bb := &SubscriptionReauthorizeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Reauthorize"

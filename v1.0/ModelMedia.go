@@ -6,120 +6,230 @@ package msgraph
 type MediaConfig struct {
 	// Object is the base model of MediaConfig
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewMediaConfig() (*MediaConfig, error) {
+	newMediaConfig := &MediaConfig{
+		ODataType: "#microsoft.graph.MediaConfig",
+	}
+	return newMediaConfig, nil
 }
 
 // MediaContentRatingAustralia undocumented
 type MediaContentRatingAustralia struct {
 	// Object is the base model of MediaContentRatingAustralia
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// MovieRating undocumented
 	MovieRating *RatingAustraliaMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
 	TvRating *RatingAustraliaTelevisionType `json:"tvRating,omitempty"`
 }
 
+func NewMediaContentRatingAustralia() (*MediaContentRatingAustralia, error) {
+	newMediaContentRatingAustralia := &MediaContentRatingAustralia{
+		ODataType: "#microsoft.graph.MediaContentRatingAustralia",
+	}
+	return newMediaContentRatingAustralia, nil
+}
+
 // MediaContentRatingCanada undocumented
 type MediaContentRatingCanada struct {
 	// Object is the base model of MediaContentRatingCanada
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// MovieRating undocumented
 	MovieRating *RatingCanadaMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
 	TvRating *RatingCanadaTelevisionType `json:"tvRating,omitempty"`
 }
 
+func NewMediaContentRatingCanada() (*MediaContentRatingCanada, error) {
+	newMediaContentRatingCanada := &MediaContentRatingCanada{
+		ODataType: "#microsoft.graph.MediaContentRatingCanada",
+	}
+	return newMediaContentRatingCanada, nil
+}
+
 // MediaContentRatingFrance undocumented
 type MediaContentRatingFrance struct {
 	// Object is the base model of MediaContentRatingFrance
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// MovieRating undocumented
 	MovieRating *RatingFranceMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
 	TvRating *RatingFranceTelevisionType `json:"tvRating,omitempty"`
 }
 
+func NewMediaContentRatingFrance() (*MediaContentRatingFrance, error) {
+	newMediaContentRatingFrance := &MediaContentRatingFrance{
+		ODataType: "#microsoft.graph.MediaContentRatingFrance",
+	}
+	return newMediaContentRatingFrance, nil
+}
+
 // MediaContentRatingGermany undocumented
 type MediaContentRatingGermany struct {
 	// Object is the base model of MediaContentRatingGermany
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// MovieRating undocumented
 	MovieRating *RatingGermanyMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
 	TvRating *RatingGermanyTelevisionType `json:"tvRating,omitempty"`
 }
 
+func NewMediaContentRatingGermany() (*MediaContentRatingGermany, error) {
+	newMediaContentRatingGermany := &MediaContentRatingGermany{
+		ODataType: "#microsoft.graph.MediaContentRatingGermany",
+	}
+	return newMediaContentRatingGermany, nil
+}
+
 // MediaContentRatingIreland undocumented
 type MediaContentRatingIreland struct {
 	// Object is the base model of MediaContentRatingIreland
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// MovieRating undocumented
 	MovieRating *RatingIrelandMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
 	TvRating *RatingIrelandTelevisionType `json:"tvRating,omitempty"`
 }
 
+func NewMediaContentRatingIreland() (*MediaContentRatingIreland, error) {
+	newMediaContentRatingIreland := &MediaContentRatingIreland{
+		ODataType: "#microsoft.graph.MediaContentRatingIreland",
+	}
+	return newMediaContentRatingIreland, nil
+}
+
 // MediaContentRatingJapan undocumented
 type MediaContentRatingJapan struct {
 	// Object is the base model of MediaContentRatingJapan
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// MovieRating undocumented
 	MovieRating *RatingJapanMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
 	TvRating *RatingJapanTelevisionType `json:"tvRating,omitempty"`
 }
 
+func NewMediaContentRatingJapan() (*MediaContentRatingJapan, error) {
+	newMediaContentRatingJapan := &MediaContentRatingJapan{
+		ODataType: "#microsoft.graph.MediaContentRatingJapan",
+	}
+	return newMediaContentRatingJapan, nil
+}
+
 // MediaContentRatingNewZealand undocumented
 type MediaContentRatingNewZealand struct {
 	// Object is the base model of MediaContentRatingNewZealand
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// MovieRating undocumented
 	MovieRating *RatingNewZealandMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
 	TvRating *RatingNewZealandTelevisionType `json:"tvRating,omitempty"`
 }
 
+func NewMediaContentRatingNewZealand() (*MediaContentRatingNewZealand, error) {
+	newMediaContentRatingNewZealand := &MediaContentRatingNewZealand{
+		ODataType: "#microsoft.graph.MediaContentRatingNewZealand",
+	}
+	return newMediaContentRatingNewZealand, nil
+}
+
 // MediaContentRatingUnitedKingdom undocumented
 type MediaContentRatingUnitedKingdom struct {
 	// Object is the base model of MediaContentRatingUnitedKingdom
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// MovieRating undocumented
 	MovieRating *RatingUnitedKingdomMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
 	TvRating *RatingUnitedKingdomTelevisionType `json:"tvRating,omitempty"`
 }
 
+func NewMediaContentRatingUnitedKingdom() (*MediaContentRatingUnitedKingdom, error) {
+	newMediaContentRatingUnitedKingdom := &MediaContentRatingUnitedKingdom{
+		ODataType: "#microsoft.graph.MediaContentRatingUnitedKingdom",
+	}
+	return newMediaContentRatingUnitedKingdom, nil
+}
+
 // MediaContentRatingUnitedStates undocumented
 type MediaContentRatingUnitedStates struct {
 	// Object is the base model of MediaContentRatingUnitedStates
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// MovieRating undocumented
 	MovieRating *RatingUnitedStatesMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
 	TvRating *RatingUnitedStatesTelevisionType `json:"tvRating,omitempty"`
 }
 
+func NewMediaContentRatingUnitedStates() (*MediaContentRatingUnitedStates, error) {
+	newMediaContentRatingUnitedStates := &MediaContentRatingUnitedStates{
+		ODataType: "#microsoft.graph.MediaContentRatingUnitedStates",
+	}
+	return newMediaContentRatingUnitedStates, nil
+}
+
 // MediaInfo undocumented
 type MediaInfo struct {
 	// Object is the base model of MediaInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ResourceID undocumented
 	ResourceID *string `json:"resourceId,omitempty"`
 	// URI undocumented
 	URI *string `json:"uri,omitempty"`
 }
 
+func NewMediaInfo() (*MediaInfo, error) {
+	newMediaInfo := &MediaInfo{
+		ODataType: "#microsoft.graph.MediaInfo",
+	}
+	return newMediaInfo, nil
+}
+
 // MediaPrompt undocumented
 type MediaPrompt struct {
 	// Prompt is the base model of MediaPrompt
 	Prompt
+
+	ODataType string `json:"@odata.type"`
 	// MediaInfo undocumented
 	MediaInfo *MediaInfo `json:"mediaInfo,omitempty"`
+}
+
+func NewMediaPrompt() (*MediaPrompt, error) {
+	newMediaPrompt := &MediaPrompt{
+		ODataType: "#microsoft.graph.MediaPrompt",
+	}
+	return newMediaPrompt, nil
 }
 
 // MediaStream undocumented
 type MediaStream struct {
 	// Object is the base model of MediaStream
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Direction undocumented
 	Direction *MediaDirection `json:"direction,omitempty"`
 	// Label undocumented
@@ -130,4 +240,11 @@ type MediaStream struct {
 	ServerMuted *bool `json:"serverMuted,omitempty"`
 	// SourceID undocumented
 	SourceID *string `json:"sourceId,omitempty"`
+}
+
+func NewMediaStream() (*MediaStream, error) {
+	newMediaStream := &MediaStream{
+		ODataType: "#microsoft.graph.MediaStream",
+	}
+	return newMediaStream, nil
 }

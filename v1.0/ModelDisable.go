@@ -6,4 +6,13 @@ package msgraph
 type DisableAndDeleteUserApplyAction struct {
 	// AccessReviewApplyAction is the base model of DisableAndDeleteUserApplyAction
 	AccessReviewApplyAction
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewDisableAndDeleteUserApplyAction() (*DisableAndDeleteUserApplyAction, error) {
+	newDisableAndDeleteUserApplyAction := &DisableAndDeleteUserApplyAction{
+		ODataType: "#microsoft.graph.DisableAndDeleteUserApplyAction",
+	}
+	return newDisableAndDeleteUserApplyAction, nil
 }

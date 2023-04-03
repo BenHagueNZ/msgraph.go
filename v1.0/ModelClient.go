@@ -6,6 +6,15 @@ package msgraph
 type ClientCertificateAuthentication struct {
 	// APIAuthenticationConfigurationBase is the base model of ClientCertificateAuthentication
 	APIAuthenticationConfigurationBase
+
+	ODataType string `json:"@odata.type"`
 	// CertificateList undocumented
 	CertificateList []Pkcs12CertificateInformation `json:"certificateList,omitempty"`
+}
+
+func NewClientCertificateAuthentication() (*ClientCertificateAuthentication, error) {
+	newClientCertificateAuthentication := &ClientCertificateAuthentication{
+		ODataType: "#microsoft.graph.ClientCertificateAuthentication",
+	}
+	return newClientCertificateAuthentication, nil
 }

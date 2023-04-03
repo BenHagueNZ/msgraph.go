@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsAcothRequestBuilder struct{ BaseRequestBuilder }
 
-// Acoth action undocumented
+// Acoth action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Acoth(reqObj *WorkbookFunctionsAcothRequestParameter) *WorkbookFunctionsAcothRequestBuilder {
 	bb := &WorkbookFunctionsAcothRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Acoth"

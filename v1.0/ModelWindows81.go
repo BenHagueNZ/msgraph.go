@@ -6,6 +6,8 @@ package msgraph
 type Windows81CompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of Windows81CompliancePolicy
 	DeviceCompliancePolicy
+
+	ODataType string `json:"@odata.type"`
 	// OsMaximumVersion undocumented
 	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
 	// OsMinimumVersion undocumented
@@ -30,10 +32,19 @@ type Windows81CompliancePolicy struct {
 	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
 }
 
+func NewWindows81CompliancePolicy() (*Windows81CompliancePolicy, error) {
+	newWindows81CompliancePolicy := &Windows81CompliancePolicy{
+		ODataType: "#microsoft.graph.Windows81CompliancePolicy",
+	}
+	return newWindows81CompliancePolicy, nil
+}
+
 // Windows81GeneralConfiguration undocumented
 type Windows81GeneralConfiguration struct {
 	// DeviceConfiguration is the base model of Windows81GeneralConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// AccountsBlockAddingNonMicrosoftAccountEmail undocumented
 	AccountsBlockAddingNonMicrosoftAccountEmail *bool `json:"accountsBlockAddingNonMicrosoftAccountEmail,omitempty"`
 	// ApplyOnlyToWindows81 undocumented
@@ -100,4 +111,11 @@ type Windows81GeneralConfiguration struct {
 	UserAccountControlSettings *WindowsUserAccountControlSettings `json:"userAccountControlSettings,omitempty"`
 	// WorkFoldersURL undocumented
 	WorkFoldersURL *string `json:"workFoldersUrl,omitempty"`
+}
+
+func NewWindows81GeneralConfiguration() (*Windows81GeneralConfiguration, error) {
+	newWindows81GeneralConfiguration := &Windows81GeneralConfiguration{
+		ODataType: "#microsoft.graph.Windows81GeneralConfiguration",
+	}
+	return newWindows81GeneralConfiguration, nil
 }

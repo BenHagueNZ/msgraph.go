@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// TeamsApps returns request builder for TeamsApp collection
+// TeamsApps returns request builder for TeamsApp collection rcn
 func (b *AppCatalogsRequestBuilder) TeamsApps() *AppCatalogsTeamsAppsCollectionRequestBuilder {
 	bb := &AppCatalogsTeamsAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/teamsApps"
@@ -114,7 +114,7 @@ func (r *AppCatalogsTeamsAppsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// AppConsentRequests returns request builder for AppConsentRequestObject collection
+// AppConsentRequests returns request builder for AppConsentRequestObject collection rcn
 func (b *AppConsentApprovalRouteRequestBuilder) AppConsentRequests() *AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder {
 	bb := &AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appConsentRequests"
@@ -217,7 +217,7 @@ func (r *AppConsentApprovalRouteAppConsentRequestsCollectionRequest) Add(ctx con
 	return
 }
 
-// UserConsentRequests returns request builder for UserConsentRequestObject collection
+// UserConsentRequests returns request builder for UserConsentRequestObject collection rcn
 func (b *AppConsentRequestObjectRequestBuilder) UserConsentRequests() *AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder {
 	bb := &AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/userConsentRequests"
@@ -320,7 +320,7 @@ func (r *AppConsentRequestObjectUserConsentRequestsCollectionRequest) Add(ctx co
 	return
 }
 
-// AppliesTo returns request builder for DirectoryObject collection
+// AppliesTo returns request builder for DirectoryObject collection rcn
 func (b *AppManagementPolicyRequestBuilder) AppliesTo() *AppManagementPolicyAppliesToCollectionRequestBuilder {
 	bb := &AppManagementPolicyAppliesToCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appliesTo"
@@ -421,4 +421,135 @@ func (r *AppManagementPolicyAppliesToCollectionRequest) Get(ctx context.Context)
 func (r *AppManagementPolicyAppliesToCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// AppCatalogs is navigation property rn
+func (b *AppCatalogsRequestBuilder) AppCatalogs() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// AppConsentApprovalRoute is navigation property rn
+func (b *AppConsentApprovalRouteRequestBuilder) AppConsentApprovalRoute() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// AppConsentRequestObject is navigation property rn
+func (b *AppConsentRequestObjectRequestBuilder) AppConsentRequestObject() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// AppRoleAssignment returns request builder for DirectoryObject collection rcn
+func (b *AppRoleAssignmentRequestBuilder) AppRoleAssignment() *AppRoleAssignmentAppRoleAssignmentCollectionRequestBuilder {
+	bb := &AppRoleAssignmentAppRoleAssignmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DirectoryObject"
+	return bb
+}
+
+// AppRoleAssignmentAppRoleAssignmentCollectionRequestBuilder is request builder for DirectoryObject collection
+type AppRoleAssignmentAppRoleAssignmentCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DirectoryObject collection
+func (b *AppRoleAssignmentAppRoleAssignmentCollectionRequestBuilder) Request() *AppRoleAssignmentAppRoleAssignmentCollectionRequest {
+	return &AppRoleAssignmentAppRoleAssignmentCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DirectoryObject item
+func (b *AppRoleAssignmentAppRoleAssignmentCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
+	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// AppRoleAssignmentAppRoleAssignmentCollectionRequest is request for DirectoryObject collection
+type AppRoleAssignmentAppRoleAssignmentCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DirectoryObject collection
+func (r *AppRoleAssignmentAppRoleAssignmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DirectoryObject
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DirectoryObject
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DirectoryObject collection, max N pages
+func (r *AppRoleAssignmentAppRoleAssignmentCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DirectoryObject collection
+func (r *AppRoleAssignmentAppRoleAssignmentCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DirectoryObject collection
+func (r *AppRoleAssignmentAppRoleAssignmentCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// AppScope is navigation property rn
+func (b *AppScopeRequestBuilder) AppScope() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

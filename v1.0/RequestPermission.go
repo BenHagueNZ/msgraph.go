@@ -145,7 +145,7 @@ func (r *PermissionScopeRequest) Delete(ctx context.Context) error {
 
 type PermissionGrantRequestBuilder struct{ BaseRequestBuilder }
 
-// Grant action undocumented
+// Grant action undocumentedrac
 func (b *PermissionRequestBuilder) Grant(reqObj *PermissionGrantRequestParameter) *PermissionGrantRequestBuilder {
 	bb := &PermissionGrantRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Grant"

@@ -8,6 +8,8 @@ import "time"
 type Application struct {
 	// DirectoryObject is the base model of Application
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// AddIns undocumented
 	AddIns []AddIn `json:"addIns,omitempty"`
 	// API undocumented
@@ -96,26 +98,53 @@ type Application struct {
 	TokenLifetimePolicies []TokenLifetimePolicy `json:"tokenLifetimePolicies,omitempty"`
 }
 
+func NewApplication() (*Application, error) {
+	newApplication := &Application{
+		ODataType: "#microsoft.graph.Application",
+	}
+	return newApplication, nil
+}
+
 // ApplicationEnforcedRestrictionsSessionControl undocumented
 type ApplicationEnforcedRestrictionsSessionControl struct {
 	// ConditionalAccessSessionControl is the base model of ApplicationEnforcedRestrictionsSessionControl
 	ConditionalAccessSessionControl
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewApplicationEnforcedRestrictionsSessionControl() (*ApplicationEnforcedRestrictionsSessionControl, error) {
+	newApplicationEnforcedRestrictionsSessionControl := &ApplicationEnforcedRestrictionsSessionControl{
+		ODataType: "#microsoft.graph.ApplicationEnforcedRestrictionsSessionControl",
+	}
+	return newApplicationEnforcedRestrictionsSessionControl, nil
 }
 
 // ApplicationServicePrincipal undocumented
 type ApplicationServicePrincipal struct {
 	// Object is the base model of ApplicationServicePrincipal
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Application undocumented
 	Application *Application `json:"application,omitempty"`
 	// ServicePrincipal undocumented
 	ServicePrincipal *ServicePrincipal `json:"servicePrincipal,omitempty"`
 }
 
+func NewApplicationServicePrincipal() (*ApplicationServicePrincipal, error) {
+	newApplicationServicePrincipal := &ApplicationServicePrincipal{
+		ODataType: "#microsoft.graph.ApplicationServicePrincipal",
+	}
+	return newApplicationServicePrincipal, nil
+}
+
 // ApplicationTemplate undocumented
 type ApplicationTemplate struct {
 	// Entity is the base model of ApplicationTemplate
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Categories undocumented
 	Categories []string `json:"categories,omitempty"`
 	// Description undocumented
@@ -132,4 +161,11 @@ type ApplicationTemplate struct {
 	SupportedProvisioningTypes []string `json:"supportedProvisioningTypes,omitempty"`
 	// SupportedSingleSignOnModes undocumented
 	SupportedSingleSignOnModes []string `json:"supportedSingleSignOnModes,omitempty"`
+}
+
+func NewApplicationTemplate() (*ApplicationTemplate, error) {
+	newApplicationTemplate := &ApplicationTemplate{
+		ODataType: "#microsoft.graph.ApplicationTemplate",
+	}
+	return newApplicationTemplate, nil
 }

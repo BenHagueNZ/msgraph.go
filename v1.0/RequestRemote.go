@@ -105,7 +105,7 @@ func (r *RemoteLockActionResultRequest) Delete(ctx context.Context) error {
 
 type RemoteAssistancePartnerBeginOnboardingRequestBuilder struct{ BaseRequestBuilder }
 
-// BeginOnboarding action undocumented
+// BeginOnboarding action undocumentedrav
 func (b *RemoteAssistancePartnerRequestBuilder) BeginOnboarding(reqObj *RemoteAssistancePartnerBeginOnboardingRequestParameter) *RemoteAssistancePartnerBeginOnboardingRequestBuilder {
 	bb := &RemoteAssistancePartnerBeginOnboardingRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/BeginOnboarding"
@@ -127,7 +127,7 @@ func (r *RemoteAssistancePartnerBeginOnboardingRequest) Post(ctx context.Context
 
 type RemoteAssistancePartnerDisconnectRequestBuilder struct{ BaseRequestBuilder }
 
-// Disconnect action undocumented
+// Disconnect action undocumentedrav
 func (b *RemoteAssistancePartnerRequestBuilder) Disconnect(reqObj *RemoteAssistancePartnerDisconnectRequestParameter) *RemoteAssistancePartnerDisconnectRequestBuilder {
 	bb := &RemoteAssistancePartnerDisconnectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Disconnect"

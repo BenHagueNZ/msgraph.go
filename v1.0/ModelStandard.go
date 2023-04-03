@@ -6,6 +6,8 @@ package msgraph
 type StandardTimeZoneOffset struct {
 	// Object is the base model of StandardTimeZoneOffset
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DayOccurrence undocumented
 	DayOccurrence *int `json:"dayOccurrence,omitempty"`
 	// DayOfWeek undocumented
@@ -16,4 +18,11 @@ type StandardTimeZoneOffset struct {
 	Time *TimeOfDay `json:"time,omitempty"`
 	// Year undocumented
 	Year *int `json:"year,omitempty"`
+}
+
+func NewStandardTimeZoneOffset() (*StandardTimeZoneOffset, error) {
+	newStandardTimeZoneOffset := &StandardTimeZoneOffset{
+		ODataType: "#microsoft.graph.StandardTimeZoneOffset",
+	}
+	return newStandardTimeZoneOffset, nil
 }

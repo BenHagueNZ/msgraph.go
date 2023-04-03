@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Stages returns request builder for ApprovalStage collection
+// Stages returns request builder for ApprovalStage collection rcn
 func (b *ApprovalRequestBuilder) Stages() *ApprovalStagesCollectionRequestBuilder {
 	bb := &ApprovalStagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/stages"
@@ -112,4 +112,18 @@ func (r *ApprovalStagesCollectionRequest) Get(ctx context.Context) ([]ApprovalSt
 func (r *ApprovalStagesCollectionRequest) Add(ctx context.Context, reqObj *ApprovalStage) (resObj *ApprovalStage, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Approval is navigation property rn
+func (b *ApprovalRequestBuilder) Approval() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ApprovalStage is navigation property rn
+func (b *ApprovalStageRequestBuilder) ApprovalStage() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDays360RequestBuilder struct{ BaseRequestBuilder }
 
-// Days360 action undocumented
+// Days360 action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Days360(reqObj *WorkbookFunctionsDays360RequestParameter) *WorkbookFunctionsDays360RequestBuilder {
 	bb := &WorkbookFunctionsDays360RequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Days360"

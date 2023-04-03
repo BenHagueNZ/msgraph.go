@@ -6,8 +6,17 @@ package msgraph
 type BasicAuthentication struct {
 	// APIAuthenticationConfigurationBase is the base model of BasicAuthentication
 	APIAuthenticationConfigurationBase
+
+	ODataType string `json:"@odata.type"`
 	// Password undocumented
 	Password *string `json:"password,omitempty"`
 	// Username undocumented
 	Username *string `json:"username,omitempty"`
+}
+
+func NewBasicAuthentication() (*BasicAuthentication, error) {
+	newBasicAuthentication := &BasicAuthentication{
+		ODataType: "#microsoft.graph.BasicAuthentication",
+	}
+	return newBasicAuthentication, nil
 }

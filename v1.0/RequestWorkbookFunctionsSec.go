@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSecRequestBuilder struct{ BaseRequestBuilder }
 
-// Sec action undocumented
+// Sec action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Sec(reqObj *WorkbookFunctionsSecRequestParameter) *WorkbookFunctionsSecRequestBuilder {
 	bb := &WorkbookFunctionsSecRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Sec"

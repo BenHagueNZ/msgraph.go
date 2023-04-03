@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsCodeRequestBuilder struct{ BaseRequestBuilder }
 
-// Code action undocumented
+// Code action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Code(reqObj *WorkbookFunctionsCodeRequestParameter) *WorkbookFunctionsCodeRequestBuilder {
 	bb := &WorkbookFunctionsCodeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Code"

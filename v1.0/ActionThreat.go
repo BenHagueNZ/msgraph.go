@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Results returns request builder for ThreatAssessmentResult collection
+// Results returns request builder for ThreatAssessmentResult collection rcn
 func (b *ThreatAssessmentRequestObjectRequestBuilder) Results() *ThreatAssessmentRequestObjectResultsCollectionRequestBuilder {
 	bb := &ThreatAssessmentRequestObjectResultsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/results"
@@ -112,4 +112,11 @@ func (r *ThreatAssessmentRequestObjectResultsCollectionRequest) Get(ctx context.
 func (r *ThreatAssessmentRequestObjectResultsCollectionRequest) Add(ctx context.Context, reqObj *ThreatAssessmentResult) (resObj *ThreatAssessmentResult, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// ThreatAssessmentResult is navigation property rn
+func (b *ThreatAssessmentResultRequestBuilder) ThreatAssessmentResult() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

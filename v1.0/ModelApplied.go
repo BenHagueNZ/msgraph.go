@@ -6,6 +6,8 @@ package msgraph
 type AppliedConditionalAccessPolicy struct {
 	// Object is the base model of AppliedConditionalAccessPolicy
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// EnforcedGrantControls undocumented
@@ -16,4 +18,11 @@ type AppliedConditionalAccessPolicy struct {
 	ID *string `json:"id,omitempty"`
 	// Result undocumented
 	Result *AppliedConditionalAccessPolicyResult `json:"result,omitempty"`
+}
+
+func NewAppliedConditionalAccessPolicy() (*AppliedConditionalAccessPolicy, error) {
+	newAppliedConditionalAccessPolicy := &AppliedConditionalAccessPolicy{
+		ODataType: "#microsoft.graph.AppliedConditionalAccessPolicy",
+	}
+	return newAppliedConditionalAccessPolicy, nil
 }

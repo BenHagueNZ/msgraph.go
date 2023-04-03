@@ -6,6 +6,8 @@ package msgraph
 type ControlScore struct {
 	// Object is the base model of ControlScore
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ControlCategory undocumented
 	ControlCategory *string `json:"controlCategory,omitempty"`
 	// ControlName undocumented
@@ -14,4 +16,11 @@ type ControlScore struct {
 	Description *string `json:"description,omitempty"`
 	// Score undocumented
 	Score *float64 `json:"score,omitempty"`
+}
+
+func NewControlScore() (*ControlScore, error) {
+	newControlScore := &ControlScore{
+		ODataType: "#microsoft.graph.ControlScore",
+	}
+	return newControlScore, nil
 }

@@ -6,6 +6,15 @@ package msgraph
 type RejectJoinResponse struct {
 	// ParticipantJoiningResponse is the base model of RejectJoinResponse
 	ParticipantJoiningResponse
+
+	ODataType string `json:"@odata.type"`
 	// Reason undocumented
 	Reason *RejectReason `json:"reason,omitempty"`
+}
+
+func NewRejectJoinResponse() (*RejectJoinResponse, error) {
+	newRejectJoinResponse := &RejectJoinResponse{
+		ODataType: "#microsoft.graph.RejectJoinResponse",
+	}
+	return newRejectJoinResponse, nil
 }

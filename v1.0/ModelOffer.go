@@ -8,6 +8,8 @@ import "time"
 type OfferShiftRequestObject struct {
 	// ScheduleChangeRequestObject is the base model of OfferShiftRequestObject
 	ScheduleChangeRequestObject
+
+	ODataType string `json:"@odata.type"`
 	// RecipientActionDateTime undocumented
 	RecipientActionDateTime *time.Time `json:"recipientActionDateTime,omitempty"`
 	// RecipientActionMessage undocumented
@@ -16,4 +18,11 @@ type OfferShiftRequestObject struct {
 	RecipientUserID *string `json:"recipientUserId,omitempty"`
 	// SenderShiftID undocumented
 	SenderShiftID *string `json:"senderShiftId,omitempty"`
+}
+
+func NewOfferShiftRequestObject() (*OfferShiftRequestObject, error) {
+	newOfferShiftRequestObject := &OfferShiftRequestObject{
+		ODataType: "#microsoft.graph.OfferShiftRequestObject",
+	}
+	return newOfferShiftRequestObject, nil
 }

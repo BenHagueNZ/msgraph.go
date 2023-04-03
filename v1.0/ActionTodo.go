@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Lists returns request builder for TodoTaskList collection
+// Lists returns request builder for TodoTaskList collection rcn
 func (b *TodoRequestBuilder) Lists() *TodoListsCollectionRequestBuilder {
 	bb := &TodoListsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/lists"
@@ -114,7 +114,7 @@ func (r *TodoListsCollectionRequest) Add(ctx context.Context, reqObj *TodoTaskLi
 	return
 }
 
-// AttachmentSessions returns request builder for AttachmentSession collection
+// AttachmentSessions returns request builder for AttachmentSession collection rcn
 func (b *TodoTaskRequestBuilder) AttachmentSessions() *TodoTaskAttachmentSessionsCollectionRequestBuilder {
 	bb := &TodoTaskAttachmentSessionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/attachmentSessions"
@@ -217,7 +217,7 @@ func (r *TodoTaskAttachmentSessionsCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// Attachments returns request builder for AttachmentBase collection
+// Attachments returns request builder for AttachmentBase collection rcn
 func (b *TodoTaskRequestBuilder) Attachments() *TodoTaskAttachmentsCollectionRequestBuilder {
 	bb := &TodoTaskAttachmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/attachments"
@@ -320,7 +320,7 @@ func (r *TodoTaskAttachmentsCollectionRequest) Add(ctx context.Context, reqObj *
 	return
 }
 
-// ChecklistItems returns request builder for ChecklistItem collection
+// ChecklistItems returns request builder for ChecklistItem collection rcn
 func (b *TodoTaskRequestBuilder) ChecklistItems() *TodoTaskChecklistItemsCollectionRequestBuilder {
 	bb := &TodoTaskChecklistItemsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/checklistItems"
@@ -423,7 +423,7 @@ func (r *TodoTaskChecklistItemsCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Extensions returns request builder for Extension collection
+// Extensions returns request builder for Extension collection rcn
 func (b *TodoTaskRequestBuilder) Extensions() *TodoTaskExtensionsCollectionRequestBuilder {
 	bb := &TodoTaskExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensions"
@@ -526,7 +526,7 @@ func (r *TodoTaskExtensionsCollectionRequest) Add(ctx context.Context, reqObj *E
 	return
 }
 
-// LinkedResources returns request builder for LinkedResource collection
+// LinkedResources returns request builder for LinkedResource collection rcn
 func (b *TodoTaskRequestBuilder) LinkedResources() *TodoTaskLinkedResourcesCollectionRequestBuilder {
 	bb := &TodoTaskLinkedResourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/linkedResources"
@@ -629,7 +629,7 @@ func (r *TodoTaskLinkedResourcesCollectionRequest) Add(ctx context.Context, reqO
 	return
 }
 
-// Extensions returns request builder for Extension collection
+// Extensions returns request builder for Extension collection rcn
 func (b *TodoTaskListRequestBuilder) Extensions() *TodoTaskListExtensionsCollectionRequestBuilder {
 	bb := &TodoTaskListExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensions"
@@ -732,7 +732,7 @@ func (r *TodoTaskListExtensionsCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Tasks returns request builder for TodoTask collection
+// Tasks returns request builder for TodoTask collection rcn
 func (b *TodoTaskListRequestBuilder) Tasks() *TodoTaskListTasksCollectionRequestBuilder {
 	bb := &TodoTaskListTasksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tasks"
@@ -833,4 +833,25 @@ func (r *TodoTaskListTasksCollectionRequest) Get(ctx context.Context) ([]TodoTas
 func (r *TodoTaskListTasksCollectionRequest) Add(ctx context.Context, reqObj *TodoTask) (resObj *TodoTask, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Todo is navigation property rn
+func (b *TodoRequestBuilder) Todo() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TodoTask is navigation property rn
+func (b *TodoTaskRequestBuilder) TodoTask() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TodoTaskList is navigation property rn
+func (b *TodoTaskListRequestBuilder) TodoTaskList() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

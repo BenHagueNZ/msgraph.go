@@ -8,14 +8,25 @@ import "time"
 type Todo struct {
 	// Entity is the base model of Todo
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Lists undocumented
 	Lists []TodoTaskList `json:"lists,omitempty"`
+}
+
+func NewTodo() (*Todo, error) {
+	newTodo := &Todo{
+		ODataType: "#microsoft.graph.Todo",
+	}
+	return newTodo, nil
 }
 
 // TodoTask undocumented
 type TodoTask struct {
 	// Entity is the base model of TodoTask
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Body undocumented
 	Body *ItemBody `json:"body,omitempty"`
 	// BodyLastModifiedDateTime undocumented
@@ -58,10 +69,19 @@ type TodoTask struct {
 	LinkedResources []LinkedResource `json:"linkedResources,omitempty"`
 }
 
+func NewTodoTask() (*TodoTask, error) {
+	newTodoTask := &TodoTask{
+		ODataType: "#microsoft.graph.TodoTask",
+	}
+	return newTodoTask, nil
+}
+
 // TodoTaskList undocumented
 type TodoTaskList struct {
 	// Entity is the base model of TodoTaskList
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// IsOwner undocumented
@@ -74,4 +94,11 @@ type TodoTaskList struct {
 	Extensions []Extension `json:"extensions,omitempty"`
 	// Tasks undocumented
 	Tasks []TodoTask `json:"tasks,omitempty"`
+}
+
+func NewTodoTaskList() (*TodoTaskList, error) {
+	newTodoTaskList := &TodoTaskList{
+		ODataType: "#microsoft.graph.TodoTaskList",
+	}
+	return newTodoTaskList, nil
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsLenbRequestBuilder struct{ BaseRequestBuilder }
 
-// Lenb action undocumented
+// Lenb action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Lenb(reqObj *WorkbookFunctionsLenbRequestParameter) *WorkbookFunctionsLenbRequestBuilder {
 	bb := &WorkbookFunctionsLenbRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Lenb"

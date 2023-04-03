@@ -6,6 +6,8 @@ package msgraph
 type SectionGroup struct {
 	// OnenoteEntityHierarchyModel is the base model of SectionGroup
 	OnenoteEntityHierarchyModel
+
+	ODataType string `json:"@odata.type"`
 	// SectionGroupsURL undocumented
 	SectionGroupsURL *string `json:"sectionGroupsUrl,omitempty"`
 	// SectionsURL undocumented
@@ -20,12 +22,28 @@ type SectionGroup struct {
 	Sections []OnenoteSection `json:"sections,omitempty"`
 }
 
+func NewSectionGroup() (*SectionGroup, error) {
+	newSectionGroup := &SectionGroup{
+		ODataType: "#microsoft.graph.SectionGroup",
+	}
+	return newSectionGroup, nil
+}
+
 // SectionLinks undocumented
 type SectionLinks struct {
 	// Object is the base model of SectionLinks
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// OneNoteClientURL undocumented
 	OneNoteClientURL *ExternalLink `json:"oneNoteClientUrl,omitempty"`
 	// OneNoteWebURL undocumented
 	OneNoteWebURL *ExternalLink `json:"oneNoteWebUrl,omitempty"`
+}
+
+func NewSectionLinks() (*SectionLinks, error) {
+	newSectionLinks := &SectionLinks{
+		ODataType: "#microsoft.graph.SectionLinks",
+	}
+	return newSectionLinks, nil
 }

@@ -138,7 +138,7 @@ func (r *DocumentSetVersionItemRequest) Delete(ctx context.Context) error {
 
 type DocumentSetVersionRestoreRequestBuilder struct{ BaseRequestBuilder }
 
-// Restore action undocumented
+// Restore action undocumentedrav
 func (b *DocumentSetVersionRequestBuilder) Restore(reqObj *DocumentSetVersionRestoreRequestParameter) *DocumentSetVersionRestoreRequestBuilder {
 	bb := &DocumentSetVersionRestoreRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Restore"

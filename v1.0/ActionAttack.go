@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// SimulationAutomations returns request builder for SimulationAutomation collection
+// SimulationAutomations returns request builder for SimulationAutomation collection rcn
 func (b *AttackSimulationRootRequestBuilder) SimulationAutomations() *AttackSimulationRootSimulationAutomationsCollectionRequestBuilder {
 	bb := &AttackSimulationRootSimulationAutomationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/simulationAutomations"
@@ -114,7 +114,7 @@ func (r *AttackSimulationRootSimulationAutomationsCollectionRequest) Add(ctx con
 	return
 }
 
-// Simulations returns request builder for Simulation collection
+// Simulations returns request builder for Simulation collection rcn
 func (b *AttackSimulationRootRequestBuilder) Simulations() *AttackSimulationRootSimulationsCollectionRequestBuilder {
 	bb := &AttackSimulationRootSimulationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/simulations"
@@ -215,4 +215,11 @@ func (r *AttackSimulationRootSimulationsCollectionRequest) Get(ctx context.Conte
 func (r *AttackSimulationRootSimulationsCollectionRequest) Add(ctx context.Context, reqObj *Simulation) (resObj *Simulation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// AttackSimulationRoot is navigation property rn
+func (b *AttackSimulationRootRequestBuilder) AttackSimulationRoot() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

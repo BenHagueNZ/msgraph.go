@@ -14,6 +14,15 @@ import (
 	"unicode"
 )
 
+func contains(s []string, e string) bool {
+	for _, a := range s {
+		if a == e {
+			return true
+		}
+	}
+	return false
+}
+
 type Const struct {
 	Name, Value, Type string
 }
@@ -135,6 +144,8 @@ func (g *Generator) Generate() error {
 		singletonMap := map[string]*Singleton{}
 		requestModelMap := map[string]bool{}
 		actionRequestBuilderMap := map[string][]string{}
+		navigations := map[string]bool{}
+		complete := map[string]bool{}
 
 		for _, x := range schema.Elems {
 			switch x.XMLName.Local {
@@ -335,6 +346,7 @@ func (g *Generator) Generate() error {
 				return err
 			}
 			g.X = x
+
 			err := tmpl.ExecuteTemplate(out, "model.go.tmpl", g)
 			if err != nil {
 				return err
@@ -462,10 +474,9 @@ func (g *Generator) Generate() error {
 		sort.Strings(keys)
 		for _, key := range keys {
 			x := entityTypeMap[key]
-			fmt.Println("b")
-			fmt.Println(x.Type)
-			actionRequestBuilderMap[strings.ToLower(x.Type)] = append(actionRequestBuilderMap[strings.ToLower(x.Type)], x.Sym)
-
+			if !contains(actionRequestBuilderMap[strings.ToLower(x.Type)], x.Sym) {
+				actionRequestBuilderMap[strings.ToLower(x.Type)] = append(actionRequestBuilderMap[strings.ToLower(x.Type)], x.Sym)
+			}
 			if len(x.Navigations) == 0 {
 				continue
 			}
@@ -476,9 +487,12 @@ func (g *Generator) Generate() error {
 			g.X = x
 			sort.Slice(x.Navigations, func(i, j int) bool { return x.Navigations[i].Name < x.Navigations[j].Name })
 			for _, y := range x.Navigations {
+				navigations[y.Type] = true
 				g.Y = y
 				if isCollectionType(y.Type) {
-					actionRequestBuilderMap[y.Type] = append(actionRequestBuilderMap[y.Type], x.Sym+y.Sym+"Collection")
+					if !contains(actionRequestBuilderMap[y.Type], x.Sym+y.Sym+"Collection") {
+						actionRequestBuilderMap[y.Type] = append(actionRequestBuilderMap[y.Type], x.Sym+y.Sym+"Collection")
+					}
 					err := tmpl.ExecuteTemplate(out, "request_collection_navigation.go.tmpl", g)
 					if err != nil {
 						return err
@@ -492,23 +506,71 @@ func (g *Generator) Generate() error {
 			}
 			out.Close()
 		}
-
+		for _, key := range keys {
+			x := entityTypeMap[key]
+			out, err = g.Create("Action", x.Sym)
+			if err != nil {
+				return err
+			}
+			if !navigations[x.Type] && !navigations["Collection("+x.Type+")"] && (x.Base != "") {
+				fmt.Println("a")
+				fmt.Println(x.Type)
+				fmt.Println(x.Base)
+				fmt.Println(x.Sym)
+				baseType := g.SymFromType(x.Base)
+				if strings.HasSuffix(baseType, "RequestObject") {
+					baseType = strings.TrimSuffix(baseType, "Object")
+				}
+				if !complete[x.Sym] {
+					if navigations["Collection("+x.Base+")"] {
+						g.X = x
+						y := entityTypeMap[baseType]
+						y.Sym = x.Sym
+						g.Y = y
+						complete[y.Sym] = true
+						fmt.Println("c")
+						fmt.Println(y.Sym)
+						if !contains(actionRequestBuilderMap[x.Type], x.Sym+"Collection") {
+							actionRequestBuilderMap[x.Type] = append(actionRequestBuilderMap[x.Type], x.Sym+"Collection")
+						}
+						err := tmpl.ExecuteTemplate(out, "request_collection_navigation.go.tmpl", g)
+						if err != nil {
+							return err
+						}
+					} else {
+						if navigations[x.Base] {
+							g.X = x
+							y := entityTypeMap[baseType]
+							y.Sym = x.Sym
+							g.Y = y
+							complete[y.Sym] = true
+							fmt.Println("b")
+							fmt.Println(y.Sym)
+							if !contains(actionRequestBuilderMap[strings.ToLower(x.Type)], x.Sym) {
+								actionRequestBuilderMap[strings.ToLower(x.Type)] = append(actionRequestBuilderMap[strings.ToLower(x.Type)], x.Sym)
+							}
+							err := tmpl.ExecuteTemplate(out, "request_navigation.go.tmpl", g)
+							if err != nil {
+								return err
+							}
+						}
+					}
+				}
+			}
+			out.Close()
+		}
 		keys = nil
 		for x := range actionTypeMap {
 			keys = append(keys, x)
 		}
 		sort.Strings(keys)
 		for _, a := range keys {
+
 			x := actionTypeMap[a]
 			if _, ok := reservedTypeTable[a]; ok {
 				continue
 			}
 			for _, y := range x {
-				fmt.Println("b")
-				fmt.Println(g.SymBaseType(a))
-				fmt.Println(y.Sym)
-				fmt.Println(actionRequestBuilderMap[a])
-				fmt.Println(a)
 				out, err = g.Create("Request", g.SymBaseType(a)+y.Sym)
 				if err != nil {
 					return err
@@ -516,6 +578,7 @@ func (g *Generator) Generate() error {
 				g.Y = y
 				if b, ok := actionRequestBuilderMap[strings.ToLower(a)]; ok {
 					g.X = b
+
 					if y.ReturnType == "" {
 						err = tmpl.ExecuteTemplate(out, "request_action_void.go.tmpl", g)
 					} else if isCollectionType(y.ReturnType) {

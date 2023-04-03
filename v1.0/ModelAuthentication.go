@@ -8,6 +8,8 @@ import "time"
 type Authentication struct {
 	// Entity is the base model of Authentication
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// EmailMethods undocumented
 	EmailMethods []EmailAuthenticationMethod `json:"emailMethods,omitempty"`
 	// Fido2Methods undocumented
@@ -30,10 +32,19 @@ type Authentication struct {
 	WindowsHelloForBusinessMethods []WindowsHelloForBusinessAuthenticationMethod `json:"windowsHelloForBusinessMethods,omitempty"`
 }
 
+func NewAuthentication() (*Authentication, error) {
+	newAuthentication := &Authentication{
+		ODataType: "#microsoft.graph.Authentication",
+	}
+	return newAuthentication, nil
+}
+
 // AuthenticationContextClassReference undocumented
 type AuthenticationContextClassReference struct {
 	// Entity is the base model of AuthenticationContextClassReference
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -42,10 +53,19 @@ type AuthenticationContextClassReference struct {
 	IsAvailable *bool `json:"isAvailable,omitempty"`
 }
 
+func NewAuthenticationContextClassReference() (*AuthenticationContextClassReference, error) {
+	newAuthenticationContextClassReference := &AuthenticationContextClassReference{
+		ODataType: "#microsoft.graph.AuthenticationContextClassReference",
+	}
+	return newAuthenticationContextClassReference, nil
+}
+
 // AuthenticationFlowsPolicy undocumented
 type AuthenticationFlowsPolicy struct {
 	// Entity is the base model of AuthenticationFlowsPolicy
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -54,24 +74,51 @@ type AuthenticationFlowsPolicy struct {
 	SelfServiceSignUp *SelfServiceSignUpAuthenticationFlowConfiguration `json:"selfServiceSignUp,omitempty"`
 }
 
+func NewAuthenticationFlowsPolicy() (*AuthenticationFlowsPolicy, error) {
+	newAuthenticationFlowsPolicy := &AuthenticationFlowsPolicy{
+		ODataType: "#microsoft.graph.AuthenticationFlowsPolicy",
+	}
+	return newAuthenticationFlowsPolicy, nil
+}
+
 // AuthenticationMethod undocumented
 type AuthenticationMethod struct {
 	// Entity is the base model of AuthenticationMethod
 	Entity
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewAuthenticationMethod() (*AuthenticationMethod, error) {
+	newAuthenticationMethod := &AuthenticationMethod{
+		ODataType: "#microsoft.graph.AuthenticationMethod",
+	}
+	return newAuthenticationMethod, nil
 }
 
 // AuthenticationMethodConfiguration undocumented
 type AuthenticationMethodConfiguration struct {
 	// Entity is the base model of AuthenticationMethodConfiguration
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// State undocumented
 	State *AuthenticationMethodState `json:"state,omitempty"`
+}
+
+func NewAuthenticationMethodConfiguration() (*AuthenticationMethodConfiguration, error) {
+	newAuthenticationMethodConfiguration := &AuthenticationMethodConfiguration{
+		ODataType: "#microsoft.graph.AuthenticationMethodConfiguration",
+	}
+	return newAuthenticationMethodConfiguration, nil
 }
 
 // AuthenticationMethodFeatureConfiguration undocumented
 type AuthenticationMethodFeatureConfiguration struct {
 	// Object is the base model of AuthenticationMethodFeatureConfiguration
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ExcludeTarget undocumented
 	ExcludeTarget *FeatureTarget `json:"excludeTarget,omitempty"`
 	// IncludeTarget undocumented
@@ -80,20 +127,38 @@ type AuthenticationMethodFeatureConfiguration struct {
 	State *AdvancedConfigState `json:"state,omitempty"`
 }
 
+func NewAuthenticationMethodFeatureConfiguration() (*AuthenticationMethodFeatureConfiguration, error) {
+	newAuthenticationMethodFeatureConfiguration := &AuthenticationMethodFeatureConfiguration{
+		ODataType: "#microsoft.graph.AuthenticationMethodFeatureConfiguration",
+	}
+	return newAuthenticationMethodFeatureConfiguration, nil
+}
+
 // AuthenticationMethodTarget undocumented
 type AuthenticationMethodTarget struct {
 	// Entity is the base model of AuthenticationMethodTarget
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// IsRegistrationRequired undocumented
 	IsRegistrationRequired *bool `json:"isRegistrationRequired,omitempty"`
 	// TargetType undocumented
 	TargetType *AuthenticationMethodTargetType `json:"targetType,omitempty"`
 }
 
+func NewAuthenticationMethodTarget() (*AuthenticationMethodTarget, error) {
+	newAuthenticationMethodTarget := &AuthenticationMethodTarget{
+		ODataType: "#microsoft.graph.AuthenticationMethodTarget",
+	}
+	return newAuthenticationMethodTarget, nil
+}
+
 // AuthenticationMethodsPolicy undocumented
 type AuthenticationMethodsPolicy struct {
 	// Entity is the base model of AuthenticationMethodsPolicy
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -110,10 +175,19 @@ type AuthenticationMethodsPolicy struct {
 	AuthenticationMethodConfigurations []AuthenticationMethodConfiguration `json:"authenticationMethodConfigurations,omitempty"`
 }
 
+func NewAuthenticationMethodsPolicy() (*AuthenticationMethodsPolicy, error) {
+	newAuthenticationMethodsPolicy := &AuthenticationMethodsPolicy{
+		ODataType: "#microsoft.graph.AuthenticationMethodsPolicy",
+	}
+	return newAuthenticationMethodsPolicy, nil
+}
+
 // AuthenticationMethodsRegistrationCampaign undocumented
 type AuthenticationMethodsRegistrationCampaign struct {
 	// Object is the base model of AuthenticationMethodsRegistrationCampaign
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ExcludeTargets undocumented
 	ExcludeTargets []ExcludeTarget `json:"excludeTargets,omitempty"`
 	// IncludeTargets undocumented
@@ -124,14 +198,30 @@ type AuthenticationMethodsRegistrationCampaign struct {
 	State *AdvancedConfigState `json:"state,omitempty"`
 }
 
+func NewAuthenticationMethodsRegistrationCampaign() (*AuthenticationMethodsRegistrationCampaign, error) {
+	newAuthenticationMethodsRegistrationCampaign := &AuthenticationMethodsRegistrationCampaign{
+		ODataType: "#microsoft.graph.AuthenticationMethodsRegistrationCampaign",
+	}
+	return newAuthenticationMethodsRegistrationCampaign, nil
+}
+
 // AuthenticationMethodsRegistrationCampaignIncludeTarget undocumented
 type AuthenticationMethodsRegistrationCampaignIncludeTarget struct {
 	// Object is the base model of AuthenticationMethodsRegistrationCampaignIncludeTarget
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ID undocumented
 	ID *string `json:"id,omitempty"`
 	// TargetedAuthenticationMethod undocumented
 	TargetedAuthenticationMethod *string `json:"targetedAuthenticationMethod,omitempty"`
 	// TargetType undocumented
 	TargetType *AuthenticationMethodTargetType `json:"targetType,omitempty"`
+}
+
+func NewAuthenticationMethodsRegistrationCampaignIncludeTarget() (*AuthenticationMethodsRegistrationCampaignIncludeTarget, error) {
+	newAuthenticationMethodsRegistrationCampaignIncludeTarget := &AuthenticationMethodsRegistrationCampaignIncludeTarget{
+		ODataType: "#microsoft.graph.AuthenticationMethodsRegistrationCampaignIncludeTarget",
+	}
+	return newAuthenticationMethodsRegistrationCampaignIncludeTarget, nil
 }

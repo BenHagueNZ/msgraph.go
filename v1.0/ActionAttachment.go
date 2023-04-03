@@ -13,3 +13,24 @@ type AttachmentBaseCollectionCreateUploadSessionRequestParameter struct {
 	// AttachmentInfo undocumented
 	AttachmentInfo *AttachmentInfo `json:"attachmentInfo,omitempty"`
 }
+
+// Attachment is navigation property rn
+func (b *AttachmentRequestBuilder) Attachment() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// AttachmentBase is navigation property rn
+func (b *AttachmentBaseRequestBuilder) AttachmentBase() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// AttachmentSession is navigation property rn
+func (b *AttachmentSessionRequestBuilder) AttachmentSession() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}

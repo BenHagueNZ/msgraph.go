@@ -8,6 +8,8 @@ import "time"
 type TelecomExpenseManagementPartner struct {
 	// Entity is the base model of TelecomExpenseManagementPartner
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AppAuthorized undocumented
 	AppAuthorized *bool `json:"appAuthorized,omitempty"`
 	// DisplayName undocumented
@@ -18,4 +20,11 @@ type TelecomExpenseManagementPartner struct {
 	LastConnectionDateTime *time.Time `json:"lastConnectionDateTime,omitempty"`
 	// URL undocumented
 	URL *string `json:"url,omitempty"`
+}
+
+func NewTelecomExpenseManagementPartner() (*TelecomExpenseManagementPartner, error) {
+	newTelecomExpenseManagementPartner := &TelecomExpenseManagementPartner{
+		ODataType: "#microsoft.graph.TelecomExpenseManagementPartner",
+	}
+	return newTelecomExpenseManagementPartner, nil
 }

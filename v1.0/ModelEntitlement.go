@@ -8,6 +8,8 @@ import "time"
 type EntitlementManagement struct {
 	// Entity is the base model of EntitlementManagement
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AccessPackageAssignmentApprovals undocumented
 	AccessPackageAssignmentApprovals []Approval `json:"accessPackageAssignmentApprovals,omitempty"`
 	// AccessPackages undocumented
@@ -26,10 +28,19 @@ type EntitlementManagement struct {
 	Settings *EntitlementManagementSettings `json:"settings,omitempty"`
 }
 
+func NewEntitlementManagement() (*EntitlementManagement, error) {
+	newEntitlementManagement := &EntitlementManagement{
+		ODataType: "#microsoft.graph.EntitlementManagement",
+	}
+	return newEntitlementManagement, nil
+}
+
 // EntitlementManagementSchedule undocumented
 type EntitlementManagementSchedule struct {
 	// Object is the base model of EntitlementManagementSchedule
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Expiration undocumented
 	Expiration *ExpirationPattern `json:"expiration,omitempty"`
 	// Recurrence undocumented
@@ -38,12 +49,28 @@ type EntitlementManagementSchedule struct {
 	StartDateTime *time.Time `json:"startDateTime,omitempty"`
 }
 
+func NewEntitlementManagementSchedule() (*EntitlementManagementSchedule, error) {
+	newEntitlementManagementSchedule := &EntitlementManagementSchedule{
+		ODataType: "#microsoft.graph.EntitlementManagementSchedule",
+	}
+	return newEntitlementManagementSchedule, nil
+}
+
 // EntitlementManagementSettings undocumented
 type EntitlementManagementSettings struct {
 	// Entity is the base model of EntitlementManagementSettings
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DurationUntilExternalUserDeletedAfterBlocked undocumented
 	DurationUntilExternalUserDeletedAfterBlocked *Duration `json:"durationUntilExternalUserDeletedAfterBlocked,omitempty"`
 	// ExternalUserLifecycleAction undocumented
 	ExternalUserLifecycleAction *AccessPackageExternalUserLifecycleAction `json:"externalUserLifecycleAction,omitempty"`
+}
+
+func NewEntitlementManagementSettings() (*EntitlementManagementSettings, error) {
+	newEntitlementManagementSettings := &EntitlementManagementSettings{
+		ODataType: "#microsoft.graph.EntitlementManagementSettings",
+	}
+	return newEntitlementManagementSettings, nil
 }

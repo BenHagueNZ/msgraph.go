@@ -6,6 +6,8 @@ package msgraph
 type HostSecurityState struct {
 	// Object is the base model of HostSecurityState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Fqdn undocumented
 	Fqdn *string `json:"fqdn,omitempty"`
 	// IsAzureAdJoined undocumented
@@ -24,4 +26,11 @@ type HostSecurityState struct {
 	PublicIPAddress *string `json:"publicIpAddress,omitempty"`
 	// RiskScore undocumented
 	RiskScore *string `json:"riskScore,omitempty"`
+}
+
+func NewHostSecurityState() (*HostSecurityState, error) {
+	newHostSecurityState := &HostSecurityState{
+		ODataType: "#microsoft.graph.HostSecurityState",
+	}
+	return newHostSecurityState, nil
 }

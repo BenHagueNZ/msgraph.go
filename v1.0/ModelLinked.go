@@ -6,6 +6,8 @@ package msgraph
 type LinkedResource struct {
 	// Entity is the base model of LinkedResource
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ApplicationName undocumented
 	ApplicationName *string `json:"applicationName,omitempty"`
 	// DisplayName undocumented
@@ -14,4 +16,11 @@ type LinkedResource struct {
 	ExternalID *string `json:"externalId,omitempty"`
 	// WebURL undocumented
 	WebURL *string `json:"webUrl,omitempty"`
+}
+
+func NewLinkedResource() (*LinkedResource, error) {
+	newLinkedResource := &LinkedResource{
+		ODataType: "#microsoft.graph.LinkedResource",
+	}
+	return newLinkedResource, nil
 }

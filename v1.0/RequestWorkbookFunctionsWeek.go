@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsWeekNumRequestBuilder struct{ BaseRequestBuilder }
 
-// WeekNum action undocumented
+// WeekNum action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) WeekNum(reqObj *WorkbookFunctionsWeekNumRequestParameter) *WorkbookFunctionsWeekNumRequestBuilder {
 	bb := &WorkbookFunctionsWeekNumRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/WeekNum"

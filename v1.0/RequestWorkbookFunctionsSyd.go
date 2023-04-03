@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSydRequestBuilder struct{ BaseRequestBuilder }
 
-// Syd action undocumented
+// Syd action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Syd(reqObj *WorkbookFunctionsSydRequestParameter) *WorkbookFunctionsSydRequestBuilder {
 	bb := &WorkbookFunctionsSydRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Syd"

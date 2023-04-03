@@ -72,7 +72,7 @@ func (r *VPPTokenRequest) Delete(ctx context.Context) error {
 
 type VPPTokenSyncLicensesRequestBuilder struct{ BaseRequestBuilder }
 
-// SyncLicenses action undocumented
+// SyncLicenses action undocumentedras
 func (b *VPPTokenRequestBuilder) SyncLicenses(reqObj *VPPTokenSyncLicensesRequestParameter) *VPPTokenSyncLicensesRequestBuilder {
 	bb := &VPPTokenSyncLicensesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SyncLicenses"

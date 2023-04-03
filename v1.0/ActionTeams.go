@@ -15,7 +15,7 @@ import (
 type TeamsAppInstallationUpgradeRequestParameter struct {
 }
 
-// AppDefinitions returns request builder for TeamsAppDefinition collection
+// AppDefinitions returns request builder for TeamsAppDefinition collection rcn
 func (b *TeamsAppRequestBuilder) AppDefinitions() *TeamsAppAppDefinitionsCollectionRequestBuilder {
 	bb := &TeamsAppAppDefinitionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appDefinitions"
@@ -118,30 +118,72 @@ func (r *TeamsAppAppDefinitionsCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Bot is navigation property
+// Bot is navigation property rn
 func (b *TeamsAppDefinitionRequestBuilder) Bot() *TeamworkBotRequestBuilder {
 	bb := &TeamworkBotRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/bot"
 	return bb
 }
 
-// TeamsApp is navigation property
+// TeamsApp is navigation property rn
 func (b *TeamsAppInstallationRequestBuilder) TeamsApp() *TeamsAppRequestBuilder {
 	bb := &TeamsAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/teamsApp"
 	return bb
 }
 
-// TeamsAppDefinition is navigation property
+// TeamsAppDefinition is navigation property rn
 func (b *TeamsAppInstallationRequestBuilder) TeamsAppDefinition() *TeamsAppDefinitionRequestBuilder {
 	bb := &TeamsAppDefinitionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/teamsAppDefinition"
 	return bb
 }
 
-// TeamsApp is navigation property
+// TeamsApp is navigation property rn
 func (b *TeamsTabRequestBuilder) TeamsApp() *TeamsAppRequestBuilder {
 	bb := &TeamsAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/teamsApp"
+	return bb
+}
+
+// TeamsApp is navigation property rn
+func (b *TeamsAppRequestBuilder) TeamsApp() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TeamsAppDefinition is navigation property rn
+func (b *TeamsAppDefinitionRequestBuilder) TeamsAppDefinition() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TeamsAppInstallation is navigation property rn
+func (b *TeamsAppInstallationRequestBuilder) TeamsAppInstallation() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TeamsAsyncOperation is navigation property rn
+func (b *TeamsAsyncOperationRequestBuilder) TeamsAsyncOperation() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TeamsTab is navigation property rn
+func (b *TeamsTabRequestBuilder) TeamsTab() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TeamsTemplate is navigation property rn
+func (b *TeamsTemplateRequestBuilder) TeamsTemplate() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

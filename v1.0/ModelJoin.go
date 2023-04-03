@@ -6,20 +6,38 @@ package msgraph
 type JoinMeetingIDMeetingInfo struct {
 	// MeetingInfo is the base model of JoinMeetingIDMeetingInfo
 	MeetingInfo
+
+	ODataType string `json:"@odata.type"`
 	// JoinMeetingID undocumented
 	JoinMeetingID *string `json:"joinMeetingId,omitempty"`
 	// Passcode undocumented
 	Passcode *string `json:"passcode,omitempty"`
 }
 
+func NewJoinMeetingIDMeetingInfo() (*JoinMeetingIDMeetingInfo, error) {
+	newJoinMeetingIDMeetingInfo := &JoinMeetingIDMeetingInfo{
+		ODataType: "#microsoft.graph.JoinMeetingIdMeetingInfo",
+	}
+	return newJoinMeetingIDMeetingInfo, nil
+}
+
 // JoinMeetingIDSettings undocumented
 type JoinMeetingIDSettings struct {
 	// Object is the base model of JoinMeetingIDSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsPasscodeRequired undocumented
 	IsPasscodeRequired *bool `json:"isPasscodeRequired,omitempty"`
 	// JoinMeetingID undocumented
 	JoinMeetingID *string `json:"joinMeetingId,omitempty"`
 	// Passcode undocumented
 	Passcode *string `json:"passcode,omitempty"`
+}
+
+func NewJoinMeetingIDSettings() (*JoinMeetingIDSettings, error) {
+	newJoinMeetingIDSettings := &JoinMeetingIDSettings{
+		ODataType: "#microsoft.graph.JoinMeetingIdSettings",
+	}
+	return newJoinMeetingIDSettings, nil
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsMaxRequestBuilder struct{ BaseRequestBuilder }
 
-// Max action undocumented
+// Max action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Max(reqObj *WorkbookFunctionsMaxRequestParameter) *WorkbookFunctionsMaxRequestBuilder {
 	bb := &WorkbookFunctionsMaxRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Max"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsMaxRequest) Post(ctx context.Context) (resObj *Workboo
 
 type WorkbookFunctionsMaxARequestBuilder struct{ BaseRequestBuilder }
 
-// MaxA action undocumented
+// MaxA action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) MaxA(reqObj *WorkbookFunctionsMaxARequestParameter) *WorkbookFunctionsMaxARequestBuilder {
 	bb := &WorkbookFunctionsMaxARequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/MaxA"

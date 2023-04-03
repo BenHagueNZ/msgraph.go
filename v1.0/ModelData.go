@@ -8,6 +8,8 @@ import "time"
 type DataPolicyOperation struct {
 	// Entity is the base model of DataPolicyOperation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CompletedDateTime undocumented
 	CompletedDateTime *time.Time `json:"completedDateTime,omitempty"`
 	// Progress undocumented
@@ -22,10 +24,19 @@ type DataPolicyOperation struct {
 	UserID *string `json:"userId,omitempty"`
 }
 
+func NewDataPolicyOperation() (*DataPolicyOperation, error) {
+	newDataPolicyOperation := &DataPolicyOperation{
+		ODataType: "#microsoft.graph.DataPolicyOperation",
+	}
+	return newDataPolicyOperation, nil
+}
+
 // DataSubject undocumented
 type DataSubject struct {
 	// Object is the base model of DataSubject
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
 	// FirstName undocumented
@@ -34,4 +45,11 @@ type DataSubject struct {
 	LastName *string `json:"lastName,omitempty"`
 	// Residency undocumented
 	Residency *string `json:"residency,omitempty"`
+}
+
+func NewDataSubject() (*DataSubject, error) {
+	newDataSubject := &DataSubject{
+		ODataType: "#microsoft.graph.DataSubject",
+	}
+	return newDataSubject, nil
 }

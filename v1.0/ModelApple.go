@@ -8,12 +8,23 @@ import "time"
 type AppleDeviceFeaturesConfigurationBase struct {
 	// DeviceConfiguration is the base model of AppleDeviceFeaturesConfigurationBase
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewAppleDeviceFeaturesConfigurationBase() (*AppleDeviceFeaturesConfigurationBase, error) {
+	newAppleDeviceFeaturesConfigurationBase := &AppleDeviceFeaturesConfigurationBase{
+		ODataType: "#microsoft.graph.AppleDeviceFeaturesConfigurationBase",
+	}
+	return newAppleDeviceFeaturesConfigurationBase, nil
 }
 
 // AppleManagedIdentityProvider undocumented
 type AppleManagedIdentityProvider struct {
 	// IdentityProviderBase is the base model of AppleManagedIdentityProvider
 	IdentityProviderBase
+
+	ODataType string `json:"@odata.type"`
 	// CertificateData undocumented
 	CertificateData *string `json:"certificateData,omitempty"`
 	// DeveloperID undocumented
@@ -24,10 +35,19 @@ type AppleManagedIdentityProvider struct {
 	ServiceID *string `json:"serviceId,omitempty"`
 }
 
+func NewAppleManagedIdentityProvider() (*AppleManagedIdentityProvider, error) {
+	newAppleManagedIdentityProvider := &AppleManagedIdentityProvider{
+		ODataType: "#microsoft.graph.AppleManagedIdentityProvider",
+	}
+	return newAppleManagedIdentityProvider, nil
+}
+
 // ApplePushNotificationCertificate undocumented
 type ApplePushNotificationCertificate struct {
 	// Entity is the base model of ApplePushNotificationCertificate
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AppleIdentifier undocumented
 	AppleIdentifier *string `json:"appleIdentifier,omitempty"`
 	// Certificate undocumented
@@ -44,4 +64,11 @@ type ApplePushNotificationCertificate struct {
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 	// TopicIdentifier undocumented
 	TopicIdentifier *string `json:"topicIdentifier,omitempty"`
+}
+
+func NewApplePushNotificationCertificate() (*ApplePushNotificationCertificate, error) {
+	newApplePushNotificationCertificate := &ApplePushNotificationCertificate{
+		ODataType: "#microsoft.graph.ApplePushNotificationCertificate",
+	}
+	return newApplePushNotificationCertificate, nil
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsPiRequestBuilder struct{ BaseRequestBuilder }
 
-// Pi action undocumented
+// Pi action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Pi(reqObj *WorkbookFunctionsPiRequestParameter) *WorkbookFunctionsPiRequestBuilder {
 	bb := &WorkbookFunctionsPiRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Pi"

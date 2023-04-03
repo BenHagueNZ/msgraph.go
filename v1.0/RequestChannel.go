@@ -303,7 +303,7 @@ func (r *ChannelUnsetAsFavoriteByDefaultEventMessageDetailRequest) Delete(ctx co
 
 type ChannelCompleteMigrationRequestBuilder struct{ BaseRequestBuilder }
 
-// CompleteMigration action undocumented
+// CompleteMigration action undocumentedrav
 func (b *ChannelRequestBuilder) CompleteMigration(reqObj *ChannelCompleteMigrationRequestParameter) *ChannelCompleteMigrationRequestBuilder {
 	bb := &ChannelCompleteMigrationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CompleteMigration"
@@ -325,7 +325,7 @@ func (r *ChannelCompleteMigrationRequest) Post(ctx context.Context) error {
 
 type ChannelProvisionEmailRequestBuilder struct{ BaseRequestBuilder }
 
-// ProvisionEmail action undocumented
+// ProvisionEmail action undocumentedras
 func (b *ChannelRequestBuilder) ProvisionEmail(reqObj *ChannelProvisionEmailRequestParameter) *ChannelProvisionEmailRequestBuilder {
 	bb := &ChannelProvisionEmailRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ProvisionEmail"
@@ -348,7 +348,7 @@ func (r *ChannelProvisionEmailRequest) Post(ctx context.Context) (resObj *Provis
 
 type ChannelRemoveEmailRequestBuilder struct{ BaseRequestBuilder }
 
-// RemoveEmail action undocumented
+// RemoveEmail action undocumentedrav
 func (b *ChannelRequestBuilder) RemoveEmail(reqObj *ChannelRemoveEmailRequestParameter) *ChannelRemoveEmailRequestBuilder {
 	bb := &ChannelRemoveEmailRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RemoveEmail"

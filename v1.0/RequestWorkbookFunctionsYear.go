@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsYearRequestBuilder struct{ BaseRequestBuilder }
 
-// Year action undocumented
+// Year action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Year(reqObj *WorkbookFunctionsYearRequestParameter) *WorkbookFunctionsYearRequestBuilder {
 	bb := &WorkbookFunctionsYearRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Year"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsYearRequest) Post(ctx context.Context) (resObj *Workbo
 
 type WorkbookFunctionsYearFracRequestBuilder struct{ BaseRequestBuilder }
 
-// YearFrac action undocumented
+// YearFrac action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) YearFrac(reqObj *WorkbookFunctionsYearFracRequestParameter) *WorkbookFunctionsYearFracRequestBuilder {
 	bb := &WorkbookFunctionsYearFracRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/YearFrac"

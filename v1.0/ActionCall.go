@@ -133,7 +133,7 @@ type CallUpdateRecordingStatusRequestParameter struct {
 	ClientContext *string `json:"clientContext,omitempty"`
 }
 
-// AudioRoutingGroups returns request builder for AudioRoutingGroup collection
+// AudioRoutingGroups returns request builder for AudioRoutingGroup collection rcn
 func (b *CallRequestBuilder) AudioRoutingGroups() *CallAudioRoutingGroupsCollectionRequestBuilder {
 	bb := &CallAudioRoutingGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/audioRoutingGroups"
@@ -236,7 +236,7 @@ func (r *CallAudioRoutingGroupsCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// ContentSharingSessions returns request builder for ContentSharingSession collection
+// ContentSharingSessions returns request builder for ContentSharingSession collection rcn
 func (b *CallRequestBuilder) ContentSharingSessions() *CallContentSharingSessionsCollectionRequestBuilder {
 	bb := &CallContentSharingSessionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/contentSharingSessions"
@@ -339,7 +339,7 @@ func (r *CallContentSharingSessionsCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// Operations returns request builder for CommsOperation collection
+// Operations returns request builder for CommsOperation collection rcn
 func (b *CallRequestBuilder) Operations() *CallOperationsCollectionRequestBuilder {
 	bb := &CallOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -442,7 +442,7 @@ func (r *CallOperationsCollectionRequest) Add(ctx context.Context, reqObj *Comms
 	return
 }
 
-// Participants returns request builder for Participant collection
+// Participants returns request builder for Participant collection rcn
 func (b *CallRequestBuilder) Participants() *CallParticipantsCollectionRequestBuilder {
 	bb := &CallParticipantsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/participants"
@@ -545,7 +545,14 @@ func (r *CallParticipantsCollectionRequest) Add(ctx context.Context, reqObj *Par
 	return
 }
 
-// Sessions returns request builder for CallRecordsSession collection
+// Call is navigation property rn
+func (b *CallRequestBuilder) Call() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Sessions returns request builder for CallRecordsSession collection rcn
 func (b *CallRecordsCallRecordRequestBuilder) Sessions() *CallRecordsCallRecordSessionsCollectionRequestBuilder {
 	bb := &CallRecordsCallRecordSessionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sessions"
@@ -648,7 +655,7 @@ func (r *CallRecordsCallRecordSessionsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Segments returns request builder for CallRecordsSegment collection
+// Segments returns request builder for CallRecordsSegment collection rcn
 func (b *CallRecordsSessionRequestBuilder) Segments() *CallRecordsSessionSegmentsCollectionRequestBuilder {
 	bb := &CallRecordsSessionSegmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/segments"

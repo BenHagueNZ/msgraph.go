@@ -8,16 +8,27 @@ import "time"
 type ItemActionStat struct {
 	// Object is the base model of ItemActionStat
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ActionCount undocumented
 	ActionCount *int `json:"actionCount,omitempty"`
 	// ActorCount undocumented
 	ActorCount *int `json:"actorCount,omitempty"`
 }
 
+func NewItemActionStat() (*ItemActionStat, error) {
+	newItemActionStat := &ItemActionStat{
+		ODataType: "#microsoft.graph.ItemActionStat",
+	}
+	return newItemActionStat, nil
+}
+
 // ItemActivity undocumented
 type ItemActivity struct {
 	// Entity is the base model of ItemActivity
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Access undocumented
 	Access *AccessAction `json:"access,omitempty"`
 	// ActivityDateTime undocumented
@@ -28,10 +39,19 @@ type ItemActivity struct {
 	DriveItem *DriveItem `json:"driveItem,omitempty"`
 }
 
+func NewItemActivity() (*ItemActivity, error) {
+	newItemActivity := &ItemActivity{
+		ODataType: "#microsoft.graph.ItemActivity",
+	}
+	return newItemActivity, nil
+}
+
 // ItemActivityStat undocumented
 type ItemActivityStat struct {
 	// Entity is the base model of ItemActivityStat
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Access undocumented
 	Access *ItemActionStat `json:"access,omitempty"`
 	// Create undocumented
@@ -54,10 +74,19 @@ type ItemActivityStat struct {
 	Activities []ItemActivity `json:"activities,omitempty"`
 }
 
+func NewItemActivityStat() (*ItemActivityStat, error) {
+	newItemActivityStat := &ItemActivityStat{
+		ODataType: "#microsoft.graph.ItemActivityStat",
+	}
+	return newItemActivityStat, nil
+}
+
 // ItemAnalytics undocumented
 type ItemAnalytics struct {
 	// Entity is the base model of ItemAnalytics
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AllTime undocumented
 	AllTime *ItemActivityStat `json:"allTime,omitempty"`
 	// ItemActivityStats undocumented
@@ -66,28 +95,55 @@ type ItemAnalytics struct {
 	LastSevenDays *ItemActivityStat `json:"lastSevenDays,omitempty"`
 }
 
+func NewItemAnalytics() (*ItemAnalytics, error) {
+	newItemAnalytics := &ItemAnalytics{
+		ODataType: "#microsoft.graph.ItemAnalytics",
+	}
+	return newItemAnalytics, nil
+}
+
 // ItemAttachment undocumented
 type ItemAttachment struct {
 	// Attachment is the base model of ItemAttachment
 	Attachment
+
+	ODataType string `json:"@odata.type"`
 	// Item undocumented
 	Item *OutlookItem `json:"item,omitempty"`
+}
+
+func NewItemAttachment() (*ItemAttachment, error) {
+	newItemAttachment := &ItemAttachment{
+		ODataType: "#microsoft.graph.ItemAttachment",
+	}
+	return newItemAttachment, nil
 }
 
 // ItemBody undocumented
 type ItemBody struct {
 	// Object is the base model of ItemBody
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Content undocumented
 	Content *string `json:"content,omitempty"`
 	// ContentType undocumented
 	ContentType *BodyType `json:"contentType,omitempty"`
 }
 
+func NewItemBody() (*ItemBody, error) {
+	newItemBody := &ItemBody{
+		ODataType: "#microsoft.graph.ItemBody",
+	}
+	return newItemBody, nil
+}
+
 // ItemPreviewInfo undocumented
 type ItemPreviewInfo struct {
 	// Object is the base model of ItemPreviewInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// GetURL undocumented
 	GetURL *string `json:"getUrl,omitempty"`
 	// PostParameters undocumented
@@ -96,10 +152,19 @@ type ItemPreviewInfo struct {
 	PostURL *string `json:"postUrl,omitempty"`
 }
 
+func NewItemPreviewInfo() (*ItemPreviewInfo, error) {
+	newItemPreviewInfo := &ItemPreviewInfo{
+		ODataType: "#microsoft.graph.ItemPreviewInfo",
+	}
+	return newItemPreviewInfo, nil
+}
+
 // ItemReference undocumented
 type ItemReference struct {
 	// Object is the base model of ItemReference
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DriveID undocumented
 	DriveID *string `json:"driveId,omitempty"`
 	// DriveType undocumented
@@ -116,4 +181,11 @@ type ItemReference struct {
 	SharepointIDs *SharepointIDs `json:"sharepointIds,omitempty"`
 	// SiteID undocumented
 	SiteID *string `json:"siteId,omitempty"`
+}
+
+func NewItemReference() (*ItemReference, error) {
+	newItemReference := &ItemReference{
+		ODataType: "#microsoft.graph.ItemReference",
+	}
+	return newItemReference, nil
 }

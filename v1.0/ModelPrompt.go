@@ -6,4 +6,13 @@ package msgraph
 type Prompt struct {
 	// Object is the base model of Prompt
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewPrompt() (*Prompt, error) {
+	newPrompt := &Prompt{
+		ODataType: "#microsoft.graph.Prompt",
+	}
+	return newPrompt, nil
 }

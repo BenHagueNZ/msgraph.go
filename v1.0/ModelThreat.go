@@ -8,6 +8,8 @@ import "time"
 type ThreatAssessmentRequestObject struct {
 	// Entity is the base model of ThreatAssessmentRequestObject
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Category undocumented
 	Category *ThreatCategory `json:"category,omitempty"`
 	// ContentType undocumented
@@ -26,14 +28,30 @@ type ThreatAssessmentRequestObject struct {
 	Results []ThreatAssessmentResult `json:"results,omitempty"`
 }
 
+func NewThreatAssessmentRequestObject() (*ThreatAssessmentRequestObject, error) {
+	newThreatAssessmentRequestObject := &ThreatAssessmentRequestObject{
+		ODataType: "#microsoft.graph.ThreatAssessmentRequestObject",
+	}
+	return newThreatAssessmentRequestObject, nil
+}
+
 // ThreatAssessmentResult undocumented
 type ThreatAssessmentResult struct {
 	// Entity is the base model of ThreatAssessmentResult
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Message undocumented
 	Message *string `json:"message,omitempty"`
 	// ResultType undocumented
 	ResultType *ThreatAssessmentResultType `json:"resultType,omitempty"`
+}
+
+func NewThreatAssessmentResult() (*ThreatAssessmentResult, error) {
+	newThreatAssessmentResult := &ThreatAssessmentResult{
+		ODataType: "#microsoft.graph.ThreatAssessmentResult",
+	}
+	return newThreatAssessmentResult, nil
 }

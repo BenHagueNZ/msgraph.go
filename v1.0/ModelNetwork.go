@@ -8,6 +8,8 @@ import "time"
 type NetworkConnection struct {
 	// Object is the base model of NetworkConnection
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ApplicationName undocumented
 	ApplicationName *string `json:"applicationName,omitempty"`
 	// DestinationAddress undocumented
@@ -24,8 +26,8 @@ type NetworkConnection struct {
 	Direction *ConnectionDirection `json:"direction,omitempty"`
 	// DomainRegisteredDateTime undocumented
 	DomainRegisteredDateTime *time.Time `json:"domainRegisteredDateTime,omitempty"`
-	// LocalDNSName undocumented
-	LocalDNSName *string `json:"localDnsName,omitempty"`
+	// LocalDnsName undocumented
+	LocalDnsName *string `json:"localDnsName,omitempty"`
 	// NatDestinationAddress undocumented
 	NatDestinationAddress *string `json:"natDestinationAddress,omitempty"`
 	// NatDestinationPort undocumented
@@ -48,4 +50,11 @@ type NetworkConnection struct {
 	Status *ConnectionStatus `json:"status,omitempty"`
 	// URLParameters undocumented
 	URLParameters *string `json:"urlParameters,omitempty"`
+}
+
+func NewNetworkConnection() (*NetworkConnection, error) {
+	newNetworkConnection := &NetworkConnection{
+		ODataType: "#microsoft.graph.NetworkConnection",
+	}
+	return newNetworkConnection, nil
 }

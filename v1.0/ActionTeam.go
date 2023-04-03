@@ -57,7 +57,7 @@ type TeamSendActivityNotificationRequestParameter struct {
 	Recipient *TeamworkNotificationRecipient `json:"recipient,omitempty"`
 }
 
-// AllChannels returns request builder for Channel collection
+// AllChannels returns request builder for Channel collection rcn
 func (b *TeamRequestBuilder) AllChannels() *TeamAllChannelsCollectionRequestBuilder {
 	bb := &TeamAllChannelsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/allChannels"
@@ -160,7 +160,7 @@ func (r *TeamAllChannelsCollectionRequest) Add(ctx context.Context, reqObj *Chan
 	return
 }
 
-// Channels returns request builder for Channel collection
+// Channels returns request builder for Channel collection rcn
 func (b *TeamRequestBuilder) Channels() *TeamChannelsCollectionRequestBuilder {
 	bb := &TeamChannelsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/channels"
@@ -263,14 +263,14 @@ func (r *TeamChannelsCollectionRequest) Add(ctx context.Context, reqObj *Channel
 	return
 }
 
-// Group is navigation property
+// Group is navigation property rn
 func (b *TeamRequestBuilder) Group() *GroupRequestBuilder {
 	bb := &GroupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/group"
 	return bb
 }
 
-// IncomingChannels returns request builder for Channel collection
+// IncomingChannels returns request builder for Channel collection rcn
 func (b *TeamRequestBuilder) IncomingChannels() *TeamIncomingChannelsCollectionRequestBuilder {
 	bb := &TeamIncomingChannelsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/incomingChannels"
@@ -373,7 +373,7 @@ func (r *TeamIncomingChannelsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// InstalledApps returns request builder for TeamsAppInstallation collection
+// InstalledApps returns request builder for TeamsAppInstallation collection rcn
 func (b *TeamRequestBuilder) InstalledApps() *TeamInstalledAppsCollectionRequestBuilder {
 	bb := &TeamInstalledAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/installedApps"
@@ -476,7 +476,7 @@ func (r *TeamInstalledAppsCollectionRequest) Add(ctx context.Context, reqObj *Te
 	return
 }
 
-// Members returns request builder for ConversationMember collection
+// Members returns request builder for ConversationMember collection rcn
 func (b *TeamRequestBuilder) Members() *TeamMembersCollectionRequestBuilder {
 	bb := &TeamMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"
@@ -579,7 +579,7 @@ func (r *TeamMembersCollectionRequest) Add(ctx context.Context, reqObj *Conversa
 	return
 }
 
-// Operations returns request builder for TeamsAsyncOperation collection
+// Operations returns request builder for TeamsAsyncOperation collection rcn
 func (b *TeamRequestBuilder) Operations() *TeamOperationsCollectionRequestBuilder {
 	bb := &TeamOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -682,28 +682,28 @@ func (r *TeamOperationsCollectionRequest) Add(ctx context.Context, reqObj *Teams
 	return
 }
 
-// Photo is navigation property
+// Photo is navigation property rn
 func (b *TeamRequestBuilder) Photo() *ProfilePhotoRequestBuilder {
 	bb := &ProfilePhotoRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/photo"
 	return bb
 }
 
-// PrimaryChannel is navigation property
+// PrimaryChannel is navigation property rn
 func (b *TeamRequestBuilder) PrimaryChannel() *ChannelRequestBuilder {
 	bb := &ChannelRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/primaryChannel"
 	return bb
 }
 
-// Schedule is navigation property
+// Schedule is navigation property rn
 func (b *TeamRequestBuilder) Schedule() *ScheduleRequestBuilder {
 	bb := &ScheduleRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/schedule"
 	return bb
 }
 
-// Tags returns request builder for TeamworkTag collection
+// Tags returns request builder for TeamworkTag collection rcn
 func (b *TeamRequestBuilder) Tags() *TeamTagsCollectionRequestBuilder {
 	bb := &TeamTagsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tags"
@@ -806,16 +806,30 @@ func (r *TeamTagsCollectionRequest) Add(ctx context.Context, reqObj *TeamworkTag
 	return
 }
 
-// Template is navigation property
+// Template is navigation property rn
 func (b *TeamRequestBuilder) Template() *TeamsTemplateRequestBuilder {
 	bb := &TeamsTemplateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/template"
 	return bb
 }
 
-// Team is navigation property
+// Team is navigation property rn
 func (b *TeamInfoRequestBuilder) Team() *TeamRequestBuilder {
 	bb := &TeamRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/team"
+	return bb
+}
+
+// Team is navigation property rn
+func (b *TeamRequestBuilder) Team() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// TeamInfo is navigation property rn
+func (b *TeamInfoRequestBuilder) TeamInfo() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

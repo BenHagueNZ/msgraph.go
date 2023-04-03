@@ -8,12 +8,23 @@ import "time"
 type AccessAction struct {
 	// Object is the base model of AccessAction
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewAccessAction() (*AccessAction, error) {
+	newAccessAction := &AccessAction{
+		ODataType: "#microsoft.graph.AccessAction",
+	}
+	return newAccessAction, nil
 }
 
 // AccessPackage undocumented
 type AccessPackage struct {
 	// Entity is the base model of AccessPackage
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -36,20 +47,38 @@ type AccessPackage struct {
 	IncompatibleGroups []Group `json:"incompatibleGroups,omitempty"`
 }
 
+func NewAccessPackage() (*AccessPackage, error) {
+	newAccessPackage := &AccessPackage{
+		ODataType: "#microsoft.graph.AccessPackage",
+	}
+	return newAccessPackage, nil
+}
+
 // AccessPackageAnswer undocumented
 type AccessPackageAnswer struct {
 	// Object is the base model of AccessPackageAnswer
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayValue undocumented
 	DisplayValue *string `json:"displayValue,omitempty"`
 	// AnsweredQuestion undocumented
 	AnsweredQuestion *AccessPackageQuestion `json:"answeredQuestion,omitempty"`
 }
 
+func NewAccessPackageAnswer() (*AccessPackageAnswer, error) {
+	newAccessPackageAnswer := &AccessPackageAnswer{
+		ODataType: "#microsoft.graph.AccessPackageAnswer",
+	}
+	return newAccessPackageAnswer, nil
+}
+
 // AccessPackageAnswerChoice undocumented
 type AccessPackageAnswerChoice struct {
 	// Object is the base model of AccessPackageAnswerChoice
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ActualValue undocumented
 	ActualValue *string `json:"actualValue,omitempty"`
 	// Localizations undocumented
@@ -58,18 +87,36 @@ type AccessPackageAnswerChoice struct {
 	Text *string `json:"text,omitempty"`
 }
 
+func NewAccessPackageAnswerChoice() (*AccessPackageAnswerChoice, error) {
+	newAccessPackageAnswerChoice := &AccessPackageAnswerChoice{
+		ODataType: "#microsoft.graph.AccessPackageAnswerChoice",
+	}
+	return newAccessPackageAnswerChoice, nil
+}
+
 // AccessPackageAnswerString undocumented
 type AccessPackageAnswerString struct {
 	// AccessPackageAnswer is the base model of AccessPackageAnswerString
 	AccessPackageAnswer
+
+	ODataType string `json:"@odata.type"`
 	// Value undocumented
 	Value *string `json:"value,omitempty"`
+}
+
+func NewAccessPackageAnswerString() (*AccessPackageAnswerString, error) {
+	newAccessPackageAnswerString := &AccessPackageAnswerString{
+		ODataType: "#microsoft.graph.AccessPackageAnswerString",
+	}
+	return newAccessPackageAnswerString, nil
 }
 
 // AccessPackageApprovalStage undocumented
 type AccessPackageApprovalStage struct {
 	// Object is the base model of AccessPackageApprovalStage
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DurationBeforeAutomaticDenial undocumented
 	DurationBeforeAutomaticDenial *Duration `json:"durationBeforeAutomaticDenial,omitempty"`
 	// DurationBeforeEscalation undocumented
@@ -88,10 +135,19 @@ type AccessPackageApprovalStage struct {
 	PrimaryApprovers []SubjectSet `json:"primaryApprovers,omitempty"`
 }
 
+func NewAccessPackageApprovalStage() (*AccessPackageApprovalStage, error) {
+	newAccessPackageApprovalStage := &AccessPackageApprovalStage{
+		ODataType: "#microsoft.graph.AccessPackageApprovalStage",
+	}
+	return newAccessPackageApprovalStage, nil
+}
+
 // AccessPackageAssignment undocumented
 type AccessPackageAssignment struct {
 	// Entity is the base model of AccessPackageAssignment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ExpiredDateTime undocumented
 	ExpiredDateTime *time.Time `json:"expiredDateTime,omitempty"`
 	// Schedule undocumented
@@ -108,10 +164,19 @@ type AccessPackageAssignment struct {
 	Target *AccessPackageSubject `json:"target,omitempty"`
 }
 
+func NewAccessPackageAssignment() (*AccessPackageAssignment, error) {
+	newAccessPackageAssignment := &AccessPackageAssignment{
+		ODataType: "#microsoft.graph.AccessPackageAssignment",
+	}
+	return newAccessPackageAssignment, nil
+}
+
 // AccessPackageAssignmentApprovalSettings undocumented
 type AccessPackageAssignmentApprovalSettings struct {
 	// Object is the base model of AccessPackageAssignmentApprovalSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsApprovalRequiredForAdd undocumented
 	IsApprovalRequiredForAdd *bool `json:"isApprovalRequiredForAdd,omitempty"`
 	// IsApprovalRequiredForUpdate undocumented
@@ -120,10 +185,19 @@ type AccessPackageAssignmentApprovalSettings struct {
 	Stages []AccessPackageApprovalStage `json:"stages,omitempty"`
 }
 
+func NewAccessPackageAssignmentApprovalSettings() (*AccessPackageAssignmentApprovalSettings, error) {
+	newAccessPackageAssignmentApprovalSettings := &AccessPackageAssignmentApprovalSettings{
+		ODataType: "#microsoft.graph.AccessPackageAssignmentApprovalSettings",
+	}
+	return newAccessPackageAssignmentApprovalSettings, nil
+}
+
 // AccessPackageAssignmentPolicy undocumented
 type AccessPackageAssignmentPolicy struct {
 	// Entity is the base model of AccessPackageAssignmentPolicy
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AllowedTargetScope undocumented
 	AllowedTargetScope *AllowedTargetScope `json:"allowedTargetScope,omitempty"`
 	// AutomaticRequestSettings undocumented
@@ -154,10 +228,19 @@ type AccessPackageAssignmentPolicy struct {
 	Questions []AccessPackageQuestion `json:"questions,omitempty"`
 }
 
+func NewAccessPackageAssignmentPolicy() (*AccessPackageAssignmentPolicy, error) {
+	newAccessPackageAssignmentPolicy := &AccessPackageAssignmentPolicy{
+		ODataType: "#microsoft.graph.AccessPackageAssignmentPolicy",
+	}
+	return newAccessPackageAssignmentPolicy, nil
+}
+
 // AccessPackageAssignmentRequestObject undocumented
 type AccessPackageAssignmentRequestObject struct {
 	// Entity is the base model of AccessPackageAssignmentRequestObject
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Answers undocumented
 	Answers []AccessPackageAnswer `json:"answers,omitempty"`
 	// CompletedDateTime undocumented
@@ -180,10 +263,19 @@ type AccessPackageAssignmentRequestObject struct {
 	Requestor *AccessPackageSubject `json:"requestor,omitempty"`
 }
 
+func NewAccessPackageAssignmentRequestObject() (*AccessPackageAssignmentRequestObject, error) {
+	newAccessPackageAssignmentRequestObject := &AccessPackageAssignmentRequestObject{
+		ODataType: "#microsoft.graph.AccessPackageAssignmentRequestObject",
+	}
+	return newAccessPackageAssignmentRequestObject, nil
+}
+
 // AccessPackageAssignmentRequestRequirements undocumented
 type AccessPackageAssignmentRequestRequirements struct {
 	// Object is the base model of AccessPackageAssignmentRequestRequirements
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowCustomAssignmentSchedule undocumented
 	AllowCustomAssignmentSchedule *bool `json:"allowCustomAssignmentSchedule,omitempty"`
 	// IsApprovalRequiredForAdd undocumented
@@ -202,10 +294,19 @@ type AccessPackageAssignmentRequestRequirements struct {
 	Questions []AccessPackageQuestion `json:"questions,omitempty"`
 }
 
+func NewAccessPackageAssignmentRequestRequirements() (*AccessPackageAssignmentRequestRequirements, error) {
+	newAccessPackageAssignmentRequestRequirements := &AccessPackageAssignmentRequestRequirements{
+		ODataType: "#microsoft.graph.AccessPackageAssignmentRequestRequirements",
+	}
+	return newAccessPackageAssignmentRequestRequirements, nil
+}
+
 // AccessPackageAssignmentRequestorSettings undocumented
 type AccessPackageAssignmentRequestorSettings struct {
 	// Object is the base model of AccessPackageAssignmentRequestorSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowCustomAssignmentSchedule undocumented
 	AllowCustomAssignmentSchedule *bool `json:"allowCustomAssignmentSchedule,omitempty"`
 	// EnableOnBehalfRequestorsToAddAccess undocumented
@@ -224,10 +325,19 @@ type AccessPackageAssignmentRequestorSettings struct {
 	OnBehalfRequestors []SubjectSet `json:"onBehalfRequestors,omitempty"`
 }
 
+func NewAccessPackageAssignmentRequestorSettings() (*AccessPackageAssignmentRequestorSettings, error) {
+	newAccessPackageAssignmentRequestorSettings := &AccessPackageAssignmentRequestorSettings{
+		ODataType: "#microsoft.graph.AccessPackageAssignmentRequestorSettings",
+	}
+	return newAccessPackageAssignmentRequestorSettings, nil
+}
+
 // AccessPackageAssignmentReviewSettings undocumented
 type AccessPackageAssignmentReviewSettings struct {
 	// Object is the base model of AccessPackageAssignmentReviewSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ExpirationBehavior undocumented
 	ExpirationBehavior *AccessReviewExpirationBehavior `json:"expirationBehavior,omitempty"`
 	// FallbackReviewers undocumented
@@ -246,10 +356,19 @@ type AccessPackageAssignmentReviewSettings struct {
 	Schedule *EntitlementManagementSchedule `json:"schedule,omitempty"`
 }
 
+func NewAccessPackageAssignmentReviewSettings() (*AccessPackageAssignmentReviewSettings, error) {
+	newAccessPackageAssignmentReviewSettings := &AccessPackageAssignmentReviewSettings{
+		ODataType: "#microsoft.graph.AccessPackageAssignmentReviewSettings",
+	}
+	return newAccessPackageAssignmentReviewSettings, nil
+}
+
 // AccessPackageAutomaticRequestSettings undocumented
 type AccessPackageAutomaticRequestSettings struct {
 	// Object is the base model of AccessPackageAutomaticRequestSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// GracePeriodBeforeAccessRemoval undocumented
 	GracePeriodBeforeAccessRemoval *Duration `json:"gracePeriodBeforeAccessRemoval,omitempty"`
 	// RemoveAccessWhenTargetLeavesAllowedTargets undocumented
@@ -258,10 +377,19 @@ type AccessPackageAutomaticRequestSettings struct {
 	RequestAccessForAllowedTargets *bool `json:"requestAccessForAllowedTargets,omitempty"`
 }
 
+func NewAccessPackageAutomaticRequestSettings() (*AccessPackageAutomaticRequestSettings, error) {
+	newAccessPackageAutomaticRequestSettings := &AccessPackageAutomaticRequestSettings{
+		ODataType: "#microsoft.graph.AccessPackageAutomaticRequestSettings",
+	}
+	return newAccessPackageAutomaticRequestSettings, nil
+}
+
 // AccessPackageCatalog undocumented
 type AccessPackageCatalog struct {
 	// Entity is the base model of AccessPackageCatalog
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CatalogType undocumented
 	CatalogType *AccessPackageCatalogType `json:"catalogType,omitempty"`
 	// CreatedDateTime undocumented
@@ -280,30 +408,57 @@ type AccessPackageCatalog struct {
 	AccessPackages []AccessPackage `json:"accessPackages,omitempty"`
 }
 
+func NewAccessPackageCatalog() (*AccessPackageCatalog, error) {
+	newAccessPackageCatalog := &AccessPackageCatalog{
+		ODataType: "#microsoft.graph.AccessPackageCatalog",
+	}
+	return newAccessPackageCatalog, nil
+}
+
 // AccessPackageLocalizedText undocumented
 type AccessPackageLocalizedText struct {
 	// Object is the base model of AccessPackageLocalizedText
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// LanguageCode undocumented
 	LanguageCode *string `json:"languageCode,omitempty"`
 	// Text undocumented
 	Text *string `json:"text,omitempty"`
 }
 
+func NewAccessPackageLocalizedText() (*AccessPackageLocalizedText, error) {
+	newAccessPackageLocalizedText := &AccessPackageLocalizedText{
+		ODataType: "#microsoft.graph.AccessPackageLocalizedText",
+	}
+	return newAccessPackageLocalizedText, nil
+}
+
 // AccessPackageMultipleChoiceQuestion undocumented
 type AccessPackageMultipleChoiceQuestion struct {
 	// AccessPackageQuestion is the base model of AccessPackageMultipleChoiceQuestion
 	AccessPackageQuestion
+
+	ODataType string `json:"@odata.type"`
 	// Choices undocumented
 	Choices []AccessPackageAnswerChoice `json:"choices,omitempty"`
 	// IsMultipleSelectionAllowed undocumented
 	IsMultipleSelectionAllowed *bool `json:"isMultipleSelectionAllowed,omitempty"`
 }
 
+func NewAccessPackageMultipleChoiceQuestion() (*AccessPackageMultipleChoiceQuestion, error) {
+	newAccessPackageMultipleChoiceQuestion := &AccessPackageMultipleChoiceQuestion{
+		ODataType: "#microsoft.graph.AccessPackageMultipleChoiceQuestion",
+	}
+	return newAccessPackageMultipleChoiceQuestion, nil
+}
+
 // AccessPackageQuestion undocumented
 type AccessPackageQuestion struct {
 	// Entity is the base model of AccessPackageQuestion
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// IsAnswerEditable undocumented
 	IsAnswerEditable *bool `json:"isAnswerEditable,omitempty"`
 	// IsRequired undocumented
@@ -316,10 +471,19 @@ type AccessPackageQuestion struct {
 	Text *string `json:"text,omitempty"`
 }
 
+func NewAccessPackageQuestion() (*AccessPackageQuestion, error) {
+	newAccessPackageQuestion := &AccessPackageQuestion{
+		ODataType: "#microsoft.graph.AccessPackageQuestion",
+	}
+	return newAccessPackageQuestion, nil
+}
+
 // AccessPackageSubject undocumented
 type AccessPackageSubject struct {
 	// Entity is the base model of AccessPackageSubject
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Email undocumented
@@ -336,26 +500,53 @@ type AccessPackageSubject struct {
 	ConnectedOrganization *ConnectedOrganization `json:"connectedOrganization,omitempty"`
 }
 
+func NewAccessPackageSubject() (*AccessPackageSubject, error) {
+	newAccessPackageSubject := &AccessPackageSubject{
+		ODataType: "#microsoft.graph.AccessPackageSubject",
+	}
+	return newAccessPackageSubject, nil
+}
+
 // AccessPackageTextInputQuestion undocumented
 type AccessPackageTextInputQuestion struct {
 	// AccessPackageQuestion is the base model of AccessPackageTextInputQuestion
 	AccessPackageQuestion
+
+	ODataType string `json:"@odata.type"`
 	// IsSingleLineQuestion undocumented
 	IsSingleLineQuestion *bool `json:"isSingleLineQuestion,omitempty"`
 	// RegexPattern undocumented
 	RegexPattern *string `json:"regexPattern,omitempty"`
 }
 
+func NewAccessPackageTextInputQuestion() (*AccessPackageTextInputQuestion, error) {
+	newAccessPackageTextInputQuestion := &AccessPackageTextInputQuestion{
+		ODataType: "#microsoft.graph.AccessPackageTextInputQuestion",
+	}
+	return newAccessPackageTextInputQuestion, nil
+}
+
 // AccessReviewApplyAction undocumented
 type AccessReviewApplyAction struct {
 	// Object is the base model of AccessReviewApplyAction
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewAccessReviewApplyAction() (*AccessReviewApplyAction, error) {
+	newAccessReviewApplyAction := &AccessReviewApplyAction{
+		ODataType: "#microsoft.graph.AccessReviewApplyAction",
+	}
+	return newAccessReviewApplyAction, nil
 }
 
 // AccessReviewHistoryDefinition undocumented
 type AccessReviewHistoryDefinition struct {
 	// Entity is the base model of AccessReviewHistoryDefinition
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedBy undocumented
 	CreatedBy *UserIdentity `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -378,10 +569,19 @@ type AccessReviewHistoryDefinition struct {
 	Instances []AccessReviewHistoryInstance `json:"instances,omitempty"`
 }
 
+func NewAccessReviewHistoryDefinition() (*AccessReviewHistoryDefinition, error) {
+	newAccessReviewHistoryDefinition := &AccessReviewHistoryDefinition{
+		ODataType: "#microsoft.graph.AccessReviewHistoryDefinition",
+	}
+	return newAccessReviewHistoryDefinition, nil
+}
+
 // AccessReviewHistoryInstance undocumented
 type AccessReviewHistoryInstance struct {
 	// Entity is the base model of AccessReviewHistoryInstance
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DownloadURI undocumented
 	DownloadURI *string `json:"downloadUri,omitempty"`
 	// ExpirationDateTime undocumented
@@ -398,28 +598,55 @@ type AccessReviewHistoryInstance struct {
 	Status *AccessReviewHistoryStatus `json:"status,omitempty"`
 }
 
+func NewAccessReviewHistoryInstance() (*AccessReviewHistoryInstance, error) {
+	newAccessReviewHistoryInstance := &AccessReviewHistoryInstance{
+		ODataType: "#microsoft.graph.AccessReviewHistoryInstance",
+	}
+	return newAccessReviewHistoryInstance, nil
+}
+
 // AccessReviewHistoryScheduleSettings undocumented
 type AccessReviewHistoryScheduleSettings struct {
 	// Object is the base model of AccessReviewHistoryScheduleSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Recurrence undocumented
 	Recurrence *PatternedRecurrence `json:"recurrence,omitempty"`
 	// ReportRange undocumented
 	ReportRange *string `json:"reportRange,omitempty"`
 }
 
+func NewAccessReviewHistoryScheduleSettings() (*AccessReviewHistoryScheduleSettings, error) {
+	newAccessReviewHistoryScheduleSettings := &AccessReviewHistoryScheduleSettings{
+		ODataType: "#microsoft.graph.AccessReviewHistoryScheduleSettings",
+	}
+	return newAccessReviewHistoryScheduleSettings, nil
+}
+
 // AccessReviewInactiveUsersQueryScope undocumented
 type AccessReviewInactiveUsersQueryScope struct {
 	// AccessReviewQueryScope is the base model of AccessReviewInactiveUsersQueryScope
 	AccessReviewQueryScope
+
+	ODataType string `json:"@odata.type"`
 	// InactiveDuration undocumented
 	InactiveDuration *Duration `json:"inactiveDuration,omitempty"`
+}
+
+func NewAccessReviewInactiveUsersQueryScope() (*AccessReviewInactiveUsersQueryScope, error) {
+	newAccessReviewInactiveUsersQueryScope := &AccessReviewInactiveUsersQueryScope{
+		ODataType: "#microsoft.graph.AccessReviewInactiveUsersQueryScope",
+	}
+	return newAccessReviewInactiveUsersQueryScope, nil
 }
 
 // AccessReviewInstance undocumented
 type AccessReviewInstance struct {
 	// Entity is the base model of AccessReviewInstance
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// FallbackReviewers undocumented
@@ -440,10 +667,19 @@ type AccessReviewInstance struct {
 	Stages []AccessReviewStage `json:"stages,omitempty"`
 }
 
+func NewAccessReviewInstance() (*AccessReviewInstance, error) {
+	newAccessReviewInstance := &AccessReviewInstance{
+		ODataType: "#microsoft.graph.AccessReviewInstance",
+	}
+	return newAccessReviewInstance, nil
+}
+
 // AccessReviewInstanceDecisionItem undocumented
 type AccessReviewInstanceDecisionItem struct {
 	// Entity is the base model of AccessReviewInstanceDecisionItem
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AccessReviewID undocumented
 	AccessReviewID *string `json:"accessReviewId,omitempty"`
 	// AppliedBy undocumented
@@ -472,28 +708,55 @@ type AccessReviewInstanceDecisionItem struct {
 	ReviewedDateTime *time.Time `json:"reviewedDateTime,omitempty"`
 }
 
+func NewAccessReviewInstanceDecisionItem() (*AccessReviewInstanceDecisionItem, error) {
+	newAccessReviewInstanceDecisionItem := &AccessReviewInstanceDecisionItem{
+		ODataType: "#microsoft.graph.AccessReviewInstanceDecisionItem",
+	}
+	return newAccessReviewInstanceDecisionItem, nil
+}
+
 // AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource undocumented
 type AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource struct {
 	// AccessReviewInstanceDecisionItemResource is the base model of AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource
 	AccessReviewInstanceDecisionItemResource
+
+	ODataType string `json:"@odata.type"`
 	// AccessPackageDisplayName undocumented
 	AccessPackageDisplayName *string `json:"accessPackageDisplayName,omitempty"`
 	// AccessPackageID undocumented
 	AccessPackageID *string `json:"accessPackageId,omitempty"`
 }
 
+func NewAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource() (*AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource, error) {
+	newAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource := &AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource{
+		ODataType: "#microsoft.graph.AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource",
+	}
+	return newAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource, nil
+}
+
 // AccessReviewInstanceDecisionItemAzureRoleResource undocumented
 type AccessReviewInstanceDecisionItemAzureRoleResource struct {
 	// AccessReviewInstanceDecisionItemResource is the base model of AccessReviewInstanceDecisionItemAzureRoleResource
 	AccessReviewInstanceDecisionItemResource
+
+	ODataType string `json:"@odata.type"`
 	// Scope undocumented
 	Scope *AccessReviewInstanceDecisionItemResource `json:"scope,omitempty"`
+}
+
+func NewAccessReviewInstanceDecisionItemAzureRoleResource() (*AccessReviewInstanceDecisionItemAzureRoleResource, error) {
+	newAccessReviewInstanceDecisionItemAzureRoleResource := &AccessReviewInstanceDecisionItemAzureRoleResource{
+		ODataType: "#microsoft.graph.AccessReviewInstanceDecisionItemAzureRoleResource",
+	}
+	return newAccessReviewInstanceDecisionItemAzureRoleResource, nil
 }
 
 // AccessReviewInstanceDecisionItemResource undocumented
 type AccessReviewInstanceDecisionItemResource struct {
 	// Object is the base model of AccessReviewInstanceDecisionItemResource
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// ID undocumented
@@ -502,46 +765,91 @@ type AccessReviewInstanceDecisionItemResource struct {
 	Type *string `json:"type,omitempty"`
 }
 
+func NewAccessReviewInstanceDecisionItemResource() (*AccessReviewInstanceDecisionItemResource, error) {
+	newAccessReviewInstanceDecisionItemResource := &AccessReviewInstanceDecisionItemResource{
+		ODataType: "#microsoft.graph.AccessReviewInstanceDecisionItemResource",
+	}
+	return newAccessReviewInstanceDecisionItemResource, nil
+}
+
 // AccessReviewInstanceDecisionItemServicePrincipalResource undocumented
 type AccessReviewInstanceDecisionItemServicePrincipalResource struct {
 	// AccessReviewInstanceDecisionItemResource is the base model of AccessReviewInstanceDecisionItemServicePrincipalResource
 	AccessReviewInstanceDecisionItemResource
+
+	ODataType string `json:"@odata.type"`
 	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
+}
+
+func NewAccessReviewInstanceDecisionItemServicePrincipalResource() (*AccessReviewInstanceDecisionItemServicePrincipalResource, error) {
+	newAccessReviewInstanceDecisionItemServicePrincipalResource := &AccessReviewInstanceDecisionItemServicePrincipalResource{
+		ODataType: "#microsoft.graph.AccessReviewInstanceDecisionItemServicePrincipalResource",
+	}
+	return newAccessReviewInstanceDecisionItemServicePrincipalResource, nil
 }
 
 // AccessReviewNotificationRecipientItem undocumented
 type AccessReviewNotificationRecipientItem struct {
 	// Object is the base model of AccessReviewNotificationRecipientItem
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// NotificationRecipientScope undocumented
 	NotificationRecipientScope *AccessReviewNotificationRecipientScope `json:"notificationRecipientScope,omitempty"`
 	// NotificationTemplateType undocumented
 	NotificationTemplateType *string `json:"notificationTemplateType,omitempty"`
 }
 
+func NewAccessReviewNotificationRecipientItem() (*AccessReviewNotificationRecipientItem, error) {
+	newAccessReviewNotificationRecipientItem := &AccessReviewNotificationRecipientItem{
+		ODataType: "#microsoft.graph.AccessReviewNotificationRecipientItem",
+	}
+	return newAccessReviewNotificationRecipientItem, nil
+}
+
 // AccessReviewNotificationRecipientQueryScope undocumented
 type AccessReviewNotificationRecipientQueryScope struct {
 	// AccessReviewNotificationRecipientScope is the base model of AccessReviewNotificationRecipientQueryScope
 	AccessReviewNotificationRecipientScope
+
+	ODataType string `json:"@odata.type"`
 	// Query undocumented
 	Query *string `json:"query,omitempty"`
 	// QueryRoot undocumented
 	QueryRoot *string `json:"queryRoot,omitempty"`
 	// QueryType undocumented
 	QueryType *string `json:"queryType,omitempty"`
+}
+
+func NewAccessReviewNotificationRecipientQueryScope() (*AccessReviewNotificationRecipientQueryScope, error) {
+	newAccessReviewNotificationRecipientQueryScope := &AccessReviewNotificationRecipientQueryScope{
+		ODataType: "#microsoft.graph.AccessReviewNotificationRecipientQueryScope",
+	}
+	return newAccessReviewNotificationRecipientQueryScope, nil
 }
 
 // AccessReviewNotificationRecipientScope undocumented
 type AccessReviewNotificationRecipientScope struct {
 	// Object is the base model of AccessReviewNotificationRecipientScope
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewAccessReviewNotificationRecipientScope() (*AccessReviewNotificationRecipientScope, error) {
+	newAccessReviewNotificationRecipientScope := &AccessReviewNotificationRecipientScope{
+		ODataType: "#microsoft.graph.AccessReviewNotificationRecipientScope",
+	}
+	return newAccessReviewNotificationRecipientScope, nil
 }
 
 // AccessReviewQueryScope undocumented
 type AccessReviewQueryScope struct {
 	// AccessReviewScope is the base model of AccessReviewQueryScope
 	AccessReviewScope
+
+	ODataType string `json:"@odata.type"`
 	// Query undocumented
 	Query *string `json:"query,omitempty"`
 	// QueryRoot undocumented
@@ -550,10 +858,19 @@ type AccessReviewQueryScope struct {
 	QueryType *string `json:"queryType,omitempty"`
 }
 
+func NewAccessReviewQueryScope() (*AccessReviewQueryScope, error) {
+	newAccessReviewQueryScope := &AccessReviewQueryScope{
+		ODataType: "#microsoft.graph.AccessReviewQueryScope",
+	}
+	return newAccessReviewQueryScope, nil
+}
+
 // AccessReviewReviewer undocumented
 type AccessReviewReviewer struct {
 	// Entity is the base model of AccessReviewReviewer
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// DisplayName undocumented
@@ -562,10 +879,19 @@ type AccessReviewReviewer struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewAccessReviewReviewer() (*AccessReviewReviewer, error) {
+	newAccessReviewReviewer := &AccessReviewReviewer{
+		ODataType: "#microsoft.graph.AccessReviewReviewer",
+	}
+	return newAccessReviewReviewer, nil
+}
+
 // AccessReviewReviewerScope undocumented
 type AccessReviewReviewerScope struct {
 	// Object is the base model of AccessReviewReviewerScope
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Query undocumented
 	Query *string `json:"query,omitempty"`
 	// QueryRoot undocumented
@@ -574,10 +900,19 @@ type AccessReviewReviewerScope struct {
 	QueryType *string `json:"queryType,omitempty"`
 }
 
+func NewAccessReviewReviewerScope() (*AccessReviewReviewerScope, error) {
+	newAccessReviewReviewerScope := &AccessReviewReviewerScope{
+		ODataType: "#microsoft.graph.AccessReviewReviewerScope",
+	}
+	return newAccessReviewReviewerScope, nil
+}
+
 // AccessReviewScheduleDefinition undocumented
 type AccessReviewScheduleDefinition struct {
 	// Entity is the base model of AccessReviewScheduleDefinition
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AdditionalNotificationRecipients undocumented
 	AdditionalNotificationRecipients []AccessReviewNotificationRecipientItem `json:"additionalNotificationRecipients,omitempty"`
 	// CreatedBy undocumented
@@ -610,10 +945,19 @@ type AccessReviewScheduleDefinition struct {
 	Instances []AccessReviewInstance `json:"instances,omitempty"`
 }
 
+func NewAccessReviewScheduleDefinition() (*AccessReviewScheduleDefinition, error) {
+	newAccessReviewScheduleDefinition := &AccessReviewScheduleDefinition{
+		ODataType: "#microsoft.graph.AccessReviewScheduleDefinition",
+	}
+	return newAccessReviewScheduleDefinition, nil
+}
+
 // AccessReviewScheduleSettings undocumented
 type AccessReviewScheduleSettings struct {
 	// Object is the base model of AccessReviewScheduleSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ApplyActions undocumented
 	ApplyActions []AccessReviewApplyAction `json:"applyActions,omitempty"`
 	// AutoApplyDecisionsEnabled undocumented
@@ -638,26 +982,53 @@ type AccessReviewScheduleSettings struct {
 	ReminderNotificationsEnabled *bool `json:"reminderNotificationsEnabled,omitempty"`
 }
 
+func NewAccessReviewScheduleSettings() (*AccessReviewScheduleSettings, error) {
+	newAccessReviewScheduleSettings := &AccessReviewScheduleSettings{
+		ODataType: "#microsoft.graph.AccessReviewScheduleSettings",
+	}
+	return newAccessReviewScheduleSettings, nil
+}
+
 // AccessReviewScope undocumented
 type AccessReviewScope struct {
 	// Object is the base model of AccessReviewScope
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewAccessReviewScope() (*AccessReviewScope, error) {
+	newAccessReviewScope := &AccessReviewScope{
+		ODataType: "#microsoft.graph.AccessReviewScope",
+	}
+	return newAccessReviewScope, nil
 }
 
 // AccessReviewSet undocumented
 type AccessReviewSet struct {
 	// Entity is the base model of AccessReviewSet
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Definitions undocumented
 	Definitions []AccessReviewScheduleDefinition `json:"definitions,omitempty"`
 	// HistoryDefinitions undocumented
 	HistoryDefinitions []AccessReviewHistoryDefinition `json:"historyDefinitions,omitempty"`
 }
 
+func NewAccessReviewSet() (*AccessReviewSet, error) {
+	newAccessReviewSet := &AccessReviewSet{
+		ODataType: "#microsoft.graph.AccessReviewSet",
+	}
+	return newAccessReviewSet, nil
+}
+
 // AccessReviewStage undocumented
 type AccessReviewStage struct {
 	// Entity is the base model of AccessReviewStage
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// FallbackReviewers undocumented
@@ -672,10 +1043,19 @@ type AccessReviewStage struct {
 	Decisions []AccessReviewInstanceDecisionItem `json:"decisions,omitempty"`
 }
 
+func NewAccessReviewStage() (*AccessReviewStage, error) {
+	newAccessReviewStage := &AccessReviewStage{
+		ODataType: "#microsoft.graph.AccessReviewStage",
+	}
+	return newAccessReviewStage, nil
+}
+
 // AccessReviewStageSettings undocumented
 type AccessReviewStageSettings struct {
 	// Object is the base model of AccessReviewStageSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DecisionsThatWillMoveToNextStage undocumented
 	DecisionsThatWillMoveToNextStage []string `json:"decisionsThatWillMoveToNextStage,omitempty"`
 	// DependsOn undocumented
@@ -690,4 +1070,11 @@ type AccessReviewStageSettings struct {
 	Reviewers []AccessReviewReviewerScope `json:"reviewers,omitempty"`
 	// StageID undocumented
 	StageID *string `json:"stageId,omitempty"`
+}
+
+func NewAccessReviewStageSettings() (*AccessReviewStageSettings, error) {
+	newAccessReviewStageSettings := &AccessReviewStageSettings{
+		ODataType: "#microsoft.graph.AccessReviewStageSettings",
+	}
+	return newAccessReviewStageSettings, nil
 }

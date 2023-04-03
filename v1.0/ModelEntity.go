@@ -6,6 +6,15 @@ package msgraph
 type Entity struct {
 	// Object is the base model of Entity
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ID undocumented
 	ID *string `json:"id,omitempty"`
+}
+
+func NewEntity() (*Entity, error) {
+	newEntity := &Entity{
+		ODataType: "#microsoft.graph.Entity",
+	}
+	return newEntity, nil
 }

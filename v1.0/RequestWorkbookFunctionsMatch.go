@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsMatchRequestBuilder struct{ BaseRequestBuilder }
 
-// Match action undocumented
+// Match action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Match(reqObj *WorkbookFunctionsMatchRequestParameter) *WorkbookFunctionsMatchRequestBuilder {
 	bb := &WorkbookFunctionsMatchRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Match"

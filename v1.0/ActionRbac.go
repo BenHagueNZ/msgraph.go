@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// RoleAssignmentScheduleInstances returns request builder for UnifiedRoleAssignmentScheduleInstance collection
+// RoleAssignmentScheduleInstances returns request builder for UnifiedRoleAssignmentScheduleInstance collection rcn
 func (b *RbacApplicationRequestBuilder) RoleAssignmentScheduleInstances() *RbacApplicationRoleAssignmentScheduleInstancesCollectionRequestBuilder {
 	bb := &RbacApplicationRoleAssignmentScheduleInstancesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleAssignmentScheduleInstances"
@@ -114,7 +114,7 @@ func (r *RbacApplicationRoleAssignmentScheduleInstancesCollectionRequest) Add(ct
 	return
 }
 
-// RoleAssignmentScheduleRequests returns request builder for UnifiedRoleAssignmentScheduleRequestObject collection
+// RoleAssignmentScheduleRequests returns request builder for UnifiedRoleAssignmentScheduleRequestObject collection rcn
 func (b *RbacApplicationRequestBuilder) RoleAssignmentScheduleRequests() *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder {
 	bb := &RbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleAssignmentScheduleRequests"
@@ -217,7 +217,7 @@ func (r *RbacApplicationRoleAssignmentScheduleRequestsCollectionRequest) Add(ctx
 	return
 }
 
-// RoleAssignmentSchedules returns request builder for UnifiedRoleAssignmentSchedule collection
+// RoleAssignmentSchedules returns request builder for UnifiedRoleAssignmentSchedule collection rcn
 func (b *RbacApplicationRequestBuilder) RoleAssignmentSchedules() *RbacApplicationRoleAssignmentSchedulesCollectionRequestBuilder {
 	bb := &RbacApplicationRoleAssignmentSchedulesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleAssignmentSchedules"
@@ -320,7 +320,7 @@ func (r *RbacApplicationRoleAssignmentSchedulesCollectionRequest) Add(ctx contex
 	return
 }
 
-// RoleAssignments returns request builder for UnifiedRoleAssignment collection
+// RoleAssignments returns request builder for UnifiedRoleAssignment collection rcn
 func (b *RbacApplicationRequestBuilder) RoleAssignments() *RbacApplicationRoleAssignmentsCollectionRequestBuilder {
 	bb := &RbacApplicationRoleAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleAssignments"
@@ -423,7 +423,7 @@ func (r *RbacApplicationRoleAssignmentsCollectionRequest) Add(ctx context.Contex
 	return
 }
 
-// RoleDefinitions returns request builder for UnifiedRoleDefinition collection
+// RoleDefinitions returns request builder for UnifiedRoleDefinition collection rcn
 func (b *RbacApplicationRequestBuilder) RoleDefinitions() *RbacApplicationRoleDefinitionsCollectionRequestBuilder {
 	bb := &RbacApplicationRoleDefinitionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleDefinitions"
@@ -526,7 +526,7 @@ func (r *RbacApplicationRoleDefinitionsCollectionRequest) Add(ctx context.Contex
 	return
 }
 
-// RoleEligibilityScheduleInstances returns request builder for UnifiedRoleEligibilityScheduleInstance collection
+// RoleEligibilityScheduleInstances returns request builder for UnifiedRoleEligibilityScheduleInstance collection rcn
 func (b *RbacApplicationRequestBuilder) RoleEligibilityScheduleInstances() *RbacApplicationRoleEligibilityScheduleInstancesCollectionRequestBuilder {
 	bb := &RbacApplicationRoleEligibilityScheduleInstancesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleEligibilityScheduleInstances"
@@ -629,7 +629,7 @@ func (r *RbacApplicationRoleEligibilityScheduleInstancesCollectionRequest) Add(c
 	return
 }
 
-// RoleEligibilityScheduleRequests returns request builder for UnifiedRoleEligibilityScheduleRequestObject collection
+// RoleEligibilityScheduleRequests returns request builder for UnifiedRoleEligibilityScheduleRequestObject collection rcn
 func (b *RbacApplicationRequestBuilder) RoleEligibilityScheduleRequests() *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder {
 	bb := &RbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleEligibilityScheduleRequests"
@@ -732,7 +732,7 @@ func (r *RbacApplicationRoleEligibilityScheduleRequestsCollectionRequest) Add(ct
 	return
 }
 
-// RoleEligibilitySchedules returns request builder for UnifiedRoleEligibilitySchedule collection
+// RoleEligibilitySchedules returns request builder for UnifiedRoleEligibilitySchedule collection rcn
 func (b *RbacApplicationRequestBuilder) RoleEligibilitySchedules() *RbacApplicationRoleEligibilitySchedulesCollectionRequestBuilder {
 	bb := &RbacApplicationRoleEligibilitySchedulesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleEligibilitySchedules"
@@ -833,4 +833,11 @@ func (r *RbacApplicationRoleEligibilitySchedulesCollectionRequest) Get(ctx conte
 func (r *RbacApplicationRoleEligibilitySchedulesCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleEligibilitySchedule) (resObj *UnifiedRoleEligibilitySchedule, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// RbacApplication is navigation property rn
+func (b *RbacApplicationRequestBuilder) RbacApplication() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

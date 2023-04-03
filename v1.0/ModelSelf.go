@@ -8,14 +8,25 @@ import "time"
 type SelfServiceSignUpAuthenticationFlowConfiguration struct {
 	// Object is the base model of SelfServiceSignUpAuthenticationFlowConfiguration
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsEnabled undocumented
 	IsEnabled *bool `json:"isEnabled,omitempty"`
+}
+
+func NewSelfServiceSignUpAuthenticationFlowConfiguration() (*SelfServiceSignUpAuthenticationFlowConfiguration, error) {
+	newSelfServiceSignUpAuthenticationFlowConfiguration := &SelfServiceSignUpAuthenticationFlowConfiguration{
+		ODataType: "#microsoft.graph.SelfServiceSignUpAuthenticationFlowConfiguration",
+	}
+	return newSelfServiceSignUpAuthenticationFlowConfiguration, nil
 }
 
 // SelfSignedCertificate undocumented
 type SelfSignedCertificate struct {
 	// Object is the base model of SelfSignedCertificate
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CustomKeyIdentifier undocumented
 	CustomKeyIdentifier *Binary `json:"customKeyIdentifier,omitempty"`
 	// DisplayName undocumented
@@ -34,4 +45,11 @@ type SelfSignedCertificate struct {
 	Type *string `json:"type,omitempty"`
 	// Usage undocumented
 	Usage *string `json:"usage,omitempty"`
+}
+
+func NewSelfSignedCertificate() (*SelfSignedCertificate, error) {
+	newSelfSignedCertificate := &SelfSignedCertificate{
+		ODataType: "#microsoft.graph.SelfSignedCertificate",
+	}
+	return newSelfSignedCertificate, nil
 }

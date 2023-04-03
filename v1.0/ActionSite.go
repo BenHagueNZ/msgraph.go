@@ -23,14 +23,14 @@ type SiteCollectionRemoveRequestParameter struct {
 	Value []Site `json:"value,omitempty"`
 }
 
-// Analytics is navigation property
+// Analytics is navigation property rn
 func (b *SiteRequestBuilder) Analytics() *ItemAnalyticsRequestBuilder {
 	bb := &ItemAnalyticsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/analytics"
 	return bb
 }
 
-// Columns returns request builder for ColumnDefinition collection
+// Columns returns request builder for ColumnDefinition collection rcn
 func (b *SiteRequestBuilder) Columns() *SiteColumnsCollectionRequestBuilder {
 	bb := &SiteColumnsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/columns"
@@ -133,7 +133,7 @@ func (r *SiteColumnsCollectionRequest) Add(ctx context.Context, reqObj *ColumnDe
 	return
 }
 
-// ContentTypes returns request builder for ContentType collection
+// ContentTypes returns request builder for ContentType collection rcn
 func (b *SiteRequestBuilder) ContentTypes() *SiteContentTypesCollectionRequestBuilder {
 	bb := &SiteContentTypesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/contentTypes"
@@ -236,14 +236,14 @@ func (r *SiteContentTypesCollectionRequest) Add(ctx context.Context, reqObj *Con
 	return
 }
 
-// Drive is navigation property
+// Drive is navigation property rn
 func (b *SiteRequestBuilder) Drive() *DriveRequestBuilder {
 	bb := &DriveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/drive"
 	return bb
 }
 
-// Drives returns request builder for Drive collection
+// Drives returns request builder for Drive collection rcn
 func (b *SiteRequestBuilder) Drives() *SiteDrivesCollectionRequestBuilder {
 	bb := &SiteDrivesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/drives"
@@ -346,7 +346,7 @@ func (r *SiteDrivesCollectionRequest) Add(ctx context.Context, reqObj *Drive) (r
 	return
 }
 
-// ExternalColumns returns request builder for ColumnDefinition collection
+// ExternalColumns returns request builder for ColumnDefinition collection rcn
 func (b *SiteRequestBuilder) ExternalColumns() *SiteExternalColumnsCollectionRequestBuilder {
 	bb := &SiteExternalColumnsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/externalColumns"
@@ -449,7 +449,7 @@ func (r *SiteExternalColumnsCollectionRequest) Add(ctx context.Context, reqObj *
 	return
 }
 
-// Items returns request builder for BaseItem collection
+// Items returns request builder for BaseItem collection rcn
 func (b *SiteRequestBuilder) Items() *SiteItemsCollectionRequestBuilder {
 	bb := &SiteItemsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/items"
@@ -552,7 +552,7 @@ func (r *SiteItemsCollectionRequest) Add(ctx context.Context, reqObj *BaseItem) 
 	return
 }
 
-// Lists returns request builder for List collection
+// Lists returns request builder for List collection rcn
 func (b *SiteRequestBuilder) Lists() *SiteListsCollectionRequestBuilder {
 	bb := &SiteListsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/lists"
@@ -655,14 +655,14 @@ func (r *SiteListsCollectionRequest) Add(ctx context.Context, reqObj *List) (res
 	return
 }
 
-// Onenote is navigation property
+// Onenote is navigation property rn
 func (b *SiteRequestBuilder) Onenote() *OnenoteRequestBuilder {
 	bb := &OnenoteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/onenote"
 	return bb
 }
 
-// Operations returns request builder for RichLongRunningOperation collection
+// Operations returns request builder for RichLongRunningOperation collection rcn
 func (b *SiteRequestBuilder) Operations() *SiteOperationsCollectionRequestBuilder {
 	bb := &SiteOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -765,7 +765,7 @@ func (r *SiteOperationsCollectionRequest) Add(ctx context.Context, reqObj *RichL
 	return
 }
 
-// Permissions returns request builder for Permission collection
+// Permissions returns request builder for Permission collection rcn
 func (b *SiteRequestBuilder) Permissions() *SitePermissionsCollectionRequestBuilder {
 	bb := &SitePermissionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/permissions"
@@ -868,7 +868,7 @@ func (r *SitePermissionsCollectionRequest) Add(ctx context.Context, reqObj *Perm
 	return
 }
 
-// Sites returns request builder for Site collection
+// Sites returns request builder for Site collection rcn
 func (b *SiteRequestBuilder) Sites() *SiteSitesCollectionRequestBuilder {
 	bb := &SiteSitesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sites"
@@ -971,14 +971,14 @@ func (r *SiteSitesCollectionRequest) Add(ctx context.Context, reqObj *Site) (res
 	return
 }
 
-// TermStore is navigation property
+// TermStore is navigation property rn
 func (b *SiteRequestBuilder) TermStore() *TermStoreStoreRequestBuilder {
 	bb := &TermStoreStoreRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/termStore"
 	return bb
 }
 
-// TermStores returns request builder for TermStoreStore collection
+// TermStores returns request builder for TermStoreStore collection rcn
 func (b *SiteRequestBuilder) TermStores() *SiteTermStoresCollectionRequestBuilder {
 	bb := &SiteTermStoresCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/termStores"
@@ -1077,6 +1077,109 @@ func (r *SiteTermStoresCollectionRequest) Get(ctx context.Context) ([]TermStoreS
 
 // Add performs POST request for TermStoreStore collection
 func (r *SiteTermStoresCollectionRequest) Add(ctx context.Context, reqObj *TermStoreStore) (resObj *TermStoreStore, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Site returns request builder for BaseItem collection rcn
+func (b *SiteRequestBuilder) Site() *SiteSiteCollectionRequestBuilder {
+	bb := &SiteSiteCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/BaseItem"
+	return bb
+}
+
+// SiteSiteCollectionRequestBuilder is request builder for BaseItem collection
+type SiteSiteCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for BaseItem collection
+func (b *SiteSiteCollectionRequestBuilder) Request() *SiteSiteCollectionRequest {
+	return &SiteSiteCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for BaseItem item
+func (b *SiteSiteCollectionRequestBuilder) ID(id string) *BaseItemRequestBuilder {
+	bb := &BaseItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// SiteSiteCollectionRequest is request for BaseItem collection
+type SiteSiteCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for BaseItem collection
+func (r *SiteSiteCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]BaseItem, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []BaseItem
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []BaseItem
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for BaseItem collection, max N pages
+func (r *SiteSiteCollectionRequest) GetN(ctx context.Context, n int) ([]BaseItem, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for BaseItem collection
+func (r *SiteSiteCollectionRequest) Get(ctx context.Context) ([]BaseItem, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for BaseItem collection
+func (r *SiteSiteCollectionRequest) Add(ctx context.Context, reqObj *BaseItem) (resObj *BaseItem, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

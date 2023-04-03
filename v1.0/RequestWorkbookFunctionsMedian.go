@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsMedianRequestBuilder struct{ BaseRequestBuilder }
 
-// Median action undocumented
+// Median action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Median(reqObj *WorkbookFunctionsMedianRequestParameter) *WorkbookFunctionsMedianRequestBuilder {
 	bb := &WorkbookFunctionsMedianRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Median"

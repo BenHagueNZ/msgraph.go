@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSmallRequestBuilder struct{ BaseRequestBuilder }
 
-// Small action undocumented
+// Small action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Small(reqObj *WorkbookFunctionsSmallRequestParameter) *WorkbookFunctionsSmallRequestBuilder {
 	bb := &WorkbookFunctionsSmallRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Small"

@@ -6,6 +6,8 @@ package msgraph
 type NumberColumn struct {
 	// Object is the base model of NumberColumn
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DecimalPlaces undocumented
 	DecimalPlaces *string `json:"decimalPlaces,omitempty"`
 	// DisplayAs undocumented
@@ -14,4 +16,11 @@ type NumberColumn struct {
 	Maximum *float64 `json:"maximum,omitempty"`
 	// Minimum undocumented
 	Minimum *float64 `json:"minimum,omitempty"`
+}
+
+func NewNumberColumn() (*NumberColumn, error) {
+	newNumberColumn := &NumberColumn{
+		ODataType: "#microsoft.graph.NumberColumn",
+	}
+	return newNumberColumn, nil
 }

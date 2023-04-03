@@ -211,7 +211,7 @@ func (r *GroupSettingTemplateRequest) Delete(ctx context.Context) error {
 
 type GroupAssignLicenseRequestBuilder struct{ BaseRequestBuilder }
 
-// AssignLicense action undocumented
+// AssignLicense action undocumentedras
 func (b *GroupRequestBuilder) AssignLicense(reqObj *GroupAssignLicenseRequestParameter) *GroupAssignLicenseRequestBuilder {
 	bb := &GroupAssignLicenseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AssignLicense"
@@ -234,7 +234,7 @@ func (r *GroupAssignLicenseRequest) Post(ctx context.Context) (resObj *Group, er
 
 type GroupCheckGrantedPermissionsForAppRequestBuilder struct{ BaseRequestBuilder }
 
-// CheckGrantedPermissionsForApp action undocumented
+// CheckGrantedPermissionsForApp action undocumentedrac
 func (b *GroupRequestBuilder) CheckGrantedPermissionsForApp(reqObj *GroupCheckGrantedPermissionsForAppRequestParameter) *GroupCheckGrantedPermissionsForAppRequestBuilder {
 	bb := &GroupCheckGrantedPermissionsForAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CheckGrantedPermissionsForApp"
@@ -315,7 +315,7 @@ func (r *GroupCheckGrantedPermissionsForAppRequest) Post(ctx context.Context) ([
 
 type GroupValidatePropertiesRequestBuilder struct{ BaseRequestBuilder }
 
-// ValidateProperties action undocumented
+// ValidateProperties action undocumentedrav
 func (b *GroupRequestBuilder) ValidateProperties(reqObj *GroupValidatePropertiesRequestParameter) *GroupValidatePropertiesRequestBuilder {
 	bb := &GroupValidatePropertiesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ValidateProperties"
@@ -337,7 +337,7 @@ func (r *GroupValidatePropertiesRequest) Post(ctx context.Context) error {
 
 type GroupAddFavoriteRequestBuilder struct{ BaseRequestBuilder }
 
-// AddFavorite action undocumented
+// AddFavorite action undocumentedrav
 func (b *GroupRequestBuilder) AddFavorite(reqObj *GroupAddFavoriteRequestParameter) *GroupAddFavoriteRequestBuilder {
 	bb := &GroupAddFavoriteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AddFavorite"
@@ -359,7 +359,7 @@ func (r *GroupAddFavoriteRequest) Post(ctx context.Context) error {
 
 type GroupRemoveFavoriteRequestBuilder struct{ BaseRequestBuilder }
 
-// RemoveFavorite action undocumented
+// RemoveFavorite action undocumentedrav
 func (b *GroupRequestBuilder) RemoveFavorite(reqObj *GroupRemoveFavoriteRequestParameter) *GroupRemoveFavoriteRequestBuilder {
 	bb := &GroupRemoveFavoriteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RemoveFavorite"
@@ -381,7 +381,7 @@ func (r *GroupRemoveFavoriteRequest) Post(ctx context.Context) error {
 
 type GroupResetUnseenCountRequestBuilder struct{ BaseRequestBuilder }
 
-// ResetUnseenCount action undocumented
+// ResetUnseenCount action undocumentedrav
 func (b *GroupRequestBuilder) ResetUnseenCount(reqObj *GroupResetUnseenCountRequestParameter) *GroupResetUnseenCountRequestBuilder {
 	bb := &GroupResetUnseenCountRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ResetUnseenCount"
@@ -403,7 +403,7 @@ func (r *GroupResetUnseenCountRequest) Post(ctx context.Context) error {
 
 type GroupSubscribeByMailRequestBuilder struct{ BaseRequestBuilder }
 
-// SubscribeByMail action undocumented
+// SubscribeByMail action undocumentedrav
 func (b *GroupRequestBuilder) SubscribeByMail(reqObj *GroupSubscribeByMailRequestParameter) *GroupSubscribeByMailRequestBuilder {
 	bb := &GroupSubscribeByMailRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SubscribeByMail"
@@ -425,7 +425,7 @@ func (r *GroupSubscribeByMailRequest) Post(ctx context.Context) error {
 
 type GroupUnsubscribeByMailRequestBuilder struct{ BaseRequestBuilder }
 
-// UnsubscribeByMail action undocumented
+// UnsubscribeByMail action undocumentedrav
 func (b *GroupRequestBuilder) UnsubscribeByMail(reqObj *GroupUnsubscribeByMailRequestParameter) *GroupUnsubscribeByMailRequestBuilder {
 	bb := &GroupUnsubscribeByMailRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/UnsubscribeByMail"
@@ -447,7 +447,7 @@ func (r *GroupUnsubscribeByMailRequest) Post(ctx context.Context) error {
 
 type GroupRenewRequestBuilder struct{ BaseRequestBuilder }
 
-// Renew action undocumented
+// Renew action undocumentedrav
 func (b *GroupRequestBuilder) Renew(reqObj *GroupRenewRequestParameter) *GroupRenewRequestBuilder {
 	bb := &GroupRenewRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Renew"
@@ -469,7 +469,7 @@ func (r *GroupRenewRequest) Post(ctx context.Context) error {
 
 type GroupLifecyclePolicyAddGroupRequestBuilder struct{ BaseRequestBuilder }
 
-// AddGroup action undocumented
+// AddGroup action undocumentedras
 func (b *GroupLifecyclePolicyRequestBuilder) AddGroup(reqObj *GroupLifecyclePolicyAddGroupRequestParameter) *GroupLifecyclePolicyAddGroupRequestBuilder {
 	bb := &GroupLifecyclePolicyAddGroupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AddGroup"
@@ -492,7 +492,7 @@ func (r *GroupLifecyclePolicyAddGroupRequest) Post(ctx context.Context) (resObj 
 
 type GroupLifecyclePolicyRemoveGroupRequestBuilder struct{ BaseRequestBuilder }
 
-// RemoveGroup action undocumented
+// RemoveGroup action undocumentedras
 func (b *GroupLifecyclePolicyRequestBuilder) RemoveGroup(reqObj *GroupLifecyclePolicyRemoveGroupRequestParameter) *GroupLifecyclePolicyRemoveGroupRequestBuilder {
 	bb := &GroupLifecyclePolicyRemoveGroupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RemoveGroup"

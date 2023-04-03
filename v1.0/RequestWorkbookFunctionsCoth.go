@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsCothRequestBuilder struct{ BaseRequestBuilder }
 
-// Coth action undocumented
+// Coth action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Coth(reqObj *WorkbookFunctionsCothRequestParameter) *WorkbookFunctionsCothRequestBuilder {
 	bb := &WorkbookFunctionsCothRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Coth"

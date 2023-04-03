@@ -6,6 +6,8 @@ package msgraph
 type WorkforceIntegration struct {
 	// ChangeTrackedEntity is the base model of WorkforceIntegration
 	ChangeTrackedEntity
+
+	ODataType string `json:"@odata.type"`
 	// APIVersion undocumented
 	APIVersion *int `json:"apiVersion,omitempty"`
 	// DisplayName undocumented
@@ -20,12 +22,28 @@ type WorkforceIntegration struct {
 	URL *string `json:"url,omitempty"`
 }
 
+func NewWorkforceIntegration() (*WorkforceIntegration, error) {
+	newWorkforceIntegration := &WorkforceIntegration{
+		ODataType: "#microsoft.graph.WorkforceIntegration",
+	}
+	return newWorkforceIntegration, nil
+}
+
 // WorkforceIntegrationEncryption undocumented
 type WorkforceIntegrationEncryption struct {
 	// Object is the base model of WorkforceIntegrationEncryption
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Protocol undocumented
 	Protocol *WorkforceIntegrationEncryptionProtocol `json:"protocol,omitempty"`
 	// Secret undocumented
 	Secret *string `json:"secret,omitempty"`
+}
+
+func NewWorkforceIntegrationEncryption() (*WorkforceIntegrationEncryption, error) {
+	newWorkforceIntegrationEncryption := &WorkforceIntegrationEncryption{
+		ODataType: "#microsoft.graph.WorkforceIntegrationEncryption",
+	}
+	return newWorkforceIntegrationEncryption, nil
 }

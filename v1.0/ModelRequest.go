@@ -8,6 +8,8 @@ import "time"
 type RequestObject struct {
 	// Entity is the base model of RequestObject
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ApprovalID undocumented
 	ApprovalID *string `json:"approvalId,omitempty"`
 	// CompletedDateTime undocumented
@@ -22,10 +24,19 @@ type RequestObject struct {
 	Status *string `json:"status,omitempty"`
 }
 
+func NewRequestObject() (*RequestObject, error) {
+	newRequestObject := &RequestObject{
+		ODataType: "#microsoft.graph.RequestObject",
+	}
+	return newRequestObject, nil
+}
+
 // RequestSchedule undocumented
 type RequestSchedule struct {
 	// Object is the base model of RequestSchedule
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Expiration undocumented
 	Expiration *ExpirationPattern `json:"expiration,omitempty"`
 	// Recurrence undocumented
@@ -34,12 +45,28 @@ type RequestSchedule struct {
 	StartDateTime *time.Time `json:"startDateTime,omitempty"`
 }
 
+func NewRequestSchedule() (*RequestSchedule, error) {
+	newRequestSchedule := &RequestSchedule{
+		ODataType: "#microsoft.graph.RequestSchedule",
+	}
+	return newRequestSchedule, nil
+}
+
 // RequestSignatureVerification undocumented
 type RequestSignatureVerification struct {
 	// Object is the base model of RequestSignatureVerification
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowedWeakAlgorithms undocumented
 	AllowedWeakAlgorithms *WeakAlgorithms `json:"allowedWeakAlgorithms,omitempty"`
 	// IsSignedRequestRequired undocumented
 	IsSignedRequestRequired *bool `json:"isSignedRequestRequired,omitempty"`
+}
+
+func NewRequestSignatureVerification() (*RequestSignatureVerification, error) {
+	newRequestSignatureVerification := &RequestSignatureVerification{
+		ODataType: "#microsoft.graph.RequestSignatureVerification",
+	}
+	return newRequestSignatureVerification, nil
 }

@@ -11,14 +11,14 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// DriveItem is navigation property
+// DriveItem is navigation property rn
 func (b *ItemActivityRequestBuilder) DriveItem() *DriveItemRequestBuilder {
 	bb := &DriveItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/driveItem"
 	return bb
 }
 
-// Activities returns request builder for ItemActivity collection
+// Activities returns request builder for ItemActivity collection rcn
 func (b *ItemActivityStatRequestBuilder) Activities() *ItemActivityStatActivitiesCollectionRequestBuilder {
 	bb := &ItemActivityStatActivitiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/activities"
@@ -121,14 +121,14 @@ func (r *ItemActivityStatActivitiesCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// AllTime is navigation property
+// AllTime is navigation property rn
 func (b *ItemAnalyticsRequestBuilder) AllTime() *ItemActivityStatRequestBuilder {
 	bb := &ItemActivityStatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/allTime"
 	return bb
 }
 
-// ItemActivityStats returns request builder for ItemActivityStat collection
+// ItemActivityStats returns request builder for ItemActivityStat collection rcn
 func (b *ItemAnalyticsRequestBuilder) ItemActivityStats() *ItemAnalyticsItemActivityStatsCollectionRequestBuilder {
 	bb := &ItemAnalyticsItemActivityStatsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/itemActivityStats"
@@ -231,16 +231,140 @@ func (r *ItemAnalyticsItemActivityStatsCollectionRequest) Add(ctx context.Contex
 	return
 }
 
-// LastSevenDays is navigation property
+// LastSevenDays is navigation property rn
 func (b *ItemAnalyticsRequestBuilder) LastSevenDays() *ItemActivityStatRequestBuilder {
 	bb := &ItemActivityStatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/lastSevenDays"
 	return bb
 }
 
-// Item is navigation property
+// Item is navigation property rn
 func (b *ItemAttachmentRequestBuilder) Item() *OutlookItemRequestBuilder {
 	bb := &OutlookItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/item"
 	return bb
+}
+
+// ItemActivity is navigation property rn
+func (b *ItemActivityRequestBuilder) ItemActivity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ItemActivityStat is navigation property rn
+func (b *ItemActivityStatRequestBuilder) ItemActivityStat() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ItemAnalytics is navigation property rn
+func (b *ItemAnalyticsRequestBuilder) ItemAnalytics() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ItemAttachment returns request builder for Attachment collection rcn
+func (b *ItemAttachmentRequestBuilder) ItemAttachment() *ItemAttachmentItemAttachmentCollectionRequestBuilder {
+	bb := &ItemAttachmentItemAttachmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Attachment"
+	return bb
+}
+
+// ItemAttachmentItemAttachmentCollectionRequestBuilder is request builder for Attachment collection
+type ItemAttachmentItemAttachmentCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for Attachment collection
+func (b *ItemAttachmentItemAttachmentCollectionRequestBuilder) Request() *ItemAttachmentItemAttachmentCollectionRequest {
+	return &ItemAttachmentItemAttachmentCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for Attachment item
+func (b *ItemAttachmentItemAttachmentCollectionRequestBuilder) ID(id string) *AttachmentRequestBuilder {
+	bb := &AttachmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// ItemAttachmentItemAttachmentCollectionRequest is request for Attachment collection
+type ItemAttachmentItemAttachmentCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for Attachment collection
+func (r *ItemAttachmentItemAttachmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Attachment, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []Attachment
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []Attachment
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for Attachment collection, max N pages
+func (r *ItemAttachmentItemAttachmentCollectionRequest) GetN(ctx context.Context, n int) ([]Attachment, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for Attachment collection
+func (r *ItemAttachmentItemAttachmentCollectionRequest) Get(ctx context.Context) ([]Attachment, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for Attachment collection
+func (r *ItemAttachmentItemAttachmentCollectionRequest) Add(ctx context.Context, reqObj *Attachment) (resObj *Attachment, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
 }

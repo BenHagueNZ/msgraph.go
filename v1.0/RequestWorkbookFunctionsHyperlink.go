@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsHyperlinkRequestBuilder struct{ BaseRequestBuilder }
 
-// Hyperlink action undocumented
+// Hyperlink action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Hyperlink(reqObj *WorkbookFunctionsHyperlinkRequestParameter) *WorkbookFunctionsHyperlinkRequestBuilder {
 	bb := &WorkbookFunctionsHyperlinkRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Hyperlink"

@@ -2,9 +2,16 @@
 
 package msgraph
 
-// InvitedUser is navigation property
+// InvitedUser is navigation property rn
 func (b *InvitationRequestBuilder) InvitedUser() *UserRequestBuilder {
 	bb := &UserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/invitedUser"
+	return bb
+}
+
+// Invitation is navigation property rn
+func (b *InvitationRequestBuilder) Invitation() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

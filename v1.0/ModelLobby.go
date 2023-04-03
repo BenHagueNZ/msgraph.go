@@ -6,8 +6,17 @@ package msgraph
 type LobbyBypassSettings struct {
 	// Object is the base model of LobbyBypassSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsDialInBypassEnabled undocumented
 	IsDialInBypassEnabled *bool `json:"isDialInBypassEnabled,omitempty"`
 	// Scope undocumented
 	Scope *LobbyBypassScope `json:"scope,omitempty"`
+}
+
+func NewLobbyBypassSettings() (*LobbyBypassSettings, error) {
+	newLobbyBypassSettings := &LobbyBypassSettings{
+		ODataType: "#microsoft.graph.LobbyBypassSettings",
+	}
+	return newLobbyBypassSettings, nil
 }

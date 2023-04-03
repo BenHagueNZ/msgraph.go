@@ -6,6 +6,15 @@ package msgraph
 type LocateDeviceActionResult struct {
 	// DeviceActionResult is the base model of LocateDeviceActionResult
 	DeviceActionResult
+
+	ODataType string `json:"@odata.type"`
 	// DeviceLocation undocumented
 	DeviceLocation *DeviceGeoLocation `json:"deviceLocation,omitempty"`
+}
+
+func NewLocateDeviceActionResult() (*LocateDeviceActionResult, error) {
+	newLocateDeviceActionResult := &LocateDeviceActionResult{
+		ODataType: "#microsoft.graph.LocateDeviceActionResult",
+	}
+	return newLocateDeviceActionResult, nil
 }

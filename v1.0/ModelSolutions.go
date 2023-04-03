@@ -6,8 +6,17 @@ package msgraph
 type SolutionsRoot struct {
 	// Object is the base model of SolutionsRoot
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// BookingBusinesses undocumented
 	BookingBusinesses []BookingBusiness `json:"bookingBusinesses,omitempty"`
 	// BookingCurrencies undocumented
 	BookingCurrencies []BookingCurrency `json:"bookingCurrencies,omitempty"`
+}
+
+func NewSolutionsRoot() (*SolutionsRoot, error) {
+	newSolutionsRoot := &SolutionsRoot{
+		ODataType: "#microsoft.graph.SolutionsRoot",
+	}
+	return newSolutionsRoot, nil
 }

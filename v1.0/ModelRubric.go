@@ -6,14 +6,25 @@ package msgraph
 type RubricCriterion struct {
 	// Object is the base model of RubricCriterion
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *EducationItemBody `json:"description,omitempty"`
+}
+
+func NewRubricCriterion() (*RubricCriterion, error) {
+	newRubricCriterion := &RubricCriterion{
+		ODataType: "#microsoft.graph.RubricCriterion",
+	}
+	return newRubricCriterion, nil
 }
 
 // RubricLevel undocumented
 type RubricLevel struct {
 	// Object is the base model of RubricLevel
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *EducationItemBody `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -24,10 +35,19 @@ type RubricLevel struct {
 	LevelID *string `json:"levelId,omitempty"`
 }
 
+func NewRubricLevel() (*RubricLevel, error) {
+	newRubricLevel := &RubricLevel{
+		ODataType: "#microsoft.graph.RubricLevel",
+	}
+	return newRubricLevel, nil
+}
+
 // RubricQuality undocumented
 type RubricQuality struct {
 	// Object is the base model of RubricQuality
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Criteria undocumented
 	Criteria []RubricCriterion `json:"criteria,omitempty"`
 	// Description undocumented
@@ -40,22 +60,47 @@ type RubricQuality struct {
 	Weight *float64 `json:"weight,omitempty"`
 }
 
+func NewRubricQuality() (*RubricQuality, error) {
+	newRubricQuality := &RubricQuality{
+		ODataType: "#microsoft.graph.RubricQuality",
+	}
+	return newRubricQuality, nil
+}
+
 // RubricQualityFeedbackModel undocumented
 type RubricQualityFeedbackModel struct {
 	// Object is the base model of RubricQualityFeedbackModel
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Feedback undocumented
 	Feedback *EducationItemBody `json:"feedback,omitempty"`
 	// QualityID undocumented
 	QualityID *string `json:"qualityId,omitempty"`
 }
 
+func NewRubricQualityFeedbackModel() (*RubricQualityFeedbackModel, error) {
+	newRubricQualityFeedbackModel := &RubricQualityFeedbackModel{
+		ODataType: "#microsoft.graph.RubricQualityFeedbackModel",
+	}
+	return newRubricQualityFeedbackModel, nil
+}
+
 // RubricQualitySelectedColumnModel undocumented
 type RubricQualitySelectedColumnModel struct {
 	// Object is the base model of RubricQualitySelectedColumnModel
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ColumnID undocumented
 	ColumnID *string `json:"columnId,omitempty"`
 	// QualityID undocumented
 	QualityID *string `json:"qualityId,omitempty"`
+}
+
+func NewRubricQualitySelectedColumnModel() (*RubricQualitySelectedColumnModel, error) {
+	newRubricQualitySelectedColumnModel := &RubricQualitySelectedColumnModel{
+		ODataType: "#microsoft.graph.RubricQualitySelectedColumnModel",
+	}
+	return newRubricQualitySelectedColumnModel, nil
 }

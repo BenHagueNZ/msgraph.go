@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDeltaRequestBuilder struct{ BaseRequestBuilder }
 
-// Delta action undocumented
+// Delta action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Delta(reqObj *WorkbookFunctionsDeltaRequestParameter) *WorkbookFunctionsDeltaRequestBuilder {
 	bb := &WorkbookFunctionsDeltaRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Delta"

@@ -8,6 +8,8 @@ import "time"
 type Certification struct {
 	// Object is the base model of Certification
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CertificationDetailsURL undocumented
 	CertificationDetailsURL *string `json:"certificationDetailsUrl,omitempty"`
 	// CertificationExpirationDateTime undocumented
@@ -20,12 +22,28 @@ type Certification struct {
 	LastCertificationDateTime *time.Time `json:"lastCertificationDateTime,omitempty"`
 }
 
+func NewCertification() (*Certification, error) {
+	newCertification := &Certification{
+		ODataType: "#microsoft.graph.Certification",
+	}
+	return newCertification, nil
+}
+
 // CertificationControl undocumented
 type CertificationControl struct {
 	// Object is the base model of CertificationControl
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// URL undocumented
 	URL *string `json:"url,omitempty"`
+}
+
+func NewCertificationControl() (*CertificationControl, error) {
+	newCertificationControl := &CertificationControl{
+		ODataType: "#microsoft.graph.CertificationControl",
+	}
+	return newCertificationControl, nil
 }

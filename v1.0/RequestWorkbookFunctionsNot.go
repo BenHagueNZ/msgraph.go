@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsNotRequestBuilder struct{ BaseRequestBuilder }
 
-// Not action undocumented
+// Not action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Not(reqObj *WorkbookFunctionsNotRequestParameter) *WorkbookFunctionsNotRequestBuilder {
 	bb := &WorkbookFunctionsNotRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Not"

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDecimalRequestBuilder struct{ BaseRequestBuilder }
 
-// Decimal action undocumented
+// Decimal action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Decimal(reqObj *WorkbookFunctionsDecimalRequestParameter) *WorkbookFunctionsDecimalRequestBuilder {
 	bb := &WorkbookFunctionsDecimalRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Decimal"

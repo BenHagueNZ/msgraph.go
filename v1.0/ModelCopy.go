@@ -8,6 +8,8 @@ import "time"
 type CopyNotebookModel struct {
 	// Object is the base model of CopyNotebookModel
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CreatedBy undocumented
 	CreatedBy *string `json:"createdBy,omitempty"`
 	// CreatedByIdentity undocumented
@@ -38,4 +40,11 @@ type CopyNotebookModel struct {
 	Self *string `json:"self,omitempty"`
 	// UserRole undocumented
 	UserRole *OnenoteUserRole `json:"userRole,omitempty"`
+}
+
+func NewCopyNotebookModel() (*CopyNotebookModel, error) {
+	newCopyNotebookModel := &CopyNotebookModel{
+		ODataType: "#microsoft.graph.CopyNotebookModel",
+	}
+	return newCopyNotebookModel, nil
 }

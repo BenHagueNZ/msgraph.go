@@ -8,6 +8,8 @@ import "time"
 type MembersAddedEventMessageDetail struct {
 	// EventMessageDetail is the base model of MembersAddedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// Members undocumented
@@ -16,32 +18,66 @@ type MembersAddedEventMessageDetail struct {
 	VisibleHistoryStartDateTime *time.Time `json:"visibleHistoryStartDateTime,omitempty"`
 }
 
+func NewMembersAddedEventMessageDetail() (*MembersAddedEventMessageDetail, error) {
+	newMembersAddedEventMessageDetail := &MembersAddedEventMessageDetail{
+		ODataType: "#microsoft.graph.MembersAddedEventMessageDetail",
+	}
+	return newMembersAddedEventMessageDetail, nil
+}
+
 // MembersDeletedEventMessageDetail undocumented
 type MembersDeletedEventMessageDetail struct {
 	// EventMessageDetail is the base model of MembersDeletedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// Members undocumented
 	Members []TeamworkUserIdentity `json:"members,omitempty"`
+}
+
+func NewMembersDeletedEventMessageDetail() (*MembersDeletedEventMessageDetail, error) {
+	newMembersDeletedEventMessageDetail := &MembersDeletedEventMessageDetail{
+		ODataType: "#microsoft.graph.MembersDeletedEventMessageDetail",
+	}
+	return newMembersDeletedEventMessageDetail, nil
 }
 
 // MembersJoinedEventMessageDetail undocumented
 type MembersJoinedEventMessageDetail struct {
 	// EventMessageDetail is the base model of MembersJoinedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// Members undocumented
 	Members []TeamworkUserIdentity `json:"members,omitempty"`
 }
 
+func NewMembersJoinedEventMessageDetail() (*MembersJoinedEventMessageDetail, error) {
+	newMembersJoinedEventMessageDetail := &MembersJoinedEventMessageDetail{
+		ODataType: "#microsoft.graph.MembersJoinedEventMessageDetail",
+	}
+	return newMembersJoinedEventMessageDetail, nil
+}
+
 // MembersLeftEventMessageDetail undocumented
 type MembersLeftEventMessageDetail struct {
 	// EventMessageDetail is the base model of MembersLeftEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// Members undocumented
 	Members []TeamworkUserIdentity `json:"members,omitempty"`
+}
+
+func NewMembersLeftEventMessageDetail() (*MembersLeftEventMessageDetail, error) {
+	newMembersLeftEventMessageDetail := &MembersLeftEventMessageDetail{
+		ODataType: "#microsoft.graph.MembersLeftEventMessageDetail",
+	}
+	return newMembersLeftEventMessageDetail, nil
 }

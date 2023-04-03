@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsChooseRequestBuilder struct{ BaseRequestBuilder }
 
-// Choose action undocumented
+// Choose action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Choose(reqObj *WorkbookFunctionsChooseRequestParameter) *WorkbookFunctionsChooseRequestBuilder {
 	bb := &WorkbookFunctionsChooseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Choose"

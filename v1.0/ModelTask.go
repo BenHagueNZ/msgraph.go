@@ -6,6 +6,15 @@ package msgraph
 type TaskFileAttachment struct {
 	// AttachmentBase is the base model of TaskFileAttachment
 	AttachmentBase
+
+	ODataType string `json:"@odata.type"`
 	// ContentBytes undocumented
 	ContentBytes *Binary `json:"contentBytes,omitempty"`
+}
+
+func NewTaskFileAttachment() (*TaskFileAttachment, error) {
+	newTaskFileAttachment := &TaskFileAttachment{
+		ODataType: "#microsoft.graph.TaskFileAttachment",
+	}
+	return newTaskFileAttachment, nil
 }

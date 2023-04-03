@@ -6,10 +6,19 @@ package msgraph
 type GeoCoordinates struct {
 	// Object is the base model of GeoCoordinates
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Altitude undocumented
 	Altitude *float64 `json:"altitude,omitempty"`
 	// Latitude undocumented
 	Latitude *float64 `json:"latitude,omitempty"`
 	// Longitude undocumented
 	Longitude *float64 `json:"longitude,omitempty"`
+}
+
+func NewGeoCoordinates() (*GeoCoordinates, error) {
+	newGeoCoordinates := &GeoCoordinates{
+		ODataType: "#microsoft.graph.GeoCoordinates",
+	}
+	return newGeoCoordinates, nil
 }

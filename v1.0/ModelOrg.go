@@ -8,6 +8,8 @@ import "time"
 type OrgContact struct {
 	// DirectoryObject is the base model of OrgContact
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// Addresses undocumented
 	Addresses []PhysicalOfficeAddress `json:"addresses,omitempty"`
 	// CompanyName undocumented
@@ -44,4 +46,11 @@ type OrgContact struct {
 	MemberOf []DirectoryObject `json:"memberOf,omitempty"`
 	// TransitiveMemberOf undocumented
 	TransitiveMemberOf []DirectoryObject `json:"transitiveMemberOf,omitempty"`
+}
+
+func NewOrgContact() (*OrgContact, error) {
+	newOrgContact := &OrgContact{
+		ODataType: "#microsoft.graph.OrgContact",
+	}
+	return newOrgContact, nil
 }

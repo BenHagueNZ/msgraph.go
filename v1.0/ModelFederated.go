@@ -6,6 +6,8 @@ package msgraph
 type FederatedIdentityCredential struct {
 	// Entity is the base model of FederatedIdentityCredential
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Audiences undocumented
 	Audiences []string `json:"audiences,omitempty"`
 	// Description undocumented
@@ -16,4 +18,11 @@ type FederatedIdentityCredential struct {
 	Name *string `json:"name,omitempty"`
 	// Subject undocumented
 	Subject *string `json:"subject,omitempty"`
+}
+
+func NewFederatedIdentityCredential() (*FederatedIdentityCredential, error) {
+	newFederatedIdentityCredential := &FederatedIdentityCredential{
+		ODataType: "#microsoft.graph.FederatedIdentityCredential",
+	}
+	return newFederatedIdentityCredential, nil
 }

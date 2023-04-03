@@ -6,14 +6,25 @@ package msgraph
 type Report struct {
 	// Object is the base model of Report
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Content undocumented
 	Content *Stream `json:"content,omitempty"`
+}
+
+func NewReport() (*Report, error) {
+	newReport := &Report{
+		ODataType: "#microsoft.graph.Report",
+	}
+	return newReport, nil
 }
 
 // ReportRoot undocumented
 type ReportRoot struct {
 	// Object is the base model of ReportRoot
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DailyPrintUsageByPrinter undocumented
 	DailyPrintUsageByPrinter []PrintUsageByPrinter `json:"dailyPrintUsageByPrinter,omitempty"`
 	// DailyPrintUsageByUser undocumented
@@ -24,4 +35,11 @@ type ReportRoot struct {
 	MonthlyPrintUsageByUser []PrintUsageByUser `json:"monthlyPrintUsageByUser,omitempty"`
 	// Security undocumented
 	Security *SecurityReportsRoot `json:"security,omitempty"`
+}
+
+func NewReportRoot() (*ReportRoot, error) {
+	newReportRoot := &ReportRoot{
+		ODataType: "#microsoft.graph.ReportRoot",
+	}
+	return newReportRoot, nil
 }

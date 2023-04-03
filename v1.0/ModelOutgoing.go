@@ -6,4 +6,13 @@ package msgraph
 type OutgoingCallOptions struct {
 	// CallOptions is the base model of OutgoingCallOptions
 	CallOptions
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewOutgoingCallOptions() (*OutgoingCallOptions, error) {
+	newOutgoingCallOptions := &OutgoingCallOptions{
+		ODataType: "#microsoft.graph.OutgoingCallOptions",
+	}
+	return newOutgoingCallOptions, nil
 }

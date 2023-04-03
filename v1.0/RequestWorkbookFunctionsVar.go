@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsVarARequestBuilder struct{ BaseRequestBuilder }
 
-// VarA action undocumented
+// VarA action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) VarA(reqObj *WorkbookFunctionsVarARequestParameter) *WorkbookFunctionsVarARequestBuilder {
 	bb := &WorkbookFunctionsVarARequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/VarA"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsVarARequest) Post(ctx context.Context) (resObj *Workbo
 
 type WorkbookFunctionsVarPARequestBuilder struct{ BaseRequestBuilder }
 
-// VarPA action undocumented
+// VarPA action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) VarPA(reqObj *WorkbookFunctionsVarPARequestParameter) *WorkbookFunctionsVarPARequestBuilder {
 	bb := &WorkbookFunctionsVarPARequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/VarPA"

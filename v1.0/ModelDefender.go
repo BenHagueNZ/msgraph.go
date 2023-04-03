@@ -6,6 +6,8 @@ package msgraph
 type DefenderDetectedMalwareActions struct {
 	// Object is the base model of DefenderDetectedMalwareActions
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// HighSeverity undocumented
 	HighSeverity *DefenderThreatAction `json:"highSeverity,omitempty"`
 	// LowSeverity undocumented
@@ -14,4 +16,11 @@ type DefenderDetectedMalwareActions struct {
 	ModerateSeverity *DefenderThreatAction `json:"moderateSeverity,omitempty"`
 	// SevereSeverity undocumented
 	SevereSeverity *DefenderThreatAction `json:"severeSeverity,omitempty"`
+}
+
+func NewDefenderDetectedMalwareActions() (*DefenderDetectedMalwareActions, error) {
+	newDefenderDetectedMalwareActions := &DefenderDetectedMalwareActions{
+		ODataType: "#microsoft.graph.DefenderDetectedMalwareActions",
+	}
+	return newDefenderDetectedMalwareActions, nil
 }

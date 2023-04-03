@@ -6,6 +6,8 @@ package msgraph
 type Invitation struct {
 	// Entity is the base model of Invitation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// InvitedUserDisplayName undocumented
 	InvitedUserDisplayName *string `json:"invitedUserDisplayName,omitempty"`
 	// InvitedUserEmailAddress undocumented
@@ -28,10 +30,19 @@ type Invitation struct {
 	InvitedUser *User `json:"invitedUser,omitempty"`
 }
 
+func NewInvitation() (*Invitation, error) {
+	newInvitation := &Invitation{
+		ODataType: "#microsoft.graph.Invitation",
+	}
+	return newInvitation, nil
+}
+
 // InvitationParticipantInfo undocumented
 type InvitationParticipantInfo struct {
 	// Object is the base model of InvitationParticipantInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Hidden undocumented
 	Hidden *bool `json:"hidden,omitempty"`
 	// Identity undocumented
@@ -42,4 +53,11 @@ type InvitationParticipantInfo struct {
 	RemoveFromDefaultAudioRoutingGroup *bool `json:"removeFromDefaultAudioRoutingGroup,omitempty"`
 	// ReplacesCallID undocumented
 	ReplacesCallID *string `json:"replacesCallId,omitempty"`
+}
+
+func NewInvitationParticipantInfo() (*InvitationParticipantInfo, error) {
+	newInvitationParticipantInfo := &InvitationParticipantInfo{
+		ODataType: "#microsoft.graph.InvitationParticipantInfo",
+	}
+	return newInvitationParticipantInfo, nil
 }

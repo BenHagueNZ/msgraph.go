@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsBesselIRequestBuilder struct{ BaseRequestBuilder }
 
-// BesselI action undocumented
+// BesselI action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) BesselI(reqObj *WorkbookFunctionsBesselIRequestParameter) *WorkbookFunctionsBesselIRequestBuilder {
 	bb := &WorkbookFunctionsBesselIRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/BesselI"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsBesselIRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsBesselJRequestBuilder struct{ BaseRequestBuilder }
 
-// BesselJ action undocumented
+// BesselJ action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) BesselJ(reqObj *WorkbookFunctionsBesselJRequestParameter) *WorkbookFunctionsBesselJRequestBuilder {
 	bb := &WorkbookFunctionsBesselJRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/BesselJ"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsBesselJRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsBesselKRequestBuilder struct{ BaseRequestBuilder }
 
-// BesselK action undocumented
+// BesselK action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) BesselK(reqObj *WorkbookFunctionsBesselKRequestParameter) *WorkbookFunctionsBesselKRequestBuilder {
 	bb := &WorkbookFunctionsBesselKRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/BesselK"
@@ -75,7 +75,7 @@ func (r *WorkbookFunctionsBesselKRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsBesselYRequestBuilder struct{ BaseRequestBuilder }
 
-// BesselY action undocumented
+// BesselY action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) BesselY(reqObj *WorkbookFunctionsBesselYRequestParameter) *WorkbookFunctionsBesselYRequestBuilder {
 	bb := &WorkbookFunctionsBesselYRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/BesselY"

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsCombinaRequestBuilder struct{ BaseRequestBuilder }
 
-// Combina action undocumented
+// Combina action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Combina(reqObj *WorkbookFunctionsCombinaRequestParameter) *WorkbookFunctionsCombinaRequestBuilder {
 	bb := &WorkbookFunctionsCombinaRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Combina"

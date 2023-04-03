@@ -6,6 +6,8 @@ package msgraph
 type DetectedApp struct {
 	// Entity is the base model of DetectedApp
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DeviceCount undocumented
 	DeviceCount *int `json:"deviceCount,omitempty"`
 	// DisplayName undocumented
@@ -20,4 +22,11 @@ type DetectedApp struct {
 	Version *string `json:"version,omitempty"`
 	// ManagedDevices undocumented
 	ManagedDevices []ManagedDevice `json:"managedDevices,omitempty"`
+}
+
+func NewDetectedApp() (*DetectedApp, error) {
+	newDetectedApp := &DetectedApp{
+		ODataType: "#microsoft.graph.DetectedApp",
+	}
+	return newDetectedApp, nil
 }

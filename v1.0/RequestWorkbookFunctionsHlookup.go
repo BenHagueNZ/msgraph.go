@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsHlookupRequestBuilder struct{ BaseRequestBuilder }
 
-// Hlookup action undocumented
+// Hlookup action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Hlookup(reqObj *WorkbookFunctionsHlookupRequestParameter) *WorkbookFunctionsHlookupRequestBuilder {
 	bb := &WorkbookFunctionsHlookupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Hlookup"

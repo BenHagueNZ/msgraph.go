@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Acceptances returns request builder for AgreementAcceptance collection
+// Acceptances returns request builder for AgreementAcceptance collection rcn
 func (b *AgreementRequestBuilder) Acceptances() *AgreementAcceptancesCollectionRequestBuilder {
 	bb := &AgreementAcceptancesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/acceptances"
@@ -114,14 +114,14 @@ func (r *AgreementAcceptancesCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// File is navigation property
+// File is navigation property rn
 func (b *AgreementRequestBuilder) File() *AgreementFileRequestBuilder {
 	bb := &AgreementFileRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/file"
 	return bb
 }
 
-// Files returns request builder for AgreementFileLocalization collection
+// Files returns request builder for AgreementFileLocalization collection rcn
 func (b *AgreementRequestBuilder) Files() *AgreementFilesCollectionRequestBuilder {
 	bb := &AgreementFilesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/files"
@@ -224,7 +224,7 @@ func (r *AgreementFilesCollectionRequest) Add(ctx context.Context, reqObj *Agree
 	return
 }
 
-// Localizations returns request builder for AgreementFileLocalization collection
+// Localizations returns request builder for AgreementFileLocalization collection rcn
 func (b *AgreementFileRequestBuilder) Localizations() *AgreementFileLocalizationsCollectionRequestBuilder {
 	bb := &AgreementFileLocalizationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/localizations"
@@ -327,7 +327,7 @@ func (r *AgreementFileLocalizationsCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// Versions returns request builder for AgreementFileVersion collection
+// Versions returns request builder for AgreementFileVersion collection rcn
 func (b *AgreementFileLocalizationRequestBuilder) Versions() *AgreementFileLocalizationVersionsCollectionRequestBuilder {
 	bb := &AgreementFileLocalizationVersionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/versions"
@@ -428,4 +428,25 @@ func (r *AgreementFileLocalizationVersionsCollectionRequest) Get(ctx context.Con
 func (r *AgreementFileLocalizationVersionsCollectionRequest) Add(ctx context.Context, reqObj *AgreementFileVersion) (resObj *AgreementFileVersion, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Agreement is navigation property rn
+func (b *AgreementRequestBuilder) Agreement() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// AgreementAcceptance is navigation property rn
+func (b *AgreementAcceptanceRequestBuilder) AgreementAcceptance() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// AgreementFileProperties is navigation property rn
+func (b *AgreementFilePropertiesRequestBuilder) AgreementFileProperties() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

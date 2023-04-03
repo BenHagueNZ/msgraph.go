@@ -8,6 +8,8 @@ import "encoding/json"
 type VisualInfo struct {
 	// Object is the base model of VisualInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Attribution undocumented
 	Attribution *ImageInfo `json:"attribution,omitempty"`
 	// BackgroundColor undocumented
@@ -18,4 +20,11 @@ type VisualInfo struct {
 	Description *string `json:"description,omitempty"`
 	// DisplayText undocumented
 	DisplayText *string `json:"displayText,omitempty"`
+}
+
+func NewVisualInfo() (*VisualInfo, error) {
+	newVisualInfo := &VisualInfo{
+		ODataType: "#microsoft.graph.VisualInfo",
+	}
+	return newVisualInfo, nil
 }

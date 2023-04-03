@@ -6,10 +6,19 @@ package msgraph
 type AggregationOption struct {
 	// Object is the base model of AggregationOption
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// BucketDefinition undocumented
 	BucketDefinition *BucketAggregationDefinition `json:"bucketDefinition,omitempty"`
 	// Field undocumented
 	Field *string `json:"field,omitempty"`
 	// Size undocumented
 	Size *int `json:"size,omitempty"`
+}
+
+func NewAggregationOption() (*AggregationOption, error) {
+	newAggregationOption := &AggregationOption{
+		ODataType: "#microsoft.graph.AggregationOption",
+	}
+	return newAggregationOption, nil
 }

@@ -6,6 +6,8 @@ package msgraph
 type AadUserConversationMember struct {
 	// ConversationMember is the base model of AadUserConversationMember
 	ConversationMember
+
+	ODataType string `json:"@odata.type"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
 	// TenantID undocumented
@@ -16,18 +18,43 @@ type AadUserConversationMember struct {
 	User *User `json:"user,omitempty"`
 }
 
+func NewAadUserConversationMember() (*AadUserConversationMember, error) {
+	newAadUserConversationMember := &AadUserConversationMember{
+		ODataType: "#microsoft.graph.AadUserConversationMember",
+	}
+	return newAadUserConversationMember, nil
+}
+
 // AadUserConversationMemberResult undocumented
 type AadUserConversationMemberResult struct {
 	// ActionResultPart is the base model of AadUserConversationMemberResult
 	ActionResultPart
+
+	ODataType string `json:"@odata.type"`
 	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
+}
+
+func NewAadUserConversationMemberResult() (*AadUserConversationMemberResult, error) {
+	newAadUserConversationMemberResult := &AadUserConversationMemberResult{
+		ODataType: "#microsoft.graph.AadUserConversationMemberResult",
+	}
+	return newAadUserConversationMemberResult, nil
 }
 
 // AadUserNotificationRecipient undocumented
 type AadUserNotificationRecipient struct {
 	// TeamworkNotificationRecipient is the base model of AadUserNotificationRecipient
 	TeamworkNotificationRecipient
+
+	ODataType string `json:"@odata.type"`
 	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
+}
+
+func NewAadUserNotificationRecipient() (*AadUserNotificationRecipient, error) {
+	newAadUserNotificationRecipient := &AadUserNotificationRecipient{
+		ODataType: "#microsoft.graph.AadUserNotificationRecipient",
+	}
+	return newAadUserNotificationRecipient, nil
 }

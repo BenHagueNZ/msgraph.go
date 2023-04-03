@@ -8,6 +8,8 @@ import "time"
 type Printer struct {
 	// PrinterBase is the base model of Printer
 	PrinterBase
+
+	ODataType string `json:"@odata.type"`
 	// HasPhysicalDevice undocumented
 	HasPhysicalDevice *bool `json:"hasPhysicalDevice,omitempty"`
 	// IsShared undocumented
@@ -24,10 +26,19 @@ type Printer struct {
 	TaskTriggers []PrintTaskTrigger `json:"taskTriggers,omitempty"`
 }
 
+func NewPrinter() (*Printer, error) {
+	newPrinter := &Printer{
+		ODataType: "#microsoft.graph.Printer",
+	}
+	return newPrinter, nil
+}
+
 // PrinterBase undocumented
 type PrinterBase struct {
 	// Entity is the base model of PrinterBase
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Capabilities undocumented
 	Capabilities *PrinterCapabilities `json:"capabilities,omitempty"`
 	// Defaults undocumented
@@ -48,10 +59,19 @@ type PrinterBase struct {
 	Jobs []PrintJob `json:"jobs,omitempty"`
 }
 
+func NewPrinterBase() (*PrinterBase, error) {
+	newPrinterBase := &PrinterBase{
+		ODataType: "#microsoft.graph.PrinterBase",
+	}
+	return newPrinterBase, nil
+}
+
 // PrinterCapabilities undocumented
 type PrinterCapabilities struct {
 	// Object is the base model of PrinterCapabilities
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// BottomMargins undocumented
 	BottomMargins []int `json:"bottomMargins,omitempty"`
 	// Collation undocumented
@@ -104,20 +124,38 @@ type PrinterCapabilities struct {
 	TopMargins []int `json:"topMargins,omitempty"`
 }
 
+func NewPrinterCapabilities() (*PrinterCapabilities, error) {
+	newPrinterCapabilities := &PrinterCapabilities{
+		ODataType: "#microsoft.graph.PrinterCapabilities",
+	}
+	return newPrinterCapabilities, nil
+}
+
 // PrinterCreateOperation undocumented
 type PrinterCreateOperation struct {
 	// PrintOperation is the base model of PrinterCreateOperation
 	PrintOperation
+
+	ODataType string `json:"@odata.type"`
 	// Certificate undocumented
 	Certificate *string `json:"certificate,omitempty"`
 	// Printer undocumented
 	Printer *Printer `json:"printer,omitempty"`
 }
 
+func NewPrinterCreateOperation() (*PrinterCreateOperation, error) {
+	newPrinterCreateOperation := &PrinterCreateOperation{
+		ODataType: "#microsoft.graph.PrinterCreateOperation",
+	}
+	return newPrinterCreateOperation, nil
+}
+
 // PrinterDefaults undocumented
 type PrinterDefaults struct {
 	// Object is the base model of PrinterDefaults
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ColorMode undocumented
 	ColorMode *PrintColorMode `json:"colorMode,omitempty"`
 	// ContentType undocumented
@@ -154,10 +192,19 @@ type PrinterDefaults struct {
 	Scaling *PrintScaling `json:"scaling,omitempty"`
 }
 
+func NewPrinterDefaults() (*PrinterDefaults, error) {
+	newPrinterDefaults := &PrinterDefaults{
+		ODataType: "#microsoft.graph.PrinterDefaults",
+	}
+	return newPrinterDefaults, nil
+}
+
 // PrinterLocation undocumented
 type PrinterLocation struct {
 	// Object is the base model of PrinterLocation
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AltitudeInMeters undocumented
 	AltitudeInMeters *int `json:"altitudeInMeters,omitempty"`
 	// Building undocumented
@@ -194,10 +241,19 @@ type PrinterLocation struct {
 	Subunit []string `json:"subunit,omitempty"`
 }
 
+func NewPrinterLocation() (*PrinterLocation, error) {
+	newPrinterLocation := &PrinterLocation{
+		ODataType: "#microsoft.graph.PrinterLocation",
+	}
+	return newPrinterLocation, nil
+}
+
 // PrinterShare undocumented
 type PrinterShare struct {
 	// PrinterBase is the base model of PrinterShare
 	PrinterBase
+
+	ODataType string `json:"@odata.type"`
 	// AllowAllUsers undocumented
 	AllowAllUsers *bool `json:"allowAllUsers,omitempty"`
 	// CreatedDateTime undocumented
@@ -210,14 +266,30 @@ type PrinterShare struct {
 	Printer *Printer `json:"printer,omitempty"`
 }
 
+func NewPrinterShare() (*PrinterShare, error) {
+	newPrinterShare := &PrinterShare{
+		ODataType: "#microsoft.graph.PrinterShare",
+	}
+	return newPrinterShare, nil
+}
+
 // PrinterStatus undocumented
 type PrinterStatus struct {
 	// Object is the base model of PrinterStatus
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// Details undocumented
 	Details []PrinterProcessingStateDetail `json:"details,omitempty"`
 	// State undocumented
 	State *PrinterProcessingState `json:"state,omitempty"`
+}
+
+func NewPrinterStatus() (*PrinterStatus, error) {
+	newPrinterStatus := &PrinterStatus{
+		ODataType: "#microsoft.graph.PrinterStatus",
+	}
+	return newPrinterStatus, nil
 }

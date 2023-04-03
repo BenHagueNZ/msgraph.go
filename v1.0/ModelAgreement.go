@@ -8,6 +8,8 @@ import "time"
 type Agreement struct {
 	// Entity is the base model of Agreement
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// IsPerDeviceAcceptanceRequired undocumented
@@ -26,10 +28,19 @@ type Agreement struct {
 	Files []AgreementFileLocalization `json:"files,omitempty"`
 }
 
+func NewAgreement() (*Agreement, error) {
+	newAgreement := &Agreement{
+		ODataType: "#microsoft.graph.Agreement",
+	}
+	return newAgreement, nil
+}
+
 // AgreementAcceptance undocumented
 type AgreementAcceptance struct {
 	// Entity is the base model of AgreementAcceptance
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AgreementFileID undocumented
 	AgreementFileID *string `json:"agreementFileId,omitempty"`
 	// AgreementID undocumented
@@ -58,34 +69,70 @@ type AgreementAcceptance struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewAgreementAcceptance() (*AgreementAcceptance, error) {
+	newAgreementAcceptance := &AgreementAcceptance{
+		ODataType: "#microsoft.graph.AgreementAcceptance",
+	}
+	return newAgreementAcceptance, nil
+}
+
 // AgreementFile undocumented
 type AgreementFile struct {
 	// AgreementFileProperties is the base model of AgreementFile
 	AgreementFileProperties
+
+	ODataType string `json:"@odata.type"`
 	// Localizations undocumented
 	Localizations []AgreementFileLocalization `json:"localizations,omitempty"`
+}
+
+func NewAgreementFile() (*AgreementFile, error) {
+	newAgreementFile := &AgreementFile{
+		ODataType: "#microsoft.graph.AgreementFile",
+	}
+	return newAgreementFile, nil
 }
 
 // AgreementFileData undocumented
 type AgreementFileData struct {
 	// Object is the base model of AgreementFileData
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Data undocumented
 	Data *Binary `json:"data,omitempty"`
+}
+
+func NewAgreementFileData() (*AgreementFileData, error) {
+	newAgreementFileData := &AgreementFileData{
+		ODataType: "#microsoft.graph.AgreementFileData",
+	}
+	return newAgreementFileData, nil
 }
 
 // AgreementFileLocalization undocumented
 type AgreementFileLocalization struct {
 	// AgreementFileProperties is the base model of AgreementFileLocalization
 	AgreementFileProperties
+
+	ODataType string `json:"@odata.type"`
 	// Versions undocumented
 	Versions []AgreementFileVersion `json:"versions,omitempty"`
+}
+
+func NewAgreementFileLocalization() (*AgreementFileLocalization, error) {
+	newAgreementFileLocalization := &AgreementFileLocalization{
+		ODataType: "#microsoft.graph.AgreementFileLocalization",
+	}
+	return newAgreementFileLocalization, nil
 }
 
 // AgreementFileProperties undocumented
 type AgreementFileProperties struct {
 	// Entity is the base model of AgreementFileProperties
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// DisplayName undocumented
@@ -102,8 +149,24 @@ type AgreementFileProperties struct {
 	Language *string `json:"language,omitempty"`
 }
 
+func NewAgreementFileProperties() (*AgreementFileProperties, error) {
+	newAgreementFileProperties := &AgreementFileProperties{
+		ODataType: "#microsoft.graph.AgreementFileProperties",
+	}
+	return newAgreementFileProperties, nil
+}
+
 // AgreementFileVersion undocumented
 type AgreementFileVersion struct {
 	// AgreementFileProperties is the base model of AgreementFileVersion
 	AgreementFileProperties
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewAgreementFileVersion() (*AgreementFileVersion, error) {
+	newAgreementFileVersion := &AgreementFileVersion{
+		ODataType: "#microsoft.graph.AgreementFileVersion",
+	}
+	return newAgreementFileVersion, nil
 }

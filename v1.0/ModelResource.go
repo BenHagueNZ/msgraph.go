@@ -6,32 +6,61 @@ package msgraph
 type ResourceAccess struct {
 	// Object is the base model of ResourceAccess
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ID undocumented
 	ID *UUID `json:"id,omitempty"`
 	// Type undocumented
 	Type *string `json:"type,omitempty"`
 }
 
+func NewResourceAccess() (*ResourceAccess, error) {
+	newResourceAccess := &ResourceAccess{
+		ODataType: "#microsoft.graph.ResourceAccess",
+	}
+	return newResourceAccess, nil
+}
+
 // ResourceAction undocumented
 type ResourceAction struct {
 	// Object is the base model of ResourceAction
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowedResourceActions undocumented
 	AllowedResourceActions []string `json:"allowedResourceActions,omitempty"`
 	// NotAllowedResourceActions undocumented
 	NotAllowedResourceActions []string `json:"notAllowedResourceActions,omitempty"`
 }
 
+func NewResourceAction() (*ResourceAction, error) {
+	newResourceAction := &ResourceAction{
+		ODataType: "#microsoft.graph.ResourceAction",
+	}
+	return newResourceAction, nil
+}
+
 // ResourceData undocumented
 type ResourceData struct {
 	// Object is the base model of ResourceData
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewResourceData() (*ResourceData, error) {
+	newResourceData := &ResourceData{
+		ODataType: "#microsoft.graph.ResourceData",
+	}
+	return newResourceData, nil
 }
 
 // ResourceOperation undocumented
 type ResourceOperation struct {
 	// Entity is the base model of ResourceOperation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ActionName undocumented
 	ActionName *string `json:"actionName,omitempty"`
 	// Description undocumented
@@ -40,20 +69,38 @@ type ResourceOperation struct {
 	ResourceName *string `json:"resourceName,omitempty"`
 }
 
+func NewResourceOperation() (*ResourceOperation, error) {
+	newResourceOperation := &ResourceOperation{
+		ODataType: "#microsoft.graph.ResourceOperation",
+	}
+	return newResourceOperation, nil
+}
+
 // ResourcePermission undocumented
 type ResourcePermission struct {
 	// Object is the base model of ResourcePermission
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Type undocumented
 	Type *string `json:"type,omitempty"`
 	// Value undocumented
 	Value *string `json:"value,omitempty"`
 }
 
+func NewResourcePermission() (*ResourcePermission, error) {
+	newResourcePermission := &ResourcePermission{
+		ODataType: "#microsoft.graph.ResourcePermission",
+	}
+	return newResourcePermission, nil
+}
+
 // ResourceReference undocumented
 type ResourceReference struct {
 	// Object is the base model of ResourceReference
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ID undocumented
 	ID *string `json:"id,omitempty"`
 	// Type undocumented
@@ -62,10 +109,19 @@ type ResourceReference struct {
 	WebURL *string `json:"webUrl,omitempty"`
 }
 
+func NewResourceReference() (*ResourceReference, error) {
+	newResourceReference := &ResourceReference{
+		ODataType: "#microsoft.graph.ResourceReference",
+	}
+	return newResourceReference, nil
+}
+
 // ResourceSpecificPermission undocumented
 type ResourceSpecificPermission struct {
 	// Object is the base model of ResourceSpecificPermission
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -78,10 +134,19 @@ type ResourceSpecificPermission struct {
 	Value *string `json:"value,omitempty"`
 }
 
+func NewResourceSpecificPermission() (*ResourceSpecificPermission, error) {
+	newResourceSpecificPermission := &ResourceSpecificPermission{
+		ODataType: "#microsoft.graph.ResourceSpecificPermission",
+	}
+	return newResourceSpecificPermission, nil
+}
+
 // ResourceSpecificPermissionGrant undocumented
 type ResourceSpecificPermissionGrant struct {
 	// DirectoryObject is the base model of ResourceSpecificPermissionGrant
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// ClientAppID undocumented
 	ClientAppID *string `json:"clientAppId,omitempty"`
 	// ClientID undocumented
@@ -94,10 +159,19 @@ type ResourceSpecificPermissionGrant struct {
 	ResourceAppID *string `json:"resourceAppId,omitempty"`
 }
 
+func NewResourceSpecificPermissionGrant() (*ResourceSpecificPermissionGrant, error) {
+	newResourceSpecificPermissionGrant := &ResourceSpecificPermissionGrant{
+		ODataType: "#microsoft.graph.ResourceSpecificPermissionGrant",
+	}
+	return newResourceSpecificPermissionGrant, nil
+}
+
 // ResourceVisualization undocumented
 type ResourceVisualization struct {
 	// Object is the base model of ResourceVisualization
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ContainerDisplayName undocumented
 	ContainerDisplayName *string `json:"containerDisplayName,omitempty"`
 	// ContainerType undocumented
@@ -114,4 +188,11 @@ type ResourceVisualization struct {
 	Title *string `json:"title,omitempty"`
 	// Type undocumented
 	Type *string `json:"type,omitempty"`
+}
+
+func NewResourceVisualization() (*ResourceVisualization, error) {
+	newResourceVisualization := &ResourceVisualization{
+		ODataType: "#microsoft.graph.ResourceVisualization",
+	}
+	return newResourceVisualization, nil
 }

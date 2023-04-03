@@ -39,7 +39,7 @@ type PrintJobRedirectRequestParameter struct {
 type PrintJobStartRequestParameter struct {
 }
 
-// Connectors returns request builder for PrintConnector collection
+// Connectors returns request builder for PrintConnector collection rcn
 func (b *PrintRequestBuilder) Connectors() *PrintConnectorsCollectionRequestBuilder {
 	bb := &PrintConnectorsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/connectors"
@@ -142,7 +142,7 @@ func (r *PrintConnectorsCollectionRequest) Add(ctx context.Context, reqObj *Prin
 	return
 }
 
-// Operations returns request builder for PrintOperation collection
+// Operations returns request builder for PrintOperation collection rcn
 func (b *PrintRequestBuilder) Operations() *PrintOperationsCollectionRequestBuilder {
 	bb := &PrintOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -245,7 +245,7 @@ func (r *PrintOperationsCollectionRequest) Add(ctx context.Context, reqObj *Prin
 	return
 }
 
-// Printers returns request builder for Printer collection
+// Printers returns request builder for Printer collection rcn
 func (b *PrintRequestBuilder) Printers() *PrintPrintersCollectionRequestBuilder {
 	bb := &PrintPrintersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/printers"
@@ -348,7 +348,7 @@ func (r *PrintPrintersCollectionRequest) Add(ctx context.Context, reqObj *Printe
 	return
 }
 
-// Services returns request builder for PrintService collection
+// Services returns request builder for PrintService collection rcn
 func (b *PrintRequestBuilder) Services() *PrintServicesCollectionRequestBuilder {
 	bb := &PrintServicesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/services"
@@ -451,7 +451,7 @@ func (r *PrintServicesCollectionRequest) Add(ctx context.Context, reqObj *PrintS
 	return
 }
 
-// Shares returns request builder for PrinterShare collection
+// Shares returns request builder for PrinterShare collection rcn
 func (b *PrintRequestBuilder) Shares() *PrintSharesCollectionRequestBuilder {
 	bb := &PrintSharesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/shares"
@@ -554,7 +554,7 @@ func (r *PrintSharesCollectionRequest) Add(ctx context.Context, reqObj *PrinterS
 	return
 }
 
-// TaskDefinitions returns request builder for PrintTaskDefinition collection
+// TaskDefinitions returns request builder for PrintTaskDefinition collection rcn
 func (b *PrintRequestBuilder) TaskDefinitions() *PrintTaskDefinitionsCollectionRequestBuilder {
 	bb := &PrintTaskDefinitionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/taskDefinitions"
@@ -657,7 +657,7 @@ func (r *PrintTaskDefinitionsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// Documents returns request builder for PrintDocument collection
+// Documents returns request builder for PrintDocument collection rcn
 func (b *PrintJobRequestBuilder) Documents() *PrintJobDocumentsCollectionRequestBuilder {
 	bb := &PrintJobDocumentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/documents"
@@ -760,7 +760,7 @@ func (r *PrintJobDocumentsCollectionRequest) Add(ctx context.Context, reqObj *Pr
 	return
 }
 
-// Tasks returns request builder for PrintTask collection
+// Tasks returns request builder for PrintTask collection rcn
 func (b *PrintJobRequestBuilder) Tasks() *PrintJobTasksCollectionRequestBuilder {
 	bb := &PrintJobTasksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tasks"
@@ -863,7 +863,7 @@ func (r *PrintJobTasksCollectionRequest) Add(ctx context.Context, reqObj *PrintT
 	return
 }
 
-// Endpoints returns request builder for PrintServiceEndpoint collection
+// Endpoints returns request builder for PrintServiceEndpoint collection rcn
 func (b *PrintServiceRequestBuilder) Endpoints() *PrintServiceEndpointsCollectionRequestBuilder {
 	bb := &PrintServiceEndpointsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/endpoints"
@@ -966,21 +966,21 @@ func (r *PrintServiceEndpointsCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// Definition is navigation property
+// Definition is navigation property rn
 func (b *PrintTaskRequestBuilder) Definition() *PrintTaskDefinitionRequestBuilder {
 	bb := &PrintTaskDefinitionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/definition"
 	return bb
 }
 
-// Trigger is navigation property
+// Trigger is navigation property rn
 func (b *PrintTaskRequestBuilder) Trigger() *PrintTaskTriggerRequestBuilder {
 	bb := &PrintTaskTriggerRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/trigger"
 	return bb
 }
 
-// Tasks returns request builder for PrintTask collection
+// Tasks returns request builder for PrintTask collection rcn
 func (b *PrintTaskDefinitionRequestBuilder) Tasks() *PrintTaskDefinitionTasksCollectionRequestBuilder {
 	bb := &PrintTaskDefinitionTasksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tasks"
@@ -1083,9 +1083,79 @@ func (r *PrintTaskDefinitionTasksCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// Definition is navigation property
+// Definition is navigation property rn
 func (b *PrintTaskTriggerRequestBuilder) Definition() *PrintTaskDefinitionRequestBuilder {
 	bb := &PrintTaskDefinitionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/definition"
+	return bb
+}
+
+// PrintConnector is navigation property rn
+func (b *PrintConnectorRequestBuilder) PrintConnector() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PrintDocument is navigation property rn
+func (b *PrintDocumentRequestBuilder) PrintDocument() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PrintJob is navigation property rn
+func (b *PrintJobRequestBuilder) PrintJob() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PrintOperation is navigation property rn
+func (b *PrintOperationRequestBuilder) PrintOperation() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PrintService is navigation property rn
+func (b *PrintServiceRequestBuilder) PrintService() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PrintServiceEndpoint is navigation property rn
+func (b *PrintServiceEndpointRequestBuilder) PrintServiceEndpoint() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PrintTask is navigation property rn
+func (b *PrintTaskRequestBuilder) PrintTask() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PrintTaskDefinition is navigation property rn
+func (b *PrintTaskDefinitionRequestBuilder) PrintTaskDefinition() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PrintTaskTrigger is navigation property rn
+func (b *PrintTaskTriggerRequestBuilder) PrintTaskTrigger() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PrintUsage is navigation property rn
+func (b *PrintUsageRequestBuilder) PrintUsage() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

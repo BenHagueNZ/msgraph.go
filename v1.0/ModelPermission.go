@@ -8,6 +8,8 @@ import "time"
 type Permission struct {
 	// Entity is the base model of Permission
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ExpirationDateTime undocumented
 	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
 	// GrantedTo undocumented
@@ -32,10 +34,19 @@ type Permission struct {
 	ShareID *string `json:"shareId,omitempty"`
 }
 
+func NewPermission() (*Permission, error) {
+	newPermission := &Permission{
+		ODataType: "#microsoft.graph.Permission",
+	}
+	return newPermission, nil
+}
+
 // PermissionGrantConditionSet undocumented
 type PermissionGrantConditionSet struct {
 	// Entity is the base model of PermissionGrantConditionSet
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ClientApplicationIDs undocumented
 	ClientApplicationIDs []string `json:"clientApplicationIds,omitempty"`
 	// ClientApplicationPublisherIDs undocumented
@@ -54,20 +65,38 @@ type PermissionGrantConditionSet struct {
 	ResourceApplication *string `json:"resourceApplication,omitempty"`
 }
 
+func NewPermissionGrantConditionSet() (*PermissionGrantConditionSet, error) {
+	newPermissionGrantConditionSet := &PermissionGrantConditionSet{
+		ODataType: "#microsoft.graph.PermissionGrantConditionSet",
+	}
+	return newPermissionGrantConditionSet, nil
+}
+
 // PermissionGrantPolicy undocumented
 type PermissionGrantPolicy struct {
 	// PolicyBase is the base model of PermissionGrantPolicy
 	PolicyBase
+
+	ODataType string `json:"@odata.type"`
 	// Excludes undocumented
 	Excludes []PermissionGrantConditionSet `json:"excludes,omitempty"`
 	// Includes undocumented
 	Includes []PermissionGrantConditionSet `json:"includes,omitempty"`
 }
 
+func NewPermissionGrantPolicy() (*PermissionGrantPolicy, error) {
+	newPermissionGrantPolicy := &PermissionGrantPolicy{
+		ODataType: "#microsoft.graph.PermissionGrantPolicy",
+	}
+	return newPermissionGrantPolicy, nil
+}
+
 // PermissionScope undocumented
 type PermissionScope struct {
 	// Object is the base model of PermissionScope
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AdminConsentDescription undocumented
 	AdminConsentDescription *string `json:"adminConsentDescription,omitempty"`
 	// AdminConsentDisplayName undocumented
@@ -86,4 +115,11 @@ type PermissionScope struct {
 	UserConsentDisplayName *string `json:"userConsentDisplayName,omitempty"`
 	// Value undocumented
 	Value *string `json:"value,omitempty"`
+}
+
+func NewPermissionScope() (*PermissionScope, error) {
+	newPermissionScope := &PermissionScope{
+		ODataType: "#microsoft.graph.PermissionScope",
+	}
+	return newPermissionScope, nil
 }

@@ -435,7 +435,7 @@ func (r *ServiceUpdateMessageViewpointRequest) Delete(ctx context.Context) error
 
 type ServicePrincipalAddKeyRequestBuilder struct{ BaseRequestBuilder }
 
-// AddKey action undocumented
+// AddKey action undocumentedras
 func (b *ServicePrincipalRequestBuilder) AddKey(reqObj *ServicePrincipalAddKeyRequestParameter) *ServicePrincipalAddKeyRequestBuilder {
 	bb := &ServicePrincipalAddKeyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AddKey"
@@ -458,7 +458,7 @@ func (r *ServicePrincipalAddKeyRequest) Post(ctx context.Context) (resObj *KeyCr
 
 type ServicePrincipalAddPasswordRequestBuilder struct{ BaseRequestBuilder }
 
-// AddPassword action undocumented
+// AddPassword action undocumentedras
 func (b *ServicePrincipalRequestBuilder) AddPassword(reqObj *ServicePrincipalAddPasswordRequestParameter) *ServicePrincipalAddPasswordRequestBuilder {
 	bb := &ServicePrincipalAddPasswordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AddPassword"
@@ -481,7 +481,7 @@ func (r *ServicePrincipalAddPasswordRequest) Post(ctx context.Context) (resObj *
 
 type ServicePrincipalRemoveKeyRequestBuilder struct{ BaseRequestBuilder }
 
-// RemoveKey action undocumented
+// RemoveKey action undocumentedrav
 func (b *ServicePrincipalRequestBuilder) RemoveKey(reqObj *ServicePrincipalRemoveKeyRequestParameter) *ServicePrincipalRemoveKeyRequestBuilder {
 	bb := &ServicePrincipalRemoveKeyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RemoveKey"
@@ -503,7 +503,7 @@ func (r *ServicePrincipalRemoveKeyRequest) Post(ctx context.Context) error {
 
 type ServicePrincipalRemovePasswordRequestBuilder struct{ BaseRequestBuilder }
 
-// RemovePassword action undocumented
+// RemovePassword action undocumentedrav
 func (b *ServicePrincipalRequestBuilder) RemovePassword(reqObj *ServicePrincipalRemovePasswordRequestParameter) *ServicePrincipalRemovePasswordRequestBuilder {
 	bb := &ServicePrincipalRemovePasswordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RemovePassword"
@@ -525,7 +525,7 @@ func (r *ServicePrincipalRemovePasswordRequest) Post(ctx context.Context) error 
 
 type ServicePrincipalAddTokenSigningCertificateRequestBuilder struct{ BaseRequestBuilder }
 
-// AddTokenSigningCertificate action undocumented
+// AddTokenSigningCertificate action undocumentedras
 func (b *ServicePrincipalRequestBuilder) AddTokenSigningCertificate(reqObj *ServicePrincipalAddTokenSigningCertificateRequestParameter) *ServicePrincipalAddTokenSigningCertificateRequestBuilder {
 	bb := &ServicePrincipalAddTokenSigningCertificateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AddTokenSigningCertificate"

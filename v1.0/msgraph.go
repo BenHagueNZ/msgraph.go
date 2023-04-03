@@ -339,15 +339,13 @@ func GetCNLRB(b *Builders) *CountryNamedLocationRequestBuilder {
 	return &b.c
 }
 
-
 // NewClient returns GraphService request builder with default base URL
 func NewClient(cli *http.Client) *Builders {
-	allBuilders := Builders{ g: GraphServiceRequestBuilder{
+	allBuilders := Builders{g: GraphServiceRequestBuilder{
 		BaseRequestBuilder: BaseRequestBuilder{baseURL: defaultBaseURL, client: cli},
-	},c: CountryNamedLocationRequestBuilder{
+	}, c: CountryNamedLocationRequestBuilder{
 		BaseRequestBuilder: BaseRequestBuilder{baseURL: defaultBaseURL, client: cli},
 	},
 	}
 	return &allBuilders
 }
-

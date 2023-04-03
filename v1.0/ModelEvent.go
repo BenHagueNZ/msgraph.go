@@ -8,6 +8,8 @@ import "time"
 type Event struct {
 	// OutlookItem is the base model of Event
 	OutlookItem
+
+	ODataType string `json:"@odata.type"`
 	// AllowNewTimeProposals undocumented
 	AllowNewTimeProposals *bool `json:"allowNewTimeProposals,omitempty"`
 	// Attendees undocumented
@@ -94,10 +96,19 @@ type Event struct {
 	SingleValueExtendedProperties []SingleValueLegacyExtendedProperty `json:"singleValueExtendedProperties,omitempty"`
 }
 
+func NewEvent() (*Event, error) {
+	newEvent := &Event{
+		ODataType: "#microsoft.graph.Event",
+	}
+	return newEvent, nil
+}
+
 // EventMessage undocumented
 type EventMessage struct {
 	// Message is the base model of EventMessage
 	Message
+
+	ODataType string `json:"@odata.type"`
 	// EndDateTime undocumented
 	EndDateTime *DateTimeTimeZone `json:"endDateTime,omitempty"`
 	// IsAllDay undocumented
@@ -120,16 +131,34 @@ type EventMessage struct {
 	Event *Event `json:"event,omitempty"`
 }
 
+func NewEventMessage() (*EventMessage, error) {
+	newEventMessage := &EventMessage{
+		ODataType: "#microsoft.graph.EventMessage",
+	}
+	return newEventMessage, nil
+}
+
 // EventMessageDetail undocumented
 type EventMessageDetail struct {
 	// Object is the base model of EventMessageDetail
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewEventMessageDetail() (*EventMessageDetail, error) {
+	newEventMessageDetail := &EventMessageDetail{
+		ODataType: "#microsoft.graph.EventMessageDetail",
+	}
+	return newEventMessageDetail, nil
 }
 
 // EventMessageRequestObject undocumented
 type EventMessageRequestObject struct {
 	// EventMessage is the base model of EventMessageRequestObject
 	EventMessage
+
+	ODataType string `json:"@odata.type"`
 	// AllowNewTimeProposals undocumented
 	AllowNewTimeProposals *bool `json:"allowNewTimeProposals,omitempty"`
 	// MeetingRequestType undocumented
@@ -144,12 +173,28 @@ type EventMessageRequestObject struct {
 	ResponseRequested *bool `json:"responseRequested,omitempty"`
 }
 
+func NewEventMessageRequestObject() (*EventMessageRequestObject, error) {
+	newEventMessageRequestObject := &EventMessageRequestObject{
+		ODataType: "#microsoft.graph.EventMessageRequestObject",
+	}
+	return newEventMessageRequestObject, nil
+}
+
 // EventMessageResponse undocumented
 type EventMessageResponse struct {
 	// EventMessage is the base model of EventMessageResponse
 	EventMessage
+
+	ODataType string `json:"@odata.type"`
 	// ProposedNewTime undocumented
 	ProposedNewTime *TimeSlot `json:"proposedNewTime,omitempty"`
 	// ResponseType undocumented
 	ResponseType *ResponseType `json:"responseType,omitempty"`
+}
+
+func NewEventMessageResponse() (*EventMessageResponse, error) {
+	newEventMessageResponse := &EventMessageResponse{
+		ODataType: "#microsoft.graph.EventMessageResponse",
+	}
+	return newEventMessageResponse, nil
 }

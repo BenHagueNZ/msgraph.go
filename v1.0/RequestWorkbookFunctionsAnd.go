@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsAndRequestBuilder struct{ BaseRequestBuilder }
 
-// And action undocumented
+// And action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) And(reqObj *WorkbookFunctionsAndRequestParameter) *WorkbookFunctionsAndRequestBuilder {
 	bb := &WorkbookFunctionsAndRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/And"

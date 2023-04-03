@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsGcdRequestBuilder struct{ BaseRequestBuilder }
 
-// Gcd action undocumented
+// Gcd action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Gcd(reqObj *WorkbookFunctionsGcdRequestParameter) *WorkbookFunctionsGcdRequestBuilder {
 	bb := &WorkbookFunctionsGcdRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Gcd"

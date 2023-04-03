@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsVdbRequestBuilder struct{ BaseRequestBuilder }
 
-// Vdb action undocumented
+// Vdb action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Vdb(reqObj *WorkbookFunctionsVdbRequestParameter) *WorkbookFunctionsVdbRequestBuilder {
 	bb := &WorkbookFunctionsVdbRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Vdb"

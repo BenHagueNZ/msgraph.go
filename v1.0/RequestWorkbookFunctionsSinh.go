@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSinhRequestBuilder struct{ BaseRequestBuilder }
 
-// Sinh action undocumented
+// Sinh action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Sinh(reqObj *WorkbookFunctionsSinhRequestParameter) *WorkbookFunctionsSinhRequestBuilder {
 	bb := &WorkbookFunctionsSinhRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Sinh"

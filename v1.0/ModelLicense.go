@@ -8,6 +8,8 @@ import "time"
 type LicenseAssignmentState struct {
 	// Object is the base model of LicenseAssignmentState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AssignedByGroup undocumented
 	AssignedByGroup *string `json:"assignedByGroup,omitempty"`
 	// DisabledPlans undocumented
@@ -22,10 +24,19 @@ type LicenseAssignmentState struct {
 	State *string `json:"state,omitempty"`
 }
 
+func NewLicenseAssignmentState() (*LicenseAssignmentState, error) {
+	newLicenseAssignmentState := &LicenseAssignmentState{
+		ODataType: "#microsoft.graph.LicenseAssignmentState",
+	}
+	return newLicenseAssignmentState, nil
+}
+
 // LicenseDetails undocumented
 type LicenseDetails struct {
 	// Entity is the base model of LicenseDetails
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ServicePlans undocumented
 	ServicePlans []ServicePlanInfo `json:"servicePlans,omitempty"`
 	// SKUID undocumented
@@ -34,22 +45,47 @@ type LicenseDetails struct {
 	SKUPartNumber *string `json:"skuPartNumber,omitempty"`
 }
 
+func NewLicenseDetails() (*LicenseDetails, error) {
+	newLicenseDetails := &LicenseDetails{
+		ODataType: "#microsoft.graph.LicenseDetails",
+	}
+	return newLicenseDetails, nil
+}
+
 // LicenseProcessingState undocumented
 type LicenseProcessingState struct {
 	// Object is the base model of LicenseProcessingState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// State undocumented
 	State *string `json:"state,omitempty"`
+}
+
+func NewLicenseProcessingState() (*LicenseProcessingState, error) {
+	newLicenseProcessingState := &LicenseProcessingState{
+		ODataType: "#microsoft.graph.LicenseProcessingState",
+	}
+	return newLicenseProcessingState, nil
 }
 
 // LicenseUnitsDetail undocumented
 type LicenseUnitsDetail struct {
 	// Object is the base model of LicenseUnitsDetail
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Enabled undocumented
 	Enabled *int `json:"enabled,omitempty"`
 	// Suspended undocumented
 	Suspended *int `json:"suspended,omitempty"`
 	// Warning undocumented
 	Warning *int `json:"warning,omitempty"`
+}
+
+func NewLicenseUnitsDetail() (*LicenseUnitsDetail, error) {
+	newLicenseUnitsDetail := &LicenseUnitsDetail{
+		ODataType: "#microsoft.graph.LicenseUnitsDetail",
+	}
+	return newLicenseUnitsDetail, nil
 }

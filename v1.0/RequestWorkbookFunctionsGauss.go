@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsGaussRequestBuilder struct{ BaseRequestBuilder }
 
-// Gauss action undocumented
+// Gauss action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Gauss(reqObj *WorkbookFunctionsGaussRequestParameter) *WorkbookFunctionsGaussRequestBuilder {
 	bb := &WorkbookFunctionsGaussRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Gauss"

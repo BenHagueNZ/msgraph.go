@@ -6,6 +6,15 @@ package msgraph
 type SwapShiftsChangeRequestObject struct {
 	// OfferShiftRequestObject is the base model of SwapShiftsChangeRequestObject
 	OfferShiftRequestObject
+
+	ODataType string `json:"@odata.type"`
 	// RecipientShiftID undocumented
 	RecipientShiftID *string `json:"recipientShiftId,omitempty"`
+}
+
+func NewSwapShiftsChangeRequestObject() (*SwapShiftsChangeRequestObject, error) {
+	newSwapShiftsChangeRequestObject := &SwapShiftsChangeRequestObject{
+		ODataType: "#microsoft.graph.SwapShiftsChangeRequestObject",
+	}
+	return newSwapShiftsChangeRequestObject, nil
 }

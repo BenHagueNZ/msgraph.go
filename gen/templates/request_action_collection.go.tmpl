@@ -6,7 +6,7 @@
 type {{$ySymBindingType}}{{$y.Sym}}RequestBuilder struct { BaseRequestBuilder }
 
 {{- range $x := .X }}
-// {{$y.Sym}} action {{$y.Description}}
+// {{$y.Sym}} action {{$y.Description}}rac
 func (b *{{$x}}RequestBuilder) {{$y.Sym}}(reqObj *{{$ySymBindingType}}{{$y.Sym}}RequestParameter) *{{$ySymBindingType}}{{$y.Sym}}RequestBuilder {
     bb := &{{$ySymBindingType}}{{$y.Sym}}RequestBuilder {BaseRequestBuilder: b.BaseRequestBuilder}
     bb.BaseRequestBuilder.baseURL += "/{{$y.Name}}"

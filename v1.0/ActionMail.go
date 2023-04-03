@@ -23,7 +23,7 @@ type MailFolderMoveRequestParameter struct {
 	DestinationID *string `json:"DestinationId,omitempty"`
 }
 
-// ChildFolders returns request builder for MailFolder collection
+// ChildFolders returns request builder for MailFolder collection rcn
 func (b *MailFolderRequestBuilder) ChildFolders() *MailFolderChildFoldersCollectionRequestBuilder {
 	bb := &MailFolderChildFoldersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/childFolders"
@@ -126,7 +126,7 @@ func (r *MailFolderChildFoldersCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// MessageRules returns request builder for MessageRule collection
+// MessageRules returns request builder for MessageRule collection rcn
 func (b *MailFolderRequestBuilder) MessageRules() *MailFolderMessageRulesCollectionRequestBuilder {
 	bb := &MailFolderMessageRulesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/messageRules"
@@ -229,7 +229,7 @@ func (r *MailFolderMessageRulesCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Messages returns request builder for Message collection
+// Messages returns request builder for Message collection rcn
 func (b *MailFolderRequestBuilder) Messages() *MailFolderMessagesCollectionRequestBuilder {
 	bb := &MailFolderMessagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/messages"
@@ -332,7 +332,7 @@ func (r *MailFolderMessagesCollectionRequest) Add(ctx context.Context, reqObj *M
 	return
 }
 
-// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection
+// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection rcn
 func (b *MailFolderRequestBuilder) MultiValueExtendedProperties() *MailFolderMultiValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &MailFolderMultiValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/multiValueExtendedProperties"
@@ -435,7 +435,7 @@ func (r *MailFolderMultiValueExtendedPropertiesCollectionRequest) Add(ctx contex
 	return
 }
 
-// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection
+// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection rcn
 func (b *MailFolderRequestBuilder) SingleValueExtendedProperties() *MailFolderSingleValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &MailFolderSingleValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/singleValueExtendedProperties"
@@ -534,6 +534,219 @@ func (r *MailFolderSingleValueExtendedPropertiesCollectionRequest) Get(ctx conte
 
 // Add performs POST request for SingleValueLegacyExtendedProperty collection
 func (r *MailFolderSingleValueExtendedPropertiesCollectionRequest) Add(ctx context.Context, reqObj *SingleValueLegacyExtendedProperty) (resObj *SingleValueLegacyExtendedProperty, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// MailAssessmentRequestObject returns request builder for ThreatAssessmentRequestObject collection rcn
+func (b *MailAssessmentRequestObjectRequestBuilder) MailAssessmentRequestObject() *MailAssessmentRequestObjectMailAssessmentRequestObjectCollectionRequestBuilder {
+	bb := &MailAssessmentRequestObjectMailAssessmentRequestObjectCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/ThreatAssessmentRequest"
+	return bb
+}
+
+// MailAssessmentRequestObjectMailAssessmentRequestObjectCollectionRequestBuilder is request builder for ThreatAssessmentRequestObject collection
+type MailAssessmentRequestObjectMailAssessmentRequestObjectCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ThreatAssessmentRequestObject collection
+func (b *MailAssessmentRequestObjectMailAssessmentRequestObjectCollectionRequestBuilder) Request() *MailAssessmentRequestObjectMailAssessmentRequestObjectCollectionRequest {
+	return &MailAssessmentRequestObjectMailAssessmentRequestObjectCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ThreatAssessmentRequestObject item
+func (b *MailAssessmentRequestObjectMailAssessmentRequestObjectCollectionRequestBuilder) ID(id string) *ThreatAssessmentRequestObjectRequestBuilder {
+	bb := &ThreatAssessmentRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// MailAssessmentRequestObjectMailAssessmentRequestObjectCollectionRequest is request for ThreatAssessmentRequestObject collection
+type MailAssessmentRequestObjectMailAssessmentRequestObjectCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ThreatAssessmentRequestObject collection
+func (r *MailAssessmentRequestObjectMailAssessmentRequestObjectCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ThreatAssessmentRequestObject, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ThreatAssessmentRequestObject
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ThreatAssessmentRequestObject
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ThreatAssessmentRequestObject collection, max N pages
+func (r *MailAssessmentRequestObjectMailAssessmentRequestObjectCollectionRequest) GetN(ctx context.Context, n int) ([]ThreatAssessmentRequestObject, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ThreatAssessmentRequestObject collection
+func (r *MailAssessmentRequestObjectMailAssessmentRequestObjectCollectionRequest) Get(ctx context.Context) ([]ThreatAssessmentRequestObject, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ThreatAssessmentRequestObject collection
+func (r *MailAssessmentRequestObjectMailAssessmentRequestObjectCollectionRequest) Add(ctx context.Context, reqObj *ThreatAssessmentRequestObject) (resObj *ThreatAssessmentRequestObject, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// MailFolder is navigation property rn
+func (b *MailFolderRequestBuilder) MailFolder() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// MailSearchFolder returns request builder for MailFolder collection rcn
+func (b *MailSearchFolderRequestBuilder) MailSearchFolder() *MailSearchFolderMailSearchFolderCollectionRequestBuilder {
+	bb := &MailSearchFolderMailSearchFolderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/MailFolder"
+	return bb
+}
+
+// MailSearchFolderMailSearchFolderCollectionRequestBuilder is request builder for MailFolder collection
+type MailSearchFolderMailSearchFolderCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for MailFolder collection
+func (b *MailSearchFolderMailSearchFolderCollectionRequestBuilder) Request() *MailSearchFolderMailSearchFolderCollectionRequest {
+	return &MailSearchFolderMailSearchFolderCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for MailFolder item
+func (b *MailSearchFolderMailSearchFolderCollectionRequestBuilder) ID(id string) *MailFolderRequestBuilder {
+	bb := &MailFolderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// MailSearchFolderMailSearchFolderCollectionRequest is request for MailFolder collection
+type MailSearchFolderMailSearchFolderCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for MailFolder collection
+func (r *MailSearchFolderMailSearchFolderCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MailFolder, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []MailFolder
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []MailFolder
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for MailFolder collection, max N pages
+func (r *MailSearchFolderMailSearchFolderCollectionRequest) GetN(ctx context.Context, n int) ([]MailFolder, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for MailFolder collection
+func (r *MailSearchFolderMailSearchFolderCollectionRequest) Get(ctx context.Context) ([]MailFolder, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for MailFolder collection
+func (r *MailSearchFolderMailSearchFolderCollectionRequest) Add(ctx context.Context, reqObj *MailFolder) (resObj *MailFolder, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

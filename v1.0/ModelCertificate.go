@@ -6,6 +6,8 @@ package msgraph
 type CertificateAuthority struct {
 	// Object is the base model of CertificateAuthority
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Certificate undocumented
 	Certificate *Binary `json:"certificate,omitempty"`
 	// CertificateRevocationListURL undocumented
@@ -20,10 +22,26 @@ type CertificateAuthority struct {
 	IssuerSki *string `json:"issuerSki,omitempty"`
 }
 
+func NewCertificateAuthority() (*CertificateAuthority, error) {
+	newCertificateAuthority := &CertificateAuthority{
+		ODataType: "#microsoft.graph.CertificateAuthority",
+	}
+	return newCertificateAuthority, nil
+}
+
 // CertificateBasedAuthConfiguration undocumented
 type CertificateBasedAuthConfiguration struct {
 	// Entity is the base model of CertificateBasedAuthConfiguration
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CertificateAuthorities undocumented
 	CertificateAuthorities []CertificateAuthority `json:"certificateAuthorities,omitempty"`
+}
+
+func NewCertificateBasedAuthConfiguration() (*CertificateBasedAuthConfiguration, error) {
+	newCertificateBasedAuthConfiguration := &CertificateBasedAuthConfiguration{
+		ODataType: "#microsoft.graph.CertificateBasedAuthConfiguration",
+	}
+	return newCertificateBasedAuthConfiguration, nil
 }

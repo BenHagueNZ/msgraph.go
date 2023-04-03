@@ -8,16 +8,27 @@ import "time"
 type OutlookCategory struct {
 	// Entity is the base model of OutlookCategory
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Color undocumented
 	Color *CategoryColor `json:"color,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 }
 
+func NewOutlookCategory() (*OutlookCategory, error) {
+	newOutlookCategory := &OutlookCategory{
+		ODataType: "#microsoft.graph.OutlookCategory",
+	}
+	return newOutlookCategory, nil
+}
+
 // OutlookGeoCoordinates undocumented
 type OutlookGeoCoordinates struct {
 	// Object is the base model of OutlookGeoCoordinates
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Accuracy undocumented
 	Accuracy *float64 `json:"accuracy,omitempty"`
 	// Altitude undocumented
@@ -30,10 +41,19 @@ type OutlookGeoCoordinates struct {
 	Longitude *float64 `json:"longitude,omitempty"`
 }
 
+func NewOutlookGeoCoordinates() (*OutlookGeoCoordinates, error) {
+	newOutlookGeoCoordinates := &OutlookGeoCoordinates{
+		ODataType: "#microsoft.graph.OutlookGeoCoordinates",
+	}
+	return newOutlookGeoCoordinates, nil
+}
+
 // OutlookItem undocumented
 type OutlookItem struct {
 	// Entity is the base model of OutlookItem
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Categories undocumented
 	Categories []string `json:"categories,omitempty"`
 	// ChangeKey undocumented
@@ -44,10 +64,26 @@ type OutlookItem struct {
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 }
 
+func NewOutlookItem() (*OutlookItem, error) {
+	newOutlookItem := &OutlookItem{
+		ODataType: "#microsoft.graph.OutlookItem",
+	}
+	return newOutlookItem, nil
+}
+
 // OutlookUser undocumented
 type OutlookUser struct {
 	// Entity is the base model of OutlookUser
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// MasterCategories undocumented
 	MasterCategories []OutlookCategory `json:"masterCategories,omitempty"`
+}
+
+func NewOutlookUser() (*OutlookUser, error) {
+	newOutlookUser := &OutlookUser{
+		ODataType: "#microsoft.graph.OutlookUser",
+	}
+	return newOutlookUser, nil
 }

@@ -6,8 +6,17 @@ package msgraph
 type DisplayNameLocalization struct {
 	// Object is the base model of DisplayNameLocalization
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// LanguageTag undocumented
 	LanguageTag *string `json:"languageTag,omitempty"`
+}
+
+func NewDisplayNameLocalization() (*DisplayNameLocalization, error) {
+	newDisplayNameLocalization := &DisplayNameLocalization{
+		ODataType: "#microsoft.graph.DisplayNameLocalization",
+	}
+	return newDisplayNameLocalization, nil
 }

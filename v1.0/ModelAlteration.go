@@ -6,10 +6,19 @@ package msgraph
 type AlterationResponse struct {
 	// Object is the base model of AlterationResponse
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// OriginalQueryString undocumented
 	OriginalQueryString *string `json:"originalQueryString,omitempty"`
 	// QueryAlteration undocumented
 	QueryAlteration *SearchAlteration `json:"queryAlteration,omitempty"`
 	// QueryAlterationType undocumented
 	QueryAlterationType *SearchAlterationType `json:"queryAlterationType,omitempty"`
+}
+
+func NewAlterationResponse() (*AlterationResponse, error) {
+	newAlterationResponse := &AlterationResponse{
+		ODataType: "#microsoft.graph.AlterationResponse",
+	}
+	return newAlterationResponse, nil
 }

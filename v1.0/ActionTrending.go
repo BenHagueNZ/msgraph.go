@@ -2,9 +2,16 @@
 
 package msgraph
 
-// Resource is navigation property
+// Resource is navigation property rn
 func (b *TrendingRequestBuilder) Resource() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/resource"
+	return bb
+}
+
+// Trending is navigation property rn
+func (b *TrendingRequestBuilder) Trending() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

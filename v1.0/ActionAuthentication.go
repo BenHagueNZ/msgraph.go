@@ -17,7 +17,7 @@ type AuthenticationMethodResetPasswordRequestParameter struct {
 	NewPassword *string `json:"newPassword,omitempty"`
 }
 
-// EmailMethods returns request builder for EmailAuthenticationMethod collection
+// EmailMethods returns request builder for EmailAuthenticationMethod collection rcn
 func (b *AuthenticationRequestBuilder) EmailMethods() *AuthenticationEmailMethodsCollectionRequestBuilder {
 	bb := &AuthenticationEmailMethodsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/emailMethods"
@@ -120,7 +120,7 @@ func (r *AuthenticationEmailMethodsCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// Fido2Methods returns request builder for Fido2AuthenticationMethod collection
+// Fido2Methods returns request builder for Fido2AuthenticationMethod collection rcn
 func (b *AuthenticationRequestBuilder) Fido2Methods() *AuthenticationFido2MethodsCollectionRequestBuilder {
 	bb := &AuthenticationFido2MethodsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/fido2Methods"
@@ -223,7 +223,7 @@ func (r *AuthenticationFido2MethodsCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// Methods returns request builder for AuthenticationMethod collection
+// Methods returns request builder for AuthenticationMethod collection rcn
 func (b *AuthenticationRequestBuilder) Methods() *AuthenticationMethodsCollectionRequestBuilder {
 	bb := &AuthenticationMethodsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/methods"
@@ -326,7 +326,7 @@ func (r *AuthenticationMethodsCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// MicrosoftAuthenticatorMethods returns request builder for MicrosoftAuthenticatorAuthenticationMethod collection
+// MicrosoftAuthenticatorMethods returns request builder for MicrosoftAuthenticatorAuthenticationMethod collection rcn
 func (b *AuthenticationRequestBuilder) MicrosoftAuthenticatorMethods() *AuthenticationMicrosoftAuthenticatorMethodsCollectionRequestBuilder {
 	bb := &AuthenticationMicrosoftAuthenticatorMethodsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/microsoftAuthenticatorMethods"
@@ -429,7 +429,7 @@ func (r *AuthenticationMicrosoftAuthenticatorMethodsCollectionRequest) Add(ctx c
 	return
 }
 
-// Operations returns request builder for LongRunningOperation collection
+// Operations returns request builder for LongRunningOperation collection rcn
 func (b *AuthenticationRequestBuilder) Operations() *AuthenticationOperationsCollectionRequestBuilder {
 	bb := &AuthenticationOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -532,7 +532,7 @@ func (r *AuthenticationOperationsCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// PasswordMethods returns request builder for PasswordAuthenticationMethod collection
+// PasswordMethods returns request builder for PasswordAuthenticationMethod collection rcn
 func (b *AuthenticationRequestBuilder) PasswordMethods() *AuthenticationPasswordMethodsCollectionRequestBuilder {
 	bb := &AuthenticationPasswordMethodsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/passwordMethods"
@@ -635,7 +635,7 @@ func (r *AuthenticationPasswordMethodsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// PhoneMethods returns request builder for PhoneAuthenticationMethod collection
+// PhoneMethods returns request builder for PhoneAuthenticationMethod collection rcn
 func (b *AuthenticationRequestBuilder) PhoneMethods() *AuthenticationPhoneMethodsCollectionRequestBuilder {
 	bb := &AuthenticationPhoneMethodsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/phoneMethods"
@@ -738,7 +738,7 @@ func (r *AuthenticationPhoneMethodsCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// SoftwareOathMethods returns request builder for SoftwareOathAuthenticationMethod collection
+// SoftwareOathMethods returns request builder for SoftwareOathAuthenticationMethod collection rcn
 func (b *AuthenticationRequestBuilder) SoftwareOathMethods() *AuthenticationSoftwareOathMethodsCollectionRequestBuilder {
 	bb := &AuthenticationSoftwareOathMethodsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/softwareOathMethods"
@@ -841,7 +841,7 @@ func (r *AuthenticationSoftwareOathMethodsCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// TemporaryAccessPassMethods returns request builder for TemporaryAccessPassAuthenticationMethod collection
+// TemporaryAccessPassMethods returns request builder for TemporaryAccessPassAuthenticationMethod collection rcn
 func (b *AuthenticationRequestBuilder) TemporaryAccessPassMethods() *AuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder {
 	bb := &AuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/temporaryAccessPassMethods"
@@ -944,7 +944,7 @@ func (r *AuthenticationTemporaryAccessPassMethodsCollectionRequest) Add(ctx cont
 	return
 }
 
-// WindowsHelloForBusinessMethods returns request builder for WindowsHelloForBusinessAuthenticationMethod collection
+// WindowsHelloForBusinessMethods returns request builder for WindowsHelloForBusinessAuthenticationMethod collection rcn
 func (b *AuthenticationRequestBuilder) WindowsHelloForBusinessMethods() *AuthenticationWindowsHelloForBusinessMethodsCollectionRequestBuilder {
 	bb := &AuthenticationWindowsHelloForBusinessMethodsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/windowsHelloForBusinessMethods"
@@ -1047,7 +1047,7 @@ func (r *AuthenticationWindowsHelloForBusinessMethodsCollectionRequest) Add(ctx 
 	return
 }
 
-// AuthenticationMethodConfigurations returns request builder for AuthenticationMethodConfiguration collection
+// AuthenticationMethodConfigurations returns request builder for AuthenticationMethodConfiguration collection rcn
 func (b *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigurations() *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionRequestBuilder {
 	bb := &AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/authenticationMethodConfigurations"
@@ -1148,4 +1148,53 @@ func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollection
 func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionRequest) Add(ctx context.Context, reqObj *AuthenticationMethodConfiguration) (resObj *AuthenticationMethodConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Authentication is navigation property rn
+func (b *AuthenticationRequestBuilder) Authentication() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// AuthenticationContextClassReference is navigation property rn
+func (b *AuthenticationContextClassReferenceRequestBuilder) AuthenticationContextClassReference() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// AuthenticationFlowsPolicy is navigation property rn
+func (b *AuthenticationFlowsPolicyRequestBuilder) AuthenticationFlowsPolicy() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// AuthenticationMethod is navigation property rn
+func (b *AuthenticationMethodRequestBuilder) AuthenticationMethod() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// AuthenticationMethodConfiguration is navigation property rn
+func (b *AuthenticationMethodConfigurationRequestBuilder) AuthenticationMethodConfiguration() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// AuthenticationMethodTarget is navigation property rn
+func (b *AuthenticationMethodTargetRequestBuilder) AuthenticationMethodTarget() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// AuthenticationMethodsPolicy is navigation property rn
+func (b *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodsPolicy() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

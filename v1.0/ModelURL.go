@@ -6,6 +6,15 @@ package msgraph
 type URLAssessmentRequestObject struct {
 	// ThreatAssessmentRequestObject is the base model of URLAssessmentRequestObject
 	ThreatAssessmentRequestObject
+
+	ODataType string `json:"@odata.type"`
 	// URL undocumented
 	URL *string `json:"url,omitempty"`
+}
+
+func NewURLAssessmentRequestObject() (*URLAssessmentRequestObject, error) {
+	newURLAssessmentRequestObject := &URLAssessmentRequestObject{
+		ODataType: "#microsoft.graph.UrlAssessmentRequestObject",
+	}
+	return newURLAssessmentRequestObject, nil
 }

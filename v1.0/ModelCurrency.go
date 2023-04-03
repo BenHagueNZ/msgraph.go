@@ -6,6 +6,15 @@ package msgraph
 type CurrencyColumn struct {
 	// Object is the base model of CurrencyColumn
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Locale undocumented
 	Locale *string `json:"locale,omitempty"`
+}
+
+func NewCurrencyColumn() (*CurrencyColumn, error) {
+	newCurrencyColumn := &CurrencyColumn{
+		ODataType: "#microsoft.graph.CurrencyColumn",
+	}
+	return newCurrencyColumn, nil
 }

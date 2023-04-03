@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsFvscheduleRequestBuilder struct{ BaseRequestBuilder }
 
-// Fvschedule action undocumented
+// Fvschedule action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Fvschedule(reqObj *WorkbookFunctionsFvscheduleRequestParameter) *WorkbookFunctionsFvscheduleRequestBuilder {
 	bb := &WorkbookFunctionsFvscheduleRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Fvschedule"

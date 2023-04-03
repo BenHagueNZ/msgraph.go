@@ -25,7 +25,7 @@ type PostReplyRequestParameter struct {
 	Post *Post `json:"Post,omitempty"`
 }
 
-// Attachments returns request builder for Attachment collection
+// Attachments returns request builder for Attachment collection rcn
 func (b *PostRequestBuilder) Attachments() *PostAttachmentsCollectionRequestBuilder {
 	bb := &PostAttachmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/attachments"
@@ -128,7 +128,7 @@ func (r *PostAttachmentsCollectionRequest) Add(ctx context.Context, reqObj *Atta
 	return
 }
 
-// Extensions returns request builder for Extension collection
+// Extensions returns request builder for Extension collection rcn
 func (b *PostRequestBuilder) Extensions() *PostExtensionsCollectionRequestBuilder {
 	bb := &PostExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensions"
@@ -231,14 +231,14 @@ func (r *PostExtensionsCollectionRequest) Add(ctx context.Context, reqObj *Exten
 	return
 }
 
-// InReplyTo is navigation property
+// InReplyTo is navigation property rn
 func (b *PostRequestBuilder) InReplyTo() *PostRequestBuilder {
 	bb := &PostRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/inReplyTo"
 	return bb
 }
 
-// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection
+// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection rcn
 func (b *PostRequestBuilder) MultiValueExtendedProperties() *PostMultiValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &PostMultiValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/multiValueExtendedProperties"
@@ -341,7 +341,7 @@ func (r *PostMultiValueExtendedPropertiesCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection
+// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection rcn
 func (b *PostRequestBuilder) SingleValueExtendedProperties() *PostSingleValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &PostSingleValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/singleValueExtendedProperties"
@@ -442,4 +442,11 @@ func (r *PostSingleValueExtendedPropertiesCollectionRequest) Get(ctx context.Con
 func (r *PostSingleValueExtendedPropertiesCollectionRequest) Add(ctx context.Context, reqObj *SingleValueLegacyExtendedProperty) (resObj *SingleValueLegacyExtendedProperty, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Post is navigation property rn
+func (b *PostRequestBuilder) Post() *OutlookItemRequestBuilder {
+	bb := &OutlookItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/OutlookItem"
+	return bb
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsMultiNomialRequestBuilder struct{ BaseRequestBuilder }
 
-// MultiNomial action undocumented
+// MultiNomial action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) MultiNomial(reqObj *WorkbookFunctionsMultiNomialRequestParameter) *WorkbookFunctionsMultiNomialRequestBuilder {
 	bb := &WorkbookFunctionsMultiNomialRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/MultiNomial"

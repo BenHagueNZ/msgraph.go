@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsFactRequestBuilder struct{ BaseRequestBuilder }
 
-// Fact action undocumented
+// Fact action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Fact(reqObj *WorkbookFunctionsFactRequestParameter) *WorkbookFunctionsFactRequestBuilder {
 	bb := &WorkbookFunctionsFactRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Fact"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsFactRequest) Post(ctx context.Context) (resObj *Workbo
 
 type WorkbookFunctionsFactDoubleRequestBuilder struct{ BaseRequestBuilder }
 
-// FactDouble action undocumented
+// FactDouble action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) FactDouble(reqObj *WorkbookFunctionsFactDoubleRequestParameter) *WorkbookFunctionsFactDoubleRequestBuilder {
 	bb := &WorkbookFunctionsFactDoubleRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/FactDouble"

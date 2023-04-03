@@ -6,14 +6,25 @@ package msgraph
 type SharePointIdentity struct {
 	// Identity is the base model of SharePointIdentity
 	Identity
+
+	ODataType string `json:"@odata.type"`
 	// LoginName undocumented
 	LoginName *string `json:"loginName,omitempty"`
+}
+
+func NewSharePointIdentity() (*SharePointIdentity, error) {
+	newSharePointIdentity := &SharePointIdentity{
+		ODataType: "#microsoft.graph.SharePointIdentity",
+	}
+	return newSharePointIdentity, nil
 }
 
 // SharePointIdentitySet undocumented
 type SharePointIdentitySet struct {
 	// IdentitySet is the base model of SharePointIdentitySet
 	IdentitySet
+
+	ODataType string `json:"@odata.type"`
 	// Group undocumented
 	Group *Identity `json:"group,omitempty"`
 	// SiteGroup undocumented
@@ -22,10 +33,26 @@ type SharePointIdentitySet struct {
 	SiteUser *SharePointIdentity `json:"siteUser,omitempty"`
 }
 
+func NewSharePointIdentitySet() (*SharePointIdentitySet, error) {
+	newSharePointIdentitySet := &SharePointIdentitySet{
+		ODataType: "#microsoft.graph.SharePointIdentitySet",
+	}
+	return newSharePointIdentitySet, nil
+}
+
 // SharePointOneDriveOptions undocumented
 type SharePointOneDriveOptions struct {
 	// Object is the base model of SharePointOneDriveOptions
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IncludeContent undocumented
 	IncludeContent *SearchContent `json:"includeContent,omitempty"`
+}
+
+func NewSharePointOneDriveOptions() (*SharePointOneDriveOptions, error) {
+	newSharePointOneDriveOptions := &SharePointOneDriveOptions{
+		ODataType: "#microsoft.graph.SharePointOneDriveOptions",
+	}
+	return newSharePointOneDriveOptions, nil
 }

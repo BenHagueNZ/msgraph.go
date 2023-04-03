@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsOrRequestBuilder struct{ BaseRequestBuilder }
 
-// Or action undocumented
+// Or action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Or(reqObj *WorkbookFunctionsOrRequestParameter) *WorkbookFunctionsOrRequestBuilder {
 	bb := &WorkbookFunctionsOrRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Or"

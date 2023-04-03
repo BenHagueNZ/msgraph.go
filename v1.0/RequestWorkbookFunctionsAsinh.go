@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsAsinhRequestBuilder struct{ BaseRequestBuilder }
 
-// Asinh action undocumented
+// Asinh action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Asinh(reqObj *WorkbookFunctionsAsinhRequestParameter) *WorkbookFunctionsAsinhRequestBuilder {
 	bb := &WorkbookFunctionsAsinhRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Asinh"

@@ -336,7 +336,7 @@ func (r *AuthenticationMethodsRegistrationCampaignIncludeTargetRequest) Delete(c
 
 type AuthenticationMethodResetPasswordRequestBuilder struct{ BaseRequestBuilder }
 
-// ResetPassword action undocumented
+// ResetPassword action undocumentedras
 func (b *AuthenticationMethodRequestBuilder) ResetPassword(reqObj *AuthenticationMethodResetPasswordRequestParameter) *AuthenticationMethodResetPasswordRequestBuilder {
 	bb := &AuthenticationMethodResetPasswordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ResetPassword"

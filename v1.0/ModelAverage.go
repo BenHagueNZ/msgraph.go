@@ -6,8 +6,17 @@ package msgraph
 type AverageComparativeScore struct {
 	// Object is the base model of AverageComparativeScore
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AverageScore undocumented
 	AverageScore *float64 `json:"averageScore,omitempty"`
 	// Basis undocumented
 	Basis *string `json:"basis,omitempty"`
+}
+
+func NewAverageComparativeScore() (*AverageComparativeScore, error) {
+	newAverageComparativeScore := &AverageComparativeScore{
+		ODataType: "#microsoft.graph.AverageComparativeScore",
+	}
+	return newAverageComparativeScore, nil
 }

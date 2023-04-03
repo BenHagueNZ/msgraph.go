@@ -6,16 +6,27 @@ package msgraph
 type WebApp struct {
 	// MobileApp is the base model of WebApp
 	MobileApp
+
+	ODataType string `json:"@odata.type"`
 	// AppURL undocumented
 	AppURL *string `json:"appUrl,omitempty"`
 	// UseManagedBrowser undocumented
 	UseManagedBrowser *bool `json:"useManagedBrowser,omitempty"`
 }
 
+func NewWebApp() (*WebApp, error) {
+	newWebApp := &WebApp{
+		ODataType: "#microsoft.graph.WebApp",
+	}
+	return newWebApp, nil
+}
+
 // WebApplication undocumented
 type WebApplication struct {
 	// Object is the base model of WebApplication
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// HomePageURL undocumented
 	HomePageURL *string `json:"homePageUrl,omitempty"`
 	// ImplicitGrantSettings undocumented
@@ -26,4 +37,11 @@ type WebApplication struct {
 	RedirectUris []string `json:"redirectUris,omitempty"`
 	// RedirectURISettings undocumented
 	RedirectURISettings []RedirectURISettings `json:"redirectUriSettings,omitempty"`
+}
+
+func NewWebApplication() (*WebApplication, error) {
+	newWebApplication := &WebApplication{
+		ODataType: "#microsoft.graph.WebApplication",
+	}
+	return newWebApplication, nil
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsRoundRequestBuilder struct{ BaseRequestBuilder }
 
-// Round action undocumented
+// Round action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Round(reqObj *WorkbookFunctionsRoundRequestParameter) *WorkbookFunctionsRoundRequestBuilder {
 	bb := &WorkbookFunctionsRoundRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Round"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsRoundRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsRoundDownRequestBuilder struct{ BaseRequestBuilder }
 
-// RoundDown action undocumented
+// RoundDown action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) RoundDown(reqObj *WorkbookFunctionsRoundDownRequestParameter) *WorkbookFunctionsRoundDownRequestBuilder {
 	bb := &WorkbookFunctionsRoundDownRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RoundDown"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsRoundDownRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsRoundUpRequestBuilder struct{ BaseRequestBuilder }
 
-// RoundUp action undocumented
+// RoundUp action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) RoundUp(reqObj *WorkbookFunctionsRoundUpRequestParameter) *WorkbookFunctionsRoundUpRequestBuilder {
 	bb := &WorkbookFunctionsRoundUpRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RoundUp"

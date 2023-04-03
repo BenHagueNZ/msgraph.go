@@ -8,10 +8,19 @@ import "time"
 type ExpirationPattern struct {
 	// Object is the base model of ExpirationPattern
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Duration undocumented
 	Duration *Duration `json:"duration,omitempty"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// Type undocumented
 	Type *ExpirationPatternType `json:"type,omitempty"`
+}
+
+func NewExpirationPattern() (*ExpirationPattern, error) {
+	newExpirationPattern := &ExpirationPattern{
+		ODataType: "#microsoft.graph.ExpirationPattern",
+	}
+	return newExpirationPattern, nil
 }

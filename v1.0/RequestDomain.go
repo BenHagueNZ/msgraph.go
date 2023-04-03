@@ -37,21 +37,21 @@ func (r *DomainRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// DomainDNSCnameRecordRequestBuilder is request builder for DomainDNSCnameRecord
-type DomainDNSCnameRecordRequestBuilder struct{ BaseRequestBuilder }
+// DomainDnsCnameRecordRequestBuilder is request builder for DomainDnsCnameRecord
+type DomainDnsCnameRecordRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns DomainDNSCnameRecordRequest
-func (b *DomainDNSCnameRecordRequestBuilder) Request() *DomainDNSCnameRecordRequest {
-	return &DomainDNSCnameRecordRequest{
+// Request returns DomainDnsCnameRecordRequest
+func (b *DomainDnsCnameRecordRequestBuilder) Request() *DomainDnsCnameRecordRequest {
+	return &DomainDnsCnameRecordRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// DomainDNSCnameRecordRequest is request for DomainDNSCnameRecord
-type DomainDNSCnameRecordRequest struct{ BaseRequest }
+// DomainDnsCnameRecordRequest is request for DomainDnsCnameRecord
+type DomainDnsCnameRecordRequest struct{ BaseRequest }
 
-// Get performs GET request for DomainDNSCnameRecord
-func (r *DomainDNSCnameRecordRequest) Get(ctx context.Context) (resObj *DomainDNSCnameRecord, err error) {
+// Get performs GET request for DomainDnsCnameRecord
+func (r *DomainDnsCnameRecordRequest) Get(ctx context.Context) (resObj *DomainDnsCnameRecord, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -60,31 +60,31 @@ func (r *DomainDNSCnameRecordRequest) Get(ctx context.Context) (resObj *DomainDN
 	return
 }
 
-// Update performs PATCH request for DomainDNSCnameRecord
-func (r *DomainDNSCnameRecordRequest) Update(ctx context.Context, reqObj *DomainDNSCnameRecord) error {
+// Update performs PATCH request for DomainDnsCnameRecord
+func (r *DomainDnsCnameRecordRequest) Update(ctx context.Context, reqObj *DomainDnsCnameRecord) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for DomainDNSCnameRecord
-func (r *DomainDNSCnameRecordRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for DomainDnsCnameRecord
+func (r *DomainDnsCnameRecordRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// DomainDNSMxRecordRequestBuilder is request builder for DomainDNSMxRecord
-type DomainDNSMxRecordRequestBuilder struct{ BaseRequestBuilder }
+// DomainDnsMxRecordRequestBuilder is request builder for DomainDnsMxRecord
+type DomainDnsMxRecordRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns DomainDNSMxRecordRequest
-func (b *DomainDNSMxRecordRequestBuilder) Request() *DomainDNSMxRecordRequest {
-	return &DomainDNSMxRecordRequest{
+// Request returns DomainDnsMxRecordRequest
+func (b *DomainDnsMxRecordRequestBuilder) Request() *DomainDnsMxRecordRequest {
+	return &DomainDnsMxRecordRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// DomainDNSMxRecordRequest is request for DomainDNSMxRecord
-type DomainDNSMxRecordRequest struct{ BaseRequest }
+// DomainDnsMxRecordRequest is request for DomainDnsMxRecord
+type DomainDnsMxRecordRequest struct{ BaseRequest }
 
-// Get performs GET request for DomainDNSMxRecord
-func (r *DomainDNSMxRecordRequest) Get(ctx context.Context) (resObj *DomainDNSMxRecord, err error) {
+// Get performs GET request for DomainDnsMxRecord
+func (r *DomainDnsMxRecordRequest) Get(ctx context.Context) (resObj *DomainDnsMxRecord, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -93,31 +93,31 @@ func (r *DomainDNSMxRecordRequest) Get(ctx context.Context) (resObj *DomainDNSMx
 	return
 }
 
-// Update performs PATCH request for DomainDNSMxRecord
-func (r *DomainDNSMxRecordRequest) Update(ctx context.Context, reqObj *DomainDNSMxRecord) error {
+// Update performs PATCH request for DomainDnsMxRecord
+func (r *DomainDnsMxRecordRequest) Update(ctx context.Context, reqObj *DomainDnsMxRecord) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for DomainDNSMxRecord
-func (r *DomainDNSMxRecordRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for DomainDnsMxRecord
+func (r *DomainDnsMxRecordRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// DomainDNSRecordRequestBuilder is request builder for DomainDNSRecord
-type DomainDNSRecordRequestBuilder struct{ BaseRequestBuilder }
+// DomainDnsRecordRequestBuilder is request builder for DomainDnsRecord
+type DomainDnsRecordRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns DomainDNSRecordRequest
-func (b *DomainDNSRecordRequestBuilder) Request() *DomainDNSRecordRequest {
-	return &DomainDNSRecordRequest{
+// Request returns DomainDnsRecordRequest
+func (b *DomainDnsRecordRequestBuilder) Request() *DomainDnsRecordRequest {
+	return &DomainDnsRecordRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// DomainDNSRecordRequest is request for DomainDNSRecord
-type DomainDNSRecordRequest struct{ BaseRequest }
+// DomainDnsRecordRequest is request for DomainDnsRecord
+type DomainDnsRecordRequest struct{ BaseRequest }
 
-// Get performs GET request for DomainDNSRecord
-func (r *DomainDNSRecordRequest) Get(ctx context.Context) (resObj *DomainDNSRecord, err error) {
+// Get performs GET request for DomainDnsRecord
+func (r *DomainDnsRecordRequest) Get(ctx context.Context) (resObj *DomainDnsRecord, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -126,31 +126,31 @@ func (r *DomainDNSRecordRequest) Get(ctx context.Context) (resObj *DomainDNSReco
 	return
 }
 
-// Update performs PATCH request for DomainDNSRecord
-func (r *DomainDNSRecordRequest) Update(ctx context.Context, reqObj *DomainDNSRecord) error {
+// Update performs PATCH request for DomainDnsRecord
+func (r *DomainDnsRecordRequest) Update(ctx context.Context, reqObj *DomainDnsRecord) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for DomainDNSRecord
-func (r *DomainDNSRecordRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for DomainDnsRecord
+func (r *DomainDnsRecordRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// DomainDNSSrvRecordRequestBuilder is request builder for DomainDNSSrvRecord
-type DomainDNSSrvRecordRequestBuilder struct{ BaseRequestBuilder }
+// DomainDnsSrvRecordRequestBuilder is request builder for DomainDnsSrvRecord
+type DomainDnsSrvRecordRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns DomainDNSSrvRecordRequest
-func (b *DomainDNSSrvRecordRequestBuilder) Request() *DomainDNSSrvRecordRequest {
-	return &DomainDNSSrvRecordRequest{
+// Request returns DomainDnsSrvRecordRequest
+func (b *DomainDnsSrvRecordRequestBuilder) Request() *DomainDnsSrvRecordRequest {
+	return &DomainDnsSrvRecordRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// DomainDNSSrvRecordRequest is request for DomainDNSSrvRecord
-type DomainDNSSrvRecordRequest struct{ BaseRequest }
+// DomainDnsSrvRecordRequest is request for DomainDnsSrvRecord
+type DomainDnsSrvRecordRequest struct{ BaseRequest }
 
-// Get performs GET request for DomainDNSSrvRecord
-func (r *DomainDNSSrvRecordRequest) Get(ctx context.Context) (resObj *DomainDNSSrvRecord, err error) {
+// Get performs GET request for DomainDnsSrvRecord
+func (r *DomainDnsSrvRecordRequest) Get(ctx context.Context) (resObj *DomainDnsSrvRecord, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -159,31 +159,31 @@ func (r *DomainDNSSrvRecordRequest) Get(ctx context.Context) (resObj *DomainDNSS
 	return
 }
 
-// Update performs PATCH request for DomainDNSSrvRecord
-func (r *DomainDNSSrvRecordRequest) Update(ctx context.Context, reqObj *DomainDNSSrvRecord) error {
+// Update performs PATCH request for DomainDnsSrvRecord
+func (r *DomainDnsSrvRecordRequest) Update(ctx context.Context, reqObj *DomainDnsSrvRecord) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for DomainDNSSrvRecord
-func (r *DomainDNSSrvRecordRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for DomainDnsSrvRecord
+func (r *DomainDnsSrvRecordRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// DomainDNSTxtRecordRequestBuilder is request builder for DomainDNSTxtRecord
-type DomainDNSTxtRecordRequestBuilder struct{ BaseRequestBuilder }
+// DomainDnsTxtRecordRequestBuilder is request builder for DomainDnsTxtRecord
+type DomainDnsTxtRecordRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns DomainDNSTxtRecordRequest
-func (b *DomainDNSTxtRecordRequestBuilder) Request() *DomainDNSTxtRecordRequest {
-	return &DomainDNSTxtRecordRequest{
+// Request returns DomainDnsTxtRecordRequest
+func (b *DomainDnsTxtRecordRequestBuilder) Request() *DomainDnsTxtRecordRequest {
+	return &DomainDnsTxtRecordRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// DomainDNSTxtRecordRequest is request for DomainDNSTxtRecord
-type DomainDNSTxtRecordRequest struct{ BaseRequest }
+// DomainDnsTxtRecordRequest is request for DomainDnsTxtRecord
+type DomainDnsTxtRecordRequest struct{ BaseRequest }
 
-// Get performs GET request for DomainDNSTxtRecord
-func (r *DomainDNSTxtRecordRequest) Get(ctx context.Context) (resObj *DomainDNSTxtRecord, err error) {
+// Get performs GET request for DomainDnsTxtRecord
+func (r *DomainDnsTxtRecordRequest) Get(ctx context.Context) (resObj *DomainDnsTxtRecord, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -192,31 +192,31 @@ func (r *DomainDNSTxtRecordRequest) Get(ctx context.Context) (resObj *DomainDNST
 	return
 }
 
-// Update performs PATCH request for DomainDNSTxtRecord
-func (r *DomainDNSTxtRecordRequest) Update(ctx context.Context, reqObj *DomainDNSTxtRecord) error {
+// Update performs PATCH request for DomainDnsTxtRecord
+func (r *DomainDnsTxtRecordRequest) Update(ctx context.Context, reqObj *DomainDnsTxtRecord) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for DomainDNSTxtRecord
-func (r *DomainDNSTxtRecordRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for DomainDnsTxtRecord
+func (r *DomainDnsTxtRecordRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// DomainDNSUnavailableRecordRequestBuilder is request builder for DomainDNSUnavailableRecord
-type DomainDNSUnavailableRecordRequestBuilder struct{ BaseRequestBuilder }
+// DomainDnsUnavailableRecordRequestBuilder is request builder for DomainDnsUnavailableRecord
+type DomainDnsUnavailableRecordRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns DomainDNSUnavailableRecordRequest
-func (b *DomainDNSUnavailableRecordRequestBuilder) Request() *DomainDNSUnavailableRecordRequest {
-	return &DomainDNSUnavailableRecordRequest{
+// Request returns DomainDnsUnavailableRecordRequest
+func (b *DomainDnsUnavailableRecordRequestBuilder) Request() *DomainDnsUnavailableRecordRequest {
+	return &DomainDnsUnavailableRecordRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// DomainDNSUnavailableRecordRequest is request for DomainDNSUnavailableRecord
-type DomainDNSUnavailableRecordRequest struct{ BaseRequest }
+// DomainDnsUnavailableRecordRequest is request for DomainDnsUnavailableRecord
+type DomainDnsUnavailableRecordRequest struct{ BaseRequest }
 
-// Get performs GET request for DomainDNSUnavailableRecord
-func (r *DomainDNSUnavailableRecordRequest) Get(ctx context.Context) (resObj *DomainDNSUnavailableRecord, err error) {
+// Get performs GET request for DomainDnsUnavailableRecord
+func (r *DomainDnsUnavailableRecordRequest) Get(ctx context.Context) (resObj *DomainDnsUnavailableRecord, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -225,13 +225,13 @@ func (r *DomainDNSUnavailableRecordRequest) Get(ctx context.Context) (resObj *Do
 	return
 }
 
-// Update performs PATCH request for DomainDNSUnavailableRecord
-func (r *DomainDNSUnavailableRecordRequest) Update(ctx context.Context, reqObj *DomainDNSUnavailableRecord) error {
+// Update performs PATCH request for DomainDnsUnavailableRecord
+func (r *DomainDnsUnavailableRecordRequest) Update(ctx context.Context, reqObj *DomainDnsUnavailableRecord) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for DomainDNSUnavailableRecord
-func (r *DomainDNSUnavailableRecordRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for DomainDnsUnavailableRecord
+func (r *DomainDnsUnavailableRecordRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
@@ -303,7 +303,7 @@ func (r *DomainStateRequest) Delete(ctx context.Context) error {
 
 type DomainForceDeleteRequestBuilder struct{ BaseRequestBuilder }
 
-// ForceDelete action undocumented
+// ForceDelete action undocumentedrav
 func (b *DomainRequestBuilder) ForceDelete(reqObj *DomainForceDeleteRequestParameter) *DomainForceDeleteRequestBuilder {
 	bb := &DomainForceDeleteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ForceDelete"
@@ -325,7 +325,7 @@ func (r *DomainForceDeleteRequest) Post(ctx context.Context) error {
 
 type DomainPromoteRequestBuilder struct{ BaseRequestBuilder }
 
-// Promote action undocumented
+// Promote action undocumentedras
 func (b *DomainRequestBuilder) Promote(reqObj *DomainPromoteRequestParameter) *DomainPromoteRequestBuilder {
 	bb := &DomainPromoteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Promote"
@@ -348,7 +348,7 @@ func (r *DomainPromoteRequest) Post(ctx context.Context) (resObj *bool, err erro
 
 type DomainVerifyRequestBuilder struct{ BaseRequestBuilder }
 
-// Verify action undocumented
+// Verify action undocumentedras
 func (b *DomainRequestBuilder) Verify(reqObj *DomainVerifyRequestParameter) *DomainVerifyRequestBuilder {
 	bb := &DomainVerifyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Verify"

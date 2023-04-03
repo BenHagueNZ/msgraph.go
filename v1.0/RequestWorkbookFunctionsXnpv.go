@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsXnpvRequestBuilder struct{ BaseRequestBuilder }
 
-// Xnpv action undocumented
+// Xnpv action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Xnpv(reqObj *WorkbookFunctionsXnpvRequestParameter) *WorkbookFunctionsXnpvRequestBuilder {
 	bb := &WorkbookFunctionsXnpvRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Xnpv"

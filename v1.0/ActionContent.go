@@ -47,14 +47,14 @@ type ContentTypeCopyToDefaultContentLocationRequestParameter struct {
 	DestinationFileName *string `json:"destinationFileName,omitempty"`
 }
 
-// Base is navigation property
+// Base is navigation property rn
 func (b *ContentTypeRequestBuilder) Base() *ContentTypeRequestBuilder {
 	bb := &ContentTypeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/base"
 	return bb
 }
 
-// BaseTypes returns request builder for ContentType collection
+// BaseTypes returns request builder for ContentType collection rcn
 func (b *ContentTypeRequestBuilder) BaseTypes() *ContentTypeBaseTypesCollectionRequestBuilder {
 	bb := &ContentTypeBaseTypesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/baseTypes"
@@ -157,7 +157,7 @@ func (r *ContentTypeBaseTypesCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// ColumnLinks returns request builder for ColumnLink collection
+// ColumnLinks returns request builder for ColumnLink collection rcn
 func (b *ContentTypeRequestBuilder) ColumnLinks() *ContentTypeColumnLinksCollectionRequestBuilder {
 	bb := &ContentTypeColumnLinksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/columnLinks"
@@ -260,7 +260,7 @@ func (r *ContentTypeColumnLinksCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// ColumnPositions returns request builder for ColumnDefinition collection
+// ColumnPositions returns request builder for ColumnDefinition collection rcn
 func (b *ContentTypeRequestBuilder) ColumnPositions() *ContentTypeColumnPositionsCollectionRequestBuilder {
 	bb := &ContentTypeColumnPositionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/columnPositions"
@@ -363,7 +363,7 @@ func (r *ContentTypeColumnPositionsCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// Columns returns request builder for ColumnDefinition collection
+// Columns returns request builder for ColumnDefinition collection rcn
 func (b *ContentTypeRequestBuilder) Columns() *ContentTypeColumnsCollectionRequestBuilder {
 	bb := &ContentTypeColumnsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/columns"
@@ -464,4 +464,18 @@ func (r *ContentTypeColumnsCollectionRequest) Get(ctx context.Context) ([]Column
 func (r *ContentTypeColumnsCollectionRequest) Add(ctx context.Context, reqObj *ColumnDefinition) (resObj *ColumnDefinition, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// ContentSharingSession is navigation property rn
+func (b *ContentSharingSessionRequestBuilder) ContentSharingSession() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ContentType is navigation property rn
+func (b *ContentTypeRequestBuilder) ContentType() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

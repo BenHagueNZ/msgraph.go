@@ -6,6 +6,15 @@ package msgraph
 type RegistrationEnforcement struct {
 	// Object is the base model of RegistrationEnforcement
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AuthenticationMethodsRegistrationCampaign undocumented
 	AuthenticationMethodsRegistrationCampaign *AuthenticationMethodsRegistrationCampaign `json:"authenticationMethodsRegistrationCampaign,omitempty"`
+}
+
+func NewRegistrationEnforcement() (*RegistrationEnforcement, error) {
+	newRegistrationEnforcement := &RegistrationEnforcement{
+		ODataType: "#microsoft.graph.RegistrationEnforcement",
+	}
+	return newRegistrationEnforcement, nil
 }

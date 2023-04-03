@@ -8,6 +8,8 @@ import "time"
 type ImportedWindowsAutopilotDeviceIdentity struct {
 	// Entity is the base model of ImportedWindowsAutopilotDeviceIdentity
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AssignedUserPrincipalName undocumented
 	AssignedUserPrincipalName *string `json:"assignedUserPrincipalName,omitempty"`
 	// GroupTag undocumented
@@ -24,10 +26,19 @@ type ImportedWindowsAutopilotDeviceIdentity struct {
 	State *ImportedWindowsAutopilotDeviceIdentityState `json:"state,omitempty"`
 }
 
+func NewImportedWindowsAutopilotDeviceIdentity() (*ImportedWindowsAutopilotDeviceIdentity, error) {
+	newImportedWindowsAutopilotDeviceIdentity := &ImportedWindowsAutopilotDeviceIdentity{
+		ODataType: "#microsoft.graph.ImportedWindowsAutopilotDeviceIdentity",
+	}
+	return newImportedWindowsAutopilotDeviceIdentity, nil
+}
+
 // ImportedWindowsAutopilotDeviceIdentityState undocumented
 type ImportedWindowsAutopilotDeviceIdentityState struct {
 	// Object is the base model of ImportedWindowsAutopilotDeviceIdentityState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DeviceErrorCode undocumented
 	DeviceErrorCode *int `json:"deviceErrorCode,omitempty"`
 	// DeviceErrorName undocumented
@@ -38,14 +49,30 @@ type ImportedWindowsAutopilotDeviceIdentityState struct {
 	DeviceRegistrationID *string `json:"deviceRegistrationId,omitempty"`
 }
 
+func NewImportedWindowsAutopilotDeviceIdentityState() (*ImportedWindowsAutopilotDeviceIdentityState, error) {
+	newImportedWindowsAutopilotDeviceIdentityState := &ImportedWindowsAutopilotDeviceIdentityState{
+		ODataType: "#microsoft.graph.ImportedWindowsAutopilotDeviceIdentityState",
+	}
+	return newImportedWindowsAutopilotDeviceIdentityState, nil
+}
+
 // ImportedWindowsAutopilotDeviceIdentityUpload undocumented
 type ImportedWindowsAutopilotDeviceIdentityUpload struct {
 	// Entity is the base model of ImportedWindowsAutopilotDeviceIdentityUpload
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTimeUtc undocumented
 	CreatedDateTimeUtc *time.Time `json:"createdDateTimeUtc,omitempty"`
 	// Status undocumented
 	Status *ImportedWindowsAutopilotDeviceIdentityUploadStatus `json:"status,omitempty"`
 	// DeviceIdentities undocumented
 	DeviceIdentities []ImportedWindowsAutopilotDeviceIdentity `json:"deviceIdentities,omitempty"`
+}
+
+func NewImportedWindowsAutopilotDeviceIdentityUpload() (*ImportedWindowsAutopilotDeviceIdentityUpload, error) {
+	newImportedWindowsAutopilotDeviceIdentityUpload := &ImportedWindowsAutopilotDeviceIdentityUpload{
+		ODataType: "#microsoft.graph.ImportedWindowsAutopilotDeviceIdentityUpload",
+	}
+	return newImportedWindowsAutopilotDeviceIdentityUpload, nil
 }

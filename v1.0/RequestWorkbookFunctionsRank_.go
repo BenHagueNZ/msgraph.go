@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsRank_AvgRequestBuilder struct{ BaseRequestBuilder }
 
-// Rank_Avg action undocumented
+// Rank_Avg action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Rank_Avg(reqObj *WorkbookFunctionsRank_AvgRequestParameter) *WorkbookFunctionsRank_AvgRequestBuilder {
 	bb := &WorkbookFunctionsRank_AvgRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Rank_Avg"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsRank_AvgRequest) Post(ctx context.Context) (resObj *Wo
 
 type WorkbookFunctionsRank_EqRequestBuilder struct{ BaseRequestBuilder }
 
-// Rank_Eq action undocumented
+// Rank_Eq action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Rank_Eq(reqObj *WorkbookFunctionsRank_EqRequestParameter) *WorkbookFunctionsRank_EqRequestBuilder {
 	bb := &WorkbookFunctionsRank_EqRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Rank_Eq"

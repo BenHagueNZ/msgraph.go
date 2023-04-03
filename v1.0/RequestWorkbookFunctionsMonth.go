@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsMonthRequestBuilder struct{ BaseRequestBuilder }
 
-// Month action undocumented
+// Month action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Month(reqObj *WorkbookFunctionsMonthRequestParameter) *WorkbookFunctionsMonthRequestBuilder {
 	bb := &WorkbookFunctionsMonthRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Month"

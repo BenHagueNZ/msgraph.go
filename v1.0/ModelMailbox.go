@@ -6,6 +6,8 @@ package msgraph
 type MailboxSettings struct {
 	// Object is the base model of MailboxSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ArchiveFolder undocumented
 	ArchiveFolder *string `json:"archiveFolder,omitempty"`
 	// AutomaticRepliesSetting undocumented
@@ -24,4 +26,11 @@ type MailboxSettings struct {
 	UserPurpose *UserPurpose `json:"userPurpose,omitempty"`
 	// WorkingHours undocumented
 	WorkingHours *WorkingHours `json:"workingHours,omitempty"`
+}
+
+func NewMailboxSettings() (*MailboxSettings, error) {
+	newMailboxSettings := &MailboxSettings{
+		ODataType: "#microsoft.graph.MailboxSettings",
+	}
+	return newMailboxSettings, nil
 }

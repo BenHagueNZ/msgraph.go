@@ -6,8 +6,17 @@ package msgraph
 type ImplicitGrantSettings struct {
 	// Object is the base model of ImplicitGrantSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// EnableAccessTokenIssuance undocumented
 	EnableAccessTokenIssuance *bool `json:"enableAccessTokenIssuance,omitempty"`
 	// EnableIDTokenIssuance undocumented
 	EnableIDTokenIssuance *bool `json:"enableIdTokenIssuance,omitempty"`
+}
+
+func NewImplicitGrantSettings() (*ImplicitGrantSettings, error) {
+	newImplicitGrantSettings := &ImplicitGrantSettings{
+		ODataType: "#microsoft.graph.ImplicitGrantSettings",
+	}
+	return newImplicitGrantSettings, nil
 }

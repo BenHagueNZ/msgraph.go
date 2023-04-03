@@ -15,7 +15,7 @@ import (
 type NotificationMessageTemplateSendTestMessageRequestParameter struct {
 }
 
-// LocalizedNotificationMessages returns request builder for LocalizedNotificationMessage collection
+// LocalizedNotificationMessages returns request builder for LocalizedNotificationMessage collection rcn
 func (b *NotificationMessageTemplateRequestBuilder) LocalizedNotificationMessages() *NotificationMessageTemplateLocalizedNotificationMessagesCollectionRequestBuilder {
 	bb := &NotificationMessageTemplateLocalizedNotificationMessagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/localizedNotificationMessages"
@@ -116,4 +116,11 @@ func (r *NotificationMessageTemplateLocalizedNotificationMessagesCollectionReque
 func (r *NotificationMessageTemplateLocalizedNotificationMessagesCollectionRequest) Add(ctx context.Context, reqObj *LocalizedNotificationMessage) (resObj *LocalizedNotificationMessage, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// NotificationMessageTemplate is navigation property rn
+func (b *NotificationMessageTemplateRequestBuilder) NotificationMessageTemplate() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

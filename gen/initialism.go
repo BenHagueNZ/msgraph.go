@@ -18,7 +18,6 @@ var commonInitialisms = map[string]string{
 	"CPU":    "CPU",
 	"CSS":    "CSS",
 	"DMA":    "DMA",
-	"DNS":    "DNS",
 	"EOF":    "EOF",
 	"GUID":   "GUID",
 	"HTML":   "HTML",

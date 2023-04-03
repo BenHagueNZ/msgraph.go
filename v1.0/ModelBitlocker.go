@@ -8,14 +8,25 @@ import "time"
 type Bitlocker struct {
 	// Entity is the base model of Bitlocker
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// RecoveryKeys undocumented
 	RecoveryKeys []BitlockerRecoveryKey `json:"recoveryKeys,omitempty"`
+}
+
+func NewBitlocker() (*Bitlocker, error) {
+	newBitlocker := &Bitlocker{
+		ODataType: "#microsoft.graph.Bitlocker",
+	}
+	return newBitlocker, nil
 }
 
 // BitlockerRecoveryKey undocumented
 type BitlockerRecoveryKey struct {
 	// Entity is the base model of BitlockerRecoveryKey
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// DeviceID undocumented
@@ -24,4 +35,11 @@ type BitlockerRecoveryKey struct {
 	Key *string `json:"key,omitempty"`
 	// VolumeType undocumented
 	VolumeType *VolumeType `json:"volumeType,omitempty"`
+}
+
+func NewBitlockerRecoveryKey() (*BitlockerRecoveryKey, error) {
+	newBitlockerRecoveryKey := &BitlockerRecoveryKey{
+		ODataType: "#microsoft.graph.BitlockerRecoveryKey",
+	}
+	return newBitlockerRecoveryKey, nil
 }

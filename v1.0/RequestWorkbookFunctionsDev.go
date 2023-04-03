@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDevSqRequestBuilder struct{ BaseRequestBuilder }
 
-// DevSq action undocumented
+// DevSq action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) DevSq(reqObj *WorkbookFunctionsDevSqRequestParameter) *WorkbookFunctionsDevSqRequestBuilder {
 	bb := &WorkbookFunctionsDevSqRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/DevSq"

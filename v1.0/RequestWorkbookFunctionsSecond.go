@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSecondRequestBuilder struct{ BaseRequestBuilder }
 
-// Second action undocumented
+// Second action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Second(reqObj *WorkbookFunctionsSecondRequestParameter) *WorkbookFunctionsSecondRequestBuilder {
 	bb := &WorkbookFunctionsSecondRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Second"

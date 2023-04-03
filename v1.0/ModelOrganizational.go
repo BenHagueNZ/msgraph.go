@@ -6,20 +6,40 @@ package msgraph
 type OrganizationalBranding struct {
 	// OrganizationalBrandingProperties is the base model of OrganizationalBranding
 	OrganizationalBrandingProperties
+
+	ODataType string `json:"@odata.type"`
 	// Localizations undocumented
 	Localizations []OrganizationalBrandingLocalization `json:"localizations,omitempty"`
+}
+
+func NewOrganizationalBranding() (*OrganizationalBranding, error) {
+	newOrganizationalBranding := &OrganizationalBranding{
+		ODataType: "#microsoft.graph.OrganizationalBranding",
+	}
+	return newOrganizationalBranding, nil
 }
 
 // OrganizationalBrandingLocalization undocumented
 type OrganizationalBrandingLocalization struct {
 	// OrganizationalBrandingProperties is the base model of OrganizationalBrandingLocalization
 	OrganizationalBrandingProperties
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewOrganizationalBrandingLocalization() (*OrganizationalBrandingLocalization, error) {
+	newOrganizationalBrandingLocalization := &OrganizationalBrandingLocalization{
+		ODataType: "#microsoft.graph.OrganizationalBrandingLocalization",
+	}
+	return newOrganizationalBrandingLocalization, nil
 }
 
 // OrganizationalBrandingProperties undocumented
 type OrganizationalBrandingProperties struct {
 	// Entity is the base model of OrganizationalBrandingProperties
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// BackgroundColor undocumented
 	BackgroundColor *string `json:"backgroundColor,omitempty"`
 	// BackgroundImage undocumented
@@ -40,4 +60,11 @@ type OrganizationalBrandingProperties struct {
 	SquareLogoRelativeURL *string `json:"squareLogoRelativeUrl,omitempty"`
 	// UsernameHintText undocumented
 	UsernameHintText *string `json:"usernameHintText,omitempty"`
+}
+
+func NewOrganizationalBrandingProperties() (*OrganizationalBrandingProperties, error) {
+	newOrganizationalBrandingProperties := &OrganizationalBrandingProperties{
+		ODataType: "#microsoft.graph.OrganizationalBrandingProperties",
+	}
+	return newOrganizationalBrandingProperties, nil
 }

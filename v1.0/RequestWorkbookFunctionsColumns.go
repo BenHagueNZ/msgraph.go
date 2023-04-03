@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsColumnsRequestBuilder struct{ BaseRequestBuilder }
 
-// Columns action undocumented
+// Columns action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Columns(reqObj *WorkbookFunctionsColumnsRequestParameter) *WorkbookFunctionsColumnsRequestBuilder {
 	bb := &WorkbookFunctionsColumnsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Columns"

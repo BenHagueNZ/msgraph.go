@@ -8,6 +8,8 @@ import "time"
 type DelegatedAdminAccessAssignment struct {
 	// Entity is the base model of DelegatedAdminAccessAssignment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AccessContainer undocumented
 	AccessContainer *DelegatedAdminAccessContainer `json:"accessContainer,omitempty"`
 	// AccessDetails undocumented
@@ -20,28 +22,55 @@ type DelegatedAdminAccessAssignment struct {
 	Status *DelegatedAdminAccessAssignmentStatus `json:"status,omitempty"`
 }
 
+func NewDelegatedAdminAccessAssignment() (*DelegatedAdminAccessAssignment, error) {
+	newDelegatedAdminAccessAssignment := &DelegatedAdminAccessAssignment{
+		ODataType: "#microsoft.graph.DelegatedAdminAccessAssignment",
+	}
+	return newDelegatedAdminAccessAssignment, nil
+}
+
 // DelegatedAdminAccessContainer undocumented
 type DelegatedAdminAccessContainer struct {
 	// Object is the base model of DelegatedAdminAccessContainer
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AccessContainerID undocumented
 	AccessContainerID *string `json:"accessContainerId,omitempty"`
 	// AccessContainerType undocumented
 	AccessContainerType *DelegatedAdminAccessContainerType `json:"accessContainerType,omitempty"`
 }
 
+func NewDelegatedAdminAccessContainer() (*DelegatedAdminAccessContainer, error) {
+	newDelegatedAdminAccessContainer := &DelegatedAdminAccessContainer{
+		ODataType: "#microsoft.graph.DelegatedAdminAccessContainer",
+	}
+	return newDelegatedAdminAccessContainer, nil
+}
+
 // DelegatedAdminAccessDetails undocumented
 type DelegatedAdminAccessDetails struct {
 	// Object is the base model of DelegatedAdminAccessDetails
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// UnifiedRoles undocumented
 	UnifiedRoles []UnifiedRole `json:"unifiedRoles,omitempty"`
+}
+
+func NewDelegatedAdminAccessDetails() (*DelegatedAdminAccessDetails, error) {
+	newDelegatedAdminAccessDetails := &DelegatedAdminAccessDetails{
+		ODataType: "#microsoft.graph.DelegatedAdminAccessDetails",
+	}
+	return newDelegatedAdminAccessDetails, nil
 }
 
 // DelegatedAdminCustomer undocumented
 type DelegatedAdminCustomer struct {
 	// Entity is the base model of DelegatedAdminCustomer
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// TenantID undocumented
@@ -50,10 +79,19 @@ type DelegatedAdminCustomer struct {
 	ServiceManagementDetails []DelegatedAdminServiceManagementDetail `json:"serviceManagementDetails,omitempty"`
 }
 
+func NewDelegatedAdminCustomer() (*DelegatedAdminCustomer, error) {
+	newDelegatedAdminCustomer := &DelegatedAdminCustomer{
+		ODataType: "#microsoft.graph.DelegatedAdminCustomer",
+	}
+	return newDelegatedAdminCustomer, nil
+}
+
 // DelegatedAdminRelationship undocumented
 type DelegatedAdminRelationship struct {
 	// Entity is the base model of DelegatedAdminRelationship
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AccessDetails undocumented
 	AccessDetails *DelegatedAdminAccessDetails `json:"accessDetails,omitempty"`
 	// ActivatedDateTime undocumented
@@ -80,20 +118,38 @@ type DelegatedAdminRelationship struct {
 	Requests []DelegatedAdminRelationshipRequestObject `json:"requests,omitempty"`
 }
 
+func NewDelegatedAdminRelationship() (*DelegatedAdminRelationship, error) {
+	newDelegatedAdminRelationship := &DelegatedAdminRelationship{
+		ODataType: "#microsoft.graph.DelegatedAdminRelationship",
+	}
+	return newDelegatedAdminRelationship, nil
+}
+
 // DelegatedAdminRelationshipCustomerParticipant undocumented
 type DelegatedAdminRelationshipCustomerParticipant struct {
 	// Object is the base model of DelegatedAdminRelationshipCustomerParticipant
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// TenantID undocumented
 	TenantID *string `json:"tenantId,omitempty"`
 }
 
+func NewDelegatedAdminRelationshipCustomerParticipant() (*DelegatedAdminRelationshipCustomerParticipant, error) {
+	newDelegatedAdminRelationshipCustomerParticipant := &DelegatedAdminRelationshipCustomerParticipant{
+		ODataType: "#microsoft.graph.DelegatedAdminRelationshipCustomerParticipant",
+	}
+	return newDelegatedAdminRelationshipCustomerParticipant, nil
+}
+
 // DelegatedAdminRelationshipOperation undocumented
 type DelegatedAdminRelationshipOperation struct {
 	// Entity is the base model of DelegatedAdminRelationshipOperation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Data undocumented
@@ -106,10 +162,19 @@ type DelegatedAdminRelationshipOperation struct {
 	Status *LongRunningOperationStatus `json:"status,omitempty"`
 }
 
+func NewDelegatedAdminRelationshipOperation() (*DelegatedAdminRelationshipOperation, error) {
+	newDelegatedAdminRelationshipOperation := &DelegatedAdminRelationshipOperation{
+		ODataType: "#microsoft.graph.DelegatedAdminRelationshipOperation",
+	}
+	return newDelegatedAdminRelationshipOperation, nil
+}
+
 // DelegatedAdminRelationshipRequestObject undocumented
 type DelegatedAdminRelationshipRequestObject struct {
 	// Entity is the base model of DelegatedAdminRelationshipRequestObject
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Action undocumented
 	Action *DelegatedAdminRelationshipRequestAction `json:"action,omitempty"`
 	// CreatedDateTime undocumented
@@ -120,24 +185,49 @@ type DelegatedAdminRelationshipRequestObject struct {
 	Status *DelegatedAdminRelationshipRequestStatus `json:"status,omitempty"`
 }
 
+func NewDelegatedAdminRelationshipRequestObject() (*DelegatedAdminRelationshipRequestObject, error) {
+	newDelegatedAdminRelationshipRequestObject := &DelegatedAdminRelationshipRequestObject{
+		ODataType: "#microsoft.graph.DelegatedAdminRelationshipRequestObject",
+	}
+	return newDelegatedAdminRelationshipRequestObject, nil
+}
+
 // DelegatedAdminServiceManagementDetail undocumented
 type DelegatedAdminServiceManagementDetail struct {
 	// Entity is the base model of DelegatedAdminServiceManagementDetail
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ServiceManagementURL undocumented
 	ServiceManagementURL *string `json:"serviceManagementUrl,omitempty"`
 	// ServiceName undocumented
 	ServiceName *string `json:"serviceName,omitempty"`
 }
 
+func NewDelegatedAdminServiceManagementDetail() (*DelegatedAdminServiceManagementDetail, error) {
+	newDelegatedAdminServiceManagementDetail := &DelegatedAdminServiceManagementDetail{
+		ODataType: "#microsoft.graph.DelegatedAdminServiceManagementDetail",
+	}
+	return newDelegatedAdminServiceManagementDetail, nil
+}
+
 // DelegatedPermissionClassification undocumented
 type DelegatedPermissionClassification struct {
 	// Entity is the base model of DelegatedPermissionClassification
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Classification undocumented
 	Classification *PermissionClassificationType `json:"classification,omitempty"`
 	// PermissionID undocumented
 	PermissionID *string `json:"permissionId,omitempty"`
 	// PermissionName undocumented
 	PermissionName *string `json:"permissionName,omitempty"`
+}
+
+func NewDelegatedPermissionClassification() (*DelegatedPermissionClassification, error) {
+	newDelegatedPermissionClassification := &DelegatedPermissionClassification{
+		ODataType: "#microsoft.graph.DelegatedPermissionClassification",
+	}
+	return newDelegatedPermissionClassification, nil
 }

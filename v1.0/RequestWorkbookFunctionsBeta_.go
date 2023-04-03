@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsBeta_DistRequestBuilder struct{ BaseRequestBuilder }
 
-// Beta_Dist action undocumented
+// Beta_Dist action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Beta_Dist(reqObj *WorkbookFunctionsBeta_DistRequestParameter) *WorkbookFunctionsBeta_DistRequestBuilder {
 	bb := &WorkbookFunctionsBeta_DistRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Beta_Dist"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsBeta_DistRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsBeta_InvRequestBuilder struct{ BaseRequestBuilder }
 
-// Beta_Inv action undocumented
+// Beta_Inv action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Beta_Inv(reqObj *WorkbookFunctionsBeta_InvRequestParameter) *WorkbookFunctionsBeta_InvRequestBuilder {
 	bb := &WorkbookFunctionsBeta_InvRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Beta_Inv"

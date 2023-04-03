@@ -39,7 +39,7 @@ func (r *PostRequest) Delete(ctx context.Context) error {
 
 type PostForwardRequestBuilder struct{ BaseRequestBuilder }
 
-// Forward action undocumented
+// Forward action undocumentedrav
 func (b *PostRequestBuilder) Forward(reqObj *PostForwardRequestParameter) *PostForwardRequestBuilder {
 	bb := &PostForwardRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Forward"
@@ -61,7 +61,7 @@ func (r *PostForwardRequest) Post(ctx context.Context) error {
 
 type PostReplyRequestBuilder struct{ BaseRequestBuilder }
 
-// Reply action undocumented
+// Reply action undocumentedrav
 func (b *PostRequestBuilder) Reply(reqObj *PostReplyRequestParameter) *PostReplyRequestBuilder {
 	bb := &PostReplyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Reply"

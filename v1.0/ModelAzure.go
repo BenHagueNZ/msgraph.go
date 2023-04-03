@@ -6,16 +6,34 @@ package msgraph
 type AzureActiveDirectoryTenant struct {
 	// IdentitySource is the base model of AzureActiveDirectoryTenant
 	IdentitySource
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// TenantID undocumented
 	TenantID *string `json:"tenantId,omitempty"`
 }
 
+func NewAzureActiveDirectoryTenant() (*AzureActiveDirectoryTenant, error) {
+	newAzureActiveDirectoryTenant := &AzureActiveDirectoryTenant{
+		ODataType: "#microsoft.graph.AzureActiveDirectoryTenant",
+	}
+	return newAzureActiveDirectoryTenant, nil
+}
+
 // AzureCommunicationServicesUserConversationMember undocumented
 type AzureCommunicationServicesUserConversationMember struct {
 	// ConversationMember is the base model of AzureCommunicationServicesUserConversationMember
 	ConversationMember
+
+	ODataType string `json:"@odata.type"`
 	// AzureCommunicationServicesID undocumented
 	AzureCommunicationServicesID *string `json:"azureCommunicationServicesId,omitempty"`
+}
+
+func NewAzureCommunicationServicesUserConversationMember() (*AzureCommunicationServicesUserConversationMember, error) {
+	newAzureCommunicationServicesUserConversationMember := &AzureCommunicationServicesUserConversationMember{
+		ODataType: "#microsoft.graph.AzureCommunicationServicesUserConversationMember",
+	}
+	return newAzureCommunicationServicesUserConversationMember, nil
 }

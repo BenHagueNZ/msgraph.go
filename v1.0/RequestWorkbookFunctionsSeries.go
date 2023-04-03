@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSeriesSumRequestBuilder struct{ BaseRequestBuilder }
 
-// SeriesSum action undocumented
+// SeriesSum action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) SeriesSum(reqObj *WorkbookFunctionsSeriesSumRequestParameter) *WorkbookFunctionsSeriesSumRequestBuilder {
 	bb := &WorkbookFunctionsSeriesSumRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SeriesSum"

@@ -8,6 +8,8 @@ import "time"
 type Call struct {
 	// Entity is the base model of Call
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CallbackURI undocumented
 	CallbackURI *string `json:"callbackUri,omitempty"`
 	// CallChainID undocumented
@@ -58,10 +60,19 @@ type Call struct {
 	Participants []Participant `json:"participants,omitempty"`
 }
 
+func NewCall() (*Call, error) {
+	newCall := &Call{
+		ODataType: "#microsoft.graph.Call",
+	}
+	return newCall, nil
+}
+
 // CallEndedEventMessageDetail undocumented
 type CallEndedEventMessageDetail struct {
 	// EventMessageDetail is the base model of CallEndedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// CallDuration undocumented
 	CallDuration *Duration `json:"callDuration,omitempty"`
 	// CallEventType undocumented
@@ -74,36 +85,72 @@ type CallEndedEventMessageDetail struct {
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 }
 
+func NewCallEndedEventMessageDetail() (*CallEndedEventMessageDetail, error) {
+	newCallEndedEventMessageDetail := &CallEndedEventMessageDetail{
+		ODataType: "#microsoft.graph.CallEndedEventMessageDetail",
+	}
+	return newCallEndedEventMessageDetail, nil
+}
+
 // CallMediaState undocumented
 type CallMediaState struct {
 	// Object is the base model of CallMediaState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Audio undocumented
 	Audio *MediaState `json:"audio,omitempty"`
+}
+
+func NewCallMediaState() (*CallMediaState, error) {
+	newCallMediaState := &CallMediaState{
+		ODataType: "#microsoft.graph.CallMediaState",
+	}
+	return newCallMediaState, nil
 }
 
 // CallOptions undocumented
 type CallOptions struct {
 	// Object is the base model of CallOptions
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// HideBotAfterEscalation undocumented
 	HideBotAfterEscalation *bool `json:"hideBotAfterEscalation,omitempty"`
 	// IsContentSharingNotificationEnabled undocumented
 	IsContentSharingNotificationEnabled *bool `json:"isContentSharingNotificationEnabled,omitempty"`
 }
 
+func NewCallOptions() (*CallOptions, error) {
+	newCallOptions := &CallOptions{
+		ODataType: "#microsoft.graph.CallOptions",
+	}
+	return newCallOptions, nil
+}
+
 // CallParticipantInfo undocumented
 type CallParticipantInfo struct {
 	// Object is the base model of CallParticipantInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Participant undocumented
 	Participant *IdentitySet `json:"participant,omitempty"`
+}
+
+func NewCallParticipantInfo() (*CallParticipantInfo, error) {
+	newCallParticipantInfo := &CallParticipantInfo{
+		ODataType: "#microsoft.graph.CallParticipantInfo",
+	}
+	return newCallParticipantInfo, nil
 }
 
 // CallRecordingEventMessageDetail undocumented
 type CallRecordingEventMessageDetail struct {
 	// EventMessageDetail is the base model of CallRecordingEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// CallID undocumented
 	CallID *string `json:"callId,omitempty"`
 	// CallRecordingDisplayName undocumented
@@ -120,10 +167,19 @@ type CallRecordingEventMessageDetail struct {
 	MeetingOrganizer *IdentitySet `json:"meetingOrganizer,omitempty"`
 }
 
+func NewCallRecordingEventMessageDetail() (*CallRecordingEventMessageDetail, error) {
+	newCallRecordingEventMessageDetail := &CallRecordingEventMessageDetail{
+		ODataType: "#microsoft.graph.CallRecordingEventMessageDetail",
+	}
+	return newCallRecordingEventMessageDetail, nil
+}
+
 // CallRoute undocumented
 type CallRoute struct {
 	// Object is the base model of CallRoute
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Final undocumented
 	Final *IdentitySet `json:"final,omitempty"`
 	// Original undocumented
@@ -132,10 +188,19 @@ type CallRoute struct {
 	RoutingType *RoutingType `json:"routingType,omitempty"`
 }
 
+func NewCallRoute() (*CallRoute, error) {
+	newCallRoute := &CallRoute{
+		ODataType: "#microsoft.graph.CallRoute",
+	}
+	return newCallRoute, nil
+}
+
 // CallStartedEventMessageDetail undocumented
 type CallStartedEventMessageDetail struct {
 	// EventMessageDetail is the base model of CallStartedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// CallEventType undocumented
 	CallEventType *TeamworkCallEventType `json:"callEventType,omitempty"`
 	// CallID undocumented
@@ -144,10 +209,19 @@ type CallStartedEventMessageDetail struct {
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 }
 
+func NewCallStartedEventMessageDetail() (*CallStartedEventMessageDetail, error) {
+	newCallStartedEventMessageDetail := &CallStartedEventMessageDetail{
+		ODataType: "#microsoft.graph.CallStartedEventMessageDetail",
+	}
+	return newCallStartedEventMessageDetail, nil
+}
+
 // CallTranscriptEventMessageDetail undocumented
 type CallTranscriptEventMessageDetail struct {
 	// EventMessageDetail is the base model of CallTranscriptEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// CallID undocumented
 	CallID *string `json:"callId,omitempty"`
 	// CallTranscriptICalUID undocumented
@@ -156,20 +230,38 @@ type CallTranscriptEventMessageDetail struct {
 	MeetingOrganizer *IdentitySet `json:"meetingOrganizer,omitempty"`
 }
 
+func NewCallTranscriptEventMessageDetail() (*CallTranscriptEventMessageDetail, error) {
+	newCallTranscriptEventMessageDetail := &CallTranscriptEventMessageDetail{
+		ODataType: "#microsoft.graph.CallTranscriptEventMessageDetail",
+	}
+	return newCallTranscriptEventMessageDetail, nil
+}
+
 // CallTranscriptionInfo undocumented
 type CallTranscriptionInfo struct {
 	// Object is the base model of CallTranscriptionInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 	// State undocumented
 	State *CallTranscriptionState `json:"state,omitempty"`
 }
 
+func NewCallTranscriptionInfo() (*CallTranscriptionInfo, error) {
+	newCallTranscriptionInfo := &CallTranscriptionInfo{
+		ODataType: "#microsoft.graph.CallTranscriptionInfo",
+	}
+	return newCallTranscriptionInfo, nil
+}
+
 // CallRecordsCallRecord undocumented
 type CallRecordsCallRecord struct {
 	// Entity is the base model of CallRecordsCallRecord
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// JoinWebURL undocumented
@@ -192,10 +284,19 @@ type CallRecordsCallRecord struct {
 	Sessions []CallRecordsSession `json:"sessions,omitempty"`
 }
 
+func NewCallRecordsCallRecord() (*CallRecordsCallRecord, error) {
+	newCallRecordsCallRecord := &CallRecordsCallRecord{
+		ODataType: "#microsoft.graph.CallRecordsCallRecord",
+	}
+	return newCallRecordsCallRecord, nil
+}
+
 // CallRecordsClientUserAgent undocumented
 type CallRecordsClientUserAgent struct {
 	// CallRecordsUserAgent is the base model of CallRecordsClientUserAgent
 	CallRecordsUserAgent
+
+	ODataType string `json:"@odata.type"`
 	// AzureADAppID undocumented
 	AzureADAppID *string `json:"azureADAppId,omitempty"`
 	// CommunicationServiceID undocumented
@@ -206,10 +307,19 @@ type CallRecordsClientUserAgent struct {
 	ProductFamily *CallRecordsProductFamily `json:"productFamily,omitempty"`
 }
 
+func NewCallRecordsClientUserAgent() (*CallRecordsClientUserAgent, error) {
+	newCallRecordsClientUserAgent := &CallRecordsClientUserAgent{
+		ODataType: "#microsoft.graph.CallRecordsClientUserAgent",
+	}
+	return newCallRecordsClientUserAgent, nil
+}
+
 // CallRecordsDeviceInfo undocumented
 type CallRecordsDeviceInfo struct {
 	// Object is the base model of CallRecordsDeviceInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CaptureDeviceDriver undocumented
 	CaptureDeviceDriver *string `json:"captureDeviceDriver,omitempty"`
 	// CaptureDeviceName undocumented
@@ -254,10 +364,19 @@ type CallRecordsDeviceInfo struct {
 	SpeakerGlitchRate *float64 `json:"speakerGlitchRate,omitempty"`
 }
 
+func NewCallRecordsDeviceInfo() (*CallRecordsDeviceInfo, error) {
+	newCallRecordsDeviceInfo := &CallRecordsDeviceInfo{
+		ODataType: "#microsoft.graph.CallRecordsDeviceInfo",
+	}
+	return newCallRecordsDeviceInfo, nil
+}
+
 // CallRecordsDirectRoutingLogRow undocumented
 type CallRecordsDirectRoutingLogRow struct {
 	// Object is the base model of CallRecordsDirectRoutingLogRow
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CalleeNumber undocumented
 	CalleeNumber *string `json:"calleeNumber,omitempty"`
 	// CallEndSubReason undocumented
@@ -302,34 +421,70 @@ type CallRecordsDirectRoutingLogRow struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewCallRecordsDirectRoutingLogRow() (*CallRecordsDirectRoutingLogRow, error) {
+	newCallRecordsDirectRoutingLogRow := &CallRecordsDirectRoutingLogRow{
+		ODataType: "#microsoft.graph.CallRecordsDirectRoutingLogRow",
+	}
+	return newCallRecordsDirectRoutingLogRow, nil
+}
+
 // CallRecordsEndpoint undocumented
 type CallRecordsEndpoint struct {
 	// Object is the base model of CallRecordsEndpoint
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// UserAgent undocumented
 	UserAgent *CallRecordsUserAgent `json:"userAgent,omitempty"`
+}
+
+func NewCallRecordsEndpoint() (*CallRecordsEndpoint, error) {
+	newCallRecordsEndpoint := &CallRecordsEndpoint{
+		ODataType: "#microsoft.graph.CallRecordsEndpoint",
+	}
+	return newCallRecordsEndpoint, nil
 }
 
 // CallRecordsFailureInfo undocumented
 type CallRecordsFailureInfo struct {
 	// Object is the base model of CallRecordsFailureInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Reason undocumented
 	Reason *string `json:"reason,omitempty"`
 	// Stage undocumented
 	Stage *CallRecordsFailureStage `json:"stage,omitempty"`
 }
 
+func NewCallRecordsFailureInfo() (*CallRecordsFailureInfo, error) {
+	newCallRecordsFailureInfo := &CallRecordsFailureInfo{
+		ODataType: "#microsoft.graph.CallRecordsFailureInfo",
+	}
+	return newCallRecordsFailureInfo, nil
+}
+
 // CallRecordsFeedbackTokenSet undocumented
 type CallRecordsFeedbackTokenSet struct {
 	// Object is the base model of CallRecordsFeedbackTokenSet
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewCallRecordsFeedbackTokenSet() (*CallRecordsFeedbackTokenSet, error) {
+	newCallRecordsFeedbackTokenSet := &CallRecordsFeedbackTokenSet{
+		ODataType: "#microsoft.graph.CallRecordsFeedbackTokenSet",
+	}
+	return newCallRecordsFeedbackTokenSet, nil
 }
 
 // CallRecordsMedia undocumented
 type CallRecordsMedia struct {
 	// Object is the base model of CallRecordsMedia
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CalleeDevice undocumented
 	CalleeDevice *CallRecordsDeviceInfo `json:"calleeDevice,omitempty"`
 	// CalleeNetwork undocumented
@@ -344,10 +499,19 @@ type CallRecordsMedia struct {
 	Streams []CallRecordsMediaStream `json:"streams,omitempty"`
 }
 
+func NewCallRecordsMedia() (*CallRecordsMedia, error) {
+	newCallRecordsMedia := &CallRecordsMedia{
+		ODataType: "#microsoft.graph.CallRecordsMedia",
+	}
+	return newCallRecordsMedia, nil
+}
+
 // CallRecordsMediaStream undocumented
 type CallRecordsMediaStream struct {
 	// Object is the base model of CallRecordsMediaStream
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AudioCodec undocumented
 	AudioCodec *CallRecordsAudioCodec `json:"audioCodec,omitempty"`
 	// AverageAudioDegradation undocumented
@@ -404,10 +568,19 @@ type CallRecordsMediaStream struct {
 	WasMediaBypassed *bool `json:"wasMediaBypassed,omitempty"`
 }
 
+func NewCallRecordsMediaStream() (*CallRecordsMediaStream, error) {
+	newCallRecordsMediaStream := &CallRecordsMediaStream{
+		ODataType: "#microsoft.graph.CallRecordsMediaStream",
+	}
+	return newCallRecordsMediaStream, nil
+}
+
 // CallRecordsNetworkInfo undocumented
 type CallRecordsNetworkInfo struct {
 	// Object is the base model of CallRecordsNetworkInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// BandwidthLowEventRatio undocumented
 	BandwidthLowEventRatio *float64 `json:"bandwidthLowEventRatio,omitempty"`
 	// BasicServiceSetIdentifier undocumented
@@ -416,8 +589,8 @@ type CallRecordsNetworkInfo struct {
 	ConnectionType *CallRecordsNetworkConnectionType `json:"connectionType,omitempty"`
 	// DelayEventRatio undocumented
 	DelayEventRatio *float64 `json:"delayEventRatio,omitempty"`
-	// DNSSuffix undocumented
-	DNSSuffix *string `json:"dnsSuffix,omitempty"`
+	// DnsSuffix undocumented
+	DnsSuffix *string `json:"dnsSuffix,omitempty"`
 	// IPAddress undocumented
 	IPAddress *string `json:"ipAddress,omitempty"`
 	// LinkSpeed undocumented
@@ -462,20 +635,38 @@ type CallRecordsNetworkInfo struct {
 	WiFiVendorDriverVersion *string `json:"wifiVendorDriverVersion,omitempty"`
 }
 
+func NewCallRecordsNetworkInfo() (*CallRecordsNetworkInfo, error) {
+	newCallRecordsNetworkInfo := &CallRecordsNetworkInfo{
+		ODataType: "#microsoft.graph.CallRecordsNetworkInfo",
+	}
+	return newCallRecordsNetworkInfo, nil
+}
+
 // CallRecordsParticipantEndpoint undocumented
 type CallRecordsParticipantEndpoint struct {
 	// CallRecordsEndpoint is the base model of CallRecordsParticipantEndpoint
 	CallRecordsEndpoint
+
+	ODataType string `json:"@odata.type"`
 	// Feedback undocumented
 	Feedback *CallRecordsUserFeedback `json:"feedback,omitempty"`
 	// Identity undocumented
 	Identity *IdentitySet `json:"identity,omitempty"`
 }
 
+func NewCallRecordsParticipantEndpoint() (*CallRecordsParticipantEndpoint, error) {
+	newCallRecordsParticipantEndpoint := &CallRecordsParticipantEndpoint{
+		ODataType: "#microsoft.graph.CallRecordsParticipantEndpoint",
+	}
+	return newCallRecordsParticipantEndpoint, nil
+}
+
 // CallRecordsPstnCallLogRow undocumented
 type CallRecordsPstnCallLogRow struct {
 	// Object is the base model of CallRecordsPstnCallLogRow
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CallDurationSource undocumented
 	CallDurationSource *CallRecordsPstnCallDurationSource `json:"callDurationSource,omitempty"`
 	// CalleeNumber undocumented
@@ -524,10 +715,19 @@ type CallRecordsPstnCallLogRow struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewCallRecordsPstnCallLogRow() (*CallRecordsPstnCallLogRow, error) {
+	newCallRecordsPstnCallLogRow := &CallRecordsPstnCallLogRow{
+		ODataType: "#microsoft.graph.CallRecordsPstnCallLogRow",
+	}
+	return newCallRecordsPstnCallLogRow, nil
+}
+
 // CallRecordsSegment undocumented
 type CallRecordsSegment struct {
 	// Entity is the base model of CallRecordsSegment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Callee undocumented
 	Callee *CallRecordsEndpoint `json:"callee,omitempty"`
 	// Caller undocumented
@@ -542,24 +742,51 @@ type CallRecordsSegment struct {
 	StartDateTime *time.Time `json:"startDateTime,omitempty"`
 }
 
+func NewCallRecordsSegment() (*CallRecordsSegment, error) {
+	newCallRecordsSegment := &CallRecordsSegment{
+		ODataType: "#microsoft.graph.CallRecordsSegment",
+	}
+	return newCallRecordsSegment, nil
+}
+
 // CallRecordsServiceEndpoint undocumented
 type CallRecordsServiceEndpoint struct {
 	// CallRecordsEndpoint is the base model of CallRecordsServiceEndpoint
 	CallRecordsEndpoint
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewCallRecordsServiceEndpoint() (*CallRecordsServiceEndpoint, error) {
+	newCallRecordsServiceEndpoint := &CallRecordsServiceEndpoint{
+		ODataType: "#microsoft.graph.CallRecordsServiceEndpoint",
+	}
+	return newCallRecordsServiceEndpoint, nil
 }
 
 // CallRecordsServiceUserAgent undocumented
 type CallRecordsServiceUserAgent struct {
 	// CallRecordsUserAgent is the base model of CallRecordsServiceUserAgent
 	CallRecordsUserAgent
+
+	ODataType string `json:"@odata.type"`
 	// Role undocumented
 	Role *CallRecordsServiceRole `json:"role,omitempty"`
+}
+
+func NewCallRecordsServiceUserAgent() (*CallRecordsServiceUserAgent, error) {
+	newCallRecordsServiceUserAgent := &CallRecordsServiceUserAgent{
+		ODataType: "#microsoft.graph.CallRecordsServiceUserAgent",
+	}
+	return newCallRecordsServiceUserAgent, nil
 }
 
 // CallRecordsSession undocumented
 type CallRecordsSession struct {
 	// Entity is the base model of CallRecordsSession
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Callee undocumented
 	Callee *CallRecordsEndpoint `json:"callee,omitempty"`
 	// Caller undocumented
@@ -576,10 +803,19 @@ type CallRecordsSession struct {
 	Segments []CallRecordsSegment `json:"segments,omitempty"`
 }
 
+func NewCallRecordsSession() (*CallRecordsSession, error) {
+	newCallRecordsSession := &CallRecordsSession{
+		ODataType: "#microsoft.graph.CallRecordsSession",
+	}
+	return newCallRecordsSession, nil
+}
+
 // CallRecordsTraceRouteHop undocumented
 type CallRecordsTraceRouteHop struct {
 	// Object is the base model of CallRecordsTraceRouteHop
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// HopCount undocumented
 	HopCount *int `json:"hopCount,omitempty"`
 	// IPAddress undocumented
@@ -588,24 +824,49 @@ type CallRecordsTraceRouteHop struct {
 	RoundTripTime *Duration `json:"roundTripTime,omitempty"`
 }
 
+func NewCallRecordsTraceRouteHop() (*CallRecordsTraceRouteHop, error) {
+	newCallRecordsTraceRouteHop := &CallRecordsTraceRouteHop{
+		ODataType: "#microsoft.graph.CallRecordsTraceRouteHop",
+	}
+	return newCallRecordsTraceRouteHop, nil
+}
+
 // CallRecordsUserAgent undocumented
 type CallRecordsUserAgent struct {
 	// Object is the base model of CallRecordsUserAgent
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ApplicationVersion undocumented
 	ApplicationVersion *string `json:"applicationVersion,omitempty"`
 	// HeaderValue undocumented
 	HeaderValue *string `json:"headerValue,omitempty"`
 }
 
+func NewCallRecordsUserAgent() (*CallRecordsUserAgent, error) {
+	newCallRecordsUserAgent := &CallRecordsUserAgent{
+		ODataType: "#microsoft.graph.CallRecordsUserAgent",
+	}
+	return newCallRecordsUserAgent, nil
+}
+
 // CallRecordsUserFeedback undocumented
 type CallRecordsUserFeedback struct {
 	// Object is the base model of CallRecordsUserFeedback
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Rating undocumented
 	Rating *CallRecordsUserFeedbackRating `json:"rating,omitempty"`
 	// Text undocumented
 	Text *string `json:"text,omitempty"`
 	// Tokens undocumented
 	Tokens *CallRecordsFeedbackTokenSet `json:"tokens,omitempty"`
+}
+
+func NewCallRecordsUserFeedback() (*CallRecordsUserFeedback, error) {
+	newCallRecordsUserFeedback := &CallRecordsUserFeedback{
+		ODataType: "#microsoft.graph.CallRecordsUserFeedback",
+	}
+	return newCallRecordsUserFeedback, nil
 }

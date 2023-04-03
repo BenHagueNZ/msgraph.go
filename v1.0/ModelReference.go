@@ -6,4 +6,13 @@ package msgraph
 type ReferenceAttachment struct {
 	// Attachment is the base model of ReferenceAttachment
 	Attachment
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewReferenceAttachment() (*ReferenceAttachment, error) {
+	newReferenceAttachment := &ReferenceAttachment{
+		ODataType: "#microsoft.graph.ReferenceAttachment",
+	}
+	return newReferenceAttachment, nil
 }

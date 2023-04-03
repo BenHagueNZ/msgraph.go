@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsVlookupRequestBuilder struct{ BaseRequestBuilder }
 
-// Vlookup action undocumented
+// Vlookup action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Vlookup(reqObj *WorkbookFunctionsVlookupRequestParameter) *WorkbookFunctionsVlookupRequestBuilder {
 	bb := &WorkbookFunctionsVlookupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Vlookup"

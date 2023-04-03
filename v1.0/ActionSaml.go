@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Domains returns request builder for ExternalDomainName collection
+// Domains returns request builder for ExternalDomainName collection rcn
 func (b *SamlOrWsFedExternalDomainFederationRequestBuilder) Domains() *SamlOrWsFedExternalDomainFederationDomainsCollectionRequestBuilder {
 	bb := &SamlOrWsFedExternalDomainFederationDomainsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/domains"
@@ -110,6 +110,109 @@ func (r *SamlOrWsFedExternalDomainFederationDomainsCollectionRequest) Get(ctx co
 
 // Add performs POST request for ExternalDomainName collection
 func (r *SamlOrWsFedExternalDomainFederationDomainsCollectionRequest) Add(ctx context.Context, reqObj *ExternalDomainName) (resObj *ExternalDomainName, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// SamlOrWsFedProvider returns request builder for IdentityProviderBase collection rcn
+func (b *SamlOrWsFedProviderRequestBuilder) SamlOrWsFedProvider() *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequestBuilder {
+	bb := &SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/IdentityProviderBase"
+	return bb
+}
+
+// SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequestBuilder is request builder for IdentityProviderBase collection
+type SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for IdentityProviderBase collection
+func (b *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequestBuilder) Request() *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest {
+	return &SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for IdentityProviderBase item
+func (b *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequestBuilder) ID(id string) *IdentityProviderBaseRequestBuilder {
+	bb := &IdentityProviderBaseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest is request for IdentityProviderBase collection
+type SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for IdentityProviderBase collection
+func (r *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityProviderBase, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []IdentityProviderBase
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []IdentityProviderBase
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for IdentityProviderBase collection, max N pages
+func (r *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityProviderBase, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for IdentityProviderBase collection
+func (r *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest) Get(ctx context.Context) ([]IdentityProviderBase, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for IdentityProviderBase collection
+func (r *SamlOrWsFedProviderSamlOrWsFedProviderCollectionRequest) Add(ctx context.Context, reqObj *IdentityProviderBase) (resObj *IdentityProviderBase, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

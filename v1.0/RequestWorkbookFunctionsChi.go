@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsChiSq_DistRequestBuilder struct{ BaseRequestBuilder }
 
-// ChiSq_Dist action undocumented
+// ChiSq_Dist action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ChiSq_Dist(reqObj *WorkbookFunctionsChiSq_DistRequestParameter) *WorkbookFunctionsChiSq_DistRequestBuilder {
 	bb := &WorkbookFunctionsChiSq_DistRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ChiSq_Dist"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsChiSq_DistRequest) Post(ctx context.Context) (resObj *
 
 type WorkbookFunctionsChiSq_Dist_RTRequestBuilder struct{ BaseRequestBuilder }
 
-// ChiSq_Dist_RT action undocumented
+// ChiSq_Dist_RT action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ChiSq_Dist_RT(reqObj *WorkbookFunctionsChiSq_Dist_RTRequestParameter) *WorkbookFunctionsChiSq_Dist_RTRequestBuilder {
 	bb := &WorkbookFunctionsChiSq_Dist_RTRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ChiSq_Dist_RT"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsChiSq_Dist_RTRequest) Post(ctx context.Context) (resOb
 
 type WorkbookFunctionsChiSq_InvRequestBuilder struct{ BaseRequestBuilder }
 
-// ChiSq_Inv action undocumented
+// ChiSq_Inv action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ChiSq_Inv(reqObj *WorkbookFunctionsChiSq_InvRequestParameter) *WorkbookFunctionsChiSq_InvRequestBuilder {
 	bb := &WorkbookFunctionsChiSq_InvRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ChiSq_Inv"
@@ -75,7 +75,7 @@ func (r *WorkbookFunctionsChiSq_InvRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsChiSq_Inv_RTRequestBuilder struct{ BaseRequestBuilder }
 
-// ChiSq_Inv_RT action undocumented
+// ChiSq_Inv_RT action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ChiSq_Inv_RT(reqObj *WorkbookFunctionsChiSq_Inv_RTRequestParameter) *WorkbookFunctionsChiSq_Inv_RTRequestBuilder {
 	bb := &WorkbookFunctionsChiSq_Inv_RTRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ChiSq_Inv_RT"

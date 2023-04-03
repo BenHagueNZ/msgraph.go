@@ -6,6 +6,8 @@ package msgraph
 type RbacApplication struct {
 	// Entity is the base model of RbacApplication
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// RoleAssignments undocumented
 	RoleAssignments []UnifiedRoleAssignment `json:"roleAssignments,omitempty"`
 	// RoleDefinitions undocumented
@@ -22,4 +24,11 @@ type RbacApplication struct {
 	RoleEligibilityScheduleRequests []UnifiedRoleEligibilityScheduleRequestObject `json:"roleEligibilityScheduleRequests,omitempty"`
 	// RoleEligibilitySchedules undocumented
 	RoleEligibilitySchedules []UnifiedRoleEligibilitySchedule `json:"roleEligibilitySchedules,omitempty"`
+}
+
+func NewRbacApplication() (*RbacApplication, error) {
+	newRbacApplication := &RbacApplication{
+		ODataType: "#microsoft.graph.RbacApplication",
+	}
+	return newRbacApplication, nil
 }

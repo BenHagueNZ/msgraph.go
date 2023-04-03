@@ -6,6 +6,8 @@ package msgraph
 type AutomaticRepliesMailTips struct {
 	// Object is the base model of AutomaticRepliesMailTips
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Message undocumented
 	Message *string `json:"message,omitempty"`
 	// MessageLanguage undocumented
@@ -16,10 +18,19 @@ type AutomaticRepliesMailTips struct {
 	ScheduledStartTime *DateTimeTimeZone `json:"scheduledStartTime,omitempty"`
 }
 
+func NewAutomaticRepliesMailTips() (*AutomaticRepliesMailTips, error) {
+	newAutomaticRepliesMailTips := &AutomaticRepliesMailTips{
+		ODataType: "#microsoft.graph.AutomaticRepliesMailTips",
+	}
+	return newAutomaticRepliesMailTips, nil
+}
+
 // AutomaticRepliesSetting undocumented
 type AutomaticRepliesSetting struct {
 	// Object is the base model of AutomaticRepliesSetting
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ExternalAudience undocumented
 	ExternalAudience *ExternalAudienceScope `json:"externalAudience,omitempty"`
 	// ExternalReplyMessage undocumented
@@ -32,4 +43,11 @@ type AutomaticRepliesSetting struct {
 	ScheduledStartDateTime *DateTimeTimeZone `json:"scheduledStartDateTime,omitempty"`
 	// Status undocumented
 	Status *AutomaticRepliesStatus `json:"status,omitempty"`
+}
+
+func NewAutomaticRepliesSetting() (*AutomaticRepliesSetting, error) {
+	newAutomaticRepliesSetting := &AutomaticRepliesSetting{
+		ODataType: "#microsoft.graph.AutomaticRepliesSetting",
+	}
+	return newAutomaticRepliesSetting, nil
 }

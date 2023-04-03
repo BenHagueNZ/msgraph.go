@@ -6,6 +6,15 @@ package msgraph
 type RequestorManager struct {
 	// SubjectSet is the base model of RequestorManager
 	SubjectSet
+
+	ODataType string `json:"@odata.type"`
 	// ManagerLevel undocumented
 	ManagerLevel *int `json:"managerLevel,omitempty"`
+}
+
+func NewRequestorManager() (*RequestorManager, error) {
+	newRequestorManager := &RequestorManager{
+		ODataType: "#microsoft.graph.RequestorManager",
+	}
+	return newRequestorManager, nil
 }

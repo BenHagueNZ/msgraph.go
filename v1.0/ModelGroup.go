@@ -8,6 +8,8 @@ import "time"
 type Group struct {
 	// DirectoryObject is the base model of Group
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// AssignedLabels undocumented
 	AssignedLabels []AssignedLabel `json:"assignedLabels,omitempty"`
 	// AssignedLicenses undocumented
@@ -140,18 +142,36 @@ type Group struct {
 	Team *Team `json:"team,omitempty"`
 }
 
+func NewGroup() (*Group, error) {
+	newGroup := &Group{
+		ODataType: "#microsoft.graph.Group",
+	}
+	return newGroup, nil
+}
+
 // GroupAssignmentTarget undocumented
 type GroupAssignmentTarget struct {
 	// DeviceAndAppManagementAssignmentTarget is the base model of GroupAssignmentTarget
 	DeviceAndAppManagementAssignmentTarget
+
+	ODataType string `json:"@odata.type"`
 	// GroupID undocumented
 	GroupID *string `json:"groupId,omitempty"`
+}
+
+func NewGroupAssignmentTarget() (*GroupAssignmentTarget, error) {
+	newGroupAssignmentTarget := &GroupAssignmentTarget{
+		ODataType: "#microsoft.graph.GroupAssignmentTarget",
+	}
+	return newGroupAssignmentTarget, nil
 }
 
 // GroupLifecyclePolicy undocumented
 type GroupLifecyclePolicy struct {
 	// Entity is the base model of GroupLifecyclePolicy
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AlternateNotificationEmails undocumented
 	AlternateNotificationEmails *string `json:"alternateNotificationEmails,omitempty"`
 	// GroupLifetimeInDays undocumented
@@ -160,20 +180,38 @@ type GroupLifecyclePolicy struct {
 	ManagedGroupTypes *string `json:"managedGroupTypes,omitempty"`
 }
 
+func NewGroupLifecyclePolicy() (*GroupLifecyclePolicy, error) {
+	newGroupLifecyclePolicy := &GroupLifecyclePolicy{
+		ODataType: "#microsoft.graph.GroupLifecyclePolicy",
+	}
+	return newGroupLifecyclePolicy, nil
+}
+
 // GroupMembers undocumented
 type GroupMembers struct {
 	// SubjectSet is the base model of GroupMembers
 	SubjectSet
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// GroupID undocumented
 	GroupID *string `json:"groupId,omitempty"`
 }
 
+func NewGroupMembers() (*GroupMembers, error) {
+	newGroupMembers := &GroupMembers{
+		ODataType: "#microsoft.graph.GroupMembers",
+	}
+	return newGroupMembers, nil
+}
+
 // GroupSetting undocumented
 type GroupSetting struct {
 	// Entity is the base model of GroupSetting
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// TemplateID undocumented
@@ -182,14 +220,30 @@ type GroupSetting struct {
 	Values []SettingValue `json:"values,omitempty"`
 }
 
+func NewGroupSetting() (*GroupSetting, error) {
+	newGroupSetting := &GroupSetting{
+		ODataType: "#microsoft.graph.GroupSetting",
+	}
+	return newGroupSetting, nil
+}
+
 // GroupSettingTemplate undocumented
 type GroupSettingTemplate struct {
 	// DirectoryObject is the base model of GroupSettingTemplate
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Values undocumented
 	Values []SettingTemplateValue `json:"values,omitempty"`
+}
+
+func NewGroupSettingTemplate() (*GroupSettingTemplate, error) {
+	newGroupSettingTemplate := &GroupSettingTemplate{
+		ODataType: "#microsoft.graph.GroupSettingTemplate",
+	}
+	return newGroupSettingTemplate, nil
 }

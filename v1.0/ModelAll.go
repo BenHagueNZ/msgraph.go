@@ -6,10 +6,28 @@ package msgraph
 type AllDevicesAssignmentTarget struct {
 	// DeviceAndAppManagementAssignmentTarget is the base model of AllDevicesAssignmentTarget
 	DeviceAndAppManagementAssignmentTarget
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewAllDevicesAssignmentTarget() (*AllDevicesAssignmentTarget, error) {
+	newAllDevicesAssignmentTarget := &AllDevicesAssignmentTarget{
+		ODataType: "#microsoft.graph.AllDevicesAssignmentTarget",
+	}
+	return newAllDevicesAssignmentTarget, nil
 }
 
 // AllLicensedUsersAssignmentTarget undocumented
 type AllLicensedUsersAssignmentTarget struct {
 	// DeviceAndAppManagementAssignmentTarget is the base model of AllLicensedUsersAssignmentTarget
 	DeviceAndAppManagementAssignmentTarget
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewAllLicensedUsersAssignmentTarget() (*AllLicensedUsersAssignmentTarget, error) {
+	newAllLicensedUsersAssignmentTarget := &AllLicensedUsersAssignmentTarget{
+		ODataType: "#microsoft.graph.AllLicensedUsersAssignmentTarget",
+	}
+	return newAllLicensedUsersAssignmentTarget, nil
 }

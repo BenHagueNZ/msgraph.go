@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsPermutRequestBuilder struct{ BaseRequestBuilder }
 
-// Permut action undocumented
+// Permut action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Permut(reqObj *WorkbookFunctionsPermutRequestParameter) *WorkbookFunctionsPermutRequestBuilder {
 	bb := &WorkbookFunctionsPermutRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Permut"

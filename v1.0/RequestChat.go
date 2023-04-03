@@ -534,7 +534,7 @@ func (r *ChatViewpointRequest) Delete(ctx context.Context) error {
 
 type ChatSendActivityNotificationRequestBuilder struct{ BaseRequestBuilder }
 
-// SendActivityNotification action undocumented
+// SendActivityNotification action undocumentedrav
 func (b *ChatRequestBuilder) SendActivityNotification(reqObj *ChatSendActivityNotificationRequestParameter) *ChatSendActivityNotificationRequestBuilder {
 	bb := &ChatSendActivityNotificationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SendActivityNotification"
@@ -556,7 +556,7 @@ func (r *ChatSendActivityNotificationRequest) Post(ctx context.Context) error {
 
 type ChatHideForUserRequestBuilder struct{ BaseRequestBuilder }
 
-// HideForUser action undocumented
+// HideForUser action undocumentedrav
 func (b *ChatRequestBuilder) HideForUser(reqObj *ChatHideForUserRequestParameter) *ChatHideForUserRequestBuilder {
 	bb := &ChatHideForUserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/HideForUser"
@@ -578,7 +578,7 @@ func (r *ChatHideForUserRequest) Post(ctx context.Context) error {
 
 type ChatMarkChatReadForUserRequestBuilder struct{ BaseRequestBuilder }
 
-// MarkChatReadForUser action undocumented
+// MarkChatReadForUser action undocumentedrav
 func (b *ChatRequestBuilder) MarkChatReadForUser(reqObj *ChatMarkChatReadForUserRequestParameter) *ChatMarkChatReadForUserRequestBuilder {
 	bb := &ChatMarkChatReadForUserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/MarkChatReadForUser"
@@ -600,7 +600,7 @@ func (r *ChatMarkChatReadForUserRequest) Post(ctx context.Context) error {
 
 type ChatMarkChatUnreadForUserRequestBuilder struct{ BaseRequestBuilder }
 
-// MarkChatUnreadForUser action undocumented
+// MarkChatUnreadForUser action undocumentedrav
 func (b *ChatRequestBuilder) MarkChatUnreadForUser(reqObj *ChatMarkChatUnreadForUserRequestParameter) *ChatMarkChatUnreadForUserRequestBuilder {
 	bb := &ChatMarkChatUnreadForUserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/MarkChatUnreadForUser"
@@ -622,7 +622,7 @@ func (r *ChatMarkChatUnreadForUserRequest) Post(ctx context.Context) error {
 
 type ChatUnhideForUserRequestBuilder struct{ BaseRequestBuilder }
 
-// UnhideForUser action undocumented
+// UnhideForUser action undocumentedrav
 func (b *ChatRequestBuilder) UnhideForUser(reqObj *ChatUnhideForUserRequestParameter) *ChatUnhideForUserRequestBuilder {
 	bb := &ChatUnhideForUserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/UnhideForUser"
@@ -644,7 +644,7 @@ func (r *ChatUnhideForUserRequest) Post(ctx context.Context) error {
 
 type ChatMessageSoftDeleteRequestBuilder struct{ BaseRequestBuilder }
 
-// SoftDelete action undocumented
+// SoftDelete action undocumentedrav
 func (b *ChatMessageRequestBuilder) SoftDelete(reqObj *ChatMessageSoftDeleteRequestParameter) *ChatMessageSoftDeleteRequestBuilder {
 	bb := &ChatMessageSoftDeleteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SoftDelete"
@@ -666,7 +666,7 @@ func (r *ChatMessageSoftDeleteRequest) Post(ctx context.Context) error {
 
 type ChatMessageUndoSoftDeleteRequestBuilder struct{ BaseRequestBuilder }
 
-// UndoSoftDelete action undocumented
+// UndoSoftDelete action undocumentedrav
 func (b *ChatMessageRequestBuilder) UndoSoftDelete(reqObj *ChatMessageUndoSoftDeleteRequestParameter) *ChatMessageUndoSoftDeleteRequestBuilder {
 	bb := &ChatMessageUndoSoftDeleteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/UndoSoftDelete"

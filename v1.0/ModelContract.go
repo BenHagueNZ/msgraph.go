@@ -6,6 +6,8 @@ package msgraph
 type Contract struct {
 	// DirectoryObject is the base model of Contract
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// ContractType undocumented
 	ContractType *string `json:"contractType,omitempty"`
 	// CustomerID undocumented
@@ -14,4 +16,11 @@ type Contract struct {
 	DefaultDomainName *string `json:"defaultDomainName,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
+}
+
+func NewContract() (*Contract, error) {
+	newContract := &Contract{
+		ODataType: "#microsoft.graph.Contract",
+	}
+	return newContract, nil
 }

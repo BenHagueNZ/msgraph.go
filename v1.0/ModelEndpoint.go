@@ -6,6 +6,8 @@ package msgraph
 type Endpoint struct {
 	// DirectoryObject is the base model of Endpoint
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// Capability undocumented
 	Capability *string `json:"capability,omitempty"`
 	// ProviderID undocumented
@@ -16,4 +18,11 @@ type Endpoint struct {
 	ProviderResourceID *string `json:"providerResourceId,omitempty"`
 	// URI undocumented
 	URI *string `json:"uri,omitempty"`
+}
+
+func NewEndpoint() (*Endpoint, error) {
+	newEndpoint := &Endpoint{
+		ODataType: "#microsoft.graph.Endpoint",
+	}
+	return newEndpoint, nil
 }

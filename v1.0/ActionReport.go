@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// DailyPrintUsageByPrinter returns request builder for PrintUsageByPrinter collection
+// DailyPrintUsageByPrinter returns request builder for PrintUsageByPrinter collection rcn
 func (b *ReportRootRequestBuilder) DailyPrintUsageByPrinter() *ReportRootDailyPrintUsageByPrinterCollectionRequestBuilder {
 	bb := &ReportRootDailyPrintUsageByPrinterCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/dailyPrintUsageByPrinter"
@@ -114,7 +114,7 @@ func (r *ReportRootDailyPrintUsageByPrinterCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// DailyPrintUsageByUser returns request builder for PrintUsageByUser collection
+// DailyPrintUsageByUser returns request builder for PrintUsageByUser collection rcn
 func (b *ReportRootRequestBuilder) DailyPrintUsageByUser() *ReportRootDailyPrintUsageByUserCollectionRequestBuilder {
 	bb := &ReportRootDailyPrintUsageByUserCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/dailyPrintUsageByUser"
@@ -217,7 +217,7 @@ func (r *ReportRootDailyPrintUsageByUserCollectionRequest) Add(ctx context.Conte
 	return
 }
 
-// MonthlyPrintUsageByPrinter returns request builder for PrintUsageByPrinter collection
+// MonthlyPrintUsageByPrinter returns request builder for PrintUsageByPrinter collection rcn
 func (b *ReportRootRequestBuilder) MonthlyPrintUsageByPrinter() *ReportRootMonthlyPrintUsageByPrinterCollectionRequestBuilder {
 	bb := &ReportRootMonthlyPrintUsageByPrinterCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/monthlyPrintUsageByPrinter"
@@ -320,7 +320,7 @@ func (r *ReportRootMonthlyPrintUsageByPrinterCollectionRequest) Add(ctx context.
 	return
 }
 
-// MonthlyPrintUsageByUser returns request builder for PrintUsageByUser collection
+// MonthlyPrintUsageByUser returns request builder for PrintUsageByUser collection rcn
 func (b *ReportRootRequestBuilder) MonthlyPrintUsageByUser() *ReportRootMonthlyPrintUsageByUserCollectionRequestBuilder {
 	bb := &ReportRootMonthlyPrintUsageByUserCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/monthlyPrintUsageByUser"
@@ -423,7 +423,7 @@ func (r *ReportRootMonthlyPrintUsageByUserCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// Security is navigation property
+// Security is navigation property rn
 func (b *ReportRootRequestBuilder) Security() *SecurityReportsRootRequestBuilder {
 	bb := &SecurityReportsRootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/security"

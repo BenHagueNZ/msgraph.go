@@ -11,21 +11,21 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// ParentNotebook is navigation property
+// ParentNotebook is navigation property rn
 func (b *SectionGroupRequestBuilder) ParentNotebook() *NotebookRequestBuilder {
 	bb := &NotebookRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/parentNotebook"
 	return bb
 }
 
-// ParentSectionGroup is navigation property
+// ParentSectionGroup is navigation property rn
 func (b *SectionGroupRequestBuilder) ParentSectionGroup() *SectionGroupRequestBuilder {
 	bb := &SectionGroupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/parentSectionGroup"
 	return bb
 }
 
-// SectionGroups returns request builder for SectionGroup collection
+// SectionGroups returns request builder for SectionGroup collection rcn
 func (b *SectionGroupRequestBuilder) SectionGroups() *SectionGroupSectionGroupsCollectionRequestBuilder {
 	bb := &SectionGroupSectionGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sectionGroups"
@@ -128,7 +128,7 @@ func (r *SectionGroupSectionGroupsCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// Sections returns request builder for OnenoteSection collection
+// Sections returns request builder for OnenoteSection collection rcn
 func (b *SectionGroupRequestBuilder) Sections() *SectionGroupSectionsCollectionRequestBuilder {
 	bb := &SectionGroupSectionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sections"

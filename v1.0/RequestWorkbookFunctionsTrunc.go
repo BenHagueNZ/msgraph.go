@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsTruncRequestBuilder struct{ BaseRequestBuilder }
 
-// Trunc action undocumented
+// Trunc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Trunc(reqObj *WorkbookFunctionsTruncRequestParameter) *WorkbookFunctionsTruncRequestBuilder {
 	bb := &WorkbookFunctionsTruncRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Trunc"

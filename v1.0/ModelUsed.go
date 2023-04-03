@@ -6,6 +6,8 @@ package msgraph
 type UsedInsight struct {
 	// Entity is the base model of UsedInsight
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// LastUsed undocumented
 	LastUsed *UsageDetails `json:"lastUsed,omitempty"`
 	// ResourceReference undocumented
@@ -14,4 +16,11 @@ type UsedInsight struct {
 	ResourceVisualization *ResourceVisualization `json:"resourceVisualization,omitempty"`
 	// Resource undocumented
 	Resource *Entity `json:"resource,omitempty"`
+}
+
+func NewUsedInsight() (*UsedInsight, error) {
+	newUsedInsight := &UsedInsight{
+		ODataType: "#microsoft.graph.UsedInsight",
+	}
+	return newUsedInsight, nil
 }

@@ -8,6 +8,8 @@ import "time"
 type Security struct {
 	// Entity is the base model of Security
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Cases undocumented
 	Cases *SecurityCasesRoot `json:"cases,omitempty"`
 	// Alerts_v2 undocumented
@@ -24,26 +26,53 @@ type Security struct {
 	SecureScores []SecureScore `json:"secureScores,omitempty"`
 }
 
+func NewSecurity() (*Security, error) {
+	newSecurity := &Security{
+		ODataType: "#microsoft.graph.Security",
+	}
+	return newSecurity, nil
+}
+
 // SecurityReportsRoot undocumented
 type SecurityReportsRoot struct {
 	// Entity is the base model of SecurityReportsRoot
 	Entity
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewSecurityReportsRoot() (*SecurityReportsRoot, error) {
+	newSecurityReportsRoot := &SecurityReportsRoot{
+		ODataType: "#microsoft.graph.SecurityReportsRoot",
+	}
+	return newSecurityReportsRoot, nil
 }
 
 // SecurityResource undocumented
 type SecurityResource struct {
 	// Object is the base model of SecurityResource
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Resource undocumented
 	Resource *string `json:"resource,omitempty"`
 	// ResourceType undocumented
 	ResourceType *SecurityResourceType `json:"resourceType,omitempty"`
 }
 
+func NewSecurityResource() (*SecurityResource, error) {
+	newSecurityResource := &SecurityResource{
+		ODataType: "#microsoft.graph.SecurityResource",
+	}
+	return newSecurityResource, nil
+}
+
 // SecurityVendorInformation undocumented
 type SecurityVendorInformation struct {
 	// Object is the base model of SecurityVendorInformation
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Provider undocumented
 	Provider *string `json:"provider,omitempty"`
 	// ProviderVersion undocumented
@@ -54,10 +83,19 @@ type SecurityVendorInformation struct {
 	Vendor *string `json:"vendor,omitempty"`
 }
 
+func NewSecurityVendorInformation() (*SecurityVendorInformation, error) {
+	newSecurityVendorInformation := &SecurityVendorInformation{
+		ODataType: "#microsoft.graph.SecurityVendorInformation",
+	}
+	return newSecurityVendorInformation, nil
+}
+
 // SecurityAlert undocumented
 type SecurityAlert struct {
 	// Entity is the base model of SecurityAlert
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ActorDisplayName undocumented
 	ActorDisplayName *string `json:"actorDisplayName,omitempty"`
 	// AlertWebURL undocumented
@@ -116,10 +154,19 @@ type SecurityAlert struct {
 	Title *string `json:"title,omitempty"`
 }
 
+func NewSecurityAlert() (*SecurityAlert, error) {
+	newSecurityAlert := &SecurityAlert{
+		ODataType: "#microsoft.graph.SecurityAlert",
+	}
+	return newSecurityAlert, nil
+}
+
 // SecurityAlertComment undocumented
 type SecurityAlertComment struct {
 	// Object is the base model of SecurityAlertComment
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Comment undocumented
 	Comment *string `json:"comment,omitempty"`
 	// CreatedByDisplayName undocumented
@@ -128,10 +175,19 @@ type SecurityAlertComment struct {
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 }
 
+func NewSecurityAlertComment() (*SecurityAlertComment, error) {
+	newSecurityAlertComment := &SecurityAlertComment{
+		ODataType: "#microsoft.graph.SecurityAlertComment",
+	}
+	return newSecurityAlertComment, nil
+}
+
 // SecurityAlertEvidence undocumented
 type SecurityAlertEvidence struct {
 	// Object is the base model of SecurityAlertEvidence
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// RemediationStatus undocumented
@@ -146,10 +202,19 @@ type SecurityAlertEvidence struct {
 	Verdict *SecurityEvidenceVerdict `json:"verdict,omitempty"`
 }
 
+func NewSecurityAlertEvidence() (*SecurityAlertEvidence, error) {
+	newSecurityAlertEvidence := &SecurityAlertEvidence{
+		ODataType: "#microsoft.graph.SecurityAlertEvidence",
+	}
+	return newSecurityAlertEvidence, nil
+}
+
 // SecurityAnalyzedMessageEvidence undocumented
 type SecurityAnalyzedMessageEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityAnalyzedMessageEvidence
 	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type"`
 	// AntiSpamDirection undocumented
 	AntiSpamDirection *string `json:"antiSpamDirection,omitempty"`
 	// AttachmentsCount undocumented
@@ -188,10 +253,19 @@ type SecurityAnalyzedMessageEvidence struct {
 	Urn *string `json:"urn,omitempty"`
 }
 
+func NewSecurityAnalyzedMessageEvidence() (*SecurityAnalyzedMessageEvidence, error) {
+	newSecurityAnalyzedMessageEvidence := &SecurityAnalyzedMessageEvidence{
+		ODataType: "#microsoft.graph.SecurityAnalyzedMessageEvidence",
+	}
+	return newSecurityAnalyzedMessageEvidence, nil
+}
+
 // SecurityCase undocumented
 type SecurityCase struct {
 	// Entity is the base model of SecurityCase
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -206,10 +280,19 @@ type SecurityCase struct {
 	Status *SecurityCaseStatus `json:"status,omitempty"`
 }
 
+func NewSecurityCase() (*SecurityCase, error) {
+	newSecurityCase := &SecurityCase{
+		ODataType: "#microsoft.graph.SecurityCase",
+	}
+	return newSecurityCase, nil
+}
+
 // SecurityCaseOperation undocumented
 type SecurityCaseOperation struct {
 	// Entity is the base model of SecurityCaseOperation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Action undocumented
 	Action *SecurityCaseAction `json:"action,omitempty"`
 	// CompletedDateTime undocumented
@@ -226,18 +309,36 @@ type SecurityCaseOperation struct {
 	Status *SecurityCaseOperationStatus `json:"status,omitempty"`
 }
 
+func NewSecurityCaseOperation() (*SecurityCaseOperation, error) {
+	newSecurityCaseOperation := &SecurityCaseOperation{
+		ODataType: "#microsoft.graph.SecurityCaseOperation",
+	}
+	return newSecurityCaseOperation, nil
+}
+
 // SecurityCasesRoot undocumented
 type SecurityCasesRoot struct {
 	// Entity is the base model of SecurityCasesRoot
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// EdiscoveryCases undocumented
 	EdiscoveryCases []SecurityEdiscoveryCase `json:"ediscoveryCases,omitempty"`
+}
+
+func NewSecurityCasesRoot() (*SecurityCasesRoot, error) {
+	newSecurityCasesRoot := &SecurityCasesRoot{
+		ODataType: "#microsoft.graph.SecurityCasesRoot",
+	}
+	return newSecurityCasesRoot, nil
 }
 
 // SecurityCloudApplicationEvidence undocumented
 type SecurityCloudApplicationEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityCloudApplicationEvidence
 	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type"`
 	// AppID undocumented
 	AppID *int `json:"appId,omitempty"`
 	// DisplayName undocumented
@@ -250,10 +351,19 @@ type SecurityCloudApplicationEvidence struct {
 	SaasAppID *int `json:"saasAppId,omitempty"`
 }
 
+func NewSecurityCloudApplicationEvidence() (*SecurityCloudApplicationEvidence, error) {
+	newSecurityCloudApplicationEvidence := &SecurityCloudApplicationEvidence{
+		ODataType: "#microsoft.graph.SecurityCloudApplicationEvidence",
+	}
+	return newSecurityCloudApplicationEvidence, nil
+}
+
 // SecurityDataSet undocumented
 type SecurityDataSet struct {
 	// Entity is the base model of SecurityDataSet
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -262,10 +372,19 @@ type SecurityDataSet struct {
 	DisplayName *string `json:"displayName,omitempty"`
 }
 
+func NewSecurityDataSet() (*SecurityDataSet, error) {
+	newSecurityDataSet := &SecurityDataSet{
+		ODataType: "#microsoft.graph.SecurityDataSet",
+	}
+	return newSecurityDataSet, nil
+}
+
 // SecurityDataSource undocumented
 type SecurityDataSource struct {
 	// Entity is the base model of SecurityDataSource
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -276,10 +395,19 @@ type SecurityDataSource struct {
 	HoldStatus *SecurityDataSourceHoldStatus `json:"holdStatus,omitempty"`
 }
 
+func NewSecurityDataSource() (*SecurityDataSource, error) {
+	newSecurityDataSource := &SecurityDataSource{
+		ODataType: "#microsoft.graph.SecurityDataSource",
+	}
+	return newSecurityDataSource, nil
+}
+
 // SecurityDataSourceContainer undocumented
 type SecurityDataSourceContainer struct {
 	// Entity is the base model of SecurityDataSourceContainer
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// DisplayName undocumented
@@ -294,16 +422,25 @@ type SecurityDataSourceContainer struct {
 	Status *SecurityDataSourceContainerStatus `json:"status,omitempty"`
 }
 
+func NewSecurityDataSourceContainer() (*SecurityDataSourceContainer, error) {
+	newSecurityDataSourceContainer := &SecurityDataSourceContainer{
+		ODataType: "#microsoft.graph.SecurityDataSourceContainer",
+	}
+	return newSecurityDataSourceContainer, nil
+}
+
 // SecurityDeviceEvidence undocumented
 type SecurityDeviceEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityDeviceEvidence
 	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type"`
 	// AzureAdDeviceID undocumented
 	AzureAdDeviceID *string `json:"azureAdDeviceId,omitempty"`
 	// DefenderAvStatus undocumented
 	DefenderAvStatus *SecurityDefenderAvStatus `json:"defenderAvStatus,omitempty"`
-	// DeviceDNSName undocumented
-	DeviceDNSName *string `json:"deviceDnsName,omitempty"`
+	// DeviceDnsName undocumented
+	DeviceDnsName *string `json:"deviceDnsName,omitempty"`
 	// FirstSeenDateTime undocumented
 	FirstSeenDateTime *time.Time `json:"firstSeenDateTime,omitempty"`
 	// HealthStatus undocumented
@@ -330,20 +467,38 @@ type SecurityDeviceEvidence struct {
 	VMMetadata *SecurityVMMetadata `json:"vmMetadata,omitempty"`
 }
 
+func NewSecurityDeviceEvidence() (*SecurityDeviceEvidence, error) {
+	newSecurityDeviceEvidence := &SecurityDeviceEvidence{
+		ODataType: "#microsoft.graph.SecurityDeviceEvidence",
+	}
+	return newSecurityDeviceEvidence, nil
+}
+
 // SecurityEdiscoveryAddToReviewSetOperation undocumented
 type SecurityEdiscoveryAddToReviewSetOperation struct {
 	// SecurityCaseOperation is the base model of SecurityEdiscoveryAddToReviewSetOperation
 	SecurityCaseOperation
+
+	ODataType string `json:"@odata.type"`
 	// ReviewSet undocumented
 	ReviewSet *SecurityEdiscoveryReviewSet `json:"reviewSet,omitempty"`
 	// Search undocumented
 	Search *SecurityEdiscoverySearch `json:"search,omitempty"`
 }
 
+func NewSecurityEdiscoveryAddToReviewSetOperation() (*SecurityEdiscoveryAddToReviewSetOperation, error) {
+	newSecurityEdiscoveryAddToReviewSetOperation := &SecurityEdiscoveryAddToReviewSetOperation{
+		ODataType: "#microsoft.graph.SecurityEdiscoveryAddToReviewSetOperation",
+	}
+	return newSecurityEdiscoveryAddToReviewSetOperation, nil
+}
+
 // SecurityEdiscoveryCase undocumented
 type SecurityEdiscoveryCase struct {
 	// SecurityCase is the base model of SecurityEdiscoveryCase
 	SecurityCase
+
+	ODataType string `json:"@odata.type"`
 	// ClosedBy undocumented
 	ClosedBy *IdentitySet `json:"closedBy,omitempty"`
 	// ClosedDateTime undocumented
@@ -366,10 +521,19 @@ type SecurityEdiscoveryCase struct {
 	Tags []SecurityEdiscoveryReviewTag `json:"tags,omitempty"`
 }
 
+func NewSecurityEdiscoveryCase() (*SecurityEdiscoveryCase, error) {
+	newSecurityEdiscoveryCase := &SecurityEdiscoveryCase{
+		ODataType: "#microsoft.graph.SecurityEdiscoveryCase",
+	}
+	return newSecurityEdiscoveryCase, nil
+}
+
 // SecurityEdiscoveryCaseSettings undocumented
 type SecurityEdiscoveryCaseSettings struct {
 	// Entity is the base model of SecurityEdiscoveryCaseSettings
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Ocr undocumented
 	Ocr *SecurityOcrSettings `json:"ocr,omitempty"`
 	// RedundancyDetection undocumented
@@ -378,10 +542,19 @@ type SecurityEdiscoveryCaseSettings struct {
 	TopicModeling *SecurityTopicModelingSettings `json:"topicModeling,omitempty"`
 }
 
+func NewSecurityEdiscoveryCaseSettings() (*SecurityEdiscoveryCaseSettings, error) {
+	newSecurityEdiscoveryCaseSettings := &SecurityEdiscoveryCaseSettings{
+		ODataType: "#microsoft.graph.SecurityEdiscoveryCaseSettings",
+	}
+	return newSecurityEdiscoveryCaseSettings, nil
+}
+
 // SecurityEdiscoveryCustodian undocumented
 type SecurityEdiscoveryCustodian struct {
 	// SecurityDataSourceContainer is the base model of SecurityEdiscoveryCustodian
 	SecurityDataSourceContainer
+
+	ODataType string `json:"@odata.type"`
 	// AcknowledgedDateTime undocumented
 	AcknowledgedDateTime *time.Time `json:"acknowledgedDateTime,omitempty"`
 	// Email undocumented
@@ -396,10 +569,19 @@ type SecurityEdiscoveryCustodian struct {
 	UserSources []SecurityUserSource `json:"userSources,omitempty"`
 }
 
+func NewSecurityEdiscoveryCustodian() (*SecurityEdiscoveryCustodian, error) {
+	newSecurityEdiscoveryCustodian := &SecurityEdiscoveryCustodian{
+		ODataType: "#microsoft.graph.SecurityEdiscoveryCustodian",
+	}
+	return newSecurityEdiscoveryCustodian, nil
+}
+
 // SecurityEdiscoveryEstimateOperation undocumented
 type SecurityEdiscoveryEstimateOperation struct {
 	// SecurityCaseOperation is the base model of SecurityEdiscoveryEstimateOperation
 	SecurityCaseOperation
+
+	ODataType string `json:"@odata.type"`
 	// IndexedItemCount undocumented
 	IndexedItemCount *int `json:"indexedItemCount,omitempty"`
 	// IndexedItemsSize undocumented
@@ -416,52 +598,115 @@ type SecurityEdiscoveryEstimateOperation struct {
 	Search *SecurityEdiscoverySearch `json:"search,omitempty"`
 }
 
+func NewSecurityEdiscoveryEstimateOperation() (*SecurityEdiscoveryEstimateOperation, error) {
+	newSecurityEdiscoveryEstimateOperation := &SecurityEdiscoveryEstimateOperation{
+		ODataType: "#microsoft.graph.SecurityEdiscoveryEstimateOperation",
+	}
+	return newSecurityEdiscoveryEstimateOperation, nil
+}
+
 // SecurityEdiscoveryHoldOperation undocumented
 type SecurityEdiscoveryHoldOperation struct {
 	// SecurityCaseOperation is the base model of SecurityEdiscoveryHoldOperation
 	SecurityCaseOperation
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewSecurityEdiscoveryHoldOperation() (*SecurityEdiscoveryHoldOperation, error) {
+	newSecurityEdiscoveryHoldOperation := &SecurityEdiscoveryHoldOperation{
+		ODataType: "#microsoft.graph.SecurityEdiscoveryHoldOperation",
+	}
+	return newSecurityEdiscoveryHoldOperation, nil
 }
 
 // SecurityEdiscoveryIndexOperation undocumented
 type SecurityEdiscoveryIndexOperation struct {
 	// SecurityCaseOperation is the base model of SecurityEdiscoveryIndexOperation
 	SecurityCaseOperation
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewSecurityEdiscoveryIndexOperation() (*SecurityEdiscoveryIndexOperation, error) {
+	newSecurityEdiscoveryIndexOperation := &SecurityEdiscoveryIndexOperation{
+		ODataType: "#microsoft.graph.SecurityEdiscoveryIndexOperation",
+	}
+	return newSecurityEdiscoveryIndexOperation, nil
 }
 
 // SecurityEdiscoveryNoncustodialDataSource undocumented
 type SecurityEdiscoveryNoncustodialDataSource struct {
 	// SecurityDataSourceContainer is the base model of SecurityEdiscoveryNoncustodialDataSource
 	SecurityDataSourceContainer
+
+	ODataType string `json:"@odata.type"`
 	// DataSource undocumented
 	DataSource *SecurityDataSource `json:"dataSource,omitempty"`
 	// LastIndexOperation undocumented
 	LastIndexOperation *SecurityEdiscoveryIndexOperation `json:"lastIndexOperation,omitempty"`
 }
 
+func NewSecurityEdiscoveryNoncustodialDataSource() (*SecurityEdiscoveryNoncustodialDataSource, error) {
+	newSecurityEdiscoveryNoncustodialDataSource := &SecurityEdiscoveryNoncustodialDataSource{
+		ODataType: "#microsoft.graph.SecurityEdiscoveryNoncustodialDataSource",
+	}
+	return newSecurityEdiscoveryNoncustodialDataSource, nil
+}
+
 // SecurityEdiscoveryPurgeDataOperation undocumented
 type SecurityEdiscoveryPurgeDataOperation struct {
 	// SecurityCaseOperation is the base model of SecurityEdiscoveryPurgeDataOperation
 	SecurityCaseOperation
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewSecurityEdiscoveryPurgeDataOperation() (*SecurityEdiscoveryPurgeDataOperation, error) {
+	newSecurityEdiscoveryPurgeDataOperation := &SecurityEdiscoveryPurgeDataOperation{
+		ODataType: "#microsoft.graph.SecurityEdiscoveryPurgeDataOperation",
+	}
+	return newSecurityEdiscoveryPurgeDataOperation, nil
 }
 
 // SecurityEdiscoveryReviewSet undocumented
 type SecurityEdiscoveryReviewSet struct {
 	// SecurityDataSet is the base model of SecurityEdiscoveryReviewSet
 	SecurityDataSet
+
+	ODataType string `json:"@odata.type"`
 	// Queries undocumented
 	Queries []SecurityEdiscoveryReviewSetQuery `json:"queries,omitempty"`
+}
+
+func NewSecurityEdiscoveryReviewSet() (*SecurityEdiscoveryReviewSet, error) {
+	newSecurityEdiscoveryReviewSet := &SecurityEdiscoveryReviewSet{
+		ODataType: "#microsoft.graph.SecurityEdiscoveryReviewSet",
+	}
+	return newSecurityEdiscoveryReviewSet, nil
 }
 
 // SecurityEdiscoveryReviewSetQuery undocumented
 type SecurityEdiscoveryReviewSetQuery struct {
 	// SecuritySearch is the base model of SecurityEdiscoveryReviewSetQuery
 	SecuritySearch
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewSecurityEdiscoveryReviewSetQuery() (*SecurityEdiscoveryReviewSetQuery, error) {
+	newSecurityEdiscoveryReviewSetQuery := &SecurityEdiscoveryReviewSetQuery{
+		ODataType: "#microsoft.graph.SecurityEdiscoveryReviewSetQuery",
+	}
+	return newSecurityEdiscoveryReviewSetQuery, nil
 }
 
 // SecurityEdiscoveryReviewTag undocumented
 type SecurityEdiscoveryReviewTag struct {
 	// SecurityTag is the base model of SecurityEdiscoveryReviewTag
 	SecurityTag
+
+	ODataType string `json:"@odata.type"`
 	// ChildSelectability undocumented
 	ChildSelectability *SecurityChildSelectability `json:"childSelectability,omitempty"`
 	// ChildTags undocumented
@@ -470,10 +715,19 @@ type SecurityEdiscoveryReviewTag struct {
 	Parent *SecurityEdiscoveryReviewTag `json:"parent,omitempty"`
 }
 
+func NewSecurityEdiscoveryReviewTag() (*SecurityEdiscoveryReviewTag, error) {
+	newSecurityEdiscoveryReviewTag := &SecurityEdiscoveryReviewTag{
+		ODataType: "#microsoft.graph.SecurityEdiscoveryReviewTag",
+	}
+	return newSecurityEdiscoveryReviewTag, nil
+}
+
 // SecurityEdiscoverySearch undocumented
 type SecurityEdiscoverySearch struct {
 	// SecuritySearch is the base model of SecurityEdiscoverySearch
 	SecuritySearch
+
+	ODataType string `json:"@odata.type"`
 	// DataSourceScopes undocumented
 	DataSourceScopes *SecurityDataSourceScopes `json:"dataSourceScopes,omitempty"`
 	// AdditionalSources undocumented
@@ -488,16 +742,34 @@ type SecurityEdiscoverySearch struct {
 	NoncustodialSources []SecurityEdiscoveryNoncustodialDataSource `json:"noncustodialSources,omitempty"`
 }
 
+func NewSecurityEdiscoverySearch() (*SecurityEdiscoverySearch, error) {
+	newSecurityEdiscoverySearch := &SecurityEdiscoverySearch{
+		ODataType: "#microsoft.graph.SecurityEdiscoverySearch",
+	}
+	return newSecurityEdiscoverySearch, nil
+}
+
 // SecurityEdiscoveryTagOperation undocumented
 type SecurityEdiscoveryTagOperation struct {
 	// SecurityCaseOperation is the base model of SecurityEdiscoveryTagOperation
 	SecurityCaseOperation
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewSecurityEdiscoveryTagOperation() (*SecurityEdiscoveryTagOperation, error) {
+	newSecurityEdiscoveryTagOperation := &SecurityEdiscoveryTagOperation{
+		ODataType: "#microsoft.graph.SecurityEdiscoveryTagOperation",
+	}
+	return newSecurityEdiscoveryTagOperation, nil
 }
 
 // SecurityEmailSender undocumented
 type SecurityEmailSender struct {
 	// Object is the base model of SecurityEmailSender
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// DomainName undocumented
@@ -506,10 +778,19 @@ type SecurityEmailSender struct {
 	EmailAddress *string `json:"emailAddress,omitempty"`
 }
 
+func NewSecurityEmailSender() (*SecurityEmailSender, error) {
+	newSecurityEmailSender := &SecurityEmailSender{
+		ODataType: "#microsoft.graph.SecurityEmailSender",
+	}
+	return newSecurityEmailSender, nil
+}
+
 // SecurityFileDetails undocumented
 type SecurityFileDetails struct {
 	// Object is the base model of SecurityFileDetails
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// FileName undocumented
 	FileName *string `json:"fileName,omitempty"`
 	// FilePath undocumented
@@ -528,10 +809,19 @@ type SecurityFileDetails struct {
 	Signer *string `json:"signer,omitempty"`
 }
 
+func NewSecurityFileDetails() (*SecurityFileDetails, error) {
+	newSecurityFileDetails := &SecurityFileDetails{
+		ODataType: "#microsoft.graph.SecurityFileDetails",
+	}
+	return newSecurityFileDetails, nil
+}
+
 // SecurityFileEvidence undocumented
 type SecurityFileEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityFileEvidence
 	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type"`
 	// DetectionStatus undocumented
 	DetectionStatus *SecurityDetectionStatus `json:"detectionStatus,omitempty"`
 	// FileDetails undocumented
@@ -540,26 +830,53 @@ type SecurityFileEvidence struct {
 	MdeDeviceID *string `json:"mdeDeviceId,omitempty"`
 }
 
+func NewSecurityFileEvidence() (*SecurityFileEvidence, error) {
+	newSecurityFileEvidence := &SecurityFileEvidence{
+		ODataType: "#microsoft.graph.SecurityFileEvidence",
+	}
+	return newSecurityFileEvidence, nil
+}
+
 // SecurityHuntingQueryResults undocumented
 type SecurityHuntingQueryResults struct {
 	// Object is the base model of SecurityHuntingQueryResults
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Results undocumented
 	Results []SecurityHuntingRowResult `json:"results,omitempty"`
 	// Schema undocumented
 	Schema []SecuritySinglePropertySchema `json:"schema,omitempty"`
 }
 
+func NewSecurityHuntingQueryResults() (*SecurityHuntingQueryResults, error) {
+	newSecurityHuntingQueryResults := &SecurityHuntingQueryResults{
+		ODataType: "#microsoft.graph.SecurityHuntingQueryResults",
+	}
+	return newSecurityHuntingQueryResults, nil
+}
+
 // SecurityHuntingRowResult undocumented
 type SecurityHuntingRowResult struct {
 	// Object is the base model of SecurityHuntingRowResult
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewSecurityHuntingRowResult() (*SecurityHuntingRowResult, error) {
+	newSecurityHuntingRowResult := &SecurityHuntingRowResult{
+		ODataType: "#microsoft.graph.SecurityHuntingRowResult",
+	}
+	return newSecurityHuntingRowResult, nil
 }
 
 // SecurityIncident undocumented
 type SecurityIncident struct {
 	// Entity is the base model of SecurityIncident
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AssignedTo undocumented
 	AssignedTo *string `json:"assignedTo,omitempty"`
 	// Classification undocumented
@@ -590,30 +907,57 @@ type SecurityIncident struct {
 	Alerts []SecurityAlert `json:"alerts,omitempty"`
 }
 
+func NewSecurityIncident() (*SecurityIncident, error) {
+	newSecurityIncident := &SecurityIncident{
+		ODataType: "#microsoft.graph.SecurityIncident",
+	}
+	return newSecurityIncident, nil
+}
+
 // SecurityIPEvidence undocumented
 type SecurityIPEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityIPEvidence
 	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type"`
 	// CountryLetterCode undocumented
 	CountryLetterCode *string `json:"countryLetterCode,omitempty"`
 	// IPAddress undocumented
 	IPAddress *string `json:"ipAddress,omitempty"`
 }
 
+func NewSecurityIPEvidence() (*SecurityIPEvidence, error) {
+	newSecurityIPEvidence := &SecurityIPEvidence{
+		ODataType: "#microsoft.graph.SecurityIpEvidence",
+	}
+	return newSecurityIPEvidence, nil
+}
+
 // SecurityLoggedOnUser undocumented
 type SecurityLoggedOnUser struct {
 	// Object is the base model of SecurityLoggedOnUser
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AccountName undocumented
 	AccountName *string `json:"accountName,omitempty"`
 	// DomainName undocumented
 	DomainName *string `json:"domainName,omitempty"`
 }
 
+func NewSecurityLoggedOnUser() (*SecurityLoggedOnUser, error) {
+	newSecurityLoggedOnUser := &SecurityLoggedOnUser{
+		ODataType: "#microsoft.graph.SecurityLoggedOnUser",
+	}
+	return newSecurityLoggedOnUser, nil
+}
+
 // SecurityMailClusterEvidence undocumented
 type SecurityMailClusterEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityMailClusterEvidence
 	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type"`
 	// ClusterBy undocumented
 	ClusterBy *string `json:"clusterBy,omitempty"`
 	// ClusterByValue undocumented
@@ -628,10 +972,19 @@ type SecurityMailClusterEvidence struct {
 	Urn *string `json:"urn,omitempty"`
 }
 
+func NewSecurityMailClusterEvidence() (*SecurityMailClusterEvidence, error) {
+	newSecurityMailClusterEvidence := &SecurityMailClusterEvidence{
+		ODataType: "#microsoft.graph.SecurityMailClusterEvidence",
+	}
+	return newSecurityMailClusterEvidence, nil
+}
+
 // SecurityMailboxEvidence undocumented
 type SecurityMailboxEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityMailboxEvidence
 	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// PrimaryAddress undocumented
@@ -640,10 +993,19 @@ type SecurityMailboxEvidence struct {
 	UserAccount *SecurityUserAccount `json:"userAccount,omitempty"`
 }
 
+func NewSecurityMailboxEvidence() (*SecurityMailboxEvidence, error) {
+	newSecurityMailboxEvidence := &SecurityMailboxEvidence{
+		ODataType: "#microsoft.graph.SecurityMailboxEvidence",
+	}
+	return newSecurityMailboxEvidence, nil
+}
+
 // SecurityOAuthApplicationEvidence undocumented
 type SecurityOAuthApplicationEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityOAuthApplicationEvidence
 	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type"`
 	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
 	// DisplayName undocumented
@@ -654,10 +1016,19 @@ type SecurityOAuthApplicationEvidence struct {
 	Publisher *string `json:"publisher,omitempty"`
 }
 
+func NewSecurityOAuthApplicationEvidence() (*SecurityOAuthApplicationEvidence, error) {
+	newSecurityOAuthApplicationEvidence := &SecurityOAuthApplicationEvidence{
+		ODataType: "#microsoft.graph.SecurityOauthApplicationEvidence",
+	}
+	return newSecurityOAuthApplicationEvidence, nil
+}
+
 // SecurityOcrSettings undocumented
 type SecurityOcrSettings struct {
 	// Object is the base model of SecurityOcrSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsEnabled undocumented
 	IsEnabled *bool `json:"isEnabled,omitempty"`
 	// MaxImageSize undocumented
@@ -666,10 +1037,19 @@ type SecurityOcrSettings struct {
 	Timeout *Duration `json:"timeout,omitempty"`
 }
 
+func NewSecurityOcrSettings() (*SecurityOcrSettings, error) {
+	newSecurityOcrSettings := &SecurityOcrSettings{
+		ODataType: "#microsoft.graph.SecurityOcrSettings",
+	}
+	return newSecurityOcrSettings, nil
+}
+
 // SecurityProcessEvidence undocumented
 type SecurityProcessEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityProcessEvidence
 	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type"`
 	// DetectionStatus undocumented
 	DetectionStatus *SecurityDetectionStatus `json:"detectionStatus,omitempty"`
 	// ImageFile undocumented
@@ -692,10 +1072,19 @@ type SecurityProcessEvidence struct {
 	UserAccount *SecurityUserAccount `json:"userAccount,omitempty"`
 }
 
+func NewSecurityProcessEvidence() (*SecurityProcessEvidence, error) {
+	newSecurityProcessEvidence := &SecurityProcessEvidence{
+		ODataType: "#microsoft.graph.SecurityProcessEvidence",
+	}
+	return newSecurityProcessEvidence, nil
+}
+
 // SecurityRedundancyDetectionSettings undocumented
 type SecurityRedundancyDetectionSettings struct {
 	// Object is the base model of SecurityRedundancyDetectionSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsEnabled undocumented
 	IsEnabled *bool `json:"isEnabled,omitempty"`
 	// MaxWords undocumented
@@ -706,20 +1095,38 @@ type SecurityRedundancyDetectionSettings struct {
 	SimilarityThreshold *int `json:"similarityThreshold,omitempty"`
 }
 
+func NewSecurityRedundancyDetectionSettings() (*SecurityRedundancyDetectionSettings, error) {
+	newSecurityRedundancyDetectionSettings := &SecurityRedundancyDetectionSettings{
+		ODataType: "#microsoft.graph.SecurityRedundancyDetectionSettings",
+	}
+	return newSecurityRedundancyDetectionSettings, nil
+}
+
 // SecurityRegistryKeyEvidence undocumented
 type SecurityRegistryKeyEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityRegistryKeyEvidence
 	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type"`
 	// RegistryHive undocumented
 	RegistryHive *string `json:"registryHive,omitempty"`
 	// RegistryKey undocumented
 	RegistryKey *string `json:"registryKey,omitempty"`
 }
 
+func NewSecurityRegistryKeyEvidence() (*SecurityRegistryKeyEvidence, error) {
+	newSecurityRegistryKeyEvidence := &SecurityRegistryKeyEvidence{
+		ODataType: "#microsoft.graph.SecurityRegistryKeyEvidence",
+	}
+	return newSecurityRegistryKeyEvidence, nil
+}
+
 // SecurityRegistryValueEvidence undocumented
 type SecurityRegistryValueEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityRegistryValueEvidence
 	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type"`
 	// RegistryHive undocumented
 	RegistryHive *string `json:"registryHive,omitempty"`
 	// RegistryKey undocumented
@@ -732,10 +1139,19 @@ type SecurityRegistryValueEvidence struct {
 	RegistryValueType *string `json:"registryValueType,omitempty"`
 }
 
+func NewSecurityRegistryValueEvidence() (*SecurityRegistryValueEvidence, error) {
+	newSecurityRegistryValueEvidence := &SecurityRegistryValueEvidence{
+		ODataType: "#microsoft.graph.SecurityRegistryValueEvidence",
+	}
+	return newSecurityRegistryValueEvidence, nil
+}
+
 // SecuritySearch undocumented
 type SecuritySearch struct {
 	// Entity is the base model of SecuritySearch
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ContentQuery undocumented
 	ContentQuery *string `json:"contentQuery,omitempty"`
 	// CreatedBy undocumented
@@ -752,44 +1168,89 @@ type SecuritySearch struct {
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 }
 
+func NewSecuritySearch() (*SecuritySearch, error) {
+	newSecuritySearch := &SecuritySearch{
+		ODataType: "#microsoft.graph.SecuritySearch",
+	}
+	return newSecuritySearch, nil
+}
+
 // SecuritySecurityGroupEvidence undocumented
 type SecuritySecurityGroupEvidence struct {
 	// SecurityAlertEvidence is the base model of SecuritySecurityGroupEvidence
 	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// SecurityGroupID undocumented
 	SecurityGroupID *string `json:"securityGroupId,omitempty"`
 }
 
+func NewSecuritySecurityGroupEvidence() (*SecuritySecurityGroupEvidence, error) {
+	newSecuritySecurityGroupEvidence := &SecuritySecurityGroupEvidence{
+		ODataType: "#microsoft.graph.SecuritySecurityGroupEvidence",
+	}
+	return newSecuritySecurityGroupEvidence, nil
+}
+
 // SecuritySinglePropertySchema undocumented
 type SecuritySinglePropertySchema struct {
 	// Object is the base model of SecuritySinglePropertySchema
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Type undocumented
 	Type *string `json:"type,omitempty"`
 }
 
+func NewSecuritySinglePropertySchema() (*SecuritySinglePropertySchema, error) {
+	newSecuritySinglePropertySchema := &SecuritySinglePropertySchema{
+		ODataType: "#microsoft.graph.SecuritySinglePropertySchema",
+	}
+	return newSecuritySinglePropertySchema, nil
+}
+
 // SecuritySiteSource undocumented
 type SecuritySiteSource struct {
 	// SecurityDataSource is the base model of SecuritySiteSource
 	SecurityDataSource
+
+	ODataType string `json:"@odata.type"`
 	// Site undocumented
 	Site *Site `json:"site,omitempty"`
+}
+
+func NewSecuritySiteSource() (*SecuritySiteSource, error) {
+	newSecuritySiteSource := &SecuritySiteSource{
+		ODataType: "#microsoft.graph.SecuritySiteSource",
+	}
+	return newSecuritySiteSource, nil
 }
 
 // SecurityStringValueDictionary undocumented
 type SecurityStringValueDictionary struct {
 	// Object is the base model of SecurityStringValueDictionary
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewSecurityStringValueDictionary() (*SecurityStringValueDictionary, error) {
+	newSecurityStringValueDictionary := &SecurityStringValueDictionary{
+		ODataType: "#microsoft.graph.SecurityStringValueDictionary",
+	}
+	return newSecurityStringValueDictionary, nil
 }
 
 // SecurityTag undocumented
 type SecurityTag struct {
 	// Entity is the base model of SecurityTag
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// Description undocumented
@@ -800,10 +1261,19 @@ type SecurityTag struct {
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 }
 
+func NewSecurityTag() (*SecurityTag, error) {
+	newSecurityTag := &SecurityTag{
+		ODataType: "#microsoft.graph.SecurityTag",
+	}
+	return newSecurityTag, nil
+}
+
 // SecurityTopicModelingSettings undocumented
 type SecurityTopicModelingSettings struct {
 	// Object is the base model of SecurityTopicModelingSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DynamicallyAdjustTopicCount undocumented
 	DynamicallyAdjustTopicCount *bool `json:"dynamicallyAdjustTopicCount,omitempty"`
 	// IgnoreNumbers undocumented
@@ -814,28 +1284,55 @@ type SecurityTopicModelingSettings struct {
 	TopicCount *int `json:"topicCount,omitempty"`
 }
 
+func NewSecurityTopicModelingSettings() (*SecurityTopicModelingSettings, error) {
+	newSecurityTopicModelingSettings := &SecurityTopicModelingSettings{
+		ODataType: "#microsoft.graph.SecurityTopicModelingSettings",
+	}
+	return newSecurityTopicModelingSettings, nil
+}
+
 // SecurityUnifiedGroupSource undocumented
 type SecurityUnifiedGroupSource struct {
 	// SecurityDataSource is the base model of SecurityUnifiedGroupSource
 	SecurityDataSource
+
+	ODataType string `json:"@odata.type"`
 	// IncludedSources undocumented
 	IncludedSources *SecuritySourceType `json:"includedSources,omitempty"`
 	// Group undocumented
 	Group *Group `json:"group,omitempty"`
 }
 
+func NewSecurityUnifiedGroupSource() (*SecurityUnifiedGroupSource, error) {
+	newSecurityUnifiedGroupSource := &SecurityUnifiedGroupSource{
+		ODataType: "#microsoft.graph.SecurityUnifiedGroupSource",
+	}
+	return newSecurityUnifiedGroupSource, nil
+}
+
 // SecurityURLEvidence undocumented
 type SecurityURLEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityURLEvidence
 	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type"`
 	// URL undocumented
 	URL *string `json:"url,omitempty"`
+}
+
+func NewSecurityURLEvidence() (*SecurityURLEvidence, error) {
+	newSecurityURLEvidence := &SecurityURLEvidence{
+		ODataType: "#microsoft.graph.SecurityUrlEvidence",
+	}
+	return newSecurityURLEvidence, nil
 }
 
 // SecurityUserAccount undocumented
 type SecurityUserAccount struct {
 	// Object is the base model of SecurityUserAccount
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AccountName undocumented
 	AccountName *string `json:"accountName,omitempty"`
 	// AzureAdUserID undocumented
@@ -848,18 +1345,36 @@ type SecurityUserAccount struct {
 	UserSid *string `json:"userSid,omitempty"`
 }
 
+func NewSecurityUserAccount() (*SecurityUserAccount, error) {
+	newSecurityUserAccount := &SecurityUserAccount{
+		ODataType: "#microsoft.graph.SecurityUserAccount",
+	}
+	return newSecurityUserAccount, nil
+}
+
 // SecurityUserEvidence undocumented
 type SecurityUserEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityUserEvidence
 	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type"`
 	// UserAccount undocumented
 	UserAccount *SecurityUserAccount `json:"userAccount,omitempty"`
+}
+
+func NewSecurityUserEvidence() (*SecurityUserEvidence, error) {
+	newSecurityUserEvidence := &SecurityUserEvidence{
+		ODataType: "#microsoft.graph.SecurityUserEvidence",
+	}
+	return newSecurityUserEvidence, nil
 }
 
 // SecurityUserSource undocumented
 type SecurityUserSource struct {
 	// SecurityDataSource is the base model of SecurityUserSource
 	SecurityDataSource
+
+	ODataType string `json:"@odata.type"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
 	// IncludedSources undocumented
@@ -868,10 +1383,19 @@ type SecurityUserSource struct {
 	SiteWebURL *string `json:"siteWebUrl,omitempty"`
 }
 
+func NewSecurityUserSource() (*SecurityUserSource, error) {
+	newSecurityUserSource := &SecurityUserSource{
+		ODataType: "#microsoft.graph.SecurityUserSource",
+	}
+	return newSecurityUserSource, nil
+}
+
 // SecurityVMMetadata undocumented
 type SecurityVMMetadata struct {
 	// Object is the base model of SecurityVMMetadata
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CloudProvider undocumented
 	CloudProvider *SecurityVMCloudProvider `json:"cloudProvider,omitempty"`
 	// ResourceID undocumented
@@ -880,4 +1404,11 @@ type SecurityVMMetadata struct {
 	SubscriptionID *string `json:"subscriptionId,omitempty"`
 	// VMID undocumented
 	VMID *string `json:"vmId,omitempty"`
+}
+
+func NewSecurityVMMetadata() (*SecurityVMMetadata, error) {
+	newSecurityVMMetadata := &SecurityVMMetadata{
+		ODataType: "#microsoft.graph.SecurityVmMetadata",
+	}
+	return newSecurityVMMetadata, nil
 }

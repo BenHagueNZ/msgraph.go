@@ -86,7 +86,7 @@ type ServicePrincipalAddTokenSigningCertificateRequestParameter struct {
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 }
 
-// HealthOverviews returns request builder for ServiceHealth collection
+// HealthOverviews returns request builder for ServiceHealth collection rcn
 func (b *ServiceAnnouncementRequestBuilder) HealthOverviews() *ServiceAnnouncementHealthOverviewsCollectionRequestBuilder {
 	bb := &ServiceAnnouncementHealthOverviewsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/healthOverviews"
@@ -189,7 +189,7 @@ func (r *ServiceAnnouncementHealthOverviewsCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// Issues returns request builder for ServiceHealthIssue collection
+// Issues returns request builder for ServiceHealthIssue collection rcn
 func (b *ServiceAnnouncementRequestBuilder) Issues() *ServiceAnnouncementIssuesCollectionRequestBuilder {
 	bb := &ServiceAnnouncementIssuesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/issues"
@@ -292,7 +292,7 @@ func (r *ServiceAnnouncementIssuesCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// Messages returns request builder for ServiceUpdateMessage collection
+// Messages returns request builder for ServiceUpdateMessage collection rcn
 func (b *ServiceAnnouncementRequestBuilder) Messages() *ServiceAnnouncementMessagesCollectionRequestBuilder {
 	bb := &ServiceAnnouncementMessagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/messages"
@@ -395,7 +395,7 @@ func (r *ServiceAnnouncementMessagesCollectionRequest) Add(ctx context.Context, 
 	return
 }
 
-// Issues returns request builder for ServiceHealthIssue collection
+// Issues returns request builder for ServiceHealthIssue collection rcn
 func (b *ServiceHealthRequestBuilder) Issues() *ServiceHealthIssuesCollectionRequestBuilder {
 	bb := &ServiceHealthIssuesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/issues"
@@ -498,7 +498,7 @@ func (r *ServiceHealthIssuesCollectionRequest) Add(ctx context.Context, reqObj *
 	return
 }
 
-// AppManagementPolicies returns request builder for AppManagementPolicy collection
+// AppManagementPolicies returns request builder for AppManagementPolicy collection rcn
 func (b *ServicePrincipalRequestBuilder) AppManagementPolicies() *ServicePrincipalAppManagementPoliciesCollectionRequestBuilder {
 	bb := &ServicePrincipalAppManagementPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appManagementPolicies"
@@ -601,7 +601,7 @@ func (r *ServicePrincipalAppManagementPoliciesCollectionRequest) Add(ctx context
 	return
 }
 
-// AppRoleAssignedTo returns request builder for AppRoleAssignment collection
+// AppRoleAssignedTo returns request builder for AppRoleAssignment collection rcn
 func (b *ServicePrincipalRequestBuilder) AppRoleAssignedTo() *ServicePrincipalAppRoleAssignedToCollectionRequestBuilder {
 	bb := &ServicePrincipalAppRoleAssignedToCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appRoleAssignedTo"
@@ -704,7 +704,7 @@ func (r *ServicePrincipalAppRoleAssignedToCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// AppRoleAssignments returns request builder for AppRoleAssignment collection
+// AppRoleAssignments returns request builder for AppRoleAssignment collection rcn
 func (b *ServicePrincipalRequestBuilder) AppRoleAssignments() *ServicePrincipalAppRoleAssignmentsCollectionRequestBuilder {
 	bb := &ServicePrincipalAppRoleAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appRoleAssignments"
@@ -807,7 +807,7 @@ func (r *ServicePrincipalAppRoleAssignmentsCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// ClaimsMappingPolicies returns request builder for ClaimsMappingPolicy collection
+// ClaimsMappingPolicies returns request builder for ClaimsMappingPolicy collection rcn
 func (b *ServicePrincipalRequestBuilder) ClaimsMappingPolicies() *ServicePrincipalClaimsMappingPoliciesCollectionRequestBuilder {
 	bb := &ServicePrincipalClaimsMappingPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/claimsMappingPolicies"
@@ -910,7 +910,7 @@ func (r *ServicePrincipalClaimsMappingPoliciesCollectionRequest) Add(ctx context
 	return
 }
 
-// CreatedObjects returns request builder for DirectoryObject collection
+// CreatedObjects returns request builder for DirectoryObject collection rcn
 func (b *ServicePrincipalRequestBuilder) CreatedObjects() *ServicePrincipalCreatedObjectsCollectionRequestBuilder {
 	bb := &ServicePrincipalCreatedObjectsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/createdObjects"
@@ -1013,7 +1013,7 @@ func (r *ServicePrincipalCreatedObjectsCollectionRequest) Add(ctx context.Contex
 	return
 }
 
-// DelegatedPermissionClassifications returns request builder for DelegatedPermissionClassification collection
+// DelegatedPermissionClassifications returns request builder for DelegatedPermissionClassification collection rcn
 func (b *ServicePrincipalRequestBuilder) DelegatedPermissionClassifications() *ServicePrincipalDelegatedPermissionClassificationsCollectionRequestBuilder {
 	bb := &ServicePrincipalDelegatedPermissionClassificationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/delegatedPermissionClassifications"
@@ -1116,7 +1116,7 @@ func (r *ServicePrincipalDelegatedPermissionClassificationsCollectionRequest) Ad
 	return
 }
 
-// Endpoints returns request builder for Endpoint collection
+// Endpoints returns request builder for Endpoint collection rcn
 func (b *ServicePrincipalRequestBuilder) Endpoints() *ServicePrincipalEndpointsCollectionRequestBuilder {
 	bb := &ServicePrincipalEndpointsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/endpoints"
@@ -1219,7 +1219,7 @@ func (r *ServicePrincipalEndpointsCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// FederatedIdentityCredentials returns request builder for FederatedIdentityCredential collection
+// FederatedIdentityCredentials returns request builder for FederatedIdentityCredential collection rcn
 func (b *ServicePrincipalRequestBuilder) FederatedIdentityCredentials() *ServicePrincipalFederatedIdentityCredentialsCollectionRequestBuilder {
 	bb := &ServicePrincipalFederatedIdentityCredentialsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/federatedIdentityCredentials"
@@ -1322,7 +1322,7 @@ func (r *ServicePrincipalFederatedIdentityCredentialsCollectionRequest) Add(ctx 
 	return
 }
 
-// HomeRealmDiscoveryPolicies returns request builder for HomeRealmDiscoveryPolicy collection
+// HomeRealmDiscoveryPolicies returns request builder for HomeRealmDiscoveryPolicy collection rcn
 func (b *ServicePrincipalRequestBuilder) HomeRealmDiscoveryPolicies() *ServicePrincipalHomeRealmDiscoveryPoliciesCollectionRequestBuilder {
 	bb := &ServicePrincipalHomeRealmDiscoveryPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/homeRealmDiscoveryPolicies"
@@ -1425,7 +1425,7 @@ func (r *ServicePrincipalHomeRealmDiscoveryPoliciesCollectionRequest) Add(ctx co
 	return
 }
 
-// MemberOf returns request builder for DirectoryObject collection
+// MemberOf returns request builder for DirectoryObject collection rcn
 func (b *ServicePrincipalRequestBuilder) MemberOf() *ServicePrincipalMemberOfCollectionRequestBuilder {
 	bb := &ServicePrincipalMemberOfCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/memberOf"
@@ -1528,7 +1528,7 @@ func (r *ServicePrincipalMemberOfCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// OAuth2PermissionGrants returns request builder for OAuth2PermissionGrant collection
+// OAuth2PermissionGrants returns request builder for OAuth2PermissionGrant collection rcn
 func (b *ServicePrincipalRequestBuilder) OAuth2PermissionGrants() *ServicePrincipalOAuth2PermissionGrantsCollectionRequestBuilder {
 	bb := &ServicePrincipalOAuth2PermissionGrantsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/oauth2PermissionGrants"
@@ -1631,7 +1631,7 @@ func (r *ServicePrincipalOAuth2PermissionGrantsCollectionRequest) Add(ctx contex
 	return
 }
 
-// OwnedObjects returns request builder for DirectoryObject collection
+// OwnedObjects returns request builder for DirectoryObject collection rcn
 func (b *ServicePrincipalRequestBuilder) OwnedObjects() *ServicePrincipalOwnedObjectsCollectionRequestBuilder {
 	bb := &ServicePrincipalOwnedObjectsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/ownedObjects"
@@ -1734,7 +1734,7 @@ func (r *ServicePrincipalOwnedObjectsCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// Owners returns request builder for DirectoryObject collection
+// Owners returns request builder for DirectoryObject collection rcn
 func (b *ServicePrincipalRequestBuilder) Owners() *ServicePrincipalOwnersCollectionRequestBuilder {
 	bb := &ServicePrincipalOwnersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/owners"
@@ -1837,7 +1837,7 @@ func (r *ServicePrincipalOwnersCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// TokenIssuancePolicies returns request builder for TokenIssuancePolicy collection
+// TokenIssuancePolicies returns request builder for TokenIssuancePolicy collection rcn
 func (b *ServicePrincipalRequestBuilder) TokenIssuancePolicies() *ServicePrincipalTokenIssuancePoliciesCollectionRequestBuilder {
 	bb := &ServicePrincipalTokenIssuancePoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tokenIssuancePolicies"
@@ -1940,7 +1940,7 @@ func (r *ServicePrincipalTokenIssuancePoliciesCollectionRequest) Add(ctx context
 	return
 }
 
-// TokenLifetimePolicies returns request builder for TokenLifetimePolicy collection
+// TokenLifetimePolicies returns request builder for TokenLifetimePolicy collection rcn
 func (b *ServicePrincipalRequestBuilder) TokenLifetimePolicies() *ServicePrincipalTokenLifetimePoliciesCollectionRequestBuilder {
 	bb := &ServicePrincipalTokenLifetimePoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tokenLifetimePolicies"
@@ -2043,7 +2043,7 @@ func (r *ServicePrincipalTokenLifetimePoliciesCollectionRequest) Add(ctx context
 	return
 }
 
-// TransitiveMemberOf returns request builder for DirectoryObject collection
+// TransitiveMemberOf returns request builder for DirectoryObject collection rcn
 func (b *ServicePrincipalRequestBuilder) TransitiveMemberOf() *ServicePrincipalTransitiveMemberOfCollectionRequestBuilder {
 	bb := &ServicePrincipalTransitiveMemberOfCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/transitiveMemberOf"
@@ -2146,7 +2146,7 @@ func (r *ServicePrincipalTransitiveMemberOfCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// Attachments returns request builder for ServiceAnnouncementAttachment collection
+// Attachments returns request builder for ServiceAnnouncementAttachment collection rcn
 func (b *ServiceUpdateMessageRequestBuilder) Attachments() *ServiceUpdateMessageAttachmentsCollectionRequestBuilder {
 	bb := &ServiceUpdateMessageAttachmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/attachments"
@@ -2247,4 +2247,142 @@ func (r *ServiceUpdateMessageAttachmentsCollectionRequest) Get(ctx context.Conte
 func (r *ServiceUpdateMessageAttachmentsCollectionRequest) Add(ctx context.Context, reqObj *ServiceAnnouncementAttachment) (resObj *ServiceAnnouncementAttachment, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// ServiceAnnouncement is navigation property rn
+func (b *ServiceAnnouncementRequestBuilder) ServiceAnnouncement() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ServiceAnnouncementAttachment is navigation property rn
+func (b *ServiceAnnouncementAttachmentRequestBuilder) ServiceAnnouncementAttachment() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ServiceAnnouncementBase is navigation property rn
+func (b *ServiceAnnouncementBaseRequestBuilder) ServiceAnnouncementBase() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ServiceHealth is navigation property rn
+func (b *ServiceHealthRequestBuilder) ServiceHealth() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ServicePrincipal returns request builder for DirectoryObject collection rcn
+func (b *ServicePrincipalRequestBuilder) ServicePrincipal() *ServicePrincipalServicePrincipalCollectionRequestBuilder {
+	bb := &ServicePrincipalServicePrincipalCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/DirectoryObject"
+	return bb
+}
+
+// ServicePrincipalServicePrincipalCollectionRequestBuilder is request builder for DirectoryObject collection
+type ServicePrincipalServicePrincipalCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DirectoryObject collection
+func (b *ServicePrincipalServicePrincipalCollectionRequestBuilder) Request() *ServicePrincipalServicePrincipalCollectionRequest {
+	return &ServicePrincipalServicePrincipalCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DirectoryObject item
+func (b *ServicePrincipalServicePrincipalCollectionRequestBuilder) ID(id string) *DirectoryObjectRequestBuilder {
+	bb := &DirectoryObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// ServicePrincipalServicePrincipalCollectionRequest is request for DirectoryObject collection
+type ServicePrincipalServicePrincipalCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DirectoryObject collection
+func (r *ServicePrincipalServicePrincipalCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObject, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DirectoryObject
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DirectoryObject
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DirectoryObject collection, max N pages
+func (r *ServicePrincipalServicePrincipalCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObject, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DirectoryObject collection
+func (r *ServicePrincipalServicePrincipalCollectionRequest) Get(ctx context.Context) ([]DirectoryObject, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DirectoryObject collection
+func (r *ServicePrincipalServicePrincipalCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// ServicePrincipalRiskDetection is navigation property rn
+func (b *ServicePrincipalRiskDetectionRequestBuilder) ServicePrincipalRiskDetection() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

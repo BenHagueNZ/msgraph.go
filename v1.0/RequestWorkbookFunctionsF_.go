@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsF_DistRequestBuilder struct{ BaseRequestBuilder }
 
-// F_Dist action undocumented
+// F_Dist action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) F_Dist(reqObj *WorkbookFunctionsF_DistRequestParameter) *WorkbookFunctionsF_DistRequestBuilder {
 	bb := &WorkbookFunctionsF_DistRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/F_Dist"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsF_DistRequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsF_Dist_RTRequestBuilder struct{ BaseRequestBuilder }
 
-// F_Dist_RT action undocumented
+// F_Dist_RT action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) F_Dist_RT(reqObj *WorkbookFunctionsF_Dist_RTRequestParameter) *WorkbookFunctionsF_Dist_RTRequestBuilder {
 	bb := &WorkbookFunctionsF_Dist_RTRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/F_Dist_RT"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsF_Dist_RTRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsF_InvRequestBuilder struct{ BaseRequestBuilder }
 
-// F_Inv action undocumented
+// F_Inv action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) F_Inv(reqObj *WorkbookFunctionsF_InvRequestParameter) *WorkbookFunctionsF_InvRequestBuilder {
 	bb := &WorkbookFunctionsF_InvRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/F_Inv"
@@ -75,7 +75,7 @@ func (r *WorkbookFunctionsF_InvRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsF_Inv_RTRequestBuilder struct{ BaseRequestBuilder }
 
-// F_Inv_RT action undocumented
+// F_Inv_RT action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) F_Inv_RT(reqObj *WorkbookFunctionsF_Inv_RTRequestParameter) *WorkbookFunctionsF_Inv_RTRequestBuilder {
 	bb := &WorkbookFunctionsF_Inv_RTRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/F_Inv_RT"

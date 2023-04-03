@@ -6,6 +6,8 @@ package msgraph
 type RecurrencePattern struct {
 	// Object is the base model of RecurrencePattern
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DayOfMonth undocumented
 	DayOfMonth *int `json:"dayOfMonth,omitempty"`
 	// DaysOfWeek undocumented
@@ -22,10 +24,19 @@ type RecurrencePattern struct {
 	Type *RecurrencePatternType `json:"type,omitempty"`
 }
 
+func NewRecurrencePattern() (*RecurrencePattern, error) {
+	newRecurrencePattern := &RecurrencePattern{
+		ODataType: "#microsoft.graph.RecurrencePattern",
+	}
+	return newRecurrencePattern, nil
+}
+
 // RecurrenceRange undocumented
 type RecurrenceRange struct {
 	// Object is the base model of RecurrenceRange
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// EndDate undocumented
 	EndDate *Date `json:"endDate,omitempty"`
 	// NumberOfOccurrences undocumented
@@ -36,4 +47,11 @@ type RecurrenceRange struct {
 	StartDate *Date `json:"startDate,omitempty"`
 	// Type undocumented
 	Type *RecurrenceRangeType `json:"type,omitempty"`
+}
+
+func NewRecurrenceRange() (*RecurrenceRange, error) {
+	newRecurrenceRange := &RecurrenceRange{
+		ODataType: "#microsoft.graph.RecurrenceRange",
+	}
+	return newRecurrenceRange, nil
 }

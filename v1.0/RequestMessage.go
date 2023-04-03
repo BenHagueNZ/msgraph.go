@@ -237,7 +237,7 @@ func (r *MessageUnpinnedEventMessageDetailRequest) Delete(ctx context.Context) e
 
 type MessageForwardRequestBuilder struct{ BaseRequestBuilder }
 
-// Forward action undocumented
+// Forward action undocumentedrav
 func (b *MessageRequestBuilder) Forward(reqObj *MessageForwardRequestParameter) *MessageForwardRequestBuilder {
 	bb := &MessageForwardRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Forward"
@@ -259,7 +259,7 @@ func (r *MessageForwardRequest) Post(ctx context.Context) error {
 
 type MessageCopyRequestBuilder struct{ BaseRequestBuilder }
 
-// Copy action undocumented
+// Copy action undocumentedras
 func (b *MessageRequestBuilder) Copy(reqObj *MessageCopyRequestParameter) *MessageCopyRequestBuilder {
 	bb := &MessageCopyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Copy"
@@ -282,7 +282,7 @@ func (r *MessageCopyRequest) Post(ctx context.Context) (resObj *Message, err err
 
 type MessageMoveRequestBuilder struct{ BaseRequestBuilder }
 
-// Move action undocumented
+// Move action undocumentedras
 func (b *MessageRequestBuilder) Move(reqObj *MessageMoveRequestParameter) *MessageMoveRequestBuilder {
 	bb := &MessageMoveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Move"
@@ -305,7 +305,7 @@ func (r *MessageMoveRequest) Post(ctx context.Context) (resObj *Message, err err
 
 type MessageCreateForwardRequestBuilder struct{ BaseRequestBuilder }
 
-// CreateForward action undocumented
+// CreateForward action undocumentedras
 func (b *MessageRequestBuilder) CreateForward(reqObj *MessageCreateForwardRequestParameter) *MessageCreateForwardRequestBuilder {
 	bb := &MessageCreateForwardRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CreateForward"
@@ -328,7 +328,7 @@ func (r *MessageCreateForwardRequest) Post(ctx context.Context) (resObj *Message
 
 type MessageCreateReplyRequestBuilder struct{ BaseRequestBuilder }
 
-// CreateReply action undocumented
+// CreateReply action undocumentedras
 func (b *MessageRequestBuilder) CreateReply(reqObj *MessageCreateReplyRequestParameter) *MessageCreateReplyRequestBuilder {
 	bb := &MessageCreateReplyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CreateReply"
@@ -351,7 +351,7 @@ func (r *MessageCreateReplyRequest) Post(ctx context.Context) (resObj *Message, 
 
 type MessageCreateReplyAllRequestBuilder struct{ BaseRequestBuilder }
 
-// CreateReplyAll action undocumented
+// CreateReplyAll action undocumentedras
 func (b *MessageRequestBuilder) CreateReplyAll(reqObj *MessageCreateReplyAllRequestParameter) *MessageCreateReplyAllRequestBuilder {
 	bb := &MessageCreateReplyAllRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CreateReplyAll"
@@ -374,7 +374,7 @@ func (r *MessageCreateReplyAllRequest) Post(ctx context.Context) (resObj *Messag
 
 type MessageReplyRequestBuilder struct{ BaseRequestBuilder }
 
-// Reply action undocumented
+// Reply action undocumentedrav
 func (b *MessageRequestBuilder) Reply(reqObj *MessageReplyRequestParameter) *MessageReplyRequestBuilder {
 	bb := &MessageReplyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Reply"
@@ -396,7 +396,7 @@ func (r *MessageReplyRequest) Post(ctx context.Context) error {
 
 type MessageReplyAllRequestBuilder struct{ BaseRequestBuilder }
 
-// ReplyAll action undocumented
+// ReplyAll action undocumentedrav
 func (b *MessageRequestBuilder) ReplyAll(reqObj *MessageReplyAllRequestParameter) *MessageReplyAllRequestBuilder {
 	bb := &MessageReplyAllRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ReplyAll"
@@ -418,7 +418,7 @@ func (r *MessageReplyAllRequest) Post(ctx context.Context) error {
 
 type MessageSendRequestBuilder struct{ BaseRequestBuilder }
 
-// Send action undocumented
+// Send action undocumentedrav
 func (b *MessageRequestBuilder) Send(reqObj *MessageSendRequestParameter) *MessageSendRequestBuilder {
 	bb := &MessageSendRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Send"

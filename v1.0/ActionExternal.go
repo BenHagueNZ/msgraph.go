@@ -11,7 +11,14 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Connections returns request builder for ExternalConnectorsExternalConnection collection
+// ExternalDomainName is navigation property rn
+func (b *ExternalDomainNameRequestBuilder) ExternalDomainName() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Connections returns request builder for ExternalConnectorsExternalConnection collection rcn
 func (b *ExternalConnectorsExternalRequestBuilder) Connections() *ExternalConnectorsExternalConnectionsCollectionRequestBuilder {
 	bb := &ExternalConnectorsExternalConnectionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/connections"
@@ -114,7 +121,7 @@ func (r *ExternalConnectorsExternalConnectionsCollectionRequest) Add(ctx context
 	return
 }
 
-// Groups returns request builder for ExternalConnectorsExternalGroup collection
+// Groups returns request builder for ExternalConnectorsExternalGroup collection rcn
 func (b *ExternalConnectorsExternalConnectionRequestBuilder) Groups() *ExternalConnectorsExternalConnectionGroupsCollectionRequestBuilder {
 	bb := &ExternalConnectorsExternalConnectionGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/groups"
@@ -217,7 +224,7 @@ func (r *ExternalConnectorsExternalConnectionGroupsCollectionRequest) Add(ctx co
 	return
 }
 
-// Items returns request builder for ExternalConnectorsExternalItem collection
+// Items returns request builder for ExternalConnectorsExternalItem collection rcn
 func (b *ExternalConnectorsExternalConnectionRequestBuilder) Items() *ExternalConnectorsExternalConnectionItemsCollectionRequestBuilder {
 	bb := &ExternalConnectorsExternalConnectionItemsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/items"
@@ -320,7 +327,7 @@ func (r *ExternalConnectorsExternalConnectionItemsCollectionRequest) Add(ctx con
 	return
 }
 
-// Operations returns request builder for ExternalConnectorsConnectionOperation collection
+// Operations returns request builder for ExternalConnectorsConnectionOperation collection rcn
 func (b *ExternalConnectorsExternalConnectionRequestBuilder) Operations() *ExternalConnectorsExternalConnectionOperationsCollectionRequestBuilder {
 	bb := &ExternalConnectorsExternalConnectionOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -423,14 +430,14 @@ func (r *ExternalConnectorsExternalConnectionOperationsCollectionRequest) Add(ct
 	return
 }
 
-// Schema is navigation property
+// Schema is navigation property rn
 func (b *ExternalConnectorsExternalConnectionRequestBuilder) Schema() *ExternalConnectorsSchemaRequestBuilder {
 	bb := &ExternalConnectorsSchemaRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/schema"
 	return bb
 }
 
-// Members returns request builder for ExternalConnectorsIdentity collection
+// Members returns request builder for ExternalConnectorsIdentity collection rcn
 func (b *ExternalConnectorsExternalGroupRequestBuilder) Members() *ExternalConnectorsExternalGroupMembersCollectionRequestBuilder {
 	bb := &ExternalConnectorsExternalGroupMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"

@@ -6,12 +6,23 @@ package msgraph
 type TeleconferenceDeviceAudioQuality struct {
 	// TeleconferenceDeviceMediaQuality is the base model of TeleconferenceDeviceAudioQuality
 	TeleconferenceDeviceMediaQuality
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewTeleconferenceDeviceAudioQuality() (*TeleconferenceDeviceAudioQuality, error) {
+	newTeleconferenceDeviceAudioQuality := &TeleconferenceDeviceAudioQuality{
+		ODataType: "#microsoft.graph.TeleconferenceDeviceAudioQuality",
+	}
+	return newTeleconferenceDeviceAudioQuality, nil
 }
 
 // TeleconferenceDeviceMediaQuality undocumented
 type TeleconferenceDeviceMediaQuality struct {
 	// Object is the base model of TeleconferenceDeviceMediaQuality
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AverageInboundJitter undocumented
 	AverageInboundJitter *Duration `json:"averageInboundJitter,omitempty"`
 	// AverageInboundPacketLossRateInPercentage undocumented
@@ -56,10 +67,19 @@ type TeleconferenceDeviceMediaQuality struct {
 	RemotePort *int `json:"remotePort,omitempty"`
 }
 
+func NewTeleconferenceDeviceMediaQuality() (*TeleconferenceDeviceMediaQuality, error) {
+	newTeleconferenceDeviceMediaQuality := &TeleconferenceDeviceMediaQuality{
+		ODataType: "#microsoft.graph.TeleconferenceDeviceMediaQuality",
+	}
+	return newTeleconferenceDeviceMediaQuality, nil
+}
+
 // TeleconferenceDeviceQuality undocumented
 type TeleconferenceDeviceQuality struct {
 	// Object is the base model of TeleconferenceDeviceQuality
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CallChainID undocumented
 	CallChainID *UUID `json:"callChainId,omitempty"`
 	// CloudServiceDeploymentEnvironment undocumented
@@ -82,16 +102,34 @@ type TeleconferenceDeviceQuality struct {
 	ParticipantID *UUID `json:"participantId,omitempty"`
 }
 
+func NewTeleconferenceDeviceQuality() (*TeleconferenceDeviceQuality, error) {
+	newTeleconferenceDeviceQuality := &TeleconferenceDeviceQuality{
+		ODataType: "#microsoft.graph.TeleconferenceDeviceQuality",
+	}
+	return newTeleconferenceDeviceQuality, nil
+}
+
 // TeleconferenceDeviceScreenSharingQuality undocumented
 type TeleconferenceDeviceScreenSharingQuality struct {
 	// TeleconferenceDeviceVideoQuality is the base model of TeleconferenceDeviceScreenSharingQuality
 	TeleconferenceDeviceVideoQuality
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewTeleconferenceDeviceScreenSharingQuality() (*TeleconferenceDeviceScreenSharingQuality, error) {
+	newTeleconferenceDeviceScreenSharingQuality := &TeleconferenceDeviceScreenSharingQuality{
+		ODataType: "#microsoft.graph.TeleconferenceDeviceScreenSharingQuality",
+	}
+	return newTeleconferenceDeviceScreenSharingQuality, nil
 }
 
 // TeleconferenceDeviceVideoQuality undocumented
 type TeleconferenceDeviceVideoQuality struct {
 	// TeleconferenceDeviceMediaQuality is the base model of TeleconferenceDeviceVideoQuality
 	TeleconferenceDeviceMediaQuality
+
+	ODataType string `json:"@odata.type"`
 	// AverageInboundBitRate undocumented
 	AverageInboundBitRate *float64 `json:"averageInboundBitRate,omitempty"`
 	// AverageInboundFrameRate undocumented
@@ -100,4 +138,11 @@ type TeleconferenceDeviceVideoQuality struct {
 	AverageOutboundBitRate *float64 `json:"averageOutboundBitRate,omitempty"`
 	// AverageOutboundFrameRate undocumented
 	AverageOutboundFrameRate *float64 `json:"averageOutboundFrameRate,omitempty"`
+}
+
+func NewTeleconferenceDeviceVideoQuality() (*TeleconferenceDeviceVideoQuality, error) {
+	newTeleconferenceDeviceVideoQuality := &TeleconferenceDeviceVideoQuality{
+		ODataType: "#microsoft.graph.TeleconferenceDeviceVideoQuality",
+	}
+	return newTeleconferenceDeviceVideoQuality, nil
 }

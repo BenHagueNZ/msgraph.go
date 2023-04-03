@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsErf_PreciseRequestBuilder struct{ BaseRequestBuilder }
 
-// Erf_Precise action undocumented
+// Erf_Precise action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Erf_Precise(reqObj *WorkbookFunctionsErf_PreciseRequestParameter) *WorkbookFunctionsErf_PreciseRequestBuilder {
 	bb := &WorkbookFunctionsErf_PreciseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Erf_Precise"

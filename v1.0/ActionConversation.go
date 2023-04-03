@@ -23,7 +23,7 @@ type ConversationThreadReplyRequestParameter struct {
 	Post *Post `json:"Post,omitempty"`
 }
 
-// Threads returns request builder for ConversationThread collection
+// Threads returns request builder for ConversationThread collection rcn
 func (b *ConversationRequestBuilder) Threads() *ConversationThreadsCollectionRequestBuilder {
 	bb := &ConversationThreadsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/threads"
@@ -126,7 +126,7 @@ func (r *ConversationThreadsCollectionRequest) Add(ctx context.Context, reqObj *
 	return
 }
 
-// Posts returns request builder for Post collection
+// Posts returns request builder for Post collection rcn
 func (b *ConversationThreadRequestBuilder) Posts() *ConversationThreadPostsCollectionRequestBuilder {
 	bb := &ConversationThreadPostsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/posts"
@@ -227,4 +227,18 @@ func (r *ConversationThreadPostsCollectionRequest) Get(ctx context.Context) ([]P
 func (r *ConversationThreadPostsCollectionRequest) Add(ctx context.Context, reqObj *Post) (resObj *Post, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Conversation is navigation property rn
+func (b *ConversationRequestBuilder) Conversation() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ConversationThread is navigation property rn
+func (b *ConversationThreadRequestBuilder) ConversationThread() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

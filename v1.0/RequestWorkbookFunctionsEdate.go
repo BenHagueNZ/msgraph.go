@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsEdateRequestBuilder struct{ BaseRequestBuilder }
 
-// Edate action undocumented
+// Edate action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Edate(reqObj *WorkbookFunctionsEdateRequestParameter) *WorkbookFunctionsEdateRequestBuilder {
 	bb := &WorkbookFunctionsEdateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Edate"

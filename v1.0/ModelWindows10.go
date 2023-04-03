@@ -6,6 +6,8 @@ package msgraph
 type Windows10CompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of Windows10CompliancePolicy
 	DeviceCompliancePolicy
+
+	ODataType string `json:"@odata.type"`
 	// BitLockerEnabled undocumented
 	BitLockerEnabled *bool `json:"bitLockerEnabled,omitempty"`
 	// CodeIntegrityEnabled undocumented
@@ -46,18 +48,36 @@ type Windows10CompliancePolicy struct {
 	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
 }
 
+func NewWindows10CompliancePolicy() (*Windows10CompliancePolicy, error) {
+	newWindows10CompliancePolicy := &Windows10CompliancePolicy{
+		ODataType: "#microsoft.graph.Windows10CompliancePolicy",
+	}
+	return newWindows10CompliancePolicy, nil
+}
+
 // Windows10CustomConfiguration undocumented
 type Windows10CustomConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10CustomConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// OMASettings undocumented
 	OMASettings []OMASetting `json:"omaSettings,omitempty"`
+}
+
+func NewWindows10CustomConfiguration() (*Windows10CustomConfiguration, error) {
+	newWindows10CustomConfiguration := &Windows10CustomConfiguration{
+		ODataType: "#microsoft.graph.Windows10CustomConfiguration",
+	}
+	return newWindows10CustomConfiguration, nil
 }
 
 // Windows10EndpointProtectionConfiguration undocumented
 type Windows10EndpointProtectionConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10EndpointProtectionConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// ApplicationGuardAllowPersistence undocumented
 	ApplicationGuardAllowPersistence *bool `json:"applicationGuardAllowPersistence,omitempty"`
 	// ApplicationGuardAllowPrintToLocalPrinters undocumented
@@ -132,18 +152,36 @@ type Windows10EndpointProtectionConfiguration struct {
 	SmartScreenEnableInShell *bool `json:"smartScreenEnableInShell,omitempty"`
 }
 
+func NewWindows10EndpointProtectionConfiguration() (*Windows10EndpointProtectionConfiguration, error) {
+	newWindows10EndpointProtectionConfiguration := &Windows10EndpointProtectionConfiguration{
+		ODataType: "#microsoft.graph.Windows10EndpointProtectionConfiguration",
+	}
+	return newWindows10EndpointProtectionConfiguration, nil
+}
+
 // Windows10EnterpriseModernAppManagementConfiguration undocumented
 type Windows10EnterpriseModernAppManagementConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10EnterpriseModernAppManagementConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// UninstallBuiltInApps undocumented
 	UninstallBuiltInApps *bool `json:"uninstallBuiltInApps,omitempty"`
+}
+
+func NewWindows10EnterpriseModernAppManagementConfiguration() (*Windows10EnterpriseModernAppManagementConfiguration, error) {
+	newWindows10EnterpriseModernAppManagementConfiguration := &Windows10EnterpriseModernAppManagementConfiguration{
+		ODataType: "#microsoft.graph.Windows10EnterpriseModernAppManagementConfiguration",
+	}
+	return newWindows10EnterpriseModernAppManagementConfiguration, nil
 }
 
 // Windows10GeneralConfiguration undocumented
 type Windows10GeneralConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10GeneralConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// AccountsBlockAddingNonMicrosoftAccountEmail undocumented
 	AccountsBlockAddingNonMicrosoftAccountEmail *bool `json:"accountsBlockAddingNonMicrosoftAccountEmail,omitempty"`
 	// AntiTheftModeBlocked undocumented
@@ -548,10 +586,19 @@ type Windows10GeneralConfiguration struct {
 	WirelessDisplayRequirePinForPairing *bool `json:"wirelessDisplayRequirePinForPairing,omitempty"`
 }
 
+func NewWindows10GeneralConfiguration() (*Windows10GeneralConfiguration, error) {
+	newWindows10GeneralConfiguration := &Windows10GeneralConfiguration{
+		ODataType: "#microsoft.graph.Windows10GeneralConfiguration",
+	}
+	return newWindows10GeneralConfiguration, nil
+}
+
 // Windows10MobileCompliancePolicy undocumented
 type Windows10MobileCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of Windows10MobileCompliancePolicy
 	DeviceCompliancePolicy
+
+	ODataType string `json:"@odata.type"`
 	// BitLockerEnabled undocumented
 	BitLockerEnabled *bool `json:"bitLockerEnabled,omitempty"`
 	// CodeIntegrityEnabled undocumented
@@ -586,10 +633,19 @@ type Windows10MobileCompliancePolicy struct {
 	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
 }
 
+func NewWindows10MobileCompliancePolicy() (*Windows10MobileCompliancePolicy, error) {
+	newWindows10MobileCompliancePolicy := &Windows10MobileCompliancePolicy{
+		ODataType: "#microsoft.graph.Windows10MobileCompliancePolicy",
+	}
+	return newWindows10MobileCompliancePolicy, nil
+}
+
 // Windows10NetworkProxyServer undocumented
 type Windows10NetworkProxyServer struct {
 	// Object is the base model of Windows10NetworkProxyServer
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Address undocumented
 	Address *string `json:"address,omitempty"`
 	// Exceptions undocumented
@@ -598,10 +654,19 @@ type Windows10NetworkProxyServer struct {
 	UseForLocalAddresses *bool `json:"useForLocalAddresses,omitempty"`
 }
 
+func NewWindows10NetworkProxyServer() (*Windows10NetworkProxyServer, error) {
+	newWindows10NetworkProxyServer := &Windows10NetworkProxyServer{
+		ODataType: "#microsoft.graph.Windows10NetworkProxyServer",
+	}
+	return newWindows10NetworkProxyServer, nil
+}
+
 // Windows10SecureAssessmentConfiguration undocumented
 type Windows10SecureAssessmentConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10SecureAssessmentConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// AllowPrinting undocumented
 	AllowPrinting *bool `json:"allowPrinting,omitempty"`
 	// AllowScreenCapture undocumented
@@ -614,10 +679,19 @@ type Windows10SecureAssessmentConfiguration struct {
 	LaunchURI *string `json:"launchUri,omitempty"`
 }
 
+func NewWindows10SecureAssessmentConfiguration() (*Windows10SecureAssessmentConfiguration, error) {
+	newWindows10SecureAssessmentConfiguration := &Windows10SecureAssessmentConfiguration{
+		ODataType: "#microsoft.graph.Windows10SecureAssessmentConfiguration",
+	}
+	return newWindows10SecureAssessmentConfiguration, nil
+}
+
 // Windows10TeamGeneralConfiguration undocumented
 type Windows10TeamGeneralConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10TeamGeneralConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// AzureOperationalInsightsBlockTelemetry undocumented
 	AzureOperationalInsightsBlockTelemetry *bool `json:"azureOperationalInsightsBlockTelemetry,omitempty"`
 	// AzureOperationalInsightsWorkspaceID undocumented
@@ -658,4 +732,11 @@ type Windows10TeamGeneralConfiguration struct {
 	WelcomeScreenBlockAutomaticWakeUp *bool `json:"welcomeScreenBlockAutomaticWakeUp,omitempty"`
 	// WelcomeScreenMeetingInformation undocumented
 	WelcomeScreenMeetingInformation *WelcomeScreenMeetingInformation `json:"welcomeScreenMeetingInformation,omitempty"`
+}
+
+func NewWindows10TeamGeneralConfiguration() (*Windows10TeamGeneralConfiguration, error) {
+	newWindows10TeamGeneralConfiguration := &Windows10TeamGeneralConfiguration{
+		ODataType: "#microsoft.graph.Windows10TeamGeneralConfiguration",
+	}
+	return newWindows10TeamGeneralConfiguration, nil
 }

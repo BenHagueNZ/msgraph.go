@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsMinuteRequestBuilder struct{ BaseRequestBuilder }
 
-// Minute action undocumented
+// Minute action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Minute(reqObj *WorkbookFunctionsMinuteRequestParameter) *WorkbookFunctionsMinuteRequestBuilder {
 	bb := &WorkbookFunctionsMinuteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Minute"

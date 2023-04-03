@@ -6,4 +6,13 @@ package msgraph
 type JSON struct {
 	// Object is the base model of JSON
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewJSON() (*JSON, error) {
+	newJSON := &JSON{
+		ODataType: "#microsoft.graph.Json",
+	}
+	return newJSON, nil
 }

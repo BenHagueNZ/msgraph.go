@@ -6,6 +6,8 @@ package msgraph
 type MacOSCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of MacOSCompliancePolicy
 	DeviceCompliancePolicy
+
+	ODataType string `json:"@odata.type"`
 	// DeviceThreatProtectionEnabled undocumented
 	DeviceThreatProtectionEnabled *bool `json:"deviceThreatProtectionEnabled,omitempty"`
 	// DeviceThreatProtectionRequiredSecurityLevel undocumented
@@ -42,10 +44,19 @@ type MacOSCompliancePolicy struct {
 	SystemIntegrityProtectionEnabled *bool `json:"systemIntegrityProtectionEnabled,omitempty"`
 }
 
+func NewMacOSCompliancePolicy() (*MacOSCompliancePolicy, error) {
+	newMacOSCompliancePolicy := &MacOSCompliancePolicy{
+		ODataType: "#microsoft.graph.MacOSCompliancePolicy",
+	}
+	return newMacOSCompliancePolicy, nil
+}
+
 // MacOSCustomConfiguration undocumented
 type MacOSCustomConfiguration struct {
 	// DeviceConfiguration is the base model of MacOSCustomConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// Payload undocumented
 	Payload *Binary `json:"payload,omitempty"`
 	// PayloadFileName undocumented
@@ -54,16 +65,34 @@ type MacOSCustomConfiguration struct {
 	PayloadName *string `json:"payloadName,omitempty"`
 }
 
+func NewMacOSCustomConfiguration() (*MacOSCustomConfiguration, error) {
+	newMacOSCustomConfiguration := &MacOSCustomConfiguration{
+		ODataType: "#microsoft.graph.MacOSCustomConfiguration",
+	}
+	return newMacOSCustomConfiguration, nil
+}
+
 // MacOSDeviceFeaturesConfiguration undocumented
 type MacOSDeviceFeaturesConfiguration struct {
 	// AppleDeviceFeaturesConfigurationBase is the base model of MacOSDeviceFeaturesConfiguration
 	AppleDeviceFeaturesConfigurationBase
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewMacOSDeviceFeaturesConfiguration() (*MacOSDeviceFeaturesConfiguration, error) {
+	newMacOSDeviceFeaturesConfiguration := &MacOSDeviceFeaturesConfiguration{
+		ODataType: "#microsoft.graph.MacOSDeviceFeaturesConfiguration",
+	}
+	return newMacOSDeviceFeaturesConfiguration, nil
 }
 
 // MacOSGeneralDeviceConfiguration undocumented
 type MacOSGeneralDeviceConfiguration struct {
 	// DeviceConfiguration is the base model of MacOSGeneralDeviceConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// CompliantAppListType undocumented
 	CompliantAppListType *AppListType `json:"compliantAppListType,omitempty"`
 	// CompliantAppsList undocumented
@@ -90,10 +119,19 @@ type MacOSGeneralDeviceConfiguration struct {
 	PasswordRequiredType *RequiredPasswordType `json:"passwordRequiredType,omitempty"`
 }
 
+func NewMacOSGeneralDeviceConfiguration() (*MacOSGeneralDeviceConfiguration, error) {
+	newMacOSGeneralDeviceConfiguration := &MacOSGeneralDeviceConfiguration{
+		ODataType: "#microsoft.graph.MacOSGeneralDeviceConfiguration",
+	}
+	return newMacOSGeneralDeviceConfiguration, nil
+}
+
 // MacOSLobApp undocumented
 type MacOSLobApp struct {
 	// MobileLobApp is the base model of MacOSLobApp
 	MobileLobApp
+
+	ODataType string `json:"@odata.type"`
 	// BuildNumber undocumented
 	BuildNumber *string `json:"buildNumber,omitempty"`
 	// BundleID undocumented
@@ -114,10 +152,19 @@ type MacOSLobApp struct {
 	VersionNumber *string `json:"versionNumber,omitempty"`
 }
 
+func NewMacOSLobApp() (*MacOSLobApp, error) {
+	newMacOSLobApp := &MacOSLobApp{
+		ODataType: "#microsoft.graph.MacOSLobApp",
+	}
+	return newMacOSLobApp, nil
+}
+
 // MacOSLobChildApp undocumented
 type MacOSLobChildApp struct {
 	// Object is the base model of MacOSLobChildApp
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// BuildNumber undocumented
 	BuildNumber *string `json:"buildNumber,omitempty"`
 	// BundleID undocumented
@@ -126,18 +173,36 @@ type MacOSLobChildApp struct {
 	VersionNumber *string `json:"versionNumber,omitempty"`
 }
 
+func NewMacOSLobChildApp() (*MacOSLobChildApp, error) {
+	newMacOSLobChildApp := &MacOSLobChildApp{
+		ODataType: "#microsoft.graph.MacOSLobChildApp",
+	}
+	return newMacOSLobChildApp, nil
+}
+
 // MacOSMicrosoftEdgeApp undocumented
 type MacOSMicrosoftEdgeApp struct {
 	// MobileApp is the base model of MacOSMicrosoftEdgeApp
 	MobileApp
+
+	ODataType string `json:"@odata.type"`
 	// Channel undocumented
 	Channel *MicrosoftEdgeChannel `json:"channel,omitempty"`
+}
+
+func NewMacOSMicrosoftEdgeApp() (*MacOSMicrosoftEdgeApp, error) {
+	newMacOSMicrosoftEdgeApp := &MacOSMicrosoftEdgeApp{
+		ODataType: "#microsoft.graph.MacOSMicrosoftEdgeApp",
+	}
+	return newMacOSMicrosoftEdgeApp, nil
 }
 
 // MacOSMinimumOperatingSystem undocumented
 type MacOSMinimumOperatingSystem struct {
 	// Object is the base model of MacOSMinimumOperatingSystem
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// V10_10 undocumented
 	V10_10 *bool `json:"v10_10,omitempty"`
 	// V10_11 undocumented
@@ -164,16 +229,41 @@ type MacOSMinimumOperatingSystem struct {
 	V13_0 *bool `json:"v13_0,omitempty"`
 }
 
+func NewMacOSMinimumOperatingSystem() (*MacOSMinimumOperatingSystem, error) {
+	newMacOSMinimumOperatingSystem := &MacOSMinimumOperatingSystem{
+		ODataType: "#microsoft.graph.MacOSMinimumOperatingSystem",
+	}
+	return newMacOSMinimumOperatingSystem, nil
+}
+
 // MacOSOfficeSuiteApp undocumented
 type MacOSOfficeSuiteApp struct {
 	// MobileApp is the base model of MacOSOfficeSuiteApp
 	MobileApp
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewMacOSOfficeSuiteApp() (*MacOSOfficeSuiteApp, error) {
+	newMacOSOfficeSuiteApp := &MacOSOfficeSuiteApp{
+		ODataType: "#microsoft.graph.MacOSOfficeSuiteApp",
+	}
+	return newMacOSOfficeSuiteApp, nil
 }
 
 // MacOsLobAppAssignmentSettings undocumented
 type MacOsLobAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of MacOsLobAppAssignmentSettings
 	MobileAppAssignmentSettings
+
+	ODataType string `json:"@odata.type"`
 	// UninstallOnDeviceRemoval undocumented
 	UninstallOnDeviceRemoval *bool `json:"uninstallOnDeviceRemoval,omitempty"`
+}
+
+func NewMacOsLobAppAssignmentSettings() (*MacOsLobAppAssignmentSettings, error) {
+	newMacOsLobAppAssignmentSettings := &MacOsLobAppAssignmentSettings{
+		ODataType: "#microsoft.graph.MacOsLobAppAssignmentSettings",
+	}
+	return newMacOsLobAppAssignmentSettings, nil
 }

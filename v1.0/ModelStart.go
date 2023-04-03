@@ -6,4 +6,13 @@ package msgraph
 type StartHoldMusicOperation struct {
 	// CommsOperation is the base model of StartHoldMusicOperation
 	CommsOperation
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewStartHoldMusicOperation() (*StartHoldMusicOperation, error) {
+	newStartHoldMusicOperation := &StartHoldMusicOperation{
+		ODataType: "#microsoft.graph.StartHoldMusicOperation",
+	}
+	return newStartHoldMusicOperation, nil
 }

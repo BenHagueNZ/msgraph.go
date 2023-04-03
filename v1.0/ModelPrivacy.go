@@ -6,16 +6,34 @@ package msgraph
 type Privacy struct {
 	// Object is the base model of Privacy
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// SubjectRightsRequests undocumented
 	SubjectRightsRequests []SubjectRightsRequestObject `json:"subjectRightsRequests,omitempty"`
+}
+
+func NewPrivacy() (*Privacy, error) {
+	newPrivacy := &Privacy{
+		ODataType: "#microsoft.graph.Privacy",
+	}
+	return newPrivacy, nil
 }
 
 // PrivacyProfile undocumented
 type PrivacyProfile struct {
 	// Object is the base model of PrivacyProfile
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ContactEmail undocumented
 	ContactEmail *string `json:"contactEmail,omitempty"`
 	// StatementURL undocumented
 	StatementURL *string `json:"statementUrl,omitempty"`
+}
+
+func NewPrivacyProfile() (*PrivacyProfile, error) {
+	newPrivacyProfile := &PrivacyProfile{
+		ODataType: "#microsoft.graph.PrivacyProfile",
+	}
+	return newPrivacyProfile, nil
 }

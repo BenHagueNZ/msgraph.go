@@ -6,6 +6,8 @@ package msgraph
 type Drive struct {
 	// BaseItem is the base model of Drive
 	BaseItem
+
+	ODataType string `json:"@odata.type"`
 	// DriveType undocumented
 	DriveType *string `json:"driveType,omitempty"`
 	// Owner undocumented
@@ -30,10 +32,19 @@ type Drive struct {
 	Special []DriveItem `json:"special,omitempty"`
 }
 
+func NewDrive() (*Drive, error) {
+	newDrive := &Drive{
+		ODataType: "#microsoft.graph.Drive",
+	}
+	return newDrive, nil
+}
+
 // DriveItem undocumented
 type DriveItem struct {
 	// BaseItem is the base model of DriveItem
 	BaseItem
+
+	ODataType string `json:"@odata.type"`
 	// Audio undocumented
 	Audio *Audio `json:"audio,omitempty"`
 	// Bundle undocumented
@@ -100,10 +111,19 @@ type DriveItem struct {
 	Versions []DriveItemVersion `json:"versions,omitempty"`
 }
 
+func NewDriveItem() (*DriveItem, error) {
+	newDriveItem := &DriveItem{
+		ODataType: "#microsoft.graph.DriveItem",
+	}
+	return newDriveItem, nil
+}
+
 // DriveItemUploadableProperties undocumented
 type DriveItemUploadableProperties struct {
 	// Object is the base model of DriveItemUploadableProperties
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// FileSize undocumented
@@ -114,24 +134,49 @@ type DriveItemUploadableProperties struct {
 	Name *string `json:"name,omitempty"`
 }
 
+func NewDriveItemUploadableProperties() (*DriveItemUploadableProperties, error) {
+	newDriveItemUploadableProperties := &DriveItemUploadableProperties{
+		ODataType: "#microsoft.graph.DriveItemUploadableProperties",
+	}
+	return newDriveItemUploadableProperties, nil
+}
+
 // DriveItemVersion undocumented
 type DriveItemVersion struct {
 	// BaseItemVersion is the base model of DriveItemVersion
 	BaseItemVersion
+
+	ODataType string `json:"@odata.type"`
 	// Content undocumented
 	Content *Stream `json:"content,omitempty"`
 	// Size undocumented
 	Size *int `json:"size,omitempty"`
 }
 
+func NewDriveItemVersion() (*DriveItemVersion, error) {
+	newDriveItemVersion := &DriveItemVersion{
+		ODataType: "#microsoft.graph.DriveItemVersion",
+	}
+	return newDriveItemVersion, nil
+}
+
 // DriveRecipient undocumented
 type DriveRecipient struct {
 	// Object is the base model of DriveRecipient
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Alias undocumented
 	Alias *string `json:"alias,omitempty"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
 	// ObjectID undocumented
 	ObjectID *string `json:"objectId,omitempty"`
+}
+
+func NewDriveRecipient() (*DriveRecipient, error) {
+	newDriveRecipient := &DriveRecipient{
+		ODataType: "#microsoft.graph.DriveRecipient",
+	}
+	return newDriveRecipient, nil
 }

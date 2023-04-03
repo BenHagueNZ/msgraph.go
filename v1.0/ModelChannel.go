@@ -8,6 +8,8 @@ import "time"
 type Channel struct {
 	// Entity is the base model of Channel
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -36,22 +38,40 @@ type Channel struct {
 	Tabs []TeamsTab `json:"tabs,omitempty"`
 }
 
+func NewChannel() (*Channel, error) {
+	newChannel := &Channel{
+		ODataType: "#microsoft.graph.Channel",
+	}
+	return newChannel, nil
+}
+
 // ChannelAddedEventMessageDetail undocumented
 type ChannelAddedEventMessageDetail struct {
 	// EventMessageDetail is the base model of ChannelAddedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// ChannelDisplayName undocumented
 	ChannelDisplayName *string `json:"channelDisplayName,omitempty"`
 	// ChannelID undocumented
 	ChannelID *string `json:"channelId,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
+}
+
+func NewChannelAddedEventMessageDetail() (*ChannelAddedEventMessageDetail, error) {
+	newChannelAddedEventMessageDetail := &ChannelAddedEventMessageDetail{
+		ODataType: "#microsoft.graph.ChannelAddedEventMessageDetail",
+	}
+	return newChannelAddedEventMessageDetail, nil
 }
 
 // ChannelDeletedEventMessageDetail undocumented
 type ChannelDeletedEventMessageDetail struct {
 	// EventMessageDetail is the base model of ChannelDeletedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// ChannelDisplayName undocumented
 	ChannelDisplayName *string `json:"channelDisplayName,omitempty"`
 	// ChannelID undocumented
@@ -60,10 +80,19 @@ type ChannelDeletedEventMessageDetail struct {
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 }
 
+func NewChannelDeletedEventMessageDetail() (*ChannelDeletedEventMessageDetail, error) {
+	newChannelDeletedEventMessageDetail := &ChannelDeletedEventMessageDetail{
+		ODataType: "#microsoft.graph.ChannelDeletedEventMessageDetail",
+	}
+	return newChannelDeletedEventMessageDetail, nil
+}
+
 // ChannelDescriptionUpdatedEventMessageDetail undocumented
 type ChannelDescriptionUpdatedEventMessageDetail struct {
 	// EventMessageDetail is the base model of ChannelDescriptionUpdatedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// ChannelDescription undocumented
 	ChannelDescription *string `json:"channelDescription,omitempty"`
 	// ChannelID undocumented
@@ -72,30 +101,57 @@ type ChannelDescriptionUpdatedEventMessageDetail struct {
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 }
 
+func NewChannelDescriptionUpdatedEventMessageDetail() (*ChannelDescriptionUpdatedEventMessageDetail, error) {
+	newChannelDescriptionUpdatedEventMessageDetail := &ChannelDescriptionUpdatedEventMessageDetail{
+		ODataType: "#microsoft.graph.ChannelDescriptionUpdatedEventMessageDetail",
+	}
+	return newChannelDescriptionUpdatedEventMessageDetail, nil
+}
+
 // ChannelIdentity undocumented
 type ChannelIdentity struct {
 	// Object is the base model of ChannelIdentity
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ChannelID undocumented
 	ChannelID *string `json:"channelId,omitempty"`
 	// TeamID undocumented
 	TeamID *string `json:"teamId,omitempty"`
+}
+
+func NewChannelIdentity() (*ChannelIdentity, error) {
+	newChannelIdentity := &ChannelIdentity{
+		ODataType: "#microsoft.graph.ChannelIdentity",
+	}
+	return newChannelIdentity, nil
 }
 
 // ChannelMembersNotificationRecipient undocumented
 type ChannelMembersNotificationRecipient struct {
 	// TeamworkNotificationRecipient is the base model of ChannelMembersNotificationRecipient
 	TeamworkNotificationRecipient
+
+	ODataType string `json:"@odata.type"`
 	// ChannelID undocumented
 	ChannelID *string `json:"channelId,omitempty"`
 	// TeamID undocumented
 	TeamID *string `json:"teamId,omitempty"`
 }
 
+func NewChannelMembersNotificationRecipient() (*ChannelMembersNotificationRecipient, error) {
+	newChannelMembersNotificationRecipient := &ChannelMembersNotificationRecipient{
+		ODataType: "#microsoft.graph.ChannelMembersNotificationRecipient",
+	}
+	return newChannelMembersNotificationRecipient, nil
+}
+
 // ChannelRenamedEventMessageDetail undocumented
 type ChannelRenamedEventMessageDetail struct {
 	// EventMessageDetail is the base model of ChannelRenamedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// ChannelDisplayName undocumented
 	ChannelDisplayName *string `json:"channelDisplayName,omitempty"`
 	// ChannelID undocumented
@@ -104,22 +160,47 @@ type ChannelRenamedEventMessageDetail struct {
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 }
 
+func NewChannelRenamedEventMessageDetail() (*ChannelRenamedEventMessageDetail, error) {
+	newChannelRenamedEventMessageDetail := &ChannelRenamedEventMessageDetail{
+		ODataType: "#microsoft.graph.ChannelRenamedEventMessageDetail",
+	}
+	return newChannelRenamedEventMessageDetail, nil
+}
+
 // ChannelSetAsFavoriteByDefaultEventMessageDetail undocumented
 type ChannelSetAsFavoriteByDefaultEventMessageDetail struct {
 	// EventMessageDetail is the base model of ChannelSetAsFavoriteByDefaultEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// ChannelID undocumented
 	ChannelID *string `json:"channelId,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 }
 
+func NewChannelSetAsFavoriteByDefaultEventMessageDetail() (*ChannelSetAsFavoriteByDefaultEventMessageDetail, error) {
+	newChannelSetAsFavoriteByDefaultEventMessageDetail := &ChannelSetAsFavoriteByDefaultEventMessageDetail{
+		ODataType: "#microsoft.graph.ChannelSetAsFavoriteByDefaultEventMessageDetail",
+	}
+	return newChannelSetAsFavoriteByDefaultEventMessageDetail, nil
+}
+
 // ChannelUnsetAsFavoriteByDefaultEventMessageDetail undocumented
 type ChannelUnsetAsFavoriteByDefaultEventMessageDetail struct {
 	// EventMessageDetail is the base model of ChannelUnsetAsFavoriteByDefaultEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// ChannelID undocumented
 	ChannelID *string `json:"channelId,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
+}
+
+func NewChannelUnsetAsFavoriteByDefaultEventMessageDetail() (*ChannelUnsetAsFavoriteByDefaultEventMessageDetail, error) {
+	newChannelUnsetAsFavoriteByDefaultEventMessageDetail := &ChannelUnsetAsFavoriteByDefaultEventMessageDetail{
+		ODataType: "#microsoft.graph.ChannelUnsetAsFavoriteByDefaultEventMessageDetail",
+	}
+	return newChannelUnsetAsFavoriteByDefaultEventMessageDetail, nil
 }

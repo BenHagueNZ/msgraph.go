@@ -8,6 +8,8 @@ import "time"
 type Organization struct {
 	// DirectoryObject is the base model of Organization
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// AssignedPlans undocumented
 	AssignedPlans []AssignedPlan `json:"assignedPlans,omitempty"`
 	// BusinessPhones undocumented
@@ -62,4 +64,11 @@ type Organization struct {
 	CertificateBasedAuthConfiguration []CertificateBasedAuthConfiguration `json:"certificateBasedAuthConfiguration,omitempty"`
 	// Extensions undocumented
 	Extensions []Extension `json:"extensions,omitempty"`
+}
+
+func NewOrganization() (*Organization, error) {
+	newOrganization := &Organization{
+		ODataType: "#microsoft.graph.Organization",
+	}
+	return newOrganization, nil
 }

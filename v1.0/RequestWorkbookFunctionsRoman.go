@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsRomanRequestBuilder struct{ BaseRequestBuilder }
 
-// Roman action undocumented
+// Roman action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Roman(reqObj *WorkbookFunctionsRomanRequestParameter) *WorkbookFunctionsRomanRequestBuilder {
 	bb := &WorkbookFunctionsRomanRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Roman"

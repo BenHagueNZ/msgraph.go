@@ -6,8 +6,17 @@ package msgraph
 type MimeContent struct {
 	// Object is the base model of MimeContent
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Type undocumented
 	Type *string `json:"type,omitempty"`
 	// Value undocumented
 	Value *Binary `json:"value,omitempty"`
+}
+
+func NewMimeContent() (*MimeContent, error) {
+	newMimeContent := &MimeContent{
+		ODataType: "#microsoft.graph.MimeContent",
+	}
+	return newMimeContent, nil
 }

@@ -6,16 +6,27 @@ package msgraph
 type Teamwork struct {
 	// Entity is the base model of Teamwork
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// WorkforceIntegrations undocumented
 	WorkforceIntegrations []WorkforceIntegration `json:"workforceIntegrations,omitempty"`
 	// DeletedTeams undocumented
 	DeletedTeams []DeletedTeam `json:"deletedTeams,omitempty"`
 }
 
+func NewTeamwork() (*Teamwork, error) {
+	newTeamwork := &Teamwork{
+		ODataType: "#microsoft.graph.Teamwork",
+	}
+	return newTeamwork, nil
+}
+
 // TeamworkActivityTopic undocumented
 type TeamworkActivityTopic struct {
 	// Object is the base model of TeamworkActivityTopic
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Source undocumented
 	Source *TeamworkActivityTopicSource `json:"source,omitempty"`
 	// Value undocumented
@@ -24,48 +35,102 @@ type TeamworkActivityTopic struct {
 	WebURL *string `json:"webUrl,omitempty"`
 }
 
+func NewTeamworkActivityTopic() (*TeamworkActivityTopic, error) {
+	newTeamworkActivityTopic := &TeamworkActivityTopic{
+		ODataType: "#microsoft.graph.TeamworkActivityTopic",
+	}
+	return newTeamworkActivityTopic, nil
+}
+
 // TeamworkApplicationIdentity undocumented
 type TeamworkApplicationIdentity struct {
 	// Identity is the base model of TeamworkApplicationIdentity
 	Identity
+
+	ODataType string `json:"@odata.type"`
 	// ApplicationIdentityType undocumented
 	ApplicationIdentityType *TeamworkApplicationIdentityType `json:"applicationIdentityType,omitempty"`
+}
+
+func NewTeamworkApplicationIdentity() (*TeamworkApplicationIdentity, error) {
+	newTeamworkApplicationIdentity := &TeamworkApplicationIdentity{
+		ODataType: "#microsoft.graph.TeamworkApplicationIdentity",
+	}
+	return newTeamworkApplicationIdentity, nil
 }
 
 // TeamworkBot undocumented
 type TeamworkBot struct {
 	// Entity is the base model of TeamworkBot
 	Entity
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewTeamworkBot() (*TeamworkBot, error) {
+	newTeamworkBot := &TeamworkBot{
+		ODataType: "#microsoft.graph.TeamworkBot",
+	}
+	return newTeamworkBot, nil
 }
 
 // TeamworkConversationIdentity undocumented
 type TeamworkConversationIdentity struct {
 	// Identity is the base model of TeamworkConversationIdentity
 	Identity
+
+	ODataType string `json:"@odata.type"`
 	// ConversationIdentityType undocumented
 	ConversationIdentityType *TeamworkConversationIdentityType `json:"conversationIdentityType,omitempty"`
+}
+
+func NewTeamworkConversationIdentity() (*TeamworkConversationIdentity, error) {
+	newTeamworkConversationIdentity := &TeamworkConversationIdentity{
+		ODataType: "#microsoft.graph.TeamworkConversationIdentity",
+	}
+	return newTeamworkConversationIdentity, nil
 }
 
 // TeamworkHostedContent undocumented
 type TeamworkHostedContent struct {
 	// Entity is the base model of TeamworkHostedContent
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ContentBytes undocumented
 	ContentBytes *Binary `json:"contentBytes,omitempty"`
 	// ContentType undocumented
 	ContentType *string `json:"contentType,omitempty"`
 }
 
+func NewTeamworkHostedContent() (*TeamworkHostedContent, error) {
+	newTeamworkHostedContent := &TeamworkHostedContent{
+		ODataType: "#microsoft.graph.TeamworkHostedContent",
+	}
+	return newTeamworkHostedContent, nil
+}
+
 // TeamworkNotificationRecipient undocumented
 type TeamworkNotificationRecipient struct {
 	// Object is the base model of TeamworkNotificationRecipient
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewTeamworkNotificationRecipient() (*TeamworkNotificationRecipient, error) {
+	newTeamworkNotificationRecipient := &TeamworkNotificationRecipient{
+		ODataType: "#microsoft.graph.TeamworkNotificationRecipient",
+	}
+	return newTeamworkNotificationRecipient, nil
 }
 
 // TeamworkOnlineMeetingInfo undocumented
 type TeamworkOnlineMeetingInfo struct {
 	// Object is the base model of TeamworkOnlineMeetingInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CalendarEventID undocumented
 	CalendarEventID *string `json:"calendarEventId,omitempty"`
 	// JoinWebURL undocumented
@@ -74,10 +139,19 @@ type TeamworkOnlineMeetingInfo struct {
 	Organizer *TeamworkUserIdentity `json:"organizer,omitempty"`
 }
 
+func NewTeamworkOnlineMeetingInfo() (*TeamworkOnlineMeetingInfo, error) {
+	newTeamworkOnlineMeetingInfo := &TeamworkOnlineMeetingInfo{
+		ODataType: "#microsoft.graph.TeamworkOnlineMeetingInfo",
+	}
+	return newTeamworkOnlineMeetingInfo, nil
+}
+
 // TeamworkTag undocumented
 type TeamworkTag struct {
 	// Entity is the base model of TeamworkTag
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -92,16 +166,34 @@ type TeamworkTag struct {
 	Members []TeamworkTagMember `json:"members,omitempty"`
 }
 
+func NewTeamworkTag() (*TeamworkTag, error) {
+	newTeamworkTag := &TeamworkTag{
+		ODataType: "#microsoft.graph.TeamworkTag",
+	}
+	return newTeamworkTag, nil
+}
+
 // TeamworkTagIdentity undocumented
 type TeamworkTagIdentity struct {
 	// Identity is the base model of TeamworkTagIdentity
 	Identity
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewTeamworkTagIdentity() (*TeamworkTagIdentity, error) {
+	newTeamworkTagIdentity := &TeamworkTagIdentity{
+		ODataType: "#microsoft.graph.TeamworkTagIdentity",
+	}
+	return newTeamworkTagIdentity, nil
 }
 
 // TeamworkTagMember undocumented
 type TeamworkTagMember struct {
 	// Entity is the base model of TeamworkTagMember
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// TenantID undocumented
@@ -110,10 +202,26 @@ type TeamworkTagMember struct {
 	UserID *string `json:"userId,omitempty"`
 }
 
+func NewTeamworkTagMember() (*TeamworkTagMember, error) {
+	newTeamworkTagMember := &TeamworkTagMember{
+		ODataType: "#microsoft.graph.TeamworkTagMember",
+	}
+	return newTeamworkTagMember, nil
+}
+
 // TeamworkUserIdentity undocumented
 type TeamworkUserIdentity struct {
 	// Identity is the base model of TeamworkUserIdentity
 	Identity
+
+	ODataType string `json:"@odata.type"`
 	// UserIdentityType undocumented
 	UserIdentityType *TeamworkUserIdentityType `json:"userIdentityType,omitempty"`
+}
+
+func NewTeamworkUserIdentity() (*TeamworkUserIdentity, error) {
+	newTeamworkUserIdentity := &TeamworkUserIdentity{
+		ODataType: "#microsoft.graph.TeamworkUserIdentity",
+	}
+	return newTeamworkUserIdentity, nil
 }

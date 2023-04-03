@@ -6,8 +6,17 @@ package msgraph
 type Presence struct {
 	// Entity is the base model of Presence
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Activity undocumented
 	Activity *string `json:"activity,omitempty"`
 	// Availability undocumented
 	Availability *string `json:"availability,omitempty"`
+}
+
+func NewPresence() (*Presence, error) {
+	newPresence := &Presence{
+		ODataType: "#microsoft.graph.Presence",
+	}
+	return newPresence, nil
 }

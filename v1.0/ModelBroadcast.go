@@ -6,6 +6,8 @@ package msgraph
 type BroadcastMeetingCaptionSettings struct {
 	// Object is the base model of BroadcastMeetingCaptionSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsCaptionEnabled undocumented
 	IsCaptionEnabled *bool `json:"isCaptionEnabled,omitempty"`
 	// SpokenLanguage undocumented
@@ -14,10 +16,19 @@ type BroadcastMeetingCaptionSettings struct {
 	TranslationLanguages []string `json:"translationLanguages,omitempty"`
 }
 
+func NewBroadcastMeetingCaptionSettings() (*BroadcastMeetingCaptionSettings, error) {
+	newBroadcastMeetingCaptionSettings := &BroadcastMeetingCaptionSettings{
+		ODataType: "#microsoft.graph.BroadcastMeetingCaptionSettings",
+	}
+	return newBroadcastMeetingCaptionSettings, nil
+}
+
 // BroadcastMeetingSettings undocumented
 type BroadcastMeetingSettings struct {
 	// Object is the base model of BroadcastMeetingSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowedAudience undocumented
 	AllowedAudience *BroadcastMeetingAudience `json:"allowedAudience,omitempty"`
 	// Captions undocumented
@@ -30,4 +41,11 @@ type BroadcastMeetingSettings struct {
 	IsRecordingEnabled *bool `json:"isRecordingEnabled,omitempty"`
 	// IsVideoOnDemandEnabled undocumented
 	IsVideoOnDemandEnabled *bool `json:"isVideoOnDemandEnabled,omitempty"`
+}
+
+func NewBroadcastMeetingSettings() (*BroadcastMeetingSettings, error) {
+	newBroadcastMeetingSettings := &BroadcastMeetingSettings{
+		ODataType: "#microsoft.graph.BroadcastMeetingSettings",
+	}
+	return newBroadcastMeetingSettings, nil
 }

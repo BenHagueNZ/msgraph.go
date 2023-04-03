@@ -6,6 +6,15 @@ package msgraph
 type DeleteUserFromSharedAppleDeviceActionResult struct {
 	// DeviceActionResult is the base model of DeleteUserFromSharedAppleDeviceActionResult
 	DeviceActionResult
+
+	ODataType string `json:"@odata.type"`
 	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
+}
+
+func NewDeleteUserFromSharedAppleDeviceActionResult() (*DeleteUserFromSharedAppleDeviceActionResult, error) {
+	newDeleteUserFromSharedAppleDeviceActionResult := &DeleteUserFromSharedAppleDeviceActionResult{
+		ODataType: "#microsoft.graph.DeleteUserFromSharedAppleDeviceActionResult",
+	}
+	return newDeleteUserFromSharedAppleDeviceActionResult, nil
 }

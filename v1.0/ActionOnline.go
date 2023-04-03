@@ -28,7 +28,7 @@ type OnlineMeetingCollectionCreateOrGetRequestParameter struct {
 	Subject *string `json:"subject,omitempty"`
 }
 
-// AttendanceReports returns request builder for MeetingAttendanceReport collection
+// AttendanceReports returns request builder for MeetingAttendanceReport collection rcn
 func (b *OnlineMeetingRequestBuilder) AttendanceReports() *OnlineMeetingAttendanceReportsCollectionRequestBuilder {
 	bb := &OnlineMeetingAttendanceReportsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/attendanceReports"
@@ -129,4 +129,11 @@ func (r *OnlineMeetingAttendanceReportsCollectionRequest) Get(ctx context.Contex
 func (r *OnlineMeetingAttendanceReportsCollectionRequest) Add(ctx context.Context, reqObj *MeetingAttendanceReport) (resObj *MeetingAttendanceReport, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// OnlineMeeting is navigation property rn
+func (b *OnlineMeetingRequestBuilder) OnlineMeeting() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

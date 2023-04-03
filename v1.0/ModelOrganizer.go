@@ -6,6 +6,15 @@ package msgraph
 type OrganizerMeetingInfo struct {
 	// MeetingInfo is the base model of OrganizerMeetingInfo
 	MeetingInfo
+
+	ODataType string `json:"@odata.type"`
 	// Organizer undocumented
 	Organizer *IdentitySet `json:"organizer,omitempty"`
+}
+
+func NewOrganizerMeetingInfo() (*OrganizerMeetingInfo, error) {
+	newOrganizerMeetingInfo := &OrganizerMeetingInfo{
+		ODataType: "#microsoft.graph.OrganizerMeetingInfo",
+	}
+	return newOrganizerMeetingInfo, nil
 }

@@ -6,16 +6,27 @@ package msgraph
 type DefaultColumnValue struct {
 	// Object is the base model of DefaultColumnValue
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Formula undocumented
 	Formula *string `json:"formula,omitempty"`
 	// Value undocumented
 	Value *string `json:"value,omitempty"`
 }
 
+func NewDefaultColumnValue() (*DefaultColumnValue, error) {
+	newDefaultColumnValue := &DefaultColumnValue{
+		ODataType: "#microsoft.graph.DefaultColumnValue",
+	}
+	return newDefaultColumnValue, nil
+}
+
 // DefaultManagedAppProtection undocumented
 type DefaultManagedAppProtection struct {
 	// ManagedAppProtection is the base model of DefaultManagedAppProtection
 	ManagedAppProtection
+
+	ODataType string `json:"@odata.type"`
 	// AppDataEncryptionType undocumented
 	AppDataEncryptionType *ManagedAppDataEncryptionType `json:"appDataEncryptionType,omitempty"`
 	// CustomSettings undocumented
@@ -42,10 +53,19 @@ type DefaultManagedAppProtection struct {
 	DeploymentSummary *ManagedAppPolicyDeploymentSummary `json:"deploymentSummary,omitempty"`
 }
 
+func NewDefaultManagedAppProtection() (*DefaultManagedAppProtection, error) {
+	newDefaultManagedAppProtection := &DefaultManagedAppProtection{
+		ODataType: "#microsoft.graph.DefaultManagedAppProtection",
+	}
+	return newDefaultManagedAppProtection, nil
+}
+
 // DefaultUserRolePermissions undocumented
 type DefaultUserRolePermissions struct {
 	// Object is the base model of DefaultUserRolePermissions
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowedToCreateApps undocumented
 	AllowedToCreateApps *bool `json:"allowedToCreateApps,omitempty"`
 	// AllowedToCreateSecurityGroups undocumented
@@ -54,4 +74,11 @@ type DefaultUserRolePermissions struct {
 	AllowedToReadOtherUsers *bool `json:"allowedToReadOtherUsers,omitempty"`
 	// PermissionGrantPoliciesAssigned undocumented
 	PermissionGrantPoliciesAssigned []string `json:"permissionGrantPoliciesAssigned,omitempty"`
+}
+
+func NewDefaultUserRolePermissions() (*DefaultUserRolePermissions, error) {
+	newDefaultUserRolePermissions := &DefaultUserRolePermissions{
+		ODataType: "#microsoft.graph.DefaultUserRolePermissions",
+	}
+	return newDefaultUserRolePermissions, nil
 }

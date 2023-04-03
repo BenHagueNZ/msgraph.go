@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsReceivedRequestBuilder struct{ BaseRequestBuilder }
 
-// Received action undocumented
+// Received action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Received(reqObj *WorkbookFunctionsReceivedRequestParameter) *WorkbookFunctionsReceivedRequestBuilder {
 	bb := &WorkbookFunctionsReceivedRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Received"

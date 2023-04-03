@@ -6,10 +6,19 @@ package msgraph
 type BitLockerRemovableDrivePolicy struct {
 	// Object is the base model of BitLockerRemovableDrivePolicy
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// BlockCrossOrganizationWriteAccess undocumented
 	BlockCrossOrganizationWriteAccess *bool `json:"blockCrossOrganizationWriteAccess,omitempty"`
 	// EncryptionMethod undocumented
 	EncryptionMethod *BitLockerEncryptionMethod `json:"encryptionMethod,omitempty"`
 	// RequireEncryptionForWriteAccess undocumented
 	RequireEncryptionForWriteAccess *bool `json:"requireEncryptionForWriteAccess,omitempty"`
+}
+
+func NewBitLockerRemovableDrivePolicy() (*BitLockerRemovableDrivePolicy, error) {
+	newBitLockerRemovableDrivePolicy := &BitLockerRemovableDrivePolicy{
+		ODataType: "#microsoft.graph.BitLockerRemovableDrivePolicy",
+	}
+	return newBitLockerRemovableDrivePolicy, nil
 }

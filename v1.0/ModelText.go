@@ -6,6 +6,8 @@ package msgraph
 type TextColumn struct {
 	// Object is the base model of TextColumn
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowMultipleLines undocumented
 	AllowMultipleLines *bool `json:"allowMultipleLines,omitempty"`
 	// AppendChangesToExistingText undocumented
@@ -16,4 +18,11 @@ type TextColumn struct {
 	MaxLength *int `json:"maxLength,omitempty"`
 	// TextType undocumented
 	TextType *string `json:"textType,omitempty"`
+}
+
+func NewTextColumn() (*TextColumn, error) {
+	newTextColumn := &TextColumn{
+		ODataType: "#microsoft.graph.TextColumn",
+	}
+	return newTextColumn, nil
 }

@@ -39,7 +39,7 @@ func (r *OrganizationRequest) Delete(ctx context.Context) error {
 
 type OrganizationSetMobileDeviceManagementAuthorityRequestBuilder struct{ BaseRequestBuilder }
 
-// SetMobileDeviceManagementAuthority action undocumented
+// SetMobileDeviceManagementAuthority action undocumentedras
 func (b *OrganizationRequestBuilder) SetMobileDeviceManagementAuthority(reqObj *OrganizationSetMobileDeviceManagementAuthorityRequestParameter) *OrganizationSetMobileDeviceManagementAuthorityRequestBuilder {
 	bb := &OrganizationSetMobileDeviceManagementAuthorityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SetMobileDeviceManagementAuthority"

@@ -6,8 +6,17 @@ package msgraph
 type GenericError struct {
 	// Object is the base model of GenericError
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
 	// Message undocumented
 	Message *string `json:"message,omitempty"`
+}
+
+func NewGenericError() (*GenericError, error) {
+	newGenericError := &GenericError{
+		ODataType: "#microsoft.graph.GenericError",
+	}
+	return newGenericError, nil
 }

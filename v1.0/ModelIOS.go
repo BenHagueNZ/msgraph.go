@@ -8,12 +8,23 @@ import "time"
 type IOSCertificateProfile struct {
 	// DeviceConfiguration is the base model of IOSCertificateProfile
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewIOSCertificateProfile() (*IOSCertificateProfile, error) {
+	newIOSCertificateProfile := &IOSCertificateProfile{
+		ODataType: "#microsoft.graph.IosCertificateProfile",
+	}
+	return newIOSCertificateProfile, nil
 }
 
 // IOSCompliancePolicy undocumented
 type IOSCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of IOSCompliancePolicy
 	DeviceCompliancePolicy
+
+	ODataType string `json:"@odata.type"`
 	// DeviceThreatProtectionEnabled undocumented
 	DeviceThreatProtectionEnabled *bool `json:"deviceThreatProtectionEnabled,omitempty"`
 	// DeviceThreatProtectionRequiredSecurityLevel undocumented
@@ -44,10 +55,19 @@ type IOSCompliancePolicy struct {
 	SecurityBlockJailbrokenDevices *bool `json:"securityBlockJailbrokenDevices,omitempty"`
 }
 
+func NewIOSCompliancePolicy() (*IOSCompliancePolicy, error) {
+	newIOSCompliancePolicy := &IOSCompliancePolicy{
+		ODataType: "#microsoft.graph.IosCompliancePolicy",
+	}
+	return newIOSCompliancePolicy, nil
+}
+
 // IOSCustomConfiguration undocumented
 type IOSCustomConfiguration struct {
 	// DeviceConfiguration is the base model of IOSCustomConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// Payload undocumented
 	Payload *Binary `json:"payload,omitempty"`
 	// PayloadFileName undocumented
@@ -56,10 +76,19 @@ type IOSCustomConfiguration struct {
 	PayloadName *string `json:"payloadName,omitempty"`
 }
 
+func NewIOSCustomConfiguration() (*IOSCustomConfiguration, error) {
+	newIOSCustomConfiguration := &IOSCustomConfiguration{
+		ODataType: "#microsoft.graph.IosCustomConfiguration",
+	}
+	return newIOSCustomConfiguration, nil
+}
+
 // IOSDeviceFeaturesConfiguration undocumented
 type IOSDeviceFeaturesConfiguration struct {
 	// AppleDeviceFeaturesConfigurationBase is the base model of IOSDeviceFeaturesConfiguration
 	AppleDeviceFeaturesConfigurationBase
+
+	ODataType string `json:"@odata.type"`
 	// AssetTagTemplate undocumented
 	AssetTagTemplate *string `json:"assetTagTemplate,omitempty"`
 	// HomeScreenDockIcons undocumented
@@ -72,20 +101,38 @@ type IOSDeviceFeaturesConfiguration struct {
 	NotificationSettings []IOSNotificationSettings `json:"notificationSettings,omitempty"`
 }
 
+func NewIOSDeviceFeaturesConfiguration() (*IOSDeviceFeaturesConfiguration, error) {
+	newIOSDeviceFeaturesConfiguration := &IOSDeviceFeaturesConfiguration{
+		ODataType: "#microsoft.graph.IosDeviceFeaturesConfiguration",
+	}
+	return newIOSDeviceFeaturesConfiguration, nil
+}
+
 // IOSDeviceType undocumented
 type IOSDeviceType struct {
 	// Object is the base model of IOSDeviceType
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IPad undocumented
 	IPad *bool `json:"iPad,omitempty"`
 	// IPhoneAndIPod undocumented
 	IPhoneAndIPod *bool `json:"iPhoneAndIPod,omitempty"`
 }
 
+func NewIOSDeviceType() (*IOSDeviceType, error) {
+	newIOSDeviceType := &IOSDeviceType{
+		ODataType: "#microsoft.graph.IosDeviceType",
+	}
+	return newIOSDeviceType, nil
+}
+
 // IOSGeneralDeviceConfiguration undocumented
 type IOSGeneralDeviceConfiguration struct {
 	// DeviceConfiguration is the base model of IOSGeneralDeviceConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// AccountBlockModification undocumented
 	AccountBlockModification *bool `json:"accountBlockModification,omitempty"`
 	// ActivationLockAllowWhenSupervised undocumented
@@ -350,54 +397,108 @@ type IOSGeneralDeviceConfiguration struct {
 	WiFiConnectOnlyToConfiguredNetworks *bool `json:"wiFiConnectOnlyToConfiguredNetworks,omitempty"`
 }
 
+func NewIOSGeneralDeviceConfiguration() (*IOSGeneralDeviceConfiguration, error) {
+	newIOSGeneralDeviceConfiguration := &IOSGeneralDeviceConfiguration{
+		ODataType: "#microsoft.graph.IosGeneralDeviceConfiguration",
+	}
+	return newIOSGeneralDeviceConfiguration, nil
+}
+
 // IOSHomeScreenApp undocumented
 type IOSHomeScreenApp struct {
 	// IOSHomeScreenItem is the base model of IOSHomeScreenApp
 	IOSHomeScreenItem
+
+	ODataType string `json:"@odata.type"`
 	// BundleID undocumented
 	BundleID *string `json:"bundleID,omitempty"`
+}
+
+func NewIOSHomeScreenApp() (*IOSHomeScreenApp, error) {
+	newIOSHomeScreenApp := &IOSHomeScreenApp{
+		ODataType: "#microsoft.graph.IosHomeScreenApp",
+	}
+	return newIOSHomeScreenApp, nil
 }
 
 // IOSHomeScreenFolder undocumented
 type IOSHomeScreenFolder struct {
 	// IOSHomeScreenItem is the base model of IOSHomeScreenFolder
 	IOSHomeScreenItem
+
+	ODataType string `json:"@odata.type"`
 	// Pages undocumented
 	Pages []IOSHomeScreenFolderPage `json:"pages,omitempty"`
+}
+
+func NewIOSHomeScreenFolder() (*IOSHomeScreenFolder, error) {
+	newIOSHomeScreenFolder := &IOSHomeScreenFolder{
+		ODataType: "#microsoft.graph.IosHomeScreenFolder",
+	}
+	return newIOSHomeScreenFolder, nil
 }
 
 // IOSHomeScreenFolderPage undocumented
 type IOSHomeScreenFolderPage struct {
 	// Object is the base model of IOSHomeScreenFolderPage
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Apps undocumented
 	Apps []IOSHomeScreenApp `json:"apps,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 }
 
+func NewIOSHomeScreenFolderPage() (*IOSHomeScreenFolderPage, error) {
+	newIOSHomeScreenFolderPage := &IOSHomeScreenFolderPage{
+		ODataType: "#microsoft.graph.IosHomeScreenFolderPage",
+	}
+	return newIOSHomeScreenFolderPage, nil
+}
+
 // IOSHomeScreenItem undocumented
 type IOSHomeScreenItem struct {
 	// Object is the base model of IOSHomeScreenItem
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
+}
+
+func NewIOSHomeScreenItem() (*IOSHomeScreenItem, error) {
+	newIOSHomeScreenItem := &IOSHomeScreenItem{
+		ODataType: "#microsoft.graph.IosHomeScreenItem",
+	}
+	return newIOSHomeScreenItem, nil
 }
 
 // IOSHomeScreenPage undocumented
 type IOSHomeScreenPage struct {
 	// Object is the base model of IOSHomeScreenPage
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Icons undocumented
 	Icons []IOSHomeScreenItem `json:"icons,omitempty"`
 }
 
+func NewIOSHomeScreenPage() (*IOSHomeScreenPage, error) {
+	newIOSHomeScreenPage := &IOSHomeScreenPage{
+		ODataType: "#microsoft.graph.IosHomeScreenPage",
+	}
+	return newIOSHomeScreenPage, nil
+}
+
 // IOSLobApp undocumented
 type IOSLobApp struct {
 	// MobileLobApp is the base model of IOSLobApp
 	MobileLobApp
+
+	ODataType string `json:"@odata.type"`
 	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
 	// BuildNumber undocumented
@@ -412,10 +513,19 @@ type IOSLobApp struct {
 	VersionNumber *string `json:"versionNumber,omitempty"`
 }
 
+func NewIOSLobApp() (*IOSLobApp, error) {
+	newIOSLobApp := &IOSLobApp{
+		ODataType: "#microsoft.graph.IosLobApp",
+	}
+	return newIOSLobApp, nil
+}
+
 // IOSLobAppAssignmentSettings undocumented
 type IOSLobAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of IOSLobAppAssignmentSettings
 	MobileAppAssignmentSettings
+
+	ODataType string `json:"@odata.type"`
 	// IsRemovable undocumented
 	IsRemovable *bool `json:"isRemovable,omitempty"`
 	// UninstallOnDeviceRemoval undocumented
@@ -424,18 +534,36 @@ type IOSLobAppAssignmentSettings struct {
 	VPNConfigurationID *string `json:"vpnConfigurationId,omitempty"`
 }
 
+func NewIOSLobAppAssignmentSettings() (*IOSLobAppAssignmentSettings, error) {
+	newIOSLobAppAssignmentSettings := &IOSLobAppAssignmentSettings{
+		ODataType: "#microsoft.graph.IosLobAppAssignmentSettings",
+	}
+	return newIOSLobAppAssignmentSettings, nil
+}
+
 // IOSLobAppProvisioningConfigurationAssignment undocumented
 type IOSLobAppProvisioningConfigurationAssignment struct {
 	// Entity is the base model of IOSLobAppProvisioningConfigurationAssignment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
+}
+
+func NewIOSLobAppProvisioningConfigurationAssignment() (*IOSLobAppProvisioningConfigurationAssignment, error) {
+	newIOSLobAppProvisioningConfigurationAssignment := &IOSLobAppProvisioningConfigurationAssignment{
+		ODataType: "#microsoft.graph.IosLobAppProvisioningConfigurationAssignment",
+	}
+	return newIOSLobAppProvisioningConfigurationAssignment, nil
 }
 
 // IOSManagedAppProtection undocumented
 type IOSManagedAppProtection struct {
 	// TargetedManagedAppProtection is the base model of IOSManagedAppProtection
 	TargetedManagedAppProtection
+
+	ODataType string `json:"@odata.type"`
 	// AppDataEncryptionType undocumented
 	AppDataEncryptionType *ManagedAppDataEncryptionType `json:"appDataEncryptionType,omitempty"`
 	// CustomBrowserProtocol undocumented
@@ -452,16 +580,34 @@ type IOSManagedAppProtection struct {
 	DeploymentSummary *ManagedAppPolicyDeploymentSummary `json:"deploymentSummary,omitempty"`
 }
 
+func NewIOSManagedAppProtection() (*IOSManagedAppProtection, error) {
+	newIOSManagedAppProtection := &IOSManagedAppProtection{
+		ODataType: "#microsoft.graph.IosManagedAppProtection",
+	}
+	return newIOSManagedAppProtection, nil
+}
+
 // IOSManagedAppRegistration undocumented
 type IOSManagedAppRegistration struct {
 	// ManagedAppRegistration is the base model of IOSManagedAppRegistration
 	ManagedAppRegistration
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewIOSManagedAppRegistration() (*IOSManagedAppRegistration, error) {
+	newIOSManagedAppRegistration := &IOSManagedAppRegistration{
+		ODataType: "#microsoft.graph.IosManagedAppRegistration",
+	}
+	return newIOSManagedAppRegistration, nil
 }
 
 // IOSMinimumOperatingSystem undocumented
 type IOSMinimumOperatingSystem struct {
 	// Object is the base model of IOSMinimumOperatingSystem
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// V10_0 undocumented
 	V10_0 *bool `json:"v10_0,omitempty"`
 	// V11_0 undocumented
@@ -480,28 +626,55 @@ type IOSMinimumOperatingSystem struct {
 	V9_0 *bool `json:"v9_0,omitempty"`
 }
 
+func NewIOSMinimumOperatingSystem() (*IOSMinimumOperatingSystem, error) {
+	newIOSMinimumOperatingSystem := &IOSMinimumOperatingSystem{
+		ODataType: "#microsoft.graph.IosMinimumOperatingSystem",
+	}
+	return newIOSMinimumOperatingSystem, nil
+}
+
 // IOSMobileAppConfiguration undocumented
 type IOSMobileAppConfiguration struct {
 	// ManagedDeviceMobileAppConfiguration is the base model of IOSMobileAppConfiguration
 	ManagedDeviceMobileAppConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// EncodedSettingXML undocumented
 	EncodedSettingXML *Binary `json:"encodedSettingXml,omitempty"`
 	// Settings undocumented
 	Settings []AppConfigurationSettingItem `json:"settings,omitempty"`
 }
 
+func NewIOSMobileAppConfiguration() (*IOSMobileAppConfiguration, error) {
+	newIOSMobileAppConfiguration := &IOSMobileAppConfiguration{
+		ODataType: "#microsoft.graph.IosMobileAppConfiguration",
+	}
+	return newIOSMobileAppConfiguration, nil
+}
+
 // IOSMobileAppIdentifier undocumented
 type IOSMobileAppIdentifier struct {
 	// MobileAppIdentifier is the base model of IOSMobileAppIdentifier
 	MobileAppIdentifier
+
+	ODataType string `json:"@odata.type"`
 	// BundleID undocumented
 	BundleID *string `json:"bundleId,omitempty"`
+}
+
+func NewIOSMobileAppIdentifier() (*IOSMobileAppIdentifier, error) {
+	newIOSMobileAppIdentifier := &IOSMobileAppIdentifier{
+		ODataType: "#microsoft.graph.IosMobileAppIdentifier",
+	}
+	return newIOSMobileAppIdentifier, nil
 }
 
 // IOSNetworkUsageRule undocumented
 type IOSNetworkUsageRule struct {
 	// Object is the base model of IOSNetworkUsageRule
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CellularDataBlocked undocumented
 	CellularDataBlocked *bool `json:"cellularDataBlocked,omitempty"`
 	// CellularDataBlockWhenRoaming undocumented
@@ -510,10 +683,19 @@ type IOSNetworkUsageRule struct {
 	ManagedApps []AppListItem `json:"managedApps,omitempty"`
 }
 
+func NewIOSNetworkUsageRule() (*IOSNetworkUsageRule, error) {
+	newIOSNetworkUsageRule := &IOSNetworkUsageRule{
+		ODataType: "#microsoft.graph.IosNetworkUsageRule",
+	}
+	return newIOSNetworkUsageRule, nil
+}
+
 // IOSNotificationSettings undocumented
 type IOSNotificationSettings struct {
 	// Object is the base model of IOSNotificationSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AlertType undocumented
 	AlertType *IOSNotificationAlertType `json:"alertType,omitempty"`
 	// AppName undocumented
@@ -534,10 +716,19 @@ type IOSNotificationSettings struct {
 	SoundsEnabled *bool `json:"soundsEnabled,omitempty"`
 }
 
+func NewIOSNotificationSettings() (*IOSNotificationSettings, error) {
+	newIOSNotificationSettings := &IOSNotificationSettings{
+		ODataType: "#microsoft.graph.IosNotificationSettings",
+	}
+	return newIOSNotificationSettings, nil
+}
+
 // IOSStoreApp undocumented
 type IOSStoreApp struct {
 	// MobileApp is the base model of IOSStoreApp
 	MobileApp
+
+	ODataType string `json:"@odata.type"`
 	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
 	// AppStoreURL undocumented
@@ -548,18 +739,36 @@ type IOSStoreApp struct {
 	MinimumSupportedOperatingSystem *IOSMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
 }
 
+func NewIOSStoreApp() (*IOSStoreApp, error) {
+	newIOSStoreApp := &IOSStoreApp{
+		ODataType: "#microsoft.graph.IosStoreApp",
+	}
+	return newIOSStoreApp, nil
+}
+
 // IOSStoreAppAssignmentSettings undocumented
 type IOSStoreAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of IOSStoreAppAssignmentSettings
 	MobileAppAssignmentSettings
+
+	ODataType string `json:"@odata.type"`
 	// VPNConfigurationID undocumented
 	VPNConfigurationID *string `json:"vpnConfigurationId,omitempty"`
+}
+
+func NewIOSStoreAppAssignmentSettings() (*IOSStoreAppAssignmentSettings, error) {
+	newIOSStoreAppAssignmentSettings := &IOSStoreAppAssignmentSettings{
+		ODataType: "#microsoft.graph.IosStoreAppAssignmentSettings",
+	}
+	return newIOSStoreAppAssignmentSettings, nil
 }
 
 // IOSUpdateConfiguration undocumented
 type IOSUpdateConfiguration struct {
 	// DeviceConfiguration is the base model of IOSUpdateConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// ActiveHoursEnd undocumented
 	ActiveHoursEnd *TimeOfDay `json:"activeHoursEnd,omitempty"`
 	// ActiveHoursStart undocumented
@@ -570,10 +779,19 @@ type IOSUpdateConfiguration struct {
 	UtcTimeOffsetInMinutes *int `json:"utcTimeOffsetInMinutes,omitempty"`
 }
 
+func NewIOSUpdateConfiguration() (*IOSUpdateConfiguration, error) {
+	newIOSUpdateConfiguration := &IOSUpdateConfiguration{
+		ODataType: "#microsoft.graph.IosUpdateConfiguration",
+	}
+	return newIOSUpdateConfiguration, nil
+}
+
 // IOSUpdateDeviceStatus undocumented
 type IOSUpdateDeviceStatus struct {
 	// Entity is the base model of IOSUpdateDeviceStatus
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ComplianceGracePeriodExpirationDateTime undocumented
 	ComplianceGracePeriodExpirationDateTime *time.Time `json:"complianceGracePeriodExpirationDateTime,omitempty"`
 	// DeviceDisplayName undocumented
@@ -598,10 +816,19 @@ type IOSUpdateDeviceStatus struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewIOSUpdateDeviceStatus() (*IOSUpdateDeviceStatus, error) {
+	newIOSUpdateDeviceStatus := &IOSUpdateDeviceStatus{
+		ODataType: "#microsoft.graph.IosUpdateDeviceStatus",
+	}
+	return newIOSUpdateDeviceStatus, nil
+}
+
 // IOSVPPApp undocumented
 type IOSVPPApp struct {
 	// MobileApp is the base model of IOSVPPApp
 	MobileApp
+
+	ODataType string `json:"@odata.type"`
 	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
 	// AppStoreURL undocumented
@@ -624,20 +851,38 @@ type IOSVPPApp struct {
 	VPPTokenOrganizationName *string `json:"vppTokenOrganizationName,omitempty"`
 }
 
+func NewIOSVPPApp() (*IOSVPPApp, error) {
+	newIOSVPPApp := &IOSVPPApp{
+		ODataType: "#microsoft.graph.IosVppApp",
+	}
+	return newIOSVPPApp, nil
+}
+
 // IOSVPPAppAssignmentSettings undocumented
 type IOSVPPAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of IOSVPPAppAssignmentSettings
 	MobileAppAssignmentSettings
+
+	ODataType string `json:"@odata.type"`
 	// UseDeviceLicensing undocumented
 	UseDeviceLicensing *bool `json:"useDeviceLicensing,omitempty"`
 	// VPNConfigurationID undocumented
 	VPNConfigurationID *string `json:"vpnConfigurationId,omitempty"`
 }
 
+func NewIOSVPPAppAssignmentSettings() (*IOSVPPAppAssignmentSettings, error) {
+	newIOSVPPAppAssignmentSettings := &IOSVPPAppAssignmentSettings{
+		ODataType: "#microsoft.graph.IosVppAppAssignmentSettings",
+	}
+	return newIOSVPPAppAssignmentSettings, nil
+}
+
 // IOSVPPEBook undocumented
 type IOSVPPEBook struct {
 	// ManagedEBook is the base model of IOSVPPEBook
 	ManagedEBook
+
+	ODataType string `json:"@odata.type"`
 	// AppleID undocumented
 	AppleID *string `json:"appleId,omitempty"`
 	// Genres undocumented
@@ -656,8 +901,24 @@ type IOSVPPEBook struct {
 	VPPTokenID *UUID `json:"vppTokenId,omitempty"`
 }
 
+func NewIOSVPPEBook() (*IOSVPPEBook, error) {
+	newIOSVPPEBook := &IOSVPPEBook{
+		ODataType: "#microsoft.graph.IosVppEBook",
+	}
+	return newIOSVPPEBook, nil
+}
+
 // IOSVPPEBookAssignment undocumented
 type IOSVPPEBookAssignment struct {
 	// ManagedEBookAssignment is the base model of IOSVPPEBookAssignment
 	ManagedEBookAssignment
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewIOSVPPEBookAssignment() (*IOSVPPEBookAssignment, error) {
+	newIOSVPPEBookAssignment := &IOSVPPEBookAssignment{
+		ODataType: "#microsoft.graph.IosVppEBookAssignment",
+	}
+	return newIOSVPPEBookAssignment, nil
 }

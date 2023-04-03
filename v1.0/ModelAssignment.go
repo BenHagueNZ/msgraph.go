@@ -6,6 +6,15 @@ package msgraph
 type AssignmentOrder struct {
 	// Object is the base model of AssignmentOrder
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Order undocumented
 	Order []string `json:"order,omitempty"`
+}
+
+func NewAssignmentOrder() (*AssignmentOrder, error) {
+	newAssignmentOrder := &AssignmentOrder{
+		ODataType: "#microsoft.graph.AssignmentOrder",
+	}
+	return newAssignmentOrder, nil
 }

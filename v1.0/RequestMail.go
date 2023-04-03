@@ -171,7 +171,7 @@ func (r *MailTipsErrorRequest) Delete(ctx context.Context) error {
 
 type MailFolderCopyRequestBuilder struct{ BaseRequestBuilder }
 
-// Copy action undocumented
+// Copy action undocumentedras
 func (b *MailFolderRequestBuilder) Copy(reqObj *MailFolderCopyRequestParameter) *MailFolderCopyRequestBuilder {
 	bb := &MailFolderCopyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Copy"
@@ -194,7 +194,7 @@ func (r *MailFolderCopyRequest) Post(ctx context.Context) (resObj *MailFolder, e
 
 type MailFolderMoveRequestBuilder struct{ BaseRequestBuilder }
 
-// Move action undocumented
+// Move action undocumentedras
 func (b *MailFolderRequestBuilder) Move(reqObj *MailFolderMoveRequestParameter) *MailFolderMoveRequestBuilder {
 	bb := &MailFolderMoveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Move"

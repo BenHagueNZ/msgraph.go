@@ -72,7 +72,7 @@ func (r *PhoneAuthenticationMethodRequest) Delete(ctx context.Context) error {
 
 type PhoneAuthenticationMethodDisableSmsSignInRequestBuilder struct{ BaseRequestBuilder }
 
-// DisableSmsSignIn action undocumented
+// DisableSmsSignIn action undocumentedrav
 func (b *PhoneAuthenticationMethodRequestBuilder) DisableSmsSignIn(reqObj *PhoneAuthenticationMethodDisableSmsSignInRequestParameter) *PhoneAuthenticationMethodDisableSmsSignInRequestBuilder {
 	bb := &PhoneAuthenticationMethodDisableSmsSignInRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/DisableSmsSignIn"
@@ -94,7 +94,7 @@ func (r *PhoneAuthenticationMethodDisableSmsSignInRequest) Post(ctx context.Cont
 
 type PhoneAuthenticationMethodEnableSmsSignInRequestBuilder struct{ BaseRequestBuilder }
 
-// EnableSmsSignIn action undocumented
+// EnableSmsSignIn action undocumentedrav
 func (b *PhoneAuthenticationMethodRequestBuilder) EnableSmsSignIn(reqObj *PhoneAuthenticationMethodEnableSmsSignInRequestParameter) *PhoneAuthenticationMethodEnableSmsSignInRequestBuilder {
 	bb := &PhoneAuthenticationMethodEnableSmsSignInRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/EnableSmsSignIn"

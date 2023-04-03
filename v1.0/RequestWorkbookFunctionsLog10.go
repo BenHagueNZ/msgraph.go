@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsLog10RequestBuilder struct{ BaseRequestBuilder }
 
-// Log10 action undocumented
+// Log10 action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Log10(reqObj *WorkbookFunctionsLog10RequestParameter) *WorkbookFunctionsLog10RequestBuilder {
 	bb := &WorkbookFunctionsLog10RequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Log10"

@@ -8,6 +8,8 @@ import "time"
 type ServiceAnnouncement struct {
 	// Entity is the base model of ServiceAnnouncement
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// HealthOverviews undocumented
 	HealthOverviews []ServiceHealth `json:"healthOverviews,omitempty"`
 	// Issues undocumented
@@ -16,10 +18,19 @@ type ServiceAnnouncement struct {
 	Messages []ServiceUpdateMessage `json:"messages,omitempty"`
 }
 
+func NewServiceAnnouncement() (*ServiceAnnouncement, error) {
+	newServiceAnnouncement := &ServiceAnnouncement{
+		ODataType: "#microsoft.graph.ServiceAnnouncement",
+	}
+	return newServiceAnnouncement, nil
+}
+
 // ServiceAnnouncementAttachment undocumented
 type ServiceAnnouncementAttachment struct {
 	// Entity is the base model of ServiceAnnouncementAttachment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Content undocumented
 	Content *Stream `json:"content,omitempty"`
 	// ContentType undocumented
@@ -32,10 +43,19 @@ type ServiceAnnouncementAttachment struct {
 	Size *int `json:"size,omitempty"`
 }
 
+func NewServiceAnnouncementAttachment() (*ServiceAnnouncementAttachment, error) {
+	newServiceAnnouncementAttachment := &ServiceAnnouncementAttachment{
+		ODataType: "#microsoft.graph.ServiceAnnouncementAttachment",
+	}
+	return newServiceAnnouncementAttachment, nil
+}
+
 // ServiceAnnouncementBase undocumented
 type ServiceAnnouncementBase struct {
 	// Entity is the base model of ServiceAnnouncementBase
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Details undocumented
 	Details []KeyValuePair `json:"details,omitempty"`
 	// EndDateTime undocumented
@@ -48,10 +68,19 @@ type ServiceAnnouncementBase struct {
 	Title *string `json:"title,omitempty"`
 }
 
+func NewServiceAnnouncementBase() (*ServiceAnnouncementBase, error) {
+	newServiceAnnouncementBase := &ServiceAnnouncementBase{
+		ODataType: "#microsoft.graph.ServiceAnnouncementBase",
+	}
+	return newServiceAnnouncementBase, nil
+}
+
 // ServiceHealth undocumented
 type ServiceHealth struct {
 	// Entity is the base model of ServiceHealth
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Service undocumented
 	Service *string `json:"service,omitempty"`
 	// Status undocumented
@@ -60,10 +89,19 @@ type ServiceHealth struct {
 	Issues []ServiceHealthIssue `json:"issues,omitempty"`
 }
 
+func NewServiceHealth() (*ServiceHealth, error) {
+	newServiceHealth := &ServiceHealth{
+		ODataType: "#microsoft.graph.ServiceHealth",
+	}
+	return newServiceHealth, nil
+}
+
 // ServiceHealthIssue undocumented
 type ServiceHealthIssue struct {
 	// ServiceAnnouncementBase is the base model of ServiceHealthIssue
 	ServiceAnnouncementBase
+
+	ODataType string `json:"@odata.type"`
 	// Classification undocumented
 	Classification *ServiceHealthClassificationType `json:"classification,omitempty"`
 	// Feature undocumented
@@ -84,10 +122,19 @@ type ServiceHealthIssue struct {
 	Status *ServiceHealthStatus `json:"status,omitempty"`
 }
 
+func NewServiceHealthIssue() (*ServiceHealthIssue, error) {
+	newServiceHealthIssue := &ServiceHealthIssue{
+		ODataType: "#microsoft.graph.ServiceHealthIssue",
+	}
+	return newServiceHealthIssue, nil
+}
+
 // ServiceHealthIssuePost undocumented
 type ServiceHealthIssuePost struct {
 	// Object is the base model of ServiceHealthIssuePost
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -96,18 +143,36 @@ type ServiceHealthIssuePost struct {
 	PostType *PostType `json:"postType,omitempty"`
 }
 
+func NewServiceHealthIssuePost() (*ServiceHealthIssuePost, error) {
+	newServiceHealthIssuePost := &ServiceHealthIssuePost{
+		ODataType: "#microsoft.graph.ServiceHealthIssuePost",
+	}
+	return newServiceHealthIssuePost, nil
+}
+
 // ServiceHostedMediaConfig undocumented
 type ServiceHostedMediaConfig struct {
 	// MediaConfig is the base model of ServiceHostedMediaConfig
 	MediaConfig
+
+	ODataType string `json:"@odata.type"`
 	// PreFetchMedia undocumented
 	PreFetchMedia []MediaInfo `json:"preFetchMedia,omitempty"`
+}
+
+func NewServiceHostedMediaConfig() (*ServiceHostedMediaConfig, error) {
+	newServiceHostedMediaConfig := &ServiceHostedMediaConfig{
+		ODataType: "#microsoft.graph.ServiceHostedMediaConfig",
+	}
+	return newServiceHostedMediaConfig, nil
 }
 
 // ServicePlanInfo undocumented
 type ServicePlanInfo struct {
 	// Object is the base model of ServicePlanInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AppliesTo undocumented
 	AppliesTo *string `json:"appliesTo,omitempty"`
 	// ProvisioningStatus undocumented
@@ -118,10 +183,19 @@ type ServicePlanInfo struct {
 	ServicePlanName *string `json:"servicePlanName,omitempty"`
 }
 
+func NewServicePlanInfo() (*ServicePlanInfo, error) {
+	newServicePlanInfo := &ServicePlanInfo{
+		ODataType: "#microsoft.graph.ServicePlanInfo",
+	}
+	return newServicePlanInfo, nil
+}
+
 // ServicePrincipal undocumented
 type ServicePrincipal struct {
 	// DirectoryObject is the base model of ServicePrincipal
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// AccountEnabled undocumented
 	AccountEnabled *bool `json:"accountEnabled,omitempty"`
 	// AddIns undocumented
@@ -222,18 +296,36 @@ type ServicePrincipal struct {
 	TransitiveMemberOf []DirectoryObject `json:"transitiveMemberOf,omitempty"`
 }
 
+func NewServicePrincipal() (*ServicePrincipal, error) {
+	newServicePrincipal := &ServicePrincipal{
+		ODataType: "#microsoft.graph.ServicePrincipal",
+	}
+	return newServicePrincipal, nil
+}
+
 // ServicePrincipalIdentity undocumented
 type ServicePrincipalIdentity struct {
 	// Identity is the base model of ServicePrincipalIdentity
 	Identity
+
+	ODataType string `json:"@odata.type"`
 	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
+}
+
+func NewServicePrincipalIdentity() (*ServicePrincipalIdentity, error) {
+	newServicePrincipalIdentity := &ServicePrincipalIdentity{
+		ODataType: "#microsoft.graph.ServicePrincipalIdentity",
+	}
+	return newServicePrincipalIdentity, nil
 }
 
 // ServicePrincipalRiskDetection undocumented
 type ServicePrincipalRiskDetection struct {
 	// Entity is the base model of ServicePrincipalRiskDetection
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Activity undocumented
 	Activity *ActivityType `json:"activity,omitempty"`
 	// ActivityDateTime undocumented
@@ -276,10 +368,19 @@ type ServicePrincipalRiskDetection struct {
 	TokenIssuerType *TokenIssuerType `json:"tokenIssuerType,omitempty"`
 }
 
+func NewServicePrincipalRiskDetection() (*ServicePrincipalRiskDetection, error) {
+	newServicePrincipalRiskDetection := &ServicePrincipalRiskDetection{
+		ODataType: "#microsoft.graph.ServicePrincipalRiskDetection",
+	}
+	return newServicePrincipalRiskDetection, nil
+}
+
 // ServiceUpdateMessage undocumented
 type ServiceUpdateMessage struct {
 	// ServiceAnnouncementBase is the base model of ServiceUpdateMessage
 	ServiceAnnouncementBase
+
+	ODataType string `json:"@odata.type"`
 	// ActionRequiredByDateTime undocumented
 	ActionRequiredByDateTime *time.Time `json:"actionRequiredByDateTime,omitempty"`
 	// AttachmentsArchive undocumented
@@ -304,14 +405,30 @@ type ServiceUpdateMessage struct {
 	Attachments []ServiceAnnouncementAttachment `json:"attachments,omitempty"`
 }
 
+func NewServiceUpdateMessage() (*ServiceUpdateMessage, error) {
+	newServiceUpdateMessage := &ServiceUpdateMessage{
+		ODataType: "#microsoft.graph.ServiceUpdateMessage",
+	}
+	return newServiceUpdateMessage, nil
+}
+
 // ServiceUpdateMessageViewpoint undocumented
 type ServiceUpdateMessageViewpoint struct {
 	// Object is the base model of ServiceUpdateMessageViewpoint
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsArchived undocumented
 	IsArchived *bool `json:"isArchived,omitempty"`
 	// IsFavorited undocumented
 	IsFavorited *bool `json:"isFavorited,omitempty"`
 	// IsRead undocumented
 	IsRead *bool `json:"isRead,omitempty"`
+}
+
+func NewServiceUpdateMessageViewpoint() (*ServiceUpdateMessageViewpoint, error) {
+	newServiceUpdateMessageViewpoint := &ServiceUpdateMessageViewpoint{
+		ODataType: "#microsoft.graph.ServiceUpdateMessageViewpoint",
+	}
+	return newServiceUpdateMessageViewpoint, nil
 }

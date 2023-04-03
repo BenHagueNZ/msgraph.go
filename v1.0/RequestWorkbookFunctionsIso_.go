@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsIso_CeilingRequestBuilder struct{ BaseRequestBuilder }
 
-// Iso_Ceiling action undocumented
+// Iso_Ceiling action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Iso_Ceiling(reqObj *WorkbookFunctionsIso_CeilingRequestParameter) *WorkbookFunctionsIso_CeilingRequestBuilder {
 	bb := &WorkbookFunctionsIso_CeilingRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Iso_Ceiling"

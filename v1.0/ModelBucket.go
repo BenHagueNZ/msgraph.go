@@ -6,6 +6,8 @@ package msgraph
 type BucketAggregationDefinition struct {
 	// Object is the base model of BucketAggregationDefinition
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsDescending undocumented
 	IsDescending *bool `json:"isDescending,omitempty"`
 	// MinimumCount undocumented
@@ -18,12 +20,28 @@ type BucketAggregationDefinition struct {
 	SortBy *BucketAggregationSortProperty `json:"sortBy,omitempty"`
 }
 
+func NewBucketAggregationDefinition() (*BucketAggregationDefinition, error) {
+	newBucketAggregationDefinition := &BucketAggregationDefinition{
+		ODataType: "#microsoft.graph.BucketAggregationDefinition",
+	}
+	return newBucketAggregationDefinition, nil
+}
+
 // BucketAggregationRange undocumented
 type BucketAggregationRange struct {
 	// Object is the base model of BucketAggregationRange
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// From undocumented
 	From *string `json:"from,omitempty"`
 	// To undocumented
 	To *string `json:"to,omitempty"`
+}
+
+func NewBucketAggregationRange() (*BucketAggregationRange, error) {
+	newBucketAggregationRange := &BucketAggregationRange{
+		ODataType: "#microsoft.graph.BucketAggregationRange",
+	}
+	return newBucketAggregationRange, nil
 }

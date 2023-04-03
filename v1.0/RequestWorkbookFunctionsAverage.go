@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsAverageRequestBuilder struct{ BaseRequestBuilder }
 
-// Average action undocumented
+// Average action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Average(reqObj *WorkbookFunctionsAverageRequestParameter) *WorkbookFunctionsAverageRequestBuilder {
 	bb := &WorkbookFunctionsAverageRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Average"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsAverageRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsAverageARequestBuilder struct{ BaseRequestBuilder }
 
-// AverageA action undocumented
+// AverageA action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) AverageA(reqObj *WorkbookFunctionsAverageARequestParameter) *WorkbookFunctionsAverageARequestBuilder {
 	bb := &WorkbookFunctionsAverageARequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AverageA"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsAverageARequest) Post(ctx context.Context) (resObj *Wo
 
 type WorkbookFunctionsAverageIfRequestBuilder struct{ BaseRequestBuilder }
 
-// AverageIf action undocumented
+// AverageIf action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) AverageIf(reqObj *WorkbookFunctionsAverageIfRequestParameter) *WorkbookFunctionsAverageIfRequestBuilder {
 	bb := &WorkbookFunctionsAverageIfRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AverageIf"
@@ -75,7 +75,7 @@ func (r *WorkbookFunctionsAverageIfRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsAverageIfsRequestBuilder struct{ BaseRequestBuilder }
 
-// AverageIfs action undocumented
+// AverageIfs action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) AverageIfs(reqObj *WorkbookFunctionsAverageIfsRequestParameter) *WorkbookFunctionsAverageIfsRequestBuilder {
 	bb := &WorkbookFunctionsAverageIfsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AverageIfs"

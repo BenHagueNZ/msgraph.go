@@ -8,6 +8,8 @@ import "time"
 type Shared struct {
 	// Object is the base model of Shared
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Owner undocumented
 	Owner *IdentitySet `json:"owner,omitempty"`
 	// Scope undocumented
@@ -18,10 +20,19 @@ type Shared struct {
 	SharedDateTime *time.Time `json:"sharedDateTime,omitempty"`
 }
 
+func NewShared() (*Shared, error) {
+	newShared := &Shared{
+		ODataType: "#microsoft.graph.Shared",
+	}
+	return newShared, nil
+}
+
 // SharedDriveItem undocumented
 type SharedDriveItem struct {
 	// BaseItem is the base model of SharedDriveItem
 	BaseItem
+
+	ODataType string `json:"@odata.type"`
 	// Owner undocumented
 	Owner *IdentitySet `json:"owner,omitempty"`
 	// DriveItem undocumented
@@ -40,10 +51,19 @@ type SharedDriveItem struct {
 	Site *Site `json:"site,omitempty"`
 }
 
+func NewSharedDriveItem() (*SharedDriveItem, error) {
+	newSharedDriveItem := &SharedDriveItem{
+		ODataType: "#microsoft.graph.SharedDriveItem",
+	}
+	return newSharedDriveItem, nil
+}
+
 // SharedInsight undocumented
 type SharedInsight struct {
 	// Entity is the base model of SharedInsight
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// LastShared undocumented
 	LastShared *SharingDetail `json:"lastShared,omitempty"`
 	// ResourceReference undocumented
@@ -58,10 +78,19 @@ type SharedInsight struct {
 	Resource *Entity `json:"resource,omitempty"`
 }
 
+func NewSharedInsight() (*SharedInsight, error) {
+	newSharedInsight := &SharedInsight{
+		ODataType: "#microsoft.graph.SharedInsight",
+	}
+	return newSharedInsight, nil
+}
+
 // SharedPCAccountManagerPolicy undocumented
 type SharedPCAccountManagerPolicy struct {
 	// Object is the base model of SharedPCAccountManagerPolicy
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AccountDeletionPolicy undocumented
 	AccountDeletionPolicy *SharedPCAccountDeletionPolicyType `json:"accountDeletionPolicy,omitempty"`
 	// CacheAccountsAboveDiskFreePercentage undocumented
@@ -72,10 +101,19 @@ type SharedPCAccountManagerPolicy struct {
 	RemoveAccountsBelowDiskFreePercentage *int `json:"removeAccountsBelowDiskFreePercentage,omitempty"`
 }
 
+func NewSharedPCAccountManagerPolicy() (*SharedPCAccountManagerPolicy, error) {
+	newSharedPCAccountManagerPolicy := &SharedPCAccountManagerPolicy{
+		ODataType: "#microsoft.graph.SharedPCAccountManagerPolicy",
+	}
+	return newSharedPCAccountManagerPolicy, nil
+}
+
 // SharedPCConfiguration undocumented
 type SharedPCConfiguration struct {
 	// DeviceConfiguration is the base model of SharedPCConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// AccountManagerPolicy undocumented
 	AccountManagerPolicy *SharedPCAccountManagerPolicy `json:"accountManagerPolicy,omitempty"`
 	// AllowedAccounts undocumented
@@ -102,12 +140,28 @@ type SharedPCConfiguration struct {
 	MaintenanceStartTime *TimeOfDay `json:"maintenanceStartTime,omitempty"`
 }
 
+func NewSharedPCConfiguration() (*SharedPCConfiguration, error) {
+	newSharedPCConfiguration := &SharedPCConfiguration{
+		ODataType: "#microsoft.graph.SharedPCConfiguration",
+	}
+	return newSharedPCConfiguration, nil
+}
+
 // SharedWithChannelTeamInfo undocumented
 type SharedWithChannelTeamInfo struct {
 	// TeamInfo is the base model of SharedWithChannelTeamInfo
 	TeamInfo
+
+	ODataType string `json:"@odata.type"`
 	// IsHostTeam undocumented
 	IsHostTeam *bool `json:"isHostTeam,omitempty"`
 	// AllowedMembers undocumented
 	AllowedMembers []ConversationMember `json:"allowedMembers,omitempty"`
+}
+
+func NewSharedWithChannelTeamInfo() (*SharedWithChannelTeamInfo, error) {
+	newSharedWithChannelTeamInfo := &SharedWithChannelTeamInfo{
+		ODataType: "#microsoft.graph.SharedWithChannelTeamInfo",
+	}
+	return newSharedWithChannelTeamInfo, nil
 }

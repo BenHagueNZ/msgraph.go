@@ -19,7 +19,7 @@ type PermissionGrantRequestParameter struct {
 	Recipients []DriveRecipient `json:"recipients,omitempty"`
 }
 
-// Excludes returns request builder for PermissionGrantConditionSet collection
+// Excludes returns request builder for PermissionGrantConditionSet collection rcn
 func (b *PermissionGrantPolicyRequestBuilder) Excludes() *PermissionGrantPolicyExcludesCollectionRequestBuilder {
 	bb := &PermissionGrantPolicyExcludesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/excludes"
@@ -122,7 +122,7 @@ func (r *PermissionGrantPolicyExcludesCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Includes returns request builder for PermissionGrantConditionSet collection
+// Includes returns request builder for PermissionGrantConditionSet collection rcn
 func (b *PermissionGrantPolicyRequestBuilder) Includes() *PermissionGrantPolicyIncludesCollectionRequestBuilder {
 	bb := &PermissionGrantPolicyIncludesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/includes"
@@ -223,4 +223,18 @@ func (r *PermissionGrantPolicyIncludesCollectionRequest) Get(ctx context.Context
 func (r *PermissionGrantPolicyIncludesCollectionRequest) Add(ctx context.Context, reqObj *PermissionGrantConditionSet) (resObj *PermissionGrantConditionSet, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Permission is navigation property rn
+func (b *PermissionRequestBuilder) Permission() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// PermissionGrantConditionSet is navigation property rn
+func (b *PermissionGrantConditionSetRequestBuilder) PermissionGrantConditionSet() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

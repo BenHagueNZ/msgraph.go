@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsErfRequestBuilder struct{ BaseRequestBuilder }
 
-// Erf action undocumented
+// Erf action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Erf(reqObj *WorkbookFunctionsErfRequestParameter) *WorkbookFunctionsErfRequestBuilder {
 	bb := &WorkbookFunctionsErfRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Erf"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsErfRequest) Post(ctx context.Context) (resObj *Workboo
 
 type WorkbookFunctionsErfCRequestBuilder struct{ BaseRequestBuilder }
 
-// ErfC action undocumented
+// ErfC action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ErfC(reqObj *WorkbookFunctionsErfCRequestParameter) *WorkbookFunctionsErfCRequestBuilder {
 	bb := &WorkbookFunctionsErfCRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ErfC"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsErfCRequest) Post(ctx context.Context) (resObj *Workbo
 
 type WorkbookFunctionsErfC_PreciseRequestBuilder struct{ BaseRequestBuilder }
 
-// ErfC_Precise action undocumented
+// ErfC_Precise action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) ErfC_Precise(reqObj *WorkbookFunctionsErfC_PreciseRequestParameter) *WorkbookFunctionsErfC_PreciseRequestBuilder {
 	bb := &WorkbookFunctionsErfC_PreciseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ErfC_Precise"

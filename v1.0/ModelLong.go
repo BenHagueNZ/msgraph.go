@@ -8,6 +8,8 @@ import "time"
 type LongRunningOperation struct {
 	// Entity is the base model of LongRunningOperation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// LastActionDateTime undocumented
@@ -18,4 +20,11 @@ type LongRunningOperation struct {
 	Status *LongRunningOperationStatus `json:"status,omitempty"`
 	// StatusDetail undocumented
 	StatusDetail *string `json:"statusDetail,omitempty"`
+}
+
+func NewLongRunningOperation() (*LongRunningOperation, error) {
+	newLongRunningOperation := &LongRunningOperation{
+		ODataType: "#microsoft.graph.LongRunningOperation",
+	}
+	return newLongRunningOperation, nil
 }

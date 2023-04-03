@@ -6,6 +6,8 @@ package msgraph
 type APIApplication struct {
 	// Object is the base model of APIApplication
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AcceptMappedClaims undocumented
 	AcceptMappedClaims *bool `json:"acceptMappedClaims,omitempty"`
 	// KnownClientApplications undocumented
@@ -18,8 +20,24 @@ type APIApplication struct {
 	RequestedAccessTokenVersion *int `json:"requestedAccessTokenVersion,omitempty"`
 }
 
+func NewAPIApplication() (*APIApplication, error) {
+	newAPIApplication := &APIApplication{
+		ODataType: "#microsoft.graph.ApiApplication",
+	}
+	return newAPIApplication, nil
+}
+
 // APIAuthenticationConfigurationBase undocumented
 type APIAuthenticationConfigurationBase struct {
 	// Object is the base model of APIAuthenticationConfigurationBase
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewAPIAuthenticationConfigurationBase() (*APIAuthenticationConfigurationBase, error) {
+	newAPIAuthenticationConfigurationBase := &APIAuthenticationConfigurationBase{
+		ODataType: "#microsoft.graph.ApiAuthenticationConfigurationBase",
+	}
+	return newAPIAuthenticationConfigurationBase, nil
 }

@@ -8,6 +8,8 @@ import "time"
 type SecureScore struct {
 	// Entity is the base model of SecureScore
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ActiveUserCount undocumented
 	ActiveUserCount *int `json:"activeUserCount,omitempty"`
 	// AverageComparativeScores undocumented
@@ -30,10 +32,19 @@ type SecureScore struct {
 	VendorInformation *SecurityVendorInformation `json:"vendorInformation,omitempty"`
 }
 
+func NewSecureScore() (*SecureScore, error) {
+	newSecureScore := &SecureScore{
+		ODataType: "#microsoft.graph.SecureScore",
+	}
+	return newSecureScore, nil
+}
+
 // SecureScoreControlProfile undocumented
 type SecureScoreControlProfile struct {
 	// Entity is the base model of SecureScoreControlProfile
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ActionType undocumented
 	ActionType *string `json:"actionType,omitempty"`
 	// ActionURL undocumented
@@ -74,10 +85,19 @@ type SecureScoreControlProfile struct {
 	VendorInformation *SecurityVendorInformation `json:"vendorInformation,omitempty"`
 }
 
+func NewSecureScoreControlProfile() (*SecureScoreControlProfile, error) {
+	newSecureScoreControlProfile := &SecureScoreControlProfile{
+		ODataType: "#microsoft.graph.SecureScoreControlProfile",
+	}
+	return newSecureScoreControlProfile, nil
+}
+
 // SecureScoreControlStateUpdate undocumented
 type SecureScoreControlStateUpdate struct {
 	// Object is the base model of SecureScoreControlStateUpdate
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AssignedTo undocumented
 	AssignedTo *string `json:"assignedTo,omitempty"`
 	// Comment undocumented
@@ -88,4 +108,11 @@ type SecureScoreControlStateUpdate struct {
 	UpdatedBy *string `json:"updatedBy,omitempty"`
 	// UpdatedDateTime undocumented
 	UpdatedDateTime *time.Time `json:"updatedDateTime,omitempty"`
+}
+
+func NewSecureScoreControlStateUpdate() (*SecureScoreControlStateUpdate, error) {
+	newSecureScoreControlStateUpdate := &SecureScoreControlStateUpdate{
+		ODataType: "#microsoft.graph.SecureScoreControlStateUpdate",
+	}
+	return newSecureScoreControlStateUpdate, nil
 }

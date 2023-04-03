@@ -63,7 +63,7 @@ type EventTentativelyAcceptRequestParameter struct {
 	Comment *string `json:"Comment,omitempty"`
 }
 
-// Attachments returns request builder for Attachment collection
+// Attachments returns request builder for Attachment collection rcn
 func (b *EventRequestBuilder) Attachments() *EventAttachmentsCollectionRequestBuilder {
 	bb := &EventAttachmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/attachments"
@@ -166,14 +166,14 @@ func (r *EventAttachmentsCollectionRequest) Add(ctx context.Context, reqObj *Att
 	return
 }
 
-// Calendar is navigation property
+// Calendar is navigation property rn
 func (b *EventRequestBuilder) Calendar() *CalendarRequestBuilder {
 	bb := &CalendarRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/calendar"
 	return bb
 }
 
-// Extensions returns request builder for Extension collection
+// Extensions returns request builder for Extension collection rcn
 func (b *EventRequestBuilder) Extensions() *EventExtensionsCollectionRequestBuilder {
 	bb := &EventExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensions"
@@ -276,7 +276,7 @@ func (r *EventExtensionsCollectionRequest) Add(ctx context.Context, reqObj *Exte
 	return
 }
 
-// Instances returns request builder for Event collection
+// Instances returns request builder for Event collection rcn
 func (b *EventRequestBuilder) Instances() *EventInstancesCollectionRequestBuilder {
 	bb := &EventInstancesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/instances"
@@ -379,7 +379,7 @@ func (r *EventInstancesCollectionRequest) Add(ctx context.Context, reqObj *Event
 	return
 }
 
-// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection
+// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection rcn
 func (b *EventRequestBuilder) MultiValueExtendedProperties() *EventMultiValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &EventMultiValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/multiValueExtendedProperties"
@@ -482,7 +482,7 @@ func (r *EventMultiValueExtendedPropertiesCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection
+// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection rcn
 func (b *EventRequestBuilder) SingleValueExtendedProperties() *EventSingleValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &EventSingleValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/singleValueExtendedProperties"
@@ -585,9 +585,119 @@ func (r *EventSingleValueExtendedPropertiesCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// Event is navigation property
+// Event is navigation property rn
 func (b *EventMessageRequestBuilder) Event() *EventRequestBuilder {
 	bb := &EventRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/event"
 	return bb
+}
+
+// Event is navigation property rn
+func (b *EventRequestBuilder) Event() *OutlookItemRequestBuilder {
+	bb := &OutlookItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/OutlookItem"
+	return bb
+}
+
+// EventMessage returns request builder for Message collection rcn
+func (b *EventMessageRequestBuilder) EventMessage() *EventMessageEventMessageCollectionRequestBuilder {
+	bb := &EventMessageEventMessageCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Message"
+	return bb
+}
+
+// EventMessageEventMessageCollectionRequestBuilder is request builder for Message collection
+type EventMessageEventMessageCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for Message collection
+func (b *EventMessageEventMessageCollectionRequestBuilder) Request() *EventMessageEventMessageCollectionRequest {
+	return &EventMessageEventMessageCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for Message item
+func (b *EventMessageEventMessageCollectionRequestBuilder) ID(id string) *MessageRequestBuilder {
+	bb := &MessageRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EventMessageEventMessageCollectionRequest is request for Message collection
+type EventMessageEventMessageCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for Message collection
+func (r *EventMessageEventMessageCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Message, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []Message
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []Message
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for Message collection, max N pages
+func (r *EventMessageEventMessageCollectionRequest) GetN(ctx context.Context, n int) ([]Message, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for Message collection
+func (r *EventMessageEventMessageCollectionRequest) Get(ctx context.Context) ([]Message, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for Message collection
+func (r *EventMessageEventMessageCollectionRequest) Add(ctx context.Context, reqObj *Message) (resObj *Message, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsArabicRequestBuilder struct{ BaseRequestBuilder }
 
-// Arabic action undocumented
+// Arabic action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Arabic(reqObj *WorkbookFunctionsArabicRequestParameter) *WorkbookFunctionsArabicRequestBuilder {
 	bb := &WorkbookFunctionsArabicRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Arabic"

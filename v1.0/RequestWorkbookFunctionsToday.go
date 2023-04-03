@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsTodayRequestBuilder struct{ BaseRequestBuilder }
 
-// Today action undocumented
+// Today action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Today(reqObj *WorkbookFunctionsTodayRequestParameter) *WorkbookFunctionsTodayRequestBuilder {
 	bb := &WorkbookFunctionsTodayRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Today"

@@ -6,6 +6,8 @@ package msgraph
 type CrossCloudAzureActiveDirectoryTenant struct {
 	// IdentitySource is the base model of CrossCloudAzureActiveDirectoryTenant
 	IdentitySource
+
+	ODataType string `json:"@odata.type"`
 	// CloudInstance undocumented
 	CloudInstance *string `json:"cloudInstance,omitempty"`
 	// DisplayName undocumented
@@ -14,10 +16,19 @@ type CrossCloudAzureActiveDirectoryTenant struct {
 	TenantID *string `json:"tenantId,omitempty"`
 }
 
+func NewCrossCloudAzureActiveDirectoryTenant() (*CrossCloudAzureActiveDirectoryTenant, error) {
+	newCrossCloudAzureActiveDirectoryTenant := &CrossCloudAzureActiveDirectoryTenant{
+		ODataType: "#microsoft.graph.CrossCloudAzureActiveDirectoryTenant",
+	}
+	return newCrossCloudAzureActiveDirectoryTenant, nil
+}
+
 // CrossTenantAccessPolicy undocumented
 type CrossTenantAccessPolicy struct {
 	// PolicyBase is the base model of CrossTenantAccessPolicy
 	PolicyBase
+
+	ODataType string `json:"@odata.type"`
 	// AllowedCloudEndpoints undocumented
 	AllowedCloudEndpoints []string `json:"allowedCloudEndpoints,omitempty"`
 	// Default undocumented
@@ -26,20 +37,38 @@ type CrossTenantAccessPolicy struct {
 	Partners []CrossTenantAccessPolicyConfigurationPartner `json:"partners,omitempty"`
 }
 
+func NewCrossTenantAccessPolicy() (*CrossTenantAccessPolicy, error) {
+	newCrossTenantAccessPolicy := &CrossTenantAccessPolicy{
+		ODataType: "#microsoft.graph.CrossTenantAccessPolicy",
+	}
+	return newCrossTenantAccessPolicy, nil
+}
+
 // CrossTenantAccessPolicyB2BSetting undocumented
 type CrossTenantAccessPolicyB2BSetting struct {
 	// Object is the base model of CrossTenantAccessPolicyB2BSetting
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Applications undocumented
 	Applications *CrossTenantAccessPolicyTargetConfiguration `json:"applications,omitempty"`
 	// UsersAndGroups undocumented
 	UsersAndGroups *CrossTenantAccessPolicyTargetConfiguration `json:"usersAndGroups,omitempty"`
 }
 
+func NewCrossTenantAccessPolicyB2BSetting() (*CrossTenantAccessPolicyB2BSetting, error) {
+	newCrossTenantAccessPolicyB2BSetting := &CrossTenantAccessPolicyB2BSetting{
+		ODataType: "#microsoft.graph.CrossTenantAccessPolicyB2BSetting",
+	}
+	return newCrossTenantAccessPolicyB2BSetting, nil
+}
+
 // CrossTenantAccessPolicyConfigurationDefault undocumented
 type CrossTenantAccessPolicyConfigurationDefault struct {
 	// Entity is the base model of CrossTenantAccessPolicyConfigurationDefault
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// B2bCollaborationInbound undocumented
 	B2bCollaborationInbound *CrossTenantAccessPolicyB2BSetting `json:"b2bCollaborationInbound,omitempty"`
 	// B2bCollaborationOutbound undocumented
@@ -54,10 +83,19 @@ type CrossTenantAccessPolicyConfigurationDefault struct {
 	IsServiceDefault *bool `json:"isServiceDefault,omitempty"`
 }
 
+func NewCrossTenantAccessPolicyConfigurationDefault() (*CrossTenantAccessPolicyConfigurationDefault, error) {
+	newCrossTenantAccessPolicyConfigurationDefault := &CrossTenantAccessPolicyConfigurationDefault{
+		ODataType: "#microsoft.graph.CrossTenantAccessPolicyConfigurationDefault",
+	}
+	return newCrossTenantAccessPolicyConfigurationDefault, nil
+}
+
 // CrossTenantAccessPolicyConfigurationPartner undocumented
 type CrossTenantAccessPolicyConfigurationPartner struct {
 	// Object is the base model of CrossTenantAccessPolicyConfigurationPartner
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// B2bCollaborationInbound undocumented
 	B2bCollaborationInbound *CrossTenantAccessPolicyB2BSetting `json:"b2bCollaborationInbound,omitempty"`
 	// B2bCollaborationOutbound undocumented
@@ -74,10 +112,19 @@ type CrossTenantAccessPolicyConfigurationPartner struct {
 	TenantID *string `json:"tenantId,omitempty"`
 }
 
+func NewCrossTenantAccessPolicyConfigurationPartner() (*CrossTenantAccessPolicyConfigurationPartner, error) {
+	newCrossTenantAccessPolicyConfigurationPartner := &CrossTenantAccessPolicyConfigurationPartner{
+		ODataType: "#microsoft.graph.CrossTenantAccessPolicyConfigurationPartner",
+	}
+	return newCrossTenantAccessPolicyConfigurationPartner, nil
+}
+
 // CrossTenantAccessPolicyInboundTrust undocumented
 type CrossTenantAccessPolicyInboundTrust struct {
 	// Object is the base model of CrossTenantAccessPolicyInboundTrust
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsCompliantDeviceAccepted undocumented
 	IsCompliantDeviceAccepted *bool `json:"isCompliantDeviceAccepted,omitempty"`
 	// IsHybridAzureADJoinedDeviceAccepted undocumented
@@ -86,22 +133,47 @@ type CrossTenantAccessPolicyInboundTrust struct {
 	IsMFAAccepted *bool `json:"isMfaAccepted,omitempty"`
 }
 
+func NewCrossTenantAccessPolicyInboundTrust() (*CrossTenantAccessPolicyInboundTrust, error) {
+	newCrossTenantAccessPolicyInboundTrust := &CrossTenantAccessPolicyInboundTrust{
+		ODataType: "#microsoft.graph.CrossTenantAccessPolicyInboundTrust",
+	}
+	return newCrossTenantAccessPolicyInboundTrust, nil
+}
+
 // CrossTenantAccessPolicyTarget undocumented
 type CrossTenantAccessPolicyTarget struct {
 	// Object is the base model of CrossTenantAccessPolicyTarget
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Target undocumented
 	Target *string `json:"target,omitempty"`
 	// TargetType undocumented
 	TargetType *CrossTenantAccessPolicyTargetType `json:"targetType,omitempty"`
 }
 
+func NewCrossTenantAccessPolicyTarget() (*CrossTenantAccessPolicyTarget, error) {
+	newCrossTenantAccessPolicyTarget := &CrossTenantAccessPolicyTarget{
+		ODataType: "#microsoft.graph.CrossTenantAccessPolicyTarget",
+	}
+	return newCrossTenantAccessPolicyTarget, nil
+}
+
 // CrossTenantAccessPolicyTargetConfiguration undocumented
 type CrossTenantAccessPolicyTargetConfiguration struct {
 	// Object is the base model of CrossTenantAccessPolicyTargetConfiguration
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AccessType undocumented
 	AccessType *CrossTenantAccessPolicyTargetConfigurationAccessType `json:"accessType,omitempty"`
 	// Targets undocumented
 	Targets []CrossTenantAccessPolicyTarget `json:"targets,omitempty"`
+}
+
+func NewCrossTenantAccessPolicyTargetConfiguration() (*CrossTenantAccessPolicyTargetConfiguration, error) {
+	newCrossTenantAccessPolicyTargetConfiguration := &CrossTenantAccessPolicyTargetConfiguration{
+		ODataType: "#microsoft.graph.CrossTenantAccessPolicyTargetConfiguration",
+	}
+	return newCrossTenantAccessPolicyTargetConfiguration, nil
 }

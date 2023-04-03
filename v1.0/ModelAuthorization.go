@@ -6,14 +6,25 @@ package msgraph
 type AuthorizationInfo struct {
 	// Object is the base model of AuthorizationInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CertificateUserIDs undocumented
 	CertificateUserIDs []string `json:"certificateUserIds,omitempty"`
+}
+
+func NewAuthorizationInfo() (*AuthorizationInfo, error) {
+	newAuthorizationInfo := &AuthorizationInfo{
+		ODataType: "#microsoft.graph.AuthorizationInfo",
+	}
+	return newAuthorizationInfo, nil
 }
 
 // AuthorizationPolicy undocumented
 type AuthorizationPolicy struct {
 	// PolicyBase is the base model of AuthorizationPolicy
 	PolicyBase
+
+	ODataType string `json:"@odata.type"`
 	// AllowedToSignUpEmailBasedSubscriptions undocumented
 	AllowedToSignUpEmailBasedSubscriptions *bool `json:"allowedToSignUpEmailBasedSubscriptions,omitempty"`
 	// AllowedToUseSSPR undocumented
@@ -28,4 +39,11 @@ type AuthorizationPolicy struct {
 	DefaultUserRolePermissions *DefaultUserRolePermissions `json:"defaultUserRolePermissions,omitempty"`
 	// GuestUserRoleID undocumented
 	GuestUserRoleID *UUID `json:"guestUserRoleId,omitempty"`
+}
+
+func NewAuthorizationPolicy() (*AuthorizationPolicy, error) {
+	newAuthorizationPolicy := &AuthorizationPolicy{
+		ODataType: "#microsoft.graph.AuthorizationPolicy",
+	}
+	return newAuthorizationPolicy, nil
 }

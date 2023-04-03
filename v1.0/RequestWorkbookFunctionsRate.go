@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsRateRequestBuilder struct{ BaseRequestBuilder }
 
-// Rate action undocumented
+// Rate action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Rate(reqObj *WorkbookFunctionsRateRequestParameter) *WorkbookFunctionsRateRequestBuilder {
 	bb := &WorkbookFunctionsRateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Rate"

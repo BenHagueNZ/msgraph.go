@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsEvenRequestBuilder struct{ BaseRequestBuilder }
 
-// Even action undocumented
+// Even action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Even(reqObj *WorkbookFunctionsEvenRequestParameter) *WorkbookFunctionsEvenRequestBuilder {
 	bb := &WorkbookFunctionsEvenRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Even"

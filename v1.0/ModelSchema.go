@@ -6,6 +6,8 @@ package msgraph
 type SchemaExtension struct {
 	// Entity is the base model of SchemaExtension
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// Owner undocumented
@@ -16,4 +18,11 @@ type SchemaExtension struct {
 	Status *string `json:"status,omitempty"`
 	// TargetTypes undocumented
 	TargetTypes []string `json:"targetTypes,omitempty"`
+}
+
+func NewSchemaExtension() (*SchemaExtension, error) {
+	newSchemaExtension := &SchemaExtension{
+		ODataType: "#microsoft.graph.SchemaExtension",
+	}
+	return newSchemaExtension, nil
 }

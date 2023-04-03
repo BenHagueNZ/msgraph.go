@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsPowerRequestBuilder struct{ BaseRequestBuilder }
 
-// Power action undocumented
+// Power action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Power(reqObj *WorkbookFunctionsPowerRequestParameter) *WorkbookFunctionsPowerRequestBuilder {
 	bb := &WorkbookFunctionsPowerRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Power"

@@ -8,6 +8,8 @@ import "time"
 type Device struct {
 	// DirectoryObject is the base model of Device
 	DirectoryObject
+
+	ODataType string `json:"@odata.type"`
 	// AccountEnabled undocumented
 	AccountEnabled *bool `json:"accountEnabled,omitempty"`
 	// AlternativeSecurityIDs undocumented
@@ -58,10 +60,19 @@ type Device struct {
 	Extensions []Extension `json:"extensions,omitempty"`
 }
 
+func NewDevice() (*Device, error) {
+	newDevice := &Device{
+		ODataType: "#microsoft.graph.Device",
+	}
+	return newDevice, nil
+}
+
 // DeviceActionResult undocumented
 type DeviceActionResult struct {
 	// Object is the base model of DeviceActionResult
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ActionName undocumented
 	ActionName *string `json:"actionName,omitempty"`
 	// ActionState undocumented
@@ -72,38 +83,83 @@ type DeviceActionResult struct {
 	StartDateTime *time.Time `json:"startDateTime,omitempty"`
 }
 
+func NewDeviceActionResult() (*DeviceActionResult, error) {
+	newDeviceActionResult := &DeviceActionResult{
+		ODataType: "#microsoft.graph.DeviceActionResult",
+	}
+	return newDeviceActionResult, nil
+}
+
 // DeviceAndAppManagementAssignmentTarget undocumented
 type DeviceAndAppManagementAssignmentTarget struct {
 	// Object is the base model of DeviceAndAppManagementAssignmentTarget
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewDeviceAndAppManagementAssignmentTarget() (*DeviceAndAppManagementAssignmentTarget, error) {
+	newDeviceAndAppManagementAssignmentTarget := &DeviceAndAppManagementAssignmentTarget{
+		ODataType: "#microsoft.graph.DeviceAndAppManagementAssignmentTarget",
+	}
+	return newDeviceAndAppManagementAssignmentTarget, nil
 }
 
 // DeviceAndAppManagementData undocumented
 type DeviceAndAppManagementData struct {
 	// Object is the base model of DeviceAndAppManagementData
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Content undocumented
 	Content *Stream `json:"content,omitempty"`
+}
+
+func NewDeviceAndAppManagementData() (*DeviceAndAppManagementData, error) {
+	newDeviceAndAppManagementData := &DeviceAndAppManagementData{
+		ODataType: "#microsoft.graph.DeviceAndAppManagementData",
+	}
+	return newDeviceAndAppManagementData, nil
 }
 
 // DeviceAndAppManagementRoleAssignment undocumented
 type DeviceAndAppManagementRoleAssignment struct {
 	// RoleAssignment is the base model of DeviceAndAppManagementRoleAssignment
 	RoleAssignment
+
+	ODataType string `json:"@odata.type"`
 	// Members undocumented
 	Members []string `json:"members,omitempty"`
+}
+
+func NewDeviceAndAppManagementRoleAssignment() (*DeviceAndAppManagementRoleAssignment, error) {
+	newDeviceAndAppManagementRoleAssignment := &DeviceAndAppManagementRoleAssignment{
+		ODataType: "#microsoft.graph.DeviceAndAppManagementRoleAssignment",
+	}
+	return newDeviceAndAppManagementRoleAssignment, nil
 }
 
 // DeviceAndAppManagementRoleDefinition undocumented
 type DeviceAndAppManagementRoleDefinition struct {
 	// RoleDefinition is the base model of DeviceAndAppManagementRoleDefinition
 	RoleDefinition
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewDeviceAndAppManagementRoleDefinition() (*DeviceAndAppManagementRoleDefinition, error) {
+	newDeviceAndAppManagementRoleDefinition := &DeviceAndAppManagementRoleDefinition{
+		ODataType: "#microsoft.graph.DeviceAndAppManagementRoleDefinition",
+	}
+	return newDeviceAndAppManagementRoleDefinition, nil
 }
 
 // DeviceAppManagement undocumented
 type DeviceAppManagement struct {
 	// Entity is the base model of DeviceAppManagement
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// IsEnabledForMicrosoftStoreForBusiness undocumented
 	IsEnabledForMicrosoftStoreForBusiness *bool `json:"isEnabledForMicrosoftStoreForBusiness,omitempty"`
 	// MicrosoftStoreForBusinessLanguage undocumented
@@ -142,20 +198,38 @@ type DeviceAppManagement struct {
 	WindowsInformationProtectionPolicies []WindowsInformationProtectionPolicy `json:"windowsInformationProtectionPolicies,omitempty"`
 }
 
+func NewDeviceAppManagement() (*DeviceAppManagement, error) {
+	newDeviceAppManagement := &DeviceAppManagement{
+		ODataType: "#microsoft.graph.DeviceAppManagement",
+	}
+	return newDeviceAppManagement, nil
+}
+
 // DeviceCategory undocumented
 type DeviceCategory struct {
 	// Entity is the base model of DeviceCategory
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 }
 
+func NewDeviceCategory() (*DeviceCategory, error) {
+	newDeviceCategory := &DeviceCategory{
+		ODataType: "#microsoft.graph.DeviceCategory",
+	}
+	return newDeviceCategory, nil
+}
+
 // DeviceComplianceActionItem undocumented
 type DeviceComplianceActionItem struct {
 	// Entity is the base model of DeviceComplianceActionItem
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ActionType undocumented
 	ActionType *DeviceComplianceActionType `json:"actionType,omitempty"`
 	// GracePeriodHours undocumented
@@ -166,10 +240,19 @@ type DeviceComplianceActionItem struct {
 	NotificationTemplateID *string `json:"notificationTemplateId,omitempty"`
 }
 
+func NewDeviceComplianceActionItem() (*DeviceComplianceActionItem, error) {
+	newDeviceComplianceActionItem := &DeviceComplianceActionItem{
+		ODataType: "#microsoft.graph.DeviceComplianceActionItem",
+	}
+	return newDeviceComplianceActionItem, nil
+}
+
 // DeviceComplianceDeviceOverview undocumented
 type DeviceComplianceDeviceOverview struct {
 	// Entity is the base model of DeviceComplianceDeviceOverview
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ConfigurationVersion undocumented
 	ConfigurationVersion *int `json:"configurationVersion,omitempty"`
 	// ErrorCount undocumented
@@ -186,10 +269,19 @@ type DeviceComplianceDeviceOverview struct {
 	SuccessCount *int `json:"successCount,omitempty"`
 }
 
+func NewDeviceComplianceDeviceOverview() (*DeviceComplianceDeviceOverview, error) {
+	newDeviceComplianceDeviceOverview := &DeviceComplianceDeviceOverview{
+		ODataType: "#microsoft.graph.DeviceComplianceDeviceOverview",
+	}
+	return newDeviceComplianceDeviceOverview, nil
+}
+
 // DeviceComplianceDeviceStatus undocumented
 type DeviceComplianceDeviceStatus struct {
 	// Entity is the base model of DeviceComplianceDeviceStatus
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ComplianceGracePeriodExpirationDateTime undocumented
 	ComplianceGracePeriodExpirationDateTime *time.Time `json:"complianceGracePeriodExpirationDateTime,omitempty"`
 	// DeviceDisplayName undocumented
@@ -206,10 +298,19 @@ type DeviceComplianceDeviceStatus struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewDeviceComplianceDeviceStatus() (*DeviceComplianceDeviceStatus, error) {
+	newDeviceComplianceDeviceStatus := &DeviceComplianceDeviceStatus{
+		ODataType: "#microsoft.graph.DeviceComplianceDeviceStatus",
+	}
+	return newDeviceComplianceDeviceStatus, nil
+}
+
 // DeviceCompliancePolicy undocumented
 type DeviceCompliancePolicy struct {
 	// Entity is the base model of DeviceCompliancePolicy
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -236,18 +337,36 @@ type DeviceCompliancePolicy struct {
 	UserStatusOverview *DeviceComplianceUserOverview `json:"userStatusOverview,omitempty"`
 }
 
+func NewDeviceCompliancePolicy() (*DeviceCompliancePolicy, error) {
+	newDeviceCompliancePolicy := &DeviceCompliancePolicy{
+		ODataType: "#microsoft.graph.DeviceCompliancePolicy",
+	}
+	return newDeviceCompliancePolicy, nil
+}
+
 // DeviceCompliancePolicyAssignment undocumented
 type DeviceCompliancePolicyAssignment struct {
 	// Entity is the base model of DeviceCompliancePolicyAssignment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
+}
+
+func NewDeviceCompliancePolicyAssignment() (*DeviceCompliancePolicyAssignment, error) {
+	newDeviceCompliancePolicyAssignment := &DeviceCompliancePolicyAssignment{
+		ODataType: "#microsoft.graph.DeviceCompliancePolicyAssignment",
+	}
+	return newDeviceCompliancePolicyAssignment, nil
 }
 
 // DeviceCompliancePolicyDeviceStateSummary undocumented
 type DeviceCompliancePolicyDeviceStateSummary struct {
 	// Entity is the base model of DeviceCompliancePolicyDeviceStateSummary
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CompliantDeviceCount undocumented
 	CompliantDeviceCount *int `json:"compliantDeviceCount,omitempty"`
 	// ConfigManagerCount undocumented
@@ -268,10 +387,19 @@ type DeviceCompliancePolicyDeviceStateSummary struct {
 	UnknownDeviceCount *int `json:"unknownDeviceCount,omitempty"`
 }
 
+func NewDeviceCompliancePolicyDeviceStateSummary() (*DeviceCompliancePolicyDeviceStateSummary, error) {
+	newDeviceCompliancePolicyDeviceStateSummary := &DeviceCompliancePolicyDeviceStateSummary{
+		ODataType: "#microsoft.graph.DeviceCompliancePolicyDeviceStateSummary",
+	}
+	return newDeviceCompliancePolicyDeviceStateSummary, nil
+}
+
 // DeviceCompliancePolicySettingState undocumented
 type DeviceCompliancePolicySettingState struct {
 	// Object is the base model of DeviceCompliancePolicySettingState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CurrentValue undocumented
 	CurrentValue *string `json:"currentValue,omitempty"`
 	// ErrorCode undocumented
@@ -298,10 +426,19 @@ type DeviceCompliancePolicySettingState struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewDeviceCompliancePolicySettingState() (*DeviceCompliancePolicySettingState, error) {
+	newDeviceCompliancePolicySettingState := &DeviceCompliancePolicySettingState{
+		ODataType: "#microsoft.graph.DeviceCompliancePolicySettingState",
+	}
+	return newDeviceCompliancePolicySettingState, nil
+}
+
 // DeviceCompliancePolicySettingStateSummary undocumented
 type DeviceCompliancePolicySettingStateSummary struct {
 	// Entity is the base model of DeviceCompliancePolicySettingStateSummary
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CompliantDeviceCount undocumented
 	CompliantDeviceCount *int `json:"compliantDeviceCount,omitempty"`
 	// ConflictDeviceCount undocumented
@@ -326,10 +463,19 @@ type DeviceCompliancePolicySettingStateSummary struct {
 	DeviceComplianceSettingStates []DeviceComplianceSettingState `json:"deviceComplianceSettingStates,omitempty"`
 }
 
+func NewDeviceCompliancePolicySettingStateSummary() (*DeviceCompliancePolicySettingStateSummary, error) {
+	newDeviceCompliancePolicySettingStateSummary := &DeviceCompliancePolicySettingStateSummary{
+		ODataType: "#microsoft.graph.DeviceCompliancePolicySettingStateSummary",
+	}
+	return newDeviceCompliancePolicySettingStateSummary, nil
+}
+
 // DeviceCompliancePolicyState undocumented
 type DeviceCompliancePolicyState struct {
 	// Entity is the base model of DeviceCompliancePolicyState
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// PlatformType undocumented
@@ -344,20 +490,38 @@ type DeviceCompliancePolicyState struct {
 	Version *int `json:"version,omitempty"`
 }
 
+func NewDeviceCompliancePolicyState() (*DeviceCompliancePolicyState, error) {
+	newDeviceCompliancePolicyState := &DeviceCompliancePolicyState{
+		ODataType: "#microsoft.graph.DeviceCompliancePolicyState",
+	}
+	return newDeviceCompliancePolicyState, nil
+}
+
 // DeviceComplianceScheduledActionForRule undocumented
 type DeviceComplianceScheduledActionForRule struct {
 	// Entity is the base model of DeviceComplianceScheduledActionForRule
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// RuleName undocumented
 	RuleName *string `json:"ruleName,omitempty"`
 	// ScheduledActionConfigurations undocumented
 	ScheduledActionConfigurations []DeviceComplianceActionItem `json:"scheduledActionConfigurations,omitempty"`
 }
 
+func NewDeviceComplianceScheduledActionForRule() (*DeviceComplianceScheduledActionForRule, error) {
+	newDeviceComplianceScheduledActionForRule := &DeviceComplianceScheduledActionForRule{
+		ODataType: "#microsoft.graph.DeviceComplianceScheduledActionForRule",
+	}
+	return newDeviceComplianceScheduledActionForRule, nil
+}
+
 // DeviceComplianceSettingState undocumented
 type DeviceComplianceSettingState struct {
 	// Entity is the base model of DeviceComplianceSettingState
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ComplianceGracePeriodExpirationDateTime undocumented
 	ComplianceGracePeriodExpirationDateTime *time.Time `json:"complianceGracePeriodExpirationDateTime,omitempty"`
 	// DeviceID undocumented
@@ -382,10 +546,19 @@ type DeviceComplianceSettingState struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewDeviceComplianceSettingState() (*DeviceComplianceSettingState, error) {
+	newDeviceComplianceSettingState := &DeviceComplianceSettingState{
+		ODataType: "#microsoft.graph.DeviceComplianceSettingState",
+	}
+	return newDeviceComplianceSettingState, nil
+}
+
 // DeviceComplianceUserOverview undocumented
 type DeviceComplianceUserOverview struct {
 	// Entity is the base model of DeviceComplianceUserOverview
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ConfigurationVersion undocumented
 	ConfigurationVersion *int `json:"configurationVersion,omitempty"`
 	// ErrorCount undocumented
@@ -402,10 +575,19 @@ type DeviceComplianceUserOverview struct {
 	SuccessCount *int `json:"successCount,omitempty"`
 }
 
+func NewDeviceComplianceUserOverview() (*DeviceComplianceUserOverview, error) {
+	newDeviceComplianceUserOverview := &DeviceComplianceUserOverview{
+		ODataType: "#microsoft.graph.DeviceComplianceUserOverview",
+	}
+	return newDeviceComplianceUserOverview, nil
+}
+
 // DeviceComplianceUserStatus undocumented
 type DeviceComplianceUserStatus struct {
 	// Entity is the base model of DeviceComplianceUserStatus
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DevicesCount undocumented
 	DevicesCount *int `json:"devicesCount,omitempty"`
 	// LastReportedDateTime undocumented
@@ -418,10 +600,19 @@ type DeviceComplianceUserStatus struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewDeviceComplianceUserStatus() (*DeviceComplianceUserStatus, error) {
+	newDeviceComplianceUserStatus := &DeviceComplianceUserStatus{
+		ODataType: "#microsoft.graph.DeviceComplianceUserStatus",
+	}
+	return newDeviceComplianceUserStatus, nil
+}
+
 // DeviceConfiguration undocumented
 type DeviceConfiguration struct {
 	// Entity is the base model of DeviceConfiguration
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -446,18 +637,36 @@ type DeviceConfiguration struct {
 	UserStatusOverview *DeviceConfigurationUserOverview `json:"userStatusOverview,omitempty"`
 }
 
+func NewDeviceConfiguration() (*DeviceConfiguration, error) {
+	newDeviceConfiguration := &DeviceConfiguration{
+		ODataType: "#microsoft.graph.DeviceConfiguration",
+	}
+	return newDeviceConfiguration, nil
+}
+
 // DeviceConfigurationAssignment undocumented
 type DeviceConfigurationAssignment struct {
 	// Entity is the base model of DeviceConfigurationAssignment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
+}
+
+func NewDeviceConfigurationAssignment() (*DeviceConfigurationAssignment, error) {
+	newDeviceConfigurationAssignment := &DeviceConfigurationAssignment{
+		ODataType: "#microsoft.graph.DeviceConfigurationAssignment",
+	}
+	return newDeviceConfigurationAssignment, nil
 }
 
 // DeviceConfigurationDeviceOverview undocumented
 type DeviceConfigurationDeviceOverview struct {
 	// Entity is the base model of DeviceConfigurationDeviceOverview
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ConfigurationVersion undocumented
 	ConfigurationVersion *int `json:"configurationVersion,omitempty"`
 	// ErrorCount undocumented
@@ -474,10 +683,19 @@ type DeviceConfigurationDeviceOverview struct {
 	SuccessCount *int `json:"successCount,omitempty"`
 }
 
+func NewDeviceConfigurationDeviceOverview() (*DeviceConfigurationDeviceOverview, error) {
+	newDeviceConfigurationDeviceOverview := &DeviceConfigurationDeviceOverview{
+		ODataType: "#microsoft.graph.DeviceConfigurationDeviceOverview",
+	}
+	return newDeviceConfigurationDeviceOverview, nil
+}
+
 // DeviceConfigurationDeviceStateSummary undocumented
 type DeviceConfigurationDeviceStateSummary struct {
 	// Entity is the base model of DeviceConfigurationDeviceStateSummary
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CompliantDeviceCount undocumented
 	CompliantDeviceCount *int `json:"compliantDeviceCount,omitempty"`
 	// ConflictDeviceCount undocumented
@@ -494,10 +712,19 @@ type DeviceConfigurationDeviceStateSummary struct {
 	UnknownDeviceCount *int `json:"unknownDeviceCount,omitempty"`
 }
 
+func NewDeviceConfigurationDeviceStateSummary() (*DeviceConfigurationDeviceStateSummary, error) {
+	newDeviceConfigurationDeviceStateSummary := &DeviceConfigurationDeviceStateSummary{
+		ODataType: "#microsoft.graph.DeviceConfigurationDeviceStateSummary",
+	}
+	return newDeviceConfigurationDeviceStateSummary, nil
+}
+
 // DeviceConfigurationDeviceStatus undocumented
 type DeviceConfigurationDeviceStatus struct {
 	// Entity is the base model of DeviceConfigurationDeviceStatus
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ComplianceGracePeriodExpirationDateTime undocumented
 	ComplianceGracePeriodExpirationDateTime *time.Time `json:"complianceGracePeriodExpirationDateTime,omitempty"`
 	// DeviceDisplayName undocumented
@@ -514,10 +741,19 @@ type DeviceConfigurationDeviceStatus struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewDeviceConfigurationDeviceStatus() (*DeviceConfigurationDeviceStatus, error) {
+	newDeviceConfigurationDeviceStatus := &DeviceConfigurationDeviceStatus{
+		ODataType: "#microsoft.graph.DeviceConfigurationDeviceStatus",
+	}
+	return newDeviceConfigurationDeviceStatus, nil
+}
+
 // DeviceConfigurationSettingState undocumented
 type DeviceConfigurationSettingState struct {
 	// Object is the base model of DeviceConfigurationSettingState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CurrentValue undocumented
 	CurrentValue *string `json:"currentValue,omitempty"`
 	// ErrorCode undocumented
@@ -544,10 +780,19 @@ type DeviceConfigurationSettingState struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewDeviceConfigurationSettingState() (*DeviceConfigurationSettingState, error) {
+	newDeviceConfigurationSettingState := &DeviceConfigurationSettingState{
+		ODataType: "#microsoft.graph.DeviceConfigurationSettingState",
+	}
+	return newDeviceConfigurationSettingState, nil
+}
+
 // DeviceConfigurationState undocumented
 type DeviceConfigurationState struct {
 	// Entity is the base model of DeviceConfigurationState
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// PlatformType undocumented
@@ -562,10 +807,19 @@ type DeviceConfigurationState struct {
 	Version *int `json:"version,omitempty"`
 }
 
+func NewDeviceConfigurationState() (*DeviceConfigurationState, error) {
+	newDeviceConfigurationState := &DeviceConfigurationState{
+		ODataType: "#microsoft.graph.DeviceConfigurationState",
+	}
+	return newDeviceConfigurationState, nil
+}
+
 // DeviceConfigurationUserOverview undocumented
 type DeviceConfigurationUserOverview struct {
 	// Entity is the base model of DeviceConfigurationUserOverview
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ConfigurationVersion undocumented
 	ConfigurationVersion *int `json:"configurationVersion,omitempty"`
 	// ErrorCount undocumented
@@ -582,10 +836,19 @@ type DeviceConfigurationUserOverview struct {
 	SuccessCount *int `json:"successCount,omitempty"`
 }
 
+func NewDeviceConfigurationUserOverview() (*DeviceConfigurationUserOverview, error) {
+	newDeviceConfigurationUserOverview := &DeviceConfigurationUserOverview{
+		ODataType: "#microsoft.graph.DeviceConfigurationUserOverview",
+	}
+	return newDeviceConfigurationUserOverview, nil
+}
+
 // DeviceConfigurationUserStatus undocumented
 type DeviceConfigurationUserStatus struct {
 	// Entity is the base model of DeviceConfigurationUserStatus
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DevicesCount undocumented
 	DevicesCount *int `json:"devicesCount,omitempty"`
 	// LastReportedDateTime undocumented
@@ -598,10 +861,19 @@ type DeviceConfigurationUserStatus struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewDeviceConfigurationUserStatus() (*DeviceConfigurationUserStatus, error) {
+	newDeviceConfigurationUserStatus := &DeviceConfigurationUserStatus{
+		ODataType: "#microsoft.graph.DeviceConfigurationUserStatus",
+	}
+	return newDeviceConfigurationUserStatus, nil
+}
+
 // DeviceDetail undocumented
 type DeviceDetail struct {
 	// Object is the base model of DeviceDetail
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Browser undocumented
 	Browser *string `json:"browser,omitempty"`
 	// DeviceID undocumented
@@ -618,10 +890,19 @@ type DeviceDetail struct {
 	TrustType *string `json:"trustType,omitempty"`
 }
 
+func NewDeviceDetail() (*DeviceDetail, error) {
+	newDeviceDetail := &DeviceDetail{
+		ODataType: "#microsoft.graph.DeviceDetail",
+	}
+	return newDeviceDetail, nil
+}
+
 // DeviceEnrollmentConfiguration undocumented
 type DeviceEnrollmentConfiguration struct {
 	// Entity is the base model of DeviceEnrollmentConfiguration
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -638,18 +919,36 @@ type DeviceEnrollmentConfiguration struct {
 	Assignments []EnrollmentConfigurationAssignment `json:"assignments,omitempty"`
 }
 
+func NewDeviceEnrollmentConfiguration() (*DeviceEnrollmentConfiguration, error) {
+	newDeviceEnrollmentConfiguration := &DeviceEnrollmentConfiguration{
+		ODataType: "#microsoft.graph.DeviceEnrollmentConfiguration",
+	}
+	return newDeviceEnrollmentConfiguration, nil
+}
+
 // DeviceEnrollmentLimitConfiguration undocumented
 type DeviceEnrollmentLimitConfiguration struct {
 	// DeviceEnrollmentConfiguration is the base model of DeviceEnrollmentLimitConfiguration
 	DeviceEnrollmentConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// Limit undocumented
 	Limit *int `json:"limit,omitempty"`
+}
+
+func NewDeviceEnrollmentLimitConfiguration() (*DeviceEnrollmentLimitConfiguration, error) {
+	newDeviceEnrollmentLimitConfiguration := &DeviceEnrollmentLimitConfiguration{
+		ODataType: "#microsoft.graph.DeviceEnrollmentLimitConfiguration",
+	}
+	return newDeviceEnrollmentLimitConfiguration, nil
 }
 
 // DeviceEnrollmentPlatformRestriction undocumented
 type DeviceEnrollmentPlatformRestriction struct {
 	// Object is the base model of DeviceEnrollmentPlatformRestriction
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// OsMaximumVersion undocumented
 	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
 	// OsMinimumVersion undocumented
@@ -660,10 +959,19 @@ type DeviceEnrollmentPlatformRestriction struct {
 	PlatformBlocked *bool `json:"platformBlocked,omitempty"`
 }
 
+func NewDeviceEnrollmentPlatformRestriction() (*DeviceEnrollmentPlatformRestriction, error) {
+	newDeviceEnrollmentPlatformRestriction := &DeviceEnrollmentPlatformRestriction{
+		ODataType: "#microsoft.graph.DeviceEnrollmentPlatformRestriction",
+	}
+	return newDeviceEnrollmentPlatformRestriction, nil
+}
+
 // DeviceEnrollmentPlatformRestrictionsConfiguration undocumented
 type DeviceEnrollmentPlatformRestrictionsConfiguration struct {
 	// DeviceEnrollmentConfiguration is the base model of DeviceEnrollmentPlatformRestrictionsConfiguration
 	DeviceEnrollmentConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// AndroidRestriction undocumented
 	AndroidRestriction *DeviceEnrollmentPlatformRestriction `json:"androidRestriction,omitempty"`
 	// IOSRestriction undocumented
@@ -676,10 +984,19 @@ type DeviceEnrollmentPlatformRestrictionsConfiguration struct {
 	WindowsRestriction *DeviceEnrollmentPlatformRestriction `json:"windowsRestriction,omitempty"`
 }
 
+func NewDeviceEnrollmentPlatformRestrictionsConfiguration() (*DeviceEnrollmentPlatformRestrictionsConfiguration, error) {
+	newDeviceEnrollmentPlatformRestrictionsConfiguration := &DeviceEnrollmentPlatformRestrictionsConfiguration{
+		ODataType: "#microsoft.graph.DeviceEnrollmentPlatformRestrictionsConfiguration",
+	}
+	return newDeviceEnrollmentPlatformRestrictionsConfiguration, nil
+}
+
 // DeviceEnrollmentWindowsHelloForBusinessConfiguration undocumented
 type DeviceEnrollmentWindowsHelloForBusinessConfiguration struct {
 	// DeviceEnrollmentConfiguration is the base model of DeviceEnrollmentWindowsHelloForBusinessConfiguration
 	DeviceEnrollmentConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// EnhancedBiometricsState undocumented
 	EnhancedBiometricsState *Enablement `json:"enhancedBiometricsState,omitempty"`
 	// PinExpirationInDays undocumented
@@ -706,10 +1023,19 @@ type DeviceEnrollmentWindowsHelloForBusinessConfiguration struct {
 	UnlockWithBiometricsEnabled *bool `json:"unlockWithBiometricsEnabled,omitempty"`
 }
 
+func NewDeviceEnrollmentWindowsHelloForBusinessConfiguration() (*DeviceEnrollmentWindowsHelloForBusinessConfiguration, error) {
+	newDeviceEnrollmentWindowsHelloForBusinessConfiguration := &DeviceEnrollmentWindowsHelloForBusinessConfiguration{
+		ODataType: "#microsoft.graph.DeviceEnrollmentWindowsHelloForBusinessConfiguration",
+	}
+	return newDeviceEnrollmentWindowsHelloForBusinessConfiguration, nil
+}
+
 // DeviceExchangeAccessStateSummary undocumented
 type DeviceExchangeAccessStateSummary struct {
 	// Object is the base model of DeviceExchangeAccessStateSummary
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowedDeviceCount undocumented
 	AllowedDeviceCount *int `json:"allowedDeviceCount,omitempty"`
 	// BlockedDeviceCount undocumented
@@ -722,10 +1048,19 @@ type DeviceExchangeAccessStateSummary struct {
 	UnknownDeviceCount *int `json:"unknownDeviceCount,omitempty"`
 }
 
+func NewDeviceExchangeAccessStateSummary() (*DeviceExchangeAccessStateSummary, error) {
+	newDeviceExchangeAccessStateSummary := &DeviceExchangeAccessStateSummary{
+		ODataType: "#microsoft.graph.DeviceExchangeAccessStateSummary",
+	}
+	return newDeviceExchangeAccessStateSummary, nil
+}
+
 // DeviceGeoLocation undocumented
 type DeviceGeoLocation struct {
 	// Object is the base model of DeviceGeoLocation
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Altitude undocumented
 	Altitude *float64 `json:"altitude,omitempty"`
 	// Heading undocumented
@@ -744,10 +1079,19 @@ type DeviceGeoLocation struct {
 	VerticalAccuracy *float64 `json:"verticalAccuracy,omitempty"`
 }
 
+func NewDeviceGeoLocation() (*DeviceGeoLocation, error) {
+	newDeviceGeoLocation := &DeviceGeoLocation{
+		ODataType: "#microsoft.graph.DeviceGeoLocation",
+	}
+	return newDeviceGeoLocation, nil
+}
+
 // DeviceHealthAttestationState undocumented
 type DeviceHealthAttestationState struct {
 	// Object is the base model of DeviceHealthAttestationState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AttestationIdentityKey undocumented
 	AttestationIdentityKey *string `json:"attestationIdentityKey,omitempty"`
 	// BitLockerStatus undocumented
@@ -814,10 +1158,19 @@ type DeviceHealthAttestationState struct {
 	WindowsPE *string `json:"windowsPE,omitempty"`
 }
 
+func NewDeviceHealthAttestationState() (*DeviceHealthAttestationState, error) {
+	newDeviceHealthAttestationState := &DeviceHealthAttestationState{
+		ODataType: "#microsoft.graph.DeviceHealthAttestationState",
+	}
+	return newDeviceHealthAttestationState, nil
+}
+
 // DeviceInstallState undocumented
 type DeviceInstallState struct {
 	// Entity is the base model of DeviceInstallState
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DeviceID undocumented
 	DeviceID *string `json:"deviceId,omitempty"`
 	// DeviceName undocumented
@@ -836,10 +1189,19 @@ type DeviceInstallState struct {
 	UserName *string `json:"userName,omitempty"`
 }
 
+func NewDeviceInstallState() (*DeviceInstallState, error) {
+	newDeviceInstallState := &DeviceInstallState{
+		ODataType: "#microsoft.graph.DeviceInstallState",
+	}
+	return newDeviceInstallState, nil
+}
+
 // DeviceManagement undocumented
 type DeviceManagement struct {
 	// Entity is the base model of DeviceManagement
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// IntuneAccountID undocumented
 	IntuneAccountID *UUID `json:"intuneAccountId,omitempty"`
 	// Settings undocumented
@@ -914,10 +1276,19 @@ type DeviceManagement struct {
 	WindowsInformationProtectionNetworkLearningSummaries []WindowsInformationProtectionNetworkLearningSummary `json:"windowsInformationProtectionNetworkLearningSummaries,omitempty"`
 }
 
+func NewDeviceManagement() (*DeviceManagement, error) {
+	newDeviceManagement := &DeviceManagement{
+		ODataType: "#microsoft.graph.DeviceManagement",
+	}
+	return newDeviceManagement, nil
+}
+
 // DeviceManagementExchangeConnector undocumented
 type DeviceManagementExchangeConnector struct {
 	// Entity is the base model of DeviceManagementExchangeConnector
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ConnectorServerName undocumented
 	ConnectorServerName *string `json:"connectorServerName,omitempty"`
 	// ExchangeAlias undocumented
@@ -938,10 +1309,19 @@ type DeviceManagementExchangeConnector struct {
 	Version *string `json:"version,omitempty"`
 }
 
+func NewDeviceManagementExchangeConnector() (*DeviceManagementExchangeConnector, error) {
+	newDeviceManagementExchangeConnector := &DeviceManagementExchangeConnector{
+		ODataType: "#microsoft.graph.DeviceManagementExchangeConnector",
+	}
+	return newDeviceManagementExchangeConnector, nil
+}
+
 // DeviceManagementExportJob undocumented
 type DeviceManagementExportJob struct {
 	// Entity is the base model of DeviceManagementExportJob
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ExpirationDateTime undocumented
 	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
 	// Filter undocumented
@@ -964,10 +1344,19 @@ type DeviceManagementExportJob struct {
 	URL *string `json:"url,omitempty"`
 }
 
+func NewDeviceManagementExportJob() (*DeviceManagementExportJob, error) {
+	newDeviceManagementExportJob := &DeviceManagementExportJob{
+		ODataType: "#microsoft.graph.DeviceManagementExportJob",
+	}
+	return newDeviceManagementExportJob, nil
+}
+
 // DeviceManagementPartner undocumented
 type DeviceManagementPartner struct {
 	// Entity is the base model of DeviceManagementPartner
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// GroupsRequiringPartnerEnrollment undocumented
@@ -988,26 +1377,53 @@ type DeviceManagementPartner struct {
 	WhenPartnerDevicesWillBeRemovedDateTime *time.Time `json:"whenPartnerDevicesWillBeRemovedDateTime,omitempty"`
 }
 
+func NewDeviceManagementPartner() (*DeviceManagementPartner, error) {
+	newDeviceManagementPartner := &DeviceManagementPartner{
+		ODataType: "#microsoft.graph.DeviceManagementPartner",
+	}
+	return newDeviceManagementPartner, nil
+}
+
 // DeviceManagementPartnerAssignment undocumented
 type DeviceManagementPartnerAssignment struct {
 	// Object is the base model of DeviceManagementPartnerAssignment
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
+}
+
+func NewDeviceManagementPartnerAssignment() (*DeviceManagementPartnerAssignment, error) {
+	newDeviceManagementPartnerAssignment := &DeviceManagementPartnerAssignment{
+		ODataType: "#microsoft.graph.DeviceManagementPartnerAssignment",
+	}
+	return newDeviceManagementPartnerAssignment, nil
 }
 
 // DeviceManagementReports undocumented
 type DeviceManagementReports struct {
 	// Entity is the base model of DeviceManagementReports
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ExportJobs undocumented
 	ExportJobs []DeviceManagementExportJob `json:"exportJobs,omitempty"`
+}
+
+func NewDeviceManagementReports() (*DeviceManagementReports, error) {
+	newDeviceManagementReports := &DeviceManagementReports{
+		ODataType: "#microsoft.graph.DeviceManagementReports",
+	}
+	return newDeviceManagementReports, nil
 }
 
 // DeviceManagementSettings undocumented
 type DeviceManagementSettings struct {
 	// Object is the base model of DeviceManagementSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DeviceComplianceCheckinThresholdDays undocumented
 	DeviceComplianceCheckinThresholdDays *int `json:"deviceComplianceCheckinThresholdDays,omitempty"`
 	// IsScheduledActionEnabled undocumented
@@ -1016,20 +1432,38 @@ type DeviceManagementSettings struct {
 	SecureByDefault *bool `json:"secureByDefault,omitempty"`
 }
 
+func NewDeviceManagementSettings() (*DeviceManagementSettings, error) {
+	newDeviceManagementSettings := &DeviceManagementSettings{
+		ODataType: "#microsoft.graph.DeviceManagementSettings",
+	}
+	return newDeviceManagementSettings, nil
+}
+
 // DeviceManagementTroubleshootingEvent undocumented
 type DeviceManagementTroubleshootingEvent struct {
 	// Entity is the base model of DeviceManagementTroubleshootingEvent
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CorrelationID undocumented
 	CorrelationID *string `json:"correlationId,omitempty"`
 	// EventDateTime undocumented
 	EventDateTime *time.Time `json:"eventDateTime,omitempty"`
 }
 
+func NewDeviceManagementTroubleshootingEvent() (*DeviceManagementTroubleshootingEvent, error) {
+	newDeviceManagementTroubleshootingEvent := &DeviceManagementTroubleshootingEvent{
+		ODataType: "#microsoft.graph.DeviceManagementTroubleshootingEvent",
+	}
+	return newDeviceManagementTroubleshootingEvent, nil
+}
+
 // DeviceOperatingSystemSummary undocumented
 type DeviceOperatingSystemSummary struct {
 	// Object is the base model of DeviceOperatingSystemSummary
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AndroidCorporateWorkProfileCount undocumented
 	AndroidCorporateWorkProfileCount *int `json:"androidCorporateWorkProfileCount,omitempty"`
 	// AndroidCount undocumented
@@ -1054,4 +1488,11 @@ type DeviceOperatingSystemSummary struct {
 	WindowsCount *int `json:"windowsCount,omitempty"`
 	// WindowsMobileCount undocumented
 	WindowsMobileCount *int `json:"windowsMobileCount,omitempty"`
+}
+
+func NewDeviceOperatingSystemSummary() (*DeviceOperatingSystemSummary, error) {
+	newDeviceOperatingSystemSummary := &DeviceOperatingSystemSummary{
+		ODataType: "#microsoft.graph.DeviceOperatingSystemSummary",
+	}
+	return newDeviceOperatingSystemSummary, nil
 }

@@ -6,12 +6,23 @@ package msgraph
 type IncomingCallOptions struct {
 	// CallOptions is the base model of IncomingCallOptions
 	CallOptions
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewIncomingCallOptions() (*IncomingCallOptions, error) {
+	newIncomingCallOptions := &IncomingCallOptions{
+		ODataType: "#microsoft.graph.IncomingCallOptions",
+	}
+	return newIncomingCallOptions, nil
 }
 
 // IncomingContext undocumented
 type IncomingContext struct {
 	// Object is the base model of IncomingContext
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ObservedParticipantID undocumented
 	ObservedParticipantID *string `json:"observedParticipantId,omitempty"`
 	// OnBehalfOf undocumented
@@ -20,4 +31,11 @@ type IncomingContext struct {
 	SourceParticipantID *string `json:"sourceParticipantId,omitempty"`
 	// Transferor undocumented
 	Transferor *IdentitySet `json:"transferor,omitempty"`
+}
+
+func NewIncomingContext() (*IncomingContext, error) {
+	newIncomingContext := &IncomingContext{
+		ODataType: "#microsoft.graph.IncomingContext",
+	}
+	return newIncomingContext, nil
 }

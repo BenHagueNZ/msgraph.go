@@ -6,8 +6,17 @@ package msgraph
 type Bundle struct {
 	// Object is the base model of Bundle
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Album undocumented
 	Album *Album `json:"album,omitempty"`
 	// ChildCount undocumented
 	ChildCount *int `json:"childCount,omitempty"`
+}
+
+func NewBundle() (*Bundle, error) {
+	newBundle := &Bundle{
+		ODataType: "#microsoft.graph.Bundle",
+	}
+	return newBundle, nil
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsGeStepRequestBuilder struct{ BaseRequestBuilder }
 
-// GeStep action undocumented
+// GeStep action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) GeStep(reqObj *WorkbookFunctionsGeStepRequestParameter) *WorkbookFunctionsGeStepRequestBuilder {
 	bb := &WorkbookFunctionsGeStepRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/GeStep"

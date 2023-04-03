@@ -8,8 +8,17 @@ import "time"
 type UsageDetails struct {
 	// Object is the base model of UsageDetails
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// LastAccessedDateTime undocumented
 	LastAccessedDateTime *time.Time `json:"lastAccessedDateTime,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+}
+
+func NewUsageDetails() (*UsageDetails, error) {
+	newUsageDetails := &UsageDetails{
+		ODataType: "#microsoft.graph.UsageDetails",
+	}
+	return newUsageDetails, nil
 }

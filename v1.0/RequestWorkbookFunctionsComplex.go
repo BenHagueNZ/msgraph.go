@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsComplexRequestBuilder struct{ BaseRequestBuilder }
 
-// Complex action undocumented
+// Complex action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Complex(reqObj *WorkbookFunctionsComplexRequestParameter) *WorkbookFunctionsComplexRequestBuilder {
 	bb := &WorkbookFunctionsComplexRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Complex"

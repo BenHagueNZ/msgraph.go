@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDegreesRequestBuilder struct{ BaseRequestBuilder }
 
-// Degrees action undocumented
+// Degrees action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Degrees(reqObj *WorkbookFunctionsDegreesRequestParameter) *WorkbookFunctionsDegreesRequestBuilder {
 	bb := &WorkbookFunctionsDegreesRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Degrees"

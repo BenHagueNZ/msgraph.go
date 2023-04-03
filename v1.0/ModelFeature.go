@@ -6,6 +6,8 @@ package msgraph
 type FeatureRolloutPolicy struct {
 	// Entity is the base model of FeatureRolloutPolicy
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -20,12 +22,28 @@ type FeatureRolloutPolicy struct {
 	AppliesTo []DirectoryObject `json:"appliesTo,omitempty"`
 }
 
+func NewFeatureRolloutPolicy() (*FeatureRolloutPolicy, error) {
+	newFeatureRolloutPolicy := &FeatureRolloutPolicy{
+		ODataType: "#microsoft.graph.FeatureRolloutPolicy",
+	}
+	return newFeatureRolloutPolicy, nil
+}
+
 // FeatureTarget undocumented
 type FeatureTarget struct {
 	// Object is the base model of FeatureTarget
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ID undocumented
 	ID *string `json:"id,omitempty"`
 	// TargetType undocumented
 	TargetType *FeatureTargetType `json:"targetType,omitempty"`
+}
+
+func NewFeatureTarget() (*FeatureTarget, error) {
+	newFeatureTarget := &FeatureTarget{
+		ODataType: "#microsoft.graph.FeatureTarget",
+	}
+	return newFeatureTarget, nil
 }

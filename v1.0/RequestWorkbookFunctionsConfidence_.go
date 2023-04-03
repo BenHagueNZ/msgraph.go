@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsConfidence_NormRequestBuilder struct{ BaseRequestBuilder }
 
-// Confidence_Norm action undocumented
+// Confidence_Norm action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Confidence_Norm(reqObj *WorkbookFunctionsConfidence_NormRequestParameter) *WorkbookFunctionsConfidence_NormRequestBuilder {
 	bb := &WorkbookFunctionsConfidence_NormRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Confidence_Norm"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsConfidence_NormRequest) Post(ctx context.Context) (res
 
 type WorkbookFunctionsConfidence_TRequestBuilder struct{ BaseRequestBuilder }
 
-// Confidence_T action undocumented
+// Confidence_T action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Confidence_T(reqObj *WorkbookFunctionsConfidence_TRequestParameter) *WorkbookFunctionsConfidence_TRequestBuilder {
 	bb := &WorkbookFunctionsConfidence_TRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Confidence_T"

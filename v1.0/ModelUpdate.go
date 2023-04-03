@@ -6,12 +6,23 @@ package msgraph
 type UpdateRecordingStatusOperation struct {
 	// CommsOperation is the base model of UpdateRecordingStatusOperation
 	CommsOperation
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewUpdateRecordingStatusOperation() (*UpdateRecordingStatusOperation, error) {
+	newUpdateRecordingStatusOperation := &UpdateRecordingStatusOperation{
+		ODataType: "#microsoft.graph.UpdateRecordingStatusOperation",
+	}
+	return newUpdateRecordingStatusOperation, nil
 }
 
 // UpdateWindowsDeviceAccountActionParameter undocumented
 type UpdateWindowsDeviceAccountActionParameter struct {
 	// Object is the base model of UpdateWindowsDeviceAccountActionParameter
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CalendarSyncEnabled undocumented
 	CalendarSyncEnabled *bool `json:"calendarSyncEnabled,omitempty"`
 	// DeviceAccount undocumented
@@ -24,4 +35,11 @@ type UpdateWindowsDeviceAccountActionParameter struct {
 	PasswordRotationEnabled *bool `json:"passwordRotationEnabled,omitempty"`
 	// SessionInitiationProtocalAddress undocumented
 	SessionInitiationProtocalAddress *string `json:"sessionInitiationProtocalAddress,omitempty"`
+}
+
+func NewUpdateWindowsDeviceAccountActionParameter() (*UpdateWindowsDeviceAccountActionParameter, error) {
+	newUpdateWindowsDeviceAccountActionParameter := &UpdateWindowsDeviceAccountActionParameter{
+		ODataType: "#microsoft.graph.UpdateWindowsDeviceAccountActionParameter",
+	}
+	return newUpdateWindowsDeviceAccountActionParameter, nil
 }

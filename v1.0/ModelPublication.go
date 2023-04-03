@@ -6,8 +6,17 @@ package msgraph
 type PublicationFacet struct {
 	// Object is the base model of PublicationFacet
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Level undocumented
 	Level *string `json:"level,omitempty"`
 	// VersionID undocumented
 	VersionID *string `json:"versionId,omitempty"`
+}
+
+func NewPublicationFacet() (*PublicationFacet, error) {
+	newPublicationFacet := &PublicationFacet{
+		ODataType: "#microsoft.graph.PublicationFacet",
+	}
+	return newPublicationFacet, nil
 }

@@ -6,8 +6,17 @@ package msgraph
 type RedirectURISettings struct {
 	// Object is the base model of RedirectURISettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Index undocumented
 	Index *int `json:"index,omitempty"`
 	// URI undocumented
 	URI *string `json:"uri,omitempty"`
+}
+
+func NewRedirectURISettings() (*RedirectURISettings, error) {
+	newRedirectURISettings := &RedirectURISettings{
+		ODataType: "#microsoft.graph.RedirectUriSettings",
+	}
+	return newRedirectURISettings, nil
 }

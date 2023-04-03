@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsCoshRequestBuilder struct{ BaseRequestBuilder }
 
-// Cosh action undocumented
+// Cosh action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Cosh(reqObj *WorkbookFunctionsCoshRequestParameter) *WorkbookFunctionsCoshRequestBuilder {
 	bb := &WorkbookFunctionsCoshRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Cosh"

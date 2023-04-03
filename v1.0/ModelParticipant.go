@@ -6,6 +6,8 @@ package msgraph
 type Participant struct {
 	// Entity is the base model of Participant
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Info undocumented
 	Info *ParticipantInfo `json:"info,omitempty"`
 	// IsInLobby undocumented
@@ -20,10 +22,19 @@ type Participant struct {
 	RecordingInfo *RecordingInfo `json:"recordingInfo,omitempty"`
 }
 
+func NewParticipant() (*Participant, error) {
+	newParticipant := &Participant{
+		ODataType: "#microsoft.graph.Participant",
+	}
+	return newParticipant, nil
+}
+
 // ParticipantInfo undocumented
 type ParticipantInfo struct {
 	// Object is the base model of ParticipantInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CountryCode undocumented
 	CountryCode *string `json:"countryCode,omitempty"`
 	// EndpointType undocumented
@@ -38,26 +49,60 @@ type ParticipantInfo struct {
 	Region *string `json:"region,omitempty"`
 }
 
+func NewParticipantInfo() (*ParticipantInfo, error) {
+	newParticipantInfo := &ParticipantInfo{
+		ODataType: "#microsoft.graph.ParticipantInfo",
+	}
+	return newParticipantInfo, nil
+}
+
 // ParticipantJoiningNotification undocumented
 type ParticipantJoiningNotification struct {
 	// Entity is the base model of ParticipantJoiningNotification
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Call undocumented
 	Call *Call `json:"call,omitempty"`
+}
+
+func NewParticipantJoiningNotification() (*ParticipantJoiningNotification, error) {
+	newParticipantJoiningNotification := &ParticipantJoiningNotification{
+		ODataType: "#microsoft.graph.ParticipantJoiningNotification",
+	}
+	return newParticipantJoiningNotification, nil
 }
 
 // ParticipantJoiningResponse undocumented
 type ParticipantJoiningResponse struct {
 	// Object is the base model of ParticipantJoiningResponse
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewParticipantJoiningResponse() (*ParticipantJoiningResponse, error) {
+	newParticipantJoiningResponse := &ParticipantJoiningResponse{
+		ODataType: "#microsoft.graph.ParticipantJoiningResponse",
+	}
+	return newParticipantJoiningResponse, nil
 }
 
 // ParticipantLeftNotification undocumented
 type ParticipantLeftNotification struct {
 	// Entity is the base model of ParticipantLeftNotification
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ParticipantID undocumented
 	ParticipantID *string `json:"participantId,omitempty"`
 	// Call undocumented
 	Call *Call `json:"call,omitempty"`
+}
+
+func NewParticipantLeftNotification() (*ParticipantLeftNotification, error) {
+	newParticipantLeftNotification := &ParticipantLeftNotification{
+		ODataType: "#microsoft.graph.ParticipantLeftNotification",
+	}
+	return newParticipantLeftNotification, nil
 }

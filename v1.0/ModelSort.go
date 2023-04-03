@@ -6,8 +6,17 @@ package msgraph
 type SortProperty struct {
 	// Object is the base model of SortProperty
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsDescending undocumented
 	IsDescending *bool `json:"isDescending,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
+}
+
+func NewSortProperty() (*SortProperty, error) {
+	newSortProperty := &SortProperty{
+		ODataType: "#microsoft.graph.SortProperty",
+	}
+	return newSortProperty, nil
 }

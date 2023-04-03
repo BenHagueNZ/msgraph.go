@@ -11,14 +11,14 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Device is navigation property
+// Device is navigation property rn
 func (b *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) Device() *DeviceRequestBuilder {
 	bb := &DeviceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/device"
 	return bb
 }
 
-// IncludeTargets returns request builder for MicrosoftAuthenticatorAuthenticationMethodTarget collection
+// IncludeTargets returns request builder for MicrosoftAuthenticatorAuthenticationMethodTarget collection rcn
 func (b *MicrosoftAuthenticatorAuthenticationMethodConfigurationRequestBuilder) IncludeTargets() *MicrosoftAuthenticatorAuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder {
 	bb := &MicrosoftAuthenticatorAuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/includeTargets"
@@ -117,6 +117,521 @@ func (r *MicrosoftAuthenticatorAuthenticationMethodConfigurationIncludeTargetsCo
 
 // Add performs POST request for MicrosoftAuthenticatorAuthenticationMethodTarget collection
 func (r *MicrosoftAuthenticatorAuthenticationMethodConfigurationIncludeTargetsCollectionRequest) Add(ctx context.Context, reqObj *MicrosoftAuthenticatorAuthenticationMethodTarget) (resObj *MicrosoftAuthenticatorAuthenticationMethodTarget, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// MicrosoftAccountUserConversationMember returns request builder for ConversationMember collection rcn
+func (b *MicrosoftAccountUserConversationMemberRequestBuilder) MicrosoftAccountUserConversationMember() *MicrosoftAccountUserConversationMemberMicrosoftAccountUserConversationMemberCollectionRequestBuilder {
+	bb := &MicrosoftAccountUserConversationMemberMicrosoftAccountUserConversationMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/ConversationMember"
+	return bb
+}
+
+// MicrosoftAccountUserConversationMemberMicrosoftAccountUserConversationMemberCollectionRequestBuilder is request builder for ConversationMember collection
+type MicrosoftAccountUserConversationMemberMicrosoftAccountUserConversationMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ConversationMember collection
+func (b *MicrosoftAccountUserConversationMemberMicrosoftAccountUserConversationMemberCollectionRequestBuilder) Request() *MicrosoftAccountUserConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest {
+	return &MicrosoftAccountUserConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ConversationMember item
+func (b *MicrosoftAccountUserConversationMemberMicrosoftAccountUserConversationMemberCollectionRequestBuilder) ID(id string) *ConversationMemberRequestBuilder {
+	bb := &ConversationMemberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// MicrosoftAccountUserConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest is request for ConversationMember collection
+type MicrosoftAccountUserConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ConversationMember collection
+func (r *MicrosoftAccountUserConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ConversationMember, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ConversationMember
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ConversationMember
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ConversationMember collection, max N pages
+func (r *MicrosoftAccountUserConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest) GetN(ctx context.Context, n int) ([]ConversationMember, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ConversationMember collection
+func (r *MicrosoftAccountUserConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest) Get(ctx context.Context) ([]ConversationMember, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ConversationMember collection
+func (r *MicrosoftAccountUserConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest) Add(ctx context.Context, reqObj *ConversationMember) (resObj *ConversationMember, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// MicrosoftAuthenticatorAuthenticationMethod returns request builder for AuthenticationMethod collection rcn
+func (b *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) MicrosoftAuthenticatorAuthenticationMethod() *MicrosoftAuthenticatorAuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder {
+	bb := &MicrosoftAuthenticatorAuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AuthenticationMethod"
+	return bb
+}
+
+// MicrosoftAuthenticatorAuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder is request builder for AuthenticationMethod collection
+type MicrosoftAuthenticatorAuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for AuthenticationMethod collection
+func (b *MicrosoftAuthenticatorAuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder) Request() *MicrosoftAuthenticatorAuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest {
+	return &MicrosoftAuthenticatorAuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for AuthenticationMethod item
+func (b *MicrosoftAuthenticatorAuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder) ID(id string) *AuthenticationMethodRequestBuilder {
+	bb := &AuthenticationMethodRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// MicrosoftAuthenticatorAuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest is request for AuthenticationMethod collection
+type MicrosoftAuthenticatorAuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for AuthenticationMethod collection
+func (r *MicrosoftAuthenticatorAuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AuthenticationMethod, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []AuthenticationMethod
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []AuthenticationMethod
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for AuthenticationMethod collection, max N pages
+func (r *MicrosoftAuthenticatorAuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]AuthenticationMethod, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for AuthenticationMethod collection
+func (r *MicrosoftAuthenticatorAuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]AuthenticationMethod, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for AuthenticationMethod collection
+func (r *MicrosoftAuthenticatorAuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *AuthenticationMethod) (resObj *AuthenticationMethod, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// MicrosoftAuthenticatorAuthenticationMethodConfiguration returns request builder for AuthenticationMethodConfiguration collection rcn
+func (b *MicrosoftAuthenticatorAuthenticationMethodConfigurationRequestBuilder) MicrosoftAuthenticatorAuthenticationMethodConfiguration() *MicrosoftAuthenticatorAuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder {
+	bb := &MicrosoftAuthenticatorAuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AuthenticationMethodConfiguration"
+	return bb
+}
+
+// MicrosoftAuthenticatorAuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder is request builder for AuthenticationMethodConfiguration collection
+type MicrosoftAuthenticatorAuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for AuthenticationMethodConfiguration collection
+func (b *MicrosoftAuthenticatorAuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder) Request() *MicrosoftAuthenticatorAuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest {
+	return &MicrosoftAuthenticatorAuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for AuthenticationMethodConfiguration item
+func (b *MicrosoftAuthenticatorAuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder) ID(id string) *AuthenticationMethodConfigurationRequestBuilder {
+	bb := &AuthenticationMethodConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// MicrosoftAuthenticatorAuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest is request for AuthenticationMethodConfiguration collection
+type MicrosoftAuthenticatorAuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for AuthenticationMethodConfiguration collection
+func (r *MicrosoftAuthenticatorAuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AuthenticationMethodConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []AuthenticationMethodConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []AuthenticationMethodConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for AuthenticationMethodConfiguration collection, max N pages
+func (r *MicrosoftAuthenticatorAuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]AuthenticationMethodConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for AuthenticationMethodConfiguration collection
+func (r *MicrosoftAuthenticatorAuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest) Get(ctx context.Context) ([]AuthenticationMethodConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for AuthenticationMethodConfiguration collection
+func (r *MicrosoftAuthenticatorAuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest) Add(ctx context.Context, reqObj *AuthenticationMethodConfiguration) (resObj *AuthenticationMethodConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// MicrosoftAuthenticatorAuthenticationMethodTarget returns request builder for AuthenticationMethodTarget collection rcn
+func (b *MicrosoftAuthenticatorAuthenticationMethodTargetRequestBuilder) MicrosoftAuthenticatorAuthenticationMethodTarget() *MicrosoftAuthenticatorAuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder {
+	bb := &MicrosoftAuthenticatorAuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/AuthenticationMethodTarget"
+	return bb
+}
+
+// MicrosoftAuthenticatorAuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder is request builder for AuthenticationMethodTarget collection
+type MicrosoftAuthenticatorAuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for AuthenticationMethodTarget collection
+func (b *MicrosoftAuthenticatorAuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder) Request() *MicrosoftAuthenticatorAuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest {
+	return &MicrosoftAuthenticatorAuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for AuthenticationMethodTarget item
+func (b *MicrosoftAuthenticatorAuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder) ID(id string) *AuthenticationMethodTargetRequestBuilder {
+	bb := &AuthenticationMethodTargetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// MicrosoftAuthenticatorAuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest is request for AuthenticationMethodTarget collection
+type MicrosoftAuthenticatorAuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for AuthenticationMethodTarget collection
+func (r *MicrosoftAuthenticatorAuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AuthenticationMethodTarget, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []AuthenticationMethodTarget
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []AuthenticationMethodTarget
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for AuthenticationMethodTarget collection, max N pages
+func (r *MicrosoftAuthenticatorAuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest) GetN(ctx context.Context, n int) ([]AuthenticationMethodTarget, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for AuthenticationMethodTarget collection
+func (r *MicrosoftAuthenticatorAuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest) Get(ctx context.Context) ([]AuthenticationMethodTarget, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for AuthenticationMethodTarget collection
+func (r *MicrosoftAuthenticatorAuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest) Add(ctx context.Context, reqObj *AuthenticationMethodTarget) (resObj *AuthenticationMethodTarget, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// MicrosoftStoreForBusinessApp returns request builder for MobileApp collection rcn
+func (b *MicrosoftStoreForBusinessAppRequestBuilder) MicrosoftStoreForBusinessApp() *MicrosoftStoreForBusinessAppMicrosoftStoreForBusinessAppCollectionRequestBuilder {
+	bb := &MicrosoftStoreForBusinessAppMicrosoftStoreForBusinessAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/MobileApp"
+	return bb
+}
+
+// MicrosoftStoreForBusinessAppMicrosoftStoreForBusinessAppCollectionRequestBuilder is request builder for MobileApp collection
+type MicrosoftStoreForBusinessAppMicrosoftStoreForBusinessAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for MobileApp collection
+func (b *MicrosoftStoreForBusinessAppMicrosoftStoreForBusinessAppCollectionRequestBuilder) Request() *MicrosoftStoreForBusinessAppMicrosoftStoreForBusinessAppCollectionRequest {
+	return &MicrosoftStoreForBusinessAppMicrosoftStoreForBusinessAppCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for MobileApp item
+func (b *MicrosoftStoreForBusinessAppMicrosoftStoreForBusinessAppCollectionRequestBuilder) ID(id string) *MobileAppRequestBuilder {
+	bb := &MobileAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// MicrosoftStoreForBusinessAppMicrosoftStoreForBusinessAppCollectionRequest is request for MobileApp collection
+type MicrosoftStoreForBusinessAppMicrosoftStoreForBusinessAppCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for MobileApp collection
+func (r *MicrosoftStoreForBusinessAppMicrosoftStoreForBusinessAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MobileApp, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []MobileApp
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []MobileApp
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for MobileApp collection, max N pages
+func (r *MicrosoftStoreForBusinessAppMicrosoftStoreForBusinessAppCollectionRequest) GetN(ctx context.Context, n int) ([]MobileApp, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for MobileApp collection
+func (r *MicrosoftStoreForBusinessAppMicrosoftStoreForBusinessAppCollectionRequest) Get(ctx context.Context) ([]MobileApp, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for MobileApp collection
+func (r *MicrosoftStoreForBusinessAppMicrosoftStoreForBusinessAppCollectionRequest) Add(ctx context.Context, reqObj *MobileApp) (resObj *MobileApp, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

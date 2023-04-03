@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDiscRequestBuilder struct{ BaseRequestBuilder }
 
-// Disc action undocumented
+// Disc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Disc(reqObj *WorkbookFunctionsDiscRequestParameter) *WorkbookFunctionsDiscRequestBuilder {
 	bb := &WorkbookFunctionsDiscRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Disc"

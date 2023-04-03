@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsIsErrRequestBuilder struct{ BaseRequestBuilder }
 
-// IsErr action undocumented
+// IsErr action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) IsErr(reqObj *WorkbookFunctionsIsErrRequestParameter) *WorkbookFunctionsIsErrRequestBuilder {
 	bb := &WorkbookFunctionsIsErrRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/IsErr"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsIsErrRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsIsErrorRequestBuilder struct{ BaseRequestBuilder }
 
-// IsError action undocumented
+// IsError action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) IsError(reqObj *WorkbookFunctionsIsErrorRequestParameter) *WorkbookFunctionsIsErrorRequestBuilder {
 	bb := &WorkbookFunctionsIsErrorRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/IsError"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsIsErrorRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsIsEvenRequestBuilder struct{ BaseRequestBuilder }
 
-// IsEven action undocumented
+// IsEven action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) IsEven(reqObj *WorkbookFunctionsIsEvenRequestParameter) *WorkbookFunctionsIsEvenRequestBuilder {
 	bb := &WorkbookFunctionsIsEvenRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/IsEven"
@@ -75,7 +75,7 @@ func (r *WorkbookFunctionsIsEvenRequest) Post(ctx context.Context) (resObj *Work
 
 type WorkbookFunctionsIsFormulaRequestBuilder struct{ BaseRequestBuilder }
 
-// IsFormula action undocumented
+// IsFormula action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) IsFormula(reqObj *WorkbookFunctionsIsFormulaRequestParameter) *WorkbookFunctionsIsFormulaRequestBuilder {
 	bb := &WorkbookFunctionsIsFormulaRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/IsFormula"
@@ -98,7 +98,7 @@ func (r *WorkbookFunctionsIsFormulaRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsIsLogicalRequestBuilder struct{ BaseRequestBuilder }
 
-// IsLogical action undocumented
+// IsLogical action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) IsLogical(reqObj *WorkbookFunctionsIsLogicalRequestParameter) *WorkbookFunctionsIsLogicalRequestBuilder {
 	bb := &WorkbookFunctionsIsLogicalRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/IsLogical"
@@ -121,7 +121,7 @@ func (r *WorkbookFunctionsIsLogicalRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsIsNARequestBuilder struct{ BaseRequestBuilder }
 
-// IsNA action undocumented
+// IsNA action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) IsNA(reqObj *WorkbookFunctionsIsNARequestParameter) *WorkbookFunctionsIsNARequestBuilder {
 	bb := &WorkbookFunctionsIsNARequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/IsNA"
@@ -144,7 +144,7 @@ func (r *WorkbookFunctionsIsNARequest) Post(ctx context.Context) (resObj *Workbo
 
 type WorkbookFunctionsIsNonTextRequestBuilder struct{ BaseRequestBuilder }
 
-// IsNonText action undocumented
+// IsNonText action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) IsNonText(reqObj *WorkbookFunctionsIsNonTextRequestParameter) *WorkbookFunctionsIsNonTextRequestBuilder {
 	bb := &WorkbookFunctionsIsNonTextRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/IsNonText"
@@ -167,7 +167,7 @@ func (r *WorkbookFunctionsIsNonTextRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsIsNumberRequestBuilder struct{ BaseRequestBuilder }
 
-// IsNumber action undocumented
+// IsNumber action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) IsNumber(reqObj *WorkbookFunctionsIsNumberRequestParameter) *WorkbookFunctionsIsNumberRequestBuilder {
 	bb := &WorkbookFunctionsIsNumberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/IsNumber"
@@ -190,7 +190,7 @@ func (r *WorkbookFunctionsIsNumberRequest) Post(ctx context.Context) (resObj *Wo
 
 type WorkbookFunctionsIsOddRequestBuilder struct{ BaseRequestBuilder }
 
-// IsOdd action undocumented
+// IsOdd action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) IsOdd(reqObj *WorkbookFunctionsIsOddRequestParameter) *WorkbookFunctionsIsOddRequestBuilder {
 	bb := &WorkbookFunctionsIsOddRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/IsOdd"
@@ -213,7 +213,7 @@ func (r *WorkbookFunctionsIsOddRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsIsTextRequestBuilder struct{ BaseRequestBuilder }
 
-// IsText action undocumented
+// IsText action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) IsText(reqObj *WorkbookFunctionsIsTextRequestParameter) *WorkbookFunctionsIsTextRequestBuilder {
 	bb := &WorkbookFunctionsIsTextRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/IsText"

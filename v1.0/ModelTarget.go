@@ -6,20 +6,40 @@ package msgraph
 type TargetApplicationOwners struct {
 	// SubjectSet is the base model of TargetApplicationOwners
 	SubjectSet
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewTargetApplicationOwners() (*TargetApplicationOwners, error) {
+	newTargetApplicationOwners := &TargetApplicationOwners{
+		ODataType: "#microsoft.graph.TargetApplicationOwners",
+	}
+	return newTargetApplicationOwners, nil
 }
 
 // TargetManager undocumented
 type TargetManager struct {
 	// SubjectSet is the base model of TargetManager
 	SubjectSet
+
+	ODataType string `json:"@odata.type"`
 	// ManagerLevel undocumented
 	ManagerLevel *int `json:"managerLevel,omitempty"`
+}
+
+func NewTargetManager() (*TargetManager, error) {
+	newTargetManager := &TargetManager{
+		ODataType: "#microsoft.graph.TargetManager",
+	}
+	return newTargetManager, nil
 }
 
 // TargetResource undocumented
 type TargetResource struct {
 	// Object is the base model of TargetResource
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// GroupType undocumented
@@ -32,4 +52,11 @@ type TargetResource struct {
 	Type *string `json:"type,omitempty"`
 	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
+}
+
+func NewTargetResource() (*TargetResource, error) {
+	newTargetResource := &TargetResource{
+		ODataType: "#microsoft.graph.TargetResource",
+	}
+	return newTargetResource, nil
 }

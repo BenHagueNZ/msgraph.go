@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsHarMeanRequestBuilder struct{ BaseRequestBuilder }
 
-// HarMean action undocumented
+// HarMean action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) HarMean(reqObj *WorkbookFunctionsHarMeanRequestParameter) *WorkbookFunctionsHarMeanRequestBuilder {
 	bb := &WorkbookFunctionsHarMeanRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/HarMean"

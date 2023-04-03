@@ -138,7 +138,7 @@ func (r *ListItemVersionRequest) Delete(ctx context.Context) error {
 
 type ListItemVersionRestoreVersionRequestBuilder struct{ BaseRequestBuilder }
 
-// RestoreVersion action undocumented
+// RestoreVersion action undocumentedrav
 func (b *ListItemVersionRequestBuilder) RestoreVersion(reqObj *ListItemVersionRestoreVersionRequestParameter) *ListItemVersionRestoreVersionRequestBuilder {
 	bb := &ListItemVersionRestoreVersionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RestoreVersion"

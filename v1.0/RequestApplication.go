@@ -138,7 +138,7 @@ func (r *ApplicationTemplateRequest) Delete(ctx context.Context) error {
 
 type ApplicationSetVerifiedPublisherRequestBuilder struct{ BaseRequestBuilder }
 
-// SetVerifiedPublisher action undocumented
+// SetVerifiedPublisher action undocumentedrav
 func (b *ApplicationRequestBuilder) SetVerifiedPublisher(reqObj *ApplicationSetVerifiedPublisherRequestParameter) *ApplicationSetVerifiedPublisherRequestBuilder {
 	bb := &ApplicationSetVerifiedPublisherRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SetVerifiedPublisher"
@@ -160,7 +160,7 @@ func (r *ApplicationSetVerifiedPublisherRequest) Post(ctx context.Context) error
 
 type ApplicationUnsetVerifiedPublisherRequestBuilder struct{ BaseRequestBuilder }
 
-// UnsetVerifiedPublisher action undocumented
+// UnsetVerifiedPublisher action undocumentedrav
 func (b *ApplicationRequestBuilder) UnsetVerifiedPublisher(reqObj *ApplicationUnsetVerifiedPublisherRequestParameter) *ApplicationUnsetVerifiedPublisherRequestBuilder {
 	bb := &ApplicationUnsetVerifiedPublisherRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/UnsetVerifiedPublisher"
@@ -182,7 +182,7 @@ func (r *ApplicationUnsetVerifiedPublisherRequest) Post(ctx context.Context) err
 
 type ApplicationAddKeyRequestBuilder struct{ BaseRequestBuilder }
 
-// AddKey action undocumented
+// AddKey action undocumentedras
 func (b *ApplicationRequestBuilder) AddKey(reqObj *ApplicationAddKeyRequestParameter) *ApplicationAddKeyRequestBuilder {
 	bb := &ApplicationAddKeyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AddKey"
@@ -205,7 +205,7 @@ func (r *ApplicationAddKeyRequest) Post(ctx context.Context) (resObj *KeyCredent
 
 type ApplicationAddPasswordRequestBuilder struct{ BaseRequestBuilder }
 
-// AddPassword action undocumented
+// AddPassword action undocumentedras
 func (b *ApplicationRequestBuilder) AddPassword(reqObj *ApplicationAddPasswordRequestParameter) *ApplicationAddPasswordRequestBuilder {
 	bb := &ApplicationAddPasswordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AddPassword"
@@ -228,7 +228,7 @@ func (r *ApplicationAddPasswordRequest) Post(ctx context.Context) (resObj *Passw
 
 type ApplicationRemoveKeyRequestBuilder struct{ BaseRequestBuilder }
 
-// RemoveKey action undocumented
+// RemoveKey action undocumentedrav
 func (b *ApplicationRequestBuilder) RemoveKey(reqObj *ApplicationRemoveKeyRequestParameter) *ApplicationRemoveKeyRequestBuilder {
 	bb := &ApplicationRemoveKeyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RemoveKey"
@@ -250,7 +250,7 @@ func (r *ApplicationRemoveKeyRequest) Post(ctx context.Context) error {
 
 type ApplicationRemovePasswordRequestBuilder struct{ BaseRequestBuilder }
 
-// RemovePassword action undocumented
+// RemovePassword action undocumentedrav
 func (b *ApplicationRequestBuilder) RemovePassword(reqObj *ApplicationRemovePasswordRequestParameter) *ApplicationRemovePasswordRequestBuilder {
 	bb := &ApplicationRemovePasswordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/RemovePassword"
@@ -272,7 +272,7 @@ func (r *ApplicationRemovePasswordRequest) Post(ctx context.Context) error {
 
 type ApplicationTemplateInstantiateRequestBuilder struct{ BaseRequestBuilder }
 
-// Instantiate action undocumented
+// Instantiate action undocumentedras
 func (b *ApplicationTemplateRequestBuilder) Instantiate(reqObj *ApplicationTemplateInstantiateRequestParameter) *ApplicationTemplateInstantiateRequestBuilder {
 	bb := &ApplicationTemplateInstantiateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Instantiate"

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsDgetRequestBuilder struct{ BaseRequestBuilder }
 
-// Dget action undocumented
+// Dget action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Dget(reqObj *WorkbookFunctionsDgetRequestParameter) *WorkbookFunctionsDgetRequestBuilder {
 	bb := &WorkbookFunctionsDgetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Dget"

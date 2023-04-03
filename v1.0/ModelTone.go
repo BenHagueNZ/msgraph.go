@@ -6,8 +6,17 @@ package msgraph
 type ToneInfo struct {
 	// Object is the base model of ToneInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// SequenceID undocumented
 	SequenceID *int `json:"sequenceId,omitempty"`
 	// Tone undocumented
 	Tone *Tone `json:"tone,omitempty"`
+}
+
+func NewToneInfo() (*ToneInfo, error) {
+	newToneInfo := &ToneInfo{
+		ODataType: "#microsoft.graph.ToneInfo",
+	}
+	return newToneInfo, nil
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsPhiRequestBuilder struct{ BaseRequestBuilder }
 
-// Phi action undocumented
+// Phi action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Phi(reqObj *WorkbookFunctionsPhiRequestParameter) *WorkbookFunctionsPhiRequestBuilder {
 	bb := &WorkbookFunctionsPhiRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Phi"

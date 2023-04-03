@@ -6,6 +6,15 @@ package msgraph
 type PersistentBrowserSessionControl struct {
 	// ConditionalAccessSessionControl is the base model of PersistentBrowserSessionControl
 	ConditionalAccessSessionControl
+
+	ODataType string `json:"@odata.type"`
 	// Mode undocumented
 	Mode *PersistentBrowserSessionMode `json:"mode,omitempty"`
+}
+
+func NewPersistentBrowserSessionControl() (*PersistentBrowserSessionControl, error) {
+	newPersistentBrowserSessionControl := &PersistentBrowserSessionControl{
+		ODataType: "#microsoft.graph.PersistentBrowserSessionControl",
+	}
+	return newPersistentBrowserSessionControl, nil
 }

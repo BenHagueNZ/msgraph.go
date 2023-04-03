@@ -8,6 +8,8 @@ import "time"
 type Alert struct {
 	// Entity is the base model of Alert
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ActivityGroupName undocumented
 	ActivityGroupName *string `json:"activityGroupName,omitempty"`
 	// AlertDetections undocumented
@@ -88,10 +90,19 @@ type Alert struct {
 	VulnerabilityStates []VulnerabilityState `json:"vulnerabilityStates,omitempty"`
 }
 
+func NewAlert() (*Alert, error) {
+	newAlert := &Alert{
+		ODataType: "#microsoft.graph.Alert",
+	}
+	return newAlert, nil
+}
+
 // AlertDetection undocumented
 type AlertDetection struct {
 	// Object is the base model of AlertDetection
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DetectionType undocumented
 	DetectionType *string `json:"detectionType,omitempty"`
 	// Method undocumented
@@ -100,10 +111,19 @@ type AlertDetection struct {
 	Name *string `json:"name,omitempty"`
 }
 
+func NewAlertDetection() (*AlertDetection, error) {
+	newAlertDetection := &AlertDetection{
+		ODataType: "#microsoft.graph.AlertDetection",
+	}
+	return newAlertDetection, nil
+}
+
 // AlertHistoryState undocumented
 type AlertHistoryState struct {
 	// Object is the base model of AlertHistoryState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
 	// AssignedTo undocumented
@@ -120,14 +140,30 @@ type AlertHistoryState struct {
 	User *string `json:"user,omitempty"`
 }
 
+func NewAlertHistoryState() (*AlertHistoryState, error) {
+	newAlertHistoryState := &AlertHistoryState{
+		ODataType: "#microsoft.graph.AlertHistoryState",
+	}
+	return newAlertHistoryState, nil
+}
+
 // AlertTrigger undocumented
 type AlertTrigger struct {
 	// Object is the base model of AlertTrigger
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Type undocumented
 	Type *string `json:"type,omitempty"`
 	// Value undocumented
 	Value *string `json:"value,omitempty"`
+}
+
+func NewAlertTrigger() (*AlertTrigger, error) {
+	newAlertTrigger := &AlertTrigger{
+		ODataType: "#microsoft.graph.AlertTrigger",
+	}
+	return newAlertTrigger, nil
 }

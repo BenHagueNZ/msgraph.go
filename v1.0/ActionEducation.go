@@ -43,7 +43,7 @@ type EducationSubmissionSubmitRequestParameter struct {
 type EducationSubmissionUnsubmitRequestParameter struct {
 }
 
-// Categories returns request builder for EducationCategory collection
+// Categories returns request builder for EducationCategory collection rcn
 func (b *EducationAssignmentRequestBuilder) Categories() *EducationAssignmentCategoriesCollectionRequestBuilder {
 	bb := &EducationAssignmentCategoriesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/categories"
@@ -146,7 +146,7 @@ func (r *EducationAssignmentCategoriesCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Resources returns request builder for EducationAssignmentResource collection
+// Resources returns request builder for EducationAssignmentResource collection rcn
 func (b *EducationAssignmentRequestBuilder) Resources() *EducationAssignmentResourcesCollectionRequestBuilder {
 	bb := &EducationAssignmentResourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/resources"
@@ -249,14 +249,14 @@ func (r *EducationAssignmentResourcesCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// Rubric is navigation property
+// Rubric is navigation property rn
 func (b *EducationAssignmentRequestBuilder) Rubric() *EducationRubricRequestBuilder {
 	bb := &EducationRubricRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/rubric"
 	return bb
 }
 
-// Submissions returns request builder for EducationSubmission collection
+// Submissions returns request builder for EducationSubmission collection rcn
 func (b *EducationAssignmentRequestBuilder) Submissions() *EducationAssignmentSubmissionsCollectionRequestBuilder {
 	bb := &EducationAssignmentSubmissionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/submissions"
@@ -359,7 +359,7 @@ func (r *EducationAssignmentSubmissionsCollectionRequest) Add(ctx context.Contex
 	return
 }
 
-// AssignmentCategories returns request builder for EducationCategory collection
+// AssignmentCategories returns request builder for EducationCategory collection rcn
 func (b *EducationClassRequestBuilder) AssignmentCategories() *EducationClassAssignmentCategoriesCollectionRequestBuilder {
 	bb := &EducationClassAssignmentCategoriesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignmentCategories"
@@ -462,21 +462,21 @@ func (r *EducationClassAssignmentCategoriesCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// AssignmentDefaults is navigation property
+// AssignmentDefaults is navigation property rn
 func (b *EducationClassRequestBuilder) AssignmentDefaults() *EducationAssignmentDefaultsRequestBuilder {
 	bb := &EducationAssignmentDefaultsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignmentDefaults"
 	return bb
 }
 
-// AssignmentSettings is navigation property
+// AssignmentSettings is navigation property rn
 func (b *EducationClassRequestBuilder) AssignmentSettings() *EducationAssignmentSettingsRequestBuilder {
 	bb := &EducationAssignmentSettingsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignmentSettings"
 	return bb
 }
 
-// Assignments returns request builder for EducationAssignment collection
+// Assignments returns request builder for EducationAssignment collection rcn
 func (b *EducationClassRequestBuilder) Assignments() *EducationClassAssignmentsCollectionRequestBuilder {
 	bb := &EducationClassAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignments"
@@ -579,14 +579,14 @@ func (r *EducationClassAssignmentsCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// Group is navigation property
+// Group is navigation property rn
 func (b *EducationClassRequestBuilder) Group() *GroupRequestBuilder {
 	bb := &GroupRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/group"
 	return bb
 }
 
-// Members returns request builder for EducationUser collection
+// Members returns request builder for EducationUser collection rcn
 func (b *EducationClassRequestBuilder) Members() *EducationClassMembersCollectionRequestBuilder {
 	bb := &EducationClassMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"
@@ -689,7 +689,7 @@ func (r *EducationClassMembersCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// Schools returns request builder for EducationSchool collection
+// Schools returns request builder for EducationSchool collection rcn
 func (b *EducationClassRequestBuilder) Schools() *EducationClassSchoolsCollectionRequestBuilder {
 	bb := &EducationClassSchoolsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/schools"
@@ -792,7 +792,7 @@ func (r *EducationClassSchoolsCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// Teachers returns request builder for EducationUser collection
+// Teachers returns request builder for EducationUser collection rcn
 func (b *EducationClassRequestBuilder) Teachers() *EducationClassTeachersCollectionRequestBuilder {
 	bb := &EducationClassTeachersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/teachers"
@@ -895,7 +895,7 @@ func (r *EducationClassTeachersCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Classes returns request builder for EducationClass collection
+// Classes returns request builder for EducationClass collection rcn
 func (b *EducationRootRequestBuilder) Classes() *EducationRootClassesCollectionRequestBuilder {
 	bb := &EducationRootClassesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/classes"
@@ -998,14 +998,14 @@ func (r *EducationRootClassesCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// Me is navigation property
+// Me is navigation property rn
 func (b *EducationRootRequestBuilder) Me() *EducationUserRequestBuilder {
 	bb := &EducationUserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/me"
 	return bb
 }
 
-// Schools returns request builder for EducationSchool collection
+// Schools returns request builder for EducationSchool collection rcn
 func (b *EducationRootRequestBuilder) Schools() *EducationRootSchoolsCollectionRequestBuilder {
 	bb := &EducationRootSchoolsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/schools"
@@ -1108,7 +1108,7 @@ func (r *EducationRootSchoolsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// Users returns request builder for EducationUser collection
+// Users returns request builder for EducationUser collection rcn
 func (b *EducationRootRequestBuilder) Users() *EducationRootUsersCollectionRequestBuilder {
 	bb := &EducationRootUsersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/users"
@@ -1211,14 +1211,14 @@ func (r *EducationRootUsersCollectionRequest) Add(ctx context.Context, reqObj *E
 	return
 }
 
-// AdministrativeUnit is navigation property
+// AdministrativeUnit is navigation property rn
 func (b *EducationSchoolRequestBuilder) AdministrativeUnit() *AdministrativeUnitRequestBuilder {
 	bb := &AdministrativeUnitRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/administrativeUnit"
 	return bb
 }
 
-// Classes returns request builder for EducationClass collection
+// Classes returns request builder for EducationClass collection rcn
 func (b *EducationSchoolRequestBuilder) Classes() *EducationSchoolClassesCollectionRequestBuilder {
 	bb := &EducationSchoolClassesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/classes"
@@ -1321,7 +1321,7 @@ func (r *EducationSchoolClassesCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Users returns request builder for EducationUser collection
+// Users returns request builder for EducationUser collection rcn
 func (b *EducationSchoolRequestBuilder) Users() *EducationSchoolUsersCollectionRequestBuilder {
 	bb := &EducationSchoolUsersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/users"
@@ -1424,7 +1424,7 @@ func (r *EducationSchoolUsersCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// Outcomes returns request builder for EducationOutcome collection
+// Outcomes returns request builder for EducationOutcome collection rcn
 func (b *EducationSubmissionRequestBuilder) Outcomes() *EducationSubmissionOutcomesCollectionRequestBuilder {
 	bb := &EducationSubmissionOutcomesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/outcomes"
@@ -1527,7 +1527,7 @@ func (r *EducationSubmissionOutcomesCollectionRequest) Add(ctx context.Context, 
 	return
 }
 
-// Resources returns request builder for EducationSubmissionResource collection
+// Resources returns request builder for EducationSubmissionResource collection rcn
 func (b *EducationSubmissionRequestBuilder) Resources() *EducationSubmissionResourcesCollectionRequestBuilder {
 	bb := &EducationSubmissionResourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/resources"
@@ -1630,7 +1630,7 @@ func (r *EducationSubmissionResourcesCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// SubmittedResources returns request builder for EducationSubmissionResource collection
+// SubmittedResources returns request builder for EducationSubmissionResource collection rcn
 func (b *EducationSubmissionRequestBuilder) SubmittedResources() *EducationSubmissionSubmittedResourcesCollectionRequestBuilder {
 	bb := &EducationSubmissionSubmittedResourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/submittedResources"
@@ -1733,7 +1733,7 @@ func (r *EducationSubmissionSubmittedResourcesCollectionRequest) Add(ctx context
 	return
 }
 
-// Assignments returns request builder for EducationAssignment collection
+// Assignments returns request builder for EducationAssignment collection rcn
 func (b *EducationUserRequestBuilder) Assignments() *EducationUserAssignmentsCollectionRequestBuilder {
 	bb := &EducationUserAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignments"
@@ -1836,7 +1836,7 @@ func (r *EducationUserAssignmentsCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// Classes returns request builder for EducationClass collection
+// Classes returns request builder for EducationClass collection rcn
 func (b *EducationUserRequestBuilder) Classes() *EducationUserClassesCollectionRequestBuilder {
 	bb := &EducationUserClassesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/classes"
@@ -1939,7 +1939,7 @@ func (r *EducationUserClassesCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// Rubrics returns request builder for EducationRubric collection
+// Rubrics returns request builder for EducationRubric collection rcn
 func (b *EducationUserRequestBuilder) Rubrics() *EducationUserRubricsCollectionRequestBuilder {
 	bb := &EducationUserRubricsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/rubrics"
@@ -2042,7 +2042,7 @@ func (r *EducationUserRubricsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// Schools returns request builder for EducationSchool collection
+// Schools returns request builder for EducationSchool collection rcn
 func (b *EducationUserRequestBuilder) Schools() *EducationUserSchoolsCollectionRequestBuilder {
 	bb := &EducationUserSchoolsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/schools"
@@ -2145,7 +2145,7 @@ func (r *EducationUserSchoolsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// TaughtClasses returns request builder for EducationClass collection
+// TaughtClasses returns request builder for EducationClass collection rcn
 func (b *EducationUserRequestBuilder) TaughtClasses() *EducationUserTaughtClassesCollectionRequestBuilder {
 	bb := &EducationUserTaughtClassesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/taughtClasses"
@@ -2248,9 +2248,498 @@ func (r *EducationUserTaughtClassesCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// User is navigation property
+// User is navigation property rn
 func (b *EducationUserRequestBuilder) User() *UserRequestBuilder {
 	bb := &UserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/user"
+	return bb
+}
+
+// EducationAssignment is navigation property rn
+func (b *EducationAssignmentRequestBuilder) EducationAssignment() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// EducationAssignmentDefaults is navigation property rn
+func (b *EducationAssignmentDefaultsRequestBuilder) EducationAssignmentDefaults() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// EducationAssignmentResource is navigation property rn
+func (b *EducationAssignmentResourceRequestBuilder) EducationAssignmentResource() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// EducationAssignmentSettings is navigation property rn
+func (b *EducationAssignmentSettingsRequestBuilder) EducationAssignmentSettings() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// EducationCategory is navigation property rn
+func (b *EducationCategoryRequestBuilder) EducationCategory() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// EducationClass is navigation property rn
+func (b *EducationClassRequestBuilder) EducationClass() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// EducationFeedbackOutcome returns request builder for EducationOutcome collection rcn
+func (b *EducationFeedbackOutcomeRequestBuilder) EducationFeedbackOutcome() *EducationFeedbackOutcomeEducationFeedbackOutcomeCollectionRequestBuilder {
+	bb := &EducationFeedbackOutcomeEducationFeedbackOutcomeCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/EducationOutcome"
+	return bb
+}
+
+// EducationFeedbackOutcomeEducationFeedbackOutcomeCollectionRequestBuilder is request builder for EducationOutcome collection
+type EducationFeedbackOutcomeEducationFeedbackOutcomeCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationOutcome collection
+func (b *EducationFeedbackOutcomeEducationFeedbackOutcomeCollectionRequestBuilder) Request() *EducationFeedbackOutcomeEducationFeedbackOutcomeCollectionRequest {
+	return &EducationFeedbackOutcomeEducationFeedbackOutcomeCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationOutcome item
+func (b *EducationFeedbackOutcomeEducationFeedbackOutcomeCollectionRequestBuilder) ID(id string) *EducationOutcomeRequestBuilder {
+	bb := &EducationOutcomeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationFeedbackOutcomeEducationFeedbackOutcomeCollectionRequest is request for EducationOutcome collection
+type EducationFeedbackOutcomeEducationFeedbackOutcomeCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationOutcome collection
+func (r *EducationFeedbackOutcomeEducationFeedbackOutcomeCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationOutcome, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationOutcome
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationOutcome
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationOutcome collection, max N pages
+func (r *EducationFeedbackOutcomeEducationFeedbackOutcomeCollectionRequest) GetN(ctx context.Context, n int) ([]EducationOutcome, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationOutcome collection
+func (r *EducationFeedbackOutcomeEducationFeedbackOutcomeCollectionRequest) Get(ctx context.Context) ([]EducationOutcome, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationOutcome collection
+func (r *EducationFeedbackOutcomeEducationFeedbackOutcomeCollectionRequest) Add(ctx context.Context, reqObj *EducationOutcome) (resObj *EducationOutcome, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// EducationFeedbackResourceOutcome returns request builder for EducationOutcome collection rcn
+func (b *EducationFeedbackResourceOutcomeRequestBuilder) EducationFeedbackResourceOutcome() *EducationFeedbackResourceOutcomeEducationFeedbackResourceOutcomeCollectionRequestBuilder {
+	bb := &EducationFeedbackResourceOutcomeEducationFeedbackResourceOutcomeCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/EducationOutcome"
+	return bb
+}
+
+// EducationFeedbackResourceOutcomeEducationFeedbackResourceOutcomeCollectionRequestBuilder is request builder for EducationOutcome collection
+type EducationFeedbackResourceOutcomeEducationFeedbackResourceOutcomeCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationOutcome collection
+func (b *EducationFeedbackResourceOutcomeEducationFeedbackResourceOutcomeCollectionRequestBuilder) Request() *EducationFeedbackResourceOutcomeEducationFeedbackResourceOutcomeCollectionRequest {
+	return &EducationFeedbackResourceOutcomeEducationFeedbackResourceOutcomeCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationOutcome item
+func (b *EducationFeedbackResourceOutcomeEducationFeedbackResourceOutcomeCollectionRequestBuilder) ID(id string) *EducationOutcomeRequestBuilder {
+	bb := &EducationOutcomeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationFeedbackResourceOutcomeEducationFeedbackResourceOutcomeCollectionRequest is request for EducationOutcome collection
+type EducationFeedbackResourceOutcomeEducationFeedbackResourceOutcomeCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationOutcome collection
+func (r *EducationFeedbackResourceOutcomeEducationFeedbackResourceOutcomeCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationOutcome, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationOutcome
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationOutcome
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationOutcome collection, max N pages
+func (r *EducationFeedbackResourceOutcomeEducationFeedbackResourceOutcomeCollectionRequest) GetN(ctx context.Context, n int) ([]EducationOutcome, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationOutcome collection
+func (r *EducationFeedbackResourceOutcomeEducationFeedbackResourceOutcomeCollectionRequest) Get(ctx context.Context) ([]EducationOutcome, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationOutcome collection
+func (r *EducationFeedbackResourceOutcomeEducationFeedbackResourceOutcomeCollectionRequest) Add(ctx context.Context, reqObj *EducationOutcome) (resObj *EducationOutcome, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// EducationOrganization is navigation property rn
+func (b *EducationOrganizationRequestBuilder) EducationOrganization() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// EducationPointsOutcome returns request builder for EducationOutcome collection rcn
+func (b *EducationPointsOutcomeRequestBuilder) EducationPointsOutcome() *EducationPointsOutcomeEducationPointsOutcomeCollectionRequestBuilder {
+	bb := &EducationPointsOutcomeEducationPointsOutcomeCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/EducationOutcome"
+	return bb
+}
+
+// EducationPointsOutcomeEducationPointsOutcomeCollectionRequestBuilder is request builder for EducationOutcome collection
+type EducationPointsOutcomeEducationPointsOutcomeCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationOutcome collection
+func (b *EducationPointsOutcomeEducationPointsOutcomeCollectionRequestBuilder) Request() *EducationPointsOutcomeEducationPointsOutcomeCollectionRequest {
+	return &EducationPointsOutcomeEducationPointsOutcomeCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationOutcome item
+func (b *EducationPointsOutcomeEducationPointsOutcomeCollectionRequestBuilder) ID(id string) *EducationOutcomeRequestBuilder {
+	bb := &EducationOutcomeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationPointsOutcomeEducationPointsOutcomeCollectionRequest is request for EducationOutcome collection
+type EducationPointsOutcomeEducationPointsOutcomeCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationOutcome collection
+func (r *EducationPointsOutcomeEducationPointsOutcomeCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationOutcome, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationOutcome
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationOutcome
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationOutcome collection, max N pages
+func (r *EducationPointsOutcomeEducationPointsOutcomeCollectionRequest) GetN(ctx context.Context, n int) ([]EducationOutcome, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationOutcome collection
+func (r *EducationPointsOutcomeEducationPointsOutcomeCollectionRequest) Get(ctx context.Context) ([]EducationOutcome, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationOutcome collection
+func (r *EducationPointsOutcomeEducationPointsOutcomeCollectionRequest) Add(ctx context.Context, reqObj *EducationOutcome) (resObj *EducationOutcome, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// EducationRubric is navigation property rn
+func (b *EducationRubricRequestBuilder) EducationRubric() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// EducationRubricOutcome returns request builder for EducationOutcome collection rcn
+func (b *EducationRubricOutcomeRequestBuilder) EducationRubricOutcome() *EducationRubricOutcomeEducationRubricOutcomeCollectionRequestBuilder {
+	bb := &EducationRubricOutcomeEducationRubricOutcomeCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/EducationOutcome"
+	return bb
+}
+
+// EducationRubricOutcomeEducationRubricOutcomeCollectionRequestBuilder is request builder for EducationOutcome collection
+type EducationRubricOutcomeEducationRubricOutcomeCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for EducationOutcome collection
+func (b *EducationRubricOutcomeEducationRubricOutcomeCollectionRequestBuilder) Request() *EducationRubricOutcomeEducationRubricOutcomeCollectionRequest {
+	return &EducationRubricOutcomeEducationRubricOutcomeCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for EducationOutcome item
+func (b *EducationRubricOutcomeEducationRubricOutcomeCollectionRequestBuilder) ID(id string) *EducationOutcomeRequestBuilder {
+	bb := &EducationOutcomeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// EducationRubricOutcomeEducationRubricOutcomeCollectionRequest is request for EducationOutcome collection
+type EducationRubricOutcomeEducationRubricOutcomeCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for EducationOutcome collection
+func (r *EducationRubricOutcomeEducationRubricOutcomeCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EducationOutcome, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []EducationOutcome
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []EducationOutcome
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for EducationOutcome collection, max N pages
+func (r *EducationRubricOutcomeEducationRubricOutcomeCollectionRequest) GetN(ctx context.Context, n int) ([]EducationOutcome, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for EducationOutcome collection
+func (r *EducationRubricOutcomeEducationRubricOutcomeCollectionRequest) Get(ctx context.Context) ([]EducationOutcome, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for EducationOutcome collection
+func (r *EducationRubricOutcomeEducationRubricOutcomeCollectionRequest) Add(ctx context.Context, reqObj *EducationOutcome) (resObj *EducationOutcome, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// EducationSubmission is navigation property rn
+func (b *EducationSubmissionRequestBuilder) EducationSubmission() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// EducationSubmissionResource is navigation property rn
+func (b *EducationSubmissionResourceRequestBuilder) EducationSubmissionResource() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// EducationUser is navigation property rn
+func (b *EducationUserRequestBuilder) EducationUser() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

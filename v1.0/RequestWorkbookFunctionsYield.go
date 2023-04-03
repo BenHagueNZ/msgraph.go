@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsYieldRequestBuilder struct{ BaseRequestBuilder }
 
-// Yield action undocumented
+// Yield action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Yield(reqObj *WorkbookFunctionsYieldRequestParameter) *WorkbookFunctionsYieldRequestBuilder {
 	bb := &WorkbookFunctionsYieldRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Yield"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsYieldRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsYieldDiscRequestBuilder struct{ BaseRequestBuilder }
 
-// YieldDisc action undocumented
+// YieldDisc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) YieldDisc(reqObj *WorkbookFunctionsYieldDiscRequestParameter) *WorkbookFunctionsYieldDiscRequestBuilder {
 	bb := &WorkbookFunctionsYieldDiscRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/YieldDisc"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsYieldDiscRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsYieldMatRequestBuilder struct{ BaseRequestBuilder }
 
-// YieldMat action undocumented
+// YieldMat action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) YieldMat(reqObj *WorkbookFunctionsYieldMatRequestParameter) *WorkbookFunctionsYieldMatRequestBuilder {
 	bb := &WorkbookFunctionsYieldMatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/YieldMat"

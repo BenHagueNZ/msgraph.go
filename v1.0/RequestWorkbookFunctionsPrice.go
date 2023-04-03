@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsPriceRequestBuilder struct{ BaseRequestBuilder }
 
-// Price action undocumented
+// Price action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Price(reqObj *WorkbookFunctionsPriceRequestParameter) *WorkbookFunctionsPriceRequestBuilder {
 	bb := &WorkbookFunctionsPriceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Price"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsPriceRequest) Post(ctx context.Context) (resObj *Workb
 
 type WorkbookFunctionsPriceDiscRequestBuilder struct{ BaseRequestBuilder }
 
-// PriceDisc action undocumented
+// PriceDisc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) PriceDisc(reqObj *WorkbookFunctionsPriceDiscRequestParameter) *WorkbookFunctionsPriceDiscRequestBuilder {
 	bb := &WorkbookFunctionsPriceDiscRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/PriceDisc"
@@ -52,7 +52,7 @@ func (r *WorkbookFunctionsPriceDiscRequest) Post(ctx context.Context) (resObj *W
 
 type WorkbookFunctionsPriceMatRequestBuilder struct{ BaseRequestBuilder }
 
-// PriceMat action undocumented
+// PriceMat action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) PriceMat(reqObj *WorkbookFunctionsPriceMatRequestParameter) *WorkbookFunctionsPriceMatRequestBuilder {
 	bb := &WorkbookFunctionsPriceMatRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/PriceMat"

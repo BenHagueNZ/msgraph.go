@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsUnicharRequestBuilder struct{ BaseRequestBuilder }
 
-// Unichar action undocumented
+// Unichar action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Unichar(reqObj *WorkbookFunctionsUnicharRequestParameter) *WorkbookFunctionsUnicharRequestBuilder {
 	bb := &WorkbookFunctionsUnicharRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Unichar"

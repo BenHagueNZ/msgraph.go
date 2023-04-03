@@ -30,16 +30,37 @@ type ParticipantStopHoldMusicRequestParameter struct {
 	ClientContext *string `json:"clientContext,omitempty"`
 }
 
-// Call is navigation property
+// Call is navigation property rn
 func (b *ParticipantJoiningNotificationRequestBuilder) Call() *CallRequestBuilder {
 	bb := &CallRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/call"
 	return bb
 }
 
-// Call is navigation property
+// Call is navigation property rn
 func (b *ParticipantLeftNotificationRequestBuilder) Call() *CallRequestBuilder {
 	bb := &CallRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/call"
+	return bb
+}
+
+// Participant is navigation property rn
+func (b *ParticipantRequestBuilder) Participant() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ParticipantJoiningNotification is navigation property rn
+func (b *ParticipantJoiningNotificationRequestBuilder) ParticipantJoiningNotification() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// ParticipantLeftNotification is navigation property rn
+func (b *ParticipantLeftNotificationRequestBuilder) ParticipantLeftNotification() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

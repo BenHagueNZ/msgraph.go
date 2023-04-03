@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Overrides returns request builder for InferenceClassificationOverride collection
+// Overrides returns request builder for InferenceClassificationOverride collection rcn
 func (b *InferenceClassificationRequestBuilder) Overrides() *InferenceClassificationOverridesCollectionRequestBuilder {
 	bb := &InferenceClassificationOverridesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/overrides"
@@ -112,4 +112,18 @@ func (r *InferenceClassificationOverridesCollectionRequest) Get(ctx context.Cont
 func (r *InferenceClassificationOverridesCollectionRequest) Add(ctx context.Context, reqObj *InferenceClassificationOverride) (resObj *InferenceClassificationOverride, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// InferenceClassification is navigation property rn
+func (b *InferenceClassificationRequestBuilder) InferenceClassification() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// InferenceClassificationOverride is navigation property rn
+func (b *InferenceClassificationOverrideRequestBuilder) InferenceClassificationOverride() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

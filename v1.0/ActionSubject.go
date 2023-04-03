@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Notes returns request builder for AuthoredNote collection
+// Notes returns request builder for AuthoredNote collection rcn
 func (b *SubjectRightsRequestObjectRequestBuilder) Notes() *SubjectRightsRequestObjectNotesCollectionRequestBuilder {
 	bb := &SubjectRightsRequestObjectNotesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/notes"
@@ -114,9 +114,16 @@ func (r *SubjectRightsRequestObjectNotesCollectionRequest) Add(ctx context.Conte
 	return
 }
 
-// Team is navigation property
+// Team is navigation property rn
 func (b *SubjectRightsRequestObjectRequestBuilder) Team() *TeamRequestBuilder {
 	bb := &TeamRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/team"
+	return bb
+}
+
+// SubjectRightsRequestObject is navigation property rn
+func (b *SubjectRightsRequestObjectRequestBuilder) SubjectRightsRequestObject() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

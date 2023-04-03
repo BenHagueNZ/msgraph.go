@@ -6,4 +6,13 @@ package msgraph
 type SystemFacet struct {
 	// Object is the base model of SystemFacet
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewSystemFacet() (*SystemFacet, error) {
+	newSystemFacet := &SystemFacet{
+		ODataType: "#microsoft.graph.SystemFacet",
+	}
+	return newSystemFacet, nil
 }

@@ -8,6 +8,8 @@ import "time"
 type Photo struct {
 	// Object is the base model of Photo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CameraMake undocumented
 	CameraMake *string `json:"cameraMake,omitempty"`
 	// CameraModel undocumented
@@ -26,4 +28,11 @@ type Photo struct {
 	Orientation *int `json:"orientation,omitempty"`
 	// TakenDateTime undocumented
 	TakenDateTime *time.Time `json:"takenDateTime,omitempty"`
+}
+
+func NewPhoto() (*Photo, error) {
+	newPhoto := &Photo{
+		ODataType: "#microsoft.graph.Photo",
+	}
+	return newPhoto, nil
 }

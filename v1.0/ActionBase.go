@@ -2,16 +2,30 @@
 
 package msgraph
 
-// CreatedByUser is navigation property
+// CreatedByUser is navigation property rn
 func (b *BaseItemRequestBuilder) CreatedByUser() *UserRequestBuilder {
 	bb := &UserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/createdByUser"
 	return bb
 }
 
-// LastModifiedByUser is navigation property
+// LastModifiedByUser is navigation property rn
 func (b *BaseItemRequestBuilder) LastModifiedByUser() *UserRequestBuilder {
 	bb := &UserRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/lastModifiedByUser"
+	return bb
+}
+
+// BaseItem is navigation property rn
+func (b *BaseItemRequestBuilder) BaseItem() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// BaseItemVersion is navigation property rn
+func (b *BaseItemVersionRequestBuilder) BaseItemVersion() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

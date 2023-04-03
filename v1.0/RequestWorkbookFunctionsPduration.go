@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsPdurationRequestBuilder struct{ BaseRequestBuilder }
 
-// Pduration action undocumented
+// Pduration action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Pduration(reqObj *WorkbookFunctionsPdurationRequestParameter) *WorkbookFunctionsPdurationRequestBuilder {
 	bb := &WorkbookFunctionsPdurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Pduration"

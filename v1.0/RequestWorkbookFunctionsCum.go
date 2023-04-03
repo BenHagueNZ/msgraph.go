@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsCumIPmtRequestBuilder struct{ BaseRequestBuilder }
 
-// CumIPmt action undocumented
+// CumIPmt action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) CumIPmt(reqObj *WorkbookFunctionsCumIPmtRequestParameter) *WorkbookFunctionsCumIPmtRequestBuilder {
 	bb := &WorkbookFunctionsCumIPmtRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CumIPmt"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsCumIPmtRequest) Post(ctx context.Context) (resObj *Wor
 
 type WorkbookFunctionsCumPrincRequestBuilder struct{ BaseRequestBuilder }
 
-// CumPrinc action undocumented
+// CumPrinc action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) CumPrinc(reqObj *WorkbookFunctionsCumPrincRequestParameter) *WorkbookFunctionsCumPrincRequestBuilder {
 	bb := &WorkbookFunctionsCumPrincRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/CumPrinc"

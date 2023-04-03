@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsLeftbRequestBuilder struct{ BaseRequestBuilder }
 
-// Leftb action undocumented
+// Leftb action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Leftb(reqObj *WorkbookFunctionsLeftbRequestParameter) *WorkbookFunctionsLeftbRequestBuilder {
 	bb := &WorkbookFunctionsLeftbRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Leftb"

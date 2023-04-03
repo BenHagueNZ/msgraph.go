@@ -6,6 +6,15 @@ package msgraph
 type SpecialFolder struct {
 	// Object is the base model of SpecialFolder
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
+}
+
+func NewSpecialFolder() (*SpecialFolder, error) {
+	newSpecialFolder := &SpecialFolder{
+		ODataType: "#microsoft.graph.SpecialFolder",
+	}
+	return newSpecialFolder, nil
 }

@@ -6,6 +6,15 @@ package msgraph
 type HyperlinkOrPictureColumn struct {
 	// Object is the base model of HyperlinkOrPictureColumn
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// IsPicture undocumented
 	IsPicture *bool `json:"isPicture,omitempty"`
+}
+
+func NewHyperlinkOrPictureColumn() (*HyperlinkOrPictureColumn, error) {
+	newHyperlinkOrPictureColumn := &HyperlinkOrPictureColumn{
+		ODataType: "#microsoft.graph.HyperlinkOrPictureColumn",
+	}
+	return newHyperlinkOrPictureColumn, nil
 }

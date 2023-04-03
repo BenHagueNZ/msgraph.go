@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsSubstituteRequestBuilder struct{ BaseRequestBuilder }
 
-// Substitute action undocumented
+// Substitute action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Substitute(reqObj *WorkbookFunctionsSubstituteRequestParameter) *WorkbookFunctionsSubstituteRequestBuilder {
 	bb := &WorkbookFunctionsSubstituteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Substitute"

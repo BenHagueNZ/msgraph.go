@@ -25,7 +25,7 @@ type IdentityAPIConnectorUploadClientCertificateRequestParameter struct {
 	Password *string `json:"password,omitempty"`
 }
 
-// APIConnectors returns request builder for IdentityAPIConnector collection
+// APIConnectors returns request builder for IdentityAPIConnector collection rcn
 func (b *IdentityContainerRequestBuilder) APIConnectors() *IdentityContainerAPIConnectorsCollectionRequestBuilder {
 	bb := &IdentityContainerAPIConnectorsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/apiConnectors"
@@ -128,7 +128,7 @@ func (r *IdentityContainerAPIConnectorsCollectionRequest) Add(ctx context.Contex
 	return
 }
 
-// B2xUserFlows returns request builder for B2xIdentityUserFlow collection
+// B2xUserFlows returns request builder for B2xIdentityUserFlow collection rcn
 func (b *IdentityContainerRequestBuilder) B2xUserFlows() *IdentityContainerB2xUserFlowsCollectionRequestBuilder {
 	bb := &IdentityContainerB2xUserFlowsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/b2xUserFlows"
@@ -231,14 +231,14 @@ func (r *IdentityContainerB2xUserFlowsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// ConditionalAccess is navigation property
+// ConditionalAccess is navigation property rn
 func (b *IdentityContainerRequestBuilder) ConditionalAccess() *ConditionalAccessRootRequestBuilder {
 	bb := &ConditionalAccessRootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/conditionalAccess"
 	return bb
 }
 
-// IdentityProviders returns request builder for IdentityProviderBase collection
+// IdentityProviders returns request builder for IdentityProviderBase collection rcn
 func (b *IdentityContainerRequestBuilder) IdentityProviders() *IdentityContainerIdentityProvidersCollectionRequestBuilder {
 	bb := &IdentityContainerIdentityProvidersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/identityProviders"
@@ -341,7 +341,7 @@ func (r *IdentityContainerIdentityProvidersCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// UserFlowAttributes returns request builder for IdentityUserFlowAttribute collection
+// UserFlowAttributes returns request builder for IdentityUserFlowAttribute collection rcn
 func (b *IdentityContainerRequestBuilder) UserFlowAttributes() *IdentityContainerUserFlowAttributesCollectionRequestBuilder {
 	bb := &IdentityContainerUserFlowAttributesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/userFlowAttributes"
@@ -444,35 +444,35 @@ func (r *IdentityContainerUserFlowAttributesCollectionRequest) Add(ctx context.C
 	return
 }
 
-// AccessReviews is navigation property
+// AccessReviews is navigation property rn
 func (b *IdentityGovernanceRequestBuilder) AccessReviews() *AccessReviewSetRequestBuilder {
 	bb := &AccessReviewSetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/accessReviews"
 	return bb
 }
 
-// AppConsent is navigation property
+// AppConsent is navigation property rn
 func (b *IdentityGovernanceRequestBuilder) AppConsent() *AppConsentApprovalRouteRequestBuilder {
 	bb := &AppConsentApprovalRouteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appConsent"
 	return bb
 }
 
-// EntitlementManagement is navigation property
+// EntitlementManagement is navigation property rn
 func (b *IdentityGovernanceRequestBuilder) EntitlementManagement() *EntitlementManagementRequestBuilder {
 	bb := &EntitlementManagementRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/entitlementManagement"
 	return bb
 }
 
-// TermsOfUse is navigation property
+// TermsOfUse is navigation property rn
 func (b *IdentityGovernanceRequestBuilder) TermsOfUse() *TermsOfUseContainerRequestBuilder {
 	bb := &TermsOfUseContainerRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/termsOfUse"
 	return bb
 }
 
-// RiskDetections returns request builder for RiskDetection collection
+// RiskDetections returns request builder for RiskDetection collection rcn
 func (b *IdentityProtectionRootRequestBuilder) RiskDetections() *IdentityProtectionRootRiskDetectionsCollectionRequestBuilder {
 	bb := &IdentityProtectionRootRiskDetectionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/riskDetections"
@@ -575,7 +575,7 @@ func (r *IdentityProtectionRootRiskDetectionsCollectionRequest) Add(ctx context.
 	return
 }
 
-// RiskyServicePrincipals returns request builder for RiskyServicePrincipal collection
+// RiskyServicePrincipals returns request builder for RiskyServicePrincipal collection rcn
 func (b *IdentityProtectionRootRequestBuilder) RiskyServicePrincipals() *IdentityProtectionRootRiskyServicePrincipalsCollectionRequestBuilder {
 	bb := &IdentityProtectionRootRiskyServicePrincipalsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/riskyServicePrincipals"
@@ -678,7 +678,7 @@ func (r *IdentityProtectionRootRiskyServicePrincipalsCollectionRequest) Add(ctx 
 	return
 }
 
-// RiskyUsers returns request builder for RiskyUser collection
+// RiskyUsers returns request builder for RiskyUser collection rcn
 func (b *IdentityProtectionRootRequestBuilder) RiskyUsers() *IdentityProtectionRootRiskyUsersCollectionRequestBuilder {
 	bb := &IdentityProtectionRootRiskyUsersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/riskyUsers"
@@ -781,7 +781,7 @@ func (r *IdentityProtectionRootRiskyUsersCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// ServicePrincipalRiskDetections returns request builder for ServicePrincipalRiskDetection collection
+// ServicePrincipalRiskDetections returns request builder for ServicePrincipalRiskDetection collection rcn
 func (b *IdentityProtectionRootRequestBuilder) ServicePrincipalRiskDetections() *IdentityProtectionRootServicePrincipalRiskDetectionsCollectionRequestBuilder {
 	bb := &IdentityProtectionRootServicePrincipalRiskDetectionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/servicePrincipalRiskDetections"
@@ -884,9 +884,250 @@ func (r *IdentityProtectionRootServicePrincipalRiskDetectionsCollectionRequest) 
 	return
 }
 
-// UserAttribute is navigation property
+// UserAttribute is navigation property rn
 func (b *IdentityUserFlowAttributeAssignmentRequestBuilder) UserAttribute() *IdentityUserFlowAttributeRequestBuilder {
 	bb := &IdentityUserFlowAttributeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/userAttribute"
+	return bb
+}
+
+// IdentityAPIConnector is navigation property rn
+func (b *IdentityAPIConnectorRequestBuilder) IdentityAPIConnector() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// IdentityBuiltInUserFlowAttribute returns request builder for IdentityUserFlowAttribute collection rcn
+func (b *IdentityBuiltInUserFlowAttributeRequestBuilder) IdentityBuiltInUserFlowAttribute() *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder {
+	bb := &IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/IdentityUserFlowAttribute"
+	return bb
+}
+
+// IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder is request builder for IdentityUserFlowAttribute collection
+type IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for IdentityUserFlowAttribute collection
+func (b *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder) Request() *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest {
+	return &IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for IdentityUserFlowAttribute item
+func (b *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequestBuilder) ID(id string) *IdentityUserFlowAttributeRequestBuilder {
+	bb := &IdentityUserFlowAttributeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest is request for IdentityUserFlowAttribute collection
+type IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for IdentityUserFlowAttribute collection
+func (r *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityUserFlowAttribute, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []IdentityUserFlowAttribute
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []IdentityUserFlowAttribute
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for IdentityUserFlowAttribute collection, max N pages
+func (r *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityUserFlowAttribute, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for IdentityUserFlowAttribute collection
+func (r *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest) Get(ctx context.Context) ([]IdentityUserFlowAttribute, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for IdentityUserFlowAttribute collection
+func (r *IdentityBuiltInUserFlowAttributeIdentityBuiltInUserFlowAttributeCollectionRequest) Add(ctx context.Context, reqObj *IdentityUserFlowAttribute) (resObj *IdentityUserFlowAttribute, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// IdentityContainer is navigation property rn
+func (b *IdentityContainerRequestBuilder) IdentityContainer() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// IdentityCustomUserFlowAttribute returns request builder for IdentityUserFlowAttribute collection rcn
+func (b *IdentityCustomUserFlowAttributeRequestBuilder) IdentityCustomUserFlowAttribute() *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder {
+	bb := &IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/IdentityUserFlowAttribute"
+	return bb
+}
+
+// IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder is request builder for IdentityUserFlowAttribute collection
+type IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for IdentityUserFlowAttribute collection
+func (b *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder) Request() *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest {
+	return &IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for IdentityUserFlowAttribute item
+func (b *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequestBuilder) ID(id string) *IdentityUserFlowAttributeRequestBuilder {
+	bb := &IdentityUserFlowAttributeRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest is request for IdentityUserFlowAttribute collection
+type IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for IdentityUserFlowAttribute collection
+func (r *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentityUserFlowAttribute, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []IdentityUserFlowAttribute
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []IdentityUserFlowAttribute
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for IdentityUserFlowAttribute collection, max N pages
+func (r *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest) GetN(ctx context.Context, n int) ([]IdentityUserFlowAttribute, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for IdentityUserFlowAttribute collection
+func (r *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest) Get(ctx context.Context) ([]IdentityUserFlowAttribute, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for IdentityUserFlowAttribute collection
+func (r *IdentityCustomUserFlowAttributeIdentityCustomUserFlowAttributeCollectionRequest) Add(ctx context.Context, reqObj *IdentityUserFlowAttribute) (resObj *IdentityUserFlowAttribute, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// IdentityProvider is navigation property rn
+func (b *IdentityProviderRequestBuilder) IdentityProvider() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// IdentityUserFlow is navigation property rn
+func (b *IdentityUserFlowRequestBuilder) IdentityUserFlow() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// IdentityUserFlowAttributeAssignment is navigation property rn
+func (b *IdentityUserFlowAttributeAssignmentRequestBuilder) IdentityUserFlowAttributeAssignment() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

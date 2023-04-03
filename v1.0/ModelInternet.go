@@ -6,8 +6,17 @@ package msgraph
 type InternetMessageHeader struct {
 	// Object is the base model of InternetMessageHeader
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Value undocumented
 	Value *string `json:"value,omitempty"`
+}
+
+func NewInternetMessageHeader() (*InternetMessageHeader, error) {
+	newInternetMessageHeader := &InternetMessageHeader{
+		ODataType: "#microsoft.graph.InternetMessageHeader",
+	}
+	return newInternetMessageHeader, nil
 }

@@ -8,6 +8,8 @@ import "time"
 type DocumentSet struct {
 	// Object is the base model of DocumentSet
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AllowedContentTypes undocumented
 	AllowedContentTypes []ContentTypeInfo `json:"allowedContentTypes,omitempty"`
 	// DefaultContents undocumented
@@ -24,10 +26,19 @@ type DocumentSet struct {
 	WelcomePageColumns []ColumnDefinition `json:"welcomePageColumns,omitempty"`
 }
 
+func NewDocumentSet() (*DocumentSet, error) {
+	newDocumentSet := &DocumentSet{
+		ODataType: "#microsoft.graph.DocumentSet",
+	}
+	return newDocumentSet, nil
+}
+
 // DocumentSetContent undocumented
 type DocumentSetContent struct {
 	// Object is the base model of DocumentSetContent
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ContentType undocumented
 	ContentType *ContentTypeInfo `json:"contentType,omitempty"`
 	// FileName undocumented
@@ -36,10 +47,19 @@ type DocumentSetContent struct {
 	FolderName *string `json:"folderName,omitempty"`
 }
 
+func NewDocumentSetContent() (*DocumentSetContent, error) {
+	newDocumentSetContent := &DocumentSetContent{
+		ODataType: "#microsoft.graph.DocumentSetContent",
+	}
+	return newDocumentSetContent, nil
+}
+
 // DocumentSetVersion undocumented
 type DocumentSetVersion struct {
 	// ListItemVersion is the base model of DocumentSetVersion
 	ListItemVersion
+
+	ODataType string `json:"@odata.type"`
 	// Comment undocumented
 	Comment *string `json:"comment,omitempty"`
 	// CreatedBy undocumented
@@ -52,14 +72,30 @@ type DocumentSetVersion struct {
 	ShouldCaptureMinorVersion *bool `json:"shouldCaptureMinorVersion,omitempty"`
 }
 
+func NewDocumentSetVersion() (*DocumentSetVersion, error) {
+	newDocumentSetVersion := &DocumentSetVersion{
+		ODataType: "#microsoft.graph.DocumentSetVersion",
+	}
+	return newDocumentSetVersion, nil
+}
+
 // DocumentSetVersionItem undocumented
 type DocumentSetVersionItem struct {
 	// Object is the base model of DocumentSetVersionItem
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ItemID undocumented
 	ItemID *string `json:"itemId,omitempty"`
 	// Title undocumented
 	Title *string `json:"title,omitempty"`
 	// VersionID undocumented
 	VersionID *string `json:"versionId,omitempty"`
+}
+
+func NewDocumentSetVersionItem() (*DocumentSetVersionItem, error) {
+	newDocumentSetVersionItem := &DocumentSetVersionItem{
+		ODataType: "#microsoft.graph.DocumentSetVersionItem",
+	}
+	return newDocumentSetVersionItem, nil
 }

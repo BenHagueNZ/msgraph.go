@@ -39,7 +39,7 @@ func (r *PresenceRequest) Delete(ctx context.Context) error {
 
 type PresenceClearPresenceRequestBuilder struct{ BaseRequestBuilder }
 
-// ClearPresence action undocumented
+// ClearPresence action undocumentedrav
 func (b *PresenceRequestBuilder) ClearPresence(reqObj *PresenceClearPresenceRequestParameter) *PresenceClearPresenceRequestBuilder {
 	bb := &PresenceClearPresenceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ClearPresence"
@@ -61,7 +61,7 @@ func (r *PresenceClearPresenceRequest) Post(ctx context.Context) error {
 
 type PresenceClearUserPreferredPresenceRequestBuilder struct{ BaseRequestBuilder }
 
-// ClearUserPreferredPresence action undocumented
+// ClearUserPreferredPresence action undocumentedrav
 func (b *PresenceRequestBuilder) ClearUserPreferredPresence(reqObj *PresenceClearUserPreferredPresenceRequestParameter) *PresenceClearUserPreferredPresenceRequestBuilder {
 	bb := &PresenceClearUserPreferredPresenceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/ClearUserPreferredPresence"
@@ -83,7 +83,7 @@ func (r *PresenceClearUserPreferredPresenceRequest) Post(ctx context.Context) er
 
 type PresenceSetPresenceRequestBuilder struct{ BaseRequestBuilder }
 
-// SetPresence action undocumented
+// SetPresence action undocumentedrav
 func (b *PresenceRequestBuilder) SetPresence(reqObj *PresenceSetPresenceRequestParameter) *PresenceSetPresenceRequestBuilder {
 	bb := &PresenceSetPresenceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SetPresence"
@@ -105,7 +105,7 @@ func (r *PresenceSetPresenceRequest) Post(ctx context.Context) error {
 
 type PresenceSetUserPreferredPresenceRequestBuilder struct{ BaseRequestBuilder }
 
-// SetUserPreferredPresence action undocumented
+// SetUserPreferredPresence action undocumentedrav
 func (b *PresenceRequestBuilder) SetUserPreferredPresence(reqObj *PresenceSetUserPreferredPresenceRequestParameter) *PresenceSetUserPreferredPresenceRequestBuilder {
 	bb := &PresenceSetUserPreferredPresenceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/SetUserPreferredPresence"

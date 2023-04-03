@@ -6,6 +6,8 @@ package msgraph
 type Reminder struct {
 	// Object is the base model of Reminder
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// ChangeKey undocumented
 	ChangeKey *string `json:"changeKey,omitempty"`
 	// EventEndTime undocumented
@@ -22,4 +24,11 @@ type Reminder struct {
 	EventWebLink *string `json:"eventWebLink,omitempty"`
 	// ReminderFireTime undocumented
 	ReminderFireTime *DateTimeTimeZone `json:"reminderFireTime,omitempty"`
+}
+
+func NewReminder() (*Reminder, error) {
+	newReminder := &Reminder{
+		ODataType: "#microsoft.graph.Reminder",
+	}
+	return newReminder, nil
 }

@@ -8,6 +8,8 @@ import "time"
 type File struct {
 	// Object is the base model of File
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Hashes undocumented
 	Hashes *Hashes `json:"hashes,omitempty"`
 	// MimeType undocumented
@@ -16,20 +18,38 @@ type File struct {
 	ProcessingMetadata *bool `json:"processingMetadata,omitempty"`
 }
 
+func NewFile() (*File, error) {
+	newFile := &File{
+		ODataType: "#microsoft.graph.File",
+	}
+	return newFile, nil
+}
+
 // FileAssessmentRequestObject undocumented
 type FileAssessmentRequestObject struct {
 	// ThreatAssessmentRequestObject is the base model of FileAssessmentRequestObject
 	ThreatAssessmentRequestObject
+
+	ODataType string `json:"@odata.type"`
 	// ContentData undocumented
 	ContentData *string `json:"contentData,omitempty"`
 	// FileName undocumented
 	FileName *string `json:"fileName,omitempty"`
 }
 
+func NewFileAssessmentRequestObject() (*FileAssessmentRequestObject, error) {
+	newFileAssessmentRequestObject := &FileAssessmentRequestObject{
+		ODataType: "#microsoft.graph.FileAssessmentRequestObject",
+	}
+	return newFileAssessmentRequestObject, nil
+}
+
 // FileAttachment undocumented
 type FileAttachment struct {
 	// Attachment is the base model of FileAttachment
 	Attachment
+
+	ODataType string `json:"@odata.type"`
 	// ContentBytes undocumented
 	ContentBytes *Binary `json:"contentBytes,omitempty"`
 	// ContentID undocumented
@@ -38,10 +58,19 @@ type FileAttachment struct {
 	ContentLocation *string `json:"contentLocation,omitempty"`
 }
 
+func NewFileAttachment() (*FileAttachment, error) {
+	newFileAttachment := &FileAttachment{
+		ODataType: "#microsoft.graph.FileAttachment",
+	}
+	return newFileAttachment, nil
+}
+
 // FileEncryptionInfo undocumented
 type FileEncryptionInfo struct {
 	// Object is the base model of FileEncryptionInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// EncryptionKey undocumented
 	EncryptionKey *Binary `json:"encryptionKey,omitempty"`
 	// FileDigest undocumented
@@ -58,20 +87,38 @@ type FileEncryptionInfo struct {
 	ProfileIdentifier *string `json:"profileIdentifier,omitempty"`
 }
 
+func NewFileEncryptionInfo() (*FileEncryptionInfo, error) {
+	newFileEncryptionInfo := &FileEncryptionInfo{
+		ODataType: "#microsoft.graph.FileEncryptionInfo",
+	}
+	return newFileEncryptionInfo, nil
+}
+
 // FileHash undocumented
 type FileHash struct {
 	// Object is the base model of FileHash
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// HashType undocumented
 	HashType *FileHashType `json:"hashType,omitempty"`
 	// HashValue undocumented
 	HashValue *string `json:"hashValue,omitempty"`
 }
 
+func NewFileHash() (*FileHash, error) {
+	newFileHash := &FileHash{
+		ODataType: "#microsoft.graph.FileHash",
+	}
+	return newFileHash, nil
+}
+
 // FileSecurityState undocumented
 type FileSecurityState struct {
 	// Object is the base model of FileSecurityState
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// FileHash undocumented
 	FileHash *FileHash `json:"fileHash,omitempty"`
 	// Name undocumented
@@ -82,14 +129,30 @@ type FileSecurityState struct {
 	RiskScore *string `json:"riskScore,omitempty"`
 }
 
+func NewFileSecurityState() (*FileSecurityState, error) {
+	newFileSecurityState := &FileSecurityState{
+		ODataType: "#microsoft.graph.FileSecurityState",
+	}
+	return newFileSecurityState, nil
+}
+
 // FileSystemInfo undocumented
 type FileSystemInfo struct {
 	// Object is the base model of FileSystemInfo
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// LastAccessedDateTime undocumented
 	LastAccessedDateTime *time.Time `json:"lastAccessedDateTime,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
+}
+
+func NewFileSystemInfo() (*FileSystemInfo, error) {
+	newFileSystemInfo := &FileSystemInfo{
+		ODataType: "#microsoft.graph.FileSystemInfo",
+	}
+	return newFileSystemInfo, nil
 }

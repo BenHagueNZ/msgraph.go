@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsIpmtRequestBuilder struct{ BaseRequestBuilder }
 
-// Ipmt action undocumented
+// Ipmt action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Ipmt(reqObj *WorkbookFunctionsIpmtRequestParameter) *WorkbookFunctionsIpmtRequestBuilder {
 	bb := &WorkbookFunctionsIpmtRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Ipmt"

@@ -6,6 +6,15 @@ package msgraph
 type ResetPasscodeActionResult struct {
 	// DeviceActionResult is the base model of ResetPasscodeActionResult
 	DeviceActionResult
+
+	ODataType string `json:"@odata.type"`
 	// Passcode undocumented
 	Passcode *string `json:"passcode,omitempty"`
+}
+
+func NewResetPasscodeActionResult() (*ResetPasscodeActionResult, error) {
+	newResetPasscodeActionResult := &ResetPasscodeActionResult{
+		ODataType: "#microsoft.graph.ResetPasscodeActionResult",
+	}
+	return newResetPasscodeActionResult, nil
 }

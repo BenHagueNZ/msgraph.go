@@ -8,14 +8,25 @@ import "time"
 type WindowsAppXAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of WindowsAppXAppAssignmentSettings
 	MobileAppAssignmentSettings
+
+	ODataType string `json:"@odata.type"`
 	// UseDeviceContext undocumented
 	UseDeviceContext *bool `json:"useDeviceContext,omitempty"`
+}
+
+func NewWindowsAppXAppAssignmentSettings() (*WindowsAppXAppAssignmentSettings, error) {
+	newWindowsAppXAppAssignmentSettings := &WindowsAppXAppAssignmentSettings{
+		ODataType: "#microsoft.graph.WindowsAppXAppAssignmentSettings",
+	}
+	return newWindowsAppXAppAssignmentSettings, nil
 }
 
 // WindowsAutopilotDeviceIdentity undocumented
 type WindowsAutopilotDeviceIdentity struct {
 	// Entity is the base model of WindowsAutopilotDeviceIdentity
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AddressableUserName undocumented
 	AddressableUserName *string `json:"addressableUserName,omitempty"`
 	// AzureActiveDirectoryDeviceID undocumented
@@ -50,54 +61,108 @@ type WindowsAutopilotDeviceIdentity struct {
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
 
+func NewWindowsAutopilotDeviceIdentity() (*WindowsAutopilotDeviceIdentity, error) {
+	newWindowsAutopilotDeviceIdentity := &WindowsAutopilotDeviceIdentity{
+		ODataType: "#microsoft.graph.WindowsAutopilotDeviceIdentity",
+	}
+	return newWindowsAutopilotDeviceIdentity, nil
+}
+
 // WindowsDefenderAdvancedThreatProtectionConfiguration undocumented
 type WindowsDefenderAdvancedThreatProtectionConfiguration struct {
 	// DeviceConfiguration is the base model of WindowsDefenderAdvancedThreatProtectionConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// AllowSampleSharing undocumented
 	AllowSampleSharing *bool `json:"allowSampleSharing,omitempty"`
 	// EnableExpeditedTelemetryReporting undocumented
 	EnableExpeditedTelemetryReporting *bool `json:"enableExpeditedTelemetryReporting,omitempty"`
 }
 
+func NewWindowsDefenderAdvancedThreatProtectionConfiguration() (*WindowsDefenderAdvancedThreatProtectionConfiguration, error) {
+	newWindowsDefenderAdvancedThreatProtectionConfiguration := &WindowsDefenderAdvancedThreatProtectionConfiguration{
+		ODataType: "#microsoft.graph.WindowsDefenderAdvancedThreatProtectionConfiguration",
+	}
+	return newWindowsDefenderAdvancedThreatProtectionConfiguration, nil
+}
+
 // WindowsDefenderScanActionResult undocumented
 type WindowsDefenderScanActionResult struct {
 	// DeviceActionResult is the base model of WindowsDefenderScanActionResult
 	DeviceActionResult
+
+	ODataType string `json:"@odata.type"`
 	// ScanType undocumented
 	ScanType *string `json:"scanType,omitempty"`
+}
+
+func NewWindowsDefenderScanActionResult() (*WindowsDefenderScanActionResult, error) {
+	newWindowsDefenderScanActionResult := &WindowsDefenderScanActionResult{
+		ODataType: "#microsoft.graph.WindowsDefenderScanActionResult",
+	}
+	return newWindowsDefenderScanActionResult, nil
 }
 
 // WindowsDeviceADAccount undocumented
 type WindowsDeviceADAccount struct {
 	// WindowsDeviceAccount is the base model of WindowsDeviceADAccount
 	WindowsDeviceAccount
+
+	ODataType string `json:"@odata.type"`
 	// DomainName undocumented
 	DomainName *string `json:"domainName,omitempty"`
 	// UserName undocumented
 	UserName *string `json:"userName,omitempty"`
 }
 
+func NewWindowsDeviceADAccount() (*WindowsDeviceADAccount, error) {
+	newWindowsDeviceADAccount := &WindowsDeviceADAccount{
+		ODataType: "#microsoft.graph.WindowsDeviceADAccount",
+	}
+	return newWindowsDeviceADAccount, nil
+}
+
 // WindowsDeviceAccount undocumented
 type WindowsDeviceAccount struct {
 	// Object is the base model of WindowsDeviceAccount
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Password undocumented
 	Password *string `json:"password,omitempty"`
+}
+
+func NewWindowsDeviceAccount() (*WindowsDeviceAccount, error) {
+	newWindowsDeviceAccount := &WindowsDeviceAccount{
+		ODataType: "#microsoft.graph.WindowsDeviceAccount",
+	}
+	return newWindowsDeviceAccount, nil
 }
 
 // WindowsDeviceAzureADAccount undocumented
 type WindowsDeviceAzureADAccount struct {
 	// WindowsDeviceAccount is the base model of WindowsDeviceAzureADAccount
 	WindowsDeviceAccount
+
+	ODataType string `json:"@odata.type"`
 	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
+}
+
+func NewWindowsDeviceAzureADAccount() (*WindowsDeviceAzureADAccount, error) {
+	newWindowsDeviceAzureADAccount := &WindowsDeviceAzureADAccount{
+		ODataType: "#microsoft.graph.WindowsDeviceAzureADAccount",
+	}
+	return newWindowsDeviceAzureADAccount, nil
 }
 
 // WindowsFirewallNetworkProfile undocumented
 type WindowsFirewallNetworkProfile struct {
 	// Object is the base model of WindowsFirewallNetworkProfile
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AuthorizedApplicationRulesFromGroupPolicyMerged undocumented
 	AuthorizedApplicationRulesFromGroupPolicyMerged *bool `json:"authorizedApplicationRulesFromGroupPolicyMerged,omitempty"`
 	// ConnectionSecurityRulesFromGroupPolicyMerged undocumented
@@ -124,10 +189,19 @@ type WindowsFirewallNetworkProfile struct {
 	UnicastResponsesToMulticastBroadcastsBlocked *bool `json:"unicastResponsesToMulticastBroadcastsBlocked,omitempty"`
 }
 
+func NewWindowsFirewallNetworkProfile() (*WindowsFirewallNetworkProfile, error) {
+	newWindowsFirewallNetworkProfile := &WindowsFirewallNetworkProfile{
+		ODataType: "#microsoft.graph.WindowsFirewallNetworkProfile",
+	}
+	return newWindowsFirewallNetworkProfile, nil
+}
+
 // WindowsHelloForBusinessAuthenticationMethod undocumented
 type WindowsHelloForBusinessAuthenticationMethod struct {
 	// AuthenticationMethod is the base model of WindowsHelloForBusinessAuthenticationMethod
 	AuthenticationMethod
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// DisplayName undocumented
@@ -138,10 +212,19 @@ type WindowsHelloForBusinessAuthenticationMethod struct {
 	Device *Device `json:"device,omitempty"`
 }
 
+func NewWindowsHelloForBusinessAuthenticationMethod() (*WindowsHelloForBusinessAuthenticationMethod, error) {
+	newWindowsHelloForBusinessAuthenticationMethod := &WindowsHelloForBusinessAuthenticationMethod{
+		ODataType: "#microsoft.graph.WindowsHelloForBusinessAuthenticationMethod",
+	}
+	return newWindowsHelloForBusinessAuthenticationMethod, nil
+}
+
 // WindowsInformationProtection undocumented
 type WindowsInformationProtection struct {
 	// ManagedAppPolicy is the base model of WindowsInformationProtection
 	ManagedAppPolicy
+
+	ODataType string `json:"@odata.type"`
 	// AzureRightsManagementServicesAllowed undocumented
 	AzureRightsManagementServicesAllowed *bool `json:"azureRightsManagementServicesAllowed,omitempty"`
 	// DataRecoveryCertificate undocumented
@@ -194,10 +277,19 @@ type WindowsInformationProtection struct {
 	ProtectedAppLockerFiles []WindowsInformationProtectionAppLockerFile `json:"protectedAppLockerFiles,omitempty"`
 }
 
+func NewWindowsInformationProtection() (*WindowsInformationProtection, error) {
+	newWindowsInformationProtection := &WindowsInformationProtection{
+		ODataType: "#microsoft.graph.WindowsInformationProtection",
+	}
+	return newWindowsInformationProtection, nil
+}
+
 // WindowsInformationProtectionApp undocumented
 type WindowsInformationProtectionApp struct {
 	// Object is the base model of WindowsInformationProtectionApp
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Denied undocumented
 	Denied *bool `json:"denied,omitempty"`
 	// Description undocumented
@@ -210,10 +302,19 @@ type WindowsInformationProtectionApp struct {
 	PublisherName *string `json:"publisherName,omitempty"`
 }
 
+func NewWindowsInformationProtectionApp() (*WindowsInformationProtectionApp, error) {
+	newWindowsInformationProtectionApp := &WindowsInformationProtectionApp{
+		ODataType: "#microsoft.graph.WindowsInformationProtectionApp",
+	}
+	return newWindowsInformationProtectionApp, nil
+}
+
 // WindowsInformationProtectionAppLearningSummary undocumented
 type WindowsInformationProtectionAppLearningSummary struct {
 	// Entity is the base model of WindowsInformationProtectionAppLearningSummary
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ApplicationName undocumented
 	ApplicationName *string `json:"applicationName,omitempty"`
 	// ApplicationType undocumented
@@ -222,10 +323,19 @@ type WindowsInformationProtectionAppLearningSummary struct {
 	DeviceCount *int `json:"deviceCount,omitempty"`
 }
 
+func NewWindowsInformationProtectionAppLearningSummary() (*WindowsInformationProtectionAppLearningSummary, error) {
+	newWindowsInformationProtectionAppLearningSummary := &WindowsInformationProtectionAppLearningSummary{
+		ODataType: "#microsoft.graph.WindowsInformationProtectionAppLearningSummary",
+	}
+	return newWindowsInformationProtectionAppLearningSummary, nil
+}
+
 // WindowsInformationProtectionAppLockerFile undocumented
 type WindowsInformationProtectionAppLockerFile struct {
 	// Entity is the base model of WindowsInformationProtectionAppLockerFile
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// File undocumented
@@ -236,10 +346,19 @@ type WindowsInformationProtectionAppLockerFile struct {
 	Version *string `json:"version,omitempty"`
 }
 
+func NewWindowsInformationProtectionAppLockerFile() (*WindowsInformationProtectionAppLockerFile, error) {
+	newWindowsInformationProtectionAppLockerFile := &WindowsInformationProtectionAppLockerFile{
+		ODataType: "#microsoft.graph.WindowsInformationProtectionAppLockerFile",
+	}
+	return newWindowsInformationProtectionAppLockerFile, nil
+}
+
 // WindowsInformationProtectionDataRecoveryCertificate undocumented
 type WindowsInformationProtectionDataRecoveryCertificate struct {
 	// Object is the base model of WindowsInformationProtectionDataRecoveryCertificate
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// Certificate undocumented
 	Certificate *Binary `json:"certificate,omitempty"`
 	// Description undocumented
@@ -250,10 +369,19 @@ type WindowsInformationProtectionDataRecoveryCertificate struct {
 	SubjectName *string `json:"subjectName,omitempty"`
 }
 
+func NewWindowsInformationProtectionDataRecoveryCertificate() (*WindowsInformationProtectionDataRecoveryCertificate, error) {
+	newWindowsInformationProtectionDataRecoveryCertificate := &WindowsInformationProtectionDataRecoveryCertificate{
+		ODataType: "#microsoft.graph.WindowsInformationProtectionDataRecoveryCertificate",
+	}
+	return newWindowsInformationProtectionDataRecoveryCertificate, nil
+}
+
 // WindowsInformationProtectionDesktopApp undocumented
 type WindowsInformationProtectionDesktopApp struct {
 	// WindowsInformationProtectionApp is the base model of WindowsInformationProtectionDesktopApp
 	WindowsInformationProtectionApp
+
+	ODataType string `json:"@odata.type"`
 	// BinaryName undocumented
 	BinaryName *string `json:"binaryName,omitempty"`
 	// BinaryVersionHigh undocumented
@@ -262,30 +390,57 @@ type WindowsInformationProtectionDesktopApp struct {
 	BinaryVersionLow *string `json:"binaryVersionLow,omitempty"`
 }
 
+func NewWindowsInformationProtectionDesktopApp() (*WindowsInformationProtectionDesktopApp, error) {
+	newWindowsInformationProtectionDesktopApp := &WindowsInformationProtectionDesktopApp{
+		ODataType: "#microsoft.graph.WindowsInformationProtectionDesktopApp",
+	}
+	return newWindowsInformationProtectionDesktopApp, nil
+}
+
 // WindowsInformationProtectionIPRangeCollection undocumented
 type WindowsInformationProtectionIPRangeCollection struct {
 	// Object is the base model of WindowsInformationProtectionIPRangeCollection
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Ranges undocumented
 	Ranges []IPRange `json:"ranges,omitempty"`
 }
 
+func NewWindowsInformationProtectionIPRangeCollection() (*WindowsInformationProtectionIPRangeCollection, error) {
+	newWindowsInformationProtectionIPRangeCollection := &WindowsInformationProtectionIPRangeCollection{
+		ODataType: "#microsoft.graph.WindowsInformationProtectionIPRangeCollection",
+	}
+	return newWindowsInformationProtectionIPRangeCollection, nil
+}
+
 // WindowsInformationProtectionNetworkLearningSummary undocumented
 type WindowsInformationProtectionNetworkLearningSummary struct {
 	// Entity is the base model of WindowsInformationProtectionNetworkLearningSummary
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DeviceCount undocumented
 	DeviceCount *int `json:"deviceCount,omitempty"`
 	// URL undocumented
 	URL *string `json:"url,omitempty"`
 }
 
+func NewWindowsInformationProtectionNetworkLearningSummary() (*WindowsInformationProtectionNetworkLearningSummary, error) {
+	newWindowsInformationProtectionNetworkLearningSummary := &WindowsInformationProtectionNetworkLearningSummary{
+		ODataType: "#microsoft.graph.WindowsInformationProtectionNetworkLearningSummary",
+	}
+	return newWindowsInformationProtectionNetworkLearningSummary, nil
+}
+
 // WindowsInformationProtectionPolicy undocumented
 type WindowsInformationProtectionPolicy struct {
 	// WindowsInformationProtection is the base model of WindowsInformationProtectionPolicy
 	WindowsInformationProtection
+
+	ODataType string `json:"@odata.type"`
 	// DaysWithoutContactBeforeUnenroll undocumented
 	DaysWithoutContactBeforeUnenroll *int `json:"daysWithoutContactBeforeUnenroll,omitempty"`
 	// MDMEnrollmentURL undocumented
@@ -312,46 +467,91 @@ type WindowsInformationProtectionPolicy struct {
 	WindowsHelloForBusinessBlocked *bool `json:"windowsHelloForBusinessBlocked,omitempty"`
 }
 
+func NewWindowsInformationProtectionPolicy() (*WindowsInformationProtectionPolicy, error) {
+	newWindowsInformationProtectionPolicy := &WindowsInformationProtectionPolicy{
+		ODataType: "#microsoft.graph.WindowsInformationProtectionPolicy",
+	}
+	return newWindowsInformationProtectionPolicy, nil
+}
+
 // WindowsInformationProtectionProxiedDomainCollection undocumented
 type WindowsInformationProtectionProxiedDomainCollection struct {
 	// Object is the base model of WindowsInformationProtectionProxiedDomainCollection
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// ProxiedDomains undocumented
 	ProxiedDomains []ProxiedDomain `json:"proxiedDomains,omitempty"`
 }
 
+func NewWindowsInformationProtectionProxiedDomainCollection() (*WindowsInformationProtectionProxiedDomainCollection, error) {
+	newWindowsInformationProtectionProxiedDomainCollection := &WindowsInformationProtectionProxiedDomainCollection{
+		ODataType: "#microsoft.graph.WindowsInformationProtectionProxiedDomainCollection",
+	}
+	return newWindowsInformationProtectionProxiedDomainCollection, nil
+}
+
 // WindowsInformationProtectionResourceCollection undocumented
 type WindowsInformationProtectionResourceCollection struct {
 	// Object is the base model of WindowsInformationProtectionResourceCollection
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Resources undocumented
 	Resources []string `json:"resources,omitempty"`
 }
 
+func NewWindowsInformationProtectionResourceCollection() (*WindowsInformationProtectionResourceCollection, error) {
+	newWindowsInformationProtectionResourceCollection := &WindowsInformationProtectionResourceCollection{
+		ODataType: "#microsoft.graph.WindowsInformationProtectionResourceCollection",
+	}
+	return newWindowsInformationProtectionResourceCollection, nil
+}
+
 // WindowsInformationProtectionStoreApp undocumented
 type WindowsInformationProtectionStoreApp struct {
 	// WindowsInformationProtectionApp is the base model of WindowsInformationProtectionStoreApp
 	WindowsInformationProtectionApp
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewWindowsInformationProtectionStoreApp() (*WindowsInformationProtectionStoreApp, error) {
+	newWindowsInformationProtectionStoreApp := &WindowsInformationProtectionStoreApp{
+		ODataType: "#microsoft.graph.WindowsInformationProtectionStoreApp",
+	}
+	return newWindowsInformationProtectionStoreApp, nil
 }
 
 // WindowsMicrosoftEdgeApp undocumented
 type WindowsMicrosoftEdgeApp struct {
 	// MobileApp is the base model of WindowsMicrosoftEdgeApp
 	MobileApp
+
+	ODataType string `json:"@odata.type"`
 	// Channel undocumented
 	Channel *MicrosoftEdgeChannel `json:"channel,omitempty"`
 	// DisplayLanguageLocale undocumented
 	DisplayLanguageLocale *string `json:"displayLanguageLocale,omitempty"`
 }
 
+func NewWindowsMicrosoftEdgeApp() (*WindowsMicrosoftEdgeApp, error) {
+	newWindowsMicrosoftEdgeApp := &WindowsMicrosoftEdgeApp{
+		ODataType: "#microsoft.graph.WindowsMicrosoftEdgeApp",
+	}
+	return newWindowsMicrosoftEdgeApp, nil
+}
+
 // WindowsMinimumOperatingSystem undocumented
 type WindowsMinimumOperatingSystem struct {
 	// Object is the base model of WindowsMinimumOperatingSystem
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// V10_0 undocumented
 	V10_0 *bool `json:"v10_0,omitempty"`
 	// V8_0 undocumented
@@ -360,10 +560,19 @@ type WindowsMinimumOperatingSystem struct {
 	V8_1 *bool `json:"v8_1,omitempty"`
 }
 
+func NewWindowsMinimumOperatingSystem() (*WindowsMinimumOperatingSystem, error) {
+	newWindowsMinimumOperatingSystem := &WindowsMinimumOperatingSystem{
+		ODataType: "#microsoft.graph.WindowsMinimumOperatingSystem",
+	}
+	return newWindowsMinimumOperatingSystem, nil
+}
+
 // WindowsMobileMSI undocumented
 type WindowsMobileMSI struct {
 	// MobileLobApp is the base model of WindowsMobileMSI
 	MobileLobApp
+
+	ODataType string `json:"@odata.type"`
 	// CommandLine undocumented
 	CommandLine *string `json:"commandLine,omitempty"`
 	// IgnoreVersionDetection undocumented
@@ -374,10 +583,19 @@ type WindowsMobileMSI struct {
 	ProductVersion *string `json:"productVersion,omitempty"`
 }
 
+func NewWindowsMobileMSI() (*WindowsMobileMSI, error) {
+	newWindowsMobileMSI := &WindowsMobileMSI{
+		ODataType: "#microsoft.graph.WindowsMobileMSI",
+	}
+	return newWindowsMobileMSI, nil
+}
+
 // WindowsPhone81CompliancePolicy undocumented
 type WindowsPhone81CompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of WindowsPhone81CompliancePolicy
 	DeviceCompliancePolicy
+
+	ODataType string `json:"@odata.type"`
 	// OsMaximumVersion undocumented
 	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
 	// OsMinimumVersion undocumented
@@ -402,18 +620,36 @@ type WindowsPhone81CompliancePolicy struct {
 	StorageRequireEncryption *bool `json:"storageRequireEncryption,omitempty"`
 }
 
+func NewWindowsPhone81CompliancePolicy() (*WindowsPhone81CompliancePolicy, error) {
+	newWindowsPhone81CompliancePolicy := &WindowsPhone81CompliancePolicy{
+		ODataType: "#microsoft.graph.WindowsPhone81CompliancePolicy",
+	}
+	return newWindowsPhone81CompliancePolicy, nil
+}
+
 // WindowsPhone81CustomConfiguration undocumented
 type WindowsPhone81CustomConfiguration struct {
 	// DeviceConfiguration is the base model of WindowsPhone81CustomConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// OMASettings undocumented
 	OMASettings []OMASetting `json:"omaSettings,omitempty"`
+}
+
+func NewWindowsPhone81CustomConfiguration() (*WindowsPhone81CustomConfiguration, error) {
+	newWindowsPhone81CustomConfiguration := &WindowsPhone81CustomConfiguration{
+		ODataType: "#microsoft.graph.WindowsPhone81CustomConfiguration",
+	}
+	return newWindowsPhone81CustomConfiguration, nil
 }
 
 // WindowsPhone81GeneralConfiguration undocumented
 type WindowsPhone81GeneralConfiguration struct {
 	// DeviceConfiguration is the base model of WindowsPhone81GeneralConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// ApplyOnlyToWindowsPhone81 undocumented
 	ApplyOnlyToWindowsPhone81 *bool `json:"applyOnlyToWindowsPhone81,omitempty"`
 	// AppsBlockCopyPaste undocumented
@@ -474,10 +710,19 @@ type WindowsPhone81GeneralConfiguration struct {
 	WindowsStoreBlocked *bool `json:"windowsStoreBlocked,omitempty"`
 }
 
+func NewWindowsPhone81GeneralConfiguration() (*WindowsPhone81GeneralConfiguration, error) {
+	newWindowsPhone81GeneralConfiguration := &WindowsPhone81GeneralConfiguration{
+		ODataType: "#microsoft.graph.WindowsPhone81GeneralConfiguration",
+	}
+	return newWindowsPhone81GeneralConfiguration, nil
+}
+
 // WindowsUniversalAppX undocumented
 type WindowsUniversalAppX struct {
 	// MobileLobApp is the base model of WindowsUniversalAppX
 	MobileLobApp
+
+	ODataType string `json:"@odata.type"`
 	// ApplicableArchitectures undocumented
 	ApplicableArchitectures *WindowsArchitecture `json:"applicableArchitectures,omitempty"`
 	// ApplicableDeviceTypes undocumented
@@ -498,36 +743,72 @@ type WindowsUniversalAppX struct {
 	CommittedContainedApps []MobileContainedApp `json:"committedContainedApps,omitempty"`
 }
 
+func NewWindowsUniversalAppX() (*WindowsUniversalAppX, error) {
+	newWindowsUniversalAppX := &WindowsUniversalAppX{
+		ODataType: "#microsoft.graph.WindowsUniversalAppX",
+	}
+	return newWindowsUniversalAppX, nil
+}
+
 // WindowsUniversalAppXAppAssignmentSettings undocumented
 type WindowsUniversalAppXAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of WindowsUniversalAppXAppAssignmentSettings
 	MobileAppAssignmentSettings
+
+	ODataType string `json:"@odata.type"`
 	// UseDeviceContext undocumented
 	UseDeviceContext *bool `json:"useDeviceContext,omitempty"`
+}
+
+func NewWindowsUniversalAppXAppAssignmentSettings() (*WindowsUniversalAppXAppAssignmentSettings, error) {
+	newWindowsUniversalAppXAppAssignmentSettings := &WindowsUniversalAppXAppAssignmentSettings{
+		ODataType: "#microsoft.graph.WindowsUniversalAppXAppAssignmentSettings",
+	}
+	return newWindowsUniversalAppXAppAssignmentSettings, nil
 }
 
 // WindowsUniversalAppXContainedApp undocumented
 type WindowsUniversalAppXContainedApp struct {
 	// MobileContainedApp is the base model of WindowsUniversalAppXContainedApp
 	MobileContainedApp
+
+	ODataType string `json:"@odata.type"`
 	// AppUserModelID undocumented
 	AppUserModelID *string `json:"appUserModelId,omitempty"`
+}
+
+func NewWindowsUniversalAppXContainedApp() (*WindowsUniversalAppXContainedApp, error) {
+	newWindowsUniversalAppXContainedApp := &WindowsUniversalAppXContainedApp{
+		ODataType: "#microsoft.graph.WindowsUniversalAppXContainedApp",
+	}
+	return newWindowsUniversalAppXContainedApp, nil
 }
 
 // WindowsUpdateActiveHoursInstall undocumented
 type WindowsUpdateActiveHoursInstall struct {
 	// WindowsUpdateInstallScheduleType is the base model of WindowsUpdateActiveHoursInstall
 	WindowsUpdateInstallScheduleType
+
+	ODataType string `json:"@odata.type"`
 	// ActiveHoursEnd undocumented
 	ActiveHoursEnd *TimeOfDay `json:"activeHoursEnd,omitempty"`
 	// ActiveHoursStart undocumented
 	ActiveHoursStart *TimeOfDay `json:"activeHoursStart,omitempty"`
 }
 
+func NewWindowsUpdateActiveHoursInstall() (*WindowsUpdateActiveHoursInstall, error) {
+	newWindowsUpdateActiveHoursInstall := &WindowsUpdateActiveHoursInstall{
+		ODataType: "#microsoft.graph.WindowsUpdateActiveHoursInstall",
+	}
+	return newWindowsUpdateActiveHoursInstall, nil
+}
+
 // WindowsUpdateForBusinessConfiguration undocumented
 type WindowsUpdateForBusinessConfiguration struct {
 	// DeviceConfiguration is the base model of WindowsUpdateForBusinessConfiguration
 	DeviceConfiguration
+
+	ODataType string `json:"@odata.type"`
 	// AllowWindows11Upgrade undocumented
 	AllowWindows11Upgrade *bool `json:"allowWindows11Upgrade,omitempty"`
 	// AutomaticUpdateMode undocumented
@@ -602,26 +883,60 @@ type WindowsUpdateForBusinessConfiguration struct {
 	UserWindowsUpdateScanAccess *Enablement `json:"userWindowsUpdateScanAccess,omitempty"`
 }
 
+func NewWindowsUpdateForBusinessConfiguration() (*WindowsUpdateForBusinessConfiguration, error) {
+	newWindowsUpdateForBusinessConfiguration := &WindowsUpdateForBusinessConfiguration{
+		ODataType: "#microsoft.graph.WindowsUpdateForBusinessConfiguration",
+	}
+	return newWindowsUpdateForBusinessConfiguration, nil
+}
+
 // WindowsUpdateInstallScheduleType undocumented
 type WindowsUpdateInstallScheduleType struct {
 	// Object is the base model of WindowsUpdateInstallScheduleType
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewWindowsUpdateInstallScheduleType() (*WindowsUpdateInstallScheduleType, error) {
+	newWindowsUpdateInstallScheduleType := &WindowsUpdateInstallScheduleType{
+		ODataType: "#microsoft.graph.WindowsUpdateInstallScheduleType",
+	}
+	return newWindowsUpdateInstallScheduleType, nil
 }
 
 // WindowsUpdateScheduledInstall undocumented
 type WindowsUpdateScheduledInstall struct {
 	// WindowsUpdateInstallScheduleType is the base model of WindowsUpdateScheduledInstall
 	WindowsUpdateInstallScheduleType
+
+	ODataType string `json:"@odata.type"`
 	// ScheduledInstallDay undocumented
 	ScheduledInstallDay *WeeklySchedule `json:"scheduledInstallDay,omitempty"`
 	// ScheduledInstallTime undocumented
 	ScheduledInstallTime *TimeOfDay `json:"scheduledInstallTime,omitempty"`
 }
 
+func NewWindowsUpdateScheduledInstall() (*WindowsUpdateScheduledInstall, error) {
+	newWindowsUpdateScheduledInstall := &WindowsUpdateScheduledInstall{
+		ODataType: "#microsoft.graph.WindowsUpdateScheduledInstall",
+	}
+	return newWindowsUpdateScheduledInstall, nil
+}
+
 // WindowsWebApp undocumented
 type WindowsWebApp struct {
 	// MobileApp is the base model of WindowsWebApp
 	MobileApp
+
+	ODataType string `json:"@odata.type"`
 	// AppURL undocumented
 	AppURL *string `json:"appUrl,omitempty"`
+}
+
+func NewWindowsWebApp() (*WindowsWebApp, error) {
+	newWindowsWebApp := &WindowsWebApp{
+		ODataType: "#microsoft.graph.WindowsWebApp",
+	}
+	return newWindowsWebApp, nil
 }

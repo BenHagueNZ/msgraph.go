@@ -6,10 +6,19 @@ package msgraph
 type StsPolicy struct {
 	// PolicyBase is the base model of StsPolicy
 	PolicyBase
+
+	ODataType string `json:"@odata.type"`
 	// Definition undocumented
 	Definition []string `json:"definition,omitempty"`
 	// IsOrganizationDefault undocumented
 	IsOrganizationDefault *bool `json:"isOrganizationDefault,omitempty"`
 	// AppliesTo undocumented
 	AppliesTo []DirectoryObject `json:"appliesTo,omitempty"`
+}
+
+func NewStsPolicy() (*StsPolicy, error) {
+	newStsPolicy := &StsPolicy{
+		ODataType: "#microsoft.graph.StsPolicy",
+	}
+	return newStsPolicy, nil
 }

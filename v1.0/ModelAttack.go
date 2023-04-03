@@ -8,26 +8,46 @@ import "time"
 type AttackSimulationRepeatOffender struct {
 	// Object is the base model of AttackSimulationRepeatOffender
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AttackSimulationUser undocumented
 	AttackSimulationUser *AttackSimulationUser `json:"attackSimulationUser,omitempty"`
 	// RepeatOffenceCount undocumented
 	RepeatOffenceCount *int `json:"repeatOffenceCount,omitempty"`
 }
 
+func NewAttackSimulationRepeatOffender() (*AttackSimulationRepeatOffender, error) {
+	newAttackSimulationRepeatOffender := &AttackSimulationRepeatOffender{
+		ODataType: "#microsoft.graph.AttackSimulationRepeatOffender",
+	}
+	return newAttackSimulationRepeatOffender, nil
+}
+
 // AttackSimulationRoot undocumented
 type AttackSimulationRoot struct {
 	// Entity is the base model of AttackSimulationRoot
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// SimulationAutomations undocumented
 	SimulationAutomations []SimulationAutomation `json:"simulationAutomations,omitempty"`
 	// Simulations undocumented
 	Simulations []Simulation `json:"simulations,omitempty"`
 }
 
+func NewAttackSimulationRoot() (*AttackSimulationRoot, error) {
+	newAttackSimulationRoot := &AttackSimulationRoot{
+		ODataType: "#microsoft.graph.AttackSimulationRoot",
+	}
+	return newAttackSimulationRoot, nil
+}
+
 // AttackSimulationSimulationUserCoverage undocumented
 type AttackSimulationSimulationUserCoverage struct {
 	// Object is the base model of AttackSimulationSimulationUserCoverage
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AttackSimulationUser undocumented
 	AttackSimulationUser *AttackSimulationUser `json:"attackSimulationUser,omitempty"`
 	// ClickCount undocumented
@@ -40,24 +60,49 @@ type AttackSimulationSimulationUserCoverage struct {
 	SimulationCount *int `json:"simulationCount,omitempty"`
 }
 
+func NewAttackSimulationSimulationUserCoverage() (*AttackSimulationSimulationUserCoverage, error) {
+	newAttackSimulationSimulationUserCoverage := &AttackSimulationSimulationUserCoverage{
+		ODataType: "#microsoft.graph.AttackSimulationSimulationUserCoverage",
+	}
+	return newAttackSimulationSimulationUserCoverage, nil
+}
+
 // AttackSimulationTrainingUserCoverage undocumented
 type AttackSimulationTrainingUserCoverage struct {
 	// Object is the base model of AttackSimulationTrainingUserCoverage
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// AttackSimulationUser undocumented
 	AttackSimulationUser *AttackSimulationUser `json:"attackSimulationUser,omitempty"`
 	// UserTrainings undocumented
 	UserTrainings []UserTrainingStatusInfo `json:"userTrainings,omitempty"`
 }
 
+func NewAttackSimulationTrainingUserCoverage() (*AttackSimulationTrainingUserCoverage, error) {
+	newAttackSimulationTrainingUserCoverage := &AttackSimulationTrainingUserCoverage{
+		ODataType: "#microsoft.graph.AttackSimulationTrainingUserCoverage",
+	}
+	return newAttackSimulationTrainingUserCoverage, nil
+}
+
 // AttackSimulationUser undocumented
 type AttackSimulationUser struct {
 	// Object is the base model of AttackSimulationUser
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
 	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
+}
+
+func NewAttackSimulationUser() (*AttackSimulationUser, error) {
+	newAttackSimulationUser := &AttackSimulationUser{
+		ODataType: "#microsoft.graph.AttackSimulationUser",
+	}
+	return newAttackSimulationUser, nil
 }

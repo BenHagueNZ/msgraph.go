@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsAcotRequestBuilder struct{ BaseRequestBuilder }
 
-// Acot action undocumented
+// Acot action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Acot(reqObj *WorkbookFunctionsAcotRequestParameter) *WorkbookFunctionsAcotRequestBuilder {
 	bb := &WorkbookFunctionsAcotRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Acot"

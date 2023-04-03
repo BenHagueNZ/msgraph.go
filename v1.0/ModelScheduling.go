@@ -6,10 +6,19 @@ package msgraph
 type SchedulingGroup struct {
 	// ChangeTrackedEntity is the base model of SchedulingGroup
 	ChangeTrackedEntity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// IsActive undocumented
 	IsActive *bool `json:"isActive,omitempty"`
 	// UserIDs undocumented
 	UserIDs []string `json:"userIds,omitempty"`
+}
+
+func NewSchedulingGroup() (*SchedulingGroup, error) {
+	newSchedulingGroup := &SchedulingGroup{
+		ODataType: "#microsoft.graph.SchedulingGroup",
+	}
+	return newSchedulingGroup, nil
 }

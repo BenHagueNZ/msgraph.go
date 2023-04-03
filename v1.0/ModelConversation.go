@@ -8,6 +8,8 @@ import "time"
 type Conversation struct {
 	// Entity is the base model of Conversation
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// HasAttachments undocumented
 	HasAttachments *bool `json:"hasAttachments,omitempty"`
 	// LastDeliveredDateTime undocumented
@@ -22,10 +24,19 @@ type Conversation struct {
 	Threads []ConversationThread `json:"threads,omitempty"`
 }
 
+func NewConversation() (*Conversation, error) {
+	newConversation := &Conversation{
+		ODataType: "#microsoft.graph.Conversation",
+	}
+	return newConversation, nil
+}
+
 // ConversationMember undocumented
 type ConversationMember struct {
 	// Entity is the base model of ConversationMember
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Roles undocumented
@@ -34,10 +45,19 @@ type ConversationMember struct {
 	VisibleHistoryStartDateTime *time.Time `json:"visibleHistoryStartDateTime,omitempty"`
 }
 
+func NewConversationMember() (*ConversationMember, error) {
+	newConversationMember := &ConversationMember{
+		ODataType: "#microsoft.graph.ConversationMember",
+	}
+	return newConversationMember, nil
+}
+
 // ConversationMemberRoleUpdatedEventMessageDetail undocumented
 type ConversationMemberRoleUpdatedEventMessageDetail struct {
 	// EventMessageDetail is the base model of ConversationMemberRoleUpdatedEventMessageDetail
 	EventMessageDetail
+
+	ODataType string `json:"@odata.type"`
 	// ConversationMemberRoles undocumented
 	ConversationMemberRoles []string `json:"conversationMemberRoles,omitempty"`
 	// ConversationMemberUser undocumented
@@ -46,10 +66,19 @@ type ConversationMemberRoleUpdatedEventMessageDetail struct {
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 }
 
+func NewConversationMemberRoleUpdatedEventMessageDetail() (*ConversationMemberRoleUpdatedEventMessageDetail, error) {
+	newConversationMemberRoleUpdatedEventMessageDetail := &ConversationMemberRoleUpdatedEventMessageDetail{
+		ODataType: "#microsoft.graph.ConversationMemberRoleUpdatedEventMessageDetail",
+	}
+	return newConversationMemberRoleUpdatedEventMessageDetail, nil
+}
+
 // ConversationThread undocumented
 type ConversationThread struct {
 	// Entity is the base model of ConversationThread
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CcRecipients undocumented
 	CcRecipients []Recipient `json:"ccRecipients,omitempty"`
 	// HasAttachments undocumented
@@ -68,4 +97,11 @@ type ConversationThread struct {
 	UniqueSenders []string `json:"uniqueSenders,omitempty"`
 	// Posts undocumented
 	Posts []Post `json:"posts,omitempty"`
+}
+
+func NewConversationThread() (*ConversationThread, error) {
+	newConversationThread := &ConversationThread{
+		ODataType: "#microsoft.graph.ConversationThread",
+	}
+	return newConversationThread, nil
 }

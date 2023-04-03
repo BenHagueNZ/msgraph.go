@@ -8,6 +8,8 @@ import "time"
 type MobileApp struct {
 	// Entity is the base model of MobileApp
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -40,10 +42,19 @@ type MobileApp struct {
 	Categories []MobileAppCategory `json:"categories,omitempty"`
 }
 
+func NewMobileApp() (*MobileApp, error) {
+	newMobileApp := &MobileApp{
+		ODataType: "#microsoft.graph.MobileApp",
+	}
+	return newMobileApp, nil
+}
+
 // MobileAppAssignment undocumented
 type MobileAppAssignment struct {
 	// Entity is the base model of MobileAppAssignment
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// Intent undocumented
 	Intent *InstallIntent `json:"intent,omitempty"`
 	// Settings undocumented
@@ -52,36 +63,72 @@ type MobileAppAssignment struct {
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
 
+func NewMobileAppAssignment() (*MobileAppAssignment, error) {
+	newMobileAppAssignment := &MobileAppAssignment{
+		ODataType: "#microsoft.graph.MobileAppAssignment",
+	}
+	return newMobileAppAssignment, nil
+}
+
 // MobileAppAssignmentSettings undocumented
 type MobileAppAssignmentSettings struct {
 	// Object is the base model of MobileAppAssignmentSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewMobileAppAssignmentSettings() (*MobileAppAssignmentSettings, error) {
+	newMobileAppAssignmentSettings := &MobileAppAssignmentSettings{
+		ODataType: "#microsoft.graph.MobileAppAssignmentSettings",
+	}
+	return newMobileAppAssignmentSettings, nil
 }
 
 // MobileAppCategory undocumented
 type MobileAppCategory struct {
 	// Entity is the base model of MobileAppCategory
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 }
 
+func NewMobileAppCategory() (*MobileAppCategory, error) {
+	newMobileAppCategory := &MobileAppCategory{
+		ODataType: "#microsoft.graph.MobileAppCategory",
+	}
+	return newMobileAppCategory, nil
+}
+
 // MobileAppContent undocumented
 type MobileAppContent struct {
 	// Entity is the base model of MobileAppContent
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// ContainedApps undocumented
 	ContainedApps []MobileContainedApp `json:"containedApps,omitempty"`
 	// Files undocumented
 	Files []MobileAppContentFile `json:"files,omitempty"`
 }
 
+func NewMobileAppContent() (*MobileAppContent, error) {
+	newMobileAppContent := &MobileAppContent{
+		ODataType: "#microsoft.graph.MobileAppContent",
+	}
+	return newMobileAppContent, nil
+}
+
 // MobileAppContentFile undocumented
 type MobileAppContentFile struct {
 	// Entity is the base model of MobileAppContentFile
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AzureStorageURI undocumented
 	AzureStorageURI *string `json:"azureStorageUri,omitempty"`
 	// AzureStorageURIExpirationDateTime undocumented
@@ -102,16 +149,34 @@ type MobileAppContentFile struct {
 	UploadState *MobileAppContentFileUploadState `json:"uploadState,omitempty"`
 }
 
+func NewMobileAppContentFile() (*MobileAppContentFile, error) {
+	newMobileAppContentFile := &MobileAppContentFile{
+		ODataType: "#microsoft.graph.MobileAppContentFile",
+	}
+	return newMobileAppContentFile, nil
+}
+
 // MobileAppIdentifier undocumented
 type MobileAppIdentifier struct {
 	// Object is the base model of MobileAppIdentifier
 	Object
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewMobileAppIdentifier() (*MobileAppIdentifier, error) {
+	newMobileAppIdentifier := &MobileAppIdentifier{
+		ODataType: "#microsoft.graph.MobileAppIdentifier",
+	}
+	return newMobileAppIdentifier, nil
 }
 
 // MobileAppInstallTimeSettings undocumented
 type MobileAppInstallTimeSettings struct {
 	// Object is the base model of MobileAppInstallTimeSettings
 	Object
+
+	ODataType string `json:"@odata.type"`
 	// DeadlineDateTime undocumented
 	DeadlineDateTime *time.Time `json:"deadlineDateTime,omitempty"`
 	// StartDateTime undocumented
@@ -120,16 +185,34 @@ type MobileAppInstallTimeSettings struct {
 	UseLocalTime *bool `json:"useLocalTime,omitempty"`
 }
 
+func NewMobileAppInstallTimeSettings() (*MobileAppInstallTimeSettings, error) {
+	newMobileAppInstallTimeSettings := &MobileAppInstallTimeSettings{
+		ODataType: "#microsoft.graph.MobileAppInstallTimeSettings",
+	}
+	return newMobileAppInstallTimeSettings, nil
+}
+
 // MobileContainedApp undocumented
 type MobileContainedApp struct {
 	// Entity is the base model of MobileContainedApp
 	Entity
+
+	ODataType string `json:"@odata.type"`
+}
+
+func NewMobileContainedApp() (*MobileContainedApp, error) {
+	newMobileContainedApp := &MobileContainedApp{
+		ODataType: "#microsoft.graph.MobileContainedApp",
+	}
+	return newMobileContainedApp, nil
 }
 
 // MobileLobApp undocumented
 type MobileLobApp struct {
 	// MobileApp is the base model of MobileLobApp
 	MobileApp
+
+	ODataType string `json:"@odata.type"`
 	// CommittedContentVersion undocumented
 	CommittedContentVersion *string `json:"committedContentVersion,omitempty"`
 	// FileName undocumented
@@ -140,10 +223,19 @@ type MobileLobApp struct {
 	ContentVersions []MobileAppContent `json:"contentVersions,omitempty"`
 }
 
+func NewMobileLobApp() (*MobileLobApp, error) {
+	newMobileLobApp := &MobileLobApp{
+		ODataType: "#microsoft.graph.MobileLobApp",
+	}
+	return newMobileLobApp, nil
+}
+
 // MobileThreatDefenseConnector undocumented
 type MobileThreatDefenseConnector struct {
 	// Entity is the base model of MobileThreatDefenseConnector
 	Entity
+
+	ODataType string `json:"@odata.type"`
 	// AllowPartnerToCollectIOSApplicationMetadata undocumented
 	AllowPartnerToCollectIOSApplicationMetadata *bool `json:"allowPartnerToCollectIOSApplicationMetadata,omitempty"`
 	// AllowPartnerToCollectIOSPersonalApplicationMetadata undocumented
@@ -174,4 +266,11 @@ type MobileThreatDefenseConnector struct {
 	WindowsDeviceBlockedOnMissingPartnerData *bool `json:"windowsDeviceBlockedOnMissingPartnerData,omitempty"`
 	// WindowsEnabled undocumented
 	WindowsEnabled *bool `json:"windowsEnabled,omitempty"`
+}
+
+func NewMobileThreatDefenseConnector() (*MobileThreatDefenseConnector, error) {
+	newMobileThreatDefenseConnector := &MobileThreatDefenseConnector{
+		ODataType: "#microsoft.graph.MobileThreatDefenseConnector",
+	}
+	return newMobileThreatDefenseConnector, nil
 }

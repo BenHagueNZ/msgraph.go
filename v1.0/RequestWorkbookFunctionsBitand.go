@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsBitandRequestBuilder struct{ BaseRequestBuilder }
 
-// Bitand action undocumented
+// Bitand action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Bitand(reqObj *WorkbookFunctionsBitandRequestParameter) *WorkbookFunctionsBitandRequestBuilder {
 	bb := &WorkbookFunctionsBitandRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Bitand"

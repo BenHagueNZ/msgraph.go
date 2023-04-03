@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Runs returns request builder for SimulationAutomationRun collection
+// Runs returns request builder for SimulationAutomationRun collection rcn
 func (b *SimulationAutomationRequestBuilder) Runs() *SimulationAutomationRunsCollectionRequestBuilder {
 	bb := &SimulationAutomationRunsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/runs"
@@ -112,4 +112,25 @@ func (r *SimulationAutomationRunsCollectionRequest) Get(ctx context.Context) ([]
 func (r *SimulationAutomationRunsCollectionRequest) Add(ctx context.Context, reqObj *SimulationAutomationRun) (resObj *SimulationAutomationRun, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Simulation is navigation property rn
+func (b *SimulationRequestBuilder) Simulation() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// SimulationAutomation is navigation property rn
+func (b *SimulationAutomationRequestBuilder) SimulationAutomation() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// SimulationAutomationRun is navigation property rn
+func (b *SimulationAutomationRunRequestBuilder) SimulationAutomationRun() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

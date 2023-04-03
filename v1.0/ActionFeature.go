@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AppliesTo returns request builder for DirectoryObject collection
+// AppliesTo returns request builder for DirectoryObject collection rcn
 func (b *FeatureRolloutPolicyRequestBuilder) AppliesTo() *FeatureRolloutPolicyAppliesToCollectionRequestBuilder {
 	bb := &FeatureRolloutPolicyAppliesToCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appliesTo"
@@ -112,4 +112,11 @@ func (r *FeatureRolloutPolicyAppliesToCollectionRequest) Get(ctx context.Context
 func (r *FeatureRolloutPolicyAppliesToCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObject) (resObj *DirectoryObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// FeatureRolloutPolicy is navigation property rn
+func (b *FeatureRolloutPolicyRequestBuilder) FeatureRolloutPolicy() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsAreasRequestBuilder struct{ BaseRequestBuilder }
 
-// Areas action undocumented
+// Areas action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Areas(reqObj *WorkbookFunctionsAreasRequestParameter) *WorkbookFunctionsAreasRequestBuilder {
 	bb := &WorkbookFunctionsAreasRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Areas"

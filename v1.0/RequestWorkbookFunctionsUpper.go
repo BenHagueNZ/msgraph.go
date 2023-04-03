@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsUpperRequestBuilder struct{ BaseRequestBuilder }
 
-// Upper action undocumented
+// Upper action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Upper(reqObj *WorkbookFunctionsUpperRequestParameter) *WorkbookFunctionsUpperRequestBuilder {
 	bb := &WorkbookFunctionsUpperRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Upper"

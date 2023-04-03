@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsFloor_MathRequestBuilder struct{ BaseRequestBuilder }
 
-// Floor_Math action undocumented
+// Floor_Math action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Floor_Math(reqObj *WorkbookFunctionsFloor_MathRequestParameter) *WorkbookFunctionsFloor_MathRequestBuilder {
 	bb := &WorkbookFunctionsFloor_MathRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Floor_Math"
@@ -29,7 +29,7 @@ func (r *WorkbookFunctionsFloor_MathRequest) Post(ctx context.Context) (resObj *
 
 type WorkbookFunctionsFloor_PreciseRequestBuilder struct{ BaseRequestBuilder }
 
-// Floor_Precise action undocumented
+// Floor_Precise action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) Floor_Precise(reqObj *WorkbookFunctionsFloor_PreciseRequestParameter) *WorkbookFunctionsFloor_PreciseRequestBuilder {
 	bb := &WorkbookFunctionsFloor_PreciseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Floor_Precise"

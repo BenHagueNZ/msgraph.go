@@ -6,7 +6,7 @@ import "context"
 
 type WorkbookFunctionsAveDevRequestBuilder struct{ BaseRequestBuilder }
 
-// AveDev action undocumented
+// AveDev action undocumentedras
 func (b *WorkbookFunctionsRequestBuilder) AveDev(reqObj *WorkbookFunctionsAveDevRequestParameter) *WorkbookFunctionsAveDevRequestBuilder {
 	bb := &WorkbookFunctionsAveDevRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/AveDev"
