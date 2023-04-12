@@ -14,7 +14,7 @@ import (
 // CountryNamedLocation returns request builder for CountryNamedLocation collection rcn
 func (b *ConditionalAccessRootRequestBuilder) CountryNamedLocation() *NamedLocationCountryNamedLocationCollectionRequestBuilder {
 	bb := &NamedLocationCountryNamedLocationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/NamedLocation"
+	bb.baseURL += "/namedLocations"
 	return bb
 }
 
