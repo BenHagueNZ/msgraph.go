@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// SimulationAutomations returns request builder for SimulationAutomation collection rcn
+// SimulationAutomations returns request builder for SimulationAutomation collection
 func (b *AttackSimulationRootRequestBuilder) SimulationAutomations() *AttackSimulationRootSimulationAutomationsCollectionRequestBuilder {
 	bb := &AttackSimulationRootSimulationAutomationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/simulationAutomations"
@@ -114,7 +114,7 @@ func (r *AttackSimulationRootSimulationAutomationsCollectionRequest) Add(ctx con
 	return
 }
 
-// Simulations returns request builder for Simulation collection rcn
+// Simulations returns request builder for Simulation collection
 func (b *AttackSimulationRootRequestBuilder) Simulations() *AttackSimulationRootSimulationsCollectionRequestBuilder {
 	bb := &AttackSimulationRootSimulationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/simulations"

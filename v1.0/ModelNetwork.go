@@ -9,7 +9,7 @@ type NetworkConnection struct {
 	// Object is the base model of NetworkConnection
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicationName undocumented
 	ApplicationName *string `json:"applicationName,omitempty"`
 	// DestinationAddress undocumented

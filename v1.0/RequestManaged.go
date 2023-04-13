@@ -905,6 +905,14 @@ func (b *ManagedAppPolicyRequestBuilder) TargetApps(reqObj *ManagedAppPolicyTarg
 	return bb
 }
 
+// TargetApps action undocumentedrav
+func (b *DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder) TargetApps(reqObj *ManagedAppPolicyTargetAppsRequestParameter) *ManagedAppPolicyTargetAppsRequestBuilder {
+	bb := &ManagedAppPolicyTargetAppsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/TargetApps"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
 type ManagedAppPolicyTargetAppsRequest struct{ BaseRequest }
 
 func (b *ManagedAppPolicyTargetAppsRequestBuilder) Request() *ManagedAppPolicyTargetAppsRequest {
@@ -1345,6 +1353,14 @@ func (b *ManagedDeviceMobileAppConfigurationRequestBuilder) Assign(reqObj *Manag
 	return bb
 }
 
+// Assign action undocumentedrav
+func (b *DeviceAppManagementMobileAppConfigurationsCollectionRequestBuilder) Assign(reqObj *ManagedDeviceMobileAppConfigurationAssignRequestParameter) *ManagedDeviceMobileAppConfigurationAssignRequestBuilder {
+	bb := &ManagedDeviceMobileAppConfigurationAssignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Assign"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
 type ManagedDeviceMobileAppConfigurationAssignRequest struct{ BaseRequest }
 
 func (b *ManagedDeviceMobileAppConfigurationAssignRequestBuilder) Request() *ManagedDeviceMobileAppConfigurationAssignRequest {
@@ -1361,6 +1377,14 @@ type ManagedEBookAssignRequestBuilder struct{ BaseRequestBuilder }
 
 // Assign action undocumentedrav
 func (b *ManagedEBookRequestBuilder) Assign(reqObj *ManagedEBookAssignRequestParameter) *ManagedEBookAssignRequestBuilder {
+	bb := &ManagedEBookAssignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Assign"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+// Assign action undocumentedrav
+func (b *DeviceAppManagementManagedEBooksCollectionRequestBuilder) Assign(reqObj *ManagedEBookAssignRequestParameter) *ManagedEBookAssignRequestBuilder {
 	bb := &ManagedEBookAssignRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.BaseRequestBuilder.baseURL += "/Assign"
 	bb.BaseRequestBuilder.requestObject = reqObj

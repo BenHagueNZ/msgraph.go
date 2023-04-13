@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// SocialIdentityProvider returns request builder for SocialIdentityProvider collection rcn
-func (b *IdentityProviderBaseRequestBuilder) SocialIdentityProvider() *IdentityProviderBaseSocialIdentityProviderCollectionRequestBuilder {
-	bb := &IdentityProviderBaseSocialIdentityProviderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SocialIdentityProvider"
+// SocialIdentityProvider returns request builder for SocialIdentityProvider collection
+func (b *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionRequestBuilder) SocialIdentityProvider() *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequestBuilder {
+	bb := &B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// IdentityProviderBaseSocialIdentityProviderCollectionRequestBuilder is request builder for SocialIdentityProvider collection
-type IdentityProviderBaseSocialIdentityProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
+// B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequestBuilder is request builder for SocialIdentityProvider collection
+type B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SocialIdentityProvider collection
-func (b *IdentityProviderBaseSocialIdentityProviderCollectionRequestBuilder) Request() *IdentityProviderBaseSocialIdentityProviderCollectionRequest {
-	return &IdentityProviderBaseSocialIdentityProviderCollectionRequest{
+func (b *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequestBuilder) Request() *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequest {
+	return &B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for SocialIdentityProvider item
-func (b *IdentityProviderBaseSocialIdentityProviderCollectionRequestBuilder) ID(id string) *SocialIdentityProviderRequestBuilder {
+func (b *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequestBuilder) ID(id string) *SocialIdentityProviderRequestBuilder {
 	bb := &SocialIdentityProviderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// IdentityProviderBaseSocialIdentityProviderCollectionRequest is request for SocialIdentityProvider collection
-type IdentityProviderBaseSocialIdentityProviderCollectionRequest struct{ BaseRequest }
+// B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequest is request for SocialIdentityProvider collection
+type B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for SocialIdentityProvider collection
-func (r *IdentityProviderBaseSocialIdentityProviderCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SocialIdentityProvider, error) {
+func (r *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SocialIdentityProvider, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *IdentityProviderBaseSocialIdentityProviderCollectionRequest) Paging(ctx
 }
 
 // GetN performs GET request for SocialIdentityProvider collection, max N pages
-func (r *IdentityProviderBaseSocialIdentityProviderCollectionRequest) GetN(ctx context.Context, n int) ([]SocialIdentityProvider, error) {
+func (r *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequest) GetN(ctx context.Context, n int) ([]SocialIdentityProvider, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *IdentityProviderBaseSocialIdentityProviderCollectionRequest) GetN(ctx c
 }
 
 // Get performs GET request for SocialIdentityProvider collection
-func (r *IdentityProviderBaseSocialIdentityProviderCollectionRequest) Get(ctx context.Context) ([]SocialIdentityProvider, error) {
+func (r *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequest) Get(ctx context.Context) ([]SocialIdentityProvider, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for SocialIdentityProvider collection
-func (r *IdentityProviderBaseSocialIdentityProviderCollectionRequest) Add(ctx context.Context, reqObj *SocialIdentityProvider) (resObj *SocialIdentityProvider, err error) {
+func (r *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequest) Add(ctx context.Context, reqObj *SocialIdentityProvider) (resObj *SocialIdentityProvider, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

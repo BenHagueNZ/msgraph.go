@@ -7,7 +7,7 @@ type RecurrencePattern struct {
 	// Object is the base model of RecurrencePattern
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DayOfMonth undocumented
 	DayOfMonth *int `json:"dayOfMonth,omitempty"`
 	// DaysOfWeek undocumented
@@ -36,7 +36,7 @@ type RecurrenceRange struct {
 	// Object is the base model of RecurrenceRange
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EndDate undocumented
 	EndDate *Date `json:"endDate,omitempty"`
 	// NumberOfOccurrences undocumented

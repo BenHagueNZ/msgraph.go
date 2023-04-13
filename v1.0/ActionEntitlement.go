@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AccessPackageAssignmentApprovals returns request builder for Approval collection rcn
+// AccessPackageAssignmentApprovals returns request builder for Approval collection
 func (b *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovals() *EntitlementManagementAccessPackageAssignmentApprovalsCollectionRequestBuilder {
 	bb := &EntitlementManagementAccessPackageAssignmentApprovalsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/accessPackageAssignmentApprovals"
@@ -114,7 +114,7 @@ func (r *EntitlementManagementAccessPackageAssignmentApprovalsCollectionRequest)
 	return
 }
 
-// AccessPackages returns request builder for AccessPackage collection rcn
+// AccessPackages returns request builder for AccessPackage collection
 func (b *EntitlementManagementRequestBuilder) AccessPackages() *EntitlementManagementAccessPackagesCollectionRequestBuilder {
 	bb := &EntitlementManagementAccessPackagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/accessPackages"
@@ -217,7 +217,7 @@ func (r *EntitlementManagementAccessPackagesCollectionRequest) Add(ctx context.C
 	return
 }
 
-// AssignmentPolicies returns request builder for AccessPackageAssignmentPolicy collection rcn
+// AssignmentPolicies returns request builder for AccessPackageAssignmentPolicy collection
 func (b *EntitlementManagementRequestBuilder) AssignmentPolicies() *EntitlementManagementAssignmentPoliciesCollectionRequestBuilder {
 	bb := &EntitlementManagementAssignmentPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignmentPolicies"
@@ -320,7 +320,7 @@ func (r *EntitlementManagementAssignmentPoliciesCollectionRequest) Add(ctx conte
 	return
 }
 
-// AssignmentRequests returns request builder for AccessPackageAssignmentRequestObject collection rcn
+// AssignmentRequests returns request builder for AccessPackageAssignmentRequestObject collection
 func (b *EntitlementManagementRequestBuilder) AssignmentRequests() *EntitlementManagementAssignmentRequestsCollectionRequestBuilder {
 	bb := &EntitlementManagementAssignmentRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignmentRequests"
@@ -423,7 +423,7 @@ func (r *EntitlementManagementAssignmentRequestsCollectionRequest) Add(ctx conte
 	return
 }
 
-// Assignments returns request builder for AccessPackageAssignment collection rcn
+// Assignments returns request builder for AccessPackageAssignment collection
 func (b *EntitlementManagementRequestBuilder) Assignments() *EntitlementManagementAssignmentsCollectionRequestBuilder {
 	bb := &EntitlementManagementAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignments"
@@ -526,7 +526,7 @@ func (r *EntitlementManagementAssignmentsCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// Catalogs returns request builder for AccessPackageCatalog collection rcn
+// Catalogs returns request builder for AccessPackageCatalog collection
 func (b *EntitlementManagementRequestBuilder) Catalogs() *EntitlementManagementCatalogsCollectionRequestBuilder {
 	bb := &EntitlementManagementCatalogsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/catalogs"
@@ -629,7 +629,7 @@ func (r *EntitlementManagementCatalogsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// ConnectedOrganizations returns request builder for ConnectedOrganization collection rcn
+// ConnectedOrganizations returns request builder for ConnectedOrganization collection
 func (b *EntitlementManagementRequestBuilder) ConnectedOrganizations() *EntitlementManagementConnectedOrganizationsCollectionRequestBuilder {
 	bb := &EntitlementManagementConnectedOrganizationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/connectedOrganizations"

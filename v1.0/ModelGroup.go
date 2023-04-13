@@ -9,7 +9,7 @@ type Group struct {
 	// DirectoryObject is the base model of Group
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedLabels undocumented
 	AssignedLabels []AssignedLabel `json:"assignedLabels,omitempty"`
 	// AssignedLicenses undocumented
@@ -154,7 +154,7 @@ type GroupAssignmentTarget struct {
 	// DeviceAndAppManagementAssignmentTarget is the base model of GroupAssignmentTarget
 	DeviceAndAppManagementAssignmentTarget
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// GroupID undocumented
 	GroupID *string `json:"groupId,omitempty"`
 }
@@ -171,7 +171,7 @@ type GroupLifecyclePolicy struct {
 	// Entity is the base model of GroupLifecyclePolicy
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AlternateNotificationEmails undocumented
 	AlternateNotificationEmails *string `json:"alternateNotificationEmails,omitempty"`
 	// GroupLifetimeInDays undocumented
@@ -192,7 +192,7 @@ type GroupMembers struct {
 	// SubjectSet is the base model of GroupMembers
 	SubjectSet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// GroupID undocumented
@@ -211,7 +211,7 @@ type GroupSetting struct {
 	// Entity is the base model of GroupSetting
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// TemplateID undocumented
@@ -232,7 +232,7 @@ type GroupSettingTemplate struct {
 	// DirectoryObject is the base model of GroupSettingTemplate
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented

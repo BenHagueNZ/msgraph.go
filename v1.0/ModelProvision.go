@@ -7,7 +7,7 @@ type ProvisionChannelEmailResult struct {
 	// Object is the base model of ProvisionChannelEmailResult
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
 }

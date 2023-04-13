@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Localizations returns request builder for OrganizationalBrandingLocalization collection rcn
+// Localizations returns request builder for OrganizationalBrandingLocalization collection
 func (b *OrganizationalBrandingRequestBuilder) Localizations() *OrganizationalBrandingLocalizationsCollectionRequestBuilder {
 	bb := &OrganizationalBrandingLocalizationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/localizations"

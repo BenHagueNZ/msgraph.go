@@ -9,7 +9,7 @@ type AccessAction struct {
 	// Object is the base model of AccessAction
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewAccessAction() (*AccessAction, error) {
@@ -24,7 +24,7 @@ type AccessPackage struct {
 	// Entity is the base model of AccessPackage
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -59,7 +59,7 @@ type AccessPackageAnswer struct {
 	// Object is the base model of AccessPackageAnswer
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayValue undocumented
 	DisplayValue *string `json:"displayValue,omitempty"`
 	// AnsweredQuestion undocumented
@@ -78,7 +78,7 @@ type AccessPackageAnswerChoice struct {
 	// Object is the base model of AccessPackageAnswerChoice
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActualValue undocumented
 	ActualValue *string `json:"actualValue,omitempty"`
 	// Localizations undocumented
@@ -99,7 +99,7 @@ type AccessPackageAnswerString struct {
 	// AccessPackageAnswer is the base model of AccessPackageAnswerString
 	AccessPackageAnswer
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Value undocumented
 	Value *string `json:"value,omitempty"`
 }
@@ -116,7 +116,7 @@ type AccessPackageApprovalStage struct {
 	// Object is the base model of AccessPackageApprovalStage
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DurationBeforeAutomaticDenial undocumented
 	DurationBeforeAutomaticDenial *Duration `json:"durationBeforeAutomaticDenial,omitempty"`
 	// DurationBeforeEscalation undocumented
@@ -147,7 +147,7 @@ type AccessPackageAssignment struct {
 	// Entity is the base model of AccessPackageAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExpiredDateTime undocumented
 	ExpiredDateTime *time.Time `json:"expiredDateTime,omitempty"`
 	// Schedule undocumented
@@ -176,7 +176,7 @@ type AccessPackageAssignmentApprovalSettings struct {
 	// Object is the base model of AccessPackageAssignmentApprovalSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsApprovalRequiredForAdd undocumented
 	IsApprovalRequiredForAdd *bool `json:"isApprovalRequiredForAdd,omitempty"`
 	// IsApprovalRequiredForUpdate undocumented
@@ -197,7 +197,7 @@ type AccessPackageAssignmentPolicy struct {
 	// Entity is the base model of AccessPackageAssignmentPolicy
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowedTargetScope undocumented
 	AllowedTargetScope *AllowedTargetScope `json:"allowedTargetScope,omitempty"`
 	// AutomaticRequestSettings undocumented
@@ -240,7 +240,7 @@ type AccessPackageAssignmentRequestObject struct {
 	// Entity is the base model of AccessPackageAssignmentRequestObject
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Answers undocumented
 	Answers []AccessPackageAnswer `json:"answers,omitempty"`
 	// CompletedDateTime undocumented
@@ -275,7 +275,7 @@ type AccessPackageAssignmentRequestRequirements struct {
 	// Object is the base model of AccessPackageAssignmentRequestRequirements
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowCustomAssignmentSchedule undocumented
 	AllowCustomAssignmentSchedule *bool `json:"allowCustomAssignmentSchedule,omitempty"`
 	// IsApprovalRequiredForAdd undocumented
@@ -306,7 +306,7 @@ type AccessPackageAssignmentRequestorSettings struct {
 	// Object is the base model of AccessPackageAssignmentRequestorSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowCustomAssignmentSchedule undocumented
 	AllowCustomAssignmentSchedule *bool `json:"allowCustomAssignmentSchedule,omitempty"`
 	// EnableOnBehalfRequestorsToAddAccess undocumented
@@ -337,7 +337,7 @@ type AccessPackageAssignmentReviewSettings struct {
 	// Object is the base model of AccessPackageAssignmentReviewSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExpirationBehavior undocumented
 	ExpirationBehavior *AccessReviewExpirationBehavior `json:"expirationBehavior,omitempty"`
 	// FallbackReviewers undocumented
@@ -368,7 +368,7 @@ type AccessPackageAutomaticRequestSettings struct {
 	// Object is the base model of AccessPackageAutomaticRequestSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// GracePeriodBeforeAccessRemoval undocumented
 	GracePeriodBeforeAccessRemoval *Duration `json:"gracePeriodBeforeAccessRemoval,omitempty"`
 	// RemoveAccessWhenTargetLeavesAllowedTargets undocumented
@@ -389,7 +389,7 @@ type AccessPackageCatalog struct {
 	// Entity is the base model of AccessPackageCatalog
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CatalogType undocumented
 	CatalogType *AccessPackageCatalogType `json:"catalogType,omitempty"`
 	// CreatedDateTime undocumented
@@ -420,7 +420,7 @@ type AccessPackageLocalizedText struct {
 	// Object is the base model of AccessPackageLocalizedText
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// LanguageCode undocumented
 	LanguageCode *string `json:"languageCode,omitempty"`
 	// Text undocumented
@@ -439,7 +439,7 @@ type AccessPackageMultipleChoiceQuestion struct {
 	// AccessPackageQuestion is the base model of AccessPackageMultipleChoiceQuestion
 	AccessPackageQuestion
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Choices undocumented
 	Choices []AccessPackageAnswerChoice `json:"choices,omitempty"`
 	// IsMultipleSelectionAllowed undocumented
@@ -458,7 +458,7 @@ type AccessPackageQuestion struct {
 	// Entity is the base model of AccessPackageQuestion
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsAnswerEditable undocumented
 	IsAnswerEditable *bool `json:"isAnswerEditable,omitempty"`
 	// IsRequired undocumented
@@ -483,7 +483,7 @@ type AccessPackageSubject struct {
 	// Entity is the base model of AccessPackageSubject
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Email undocumented
@@ -512,7 +512,7 @@ type AccessPackageTextInputQuestion struct {
 	// AccessPackageQuestion is the base model of AccessPackageTextInputQuestion
 	AccessPackageQuestion
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsSingleLineQuestion undocumented
 	IsSingleLineQuestion *bool `json:"isSingleLineQuestion,omitempty"`
 	// RegexPattern undocumented
@@ -531,7 +531,7 @@ type AccessReviewApplyAction struct {
 	// Object is the base model of AccessReviewApplyAction
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewAccessReviewApplyAction() (*AccessReviewApplyAction, error) {
@@ -546,7 +546,7 @@ type AccessReviewHistoryDefinition struct {
 	// Entity is the base model of AccessReviewHistoryDefinition
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *UserIdentity `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -581,7 +581,7 @@ type AccessReviewHistoryInstance struct {
 	// Entity is the base model of AccessReviewHistoryInstance
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DownloadURI undocumented
 	DownloadURI *string `json:"downloadUri,omitempty"`
 	// ExpirationDateTime undocumented
@@ -610,7 +610,7 @@ type AccessReviewHistoryScheduleSettings struct {
 	// Object is the base model of AccessReviewHistoryScheduleSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Recurrence undocumented
 	Recurrence *PatternedRecurrence `json:"recurrence,omitempty"`
 	// ReportRange undocumented
@@ -629,7 +629,7 @@ type AccessReviewInactiveUsersQueryScope struct {
 	// AccessReviewQueryScope is the base model of AccessReviewInactiveUsersQueryScope
 	AccessReviewQueryScope
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// InactiveDuration undocumented
 	InactiveDuration *Duration `json:"inactiveDuration,omitempty"`
 }
@@ -646,7 +646,7 @@ type AccessReviewInstance struct {
 	// Entity is the base model of AccessReviewInstance
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// FallbackReviewers undocumented
@@ -679,7 +679,7 @@ type AccessReviewInstanceDecisionItem struct {
 	// Entity is the base model of AccessReviewInstanceDecisionItem
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccessReviewID undocumented
 	AccessReviewID *string `json:"accessReviewId,omitempty"`
 	// AppliedBy undocumented
@@ -720,7 +720,7 @@ type AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource struc
 	// AccessReviewInstanceDecisionItemResource is the base model of AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource
 	AccessReviewInstanceDecisionItemResource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccessPackageDisplayName undocumented
 	AccessPackageDisplayName *string `json:"accessPackageDisplayName,omitempty"`
 	// AccessPackageID undocumented
@@ -739,7 +739,7 @@ type AccessReviewInstanceDecisionItemAzureRoleResource struct {
 	// AccessReviewInstanceDecisionItemResource is the base model of AccessReviewInstanceDecisionItemAzureRoleResource
 	AccessReviewInstanceDecisionItemResource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Scope undocumented
 	Scope *AccessReviewInstanceDecisionItemResource `json:"scope,omitempty"`
 }
@@ -756,7 +756,7 @@ type AccessReviewInstanceDecisionItemResource struct {
 	// Object is the base model of AccessReviewInstanceDecisionItemResource
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// ID undocumented
@@ -777,7 +777,7 @@ type AccessReviewInstanceDecisionItemServicePrincipalResource struct {
 	// AccessReviewInstanceDecisionItemResource is the base model of AccessReviewInstanceDecisionItemServicePrincipalResource
 	AccessReviewInstanceDecisionItemResource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
 }
@@ -794,7 +794,7 @@ type AccessReviewNotificationRecipientItem struct {
 	// Object is the base model of AccessReviewNotificationRecipientItem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// NotificationRecipientScope undocumented
 	NotificationRecipientScope *AccessReviewNotificationRecipientScope `json:"notificationRecipientScope,omitempty"`
 	// NotificationTemplateType undocumented
@@ -813,7 +813,7 @@ type AccessReviewNotificationRecipientQueryScope struct {
 	// AccessReviewNotificationRecipientScope is the base model of AccessReviewNotificationRecipientQueryScope
 	AccessReviewNotificationRecipientScope
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Query undocumented
 	Query *string `json:"query,omitempty"`
 	// QueryRoot undocumented
@@ -834,7 +834,7 @@ type AccessReviewNotificationRecipientScope struct {
 	// Object is the base model of AccessReviewNotificationRecipientScope
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewAccessReviewNotificationRecipientScope() (*AccessReviewNotificationRecipientScope, error) {
@@ -849,7 +849,7 @@ type AccessReviewQueryScope struct {
 	// AccessReviewScope is the base model of AccessReviewQueryScope
 	AccessReviewScope
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Query undocumented
 	Query *string `json:"query,omitempty"`
 	// QueryRoot undocumented
@@ -870,7 +870,7 @@ type AccessReviewReviewer struct {
 	// Entity is the base model of AccessReviewReviewer
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// DisplayName undocumented
@@ -891,7 +891,7 @@ type AccessReviewReviewerScope struct {
 	// Object is the base model of AccessReviewReviewerScope
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Query undocumented
 	Query *string `json:"query,omitempty"`
 	// QueryRoot undocumented
@@ -912,7 +912,7 @@ type AccessReviewScheduleDefinition struct {
 	// Entity is the base model of AccessReviewScheduleDefinition
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AdditionalNotificationRecipients undocumented
 	AdditionalNotificationRecipients []AccessReviewNotificationRecipientItem `json:"additionalNotificationRecipients,omitempty"`
 	// CreatedBy undocumented
@@ -957,7 +957,7 @@ type AccessReviewScheduleSettings struct {
 	// Object is the base model of AccessReviewScheduleSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplyActions undocumented
 	ApplyActions []AccessReviewApplyAction `json:"applyActions,omitempty"`
 	// AutoApplyDecisionsEnabled undocumented
@@ -994,7 +994,7 @@ type AccessReviewScope struct {
 	// Object is the base model of AccessReviewScope
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewAccessReviewScope() (*AccessReviewScope, error) {
@@ -1009,7 +1009,7 @@ type AccessReviewSet struct {
 	// Entity is the base model of AccessReviewSet
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Definitions undocumented
 	Definitions []AccessReviewScheduleDefinition `json:"definitions,omitempty"`
 	// HistoryDefinitions undocumented
@@ -1028,7 +1028,7 @@ type AccessReviewStage struct {
 	// Entity is the base model of AccessReviewStage
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// FallbackReviewers undocumented
@@ -1055,7 +1055,7 @@ type AccessReviewStageSettings struct {
 	// Object is the base model of AccessReviewStageSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DecisionsThatWillMoveToNextStage undocumented
 	DecisionsThatWillMoveToNextStage []string `json:"decisionsThatWillMoveToNextStage,omitempty"`
 	// DependsOn undocumented

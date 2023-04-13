@@ -9,7 +9,7 @@ type ArchivedPrintJob struct {
 	// Object is the base model of ArchivedPrintJob
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AcquiredByPrinter undocumented
 	AcquiredByPrinter *bool `json:"acquiredByPrinter,omitempty"`
 	// AcquiredDateTime undocumented

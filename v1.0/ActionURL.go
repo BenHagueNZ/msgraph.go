@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// URLAssessmentRequestObject returns request builder for URLAssessmentRequestObject collection rcn
-func (b *ThreatAssessmentRequestObjectRequestBuilder) URLAssessmentRequestObject() *ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionRequestBuilder {
-	bb := &ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/UrlAssessmentRequest"
+// URLAssessmentRequestObject returns request builder for URLAssessmentRequestObject collection
+func (b *InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder) URLAssessmentRequestObject() *InformationProtectionThreatAssessmentRequestsCollectionURLAssessmentRequestObjectCollectionRequestBuilder {
+	bb := &InformationProtectionThreatAssessmentRequestsCollectionURLAssessmentRequestObjectCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionRequestBuilder is request builder for URLAssessmentRequestObject collection
-type ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionRequestBuilder struct{ BaseRequestBuilder }
+// InformationProtectionThreatAssessmentRequestsCollectionURLAssessmentRequestObjectCollectionRequestBuilder is request builder for URLAssessmentRequestObject collection
+type InformationProtectionThreatAssessmentRequestsCollectionURLAssessmentRequestObjectCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for URLAssessmentRequestObject collection
-func (b *ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionRequestBuilder) Request() *ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionRequest {
-	return &ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionRequest{
+func (b *InformationProtectionThreatAssessmentRequestsCollectionURLAssessmentRequestObjectCollectionRequestBuilder) Request() *InformationProtectionThreatAssessmentRequestsCollectionURLAssessmentRequestObjectCollectionRequest {
+	return &InformationProtectionThreatAssessmentRequestsCollectionURLAssessmentRequestObjectCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for URLAssessmentRequestObject item
-func (b *ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionRequestBuilder) ID(id string) *URLAssessmentRequestObjectRequestBuilder {
+func (b *InformationProtectionThreatAssessmentRequestsCollectionURLAssessmentRequestObjectCollectionRequestBuilder) ID(id string) *URLAssessmentRequestObjectRequestBuilder {
 	bb := &URLAssessmentRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionRequest is request for URLAssessmentRequestObject collection
-type ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionRequest struct{ BaseRequest }
+// InformationProtectionThreatAssessmentRequestsCollectionURLAssessmentRequestObjectCollectionRequest is request for URLAssessmentRequestObject collection
+type InformationProtectionThreatAssessmentRequestsCollectionURLAssessmentRequestObjectCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for URLAssessmentRequestObject collection
-func (r *ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]URLAssessmentRequestObject, error) {
+func (r *InformationProtectionThreatAssessmentRequestsCollectionURLAssessmentRequestObjectCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]URLAssessmentRequestObject, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionReques
 }
 
 // GetN performs GET request for URLAssessmentRequestObject collection, max N pages
-func (r *ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionRequest) GetN(ctx context.Context, n int) ([]URLAssessmentRequestObject, error) {
+func (r *InformationProtectionThreatAssessmentRequestsCollectionURLAssessmentRequestObjectCollectionRequest) GetN(ctx context.Context, n int) ([]URLAssessmentRequestObject, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionReques
 }
 
 // Get performs GET request for URLAssessmentRequestObject collection
-func (r *ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionRequest) Get(ctx context.Context) ([]URLAssessmentRequestObject, error) {
+func (r *InformationProtectionThreatAssessmentRequestsCollectionURLAssessmentRequestObjectCollectionRequest) Get(ctx context.Context) ([]URLAssessmentRequestObject, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for URLAssessmentRequestObject collection
-func (r *ThreatAssessmentRequestObjectURLAssessmentRequestObjectCollectionRequest) Add(ctx context.Context, reqObj *URLAssessmentRequestObject) (resObj *URLAssessmentRequestObject, err error) {
+func (r *InformationProtectionThreatAssessmentRequestsCollectionURLAssessmentRequestObjectCollectionRequest) Add(ctx context.Context, reqObj *URLAssessmentRequestObject) (resObj *URLAssessmentRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

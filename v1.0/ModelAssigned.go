@@ -9,7 +9,7 @@ type AssignedLabel struct {
 	// Object is the base model of AssignedLabel
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// LabelID undocumented
@@ -28,7 +28,7 @@ type AssignedLicense struct {
 	// Object is the base model of AssignedLicense
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisabledPlans undocumented
 	DisabledPlans []UUID `json:"disabledPlans,omitempty"`
 	// SKUID undocumented
@@ -47,7 +47,7 @@ type AssignedPlan struct {
 	// Object is the base model of AssignedPlan
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedDateTime undocumented
 	AssignedDateTime *time.Time `json:"assignedDateTime,omitempty"`
 	// CapabilityStatus undocumented
@@ -70,7 +70,7 @@ type AssignedTrainingInfo struct {
 	// Object is the base model of AssignedTrainingInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedUserCount undocumented
 	AssignedUserCount *int `json:"assignedUserCount,omitempty"`
 	// CompletedUserCount undocumented

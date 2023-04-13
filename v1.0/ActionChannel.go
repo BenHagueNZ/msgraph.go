@@ -30,7 +30,7 @@ func (b *ChannelRequestBuilder) FilesFolder() *DriveItemRequestBuilder {
 	return bb
 }
 
-// Members returns request builder for ConversationMember collection rcn
+// Members returns request builder for ConversationMember collection
 func (b *ChannelRequestBuilder) Members() *ChannelMembersCollectionRequestBuilder {
 	bb := &ChannelMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"
@@ -133,7 +133,7 @@ func (r *ChannelMembersCollectionRequest) Add(ctx context.Context, reqObj *Conve
 	return
 }
 
-// Messages returns request builder for ChatMessage collection rcn
+// Messages returns request builder for ChatMessage collection
 func (b *ChannelRequestBuilder) Messages() *ChannelMessagesCollectionRequestBuilder {
 	bb := &ChannelMessagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/messages"
@@ -236,7 +236,7 @@ func (r *ChannelMessagesCollectionRequest) Add(ctx context.Context, reqObj *Chat
 	return
 }
 
-// SharedWithTeams returns request builder for SharedWithChannelTeamInfo collection rcn
+// SharedWithTeams returns request builder for SharedWithChannelTeamInfo collection
 func (b *ChannelRequestBuilder) SharedWithTeams() *ChannelSharedWithTeamsCollectionRequestBuilder {
 	bb := &ChannelSharedWithTeamsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sharedWithTeams"
@@ -339,7 +339,7 @@ func (r *ChannelSharedWithTeamsCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Tabs returns request builder for TeamsTab collection rcn
+// Tabs returns request builder for TeamsTab collection
 func (b *ChannelRequestBuilder) Tabs() *ChannelTabsCollectionRequestBuilder {
 	bb := &ChannelTabsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tabs"

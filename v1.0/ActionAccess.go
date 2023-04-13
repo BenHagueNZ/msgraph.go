@@ -71,7 +71,7 @@ type AccessReviewScheduleDefinitionStopRequestParameter struct {
 type AccessReviewStageStopRequestParameter struct {
 }
 
-// AccessPackagesIncompatibleWith returns request builder for AccessPackage collection rcn
+// AccessPackagesIncompatibleWith returns request builder for AccessPackage collection
 func (b *AccessPackageRequestBuilder) AccessPackagesIncompatibleWith() *AccessPackageAccessPackagesIncompatibleWithCollectionRequestBuilder {
 	bb := &AccessPackageAccessPackagesIncompatibleWithCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/accessPackagesIncompatibleWith"
@@ -174,7 +174,7 @@ func (r *AccessPackageAccessPackagesIncompatibleWithCollectionRequest) Add(ctx c
 	return
 }
 
-// AssignmentPolicies returns request builder for AccessPackageAssignmentPolicy collection rcn
+// AssignmentPolicies returns request builder for AccessPackageAssignmentPolicy collection
 func (b *AccessPackageRequestBuilder) AssignmentPolicies() *AccessPackageAssignmentPoliciesCollectionRequestBuilder {
 	bb := &AccessPackageAssignmentPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignmentPolicies"
@@ -284,7 +284,7 @@ func (b *AccessPackageRequestBuilder) Catalog() *AccessPackageCatalogRequestBuil
 	return bb
 }
 
-// IncompatibleAccessPackages returns request builder for AccessPackage collection rcn
+// IncompatibleAccessPackages returns request builder for AccessPackage collection
 func (b *AccessPackageRequestBuilder) IncompatibleAccessPackages() *AccessPackageIncompatibleAccessPackagesCollectionRequestBuilder {
 	bb := &AccessPackageIncompatibleAccessPackagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/incompatibleAccessPackages"
@@ -387,7 +387,7 @@ func (r *AccessPackageIncompatibleAccessPackagesCollectionRequest) Add(ctx conte
 	return
 }
 
-// IncompatibleGroups returns request builder for Group collection rcn
+// IncompatibleGroups returns request builder for Group collection
 func (b *AccessPackageRequestBuilder) IncompatibleGroups() *AccessPackageIncompatibleGroupsCollectionRequestBuilder {
 	bb := &AccessPackageIncompatibleGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/incompatibleGroups"
@@ -532,7 +532,7 @@ func (b *AccessPackageAssignmentPolicyRequestBuilder) Catalog() *AccessPackageCa
 	return bb
 }
 
-// Questions returns request builder for AccessPackageQuestion collection rcn
+// Questions returns request builder for AccessPackageQuestion collection
 func (b *AccessPackageAssignmentPolicyRequestBuilder) Questions() *AccessPackageAssignmentPolicyQuestionsCollectionRequestBuilder {
 	bb := &AccessPackageAssignmentPolicyQuestionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/questions"
@@ -656,7 +656,7 @@ func (b *AccessPackageAssignmentRequestObjectRequestBuilder) Requestor() *Access
 	return bb
 }
 
-// Questions returns request builder for AccessPackageQuestion collection rcn
+// Questions returns request builder for AccessPackageQuestion collection
 func (b *AccessPackageAssignmentRequestRequirementsRequestBuilder) Questions() *AccessPackageAssignmentRequestRequirementsQuestionsCollectionRequestBuilder {
 	bb := &AccessPackageAssignmentRequestRequirementsQuestionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/questions"
@@ -759,7 +759,7 @@ func (r *AccessPackageAssignmentRequestRequirementsQuestionsCollectionRequest) A
 	return
 }
 
-// AccessPackages returns request builder for AccessPackage collection rcn
+// AccessPackages returns request builder for AccessPackage collection
 func (b *AccessPackageCatalogRequestBuilder) AccessPackages() *AccessPackageCatalogAccessPackagesCollectionRequestBuilder {
 	bb := &AccessPackageCatalogAccessPackagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/accessPackages"
@@ -869,7 +869,7 @@ func (b *AccessPackageSubjectRequestBuilder) ConnectedOrganization() *ConnectedO
 	return bb
 }
 
-// Instances returns request builder for AccessReviewHistoryInstance collection rcn
+// Instances returns request builder for AccessReviewHistoryInstance collection
 func (b *AccessReviewHistoryDefinitionRequestBuilder) Instances() *AccessReviewHistoryDefinitionInstancesCollectionRequestBuilder {
 	bb := &AccessReviewHistoryDefinitionInstancesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/instances"
@@ -972,7 +972,7 @@ func (r *AccessReviewHistoryDefinitionInstancesCollectionRequest) Add(ctx contex
 	return
 }
 
-// ContactedReviewers returns request builder for AccessReviewReviewer collection rcn
+// ContactedReviewers returns request builder for AccessReviewReviewer collection
 func (b *AccessReviewInstanceRequestBuilder) ContactedReviewers() *AccessReviewInstanceContactedReviewersCollectionRequestBuilder {
 	bb := &AccessReviewInstanceContactedReviewersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/contactedReviewers"
@@ -1075,7 +1075,7 @@ func (r *AccessReviewInstanceContactedReviewersCollectionRequest) Add(ctx contex
 	return
 }
 
-// Decisions returns request builder for AccessReviewInstanceDecisionItem collection rcn
+// Decisions returns request builder for AccessReviewInstanceDecisionItem collection
 func (b *AccessReviewInstanceRequestBuilder) Decisions() *AccessReviewInstanceDecisionsCollectionRequestBuilder {
 	bb := &AccessReviewInstanceDecisionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/decisions"
@@ -1178,7 +1178,7 @@ func (r *AccessReviewInstanceDecisionsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Stages returns request builder for AccessReviewStage collection rcn
+// Stages returns request builder for AccessReviewStage collection
 func (b *AccessReviewInstanceRequestBuilder) Stages() *AccessReviewInstanceStagesCollectionRequestBuilder {
 	bb := &AccessReviewInstanceStagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/stages"
@@ -1281,7 +1281,7 @@ func (r *AccessReviewInstanceStagesCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// Instances returns request builder for AccessReviewInstance collection rcn
+// Instances returns request builder for AccessReviewInstance collection
 func (b *AccessReviewScheduleDefinitionRequestBuilder) Instances() *AccessReviewScheduleDefinitionInstancesCollectionRequestBuilder {
 	bb := &AccessReviewScheduleDefinitionInstancesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/instances"
@@ -1384,7 +1384,7 @@ func (r *AccessReviewScheduleDefinitionInstancesCollectionRequest) Add(ctx conte
 	return
 }
 
-// Definitions returns request builder for AccessReviewScheduleDefinition collection rcn
+// Definitions returns request builder for AccessReviewScheduleDefinition collection
 func (b *AccessReviewSetRequestBuilder) Definitions() *AccessReviewSetDefinitionsCollectionRequestBuilder {
 	bb := &AccessReviewSetDefinitionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/definitions"
@@ -1487,7 +1487,7 @@ func (r *AccessReviewSetDefinitionsCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// HistoryDefinitions returns request builder for AccessReviewHistoryDefinition collection rcn
+// HistoryDefinitions returns request builder for AccessReviewHistoryDefinition collection
 func (b *AccessReviewSetRequestBuilder) HistoryDefinitions() *AccessReviewSetHistoryDefinitionsCollectionRequestBuilder {
 	bb := &AccessReviewSetHistoryDefinitionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/historyDefinitions"
@@ -1590,7 +1590,7 @@ func (r *AccessReviewSetHistoryDefinitionsCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// Decisions returns request builder for AccessReviewInstanceDecisionItem collection rcn
+// Decisions returns request builder for AccessReviewInstanceDecisionItem collection
 func (b *AccessReviewStageRequestBuilder) Decisions() *AccessReviewStageDecisionsCollectionRequestBuilder {
 	bb := &AccessReviewStageDecisionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/decisions"
@@ -1728,35 +1728,35 @@ func (b *AccessPackageCatalogRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
-// AccessPackageMultipleChoiceQuestion returns request builder for AccessPackageMultipleChoiceQuestion collection rcn
-func (b *AccessPackageQuestionRequestBuilder) AccessPackageMultipleChoiceQuestion() *AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder {
-	bb := &AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/AccessPackageMultipleChoiceQuestion"
+// AccessPackageMultipleChoiceQuestion returns request builder for AccessPackageMultipleChoiceQuestion collection
+func (b *AccessPackageAssignmentPolicyQuestionsCollectionRequestBuilder) AccessPackageMultipleChoiceQuestion() *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder {
+	bb := &AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder is request builder for AccessPackageMultipleChoiceQuestion collection
-type AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder is request builder for AccessPackageMultipleChoiceQuestion collection
+type AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackageMultipleChoiceQuestion collection
-func (b *AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder) Request() *AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionRequest {
-	return &AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionRequest{
+func (b *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder) Request() *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequest {
+	return &AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for AccessPackageMultipleChoiceQuestion item
-func (b *AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder) ID(id string) *AccessPackageMultipleChoiceQuestionRequestBuilder {
+func (b *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder) ID(id string) *AccessPackageMultipleChoiceQuestionRequestBuilder {
 	bb := &AccessPackageMultipleChoiceQuestionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionRequest is request for AccessPackageMultipleChoiceQuestion collection
-type AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionRequest struct{ BaseRequest }
+// AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequest is request for AccessPackageMultipleChoiceQuestion collection
+type AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for AccessPackageMultipleChoiceQuestion collection
-func (r *AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AccessPackageMultipleChoiceQuestion, error) {
+func (r *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AccessPackageMultipleChoiceQuestion, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1812,7 +1812,7 @@ func (r *AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionReque
 }
 
 // GetN performs GET request for AccessPackageMultipleChoiceQuestion collection, max N pages
-func (r *AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionRequest) GetN(ctx context.Context, n int) ([]AccessPackageMultipleChoiceQuestion, error) {
+func (r *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequest) GetN(ctx context.Context, n int) ([]AccessPackageMultipleChoiceQuestion, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1821,14 +1821,21 @@ func (r *AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionReque
 }
 
 // Get performs GET request for AccessPackageMultipleChoiceQuestion collection
-func (r *AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionRequest) Get(ctx context.Context) ([]AccessPackageMultipleChoiceQuestion, error) {
+func (r *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequest) Get(ctx context.Context) ([]AccessPackageMultipleChoiceQuestion, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for AccessPackageMultipleChoiceQuestion collection
-func (r *AccessPackageQuestionAccessPackageMultipleChoiceQuestionCollectionRequest) Add(ctx context.Context, reqObj *AccessPackageMultipleChoiceQuestion) (resObj *AccessPackageMultipleChoiceQuestion, err error) {
+func (r *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequest) Add(ctx context.Context, reqObj *AccessPackageMultipleChoiceQuestion) (resObj *AccessPackageMultipleChoiceQuestion, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Entity is navigation property rn
+func (b *AccessPackageAssignmentPolicyQuestionsCollectionRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }
 
 // Entity is navigation property rn
@@ -1838,35 +1845,35 @@ func (b *AccessPackageSubjectRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
-// AccessPackageTextInputQuestion returns request builder for AccessPackageTextInputQuestion collection rcn
-func (b *AccessPackageQuestionRequestBuilder) AccessPackageTextInputQuestion() *AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequestBuilder {
-	bb := &AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/AccessPackageTextInputQuestion"
+// AccessPackageTextInputQuestion returns request builder for AccessPackageTextInputQuestion collection
+func (b *AccessPackageAssignmentPolicyQuestionsCollectionRequestBuilder) AccessPackageTextInputQuestion() *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequestBuilder {
+	bb := &AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequestBuilder is request builder for AccessPackageTextInputQuestion collection
-type AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequestBuilder is request builder for AccessPackageTextInputQuestion collection
+type AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackageTextInputQuestion collection
-func (b *AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequestBuilder) Request() *AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequest {
-	return &AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequest{
+func (b *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequestBuilder) Request() *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequest {
+	return &AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for AccessPackageTextInputQuestion item
-func (b *AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequestBuilder) ID(id string) *AccessPackageTextInputQuestionRequestBuilder {
+func (b *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequestBuilder) ID(id string) *AccessPackageTextInputQuestionRequestBuilder {
 	bb := &AccessPackageTextInputQuestionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequest is request for AccessPackageTextInputQuestion collection
-type AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequest struct{ BaseRequest }
+// AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequest is request for AccessPackageTextInputQuestion collection
+type AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for AccessPackageTextInputQuestion collection
-func (r *AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AccessPackageTextInputQuestion, error) {
+func (r *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AccessPackageTextInputQuestion, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1922,7 +1929,7 @@ func (r *AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequest) P
 }
 
 // GetN performs GET request for AccessPackageTextInputQuestion collection, max N pages
-func (r *AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequest) GetN(ctx context.Context, n int) ([]AccessPackageTextInputQuestion, error) {
+func (r *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequest) GetN(ctx context.Context, n int) ([]AccessPackageTextInputQuestion, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1931,12 +1938,12 @@ func (r *AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequest) G
 }
 
 // Get performs GET request for AccessPackageTextInputQuestion collection
-func (r *AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequest) Get(ctx context.Context) ([]AccessPackageTextInputQuestion, error) {
+func (r *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequest) Get(ctx context.Context) ([]AccessPackageTextInputQuestion, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for AccessPackageTextInputQuestion collection
-func (r *AccessPackageQuestionAccessPackageTextInputQuestionCollectionRequest) Add(ctx context.Context, reqObj *AccessPackageTextInputQuestion) (resObj *AccessPackageTextInputQuestion, err error) {
+func (r *AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequest) Add(ctx context.Context, reqObj *AccessPackageTextInputQuestion) (resObj *AccessPackageTextInputQuestion, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

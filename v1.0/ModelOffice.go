@@ -7,7 +7,7 @@ type OfficeGraphInsights struct {
 	// Entity is the base model of OfficeGraphInsights
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Shared undocumented
 	Shared []SharedInsight `json:"shared,omitempty"`
 	// Trending undocumented

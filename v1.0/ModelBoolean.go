@@ -7,7 +7,7 @@ type BooleanColumn struct {
 	// Object is the base model of BooleanColumn
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewBooleanColumn() (*BooleanColumn, error) {

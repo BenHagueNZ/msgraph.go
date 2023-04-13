@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Results returns request builder for ThreatAssessmentResult collection rcn
+// Results returns request builder for ThreatAssessmentResult collection
 func (b *ThreatAssessmentRequestObjectRequestBuilder) Results() *ThreatAssessmentRequestObjectResultsCollectionRequestBuilder {
 	bb := &ThreatAssessmentRequestObjectResultsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/results"

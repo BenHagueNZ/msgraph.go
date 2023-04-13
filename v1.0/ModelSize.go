@@ -7,7 +7,7 @@ type SizeRange struct {
 	// Object is the base model of SizeRange
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MaximumSize undocumented
 	MaximumSize *int `json:"maximumSize,omitempty"`
 	// MinimumSize undocumented

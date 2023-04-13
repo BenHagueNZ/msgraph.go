@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// ExternalSponsors returns request builder for DirectoryObject collection rcn
+// ExternalSponsors returns request builder for DirectoryObject collection
 func (b *ConnectedOrganizationRequestBuilder) ExternalSponsors() *ConnectedOrganizationExternalSponsorsCollectionRequestBuilder {
 	bb := &ConnectedOrganizationExternalSponsorsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/externalSponsors"
@@ -114,7 +114,7 @@ func (r *ConnectedOrganizationExternalSponsorsCollectionRequest) Add(ctx context
 	return
 }
 
-// InternalSponsors returns request builder for DirectoryObject collection rcn
+// InternalSponsors returns request builder for DirectoryObject collection
 func (b *ConnectedOrganizationRequestBuilder) InternalSponsors() *ConnectedOrganizationInternalSponsorsCollectionRequestBuilder {
 	bb := &ConnectedOrganizationInternalSponsorsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/internalSponsors"

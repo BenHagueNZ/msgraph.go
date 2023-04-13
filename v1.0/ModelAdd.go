@@ -7,7 +7,7 @@ type AddIn struct {
 	// Object is the base model of AddIn
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ID undocumented
 	ID *UUID `json:"id,omitempty"`
 	// Properties undocumented
@@ -28,7 +28,7 @@ type AddLargeGalleryViewOperation struct {
 	// CommsOperation is the base model of AddLargeGalleryViewOperation
 	CommsOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewAddLargeGalleryViewOperation() (*AddLargeGalleryViewOperation, error) {

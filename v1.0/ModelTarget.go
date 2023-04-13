@@ -7,7 +7,7 @@ type TargetApplicationOwners struct {
 	// SubjectSet is the base model of TargetApplicationOwners
 	SubjectSet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewTargetApplicationOwners() (*TargetApplicationOwners, error) {
@@ -22,7 +22,7 @@ type TargetManager struct {
 	// SubjectSet is the base model of TargetManager
 	SubjectSet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ManagerLevel undocumented
 	ManagerLevel *int `json:"managerLevel,omitempty"`
 }
@@ -39,7 +39,7 @@ type TargetResource struct {
 	// Object is the base model of TargetResource
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// GroupType undocumented

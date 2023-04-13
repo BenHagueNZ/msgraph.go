@@ -7,7 +7,7 @@ type Website struct {
 	// Object is the base model of Website
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Address undocumented
 	Address *string `json:"address,omitempty"`
 	// DisplayName undocumented

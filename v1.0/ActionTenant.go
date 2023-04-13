@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// DelegatedAdminCustomers returns request builder for DelegatedAdminCustomer collection rcn
+// DelegatedAdminCustomers returns request builder for DelegatedAdminCustomer collection
 func (b *TenantRelationshipRequestBuilder) DelegatedAdminCustomers() *TenantRelationshipDelegatedAdminCustomersCollectionRequestBuilder {
 	bb := &TenantRelationshipDelegatedAdminCustomersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/delegatedAdminCustomers"
@@ -114,7 +114,7 @@ func (r *TenantRelationshipDelegatedAdminCustomersCollectionRequest) Add(ctx con
 	return
 }
 
-// DelegatedAdminRelationships returns request builder for DelegatedAdminRelationship collection rcn
+// DelegatedAdminRelationships returns request builder for DelegatedAdminRelationship collection
 func (b *TenantRelationshipRequestBuilder) DelegatedAdminRelationships() *TenantRelationshipDelegatedAdminRelationshipsCollectionRequestBuilder {
 	bb := &TenantRelationshipDelegatedAdminRelationshipsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/delegatedAdminRelationships"

@@ -9,7 +9,7 @@ type Conversation struct {
 	// Entity is the base model of Conversation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// HasAttachments undocumented
 	HasAttachments *bool `json:"hasAttachments,omitempty"`
 	// LastDeliveredDateTime undocumented
@@ -36,7 +36,7 @@ type ConversationMember struct {
 	// Entity is the base model of ConversationMember
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Roles undocumented
@@ -57,7 +57,7 @@ type ConversationMemberRoleUpdatedEventMessageDetail struct {
 	// EventMessageDetail is the base model of ConversationMemberRoleUpdatedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConversationMemberRoles undocumented
 	ConversationMemberRoles []string `json:"conversationMemberRoles,omitempty"`
 	// ConversationMemberUser undocumented
@@ -78,7 +78,7 @@ type ConversationThread struct {
 	// Entity is the base model of ConversationThread
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CcRecipients undocumented
 	CcRecipients []Recipient `json:"ccRecipients,omitempty"`
 	// HasAttachments undocumented

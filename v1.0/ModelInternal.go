@@ -7,7 +7,7 @@ type InternalDomainFederation struct {
 	// SamlOrWsFedProvider is the base model of InternalDomainFederation
 	SamlOrWsFedProvider
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActiveSignInURI undocumented
 	ActiveSignInURI *string `json:"activeSignInUri,omitempty"`
 	// FederatedIdpMFABehavior undocumented
@@ -36,7 +36,7 @@ type InternalSponsors struct {
 	// SubjectSet is the base model of InternalSponsors
 	SubjectSet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewInternalSponsors() (*InternalSponsors, error) {

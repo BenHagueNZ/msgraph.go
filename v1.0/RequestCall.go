@@ -367,6 +367,28 @@ func (r *CallTranscriptionInfoRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+type CallCollectionLogTeleconferenceDeviceQualityRequestBuilder struct{ BaseRequestBuilder }
+
+// LogTeleconferenceDeviceQuality action undocumentedrav
+func (b *CloudCommunicationsCallsCollectionRequestBuilder) LogTeleconferenceDeviceQuality(reqObj *CallCollectionLogTeleconferenceDeviceQualityRequestParameter) *CallCollectionLogTeleconferenceDeviceQualityRequestBuilder {
+	bb := &CallCollectionLogTeleconferenceDeviceQualityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/LogTeleconferenceDeviceQuality"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type CallCollectionLogTeleconferenceDeviceQualityRequest struct{ BaseRequest }
+
+func (b *CallCollectionLogTeleconferenceDeviceQualityRequestBuilder) Request() *CallCollectionLogTeleconferenceDeviceQualityRequest {
+	return &CallCollectionLogTeleconferenceDeviceQualityRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *CallCollectionLogTeleconferenceDeviceQualityRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
 type CallRedirectRequestBuilder struct{ BaseRequestBuilder }
 
 // Redirect action undocumentedrav

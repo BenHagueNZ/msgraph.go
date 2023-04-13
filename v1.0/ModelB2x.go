@@ -7,7 +7,7 @@ type B2xIdentityUserFlow struct {
 	// IdentityUserFlow is the base model of B2xIdentityUserFlow
 	IdentityUserFlow
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// APIConnectorConfiguration undocumented
 	APIConnectorConfiguration *UserFlowAPIConnectorConfiguration `json:"apiConnectorConfiguration,omitempty"`
 	// IdentityProviders undocumented

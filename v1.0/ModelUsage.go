@@ -9,7 +9,7 @@ type UsageDetails struct {
 	// Object is the base model of UsageDetails
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// LastAccessedDateTime undocumented
 	LastAccessedDateTime *time.Time `json:"lastAccessedDateTime,omitempty"`
 	// LastModifiedDateTime undocumented

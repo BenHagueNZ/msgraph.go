@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Endpoint returns request builder for Endpoint collection rcn
-func (b *DirectoryObjectRequestBuilder) Endpoint() *DirectoryObjectEndpointCollectionRequestBuilder {
-	bb := &DirectoryObjectEndpointCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/Endpoint"
+// Endpoint returns request builder for Endpoint collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) Endpoint() *AdministrativeUnitMembersCollectionEndpointCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionEndpointCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DirectoryObjectEndpointCollectionRequestBuilder is request builder for Endpoint collection
-type DirectoryObjectEndpointCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AdministrativeUnitMembersCollectionEndpointCollectionRequestBuilder is request builder for Endpoint collection
+type AdministrativeUnitMembersCollectionEndpointCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Endpoint collection
-func (b *DirectoryObjectEndpointCollectionRequestBuilder) Request() *DirectoryObjectEndpointCollectionRequest {
-	return &DirectoryObjectEndpointCollectionRequest{
+func (b *AdministrativeUnitMembersCollectionEndpointCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionEndpointCollectionRequest {
+	return &AdministrativeUnitMembersCollectionEndpointCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for Endpoint item
-func (b *DirectoryObjectEndpointCollectionRequestBuilder) ID(id string) *EndpointRequestBuilder {
+func (b *AdministrativeUnitMembersCollectionEndpointCollectionRequestBuilder) ID(id string) *EndpointRequestBuilder {
 	bb := &EndpointRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DirectoryObjectEndpointCollectionRequest is request for Endpoint collection
-type DirectoryObjectEndpointCollectionRequest struct{ BaseRequest }
+// AdministrativeUnitMembersCollectionEndpointCollectionRequest is request for Endpoint collection
+type AdministrativeUnitMembersCollectionEndpointCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for Endpoint collection
-func (r *DirectoryObjectEndpointCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Endpoint, error) {
+func (r *AdministrativeUnitMembersCollectionEndpointCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Endpoint, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *DirectoryObjectEndpointCollectionRequest) Paging(ctx context.Context, m
 }
 
 // GetN performs GET request for Endpoint collection, max N pages
-func (r *DirectoryObjectEndpointCollectionRequest) GetN(ctx context.Context, n int) ([]Endpoint, error) {
+func (r *AdministrativeUnitMembersCollectionEndpointCollectionRequest) GetN(ctx context.Context, n int) ([]Endpoint, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *DirectoryObjectEndpointCollectionRequest) GetN(ctx context.Context, n i
 }
 
 // Get performs GET request for Endpoint collection
-func (r *DirectoryObjectEndpointCollectionRequest) Get(ctx context.Context) ([]Endpoint, error) {
+func (r *AdministrativeUnitMembersCollectionEndpointCollectionRequest) Get(ctx context.Context) ([]Endpoint, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for Endpoint collection
-func (r *DirectoryObjectEndpointCollectionRequest) Add(ctx context.Context, reqObj *Endpoint) (resObj *Endpoint, err error) {
+func (r *AdministrativeUnitMembersCollectionEndpointCollectionRequest) Add(ctx context.Context, reqObj *Endpoint) (resObj *Endpoint, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

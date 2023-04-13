@@ -7,7 +7,7 @@ type WorkforceIntegration struct {
 	// ChangeTrackedEntity is the base model of WorkforceIntegration
 	ChangeTrackedEntity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// APIVersion undocumented
 	APIVersion *int `json:"apiVersion,omitempty"`
 	// DisplayName undocumented
@@ -34,7 +34,7 @@ type WorkforceIntegrationEncryption struct {
 	// Object is the base model of WorkforceIntegrationEncryption
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Protocol undocumented
 	Protocol *WorkforceIntegrationEncryptionProtocol `json:"protocol,omitempty"`
 	// Secret undocumented

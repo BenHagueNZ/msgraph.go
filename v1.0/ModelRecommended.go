@@ -7,7 +7,7 @@ type RecommendedAction struct {
 	// Object is the base model of RecommendedAction
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActionWebURL undocumented
 	ActionWebURL *string `json:"actionWebUrl,omitempty"`
 	// PotentialScoreImpact undocumented

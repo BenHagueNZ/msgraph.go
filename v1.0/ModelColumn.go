@@ -7,7 +7,7 @@ type ColumnDefinition struct {
 	// Entity is the base model of ColumnDefinition
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Boolean undocumented
 	Boolean *BooleanColumn `json:"boolean,omitempty"`
 	// Calculated undocumented
@@ -86,7 +86,7 @@ type ColumnLink struct {
 	// Entity is the base model of ColumnLink
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 }
@@ -103,7 +103,7 @@ type ColumnValidation struct {
 	// Object is the base model of ColumnValidation
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DefaultLanguage undocumented
 	DefaultLanguage *string `json:"defaultLanguage,omitempty"`
 	// Descriptions undocumented

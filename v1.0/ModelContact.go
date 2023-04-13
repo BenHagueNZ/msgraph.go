@@ -9,7 +9,7 @@ type Contact struct {
 	// OutlookItem is the base model of Contact
 	OutlookItem
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssistantName undocumented
 	AssistantName *string `json:"assistantName,omitempty"`
 	// Birthday undocumented
@@ -98,7 +98,7 @@ type ContactFolder struct {
 	// Entity is the base model of ContactFolder
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// ParentFolderID undocumented

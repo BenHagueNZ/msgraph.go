@@ -7,7 +7,7 @@ type CommsNotification struct {
 	// Object is the base model of CommsNotification
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChangeType undocumented
 	ChangeType *ChangeType `json:"changeType,omitempty"`
 	// ResourceURL undocumented
@@ -26,7 +26,7 @@ type CommsNotifications struct {
 	// Object is the base model of CommsNotifications
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Value undocumented
 	Value []CommsNotification `json:"value,omitempty"`
 }
@@ -43,7 +43,7 @@ type CommsOperation struct {
 	// Entity is the base model of CommsOperation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ClientContext undocumented
 	ClientContext *string `json:"clientContext,omitempty"`
 	// ResultInfo undocumented

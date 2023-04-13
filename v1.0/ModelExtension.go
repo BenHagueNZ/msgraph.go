@@ -7,7 +7,7 @@ type Extension struct {
 	// Entity is the base model of Extension
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewExtension() (*Extension, error) {
@@ -22,7 +22,7 @@ type ExtensionProperty struct {
 	// DirectoryObject is the base model of ExtensionProperty
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppDisplayName undocumented
 	AppDisplayName *string `json:"appDisplayName,omitempty"`
 	// DataType undocumented
@@ -47,7 +47,7 @@ type ExtensionSchemaProperty struct {
 	// Object is the base model of ExtensionSchemaProperty
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Type undocumented

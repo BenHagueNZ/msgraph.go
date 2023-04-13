@@ -7,7 +7,7 @@ type Identity struct {
 	// Object is the base model of Identity
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// ID undocumented
@@ -26,7 +26,7 @@ type IdentityAPIConnector struct {
 	// Entity is the base model of IdentityAPIConnector
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AuthenticationConfiguration undocumented
 	AuthenticationConfiguration *APIAuthenticationConfigurationBase `json:"authenticationConfiguration,omitempty"`
 	// DisplayName undocumented
@@ -47,7 +47,7 @@ type IdentityBuiltInUserFlowAttribute struct {
 	// IdentityUserFlowAttribute is the base model of IdentityBuiltInUserFlowAttribute
 	IdentityUserFlowAttribute
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewIdentityBuiltInUserFlowAttribute() (*IdentityBuiltInUserFlowAttribute, error) {
@@ -62,7 +62,7 @@ type IdentityContainer struct {
 	// Entity is the base model of IdentityContainer
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// APIConnectors undocumented
 	APIConnectors []IdentityAPIConnector `json:"apiConnectors,omitempty"`
 	// B2xUserFlows undocumented
@@ -87,7 +87,7 @@ type IdentityCustomUserFlowAttribute struct {
 	// IdentityUserFlowAttribute is the base model of IdentityCustomUserFlowAttribute
 	IdentityUserFlowAttribute
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewIdentityCustomUserFlowAttribute() (*IdentityCustomUserFlowAttribute, error) {
@@ -102,7 +102,7 @@ type IdentityGovernance struct {
 	// Object is the base model of IdentityGovernance
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccessReviews undocumented
 	AccessReviews *AccessReviewSet `json:"accessReviews,omitempty"`
 	// AppConsent undocumented
@@ -125,7 +125,7 @@ type IdentityProtectionRoot struct {
 	// Object is the base model of IdentityProtectionRoot
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RiskDetections undocumented
 	RiskDetections []RiskDetection `json:"riskDetections,omitempty"`
 	// RiskyServicePrincipals undocumented
@@ -148,7 +148,7 @@ type IdentityProvider struct {
 	// Entity is the base model of IdentityProvider
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ClientID undocumented
 	ClientID *string `json:"clientId,omitempty"`
 	// ClientSecret undocumented
@@ -171,7 +171,7 @@ type IdentityProviderBase struct {
 	// Entity is the base model of IdentityProviderBase
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 }
@@ -188,7 +188,7 @@ type IdentitySecurityDefaultsEnforcementPolicy struct {
 	// PolicyBase is the base model of IdentitySecurityDefaultsEnforcementPolicy
 	PolicyBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsEnabled undocumented
 	IsEnabled *bool `json:"isEnabled,omitempty"`
 }
@@ -205,7 +205,7 @@ type IdentitySet struct {
 	// Object is the base model of IdentitySet
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Application undocumented
 	Application *Identity `json:"application,omitempty"`
 	// Device undocumented
@@ -226,7 +226,7 @@ type IdentitySource struct {
 	// Object is the base model of IdentitySource
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewIdentitySource() (*IdentitySource, error) {
@@ -241,7 +241,7 @@ type IdentityUserFlow struct {
 	// Entity is the base model of IdentityUserFlow
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UserFlowType undocumented
 	UserFlowType *UserFlowType `json:"userFlowType,omitempty"`
 	// UserFlowTypeVersion undocumented
@@ -260,7 +260,7 @@ type IdentityUserFlowAttribute struct {
 	// Entity is the base model of IdentityUserFlowAttribute
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DataType undocumented
 	DataType *IdentityUserFlowAttributeDataType `json:"dataType,omitempty"`
 	// Description undocumented
@@ -283,7 +283,7 @@ type IdentityUserFlowAttributeAssignment struct {
 	// Entity is the base model of IdentityUserFlowAttributeAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// IsOptional undocumented

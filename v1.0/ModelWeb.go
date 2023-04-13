@@ -7,7 +7,7 @@ type WebApp struct {
 	// MobileApp is the base model of WebApp
 	MobileApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppURL undocumented
 	AppURL *string `json:"appUrl,omitempty"`
 	// UseManagedBrowser undocumented
@@ -26,7 +26,7 @@ type WebApplication struct {
 	// Object is the base model of WebApplication
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// HomePageURL undocumented
 	HomePageURL *string `json:"homePageUrl,omitempty"`
 	// ImplicitGrantSettings undocumented

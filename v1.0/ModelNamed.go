@@ -9,7 +9,7 @@ type NamedLocation struct {
 	// Entity is the base model of NamedLocation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// DisplayName undocumented

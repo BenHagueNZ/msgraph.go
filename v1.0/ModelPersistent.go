@@ -7,7 +7,7 @@ type PersistentBrowserSessionControl struct {
 	// ConditionalAccessSessionControl is the base model of PersistentBrowserSessionControl
 	ConditionalAccessSessionControl
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Mode undocumented
 	Mode *PersistentBrowserSessionMode `json:"mode,omitempty"`
 }

@@ -63,7 +63,7 @@ type EventTentativelyAcceptRequestParameter struct {
 	Comment *string `json:"Comment,omitempty"`
 }
 
-// Attachments returns request builder for Attachment collection rcn
+// Attachments returns request builder for Attachment collection
 func (b *EventRequestBuilder) Attachments() *EventAttachmentsCollectionRequestBuilder {
 	bb := &EventAttachmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/attachments"
@@ -173,7 +173,7 @@ func (b *EventRequestBuilder) Calendar() *CalendarRequestBuilder {
 	return bb
 }
 
-// Extensions returns request builder for Extension collection rcn
+// Extensions returns request builder for Extension collection
 func (b *EventRequestBuilder) Extensions() *EventExtensionsCollectionRequestBuilder {
 	bb := &EventExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensions"
@@ -276,7 +276,7 @@ func (r *EventExtensionsCollectionRequest) Add(ctx context.Context, reqObj *Exte
 	return
 }
 
-// Instances returns request builder for Event collection rcn
+// Instances returns request builder for Event collection
 func (b *EventRequestBuilder) Instances() *EventInstancesCollectionRequestBuilder {
 	bb := &EventInstancesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/instances"
@@ -379,7 +379,7 @@ func (r *EventInstancesCollectionRequest) Add(ctx context.Context, reqObj *Event
 	return
 }
 
-// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection rcn
+// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection
 func (b *EventRequestBuilder) MultiValueExtendedProperties() *EventMultiValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &EventMultiValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/multiValueExtendedProperties"
@@ -482,7 +482,7 @@ func (r *EventMultiValueExtendedPropertiesCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection rcn
+// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection
 func (b *EventRequestBuilder) SingleValueExtendedProperties() *EventSingleValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &EventSingleValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/singleValueExtendedProperties"
@@ -599,35 +599,35 @@ func (b *EventRequestBuilder) OutlookItem() *OutlookItemRequestBuilder {
 	return bb
 }
 
-// EventMessage returns request builder for EventMessage collection rcn
-func (b *MessageRequestBuilder) EventMessage() *MessageEventMessageCollectionRequestBuilder {
-	bb := &MessageEventMessageCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/EventMessage"
+// EventMessage returns request builder for EventMessage collection
+func (b *MailFolderMessagesCollectionRequestBuilder) EventMessage() *MailFolderMessagesCollectionEventMessageCollectionRequestBuilder {
+	bb := &MailFolderMessagesCollectionEventMessageCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// MessageEventMessageCollectionRequestBuilder is request builder for EventMessage collection
-type MessageEventMessageCollectionRequestBuilder struct{ BaseRequestBuilder }
+// MailFolderMessagesCollectionEventMessageCollectionRequestBuilder is request builder for EventMessage collection
+type MailFolderMessagesCollectionEventMessageCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EventMessage collection
-func (b *MessageEventMessageCollectionRequestBuilder) Request() *MessageEventMessageCollectionRequest {
-	return &MessageEventMessageCollectionRequest{
+func (b *MailFolderMessagesCollectionEventMessageCollectionRequestBuilder) Request() *MailFolderMessagesCollectionEventMessageCollectionRequest {
+	return &MailFolderMessagesCollectionEventMessageCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for EventMessage item
-func (b *MessageEventMessageCollectionRequestBuilder) ID(id string) *EventMessageRequestBuilder {
+func (b *MailFolderMessagesCollectionEventMessageCollectionRequestBuilder) ID(id string) *EventMessageRequestBuilder {
 	bb := &EventMessageRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// MessageEventMessageCollectionRequest is request for EventMessage collection
-type MessageEventMessageCollectionRequest struct{ BaseRequest }
+// MailFolderMessagesCollectionEventMessageCollectionRequest is request for EventMessage collection
+type MailFolderMessagesCollectionEventMessageCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for EventMessage collection
-func (r *MessageEventMessageCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EventMessage, error) {
+func (r *MailFolderMessagesCollectionEventMessageCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EventMessage, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -683,7 +683,7 @@ func (r *MessageEventMessageCollectionRequest) Paging(ctx context.Context, metho
 }
 
 // GetN performs GET request for EventMessage collection, max N pages
-func (r *MessageEventMessageCollectionRequest) GetN(ctx context.Context, n int) ([]EventMessage, error) {
+func (r *MailFolderMessagesCollectionEventMessageCollectionRequest) GetN(ctx context.Context, n int) ([]EventMessage, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -692,12 +692,12 @@ func (r *MessageEventMessageCollectionRequest) GetN(ctx context.Context, n int) 
 }
 
 // Get performs GET request for EventMessage collection
-func (r *MessageEventMessageCollectionRequest) Get(ctx context.Context) ([]EventMessage, error) {
+func (r *MailFolderMessagesCollectionEventMessageCollectionRequest) Get(ctx context.Context) ([]EventMessage, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for EventMessage collection
-func (r *MessageEventMessageCollectionRequest) Add(ctx context.Context, reqObj *EventMessage) (resObj *EventMessage, err error) {
+func (r *MailFolderMessagesCollectionEventMessageCollectionRequest) Add(ctx context.Context, reqObj *EventMessage) (resObj *EventMessage, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

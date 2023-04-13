@@ -7,7 +7,7 @@ type ClientCertificateAuthentication struct {
 	// APIAuthenticationConfigurationBase is the base model of ClientCertificateAuthentication
 	APIAuthenticationConfigurationBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CertificateList undocumented
 	CertificateList []Pkcs12CertificateInformation `json:"certificateList,omitempty"`
 }

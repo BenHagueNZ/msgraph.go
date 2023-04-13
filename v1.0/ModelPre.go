@@ -7,7 +7,7 @@ type PreAuthorizedApplication struct {
 	// Object is the base model of PreAuthorizedApplication
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
 	// DelegatedPermissionIDs undocumented

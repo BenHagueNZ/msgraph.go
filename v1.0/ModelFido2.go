@@ -9,7 +9,7 @@ type Fido2AuthenticationMethod struct {
 	// AuthenticationMethod is the base model of Fido2AuthenticationMethod
 	AuthenticationMethod
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AaGUID undocumented
 	AaGUID *string `json:"aaGuid,omitempty"`
 	// AttestationCertificates undocumented
@@ -36,7 +36,7 @@ type Fido2AuthenticationMethodConfiguration struct {
 	// AuthenticationMethodConfiguration is the base model of Fido2AuthenticationMethodConfiguration
 	AuthenticationMethodConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsAttestationEnforced undocumented
 	IsAttestationEnforced *bool `json:"isAttestationEnforced,omitempty"`
 	// IsSelfServiceRegistrationAllowed undocumented
@@ -59,7 +59,7 @@ type Fido2KeyRestrictions struct {
 	// Object is the base model of Fido2KeyRestrictions
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AaGuids undocumented
 	AaGuids []string `json:"aaGuids,omitempty"`
 	// EnforcementType undocumented

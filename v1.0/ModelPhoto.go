@@ -9,7 +9,7 @@ type Photo struct {
 	// Object is the base model of Photo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CameraMake undocumented
 	CameraMake *string `json:"cameraMake,omitempty"`
 	// CameraModel undocumented

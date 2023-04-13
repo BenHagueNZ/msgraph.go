@@ -9,7 +9,7 @@ type Compliance struct {
 	// Object is the base model of Compliance
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewCompliance() (*Compliance, error) {
@@ -24,7 +24,7 @@ type ComplianceInformation struct {
 	// Object is the base model of ComplianceInformation
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CertificationControls undocumented
 	CertificationControls []CertificationControl `json:"certificationControls,omitempty"`
 	// CertificationName undocumented
@@ -43,7 +43,7 @@ type ComplianceManagementPartner struct {
 	// Entity is the base model of ComplianceManagementPartner
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AndroidEnrollmentAssignments undocumented
 	AndroidEnrollmentAssignments []ComplianceManagementPartnerAssignment `json:"androidEnrollmentAssignments,omitempty"`
 	// AndroidOnboarded undocumented
@@ -76,7 +76,7 @@ type ComplianceManagementPartnerAssignment struct {
 	// Object is the base model of ComplianceManagementPartnerAssignment
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }

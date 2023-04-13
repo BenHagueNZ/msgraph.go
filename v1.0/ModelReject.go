@@ -7,7 +7,7 @@ type RejectJoinResponse struct {
 	// ParticipantJoiningResponse is the base model of RejectJoinResponse
 	ParticipantJoiningResponse
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Reason undocumented
 	Reason *RejectReason `json:"reason,omitempty"`
 }

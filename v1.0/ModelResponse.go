@@ -9,7 +9,7 @@ type ResponseStatus struct {
 	// Object is the base model of ResponseStatus
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Response undocumented
 	Response *ResponseType `json:"response,omitempty"`
 	// Time undocumented

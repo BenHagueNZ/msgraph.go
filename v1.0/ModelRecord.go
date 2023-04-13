@@ -7,7 +7,7 @@ type RecordOperation struct {
 	// CommsOperation is the base model of RecordOperation
 	CommsOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RecordingAccessToken undocumented
 	RecordingAccessToken *string `json:"recordingAccessToken,omitempty"`
 	// RecordingLocation undocumented

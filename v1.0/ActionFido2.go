@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// IncludeTargets returns request builder for AuthenticationMethodTarget collection rcn
+// IncludeTargets returns request builder for AuthenticationMethodTarget collection
 func (b *Fido2AuthenticationMethodConfigurationRequestBuilder) IncludeTargets() *Fido2AuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder {
 	bb := &Fido2AuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/includeTargets"
@@ -114,35 +114,35 @@ func (r *Fido2AuthenticationMethodConfigurationIncludeTargetsCollectionRequest) 
 	return
 }
 
-// Fido2AuthenticationMethod returns request builder for Fido2AuthenticationMethod collection rcn
-func (b *AuthenticationMethodRequestBuilder) Fido2AuthenticationMethod() *AuthenticationMethodFido2AuthenticationMethodCollectionRequestBuilder {
-	bb := &AuthenticationMethodFido2AuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/Fido2AuthenticationMethod"
+// Fido2AuthenticationMethod returns request builder for Fido2AuthenticationMethod collection
+func (b *AuthenticationMethodsCollectionRequestBuilder) Fido2AuthenticationMethod() *AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequestBuilder {
+	bb := &AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AuthenticationMethodFido2AuthenticationMethodCollectionRequestBuilder is request builder for Fido2AuthenticationMethod collection
-type AuthenticationMethodFido2AuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequestBuilder is request builder for Fido2AuthenticationMethod collection
+type AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Fido2AuthenticationMethod collection
-func (b *AuthenticationMethodFido2AuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodFido2AuthenticationMethodCollectionRequest {
-	return &AuthenticationMethodFido2AuthenticationMethodCollectionRequest{
+func (b *AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequest {
+	return &AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for Fido2AuthenticationMethod item
-func (b *AuthenticationMethodFido2AuthenticationMethodCollectionRequestBuilder) ID(id string) *Fido2AuthenticationMethodRequestBuilder {
+func (b *AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequestBuilder) ID(id string) *Fido2AuthenticationMethodRequestBuilder {
 	bb := &Fido2AuthenticationMethodRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AuthenticationMethodFido2AuthenticationMethodCollectionRequest is request for Fido2AuthenticationMethod collection
-type AuthenticationMethodFido2AuthenticationMethodCollectionRequest struct{ BaseRequest }
+// AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequest is request for Fido2AuthenticationMethod collection
+type AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for Fido2AuthenticationMethod collection
-func (r *AuthenticationMethodFido2AuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Fido2AuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Fido2AuthenticationMethod, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -198,7 +198,7 @@ func (r *AuthenticationMethodFido2AuthenticationMethodCollectionRequest) Paging(
 }
 
 // GetN performs GET request for Fido2AuthenticationMethod collection, max N pages
-func (r *AuthenticationMethodFido2AuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]Fido2AuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]Fido2AuthenticationMethod, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -207,45 +207,45 @@ func (r *AuthenticationMethodFido2AuthenticationMethodCollectionRequest) GetN(ct
 }
 
 // Get performs GET request for Fido2AuthenticationMethod collection
-func (r *AuthenticationMethodFido2AuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]Fido2AuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]Fido2AuthenticationMethod, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for Fido2AuthenticationMethod collection
-func (r *AuthenticationMethodFido2AuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *Fido2AuthenticationMethod) (resObj *Fido2AuthenticationMethod, err error) {
+func (r *AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *Fido2AuthenticationMethod) (resObj *Fido2AuthenticationMethod, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// Fido2AuthenticationMethodConfiguration returns request builder for Fido2AuthenticationMethodConfiguration collection rcn
-func (b *AuthenticationMethodConfigurationRequestBuilder) Fido2AuthenticationMethodConfiguration() *AuthenticationMethodConfigurationFido2AuthenticationMethodConfigurationCollectionRequestBuilder {
-	bb := &AuthenticationMethodConfigurationFido2AuthenticationMethodConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/Fido2AuthenticationMethodConfiguration"
+// Fido2AuthenticationMethodConfiguration returns request builder for Fido2AuthenticationMethodConfiguration collection
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionRequestBuilder) Fido2AuthenticationMethodConfiguration() *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequestBuilder {
+	bb := &AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AuthenticationMethodConfigurationFido2AuthenticationMethodConfigurationCollectionRequestBuilder is request builder for Fido2AuthenticationMethodConfiguration collection
-type AuthenticationMethodConfigurationFido2AuthenticationMethodConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequestBuilder is request builder for Fido2AuthenticationMethodConfiguration collection
+type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Fido2AuthenticationMethodConfiguration collection
-func (b *AuthenticationMethodConfigurationFido2AuthenticationMethodConfigurationCollectionRequestBuilder) Request() *AuthenticationMethodConfigurationFido2AuthenticationMethodConfigurationCollectionRequest {
-	return &AuthenticationMethodConfigurationFido2AuthenticationMethodConfigurationCollectionRequest{
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequestBuilder) Request() *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequest {
+	return &AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for Fido2AuthenticationMethodConfiguration item
-func (b *AuthenticationMethodConfigurationFido2AuthenticationMethodConfigurationCollectionRequestBuilder) ID(id string) *Fido2AuthenticationMethodConfigurationRequestBuilder {
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequestBuilder) ID(id string) *Fido2AuthenticationMethodConfigurationRequestBuilder {
 	bb := &Fido2AuthenticationMethodConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AuthenticationMethodConfigurationFido2AuthenticationMethodConfigurationCollectionRequest is request for Fido2AuthenticationMethodConfiguration collection
-type AuthenticationMethodConfigurationFido2AuthenticationMethodConfigurationCollectionRequest struct{ BaseRequest }
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequest is request for Fido2AuthenticationMethodConfiguration collection
+type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for Fido2AuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationFido2AuthenticationMethodConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Fido2AuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Fido2AuthenticationMethodConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -301,7 +301,7 @@ func (r *AuthenticationMethodConfigurationFido2AuthenticationMethodConfiguration
 }
 
 // GetN performs GET request for Fido2AuthenticationMethodConfiguration collection, max N pages
-func (r *AuthenticationMethodConfigurationFido2AuthenticationMethodConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]Fido2AuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]Fido2AuthenticationMethodConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -310,12 +310,12 @@ func (r *AuthenticationMethodConfigurationFido2AuthenticationMethodConfiguration
 }
 
 // Get performs GET request for Fido2AuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationFido2AuthenticationMethodConfigurationCollectionRequest) Get(ctx context.Context) ([]Fido2AuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequest) Get(ctx context.Context) ([]Fido2AuthenticationMethodConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for Fido2AuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationFido2AuthenticationMethodConfigurationCollectionRequest) Add(ctx context.Context, reqObj *Fido2AuthenticationMethodConfiguration) (resObj *Fido2AuthenticationMethodConfiguration, err error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequest) Add(ctx context.Context, reqObj *Fido2AuthenticationMethodConfiguration) (resObj *Fido2AuthenticationMethodConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

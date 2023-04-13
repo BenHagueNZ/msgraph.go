@@ -7,7 +7,7 @@ type TicketInfo struct {
 	// Object is the base model of TicketInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// TicketNumber undocumented
 	TicketNumber *string `json:"ticketNumber,omitempty"`
 	// TicketSystem undocumented

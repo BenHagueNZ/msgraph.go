@@ -7,7 +7,7 @@ type DeleteUserFromSharedAppleDeviceActionResult struct {
 	// DeviceActionResult is the base model of DeleteUserFromSharedAppleDeviceActionResult
 	DeviceActionResult
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }

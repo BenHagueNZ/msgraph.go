@@ -7,7 +7,7 @@ type FederatedIdentityCredential struct {
 	// Entity is the base model of FederatedIdentityCredential
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Audiences undocumented
 	Audiences []string `json:"audiences,omitempty"`
 	// Description undocumented

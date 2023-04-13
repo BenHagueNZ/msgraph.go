@@ -7,7 +7,7 @@ type Drive struct {
 	// BaseItem is the base model of Drive
 	BaseItem
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DriveType undocumented
 	DriveType *string `json:"driveType,omitempty"`
 	// Owner undocumented
@@ -44,7 +44,7 @@ type DriveItem struct {
 	// BaseItem is the base model of DriveItem
 	BaseItem
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Audio undocumented
 	Audio *Audio `json:"audio,omitempty"`
 	// Bundle undocumented
@@ -123,7 +123,7 @@ type DriveItemUploadableProperties struct {
 	// Object is the base model of DriveItemUploadableProperties
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// FileSize undocumented
@@ -146,7 +146,7 @@ type DriveItemVersion struct {
 	// BaseItemVersion is the base model of DriveItemVersion
 	BaseItemVersion
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *Stream `json:"content,omitempty"`
 	// Size undocumented
@@ -165,7 +165,7 @@ type DriveRecipient struct {
 	// Object is the base model of DriveRecipient
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Alias undocumented
 	Alias *string `json:"alias,omitempty"`
 	// Email undocumented

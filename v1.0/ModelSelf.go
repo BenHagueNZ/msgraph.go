@@ -9,7 +9,7 @@ type SelfServiceSignUpAuthenticationFlowConfiguration struct {
 	// Object is the base model of SelfServiceSignUpAuthenticationFlowConfiguration
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsEnabled undocumented
 	IsEnabled *bool `json:"isEnabled,omitempty"`
 }
@@ -26,7 +26,7 @@ type SelfSignedCertificate struct {
 	// Object is the base model of SelfSignedCertificate
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CustomKeyIdentifier undocumented
 	CustomKeyIdentifier *Binary `json:"customKeyIdentifier,omitempty"`
 	// DisplayName undocumented

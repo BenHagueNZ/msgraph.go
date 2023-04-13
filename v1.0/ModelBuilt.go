@@ -7,7 +7,7 @@ type BuiltInIdentityProvider struct {
 	// IdentityProviderBase is the base model of BuiltInIdentityProvider
 	IdentityProviderBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IdentityProviderType undocumented
 	IdentityProviderType *string `json:"identityProviderType,omitempty"`
 }

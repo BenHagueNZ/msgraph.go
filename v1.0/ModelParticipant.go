@@ -7,7 +7,7 @@ type Participant struct {
 	// Entity is the base model of Participant
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Info undocumented
 	Info *ParticipantInfo `json:"info,omitempty"`
 	// IsInLobby undocumented
@@ -34,7 +34,7 @@ type ParticipantInfo struct {
 	// Object is the base model of ParticipantInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CountryCode undocumented
 	CountryCode *string `json:"countryCode,omitempty"`
 	// EndpointType undocumented
@@ -61,7 +61,7 @@ type ParticipantJoiningNotification struct {
 	// Entity is the base model of ParticipantJoiningNotification
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Call undocumented
 	Call *Call `json:"call,omitempty"`
 }
@@ -78,7 +78,7 @@ type ParticipantJoiningResponse struct {
 	// Object is the base model of ParticipantJoiningResponse
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewParticipantJoiningResponse() (*ParticipantJoiningResponse, error) {
@@ -93,7 +93,7 @@ type ParticipantLeftNotification struct {
 	// Entity is the base model of ParticipantLeftNotification
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ParticipantID undocumented
 	ParticipantID *string `json:"participantId,omitempty"`
 	// Call undocumented

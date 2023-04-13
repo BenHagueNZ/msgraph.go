@@ -7,7 +7,7 @@ type BookingAppointment struct {
 	// Entity is the base model of BookingAppointment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AdditionalInformation undocumented
 	AdditionalInformation *string `json:"additionalInformation,omitempty"`
 	// AnonymousJoinWebURL undocumented
@@ -70,7 +70,7 @@ type BookingBusiness struct {
 	// Entity is the base model of BookingBusiness
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Address undocumented
 	Address *PhysicalAddress `json:"address,omitempty"`
 	// BusinessHours undocumented
@@ -121,7 +121,7 @@ type BookingCurrency struct {
 	// Entity is the base model of BookingCurrency
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Symbol undocumented
 	Symbol *string `json:"symbol,omitempty"`
 }
@@ -138,7 +138,7 @@ type BookingCustomQuestion struct {
 	// Entity is the base model of BookingCustomQuestion
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AnswerInputType undocumented
 	AnswerInputType *AnswerInputType `json:"answerInputType,omitempty"`
 	// AnswerOptions undocumented
@@ -159,7 +159,7 @@ type BookingCustomer struct {
 	// BookingCustomerBase is the base model of BookingCustomer
 	BookingCustomerBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Addresses undocumented
 	Addresses []PhysicalAddress `json:"addresses,omitempty"`
 	// DisplayName undocumented
@@ -182,7 +182,7 @@ type BookingCustomerBase struct {
 	// Entity is the base model of BookingCustomerBase
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewBookingCustomerBase() (*BookingCustomerBase, error) {
@@ -197,7 +197,7 @@ type BookingCustomerInformation struct {
 	// BookingCustomerInformationBase is the base model of BookingCustomerInformation
 	BookingCustomerInformationBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CustomerID undocumented
 	CustomerID *string `json:"customerId,omitempty"`
 	// CustomQuestionAnswers undocumented
@@ -228,7 +228,7 @@ type BookingCustomerInformationBase struct {
 	// Object is the base model of BookingCustomerInformationBase
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewBookingCustomerInformationBase() (*BookingCustomerInformationBase, error) {
@@ -243,7 +243,7 @@ type BookingQuestionAnswer struct {
 	// Object is the base model of BookingQuestionAnswer
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Answer undocumented
 	Answer *string `json:"answer,omitempty"`
 	// AnswerInputType undocumented
@@ -272,7 +272,7 @@ type BookingQuestionAssignment struct {
 	// Object is the base model of BookingQuestionAssignment
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsRequired undocumented
 	IsRequired *bool `json:"isRequired,omitempty"`
 	// QuestionID undocumented
@@ -291,7 +291,7 @@ type BookingReminder struct {
 	// Object is the base model of BookingReminder
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Message undocumented
 	Message *string `json:"message,omitempty"`
 	// Offset undocumented
@@ -312,7 +312,7 @@ type BookingSchedulingPolicy struct {
 	// Object is the base model of BookingSchedulingPolicy
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowStaffSelection undocumented
 	AllowStaffSelection *bool `json:"allowStaffSelection,omitempty"`
 	// MaximumAdvance undocumented
@@ -337,7 +337,7 @@ type BookingService struct {
 	// Entity is the base model of BookingService
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AdditionalInformation undocumented
 	AdditionalInformation *string `json:"additionalInformation,omitempty"`
 	// CustomQuestions undocumented
@@ -394,7 +394,7 @@ type BookingStaffMember struct {
 	// BookingStaffMemberBase is the base model of BookingStaffMember
 	BookingStaffMemberBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AvailabilityIsAffectedByPersonalCalendar undocumented
 	AvailabilityIsAffectedByPersonalCalendar *bool `json:"availabilityIsAffectedByPersonalCalendar,omitempty"`
 	// DisplayName undocumented
@@ -425,7 +425,7 @@ type BookingStaffMemberBase struct {
 	// Entity is the base model of BookingStaffMemberBase
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewBookingStaffMemberBase() (*BookingStaffMemberBase, error) {
@@ -440,7 +440,7 @@ type BookingWorkHours struct {
 	// Object is the base model of BookingWorkHours
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Day undocumented
 	Day *DayOfWeek `json:"day,omitempty"`
 	// TimeSlots undocumented
@@ -459,7 +459,7 @@ type BookingWorkTimeSlot struct {
 	// Object is the base model of BookingWorkTimeSlot
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EndTime undocumented
 	EndTime *TimeOfDay `json:"endTime,omitempty"`
 	// StartTime undocumented

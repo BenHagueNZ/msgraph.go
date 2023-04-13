@@ -7,7 +7,7 @@ type Site struct {
 	// BaseItem is the base model of Site
 	BaseItem
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Error undocumented
@@ -60,7 +60,7 @@ type SiteCollection struct {
 	// Object is the base model of SiteCollection
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DataLocationCode undocumented
 	DataLocationCode *string `json:"dataLocationCode,omitempty"`
 	// Hostname undocumented

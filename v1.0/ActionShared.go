@@ -18,7 +18,7 @@ func (b *SharedDriveItemRequestBuilder) DriveItem() *DriveItemRequestBuilder {
 	return bb
 }
 
-// Items returns request builder for DriveItem collection rcn
+// Items returns request builder for DriveItem collection
 func (b *SharedDriveItemRequestBuilder) Items() *SharedDriveItemItemsCollectionRequestBuilder {
 	bb := &SharedDriveItemItemsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/items"
@@ -170,7 +170,7 @@ func (b *SharedInsightRequestBuilder) Resource() *EntityRequestBuilder {
 	return bb
 }
 
-// AllowedMembers returns request builder for ConversationMember collection rcn
+// AllowedMembers returns request builder for ConversationMember collection
 func (b *SharedWithChannelTeamInfoRequestBuilder) AllowedMembers() *SharedWithChannelTeamInfoAllowedMembersCollectionRequestBuilder {
 	bb := &SharedWithChannelTeamInfoAllowedMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/allowedMembers"
@@ -273,35 +273,35 @@ func (r *SharedWithChannelTeamInfoAllowedMembersCollectionRequest) Add(ctx conte
 	return
 }
 
-// SharedDriveItem returns request builder for SharedDriveItem collection rcn
-func (b *BaseItemRequestBuilder) SharedDriveItem() *BaseItemSharedDriveItemCollectionRequestBuilder {
-	bb := &BaseItemSharedDriveItemCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SharedDriveItem"
+// SharedDriveItem returns request builder for SharedDriveItem collection
+func (b *SiteItemsCollectionRequestBuilder) SharedDriveItem() *SiteItemsCollectionSharedDriveItemCollectionRequestBuilder {
+	bb := &SiteItemsCollectionSharedDriveItemCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// BaseItemSharedDriveItemCollectionRequestBuilder is request builder for SharedDriveItem collection
-type BaseItemSharedDriveItemCollectionRequestBuilder struct{ BaseRequestBuilder }
+// SiteItemsCollectionSharedDriveItemCollectionRequestBuilder is request builder for SharedDriveItem collection
+type SiteItemsCollectionSharedDriveItemCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SharedDriveItem collection
-func (b *BaseItemSharedDriveItemCollectionRequestBuilder) Request() *BaseItemSharedDriveItemCollectionRequest {
-	return &BaseItemSharedDriveItemCollectionRequest{
+func (b *SiteItemsCollectionSharedDriveItemCollectionRequestBuilder) Request() *SiteItemsCollectionSharedDriveItemCollectionRequest {
+	return &SiteItemsCollectionSharedDriveItemCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for SharedDriveItem item
-func (b *BaseItemSharedDriveItemCollectionRequestBuilder) ID(id string) *SharedDriveItemRequestBuilder {
+func (b *SiteItemsCollectionSharedDriveItemCollectionRequestBuilder) ID(id string) *SharedDriveItemRequestBuilder {
 	bb := &SharedDriveItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// BaseItemSharedDriveItemCollectionRequest is request for SharedDriveItem collection
-type BaseItemSharedDriveItemCollectionRequest struct{ BaseRequest }
+// SiteItemsCollectionSharedDriveItemCollectionRequest is request for SharedDriveItem collection
+type SiteItemsCollectionSharedDriveItemCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for SharedDriveItem collection
-func (r *BaseItemSharedDriveItemCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SharedDriveItem, error) {
+func (r *SiteItemsCollectionSharedDriveItemCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SharedDriveItem, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -357,7 +357,7 @@ func (r *BaseItemSharedDriveItemCollectionRequest) Paging(ctx context.Context, m
 }
 
 // GetN performs GET request for SharedDriveItem collection, max N pages
-func (r *BaseItemSharedDriveItemCollectionRequest) GetN(ctx context.Context, n int) ([]SharedDriveItem, error) {
+func (r *SiteItemsCollectionSharedDriveItemCollectionRequest) GetN(ctx context.Context, n int) ([]SharedDriveItem, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -366,12 +366,12 @@ func (r *BaseItemSharedDriveItemCollectionRequest) GetN(ctx context.Context, n i
 }
 
 // Get performs GET request for SharedDriveItem collection
-func (r *BaseItemSharedDriveItemCollectionRequest) Get(ctx context.Context) ([]SharedDriveItem, error) {
+func (r *SiteItemsCollectionSharedDriveItemCollectionRequest) Get(ctx context.Context) ([]SharedDriveItem, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for SharedDriveItem collection
-func (r *BaseItemSharedDriveItemCollectionRequest) Add(ctx context.Context, reqObj *SharedDriveItem) (resObj *SharedDriveItem, err error) {
+func (r *SiteItemsCollectionSharedDriveItemCollectionRequest) Add(ctx context.Context, reqObj *SharedDriveItem) (resObj *SharedDriveItem, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -383,35 +383,35 @@ func (b *SharedInsightRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
-// SharedPCConfiguration returns request builder for SharedPCConfiguration collection rcn
-func (b *DeviceConfigurationRequestBuilder) SharedPCConfiguration() *DeviceConfigurationSharedPCConfigurationCollectionRequestBuilder {
-	bb := &DeviceConfigurationSharedPCConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SharedPCConfiguration"
+// SharedPCConfiguration returns request builder for SharedPCConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) SharedPCConfiguration() *DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequestBuilder {
+	bb := &DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DeviceConfigurationSharedPCConfigurationCollectionRequestBuilder is request builder for SharedPCConfiguration collection
-type DeviceConfigurationSharedPCConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequestBuilder is request builder for SharedPCConfiguration collection
+type DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SharedPCConfiguration collection
-func (b *DeviceConfigurationSharedPCConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationSharedPCConfigurationCollectionRequest {
-	return &DeviceConfigurationSharedPCConfigurationCollectionRequest{
+func (b *DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequestBuilder) Request() *DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequest {
+	return &DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for SharedPCConfiguration item
-func (b *DeviceConfigurationSharedPCConfigurationCollectionRequestBuilder) ID(id string) *SharedPCConfigurationRequestBuilder {
+func (b *DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequestBuilder) ID(id string) *SharedPCConfigurationRequestBuilder {
 	bb := &SharedPCConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DeviceConfigurationSharedPCConfigurationCollectionRequest is request for SharedPCConfiguration collection
-type DeviceConfigurationSharedPCConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequest is request for SharedPCConfiguration collection
+type DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for SharedPCConfiguration collection
-func (r *DeviceConfigurationSharedPCConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SharedPCConfiguration, error) {
+func (r *DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SharedPCConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -467,7 +467,7 @@ func (r *DeviceConfigurationSharedPCConfigurationCollectionRequest) Paging(ctx c
 }
 
 // GetN performs GET request for SharedPCConfiguration collection, max N pages
-func (r *DeviceConfigurationSharedPCConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]SharedPCConfiguration, error) {
+func (r *DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]SharedPCConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -476,12 +476,12 @@ func (r *DeviceConfigurationSharedPCConfigurationCollectionRequest) GetN(ctx con
 }
 
 // Get performs GET request for SharedPCConfiguration collection
-func (r *DeviceConfigurationSharedPCConfigurationCollectionRequest) Get(ctx context.Context) ([]SharedPCConfiguration, error) {
+func (r *DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequest) Get(ctx context.Context) ([]SharedPCConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for SharedPCConfiguration collection
-func (r *DeviceConfigurationSharedPCConfigurationCollectionRequest) Add(ctx context.Context, reqObj *SharedPCConfiguration) (resObj *SharedPCConfiguration, err error) {
+func (r *DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequest) Add(ctx context.Context, reqObj *SharedPCConfiguration) (resObj *SharedPCConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

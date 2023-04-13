@@ -9,7 +9,7 @@ type ImportedWindowsAutopilotDeviceIdentity struct {
 	// Entity is the base model of ImportedWindowsAutopilotDeviceIdentity
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedUserPrincipalName undocumented
 	AssignedUserPrincipalName *string `json:"assignedUserPrincipalName,omitempty"`
 	// GroupTag undocumented
@@ -38,7 +38,7 @@ type ImportedWindowsAutopilotDeviceIdentityState struct {
 	// Object is the base model of ImportedWindowsAutopilotDeviceIdentityState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeviceErrorCode undocumented
 	DeviceErrorCode *int `json:"deviceErrorCode,omitempty"`
 	// DeviceErrorName undocumented
@@ -61,7 +61,7 @@ type ImportedWindowsAutopilotDeviceIdentityUpload struct {
 	// Entity is the base model of ImportedWindowsAutopilotDeviceIdentityUpload
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTimeUtc undocumented
 	CreatedDateTimeUtc *time.Time `json:"createdDateTimeUtc,omitempty"`
 	// Status undocumented

@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AttendanceRecords returns request builder for AttendanceRecord collection rcn
+// AttendanceRecords returns request builder for AttendanceRecord collection
 func (b *MeetingAttendanceReportRequestBuilder) AttendanceRecords() *MeetingAttendanceReportAttendanceRecordsCollectionRequestBuilder {
 	bb := &MeetingAttendanceReportAttendanceRecordsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/attendanceRecords"

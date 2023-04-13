@@ -7,7 +7,7 @@ type DisplayNameLocalization struct {
 	// Object is the base model of DisplayNameLocalization
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// LanguageTag undocumented

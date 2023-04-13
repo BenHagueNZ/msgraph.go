@@ -7,7 +7,7 @@ type DetectedApp struct {
 	// Entity is the base model of DetectedApp
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeviceCount undocumented
 	DeviceCount *int `json:"deviceCount,omitempty"`
 	// DisplayName undocumented

@@ -7,7 +7,7 @@ type AlternativeSecurityID struct {
 	// Object is the base model of AlternativeSecurityID
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IdentityProvider undocumented
 	IdentityProvider *string `json:"identityProvider,omitempty"`
 	// Key undocumented

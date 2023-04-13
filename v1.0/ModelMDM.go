@@ -7,7 +7,7 @@ type MDMWindowsInformationProtectionPolicy struct {
 	// WindowsInformationProtection is the base model of MDMWindowsInformationProtectionPolicy
 	WindowsInformationProtection
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewMDMWindowsInformationProtectionPolicy() (*MDMWindowsInformationProtectionPolicy, error) {

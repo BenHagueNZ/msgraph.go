@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// ReferenceAttachment returns request builder for ReferenceAttachment collection rcn
-func (b *AttachmentRequestBuilder) ReferenceAttachment() *AttachmentReferenceAttachmentCollectionRequestBuilder {
-	bb := &AttachmentReferenceAttachmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ReferenceAttachment"
+// ReferenceAttachment returns request builder for ReferenceAttachment collection
+func (b *EventAttachmentsCollectionRequestBuilder) ReferenceAttachment() *EventAttachmentsCollectionReferenceAttachmentCollectionRequestBuilder {
+	bb := &EventAttachmentsCollectionReferenceAttachmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AttachmentReferenceAttachmentCollectionRequestBuilder is request builder for ReferenceAttachment collection
-type AttachmentReferenceAttachmentCollectionRequestBuilder struct{ BaseRequestBuilder }
+// EventAttachmentsCollectionReferenceAttachmentCollectionRequestBuilder is request builder for ReferenceAttachment collection
+type EventAttachmentsCollectionReferenceAttachmentCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ReferenceAttachment collection
-func (b *AttachmentReferenceAttachmentCollectionRequestBuilder) Request() *AttachmentReferenceAttachmentCollectionRequest {
-	return &AttachmentReferenceAttachmentCollectionRequest{
+func (b *EventAttachmentsCollectionReferenceAttachmentCollectionRequestBuilder) Request() *EventAttachmentsCollectionReferenceAttachmentCollectionRequest {
+	return &EventAttachmentsCollectionReferenceAttachmentCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for ReferenceAttachment item
-func (b *AttachmentReferenceAttachmentCollectionRequestBuilder) ID(id string) *ReferenceAttachmentRequestBuilder {
+func (b *EventAttachmentsCollectionReferenceAttachmentCollectionRequestBuilder) ID(id string) *ReferenceAttachmentRequestBuilder {
 	bb := &ReferenceAttachmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AttachmentReferenceAttachmentCollectionRequest is request for ReferenceAttachment collection
-type AttachmentReferenceAttachmentCollectionRequest struct{ BaseRequest }
+// EventAttachmentsCollectionReferenceAttachmentCollectionRequest is request for ReferenceAttachment collection
+type EventAttachmentsCollectionReferenceAttachmentCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for ReferenceAttachment collection
-func (r *AttachmentReferenceAttachmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ReferenceAttachment, error) {
+func (r *EventAttachmentsCollectionReferenceAttachmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ReferenceAttachment, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *AttachmentReferenceAttachmentCollectionRequest) Paging(ctx context.Cont
 }
 
 // GetN performs GET request for ReferenceAttachment collection, max N pages
-func (r *AttachmentReferenceAttachmentCollectionRequest) GetN(ctx context.Context, n int) ([]ReferenceAttachment, error) {
+func (r *EventAttachmentsCollectionReferenceAttachmentCollectionRequest) GetN(ctx context.Context, n int) ([]ReferenceAttachment, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *AttachmentReferenceAttachmentCollectionRequest) GetN(ctx context.Contex
 }
 
 // Get performs GET request for ReferenceAttachment collection
-func (r *AttachmentReferenceAttachmentCollectionRequest) Get(ctx context.Context) ([]ReferenceAttachment, error) {
+func (r *EventAttachmentsCollectionReferenceAttachmentCollectionRequest) Get(ctx context.Context) ([]ReferenceAttachment, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for ReferenceAttachment collection
-func (r *AttachmentReferenceAttachmentCollectionRequest) Add(ctx context.Context, reqObj *ReferenceAttachment) (resObj *ReferenceAttachment, err error) {
+func (r *EventAttachmentsCollectionReferenceAttachmentCollectionRequest) Add(ctx context.Context, reqObj *ReferenceAttachment) (resObj *ReferenceAttachment, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

@@ -7,7 +7,7 @@ type IosiPadOSWebClip struct {
 	// MobileApp is the base model of IosiPadOSWebClip
 	MobileApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppURL undocumented
 	AppURL *string `json:"appUrl,omitempty"`
 	// UseManagedBrowser undocumented

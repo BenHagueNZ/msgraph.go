@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Alerts returns request builder for Alert collection rcn
+// Alerts returns request builder for Alert collection
 func (b *SecurityRequestBuilder) Alerts() *SecurityAlertsCollectionRequestBuilder {
 	bb := &SecurityAlertsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/alerts"
@@ -114,7 +114,7 @@ func (r *SecurityAlertsCollectionRequest) Add(ctx context.Context, reqObj *Alert
 	return
 }
 
-// Alerts_v2 returns request builder for SecurityAlert collection rcn
+// Alerts_v2 returns request builder for SecurityAlert collection
 func (b *SecurityRequestBuilder) Alerts_v2() *SecurityAlerts_v2CollectionRequestBuilder {
 	bb := &SecurityAlerts_v2CollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/alerts_v2"
@@ -231,7 +231,7 @@ func (b *SecurityRequestBuilder) Cases() *SecurityCasesRootRequestBuilder {
 	return bb
 }
 
-// Incidents returns request builder for SecurityIncident collection rcn
+// Incidents returns request builder for SecurityIncident collection
 func (b *SecurityRequestBuilder) Incidents() *SecurityIncidentsCollectionRequestBuilder {
 	bb := &SecurityIncidentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/incidents"
@@ -334,7 +334,7 @@ func (r *SecurityIncidentsCollectionRequest) Add(ctx context.Context, reqObj *Se
 	return
 }
 
-// SecureScoreControlProfiles returns request builder for SecureScoreControlProfile collection rcn
+// SecureScoreControlProfiles returns request builder for SecureScoreControlProfile collection
 func (b *SecurityRequestBuilder) SecureScoreControlProfiles() *SecuritySecureScoreControlProfilesCollectionRequestBuilder {
 	bb := &SecuritySecureScoreControlProfilesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/secureScoreControlProfiles"
@@ -437,7 +437,7 @@ func (r *SecuritySecureScoreControlProfilesCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// SecureScores returns request builder for SecureScore collection rcn
+// SecureScores returns request builder for SecureScore collection
 func (b *SecurityRequestBuilder) SecureScores() *SecuritySecureScoresCollectionRequestBuilder {
 	bb := &SecuritySecureScoresCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/secureScores"
@@ -660,7 +660,7 @@ type SecurityEdiscoverySearchSecurityPurgeDataRequestParameter struct {
 	PurgeAreas *SecurityPurgeAreas `json:"purgeAreas,omitempty"`
 }
 
-// EdiscoveryCases returns request builder for SecurityEdiscoveryCase collection rcn
+// EdiscoveryCases returns request builder for SecurityEdiscoveryCase collection
 func (b *SecurityCasesRootRequestBuilder) EdiscoveryCases() *SecurityCasesRootEdiscoveryCasesCollectionRequestBuilder {
 	bb := &SecurityCasesRootEdiscoveryCasesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/ediscoveryCases"
@@ -777,7 +777,7 @@ func (b *SecurityEdiscoveryAddToReviewSetOperationRequestBuilder) Search() *Secu
 	return bb
 }
 
-// Custodians returns request builder for SecurityEdiscoveryCustodian collection rcn
+// Custodians returns request builder for SecurityEdiscoveryCustodian collection
 func (b *SecurityEdiscoveryCaseRequestBuilder) Custodians() *SecurityEdiscoveryCaseCustodiansCollectionRequestBuilder {
 	bb := &SecurityEdiscoveryCaseCustodiansCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/custodians"
@@ -880,7 +880,7 @@ func (r *SecurityEdiscoveryCaseCustodiansCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// NoncustodialDataSources returns request builder for SecurityEdiscoveryNoncustodialDataSource collection rcn
+// NoncustodialDataSources returns request builder for SecurityEdiscoveryNoncustodialDataSource collection
 func (b *SecurityEdiscoveryCaseRequestBuilder) NoncustodialDataSources() *SecurityEdiscoveryCaseNoncustodialDataSourcesCollectionRequestBuilder {
 	bb := &SecurityEdiscoveryCaseNoncustodialDataSourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/noncustodialDataSources"
@@ -983,7 +983,7 @@ func (r *SecurityEdiscoveryCaseNoncustodialDataSourcesCollectionRequest) Add(ctx
 	return
 }
 
-// Operations returns request builder for SecurityCaseOperation collection rcn
+// Operations returns request builder for SecurityCaseOperation collection
 func (b *SecurityEdiscoveryCaseRequestBuilder) Operations() *SecurityEdiscoveryCaseOperationsCollectionRequestBuilder {
 	bb := &SecurityEdiscoveryCaseOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -1086,7 +1086,7 @@ func (r *SecurityEdiscoveryCaseOperationsCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// ReviewSets returns request builder for SecurityEdiscoveryReviewSet collection rcn
+// ReviewSets returns request builder for SecurityEdiscoveryReviewSet collection
 func (b *SecurityEdiscoveryCaseRequestBuilder) ReviewSets() *SecurityEdiscoveryCaseReviewSetsCollectionRequestBuilder {
 	bb := &SecurityEdiscoveryCaseReviewSetsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/reviewSets"
@@ -1189,7 +1189,7 @@ func (r *SecurityEdiscoveryCaseReviewSetsCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// Searches returns request builder for SecurityEdiscoverySearch collection rcn
+// Searches returns request builder for SecurityEdiscoverySearch collection
 func (b *SecurityEdiscoveryCaseRequestBuilder) Searches() *SecurityEdiscoveryCaseSearchesCollectionRequestBuilder {
 	bb := &SecurityEdiscoveryCaseSearchesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/searches"
@@ -1299,7 +1299,7 @@ func (b *SecurityEdiscoveryCaseRequestBuilder) Settings() *SecurityEdiscoveryCas
 	return bb
 }
 
-// Tags returns request builder for SecurityEdiscoveryReviewTag collection rcn
+// Tags returns request builder for SecurityEdiscoveryReviewTag collection
 func (b *SecurityEdiscoveryCaseRequestBuilder) Tags() *SecurityEdiscoveryCaseTagsCollectionRequestBuilder {
 	bb := &SecurityEdiscoveryCaseTagsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tags"
@@ -1409,7 +1409,7 @@ func (b *SecurityEdiscoveryCustodianRequestBuilder) LastIndexOperation() *Securi
 	return bb
 }
 
-// SiteSources returns request builder for SecuritySiteSource collection rcn
+// SiteSources returns request builder for SecuritySiteSource collection
 func (b *SecurityEdiscoveryCustodianRequestBuilder) SiteSources() *SecurityEdiscoveryCustodianSiteSourcesCollectionRequestBuilder {
 	bb := &SecurityEdiscoveryCustodianSiteSourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/siteSources"
@@ -1512,7 +1512,7 @@ func (r *SecurityEdiscoveryCustodianSiteSourcesCollectionRequest) Add(ctx contex
 	return
 }
 
-// UnifiedGroupSources returns request builder for SecurityUnifiedGroupSource collection rcn
+// UnifiedGroupSources returns request builder for SecurityUnifiedGroupSource collection
 func (b *SecurityEdiscoveryCustodianRequestBuilder) UnifiedGroupSources() *SecurityEdiscoveryCustodianUnifiedGroupSourcesCollectionRequestBuilder {
 	bb := &SecurityEdiscoveryCustodianUnifiedGroupSourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/unifiedGroupSources"
@@ -1615,7 +1615,7 @@ func (r *SecurityEdiscoveryCustodianUnifiedGroupSourcesCollectionRequest) Add(ct
 	return
 }
 
-// UserSources returns request builder for SecurityUserSource collection rcn
+// UserSources returns request builder for SecurityUserSource collection
 func (b *SecurityEdiscoveryCustodianRequestBuilder) UserSources() *SecurityEdiscoveryCustodianUserSourcesCollectionRequestBuilder {
 	bb := &SecurityEdiscoveryCustodianUserSourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/userSources"
@@ -1739,7 +1739,7 @@ func (b *SecurityEdiscoveryNoncustodialDataSourceRequestBuilder) LastIndexOperat
 	return bb
 }
 
-// Queries returns request builder for SecurityEdiscoveryReviewSetQuery collection rcn
+// Queries returns request builder for SecurityEdiscoveryReviewSetQuery collection
 func (b *SecurityEdiscoveryReviewSetRequestBuilder) Queries() *SecurityEdiscoveryReviewSetQueriesCollectionRequestBuilder {
 	bb := &SecurityEdiscoveryReviewSetQueriesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/queries"
@@ -1842,7 +1842,7 @@ func (r *SecurityEdiscoveryReviewSetQueriesCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// ChildTags returns request builder for SecurityEdiscoveryReviewTag collection rcn
+// ChildTags returns request builder for SecurityEdiscoveryReviewTag collection
 func (b *SecurityEdiscoveryReviewTagRequestBuilder) ChildTags() *SecurityEdiscoveryReviewTagChildTagsCollectionRequestBuilder {
 	bb := &SecurityEdiscoveryReviewTagChildTagsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/childTags"
@@ -1959,7 +1959,7 @@ func (b *SecurityEdiscoverySearchRequestBuilder) AddToReviewSetOperation() *Secu
 	return bb
 }
 
-// AdditionalSources returns request builder for SecurityDataSource collection rcn
+// AdditionalSources returns request builder for SecurityDataSource collection
 func (b *SecurityEdiscoverySearchRequestBuilder) AdditionalSources() *SecurityEdiscoverySearchAdditionalSourcesCollectionRequestBuilder {
 	bb := &SecurityEdiscoverySearchAdditionalSourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/additionalSources"
@@ -2062,7 +2062,7 @@ func (r *SecurityEdiscoverySearchAdditionalSourcesCollectionRequest) Add(ctx con
 	return
 }
 
-// CustodianSources returns request builder for SecurityDataSource collection rcn
+// CustodianSources returns request builder for SecurityDataSource collection
 func (b *SecurityEdiscoverySearchRequestBuilder) CustodianSources() *SecurityEdiscoverySearchCustodianSourcesCollectionRequestBuilder {
 	bb := &SecurityEdiscoverySearchCustodianSourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/custodianSources"
@@ -2172,7 +2172,7 @@ func (b *SecurityEdiscoverySearchRequestBuilder) LastEstimateStatisticsOperation
 	return bb
 }
 
-// NoncustodialSources returns request builder for SecurityEdiscoveryNoncustodialDataSource collection rcn
+// NoncustodialSources returns request builder for SecurityEdiscoveryNoncustodialDataSource collection
 func (b *SecurityEdiscoverySearchRequestBuilder) NoncustodialSources() *SecurityEdiscoverySearchNoncustodialSourcesCollectionRequestBuilder {
 	bb := &SecurityEdiscoverySearchNoncustodialSourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/noncustodialSources"
@@ -2275,7 +2275,7 @@ func (r *SecurityEdiscoverySearchNoncustodialSourcesCollectionRequest) Add(ctx c
 	return
 }
 
-// Alerts returns request builder for SecurityAlert collection rcn
+// Alerts returns request builder for SecurityAlert collection
 func (b *SecurityIncidentRequestBuilder) Alerts() *SecurityIncidentAlertsCollectionRequestBuilder {
 	bb := &SecurityIncidentAlertsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/alerts"
@@ -2392,10 +2392,10 @@ func (b *SecurityUnifiedGroupSourceRequestBuilder) Group() *GroupRequestBuilder 
 	return bb
 }
 
-// SecurityEdiscoveryAddToReviewSetOperation returns request builder for SecurityEdiscoveryAddToReviewSetOperation collection rcn
+// SecurityEdiscoveryAddToReviewSetOperation returns request builder for SecurityEdiscoveryAddToReviewSetOperation collection
 func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryAddToReviewSetOperation() *SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder {
 	bb := &SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityEdiscoveryAddToReviewSetOperation"
+	bb.baseURL += "/"
 	return bb
 }
 
@@ -2495,10 +2495,10 @@ func (r *SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectio
 	return
 }
 
-// SecurityEdiscoveryEstimateOperation returns request builder for SecurityEdiscoveryEstimateOperation collection rcn
+// SecurityEdiscoveryEstimateOperation returns request builder for SecurityEdiscoveryEstimateOperation collection
 func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryEstimateOperation() *SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder {
 	bb := &SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityEdiscoveryEstimateOperation"
+	bb.baseURL += "/"
 	return bb
 }
 
@@ -2598,10 +2598,10 @@ func (r *SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionReque
 	return
 }
 
-// SecurityEdiscoveryHoldOperation returns request builder for SecurityEdiscoveryHoldOperation collection rcn
+// SecurityEdiscoveryHoldOperation returns request builder for SecurityEdiscoveryHoldOperation collection
 func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryHoldOperation() *SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder {
 	bb := &SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityEdiscoveryHoldOperation"
+	bb.baseURL += "/"
 	return bb
 }
 
@@ -2701,10 +2701,10 @@ func (r *SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequest) 
 	return
 }
 
-// SecurityEdiscoveryIndexOperation returns request builder for SecurityEdiscoveryIndexOperation collection rcn
+// SecurityEdiscoveryIndexOperation returns request builder for SecurityEdiscoveryIndexOperation collection
 func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryIndexOperation() *SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder {
 	bb := &SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityEdiscoveryIndexOperation"
+	bb.baseURL += "/"
 	return bb
 }
 
@@ -2804,10 +2804,10 @@ func (r *SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequest)
 	return
 }
 
-// SecurityEdiscoveryPurgeDataOperation returns request builder for SecurityEdiscoveryPurgeDataOperation collection rcn
+// SecurityEdiscoveryPurgeDataOperation returns request builder for SecurityEdiscoveryPurgeDataOperation collection
 func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryPurgeDataOperation() *SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder {
 	bb := &SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityEdiscoveryPurgeDataOperation"
+	bb.baseURL += "/"
 	return bb
 }
 
@@ -2907,10 +2907,10 @@ func (r *SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequ
 	return
 }
 
-// SecurityEdiscoveryTagOperation returns request builder for SecurityEdiscoveryTagOperation collection rcn
+// SecurityEdiscoveryTagOperation returns request builder for SecurityEdiscoveryTagOperation collection
 func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryTagOperation() *SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder {
 	bb := &SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityEdiscoveryTagOperation"
+	bb.baseURL += "/"
 	return bb
 }
 
@@ -3010,10 +3010,10 @@ func (r *SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequest) A
 	return
 }
 
-// SecuritySiteSource returns request builder for SecuritySiteSource collection rcn
+// SecuritySiteSource returns request builder for SecuritySiteSource collection
 func (b *SecurityDataSourceRequestBuilder) SecuritySiteSource() *SecurityDataSourceSecuritySiteSourceCollectionRequestBuilder {
 	bb := &SecurityDataSourceSecuritySiteSourceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecuritySiteSource"
+	bb.baseURL += "/"
 	return bb
 }
 
@@ -3113,10 +3113,10 @@ func (r *SecurityDataSourceSecuritySiteSourceCollectionRequest) Add(ctx context.
 	return
 }
 
-// SecurityUnifiedGroupSource returns request builder for SecurityUnifiedGroupSource collection rcn
+// SecurityUnifiedGroupSource returns request builder for SecurityUnifiedGroupSource collection
 func (b *SecurityDataSourceRequestBuilder) SecurityUnifiedGroupSource() *SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequestBuilder {
 	bb := &SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityUnifiedGroupSource"
+	bb.baseURL += "/"
 	return bb
 }
 
@@ -3216,10 +3216,10 @@ func (r *SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequest) Add(ctx 
 	return
 }
 
-// SecurityUserSource returns request builder for SecurityUserSource collection rcn
+// SecurityUserSource returns request builder for SecurityUserSource collection
 func (b *SecurityDataSourceRequestBuilder) SecurityUserSource() *SecurityDataSourceSecurityUserSourceCollectionRequestBuilder {
 	bb := &SecurityDataSourceSecurityUserSourceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SecurityUserSource"
+	bb.baseURL += "/"
 	return bb
 }
 

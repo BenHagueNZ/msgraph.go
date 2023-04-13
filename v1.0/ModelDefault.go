@@ -7,7 +7,7 @@ type DefaultColumnValue struct {
 	// Object is the base model of DefaultColumnValue
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Formula undocumented
 	Formula *string `json:"formula,omitempty"`
 	// Value undocumented
@@ -26,7 +26,7 @@ type DefaultManagedAppProtection struct {
 	// ManagedAppProtection is the base model of DefaultManagedAppProtection
 	ManagedAppProtection
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppDataEncryptionType undocumented
 	AppDataEncryptionType *ManagedAppDataEncryptionType `json:"appDataEncryptionType,omitempty"`
 	// CustomSettings undocumented
@@ -65,7 +65,7 @@ type DefaultUserRolePermissions struct {
 	// Object is the base model of DefaultUserRolePermissions
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowedToCreateApps undocumented
 	AllowedToCreateApps *bool `json:"allowedToCreateApps,omitempty"`
 	// AllowedToCreateSecurityGroups undocumented

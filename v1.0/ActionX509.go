@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// IncludeTargets returns request builder for AuthenticationMethodTarget collection rcn
+// IncludeTargets returns request builder for AuthenticationMethodTarget collection
 func (b *X509CertificateAuthenticationMethodConfigurationRequestBuilder) IncludeTargets() *X509CertificateAuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder {
 	bb := &X509CertificateAuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/includeTargets"
@@ -114,35 +114,35 @@ func (r *X509CertificateAuthenticationMethodConfigurationIncludeTargetsCollectio
 	return
 }
 
-// X509CertificateAuthenticationMethodConfiguration returns request builder for X509CertificateAuthenticationMethodConfiguration collection rcn
-func (b *AuthenticationMethodConfigurationRequestBuilder) X509CertificateAuthenticationMethodConfiguration() *AuthenticationMethodConfigurationX509CertificateAuthenticationMethodConfigurationCollectionRequestBuilder {
-	bb := &AuthenticationMethodConfigurationX509CertificateAuthenticationMethodConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/X509CertificateAuthenticationMethodConfiguration"
+// X509CertificateAuthenticationMethodConfiguration returns request builder for X509CertificateAuthenticationMethodConfiguration collection
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionRequestBuilder) X509CertificateAuthenticationMethodConfiguration() *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionX509CertificateAuthenticationMethodConfigurationCollectionRequestBuilder {
+	bb := &AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionX509CertificateAuthenticationMethodConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AuthenticationMethodConfigurationX509CertificateAuthenticationMethodConfigurationCollectionRequestBuilder is request builder for X509CertificateAuthenticationMethodConfiguration collection
-type AuthenticationMethodConfigurationX509CertificateAuthenticationMethodConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionX509CertificateAuthenticationMethodConfigurationCollectionRequestBuilder is request builder for X509CertificateAuthenticationMethodConfiguration collection
+type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionX509CertificateAuthenticationMethodConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for X509CertificateAuthenticationMethodConfiguration collection
-func (b *AuthenticationMethodConfigurationX509CertificateAuthenticationMethodConfigurationCollectionRequestBuilder) Request() *AuthenticationMethodConfigurationX509CertificateAuthenticationMethodConfigurationCollectionRequest {
-	return &AuthenticationMethodConfigurationX509CertificateAuthenticationMethodConfigurationCollectionRequest{
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionX509CertificateAuthenticationMethodConfigurationCollectionRequestBuilder) Request() *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionX509CertificateAuthenticationMethodConfigurationCollectionRequest {
+	return &AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionX509CertificateAuthenticationMethodConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for X509CertificateAuthenticationMethodConfiguration item
-func (b *AuthenticationMethodConfigurationX509CertificateAuthenticationMethodConfigurationCollectionRequestBuilder) ID(id string) *X509CertificateAuthenticationMethodConfigurationRequestBuilder {
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionX509CertificateAuthenticationMethodConfigurationCollectionRequestBuilder) ID(id string) *X509CertificateAuthenticationMethodConfigurationRequestBuilder {
 	bb := &X509CertificateAuthenticationMethodConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AuthenticationMethodConfigurationX509CertificateAuthenticationMethodConfigurationCollectionRequest is request for X509CertificateAuthenticationMethodConfiguration collection
-type AuthenticationMethodConfigurationX509CertificateAuthenticationMethodConfigurationCollectionRequest struct{ BaseRequest }
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionX509CertificateAuthenticationMethodConfigurationCollectionRequest is request for X509CertificateAuthenticationMethodConfiguration collection
+type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionX509CertificateAuthenticationMethodConfigurationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for X509CertificateAuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationX509CertificateAuthenticationMethodConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]X509CertificateAuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionX509CertificateAuthenticationMethodConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]X509CertificateAuthenticationMethodConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -198,7 +198,7 @@ func (r *AuthenticationMethodConfigurationX509CertificateAuthenticationMethodCon
 }
 
 // GetN performs GET request for X509CertificateAuthenticationMethodConfiguration collection, max N pages
-func (r *AuthenticationMethodConfigurationX509CertificateAuthenticationMethodConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]X509CertificateAuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionX509CertificateAuthenticationMethodConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]X509CertificateAuthenticationMethodConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -207,12 +207,12 @@ func (r *AuthenticationMethodConfigurationX509CertificateAuthenticationMethodCon
 }
 
 // Get performs GET request for X509CertificateAuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationX509CertificateAuthenticationMethodConfigurationCollectionRequest) Get(ctx context.Context) ([]X509CertificateAuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionX509CertificateAuthenticationMethodConfigurationCollectionRequest) Get(ctx context.Context) ([]X509CertificateAuthenticationMethodConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for X509CertificateAuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationX509CertificateAuthenticationMethodConfigurationCollectionRequest) Add(ctx context.Context, reqObj *X509CertificateAuthenticationMethodConfiguration) (resObj *X509CertificateAuthenticationMethodConfiguration, err error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionX509CertificateAuthenticationMethodConfigurationCollectionRequest) Add(ctx context.Context, reqObj *X509CertificateAuthenticationMethodConfiguration) (resObj *X509CertificateAuthenticationMethodConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

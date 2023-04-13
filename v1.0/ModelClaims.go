@@ -7,7 +7,7 @@ type ClaimsMappingPolicy struct {
 	// StsPolicy is the base model of ClaimsMappingPolicy
 	StsPolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewClaimsMappingPolicy() (*ClaimsMappingPolicy, error) {

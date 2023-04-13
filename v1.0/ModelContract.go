@@ -7,7 +7,7 @@ type Contract struct {
 	// DirectoryObject is the base model of Contract
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContractType undocumented
 	ContractType *string `json:"contractType,omitempty"`
 	// CustomerID undocumented

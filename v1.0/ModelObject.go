@@ -7,7 +7,7 @@ type ObjectIdentity struct {
 	// Object is the base model of ObjectIdentity
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Issuer undocumented
 	Issuer *string `json:"issuer,omitempty"`
 	// IssuerAssignedID undocumented

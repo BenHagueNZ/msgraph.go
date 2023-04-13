@@ -7,7 +7,7 @@ type Teamwork struct {
 	// Entity is the base model of Teamwork
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// WorkforceIntegrations undocumented
 	WorkforceIntegrations []WorkforceIntegration `json:"workforceIntegrations,omitempty"`
 	// DeletedTeams undocumented
@@ -26,7 +26,7 @@ type TeamworkActivityTopic struct {
 	// Object is the base model of TeamworkActivityTopic
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Source undocumented
 	Source *TeamworkActivityTopicSource `json:"source,omitempty"`
 	// Value undocumented
@@ -47,7 +47,7 @@ type TeamworkApplicationIdentity struct {
 	// Identity is the base model of TeamworkApplicationIdentity
 	Identity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicationIdentityType undocumented
 	ApplicationIdentityType *TeamworkApplicationIdentityType `json:"applicationIdentityType,omitempty"`
 }
@@ -64,7 +64,7 @@ type TeamworkBot struct {
 	// Entity is the base model of TeamworkBot
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewTeamworkBot() (*TeamworkBot, error) {
@@ -79,7 +79,7 @@ type TeamworkConversationIdentity struct {
 	// Identity is the base model of TeamworkConversationIdentity
 	Identity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConversationIdentityType undocumented
 	ConversationIdentityType *TeamworkConversationIdentityType `json:"conversationIdentityType,omitempty"`
 }
@@ -96,7 +96,7 @@ type TeamworkHostedContent struct {
 	// Entity is the base model of TeamworkHostedContent
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentBytes undocumented
 	ContentBytes *Binary `json:"contentBytes,omitempty"`
 	// ContentType undocumented
@@ -115,7 +115,7 @@ type TeamworkNotificationRecipient struct {
 	// Object is the base model of TeamworkNotificationRecipient
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewTeamworkNotificationRecipient() (*TeamworkNotificationRecipient, error) {
@@ -130,7 +130,7 @@ type TeamworkOnlineMeetingInfo struct {
 	// Object is the base model of TeamworkOnlineMeetingInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CalendarEventID undocumented
 	CalendarEventID *string `json:"calendarEventId,omitempty"`
 	// JoinWebURL undocumented
@@ -151,7 +151,7 @@ type TeamworkTag struct {
 	// Entity is the base model of TeamworkTag
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -178,7 +178,7 @@ type TeamworkTagIdentity struct {
 	// Identity is the base model of TeamworkTagIdentity
 	Identity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewTeamworkTagIdentity() (*TeamworkTagIdentity, error) {
@@ -193,7 +193,7 @@ type TeamworkTagMember struct {
 	// Entity is the base model of TeamworkTagMember
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// TenantID undocumented
@@ -214,7 +214,7 @@ type TeamworkUserIdentity struct {
 	// Identity is the base model of TeamworkUserIdentity
 	Identity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UserIdentityType undocumented
 	UserIdentityType *TeamworkUserIdentityType `json:"userIdentityType,omitempty"`
 }

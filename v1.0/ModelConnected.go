@@ -9,7 +9,7 @@ type ConnectedOrganization struct {
 	// Entity is the base model of ConnectedOrganization
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -40,7 +40,7 @@ type ConnectedOrganizationMembers struct {
 	// SubjectSet is the base model of ConnectedOrganizationMembers
 	SubjectSet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConnectedOrganizationID undocumented
 	ConnectedOrganizationID *string `json:"connectedOrganizationId,omitempty"`
 	// Description undocumented

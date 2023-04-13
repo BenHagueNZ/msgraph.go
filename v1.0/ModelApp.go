@@ -9,7 +9,7 @@ type AppCatalogs struct {
 	// Entity is the base model of AppCatalogs
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// TeamsApps undocumented
 	TeamsApps []TeamsApp `json:"teamsApps,omitempty"`
 }
@@ -26,7 +26,7 @@ type AppConfigurationSettingItem struct {
 	// Object is the base model of AppConfigurationSettingItem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppConfigKey undocumented
 	AppConfigKey *string `json:"appConfigKey,omitempty"`
 	// AppConfigKeyType undocumented
@@ -47,7 +47,7 @@ type AppConsentApprovalRoute struct {
 	// Entity is the base model of AppConsentApprovalRoute
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppConsentRequests undocumented
 	AppConsentRequests []AppConsentRequestObject `json:"appConsentRequests,omitempty"`
 }
@@ -64,7 +64,7 @@ type AppConsentRequestObject struct {
 	// Entity is the base model of AppConsentRequestObject
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppDisplayName undocumented
 	AppDisplayName *string `json:"appDisplayName,omitempty"`
 	// AppID undocumented
@@ -87,7 +87,7 @@ type AppConsentRequestScope struct {
 	// Object is the base model of AppConsentRequestScope
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 }
@@ -104,7 +104,7 @@ type AppHostedMediaConfig struct {
 	// MediaConfig is the base model of AppHostedMediaConfig
 	MediaConfig
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Blob undocumented
 	Blob *string `json:"blob,omitempty"`
 }
@@ -121,7 +121,7 @@ type AppIdentity struct {
 	// Object is the base model of AppIdentity
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
 	// DisplayName undocumented
@@ -144,7 +144,7 @@ type AppListItem struct {
 	// Object is the base model of AppListItem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
 	// AppStoreURL undocumented
@@ -167,7 +167,7 @@ type AppManagementConfiguration struct {
 	// Object is the base model of AppManagementConfiguration
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// KeyCredentials undocumented
 	KeyCredentials []KeyCredentialConfiguration `json:"keyCredentials,omitempty"`
 	// PasswordCredentials undocumented
@@ -186,7 +186,7 @@ type AppManagementPolicy struct {
 	// PolicyBase is the base model of AppManagementPolicy
 	PolicyBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsEnabled undocumented
 	IsEnabled *bool `json:"isEnabled,omitempty"`
 	// Restrictions undocumented
@@ -207,7 +207,7 @@ type AppRole struct {
 	// Object is the base model of AppRole
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowedMemberTypes undocumented
 	AllowedMemberTypes []string `json:"allowedMemberTypes,omitempty"`
 	// Description undocumented
@@ -236,7 +236,7 @@ type AppRoleAssignment struct {
 	// DirectoryObject is the base model of AppRoleAssignment
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppRoleID undocumented
 	AppRoleID *UUID `json:"appRoleId,omitempty"`
 	// CreatedDateTime undocumented
@@ -265,7 +265,7 @@ type AppScope struct {
 	// Entity is the base model of AppScope
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Type undocumented

@@ -7,7 +7,7 @@ type EnrollmentConfigurationAssignment struct {
 	// Entity is the base model of EnrollmentConfigurationAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
@@ -24,7 +24,7 @@ type EnrollmentTroubleshootingEvent struct {
 	// DeviceManagementTroubleshootingEvent is the base model of EnrollmentTroubleshootingEvent
 	DeviceManagementTroubleshootingEvent
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeviceID undocumented
 	DeviceID *string `json:"deviceId,omitempty"`
 	// EnrollmentType undocumented

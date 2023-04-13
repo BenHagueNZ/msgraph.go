@@ -19,35 +19,35 @@ type PhoneAuthenticationMethodDisableSmsSignInRequestParameter struct {
 type PhoneAuthenticationMethodEnableSmsSignInRequestParameter struct {
 }
 
-// PhoneAuthenticationMethod returns request builder for PhoneAuthenticationMethod collection rcn
-func (b *AuthenticationMethodRequestBuilder) PhoneAuthenticationMethod() *AuthenticationMethodPhoneAuthenticationMethodCollectionRequestBuilder {
-	bb := &AuthenticationMethodPhoneAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/PhoneAuthenticationMethod"
+// PhoneAuthenticationMethod returns request builder for PhoneAuthenticationMethod collection
+func (b *AuthenticationMethodsCollectionRequestBuilder) PhoneAuthenticationMethod() *AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequestBuilder {
+	bb := &AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AuthenticationMethodPhoneAuthenticationMethodCollectionRequestBuilder is request builder for PhoneAuthenticationMethod collection
-type AuthenticationMethodPhoneAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequestBuilder is request builder for PhoneAuthenticationMethod collection
+type AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PhoneAuthenticationMethod collection
-func (b *AuthenticationMethodPhoneAuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodPhoneAuthenticationMethodCollectionRequest {
-	return &AuthenticationMethodPhoneAuthenticationMethodCollectionRequest{
+func (b *AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequest {
+	return &AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for PhoneAuthenticationMethod item
-func (b *AuthenticationMethodPhoneAuthenticationMethodCollectionRequestBuilder) ID(id string) *PhoneAuthenticationMethodRequestBuilder {
+func (b *AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequestBuilder) ID(id string) *PhoneAuthenticationMethodRequestBuilder {
 	bb := &PhoneAuthenticationMethodRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AuthenticationMethodPhoneAuthenticationMethodCollectionRequest is request for PhoneAuthenticationMethod collection
-type AuthenticationMethodPhoneAuthenticationMethodCollectionRequest struct{ BaseRequest }
+// AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequest is request for PhoneAuthenticationMethod collection
+type AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for PhoneAuthenticationMethod collection
-func (r *AuthenticationMethodPhoneAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]PhoneAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]PhoneAuthenticationMethod, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -103,7 +103,7 @@ func (r *AuthenticationMethodPhoneAuthenticationMethodCollectionRequest) Paging(
 }
 
 // GetN performs GET request for PhoneAuthenticationMethod collection, max N pages
-func (r *AuthenticationMethodPhoneAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]PhoneAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]PhoneAuthenticationMethod, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -112,12 +112,12 @@ func (r *AuthenticationMethodPhoneAuthenticationMethodCollectionRequest) GetN(ct
 }
 
 // Get performs GET request for PhoneAuthenticationMethod collection
-func (r *AuthenticationMethodPhoneAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]PhoneAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]PhoneAuthenticationMethod, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for PhoneAuthenticationMethod collection
-func (r *AuthenticationMethodPhoneAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *PhoneAuthenticationMethod) (resObj *PhoneAuthenticationMethod, err error) {
+func (r *AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *PhoneAuthenticationMethod) (resObj *PhoneAuthenticationMethod, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

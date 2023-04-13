@@ -9,7 +9,7 @@ type ActivityBasedTimeoutPolicy struct {
 	// StsPolicy is the base model of ActivityBasedTimeoutPolicy
 	StsPolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewActivityBasedTimeoutPolicy() (*ActivityBasedTimeoutPolicy, error) {
@@ -24,7 +24,7 @@ type ActivityHistoryItem struct {
 	// Entity is the base model of ActivityHistoryItem
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActiveDurationSeconds undocumented
 	ActiveDurationSeconds *int `json:"activeDurationSeconds,omitempty"`
 	// CreatedDateTime undocumented

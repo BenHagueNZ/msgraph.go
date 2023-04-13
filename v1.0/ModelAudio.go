@@ -7,7 +7,7 @@ type Audio struct {
 	// Object is the base model of Audio
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Album undocumented
 	Album *string `json:"album,omitempty"`
 	// AlbumArtist undocumented
@@ -54,7 +54,7 @@ type AudioConferencing struct {
 	// Object is the base model of AudioConferencing
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConferenceID undocumented
 	ConferenceID *string `json:"conferenceId,omitempty"`
 	// DialinURL undocumented
@@ -81,7 +81,7 @@ type AudioRoutingGroup struct {
 	// Entity is the base model of AudioRoutingGroup
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Receivers undocumented
 	Receivers []string `json:"receivers,omitempty"`
 	// RoutingMode undocumented

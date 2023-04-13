@@ -7,7 +7,7 @@ type PublicationFacet struct {
 	// Object is the base model of PublicationFacet
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Level undocumented
 	Level *string `json:"level,omitempty"`
 	// VersionID undocumented

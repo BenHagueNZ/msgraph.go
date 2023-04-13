@@ -7,7 +7,7 @@ type TrainingEventsContent struct {
 	// Object is the base model of TrainingEventsContent
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedTrainingsInfos undocumented
 	AssignedTrainingsInfos []AssignedTrainingInfo `json:"assignedTrainingsInfos,omitempty"`
 	// TrainingsAssignedUserCount undocumented

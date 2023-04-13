@@ -9,7 +9,7 @@ type VPPLicensingType struct {
 	// Object is the base model of VPPLicensingType
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// SupportsDeviceLicensing undocumented
 	SupportsDeviceLicensing *bool `json:"supportsDeviceLicensing,omitempty"`
 	// SupportsUserLicensing undocumented
@@ -28,7 +28,7 @@ type VPPToken struct {
 	// Entity is the base model of VPPToken
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppleID undocumented
 	AppleID *string `json:"appleId,omitempty"`
 	// AutomaticallyUpdateApps undocumented

@@ -7,7 +7,7 @@ type Quota struct {
 	// Object is the base model of Quota
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Deleted undocumented
 	Deleted *int `json:"deleted,omitempty"`
 	// Remaining undocumented

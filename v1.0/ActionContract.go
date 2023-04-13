@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Contract returns request builder for Contract collection rcn
-func (b *DirectoryObjectRequestBuilder) Contract() *DirectoryObjectContractCollectionRequestBuilder {
-	bb := &DirectoryObjectContractCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/Contract"
+// Contract returns request builder for Contract collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) Contract() *AdministrativeUnitMembersCollectionContractCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionContractCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DirectoryObjectContractCollectionRequestBuilder is request builder for Contract collection
-type DirectoryObjectContractCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AdministrativeUnitMembersCollectionContractCollectionRequestBuilder is request builder for Contract collection
+type AdministrativeUnitMembersCollectionContractCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Contract collection
-func (b *DirectoryObjectContractCollectionRequestBuilder) Request() *DirectoryObjectContractCollectionRequest {
-	return &DirectoryObjectContractCollectionRequest{
+func (b *AdministrativeUnitMembersCollectionContractCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionContractCollectionRequest {
+	return &AdministrativeUnitMembersCollectionContractCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for Contract item
-func (b *DirectoryObjectContractCollectionRequestBuilder) ID(id string) *ContractRequestBuilder {
+func (b *AdministrativeUnitMembersCollectionContractCollectionRequestBuilder) ID(id string) *ContractRequestBuilder {
 	bb := &ContractRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DirectoryObjectContractCollectionRequest is request for Contract collection
-type DirectoryObjectContractCollectionRequest struct{ BaseRequest }
+// AdministrativeUnitMembersCollectionContractCollectionRequest is request for Contract collection
+type AdministrativeUnitMembersCollectionContractCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for Contract collection
-func (r *DirectoryObjectContractCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Contract, error) {
+func (r *AdministrativeUnitMembersCollectionContractCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Contract, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *DirectoryObjectContractCollectionRequest) Paging(ctx context.Context, m
 }
 
 // GetN performs GET request for Contract collection, max N pages
-func (r *DirectoryObjectContractCollectionRequest) GetN(ctx context.Context, n int) ([]Contract, error) {
+func (r *AdministrativeUnitMembersCollectionContractCollectionRequest) GetN(ctx context.Context, n int) ([]Contract, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *DirectoryObjectContractCollectionRequest) GetN(ctx context.Context, n i
 }
 
 // Get performs GET request for Contract collection
-func (r *DirectoryObjectContractCollectionRequest) Get(ctx context.Context) ([]Contract, error) {
+func (r *AdministrativeUnitMembersCollectionContractCollectionRequest) Get(ctx context.Context) ([]Contract, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for Contract collection
-func (r *DirectoryObjectContractCollectionRequest) Add(ctx context.Context, reqObj *Contract) (resObj *Contract, err error) {
+func (r *AdministrativeUnitMembersCollectionContractCollectionRequest) Add(ctx context.Context, reqObj *Contract) (resObj *Contract, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

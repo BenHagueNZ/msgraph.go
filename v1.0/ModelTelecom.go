@@ -9,7 +9,7 @@ type TelecomExpenseManagementPartner struct {
 	// Entity is the base model of TelecomExpenseManagementPartner
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppAuthorized undocumented
 	AppAuthorized *bool `json:"appAuthorized,omitempty"`
 	// DisplayName undocumented

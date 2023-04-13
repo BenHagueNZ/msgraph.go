@@ -62,7 +62,7 @@ type ChatMessageSoftDeleteRequestParameter struct {
 type ChatMessageUndoSoftDeleteRequestParameter struct {
 }
 
-// InstalledApps returns request builder for TeamsAppInstallation collection rcn
+// InstalledApps returns request builder for TeamsAppInstallation collection
 func (b *ChatRequestBuilder) InstalledApps() *ChatInstalledAppsCollectionRequestBuilder {
 	bb := &ChatInstalledAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/installedApps"
@@ -172,7 +172,7 @@ func (b *ChatRequestBuilder) LastMessagePreview() *ChatMessageInfoRequestBuilder
 	return bb
 }
 
-// Members returns request builder for ConversationMember collection rcn
+// Members returns request builder for ConversationMember collection
 func (b *ChatRequestBuilder) Members() *ChatMembersCollectionRequestBuilder {
 	bb := &ChatMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"
@@ -275,7 +275,7 @@ func (r *ChatMembersCollectionRequest) Add(ctx context.Context, reqObj *Conversa
 	return
 }
 
-// Messages returns request builder for ChatMessage collection rcn
+// Messages returns request builder for ChatMessage collection
 func (b *ChatRequestBuilder) Messages() *ChatMessagesCollectionRequestBuilder {
 	bb := &ChatMessagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/messages"
@@ -378,7 +378,7 @@ func (r *ChatMessagesCollectionRequest) Add(ctx context.Context, reqObj *ChatMes
 	return
 }
 
-// PinnedMessages returns request builder for PinnedChatMessageInfo collection rcn
+// PinnedMessages returns request builder for PinnedChatMessageInfo collection
 func (b *ChatRequestBuilder) PinnedMessages() *ChatPinnedMessagesCollectionRequestBuilder {
 	bb := &ChatPinnedMessagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/pinnedMessages"
@@ -481,7 +481,7 @@ func (r *ChatPinnedMessagesCollectionRequest) Add(ctx context.Context, reqObj *P
 	return
 }
 
-// Tabs returns request builder for TeamsTab collection rcn
+// Tabs returns request builder for TeamsTab collection
 func (b *ChatRequestBuilder) Tabs() *ChatTabsCollectionRequestBuilder {
 	bb := &ChatTabsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tabs"
@@ -584,7 +584,7 @@ func (r *ChatTabsCollectionRequest) Add(ctx context.Context, reqObj *TeamsTab) (
 	return
 }
 
-// HostedContents returns request builder for ChatMessageHostedContent collection rcn
+// HostedContents returns request builder for ChatMessageHostedContent collection
 func (b *ChatMessageRequestBuilder) HostedContents() *ChatMessageHostedContentsCollectionRequestBuilder {
 	bb := &ChatMessageHostedContentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/hostedContents"
@@ -687,7 +687,7 @@ func (r *ChatMessageHostedContentsCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// Replies returns request builder for ChatMessage collection rcn
+// Replies returns request builder for ChatMessage collection
 func (b *ChatMessageRequestBuilder) Replies() *ChatMessageRepliesCollectionRequestBuilder {
 	bb := &ChatMessageRepliesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/replies"

@@ -9,7 +9,7 @@ type Organization struct {
 	// DirectoryObject is the base model of Organization
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedPlans undocumented
 	AssignedPlans []AssignedPlan `json:"assignedPlans,omitempty"`
 	// BusinessPhones undocumented

@@ -7,7 +7,7 @@ type EdgeSearchEngine struct {
 	// EdgeSearchEngineBase is the base model of EdgeSearchEngine
 	EdgeSearchEngineBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EdgeSearchEngineType undocumented
 	EdgeSearchEngineType *EdgeSearchEngineType `json:"edgeSearchEngineType,omitempty"`
 }
@@ -24,7 +24,7 @@ type EdgeSearchEngineBase struct {
 	// Object is the base model of EdgeSearchEngineBase
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewEdgeSearchEngineBase() (*EdgeSearchEngineBase, error) {
@@ -39,7 +39,7 @@ type EdgeSearchEngineCustom struct {
 	// EdgeSearchEngineBase is the base model of EdgeSearchEngineCustom
 	EdgeSearchEngineBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EdgeSearchEngineOpenSearchXMLURL undocumented
 	EdgeSearchEngineOpenSearchXMLURL *string `json:"edgeSearchEngineOpenSearchXmlUrl,omitempty"`
 }

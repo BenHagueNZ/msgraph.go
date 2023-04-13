@@ -15,7 +15,7 @@ import (
 type TeamsAppInstallationUpgradeRequestParameter struct {
 }
 
-// AppDefinitions returns request builder for TeamsAppDefinition collection rcn
+// AppDefinitions returns request builder for TeamsAppDefinition collection
 func (b *TeamsAppRequestBuilder) AppDefinitions() *TeamsAppAppDefinitionsCollectionRequestBuilder {
 	bb := &TeamsAppAppDefinitionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appDefinitions"

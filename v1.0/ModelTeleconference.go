@@ -7,7 +7,7 @@ type TeleconferenceDeviceAudioQuality struct {
 	// TeleconferenceDeviceMediaQuality is the base model of TeleconferenceDeviceAudioQuality
 	TeleconferenceDeviceMediaQuality
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewTeleconferenceDeviceAudioQuality() (*TeleconferenceDeviceAudioQuality, error) {
@@ -22,7 +22,7 @@ type TeleconferenceDeviceMediaQuality struct {
 	// Object is the base model of TeleconferenceDeviceMediaQuality
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AverageInboundJitter undocumented
 	AverageInboundJitter *Duration `json:"averageInboundJitter,omitempty"`
 	// AverageInboundPacketLossRateInPercentage undocumented
@@ -79,7 +79,7 @@ type TeleconferenceDeviceQuality struct {
 	// Object is the base model of TeleconferenceDeviceQuality
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CallChainID undocumented
 	CallChainID *UUID `json:"callChainId,omitempty"`
 	// CloudServiceDeploymentEnvironment undocumented
@@ -114,7 +114,7 @@ type TeleconferenceDeviceScreenSharingQuality struct {
 	// TeleconferenceDeviceVideoQuality is the base model of TeleconferenceDeviceScreenSharingQuality
 	TeleconferenceDeviceVideoQuality
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewTeleconferenceDeviceScreenSharingQuality() (*TeleconferenceDeviceScreenSharingQuality, error) {
@@ -129,7 +129,7 @@ type TeleconferenceDeviceVideoQuality struct {
 	// TeleconferenceDeviceMediaQuality is the base model of TeleconferenceDeviceVideoQuality
 	TeleconferenceDeviceMediaQuality
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AverageInboundBitRate undocumented
 	AverageInboundBitRate *float64 `json:"averageInboundBitRate,omitempty"`
 	// AverageInboundFrameRate undocumented

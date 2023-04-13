@@ -7,7 +7,7 @@ type SchemaExtension struct {
 	// Entity is the base model of SchemaExtension
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// Owner undocumented

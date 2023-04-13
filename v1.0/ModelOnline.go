@@ -9,7 +9,7 @@ type OnlineMeeting struct {
 	// Entity is the base model of OnlineMeeting
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowAttendeeToEnableCamera undocumented
 	AllowAttendeeToEnableCamera *bool `json:"allowAttendeeToEnableCamera,omitempty"`
 	// AllowAttendeeToEnableMic undocumented
@@ -72,7 +72,7 @@ type OnlineMeetingInfo struct {
 	// Object is the base model of OnlineMeetingInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConferenceID undocumented
 	ConferenceID *string `json:"conferenceId,omitempty"`
 	// JoinURL undocumented

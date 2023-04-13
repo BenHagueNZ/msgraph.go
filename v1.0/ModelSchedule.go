@@ -9,7 +9,7 @@ type Schedule struct {
 	// Entity is the base model of Schedule
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Enabled undocumented
 	Enabled *bool `json:"enabled,omitempty"`
 	// OfferShiftRequestsEnabled undocumented
@@ -62,7 +62,7 @@ type ScheduleChangeRequestObject struct {
 	// ChangeTrackedEntity is the base model of ScheduleChangeRequestObject
 	ChangeTrackedEntity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedTo undocumented
 	AssignedTo *ScheduleChangeRequestActor `json:"assignedTo,omitempty"`
 	// ManagerActionDateTime undocumented
@@ -93,7 +93,7 @@ type ScheduleEntity struct {
 	// Object is the base model of ScheduleEntity
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// StartDateTime undocumented
@@ -114,7 +114,7 @@ type ScheduleInformation struct {
 	// Object is the base model of ScheduleInformation
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AvailabilityView undocumented
 	AvailabilityView *string `json:"availabilityView,omitempty"`
 	// Error undocumented
@@ -139,7 +139,7 @@ type ScheduleItem struct {
 	// Object is the base model of ScheduleItem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// End undocumented
 	End *DateTimeTimeZone `json:"end,omitempty"`
 	// IsPrivate undocumented

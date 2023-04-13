@@ -7,7 +7,7 @@ type RubricCriterion struct {
 	// Object is the base model of RubricCriterion
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *EducationItemBody `json:"description,omitempty"`
 }
@@ -24,7 +24,7 @@ type RubricLevel struct {
 	// Object is the base model of RubricLevel
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *EducationItemBody `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -47,7 +47,7 @@ type RubricQuality struct {
 	// Object is the base model of RubricQuality
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Criteria undocumented
 	Criteria []RubricCriterion `json:"criteria,omitempty"`
 	// Description undocumented
@@ -72,7 +72,7 @@ type RubricQualityFeedbackModel struct {
 	// Object is the base model of RubricQualityFeedbackModel
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Feedback undocumented
 	Feedback *EducationItemBody `json:"feedback,omitempty"`
 	// QualityID undocumented
@@ -91,7 +91,7 @@ type RubricQualitySelectedColumnModel struct {
 	// Object is the base model of RubricQualitySelectedColumnModel
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ColumnID undocumented
 	ColumnID *string `json:"columnId,omitempty"`
 	// QualityID undocumented

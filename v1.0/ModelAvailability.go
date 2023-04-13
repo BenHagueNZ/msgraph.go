@@ -7,7 +7,7 @@ type AvailabilityItem struct {
 	// Object is the base model of AvailabilityItem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EndDateTime undocumented
 	EndDateTime *DateTimeTimeZone `json:"endDateTime,omitempty"`
 	// ServiceID undocumented

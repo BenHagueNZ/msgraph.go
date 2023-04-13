@@ -70,6 +70,29 @@ func (r *NotebookLinksRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+type NotebookCollectionGetNotebookFromWebURLRequestBuilder struct{ BaseRequestBuilder }
+
+// GetNotebookFromWebURL action undocumentedras
+func (b *OnenoteNotebooksCollectionRequestBuilder) GetNotebookFromWebURL(reqObj *NotebookCollectionGetNotebookFromWebURLRequestParameter) *NotebookCollectionGetNotebookFromWebURLRequestBuilder {
+	bb := &NotebookCollectionGetNotebookFromWebURLRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/GetNotebookFromWebUrl"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type NotebookCollectionGetNotebookFromWebURLRequest struct{ BaseRequest }
+
+func (b *NotebookCollectionGetNotebookFromWebURLRequestBuilder) Request() *NotebookCollectionGetNotebookFromWebURLRequest {
+	return &NotebookCollectionGetNotebookFromWebURLRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *NotebookCollectionGetNotebookFromWebURLRequest) Post(ctx context.Context) (resObj *CopyNotebookModel, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
 type NotebookCopyNotebookRequestBuilder struct{ BaseRequestBuilder }
 
 // CopyNotebook action undocumentedras

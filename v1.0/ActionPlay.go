@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// PlayPromptOperation returns request builder for PlayPromptOperation collection rcn
-func (b *CommsOperationRequestBuilder) PlayPromptOperation() *CommsOperationPlayPromptOperationCollectionRequestBuilder {
-	bb := &CommsOperationPlayPromptOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/PlayPromptOperation"
+// PlayPromptOperation returns request builder for PlayPromptOperation collection
+func (b *CallOperationsCollectionRequestBuilder) PlayPromptOperation() *CallOperationsCollectionPlayPromptOperationCollectionRequestBuilder {
+	bb := &CallOperationsCollectionPlayPromptOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// CommsOperationPlayPromptOperationCollectionRequestBuilder is request builder for PlayPromptOperation collection
-type CommsOperationPlayPromptOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// CallOperationsCollectionPlayPromptOperationCollectionRequestBuilder is request builder for PlayPromptOperation collection
+type CallOperationsCollectionPlayPromptOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PlayPromptOperation collection
-func (b *CommsOperationPlayPromptOperationCollectionRequestBuilder) Request() *CommsOperationPlayPromptOperationCollectionRequest {
-	return &CommsOperationPlayPromptOperationCollectionRequest{
+func (b *CallOperationsCollectionPlayPromptOperationCollectionRequestBuilder) Request() *CallOperationsCollectionPlayPromptOperationCollectionRequest {
+	return &CallOperationsCollectionPlayPromptOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for PlayPromptOperation item
-func (b *CommsOperationPlayPromptOperationCollectionRequestBuilder) ID(id string) *PlayPromptOperationRequestBuilder {
+func (b *CallOperationsCollectionPlayPromptOperationCollectionRequestBuilder) ID(id string) *PlayPromptOperationRequestBuilder {
 	bb := &PlayPromptOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// CommsOperationPlayPromptOperationCollectionRequest is request for PlayPromptOperation collection
-type CommsOperationPlayPromptOperationCollectionRequest struct{ BaseRequest }
+// CallOperationsCollectionPlayPromptOperationCollectionRequest is request for PlayPromptOperation collection
+type CallOperationsCollectionPlayPromptOperationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for PlayPromptOperation collection
-func (r *CommsOperationPlayPromptOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]PlayPromptOperation, error) {
+func (r *CallOperationsCollectionPlayPromptOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]PlayPromptOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *CommsOperationPlayPromptOperationCollectionRequest) Paging(ctx context.
 }
 
 // GetN performs GET request for PlayPromptOperation collection, max N pages
-func (r *CommsOperationPlayPromptOperationCollectionRequest) GetN(ctx context.Context, n int) ([]PlayPromptOperation, error) {
+func (r *CallOperationsCollectionPlayPromptOperationCollectionRequest) GetN(ctx context.Context, n int) ([]PlayPromptOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *CommsOperationPlayPromptOperationCollectionRequest) GetN(ctx context.Co
 }
 
 // Get performs GET request for PlayPromptOperation collection
-func (r *CommsOperationPlayPromptOperationCollectionRequest) Get(ctx context.Context) ([]PlayPromptOperation, error) {
+func (r *CallOperationsCollectionPlayPromptOperationCollectionRequest) Get(ctx context.Context) ([]PlayPromptOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for PlayPromptOperation collection
-func (r *CommsOperationPlayPromptOperationCollectionRequest) Add(ctx context.Context, reqObj *PlayPromptOperation) (resObj *PlayPromptOperation, err error) {
+func (r *CallOperationsCollectionPlayPromptOperationCollectionRequest) Add(ctx context.Context, reqObj *PlayPromptOperation) (resObj *PlayPromptOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

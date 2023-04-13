@@ -7,7 +7,7 @@ type EditionUpgradeConfiguration struct {
 	// DeviceConfiguration is the base model of EditionUpgradeConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// License undocumented
 	License *string `json:"license,omitempty"`
 	// LicenseType undocumented

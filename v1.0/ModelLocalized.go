@@ -9,7 +9,7 @@ type LocalizedNotificationMessage struct {
 	// Entity is the base model of LocalizedNotificationMessage
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsDefault undocumented
 	IsDefault *bool `json:"isDefault,omitempty"`
 	// LastModifiedDateTime undocumented

@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Buckets returns request builder for PlannerBucket collection rcn
+// Buckets returns request builder for PlannerBucket collection
 func (b *PlannerRequestBuilder) Buckets() *PlannerBucketsCollectionRequestBuilder {
 	bb := &PlannerBucketsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/buckets"
@@ -114,7 +114,7 @@ func (r *PlannerBucketsCollectionRequest) Add(ctx context.Context, reqObj *Plann
 	return
 }
 
-// Plans returns request builder for PlannerPlan collection rcn
+// Plans returns request builder for PlannerPlan collection
 func (b *PlannerRequestBuilder) Plans() *PlannerPlansCollectionRequestBuilder {
 	bb := &PlannerPlansCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/plans"
@@ -217,7 +217,7 @@ func (r *PlannerPlansCollectionRequest) Add(ctx context.Context, reqObj *Planner
 	return
 }
 
-// Tasks returns request builder for PlannerTask collection rcn
+// Tasks returns request builder for PlannerTask collection
 func (b *PlannerRequestBuilder) Tasks() *PlannerTasksCollectionRequestBuilder {
 	bb := &PlannerTasksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tasks"
@@ -320,7 +320,7 @@ func (r *PlannerTasksCollectionRequest) Add(ctx context.Context, reqObj *Planner
 	return
 }
 
-// Tasks returns request builder for PlannerTask collection rcn
+// Tasks returns request builder for PlannerTask collection
 func (b *PlannerBucketRequestBuilder) Tasks() *PlannerBucketTasksCollectionRequestBuilder {
 	bb := &PlannerBucketTasksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tasks"
@@ -423,7 +423,7 @@ func (r *PlannerBucketTasksCollectionRequest) Add(ctx context.Context, reqObj *P
 	return
 }
 
-// Plans returns request builder for PlannerPlan collection rcn
+// Plans returns request builder for PlannerPlan collection
 func (b *PlannerGroupRequestBuilder) Plans() *PlannerGroupPlansCollectionRequestBuilder {
 	bb := &PlannerGroupPlansCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/plans"
@@ -526,7 +526,7 @@ func (r *PlannerGroupPlansCollectionRequest) Add(ctx context.Context, reqObj *Pl
 	return
 }
 
-// Buckets returns request builder for PlannerBucket collection rcn
+// Buckets returns request builder for PlannerBucket collection
 func (b *PlannerPlanRequestBuilder) Buckets() *PlannerPlanBucketsCollectionRequestBuilder {
 	bb := &PlannerPlanBucketsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/buckets"
@@ -636,7 +636,7 @@ func (b *PlannerPlanRequestBuilder) Details() *PlannerPlanDetailsRequestBuilder 
 	return bb
 }
 
-// Tasks returns request builder for PlannerTask collection rcn
+// Tasks returns request builder for PlannerTask collection
 func (b *PlannerPlanRequestBuilder) Tasks() *PlannerPlanTasksCollectionRequestBuilder {
 	bb := &PlannerPlanTasksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tasks"
@@ -767,7 +767,7 @@ func (b *PlannerTaskRequestBuilder) ProgressTaskBoardFormat() *PlannerProgressTa
 	return bb
 }
 
-// Plans returns request builder for PlannerPlan collection rcn
+// Plans returns request builder for PlannerPlan collection
 func (b *PlannerUserRequestBuilder) Plans() *PlannerUserPlansCollectionRequestBuilder {
 	bb := &PlannerUserPlansCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/plans"
@@ -870,7 +870,7 @@ func (r *PlannerUserPlansCollectionRequest) Add(ctx context.Context, reqObj *Pla
 	return
 }
 
-// Tasks returns request builder for PlannerTask collection rcn
+// Tasks returns request builder for PlannerTask collection
 func (b *PlannerUserRequestBuilder) Tasks() *PlannerUserTasksCollectionRequestBuilder {
 	bb := &PlannerUserTasksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tasks"

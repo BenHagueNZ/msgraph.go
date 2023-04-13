@@ -7,7 +7,7 @@ type MuteParticipantOperation struct {
 	// CommsOperation is the base model of MuteParticipantOperation
 	CommsOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewMuteParticipantOperation() (*MuteParticipantOperation, error) {

@@ -7,7 +7,7 @@ type PlayPromptOperation struct {
 	// CommsOperation is the base model of PlayPromptOperation
 	CommsOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewPlayPromptOperation() (*PlayPromptOperation, error) {

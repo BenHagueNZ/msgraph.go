@@ -9,7 +9,7 @@ type Simulation struct {
 	// Entity is the base model of Simulation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AttackTechnique undocumented
 	AttackTechnique *SimulationAttackTechnique `json:"attackTechnique,omitempty"`
 	// AttackType undocumented
@@ -54,7 +54,7 @@ type SimulationAutomation struct {
 	// Entity is the base model of SimulationAutomation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *EmailIdentity `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -89,7 +89,7 @@ type SimulationAutomationRun struct {
 	// Entity is the base model of SimulationAutomationRun
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// SimulationID undocumented
@@ -112,7 +112,7 @@ type SimulationEvent struct {
 	// Object is the base model of SimulationEvent
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Count undocumented
 	Count *int `json:"count,omitempty"`
 	// EventName undocumented
@@ -131,7 +131,7 @@ type SimulationEventsContent struct {
 	// Object is the base model of SimulationEventsContent
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CompromisedRate undocumented
 	CompromisedRate *float64 `json:"compromisedRate,omitempty"`
 	// Events undocumented
@@ -150,7 +150,7 @@ type SimulationReport struct {
 	// Object is the base model of SimulationReport
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Overview undocumented
 	Overview *SimulationReportOverview `json:"overview,omitempty"`
 	// SimulationUsers undocumented
@@ -169,7 +169,7 @@ type SimulationReportOverview struct {
 	// Object is the base model of SimulationReportOverview
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RecommendedActions undocumented
 	RecommendedActions []RecommendedAction `json:"recommendedActions,omitempty"`
 	// ResolvedTargetsCount undocumented

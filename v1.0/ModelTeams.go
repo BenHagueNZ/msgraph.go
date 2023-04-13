@@ -9,7 +9,7 @@ type TeamsApp struct {
 	// Entity is the base model of TeamsApp
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// DistributionMethod undocumented
@@ -32,7 +32,7 @@ type TeamsAppDefinition struct {
 	// Entity is the base model of TeamsAppDefinition
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// Description undocumented
@@ -65,7 +65,7 @@ type TeamsAppInstallation struct {
 	// Entity is the base model of TeamsAppInstallation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// TeamsApp undocumented
 	TeamsApp *TeamsApp `json:"teamsApp,omitempty"`
 	// TeamsAppDefinition undocumented
@@ -84,7 +84,7 @@ type TeamsAppInstalledEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamsAppInstalledEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamsAppDisplayName undocumented
@@ -105,7 +105,7 @@ type TeamsAppRemovedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamsAppRemovedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamsAppDisplayName undocumented
@@ -126,7 +126,7 @@ type TeamsAppUpgradedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamsAppUpgradedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamsAppDisplayName undocumented
@@ -147,7 +147,7 @@ type TeamsAsyncOperation struct {
 	// Entity is the base model of TeamsAsyncOperation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AttemptsCount undocumented
 	AttemptsCount *int `json:"attemptsCount,omitempty"`
 	// CreatedDateTime undocumented
@@ -178,7 +178,7 @@ type TeamsTab struct {
 	// Entity is the base model of TeamsTab
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Configuration undocumented
 	Configuration *TeamsTabConfiguration `json:"configuration,omitempty"`
 	// DisplayName undocumented
@@ -201,7 +201,7 @@ type TeamsTabConfiguration struct {
 	// Object is the base model of TeamsTabConfiguration
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentURL undocumented
 	ContentURL *string `json:"contentUrl,omitempty"`
 	// EntityID undocumented
@@ -224,7 +224,7 @@ type TeamsTemplate struct {
 	// Entity is the base model of TeamsTemplate
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewTeamsTemplate() (*TeamsTemplate, error) {

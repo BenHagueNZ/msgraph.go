@@ -7,7 +7,7 @@ type InformationalURL struct {
 	// Object is the base model of InformationalURL
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// LogoURL undocumented
 	LogoURL *string `json:"logoUrl,omitempty"`
 	// MarketingURL undocumented

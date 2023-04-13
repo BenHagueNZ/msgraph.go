@@ -7,7 +7,7 @@ type SoftwareOathAuthenticationMethod struct {
 	// AuthenticationMethod is the base model of SoftwareOathAuthenticationMethod
 	AuthenticationMethod
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// SecretKey undocumented
 	SecretKey *string `json:"secretKey,omitempty"`
 }
@@ -24,7 +24,7 @@ type SoftwareUpdateStatusSummary struct {
 	// Entity is the base model of SoftwareUpdateStatusSummary
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CompliantDeviceCount undocumented
 	CompliantDeviceCount *int `json:"compliantDeviceCount,omitempty"`
 	// CompliantUserCount undocumented

@@ -7,7 +7,7 @@ type ReferenceAttachment struct {
 	// Attachment is the base model of ReferenceAttachment
 	Attachment
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewReferenceAttachment() (*ReferenceAttachment, error) {

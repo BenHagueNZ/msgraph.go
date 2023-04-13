@@ -7,7 +7,7 @@ type RecordingInfo struct {
 	// Object is the base model of RecordingInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// RecordingStatus undocumented

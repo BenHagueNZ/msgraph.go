@@ -7,7 +7,7 @@ type IPv6CidrRange struct {
 	// IPRange is the base model of IPv6CidrRange
 	IPRange
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CIDRAddress undocumented
 	CIDRAddress *string `json:"cidrAddress,omitempty"`
 }
@@ -24,7 +24,7 @@ type IPv6Range struct {
 	// IPRange is the base model of IPv6Range
 	IPRange
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// LowerAddress undocumented
 	LowerAddress *string `json:"lowerAddress,omitempty"`
 	// UpperAddress undocumented

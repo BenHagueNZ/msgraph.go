@@ -7,7 +7,7 @@ type RelatedContact struct {
 	// Object is the base model of RelatedContact
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccessConsent undocumented
 	AccessConsent *bool `json:"accessConsent,omitempty"`
 	// DisplayName undocumented

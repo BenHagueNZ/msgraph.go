@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// IPNamedLocation returns request builder for IPNamedLocation collection rcn
-func (b *NamedLocationRequestBuilder) IPNamedLocation() *NamedLocationIPNamedLocationCollectionRequestBuilder {
-	bb := &NamedLocationIPNamedLocationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/IpNamedLocation"
+// IPNamedLocation returns request builder for IPNamedLocation collection
+func (b *ConditionalAccessRootNamedLocationsCollectionRequestBuilder) IPNamedLocation() *ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequestBuilder {
+	bb := &ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// NamedLocationIPNamedLocationCollectionRequestBuilder is request builder for IPNamedLocation collection
-type NamedLocationIPNamedLocationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequestBuilder is request builder for IPNamedLocation collection
+type ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IPNamedLocation collection
-func (b *NamedLocationIPNamedLocationCollectionRequestBuilder) Request() *NamedLocationIPNamedLocationCollectionRequest {
-	return &NamedLocationIPNamedLocationCollectionRequest{
+func (b *ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequestBuilder) Request() *ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequest {
+	return &ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for IPNamedLocation item
-func (b *NamedLocationIPNamedLocationCollectionRequestBuilder) ID(id string) *IPNamedLocationRequestBuilder {
+func (b *ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequestBuilder) ID(id string) *IPNamedLocationRequestBuilder {
 	bb := &IPNamedLocationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// NamedLocationIPNamedLocationCollectionRequest is request for IPNamedLocation collection
-type NamedLocationIPNamedLocationCollectionRequest struct{ BaseRequest }
+// ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequest is request for IPNamedLocation collection
+type ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for IPNamedLocation collection
-func (r *NamedLocationIPNamedLocationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IPNamedLocation, error) {
+func (r *ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IPNamedLocation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *NamedLocationIPNamedLocationCollectionRequest) Paging(ctx context.Conte
 }
 
 // GetN performs GET request for IPNamedLocation collection, max N pages
-func (r *NamedLocationIPNamedLocationCollectionRequest) GetN(ctx context.Context, n int) ([]IPNamedLocation, error) {
+func (r *ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequest) GetN(ctx context.Context, n int) ([]IPNamedLocation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *NamedLocationIPNamedLocationCollectionRequest) GetN(ctx context.Context
 }
 
 // Get performs GET request for IPNamedLocation collection
-func (r *NamedLocationIPNamedLocationCollectionRequest) Get(ctx context.Context) ([]IPNamedLocation, error) {
+func (r *ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequest) Get(ctx context.Context) ([]IPNamedLocation, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for IPNamedLocation collection
-func (r *NamedLocationIPNamedLocationCollectionRequest) Add(ctx context.Context, reqObj *IPNamedLocation) (resObj *IPNamedLocation, err error) {
+func (r *ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequest) Add(ctx context.Context, reqObj *IPNamedLocation) (resObj *IPNamedLocation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

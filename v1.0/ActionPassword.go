@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// PasswordAuthenticationMethod returns request builder for PasswordAuthenticationMethod collection rcn
-func (b *AuthenticationMethodRequestBuilder) PasswordAuthenticationMethod() *AuthenticationMethodPasswordAuthenticationMethodCollectionRequestBuilder {
-	bb := &AuthenticationMethodPasswordAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/PasswordAuthenticationMethod"
+// PasswordAuthenticationMethod returns request builder for PasswordAuthenticationMethod collection
+func (b *AuthenticationMethodsCollectionRequestBuilder) PasswordAuthenticationMethod() *AuthenticationMethodsCollectionPasswordAuthenticationMethodCollectionRequestBuilder {
+	bb := &AuthenticationMethodsCollectionPasswordAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AuthenticationMethodPasswordAuthenticationMethodCollectionRequestBuilder is request builder for PasswordAuthenticationMethod collection
-type AuthenticationMethodPasswordAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AuthenticationMethodsCollectionPasswordAuthenticationMethodCollectionRequestBuilder is request builder for PasswordAuthenticationMethod collection
+type AuthenticationMethodsCollectionPasswordAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PasswordAuthenticationMethod collection
-func (b *AuthenticationMethodPasswordAuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodPasswordAuthenticationMethodCollectionRequest {
-	return &AuthenticationMethodPasswordAuthenticationMethodCollectionRequest{
+func (b *AuthenticationMethodsCollectionPasswordAuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodsCollectionPasswordAuthenticationMethodCollectionRequest {
+	return &AuthenticationMethodsCollectionPasswordAuthenticationMethodCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for PasswordAuthenticationMethod item
-func (b *AuthenticationMethodPasswordAuthenticationMethodCollectionRequestBuilder) ID(id string) *PasswordAuthenticationMethodRequestBuilder {
+func (b *AuthenticationMethodsCollectionPasswordAuthenticationMethodCollectionRequestBuilder) ID(id string) *PasswordAuthenticationMethodRequestBuilder {
 	bb := &PasswordAuthenticationMethodRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AuthenticationMethodPasswordAuthenticationMethodCollectionRequest is request for PasswordAuthenticationMethod collection
-type AuthenticationMethodPasswordAuthenticationMethodCollectionRequest struct{ BaseRequest }
+// AuthenticationMethodsCollectionPasswordAuthenticationMethodCollectionRequest is request for PasswordAuthenticationMethod collection
+type AuthenticationMethodsCollectionPasswordAuthenticationMethodCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for PasswordAuthenticationMethod collection
-func (r *AuthenticationMethodPasswordAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]PasswordAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionPasswordAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]PasswordAuthenticationMethod, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *AuthenticationMethodPasswordAuthenticationMethodCollectionRequest) Pagi
 }
 
 // GetN performs GET request for PasswordAuthenticationMethod collection, max N pages
-func (r *AuthenticationMethodPasswordAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]PasswordAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionPasswordAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]PasswordAuthenticationMethod, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *AuthenticationMethodPasswordAuthenticationMethodCollectionRequest) GetN
 }
 
 // Get performs GET request for PasswordAuthenticationMethod collection
-func (r *AuthenticationMethodPasswordAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]PasswordAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionPasswordAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]PasswordAuthenticationMethod, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for PasswordAuthenticationMethod collection
-func (r *AuthenticationMethodPasswordAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *PasswordAuthenticationMethod) (resObj *PasswordAuthenticationMethod, err error) {
+func (r *AuthenticationMethodsCollectionPasswordAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *PasswordAuthenticationMethod) (resObj *PasswordAuthenticationMethod, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

@@ -7,7 +7,7 @@ type SubscribedSKU struct {
 	// Entity is the base model of SubscribedSKU
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppliesTo undocumented
 	AppliesTo *string `json:"appliesTo,omitempty"`
 	// CapabilityStatus undocumented

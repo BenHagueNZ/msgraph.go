@@ -7,7 +7,7 @@ type RequestorManager struct {
 	// SubjectSet is the base model of RequestorManager
 	SubjectSet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ManagerLevel undocumented
 	ManagerLevel *int `json:"managerLevel,omitempty"`
 }

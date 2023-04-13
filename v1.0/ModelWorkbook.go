@@ -9,7 +9,7 @@ type Workbook struct {
 	// Entity is the base model of Workbook
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Application undocumented
 	Application *WorkbookApplication `json:"application,omitempty"`
 	// Comments undocumented
@@ -38,7 +38,7 @@ type WorkbookApplication struct {
 	// Entity is the base model of WorkbookApplication
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CalculationMode undocumented
 	CalculationMode *string `json:"calculationMode,omitempty"`
 }
@@ -55,7 +55,7 @@ type WorkbookChart struct {
 	// Entity is the base model of WorkbookChart
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Height undocumented
 	Height *float64 `json:"height,omitempty"`
 	// Left undocumented
@@ -94,7 +94,7 @@ type WorkbookChartAreaFormat struct {
 	// Entity is the base model of WorkbookChartAreaFormat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Fill undocumented
 	Fill *WorkbookChartFill `json:"fill,omitempty"`
 	// Font undocumented
@@ -113,7 +113,7 @@ type WorkbookChartAxes struct {
 	// Entity is the base model of WorkbookChartAxes
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CategoryAxis undocumented
 	CategoryAxis *WorkbookChartAxis `json:"categoryAxis,omitempty"`
 	// SeriesAxis undocumented
@@ -134,7 +134,7 @@ type WorkbookChartAxis struct {
 	// Entity is the base model of WorkbookChartAxis
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MajorUnit undocumented
 	MajorUnit json.RawMessage `json:"majorUnit,omitempty"`
 	// Maximum undocumented
@@ -165,7 +165,7 @@ type WorkbookChartAxisFormat struct {
 	// Entity is the base model of WorkbookChartAxisFormat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Font undocumented
 	Font *WorkbookChartFont `json:"font,omitempty"`
 	// Line undocumented
@@ -184,7 +184,7 @@ type WorkbookChartAxisTitle struct {
 	// Entity is the base model of WorkbookChartAxisTitle
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Text undocumented
 	Text *string `json:"text,omitempty"`
 	// Visible undocumented
@@ -205,7 +205,7 @@ type WorkbookChartAxisTitleFormat struct {
 	// Entity is the base model of WorkbookChartAxisTitleFormat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Font undocumented
 	Font *WorkbookChartFont `json:"font,omitempty"`
 }
@@ -222,7 +222,7 @@ type WorkbookChartDataLabelFormat struct {
 	// Entity is the base model of WorkbookChartDataLabelFormat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Fill undocumented
 	Fill *WorkbookChartFill `json:"fill,omitempty"`
 	// Font undocumented
@@ -241,7 +241,7 @@ type WorkbookChartDataLabels struct {
 	// Entity is the base model of WorkbookChartDataLabels
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Position undocumented
 	Position *string `json:"position,omitempty"`
 	// Separator undocumented
@@ -274,7 +274,7 @@ type WorkbookChartFill struct {
 	// Entity is the base model of WorkbookChartFill
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewWorkbookChartFill() (*WorkbookChartFill, error) {
@@ -289,7 +289,7 @@ type WorkbookChartFont struct {
 	// Entity is the base model of WorkbookChartFont
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Bold undocumented
 	Bold *bool `json:"bold,omitempty"`
 	// Color undocumented
@@ -316,7 +316,7 @@ type WorkbookChartGridlines struct {
 	// Entity is the base model of WorkbookChartGridlines
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Visible undocumented
 	Visible *bool `json:"visible,omitempty"`
 	// Format undocumented
@@ -335,7 +335,7 @@ type WorkbookChartGridlinesFormat struct {
 	// Entity is the base model of WorkbookChartGridlinesFormat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Line undocumented
 	Line *WorkbookChartLineFormat `json:"line,omitempty"`
 }
@@ -352,7 +352,7 @@ type WorkbookChartLegend struct {
 	// Entity is the base model of WorkbookChartLegend
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Overlay undocumented
 	Overlay *bool `json:"overlay,omitempty"`
 	// Position undocumented
@@ -375,7 +375,7 @@ type WorkbookChartLegendFormat struct {
 	// Entity is the base model of WorkbookChartLegendFormat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Fill undocumented
 	Fill *WorkbookChartFill `json:"fill,omitempty"`
 	// Font undocumented
@@ -394,7 +394,7 @@ type WorkbookChartLineFormat struct {
 	// Entity is the base model of WorkbookChartLineFormat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Color undocumented
 	Color *string `json:"color,omitempty"`
 }
@@ -411,7 +411,7 @@ type WorkbookChartPoint struct {
 	// Entity is the base model of WorkbookChartPoint
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Value undocumented
 	Value json.RawMessage `json:"value,omitempty"`
 	// Format undocumented
@@ -430,7 +430,7 @@ type WorkbookChartPointFormat struct {
 	// Entity is the base model of WorkbookChartPointFormat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Fill undocumented
 	Fill *WorkbookChartFill `json:"fill,omitempty"`
 }
@@ -447,7 +447,7 @@ type WorkbookChartSeries struct {
 	// Entity is the base model of WorkbookChartSeries
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Format undocumented
@@ -468,7 +468,7 @@ type WorkbookChartSeriesFormat struct {
 	// Entity is the base model of WorkbookChartSeriesFormat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Fill undocumented
 	Fill *WorkbookChartFill `json:"fill,omitempty"`
 	// Line undocumented
@@ -487,7 +487,7 @@ type WorkbookChartTitle struct {
 	// Entity is the base model of WorkbookChartTitle
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Overlay undocumented
 	Overlay *bool `json:"overlay,omitempty"`
 	// Text undocumented
@@ -510,7 +510,7 @@ type WorkbookChartTitleFormat struct {
 	// Entity is the base model of WorkbookChartTitleFormat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Fill undocumented
 	Fill *WorkbookChartFill `json:"fill,omitempty"`
 	// Font undocumented
@@ -529,7 +529,7 @@ type WorkbookComment struct {
 	// Entity is the base model of WorkbookComment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *string `json:"content,omitempty"`
 	// ContentType undocumented
@@ -550,7 +550,7 @@ type WorkbookCommentReply struct {
 	// Entity is the base model of WorkbookCommentReply
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *string `json:"content,omitempty"`
 	// ContentType undocumented
@@ -569,7 +569,7 @@ type WorkbookFilter struct {
 	// Entity is the base model of WorkbookFilter
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Criteria undocumented
 	Criteria *WorkbookFilterCriteria `json:"criteria,omitempty"`
 }
@@ -586,7 +586,7 @@ type WorkbookFilterCriteria struct {
 	// Object is the base model of WorkbookFilterCriteria
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Color undocumented
 	Color *string `json:"color,omitempty"`
 	// Criterion1 undocumented
@@ -617,7 +617,7 @@ type WorkbookFilterDatetime struct {
 	// Object is the base model of WorkbookFilterDatetime
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Date undocumented
 	Date *string `json:"date,omitempty"`
 	// Specificity undocumented
@@ -636,7 +636,7 @@ type WorkbookFormatProtection struct {
 	// Entity is the base model of WorkbookFormatProtection
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FormulaHidden undocumented
 	FormulaHidden *bool `json:"formulaHidden,omitempty"`
 	// Locked undocumented
@@ -655,7 +655,7 @@ type WorkbookFunctionResult struct {
 	// Entity is the base model of WorkbookFunctionResult
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Error undocumented
 	Error *string `json:"error,omitempty"`
 	// Value undocumented
@@ -674,7 +674,7 @@ type WorkbookFunctions struct {
 	// Entity is the base model of WorkbookFunctions
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewWorkbookFunctions() (*WorkbookFunctions, error) {
@@ -689,7 +689,7 @@ type WorkbookIcon struct {
 	// Object is the base model of WorkbookIcon
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Index undocumented
 	Index *int `json:"index,omitempty"`
 	// Set undocumented
@@ -708,7 +708,7 @@ type WorkbookNamedItem struct {
 	// Entity is the base model of WorkbookNamedItem
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Comment undocumented
 	Comment *string `json:"comment,omitempty"`
 	// Name undocumented
@@ -737,7 +737,7 @@ type WorkbookOperation struct {
 	// Entity is the base model of WorkbookOperation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Error undocumented
 	Error *WorkbookOperationError `json:"error,omitempty"`
 	// ResourceLocation undocumented
@@ -758,7 +758,7 @@ type WorkbookOperationError struct {
 	// Object is the base model of WorkbookOperationError
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
 	// InnerError undocumented
@@ -779,7 +779,7 @@ type WorkbookPivotTable struct {
 	// Entity is the base model of WorkbookPivotTable
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Worksheet undocumented
@@ -798,7 +798,7 @@ type WorkbookRange struct {
 	// Entity is the base model of WorkbookRange
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Address undocumented
 	Address *string `json:"address,omitempty"`
 	// AddressLocal undocumented
@@ -853,7 +853,7 @@ type WorkbookRangeBorder struct {
 	// Entity is the base model of WorkbookRangeBorder
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Color undocumented
 	Color *string `json:"color,omitempty"`
 	// SideIndex undocumented
@@ -876,7 +876,7 @@ type WorkbookRangeFill struct {
 	// Entity is the base model of WorkbookRangeFill
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Color undocumented
 	Color *string `json:"color,omitempty"`
 }
@@ -893,7 +893,7 @@ type WorkbookRangeFont struct {
 	// Entity is the base model of WorkbookRangeFont
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Bold undocumented
 	Bold *bool `json:"bold,omitempty"`
 	// Color undocumented
@@ -920,7 +920,7 @@ type WorkbookRangeFormat struct {
 	// Entity is the base model of WorkbookRangeFormat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ColumnWidth undocumented
 	ColumnWidth *float64 `json:"columnWidth,omitempty"`
 	// HorizontalAlignment undocumented
@@ -953,7 +953,7 @@ type WorkbookRangeReference struct {
 	// Object is the base model of WorkbookRangeReference
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Address undocumented
 	Address *string `json:"address,omitempty"`
 }
@@ -970,7 +970,7 @@ type WorkbookRangeSort struct {
 	// Entity is the base model of WorkbookRangeSort
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewWorkbookRangeSort() (*WorkbookRangeSort, error) {
@@ -985,7 +985,7 @@ type WorkbookRangeView struct {
 	// Entity is the base model of WorkbookRangeView
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CellAddresses undocumented
 	CellAddresses json.RawMessage `json:"cellAddresses,omitempty"`
 	// ColumnCount undocumented
@@ -1024,7 +1024,7 @@ type WorkbookSessionInfo struct {
 	// Object is the base model of WorkbookSessionInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ID undocumented
 	ID *string `json:"id,omitempty"`
 	// PersistChanges undocumented
@@ -1043,7 +1043,7 @@ type WorkbookSortField struct {
 	// Object is the base model of WorkbookSortField
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Ascending undocumented
 	Ascending *bool `json:"ascending,omitempty"`
 	// Color undocumented
@@ -1070,7 +1070,7 @@ type WorkbookTable struct {
 	// Entity is the base model of WorkbookTable
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// HighlightFirstColumn undocumented
 	HighlightFirstColumn *bool `json:"highlightFirstColumn,omitempty"`
 	// HighlightLastColumn undocumented
@@ -1113,7 +1113,7 @@ type WorkbookTableColumn struct {
 	// Entity is the base model of WorkbookTableColumn
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Index undocumented
 	Index *int `json:"index,omitempty"`
 	// Name undocumented
@@ -1136,7 +1136,7 @@ type WorkbookTableRow struct {
 	// Entity is the base model of WorkbookTableRow
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Index undocumented
 	Index *int `json:"index,omitempty"`
 	// Values undocumented
@@ -1155,7 +1155,7 @@ type WorkbookTableSort struct {
 	// Entity is the base model of WorkbookTableSort
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Fields undocumented
 	Fields []WorkbookSortField `json:"fields,omitempty"`
 	// MatchCase undocumented
@@ -1176,7 +1176,7 @@ type WorkbookWorksheet struct {
 	// Entity is the base model of WorkbookWorksheet
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Position undocumented
@@ -1207,7 +1207,7 @@ type WorkbookWorksheetProtection struct {
 	// Entity is the base model of WorkbookWorksheetProtection
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Options undocumented
 	Options *WorkbookWorksheetProtectionOptions `json:"options,omitempty"`
 	// Protected undocumented
@@ -1226,7 +1226,7 @@ type WorkbookWorksheetProtectionOptions struct {
 	// Object is the base model of WorkbookWorksheetProtectionOptions
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowAutoFilter undocumented
 	AllowAutoFilter *bool `json:"allowAutoFilter,omitempty"`
 	// AllowDeleteColumns undocumented

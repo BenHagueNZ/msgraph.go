@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AuthenticationContextClassReferences returns request builder for AuthenticationContextClassReference collection rcn
+// AuthenticationContextClassReferences returns request builder for AuthenticationContextClassReference collection
 func (b *ConditionalAccessRootRequestBuilder) AuthenticationContextClassReferences() *ConditionalAccessRootAuthenticationContextClassReferencesCollectionRequestBuilder {
 	bb := &ConditionalAccessRootAuthenticationContextClassReferencesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/authenticationContextClassReferences"
@@ -114,7 +114,7 @@ func (r *ConditionalAccessRootAuthenticationContextClassReferencesCollectionRequ
 	return
 }
 
-// NamedLocations returns request builder for NamedLocation collection rcn
+// NamedLocations returns request builder for NamedLocation collection
 func (b *ConditionalAccessRootRequestBuilder) NamedLocations() *ConditionalAccessRootNamedLocationsCollectionRequestBuilder {
 	bb := &ConditionalAccessRootNamedLocationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/namedLocations"
@@ -217,7 +217,7 @@ func (r *ConditionalAccessRootNamedLocationsCollectionRequest) Add(ctx context.C
 	return
 }
 
-// Policies returns request builder for ConditionalAccessPolicy collection rcn
+// Policies returns request builder for ConditionalAccessPolicy collection
 func (b *ConditionalAccessRootRequestBuilder) Policies() *ConditionalAccessRootPoliciesCollectionRequestBuilder {
 	bb := &ConditionalAccessRootPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/policies"
@@ -320,7 +320,7 @@ func (r *ConditionalAccessRootPoliciesCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Templates returns request builder for ConditionalAccessTemplate collection rcn
+// Templates returns request builder for ConditionalAccessTemplate collection
 func (b *ConditionalAccessRootRequestBuilder) Templates() *ConditionalAccessRootTemplatesCollectionRequestBuilder {
 	bb := &ConditionalAccessRootTemplatesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/templates"

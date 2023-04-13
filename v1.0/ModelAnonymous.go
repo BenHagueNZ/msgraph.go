@@ -7,7 +7,7 @@ type AnonymousGuestConversationMember struct {
 	// ConversationMember is the base model of AnonymousGuestConversationMember
 	ConversationMember
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AnonymousGuestID undocumented
 	AnonymousGuestID *string `json:"anonymousGuestId,omitempty"`
 }

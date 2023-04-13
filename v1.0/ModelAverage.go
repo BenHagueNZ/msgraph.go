@@ -7,7 +7,7 @@ type AverageComparativeScore struct {
 	// Object is the base model of AverageComparativeScore
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AverageScore undocumented
 	AverageScore *float64 `json:"averageScore,omitempty"`
 	// Basis undocumented

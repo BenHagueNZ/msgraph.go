@@ -7,7 +7,7 @@ type MimeContent struct {
 	// Object is the base model of MimeContent
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Type undocumented
 	Type *string `json:"type,omitempty"`
 	// Value undocumented

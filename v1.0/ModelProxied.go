@@ -7,7 +7,7 @@ type ProxiedDomain struct {
 	// Object is the base model of ProxiedDomain
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IPAddressOrFQDN undocumented
 	IPAddressOrFQDN *string `json:"ipAddressOrFQDN,omitempty"`
 	// Proxy undocumented

@@ -7,7 +7,7 @@ type BitLockerRemovableDrivePolicy struct {
 	// Object is the base model of BitLockerRemovableDrivePolicy
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BlockCrossOrganizationWriteAccess undocumented
 	BlockCrossOrganizationWriteAccess *bool `json:"blockCrossOrganizationWriteAccess,omitempty"`
 	// EncryptionMethod undocumented

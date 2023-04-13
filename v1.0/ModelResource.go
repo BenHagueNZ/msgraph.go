@@ -7,7 +7,7 @@ type ResourceAccess struct {
 	// Object is the base model of ResourceAccess
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ID undocumented
 	ID *UUID `json:"id,omitempty"`
 	// Type undocumented
@@ -26,7 +26,7 @@ type ResourceAction struct {
 	// Object is the base model of ResourceAction
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowedResourceActions undocumented
 	AllowedResourceActions []string `json:"allowedResourceActions,omitempty"`
 	// NotAllowedResourceActions undocumented
@@ -45,7 +45,7 @@ type ResourceData struct {
 	// Object is the base model of ResourceData
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewResourceData() (*ResourceData, error) {
@@ -60,7 +60,7 @@ type ResourceOperation struct {
 	// Entity is the base model of ResourceOperation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActionName undocumented
 	ActionName *string `json:"actionName,omitempty"`
 	// Description undocumented
@@ -81,7 +81,7 @@ type ResourcePermission struct {
 	// Object is the base model of ResourcePermission
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Type undocumented
 	Type *string `json:"type,omitempty"`
 	// Value undocumented
@@ -100,7 +100,7 @@ type ResourceReference struct {
 	// Object is the base model of ResourceReference
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ID undocumented
 	ID *string `json:"id,omitempty"`
 	// Type undocumented
@@ -121,7 +121,7 @@ type ResourceSpecificPermission struct {
 	// Object is the base model of ResourceSpecificPermission
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -146,7 +146,7 @@ type ResourceSpecificPermissionGrant struct {
 	// DirectoryObject is the base model of ResourceSpecificPermissionGrant
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ClientAppID undocumented
 	ClientAppID *string `json:"clientAppId,omitempty"`
 	// ClientID undocumented
@@ -171,7 +171,7 @@ type ResourceVisualization struct {
 	// Object is the base model of ResourceVisualization
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContainerDisplayName undocumented
 	ContainerDisplayName *string `json:"containerDisplayName,omitempty"`
 	// ContainerType undocumented

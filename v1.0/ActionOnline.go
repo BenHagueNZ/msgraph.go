@@ -28,7 +28,7 @@ type OnlineMeetingCollectionCreateOrGetRequestParameter struct {
 	Subject *string `json:"subject,omitempty"`
 }
 
-// AttendanceReports returns request builder for MeetingAttendanceReport collection rcn
+// AttendanceReports returns request builder for MeetingAttendanceReport collection
 func (b *OnlineMeetingRequestBuilder) AttendanceReports() *OnlineMeetingAttendanceReportsCollectionRequestBuilder {
 	bb := &OnlineMeetingAttendanceReportsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/attendanceReports"

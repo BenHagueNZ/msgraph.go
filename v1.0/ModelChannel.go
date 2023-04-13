@@ -9,7 +9,7 @@ type Channel struct {
 	// Entity is the base model of Channel
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -50,7 +50,7 @@ type ChannelAddedEventMessageDetail struct {
 	// EventMessageDetail is the base model of ChannelAddedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChannelDisplayName undocumented
 	ChannelDisplayName *string `json:"channelDisplayName,omitempty"`
 	// ChannelID undocumented
@@ -71,7 +71,7 @@ type ChannelDeletedEventMessageDetail struct {
 	// EventMessageDetail is the base model of ChannelDeletedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChannelDisplayName undocumented
 	ChannelDisplayName *string `json:"channelDisplayName,omitempty"`
 	// ChannelID undocumented
@@ -92,7 +92,7 @@ type ChannelDescriptionUpdatedEventMessageDetail struct {
 	// EventMessageDetail is the base model of ChannelDescriptionUpdatedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChannelDescription undocumented
 	ChannelDescription *string `json:"channelDescription,omitempty"`
 	// ChannelID undocumented
@@ -113,7 +113,7 @@ type ChannelIdentity struct {
 	// Object is the base model of ChannelIdentity
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChannelID undocumented
 	ChannelID *string `json:"channelId,omitempty"`
 	// TeamID undocumented
@@ -132,7 +132,7 @@ type ChannelMembersNotificationRecipient struct {
 	// TeamworkNotificationRecipient is the base model of ChannelMembersNotificationRecipient
 	TeamworkNotificationRecipient
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChannelID undocumented
 	ChannelID *string `json:"channelId,omitempty"`
 	// TeamID undocumented
@@ -151,7 +151,7 @@ type ChannelRenamedEventMessageDetail struct {
 	// EventMessageDetail is the base model of ChannelRenamedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChannelDisplayName undocumented
 	ChannelDisplayName *string `json:"channelDisplayName,omitempty"`
 	// ChannelID undocumented
@@ -172,7 +172,7 @@ type ChannelSetAsFavoriteByDefaultEventMessageDetail struct {
 	// EventMessageDetail is the base model of ChannelSetAsFavoriteByDefaultEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChannelID undocumented
 	ChannelID *string `json:"channelId,omitempty"`
 	// Initiator undocumented
@@ -191,7 +191,7 @@ type ChannelUnsetAsFavoriteByDefaultEventMessageDetail struct {
 	// EventMessageDetail is the base model of ChannelUnsetAsFavoriteByDefaultEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChannelID undocumented
 	ChannelID *string `json:"channelId,omitempty"`
 	// Initiator undocumented

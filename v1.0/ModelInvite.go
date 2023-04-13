@@ -7,7 +7,7 @@ type InviteNewBotResponse struct {
 	// ParticipantJoiningResponse is the base model of InviteNewBotResponse
 	ParticipantJoiningResponse
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// InviteURI undocumented
 	InviteURI *string `json:"inviteUri,omitempty"`
 }
@@ -24,7 +24,7 @@ type InviteParticipantsOperation struct {
 	// CommsOperation is the base model of InviteParticipantsOperation
 	CommsOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Participants undocumented
 	Participants []InvitationParticipantInfo `json:"participants,omitempty"`
 }

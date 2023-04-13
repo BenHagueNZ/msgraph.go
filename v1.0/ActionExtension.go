@@ -18,35 +18,35 @@ func (b *ExtensionRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
-// ExtensionProperty returns request builder for ExtensionProperty collection rcn
-func (b *DirectoryObjectRequestBuilder) ExtensionProperty() *DirectoryObjectExtensionPropertyCollectionRequestBuilder {
-	bb := &DirectoryObjectExtensionPropertyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ExtensionProperty"
+// ExtensionProperty returns request builder for ExtensionProperty collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) ExtensionProperty() *AdministrativeUnitMembersCollectionExtensionPropertyCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionExtensionPropertyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DirectoryObjectExtensionPropertyCollectionRequestBuilder is request builder for ExtensionProperty collection
-type DirectoryObjectExtensionPropertyCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AdministrativeUnitMembersCollectionExtensionPropertyCollectionRequestBuilder is request builder for ExtensionProperty collection
+type AdministrativeUnitMembersCollectionExtensionPropertyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ExtensionProperty collection
-func (b *DirectoryObjectExtensionPropertyCollectionRequestBuilder) Request() *DirectoryObjectExtensionPropertyCollectionRequest {
-	return &DirectoryObjectExtensionPropertyCollectionRequest{
+func (b *AdministrativeUnitMembersCollectionExtensionPropertyCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionExtensionPropertyCollectionRequest {
+	return &AdministrativeUnitMembersCollectionExtensionPropertyCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for ExtensionProperty item
-func (b *DirectoryObjectExtensionPropertyCollectionRequestBuilder) ID(id string) *ExtensionPropertyRequestBuilder {
+func (b *AdministrativeUnitMembersCollectionExtensionPropertyCollectionRequestBuilder) ID(id string) *ExtensionPropertyRequestBuilder {
 	bb := &ExtensionPropertyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DirectoryObjectExtensionPropertyCollectionRequest is request for ExtensionProperty collection
-type DirectoryObjectExtensionPropertyCollectionRequest struct{ BaseRequest }
+// AdministrativeUnitMembersCollectionExtensionPropertyCollectionRequest is request for ExtensionProperty collection
+type AdministrativeUnitMembersCollectionExtensionPropertyCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for ExtensionProperty collection
-func (r *DirectoryObjectExtensionPropertyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ExtensionProperty, error) {
+func (r *AdministrativeUnitMembersCollectionExtensionPropertyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ExtensionProperty, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -102,7 +102,7 @@ func (r *DirectoryObjectExtensionPropertyCollectionRequest) Paging(ctx context.C
 }
 
 // GetN performs GET request for ExtensionProperty collection, max N pages
-func (r *DirectoryObjectExtensionPropertyCollectionRequest) GetN(ctx context.Context, n int) ([]ExtensionProperty, error) {
+func (r *AdministrativeUnitMembersCollectionExtensionPropertyCollectionRequest) GetN(ctx context.Context, n int) ([]ExtensionProperty, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -111,12 +111,12 @@ func (r *DirectoryObjectExtensionPropertyCollectionRequest) GetN(ctx context.Con
 }
 
 // Get performs GET request for ExtensionProperty collection
-func (r *DirectoryObjectExtensionPropertyCollectionRequest) Get(ctx context.Context) ([]ExtensionProperty, error) {
+func (r *AdministrativeUnitMembersCollectionExtensionPropertyCollectionRequest) Get(ctx context.Context) ([]ExtensionProperty, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for ExtensionProperty collection
-func (r *DirectoryObjectExtensionPropertyCollectionRequest) Add(ctx context.Context, reqObj *ExtensionProperty) (resObj *ExtensionProperty, err error) {
+func (r *AdministrativeUnitMembersCollectionExtensionPropertyCollectionRequest) Add(ctx context.Context, reqObj *ExtensionProperty) (resObj *ExtensionProperty, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

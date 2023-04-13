@@ -7,7 +7,7 @@ type BasicAuthentication struct {
 	// APIAuthenticationConfigurationBase is the base model of BasicAuthentication
 	APIAuthenticationConfigurationBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Password undocumented
 	Password *string `json:"password,omitempty"`
 	// Username undocumented

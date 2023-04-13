@@ -7,7 +7,7 @@ type DisableAndDeleteUserApplyAction struct {
 	// AccessReviewApplyAction is the base model of DisableAndDeleteUserApplyAction
 	AccessReviewApplyAction
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewDisableAndDeleteUserApplyAction() (*DisableAndDeleteUserApplyAction, error) {

@@ -9,7 +9,7 @@ type Application struct {
 	// DirectoryObject is the base model of Application
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AddIns undocumented
 	AddIns []AddIn `json:"addIns,omitempty"`
 	// API undocumented
@@ -110,7 +110,7 @@ type ApplicationEnforcedRestrictionsSessionControl struct {
 	// ConditionalAccessSessionControl is the base model of ApplicationEnforcedRestrictionsSessionControl
 	ConditionalAccessSessionControl
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewApplicationEnforcedRestrictionsSessionControl() (*ApplicationEnforcedRestrictionsSessionControl, error) {
@@ -125,7 +125,7 @@ type ApplicationServicePrincipal struct {
 	// Object is the base model of ApplicationServicePrincipal
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Application undocumented
 	Application *Application `json:"application,omitempty"`
 	// ServicePrincipal undocumented
@@ -144,7 +144,7 @@ type ApplicationTemplate struct {
 	// Entity is the base model of ApplicationTemplate
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Categories undocumented
 	Categories []string `json:"categories,omitempty"`
 	// Description undocumented

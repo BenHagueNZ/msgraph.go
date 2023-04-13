@@ -7,7 +7,7 @@ type AlterationResponse struct {
 	// Object is the base model of AlterationResponse
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OriginalQueryString undocumented
 	OriginalQueryString *string `json:"originalQueryString,omitempty"`
 	// QueryAlteration undocumented

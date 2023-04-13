@@ -7,7 +7,7 @@ type Privacy struct {
 	// Object is the base model of Privacy
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// SubjectRightsRequests undocumented
 	SubjectRightsRequests []SubjectRightsRequestObject `json:"subjectRightsRequests,omitempty"`
 }
@@ -24,7 +24,7 @@ type PrivacyProfile struct {
 	// Object is the base model of PrivacyProfile
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContactEmail undocumented
 	ContactEmail *string `json:"contactEmail,omitempty"`
 	// StatementURL undocumented

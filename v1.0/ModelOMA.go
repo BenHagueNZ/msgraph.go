@@ -9,7 +9,7 @@ type OMASetting struct {
 	// Object is the base model of OMASetting
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -30,7 +30,7 @@ type OMASettingBase64 struct {
 	// OMASetting is the base model of OMASettingBase64
 	OMASetting
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FileName undocumented
 	FileName *string `json:"fileName,omitempty"`
 	// Value undocumented
@@ -49,7 +49,7 @@ type OMASettingBoolean struct {
 	// OMASetting is the base model of OMASettingBoolean
 	OMASetting
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Value undocumented
 	Value *bool `json:"value,omitempty"`
 }
@@ -66,7 +66,7 @@ type OMASettingDateTime struct {
 	// OMASetting is the base model of OMASettingDateTime
 	OMASetting
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Value undocumented
 	Value *time.Time `json:"value,omitempty"`
 }
@@ -83,7 +83,7 @@ type OMASettingFloatingPoint struct {
 	// OMASetting is the base model of OMASettingFloatingPoint
 	OMASetting
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Value undocumented
 	Value *float64 `json:"value,omitempty"`
 }
@@ -100,7 +100,7 @@ type OMASettingInteger struct {
 	// OMASetting is the base model of OMASettingInteger
 	OMASetting
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Value undocumented
 	Value *int `json:"value,omitempty"`
 }
@@ -117,7 +117,7 @@ type OMASettingString struct {
 	// OMASetting is the base model of OMASettingString
 	OMASetting
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Value undocumented
 	Value *string `json:"value,omitempty"`
 }
@@ -134,7 +134,7 @@ type OMASettingStringXML struct {
 	// OMASetting is the base model of OMASettingStringXML
 	OMASetting
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FileName undocumented
 	FileName *string `json:"fileName,omitempty"`
 	// Value undocumented

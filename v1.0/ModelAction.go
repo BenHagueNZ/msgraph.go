@@ -7,7 +7,7 @@ type ActionResultPart struct {
 	// Object is the base model of ActionResultPart
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Error undocumented
 	Error *PublicError `json:"error,omitempty"`
 }

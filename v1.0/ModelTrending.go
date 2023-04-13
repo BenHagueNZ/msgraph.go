@@ -9,7 +9,7 @@ type Trending struct {
 	// Entity is the base model of Trending
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 	// ResourceReference undocumented

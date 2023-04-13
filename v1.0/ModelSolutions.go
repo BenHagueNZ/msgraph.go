@@ -7,7 +7,7 @@ type SolutionsRoot struct {
 	// Object is the base model of SolutionsRoot
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BookingBusinesses undocumented
 	BookingBusinesses []BookingBusiness `json:"bookingBusinesses,omitempty"`
 	// BookingCurrencies undocumented

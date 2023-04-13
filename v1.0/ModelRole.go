@@ -7,7 +7,7 @@ type RoleAssignment struct {
 	// Entity is the base model of RoleAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -30,7 +30,7 @@ type RoleDefinition struct {
 	// Entity is the base model of RoleDefinition
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -55,7 +55,7 @@ type RoleManagement struct {
 	// Object is the base model of RoleManagement
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Directory undocumented
 	Directory *RbacApplication `json:"directory,omitempty"`
 	// EntitlementManagement undocumented
@@ -74,7 +74,7 @@ type RolePermission struct {
 	// Object is the base model of RolePermission
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ResourceActions undocumented
 	ResourceActions []ResourceAction `json:"resourceActions,omitempty"`
 }

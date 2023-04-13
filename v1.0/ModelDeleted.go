@@ -7,7 +7,7 @@ type Deleted struct {
 	// Object is the base model of Deleted
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// State undocumented
 	State *string `json:"state,omitempty"`
 }
@@ -24,7 +24,7 @@ type DeletedTeam struct {
 	// Entity is the base model of DeletedTeam
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Channels undocumented
 	Channels []Channel `json:"channels,omitempty"`
 }

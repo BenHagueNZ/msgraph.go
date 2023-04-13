@@ -168,3 +168,65 @@ func (r *AttachmentSessionRequest) Update(ctx context.Context, reqObj *Attachmen
 func (r *AttachmentSessionRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
+
+type AttachmentCollectionCreateUploadSessionRequestBuilder struct{ BaseRequestBuilder }
+
+// CreateUploadSession action undocumentedras
+func (b *EventAttachmentsCollectionRequestBuilder) CreateUploadSession(reqObj *AttachmentCollectionCreateUploadSessionRequestParameter) *AttachmentCollectionCreateUploadSessionRequestBuilder {
+	bb := &AttachmentCollectionCreateUploadSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/CreateUploadSession"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+// CreateUploadSession action undocumentedras
+func (b *MessageAttachmentsCollectionRequestBuilder) CreateUploadSession(reqObj *AttachmentCollectionCreateUploadSessionRequestParameter) *AttachmentCollectionCreateUploadSessionRequestBuilder {
+	bb := &AttachmentCollectionCreateUploadSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/CreateUploadSession"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+// CreateUploadSession action undocumentedras
+func (b *PostAttachmentsCollectionRequestBuilder) CreateUploadSession(reqObj *AttachmentCollectionCreateUploadSessionRequestParameter) *AttachmentCollectionCreateUploadSessionRequestBuilder {
+	bb := &AttachmentCollectionCreateUploadSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/CreateUploadSession"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type AttachmentCollectionCreateUploadSessionRequest struct{ BaseRequest }
+
+func (b *AttachmentCollectionCreateUploadSessionRequestBuilder) Request() *AttachmentCollectionCreateUploadSessionRequest {
+	return &AttachmentCollectionCreateUploadSessionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *AttachmentCollectionCreateUploadSessionRequest) Post(ctx context.Context) (resObj *UploadSession, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type AttachmentBaseCollectionCreateUploadSessionRequestBuilder struct{ BaseRequestBuilder }
+
+// CreateUploadSession action undocumentedras
+func (b *TodoTaskAttachmentsCollectionRequestBuilder) CreateUploadSession(reqObj *AttachmentBaseCollectionCreateUploadSessionRequestParameter) *AttachmentBaseCollectionCreateUploadSessionRequestBuilder {
+	bb := &AttachmentBaseCollectionCreateUploadSessionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/CreateUploadSession"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type AttachmentBaseCollectionCreateUploadSessionRequest struct{ BaseRequest }
+
+func (b *AttachmentBaseCollectionCreateUploadSessionRequestBuilder) Request() *AttachmentBaseCollectionCreateUploadSessionRequest {
+	return &AttachmentBaseCollectionCreateUploadSessionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *AttachmentBaseCollectionCreateUploadSessionRequest) Post(ctx context.Context) (resObj *UploadSession, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}

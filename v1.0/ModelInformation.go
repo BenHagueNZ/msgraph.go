@@ -7,7 +7,7 @@ type InformationProtection struct {
 	// Object is the base model of InformationProtection
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Bitlocker undocumented
 	Bitlocker *Bitlocker `json:"bitlocker,omitempty"`
 	// ThreatAssessmentRequests undocumented

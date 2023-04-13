@@ -7,7 +7,7 @@ type CancelMediaProcessingOperation struct {
 	// CommsOperation is the base model of CancelMediaProcessingOperation
 	CommsOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewCancelMediaProcessingOperation() (*CancelMediaProcessingOperation, error) {

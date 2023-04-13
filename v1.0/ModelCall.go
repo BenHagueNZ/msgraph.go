@@ -9,7 +9,7 @@ type Call struct {
 	// Entity is the base model of Call
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CallbackURI undocumented
 	CallbackURI *string `json:"callbackUri,omitempty"`
 	// CallChainID undocumented
@@ -72,7 +72,7 @@ type CallEndedEventMessageDetail struct {
 	// EventMessageDetail is the base model of CallEndedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CallDuration undocumented
 	CallDuration *Duration `json:"callDuration,omitempty"`
 	// CallEventType undocumented
@@ -97,7 +97,7 @@ type CallMediaState struct {
 	// Object is the base model of CallMediaState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Audio undocumented
 	Audio *MediaState `json:"audio,omitempty"`
 }
@@ -114,7 +114,7 @@ type CallOptions struct {
 	// Object is the base model of CallOptions
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// HideBotAfterEscalation undocumented
 	HideBotAfterEscalation *bool `json:"hideBotAfterEscalation,omitempty"`
 	// IsContentSharingNotificationEnabled undocumented
@@ -133,7 +133,7 @@ type CallParticipantInfo struct {
 	// Object is the base model of CallParticipantInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Participant undocumented
 	Participant *IdentitySet `json:"participant,omitempty"`
 }
@@ -150,7 +150,7 @@ type CallRecordingEventMessageDetail struct {
 	// EventMessageDetail is the base model of CallRecordingEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CallID undocumented
 	CallID *string `json:"callId,omitempty"`
 	// CallRecordingDisplayName undocumented
@@ -179,7 +179,7 @@ type CallRoute struct {
 	// Object is the base model of CallRoute
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Final undocumented
 	Final *IdentitySet `json:"final,omitempty"`
 	// Original undocumented
@@ -200,7 +200,7 @@ type CallStartedEventMessageDetail struct {
 	// EventMessageDetail is the base model of CallStartedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CallEventType undocumented
 	CallEventType *TeamworkCallEventType `json:"callEventType,omitempty"`
 	// CallID undocumented
@@ -221,7 +221,7 @@ type CallTranscriptEventMessageDetail struct {
 	// EventMessageDetail is the base model of CallTranscriptEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CallID undocumented
 	CallID *string `json:"callId,omitempty"`
 	// CallTranscriptICalUID undocumented
@@ -242,7 +242,7 @@ type CallTranscriptionInfo struct {
 	// Object is the base model of CallTranscriptionInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// LastModifiedDateTime undocumented
 	LastModifiedDateTime *time.Time `json:"lastModifiedDateTime,omitempty"`
 	// State undocumented
@@ -261,7 +261,7 @@ type CallRecordsCallRecord struct {
 	// Entity is the base model of CallRecordsCallRecord
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// JoinWebURL undocumented
@@ -296,7 +296,7 @@ type CallRecordsClientUserAgent struct {
 	// CallRecordsUserAgent is the base model of CallRecordsClientUserAgent
 	CallRecordsUserAgent
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AzureADAppID undocumented
 	AzureADAppID *string `json:"azureADAppId,omitempty"`
 	// CommunicationServiceID undocumented
@@ -319,7 +319,7 @@ type CallRecordsDeviceInfo struct {
 	// Object is the base model of CallRecordsDeviceInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CaptureDeviceDriver undocumented
 	CaptureDeviceDriver *string `json:"captureDeviceDriver,omitempty"`
 	// CaptureDeviceName undocumented
@@ -376,7 +376,7 @@ type CallRecordsDirectRoutingLogRow struct {
 	// Object is the base model of CallRecordsDirectRoutingLogRow
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CalleeNumber undocumented
 	CalleeNumber *string `json:"calleeNumber,omitempty"`
 	// CallEndSubReason undocumented
@@ -433,7 +433,7 @@ type CallRecordsEndpoint struct {
 	// Object is the base model of CallRecordsEndpoint
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UserAgent undocumented
 	UserAgent *CallRecordsUserAgent `json:"userAgent,omitempty"`
 }
@@ -450,7 +450,7 @@ type CallRecordsFailureInfo struct {
 	// Object is the base model of CallRecordsFailureInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Reason undocumented
 	Reason *string `json:"reason,omitempty"`
 	// Stage undocumented
@@ -469,7 +469,7 @@ type CallRecordsFeedbackTokenSet struct {
 	// Object is the base model of CallRecordsFeedbackTokenSet
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewCallRecordsFeedbackTokenSet() (*CallRecordsFeedbackTokenSet, error) {
@@ -484,7 +484,7 @@ type CallRecordsMedia struct {
 	// Object is the base model of CallRecordsMedia
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CalleeDevice undocumented
 	CalleeDevice *CallRecordsDeviceInfo `json:"calleeDevice,omitempty"`
 	// CalleeNetwork undocumented
@@ -511,7 +511,7 @@ type CallRecordsMediaStream struct {
 	// Object is the base model of CallRecordsMediaStream
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AudioCodec undocumented
 	AudioCodec *CallRecordsAudioCodec `json:"audioCodec,omitempty"`
 	// AverageAudioDegradation undocumented
@@ -580,7 +580,7 @@ type CallRecordsNetworkInfo struct {
 	// Object is the base model of CallRecordsNetworkInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BandwidthLowEventRatio undocumented
 	BandwidthLowEventRatio *float64 `json:"bandwidthLowEventRatio,omitempty"`
 	// BasicServiceSetIdentifier undocumented
@@ -647,7 +647,7 @@ type CallRecordsParticipantEndpoint struct {
 	// CallRecordsEndpoint is the base model of CallRecordsParticipantEndpoint
 	CallRecordsEndpoint
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Feedback undocumented
 	Feedback *CallRecordsUserFeedback `json:"feedback,omitempty"`
 	// Identity undocumented
@@ -666,7 +666,7 @@ type CallRecordsPstnCallLogRow struct {
 	// Object is the base model of CallRecordsPstnCallLogRow
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CallDurationSource undocumented
 	CallDurationSource *CallRecordsPstnCallDurationSource `json:"callDurationSource,omitempty"`
 	// CalleeNumber undocumented
@@ -727,7 +727,7 @@ type CallRecordsSegment struct {
 	// Entity is the base model of CallRecordsSegment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Callee undocumented
 	Callee *CallRecordsEndpoint `json:"callee,omitempty"`
 	// Caller undocumented
@@ -754,7 +754,7 @@ type CallRecordsServiceEndpoint struct {
 	// CallRecordsEndpoint is the base model of CallRecordsServiceEndpoint
 	CallRecordsEndpoint
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewCallRecordsServiceEndpoint() (*CallRecordsServiceEndpoint, error) {
@@ -769,7 +769,7 @@ type CallRecordsServiceUserAgent struct {
 	// CallRecordsUserAgent is the base model of CallRecordsServiceUserAgent
 	CallRecordsUserAgent
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Role undocumented
 	Role *CallRecordsServiceRole `json:"role,omitempty"`
 }
@@ -786,7 +786,7 @@ type CallRecordsSession struct {
 	// Entity is the base model of CallRecordsSession
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Callee undocumented
 	Callee *CallRecordsEndpoint `json:"callee,omitempty"`
 	// Caller undocumented
@@ -815,7 +815,7 @@ type CallRecordsTraceRouteHop struct {
 	// Object is the base model of CallRecordsTraceRouteHop
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// HopCount undocumented
 	HopCount *int `json:"hopCount,omitempty"`
 	// IPAddress undocumented
@@ -836,7 +836,7 @@ type CallRecordsUserAgent struct {
 	// Object is the base model of CallRecordsUserAgent
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicationVersion undocumented
 	ApplicationVersion *string `json:"applicationVersion,omitempty"`
 	// HeaderValue undocumented
@@ -855,7 +855,7 @@ type CallRecordsUserFeedback struct {
 	// Object is the base model of CallRecordsUserFeedback
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Rating undocumented
 	Rating *CallRecordsUserFeedbackRating `json:"rating,omitempty"`
 	// Text undocumented

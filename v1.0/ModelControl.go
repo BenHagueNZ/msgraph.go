@@ -7,7 +7,7 @@ type ControlScore struct {
 	// Object is the base model of ControlScore
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ControlCategory undocumented
 	ControlCategory *string `json:"controlCategory,omitempty"`
 	// ControlName undocumented

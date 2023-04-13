@@ -7,7 +7,7 @@ type Root struct {
 	// Object is the base model of Root
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewRoot() (*Root, error) {

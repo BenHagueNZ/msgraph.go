@@ -7,7 +7,7 @@ type HomeRealmDiscoveryPolicy struct {
 	// StsPolicy is the base model of HomeRealmDiscoveryPolicy
 	StsPolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewHomeRealmDiscoveryPolicy() (*HomeRealmDiscoveryPolicy, error) {

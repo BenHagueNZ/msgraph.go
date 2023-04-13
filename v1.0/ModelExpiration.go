@@ -9,7 +9,7 @@ type ExpirationPattern struct {
 	// Object is the base model of ExpirationPattern
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Duration undocumented
 	Duration *Duration `json:"duration,omitempty"`
 	// EndDateTime undocumented

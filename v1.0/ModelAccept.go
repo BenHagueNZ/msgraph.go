@@ -7,7 +7,7 @@ type AcceptJoinResponse struct {
 	// ParticipantJoiningResponse is the base model of AcceptJoinResponse
 	ParticipantJoiningResponse
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewAcceptJoinResponse() (*AcceptJoinResponse, error) {

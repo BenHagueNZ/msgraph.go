@@ -7,7 +7,7 @@ type OrganizerMeetingInfo struct {
 	// MeetingInfo is the base model of OrganizerMeetingInfo
 	MeetingInfo
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Organizer undocumented
 	Organizer *IdentitySet `json:"organizer,omitempty"`
 }

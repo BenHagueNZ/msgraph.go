@@ -15,7 +15,7 @@ import (
 type ListItemVersionRestoreVersionRequestParameter struct {
 }
 
-// Columns returns request builder for ColumnDefinition collection rcn
+// Columns returns request builder for ColumnDefinition collection
 func (b *ListRequestBuilder) Columns() *ListColumnsCollectionRequestBuilder {
 	bb := &ListColumnsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/columns"
@@ -118,7 +118,7 @@ func (r *ListColumnsCollectionRequest) Add(ctx context.Context, reqObj *ColumnDe
 	return
 }
 
-// ContentTypes returns request builder for ContentType collection rcn
+// ContentTypes returns request builder for ContentType collection
 func (b *ListRequestBuilder) ContentTypes() *ListContentTypesCollectionRequestBuilder {
 	bb := &ListContentTypesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/contentTypes"
@@ -228,7 +228,7 @@ func (b *ListRequestBuilder) Drive() *DriveRequestBuilder {
 	return bb
 }
 
-// Items returns request builder for ListItem collection rcn
+// Items returns request builder for ListItem collection
 func (b *ListRequestBuilder) Items() *ListItemsCollectionRequestBuilder {
 	bb := &ListItemsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/items"
@@ -331,7 +331,7 @@ func (r *ListItemsCollectionRequest) Add(ctx context.Context, reqObj *ListItem) 
 	return
 }
 
-// Operations returns request builder for RichLongRunningOperation collection rcn
+// Operations returns request builder for RichLongRunningOperation collection
 func (b *ListRequestBuilder) Operations() *ListOperationsCollectionRequestBuilder {
 	bb := &ListOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -434,7 +434,7 @@ func (r *ListOperationsCollectionRequest) Add(ctx context.Context, reqObj *RichL
 	return
 }
 
-// Subscriptions returns request builder for Subscription collection rcn
+// Subscriptions returns request builder for Subscription collection
 func (b *ListRequestBuilder) Subscriptions() *ListSubscriptionsCollectionRequestBuilder {
 	bb := &ListSubscriptionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/subscriptions"
@@ -544,7 +544,7 @@ func (b *ListItemRequestBuilder) Analytics() *ItemAnalyticsRequestBuilder {
 	return bb
 }
 
-// DocumentSetVersions returns request builder for DocumentSetVersion collection rcn
+// DocumentSetVersions returns request builder for DocumentSetVersion collection
 func (b *ListItemRequestBuilder) DocumentSetVersions() *ListItemDocumentSetVersionsCollectionRequestBuilder {
 	bb := &ListItemDocumentSetVersionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/documentSetVersions"
@@ -661,7 +661,7 @@ func (b *ListItemRequestBuilder) Fields() *FieldValueSetRequestBuilder {
 	return bb
 }
 
-// Versions returns request builder for ListItemVersion collection rcn
+// Versions returns request builder for ListItemVersion collection
 func (b *ListItemRequestBuilder) Versions() *ListItemVersionsCollectionRequestBuilder {
 	bb := &ListItemVersionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/versions"
@@ -771,35 +771,35 @@ func (b *ListItemVersionRequestBuilder) Fields() *FieldValueSetRequestBuilder {
 	return bb
 }
 
-// List returns request builder for List collection rcn
-func (b *BaseItemRequestBuilder) List() *BaseItemListCollectionRequestBuilder {
-	bb := &BaseItemListCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/List"
+// List returns request builder for List collection
+func (b *SiteItemsCollectionRequestBuilder) List() *SiteItemsCollectionListCollectionRequestBuilder {
+	bb := &SiteItemsCollectionListCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// BaseItemListCollectionRequestBuilder is request builder for List collection
-type BaseItemListCollectionRequestBuilder struct{ BaseRequestBuilder }
+// SiteItemsCollectionListCollectionRequestBuilder is request builder for List collection
+type SiteItemsCollectionListCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for List collection
-func (b *BaseItemListCollectionRequestBuilder) Request() *BaseItemListCollectionRequest {
-	return &BaseItemListCollectionRequest{
+func (b *SiteItemsCollectionListCollectionRequestBuilder) Request() *SiteItemsCollectionListCollectionRequest {
+	return &SiteItemsCollectionListCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for List item
-func (b *BaseItemListCollectionRequestBuilder) ID(id string) *ListRequestBuilder {
+func (b *SiteItemsCollectionListCollectionRequestBuilder) ID(id string) *ListRequestBuilder {
 	bb := &ListRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// BaseItemListCollectionRequest is request for List collection
-type BaseItemListCollectionRequest struct{ BaseRequest }
+// SiteItemsCollectionListCollectionRequest is request for List collection
+type SiteItemsCollectionListCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for List collection
-func (r *BaseItemListCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]List, error) {
+func (r *SiteItemsCollectionListCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]List, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -855,7 +855,7 @@ func (r *BaseItemListCollectionRequest) Paging(ctx context.Context, method, path
 }
 
 // GetN performs GET request for List collection, max N pages
-func (r *BaseItemListCollectionRequest) GetN(ctx context.Context, n int) ([]List, error) {
+func (r *SiteItemsCollectionListCollectionRequest) GetN(ctx context.Context, n int) ([]List, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -864,45 +864,45 @@ func (r *BaseItemListCollectionRequest) GetN(ctx context.Context, n int) ([]List
 }
 
 // Get performs GET request for List collection
-func (r *BaseItemListCollectionRequest) Get(ctx context.Context) ([]List, error) {
+func (r *SiteItemsCollectionListCollectionRequest) Get(ctx context.Context) ([]List, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for List collection
-func (r *BaseItemListCollectionRequest) Add(ctx context.Context, reqObj *List) (resObj *List, err error) {
+func (r *SiteItemsCollectionListCollectionRequest) Add(ctx context.Context, reqObj *List) (resObj *List, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// ListItem returns request builder for ListItem collection rcn
-func (b *BaseItemRequestBuilder) ListItem() *BaseItemListItemCollectionRequestBuilder {
-	bb := &BaseItemListItemCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ListItem"
+// ListItem returns request builder for ListItem collection
+func (b *SiteItemsCollectionRequestBuilder) ListItem() *SiteItemsCollectionListItemCollectionRequestBuilder {
+	bb := &SiteItemsCollectionListItemCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// BaseItemListItemCollectionRequestBuilder is request builder for ListItem collection
-type BaseItemListItemCollectionRequestBuilder struct{ BaseRequestBuilder }
+// SiteItemsCollectionListItemCollectionRequestBuilder is request builder for ListItem collection
+type SiteItemsCollectionListItemCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ListItem collection
-func (b *BaseItemListItemCollectionRequestBuilder) Request() *BaseItemListItemCollectionRequest {
-	return &BaseItemListItemCollectionRequest{
+func (b *SiteItemsCollectionListItemCollectionRequestBuilder) Request() *SiteItemsCollectionListItemCollectionRequest {
+	return &SiteItemsCollectionListItemCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for ListItem item
-func (b *BaseItemListItemCollectionRequestBuilder) ID(id string) *ListItemRequestBuilder {
+func (b *SiteItemsCollectionListItemCollectionRequestBuilder) ID(id string) *ListItemRequestBuilder {
 	bb := &ListItemRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// BaseItemListItemCollectionRequest is request for ListItem collection
-type BaseItemListItemCollectionRequest struct{ BaseRequest }
+// SiteItemsCollectionListItemCollectionRequest is request for ListItem collection
+type SiteItemsCollectionListItemCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for ListItem collection
-func (r *BaseItemListItemCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ListItem, error) {
+func (r *SiteItemsCollectionListItemCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ListItem, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -958,7 +958,7 @@ func (r *BaseItemListItemCollectionRequest) Paging(ctx context.Context, method, 
 }
 
 // GetN performs GET request for ListItem collection, max N pages
-func (r *BaseItemListItemCollectionRequest) GetN(ctx context.Context, n int) ([]ListItem, error) {
+func (r *SiteItemsCollectionListItemCollectionRequest) GetN(ctx context.Context, n int) ([]ListItem, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -967,12 +967,12 @@ func (r *BaseItemListItemCollectionRequest) GetN(ctx context.Context, n int) ([]
 }
 
 // Get performs GET request for ListItem collection
-func (r *BaseItemListItemCollectionRequest) Get(ctx context.Context) ([]ListItem, error) {
+func (r *SiteItemsCollectionListItemCollectionRequest) Get(ctx context.Context) ([]ListItem, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for ListItem collection
-func (r *BaseItemListItemCollectionRequest) Add(ctx context.Context, reqObj *ListItem) (resObj *ListItem, err error) {
+func (r *SiteItemsCollectionListItemCollectionRequest) Add(ctx context.Context, reqObj *ListItem) (resObj *ListItem, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

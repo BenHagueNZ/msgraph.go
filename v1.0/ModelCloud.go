@@ -7,7 +7,7 @@ type CloudAppSecuritySessionControl struct {
 	// ConditionalAccessSessionControl is the base model of CloudAppSecuritySessionControl
 	ConditionalAccessSessionControl
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CloudAppSecurityType undocumented
 	CloudAppSecurityType *CloudAppSecuritySessionControlType `json:"cloudAppSecurityType,omitempty"`
 }
@@ -24,7 +24,7 @@ type CloudAppSecurityState struct {
 	// Object is the base model of CloudAppSecurityState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DestinationServiceIP undocumented
 	DestinationServiceIP *string `json:"destinationServiceIp,omitempty"`
 	// DestinationServiceName undocumented
@@ -45,7 +45,7 @@ type CloudCommunications struct {
 	// Entity is the base model of CloudCommunications
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Calls undocumented
 	Calls []Call `json:"calls,omitempty"`
 	// CallRecords undocumented

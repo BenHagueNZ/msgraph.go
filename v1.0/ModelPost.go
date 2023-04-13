@@ -9,7 +9,7 @@ type Post struct {
 	// OutlookItem is the base model of Post
 	OutlookItem
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Body undocumented
 	Body *ItemBody `json:"body,omitempty"`
 	// ConversationID undocumented

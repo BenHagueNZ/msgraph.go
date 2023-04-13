@@ -9,7 +9,7 @@ type AuditActivityInitiator struct {
 	// Object is the base model of AuditActivityInitiator
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// App undocumented
 	App *AppIdentity `json:"app,omitempty"`
 	// User undocumented
@@ -28,7 +28,7 @@ type AuditActor struct {
 	// Object is the base model of AuditActor
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicationDisplayName undocumented
 	ApplicationDisplayName *string `json:"applicationDisplayName,omitempty"`
 	// ApplicationID undocumented
@@ -59,7 +59,7 @@ type AuditEvent struct {
 	// Entity is the base model of AuditEvent
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Activity undocumented
 	Activity *string `json:"activity,omitempty"`
 	// ActivityDateTime undocumented
@@ -96,7 +96,7 @@ type AuditLogRoot struct {
 	// Entity is the base model of AuditLogRoot
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DirectoryAudits undocumented
 	DirectoryAudits []DirectoryAudit `json:"directoryAudits,omitempty"`
 	// Provisioning undocumented
@@ -117,7 +117,7 @@ type AuditProperty struct {
 	// Object is the base model of AuditProperty
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// NewValue undocumented
@@ -138,7 +138,7 @@ type AuditResource struct {
 	// Object is the base model of AuditResource
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AuditResourceType undocumented
 	AuditResourceType *string `json:"auditResourceType,omitempty"`
 	// DisplayName undocumented

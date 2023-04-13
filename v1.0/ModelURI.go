@@ -9,7 +9,7 @@ type URIClickSecurityState struct {
 	// Object is the base model of URIClickSecurityState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ClickAction undocumented
 	ClickAction *string `json:"clickAction,omitempty"`
 	// ClickDateTime undocumented

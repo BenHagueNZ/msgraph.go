@@ -7,7 +7,7 @@ type SingleServicePrincipal struct {
 	// SubjectSet is the base model of SingleServicePrincipal
 	SubjectSet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// ServicePrincipalID undocumented
@@ -26,7 +26,7 @@ type SingleUser struct {
 	// SubjectSet is the base model of SingleUser
 	SubjectSet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// UserID undocumented
@@ -45,7 +45,7 @@ type SingleValueLegacyExtendedProperty struct {
 	// Entity is the base model of SingleValueLegacyExtendedProperty
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Value undocumented
 	Value *string `json:"value,omitempty"`
 }

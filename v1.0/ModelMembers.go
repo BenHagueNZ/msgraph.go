@@ -9,7 +9,7 @@ type MembersAddedEventMessageDetail struct {
 	// EventMessageDetail is the base model of MembersAddedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// Members undocumented
@@ -30,7 +30,7 @@ type MembersDeletedEventMessageDetail struct {
 	// EventMessageDetail is the base model of MembersDeletedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// Members undocumented
@@ -49,7 +49,7 @@ type MembersJoinedEventMessageDetail struct {
 	// EventMessageDetail is the base model of MembersJoinedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// Members undocumented
@@ -68,7 +68,7 @@ type MembersLeftEventMessageDetail struct {
 	// EventMessageDetail is the base model of MembersLeftEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// Members undocumented

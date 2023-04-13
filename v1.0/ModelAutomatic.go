@@ -7,7 +7,7 @@ type AutomaticRepliesMailTips struct {
 	// Object is the base model of AutomaticRepliesMailTips
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Message undocumented
 	Message *string `json:"message,omitempty"`
 	// MessageLanguage undocumented
@@ -30,7 +30,7 @@ type AutomaticRepliesSetting struct {
 	// Object is the base model of AutomaticRepliesSetting
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExternalAudience undocumented
 	ExternalAudience *ExternalAudienceScope `json:"externalAudience,omitempty"`
 	// ExternalReplyMessage undocumented

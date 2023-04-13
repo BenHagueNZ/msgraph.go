@@ -169,6 +169,84 @@ func (r *ContentTypeOrderRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+type ContentTypeCollectionAddCopyRequestBuilder struct{ BaseRequestBuilder }
+
+// AddCopy action undocumentedras
+func (b *ContentTypeBaseTypesCollectionRequestBuilder) AddCopy(reqObj *ContentTypeCollectionAddCopyRequestParameter) *ContentTypeCollectionAddCopyRequestBuilder {
+	bb := &ContentTypeCollectionAddCopyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/AddCopy"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+// AddCopy action undocumentedras
+func (b *ListContentTypesCollectionRequestBuilder) AddCopy(reqObj *ContentTypeCollectionAddCopyRequestParameter) *ContentTypeCollectionAddCopyRequestBuilder {
+	bb := &ContentTypeCollectionAddCopyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/AddCopy"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+// AddCopy action undocumentedras
+func (b *SiteContentTypesCollectionRequestBuilder) AddCopy(reqObj *ContentTypeCollectionAddCopyRequestParameter) *ContentTypeCollectionAddCopyRequestBuilder {
+	bb := &ContentTypeCollectionAddCopyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/AddCopy"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ContentTypeCollectionAddCopyRequest struct{ BaseRequest }
+
+func (b *ContentTypeCollectionAddCopyRequestBuilder) Request() *ContentTypeCollectionAddCopyRequest {
+	return &ContentTypeCollectionAddCopyRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ContentTypeCollectionAddCopyRequest) Post(ctx context.Context) (resObj *ContentType, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder struct{ BaseRequestBuilder }
+
+// AddCopyFromContentTypeHub action undocumentedras
+func (b *ContentTypeBaseTypesCollectionRequestBuilder) AddCopyFromContentTypeHub(reqObj *ContentTypeCollectionAddCopyFromContentTypeHubRequestParameter) *ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder {
+	bb := &ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/AddCopyFromContentTypeHub"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+// AddCopyFromContentTypeHub action undocumentedras
+func (b *ListContentTypesCollectionRequestBuilder) AddCopyFromContentTypeHub(reqObj *ContentTypeCollectionAddCopyFromContentTypeHubRequestParameter) *ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder {
+	bb := &ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/AddCopyFromContentTypeHub"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+// AddCopyFromContentTypeHub action undocumentedras
+func (b *SiteContentTypesCollectionRequestBuilder) AddCopyFromContentTypeHub(reqObj *ContentTypeCollectionAddCopyFromContentTypeHubRequestParameter) *ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder {
+	bb := &ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/AddCopyFromContentTypeHub"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ContentTypeCollectionAddCopyFromContentTypeHubRequest struct{ BaseRequest }
+
+func (b *ContentTypeCollectionAddCopyFromContentTypeHubRequestBuilder) Request() *ContentTypeCollectionAddCopyFromContentTypeHubRequest {
+	return &ContentTypeCollectionAddCopyFromContentTypeHubRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ContentTypeCollectionAddCopyFromContentTypeHubRequest) Post(ctx context.Context) (resObj *ContentType, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
 type ContentTypePublishRequestBuilder struct{ BaseRequestBuilder }
 
 // Publish action undocumentedrav

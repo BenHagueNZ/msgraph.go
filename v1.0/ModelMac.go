@@ -7,7 +7,7 @@ type MacOSCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of MacOSCompliancePolicy
 	DeviceCompliancePolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeviceThreatProtectionEnabled undocumented
 	DeviceThreatProtectionEnabled *bool `json:"deviceThreatProtectionEnabled,omitempty"`
 	// DeviceThreatProtectionRequiredSecurityLevel undocumented
@@ -56,7 +56,7 @@ type MacOSCustomConfiguration struct {
 	// DeviceConfiguration is the base model of MacOSCustomConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Payload undocumented
 	Payload *Binary `json:"payload,omitempty"`
 	// PayloadFileName undocumented
@@ -77,7 +77,7 @@ type MacOSDeviceFeaturesConfiguration struct {
 	// AppleDeviceFeaturesConfigurationBase is the base model of MacOSDeviceFeaturesConfiguration
 	AppleDeviceFeaturesConfigurationBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewMacOSDeviceFeaturesConfiguration() (*MacOSDeviceFeaturesConfiguration, error) {
@@ -92,7 +92,7 @@ type MacOSGeneralDeviceConfiguration struct {
 	// DeviceConfiguration is the base model of MacOSGeneralDeviceConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CompliantAppListType undocumented
 	CompliantAppListType *AppListType `json:"compliantAppListType,omitempty"`
 	// CompliantAppsList undocumented
@@ -131,7 +131,7 @@ type MacOSLobApp struct {
 	// MobileLobApp is the base model of MacOSLobApp
 	MobileLobApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BuildNumber undocumented
 	BuildNumber *string `json:"buildNumber,omitempty"`
 	// BundleID undocumented
@@ -164,7 +164,7 @@ type MacOSLobChildApp struct {
 	// Object is the base model of MacOSLobChildApp
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BuildNumber undocumented
 	BuildNumber *string `json:"buildNumber,omitempty"`
 	// BundleID undocumented
@@ -185,7 +185,7 @@ type MacOSMicrosoftEdgeApp struct {
 	// MobileApp is the base model of MacOSMicrosoftEdgeApp
 	MobileApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Channel undocumented
 	Channel *MicrosoftEdgeChannel `json:"channel,omitempty"`
 }
@@ -202,7 +202,7 @@ type MacOSMinimumOperatingSystem struct {
 	// Object is the base model of MacOSMinimumOperatingSystem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// V10_10 undocumented
 	V10_10 *bool `json:"v10_10,omitempty"`
 	// V10_11 undocumented
@@ -241,7 +241,7 @@ type MacOSOfficeSuiteApp struct {
 	// MobileApp is the base model of MacOSOfficeSuiteApp
 	MobileApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewMacOSOfficeSuiteApp() (*MacOSOfficeSuiteApp, error) {
@@ -256,7 +256,7 @@ type MacOsLobAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of MacOsLobAppAssignmentSettings
 	MobileAppAssignmentSettings
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UninstallOnDeviceRemoval undocumented
 	UninstallOnDeviceRemoval *bool `json:"uninstallOnDeviceRemoval,omitempty"`
 }

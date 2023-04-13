@@ -7,7 +7,7 @@ type AttributeRuleMembers struct {
 	// SubjectSet is the base model of AttributeRuleMembers
 	SubjectSet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// MembershipRule undocumented

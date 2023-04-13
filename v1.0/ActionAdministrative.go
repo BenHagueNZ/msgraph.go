@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Extensions returns request builder for Extension collection rcn
+// Extensions returns request builder for Extension collection
 func (b *AdministrativeUnitRequestBuilder) Extensions() *AdministrativeUnitExtensionsCollectionRequestBuilder {
 	bb := &AdministrativeUnitExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensions"
@@ -114,7 +114,7 @@ func (r *AdministrativeUnitExtensionsCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// Members returns request builder for DirectoryObject collection rcn
+// Members returns request builder for DirectoryObject collection
 func (b *AdministrativeUnitRequestBuilder) Members() *AdministrativeUnitMembersCollectionRequestBuilder {
 	bb := &AdministrativeUnitMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"
@@ -217,7 +217,7 @@ func (r *AdministrativeUnitMembersCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// ScopedRoleMembers returns request builder for ScopedRoleMembership collection rcn
+// ScopedRoleMembers returns request builder for ScopedRoleMembership collection
 func (b *AdministrativeUnitRequestBuilder) ScopedRoleMembers() *AdministrativeUnitScopedRoleMembersCollectionRequestBuilder {
 	bb := &AdministrativeUnitScopedRoleMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/scopedRoleMembers"
@@ -320,35 +320,35 @@ func (r *AdministrativeUnitScopedRoleMembersCollectionRequest) Add(ctx context.C
 	return
 }
 
-// AdministrativeUnit returns request builder for AdministrativeUnit collection rcn
-func (b *DirectoryObjectRequestBuilder) AdministrativeUnit() *DirectoryObjectAdministrativeUnitCollectionRequestBuilder {
-	bb := &DirectoryObjectAdministrativeUnitCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/AdministrativeUnit"
+// AdministrativeUnit returns request builder for AdministrativeUnit collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) AdministrativeUnit() *AdministrativeUnitMembersCollectionAdministrativeUnitCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionAdministrativeUnitCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DirectoryObjectAdministrativeUnitCollectionRequestBuilder is request builder for AdministrativeUnit collection
-type DirectoryObjectAdministrativeUnitCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AdministrativeUnitMembersCollectionAdministrativeUnitCollectionRequestBuilder is request builder for AdministrativeUnit collection
+type AdministrativeUnitMembersCollectionAdministrativeUnitCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AdministrativeUnit collection
-func (b *DirectoryObjectAdministrativeUnitCollectionRequestBuilder) Request() *DirectoryObjectAdministrativeUnitCollectionRequest {
-	return &DirectoryObjectAdministrativeUnitCollectionRequest{
+func (b *AdministrativeUnitMembersCollectionAdministrativeUnitCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionAdministrativeUnitCollectionRequest {
+	return &AdministrativeUnitMembersCollectionAdministrativeUnitCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for AdministrativeUnit item
-func (b *DirectoryObjectAdministrativeUnitCollectionRequestBuilder) ID(id string) *AdministrativeUnitRequestBuilder {
+func (b *AdministrativeUnitMembersCollectionAdministrativeUnitCollectionRequestBuilder) ID(id string) *AdministrativeUnitRequestBuilder {
 	bb := &AdministrativeUnitRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DirectoryObjectAdministrativeUnitCollectionRequest is request for AdministrativeUnit collection
-type DirectoryObjectAdministrativeUnitCollectionRequest struct{ BaseRequest }
+// AdministrativeUnitMembersCollectionAdministrativeUnitCollectionRequest is request for AdministrativeUnit collection
+type AdministrativeUnitMembersCollectionAdministrativeUnitCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for AdministrativeUnit collection
-func (r *DirectoryObjectAdministrativeUnitCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AdministrativeUnit, error) {
+func (r *AdministrativeUnitMembersCollectionAdministrativeUnitCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AdministrativeUnit, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -404,7 +404,7 @@ func (r *DirectoryObjectAdministrativeUnitCollectionRequest) Paging(ctx context.
 }
 
 // GetN performs GET request for AdministrativeUnit collection, max N pages
-func (r *DirectoryObjectAdministrativeUnitCollectionRequest) GetN(ctx context.Context, n int) ([]AdministrativeUnit, error) {
+func (r *AdministrativeUnitMembersCollectionAdministrativeUnitCollectionRequest) GetN(ctx context.Context, n int) ([]AdministrativeUnit, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -413,12 +413,12 @@ func (r *DirectoryObjectAdministrativeUnitCollectionRequest) GetN(ctx context.Co
 }
 
 // Get performs GET request for AdministrativeUnit collection
-func (r *DirectoryObjectAdministrativeUnitCollectionRequest) Get(ctx context.Context) ([]AdministrativeUnit, error) {
+func (r *AdministrativeUnitMembersCollectionAdministrativeUnitCollectionRequest) Get(ctx context.Context) ([]AdministrativeUnit, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for AdministrativeUnit collection
-func (r *DirectoryObjectAdministrativeUnitCollectionRequest) Add(ctx context.Context, reqObj *AdministrativeUnit) (resObj *AdministrativeUnit, err error) {
+func (r *AdministrativeUnitMembersCollectionAdministrativeUnitCollectionRequest) Add(ctx context.Context, reqObj *AdministrativeUnit) (resObj *AdministrativeUnit, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

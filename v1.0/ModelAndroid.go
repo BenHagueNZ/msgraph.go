@@ -7,7 +7,7 @@ type AndroidCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of AndroidCompliancePolicy
 	DeviceCompliancePolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeviceThreatProtectionEnabled undocumented
 	DeviceThreatProtectionEnabled *bool `json:"deviceThreatProtectionEnabled,omitempty"`
 	// DeviceThreatProtectionRequiredSecurityLevel undocumented
@@ -64,7 +64,7 @@ type AndroidCustomConfiguration struct {
 	// DeviceConfiguration is the base model of AndroidCustomConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OMASettings undocumented
 	OMASettings []OMASetting `json:"omaSettings,omitempty"`
 }
@@ -81,7 +81,7 @@ type AndroidGeneralDeviceConfiguration struct {
 	// DeviceConfiguration is the base model of AndroidGeneralDeviceConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppsBlockClipboardSharing undocumented
 	AppsBlockClipboardSharing *bool `json:"appsBlockClipboardSharing,omitempty"`
 	// AppsBlockCopyPaste undocumented
@@ -192,7 +192,7 @@ type AndroidLobApp struct {
 	// MobileLobApp is the base model of AndroidLobApp
 	MobileLobApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MinimumSupportedOperatingSystem undocumented
 	MinimumSupportedOperatingSystem *AndroidMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
 	// PackageID undocumented
@@ -215,7 +215,7 @@ type AndroidManagedAppProtection struct {
 	// TargetedManagedAppProtection is the base model of AndroidManagedAppProtection
 	TargetedManagedAppProtection
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CustomBrowserDisplayName undocumented
 	CustomBrowserDisplayName *string `json:"customBrowserDisplayName,omitempty"`
 	// CustomBrowserPackageID undocumented
@@ -250,7 +250,7 @@ type AndroidManagedAppRegistration struct {
 	// ManagedAppRegistration is the base model of AndroidManagedAppRegistration
 	ManagedAppRegistration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewAndroidManagedAppRegistration() (*AndroidManagedAppRegistration, error) {
@@ -265,7 +265,7 @@ type AndroidMinimumOperatingSystem struct {
 	// Object is the base model of AndroidMinimumOperatingSystem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// V10_0 undocumented
 	V10_0 *bool `json:"v10_0,omitempty"`
 	// V11_0 undocumented
@@ -312,7 +312,7 @@ type AndroidMobileAppIdentifier struct {
 	// MobileAppIdentifier is the base model of AndroidMobileAppIdentifier
 	MobileAppIdentifier
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// PackageID undocumented
 	PackageID *string `json:"packageId,omitempty"`
 }
@@ -329,7 +329,7 @@ type AndroidStoreApp struct {
 	// MobileApp is the base model of AndroidStoreApp
 	MobileApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppStoreURL undocumented
 	AppStoreURL *string `json:"appStoreUrl,omitempty"`
 	// MinimumSupportedOperatingSystem undocumented
@@ -350,7 +350,7 @@ type AndroidWorkProfileCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of AndroidWorkProfileCompliancePolicy
 	DeviceCompliancePolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeviceThreatProtectionEnabled undocumented
 	DeviceThreatProtectionEnabled *bool `json:"deviceThreatProtectionEnabled,omitempty"`
 	// DeviceThreatProtectionRequiredSecurityLevel undocumented
@@ -407,7 +407,7 @@ type AndroidWorkProfileCustomConfiguration struct {
 	// DeviceConfiguration is the base model of AndroidWorkProfileCustomConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OMASettings undocumented
 	OMASettings []OMASetting `json:"omaSettings,omitempty"`
 }
@@ -424,7 +424,7 @@ type AndroidWorkProfileGeneralDeviceConfiguration struct {
 	// DeviceConfiguration is the base model of AndroidWorkProfileGeneralDeviceConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// PasswordBlockFingerprintUnlock undocumented
 	PasswordBlockFingerprintUnlock *bool `json:"passwordBlockFingerprintUnlock,omitempty"`
 	// PasswordBlockTrustAgents undocumented

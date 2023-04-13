@@ -7,7 +7,7 @@ type AllDevicesAssignmentTarget struct {
 	// DeviceAndAppManagementAssignmentTarget is the base model of AllDevicesAssignmentTarget
 	DeviceAndAppManagementAssignmentTarget
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewAllDevicesAssignmentTarget() (*AllDevicesAssignmentTarget, error) {
@@ -22,7 +22,7 @@ type AllLicensedUsersAssignmentTarget struct {
 	// DeviceAndAppManagementAssignmentTarget is the base model of AllLicensedUsersAssignmentTarget
 	DeviceAndAppManagementAssignmentTarget
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewAllLicensedUsersAssignmentTarget() (*AllLicensedUsersAssignmentTarget, error) {

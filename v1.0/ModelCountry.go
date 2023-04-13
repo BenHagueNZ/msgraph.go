@@ -7,7 +7,7 @@ type CountryNamedLocation struct {
 	// NamedLocation is the base model of CountryNamedLocation
 	NamedLocation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CountriesAndRegions undocumented
 	CountriesAndRegions []string `json:"countriesAndRegions,omitempty"`
 	// CountryLookupMethod undocumented

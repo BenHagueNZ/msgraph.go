@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// RecoveryKeys returns request builder for BitlockerRecoveryKey collection rcn
+// RecoveryKeys returns request builder for BitlockerRecoveryKey collection
 func (b *BitlockerRequestBuilder) RecoveryKeys() *BitlockerRecoveryKeysCollectionRequestBuilder {
 	bb := &BitlockerRecoveryKeysCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/recoveryKeys"

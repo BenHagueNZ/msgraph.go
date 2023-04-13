@@ -7,7 +7,7 @@ type LinkedResource struct {
 	// Entity is the base model of LinkedResource
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicationName undocumented
 	ApplicationName *string `json:"applicationName,omitempty"`
 	// DisplayName undocumented

@@ -7,7 +7,7 @@ type HostSecurityState struct {
 	// Object is the base model of HostSecurityState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Fqdn undocumented
 	Fqdn *string `json:"fqdn,omitempty"`
 	// IsAzureAdJoined undocumented

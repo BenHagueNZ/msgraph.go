@@ -9,7 +9,7 @@ type EnterpriseCodeSigningCertificate struct {
 	// Entity is the base model of EnterpriseCodeSigningCertificate
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *Binary `json:"content,omitempty"`
 	// ExpirationDateTime undocumented

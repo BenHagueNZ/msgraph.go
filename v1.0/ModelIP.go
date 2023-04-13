@@ -7,7 +7,7 @@ type IPNamedLocation struct {
 	// NamedLocation is the base model of IPNamedLocation
 	NamedLocation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IPRanges undocumented
 	IPRanges []IPRange `json:"ipRanges,omitempty"`
 	// IsTrusted undocumented
@@ -26,7 +26,7 @@ type IPRange struct {
 	// Object is the base model of IPRange
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewIPRange() (*IPRange, error) {

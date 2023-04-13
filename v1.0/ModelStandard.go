@@ -7,7 +7,7 @@ type StandardTimeZoneOffset struct {
 	// Object is the base model of StandardTimeZoneOffset
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DayOccurrence undocumented
 	DayOccurrence *int `json:"dayOccurrence,omitempty"`
 	// DayOfWeek undocumented

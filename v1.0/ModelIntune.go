@@ -7,7 +7,7 @@ type IntuneBrand struct {
 	// Object is the base model of IntuneBrand
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContactITEmailAddress undocumented
 	ContactITEmailAddress *string `json:"contactITEmailAddress,omitempty"`
 	// ContactITName undocumented

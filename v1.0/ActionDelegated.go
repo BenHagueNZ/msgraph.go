@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// ServiceManagementDetails returns request builder for DelegatedAdminServiceManagementDetail collection rcn
+// ServiceManagementDetails returns request builder for DelegatedAdminServiceManagementDetail collection
 func (b *DelegatedAdminCustomerRequestBuilder) ServiceManagementDetails() *DelegatedAdminCustomerServiceManagementDetailsCollectionRequestBuilder {
 	bb := &DelegatedAdminCustomerServiceManagementDetailsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/serviceManagementDetails"
@@ -114,7 +114,7 @@ func (r *DelegatedAdminCustomerServiceManagementDetailsCollectionRequest) Add(ct
 	return
 }
 
-// AccessAssignments returns request builder for DelegatedAdminAccessAssignment collection rcn
+// AccessAssignments returns request builder for DelegatedAdminAccessAssignment collection
 func (b *DelegatedAdminRelationshipRequestBuilder) AccessAssignments() *DelegatedAdminRelationshipAccessAssignmentsCollectionRequestBuilder {
 	bb := &DelegatedAdminRelationshipAccessAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/accessAssignments"
@@ -217,7 +217,7 @@ func (r *DelegatedAdminRelationshipAccessAssignmentsCollectionRequest) Add(ctx c
 	return
 }
 
-// Operations returns request builder for DelegatedAdminRelationshipOperation collection rcn
+// Operations returns request builder for DelegatedAdminRelationshipOperation collection
 func (b *DelegatedAdminRelationshipRequestBuilder) Operations() *DelegatedAdminRelationshipOperationsCollectionRequestBuilder {
 	bb := &DelegatedAdminRelationshipOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -320,7 +320,7 @@ func (r *DelegatedAdminRelationshipOperationsCollectionRequest) Add(ctx context.
 	return
 }
 
-// Requests returns request builder for DelegatedAdminRelationshipRequestObject collection rcn
+// Requests returns request builder for DelegatedAdminRelationshipRequestObject collection
 func (b *DelegatedAdminRelationshipRequestBuilder) Requests() *DelegatedAdminRelationshipRequestsCollectionRequestBuilder {
 	bb := &DelegatedAdminRelationshipRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/requests"

@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// SubscribeToToneOperation returns request builder for SubscribeToToneOperation collection rcn
-func (b *CommsOperationRequestBuilder) SubscribeToToneOperation() *CommsOperationSubscribeToToneOperationCollectionRequestBuilder {
-	bb := &CommsOperationSubscribeToToneOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SubscribeToToneOperation"
+// SubscribeToToneOperation returns request builder for SubscribeToToneOperation collection
+func (b *CallOperationsCollectionRequestBuilder) SubscribeToToneOperation() *CallOperationsCollectionSubscribeToToneOperationCollectionRequestBuilder {
+	bb := &CallOperationsCollectionSubscribeToToneOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// CommsOperationSubscribeToToneOperationCollectionRequestBuilder is request builder for SubscribeToToneOperation collection
-type CommsOperationSubscribeToToneOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// CallOperationsCollectionSubscribeToToneOperationCollectionRequestBuilder is request builder for SubscribeToToneOperation collection
+type CallOperationsCollectionSubscribeToToneOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SubscribeToToneOperation collection
-func (b *CommsOperationSubscribeToToneOperationCollectionRequestBuilder) Request() *CommsOperationSubscribeToToneOperationCollectionRequest {
-	return &CommsOperationSubscribeToToneOperationCollectionRequest{
+func (b *CallOperationsCollectionSubscribeToToneOperationCollectionRequestBuilder) Request() *CallOperationsCollectionSubscribeToToneOperationCollectionRequest {
+	return &CallOperationsCollectionSubscribeToToneOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for SubscribeToToneOperation item
-func (b *CommsOperationSubscribeToToneOperationCollectionRequestBuilder) ID(id string) *SubscribeToToneOperationRequestBuilder {
+func (b *CallOperationsCollectionSubscribeToToneOperationCollectionRequestBuilder) ID(id string) *SubscribeToToneOperationRequestBuilder {
 	bb := &SubscribeToToneOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// CommsOperationSubscribeToToneOperationCollectionRequest is request for SubscribeToToneOperation collection
-type CommsOperationSubscribeToToneOperationCollectionRequest struct{ BaseRequest }
+// CallOperationsCollectionSubscribeToToneOperationCollectionRequest is request for SubscribeToToneOperation collection
+type CallOperationsCollectionSubscribeToToneOperationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for SubscribeToToneOperation collection
-func (r *CommsOperationSubscribeToToneOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SubscribeToToneOperation, error) {
+func (r *CallOperationsCollectionSubscribeToToneOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SubscribeToToneOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *CommsOperationSubscribeToToneOperationCollectionRequest) Paging(ctx con
 }
 
 // GetN performs GET request for SubscribeToToneOperation collection, max N pages
-func (r *CommsOperationSubscribeToToneOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SubscribeToToneOperation, error) {
+func (r *CallOperationsCollectionSubscribeToToneOperationCollectionRequest) GetN(ctx context.Context, n int) ([]SubscribeToToneOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *CommsOperationSubscribeToToneOperationCollectionRequest) GetN(ctx conte
 }
 
 // Get performs GET request for SubscribeToToneOperation collection
-func (r *CommsOperationSubscribeToToneOperationCollectionRequest) Get(ctx context.Context) ([]SubscribeToToneOperation, error) {
+func (r *CallOperationsCollectionSubscribeToToneOperationCollectionRequest) Get(ctx context.Context) ([]SubscribeToToneOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for SubscribeToToneOperation collection
-func (r *CommsOperationSubscribeToToneOperationCollectionRequest) Add(ctx context.Context, reqObj *SubscribeToToneOperation) (resObj *SubscribeToToneOperation, err error) {
+func (r *CallOperationsCollectionSubscribeToToneOperationCollectionRequest) Add(ctx context.Context, reqObj *SubscribeToToneOperation) (resObj *SubscribeToToneOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

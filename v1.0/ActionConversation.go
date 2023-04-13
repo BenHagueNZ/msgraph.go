@@ -23,7 +23,7 @@ type ConversationThreadReplyRequestParameter struct {
 	Post *Post `json:"Post,omitempty"`
 }
 
-// Threads returns request builder for ConversationThread collection rcn
+// Threads returns request builder for ConversationThread collection
 func (b *ConversationRequestBuilder) Threads() *ConversationThreadsCollectionRequestBuilder {
 	bb := &ConversationThreadsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/threads"
@@ -126,7 +126,7 @@ func (r *ConversationThreadsCollectionRequest) Add(ctx context.Context, reqObj *
 	return
 }
 
-// Posts returns request builder for Post collection rcn
+// Posts returns request builder for Post collection
 func (b *ConversationThreadRequestBuilder) Posts() *ConversationThreadPostsCollectionRequestBuilder {
 	bb := &ConversationThreadPostsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/posts"

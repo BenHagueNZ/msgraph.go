@@ -9,7 +9,7 @@ type Security struct {
 	// Entity is the base model of Security
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Cases undocumented
 	Cases *SecurityCasesRoot `json:"cases,omitempty"`
 	// Alerts_v2 undocumented
@@ -38,7 +38,7 @@ type SecurityReportsRoot struct {
 	// Entity is the base model of SecurityReportsRoot
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewSecurityReportsRoot() (*SecurityReportsRoot, error) {
@@ -53,7 +53,7 @@ type SecurityResource struct {
 	// Object is the base model of SecurityResource
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Resource undocumented
 	Resource *string `json:"resource,omitempty"`
 	// ResourceType undocumented
@@ -72,7 +72,7 @@ type SecurityVendorInformation struct {
 	// Object is the base model of SecurityVendorInformation
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Provider undocumented
 	Provider *string `json:"provider,omitempty"`
 	// ProviderVersion undocumented
@@ -95,7 +95,7 @@ type SecurityAlert struct {
 	// Entity is the base model of SecurityAlert
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActorDisplayName undocumented
 	ActorDisplayName *string `json:"actorDisplayName,omitempty"`
 	// AlertWebURL undocumented
@@ -166,7 +166,7 @@ type SecurityAlertComment struct {
 	// Object is the base model of SecurityAlertComment
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Comment undocumented
 	Comment *string `json:"comment,omitempty"`
 	// CreatedByDisplayName undocumented
@@ -187,7 +187,7 @@ type SecurityAlertEvidence struct {
 	// Object is the base model of SecurityAlertEvidence
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// RemediationStatus undocumented
@@ -214,7 +214,7 @@ type SecurityAnalyzedMessageEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityAnalyzedMessageEvidence
 	SecurityAlertEvidence
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AntiSpamDirection undocumented
 	AntiSpamDirection *string `json:"antiSpamDirection,omitempty"`
 	// AttachmentsCount undocumented
@@ -265,7 +265,7 @@ type SecurityCase struct {
 	// Entity is the base model of SecurityCase
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -292,7 +292,7 @@ type SecurityCaseOperation struct {
 	// Entity is the base model of SecurityCaseOperation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Action undocumented
 	Action *SecurityCaseAction `json:"action,omitempty"`
 	// CompletedDateTime undocumented
@@ -321,7 +321,7 @@ type SecurityCasesRoot struct {
 	// Entity is the base model of SecurityCasesRoot
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EdiscoveryCases undocumented
 	EdiscoveryCases []SecurityEdiscoveryCase `json:"ediscoveryCases,omitempty"`
 }
@@ -338,7 +338,7 @@ type SecurityCloudApplicationEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityCloudApplicationEvidence
 	SecurityAlertEvidence
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppID undocumented
 	AppID *int `json:"appId,omitempty"`
 	// DisplayName undocumented
@@ -363,7 +363,7 @@ type SecurityDataSet struct {
 	// Entity is the base model of SecurityDataSet
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -384,7 +384,7 @@ type SecurityDataSource struct {
 	// Entity is the base model of SecurityDataSource
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -407,7 +407,7 @@ type SecurityDataSourceContainer struct {
 	// Entity is the base model of SecurityDataSourceContainer
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// DisplayName undocumented
@@ -434,7 +434,7 @@ type SecurityDeviceEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityDeviceEvidence
 	SecurityAlertEvidence
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AzureAdDeviceID undocumented
 	AzureAdDeviceID *string `json:"azureAdDeviceId,omitempty"`
 	// DefenderAvStatus undocumented
@@ -479,7 +479,7 @@ type SecurityEdiscoveryAddToReviewSetOperation struct {
 	// SecurityCaseOperation is the base model of SecurityEdiscoveryAddToReviewSetOperation
 	SecurityCaseOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ReviewSet undocumented
 	ReviewSet *SecurityEdiscoveryReviewSet `json:"reviewSet,omitempty"`
 	// Search undocumented
@@ -498,7 +498,7 @@ type SecurityEdiscoveryCase struct {
 	// SecurityCase is the base model of SecurityEdiscoveryCase
 	SecurityCase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ClosedBy undocumented
 	ClosedBy *IdentitySet `json:"closedBy,omitempty"`
 	// ClosedDateTime undocumented
@@ -533,7 +533,7 @@ type SecurityEdiscoveryCaseSettings struct {
 	// Entity is the base model of SecurityEdiscoveryCaseSettings
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Ocr undocumented
 	Ocr *SecurityOcrSettings `json:"ocr,omitempty"`
 	// RedundancyDetection undocumented
@@ -554,7 +554,7 @@ type SecurityEdiscoveryCustodian struct {
 	// SecurityDataSourceContainer is the base model of SecurityEdiscoveryCustodian
 	SecurityDataSourceContainer
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AcknowledgedDateTime undocumented
 	AcknowledgedDateTime *time.Time `json:"acknowledgedDateTime,omitempty"`
 	// Email undocumented
@@ -581,7 +581,7 @@ type SecurityEdiscoveryEstimateOperation struct {
 	// SecurityCaseOperation is the base model of SecurityEdiscoveryEstimateOperation
 	SecurityCaseOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IndexedItemCount undocumented
 	IndexedItemCount *int `json:"indexedItemCount,omitempty"`
 	// IndexedItemsSize undocumented
@@ -610,7 +610,7 @@ type SecurityEdiscoveryHoldOperation struct {
 	// SecurityCaseOperation is the base model of SecurityEdiscoveryHoldOperation
 	SecurityCaseOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewSecurityEdiscoveryHoldOperation() (*SecurityEdiscoveryHoldOperation, error) {
@@ -625,7 +625,7 @@ type SecurityEdiscoveryIndexOperation struct {
 	// SecurityCaseOperation is the base model of SecurityEdiscoveryIndexOperation
 	SecurityCaseOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewSecurityEdiscoveryIndexOperation() (*SecurityEdiscoveryIndexOperation, error) {
@@ -640,7 +640,7 @@ type SecurityEdiscoveryNoncustodialDataSource struct {
 	// SecurityDataSourceContainer is the base model of SecurityEdiscoveryNoncustodialDataSource
 	SecurityDataSourceContainer
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DataSource undocumented
 	DataSource *SecurityDataSource `json:"dataSource,omitempty"`
 	// LastIndexOperation undocumented
@@ -659,7 +659,7 @@ type SecurityEdiscoveryPurgeDataOperation struct {
 	// SecurityCaseOperation is the base model of SecurityEdiscoveryPurgeDataOperation
 	SecurityCaseOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewSecurityEdiscoveryPurgeDataOperation() (*SecurityEdiscoveryPurgeDataOperation, error) {
@@ -674,7 +674,7 @@ type SecurityEdiscoveryReviewSet struct {
 	// SecurityDataSet is the base model of SecurityEdiscoveryReviewSet
 	SecurityDataSet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Queries undocumented
 	Queries []SecurityEdiscoveryReviewSetQuery `json:"queries,omitempty"`
 }
@@ -691,7 +691,7 @@ type SecurityEdiscoveryReviewSetQuery struct {
 	// SecuritySearch is the base model of SecurityEdiscoveryReviewSetQuery
 	SecuritySearch
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewSecurityEdiscoveryReviewSetQuery() (*SecurityEdiscoveryReviewSetQuery, error) {
@@ -706,7 +706,7 @@ type SecurityEdiscoveryReviewTag struct {
 	// SecurityTag is the base model of SecurityEdiscoveryReviewTag
 	SecurityTag
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChildSelectability undocumented
 	ChildSelectability *SecurityChildSelectability `json:"childSelectability,omitempty"`
 	// ChildTags undocumented
@@ -727,7 +727,7 @@ type SecurityEdiscoverySearch struct {
 	// SecuritySearch is the base model of SecurityEdiscoverySearch
 	SecuritySearch
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DataSourceScopes undocumented
 	DataSourceScopes *SecurityDataSourceScopes `json:"dataSourceScopes,omitempty"`
 	// AdditionalSources undocumented
@@ -754,7 +754,7 @@ type SecurityEdiscoveryTagOperation struct {
 	// SecurityCaseOperation is the base model of SecurityEdiscoveryTagOperation
 	SecurityCaseOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewSecurityEdiscoveryTagOperation() (*SecurityEdiscoveryTagOperation, error) {
@@ -769,7 +769,7 @@ type SecurityEmailSender struct {
 	// Object is the base model of SecurityEmailSender
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// DomainName undocumented
@@ -790,7 +790,7 @@ type SecurityFileDetails struct {
 	// Object is the base model of SecurityFileDetails
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FileName undocumented
 	FileName *string `json:"fileName,omitempty"`
 	// FilePath undocumented
@@ -821,7 +821,7 @@ type SecurityFileEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityFileEvidence
 	SecurityAlertEvidence
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DetectionStatus undocumented
 	DetectionStatus *SecurityDetectionStatus `json:"detectionStatus,omitempty"`
 	// FileDetails undocumented
@@ -842,7 +842,7 @@ type SecurityHuntingQueryResults struct {
 	// Object is the base model of SecurityHuntingQueryResults
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Results undocumented
 	Results []SecurityHuntingRowResult `json:"results,omitempty"`
 	// Schema undocumented
@@ -861,7 +861,7 @@ type SecurityHuntingRowResult struct {
 	// Object is the base model of SecurityHuntingRowResult
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewSecurityHuntingRowResult() (*SecurityHuntingRowResult, error) {
@@ -876,7 +876,7 @@ type SecurityIncident struct {
 	// Entity is the base model of SecurityIncident
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedTo undocumented
 	AssignedTo *string `json:"assignedTo,omitempty"`
 	// Classification undocumented
@@ -919,7 +919,7 @@ type SecurityIPEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityIPEvidence
 	SecurityAlertEvidence
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CountryLetterCode undocumented
 	CountryLetterCode *string `json:"countryLetterCode,omitempty"`
 	// IPAddress undocumented
@@ -938,7 +938,7 @@ type SecurityLoggedOnUser struct {
 	// Object is the base model of SecurityLoggedOnUser
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccountName undocumented
 	AccountName *string `json:"accountName,omitempty"`
 	// DomainName undocumented
@@ -957,7 +957,7 @@ type SecurityMailClusterEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityMailClusterEvidence
 	SecurityAlertEvidence
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ClusterBy undocumented
 	ClusterBy *string `json:"clusterBy,omitempty"`
 	// ClusterByValue undocumented
@@ -984,7 +984,7 @@ type SecurityMailboxEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityMailboxEvidence
 	SecurityAlertEvidence
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// PrimaryAddress undocumented
@@ -1005,7 +1005,7 @@ type SecurityOAuthApplicationEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityOAuthApplicationEvidence
 	SecurityAlertEvidence
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
 	// DisplayName undocumented
@@ -1028,7 +1028,7 @@ type SecurityOcrSettings struct {
 	// Object is the base model of SecurityOcrSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsEnabled undocumented
 	IsEnabled *bool `json:"isEnabled,omitempty"`
 	// MaxImageSize undocumented
@@ -1049,7 +1049,7 @@ type SecurityProcessEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityProcessEvidence
 	SecurityAlertEvidence
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DetectionStatus undocumented
 	DetectionStatus *SecurityDetectionStatus `json:"detectionStatus,omitempty"`
 	// ImageFile undocumented
@@ -1084,7 +1084,7 @@ type SecurityRedundancyDetectionSettings struct {
 	// Object is the base model of SecurityRedundancyDetectionSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsEnabled undocumented
 	IsEnabled *bool `json:"isEnabled,omitempty"`
 	// MaxWords undocumented
@@ -1107,7 +1107,7 @@ type SecurityRegistryKeyEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityRegistryKeyEvidence
 	SecurityAlertEvidence
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RegistryHive undocumented
 	RegistryHive *string `json:"registryHive,omitempty"`
 	// RegistryKey undocumented
@@ -1126,7 +1126,7 @@ type SecurityRegistryValueEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityRegistryValueEvidence
 	SecurityAlertEvidence
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RegistryHive undocumented
 	RegistryHive *string `json:"registryHive,omitempty"`
 	// RegistryKey undocumented
@@ -1151,7 +1151,7 @@ type SecuritySearch struct {
 	// Entity is the base model of SecuritySearch
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentQuery undocumented
 	ContentQuery *string `json:"contentQuery,omitempty"`
 	// CreatedBy undocumented
@@ -1180,7 +1180,7 @@ type SecuritySecurityGroupEvidence struct {
 	// SecurityAlertEvidence is the base model of SecuritySecurityGroupEvidence
 	SecurityAlertEvidence
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// SecurityGroupID undocumented
@@ -1199,7 +1199,7 @@ type SecuritySinglePropertySchema struct {
 	// Object is the base model of SecuritySinglePropertySchema
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Type undocumented
@@ -1218,7 +1218,7 @@ type SecuritySiteSource struct {
 	// SecurityDataSource is the base model of SecuritySiteSource
 	SecurityDataSource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Site undocumented
 	Site *Site `json:"site,omitempty"`
 }
@@ -1235,7 +1235,7 @@ type SecurityStringValueDictionary struct {
 	// Object is the base model of SecurityStringValueDictionary
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewSecurityStringValueDictionary() (*SecurityStringValueDictionary, error) {
@@ -1250,7 +1250,7 @@ type SecurityTag struct {
 	// Entity is the base model of SecurityTag
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// Description undocumented
@@ -1273,7 +1273,7 @@ type SecurityTopicModelingSettings struct {
 	// Object is the base model of SecurityTopicModelingSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DynamicallyAdjustTopicCount undocumented
 	DynamicallyAdjustTopicCount *bool `json:"dynamicallyAdjustTopicCount,omitempty"`
 	// IgnoreNumbers undocumented
@@ -1296,7 +1296,7 @@ type SecurityUnifiedGroupSource struct {
 	// SecurityDataSource is the base model of SecurityUnifiedGroupSource
 	SecurityDataSource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IncludedSources undocumented
 	IncludedSources *SecuritySourceType `json:"includedSources,omitempty"`
 	// Group undocumented
@@ -1315,7 +1315,7 @@ type SecurityURLEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityURLEvidence
 	SecurityAlertEvidence
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// URL undocumented
 	URL *string `json:"url,omitempty"`
 }
@@ -1332,7 +1332,7 @@ type SecurityUserAccount struct {
 	// Object is the base model of SecurityUserAccount
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccountName undocumented
 	AccountName *string `json:"accountName,omitempty"`
 	// AzureAdUserID undocumented
@@ -1357,7 +1357,7 @@ type SecurityUserEvidence struct {
 	// SecurityAlertEvidence is the base model of SecurityUserEvidence
 	SecurityAlertEvidence
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UserAccount undocumented
 	UserAccount *SecurityUserAccount `json:"userAccount,omitempty"`
 }
@@ -1374,7 +1374,7 @@ type SecurityUserSource struct {
 	// SecurityDataSource is the base model of SecurityUserSource
 	SecurityDataSource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
 	// IncludedSources undocumented
@@ -1395,7 +1395,7 @@ type SecurityVMMetadata struct {
 	// Object is the base model of SecurityVMMetadata
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CloudProvider undocumented
 	CloudProvider *SecurityVMCloudProvider `json:"cloudProvider,omitempty"`
 	// ResourceID undocumented

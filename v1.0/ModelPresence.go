@@ -7,7 +7,7 @@ type Presence struct {
 	// Entity is the base model of Presence
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Activity undocumented
 	Activity *string `json:"activity,omitempty"`
 	// Availability undocumented

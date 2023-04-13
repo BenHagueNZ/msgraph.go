@@ -9,7 +9,7 @@ type SignIn struct {
 	// Entity is the base model of SignIn
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppDisplayName undocumented
 	AppDisplayName *string `json:"appDisplayName,omitempty"`
 	// AppID undocumented
@@ -70,7 +70,7 @@ type SignInFrequencySessionControl struct {
 	// ConditionalAccessSessionControl is the base model of SignInFrequencySessionControl
 	ConditionalAccessSessionControl
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AuthenticationType undocumented
 	AuthenticationType *SignInFrequencyAuthenticationType `json:"authenticationType,omitempty"`
 	// FrequencyInterval undocumented
@@ -93,7 +93,7 @@ type SignInLocation struct {
 	// Object is the base model of SignInLocation
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// City undocumented
 	City *string `json:"city,omitempty"`
 	// CountryOrRegion undocumented
@@ -116,7 +116,7 @@ type SignInStatus struct {
 	// Object is the base model of SignInStatus
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AdditionalDetails undocumented
 	AdditionalDetails *string `json:"additionalDetails,omitempty"`
 	// ErrorCode undocumented

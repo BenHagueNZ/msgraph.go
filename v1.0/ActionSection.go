@@ -25,7 +25,7 @@ func (b *SectionGroupRequestBuilder) ParentSectionGroup() *SectionGroupRequestBu
 	return bb
 }
 
-// SectionGroups returns request builder for SectionGroup collection rcn
+// SectionGroups returns request builder for SectionGroup collection
 func (b *SectionGroupRequestBuilder) SectionGroups() *SectionGroupSectionGroupsCollectionRequestBuilder {
 	bb := &SectionGroupSectionGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sectionGroups"
@@ -128,7 +128,7 @@ func (r *SectionGroupSectionGroupsCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// Sections returns request builder for OnenoteSection collection rcn
+// Sections returns request builder for OnenoteSection collection
 func (b *SectionGroupRequestBuilder) Sections() *SectionGroupSectionsCollectionRequestBuilder {
 	bb := &SectionGroupSectionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sections"

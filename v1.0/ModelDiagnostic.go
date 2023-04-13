@@ -7,7 +7,7 @@ type Diagnostic struct {
 	// Object is the base model of Diagnostic
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Message undocumented
 	Message *string `json:"message,omitempty"`
 	// URL undocumented

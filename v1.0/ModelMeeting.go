@@ -9,7 +9,7 @@ type MeetingAttendanceReport struct {
 	// Entity is the base model of MeetingAttendanceReport
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MeetingEndDateTime undocumented
 	MeetingEndDateTime *time.Time `json:"meetingEndDateTime,omitempty"`
 	// MeetingStartDateTime undocumented
@@ -32,7 +32,7 @@ type MeetingInfo struct {
 	// Object is the base model of MeetingInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewMeetingInfo() (*MeetingInfo, error) {
@@ -47,7 +47,7 @@ type MeetingParticipantInfo struct {
 	// Object is the base model of MeetingParticipantInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Identity undocumented
 	Identity *IdentitySet `json:"identity,omitempty"`
 	// Role undocumented
@@ -68,7 +68,7 @@ type MeetingParticipants struct {
 	// Object is the base model of MeetingParticipants
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Attendees undocumented
 	Attendees []MeetingParticipantInfo `json:"attendees,omitempty"`
 	// Organizer undocumented
@@ -87,7 +87,7 @@ type MeetingPolicyUpdatedEventMessageDetail struct {
 	// EventMessageDetail is the base model of MeetingPolicyUpdatedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// MeetingChatEnabled undocumented
@@ -108,7 +108,7 @@ type MeetingTimeSuggestion struct {
 	// Object is the base model of MeetingTimeSuggestion
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AttendeeAvailability undocumented
 	AttendeeAvailability []AttendeeAvailability `json:"attendeeAvailability,omitempty"`
 	// Confidence undocumented
@@ -137,7 +137,7 @@ type MeetingTimeSuggestionsResult struct {
 	// Object is the base model of MeetingTimeSuggestionsResult
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EmptySuggestionsReason undocumented
 	EmptySuggestionsReason *string `json:"emptySuggestionsReason,omitempty"`
 	// MeetingTimeSuggestions undocumented

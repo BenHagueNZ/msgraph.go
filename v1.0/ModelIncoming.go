@@ -7,7 +7,7 @@ type IncomingCallOptions struct {
 	// CallOptions is the base model of IncomingCallOptions
 	CallOptions
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewIncomingCallOptions() (*IncomingCallOptions, error) {
@@ -22,7 +22,7 @@ type IncomingContext struct {
 	// Object is the base model of IncomingContext
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ObservedParticipantID undocumented
 	ObservedParticipantID *string `json:"observedParticipantId,omitempty"`
 	// OnBehalfOf undocumented

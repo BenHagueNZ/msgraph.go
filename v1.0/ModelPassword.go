@@ -9,7 +9,7 @@ type PasswordAuthenticationMethod struct {
 	// AuthenticationMethod is the base model of PasswordAuthenticationMethod
 	AuthenticationMethod
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Password undocumented
@@ -28,7 +28,7 @@ type PasswordCredential struct {
 	// Object is the base model of PasswordCredential
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CustomKeyIdentifier undocumented
 	CustomKeyIdentifier *Binary `json:"customKeyIdentifier,omitempty"`
 	// DisplayName undocumented
@@ -57,7 +57,7 @@ type PasswordCredentialConfiguration struct {
 	// Object is the base model of PasswordCredentialConfiguration
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MaxLifetime undocumented
 	MaxLifetime *Duration `json:"maxLifetime,omitempty"`
 	// RestrictForAppsCreatedAfterDateTime undocumented
@@ -78,7 +78,7 @@ type PasswordProfile struct {
 	// Object is the base model of PasswordProfile
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ForceChangePasswordNextSignIn undocumented
 	ForceChangePasswordNextSignIn *bool `json:"forceChangePasswordNextSignIn,omitempty"`
 	// ForceChangePasswordNextSignInWithMFA undocumented
@@ -99,7 +99,7 @@ type PasswordResetResponse struct {
 	// Object is the base model of PasswordResetResponse
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// NewPassword undocumented
 	NewPassword *string `json:"newPassword,omitempty"`
 }

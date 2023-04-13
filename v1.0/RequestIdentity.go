@@ -499,6 +499,28 @@ func (r *IdentityUserFlowAttributeAssignmentRequest) Delete(ctx context.Context)
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+type IdentityUserFlowAttributeAssignmentCollectionSetOrderRequestBuilder struct{ BaseRequestBuilder }
+
+// SetOrder action undocumentedrav
+func (b *B2xIdentityUserFlowUserAttributeAssignmentsCollectionRequestBuilder) SetOrder(reqObj *IdentityUserFlowAttributeAssignmentCollectionSetOrderRequestParameter) *IdentityUserFlowAttributeAssignmentCollectionSetOrderRequestBuilder {
+	bb := &IdentityUserFlowAttributeAssignmentCollectionSetOrderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/SetOrder"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type IdentityUserFlowAttributeAssignmentCollectionSetOrderRequest struct{ BaseRequest }
+
+func (b *IdentityUserFlowAttributeAssignmentCollectionSetOrderRequestBuilder) Request() *IdentityUserFlowAttributeAssignmentCollectionSetOrderRequest {
+	return &IdentityUserFlowAttributeAssignmentCollectionSetOrderRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *IdentityUserFlowAttributeAssignmentCollectionSetOrderRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
 type IdentityAPIConnectorUploadClientCertificateRequestBuilder struct{ BaseRequestBuilder }
 
 // UploadClientCertificate action undocumentedras

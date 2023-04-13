@@ -7,7 +7,7 @@ type SpecialFolder struct {
 	// Object is the base model of SpecialFolder
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 }

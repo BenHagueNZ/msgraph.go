@@ -7,7 +7,7 @@ type EmailAddress struct {
 	// Object is the base model of EmailAddress
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Address undocumented
 	Address *string `json:"address,omitempty"`
 	// Name undocumented
@@ -26,7 +26,7 @@ type EmailAuthenticationMethod struct {
 	// AuthenticationMethod is the base model of EmailAuthenticationMethod
 	AuthenticationMethod
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EmailAddress undocumented
 	EmailAddress *string `json:"emailAddress,omitempty"`
 }
@@ -43,7 +43,7 @@ type EmailAuthenticationMethodConfiguration struct {
 	// AuthenticationMethodConfiguration is the base model of EmailAuthenticationMethodConfiguration
 	AuthenticationMethodConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowExternalIDToUseEmailOtp undocumented
 	AllowExternalIDToUseEmailOtp *ExternalEmailOtpState `json:"allowExternalIdToUseEmailOtp,omitempty"`
 	// IncludeTargets undocumented
@@ -62,7 +62,7 @@ type EmailFileAssessmentRequestObject struct {
 	// ThreatAssessmentRequestObject is the base model of EmailFileAssessmentRequestObject
 	ThreatAssessmentRequestObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentData undocumented
 	ContentData *string `json:"contentData,omitempty"`
 	// DestinationRoutingReason undocumented
@@ -83,7 +83,7 @@ type EmailIdentity struct {
 	// Identity is the base model of EmailIdentity
 	Identity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
 }

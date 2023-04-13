@@ -7,7 +7,7 @@ type Image struct {
 	// Object is the base model of Image
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Height undocumented
 	Height *int `json:"height,omitempty"`
 	// Width undocumented
@@ -26,7 +26,7 @@ type ImageInfo struct {
 	// Object is the base model of ImageInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AddImageQuery undocumented
 	AddImageQuery *bool `json:"addImageQuery,omitempty"`
 	// AlternateText undocumented

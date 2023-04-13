@@ -7,7 +7,7 @@ type Thumbnail struct {
 	// Object is the base model of Thumbnail
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *Stream `json:"content,omitempty"`
 	// Height undocumented
@@ -32,7 +32,7 @@ type ThumbnailColumn struct {
 	// Object is the base model of ThumbnailColumn
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewThumbnailColumn() (*ThumbnailColumn, error) {
@@ -47,7 +47,7 @@ type ThumbnailSet struct {
 	// Entity is the base model of ThumbnailSet
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Large undocumented
 	Large *Thumbnail `json:"large,omitempty"`
 	// Medium undocumented

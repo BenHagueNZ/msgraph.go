@@ -9,7 +9,7 @@ type Agreement struct {
 	// Entity is the base model of Agreement
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// IsPerDeviceAcceptanceRequired undocumented
@@ -40,7 +40,7 @@ type AgreementAcceptance struct {
 	// Entity is the base model of AgreementAcceptance
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AgreementFileID undocumented
 	AgreementFileID *string `json:"agreementFileId,omitempty"`
 	// AgreementID undocumented
@@ -81,7 +81,7 @@ type AgreementFile struct {
 	// AgreementFileProperties is the base model of AgreementFile
 	AgreementFileProperties
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Localizations undocumented
 	Localizations []AgreementFileLocalization `json:"localizations,omitempty"`
 }
@@ -98,7 +98,7 @@ type AgreementFileData struct {
 	// Object is the base model of AgreementFileData
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Data undocumented
 	Data *Binary `json:"data,omitempty"`
 }
@@ -115,7 +115,7 @@ type AgreementFileLocalization struct {
 	// AgreementFileProperties is the base model of AgreementFileLocalization
 	AgreementFileProperties
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Versions undocumented
 	Versions []AgreementFileVersion `json:"versions,omitempty"`
 }
@@ -132,7 +132,7 @@ type AgreementFileProperties struct {
 	// Entity is the base model of AgreementFileProperties
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// DisplayName undocumented
@@ -161,7 +161,7 @@ type AgreementFileVersion struct {
 	// AgreementFileProperties is the base model of AgreementFileVersion
 	AgreementFileProperties
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewAgreementFileVersion() (*AgreementFileVersion, error) {

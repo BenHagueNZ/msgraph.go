@@ -7,7 +7,7 @@ type RequiredResourceAccess struct {
 	// Object is the base model of RequiredResourceAccess
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ResourceAccess undocumented
 	ResourceAccess []ResourceAccess `json:"resourceAccess,omitempty"`
 	// ResourceAppID undocumented

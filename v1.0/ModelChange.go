@@ -9,7 +9,7 @@ type ChangeNotification struct {
 	// Object is the base model of ChangeNotification
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChangeType undocumented
 	ChangeType *ChangeType `json:"changeType,omitempty"`
 	// ClientState undocumented
@@ -44,7 +44,7 @@ type ChangeNotificationCollection struct {
 	// Object is the base model of ChangeNotificationCollection
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ValidationTokens undocumented
 	ValidationTokens []string `json:"validationTokens,omitempty"`
 	// Value undocumented
@@ -63,7 +63,7 @@ type ChangeNotificationEncryptedContent struct {
 	// Object is the base model of ChangeNotificationEncryptedContent
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Data undocumented
 	Data *string `json:"data,omitempty"`
 	// DataKey undocumented
@@ -88,7 +88,7 @@ type ChangeTrackedEntity struct {
 	// Entity is the base model of ChangeTrackedEntity
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// LastModifiedBy undocumented

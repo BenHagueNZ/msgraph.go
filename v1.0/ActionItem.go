@@ -18,7 +18,7 @@ func (b *ItemActivityRequestBuilder) DriveItem() *DriveItemRequestBuilder {
 	return bb
 }
 
-// Activities returns request builder for ItemActivity collection rcn
+// Activities returns request builder for ItemActivity collection
 func (b *ItemActivityStatRequestBuilder) Activities() *ItemActivityStatActivitiesCollectionRequestBuilder {
 	bb := &ItemActivityStatActivitiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/activities"
@@ -128,7 +128,7 @@ func (b *ItemAnalyticsRequestBuilder) AllTime() *ItemActivityStatRequestBuilder 
 	return bb
 }
 
-// ItemActivityStats returns request builder for ItemActivityStat collection rcn
+// ItemActivityStats returns request builder for ItemActivityStat collection
 func (b *ItemAnalyticsRequestBuilder) ItemActivityStats() *ItemAnalyticsItemActivityStatsCollectionRequestBuilder {
 	bb := &ItemAnalyticsItemActivityStatsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/itemActivityStats"
@@ -266,35 +266,35 @@ func (b *ItemAnalyticsRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
-// ItemAttachment returns request builder for ItemAttachment collection rcn
-func (b *AttachmentRequestBuilder) ItemAttachment() *AttachmentItemAttachmentCollectionRequestBuilder {
-	bb := &AttachmentItemAttachmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ItemAttachment"
+// ItemAttachment returns request builder for ItemAttachment collection
+func (b *EventAttachmentsCollectionRequestBuilder) ItemAttachment() *EventAttachmentsCollectionItemAttachmentCollectionRequestBuilder {
+	bb := &EventAttachmentsCollectionItemAttachmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AttachmentItemAttachmentCollectionRequestBuilder is request builder for ItemAttachment collection
-type AttachmentItemAttachmentCollectionRequestBuilder struct{ BaseRequestBuilder }
+// EventAttachmentsCollectionItemAttachmentCollectionRequestBuilder is request builder for ItemAttachment collection
+type EventAttachmentsCollectionItemAttachmentCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ItemAttachment collection
-func (b *AttachmentItemAttachmentCollectionRequestBuilder) Request() *AttachmentItemAttachmentCollectionRequest {
-	return &AttachmentItemAttachmentCollectionRequest{
+func (b *EventAttachmentsCollectionItemAttachmentCollectionRequestBuilder) Request() *EventAttachmentsCollectionItemAttachmentCollectionRequest {
+	return &EventAttachmentsCollectionItemAttachmentCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for ItemAttachment item
-func (b *AttachmentItemAttachmentCollectionRequestBuilder) ID(id string) *ItemAttachmentRequestBuilder {
+func (b *EventAttachmentsCollectionItemAttachmentCollectionRequestBuilder) ID(id string) *ItemAttachmentRequestBuilder {
 	bb := &ItemAttachmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AttachmentItemAttachmentCollectionRequest is request for ItemAttachment collection
-type AttachmentItemAttachmentCollectionRequest struct{ BaseRequest }
+// EventAttachmentsCollectionItemAttachmentCollectionRequest is request for ItemAttachment collection
+type EventAttachmentsCollectionItemAttachmentCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for ItemAttachment collection
-func (r *AttachmentItemAttachmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ItemAttachment, error) {
+func (r *EventAttachmentsCollectionItemAttachmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ItemAttachment, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -350,7 +350,7 @@ func (r *AttachmentItemAttachmentCollectionRequest) Paging(ctx context.Context, 
 }
 
 // GetN performs GET request for ItemAttachment collection, max N pages
-func (r *AttachmentItemAttachmentCollectionRequest) GetN(ctx context.Context, n int) ([]ItemAttachment, error) {
+func (r *EventAttachmentsCollectionItemAttachmentCollectionRequest) GetN(ctx context.Context, n int) ([]ItemAttachment, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -359,12 +359,12 @@ func (r *AttachmentItemAttachmentCollectionRequest) GetN(ctx context.Context, n 
 }
 
 // Get performs GET request for ItemAttachment collection
-func (r *AttachmentItemAttachmentCollectionRequest) Get(ctx context.Context) ([]ItemAttachment, error) {
+func (r *EventAttachmentsCollectionItemAttachmentCollectionRequest) Get(ctx context.Context) ([]ItemAttachment, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for ItemAttachment collection
-func (r *AttachmentItemAttachmentCollectionRequest) Add(ctx context.Context, reqObj *ItemAttachment) (resObj *ItemAttachment, err error) {
+func (r *EventAttachmentsCollectionItemAttachmentCollectionRequest) Add(ctx context.Context, reqObj *ItemAttachment) (resObj *ItemAttachment, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

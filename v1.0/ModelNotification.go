@@ -9,7 +9,7 @@ type NotificationMessageTemplate struct {
 	// Entity is the base model of NotificationMessageTemplate
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BrandingOptions undocumented
 	BrandingOptions *NotificationTemplateBrandingOptions `json:"brandingOptions,omitempty"`
 	// DefaultLocale undocumented

@@ -7,7 +7,7 @@ type InvestigationSecurityState struct {
 	// Object is the base model of InvestigationSecurityState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Status undocumented

@@ -9,7 +9,7 @@ type TimeConstraint struct {
 	// Object is the base model of TimeConstraint
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActivityDomain undocumented
 	ActivityDomain *ActivityDomain `json:"activityDomain,omitempty"`
 	// TimeSlots undocumented
@@ -28,7 +28,7 @@ type TimeOff struct {
 	// ChangeTrackedEntity is the base model of TimeOff
 	ChangeTrackedEntity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DraftTimeOff undocumented
 	DraftTimeOff *TimeOffItem `json:"draftTimeOff,omitempty"`
 	// SharedTimeOff undocumented
@@ -49,7 +49,7 @@ type TimeOffItem struct {
 	// ScheduleEntity is the base model of TimeOffItem
 	ScheduleEntity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// TimeOffReasonID undocumented
 	TimeOffReasonID *string `json:"timeOffReasonId,omitempty"`
 }
@@ -66,7 +66,7 @@ type TimeOffReason struct {
 	// ChangeTrackedEntity is the base model of TimeOffReason
 	ChangeTrackedEntity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// IconType undocumented
@@ -87,7 +87,7 @@ type TimeOffRequestObject struct {
 	// ScheduleChangeRequestObject is the base model of TimeOffRequestObject
 	ScheduleChangeRequestObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// StartDateTime undocumented
@@ -108,7 +108,7 @@ type TimeRange struct {
 	// Object is the base model of TimeRange
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EndTime undocumented
 	EndTime *TimeOfDay `json:"endTime,omitempty"`
 	// StartTime undocumented
@@ -127,7 +127,7 @@ type TimeSlot struct {
 	// Object is the base model of TimeSlot
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// End undocumented
 	End *DateTimeTimeZone `json:"end,omitempty"`
 	// Start undocumented
@@ -146,7 +146,7 @@ type TimeZoneBase struct {
 	// Object is the base model of TimeZoneBase
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 }
@@ -163,7 +163,7 @@ type TimeZoneInformation struct {
 	// Object is the base model of TimeZoneInformation
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Alias undocumented
 	Alias *string `json:"alias,omitempty"`
 	// DisplayName undocumented

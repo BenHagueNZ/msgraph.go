@@ -7,7 +7,7 @@ type IntegerRange struct {
 	// Object is the base model of IntegerRange
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// End undocumented
 	End *int `json:"end,omitempty"`
 	// Start undocumented

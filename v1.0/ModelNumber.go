@@ -7,7 +7,7 @@ type NumberColumn struct {
 	// Object is the base model of NumberColumn
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DecimalPlaces undocumented
 	DecimalPlaces *string `json:"decimalPlaces,omitempty"`
 	// DisplayAs undocumented

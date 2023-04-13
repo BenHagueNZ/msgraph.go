@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Domains returns request builder for ExternalDomainName collection rcn
+// Domains returns request builder for ExternalDomainName collection
 func (b *SamlOrWsFedExternalDomainFederationRequestBuilder) Domains() *SamlOrWsFedExternalDomainFederationDomainsCollectionRequestBuilder {
 	bb := &SamlOrWsFedExternalDomainFederationDomainsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/domains"
@@ -114,35 +114,35 @@ func (r *SamlOrWsFedExternalDomainFederationDomainsCollectionRequest) Add(ctx co
 	return
 }
 
-// SamlOrWsFedProvider returns request builder for SamlOrWsFedProvider collection rcn
-func (b *IdentityProviderBaseRequestBuilder) SamlOrWsFedProvider() *IdentityProviderBaseSamlOrWsFedProviderCollectionRequestBuilder {
-	bb := &IdentityProviderBaseSamlOrWsFedProviderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SamlOrWsFedProvider"
+// SamlOrWsFedProvider returns request builder for SamlOrWsFedProvider collection
+func (b *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionRequestBuilder) SamlOrWsFedProvider() *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequestBuilder {
+	bb := &B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// IdentityProviderBaseSamlOrWsFedProviderCollectionRequestBuilder is request builder for SamlOrWsFedProvider collection
-type IdentityProviderBaseSamlOrWsFedProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
+// B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequestBuilder is request builder for SamlOrWsFedProvider collection
+type B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SamlOrWsFedProvider collection
-func (b *IdentityProviderBaseSamlOrWsFedProviderCollectionRequestBuilder) Request() *IdentityProviderBaseSamlOrWsFedProviderCollectionRequest {
-	return &IdentityProviderBaseSamlOrWsFedProviderCollectionRequest{
+func (b *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequestBuilder) Request() *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequest {
+	return &B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for SamlOrWsFedProvider item
-func (b *IdentityProviderBaseSamlOrWsFedProviderCollectionRequestBuilder) ID(id string) *SamlOrWsFedProviderRequestBuilder {
+func (b *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequestBuilder) ID(id string) *SamlOrWsFedProviderRequestBuilder {
 	bb := &SamlOrWsFedProviderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// IdentityProviderBaseSamlOrWsFedProviderCollectionRequest is request for SamlOrWsFedProvider collection
-type IdentityProviderBaseSamlOrWsFedProviderCollectionRequest struct{ BaseRequest }
+// B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequest is request for SamlOrWsFedProvider collection
+type B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for SamlOrWsFedProvider collection
-func (r *IdentityProviderBaseSamlOrWsFedProviderCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SamlOrWsFedProvider, error) {
+func (r *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SamlOrWsFedProvider, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -198,7 +198,7 @@ func (r *IdentityProviderBaseSamlOrWsFedProviderCollectionRequest) Paging(ctx co
 }
 
 // GetN performs GET request for SamlOrWsFedProvider collection, max N pages
-func (r *IdentityProviderBaseSamlOrWsFedProviderCollectionRequest) GetN(ctx context.Context, n int) ([]SamlOrWsFedProvider, error) {
+func (r *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequest) GetN(ctx context.Context, n int) ([]SamlOrWsFedProvider, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -207,12 +207,12 @@ func (r *IdentityProviderBaseSamlOrWsFedProviderCollectionRequest) GetN(ctx cont
 }
 
 // Get performs GET request for SamlOrWsFedProvider collection
-func (r *IdentityProviderBaseSamlOrWsFedProviderCollectionRequest) Get(ctx context.Context) ([]SamlOrWsFedProvider, error) {
+func (r *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequest) Get(ctx context.Context) ([]SamlOrWsFedProvider, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for SamlOrWsFedProvider collection
-func (r *IdentityProviderBaseSamlOrWsFedProviderCollectionRequest) Add(ctx context.Context, reqObj *SamlOrWsFedProvider) (resObj *SamlOrWsFedProvider, err error) {
+func (r *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequest) Add(ctx context.Context, reqObj *SamlOrWsFedProvider) (resObj *SamlOrWsFedProvider, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

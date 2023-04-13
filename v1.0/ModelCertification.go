@@ -9,7 +9,7 @@ type Certification struct {
 	// Object is the base model of Certification
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CertificationDetailsURL undocumented
 	CertificationDetailsURL *string `json:"certificationDetailsUrl,omitempty"`
 	// CertificationExpirationDateTime undocumented
@@ -34,7 +34,7 @@ type CertificationControl struct {
 	// Object is the base model of CertificationControl
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// URL undocumented

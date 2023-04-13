@@ -7,7 +7,7 @@ type InvitedUserMessageInfo struct {
 	// Object is the base model of InvitedUserMessageInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CcRecipients undocumented
 	CcRecipients []Recipient `json:"ccRecipients,omitempty"`
 	// CustomizedMessageBody undocumented

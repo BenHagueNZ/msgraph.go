@@ -7,7 +7,7 @@ type FieldValueSet struct {
 	// Entity is the base model of FieldValueSet
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewFieldValueSet() (*FieldValueSet, error) {

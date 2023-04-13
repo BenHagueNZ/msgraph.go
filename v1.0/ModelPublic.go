@@ -7,7 +7,7 @@ type PublicClientApplication struct {
 	// Object is the base model of PublicClientApplication
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RedirectUris undocumented
 	RedirectUris []string `json:"redirectUris,omitempty"`
 }
@@ -24,7 +24,7 @@ type PublicError struct {
 	// Object is the base model of PublicError
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
 	// Details undocumented
@@ -49,7 +49,7 @@ type PublicErrorDetail struct {
 	// Object is the base model of PublicErrorDetail
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
 	// Message undocumented
@@ -70,7 +70,7 @@ type PublicInnerError struct {
 	// Object is the base model of PublicInnerError
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
 	// Details undocumented

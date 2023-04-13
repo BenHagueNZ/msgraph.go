@@ -7,7 +7,7 @@ type GeolocationColumn struct {
 	// Object is the base model of GeolocationColumn
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewGeolocationColumn() (*GeolocationColumn, error) {

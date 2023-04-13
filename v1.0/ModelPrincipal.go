@@ -7,7 +7,7 @@ type PrincipalResourceMembershipsScope struct {
 	// AccessReviewScope is the base model of PrincipalResourceMembershipsScope
 	AccessReviewScope
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// PrincipalScopes undocumented
 	PrincipalScopes []AccessReviewScope `json:"principalScopes,omitempty"`
 	// ResourceScopes undocumented

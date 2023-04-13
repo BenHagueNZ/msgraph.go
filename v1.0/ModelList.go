@@ -7,7 +7,7 @@ type List struct {
 	// BaseItem is the base model of List
 	BaseItem
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// List undocumented
@@ -42,7 +42,7 @@ type ListInfo struct {
 	// Object is the base model of ListInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentTypesEnabled undocumented
 	ContentTypesEnabled *bool `json:"contentTypesEnabled,omitempty"`
 	// Hidden undocumented
@@ -63,7 +63,7 @@ type ListItem struct {
 	// BaseItem is the base model of ListItem
 	BaseItem
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentType undocumented
 	ContentType *ContentTypeInfo `json:"contentType,omitempty"`
 	// SharepointIDs undocumented
@@ -92,7 +92,7 @@ type ListItemVersion struct {
 	// BaseItemVersion is the base model of ListItemVersion
 	BaseItemVersion
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Fields undocumented
 	Fields *FieldValueSet `json:"fields,omitempty"`
 }

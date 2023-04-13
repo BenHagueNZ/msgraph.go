@@ -7,7 +7,7 @@ type SwapShiftsChangeRequestObject struct {
 	// OfferShiftRequestObject is the base model of SwapShiftsChangeRequestObject
 	OfferShiftRequestObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RecipientShiftID undocumented
 	RecipientShiftID *string `json:"recipientShiftId,omitempty"`
 }

@@ -7,7 +7,7 @@ type DefenderDetectedMalwareActions struct {
 	// Object is the base model of DefenderDetectedMalwareActions
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// HighSeverity undocumented
 	HighSeverity *DefenderThreatAction `json:"highSeverity,omitempty"`
 	// LowSeverity undocumented

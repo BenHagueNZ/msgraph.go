@@ -7,7 +7,7 @@ type ExclusionGroupAssignmentTarget struct {
 	// GroupAssignmentTarget is the base model of ExclusionGroupAssignmentTarget
 	GroupAssignmentTarget
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewExclusionGroupAssignmentTarget() (*ExclusionGroupAssignmentTarget, error) {

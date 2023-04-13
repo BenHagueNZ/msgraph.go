@@ -7,7 +7,7 @@ type Bundle struct {
 	// Object is the base model of Bundle
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Album undocumented
 	Album *Album `json:"album,omitempty"`
 	// ChildCount undocumented

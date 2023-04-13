@@ -7,7 +7,7 @@ type AuthorizationInfo struct {
 	// Object is the base model of AuthorizationInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CertificateUserIDs undocumented
 	CertificateUserIDs []string `json:"certificateUserIds,omitempty"`
 }
@@ -24,7 +24,7 @@ type AuthorizationPolicy struct {
 	// PolicyBase is the base model of AuthorizationPolicy
 	PolicyBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowedToSignUpEmailBasedSubscriptions undocumented
 	AllowedToSignUpEmailBasedSubscriptions *bool `json:"allowedToSignUpEmailBasedSubscriptions,omitempty"`
 	// AllowedToUseSSPR undocumented

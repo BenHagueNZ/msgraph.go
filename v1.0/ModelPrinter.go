@@ -9,7 +9,7 @@ type Printer struct {
 	// PrinterBase is the base model of Printer
 	PrinterBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// HasPhysicalDevice undocumented
 	HasPhysicalDevice *bool `json:"hasPhysicalDevice,omitempty"`
 	// IsShared undocumented
@@ -38,7 +38,7 @@ type PrinterBase struct {
 	// Entity is the base model of PrinterBase
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Capabilities undocumented
 	Capabilities *PrinterCapabilities `json:"capabilities,omitempty"`
 	// Defaults undocumented
@@ -71,7 +71,7 @@ type PrinterCapabilities struct {
 	// Object is the base model of PrinterCapabilities
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BottomMargins undocumented
 	BottomMargins []int `json:"bottomMargins,omitempty"`
 	// Collation undocumented
@@ -136,7 +136,7 @@ type PrinterCreateOperation struct {
 	// PrintOperation is the base model of PrinterCreateOperation
 	PrintOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Certificate undocumented
 	Certificate *string `json:"certificate,omitempty"`
 	// Printer undocumented
@@ -155,7 +155,7 @@ type PrinterDefaults struct {
 	// Object is the base model of PrinterDefaults
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ColorMode undocumented
 	ColorMode *PrintColorMode `json:"colorMode,omitempty"`
 	// ContentType undocumented
@@ -204,7 +204,7 @@ type PrinterLocation struct {
 	// Object is the base model of PrinterLocation
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AltitudeInMeters undocumented
 	AltitudeInMeters *int `json:"altitudeInMeters,omitempty"`
 	// Building undocumented
@@ -253,7 +253,7 @@ type PrinterShare struct {
 	// PrinterBase is the base model of PrinterShare
 	PrinterBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowAllUsers undocumented
 	AllowAllUsers *bool `json:"allowAllUsers,omitempty"`
 	// CreatedDateTime undocumented
@@ -278,7 +278,7 @@ type PrinterStatus struct {
 	// Object is the base model of PrinterStatus
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// Details undocumented

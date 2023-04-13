@@ -7,7 +7,7 @@ type Report struct {
 	// Object is the base model of Report
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *Stream `json:"content,omitempty"`
 }
@@ -24,7 +24,7 @@ type ReportRoot struct {
 	// Object is the base model of ReportRoot
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DailyPrintUsageByPrinter undocumented
 	DailyPrintUsageByPrinter []PrintUsageByPrinter `json:"dailyPrintUsageByPrinter,omitempty"`
 	// DailyPrintUsageByUser undocumented

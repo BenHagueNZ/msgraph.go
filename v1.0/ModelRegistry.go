@@ -7,7 +7,7 @@ type RegistryKeyState struct {
 	// Object is the base model of RegistryKeyState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Hive undocumented
 	Hive *RegistryHive `json:"hive,omitempty"`
 	// Key undocumented

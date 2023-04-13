@@ -12,7 +12,7 @@ type ManagedAndroidLobApp struct {
 	// ManagedMobileLobApp is the base model of ManagedAndroidLobApp
 	ManagedMobileLobApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MinimumSupportedOperatingSystem undocumented
 	MinimumSupportedOperatingSystem *AndroidMinimumOperatingSystem `json:"minimumSupportedOperatingSystem,omitempty"`
 	// PackageID undocumented
@@ -35,7 +35,7 @@ type ManagedAndroidStoreApp struct {
 	// ManagedApp is the base model of ManagedAndroidStoreApp
 	ManagedApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppStoreURL undocumented
 	AppStoreURL *string `json:"appStoreUrl,omitempty"`
 	// MinimumSupportedOperatingSystem undocumented
@@ -56,7 +56,7 @@ type ManagedApp struct {
 	// MobileApp is the base model of ManagedApp
 	MobileApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppAvailability undocumented
 	AppAvailability *ManagedAppAvailability `json:"appAvailability,omitempty"`
 	// Version undocumented
@@ -75,7 +75,7 @@ type ManagedAppConfiguration struct {
 	// ManagedAppPolicy is the base model of ManagedAppConfiguration
 	ManagedAppPolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CustomSettings undocumented
 	CustomSettings []KeyValuePair `json:"customSettings,omitempty"`
 }
@@ -92,7 +92,7 @@ type ManagedAppDiagnosticStatus struct {
 	// Object is the base model of ManagedAppDiagnosticStatus
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MitigationInstruction undocumented
 	MitigationInstruction *string `json:"mitigationInstruction,omitempty"`
 	// State undocumented
@@ -113,7 +113,7 @@ type ManagedAppOperation struct {
 	// Entity is the base model of ManagedAppOperation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// LastModifiedDateTime undocumented
@@ -136,7 +136,7 @@ type ManagedAppPolicy struct {
 	// Entity is the base model of ManagedAppPolicy
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -161,7 +161,7 @@ type ManagedAppPolicyDeploymentSummary struct {
 	// Entity is the base model of ManagedAppPolicyDeploymentSummary
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConfigurationDeployedUserCount undocumented
 	ConfigurationDeployedUserCount *int `json:"configurationDeployedUserCount,omitempty"`
 	// ConfigurationDeploymentSummaryPerApp undocumented
@@ -186,7 +186,7 @@ type ManagedAppPolicyDeploymentSummaryPerApp struct {
 	// Object is the base model of ManagedAppPolicyDeploymentSummaryPerApp
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConfigurationAppliedUserCount undocumented
 	ConfigurationAppliedUserCount *int `json:"configurationAppliedUserCount,omitempty"`
 	// MobileAppIdentifier undocumented
@@ -205,7 +205,7 @@ type ManagedAppProtection struct {
 	// ManagedAppPolicy is the base model of ManagedAppProtection
 	ManagedAppPolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowedDataStorageLocations undocumented
 	AllowedDataStorageLocations []ManagedAppDataStorageLocation `json:"allowedDataStorageLocations,omitempty"`
 	// AllowedInboundDataTransferSources undocumented
@@ -274,7 +274,7 @@ type ManagedAppRegistration struct {
 	// Entity is the base model of ManagedAppRegistration
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppIdentifier undocumented
 	AppIdentifier *MobileAppIdentifier `json:"appIdentifier,omitempty"`
 	// ApplicationVersion undocumented
@@ -319,7 +319,7 @@ type ManagedAppStatus struct {
 	// Entity is the base model of ManagedAppStatus
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Version undocumented
@@ -338,7 +338,7 @@ type ManagedAppStatusRaw struct {
 	// ManagedAppStatus is the base model of ManagedAppStatusRaw
 	ManagedAppStatus
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content json.RawMessage `json:"content,omitempty"`
 }
@@ -355,7 +355,7 @@ type ManagedDevice struct {
 	// Entity is the base model of ManagedDevice
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActivationLockBypassCode undocumented
 	ActivationLockBypassCode *string `json:"activationLockBypassCode,omitempty"`
 	// AndroidSecurityPatchLevel undocumented
@@ -484,7 +484,7 @@ type ManagedDeviceMobileAppConfiguration struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfiguration
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -521,7 +521,7 @@ type ManagedDeviceMobileAppConfigurationAssignment struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
@@ -538,7 +538,7 @@ type ManagedDeviceMobileAppConfigurationDeviceStatus struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationDeviceStatus
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ComplianceGracePeriodExpirationDateTime undocumented
 	ComplianceGracePeriodExpirationDateTime *time.Time `json:"complianceGracePeriodExpirationDateTime,omitempty"`
 	// DeviceDisplayName undocumented
@@ -567,7 +567,7 @@ type ManagedDeviceMobileAppConfigurationDeviceSummary struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationDeviceSummary
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConfigurationVersion undocumented
 	ConfigurationVersion *int `json:"configurationVersion,omitempty"`
 	// ErrorCount undocumented
@@ -596,7 +596,7 @@ type ManagedDeviceMobileAppConfigurationUserStatus struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationUserStatus
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DevicesCount undocumented
 	DevicesCount *int `json:"devicesCount,omitempty"`
 	// LastReportedDateTime undocumented
@@ -621,7 +621,7 @@ type ManagedDeviceMobileAppConfigurationUserSummary struct {
 	// Entity is the base model of ManagedDeviceMobileAppConfigurationUserSummary
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConfigurationVersion undocumented
 	ConfigurationVersion *int `json:"configurationVersion,omitempty"`
 	// ErrorCount undocumented
@@ -650,7 +650,7 @@ type ManagedDeviceOverview struct {
 	// Entity is the base model of ManagedDeviceOverview
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeviceExchangeAccessStateSummary undocumented
 	DeviceExchangeAccessStateSummary *DeviceExchangeAccessStateSummary `json:"deviceExchangeAccessStateSummary,omitempty"`
 	// DeviceOperatingSystemSummary undocumented
@@ -675,7 +675,7 @@ type ManagedEBook struct {
 	// Entity is the base model of ManagedEBook
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -716,7 +716,7 @@ type ManagedEBookAssignment struct {
 	// Entity is the base model of ManagedEBookAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// InstallIntent undocumented
 	InstallIntent *InstallIntent `json:"installIntent,omitempty"`
 	// Target undocumented
@@ -735,7 +735,7 @@ type ManagedIOSLobApp struct {
 	// ManagedMobileLobApp is the base model of ManagedIOSLobApp
 	ManagedMobileLobApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
 	// BuildNumber undocumented
@@ -762,7 +762,7 @@ type ManagedIOSStoreApp struct {
 	// ManagedApp is the base model of ManagedIOSStoreApp
 	ManagedApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
 	// AppStoreURL undocumented
@@ -785,7 +785,7 @@ type ManagedMobileApp struct {
 	// Entity is the base model of ManagedMobileApp
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MobileAppIdentifier undocumented
 	MobileAppIdentifier *MobileAppIdentifier `json:"mobileAppIdentifier,omitempty"`
 	// Version undocumented
@@ -804,7 +804,7 @@ type ManagedMobileLobApp struct {
 	// ManagedApp is the base model of ManagedMobileLobApp
 	ManagedApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CommittedContentVersion undocumented
 	CommittedContentVersion *string `json:"committedContentVersion,omitempty"`
 	// FileName undocumented

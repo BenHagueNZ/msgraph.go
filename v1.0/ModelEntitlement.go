@@ -9,7 +9,7 @@ type EntitlementManagement struct {
 	// Entity is the base model of EntitlementManagement
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccessPackageAssignmentApprovals undocumented
 	AccessPackageAssignmentApprovals []Approval `json:"accessPackageAssignmentApprovals,omitempty"`
 	// AccessPackages undocumented
@@ -40,7 +40,7 @@ type EntitlementManagementSchedule struct {
 	// Object is the base model of EntitlementManagementSchedule
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Expiration undocumented
 	Expiration *ExpirationPattern `json:"expiration,omitempty"`
 	// Recurrence undocumented
@@ -61,7 +61,7 @@ type EntitlementManagementSettings struct {
 	// Entity is the base model of EntitlementManagementSettings
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DurationUntilExternalUserDeletedAfterBlocked undocumented
 	DurationUntilExternalUserDeletedAfterBlocked *Duration `json:"durationUntilExternalUserDeletedAfterBlocked,omitempty"`
 	// ExternalUserLifecycleAction undocumented

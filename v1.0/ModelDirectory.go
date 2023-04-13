@@ -9,7 +9,7 @@ type Directory struct {
 	// Entity is the base model of Directory
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AdministrativeUnits undocumented
 	AdministrativeUnits []AdministrativeUnit `json:"administrativeUnits,omitempty"`
 	// DeletedItems undocumented
@@ -32,7 +32,7 @@ type DirectoryAudit struct {
 	// Entity is the base model of DirectoryAudit
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActivityDateTime undocumented
 	ActivityDateTime *time.Time `json:"activityDateTime,omitempty"`
 	// ActivityDisplayName undocumented
@@ -69,7 +69,7 @@ type DirectoryObject struct {
 	// Entity is the base model of DirectoryObject
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeletedDateTime undocumented
 	DeletedDateTime *time.Time `json:"deletedDateTime,omitempty"`
 }
@@ -86,7 +86,7 @@ type DirectoryObjectPartnerReference struct {
 	// DirectoryObject is the base model of DirectoryObjectPartnerReference
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -109,7 +109,7 @@ type DirectoryRole struct {
 	// DirectoryObject is the base model of DirectoryRole
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -134,7 +134,7 @@ type DirectoryRoleTemplate struct {
 	// DirectoryObject is the base model of DirectoryRoleTemplate
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented

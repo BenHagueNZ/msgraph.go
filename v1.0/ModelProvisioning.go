@@ -9,7 +9,7 @@ type ProvisioningErrorInfo struct {
 	// Object is the base model of ProvisioningErrorInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AdditionalDetails undocumented
 	AdditionalDetails *string `json:"additionalDetails,omitempty"`
 	// ErrorCategory undocumented
@@ -34,7 +34,7 @@ type ProvisioningObjectSummary struct {
 	// Entity is the base model of ProvisioningObjectSummary
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActivityDateTime undocumented
 	ActivityDateTime *time.Time `json:"activityDateTime,omitempty"`
 	// ChangeID undocumented
@@ -81,7 +81,7 @@ type ProvisioningServicePrincipal struct {
 	// Identity is the base model of ProvisioningServicePrincipal
 	Identity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewProvisioningServicePrincipal() (*ProvisioningServicePrincipal, error) {
@@ -96,7 +96,7 @@ type ProvisioningStatusInfo struct {
 	// Object is the base model of ProvisioningStatusInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ErrorInformation undocumented
 	ErrorInformation *ProvisioningErrorInfo `json:"errorInformation,omitempty"`
 	// Status undocumented
@@ -115,7 +115,7 @@ type ProvisioningStep struct {
 	// Object is the base model of ProvisioningStep
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// Details undocumented
@@ -140,7 +140,7 @@ type ProvisioningSystem struct {
 	// Identity is the base model of ProvisioningSystem
 	Identity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Details undocumented
 	Details *DetailsInfo `json:"details,omitempty"`
 }

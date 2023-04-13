@@ -7,7 +7,7 @@ type BroadcastMeetingCaptionSettings struct {
 	// Object is the base model of BroadcastMeetingCaptionSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsCaptionEnabled undocumented
 	IsCaptionEnabled *bool `json:"isCaptionEnabled,omitempty"`
 	// SpokenLanguage undocumented
@@ -28,7 +28,7 @@ type BroadcastMeetingSettings struct {
 	// Object is the base model of BroadcastMeetingSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowedAudience undocumented
 	AllowedAudience *BroadcastMeetingAudience `json:"allowedAudience,omitempty"`
 	// Captions undocumented

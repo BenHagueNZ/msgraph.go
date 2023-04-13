@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// RichLongRunningOperation returns request builder for RichLongRunningOperation collection rcn
-func (b *LongRunningOperationRequestBuilder) RichLongRunningOperation() *LongRunningOperationRichLongRunningOperationCollectionRequestBuilder {
-	bb := &LongRunningOperationRichLongRunningOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/RichLongRunningOperation"
+// RichLongRunningOperation returns request builder for RichLongRunningOperation collection
+func (b *AuthenticationOperationsCollectionRequestBuilder) RichLongRunningOperation() *AuthenticationOperationsCollectionRichLongRunningOperationCollectionRequestBuilder {
+	bb := &AuthenticationOperationsCollectionRichLongRunningOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// LongRunningOperationRichLongRunningOperationCollectionRequestBuilder is request builder for RichLongRunningOperation collection
-type LongRunningOperationRichLongRunningOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AuthenticationOperationsCollectionRichLongRunningOperationCollectionRequestBuilder is request builder for RichLongRunningOperation collection
+type AuthenticationOperationsCollectionRichLongRunningOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for RichLongRunningOperation collection
-func (b *LongRunningOperationRichLongRunningOperationCollectionRequestBuilder) Request() *LongRunningOperationRichLongRunningOperationCollectionRequest {
-	return &LongRunningOperationRichLongRunningOperationCollectionRequest{
+func (b *AuthenticationOperationsCollectionRichLongRunningOperationCollectionRequestBuilder) Request() *AuthenticationOperationsCollectionRichLongRunningOperationCollectionRequest {
+	return &AuthenticationOperationsCollectionRichLongRunningOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for RichLongRunningOperation item
-func (b *LongRunningOperationRichLongRunningOperationCollectionRequestBuilder) ID(id string) *RichLongRunningOperationRequestBuilder {
+func (b *AuthenticationOperationsCollectionRichLongRunningOperationCollectionRequestBuilder) ID(id string) *RichLongRunningOperationRequestBuilder {
 	bb := &RichLongRunningOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// LongRunningOperationRichLongRunningOperationCollectionRequest is request for RichLongRunningOperation collection
-type LongRunningOperationRichLongRunningOperationCollectionRequest struct{ BaseRequest }
+// AuthenticationOperationsCollectionRichLongRunningOperationCollectionRequest is request for RichLongRunningOperation collection
+type AuthenticationOperationsCollectionRichLongRunningOperationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for RichLongRunningOperation collection
-func (r *LongRunningOperationRichLongRunningOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RichLongRunningOperation, error) {
+func (r *AuthenticationOperationsCollectionRichLongRunningOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RichLongRunningOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *LongRunningOperationRichLongRunningOperationCollectionRequest) Paging(c
 }
 
 // GetN performs GET request for RichLongRunningOperation collection, max N pages
-func (r *LongRunningOperationRichLongRunningOperationCollectionRequest) GetN(ctx context.Context, n int) ([]RichLongRunningOperation, error) {
+func (r *AuthenticationOperationsCollectionRichLongRunningOperationCollectionRequest) GetN(ctx context.Context, n int) ([]RichLongRunningOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *LongRunningOperationRichLongRunningOperationCollectionRequest) GetN(ctx
 }
 
 // Get performs GET request for RichLongRunningOperation collection
-func (r *LongRunningOperationRichLongRunningOperationCollectionRequest) Get(ctx context.Context) ([]RichLongRunningOperation, error) {
+func (r *AuthenticationOperationsCollectionRichLongRunningOperationCollectionRequest) Get(ctx context.Context) ([]RichLongRunningOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for RichLongRunningOperation collection
-func (r *LongRunningOperationRichLongRunningOperationCollectionRequest) Add(ctx context.Context, reqObj *RichLongRunningOperation) (resObj *RichLongRunningOperation, err error) {
+func (r *AuthenticationOperationsCollectionRichLongRunningOperationCollectionRequest) Add(ctx context.Context, reqObj *RichLongRunningOperation) (resObj *RichLongRunningOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

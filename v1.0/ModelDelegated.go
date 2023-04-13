@@ -9,7 +9,7 @@ type DelegatedAdminAccessAssignment struct {
 	// Entity is the base model of DelegatedAdminAccessAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccessContainer undocumented
 	AccessContainer *DelegatedAdminAccessContainer `json:"accessContainer,omitempty"`
 	// AccessDetails undocumented
@@ -34,7 +34,7 @@ type DelegatedAdminAccessContainer struct {
 	// Object is the base model of DelegatedAdminAccessContainer
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccessContainerID undocumented
 	AccessContainerID *string `json:"accessContainerId,omitempty"`
 	// AccessContainerType undocumented
@@ -53,7 +53,7 @@ type DelegatedAdminAccessDetails struct {
 	// Object is the base model of DelegatedAdminAccessDetails
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UnifiedRoles undocumented
 	UnifiedRoles []UnifiedRole `json:"unifiedRoles,omitempty"`
 }
@@ -70,7 +70,7 @@ type DelegatedAdminCustomer struct {
 	// Entity is the base model of DelegatedAdminCustomer
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// TenantID undocumented
@@ -91,7 +91,7 @@ type DelegatedAdminRelationship struct {
 	// Entity is the base model of DelegatedAdminRelationship
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccessDetails undocumented
 	AccessDetails *DelegatedAdminAccessDetails `json:"accessDetails,omitempty"`
 	// ActivatedDateTime undocumented
@@ -130,7 +130,7 @@ type DelegatedAdminRelationshipCustomerParticipant struct {
 	// Object is the base model of DelegatedAdminRelationshipCustomerParticipant
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// TenantID undocumented
@@ -149,7 +149,7 @@ type DelegatedAdminRelationshipOperation struct {
 	// Entity is the base model of DelegatedAdminRelationshipOperation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Data undocumented
@@ -174,7 +174,7 @@ type DelegatedAdminRelationshipRequestObject struct {
 	// Entity is the base model of DelegatedAdminRelationshipRequestObject
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Action undocumented
 	Action *DelegatedAdminRelationshipRequestAction `json:"action,omitempty"`
 	// CreatedDateTime undocumented
@@ -197,7 +197,7 @@ type DelegatedAdminServiceManagementDetail struct {
 	// Entity is the base model of DelegatedAdminServiceManagementDetail
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ServiceManagementURL undocumented
 	ServiceManagementURL *string `json:"serviceManagementUrl,omitempty"`
 	// ServiceName undocumented
@@ -216,7 +216,7 @@ type DelegatedPermissionClassification struct {
 	// Entity is the base model of DelegatedPermissionClassification
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Classification undocumented
 	Classification *PermissionClassificationType `json:"classification,omitempty"`
 	// PermissionID undocumented

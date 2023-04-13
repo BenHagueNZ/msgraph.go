@@ -7,7 +7,7 @@ type LocateDeviceActionResult struct {
 	// DeviceActionResult is the base model of LocateDeviceActionResult
 	DeviceActionResult
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeviceLocation undocumented
 	DeviceLocation *DeviceGeoLocation `json:"deviceLocation,omitempty"`
 }

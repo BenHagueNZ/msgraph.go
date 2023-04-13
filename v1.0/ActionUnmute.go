@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// UnmuteParticipantOperation returns request builder for UnmuteParticipantOperation collection rcn
-func (b *CommsOperationRequestBuilder) UnmuteParticipantOperation() *CommsOperationUnmuteParticipantOperationCollectionRequestBuilder {
-	bb := &CommsOperationUnmuteParticipantOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/UnmuteParticipantOperation"
+// UnmuteParticipantOperation returns request builder for UnmuteParticipantOperation collection
+func (b *CallOperationsCollectionRequestBuilder) UnmuteParticipantOperation() *CallOperationsCollectionUnmuteParticipantOperationCollectionRequestBuilder {
+	bb := &CallOperationsCollectionUnmuteParticipantOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// CommsOperationUnmuteParticipantOperationCollectionRequestBuilder is request builder for UnmuteParticipantOperation collection
-type CommsOperationUnmuteParticipantOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// CallOperationsCollectionUnmuteParticipantOperationCollectionRequestBuilder is request builder for UnmuteParticipantOperation collection
+type CallOperationsCollectionUnmuteParticipantOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnmuteParticipantOperation collection
-func (b *CommsOperationUnmuteParticipantOperationCollectionRequestBuilder) Request() *CommsOperationUnmuteParticipantOperationCollectionRequest {
-	return &CommsOperationUnmuteParticipantOperationCollectionRequest{
+func (b *CallOperationsCollectionUnmuteParticipantOperationCollectionRequestBuilder) Request() *CallOperationsCollectionUnmuteParticipantOperationCollectionRequest {
+	return &CallOperationsCollectionUnmuteParticipantOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for UnmuteParticipantOperation item
-func (b *CommsOperationUnmuteParticipantOperationCollectionRequestBuilder) ID(id string) *UnmuteParticipantOperationRequestBuilder {
+func (b *CallOperationsCollectionUnmuteParticipantOperationCollectionRequestBuilder) ID(id string) *UnmuteParticipantOperationRequestBuilder {
 	bb := &UnmuteParticipantOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// CommsOperationUnmuteParticipantOperationCollectionRequest is request for UnmuteParticipantOperation collection
-type CommsOperationUnmuteParticipantOperationCollectionRequest struct{ BaseRequest }
+// CallOperationsCollectionUnmuteParticipantOperationCollectionRequest is request for UnmuteParticipantOperation collection
+type CallOperationsCollectionUnmuteParticipantOperationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for UnmuteParticipantOperation collection
-func (r *CommsOperationUnmuteParticipantOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnmuteParticipantOperation, error) {
+func (r *CallOperationsCollectionUnmuteParticipantOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnmuteParticipantOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *CommsOperationUnmuteParticipantOperationCollectionRequest) Paging(ctx c
 }
 
 // GetN performs GET request for UnmuteParticipantOperation collection, max N pages
-func (r *CommsOperationUnmuteParticipantOperationCollectionRequest) GetN(ctx context.Context, n int) ([]UnmuteParticipantOperation, error) {
+func (r *CallOperationsCollectionUnmuteParticipantOperationCollectionRequest) GetN(ctx context.Context, n int) ([]UnmuteParticipantOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *CommsOperationUnmuteParticipantOperationCollectionRequest) GetN(ctx con
 }
 
 // Get performs GET request for UnmuteParticipantOperation collection
-func (r *CommsOperationUnmuteParticipantOperationCollectionRequest) Get(ctx context.Context) ([]UnmuteParticipantOperation, error) {
+func (r *CallOperationsCollectionUnmuteParticipantOperationCollectionRequest) Get(ctx context.Context) ([]UnmuteParticipantOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for UnmuteParticipantOperation collection
-func (r *CommsOperationUnmuteParticipantOperationCollectionRequest) Add(ctx context.Context, reqObj *UnmuteParticipantOperation) (resObj *UnmuteParticipantOperation, err error) {
+func (r *CallOperationsCollectionUnmuteParticipantOperationCollectionRequest) Add(ctx context.Context, reqObj *UnmuteParticipantOperation) (resObj *UnmuteParticipantOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

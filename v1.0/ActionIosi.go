@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// IosiPadOSWebClip returns request builder for IosiPadOSWebClip collection rcn
-func (b *MobileAppRequestBuilder) IosiPadOSWebClip() *MobileAppIosiPadOSWebClipCollectionRequestBuilder {
-	bb := &MobileAppIosiPadOSWebClipCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/IosiPadOSWebClip"
+// IosiPadOSWebClip returns request builder for IosiPadOSWebClip collection
+func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) IosiPadOSWebClip() *DeviceAppManagementMobileAppsCollectionIosiPadOSWebClipCollectionRequestBuilder {
+	bb := &DeviceAppManagementMobileAppsCollectionIosiPadOSWebClipCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// MobileAppIosiPadOSWebClipCollectionRequestBuilder is request builder for IosiPadOSWebClip collection
-type MobileAppIosiPadOSWebClipCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceAppManagementMobileAppsCollectionIosiPadOSWebClipCollectionRequestBuilder is request builder for IosiPadOSWebClip collection
+type DeviceAppManagementMobileAppsCollectionIosiPadOSWebClipCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IosiPadOSWebClip collection
-func (b *MobileAppIosiPadOSWebClipCollectionRequestBuilder) Request() *MobileAppIosiPadOSWebClipCollectionRequest {
-	return &MobileAppIosiPadOSWebClipCollectionRequest{
+func (b *DeviceAppManagementMobileAppsCollectionIosiPadOSWebClipCollectionRequestBuilder) Request() *DeviceAppManagementMobileAppsCollectionIosiPadOSWebClipCollectionRequest {
+	return &DeviceAppManagementMobileAppsCollectionIosiPadOSWebClipCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for IosiPadOSWebClip item
-func (b *MobileAppIosiPadOSWebClipCollectionRequestBuilder) ID(id string) *IosiPadOSWebClipRequestBuilder {
+func (b *DeviceAppManagementMobileAppsCollectionIosiPadOSWebClipCollectionRequestBuilder) ID(id string) *IosiPadOSWebClipRequestBuilder {
 	bb := &IosiPadOSWebClipRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// MobileAppIosiPadOSWebClipCollectionRequest is request for IosiPadOSWebClip collection
-type MobileAppIosiPadOSWebClipCollectionRequest struct{ BaseRequest }
+// DeviceAppManagementMobileAppsCollectionIosiPadOSWebClipCollectionRequest is request for IosiPadOSWebClip collection
+type DeviceAppManagementMobileAppsCollectionIosiPadOSWebClipCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for IosiPadOSWebClip collection
-func (r *MobileAppIosiPadOSWebClipCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IosiPadOSWebClip, error) {
+func (r *DeviceAppManagementMobileAppsCollectionIosiPadOSWebClipCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IosiPadOSWebClip, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *MobileAppIosiPadOSWebClipCollectionRequest) Paging(ctx context.Context,
 }
 
 // GetN performs GET request for IosiPadOSWebClip collection, max N pages
-func (r *MobileAppIosiPadOSWebClipCollectionRequest) GetN(ctx context.Context, n int) ([]IosiPadOSWebClip, error) {
+func (r *DeviceAppManagementMobileAppsCollectionIosiPadOSWebClipCollectionRequest) GetN(ctx context.Context, n int) ([]IosiPadOSWebClip, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *MobileAppIosiPadOSWebClipCollectionRequest) GetN(ctx context.Context, n
 }
 
 // Get performs GET request for IosiPadOSWebClip collection
-func (r *MobileAppIosiPadOSWebClipCollectionRequest) Get(ctx context.Context) ([]IosiPadOSWebClip, error) {
+func (r *DeviceAppManagementMobileAppsCollectionIosiPadOSWebClipCollectionRequest) Get(ctx context.Context) ([]IosiPadOSWebClip, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for IosiPadOSWebClip collection
-func (r *MobileAppIosiPadOSWebClipCollectionRequest) Add(ctx context.Context, reqObj *IosiPadOSWebClip) (resObj *IosiPadOSWebClip, err error) {
+func (r *DeviceAppManagementMobileAppsCollectionIosiPadOSWebClipCollectionRequest) Add(ctx context.Context, reqObj *IosiPadOSWebClip) (resObj *IosiPadOSWebClip, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

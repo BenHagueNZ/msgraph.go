@@ -103,7 +103,7 @@ func (b *UnifiedRoleAssignmentScheduleRequestObjectRequestBuilder) TargetSchedul
 	return bb
 }
 
-// InheritsPermissionsFrom returns request builder for UnifiedRoleDefinition collection rcn
+// InheritsPermissionsFrom returns request builder for UnifiedRoleDefinition collection
 func (b *UnifiedRoleDefinitionRequestBuilder) InheritsPermissionsFrom() *UnifiedRoleDefinitionInheritsPermissionsFromCollectionRequestBuilder {
 	bb := &UnifiedRoleDefinitionInheritsPermissionsFromCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/inheritsPermissionsFrom"
@@ -241,7 +241,7 @@ func (b *UnifiedRoleEligibilityScheduleRequestObjectRequestBuilder) TargetSchedu
 	return bb
 }
 
-// EffectiveRules returns request builder for UnifiedRoleManagementPolicyRule collection rcn
+// EffectiveRules returns request builder for UnifiedRoleManagementPolicyRule collection
 func (b *UnifiedRoleManagementPolicyRequestBuilder) EffectiveRules() *UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder {
 	bb := &UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/effectiveRules"
@@ -344,7 +344,7 @@ func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionRequest) Add(ctx con
 	return
 }
 
-// Rules returns request builder for UnifiedRoleManagementPolicyRule collection rcn
+// Rules returns request builder for UnifiedRoleManagementPolicyRule collection
 func (b *UnifiedRoleManagementPolicyRequestBuilder) Rules() *UnifiedRoleManagementPolicyRulesCollectionRequestBuilder {
 	bb := &UnifiedRoleManagementPolicyRulesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/rules"
@@ -454,7 +454,7 @@ func (b *UnifiedRoleManagementPolicyAssignmentRequestBuilder) Policy() *UnifiedR
 	return bb
 }
 
-// TargetObjects returns request builder for DirectoryObject collection rcn
+// TargetObjects returns request builder for DirectoryObject collection
 func (b *UnifiedRoleManagementPolicyRuleTargetRequestBuilder) TargetObjects() *UnifiedRoleManagementPolicyRuleTargetTargetObjectsCollectionRequestBuilder {
 	bb := &UnifiedRoleManagementPolicyRuleTargetTargetObjectsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/targetObjects"
@@ -634,35 +634,35 @@ func (b *UnifiedRoleManagementPolicyRequestBuilder) Entity() *EntityRequestBuild
 	return bb
 }
 
-// UnifiedRoleManagementPolicyApprovalRule returns request builder for UnifiedRoleManagementPolicyApprovalRule collection rcn
-func (b *UnifiedRoleManagementPolicyRuleRequestBuilder) UnifiedRoleManagementPolicyApprovalRule() *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder {
-	bb := &UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/UnifiedRoleManagementPolicyApprovalRule"
+// UnifiedRoleManagementPolicyApprovalRule returns request builder for UnifiedRoleManagementPolicyApprovalRule collection
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder) UnifiedRoleManagementPolicyApprovalRule() *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder {
+	bb := &UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyApprovalRule collection
-type UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyApprovalRule collection
+type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleManagementPolicyApprovalRule collection
-func (b *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder) Request() *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleCollectionRequest {
-	return &UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleCollectionRequest{
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder) Request() *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequest {
+	return &UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for UnifiedRoleManagementPolicyApprovalRule item
-func (b *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder) ID(id string) *UnifiedRoleManagementPolicyApprovalRuleRequestBuilder {
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder) ID(id string) *UnifiedRoleManagementPolicyApprovalRuleRequestBuilder {
 	bb := &UnifiedRoleManagementPolicyApprovalRuleRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleCollectionRequest is request for UnifiedRoleManagementPolicyApprovalRule collection
-type UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleCollectionRequest struct{ BaseRequest }
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequest is request for UnifiedRoleManagementPolicyApprovalRule collection
+type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for UnifiedRoleManagementPolicyApprovalRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnifiedRoleManagementPolicyApprovalRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnifiedRoleManagementPolicyApprovalRule, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -718,7 +718,7 @@ func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleC
 }
 
 // GetN performs GET request for UnifiedRoleManagementPolicyApprovalRule collection, max N pages
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleCollectionRequest) GetN(ctx context.Context, n int) ([]UnifiedRoleManagementPolicyApprovalRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequest) GetN(ctx context.Context, n int) ([]UnifiedRoleManagementPolicyApprovalRule, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -727,12 +727,12 @@ func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleC
 }
 
 // Get performs GET request for UnifiedRoleManagementPolicyApprovalRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleCollectionRequest) Get(ctx context.Context) ([]UnifiedRoleManagementPolicyApprovalRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequest) Get(ctx context.Context) ([]UnifiedRoleManagementPolicyApprovalRule, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for UnifiedRoleManagementPolicyApprovalRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyApprovalRuleCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleManagementPolicyApprovalRule) (resObj *UnifiedRoleManagementPolicyApprovalRule, err error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleManagementPolicyApprovalRule) (resObj *UnifiedRoleManagementPolicyApprovalRule, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -744,35 +744,35 @@ func (b *UnifiedRoleManagementPolicyAssignmentRequestBuilder) Entity() *EntityRe
 	return bb
 }
 
-// UnifiedRoleManagementPolicyAuthenticationContextRule returns request builder for UnifiedRoleManagementPolicyAuthenticationContextRule collection rcn
-func (b *UnifiedRoleManagementPolicyRuleRequestBuilder) UnifiedRoleManagementPolicyAuthenticationContextRule() *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder {
-	bb := &UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/UnifiedRoleManagementPolicyAuthenticationContextRule"
+// UnifiedRoleManagementPolicyAuthenticationContextRule returns request builder for UnifiedRoleManagementPolicyAuthenticationContextRule collection
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder) UnifiedRoleManagementPolicyAuthenticationContextRule() *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder {
+	bb := &UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyAuthenticationContextRule collection
-type UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyAuthenticationContextRule collection
+type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleManagementPolicyAuthenticationContextRule collection
-func (b *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder) Request() *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest {
-	return &UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest{
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder) Request() *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest {
+	return &UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for UnifiedRoleManagementPolicyAuthenticationContextRule item
-func (b *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder) ID(id string) *UnifiedRoleManagementPolicyAuthenticationContextRuleRequestBuilder {
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder) ID(id string) *UnifiedRoleManagementPolicyAuthenticationContextRuleRequestBuilder {
 	bb := &UnifiedRoleManagementPolicyAuthenticationContextRuleRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest is request for UnifiedRoleManagementPolicyAuthenticationContextRule collection
-type UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest struct{ BaseRequest }
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest is request for UnifiedRoleManagementPolicyAuthenticationContextRule collection
+type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for UnifiedRoleManagementPolicyAuthenticationContextRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnifiedRoleManagementPolicyAuthenticationContextRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnifiedRoleManagementPolicyAuthenticationContextRule, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -828,7 +828,7 @@ func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticatio
 }
 
 // GetN performs GET request for UnifiedRoleManagementPolicyAuthenticationContextRule collection, max N pages
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest) GetN(ctx context.Context, n int) ([]UnifiedRoleManagementPolicyAuthenticationContextRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest) GetN(ctx context.Context, n int) ([]UnifiedRoleManagementPolicyAuthenticationContextRule, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -837,45 +837,45 @@ func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticatio
 }
 
 // Get performs GET request for UnifiedRoleManagementPolicyAuthenticationContextRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest) Get(ctx context.Context) ([]UnifiedRoleManagementPolicyAuthenticationContextRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest) Get(ctx context.Context) ([]UnifiedRoleManagementPolicyAuthenticationContextRule, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for UnifiedRoleManagementPolicyAuthenticationContextRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleManagementPolicyAuthenticationContextRule) (resObj *UnifiedRoleManagementPolicyAuthenticationContextRule, err error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleManagementPolicyAuthenticationContextRule) (resObj *UnifiedRoleManagementPolicyAuthenticationContextRule, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// UnifiedRoleManagementPolicyEnablementRule returns request builder for UnifiedRoleManagementPolicyEnablementRule collection rcn
-func (b *UnifiedRoleManagementPolicyRuleRequestBuilder) UnifiedRoleManagementPolicyEnablementRule() *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder {
-	bb := &UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/UnifiedRoleManagementPolicyEnablementRule"
+// UnifiedRoleManagementPolicyEnablementRule returns request builder for UnifiedRoleManagementPolicyEnablementRule collection
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder) UnifiedRoleManagementPolicyEnablementRule() *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder {
+	bb := &UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyEnablementRule collection
-type UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyEnablementRule collection
+type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleManagementPolicyEnablementRule collection
-func (b *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder) Request() *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRuleCollectionRequest {
-	return &UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRuleCollectionRequest{
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder) Request() *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequest {
+	return &UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for UnifiedRoleManagementPolicyEnablementRule item
-func (b *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder) ID(id string) *UnifiedRoleManagementPolicyEnablementRuleRequestBuilder {
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder) ID(id string) *UnifiedRoleManagementPolicyEnablementRuleRequestBuilder {
 	bb := &UnifiedRoleManagementPolicyEnablementRuleRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRuleCollectionRequest is request for UnifiedRoleManagementPolicyEnablementRule collection
-type UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRuleCollectionRequest struct{ BaseRequest }
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequest is request for UnifiedRoleManagementPolicyEnablementRule collection
+type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for UnifiedRoleManagementPolicyEnablementRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRuleCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnifiedRoleManagementPolicyEnablementRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnifiedRoleManagementPolicyEnablementRule, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -931,7 +931,7 @@ func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRul
 }
 
 // GetN performs GET request for UnifiedRoleManagementPolicyEnablementRule collection, max N pages
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRuleCollectionRequest) GetN(ctx context.Context, n int) ([]UnifiedRoleManagementPolicyEnablementRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequest) GetN(ctx context.Context, n int) ([]UnifiedRoleManagementPolicyEnablementRule, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -940,45 +940,45 @@ func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRul
 }
 
 // Get performs GET request for UnifiedRoleManagementPolicyEnablementRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRuleCollectionRequest) Get(ctx context.Context) ([]UnifiedRoleManagementPolicyEnablementRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequest) Get(ctx context.Context) ([]UnifiedRoleManagementPolicyEnablementRule, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for UnifiedRoleManagementPolicyEnablementRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyEnablementRuleCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleManagementPolicyEnablementRule) (resObj *UnifiedRoleManagementPolicyEnablementRule, err error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleManagementPolicyEnablementRule) (resObj *UnifiedRoleManagementPolicyEnablementRule, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// UnifiedRoleManagementPolicyExpirationRule returns request builder for UnifiedRoleManagementPolicyExpirationRule collection rcn
-func (b *UnifiedRoleManagementPolicyRuleRequestBuilder) UnifiedRoleManagementPolicyExpirationRule() *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder {
-	bb := &UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/UnifiedRoleManagementPolicyExpirationRule"
+// UnifiedRoleManagementPolicyExpirationRule returns request builder for UnifiedRoleManagementPolicyExpirationRule collection
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder) UnifiedRoleManagementPolicyExpirationRule() *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder {
+	bb := &UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyExpirationRule collection
-type UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyExpirationRule collection
+type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleManagementPolicyExpirationRule collection
-func (b *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder) Request() *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRuleCollectionRequest {
-	return &UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRuleCollectionRequest{
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder) Request() *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequest {
+	return &UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for UnifiedRoleManagementPolicyExpirationRule item
-func (b *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder) ID(id string) *UnifiedRoleManagementPolicyExpirationRuleRequestBuilder {
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder) ID(id string) *UnifiedRoleManagementPolicyExpirationRuleRequestBuilder {
 	bb := &UnifiedRoleManagementPolicyExpirationRuleRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRuleCollectionRequest is request for UnifiedRoleManagementPolicyExpirationRule collection
-type UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRuleCollectionRequest struct{ BaseRequest }
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequest is request for UnifiedRoleManagementPolicyExpirationRule collection
+type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for UnifiedRoleManagementPolicyExpirationRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRuleCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnifiedRoleManagementPolicyExpirationRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnifiedRoleManagementPolicyExpirationRule, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1034,7 +1034,7 @@ func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRul
 }
 
 // GetN performs GET request for UnifiedRoleManagementPolicyExpirationRule collection, max N pages
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRuleCollectionRequest) GetN(ctx context.Context, n int) ([]UnifiedRoleManagementPolicyExpirationRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequest) GetN(ctx context.Context, n int) ([]UnifiedRoleManagementPolicyExpirationRule, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1043,45 +1043,45 @@ func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRul
 }
 
 // Get performs GET request for UnifiedRoleManagementPolicyExpirationRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRuleCollectionRequest) Get(ctx context.Context) ([]UnifiedRoleManagementPolicyExpirationRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequest) Get(ctx context.Context) ([]UnifiedRoleManagementPolicyExpirationRule, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for UnifiedRoleManagementPolicyExpirationRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyExpirationRuleCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleManagementPolicyExpirationRule) (resObj *UnifiedRoleManagementPolicyExpirationRule, err error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleManagementPolicyExpirationRule) (resObj *UnifiedRoleManagementPolicyExpirationRule, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// UnifiedRoleManagementPolicyNotificationRule returns request builder for UnifiedRoleManagementPolicyNotificationRule collection rcn
-func (b *UnifiedRoleManagementPolicyRuleRequestBuilder) UnifiedRoleManagementPolicyNotificationRule() *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder {
-	bb := &UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/UnifiedRoleManagementPolicyNotificationRule"
+// UnifiedRoleManagementPolicyNotificationRule returns request builder for UnifiedRoleManagementPolicyNotificationRule collection
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder) UnifiedRoleManagementPolicyNotificationRule() *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder {
+	bb := &UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyNotificationRule collection
-type UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyNotificationRule collection
+type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleManagementPolicyNotificationRule collection
-func (b *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder) Request() *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationRuleCollectionRequest {
-	return &UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationRuleCollectionRequest{
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder) Request() *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequest {
+	return &UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for UnifiedRoleManagementPolicyNotificationRule item
-func (b *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder) ID(id string) *UnifiedRoleManagementPolicyNotificationRuleRequestBuilder {
+func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder) ID(id string) *UnifiedRoleManagementPolicyNotificationRuleRequestBuilder {
 	bb := &UnifiedRoleManagementPolicyNotificationRuleRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationRuleCollectionRequest is request for UnifiedRoleManagementPolicyNotificationRule collection
-type UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationRuleCollectionRequest struct{ BaseRequest }
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequest is request for UnifiedRoleManagementPolicyNotificationRule collection
+type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for UnifiedRoleManagementPolicyNotificationRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationRuleCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnifiedRoleManagementPolicyNotificationRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UnifiedRoleManagementPolicyNotificationRule, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1137,7 +1137,7 @@ func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationR
 }
 
 // GetN performs GET request for UnifiedRoleManagementPolicyNotificationRule collection, max N pages
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationRuleCollectionRequest) GetN(ctx context.Context, n int) ([]UnifiedRoleManagementPolicyNotificationRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequest) GetN(ctx context.Context, n int) ([]UnifiedRoleManagementPolicyNotificationRule, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1146,12 +1146,12 @@ func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationR
 }
 
 // Get performs GET request for UnifiedRoleManagementPolicyNotificationRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationRuleCollectionRequest) Get(ctx context.Context) ([]UnifiedRoleManagementPolicyNotificationRule, error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequest) Get(ctx context.Context) ([]UnifiedRoleManagementPolicyNotificationRule, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for UnifiedRoleManagementPolicyNotificationRule collection
-func (r *UnifiedRoleManagementPolicyRuleUnifiedRoleManagementPolicyNotificationRuleCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleManagementPolicyNotificationRule) (resObj *UnifiedRoleManagementPolicyNotificationRule, err error) {
+func (r *UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequest) Add(ctx context.Context, reqObj *UnifiedRoleManagementPolicyNotificationRule) (resObj *UnifiedRoleManagementPolicyNotificationRule, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

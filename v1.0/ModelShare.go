@@ -7,7 +7,7 @@ type SharePointIdentity struct {
 	// Identity is the base model of SharePointIdentity
 	Identity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// LoginName undocumented
 	LoginName *string `json:"loginName,omitempty"`
 }
@@ -24,7 +24,7 @@ type SharePointIdentitySet struct {
 	// IdentitySet is the base model of SharePointIdentitySet
 	IdentitySet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Group undocumented
 	Group *Identity `json:"group,omitempty"`
 	// SiteGroup undocumented
@@ -45,7 +45,7 @@ type SharePointOneDriveOptions struct {
 	// Object is the base model of SharePointOneDriveOptions
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IncludeContent undocumented
 	IncludeContent *SearchContent `json:"includeContent,omitempty"`
 }

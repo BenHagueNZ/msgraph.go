@@ -7,7 +7,7 @@ type RbacApplication struct {
 	// Entity is the base model of RbacApplication
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RoleAssignments undocumented
 	RoleAssignments []UnifiedRoleAssignment `json:"roleAssignments,omitempty"`
 	// RoleDefinitions undocumented

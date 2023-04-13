@@ -7,7 +7,7 @@ type SamlOrWsFedExternalDomainFederation struct {
 	// SamlOrWsFedProvider is the base model of SamlOrWsFedExternalDomainFederation
 	SamlOrWsFedProvider
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Domains undocumented
 	Domains []ExternalDomainName `json:"domains,omitempty"`
 }
@@ -24,7 +24,7 @@ type SamlOrWsFedProvider struct {
 	// IdentityProviderBase is the base model of SamlOrWsFedProvider
 	IdentityProviderBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IssuerURI undocumented
 	IssuerURI *string `json:"issuerUri,omitempty"`
 	// MetadataExchangeURI undocumented
@@ -49,7 +49,7 @@ type SamlSingleSignOnSettings struct {
 	// Object is the base model of SamlSingleSignOnSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RelayState undocumented
 	RelayState *string `json:"relayState,omitempty"`
 }

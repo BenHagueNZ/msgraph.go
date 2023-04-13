@@ -7,7 +7,7 @@ type RemoveAccessApplyAction struct {
 	// AccessReviewApplyAction is the base model of RemoveAccessApplyAction
 	AccessReviewApplyAction
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewRemoveAccessApplyAction() (*RemoveAccessApplyAction, error) {

@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// SwapShiftsChangeRequestObject returns request builder for SwapShiftsChangeRequestObject collection rcn
-func (b *OfferShiftRequestObjectRequestBuilder) SwapShiftsChangeRequestObject() *OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequestBuilder {
-	bb := &OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SwapShiftsChangeRequest"
+// SwapShiftsChangeRequestObject returns request builder for SwapShiftsChangeRequestObject collection
+func (b *ScheduleOfferShiftRequestsCollectionRequestBuilder) SwapShiftsChangeRequestObject() *ScheduleOfferShiftRequestsCollectionSwapShiftsChangeRequestObjectCollectionRequestBuilder {
+	bb := &ScheduleOfferShiftRequestsCollectionSwapShiftsChangeRequestObjectCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequestBuilder is request builder for SwapShiftsChangeRequestObject collection
-type OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ScheduleOfferShiftRequestsCollectionSwapShiftsChangeRequestObjectCollectionRequestBuilder is request builder for SwapShiftsChangeRequestObject collection
+type ScheduleOfferShiftRequestsCollectionSwapShiftsChangeRequestObjectCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SwapShiftsChangeRequestObject collection
-func (b *OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequestBuilder) Request() *OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequest {
-	return &OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequest{
+func (b *ScheduleOfferShiftRequestsCollectionSwapShiftsChangeRequestObjectCollectionRequestBuilder) Request() *ScheduleOfferShiftRequestsCollectionSwapShiftsChangeRequestObjectCollectionRequest {
+	return &ScheduleOfferShiftRequestsCollectionSwapShiftsChangeRequestObjectCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for SwapShiftsChangeRequestObject item
-func (b *OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequestBuilder) ID(id string) *SwapShiftsChangeRequestObjectRequestBuilder {
+func (b *ScheduleOfferShiftRequestsCollectionSwapShiftsChangeRequestObjectCollectionRequestBuilder) ID(id string) *SwapShiftsChangeRequestObjectRequestBuilder {
 	bb := &SwapShiftsChangeRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequest is request for SwapShiftsChangeRequestObject collection
-type OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequest struct{ BaseRequest }
+// ScheduleOfferShiftRequestsCollectionSwapShiftsChangeRequestObjectCollectionRequest is request for SwapShiftsChangeRequestObject collection
+type ScheduleOfferShiftRequestsCollectionSwapShiftsChangeRequestObjectCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for SwapShiftsChangeRequestObject collection
-func (r *OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SwapShiftsChangeRequestObject, error) {
+func (r *ScheduleOfferShiftRequestsCollectionSwapShiftsChangeRequestObjectCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SwapShiftsChangeRequestObject, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequest) 
 }
 
 // GetN performs GET request for SwapShiftsChangeRequestObject collection, max N pages
-func (r *OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequest) GetN(ctx context.Context, n int) ([]SwapShiftsChangeRequestObject, error) {
+func (r *ScheduleOfferShiftRequestsCollectionSwapShiftsChangeRequestObjectCollectionRequest) GetN(ctx context.Context, n int) ([]SwapShiftsChangeRequestObject, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequest) 
 }
 
 // Get performs GET request for SwapShiftsChangeRequestObject collection
-func (r *OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequest) Get(ctx context.Context) ([]SwapShiftsChangeRequestObject, error) {
+func (r *ScheduleOfferShiftRequestsCollectionSwapShiftsChangeRequestObjectCollectionRequest) Get(ctx context.Context) ([]SwapShiftsChangeRequestObject, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for SwapShiftsChangeRequestObject collection
-func (r *OfferShiftRequestObjectSwapShiftsChangeRequestObjectCollectionRequest) Add(ctx context.Context, reqObj *SwapShiftsChangeRequestObject) (resObj *SwapShiftsChangeRequestObject, err error) {
+func (r *ScheduleOfferShiftRequestsCollectionSwapShiftsChangeRequestObjectCollectionRequest) Add(ctx context.Context, reqObj *SwapShiftsChangeRequestObject) (resObj *SwapShiftsChangeRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

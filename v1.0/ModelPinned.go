@@ -7,7 +7,7 @@ type PinnedChatMessageInfo struct {
 	// Entity is the base model of PinnedChatMessageInfo
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Message undocumented
 	Message *ChatMessage `json:"message,omitempty"`
 }

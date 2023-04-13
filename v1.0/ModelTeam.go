@@ -9,7 +9,7 @@ type Team struct {
 	// Entity is the base model of Team
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Classification undocumented
 	Classification *string `json:"classification,omitempty"`
 	// CreatedDateTime undocumented
@@ -78,7 +78,7 @@ type TeamArchivedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamArchivedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamID undocumented
@@ -97,7 +97,7 @@ type TeamClassSettings struct {
 	// Object is the base model of TeamClassSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// NotifyGuardiansAboutAssignments undocumented
 	NotifyGuardiansAboutAssignments *bool `json:"notifyGuardiansAboutAssignments,omitempty"`
 }
@@ -114,7 +114,7 @@ type TeamCreatedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamCreatedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamDescription undocumented
@@ -137,7 +137,7 @@ type TeamDescriptionUpdatedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamDescriptionUpdatedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamDescription undocumented
@@ -158,7 +158,7 @@ type TeamFunSettings struct {
 	// Object is the base model of TeamFunSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowCustomMemes undocumented
 	AllowCustomMemes *bool `json:"allowCustomMemes,omitempty"`
 	// AllowGiphy undocumented
@@ -181,7 +181,7 @@ type TeamGuestSettings struct {
 	// Object is the base model of TeamGuestSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowCreateUpdateChannels undocumented
 	AllowCreateUpdateChannels *bool `json:"allowCreateUpdateChannels,omitempty"`
 	// AllowDeleteChannels undocumented
@@ -200,7 +200,7 @@ type TeamInfo struct {
 	// Entity is the base model of TeamInfo
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// TenantID undocumented
@@ -221,7 +221,7 @@ type TeamJoiningDisabledEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamJoiningDisabledEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamID undocumented
@@ -240,7 +240,7 @@ type TeamJoiningEnabledEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamJoiningEnabledEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamID undocumented
@@ -259,7 +259,7 @@ type TeamMemberSettings struct {
 	// Object is the base model of TeamMemberSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowAddRemoveApps undocumented
 	AllowAddRemoveApps *bool `json:"allowAddRemoveApps,omitempty"`
 	// AllowCreatePrivateChannels undocumented
@@ -286,7 +286,7 @@ type TeamMembersNotificationRecipient struct {
 	// TeamworkNotificationRecipient is the base model of TeamMembersNotificationRecipient
 	TeamworkNotificationRecipient
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// TeamID undocumented
 	TeamID *string `json:"teamId,omitempty"`
 }
@@ -303,7 +303,7 @@ type TeamMessagingSettings struct {
 	// Object is the base model of TeamMessagingSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowChannelMentions undocumented
 	AllowChannelMentions *bool `json:"allowChannelMentions,omitempty"`
 	// AllowOwnerDeleteMessages undocumented
@@ -328,7 +328,7 @@ type TeamRenamedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamRenamedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamDisplayName undocumented
@@ -349,7 +349,7 @@ type TeamSummary struct {
 	// Object is the base model of TeamSummary
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// GuestsCount undocumented
 	GuestsCount *int `json:"guestsCount,omitempty"`
 	// MembersCount undocumented
@@ -370,7 +370,7 @@ type TeamUnarchivedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TeamUnarchivedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TeamID undocumented

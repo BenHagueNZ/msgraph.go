@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AcceptanceStatuses returns request builder for TermsAndConditionsAcceptanceStatus collection rcn
+// AcceptanceStatuses returns request builder for TermsAndConditionsAcceptanceStatus collection
 func (b *TermsAndConditionsRequestBuilder) AcceptanceStatuses() *TermsAndConditionsAcceptanceStatusesCollectionRequestBuilder {
 	bb := &TermsAndConditionsAcceptanceStatusesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/acceptanceStatuses"
@@ -114,7 +114,7 @@ func (r *TermsAndConditionsAcceptanceStatusesCollectionRequest) Add(ctx context.
 	return
 }
 
-// Assignments returns request builder for TermsAndConditionsAssignment collection rcn
+// Assignments returns request builder for TermsAndConditionsAssignment collection
 func (b *TermsAndConditionsRequestBuilder) Assignments() *TermsAndConditionsAssignmentsCollectionRequestBuilder {
 	bb := &TermsAndConditionsAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignments"
@@ -224,7 +224,7 @@ func (b *TermsAndConditionsAcceptanceStatusRequestBuilder) TermsAndConditions() 
 	return bb
 }
 
-// AgreementAcceptances returns request builder for AgreementAcceptance collection rcn
+// AgreementAcceptances returns request builder for AgreementAcceptance collection
 func (b *TermsOfUseContainerRequestBuilder) AgreementAcceptances() *TermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder {
 	bb := &TermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/agreementAcceptances"
@@ -327,7 +327,7 @@ func (r *TermsOfUseContainerAgreementAcceptancesCollectionRequest) Add(ctx conte
 	return
 }
 
-// Agreements returns request builder for Agreement collection rcn
+// Agreements returns request builder for Agreement collection
 func (b *TermsOfUseContainerRequestBuilder) Agreements() *TermsOfUseContainerAgreementsCollectionRequestBuilder {
 	bb := &TermsOfUseContainerAgreementsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/agreements"

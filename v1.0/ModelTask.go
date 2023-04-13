@@ -7,7 +7,7 @@ type TaskFileAttachment struct {
 	// AttachmentBase is the base model of TaskFileAttachment
 	AttachmentBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentBytes undocumented
 	ContentBytes *Binary `json:"contentBytes,omitempty"`
 }

@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Apps returns request builder for ManagedMobileApp collection rcn
+// Apps returns request builder for ManagedMobileApp collection
 func (b *DefaultManagedAppProtectionRequestBuilder) Apps() *DefaultManagedAppProtectionAppsCollectionRequestBuilder {
 	bb := &DefaultManagedAppProtectionAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/apps"

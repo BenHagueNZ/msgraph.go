@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// ManagedDevices returns request builder for ManagedDevice collection rcn
+// ManagedDevices returns request builder for ManagedDevice collection
 func (b *DetectedAppRequestBuilder) ManagedDevices() *DetectedAppManagedDevicesCollectionRequestBuilder {
 	bb := &DetectedAppManagedDevicesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/managedDevices"

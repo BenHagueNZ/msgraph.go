@@ -9,7 +9,7 @@ type Subscription struct {
 	// Entity is the base model of Subscription
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicationID undocumented
 	ApplicationID *string `json:"applicationId,omitempty"`
 	// ChangeType undocumented

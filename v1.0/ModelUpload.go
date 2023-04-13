@@ -9,7 +9,7 @@ type UploadSession struct {
 	// Object is the base model of UploadSession
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExpirationDateTime undocumented
 	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
 	// NextExpectedRanges undocumented

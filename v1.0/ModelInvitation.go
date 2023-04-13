@@ -7,7 +7,7 @@ type Invitation struct {
 	// Entity is the base model of Invitation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// InvitedUserDisplayName undocumented
 	InvitedUserDisplayName *string `json:"invitedUserDisplayName,omitempty"`
 	// InvitedUserEmailAddress undocumented
@@ -42,7 +42,7 @@ type InvitationParticipantInfo struct {
 	// Object is the base model of InvitationParticipantInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Hidden undocumented
 	Hidden *bool `json:"hidden,omitempty"`
 	// Identity undocumented

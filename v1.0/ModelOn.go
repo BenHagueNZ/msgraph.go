@@ -9,7 +9,7 @@ type OnPremisesAccidentalDeletionPrevention struct {
 	// Object is the base model of OnPremisesAccidentalDeletionPrevention
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AlertThreshold undocumented
 	AlertThreshold *int `json:"alertThreshold,omitempty"`
 	// SynchronizationPreventionType undocumented
@@ -28,7 +28,7 @@ type OnPremisesConditionalAccessSettings struct {
 	// Entity is the base model of OnPremisesConditionalAccessSettings
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Enabled undocumented
 	Enabled *bool `json:"enabled,omitempty"`
 	// ExcludedGroups undocumented
@@ -51,7 +51,7 @@ type OnPremisesDirectorySynchronization struct {
 	// Entity is the base model of OnPremisesDirectorySynchronization
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Configuration undocumented
 	Configuration *OnPremisesDirectorySynchronizationConfiguration `json:"configuration,omitempty"`
 	// Features undocumented
@@ -70,7 +70,7 @@ type OnPremisesDirectorySynchronizationConfiguration struct {
 	// Object is the base model of OnPremisesDirectorySynchronizationConfiguration
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccidentalDeletionPrevention undocumented
 	AccidentalDeletionPrevention *OnPremisesAccidentalDeletionPrevention `json:"accidentalDeletionPrevention,omitempty"`
 }
@@ -87,7 +87,7 @@ type OnPremisesDirectorySynchronizationFeature struct {
 	// Object is the base model of OnPremisesDirectorySynchronizationFeature
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BlockCloudObjectTakeoverThroughHardMatchEnabled undocumented
 	BlockCloudObjectTakeoverThroughHardMatchEnabled *bool `json:"blockCloudObjectTakeoverThroughHardMatchEnabled,omitempty"`
 	// BlockSoftMatchEnabled undocumented
@@ -140,7 +140,7 @@ type OnPremisesExtensionAttributes struct {
 	// Object is the base model of OnPremisesExtensionAttributes
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExtensionAttribute1 undocumented
 	ExtensionAttribute1 *string `json:"extensionAttribute1,omitempty"`
 	// ExtensionAttribute10 undocumented
@@ -185,7 +185,7 @@ type OnPremisesProvisioningError struct {
 	// Object is the base model of OnPremisesProvisioningError
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Category undocumented
 	Category *string `json:"category,omitempty"`
 	// OccurredDateTime undocumented

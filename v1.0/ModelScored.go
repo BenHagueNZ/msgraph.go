@@ -7,7 +7,7 @@ type ScoredEmailAddress struct {
 	// Object is the base model of ScoredEmailAddress
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Address undocumented
 	Address *string `json:"address,omitempty"`
 	// ItemID undocumented

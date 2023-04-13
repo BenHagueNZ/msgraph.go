@@ -9,7 +9,7 @@ type Onenote struct {
 	// Entity is the base model of Onenote
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Notebooks undocumented
 	Notebooks []Notebook `json:"notebooks,omitempty"`
 	// Operations undocumented
@@ -36,7 +36,7 @@ type OnenoteEntityBaseModel struct {
 	// Entity is the base model of OnenoteEntityBaseModel
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Self undocumented
 	Self *string `json:"self,omitempty"`
 }
@@ -53,7 +53,7 @@ type OnenoteEntityHierarchyModel struct {
 	// OnenoteEntitySchemaObjectModel is the base model of OnenoteEntityHierarchyModel
 	OnenoteEntitySchemaObjectModel
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// DisplayName undocumented
@@ -76,7 +76,7 @@ type OnenoteEntitySchemaObjectModel struct {
 	// OnenoteEntityBaseModel is the base model of OnenoteEntitySchemaObjectModel
 	OnenoteEntityBaseModel
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 }
@@ -93,7 +93,7 @@ type OnenoteOperation struct {
 	// Operation is the base model of OnenoteOperation
 	Operation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Error undocumented
 	Error *OnenoteOperationError `json:"error,omitempty"`
 	// PercentComplete undocumented
@@ -116,7 +116,7 @@ type OnenoteOperationError struct {
 	// Object is the base model of OnenoteOperationError
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
 	// Message undocumented
@@ -135,7 +135,7 @@ type OnenotePage struct {
 	// OnenoteEntitySchemaObjectModel is the base model of OnenotePage
 	OnenoteEntitySchemaObjectModel
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *Stream `json:"content,omitempty"`
 	// ContentURL undocumented
@@ -172,7 +172,7 @@ type OnenotePagePreview struct {
 	// Object is the base model of OnenotePagePreview
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Links undocumented
 	Links *OnenotePagePreviewLinks `json:"links,omitempty"`
 	// PreviewText undocumented
@@ -191,7 +191,7 @@ type OnenotePagePreviewLinks struct {
 	// Object is the base model of OnenotePagePreviewLinks
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// PreviewImageURL undocumented
 	PreviewImageURL *ExternalLink `json:"previewImageUrl,omitempty"`
 }
@@ -208,7 +208,7 @@ type OnenotePatchContentCommand struct {
 	// Object is the base model of OnenotePatchContentCommand
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Action undocumented
 	Action *OnenotePatchActionType `json:"action,omitempty"`
 	// Content undocumented
@@ -231,7 +231,7 @@ type OnenoteResource struct {
 	// OnenoteEntityBaseModel is the base model of OnenoteResource
 	OnenoteEntityBaseModel
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *Stream `json:"content,omitempty"`
 	// ContentURL undocumented
@@ -250,7 +250,7 @@ type OnenoteSection struct {
 	// OnenoteEntityHierarchyModel is the base model of OnenoteSection
 	OnenoteEntityHierarchyModel
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsDefault undocumented
 	IsDefault *bool `json:"isDefault,omitempty"`
 	// Links undocumented

@@ -9,7 +9,7 @@ type OrgContact struct {
 	// DirectoryObject is the base model of OrgContact
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Addresses undocumented
 	Addresses []PhysicalOfficeAddress `json:"addresses,omitempty"`
 	// CompanyName undocumented

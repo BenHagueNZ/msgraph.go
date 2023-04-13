@@ -7,7 +7,7 @@ type GenericError struct {
 	// Object is the base model of GenericError
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
 	// Message undocumented

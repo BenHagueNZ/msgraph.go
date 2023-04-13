@@ -3401,7 +3401,7 @@ func (b *WorkbookRequestBuilder) Application() *WorkbookApplicationRequestBuilde
 	return bb
 }
 
-// Comments returns request builder for WorkbookComment collection rcn
+// Comments returns request builder for WorkbookComment collection
 func (b *WorkbookRequestBuilder) Comments() *WorkbookCommentsCollectionRequestBuilder {
 	bb := &WorkbookCommentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/comments"
@@ -3511,7 +3511,7 @@ func (b *WorkbookRequestBuilder) Functions() *WorkbookFunctionsRequestBuilder {
 	return bb
 }
 
-// Names returns request builder for WorkbookNamedItem collection rcn
+// Names returns request builder for WorkbookNamedItem collection
 func (b *WorkbookRequestBuilder) Names() *WorkbookNamesCollectionRequestBuilder {
 	bb := &WorkbookNamesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/names"
@@ -3614,7 +3614,7 @@ func (r *WorkbookNamesCollectionRequest) Add(ctx context.Context, reqObj *Workbo
 	return
 }
 
-// Operations returns request builder for WorkbookOperation collection rcn
+// Operations returns request builder for WorkbookOperation collection
 func (b *WorkbookRequestBuilder) Operations() *WorkbookOperationsCollectionRequestBuilder {
 	bb := &WorkbookOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -3717,7 +3717,7 @@ func (r *WorkbookOperationsCollectionRequest) Add(ctx context.Context, reqObj *W
 	return
 }
 
-// Tables returns request builder for WorkbookTable collection rcn
+// Tables returns request builder for WorkbookTable collection
 func (b *WorkbookRequestBuilder) Tables() *WorkbookTablesCollectionRequestBuilder {
 	bb := &WorkbookTablesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tables"
@@ -3820,7 +3820,7 @@ func (r *WorkbookTablesCollectionRequest) Add(ctx context.Context, reqObj *Workb
 	return
 }
 
-// Worksheets returns request builder for WorkbookWorksheet collection rcn
+// Worksheets returns request builder for WorkbookWorksheet collection
 func (b *WorkbookRequestBuilder) Worksheets() *WorkbookWorksheetsCollectionRequestBuilder {
 	bb := &WorkbookWorksheetsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/worksheets"
@@ -3951,7 +3951,7 @@ func (b *WorkbookChartRequestBuilder) Legend() *WorkbookChartLegendRequestBuilde
 	return bb
 }
 
-// Series returns request builder for WorkbookChartSeries collection rcn
+// Series returns request builder for WorkbookChartSeries collection
 func (b *WorkbookChartRequestBuilder) Series() *WorkbookChartSeriesCollectionRequestBuilder {
 	bb := &WorkbookChartSeriesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/series"
@@ -4236,7 +4236,7 @@ func (b *WorkbookChartSeriesRequestBuilder) Format() *WorkbookChartSeriesFormatR
 	return bb
 }
 
-// Points returns request builder for WorkbookChartPoint collection rcn
+// Points returns request builder for WorkbookChartPoint collection
 func (b *WorkbookChartSeriesRequestBuilder) Points() *WorkbookChartSeriesPointsCollectionRequestBuilder {
 	bb := &WorkbookChartSeriesPointsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/points"
@@ -4374,7 +4374,7 @@ func (b *WorkbookChartTitleFormatRequestBuilder) Font() *WorkbookChartFontReques
 	return bb
 }
 
-// Replies returns request builder for WorkbookCommentReply collection rcn
+// Replies returns request builder for WorkbookCommentReply collection
 func (b *WorkbookCommentRequestBuilder) Replies() *WorkbookCommentRepliesCollectionRequestBuilder {
 	bb := &WorkbookCommentRepliesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/replies"
@@ -4512,7 +4512,7 @@ func (b *WorkbookRangeRequestBuilder) Worksheet() *WorkbookWorksheetRequestBuild
 	return bb
 }
 
-// Borders returns request builder for WorkbookRangeBorder collection rcn
+// Borders returns request builder for WorkbookRangeBorder collection
 func (b *WorkbookRangeFormatRequestBuilder) Borders() *WorkbookRangeFormatBordersCollectionRequestBuilder {
 	bb := &WorkbookRangeFormatBordersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/borders"
@@ -4636,7 +4636,7 @@ func (b *WorkbookRangeFormatRequestBuilder) Protection() *WorkbookFormatProtecti
 	return bb
 }
 
-// Rows returns request builder for WorkbookRangeView collection rcn
+// Rows returns request builder for WorkbookRangeView collection
 func (b *WorkbookRangeViewRequestBuilder) Rows() *WorkbookRangeViewRowsCollectionRequestBuilder {
 	bb := &WorkbookRangeViewRowsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/rows"
@@ -4739,7 +4739,7 @@ func (r *WorkbookRangeViewRowsCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// Columns returns request builder for WorkbookTableColumn collection rcn
+// Columns returns request builder for WorkbookTableColumn collection
 func (b *WorkbookTableRequestBuilder) Columns() *WorkbookTableColumnsCollectionRequestBuilder {
 	bb := &WorkbookTableColumnsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/columns"
@@ -4842,7 +4842,7 @@ func (r *WorkbookTableColumnsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// Rows returns request builder for WorkbookTableRow collection rcn
+// Rows returns request builder for WorkbookTableRow collection
 func (b *WorkbookTableRequestBuilder) Rows() *WorkbookTableRowsCollectionRequestBuilder {
 	bb := &WorkbookTableRowsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/rows"
@@ -4966,7 +4966,7 @@ func (b *WorkbookTableColumnRequestBuilder) Filter() *WorkbookFilterRequestBuild
 	return bb
 }
 
-// Charts returns request builder for WorkbookChart collection rcn
+// Charts returns request builder for WorkbookChart collection
 func (b *WorkbookWorksheetRequestBuilder) Charts() *WorkbookWorksheetChartsCollectionRequestBuilder {
 	bb := &WorkbookWorksheetChartsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/charts"
@@ -5069,7 +5069,7 @@ func (r *WorkbookWorksheetChartsCollectionRequest) Add(ctx context.Context, reqO
 	return
 }
 
-// Names returns request builder for WorkbookNamedItem collection rcn
+// Names returns request builder for WorkbookNamedItem collection
 func (b *WorkbookWorksheetRequestBuilder) Names() *WorkbookWorksheetNamesCollectionRequestBuilder {
 	bb := &WorkbookWorksheetNamesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/names"
@@ -5172,7 +5172,7 @@ func (r *WorkbookWorksheetNamesCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// PivotTables returns request builder for WorkbookPivotTable collection rcn
+// PivotTables returns request builder for WorkbookPivotTable collection
 func (b *WorkbookWorksheetRequestBuilder) PivotTables() *WorkbookWorksheetPivotTablesCollectionRequestBuilder {
 	bb := &WorkbookWorksheetPivotTablesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/pivotTables"
@@ -5282,7 +5282,7 @@ func (b *WorkbookWorksheetRequestBuilder) Protection() *WorkbookWorksheetProtect
 	return bb
 }
 
-// Tables returns request builder for WorkbookTable collection rcn
+// Tables returns request builder for WorkbookTable collection
 func (b *WorkbookWorksheetRequestBuilder) Tables() *WorkbookWorksheetTablesCollectionRequestBuilder {
 	bb := &WorkbookWorksheetTablesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tables"

@@ -7,7 +7,7 @@ type SystemFacet struct {
 	// Object is the base model of SystemFacet
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewSystemFacet() (*SystemFacet, error) {

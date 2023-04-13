@@ -15,7 +15,7 @@ import (
 type DocumentSetVersionRestoreRequestParameter struct {
 }
 
-// SharedColumns returns request builder for ColumnDefinition collection rcn
+// SharedColumns returns request builder for ColumnDefinition collection
 func (b *DocumentSetRequestBuilder) SharedColumns() *DocumentSetSharedColumnsCollectionRequestBuilder {
 	bb := &DocumentSetSharedColumnsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sharedColumns"
@@ -118,7 +118,7 @@ func (r *DocumentSetSharedColumnsCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// WelcomePageColumns returns request builder for ColumnDefinition collection rcn
+// WelcomePageColumns returns request builder for ColumnDefinition collection
 func (b *DocumentSetRequestBuilder) WelcomePageColumns() *DocumentSetWelcomePageColumnsCollectionRequestBuilder {
 	bb := &DocumentSetWelcomePageColumnsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/welcomePageColumns"
@@ -221,35 +221,35 @@ func (r *DocumentSetWelcomePageColumnsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// DocumentSetVersion returns request builder for DocumentSetVersion collection rcn
-func (b *ListItemVersionRequestBuilder) DocumentSetVersion() *ListItemVersionDocumentSetVersionCollectionRequestBuilder {
-	bb := &ListItemVersionDocumentSetVersionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DocumentSetVersion"
+// DocumentSetVersion returns request builder for DocumentSetVersion collection
+func (b *ListItemVersionsCollectionRequestBuilder) DocumentSetVersion() *ListItemVersionsCollectionDocumentSetVersionCollectionRequestBuilder {
+	bb := &ListItemVersionsCollectionDocumentSetVersionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// ListItemVersionDocumentSetVersionCollectionRequestBuilder is request builder for DocumentSetVersion collection
-type ListItemVersionDocumentSetVersionCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ListItemVersionsCollectionDocumentSetVersionCollectionRequestBuilder is request builder for DocumentSetVersion collection
+type ListItemVersionsCollectionDocumentSetVersionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DocumentSetVersion collection
-func (b *ListItemVersionDocumentSetVersionCollectionRequestBuilder) Request() *ListItemVersionDocumentSetVersionCollectionRequest {
-	return &ListItemVersionDocumentSetVersionCollectionRequest{
+func (b *ListItemVersionsCollectionDocumentSetVersionCollectionRequestBuilder) Request() *ListItemVersionsCollectionDocumentSetVersionCollectionRequest {
+	return &ListItemVersionsCollectionDocumentSetVersionCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for DocumentSetVersion item
-func (b *ListItemVersionDocumentSetVersionCollectionRequestBuilder) ID(id string) *DocumentSetVersionRequestBuilder {
+func (b *ListItemVersionsCollectionDocumentSetVersionCollectionRequestBuilder) ID(id string) *DocumentSetVersionRequestBuilder {
 	bb := &DocumentSetVersionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ListItemVersionDocumentSetVersionCollectionRequest is request for DocumentSetVersion collection
-type ListItemVersionDocumentSetVersionCollectionRequest struct{ BaseRequest }
+// ListItemVersionsCollectionDocumentSetVersionCollectionRequest is request for DocumentSetVersion collection
+type ListItemVersionsCollectionDocumentSetVersionCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for DocumentSetVersion collection
-func (r *ListItemVersionDocumentSetVersionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DocumentSetVersion, error) {
+func (r *ListItemVersionsCollectionDocumentSetVersionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DocumentSetVersion, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -305,7 +305,7 @@ func (r *ListItemVersionDocumentSetVersionCollectionRequest) Paging(ctx context.
 }
 
 // GetN performs GET request for DocumentSetVersion collection, max N pages
-func (r *ListItemVersionDocumentSetVersionCollectionRequest) GetN(ctx context.Context, n int) ([]DocumentSetVersion, error) {
+func (r *ListItemVersionsCollectionDocumentSetVersionCollectionRequest) GetN(ctx context.Context, n int) ([]DocumentSetVersion, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -314,12 +314,12 @@ func (r *ListItemVersionDocumentSetVersionCollectionRequest) GetN(ctx context.Co
 }
 
 // Get performs GET request for DocumentSetVersion collection
-func (r *ListItemVersionDocumentSetVersionCollectionRequest) Get(ctx context.Context) ([]DocumentSetVersion, error) {
+func (r *ListItemVersionsCollectionDocumentSetVersionCollectionRequest) Get(ctx context.Context) ([]DocumentSetVersion, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for DocumentSetVersion collection
-func (r *ListItemVersionDocumentSetVersionCollectionRequest) Add(ctx context.Context, reqObj *DocumentSetVersion) (resObj *DocumentSetVersion, err error) {
+func (r *ListItemVersionsCollectionDocumentSetVersionCollectionRequest) Add(ctx context.Context, reqObj *DocumentSetVersion) (resObj *DocumentSetVersion, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

@@ -12,7 +12,7 @@ type User struct {
 	// DirectoryObject is the base model of User
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccountEnabled undocumented
 	AccountEnabled *bool `json:"accountEnabled,omitempty"`
 	// AgeGroup undocumented
@@ -265,7 +265,7 @@ type UserActivity struct {
 	// Entity is the base model of UserActivity
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActivationURL undocumented
 	ActivationURL *string `json:"activationUrl,omitempty"`
 	// ActivitySourceHost undocumented
@@ -308,7 +308,7 @@ type UserAttributeValuesItem struct {
 	// Object is the base model of UserAttributeValuesItem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsDefault undocumented
 	IsDefault *bool `json:"isDefault,omitempty"`
 	// Name undocumented
@@ -329,7 +329,7 @@ type UserConsentRequestObject struct {
 	// RequestObject is the base model of UserConsentRequestObject
 	RequestObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Reason undocumented
 	Reason *string `json:"reason,omitempty"`
 	// Approval undocumented
@@ -348,7 +348,7 @@ type UserExperienceAnalyticsDevicePerformance struct {
 	// Entity is the base model of UserExperienceAnalyticsDevicePerformance
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AverageBlueScreens undocumented
 	AverageBlueScreens *float64 `json:"averageBlueScreens,omitempty"`
 	// AverageRestarts undocumented
@@ -403,7 +403,7 @@ type UserFlowAPIConnectorConfiguration struct {
 	// Object is the base model of UserFlowAPIConnectorConfiguration
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// PostAttributeCollection undocumented
 	PostAttributeCollection *IdentityAPIConnector `json:"postAttributeCollection,omitempty"`
 	// PostFederationSignup undocumented
@@ -422,7 +422,7 @@ type UserFlowLanguageConfiguration struct {
 	// Entity is the base model of UserFlowLanguageConfiguration
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// IsEnabled undocumented
@@ -445,7 +445,7 @@ type UserFlowLanguagePage struct {
 	// Entity is the base model of UserFlowLanguagePage
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewUserFlowLanguagePage() (*UserFlowLanguagePage, error) {
@@ -460,7 +460,7 @@ type UserIdentity struct {
 	// Identity is the base model of UserIdentity
 	Identity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IPAddress undocumented
 	IPAddress *string `json:"ipAddress,omitempty"`
 	// UserPrincipalName undocumented
@@ -479,7 +479,7 @@ type UserInstallStateSummary struct {
 	// Entity is the base model of UserInstallStateSummary
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FailedDeviceCount undocumented
 	FailedDeviceCount *int `json:"failedDeviceCount,omitempty"`
 	// InstalledDeviceCount undocumented
@@ -504,7 +504,7 @@ type UserScopeTeamsAppInstallation struct {
 	// TeamsAppInstallation is the base model of UserScopeTeamsAppInstallation
 	TeamsAppInstallation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Chat undocumented
 	Chat *Chat `json:"chat,omitempty"`
 }
@@ -521,7 +521,7 @@ type UserSecurityState struct {
 	// Object is the base model of UserSecurityState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AadUserID undocumented
 	AadUserID *string `json:"aadUserId,omitempty"`
 	// AccountName undocumented
@@ -564,7 +564,7 @@ type UserSettings struct {
 	// Entity is the base model of UserSettings
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContributionToContentDiscoveryAsOrganizationDisabled undocumented
 	ContributionToContentDiscoveryAsOrganizationDisabled *bool `json:"contributionToContentDiscoveryAsOrganizationDisabled,omitempty"`
 	// ContributionToContentDiscoveryDisabled undocumented
@@ -585,7 +585,7 @@ type UserSimulationDetails struct {
 	// Object is the base model of UserSimulationDetails
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedTrainingsCount undocumented
 	AssignedTrainingsCount *int `json:"assignedTrainingsCount,omitempty"`
 	// CompletedTrainingsCount undocumented
@@ -618,7 +618,7 @@ type UserSimulationEventInfo struct {
 	// Object is the base model of UserSimulationEventInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Browser undocumented
 	Browser *string `json:"browser,omitempty"`
 	// EventDateTime undocumented
@@ -643,7 +643,7 @@ type UserTeamwork struct {
 	// Entity is the base model of UserTeamwork
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssociatedTeams undocumented
 	AssociatedTeams []AssociatedTeamInfo `json:"associatedTeams,omitempty"`
 	// InstalledApps undocumented
@@ -662,7 +662,7 @@ type UserTrainingContentEventInfo struct {
 	// Object is the base model of UserTrainingContentEventInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Browser undocumented
 	Browser *string `json:"browser,omitempty"`
 	// ContentDateTime undocumented
@@ -687,7 +687,7 @@ type UserTrainingEventInfo struct {
 	// Object is the base model of UserTrainingEventInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// LatestTrainingStatus undocumented
@@ -712,7 +712,7 @@ type UserTrainingStatusInfo struct {
 	// Object is the base model of UserTrainingStatusInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedDateTime undocumented
 	AssignedDateTime *time.Time `json:"assignedDateTime,omitempty"`
 	// CompletionDateTime undocumented

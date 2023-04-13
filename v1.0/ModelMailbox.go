@@ -7,7 +7,7 @@ type MailboxSettings struct {
 	// Object is the base model of MailboxSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ArchiveFolder undocumented
 	ArchiveFolder *string `json:"archiveFolder,omitempty"`
 	// AutomaticRepliesSetting undocumented

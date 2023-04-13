@@ -7,7 +7,7 @@ type Hashes struct {
 	// Object is the base model of Hashes
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Crc32Hash undocumented
 	Crc32Hash *string `json:"crc32Hash,omitempty"`
 	// QuickXorHash undocumented

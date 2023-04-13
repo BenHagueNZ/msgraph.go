@@ -18,35 +18,35 @@ func (b *ResourceOperationRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
-// ResourceSpecificPermissionGrant returns request builder for ResourceSpecificPermissionGrant collection rcn
-func (b *DirectoryObjectRequestBuilder) ResourceSpecificPermissionGrant() *DirectoryObjectResourceSpecificPermissionGrantCollectionRequestBuilder {
-	bb := &DirectoryObjectResourceSpecificPermissionGrantCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/ResourceSpecificPermissionGrant"
+// ResourceSpecificPermissionGrant returns request builder for ResourceSpecificPermissionGrant collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) ResourceSpecificPermissionGrant() *AdministrativeUnitMembersCollectionResourceSpecificPermissionGrantCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionResourceSpecificPermissionGrantCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DirectoryObjectResourceSpecificPermissionGrantCollectionRequestBuilder is request builder for ResourceSpecificPermissionGrant collection
-type DirectoryObjectResourceSpecificPermissionGrantCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AdministrativeUnitMembersCollectionResourceSpecificPermissionGrantCollectionRequestBuilder is request builder for ResourceSpecificPermissionGrant collection
+type AdministrativeUnitMembersCollectionResourceSpecificPermissionGrantCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ResourceSpecificPermissionGrant collection
-func (b *DirectoryObjectResourceSpecificPermissionGrantCollectionRequestBuilder) Request() *DirectoryObjectResourceSpecificPermissionGrantCollectionRequest {
-	return &DirectoryObjectResourceSpecificPermissionGrantCollectionRequest{
+func (b *AdministrativeUnitMembersCollectionResourceSpecificPermissionGrantCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionResourceSpecificPermissionGrantCollectionRequest {
+	return &AdministrativeUnitMembersCollectionResourceSpecificPermissionGrantCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for ResourceSpecificPermissionGrant item
-func (b *DirectoryObjectResourceSpecificPermissionGrantCollectionRequestBuilder) ID(id string) *ResourceSpecificPermissionGrantRequestBuilder {
+func (b *AdministrativeUnitMembersCollectionResourceSpecificPermissionGrantCollectionRequestBuilder) ID(id string) *ResourceSpecificPermissionGrantRequestBuilder {
 	bb := &ResourceSpecificPermissionGrantRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DirectoryObjectResourceSpecificPermissionGrantCollectionRequest is request for ResourceSpecificPermissionGrant collection
-type DirectoryObjectResourceSpecificPermissionGrantCollectionRequest struct{ BaseRequest }
+// AdministrativeUnitMembersCollectionResourceSpecificPermissionGrantCollectionRequest is request for ResourceSpecificPermissionGrant collection
+type AdministrativeUnitMembersCollectionResourceSpecificPermissionGrantCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for ResourceSpecificPermissionGrant collection
-func (r *DirectoryObjectResourceSpecificPermissionGrantCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ResourceSpecificPermissionGrant, error) {
+func (r *AdministrativeUnitMembersCollectionResourceSpecificPermissionGrantCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ResourceSpecificPermissionGrant, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -102,7 +102,7 @@ func (r *DirectoryObjectResourceSpecificPermissionGrantCollectionRequest) Paging
 }
 
 // GetN performs GET request for ResourceSpecificPermissionGrant collection, max N pages
-func (r *DirectoryObjectResourceSpecificPermissionGrantCollectionRequest) GetN(ctx context.Context, n int) ([]ResourceSpecificPermissionGrant, error) {
+func (r *AdministrativeUnitMembersCollectionResourceSpecificPermissionGrantCollectionRequest) GetN(ctx context.Context, n int) ([]ResourceSpecificPermissionGrant, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -111,12 +111,12 @@ func (r *DirectoryObjectResourceSpecificPermissionGrantCollectionRequest) GetN(c
 }
 
 // Get performs GET request for ResourceSpecificPermissionGrant collection
-func (r *DirectoryObjectResourceSpecificPermissionGrantCollectionRequest) Get(ctx context.Context) ([]ResourceSpecificPermissionGrant, error) {
+func (r *AdministrativeUnitMembersCollectionResourceSpecificPermissionGrantCollectionRequest) Get(ctx context.Context) ([]ResourceSpecificPermissionGrant, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for ResourceSpecificPermissionGrant collection
-func (r *DirectoryObjectResourceSpecificPermissionGrantCollectionRequest) Add(ctx context.Context, reqObj *ResourceSpecificPermissionGrant) (resObj *ResourceSpecificPermissionGrant, err error) {
+func (r *AdministrativeUnitMembersCollectionResourceSpecificPermissionGrantCollectionRequest) Add(ctx context.Context, reqObj *ResourceSpecificPermissionGrant) (resObj *ResourceSpecificPermissionGrant, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

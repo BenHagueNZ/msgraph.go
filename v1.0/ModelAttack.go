@@ -9,7 +9,7 @@ type AttackSimulationRepeatOffender struct {
 	// Object is the base model of AttackSimulationRepeatOffender
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AttackSimulationUser undocumented
 	AttackSimulationUser *AttackSimulationUser `json:"attackSimulationUser,omitempty"`
 	// RepeatOffenceCount undocumented
@@ -28,7 +28,7 @@ type AttackSimulationRoot struct {
 	// Entity is the base model of AttackSimulationRoot
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// SimulationAutomations undocumented
 	SimulationAutomations []SimulationAutomation `json:"simulationAutomations,omitempty"`
 	// Simulations undocumented
@@ -47,7 +47,7 @@ type AttackSimulationSimulationUserCoverage struct {
 	// Object is the base model of AttackSimulationSimulationUserCoverage
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AttackSimulationUser undocumented
 	AttackSimulationUser *AttackSimulationUser `json:"attackSimulationUser,omitempty"`
 	// ClickCount undocumented
@@ -72,7 +72,7 @@ type AttackSimulationTrainingUserCoverage struct {
 	// Object is the base model of AttackSimulationTrainingUserCoverage
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AttackSimulationUser undocumented
 	AttackSimulationUser *AttackSimulationUser `json:"attackSimulationUser,omitempty"`
 	// UserTrainings undocumented
@@ -91,7 +91,7 @@ type AttackSimulationUser struct {
 	// Object is the base model of AttackSimulationUser
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Email undocumented

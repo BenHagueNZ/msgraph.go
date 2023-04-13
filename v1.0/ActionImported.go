@@ -17,7 +17,7 @@ type ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestParameter stru
 	ImportedWindowsAutopilotDeviceIdentities []ImportedWindowsAutopilotDeviceIdentity `json:"importedWindowsAutopilotDeviceIdentities,omitempty"`
 }
 
-// DeviceIdentities returns request builder for ImportedWindowsAutopilotDeviceIdentity collection rcn
+// DeviceIdentities returns request builder for ImportedWindowsAutopilotDeviceIdentity collection
 func (b *ImportedWindowsAutopilotDeviceIdentityUploadRequestBuilder) DeviceIdentities() *ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionRequestBuilder {
 	bb := &ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceIdentities"

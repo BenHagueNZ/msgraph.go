@@ -57,7 +57,7 @@ type TeamSendActivityNotificationRequestParameter struct {
 	Recipient *TeamworkNotificationRecipient `json:"recipient,omitempty"`
 }
 
-// AllChannels returns request builder for Channel collection rcn
+// AllChannels returns request builder for Channel collection
 func (b *TeamRequestBuilder) AllChannels() *TeamAllChannelsCollectionRequestBuilder {
 	bb := &TeamAllChannelsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/allChannels"
@@ -160,7 +160,7 @@ func (r *TeamAllChannelsCollectionRequest) Add(ctx context.Context, reqObj *Chan
 	return
 }
 
-// Channels returns request builder for Channel collection rcn
+// Channels returns request builder for Channel collection
 func (b *TeamRequestBuilder) Channels() *TeamChannelsCollectionRequestBuilder {
 	bb := &TeamChannelsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/channels"
@@ -270,7 +270,7 @@ func (b *TeamRequestBuilder) Group() *GroupRequestBuilder {
 	return bb
 }
 
-// IncomingChannels returns request builder for Channel collection rcn
+// IncomingChannels returns request builder for Channel collection
 func (b *TeamRequestBuilder) IncomingChannels() *TeamIncomingChannelsCollectionRequestBuilder {
 	bb := &TeamIncomingChannelsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/incomingChannels"
@@ -373,7 +373,7 @@ func (r *TeamIncomingChannelsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// InstalledApps returns request builder for TeamsAppInstallation collection rcn
+// InstalledApps returns request builder for TeamsAppInstallation collection
 func (b *TeamRequestBuilder) InstalledApps() *TeamInstalledAppsCollectionRequestBuilder {
 	bb := &TeamInstalledAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/installedApps"
@@ -476,7 +476,7 @@ func (r *TeamInstalledAppsCollectionRequest) Add(ctx context.Context, reqObj *Te
 	return
 }
 
-// Members returns request builder for ConversationMember collection rcn
+// Members returns request builder for ConversationMember collection
 func (b *TeamRequestBuilder) Members() *TeamMembersCollectionRequestBuilder {
 	bb := &TeamMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"
@@ -579,7 +579,7 @@ func (r *TeamMembersCollectionRequest) Add(ctx context.Context, reqObj *Conversa
 	return
 }
 
-// Operations returns request builder for TeamsAsyncOperation collection rcn
+// Operations returns request builder for TeamsAsyncOperation collection
 func (b *TeamRequestBuilder) Operations() *TeamOperationsCollectionRequestBuilder {
 	bb := &TeamOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -703,7 +703,7 @@ func (b *TeamRequestBuilder) Schedule() *ScheduleRequestBuilder {
 	return bb
 }
 
-// Tags returns request builder for TeamworkTag collection rcn
+// Tags returns request builder for TeamworkTag collection
 func (b *TeamRequestBuilder) Tags() *TeamTagsCollectionRequestBuilder {
 	bb := &TeamTagsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tags"

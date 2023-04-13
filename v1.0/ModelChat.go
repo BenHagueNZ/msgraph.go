@@ -9,7 +9,7 @@ type Chat struct {
 	// Entity is the base model of Chat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChatType undocumented
 	ChatType *ChatType `json:"chatType,omitempty"`
 	// CreatedDateTime undocumented
@@ -52,7 +52,7 @@ type ChatInfo struct {
 	// Object is the base model of ChatInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MessageID undocumented
 	MessageID *string `json:"messageId,omitempty"`
 	// ReplyChainMessageID undocumented
@@ -73,7 +73,7 @@ type ChatMembersNotificationRecipient struct {
 	// TeamworkNotificationRecipient is the base model of ChatMembersNotificationRecipient
 	TeamworkNotificationRecipient
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChatID undocumented
 	ChatID *string `json:"chatId,omitempty"`
 }
@@ -90,7 +90,7 @@ type ChatMessage struct {
 	// Entity is the base model of ChatMessage
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Attachments undocumented
 	Attachments []ChatMessageAttachment `json:"attachments,omitempty"`
 	// Body undocumented
@@ -151,7 +151,7 @@ type ChatMessageAttachment struct {
 	// Object is the base model of ChatMessageAttachment
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *string `json:"content,omitempty"`
 	// ContentType undocumented
@@ -180,7 +180,7 @@ type ChatMessageFromIdentitySet struct {
 	// IdentitySet is the base model of ChatMessageFromIdentitySet
 	IdentitySet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewChatMessageFromIdentitySet() (*ChatMessageFromIdentitySet, error) {
@@ -195,7 +195,7 @@ type ChatMessageHostedContent struct {
 	// TeamworkHostedContent is the base model of ChatMessageHostedContent
 	TeamworkHostedContent
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewChatMessageHostedContent() (*ChatMessageHostedContent, error) {
@@ -210,7 +210,7 @@ type ChatMessageInfo struct {
 	// Entity is the base model of ChatMessageInfo
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Body undocumented
 	Body *ItemBody `json:"body,omitempty"`
 	// CreatedDateTime undocumented
@@ -237,7 +237,7 @@ type ChatMessageMention struct {
 	// Object is the base model of ChatMessageMention
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ID undocumented
 	ID *int `json:"id,omitempty"`
 	// Mentioned undocumented
@@ -258,7 +258,7 @@ type ChatMessageMentionedIdentitySet struct {
 	// IdentitySet is the base model of ChatMessageMentionedIdentitySet
 	IdentitySet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Conversation undocumented
 	Conversation *TeamworkConversationIdentity `json:"conversation,omitempty"`
 }
@@ -275,7 +275,7 @@ type ChatMessagePolicyViolation struct {
 	// Object is the base model of ChatMessagePolicyViolation
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DlpAction undocumented
 	DlpAction *ChatMessagePolicyViolationDlpActionTypes `json:"dlpAction,omitempty"`
 	// JustificationText undocumented
@@ -300,7 +300,7 @@ type ChatMessagePolicyViolationPolicyTip struct {
 	// Object is the base model of ChatMessagePolicyViolationPolicyTip
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ComplianceURL undocumented
 	ComplianceURL *string `json:"complianceUrl,omitempty"`
 	// GeneralText undocumented
@@ -321,7 +321,7 @@ type ChatMessageReaction struct {
 	// Object is the base model of ChatMessageReaction
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// ReactionType undocumented
@@ -342,7 +342,7 @@ type ChatMessageReactionIdentitySet struct {
 	// IdentitySet is the base model of ChatMessageReactionIdentitySet
 	IdentitySet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewChatMessageReactionIdentitySet() (*ChatMessageReactionIdentitySet, error) {
@@ -357,7 +357,7 @@ type ChatRenamedEventMessageDetail struct {
 	// EventMessageDetail is the base model of ChatRenamedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChatDisplayName undocumented
 	ChatDisplayName *string `json:"chatDisplayName,omitempty"`
 	// ChatID undocumented
@@ -378,7 +378,7 @@ type ChatViewpoint struct {
 	// Object is the base model of ChatViewpoint
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsHidden undocumented
 	IsHidden *bool `json:"isHidden,omitempty"`
 	// LastMessageReadDateTime undocumented

@@ -7,7 +7,7 @@ type ExternalDomainFederation struct {
 	// IdentitySource is the base model of ExternalDomainFederation
 	IdentitySource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// DomainName undocumented
@@ -28,7 +28,7 @@ type ExternalDomainName struct {
 	// Entity is the base model of ExternalDomainName
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewExternalDomainName() (*ExternalDomainName, error) {
@@ -43,7 +43,7 @@ type ExternalLink struct {
 	// Object is the base model of ExternalLink
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Href undocumented
 	Href *string `json:"href,omitempty"`
 }
@@ -60,7 +60,7 @@ type ExternalSponsors struct {
 	// SubjectSet is the base model of ExternalSponsors
 	SubjectSet
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewExternalSponsors() (*ExternalSponsors, error) {
@@ -75,7 +75,7 @@ type ExternalConnectorsACL struct {
 	// Object is the base model of ExternalConnectorsACL
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccessType undocumented
 	AccessType *ExternalConnectorsAccessType `json:"accessType,omitempty"`
 	// Type undocumented
@@ -96,7 +96,7 @@ type ExternalConnectorsConfiguration struct {
 	// Object is the base model of ExternalConnectorsConfiguration
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AuthorizedAppIDs undocumented
 	AuthorizedAppIDs []string `json:"authorizedAppIds,omitempty"`
 }
@@ -113,7 +113,7 @@ type ExternalConnectorsConnectionOperation struct {
 	// Entity is the base model of ExternalConnectorsConnectionOperation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Error undocumented
 	Error *PublicError `json:"error,omitempty"`
 	// Status undocumented
@@ -132,7 +132,7 @@ type ExternalConnectorsExternal struct {
 	// Object is the base model of ExternalConnectorsExternal
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Connections undocumented
 	Connections []ExternalConnectorsExternalConnection `json:"connections,omitempty"`
 }
@@ -149,7 +149,7 @@ type ExternalConnectorsExternalConnection struct {
 	// Entity is the base model of ExternalConnectorsExternalConnection
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Configuration undocumented
 	Configuration *ExternalConnectorsConfiguration `json:"configuration,omitempty"`
 	// Description undocumented
@@ -180,7 +180,7 @@ type ExternalConnectorsExternalGroup struct {
 	// Entity is the base model of ExternalConnectorsExternalGroup
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -201,7 +201,7 @@ type ExternalConnectorsExternalItem struct {
 	// Entity is the base model of ExternalConnectorsExternalItem
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ACL undocumented
 	ACL []ExternalConnectorsACL `json:"acl,omitempty"`
 	// Content undocumented
@@ -222,7 +222,7 @@ type ExternalConnectorsExternalItemContent struct {
 	// Object is the base model of ExternalConnectorsExternalItemContent
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Type undocumented
 	Type *ExternalConnectorsExternalItemContentType `json:"type,omitempty"`
 	// Value undocumented
@@ -241,7 +241,7 @@ type ExternalConnectorsIdentity struct {
 	// Entity is the base model of ExternalConnectorsIdentity
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Type undocumented
 	Type *ExternalConnectorsIdentityType `json:"type,omitempty"`
 }
@@ -258,7 +258,7 @@ type ExternalConnectorsProperties struct {
 	// Object is the base model of ExternalConnectorsProperties
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewExternalConnectorsProperties() (*ExternalConnectorsProperties, error) {
@@ -273,7 +273,7 @@ type ExternalConnectorsProperty struct {
 	// Object is the base model of ExternalConnectorsProperty
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Aliases undocumented
 	Aliases []string `json:"aliases,omitempty"`
 	// IsQueryable undocumented
@@ -304,7 +304,7 @@ type ExternalConnectorsSchema struct {
 	// Entity is the base model of ExternalConnectorsSchema
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BaseType undocumented
 	BaseType *string `json:"baseType,omitempty"`
 	// Properties undocumented

@@ -9,7 +9,7 @@ type Print struct {
 	// Object is the base model of Print
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Settings undocumented
 	Settings *PrintSettings `json:"settings,omitempty"`
 	// Connectors undocumented
@@ -38,7 +38,7 @@ type PrintCertificateSigningRequestObject struct {
 	// Object is the base model of PrintCertificateSigningRequestObject
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *string `json:"content,omitempty"`
 	// TransportKey undocumented
@@ -57,7 +57,7 @@ type PrintConnector struct {
 	// Entity is the base model of PrintConnector
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppVersion undocumented
 	AppVersion *string `json:"appVersion,omitempty"`
 	// DisplayName undocumented
@@ -84,7 +84,7 @@ type PrintDocument struct {
 	// Entity is the base model of PrintDocument
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentType undocumented
 	ContentType *string `json:"contentType,omitempty"`
 	// DisplayName undocumented
@@ -105,7 +105,7 @@ type PrintDocumentUploadProperties struct {
 	// Object is the base model of PrintDocumentUploadProperties
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentType undocumented
 	ContentType *string `json:"contentType,omitempty"`
 	// DocumentName undocumented
@@ -126,7 +126,7 @@ type PrintJob struct {
 	// Entity is the base model of PrintJob
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Configuration undocumented
 	Configuration *PrintJobConfiguration `json:"configuration,omitempty"`
 	// CreatedBy undocumented
@@ -159,7 +159,7 @@ type PrintJobConfiguration struct {
 	// Object is the base model of PrintJobConfiguration
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Collate undocumented
 	Collate *bool `json:"collate,omitempty"`
 	// ColorMode undocumented
@@ -212,7 +212,7 @@ type PrintJobStatus struct {
 	// Object is the base model of PrintJobStatus
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// Details undocumented
@@ -235,7 +235,7 @@ type PrintMargin struct {
 	// Object is the base model of PrintMargin
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Bottom undocumented
 	Bottom *int `json:"bottom,omitempty"`
 	// Left undocumented
@@ -258,7 +258,7 @@ type PrintOperation struct {
 	// Entity is the base model of PrintOperation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Status undocumented
@@ -277,7 +277,7 @@ type PrintOperationStatus struct {
 	// Object is the base model of PrintOperationStatus
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// State undocumented
@@ -296,7 +296,7 @@ type PrintService struct {
 	// Entity is the base model of PrintService
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Endpoints undocumented
 	Endpoints []PrintServiceEndpoint `json:"endpoints,omitempty"`
 }
@@ -313,7 +313,7 @@ type PrintServiceEndpoint struct {
 	// Entity is the base model of PrintServiceEndpoint
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// URI undocumented
@@ -332,7 +332,7 @@ type PrintSettings struct {
 	// Object is the base model of PrintSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DocumentConversionEnabled undocumented
 	DocumentConversionEnabled *bool `json:"documentConversionEnabled,omitempty"`
 }
@@ -349,7 +349,7 @@ type PrintTask struct {
 	// Entity is the base model of PrintTask
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ParentURL undocumented
 	ParentURL *string `json:"parentUrl,omitempty"`
 	// Status undocumented
@@ -372,7 +372,7 @@ type PrintTaskDefinition struct {
 	// Entity is the base model of PrintTaskDefinition
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *AppIdentity `json:"createdBy,omitempty"`
 	// DisplayName undocumented
@@ -393,7 +393,7 @@ type PrintTaskStatus struct {
 	// Object is the base model of PrintTaskStatus
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// State undocumented
@@ -412,7 +412,7 @@ type PrintTaskTrigger struct {
 	// Entity is the base model of PrintTaskTrigger
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Event undocumented
 	Event *PrintEvent `json:"event,omitempty"`
 	// Definition undocumented
@@ -431,7 +431,7 @@ type PrintUsage struct {
 	// Entity is the base model of PrintUsage
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CompletedBlackAndWhiteJobCount undocumented
 	CompletedBlackAndWhiteJobCount *int `json:"completedBlackAndWhiteJobCount,omitempty"`
 	// CompletedColorJobCount undocumented
@@ -454,7 +454,7 @@ type PrintUsageByPrinter struct {
 	// PrintUsage is the base model of PrintUsageByPrinter
 	PrintUsage
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// PrinterID undocumented
 	PrinterID *string `json:"printerId,omitempty"`
 }
@@ -471,7 +471,7 @@ type PrintUsageByUser struct {
 	// PrintUsage is the base model of PrintUsageByUser
 	PrintUsage
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }

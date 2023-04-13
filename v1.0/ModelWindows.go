@@ -9,7 +9,7 @@ type WindowsAppXAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of WindowsAppXAppAssignmentSettings
 	MobileAppAssignmentSettings
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UseDeviceContext undocumented
 	UseDeviceContext *bool `json:"useDeviceContext,omitempty"`
 }
@@ -26,7 +26,7 @@ type WindowsAutopilotDeviceIdentity struct {
 	// Entity is the base model of WindowsAutopilotDeviceIdentity
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AddressableUserName undocumented
 	AddressableUserName *string `json:"addressableUserName,omitempty"`
 	// AzureActiveDirectoryDeviceID undocumented
@@ -73,7 +73,7 @@ type WindowsDefenderAdvancedThreatProtectionConfiguration struct {
 	// DeviceConfiguration is the base model of WindowsDefenderAdvancedThreatProtectionConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowSampleSharing undocumented
 	AllowSampleSharing *bool `json:"allowSampleSharing,omitempty"`
 	// EnableExpeditedTelemetryReporting undocumented
@@ -92,7 +92,7 @@ type WindowsDefenderScanActionResult struct {
 	// DeviceActionResult is the base model of WindowsDefenderScanActionResult
 	DeviceActionResult
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ScanType undocumented
 	ScanType *string `json:"scanType,omitempty"`
 }
@@ -109,7 +109,7 @@ type WindowsDeviceADAccount struct {
 	// WindowsDeviceAccount is the base model of WindowsDeviceADAccount
 	WindowsDeviceAccount
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DomainName undocumented
 	DomainName *string `json:"domainName,omitempty"`
 	// UserName undocumented
@@ -128,7 +128,7 @@ type WindowsDeviceAccount struct {
 	// Object is the base model of WindowsDeviceAccount
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Password undocumented
 	Password *string `json:"password,omitempty"`
 }
@@ -145,7 +145,7 @@ type WindowsDeviceAzureADAccount struct {
 	// WindowsDeviceAccount is the base model of WindowsDeviceAzureADAccount
 	WindowsDeviceAccount
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UserPrincipalName undocumented
 	UserPrincipalName *string `json:"userPrincipalName,omitempty"`
 }
@@ -162,7 +162,7 @@ type WindowsFirewallNetworkProfile struct {
 	// Object is the base model of WindowsFirewallNetworkProfile
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AuthorizedApplicationRulesFromGroupPolicyMerged undocumented
 	AuthorizedApplicationRulesFromGroupPolicyMerged *bool `json:"authorizedApplicationRulesFromGroupPolicyMerged,omitempty"`
 	// ConnectionSecurityRulesFromGroupPolicyMerged undocumented
@@ -201,7 +201,7 @@ type WindowsHelloForBusinessAuthenticationMethod struct {
 	// AuthenticationMethod is the base model of WindowsHelloForBusinessAuthenticationMethod
 	AuthenticationMethod
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// DisplayName undocumented
@@ -224,7 +224,7 @@ type WindowsInformationProtection struct {
 	// ManagedAppPolicy is the base model of WindowsInformationProtection
 	ManagedAppPolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AzureRightsManagementServicesAllowed undocumented
 	AzureRightsManagementServicesAllowed *bool `json:"azureRightsManagementServicesAllowed,omitempty"`
 	// DataRecoveryCertificate undocumented
@@ -289,7 +289,7 @@ type WindowsInformationProtectionApp struct {
 	// Object is the base model of WindowsInformationProtectionApp
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Denied undocumented
 	Denied *bool `json:"denied,omitempty"`
 	// Description undocumented
@@ -314,7 +314,7 @@ type WindowsInformationProtectionAppLearningSummary struct {
 	// Entity is the base model of WindowsInformationProtectionAppLearningSummary
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicationName undocumented
 	ApplicationName *string `json:"applicationName,omitempty"`
 	// ApplicationType undocumented
@@ -335,7 +335,7 @@ type WindowsInformationProtectionAppLockerFile struct {
 	// Entity is the base model of WindowsInformationProtectionAppLockerFile
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// File undocumented
@@ -358,7 +358,7 @@ type WindowsInformationProtectionDataRecoveryCertificate struct {
 	// Object is the base model of WindowsInformationProtectionDataRecoveryCertificate
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Certificate undocumented
 	Certificate *Binary `json:"certificate,omitempty"`
 	// Description undocumented
@@ -381,7 +381,7 @@ type WindowsInformationProtectionDesktopApp struct {
 	// WindowsInformationProtectionApp is the base model of WindowsInformationProtectionDesktopApp
 	WindowsInformationProtectionApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BinaryName undocumented
 	BinaryName *string `json:"binaryName,omitempty"`
 	// BinaryVersionHigh undocumented
@@ -402,7 +402,7 @@ type WindowsInformationProtectionIPRangeCollection struct {
 	// Object is the base model of WindowsInformationProtectionIPRangeCollection
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Ranges undocumented
@@ -421,7 +421,7 @@ type WindowsInformationProtectionNetworkLearningSummary struct {
 	// Entity is the base model of WindowsInformationProtectionNetworkLearningSummary
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeviceCount undocumented
 	DeviceCount *int `json:"deviceCount,omitempty"`
 	// URL undocumented
@@ -440,7 +440,7 @@ type WindowsInformationProtectionPolicy struct {
 	// WindowsInformationProtection is the base model of WindowsInformationProtectionPolicy
 	WindowsInformationProtection
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DaysWithoutContactBeforeUnenroll undocumented
 	DaysWithoutContactBeforeUnenroll *int `json:"daysWithoutContactBeforeUnenroll,omitempty"`
 	// MDMEnrollmentURL undocumented
@@ -479,7 +479,7 @@ type WindowsInformationProtectionProxiedDomainCollection struct {
 	// Object is the base model of WindowsInformationProtectionProxiedDomainCollection
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// ProxiedDomains undocumented
@@ -498,7 +498,7 @@ type WindowsInformationProtectionResourceCollection struct {
 	// Object is the base model of WindowsInformationProtectionResourceCollection
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Resources undocumented
@@ -517,7 +517,7 @@ type WindowsInformationProtectionStoreApp struct {
 	// WindowsInformationProtectionApp is the base model of WindowsInformationProtectionStoreApp
 	WindowsInformationProtectionApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewWindowsInformationProtectionStoreApp() (*WindowsInformationProtectionStoreApp, error) {
@@ -532,7 +532,7 @@ type WindowsMicrosoftEdgeApp struct {
 	// MobileApp is the base model of WindowsMicrosoftEdgeApp
 	MobileApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Channel undocumented
 	Channel *MicrosoftEdgeChannel `json:"channel,omitempty"`
 	// DisplayLanguageLocale undocumented
@@ -551,7 +551,7 @@ type WindowsMinimumOperatingSystem struct {
 	// Object is the base model of WindowsMinimumOperatingSystem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// V10_0 undocumented
 	V10_0 *bool `json:"v10_0,omitempty"`
 	// V8_0 undocumented
@@ -572,7 +572,7 @@ type WindowsMobileMSI struct {
 	// MobileLobApp is the base model of WindowsMobileMSI
 	MobileLobApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CommandLine undocumented
 	CommandLine *string `json:"commandLine,omitempty"`
 	// IgnoreVersionDetection undocumented
@@ -595,7 +595,7 @@ type WindowsPhone81CompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of WindowsPhone81CompliancePolicy
 	DeviceCompliancePolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OsMaximumVersion undocumented
 	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
 	// OsMinimumVersion undocumented
@@ -632,7 +632,7 @@ type WindowsPhone81CustomConfiguration struct {
 	// DeviceConfiguration is the base model of WindowsPhone81CustomConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OMASettings undocumented
 	OMASettings []OMASetting `json:"omaSettings,omitempty"`
 }
@@ -649,7 +649,7 @@ type WindowsPhone81GeneralConfiguration struct {
 	// DeviceConfiguration is the base model of WindowsPhone81GeneralConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplyOnlyToWindowsPhone81 undocumented
 	ApplyOnlyToWindowsPhone81 *bool `json:"applyOnlyToWindowsPhone81,omitempty"`
 	// AppsBlockCopyPaste undocumented
@@ -722,7 +722,7 @@ type WindowsUniversalAppX struct {
 	// MobileLobApp is the base model of WindowsUniversalAppX
 	MobileLobApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicableArchitectures undocumented
 	ApplicableArchitectures *WindowsArchitecture `json:"applicableArchitectures,omitempty"`
 	// ApplicableDeviceTypes undocumented
@@ -755,7 +755,7 @@ type WindowsUniversalAppXAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of WindowsUniversalAppXAppAssignmentSettings
 	MobileAppAssignmentSettings
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UseDeviceContext undocumented
 	UseDeviceContext *bool `json:"useDeviceContext,omitempty"`
 }
@@ -772,7 +772,7 @@ type WindowsUniversalAppXContainedApp struct {
 	// MobileContainedApp is the base model of WindowsUniversalAppXContainedApp
 	MobileContainedApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppUserModelID undocumented
 	AppUserModelID *string `json:"appUserModelId,omitempty"`
 }
@@ -789,7 +789,7 @@ type WindowsUpdateActiveHoursInstall struct {
 	// WindowsUpdateInstallScheduleType is the base model of WindowsUpdateActiveHoursInstall
 	WindowsUpdateInstallScheduleType
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActiveHoursEnd undocumented
 	ActiveHoursEnd *TimeOfDay `json:"activeHoursEnd,omitempty"`
 	// ActiveHoursStart undocumented
@@ -808,7 +808,7 @@ type WindowsUpdateForBusinessConfiguration struct {
 	// DeviceConfiguration is the base model of WindowsUpdateForBusinessConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowWindows11Upgrade undocumented
 	AllowWindows11Upgrade *bool `json:"allowWindows11Upgrade,omitempty"`
 	// AutomaticUpdateMode undocumented
@@ -895,7 +895,7 @@ type WindowsUpdateInstallScheduleType struct {
 	// Object is the base model of WindowsUpdateInstallScheduleType
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewWindowsUpdateInstallScheduleType() (*WindowsUpdateInstallScheduleType, error) {
@@ -910,7 +910,7 @@ type WindowsUpdateScheduledInstall struct {
 	// WindowsUpdateInstallScheduleType is the base model of WindowsUpdateScheduledInstall
 	WindowsUpdateInstallScheduleType
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ScheduledInstallDay undocumented
 	ScheduledInstallDay *WeeklySchedule `json:"scheduledInstallDay,omitempty"`
 	// ScheduledInstallTime undocumented
@@ -929,7 +929,7 @@ type WindowsWebApp struct {
 	// MobileApp is the base model of WindowsWebApp
 	MobileApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppURL undocumented
 	AppURL *string `json:"appUrl,omitempty"`
 }

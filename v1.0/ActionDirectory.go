@@ -65,7 +65,7 @@ type DirectoryObjectGetMemberObjectsRequestParameter struct {
 type DirectoryObjectRestoreRequestParameter struct {
 }
 
-// AdministrativeUnits returns request builder for AdministrativeUnit collection rcn
+// AdministrativeUnits returns request builder for AdministrativeUnit collection
 func (b *DirectoryRequestBuilder) AdministrativeUnits() *DirectoryAdministrativeUnitsCollectionRequestBuilder {
 	bb := &DirectoryAdministrativeUnitsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/administrativeUnits"
@@ -168,7 +168,7 @@ func (r *DirectoryAdministrativeUnitsCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// DeletedItems returns request builder for DirectoryObject collection rcn
+// DeletedItems returns request builder for DirectoryObject collection
 func (b *DirectoryRequestBuilder) DeletedItems() *DirectoryDeletedItemsCollectionRequestBuilder {
 	bb := &DirectoryDeletedItemsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deletedItems"
@@ -271,7 +271,7 @@ func (r *DirectoryDeletedItemsCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// FederationConfigurations returns request builder for IdentityProviderBase collection rcn
+// FederationConfigurations returns request builder for IdentityProviderBase collection
 func (b *DirectoryRequestBuilder) FederationConfigurations() *DirectoryFederationConfigurationsCollectionRequestBuilder {
 	bb := &DirectoryFederationConfigurationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/federationConfigurations"
@@ -374,7 +374,7 @@ func (r *DirectoryFederationConfigurationsCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// OnPremisesSynchronization returns request builder for OnPremisesDirectorySynchronization collection rcn
+// OnPremisesSynchronization returns request builder for OnPremisesDirectorySynchronization collection
 func (b *DirectoryRequestBuilder) OnPremisesSynchronization() *DirectoryOnPremisesSynchronizationCollectionRequestBuilder {
 	bb := &DirectoryOnPremisesSynchronizationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/onPremisesSynchronization"
@@ -477,7 +477,7 @@ func (r *DirectoryOnPremisesSynchronizationCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// Members returns request builder for DirectoryObject collection rcn
+// Members returns request builder for DirectoryObject collection
 func (b *DirectoryRoleRequestBuilder) Members() *DirectoryRoleMembersCollectionRequestBuilder {
 	bb := &DirectoryRoleMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"
@@ -580,7 +580,7 @@ func (r *DirectoryRoleMembersCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// ScopedMembers returns request builder for ScopedRoleMembership collection rcn
+// ScopedMembers returns request builder for ScopedRoleMembership collection
 func (b *DirectoryRoleRequestBuilder) ScopedMembers() *DirectoryRoleScopedMembersCollectionRequestBuilder {
 	bb := &DirectoryRoleScopedMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/scopedMembers"
@@ -697,35 +697,35 @@ func (b *DirectoryAuditRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
-// DirectoryObjectPartnerReference returns request builder for DirectoryObjectPartnerReference collection rcn
-func (b *DirectoryObjectRequestBuilder) DirectoryObjectPartnerReference() *DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequestBuilder {
-	bb := &DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryObjectPartnerReference"
+// DirectoryObjectPartnerReference returns request builder for DirectoryObjectPartnerReference collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) DirectoryObjectPartnerReference() *AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequestBuilder is request builder for DirectoryObjectPartnerReference collection
-type DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequestBuilder is request builder for DirectoryObjectPartnerReference collection
+type AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObjectPartnerReference collection
-func (b *DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequestBuilder) Request() *DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequest {
-	return &DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequest{
+func (b *AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequest {
+	return &AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for DirectoryObjectPartnerReference item
-func (b *DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequestBuilder) ID(id string) *DirectoryObjectPartnerReferenceRequestBuilder {
+func (b *AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequestBuilder) ID(id string) *DirectoryObjectPartnerReferenceRequestBuilder {
 	bb := &DirectoryObjectPartnerReferenceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequest is request for DirectoryObjectPartnerReference collection
-type DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequest struct{ BaseRequest }
+// AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequest is request for DirectoryObjectPartnerReference collection
+type AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for DirectoryObjectPartnerReference collection
-func (r *DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObjectPartnerReference, error) {
+func (r *AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryObjectPartnerReference, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -781,7 +781,7 @@ func (r *DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequest) Paging
 }
 
 // GetN performs GET request for DirectoryObjectPartnerReference collection, max N pages
-func (r *DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObjectPartnerReference, error) {
+func (r *AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryObjectPartnerReference, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -790,45 +790,45 @@ func (r *DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequest) GetN(c
 }
 
 // Get performs GET request for DirectoryObjectPartnerReference collection
-func (r *DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequest) Get(ctx context.Context) ([]DirectoryObjectPartnerReference, error) {
+func (r *AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequest) Get(ctx context.Context) ([]DirectoryObjectPartnerReference, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for DirectoryObjectPartnerReference collection
-func (r *DirectoryObjectDirectoryObjectPartnerReferenceCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObjectPartnerReference) (resObj *DirectoryObjectPartnerReference, err error) {
+func (r *AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequest) Add(ctx context.Context, reqObj *DirectoryObjectPartnerReference) (resObj *DirectoryObjectPartnerReference, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// DirectoryRole returns request builder for DirectoryRole collection rcn
-func (b *DirectoryObjectRequestBuilder) DirectoryRole() *DirectoryObjectDirectoryRoleCollectionRequestBuilder {
-	bb := &DirectoryObjectDirectoryRoleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryRole"
+// DirectoryRole returns request builder for DirectoryRole collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) DirectoryRole() *AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DirectoryObjectDirectoryRoleCollectionRequestBuilder is request builder for DirectoryRole collection
-type DirectoryObjectDirectoryRoleCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequestBuilder is request builder for DirectoryRole collection
+type AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryRole collection
-func (b *DirectoryObjectDirectoryRoleCollectionRequestBuilder) Request() *DirectoryObjectDirectoryRoleCollectionRequest {
-	return &DirectoryObjectDirectoryRoleCollectionRequest{
+func (b *AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequest {
+	return &AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for DirectoryRole item
-func (b *DirectoryObjectDirectoryRoleCollectionRequestBuilder) ID(id string) *DirectoryRoleRequestBuilder {
+func (b *AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequestBuilder) ID(id string) *DirectoryRoleRequestBuilder {
 	bb := &DirectoryRoleRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DirectoryObjectDirectoryRoleCollectionRequest is request for DirectoryRole collection
-type DirectoryObjectDirectoryRoleCollectionRequest struct{ BaseRequest }
+// AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequest is request for DirectoryRole collection
+type AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for DirectoryRole collection
-func (r *DirectoryObjectDirectoryRoleCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryRole, error) {
+func (r *AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryRole, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -884,7 +884,7 @@ func (r *DirectoryObjectDirectoryRoleCollectionRequest) Paging(ctx context.Conte
 }
 
 // GetN performs GET request for DirectoryRole collection, max N pages
-func (r *DirectoryObjectDirectoryRoleCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryRole, error) {
+func (r *AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryRole, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -893,45 +893,45 @@ func (r *DirectoryObjectDirectoryRoleCollectionRequest) GetN(ctx context.Context
 }
 
 // Get performs GET request for DirectoryRole collection
-func (r *DirectoryObjectDirectoryRoleCollectionRequest) Get(ctx context.Context) ([]DirectoryRole, error) {
+func (r *AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequest) Get(ctx context.Context) ([]DirectoryRole, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for DirectoryRole collection
-func (r *DirectoryObjectDirectoryRoleCollectionRequest) Add(ctx context.Context, reqObj *DirectoryRole) (resObj *DirectoryRole, err error) {
+func (r *AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequest) Add(ctx context.Context, reqObj *DirectoryRole) (resObj *DirectoryRole, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// DirectoryRoleTemplate returns request builder for DirectoryRoleTemplate collection rcn
-func (b *DirectoryObjectRequestBuilder) DirectoryRoleTemplate() *DirectoryObjectDirectoryRoleTemplateCollectionRequestBuilder {
-	bb := &DirectoryObjectDirectoryRoleTemplateCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DirectoryRoleTemplate"
+// DirectoryRoleTemplate returns request builder for DirectoryRoleTemplate collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) DirectoryRoleTemplate() *AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DirectoryObjectDirectoryRoleTemplateCollectionRequestBuilder is request builder for DirectoryRoleTemplate collection
-type DirectoryObjectDirectoryRoleTemplateCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequestBuilder is request builder for DirectoryRoleTemplate collection
+type AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryRoleTemplate collection
-func (b *DirectoryObjectDirectoryRoleTemplateCollectionRequestBuilder) Request() *DirectoryObjectDirectoryRoleTemplateCollectionRequest {
-	return &DirectoryObjectDirectoryRoleTemplateCollectionRequest{
+func (b *AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequest {
+	return &AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for DirectoryRoleTemplate item
-func (b *DirectoryObjectDirectoryRoleTemplateCollectionRequestBuilder) ID(id string) *DirectoryRoleTemplateRequestBuilder {
+func (b *AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequestBuilder) ID(id string) *DirectoryRoleTemplateRequestBuilder {
 	bb := &DirectoryRoleTemplateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DirectoryObjectDirectoryRoleTemplateCollectionRequest is request for DirectoryRoleTemplate collection
-type DirectoryObjectDirectoryRoleTemplateCollectionRequest struct{ BaseRequest }
+// AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequest is request for DirectoryRoleTemplate collection
+type AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for DirectoryRoleTemplate collection
-func (r *DirectoryObjectDirectoryRoleTemplateCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryRoleTemplate, error) {
+func (r *AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DirectoryRoleTemplate, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -987,7 +987,7 @@ func (r *DirectoryObjectDirectoryRoleTemplateCollectionRequest) Paging(ctx conte
 }
 
 // GetN performs GET request for DirectoryRoleTemplate collection, max N pages
-func (r *DirectoryObjectDirectoryRoleTemplateCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryRoleTemplate, error) {
+func (r *AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequest) GetN(ctx context.Context, n int) ([]DirectoryRoleTemplate, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -996,12 +996,12 @@ func (r *DirectoryObjectDirectoryRoleTemplateCollectionRequest) GetN(ctx context
 }
 
 // Get performs GET request for DirectoryRoleTemplate collection
-func (r *DirectoryObjectDirectoryRoleTemplateCollectionRequest) Get(ctx context.Context) ([]DirectoryRoleTemplate, error) {
+func (r *AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequest) Get(ctx context.Context) ([]DirectoryRoleTemplate, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for DirectoryRoleTemplate collection
-func (r *DirectoryObjectDirectoryRoleTemplateCollectionRequest) Add(ctx context.Context, reqObj *DirectoryRoleTemplate) (resObj *DirectoryRoleTemplate, err error) {
+func (r *AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequest) Add(ctx context.Context, reqObj *DirectoryRoleTemplate) (resObj *DirectoryRoleTemplate, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

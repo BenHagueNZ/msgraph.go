@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// SoftwareOathAuthenticationMethod returns request builder for SoftwareOathAuthenticationMethod collection rcn
-func (b *AuthenticationMethodRequestBuilder) SoftwareOathAuthenticationMethod() *AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequestBuilder {
-	bb := &AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/SoftwareOathAuthenticationMethod"
+// SoftwareOathAuthenticationMethod returns request builder for SoftwareOathAuthenticationMethod collection
+func (b *AuthenticationMethodsCollectionRequestBuilder) SoftwareOathAuthenticationMethod() *AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequestBuilder {
+	bb := &AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequestBuilder is request builder for SoftwareOathAuthenticationMethod collection
-type AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequestBuilder is request builder for SoftwareOathAuthenticationMethod collection
+type AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SoftwareOathAuthenticationMethod collection
-func (b *AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequest {
-	return &AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequest{
+func (b *AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequest {
+	return &AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for SoftwareOathAuthenticationMethod item
-func (b *AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequestBuilder) ID(id string) *SoftwareOathAuthenticationMethodRequestBuilder {
+func (b *AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequestBuilder) ID(id string) *SoftwareOathAuthenticationMethodRequestBuilder {
 	bb := &SoftwareOathAuthenticationMethodRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequest is request for SoftwareOathAuthenticationMethod collection
-type AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequest struct{ BaseRequest }
+// AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequest is request for SoftwareOathAuthenticationMethod collection
+type AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for SoftwareOathAuthenticationMethod collection
-func (r *AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SoftwareOathAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SoftwareOathAuthenticationMethod, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequest) 
 }
 
 // GetN performs GET request for SoftwareOathAuthenticationMethod collection, max N pages
-func (r *AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]SoftwareOathAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]SoftwareOathAuthenticationMethod, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequest) 
 }
 
 // Get performs GET request for SoftwareOathAuthenticationMethod collection
-func (r *AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]SoftwareOathAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]SoftwareOathAuthenticationMethod, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for SoftwareOathAuthenticationMethod collection
-func (r *AuthenticationMethodSoftwareOathAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *SoftwareOathAuthenticationMethod) (resObj *SoftwareOathAuthenticationMethod, err error) {
+func (r *AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *SoftwareOathAuthenticationMethod) (resObj *SoftwareOathAuthenticationMethod, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

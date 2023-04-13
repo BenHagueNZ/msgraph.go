@@ -18,7 +18,7 @@ func (b *RoleAssignmentRequestBuilder) RoleDefinition() *RoleDefinitionRequestBu
 	return bb
 }
 
-// RoleAssignments returns request builder for RoleAssignment collection rcn
+// RoleAssignments returns request builder for RoleAssignment collection
 func (b *RoleDefinitionRequestBuilder) RoleAssignments() *RoleDefinitionRoleAssignmentsCollectionRequestBuilder {
 	bb := &RoleDefinitionRoleAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleAssignments"
@@ -132,5 +132,12 @@ func (b *RoleManagementRequestBuilder) Directory() *RbacApplicationRequestBuilde
 func (b *RoleManagementRequestBuilder) EntitlementManagement() *RbacApplicationRequestBuilder {
 	bb := &RbacApplicationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/entitlementManagement"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *RoleDefinitionRoleAssignmentsCollectionRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
 	return bb
 }

@@ -39,7 +39,7 @@ type TargetedManagedAppProtectionTargetAppsRequestParameter struct {
 	AppGroupType *TargetedManagedAppGroupType `json:"appGroupType,omitempty"`
 }
 
-// Apps returns request builder for ManagedMobileApp collection rcn
+// Apps returns request builder for ManagedMobileApp collection
 func (b *TargetedManagedAppConfigurationRequestBuilder) Apps() *TargetedManagedAppConfigurationAppsCollectionRequestBuilder {
 	bb := &TargetedManagedAppConfigurationAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/apps"
@@ -142,7 +142,7 @@ func (r *TargetedManagedAppConfigurationAppsCollectionRequest) Add(ctx context.C
 	return
 }
 
-// Assignments returns request builder for TargetedManagedAppPolicyAssignment collection rcn
+// Assignments returns request builder for TargetedManagedAppPolicyAssignment collection
 func (b *TargetedManagedAppConfigurationRequestBuilder) Assignments() *TargetedManagedAppConfigurationAssignmentsCollectionRequestBuilder {
 	bb := &TargetedManagedAppConfigurationAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignments"
@@ -252,7 +252,7 @@ func (b *TargetedManagedAppConfigurationRequestBuilder) DeploymentSummary() *Man
 	return bb
 }
 
-// Assignments returns request builder for TargetedManagedAppPolicyAssignment collection rcn
+// Assignments returns request builder for TargetedManagedAppPolicyAssignment collection
 func (b *TargetedManagedAppProtectionRequestBuilder) Assignments() *TargetedManagedAppProtectionAssignmentsCollectionRequestBuilder {
 	bb := &TargetedManagedAppProtectionAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignments"

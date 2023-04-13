@@ -7,7 +7,7 @@ type AppliedConditionalAccessPolicy struct {
 	// Object is the base model of AppliedConditionalAccessPolicy
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// EnforcedGrantControls undocumented

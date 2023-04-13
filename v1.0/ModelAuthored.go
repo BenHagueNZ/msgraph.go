@@ -9,7 +9,7 @@ type AuthoredNote struct {
 	// Entity is the base model of AuthoredNote
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Author undocumented
 	Author *Identity `json:"author,omitempty"`
 	// Content undocumented

@@ -7,7 +7,7 @@ type AssociatedTeamInfo struct {
 	// TeamInfo is the base model of AssociatedTeamInfo
 	TeamInfo
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewAssociatedTeamInfo() (*AssociatedTeamInfo, error) {

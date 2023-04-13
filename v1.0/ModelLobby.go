@@ -7,7 +7,7 @@ type LobbyBypassSettings struct {
 	// Object is the base model of LobbyBypassSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsDialInBypassEnabled undocumented
 	IsDialInBypassEnabled *bool `json:"isDialInBypassEnabled,omitempty"`
 	// Scope undocumented

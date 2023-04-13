@@ -9,7 +9,7 @@ type TermsAndConditions struct {
 	// Entity is the base model of TermsAndConditions
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AcceptanceStatement undocumented
 	AcceptanceStatement *string `json:"acceptanceStatement,omitempty"`
 	// BodyText undocumented
@@ -44,7 +44,7 @@ type TermsAndConditionsAcceptanceStatus struct {
 	// Entity is the base model of TermsAndConditionsAcceptanceStatus
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AcceptedDateTime undocumented
 	AcceptedDateTime *time.Time `json:"acceptedDateTime,omitempty"`
 	// AcceptedVersion undocumented
@@ -69,7 +69,7 @@ type TermsAndConditionsAssignment struct {
 	// Entity is the base model of TermsAndConditionsAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
@@ -86,7 +86,7 @@ type TermsExpiration struct {
 	// Object is the base model of TermsExpiration
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Frequency undocumented
 	Frequency *Duration `json:"frequency,omitempty"`
 	// StartDateTime undocumented
@@ -105,7 +105,7 @@ type TermsOfUseContainer struct {
 	// Entity is the base model of TermsOfUseContainer
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AgreementAcceptances undocumented
 	AgreementAcceptances []AgreementAcceptance `json:"agreementAcceptances,omitempty"`
 	// Agreements undocumented

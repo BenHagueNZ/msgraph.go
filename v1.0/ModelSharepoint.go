@@ -7,7 +7,7 @@ type SharepointIDs struct {
 	// Object is the base model of SharepointIDs
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ListID undocumented
 	ListID *string `json:"listId,omitempty"`
 	// ListItemID undocumented

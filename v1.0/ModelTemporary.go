@@ -9,7 +9,7 @@ type TemporaryAccessPassAuthenticationMethod struct {
 	// AuthenticationMethod is the base model of TemporaryAccessPassAuthenticationMethod
 	AuthenticationMethod
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// IsUsable undocumented
@@ -38,7 +38,7 @@ type TemporaryAccessPassAuthenticationMethodConfiguration struct {
 	// AuthenticationMethodConfiguration is the base model of TemporaryAccessPassAuthenticationMethodConfiguration
 	AuthenticationMethodConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DefaultLength undocumented
 	DefaultLength *int `json:"defaultLength,omitempty"`
 	// DefaultLifetimeInMinutes undocumented

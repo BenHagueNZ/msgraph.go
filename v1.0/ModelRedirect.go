@@ -7,7 +7,7 @@ type RedirectURISettings struct {
 	// Object is the base model of RedirectURISettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Index undocumented
 	Index *int `json:"index,omitempty"`
 	// URI undocumented

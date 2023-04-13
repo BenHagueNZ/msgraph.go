@@ -9,7 +9,7 @@ type ServiceAnnouncement struct {
 	// Entity is the base model of ServiceAnnouncement
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// HealthOverviews undocumented
 	HealthOverviews []ServiceHealth `json:"healthOverviews,omitempty"`
 	// Issues undocumented
@@ -30,7 +30,7 @@ type ServiceAnnouncementAttachment struct {
 	// Entity is the base model of ServiceAnnouncementAttachment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *Stream `json:"content,omitempty"`
 	// ContentType undocumented
@@ -55,7 +55,7 @@ type ServiceAnnouncementBase struct {
 	// Entity is the base model of ServiceAnnouncementBase
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Details undocumented
 	Details []KeyValuePair `json:"details,omitempty"`
 	// EndDateTime undocumented
@@ -80,7 +80,7 @@ type ServiceHealth struct {
 	// Entity is the base model of ServiceHealth
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Service undocumented
 	Service *string `json:"service,omitempty"`
 	// Status undocumented
@@ -101,7 +101,7 @@ type ServiceHealthIssue struct {
 	// ServiceAnnouncementBase is the base model of ServiceHealthIssue
 	ServiceAnnouncementBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Classification undocumented
 	Classification *ServiceHealthClassificationType `json:"classification,omitempty"`
 	// Feature undocumented
@@ -134,7 +134,7 @@ type ServiceHealthIssuePost struct {
 	// Object is the base model of ServiceHealthIssuePost
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -155,7 +155,7 @@ type ServiceHostedMediaConfig struct {
 	// MediaConfig is the base model of ServiceHostedMediaConfig
 	MediaConfig
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// PreFetchMedia undocumented
 	PreFetchMedia []MediaInfo `json:"preFetchMedia,omitempty"`
 }
@@ -172,7 +172,7 @@ type ServicePlanInfo struct {
 	// Object is the base model of ServicePlanInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppliesTo undocumented
 	AppliesTo *string `json:"appliesTo,omitempty"`
 	// ProvisioningStatus undocumented
@@ -195,7 +195,7 @@ type ServicePrincipal struct {
 	// DirectoryObject is the base model of ServicePrincipal
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccountEnabled undocumented
 	AccountEnabled *bool `json:"accountEnabled,omitempty"`
 	// AddIns undocumented
@@ -308,7 +308,7 @@ type ServicePrincipalIdentity struct {
 	// Identity is the base model of ServicePrincipalIdentity
 	Identity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
 }
@@ -325,7 +325,7 @@ type ServicePrincipalRiskDetection struct {
 	// Entity is the base model of ServicePrincipalRiskDetection
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Activity undocumented
 	Activity *ActivityType `json:"activity,omitempty"`
 	// ActivityDateTime undocumented
@@ -380,7 +380,7 @@ type ServiceUpdateMessage struct {
 	// ServiceAnnouncementBase is the base model of ServiceUpdateMessage
 	ServiceAnnouncementBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActionRequiredByDateTime undocumented
 	ActionRequiredByDateTime *time.Time `json:"actionRequiredByDateTime,omitempty"`
 	// AttachmentsArchive undocumented
@@ -417,7 +417,7 @@ type ServiceUpdateMessageViewpoint struct {
 	// Object is the base model of ServiceUpdateMessageViewpoint
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsArchived undocumented
 	IsArchived *bool `json:"isArchived,omitempty"`
 	// IsFavorited undocumented

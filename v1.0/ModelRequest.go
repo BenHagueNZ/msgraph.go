@@ -9,7 +9,7 @@ type RequestObject struct {
 	// Entity is the base model of RequestObject
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApprovalID undocumented
 	ApprovalID *string `json:"approvalId,omitempty"`
 	// CompletedDateTime undocumented
@@ -36,7 +36,7 @@ type RequestSchedule struct {
 	// Object is the base model of RequestSchedule
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Expiration undocumented
 	Expiration *ExpirationPattern `json:"expiration,omitempty"`
 	// Recurrence undocumented
@@ -57,7 +57,7 @@ type RequestSignatureVerification struct {
 	// Object is the base model of RequestSignatureVerification
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowedWeakAlgorithms undocumented
 	AllowedWeakAlgorithms *WeakAlgorithms `json:"allowedWeakAlgorithms,omitempty"`
 	// IsSignedRequestRequired undocumented

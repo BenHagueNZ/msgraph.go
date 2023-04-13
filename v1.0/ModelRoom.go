@@ -7,7 +7,7 @@ type Room struct {
 	// Place is the base model of Room
 	Place
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AudioDeviceName undocumented
 	AudioDeviceName *string `json:"audioDeviceName,omitempty"`
 	// BookingType undocumented
@@ -48,7 +48,7 @@ type RoomList struct {
 	// Place is the base model of RoomList
 	Place
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EmailAddress undocumented
 	EmailAddress *string `json:"emailAddress,omitempty"`
 	// Rooms undocumented

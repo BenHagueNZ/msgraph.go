@@ -9,7 +9,7 @@ type ChecklistItem struct {
 	// Entity is the base model of ChecklistItem
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CheckedDateTime undocumented
 	CheckedDateTime *time.Time `json:"checkedDateTime,omitempty"`
 	// CreatedDateTime undocumented

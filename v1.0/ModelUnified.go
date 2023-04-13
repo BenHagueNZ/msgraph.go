@@ -9,7 +9,7 @@ type UnifiedApprovalStage struct {
 	// Object is the base model of UnifiedApprovalStage
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApprovalStageTimeOutInDays undocumented
 	ApprovalStageTimeOutInDays *int `json:"approvalStageTimeOutInDays,omitempty"`
 	// EscalationApprovers undocumented
@@ -36,7 +36,7 @@ type UnifiedRole struct {
 	// Object is the base model of UnifiedRole
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RoleDefinitionID undocumented
 	RoleDefinitionID *string `json:"roleDefinitionId,omitempty"`
 }
@@ -53,7 +53,7 @@ type UnifiedRoleAssignment struct {
 	// Entity is the base model of UnifiedRoleAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppScopeID undocumented
 	AppScopeID *string `json:"appScopeId,omitempty"`
 	// Condition undocumented
@@ -86,7 +86,7 @@ type UnifiedRoleAssignmentSchedule struct {
 	// UnifiedRoleScheduleBase is the base model of UnifiedRoleAssignmentSchedule
 	UnifiedRoleScheduleBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignmentType undocumented
 	AssignmentType *string `json:"assignmentType,omitempty"`
 	// MemberType undocumented
@@ -109,7 +109,7 @@ type UnifiedRoleAssignmentScheduleInstance struct {
 	// UnifiedRoleScheduleInstanceBase is the base model of UnifiedRoleAssignmentScheduleInstance
 	UnifiedRoleScheduleInstanceBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignmentType undocumented
 	AssignmentType *string `json:"assignmentType,omitempty"`
 	// EndDateTime undocumented
@@ -138,7 +138,7 @@ type UnifiedRoleAssignmentScheduleRequestObject struct {
 	// RequestObject is the base model of UnifiedRoleAssignmentScheduleRequestObject
 	RequestObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Action undocumented
 	Action *UnifiedRoleScheduleRequestActions `json:"action,omitempty"`
 	// AppScopeID undocumented
@@ -185,7 +185,7 @@ type UnifiedRoleDefinition struct {
 	// Entity is the base model of UnifiedRoleDefinition
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -218,7 +218,7 @@ type UnifiedRoleEligibilitySchedule struct {
 	// UnifiedRoleScheduleBase is the base model of UnifiedRoleEligibilitySchedule
 	UnifiedRoleScheduleBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MemberType undocumented
 	MemberType *string `json:"memberType,omitempty"`
 	// ScheduleInfo undocumented
@@ -237,7 +237,7 @@ type UnifiedRoleEligibilityScheduleInstance struct {
 	// UnifiedRoleScheduleInstanceBase is the base model of UnifiedRoleEligibilityScheduleInstance
 	UnifiedRoleScheduleInstanceBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EndDateTime undocumented
 	EndDateTime *time.Time `json:"endDateTime,omitempty"`
 	// MemberType undocumented
@@ -260,7 +260,7 @@ type UnifiedRoleEligibilityScheduleRequestObject struct {
 	// RequestObject is the base model of UnifiedRoleEligibilityScheduleRequestObject
 	RequestObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Action undocumented
 	Action *UnifiedRoleScheduleRequestActions `json:"action,omitempty"`
 	// AppScopeID undocumented
@@ -305,7 +305,7 @@ type UnifiedRoleManagementPolicy struct {
 	// Entity is the base model of UnifiedRoleManagementPolicy
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -338,7 +338,7 @@ type UnifiedRoleManagementPolicyApprovalRule struct {
 	// UnifiedRoleManagementPolicyRule is the base model of UnifiedRoleManagementPolicyApprovalRule
 	UnifiedRoleManagementPolicyRule
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Setting undocumented
 	Setting *ApprovalSettings `json:"setting,omitempty"`
 }
@@ -355,7 +355,7 @@ type UnifiedRoleManagementPolicyAssignment struct {
 	// Entity is the base model of UnifiedRoleManagementPolicyAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// PolicyID undocumented
 	PolicyID *string `json:"policyId,omitempty"`
 	// RoleDefinitionID undocumented
@@ -380,7 +380,7 @@ type UnifiedRoleManagementPolicyAuthenticationContextRule struct {
 	// UnifiedRoleManagementPolicyRule is the base model of UnifiedRoleManagementPolicyAuthenticationContextRule
 	UnifiedRoleManagementPolicyRule
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ClaimValue undocumented
 	ClaimValue *string `json:"claimValue,omitempty"`
 	// IsEnabled undocumented
@@ -399,7 +399,7 @@ type UnifiedRoleManagementPolicyEnablementRule struct {
 	// UnifiedRoleManagementPolicyRule is the base model of UnifiedRoleManagementPolicyEnablementRule
 	UnifiedRoleManagementPolicyRule
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EnabledRules undocumented
 	EnabledRules []string `json:"enabledRules,omitempty"`
 }
@@ -416,7 +416,7 @@ type UnifiedRoleManagementPolicyExpirationRule struct {
 	// UnifiedRoleManagementPolicyRule is the base model of UnifiedRoleManagementPolicyExpirationRule
 	UnifiedRoleManagementPolicyRule
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsExpirationRequired undocumented
 	IsExpirationRequired *bool `json:"isExpirationRequired,omitempty"`
 	// MaximumDuration undocumented
@@ -435,7 +435,7 @@ type UnifiedRoleManagementPolicyNotificationRule struct {
 	// UnifiedRoleManagementPolicyRule is the base model of UnifiedRoleManagementPolicyNotificationRule
 	UnifiedRoleManagementPolicyRule
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsDefaultRecipientsEnabled undocumented
 	IsDefaultRecipientsEnabled *bool `json:"isDefaultRecipientsEnabled,omitempty"`
 	// NotificationLevel undocumented
@@ -460,7 +460,7 @@ type UnifiedRoleManagementPolicyRule struct {
 	// Entity is the base model of UnifiedRoleManagementPolicyRule
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Target undocumented
 	Target *UnifiedRoleManagementPolicyRuleTarget `json:"target,omitempty"`
 }
@@ -477,7 +477,7 @@ type UnifiedRoleManagementPolicyRuleTarget struct {
 	// Object is the base model of UnifiedRoleManagementPolicyRuleTarget
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Caller undocumented
 	Caller *string `json:"caller,omitempty"`
 	// EnforcedSettings undocumented
@@ -504,7 +504,7 @@ type UnifiedRolePermission struct {
 	// Object is the base model of UnifiedRolePermission
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowedResourceActions undocumented
 	AllowedResourceActions []string `json:"allowedResourceActions,omitempty"`
 	// Condition undocumented
@@ -525,7 +525,7 @@ type UnifiedRoleScheduleBase struct {
 	// Entity is the base model of UnifiedRoleScheduleBase
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppScopeID undocumented
 	AppScopeID *string `json:"appScopeId,omitempty"`
 	// CreatedDateTime undocumented
@@ -564,7 +564,7 @@ type UnifiedRoleScheduleInstanceBase struct {
 	// Entity is the base model of UnifiedRoleScheduleInstanceBase
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppScopeID undocumented
 	AppScopeID *string `json:"appScopeId,omitempty"`
 	// DirectoryScopeID undocumented

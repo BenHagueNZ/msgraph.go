@@ -7,7 +7,7 @@ type Notebook struct {
 	// OnenoteEntityHierarchyModel is the base model of Notebook
 	OnenoteEntityHierarchyModel
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsDefault undocumented
 	IsDefault *bool `json:"isDefault,omitempty"`
 	// IsShared undocumented
@@ -38,7 +38,7 @@ type NotebookLinks struct {
 	// Object is the base model of NotebookLinks
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OneNoteClientURL undocumented
 	OneNoteClientURL *ExternalLink `json:"oneNoteClientUrl,omitempty"`
 	// OneNoteWebURL undocumented

@@ -7,7 +7,7 @@ type Video struct {
 	// Object is the base model of Video
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AudioBitsPerSample undocumented
 	AudioBitsPerSample *int `json:"audioBitsPerSample,omitempty"`
 	// AudioChannels undocumented

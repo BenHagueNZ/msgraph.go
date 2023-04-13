@@ -7,7 +7,7 @@ type MultiValueLegacyExtendedProperty struct {
 	// Entity is the base model of MultiValueLegacyExtendedProperty
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Value undocumented
 	Value []string `json:"value,omitempty"`
 }

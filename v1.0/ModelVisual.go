@@ -9,7 +9,7 @@ type VisualInfo struct {
 	// Object is the base model of VisualInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Attribution undocumented
 	Attribution *ImageInfo `json:"attribution,omitempty"`
 	// BackgroundColor undocumented

@@ -7,7 +7,7 @@ type SortProperty struct {
 	// Object is the base model of SortProperty
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsDescending undocumented
 	IsDescending *bool `json:"isDescending,omitempty"`
 	// Name undocumented

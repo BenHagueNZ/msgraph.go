@@ -9,7 +9,7 @@ type Shared struct {
 	// Object is the base model of Shared
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Owner undocumented
 	Owner *IdentitySet `json:"owner,omitempty"`
 	// Scope undocumented
@@ -32,7 +32,7 @@ type SharedDriveItem struct {
 	// BaseItem is the base model of SharedDriveItem
 	BaseItem
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Owner undocumented
 	Owner *IdentitySet `json:"owner,omitempty"`
 	// DriveItem undocumented
@@ -63,7 +63,7 @@ type SharedInsight struct {
 	// Entity is the base model of SharedInsight
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// LastShared undocumented
 	LastShared *SharingDetail `json:"lastShared,omitempty"`
 	// ResourceReference undocumented
@@ -90,7 +90,7 @@ type SharedPCAccountManagerPolicy struct {
 	// Object is the base model of SharedPCAccountManagerPolicy
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccountDeletionPolicy undocumented
 	AccountDeletionPolicy *SharedPCAccountDeletionPolicyType `json:"accountDeletionPolicy,omitempty"`
 	// CacheAccountsAboveDiskFreePercentage undocumented
@@ -113,7 +113,7 @@ type SharedPCConfiguration struct {
 	// DeviceConfiguration is the base model of SharedPCConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccountManagerPolicy undocumented
 	AccountManagerPolicy *SharedPCAccountManagerPolicy `json:"accountManagerPolicy,omitempty"`
 	// AllowedAccounts undocumented
@@ -152,7 +152,7 @@ type SharedWithChannelTeamInfo struct {
 	// TeamInfo is the base model of SharedWithChannelTeamInfo
 	TeamInfo
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsHostTeam undocumented
 	IsHostTeam *bool `json:"isHostTeam,omitempty"`
 	// AllowedMembers undocumented

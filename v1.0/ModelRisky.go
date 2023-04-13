@@ -9,7 +9,7 @@ type RiskyServicePrincipal struct {
 	// Entity is the base model of RiskyServicePrincipal
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
 	// DisplayName undocumented
@@ -44,7 +44,7 @@ type RiskyServicePrincipalHistoryItem struct {
 	// RiskyServicePrincipal is the base model of RiskyServicePrincipalHistoryItem
 	RiskyServicePrincipal
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Activity undocumented
 	Activity *RiskServicePrincipalActivity `json:"activity,omitempty"`
 	// InitiatedBy undocumented
@@ -63,7 +63,7 @@ type RiskyUser struct {
 	// Entity is the base model of RiskyUser
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsDeleted undocumented
 	IsDeleted *bool `json:"isDeleted,omitempty"`
 	// IsProcessing undocumented
@@ -96,7 +96,7 @@ type RiskyUserHistoryItem struct {
 	// RiskyUser is the base model of RiskyUserHistoryItem
 	RiskyUser
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Activity undocumented
 	Activity *RiskUserActivity `json:"activity,omitempty"`
 	// InitiatedBy undocumented

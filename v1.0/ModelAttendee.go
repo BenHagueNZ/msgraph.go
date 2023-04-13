@@ -7,7 +7,7 @@ type Attendee struct {
 	// AttendeeBase is the base model of Attendee
 	AttendeeBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ProposedNewTime undocumented
 	ProposedNewTime *TimeSlot `json:"proposedNewTime,omitempty"`
 	// Status undocumented
@@ -26,7 +26,7 @@ type AttendeeAvailability struct {
 	// Object is the base model of AttendeeAvailability
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Attendee undocumented
 	Attendee *AttendeeBase `json:"attendee,omitempty"`
 	// Availability undocumented
@@ -45,7 +45,7 @@ type AttendeeBase struct {
 	// Recipient is the base model of AttendeeBase
 	Recipient
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Type undocumented
 	Type *AttendeeType `json:"type,omitempty"`
 }

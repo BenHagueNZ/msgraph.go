@@ -9,7 +9,7 @@ type Process struct {
 	// Object is the base model of Process
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccountName undocumented
 	AccountName *string `json:"accountName,omitempty"`
 	// CommandLine undocumented

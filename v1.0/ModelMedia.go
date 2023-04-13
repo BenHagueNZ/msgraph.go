@@ -7,7 +7,7 @@ type MediaConfig struct {
 	// Object is the base model of MediaConfig
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewMediaConfig() (*MediaConfig, error) {
@@ -22,7 +22,7 @@ type MediaContentRatingAustralia struct {
 	// Object is the base model of MediaContentRatingAustralia
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MovieRating undocumented
 	MovieRating *RatingAustraliaMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
@@ -41,7 +41,7 @@ type MediaContentRatingCanada struct {
 	// Object is the base model of MediaContentRatingCanada
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MovieRating undocumented
 	MovieRating *RatingCanadaMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
@@ -60,7 +60,7 @@ type MediaContentRatingFrance struct {
 	// Object is the base model of MediaContentRatingFrance
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MovieRating undocumented
 	MovieRating *RatingFranceMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
@@ -79,7 +79,7 @@ type MediaContentRatingGermany struct {
 	// Object is the base model of MediaContentRatingGermany
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MovieRating undocumented
 	MovieRating *RatingGermanyMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
@@ -98,7 +98,7 @@ type MediaContentRatingIreland struct {
 	// Object is the base model of MediaContentRatingIreland
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MovieRating undocumented
 	MovieRating *RatingIrelandMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
@@ -117,7 +117,7 @@ type MediaContentRatingJapan struct {
 	// Object is the base model of MediaContentRatingJapan
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MovieRating undocumented
 	MovieRating *RatingJapanMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
@@ -136,7 +136,7 @@ type MediaContentRatingNewZealand struct {
 	// Object is the base model of MediaContentRatingNewZealand
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MovieRating undocumented
 	MovieRating *RatingNewZealandMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
@@ -155,7 +155,7 @@ type MediaContentRatingUnitedKingdom struct {
 	// Object is the base model of MediaContentRatingUnitedKingdom
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MovieRating undocumented
 	MovieRating *RatingUnitedKingdomMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
@@ -174,7 +174,7 @@ type MediaContentRatingUnitedStates struct {
 	// Object is the base model of MediaContentRatingUnitedStates
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MovieRating undocumented
 	MovieRating *RatingUnitedStatesMoviesType `json:"movieRating,omitempty"`
 	// TvRating undocumented
@@ -193,7 +193,7 @@ type MediaInfo struct {
 	// Object is the base model of MediaInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ResourceID undocumented
 	ResourceID *string `json:"resourceId,omitempty"`
 	// URI undocumented
@@ -212,7 +212,7 @@ type MediaPrompt struct {
 	// Prompt is the base model of MediaPrompt
 	Prompt
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MediaInfo undocumented
 	MediaInfo *MediaInfo `json:"mediaInfo,omitempty"`
 }
@@ -229,7 +229,7 @@ type MediaStream struct {
 	// Object is the base model of MediaStream
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Direction undocumented
 	Direction *MediaDirection `json:"direction,omitempty"`
 	// Label undocumented

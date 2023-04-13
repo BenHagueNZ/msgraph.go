@@ -9,7 +9,7 @@ type Attachment struct {
 	// Entity is the base model of Attachment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentType undocumented
 	ContentType *string `json:"contentType,omitempty"`
 	// IsInline undocumented
@@ -34,7 +34,7 @@ type AttachmentBase struct {
 	// Entity is the base model of AttachmentBase
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentType undocumented
 	ContentType *string `json:"contentType,omitempty"`
 	// LastModifiedDateTime undocumented
@@ -57,7 +57,7 @@ type AttachmentInfo struct {
 	// Object is the base model of AttachmentInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AttachmentType undocumented
 	AttachmentType *AttachmentType `json:"attachmentType,omitempty"`
 	// ContentType undocumented
@@ -80,7 +80,7 @@ type AttachmentItem struct {
 	// Object is the base model of AttachmentItem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AttachmentType undocumented
 	AttachmentType *AttachmentType `json:"attachmentType,omitempty"`
 	// ContentID undocumented
@@ -107,7 +107,7 @@ type AttachmentSession struct {
 	// Entity is the base model of AttachmentSession
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *Stream `json:"content,omitempty"`
 	// ExpirationDateTime undocumented

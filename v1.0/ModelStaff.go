@@ -7,7 +7,7 @@ type StaffAvailabilityItem struct {
 	// Object is the base model of StaffAvailabilityItem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AvailabilityItems undocumented
 	AvailabilityItems []AvailabilityItem `json:"availabilityItems,omitempty"`
 	// StaffID undocumented

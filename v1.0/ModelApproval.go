@@ -9,7 +9,7 @@ type Approval struct {
 	// Entity is the base model of Approval
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Stages undocumented
 	Stages []ApprovalStage `json:"stages,omitempty"`
 }
@@ -26,7 +26,7 @@ type ApprovalSettings struct {
 	// Object is the base model of ApprovalSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApprovalMode undocumented
 	ApprovalMode *string `json:"approvalMode,omitempty"`
 	// ApprovalStages undocumented
@@ -51,7 +51,7 @@ type ApprovalStage struct {
 	// Entity is the base model of ApprovalStage
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedToMe undocumented
 	AssignedToMe *bool `json:"assignedToMe,omitempty"`
 	// DisplayName undocumented

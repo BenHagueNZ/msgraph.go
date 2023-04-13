@@ -9,7 +9,7 @@ type ThreatAssessmentRequestObject struct {
 	// Entity is the base model of ThreatAssessmentRequestObject
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Category undocumented
 	Category *ThreatCategory `json:"category,omitempty"`
 	// ContentType undocumented
@@ -40,7 +40,7 @@ type ThreatAssessmentResult struct {
 	// Entity is the base model of ThreatAssessmentResult
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Message undocumented

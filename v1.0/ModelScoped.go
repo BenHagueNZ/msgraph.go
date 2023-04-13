@@ -7,7 +7,7 @@ type ScopedRoleMembership struct {
 	// Entity is the base model of ScopedRoleMembership
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AdministrativeUnitID undocumented
 	AdministrativeUnitID *string `json:"administrativeUnitId,omitempty"`
 	// RoleID undocumented

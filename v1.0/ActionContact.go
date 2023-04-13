@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Extensions returns request builder for Extension collection rcn
+// Extensions returns request builder for Extension collection
 func (b *ContactRequestBuilder) Extensions() *ContactExtensionsCollectionRequestBuilder {
 	bb := &ContactExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensions"
@@ -114,7 +114,7 @@ func (r *ContactExtensionsCollectionRequest) Add(ctx context.Context, reqObj *Ex
 	return
 }
 
-// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection rcn
+// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection
 func (b *ContactRequestBuilder) MultiValueExtendedProperties() *ContactMultiValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &ContactMultiValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/multiValueExtendedProperties"
@@ -224,7 +224,7 @@ func (b *ContactRequestBuilder) Photo() *ProfilePhotoRequestBuilder {
 	return bb
 }
 
-// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection rcn
+// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection
 func (b *ContactRequestBuilder) SingleValueExtendedProperties() *ContactSingleValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &ContactSingleValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/singleValueExtendedProperties"
@@ -327,7 +327,7 @@ func (r *ContactSingleValueExtendedPropertiesCollectionRequest) Add(ctx context.
 	return
 }
 
-// ChildFolders returns request builder for ContactFolder collection rcn
+// ChildFolders returns request builder for ContactFolder collection
 func (b *ContactFolderRequestBuilder) ChildFolders() *ContactFolderChildFoldersCollectionRequestBuilder {
 	bb := &ContactFolderChildFoldersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/childFolders"
@@ -430,7 +430,7 @@ func (r *ContactFolderChildFoldersCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// Contacts returns request builder for Contact collection rcn
+// Contacts returns request builder for Contact collection
 func (b *ContactFolderRequestBuilder) Contacts() *ContactFolderContactsCollectionRequestBuilder {
 	bb := &ContactFolderContactsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/contacts"
@@ -533,7 +533,7 @@ func (r *ContactFolderContactsCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection rcn
+// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection
 func (b *ContactFolderRequestBuilder) MultiValueExtendedProperties() *ContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &ContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/multiValueExtendedProperties"
@@ -636,7 +636,7 @@ func (r *ContactFolderMultiValueExtendedPropertiesCollectionRequest) Add(ctx con
 	return
 }
 
-// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection rcn
+// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection
 func (b *ContactFolderRequestBuilder) SingleValueExtendedProperties() *ContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &ContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/singleValueExtendedProperties"

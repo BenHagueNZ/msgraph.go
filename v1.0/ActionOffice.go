@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Shared returns request builder for SharedInsight collection rcn
+// Shared returns request builder for SharedInsight collection
 func (b *OfficeGraphInsightsRequestBuilder) Shared() *OfficeGraphInsightsSharedCollectionRequestBuilder {
 	bb := &OfficeGraphInsightsSharedCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/shared"
@@ -114,7 +114,7 @@ func (r *OfficeGraphInsightsSharedCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// Trending returns request builder for Trending collection rcn
+// Trending returns request builder for Trending collection
 func (b *OfficeGraphInsightsRequestBuilder) Trending() *OfficeGraphInsightsTrendingCollectionRequestBuilder {
 	bb := &OfficeGraphInsightsTrendingCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/trending"
@@ -217,7 +217,7 @@ func (r *OfficeGraphInsightsTrendingCollectionRequest) Add(ctx context.Context, 
 	return
 }
 
-// Used returns request builder for UsedInsight collection rcn
+// Used returns request builder for UsedInsight collection
 func (b *OfficeGraphInsightsRequestBuilder) Used() *OfficeGraphInsightsUsedCollectionRequestBuilder {
 	bb := &OfficeGraphInsightsUsedCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/used"

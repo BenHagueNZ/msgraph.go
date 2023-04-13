@@ -7,7 +7,7 @@ type ModifiedProperty struct {
 	// Object is the base model of ModifiedProperty
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// NewValue undocumented

@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Stages returns request builder for ApprovalStage collection rcn
+// Stages returns request builder for ApprovalStage collection
 func (b *ApprovalRequestBuilder) Stages() *ApprovalStagesCollectionRequestBuilder {
 	bb := &ApprovalStagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/stages"

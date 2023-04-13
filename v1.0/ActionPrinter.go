@@ -33,7 +33,7 @@ type PrinterCollectionCreateRequestParameter struct {
 type PrinterRestoreFactoryDefaultsRequestParameter struct {
 }
 
-// Connectors returns request builder for PrintConnector collection rcn
+// Connectors returns request builder for PrintConnector collection
 func (b *PrinterRequestBuilder) Connectors() *PrinterConnectorsCollectionRequestBuilder {
 	bb := &PrinterConnectorsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/connectors"
@@ -136,7 +136,7 @@ func (r *PrinterConnectorsCollectionRequest) Add(ctx context.Context, reqObj *Pr
 	return
 }
 
-// Shares returns request builder for PrinterShare collection rcn
+// Shares returns request builder for PrinterShare collection
 func (b *PrinterRequestBuilder) Shares() *PrinterSharesCollectionRequestBuilder {
 	bb := &PrinterSharesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/shares"
@@ -239,7 +239,7 @@ func (r *PrinterSharesCollectionRequest) Add(ctx context.Context, reqObj *Printe
 	return
 }
 
-// TaskTriggers returns request builder for PrintTaskTrigger collection rcn
+// TaskTriggers returns request builder for PrintTaskTrigger collection
 func (b *PrinterRequestBuilder) TaskTriggers() *PrinterTaskTriggersCollectionRequestBuilder {
 	bb := &PrinterTaskTriggersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/taskTriggers"
@@ -342,7 +342,7 @@ func (r *PrinterTaskTriggersCollectionRequest) Add(ctx context.Context, reqObj *
 	return
 }
 
-// Jobs returns request builder for PrintJob collection rcn
+// Jobs returns request builder for PrintJob collection
 func (b *PrinterBaseRequestBuilder) Jobs() *PrinterBaseJobsCollectionRequestBuilder {
 	bb := &PrinterBaseJobsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/jobs"
@@ -452,7 +452,7 @@ func (b *PrinterCreateOperationRequestBuilder) Printer() *PrinterRequestBuilder 
 	return bb
 }
 
-// AllowedGroups returns request builder for Group collection rcn
+// AllowedGroups returns request builder for Group collection
 func (b *PrinterShareRequestBuilder) AllowedGroups() *PrinterShareAllowedGroupsCollectionRequestBuilder {
 	bb := &PrinterShareAllowedGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/allowedGroups"
@@ -555,7 +555,7 @@ func (r *PrinterShareAllowedGroupsCollectionRequest) Add(ctx context.Context, re
 	return
 }
 
-// AllowedUsers returns request builder for User collection rcn
+// AllowedUsers returns request builder for User collection
 func (b *PrinterShareRequestBuilder) AllowedUsers() *PrinterShareAllowedUsersCollectionRequestBuilder {
 	bb := &PrinterShareAllowedUsersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/allowedUsers"
@@ -672,35 +672,35 @@ func (b *PrinterBaseRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
-// PrinterCreateOperation returns request builder for PrinterCreateOperation collection rcn
-func (b *PrintOperationRequestBuilder) PrinterCreateOperation() *PrintOperationPrinterCreateOperationCollectionRequestBuilder {
-	bb := &PrintOperationPrinterCreateOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/PrinterCreateOperation"
+// PrinterCreateOperation returns request builder for PrinterCreateOperation collection
+func (b *PrintOperationsCollectionRequestBuilder) PrinterCreateOperation() *PrintOperationsCollectionPrinterCreateOperationCollectionRequestBuilder {
+	bb := &PrintOperationsCollectionPrinterCreateOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// PrintOperationPrinterCreateOperationCollectionRequestBuilder is request builder for PrinterCreateOperation collection
-type PrintOperationPrinterCreateOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// PrintOperationsCollectionPrinterCreateOperationCollectionRequestBuilder is request builder for PrinterCreateOperation collection
+type PrintOperationsCollectionPrinterCreateOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrinterCreateOperation collection
-func (b *PrintOperationPrinterCreateOperationCollectionRequestBuilder) Request() *PrintOperationPrinterCreateOperationCollectionRequest {
-	return &PrintOperationPrinterCreateOperationCollectionRequest{
+func (b *PrintOperationsCollectionPrinterCreateOperationCollectionRequestBuilder) Request() *PrintOperationsCollectionPrinterCreateOperationCollectionRequest {
+	return &PrintOperationsCollectionPrinterCreateOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for PrinterCreateOperation item
-func (b *PrintOperationPrinterCreateOperationCollectionRequestBuilder) ID(id string) *PrinterCreateOperationRequestBuilder {
+func (b *PrintOperationsCollectionPrinterCreateOperationCollectionRequestBuilder) ID(id string) *PrinterCreateOperationRequestBuilder {
 	bb := &PrinterCreateOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// PrintOperationPrinterCreateOperationCollectionRequest is request for PrinterCreateOperation collection
-type PrintOperationPrinterCreateOperationCollectionRequest struct{ BaseRequest }
+// PrintOperationsCollectionPrinterCreateOperationCollectionRequest is request for PrinterCreateOperation collection
+type PrintOperationsCollectionPrinterCreateOperationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for PrinterCreateOperation collection
-func (r *PrintOperationPrinterCreateOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]PrinterCreateOperation, error) {
+func (r *PrintOperationsCollectionPrinterCreateOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]PrinterCreateOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -756,7 +756,7 @@ func (r *PrintOperationPrinterCreateOperationCollectionRequest) Paging(ctx conte
 }
 
 // GetN performs GET request for PrinterCreateOperation collection, max N pages
-func (r *PrintOperationPrinterCreateOperationCollectionRequest) GetN(ctx context.Context, n int) ([]PrinterCreateOperation, error) {
+func (r *PrintOperationsCollectionPrinterCreateOperationCollectionRequest) GetN(ctx context.Context, n int) ([]PrinterCreateOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -765,12 +765,12 @@ func (r *PrintOperationPrinterCreateOperationCollectionRequest) GetN(ctx context
 }
 
 // Get performs GET request for PrinterCreateOperation collection
-func (r *PrintOperationPrinterCreateOperationCollectionRequest) Get(ctx context.Context) ([]PrinterCreateOperation, error) {
+func (r *PrintOperationsCollectionPrinterCreateOperationCollectionRequest) Get(ctx context.Context) ([]PrinterCreateOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for PrinterCreateOperation collection
-func (r *PrintOperationPrinterCreateOperationCollectionRequest) Add(ctx context.Context, reqObj *PrinterCreateOperation) (resObj *PrinterCreateOperation, err error) {
+func (r *PrintOperationsCollectionPrinterCreateOperationCollectionRequest) Add(ctx context.Context, reqObj *PrinterCreateOperation) (resObj *PrinterCreateOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

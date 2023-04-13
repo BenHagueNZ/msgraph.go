@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// UpdateRecordingStatusOperation returns request builder for UpdateRecordingStatusOperation collection rcn
-func (b *CommsOperationRequestBuilder) UpdateRecordingStatusOperation() *CommsOperationUpdateRecordingStatusOperationCollectionRequestBuilder {
-	bb := &CommsOperationUpdateRecordingStatusOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/UpdateRecordingStatusOperation"
+// UpdateRecordingStatusOperation returns request builder for UpdateRecordingStatusOperation collection
+func (b *CallOperationsCollectionRequestBuilder) UpdateRecordingStatusOperation() *CallOperationsCollectionUpdateRecordingStatusOperationCollectionRequestBuilder {
+	bb := &CallOperationsCollectionUpdateRecordingStatusOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// CommsOperationUpdateRecordingStatusOperationCollectionRequestBuilder is request builder for UpdateRecordingStatusOperation collection
-type CommsOperationUpdateRecordingStatusOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// CallOperationsCollectionUpdateRecordingStatusOperationCollectionRequestBuilder is request builder for UpdateRecordingStatusOperation collection
+type CallOperationsCollectionUpdateRecordingStatusOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UpdateRecordingStatusOperation collection
-func (b *CommsOperationUpdateRecordingStatusOperationCollectionRequestBuilder) Request() *CommsOperationUpdateRecordingStatusOperationCollectionRequest {
-	return &CommsOperationUpdateRecordingStatusOperationCollectionRequest{
+func (b *CallOperationsCollectionUpdateRecordingStatusOperationCollectionRequestBuilder) Request() *CallOperationsCollectionUpdateRecordingStatusOperationCollectionRequest {
+	return &CallOperationsCollectionUpdateRecordingStatusOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for UpdateRecordingStatusOperation item
-func (b *CommsOperationUpdateRecordingStatusOperationCollectionRequestBuilder) ID(id string) *UpdateRecordingStatusOperationRequestBuilder {
+func (b *CallOperationsCollectionUpdateRecordingStatusOperationCollectionRequestBuilder) ID(id string) *UpdateRecordingStatusOperationRequestBuilder {
 	bb := &UpdateRecordingStatusOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// CommsOperationUpdateRecordingStatusOperationCollectionRequest is request for UpdateRecordingStatusOperation collection
-type CommsOperationUpdateRecordingStatusOperationCollectionRequest struct{ BaseRequest }
+// CallOperationsCollectionUpdateRecordingStatusOperationCollectionRequest is request for UpdateRecordingStatusOperation collection
+type CallOperationsCollectionUpdateRecordingStatusOperationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for UpdateRecordingStatusOperation collection
-func (r *CommsOperationUpdateRecordingStatusOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UpdateRecordingStatusOperation, error) {
+func (r *CallOperationsCollectionUpdateRecordingStatusOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]UpdateRecordingStatusOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *CommsOperationUpdateRecordingStatusOperationCollectionRequest) Paging(c
 }
 
 // GetN performs GET request for UpdateRecordingStatusOperation collection, max N pages
-func (r *CommsOperationUpdateRecordingStatusOperationCollectionRequest) GetN(ctx context.Context, n int) ([]UpdateRecordingStatusOperation, error) {
+func (r *CallOperationsCollectionUpdateRecordingStatusOperationCollectionRequest) GetN(ctx context.Context, n int) ([]UpdateRecordingStatusOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *CommsOperationUpdateRecordingStatusOperationCollectionRequest) GetN(ctx
 }
 
 // Get performs GET request for UpdateRecordingStatusOperation collection
-func (r *CommsOperationUpdateRecordingStatusOperationCollectionRequest) Get(ctx context.Context) ([]UpdateRecordingStatusOperation, error) {
+func (r *CallOperationsCollectionUpdateRecordingStatusOperationCollectionRequest) Get(ctx context.Context) ([]UpdateRecordingStatusOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for UpdateRecordingStatusOperation collection
-func (r *CommsOperationUpdateRecordingStatusOperationCollectionRequest) Add(ctx context.Context, reqObj *UpdateRecordingStatusOperation) (resObj *UpdateRecordingStatusOperation, err error) {
+func (r *CallOperationsCollectionUpdateRecordingStatusOperationCollectionRequest) Add(ctx context.Context, reqObj *UpdateRecordingStatusOperation) (resObj *UpdateRecordingStatusOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

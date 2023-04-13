@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// OpenTypeExtension returns request builder for OpenTypeExtension collection rcn
-func (b *ExtensionRequestBuilder) OpenTypeExtension() *ExtensionOpenTypeExtensionCollectionRequestBuilder {
-	bb := &ExtensionOpenTypeExtensionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/OpenTypeExtension"
+// OpenTypeExtension returns request builder for OpenTypeExtension collection
+func (b *AdministrativeUnitExtensionsCollectionRequestBuilder) OpenTypeExtension() *AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequestBuilder {
+	bb := &AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// ExtensionOpenTypeExtensionCollectionRequestBuilder is request builder for OpenTypeExtension collection
-type ExtensionOpenTypeExtensionCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequestBuilder is request builder for OpenTypeExtension collection
+type AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OpenTypeExtension collection
-func (b *ExtensionOpenTypeExtensionCollectionRequestBuilder) Request() *ExtensionOpenTypeExtensionCollectionRequest {
-	return &ExtensionOpenTypeExtensionCollectionRequest{
+func (b *AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequestBuilder) Request() *AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequest {
+	return &AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for OpenTypeExtension item
-func (b *ExtensionOpenTypeExtensionCollectionRequestBuilder) ID(id string) *OpenTypeExtensionRequestBuilder {
+func (b *AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequestBuilder) ID(id string) *OpenTypeExtensionRequestBuilder {
 	bb := &OpenTypeExtensionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ExtensionOpenTypeExtensionCollectionRequest is request for OpenTypeExtension collection
-type ExtensionOpenTypeExtensionCollectionRequest struct{ BaseRequest }
+// AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequest is request for OpenTypeExtension collection
+type AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for OpenTypeExtension collection
-func (r *ExtensionOpenTypeExtensionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]OpenTypeExtension, error) {
+func (r *AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]OpenTypeExtension, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *ExtensionOpenTypeExtensionCollectionRequest) Paging(ctx context.Context
 }
 
 // GetN performs GET request for OpenTypeExtension collection, max N pages
-func (r *ExtensionOpenTypeExtensionCollectionRequest) GetN(ctx context.Context, n int) ([]OpenTypeExtension, error) {
+func (r *AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequest) GetN(ctx context.Context, n int) ([]OpenTypeExtension, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *ExtensionOpenTypeExtensionCollectionRequest) GetN(ctx context.Context, 
 }
 
 // Get performs GET request for OpenTypeExtension collection
-func (r *ExtensionOpenTypeExtensionCollectionRequest) Get(ctx context.Context) ([]OpenTypeExtension, error) {
+func (r *AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequest) Get(ctx context.Context) ([]OpenTypeExtension, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for OpenTypeExtension collection
-func (r *ExtensionOpenTypeExtensionCollectionRequest) Add(ctx context.Context, reqObj *OpenTypeExtension) (resObj *OpenTypeExtension, err error) {
+func (r *AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequest) Add(ctx context.Context, reqObj *OpenTypeExtension) (resObj *OpenTypeExtension, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

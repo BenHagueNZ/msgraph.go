@@ -7,7 +7,7 @@ type ToneInfo struct {
 	// Object is the base model of ToneInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// SequenceID undocumented
 	SequenceID *int `json:"sequenceId,omitempty"`
 	// Tone undocumented

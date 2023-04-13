@@ -9,7 +9,7 @@ type MicrosoftAccountUserConversationMember struct {
 	// ConversationMember is the base model of MicrosoftAccountUserConversationMember
 	ConversationMember
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
 }
@@ -26,7 +26,7 @@ type MicrosoftAuthenticatorAuthenticationMethod struct {
 	// AuthenticationMethod is the base model of MicrosoftAuthenticatorAuthenticationMethod
 	AuthenticationMethod
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// DeviceTag undocumented
@@ -51,7 +51,7 @@ type MicrosoftAuthenticatorAuthenticationMethodConfiguration struct {
 	// AuthenticationMethodConfiguration is the base model of MicrosoftAuthenticatorAuthenticationMethodConfiguration
 	AuthenticationMethodConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FeatureSettings undocumented
 	FeatureSettings *MicrosoftAuthenticatorFeatureSettings `json:"featureSettings,omitempty"`
 	// IncludeTargets undocumented
@@ -70,7 +70,7 @@ type MicrosoftAuthenticatorAuthenticationMethodTarget struct {
 	// AuthenticationMethodTarget is the base model of MicrosoftAuthenticatorAuthenticationMethodTarget
 	AuthenticationMethodTarget
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AuthenticationMode undocumented
 	AuthenticationMode *MicrosoftAuthenticatorAuthenticationMode `json:"authenticationMode,omitempty"`
 }
@@ -87,7 +87,7 @@ type MicrosoftAuthenticatorFeatureSettings struct {
 	// Object is the base model of MicrosoftAuthenticatorFeatureSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayAppInformationRequiredState undocumented
 	DisplayAppInformationRequiredState *AuthenticationMethodFeatureConfiguration `json:"displayAppInformationRequiredState,omitempty"`
 	// DisplayLocationInformationRequiredState undocumented
@@ -106,7 +106,7 @@ type MicrosoftStoreForBusinessApp struct {
 	// MobileApp is the base model of MicrosoftStoreForBusinessApp
 	MobileApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// LicenseType undocumented
 	LicenseType *MicrosoftStoreForBusinessLicenseType `json:"licenseType,omitempty"`
 	// PackageIdentityName undocumented
@@ -131,7 +131,7 @@ type MicrosoftStoreForBusinessAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of MicrosoftStoreForBusinessAppAssignmentSettings
 	MobileAppAssignmentSettings
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UseDeviceContext undocumented
 	UseDeviceContext *bool `json:"useDeviceContext,omitempty"`
 }

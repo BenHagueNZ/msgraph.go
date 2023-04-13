@@ -9,7 +9,7 @@ type IncompleteData struct {
 	// Object is the base model of IncompleteData
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MissingDataBeforeDateTime undocumented
 	MissingDataBeforeDateTime *time.Time `json:"missingDataBeforeDateTime,omitempty"`
 	// WasThrottled undocumented

@@ -7,7 +7,7 @@ type SubscribeToToneOperation struct {
 	// CommsOperation is the base model of SubscribeToToneOperation
 	CommsOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewSubscribeToToneOperation() (*SubscribeToToneOperation, error) {

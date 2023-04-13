@@ -7,7 +7,7 @@ type Location struct {
 	// Object is the base model of Location
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Address undocumented
 	Address *PhysicalAddress `json:"address,omitempty"`
 	// Coordinates undocumented
@@ -38,7 +38,7 @@ type LocationConstraint struct {
 	// Object is the base model of LocationConstraint
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsRequired undocumented
 	IsRequired *bool `json:"isRequired,omitempty"`
 	// Locations undocumented
@@ -59,7 +59,7 @@ type LocationConstraintItem struct {
 	// Location is the base model of LocationConstraintItem
 	Location
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ResolveAvailability undocumented
 	ResolveAvailability *bool `json:"resolveAvailability,omitempty"`
 }

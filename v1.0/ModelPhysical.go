@@ -7,7 +7,7 @@ type PhysicalAddress struct {
 	// Object is the base model of PhysicalAddress
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// City undocumented
 	City *string `json:"city,omitempty"`
 	// CountryOrRegion undocumented
@@ -32,7 +32,7 @@ type PhysicalOfficeAddress struct {
 	// Object is the base model of PhysicalOfficeAddress
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// City undocumented
 	City *string `json:"city,omitempty"`
 	// CountryOrRegion undocumented

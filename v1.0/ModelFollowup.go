@@ -7,7 +7,7 @@ type FollowupFlag struct {
 	// Object is the base model of FollowupFlag
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CompletedDateTime undocumented
 	CompletedDateTime *DateTimeTimeZone `json:"completedDateTime,omitempty"`
 	// DueDateTime undocumented

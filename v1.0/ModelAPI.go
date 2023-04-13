@@ -7,7 +7,7 @@ type APIApplication struct {
 	// Object is the base model of APIApplication
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AcceptMappedClaims undocumented
 	AcceptMappedClaims *bool `json:"acceptMappedClaims,omitempty"`
 	// KnownClientApplications undocumented
@@ -32,7 +32,7 @@ type APIAuthenticationConfigurationBase struct {
 	// Object is the base model of APIAuthenticationConfigurationBase
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewAPIAuthenticationConfigurationBase() (*APIAuthenticationConfigurationBase, error) {

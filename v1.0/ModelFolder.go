@@ -7,7 +7,7 @@ type Folder struct {
 	// Object is the base model of Folder
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChildCount undocumented
 	ChildCount *int `json:"childCount,omitempty"`
 	// View undocumented
@@ -26,7 +26,7 @@ type FolderView struct {
 	// Object is the base model of FolderView
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// SortBy undocumented
 	SortBy *string `json:"sortBy,omitempty"`
 	// SortOrder undocumented

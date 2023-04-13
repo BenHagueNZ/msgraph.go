@@ -9,7 +9,7 @@ type SharingDetail struct {
 	// Object is the base model of SharingDetail
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// SharedBy undocumented
 	SharedBy *InsightIdentity `json:"sharedBy,omitempty"`
 	// SharedDateTime undocumented
@@ -34,7 +34,7 @@ type SharingInvitation struct {
 	// Object is the base model of SharingInvitation
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
 	// InvitedBy undocumented
@@ -57,7 +57,7 @@ type SharingLink struct {
 	// Object is the base model of SharingLink
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Application undocumented
 	Application *Identity `json:"application,omitempty"`
 	// PreventsDownload undocumented

@@ -9,7 +9,7 @@ type SubjectRightsRequestObject struct {
 	// Entity is the base model of SubjectRightsRequestObject
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedTo undocumented
 	AssignedTo *Identity `json:"assignedTo,omitempty"`
 	// ClosedDateTime undocumented
@@ -62,7 +62,7 @@ type SubjectRightsRequestDetail struct {
 	// Object is the base model of SubjectRightsRequestDetail
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExcludedItemCount undocumented
 	ExcludedItemCount *int `json:"excludedItemCount,omitempty"`
 	// InsightCounts undocumented
@@ -91,7 +91,7 @@ type SubjectRightsRequestHistory struct {
 	// Object is the base model of SubjectRightsRequestHistory
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChangedBy undocumented
 	ChangedBy *IdentitySet `json:"changedBy,omitempty"`
 	// EventDateTime undocumented
@@ -116,7 +116,7 @@ type SubjectRightsRequestStageDetail struct {
 	// Object is the base model of SubjectRightsRequestStageDetail
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Error undocumented
 	Error *PublicError `json:"error,omitempty"`
 	// Stage undocumented
@@ -137,7 +137,7 @@ type SubjectSet struct {
 	// Object is the base model of SubjectSet
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewSubjectSet() (*SubjectSet, error) {

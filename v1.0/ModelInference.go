@@ -7,7 +7,7 @@ type InferenceClassification struct {
 	// Entity is the base model of InferenceClassification
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Overrides undocumented
 	Overrides []InferenceClassificationOverride `json:"overrides,omitempty"`
 }
@@ -24,7 +24,7 @@ type InferenceClassificationOverride struct {
 	// Entity is the base model of InferenceClassificationOverride
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ClassifyAs undocumented
 	ClassifyAs *InferenceClassificationType `json:"classifyAs,omitempty"`
 	// SenderEmailAddress undocumented

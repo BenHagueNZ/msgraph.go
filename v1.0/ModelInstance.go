@@ -7,7 +7,7 @@ type InstanceResourceAccess struct {
 	// Object is the base model of InstanceResourceAccess
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Permissions undocumented
 	Permissions []ResourcePermission `json:"permissions,omitempty"`
 	// ResourceAppID undocumented

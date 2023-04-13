@@ -7,7 +7,7 @@ type LocaleInfo struct {
 	// Object is the base model of LocaleInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Locale undocumented

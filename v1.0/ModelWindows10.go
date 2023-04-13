@@ -7,7 +7,7 @@ type Windows10CompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of Windows10CompliancePolicy
 	DeviceCompliancePolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BitLockerEnabled undocumented
 	BitLockerEnabled *bool `json:"bitLockerEnabled,omitempty"`
 	// CodeIntegrityEnabled undocumented
@@ -60,7 +60,7 @@ type Windows10CustomConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10CustomConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OMASettings undocumented
 	OMASettings []OMASetting `json:"omaSettings,omitempty"`
 }
@@ -77,7 +77,7 @@ type Windows10EndpointProtectionConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10EndpointProtectionConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicationGuardAllowPersistence undocumented
 	ApplicationGuardAllowPersistence *bool `json:"applicationGuardAllowPersistence,omitempty"`
 	// ApplicationGuardAllowPrintToLocalPrinters undocumented
@@ -164,7 +164,7 @@ type Windows10EnterpriseModernAppManagementConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10EnterpriseModernAppManagementConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UninstallBuiltInApps undocumented
 	UninstallBuiltInApps *bool `json:"uninstallBuiltInApps,omitempty"`
 }
@@ -181,7 +181,7 @@ type Windows10GeneralConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10GeneralConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccountsBlockAddingNonMicrosoftAccountEmail undocumented
 	AccountsBlockAddingNonMicrosoftAccountEmail *bool `json:"accountsBlockAddingNonMicrosoftAccountEmail,omitempty"`
 	// AntiTheftModeBlocked undocumented
@@ -598,7 +598,7 @@ type Windows10MobileCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of Windows10MobileCompliancePolicy
 	DeviceCompliancePolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BitLockerEnabled undocumented
 	BitLockerEnabled *bool `json:"bitLockerEnabled,omitempty"`
 	// CodeIntegrityEnabled undocumented
@@ -645,7 +645,7 @@ type Windows10NetworkProxyServer struct {
 	// Object is the base model of Windows10NetworkProxyServer
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Address undocumented
 	Address *string `json:"address,omitempty"`
 	// Exceptions undocumented
@@ -666,7 +666,7 @@ type Windows10SecureAssessmentConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10SecureAssessmentConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowPrinting undocumented
 	AllowPrinting *bool `json:"allowPrinting,omitempty"`
 	// AllowScreenCapture undocumented
@@ -691,7 +691,7 @@ type Windows10TeamGeneralConfiguration struct {
 	// DeviceConfiguration is the base model of Windows10TeamGeneralConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AzureOperationalInsightsBlockTelemetry undocumented
 	AzureOperationalInsightsBlockTelemetry *bool `json:"azureOperationalInsightsBlockTelemetry,omitempty"`
 	// AzureOperationalInsightsWorkspaceID undocumented

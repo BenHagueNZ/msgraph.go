@@ -7,7 +7,7 @@ type Reminder struct {
 	// Object is the base model of Reminder
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChangeKey undocumented
 	ChangeKey *string `json:"changeKey,omitempty"`
 	// EventEndTime undocumented

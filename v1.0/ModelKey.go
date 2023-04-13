@@ -9,7 +9,7 @@ type KeyCredential struct {
 	// Object is the base model of KeyCredential
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CustomKeyIdentifier undocumented
 	CustomKeyIdentifier *Binary `json:"customKeyIdentifier,omitempty"`
 	// DisplayName undocumented
@@ -40,7 +40,7 @@ type KeyCredentialConfiguration struct {
 	// Object is the base model of KeyCredentialConfiguration
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MaxLifetime undocumented
 	MaxLifetime *Duration `json:"maxLifetime,omitempty"`
 	// RestrictForAppsCreatedAfterDateTime undocumented
@@ -61,7 +61,7 @@ type KeyValue struct {
 	// Object is the base model of KeyValue
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Key undocumented
 	Key *string `json:"key,omitempty"`
 	// Value undocumented
@@ -80,7 +80,7 @@ type KeyValuePair struct {
 	// Object is the base model of KeyValuePair
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Value undocumented

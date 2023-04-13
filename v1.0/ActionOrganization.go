@@ -22,7 +22,7 @@ func (b *OrganizationRequestBuilder) Branding() *OrganizationalBrandingRequestBu
 	return bb
 }
 
-// CertificateBasedAuthConfiguration returns request builder for CertificateBasedAuthConfiguration collection rcn
+// CertificateBasedAuthConfiguration returns request builder for CertificateBasedAuthConfiguration collection
 func (b *OrganizationRequestBuilder) CertificateBasedAuthConfiguration() *OrganizationCertificateBasedAuthConfigurationCollectionRequestBuilder {
 	bb := &OrganizationCertificateBasedAuthConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/certificateBasedAuthConfiguration"
@@ -125,7 +125,7 @@ func (r *OrganizationCertificateBasedAuthConfigurationCollectionRequest) Add(ctx
 	return
 }
 
-// Extensions returns request builder for Extension collection rcn
+// Extensions returns request builder for Extension collection
 func (b *OrganizationRequestBuilder) Extensions() *OrganizationExtensionsCollectionRequestBuilder {
 	bb := &OrganizationExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensions"
@@ -228,35 +228,35 @@ func (r *OrganizationExtensionsCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// Organization returns request builder for Organization collection rcn
-func (b *DirectoryObjectRequestBuilder) Organization() *DirectoryObjectOrganizationCollectionRequestBuilder {
-	bb := &DirectoryObjectOrganizationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/Organization"
+// Organization returns request builder for Organization collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) Organization() *AdministrativeUnitMembersCollectionOrganizationCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionOrganizationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DirectoryObjectOrganizationCollectionRequestBuilder is request builder for Organization collection
-type DirectoryObjectOrganizationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AdministrativeUnitMembersCollectionOrganizationCollectionRequestBuilder is request builder for Organization collection
+type AdministrativeUnitMembersCollectionOrganizationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Organization collection
-func (b *DirectoryObjectOrganizationCollectionRequestBuilder) Request() *DirectoryObjectOrganizationCollectionRequest {
-	return &DirectoryObjectOrganizationCollectionRequest{
+func (b *AdministrativeUnitMembersCollectionOrganizationCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionOrganizationCollectionRequest {
+	return &AdministrativeUnitMembersCollectionOrganizationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for Organization item
-func (b *DirectoryObjectOrganizationCollectionRequestBuilder) ID(id string) *OrganizationRequestBuilder {
+func (b *AdministrativeUnitMembersCollectionOrganizationCollectionRequestBuilder) ID(id string) *OrganizationRequestBuilder {
 	bb := &OrganizationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DirectoryObjectOrganizationCollectionRequest is request for Organization collection
-type DirectoryObjectOrganizationCollectionRequest struct{ BaseRequest }
+// AdministrativeUnitMembersCollectionOrganizationCollectionRequest is request for Organization collection
+type AdministrativeUnitMembersCollectionOrganizationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for Organization collection
-func (r *DirectoryObjectOrganizationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Organization, error) {
+func (r *AdministrativeUnitMembersCollectionOrganizationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Organization, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -312,7 +312,7 @@ func (r *DirectoryObjectOrganizationCollectionRequest) Paging(ctx context.Contex
 }
 
 // GetN performs GET request for Organization collection, max N pages
-func (r *DirectoryObjectOrganizationCollectionRequest) GetN(ctx context.Context, n int) ([]Organization, error) {
+func (r *AdministrativeUnitMembersCollectionOrganizationCollectionRequest) GetN(ctx context.Context, n int) ([]Organization, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -321,12 +321,12 @@ func (r *DirectoryObjectOrganizationCollectionRequest) GetN(ctx context.Context,
 }
 
 // Get performs GET request for Organization collection
-func (r *DirectoryObjectOrganizationCollectionRequest) Get(ctx context.Context) ([]Organization, error) {
+func (r *AdministrativeUnitMembersCollectionOrganizationCollectionRequest) Get(ctx context.Context) ([]Organization, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for Organization collection
-func (r *DirectoryObjectOrganizationCollectionRequest) Add(ctx context.Context, reqObj *Organization) (resObj *Organization, err error) {
+func (r *AdministrativeUnitMembersCollectionOrganizationCollectionRequest) Add(ctx context.Context, reqObj *Organization) (resObj *Organization, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

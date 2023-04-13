@@ -57,7 +57,7 @@ type OnenoteSectionCopyToSectionGroupRequestParameter struct {
 	SiteID *string `json:"siteId,omitempty"`
 }
 
-// Notebooks returns request builder for Notebook collection rcn
+// Notebooks returns request builder for Notebook collection
 func (b *OnenoteRequestBuilder) Notebooks() *OnenoteNotebooksCollectionRequestBuilder {
 	bb := &OnenoteNotebooksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/notebooks"
@@ -160,7 +160,7 @@ func (r *OnenoteNotebooksCollectionRequest) Add(ctx context.Context, reqObj *Not
 	return
 }
 
-// Operations returns request builder for OnenoteOperation collection rcn
+// Operations returns request builder for OnenoteOperation collection
 func (b *OnenoteRequestBuilder) Operations() *OnenoteOperationsCollectionRequestBuilder {
 	bb := &OnenoteOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -263,7 +263,7 @@ func (r *OnenoteOperationsCollectionRequest) Add(ctx context.Context, reqObj *On
 	return
 }
 
-// Pages returns request builder for OnenotePage collection rcn
+// Pages returns request builder for OnenotePage collection
 func (b *OnenoteRequestBuilder) Pages() *OnenotePagesCollectionRequestBuilder {
 	bb := &OnenotePagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/pages"
@@ -366,7 +366,7 @@ func (r *OnenotePagesCollectionRequest) Add(ctx context.Context, reqObj *Onenote
 	return
 }
 
-// Resources returns request builder for OnenoteResource collection rcn
+// Resources returns request builder for OnenoteResource collection
 func (b *OnenoteRequestBuilder) Resources() *OnenoteResourcesCollectionRequestBuilder {
 	bb := &OnenoteResourcesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/resources"
@@ -469,7 +469,7 @@ func (r *OnenoteResourcesCollectionRequest) Add(ctx context.Context, reqObj *One
 	return
 }
 
-// SectionGroups returns request builder for SectionGroup collection rcn
+// SectionGroups returns request builder for SectionGroup collection
 func (b *OnenoteRequestBuilder) SectionGroups() *OnenoteSectionGroupsCollectionRequestBuilder {
 	bb := &OnenoteSectionGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sectionGroups"
@@ -572,7 +572,7 @@ func (r *OnenoteSectionGroupsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// Sections returns request builder for OnenoteSection collection rcn
+// Sections returns request builder for OnenoteSection collection
 func (b *OnenoteRequestBuilder) Sections() *OnenoteSectionsCollectionRequestBuilder {
 	bb := &OnenoteSectionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sections"
@@ -689,7 +689,7 @@ func (b *OnenotePageRequestBuilder) ParentSection() *OnenoteSectionRequestBuilde
 	return bb
 }
 
-// Pages returns request builder for OnenotePage collection rcn
+// Pages returns request builder for OnenotePage collection
 func (b *OnenoteSectionRequestBuilder) Pages() *OnenoteSectionPagesCollectionRequestBuilder {
 	bb := &OnenoteSectionPagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/pages"

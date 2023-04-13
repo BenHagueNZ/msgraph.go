@@ -9,7 +9,7 @@ type AttendanceInterval struct {
 	// Object is the base model of AttendanceInterval
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DurationInSeconds undocumented
 	DurationInSeconds *int `json:"durationInSeconds,omitempty"`
 	// JoinDateTime undocumented
@@ -30,7 +30,7 @@ type AttendanceRecord struct {
 	// Entity is the base model of AttendanceRecord
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AttendanceIntervals undocumented
 	AttendanceIntervals []AttendanceInterval `json:"attendanceIntervals,omitempty"`
 	// EmailAddress undocumented

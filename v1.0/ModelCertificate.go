@@ -7,7 +7,7 @@ type CertificateAuthority struct {
 	// Object is the base model of CertificateAuthority
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Certificate undocumented
 	Certificate *Binary `json:"certificate,omitempty"`
 	// CertificateRevocationListURL undocumented
@@ -34,7 +34,7 @@ type CertificateBasedAuthConfiguration struct {
 	// Entity is the base model of CertificateBasedAuthConfiguration
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CertificateAuthorities undocumented
 	CertificateAuthorities []CertificateAuthority `json:"certificateAuthorities,omitempty"`
 }

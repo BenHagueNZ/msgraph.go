@@ -7,7 +7,7 @@ type ContentApprovalStatusColumn struct {
 	// Object is the base model of ContentApprovalStatusColumn
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewContentApprovalStatusColumn() (*ContentApprovalStatusColumn, error) {
@@ -22,7 +22,7 @@ type ContentSharingSession struct {
 	// Entity is the base model of ContentSharingSession
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewContentSharingSession() (*ContentSharingSession, error) {
@@ -37,7 +37,7 @@ type ContentType struct {
 	// Entity is the base model of ContentType
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssociatedHubsUrls undocumented
 	AssociatedHubsUrls []string `json:"associatedHubsUrls,omitempty"`
 	// Description undocumented
@@ -90,7 +90,7 @@ type ContentTypeInfo struct {
 	// Object is the base model of ContentTypeInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ID undocumented
 	ID *string `json:"id,omitempty"`
 	// Name undocumented
@@ -109,7 +109,7 @@ type ContentTypeOrder struct {
 	// Object is the base model of ContentTypeOrder
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Default undocumented
 	Default *bool `json:"default,omitempty"`
 	// Position undocumented

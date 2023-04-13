@@ -7,7 +7,7 @@ type GeoCoordinates struct {
 	// Object is the base model of GeoCoordinates
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Altitude undocumented
 	Altitude *float64 `json:"altitude,omitempty"`
 	// Latitude undocumented

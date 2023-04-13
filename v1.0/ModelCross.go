@@ -7,7 +7,7 @@ type CrossCloudAzureActiveDirectoryTenant struct {
 	// IdentitySource is the base model of CrossCloudAzureActiveDirectoryTenant
 	IdentitySource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CloudInstance undocumented
 	CloudInstance *string `json:"cloudInstance,omitempty"`
 	// DisplayName undocumented
@@ -28,7 +28,7 @@ type CrossTenantAccessPolicy struct {
 	// PolicyBase is the base model of CrossTenantAccessPolicy
 	PolicyBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowedCloudEndpoints undocumented
 	AllowedCloudEndpoints []string `json:"allowedCloudEndpoints,omitempty"`
 	// Default undocumented
@@ -49,7 +49,7 @@ type CrossTenantAccessPolicyB2BSetting struct {
 	// Object is the base model of CrossTenantAccessPolicyB2BSetting
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Applications undocumented
 	Applications *CrossTenantAccessPolicyTargetConfiguration `json:"applications,omitempty"`
 	// UsersAndGroups undocumented
@@ -68,7 +68,7 @@ type CrossTenantAccessPolicyConfigurationDefault struct {
 	// Entity is the base model of CrossTenantAccessPolicyConfigurationDefault
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// B2bCollaborationInbound undocumented
 	B2bCollaborationInbound *CrossTenantAccessPolicyB2BSetting `json:"b2bCollaborationInbound,omitempty"`
 	// B2bCollaborationOutbound undocumented
@@ -95,7 +95,7 @@ type CrossTenantAccessPolicyConfigurationPartner struct {
 	// Object is the base model of CrossTenantAccessPolicyConfigurationPartner
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// B2bCollaborationInbound undocumented
 	B2bCollaborationInbound *CrossTenantAccessPolicyB2BSetting `json:"b2bCollaborationInbound,omitempty"`
 	// B2bCollaborationOutbound undocumented
@@ -124,7 +124,7 @@ type CrossTenantAccessPolicyInboundTrust struct {
 	// Object is the base model of CrossTenantAccessPolicyInboundTrust
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsCompliantDeviceAccepted undocumented
 	IsCompliantDeviceAccepted *bool `json:"isCompliantDeviceAccepted,omitempty"`
 	// IsHybridAzureADJoinedDeviceAccepted undocumented
@@ -145,7 +145,7 @@ type CrossTenantAccessPolicyTarget struct {
 	// Object is the base model of CrossTenantAccessPolicyTarget
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Target undocumented
 	Target *string `json:"target,omitempty"`
 	// TargetType undocumented
@@ -164,7 +164,7 @@ type CrossTenantAccessPolicyTargetConfiguration struct {
 	// Object is the base model of CrossTenantAccessPolicyTargetConfiguration
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccessType undocumented
 	AccessType *CrossTenantAccessPolicyTargetConfigurationAccessType `json:"accessType,omitempty"`
 	// Targets undocumented

@@ -18,7 +18,7 @@ func (b *ExternalDomainNameRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
-// Connections returns request builder for ExternalConnectorsExternalConnection collection rcn
+// Connections returns request builder for ExternalConnectorsExternalConnection collection
 func (b *ExternalConnectorsExternalRequestBuilder) Connections() *ExternalConnectorsExternalConnectionsCollectionRequestBuilder {
 	bb := &ExternalConnectorsExternalConnectionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/connections"
@@ -121,7 +121,7 @@ func (r *ExternalConnectorsExternalConnectionsCollectionRequest) Add(ctx context
 	return
 }
 
-// Groups returns request builder for ExternalConnectorsExternalGroup collection rcn
+// Groups returns request builder for ExternalConnectorsExternalGroup collection
 func (b *ExternalConnectorsExternalConnectionRequestBuilder) Groups() *ExternalConnectorsExternalConnectionGroupsCollectionRequestBuilder {
 	bb := &ExternalConnectorsExternalConnectionGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/groups"
@@ -224,7 +224,7 @@ func (r *ExternalConnectorsExternalConnectionGroupsCollectionRequest) Add(ctx co
 	return
 }
 
-// Items returns request builder for ExternalConnectorsExternalItem collection rcn
+// Items returns request builder for ExternalConnectorsExternalItem collection
 func (b *ExternalConnectorsExternalConnectionRequestBuilder) Items() *ExternalConnectorsExternalConnectionItemsCollectionRequestBuilder {
 	bb := &ExternalConnectorsExternalConnectionItemsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/items"
@@ -327,7 +327,7 @@ func (r *ExternalConnectorsExternalConnectionItemsCollectionRequest) Add(ctx con
 	return
 }
 
-// Operations returns request builder for ExternalConnectorsConnectionOperation collection rcn
+// Operations returns request builder for ExternalConnectorsConnectionOperation collection
 func (b *ExternalConnectorsExternalConnectionRequestBuilder) Operations() *ExternalConnectorsExternalConnectionOperationsCollectionRequestBuilder {
 	bb := &ExternalConnectorsExternalConnectionOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/operations"
@@ -437,7 +437,7 @@ func (b *ExternalConnectorsExternalConnectionRequestBuilder) Schema() *ExternalC
 	return bb
 }
 
-// Members returns request builder for ExternalConnectorsIdentity collection rcn
+// Members returns request builder for ExternalConnectorsIdentity collection
 func (b *ExternalConnectorsExternalGroupRequestBuilder) Members() *ExternalConnectorsExternalGroupMembersCollectionRequestBuilder {
 	bb := &ExternalConnectorsExternalGroupMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"

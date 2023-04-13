@@ -10,7 +10,7 @@ type {{$x.Sym}} struct {
     Object
 {{- end }}
 
-    ODataType string `json:"@odata.type"`
+    ODataType string `json:"@odata.type,omitempty"`
 {{- range $y := .X.Members }}
 {{- $yTypeType := $.TypeFromType $y.Type }}
     // {{$y.Sym}} {{$y.Description}}

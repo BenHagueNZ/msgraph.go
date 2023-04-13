@@ -7,7 +7,7 @@ type Calendar struct {
 	// Entity is the base model of Calendar
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowedOnlineMeetingProviders undocumented
 	AllowedOnlineMeetingProviders []OnlineMeetingProviderType `json:"allowedOnlineMeetingProviders,omitempty"`
 	// CanEdit undocumented
@@ -58,7 +58,7 @@ type CalendarGroup struct {
 	// Entity is the base model of CalendarGroup
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChangeKey undocumented
 	ChangeKey *string `json:"changeKey,omitempty"`
 	// ClassID undocumented
@@ -81,7 +81,7 @@ type CalendarPermission struct {
 	// Entity is the base model of CalendarPermission
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowedRoles undocumented
 	AllowedRoles []CalendarRoleType `json:"allowedRoles,omitempty"`
 	// EmailAddress undocumented
@@ -106,7 +106,7 @@ type CalendarSharingMessage struct {
 	// Message is the base model of CalendarSharingMessage
 	Message
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CanAccept undocumented
 	CanAccept *bool `json:"canAccept,omitempty"`
 	// SharingMessageAction undocumented
@@ -129,7 +129,7 @@ type CalendarSharingMessageAction struct {
 	// Object is the base model of CalendarSharingMessageAction
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Action undocumented
 	Action *CalendarSharingAction `json:"action,omitempty"`
 	// ActionType undocumented

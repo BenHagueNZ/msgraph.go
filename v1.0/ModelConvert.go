@@ -7,7 +7,7 @@ type ConvertIDResult struct {
 	// Object is the base model of ConvertIDResult
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ErrorDetails undocumented
 	ErrorDetails *GenericError `json:"errorDetails,omitempty"`
 	// SourceID undocumented

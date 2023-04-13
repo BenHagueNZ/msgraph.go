@@ -7,7 +7,7 @@ type RichLongRunningOperation struct {
 	// LongRunningOperation is the base model of RichLongRunningOperation
 	LongRunningOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Error undocumented
 	Error *PublicError `json:"error,omitempty"`
 	// PercentageComplete undocumented

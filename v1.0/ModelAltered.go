@@ -7,7 +7,7 @@ type AlteredQueryToken struct {
 	// Object is the base model of AlteredQueryToken
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Length undocumented
 	Length *int `json:"length,omitempty"`
 	// Offset undocumented

@@ -7,7 +7,7 @@ type HyperlinkOrPictureColumn struct {
 	// Object is the base model of HyperlinkOrPictureColumn
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsPicture undocumented
 	IsPicture *bool `json:"isPicture,omitempty"`
 }

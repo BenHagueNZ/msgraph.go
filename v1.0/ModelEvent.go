@@ -9,7 +9,7 @@ type Event struct {
 	// OutlookItem is the base model of Event
 	OutlookItem
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowNewTimeProposals undocumented
 	AllowNewTimeProposals *bool `json:"allowNewTimeProposals,omitempty"`
 	// Attendees undocumented
@@ -108,7 +108,7 @@ type EventMessage struct {
 	// Message is the base model of EventMessage
 	Message
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EndDateTime undocumented
 	EndDateTime *DateTimeTimeZone `json:"endDateTime,omitempty"`
 	// IsAllDay undocumented
@@ -143,7 +143,7 @@ type EventMessageDetail struct {
 	// Object is the base model of EventMessageDetail
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewEventMessageDetail() (*EventMessageDetail, error) {
@@ -158,7 +158,7 @@ type EventMessageRequestObject struct {
 	// EventMessage is the base model of EventMessageRequestObject
 	EventMessage
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowNewTimeProposals undocumented
 	AllowNewTimeProposals *bool `json:"allowNewTimeProposals,omitempty"`
 	// MeetingRequestType undocumented
@@ -185,7 +185,7 @@ type EventMessageResponse struct {
 	// EventMessage is the base model of EventMessageResponse
 	EventMessage
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ProposedNewTime undocumented
 	ProposedNewTime *TimeSlot `json:"proposedNewTime,omitempty"`
 	// ResponseType undocumented

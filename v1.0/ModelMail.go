@@ -7,7 +7,7 @@ type MailAssessmentRequestObject struct {
 	// ThreatAssessmentRequestObject is the base model of MailAssessmentRequestObject
 	ThreatAssessmentRequestObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DestinationRoutingReason undocumented
 	DestinationRoutingReason *MailDestinationRoutingReason `json:"destinationRoutingReason,omitempty"`
 	// MessageURI undocumented
@@ -28,7 +28,7 @@ type MailFolder struct {
 	// Entity is the base model of MailFolder
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ChildFolderCount undocumented
 	ChildFolderCount *int `json:"childFolderCount,omitempty"`
 	// DisplayName undocumented
@@ -65,7 +65,7 @@ type MailSearchFolder struct {
 	// MailFolder is the base model of MailSearchFolder
 	MailFolder
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FilterQuery undocumented
 	FilterQuery *string `json:"filterQuery,omitempty"`
 	// IncludeNestedFolders undocumented
@@ -88,7 +88,7 @@ type MailTips struct {
 	// Object is the base model of MailTips
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AutomaticReplies undocumented
 	AutomaticReplies *AutomaticRepliesMailTips `json:"automaticReplies,omitempty"`
 	// CustomMailTip undocumented
@@ -127,7 +127,7 @@ type MailTipsError struct {
 	// Object is the base model of MailTipsError
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
 	// Message undocumented

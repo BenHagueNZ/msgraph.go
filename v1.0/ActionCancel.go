@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// CancelMediaProcessingOperation returns request builder for CancelMediaProcessingOperation collection rcn
-func (b *CommsOperationRequestBuilder) CancelMediaProcessingOperation() *CommsOperationCancelMediaProcessingOperationCollectionRequestBuilder {
-	bb := &CommsOperationCancelMediaProcessingOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/CancelMediaProcessingOperation"
+// CancelMediaProcessingOperation returns request builder for CancelMediaProcessingOperation collection
+func (b *CallOperationsCollectionRequestBuilder) CancelMediaProcessingOperation() *CallOperationsCollectionCancelMediaProcessingOperationCollectionRequestBuilder {
+	bb := &CallOperationsCollectionCancelMediaProcessingOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// CommsOperationCancelMediaProcessingOperationCollectionRequestBuilder is request builder for CancelMediaProcessingOperation collection
-type CommsOperationCancelMediaProcessingOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// CallOperationsCollectionCancelMediaProcessingOperationCollectionRequestBuilder is request builder for CancelMediaProcessingOperation collection
+type CallOperationsCollectionCancelMediaProcessingOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for CancelMediaProcessingOperation collection
-func (b *CommsOperationCancelMediaProcessingOperationCollectionRequestBuilder) Request() *CommsOperationCancelMediaProcessingOperationCollectionRequest {
-	return &CommsOperationCancelMediaProcessingOperationCollectionRequest{
+func (b *CallOperationsCollectionCancelMediaProcessingOperationCollectionRequestBuilder) Request() *CallOperationsCollectionCancelMediaProcessingOperationCollectionRequest {
+	return &CallOperationsCollectionCancelMediaProcessingOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for CancelMediaProcessingOperation item
-func (b *CommsOperationCancelMediaProcessingOperationCollectionRequestBuilder) ID(id string) *CancelMediaProcessingOperationRequestBuilder {
+func (b *CallOperationsCollectionCancelMediaProcessingOperationCollectionRequestBuilder) ID(id string) *CancelMediaProcessingOperationRequestBuilder {
 	bb := &CancelMediaProcessingOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// CommsOperationCancelMediaProcessingOperationCollectionRequest is request for CancelMediaProcessingOperation collection
-type CommsOperationCancelMediaProcessingOperationCollectionRequest struct{ BaseRequest }
+// CallOperationsCollectionCancelMediaProcessingOperationCollectionRequest is request for CancelMediaProcessingOperation collection
+type CallOperationsCollectionCancelMediaProcessingOperationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for CancelMediaProcessingOperation collection
-func (r *CommsOperationCancelMediaProcessingOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CancelMediaProcessingOperation, error) {
+func (r *CallOperationsCollectionCancelMediaProcessingOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CancelMediaProcessingOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *CommsOperationCancelMediaProcessingOperationCollectionRequest) Paging(c
 }
 
 // GetN performs GET request for CancelMediaProcessingOperation collection, max N pages
-func (r *CommsOperationCancelMediaProcessingOperationCollectionRequest) GetN(ctx context.Context, n int) ([]CancelMediaProcessingOperation, error) {
+func (r *CallOperationsCollectionCancelMediaProcessingOperationCollectionRequest) GetN(ctx context.Context, n int) ([]CancelMediaProcessingOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *CommsOperationCancelMediaProcessingOperationCollectionRequest) GetN(ctx
 }
 
 // Get performs GET request for CancelMediaProcessingOperation collection
-func (r *CommsOperationCancelMediaProcessingOperationCollectionRequest) Get(ctx context.Context) ([]CancelMediaProcessingOperation, error) {
+func (r *CallOperationsCollectionCancelMediaProcessingOperationCollectionRequest) Get(ctx context.Context) ([]CancelMediaProcessingOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for CancelMediaProcessingOperation collection
-func (r *CommsOperationCancelMediaProcessingOperationCollectionRequest) Add(ctx context.Context, reqObj *CancelMediaProcessingOperation) (resObj *CancelMediaProcessingOperation, err error) {
+func (r *CallOperationsCollectionCancelMediaProcessingOperationCollectionRequest) Add(ctx context.Context, reqObj *CancelMediaProcessingOperation) (resObj *CancelMediaProcessingOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

@@ -9,7 +9,7 @@ type Permission struct {
 	// Entity is the base model of Permission
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExpirationDateTime undocumented
 	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
 	// GrantedTo undocumented
@@ -46,7 +46,7 @@ type PermissionGrantConditionSet struct {
 	// Entity is the base model of PermissionGrantConditionSet
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ClientApplicationIDs undocumented
 	ClientApplicationIDs []string `json:"clientApplicationIds,omitempty"`
 	// ClientApplicationPublisherIDs undocumented
@@ -77,7 +77,7 @@ type PermissionGrantPolicy struct {
 	// PolicyBase is the base model of PermissionGrantPolicy
 	PolicyBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Excludes undocumented
 	Excludes []PermissionGrantConditionSet `json:"excludes,omitempty"`
 	// Includes undocumented
@@ -96,7 +96,7 @@ type PermissionScope struct {
 	// Object is the base model of PermissionScope
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AdminConsentDescription undocumented
 	AdminConsentDescription *string `json:"adminConsentDescription,omitempty"`
 	// AdminConsentDisplayName undocumented

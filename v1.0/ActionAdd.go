@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AddLargeGalleryViewOperation returns request builder for AddLargeGalleryViewOperation collection rcn
-func (b *CommsOperationRequestBuilder) AddLargeGalleryViewOperation() *CommsOperationAddLargeGalleryViewOperationCollectionRequestBuilder {
-	bb := &CommsOperationAddLargeGalleryViewOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/AddLargeGalleryViewOperation"
+// AddLargeGalleryViewOperation returns request builder for AddLargeGalleryViewOperation collection
+func (b *CallOperationsCollectionRequestBuilder) AddLargeGalleryViewOperation() *CallOperationsCollectionAddLargeGalleryViewOperationCollectionRequestBuilder {
+	bb := &CallOperationsCollectionAddLargeGalleryViewOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// CommsOperationAddLargeGalleryViewOperationCollectionRequestBuilder is request builder for AddLargeGalleryViewOperation collection
-type CommsOperationAddLargeGalleryViewOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// CallOperationsCollectionAddLargeGalleryViewOperationCollectionRequestBuilder is request builder for AddLargeGalleryViewOperation collection
+type CallOperationsCollectionAddLargeGalleryViewOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AddLargeGalleryViewOperation collection
-func (b *CommsOperationAddLargeGalleryViewOperationCollectionRequestBuilder) Request() *CommsOperationAddLargeGalleryViewOperationCollectionRequest {
-	return &CommsOperationAddLargeGalleryViewOperationCollectionRequest{
+func (b *CallOperationsCollectionAddLargeGalleryViewOperationCollectionRequestBuilder) Request() *CallOperationsCollectionAddLargeGalleryViewOperationCollectionRequest {
+	return &CallOperationsCollectionAddLargeGalleryViewOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for AddLargeGalleryViewOperation item
-func (b *CommsOperationAddLargeGalleryViewOperationCollectionRequestBuilder) ID(id string) *AddLargeGalleryViewOperationRequestBuilder {
+func (b *CallOperationsCollectionAddLargeGalleryViewOperationCollectionRequestBuilder) ID(id string) *AddLargeGalleryViewOperationRequestBuilder {
 	bb := &AddLargeGalleryViewOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// CommsOperationAddLargeGalleryViewOperationCollectionRequest is request for AddLargeGalleryViewOperation collection
-type CommsOperationAddLargeGalleryViewOperationCollectionRequest struct{ BaseRequest }
+// CallOperationsCollectionAddLargeGalleryViewOperationCollectionRequest is request for AddLargeGalleryViewOperation collection
+type CallOperationsCollectionAddLargeGalleryViewOperationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for AddLargeGalleryViewOperation collection
-func (r *CommsOperationAddLargeGalleryViewOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AddLargeGalleryViewOperation, error) {
+func (r *CallOperationsCollectionAddLargeGalleryViewOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AddLargeGalleryViewOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *CommsOperationAddLargeGalleryViewOperationCollectionRequest) Paging(ctx
 }
 
 // GetN performs GET request for AddLargeGalleryViewOperation collection, max N pages
-func (r *CommsOperationAddLargeGalleryViewOperationCollectionRequest) GetN(ctx context.Context, n int) ([]AddLargeGalleryViewOperation, error) {
+func (r *CallOperationsCollectionAddLargeGalleryViewOperationCollectionRequest) GetN(ctx context.Context, n int) ([]AddLargeGalleryViewOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *CommsOperationAddLargeGalleryViewOperationCollectionRequest) GetN(ctx c
 }
 
 // Get performs GET request for AddLargeGalleryViewOperation collection
-func (r *CommsOperationAddLargeGalleryViewOperationCollectionRequest) Get(ctx context.Context) ([]AddLargeGalleryViewOperation, error) {
+func (r *CallOperationsCollectionAddLargeGalleryViewOperationCollectionRequest) Get(ctx context.Context) ([]AddLargeGalleryViewOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for AddLargeGalleryViewOperation collection
-func (r *CommsOperationAddLargeGalleryViewOperationCollectionRequest) Add(ctx context.Context, reqObj *AddLargeGalleryViewOperation) (resObj *AddLargeGalleryViewOperation, err error) {
+func (r *CallOperationsCollectionAddLargeGalleryViewOperationCollectionRequest) Add(ctx context.Context, reqObj *AddLargeGalleryViewOperation) (resObj *AddLargeGalleryViewOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

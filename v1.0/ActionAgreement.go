@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Acceptances returns request builder for AgreementAcceptance collection rcn
+// Acceptances returns request builder for AgreementAcceptance collection
 func (b *AgreementRequestBuilder) Acceptances() *AgreementAcceptancesCollectionRequestBuilder {
 	bb := &AgreementAcceptancesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/acceptances"
@@ -121,7 +121,7 @@ func (b *AgreementRequestBuilder) File() *AgreementFileRequestBuilder {
 	return bb
 }
 
-// Files returns request builder for AgreementFileLocalization collection rcn
+// Files returns request builder for AgreementFileLocalization collection
 func (b *AgreementRequestBuilder) Files() *AgreementFilesCollectionRequestBuilder {
 	bb := &AgreementFilesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/files"
@@ -224,7 +224,7 @@ func (r *AgreementFilesCollectionRequest) Add(ctx context.Context, reqObj *Agree
 	return
 }
 
-// Localizations returns request builder for AgreementFileLocalization collection rcn
+// Localizations returns request builder for AgreementFileLocalization collection
 func (b *AgreementFileRequestBuilder) Localizations() *AgreementFileLocalizationsCollectionRequestBuilder {
 	bb := &AgreementFileLocalizationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/localizations"
@@ -327,7 +327,7 @@ func (r *AgreementFileLocalizationsCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// Versions returns request builder for AgreementFileVersion collection rcn
+// Versions returns request builder for AgreementFileVersion collection
 func (b *AgreementFileLocalizationRequestBuilder) Versions() *AgreementFileLocalizationVersionsCollectionRequestBuilder {
 	bb := &AgreementFileLocalizationVersionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/versions"

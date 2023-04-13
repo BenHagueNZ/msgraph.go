@@ -9,7 +9,7 @@ type Alert struct {
 	// Entity is the base model of Alert
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActivityGroupName undocumented
 	ActivityGroupName *string `json:"activityGroupName,omitempty"`
 	// AlertDetections undocumented
@@ -102,7 +102,7 @@ type AlertDetection struct {
 	// Object is the base model of AlertDetection
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DetectionType undocumented
 	DetectionType *string `json:"detectionType,omitempty"`
 	// Method undocumented
@@ -123,7 +123,7 @@ type AlertHistoryState struct {
 	// Object is the base model of AlertHistoryState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppID undocumented
 	AppID *string `json:"appId,omitempty"`
 	// AssignedTo undocumented
@@ -152,7 +152,7 @@ type AlertTrigger struct {
 	// Object is the base model of AlertTrigger
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Type undocumented

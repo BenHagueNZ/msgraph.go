@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// TeamsApps returns request builder for TeamsApp collection rcn
+// TeamsApps returns request builder for TeamsApp collection
 func (b *AppCatalogsRequestBuilder) TeamsApps() *AppCatalogsTeamsAppsCollectionRequestBuilder {
 	bb := &AppCatalogsTeamsAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/teamsApps"
@@ -114,7 +114,7 @@ func (r *AppCatalogsTeamsAppsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// AppConsentRequests returns request builder for AppConsentRequestObject collection rcn
+// AppConsentRequests returns request builder for AppConsentRequestObject collection
 func (b *AppConsentApprovalRouteRequestBuilder) AppConsentRequests() *AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder {
 	bb := &AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appConsentRequests"
@@ -217,7 +217,7 @@ func (r *AppConsentApprovalRouteAppConsentRequestsCollectionRequest) Add(ctx con
 	return
 }
 
-// UserConsentRequests returns request builder for UserConsentRequestObject collection rcn
+// UserConsentRequests returns request builder for UserConsentRequestObject collection
 func (b *AppConsentRequestObjectRequestBuilder) UserConsentRequests() *AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder {
 	bb := &AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/userConsentRequests"
@@ -320,7 +320,7 @@ func (r *AppConsentRequestObjectUserConsentRequestsCollectionRequest) Add(ctx co
 	return
 }
 
-// AppliesTo returns request builder for DirectoryObject collection rcn
+// AppliesTo returns request builder for DirectoryObject collection
 func (b *AppManagementPolicyRequestBuilder) AppliesTo() *AppManagementPolicyAppliesToCollectionRequestBuilder {
 	bb := &AppManagementPolicyAppliesToCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appliesTo"
@@ -444,35 +444,35 @@ func (b *AppConsentRequestObjectRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
-// AppRoleAssignment returns request builder for AppRoleAssignment collection rcn
-func (b *DirectoryObjectRequestBuilder) AppRoleAssignment() *DirectoryObjectAppRoleAssignmentCollectionRequestBuilder {
-	bb := &DirectoryObjectAppRoleAssignmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/AppRoleAssignment"
+// AppRoleAssignment returns request builder for AppRoleAssignment collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) AppRoleAssignment() *AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DirectoryObjectAppRoleAssignmentCollectionRequestBuilder is request builder for AppRoleAssignment collection
-type DirectoryObjectAppRoleAssignmentCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequestBuilder is request builder for AppRoleAssignment collection
+type AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AppRoleAssignment collection
-func (b *DirectoryObjectAppRoleAssignmentCollectionRequestBuilder) Request() *DirectoryObjectAppRoleAssignmentCollectionRequest {
-	return &DirectoryObjectAppRoleAssignmentCollectionRequest{
+func (b *AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequest {
+	return &AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for AppRoleAssignment item
-func (b *DirectoryObjectAppRoleAssignmentCollectionRequestBuilder) ID(id string) *AppRoleAssignmentRequestBuilder {
+func (b *AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequestBuilder) ID(id string) *AppRoleAssignmentRequestBuilder {
 	bb := &AppRoleAssignmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DirectoryObjectAppRoleAssignmentCollectionRequest is request for AppRoleAssignment collection
-type DirectoryObjectAppRoleAssignmentCollectionRequest struct{ BaseRequest }
+// AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequest is request for AppRoleAssignment collection
+type AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for AppRoleAssignment collection
-func (r *DirectoryObjectAppRoleAssignmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AppRoleAssignment, error) {
+func (r *AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AppRoleAssignment, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -528,7 +528,7 @@ func (r *DirectoryObjectAppRoleAssignmentCollectionRequest) Paging(ctx context.C
 }
 
 // GetN performs GET request for AppRoleAssignment collection, max N pages
-func (r *DirectoryObjectAppRoleAssignmentCollectionRequest) GetN(ctx context.Context, n int) ([]AppRoleAssignment, error) {
+func (r *AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequest) GetN(ctx context.Context, n int) ([]AppRoleAssignment, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -537,12 +537,12 @@ func (r *DirectoryObjectAppRoleAssignmentCollectionRequest) GetN(ctx context.Con
 }
 
 // Get performs GET request for AppRoleAssignment collection
-func (r *DirectoryObjectAppRoleAssignmentCollectionRequest) Get(ctx context.Context) ([]AppRoleAssignment, error) {
+func (r *AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequest) Get(ctx context.Context) ([]AppRoleAssignment, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for AppRoleAssignment collection
-func (r *DirectoryObjectAppRoleAssignmentCollectionRequest) Add(ctx context.Context, reqObj *AppRoleAssignment) (resObj *AppRoleAssignment, err error) {
+func (r *AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequest) Add(ctx context.Context, reqObj *AppRoleAssignment) (resObj *AppRoleAssignment, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

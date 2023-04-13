@@ -9,7 +9,7 @@ type Authentication struct {
 	// Entity is the base model of Authentication
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EmailMethods undocumented
 	EmailMethods []EmailAuthenticationMethod `json:"emailMethods,omitempty"`
 	// Fido2Methods undocumented
@@ -44,7 +44,7 @@ type AuthenticationContextClassReference struct {
 	// Entity is the base model of AuthenticationContextClassReference
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -65,7 +65,7 @@ type AuthenticationFlowsPolicy struct {
 	// Entity is the base model of AuthenticationFlowsPolicy
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -86,7 +86,7 @@ type AuthenticationMethod struct {
 	// Entity is the base model of AuthenticationMethod
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewAuthenticationMethod() (*AuthenticationMethod, error) {
@@ -101,7 +101,7 @@ type AuthenticationMethodConfiguration struct {
 	// Entity is the base model of AuthenticationMethodConfiguration
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// State undocumented
 	State *AuthenticationMethodState `json:"state,omitempty"`
 }
@@ -118,7 +118,7 @@ type AuthenticationMethodFeatureConfiguration struct {
 	// Object is the base model of AuthenticationMethodFeatureConfiguration
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExcludeTarget undocumented
 	ExcludeTarget *FeatureTarget `json:"excludeTarget,omitempty"`
 	// IncludeTarget undocumented
@@ -139,7 +139,7 @@ type AuthenticationMethodTarget struct {
 	// Entity is the base model of AuthenticationMethodTarget
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsRegistrationRequired undocumented
 	IsRegistrationRequired *bool `json:"isRegistrationRequired,omitempty"`
 	// TargetType undocumented
@@ -158,7 +158,7 @@ type AuthenticationMethodsPolicy struct {
 	// Entity is the base model of AuthenticationMethodsPolicy
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -187,7 +187,7 @@ type AuthenticationMethodsRegistrationCampaign struct {
 	// Object is the base model of AuthenticationMethodsRegistrationCampaign
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExcludeTargets undocumented
 	ExcludeTargets []ExcludeTarget `json:"excludeTargets,omitempty"`
 	// IncludeTargets undocumented
@@ -210,7 +210,7 @@ type AuthenticationMethodsRegistrationCampaignIncludeTarget struct {
 	// Object is the base model of AuthenticationMethodsRegistrationCampaignIncludeTarget
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ID undocumented
 	ID *string `json:"id,omitempty"`
 	// TargetedAuthenticationMethod undocumented

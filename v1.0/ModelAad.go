@@ -7,7 +7,7 @@ type AadUserConversationMember struct {
 	// ConversationMember is the base model of AadUserConversationMember
 	ConversationMember
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
 	// TenantID undocumented
@@ -30,7 +30,7 @@ type AadUserConversationMemberResult struct {
 	// ActionResultPart is the base model of AadUserConversationMemberResult
 	ActionResultPart
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
 }
@@ -47,7 +47,7 @@ type AadUserNotificationRecipient struct {
 	// TeamworkNotificationRecipient is the base model of AadUserNotificationRecipient
 	TeamworkNotificationRecipient
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
 }

@@ -7,7 +7,7 @@ type CurrencyColumn struct {
 	// Object is the base model of CurrencyColumn
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Locale undocumented
 	Locale *string `json:"locale,omitempty"`
 }

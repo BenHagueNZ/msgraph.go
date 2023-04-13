@@ -7,7 +7,7 @@ type DateTimeColumn struct {
 	// Object is the base model of DateTimeColumn
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayAs undocumented
 	DisplayAs *string `json:"displayAs,omitempty"`
 	// Format undocumented
@@ -26,7 +26,7 @@ type DateTimeTimeZone struct {
 	// Object is the base model of DateTimeTimeZone
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DateTime undocumented
 	DateTime *string `json:"dateTime,omitempty"`
 	// TimeZone undocumented

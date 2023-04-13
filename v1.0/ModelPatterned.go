@@ -7,7 +7,7 @@ type PatternedRecurrence struct {
 	// Object is the base model of PatternedRecurrence
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Pattern undocumented
 	Pattern *RecurrencePattern `json:"pattern,omitempty"`
 	// Range undocumented

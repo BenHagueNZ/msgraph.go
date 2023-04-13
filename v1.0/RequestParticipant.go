@@ -169,6 +169,29 @@ func (r *ParticipantLeftNotificationRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+type ParticipantCollectionInviteRequestBuilder struct{ BaseRequestBuilder }
+
+// Invite action undocumentedras
+func (b *CallParticipantsCollectionRequestBuilder) Invite(reqObj *ParticipantCollectionInviteRequestParameter) *ParticipantCollectionInviteRequestBuilder {
+	bb := &ParticipantCollectionInviteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Invite"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ParticipantCollectionInviteRequest struct{ BaseRequest }
+
+func (b *ParticipantCollectionInviteRequestBuilder) Request() *ParticipantCollectionInviteRequest {
+	return &ParticipantCollectionInviteRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ParticipantCollectionInviteRequest) Post(ctx context.Context) (resObj *InviteParticipantsOperation, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
 type ParticipantMuteRequestBuilder struct{ BaseRequestBuilder }
 
 // Mute action undocumentedras

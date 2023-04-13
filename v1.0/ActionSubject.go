@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Notes returns request builder for AuthoredNote collection rcn
+// Notes returns request builder for AuthoredNote collection
 func (b *SubjectRightsRequestObjectRequestBuilder) Notes() *SubjectRightsRequestObjectNotesCollectionRequestBuilder {
 	bb := &SubjectRightsRequestObjectNotesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/notes"

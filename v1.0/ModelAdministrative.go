@@ -7,7 +7,7 @@ type AdministrativeUnit struct {
 	// DirectoryObject is the base model of AdministrativeUnit
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented

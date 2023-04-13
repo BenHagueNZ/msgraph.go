@@ -7,7 +7,7 @@ type WorkingHours struct {
 	// Object is the base model of WorkingHours
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DaysOfWeek undocumented
 	DaysOfWeek []DayOfWeek `json:"daysOfWeek,omitempty"`
 	// EndTime undocumented

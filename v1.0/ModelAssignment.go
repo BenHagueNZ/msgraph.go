@@ -7,7 +7,7 @@ type AssignmentOrder struct {
 	// Object is the base model of AssignmentOrder
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Order undocumented
 	Order []string `json:"order,omitempty"`
 }

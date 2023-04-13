@@ -18,7 +18,7 @@ func (b *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder) Device() *Dev
 	return bb
 }
 
-// IncludeTargets returns request builder for MicrosoftAuthenticatorAuthenticationMethodTarget collection rcn
+// IncludeTargets returns request builder for MicrosoftAuthenticatorAuthenticationMethodTarget collection
 func (b *MicrosoftAuthenticatorAuthenticationMethodConfigurationRequestBuilder) IncludeTargets() *MicrosoftAuthenticatorAuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder {
 	bb := &MicrosoftAuthenticatorAuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/includeTargets"
@@ -121,35 +121,35 @@ func (r *MicrosoftAuthenticatorAuthenticationMethodConfigurationIncludeTargetsCo
 	return
 }
 
-// MicrosoftAccountUserConversationMember returns request builder for MicrosoftAccountUserConversationMember collection rcn
-func (b *ConversationMemberRequestBuilder) MicrosoftAccountUserConversationMember() *ConversationMemberMicrosoftAccountUserConversationMemberCollectionRequestBuilder {
-	bb := &ConversationMemberMicrosoftAccountUserConversationMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/MicrosoftAccountUserConversationMember"
+// MicrosoftAccountUserConversationMember returns request builder for MicrosoftAccountUserConversationMember collection
+func (b *ChannelMembersCollectionRequestBuilder) MicrosoftAccountUserConversationMember() *ChannelMembersCollectionMicrosoftAccountUserConversationMemberCollectionRequestBuilder {
+	bb := &ChannelMembersCollectionMicrosoftAccountUserConversationMemberCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// ConversationMemberMicrosoftAccountUserConversationMemberCollectionRequestBuilder is request builder for MicrosoftAccountUserConversationMember collection
-type ConversationMemberMicrosoftAccountUserConversationMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ChannelMembersCollectionMicrosoftAccountUserConversationMemberCollectionRequestBuilder is request builder for MicrosoftAccountUserConversationMember collection
+type ChannelMembersCollectionMicrosoftAccountUserConversationMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MicrosoftAccountUserConversationMember collection
-func (b *ConversationMemberMicrosoftAccountUserConversationMemberCollectionRequestBuilder) Request() *ConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest {
-	return &ConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest{
+func (b *ChannelMembersCollectionMicrosoftAccountUserConversationMemberCollectionRequestBuilder) Request() *ChannelMembersCollectionMicrosoftAccountUserConversationMemberCollectionRequest {
+	return &ChannelMembersCollectionMicrosoftAccountUserConversationMemberCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for MicrosoftAccountUserConversationMember item
-func (b *ConversationMemberMicrosoftAccountUserConversationMemberCollectionRequestBuilder) ID(id string) *MicrosoftAccountUserConversationMemberRequestBuilder {
+func (b *ChannelMembersCollectionMicrosoftAccountUserConversationMemberCollectionRequestBuilder) ID(id string) *MicrosoftAccountUserConversationMemberRequestBuilder {
 	bb := &MicrosoftAccountUserConversationMemberRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest is request for MicrosoftAccountUserConversationMember collection
-type ConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest struct{ BaseRequest }
+// ChannelMembersCollectionMicrosoftAccountUserConversationMemberCollectionRequest is request for MicrosoftAccountUserConversationMember collection
+type ChannelMembersCollectionMicrosoftAccountUserConversationMemberCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for MicrosoftAccountUserConversationMember collection
-func (r *ConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MicrosoftAccountUserConversationMember, error) {
+func (r *ChannelMembersCollectionMicrosoftAccountUserConversationMemberCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MicrosoftAccountUserConversationMember, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -205,7 +205,7 @@ func (r *ConversationMemberMicrosoftAccountUserConversationMemberCollectionReque
 }
 
 // GetN performs GET request for MicrosoftAccountUserConversationMember collection, max N pages
-func (r *ConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest) GetN(ctx context.Context, n int) ([]MicrosoftAccountUserConversationMember, error) {
+func (r *ChannelMembersCollectionMicrosoftAccountUserConversationMemberCollectionRequest) GetN(ctx context.Context, n int) ([]MicrosoftAccountUserConversationMember, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -214,45 +214,45 @@ func (r *ConversationMemberMicrosoftAccountUserConversationMemberCollectionReque
 }
 
 // Get performs GET request for MicrosoftAccountUserConversationMember collection
-func (r *ConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest) Get(ctx context.Context) ([]MicrosoftAccountUserConversationMember, error) {
+func (r *ChannelMembersCollectionMicrosoftAccountUserConversationMemberCollectionRequest) Get(ctx context.Context) ([]MicrosoftAccountUserConversationMember, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for MicrosoftAccountUserConversationMember collection
-func (r *ConversationMemberMicrosoftAccountUserConversationMemberCollectionRequest) Add(ctx context.Context, reqObj *MicrosoftAccountUserConversationMember) (resObj *MicrosoftAccountUserConversationMember, err error) {
+func (r *ChannelMembersCollectionMicrosoftAccountUserConversationMemberCollectionRequest) Add(ctx context.Context, reqObj *MicrosoftAccountUserConversationMember) (resObj *MicrosoftAccountUserConversationMember, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// MicrosoftAuthenticatorAuthenticationMethod returns request builder for MicrosoftAuthenticatorAuthenticationMethod collection rcn
-func (b *AuthenticationMethodRequestBuilder) MicrosoftAuthenticatorAuthenticationMethod() *AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder {
-	bb := &AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/MicrosoftAuthenticatorAuthenticationMethod"
+// MicrosoftAuthenticatorAuthenticationMethod returns request builder for MicrosoftAuthenticatorAuthenticationMethod collection
+func (b *AuthenticationMethodsCollectionRequestBuilder) MicrosoftAuthenticatorAuthenticationMethod() *AuthenticationMethodsCollectionMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder {
+	bb := &AuthenticationMethodsCollectionMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder is request builder for MicrosoftAuthenticatorAuthenticationMethod collection
-type AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AuthenticationMethodsCollectionMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder is request builder for MicrosoftAuthenticatorAuthenticationMethod collection
+type AuthenticationMethodsCollectionMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MicrosoftAuthenticatorAuthenticationMethod collection
-func (b *AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest {
-	return &AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest{
+func (b *AuthenticationMethodsCollectionMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodsCollectionMicrosoftAuthenticatorAuthenticationMethodCollectionRequest {
+	return &AuthenticationMethodsCollectionMicrosoftAuthenticatorAuthenticationMethodCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for MicrosoftAuthenticatorAuthenticationMethod item
-func (b *AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder) ID(id string) *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder {
+func (b *AuthenticationMethodsCollectionMicrosoftAuthenticatorAuthenticationMethodCollectionRequestBuilder) ID(id string) *MicrosoftAuthenticatorAuthenticationMethodRequestBuilder {
 	bb := &MicrosoftAuthenticatorAuthenticationMethodRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest is request for MicrosoftAuthenticatorAuthenticationMethod collection
-type AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest struct{ BaseRequest }
+// AuthenticationMethodsCollectionMicrosoftAuthenticatorAuthenticationMethodCollectionRequest is request for MicrosoftAuthenticatorAuthenticationMethod collection
+type AuthenticationMethodsCollectionMicrosoftAuthenticatorAuthenticationMethodCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for MicrosoftAuthenticatorAuthenticationMethod collection
-func (r *AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MicrosoftAuthenticatorAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionMicrosoftAuthenticatorAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MicrosoftAuthenticatorAuthenticationMethod, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -308,7 +308,7 @@ func (r *AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectio
 }
 
 // GetN performs GET request for MicrosoftAuthenticatorAuthenticationMethod collection, max N pages
-func (r *AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]MicrosoftAuthenticatorAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionMicrosoftAuthenticatorAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]MicrosoftAuthenticatorAuthenticationMethod, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -317,45 +317,45 @@ func (r *AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectio
 }
 
 // Get performs GET request for MicrosoftAuthenticatorAuthenticationMethod collection
-func (r *AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]MicrosoftAuthenticatorAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionMicrosoftAuthenticatorAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]MicrosoftAuthenticatorAuthenticationMethod, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for MicrosoftAuthenticatorAuthenticationMethod collection
-func (r *AuthenticationMethodMicrosoftAuthenticatorAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *MicrosoftAuthenticatorAuthenticationMethod) (resObj *MicrosoftAuthenticatorAuthenticationMethod, err error) {
+func (r *AuthenticationMethodsCollectionMicrosoftAuthenticatorAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *MicrosoftAuthenticatorAuthenticationMethod) (resObj *MicrosoftAuthenticatorAuthenticationMethod, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// MicrosoftAuthenticatorAuthenticationMethodConfiguration returns request builder for MicrosoftAuthenticatorAuthenticationMethodConfiguration collection rcn
-func (b *AuthenticationMethodConfigurationRequestBuilder) MicrosoftAuthenticatorAuthenticationMethodConfiguration() *AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder {
-	bb := &AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/MicrosoftAuthenticatorAuthenticationMethodConfiguration"
+// MicrosoftAuthenticatorAuthenticationMethodConfiguration returns request builder for MicrosoftAuthenticatorAuthenticationMethodConfiguration collection
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionRequestBuilder) MicrosoftAuthenticatorAuthenticationMethodConfiguration() *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder {
+	bb := &AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder is request builder for MicrosoftAuthenticatorAuthenticationMethodConfiguration collection
-type AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder is request builder for MicrosoftAuthenticatorAuthenticationMethodConfiguration collection
+type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MicrosoftAuthenticatorAuthenticationMethodConfiguration collection
-func (b *AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder) Request() *AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest {
-	return &AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest{
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder) Request() *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest {
+	return &AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for MicrosoftAuthenticatorAuthenticationMethodConfiguration item
-func (b *AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder) ID(id string) *MicrosoftAuthenticatorAuthenticationMethodConfigurationRequestBuilder {
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequestBuilder) ID(id string) *MicrosoftAuthenticatorAuthenticationMethodConfigurationRequestBuilder {
 	bb := &MicrosoftAuthenticatorAuthenticationMethodConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest is request for MicrosoftAuthenticatorAuthenticationMethodConfiguration collection
-type AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest struct{ BaseRequest }
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest is request for MicrosoftAuthenticatorAuthenticationMethodConfiguration collection
+type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for MicrosoftAuthenticatorAuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MicrosoftAuthenticatorAuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MicrosoftAuthenticatorAuthenticationMethodConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -411,7 +411,7 @@ func (r *AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMe
 }
 
 // GetN performs GET request for MicrosoftAuthenticatorAuthenticationMethodConfiguration collection, max N pages
-func (r *AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]MicrosoftAuthenticatorAuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]MicrosoftAuthenticatorAuthenticationMethodConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -420,45 +420,45 @@ func (r *AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMe
 }
 
 // Get performs GET request for MicrosoftAuthenticatorAuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest) Get(ctx context.Context) ([]MicrosoftAuthenticatorAuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest) Get(ctx context.Context) ([]MicrosoftAuthenticatorAuthenticationMethodConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for MicrosoftAuthenticatorAuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest) Add(ctx context.Context, reqObj *MicrosoftAuthenticatorAuthenticationMethodConfiguration) (resObj *MicrosoftAuthenticatorAuthenticationMethodConfiguration, err error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionMicrosoftAuthenticatorAuthenticationMethodConfigurationCollectionRequest) Add(ctx context.Context, reqObj *MicrosoftAuthenticatorAuthenticationMethodConfiguration) (resObj *MicrosoftAuthenticatorAuthenticationMethodConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// MicrosoftAuthenticatorAuthenticationMethodTarget returns request builder for MicrosoftAuthenticatorAuthenticationMethodTarget collection rcn
-func (b *AuthenticationMethodTargetRequestBuilder) MicrosoftAuthenticatorAuthenticationMethodTarget() *AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder {
-	bb := &AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/MicrosoftAuthenticatorAuthenticationMethodTarget"
+// MicrosoftAuthenticatorAuthenticationMethodTarget returns request builder for MicrosoftAuthenticatorAuthenticationMethodTarget collection
+func (b *EmailAuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder) MicrosoftAuthenticatorAuthenticationMethodTarget() *EmailAuthenticationMethodConfigurationIncludeTargetsCollectionMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder {
+	bb := &EmailAuthenticationMethodConfigurationIncludeTargetsCollectionMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder is request builder for MicrosoftAuthenticatorAuthenticationMethodTarget collection
-type AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder struct{ BaseRequestBuilder }
+// EmailAuthenticationMethodConfigurationIncludeTargetsCollectionMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder is request builder for MicrosoftAuthenticatorAuthenticationMethodTarget collection
+type EmailAuthenticationMethodConfigurationIncludeTargetsCollectionMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MicrosoftAuthenticatorAuthenticationMethodTarget collection
-func (b *AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder) Request() *AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest {
-	return &AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest{
+func (b *EmailAuthenticationMethodConfigurationIncludeTargetsCollectionMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder) Request() *EmailAuthenticationMethodConfigurationIncludeTargetsCollectionMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest {
+	return &EmailAuthenticationMethodConfigurationIncludeTargetsCollectionMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for MicrosoftAuthenticatorAuthenticationMethodTarget item
-func (b *AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder) ID(id string) *MicrosoftAuthenticatorAuthenticationMethodTargetRequestBuilder {
+func (b *EmailAuthenticationMethodConfigurationIncludeTargetsCollectionMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequestBuilder) ID(id string) *MicrosoftAuthenticatorAuthenticationMethodTargetRequestBuilder {
 	bb := &MicrosoftAuthenticatorAuthenticationMethodTargetRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest is request for MicrosoftAuthenticatorAuthenticationMethodTarget collection
-type AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest struct{ BaseRequest }
+// EmailAuthenticationMethodConfigurationIncludeTargetsCollectionMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest is request for MicrosoftAuthenticatorAuthenticationMethodTarget collection
+type EmailAuthenticationMethodConfigurationIncludeTargetsCollectionMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for MicrosoftAuthenticatorAuthenticationMethodTarget collection
-func (r *AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MicrosoftAuthenticatorAuthenticationMethodTarget, error) {
+func (r *EmailAuthenticationMethodConfigurationIncludeTargetsCollectionMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MicrosoftAuthenticatorAuthenticationMethodTarget, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -514,7 +514,7 @@ func (r *AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTar
 }
 
 // GetN performs GET request for MicrosoftAuthenticatorAuthenticationMethodTarget collection, max N pages
-func (r *AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest) GetN(ctx context.Context, n int) ([]MicrosoftAuthenticatorAuthenticationMethodTarget, error) {
+func (r *EmailAuthenticationMethodConfigurationIncludeTargetsCollectionMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest) GetN(ctx context.Context, n int) ([]MicrosoftAuthenticatorAuthenticationMethodTarget, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -523,45 +523,45 @@ func (r *AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTar
 }
 
 // Get performs GET request for MicrosoftAuthenticatorAuthenticationMethodTarget collection
-func (r *AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest) Get(ctx context.Context) ([]MicrosoftAuthenticatorAuthenticationMethodTarget, error) {
+func (r *EmailAuthenticationMethodConfigurationIncludeTargetsCollectionMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest) Get(ctx context.Context) ([]MicrosoftAuthenticatorAuthenticationMethodTarget, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for MicrosoftAuthenticatorAuthenticationMethodTarget collection
-func (r *AuthenticationMethodTargetMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest) Add(ctx context.Context, reqObj *MicrosoftAuthenticatorAuthenticationMethodTarget) (resObj *MicrosoftAuthenticatorAuthenticationMethodTarget, err error) {
+func (r *EmailAuthenticationMethodConfigurationIncludeTargetsCollectionMicrosoftAuthenticatorAuthenticationMethodTargetCollectionRequest) Add(ctx context.Context, reqObj *MicrosoftAuthenticatorAuthenticationMethodTarget) (resObj *MicrosoftAuthenticatorAuthenticationMethodTarget, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// MicrosoftStoreForBusinessApp returns request builder for MicrosoftStoreForBusinessApp collection rcn
-func (b *MobileAppRequestBuilder) MicrosoftStoreForBusinessApp() *MobileAppMicrosoftStoreForBusinessAppCollectionRequestBuilder {
-	bb := &MobileAppMicrosoftStoreForBusinessAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/MicrosoftStoreForBusinessApp"
+// MicrosoftStoreForBusinessApp returns request builder for MicrosoftStoreForBusinessApp collection
+func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) MicrosoftStoreForBusinessApp() *DeviceAppManagementMobileAppsCollectionMicrosoftStoreForBusinessAppCollectionRequestBuilder {
+	bb := &DeviceAppManagementMobileAppsCollectionMicrosoftStoreForBusinessAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// MobileAppMicrosoftStoreForBusinessAppCollectionRequestBuilder is request builder for MicrosoftStoreForBusinessApp collection
-type MobileAppMicrosoftStoreForBusinessAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceAppManagementMobileAppsCollectionMicrosoftStoreForBusinessAppCollectionRequestBuilder is request builder for MicrosoftStoreForBusinessApp collection
+type DeviceAppManagementMobileAppsCollectionMicrosoftStoreForBusinessAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MicrosoftStoreForBusinessApp collection
-func (b *MobileAppMicrosoftStoreForBusinessAppCollectionRequestBuilder) Request() *MobileAppMicrosoftStoreForBusinessAppCollectionRequest {
-	return &MobileAppMicrosoftStoreForBusinessAppCollectionRequest{
+func (b *DeviceAppManagementMobileAppsCollectionMicrosoftStoreForBusinessAppCollectionRequestBuilder) Request() *DeviceAppManagementMobileAppsCollectionMicrosoftStoreForBusinessAppCollectionRequest {
+	return &DeviceAppManagementMobileAppsCollectionMicrosoftStoreForBusinessAppCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for MicrosoftStoreForBusinessApp item
-func (b *MobileAppMicrosoftStoreForBusinessAppCollectionRequestBuilder) ID(id string) *MicrosoftStoreForBusinessAppRequestBuilder {
+func (b *DeviceAppManagementMobileAppsCollectionMicrosoftStoreForBusinessAppCollectionRequestBuilder) ID(id string) *MicrosoftStoreForBusinessAppRequestBuilder {
 	bb := &MicrosoftStoreForBusinessAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// MobileAppMicrosoftStoreForBusinessAppCollectionRequest is request for MicrosoftStoreForBusinessApp collection
-type MobileAppMicrosoftStoreForBusinessAppCollectionRequest struct{ BaseRequest }
+// DeviceAppManagementMobileAppsCollectionMicrosoftStoreForBusinessAppCollectionRequest is request for MicrosoftStoreForBusinessApp collection
+type DeviceAppManagementMobileAppsCollectionMicrosoftStoreForBusinessAppCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for MicrosoftStoreForBusinessApp collection
-func (r *MobileAppMicrosoftStoreForBusinessAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MicrosoftStoreForBusinessApp, error) {
+func (r *DeviceAppManagementMobileAppsCollectionMicrosoftStoreForBusinessAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MicrosoftStoreForBusinessApp, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -617,7 +617,7 @@ func (r *MobileAppMicrosoftStoreForBusinessAppCollectionRequest) Paging(ctx cont
 }
 
 // GetN performs GET request for MicrosoftStoreForBusinessApp collection, max N pages
-func (r *MobileAppMicrosoftStoreForBusinessAppCollectionRequest) GetN(ctx context.Context, n int) ([]MicrosoftStoreForBusinessApp, error) {
+func (r *DeviceAppManagementMobileAppsCollectionMicrosoftStoreForBusinessAppCollectionRequest) GetN(ctx context.Context, n int) ([]MicrosoftStoreForBusinessApp, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -626,12 +626,12 @@ func (r *MobileAppMicrosoftStoreForBusinessAppCollectionRequest) GetN(ctx contex
 }
 
 // Get performs GET request for MicrosoftStoreForBusinessApp collection
-func (r *MobileAppMicrosoftStoreForBusinessAppCollectionRequest) Get(ctx context.Context) ([]MicrosoftStoreForBusinessApp, error) {
+func (r *DeviceAppManagementMobileAppsCollectionMicrosoftStoreForBusinessAppCollectionRequest) Get(ctx context.Context) ([]MicrosoftStoreForBusinessApp, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for MicrosoftStoreForBusinessApp collection
-func (r *MobileAppMicrosoftStoreForBusinessAppCollectionRequest) Add(ctx context.Context, reqObj *MicrosoftStoreForBusinessApp) (resObj *MicrosoftStoreForBusinessApp, err error) {
+func (r *DeviceAppManagementMobileAppsCollectionMicrosoftStoreForBusinessAppCollectionRequest) Add(ctx context.Context, reqObj *MicrosoftStoreForBusinessApp) (resObj *MicrosoftStoreForBusinessApp, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

@@ -29,7 +29,7 @@ type TeamworkSendActivityNotificationToRecipientsRequestParameter struct {
 	Recipients []TeamworkNotificationRecipient `json:"recipients,omitempty"`
 }
 
-// DeletedTeams returns request builder for DeletedTeam collection rcn
+// DeletedTeams returns request builder for DeletedTeam collection
 func (b *TeamworkRequestBuilder) DeletedTeams() *TeamworkDeletedTeamsCollectionRequestBuilder {
 	bb := &TeamworkDeletedTeamsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deletedTeams"
@@ -132,7 +132,7 @@ func (r *TeamworkDeletedTeamsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// WorkforceIntegrations returns request builder for WorkforceIntegration collection rcn
+// WorkforceIntegrations returns request builder for WorkforceIntegration collection
 func (b *TeamworkRequestBuilder) WorkforceIntegrations() *TeamworkWorkforceIntegrationsCollectionRequestBuilder {
 	bb := &TeamworkWorkforceIntegrationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/workforceIntegrations"
@@ -235,7 +235,7 @@ func (r *TeamworkWorkforceIntegrationsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Members returns request builder for TeamworkTagMember collection rcn
+// Members returns request builder for TeamworkTagMember collection
 func (b *TeamworkTagRequestBuilder) Members() *TeamworkTagMembersCollectionRequestBuilder {
 	bb := &TeamworkTagMembersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/members"

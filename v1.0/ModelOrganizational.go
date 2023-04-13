@@ -7,7 +7,7 @@ type OrganizationalBranding struct {
 	// OrganizationalBrandingProperties is the base model of OrganizationalBranding
 	OrganizationalBrandingProperties
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Localizations undocumented
 	Localizations []OrganizationalBrandingLocalization `json:"localizations,omitempty"`
 }
@@ -24,7 +24,7 @@ type OrganizationalBrandingLocalization struct {
 	// OrganizationalBrandingProperties is the base model of OrganizationalBrandingLocalization
 	OrganizationalBrandingProperties
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewOrganizationalBrandingLocalization() (*OrganizationalBrandingLocalization, error) {
@@ -39,7 +39,7 @@ type OrganizationalBrandingProperties struct {
 	// Entity is the base model of OrganizationalBrandingProperties
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BackgroundColor undocumented
 	BackgroundColor *string `json:"backgroundColor,omitempty"`
 	// BackgroundImage undocumented

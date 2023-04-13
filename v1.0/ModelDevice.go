@@ -9,7 +9,7 @@ type Device struct {
 	// DirectoryObject is the base model of Device
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccountEnabled undocumented
 	AccountEnabled *bool `json:"accountEnabled,omitempty"`
 	// AlternativeSecurityIDs undocumented
@@ -72,7 +72,7 @@ type DeviceActionResult struct {
 	// Object is the base model of DeviceActionResult
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActionName undocumented
 	ActionName *string `json:"actionName,omitempty"`
 	// ActionState undocumented
@@ -95,7 +95,7 @@ type DeviceAndAppManagementAssignmentTarget struct {
 	// Object is the base model of DeviceAndAppManagementAssignmentTarget
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewDeviceAndAppManagementAssignmentTarget() (*DeviceAndAppManagementAssignmentTarget, error) {
@@ -110,7 +110,7 @@ type DeviceAndAppManagementData struct {
 	// Object is the base model of DeviceAndAppManagementData
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *Stream `json:"content,omitempty"`
 }
@@ -127,7 +127,7 @@ type DeviceAndAppManagementRoleAssignment struct {
 	// RoleAssignment is the base model of DeviceAndAppManagementRoleAssignment
 	RoleAssignment
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Members undocumented
 	Members []string `json:"members,omitempty"`
 }
@@ -144,7 +144,7 @@ type DeviceAndAppManagementRoleDefinition struct {
 	// RoleDefinition is the base model of DeviceAndAppManagementRoleDefinition
 	RoleDefinition
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewDeviceAndAppManagementRoleDefinition() (*DeviceAndAppManagementRoleDefinition, error) {
@@ -159,7 +159,7 @@ type DeviceAppManagement struct {
 	// Entity is the base model of DeviceAppManagement
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsEnabledForMicrosoftStoreForBusiness undocumented
 	IsEnabledForMicrosoftStoreForBusiness *bool `json:"isEnabledForMicrosoftStoreForBusiness,omitempty"`
 	// MicrosoftStoreForBusinessLanguage undocumented
@@ -210,7 +210,7 @@ type DeviceCategory struct {
 	// Entity is the base model of DeviceCategory
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -229,7 +229,7 @@ type DeviceComplianceActionItem struct {
 	// Entity is the base model of DeviceComplianceActionItem
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActionType undocumented
 	ActionType *DeviceComplianceActionType `json:"actionType,omitempty"`
 	// GracePeriodHours undocumented
@@ -252,7 +252,7 @@ type DeviceComplianceDeviceOverview struct {
 	// Entity is the base model of DeviceComplianceDeviceOverview
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConfigurationVersion undocumented
 	ConfigurationVersion *int `json:"configurationVersion,omitempty"`
 	// ErrorCount undocumented
@@ -281,7 +281,7 @@ type DeviceComplianceDeviceStatus struct {
 	// Entity is the base model of DeviceComplianceDeviceStatus
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ComplianceGracePeriodExpirationDateTime undocumented
 	ComplianceGracePeriodExpirationDateTime *time.Time `json:"complianceGracePeriodExpirationDateTime,omitempty"`
 	// DeviceDisplayName undocumented
@@ -310,7 +310,7 @@ type DeviceCompliancePolicy struct {
 	// Entity is the base model of DeviceCompliancePolicy
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -349,7 +349,7 @@ type DeviceCompliancePolicyAssignment struct {
 	// Entity is the base model of DeviceCompliancePolicyAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
@@ -366,7 +366,7 @@ type DeviceCompliancePolicyDeviceStateSummary struct {
 	// Entity is the base model of DeviceCompliancePolicyDeviceStateSummary
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CompliantDeviceCount undocumented
 	CompliantDeviceCount *int `json:"compliantDeviceCount,omitempty"`
 	// ConfigManagerCount undocumented
@@ -399,7 +399,7 @@ type DeviceCompliancePolicySettingState struct {
 	// Object is the base model of DeviceCompliancePolicySettingState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CurrentValue undocumented
 	CurrentValue *string `json:"currentValue,omitempty"`
 	// ErrorCode undocumented
@@ -438,7 +438,7 @@ type DeviceCompliancePolicySettingStateSummary struct {
 	// Entity is the base model of DeviceCompliancePolicySettingStateSummary
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CompliantDeviceCount undocumented
 	CompliantDeviceCount *int `json:"compliantDeviceCount,omitempty"`
 	// ConflictDeviceCount undocumented
@@ -475,7 +475,7 @@ type DeviceCompliancePolicyState struct {
 	// Entity is the base model of DeviceCompliancePolicyState
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// PlatformType undocumented
@@ -502,7 +502,7 @@ type DeviceComplianceScheduledActionForRule struct {
 	// Entity is the base model of DeviceComplianceScheduledActionForRule
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RuleName undocumented
 	RuleName *string `json:"ruleName,omitempty"`
 	// ScheduledActionConfigurations undocumented
@@ -521,7 +521,7 @@ type DeviceComplianceSettingState struct {
 	// Entity is the base model of DeviceComplianceSettingState
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ComplianceGracePeriodExpirationDateTime undocumented
 	ComplianceGracePeriodExpirationDateTime *time.Time `json:"complianceGracePeriodExpirationDateTime,omitempty"`
 	// DeviceID undocumented
@@ -558,7 +558,7 @@ type DeviceComplianceUserOverview struct {
 	// Entity is the base model of DeviceComplianceUserOverview
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConfigurationVersion undocumented
 	ConfigurationVersion *int `json:"configurationVersion,omitempty"`
 	// ErrorCount undocumented
@@ -587,7 +587,7 @@ type DeviceComplianceUserStatus struct {
 	// Entity is the base model of DeviceComplianceUserStatus
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DevicesCount undocumented
 	DevicesCount *int `json:"devicesCount,omitempty"`
 	// LastReportedDateTime undocumented
@@ -612,7 +612,7 @@ type DeviceConfiguration struct {
 	// Entity is the base model of DeviceConfiguration
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -649,7 +649,7 @@ type DeviceConfigurationAssignment struct {
 	// Entity is the base model of DeviceConfigurationAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
@@ -666,7 +666,7 @@ type DeviceConfigurationDeviceOverview struct {
 	// Entity is the base model of DeviceConfigurationDeviceOverview
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConfigurationVersion undocumented
 	ConfigurationVersion *int `json:"configurationVersion,omitempty"`
 	// ErrorCount undocumented
@@ -695,7 +695,7 @@ type DeviceConfigurationDeviceStateSummary struct {
 	// Entity is the base model of DeviceConfigurationDeviceStateSummary
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CompliantDeviceCount undocumented
 	CompliantDeviceCount *int `json:"compliantDeviceCount,omitempty"`
 	// ConflictDeviceCount undocumented
@@ -724,7 +724,7 @@ type DeviceConfigurationDeviceStatus struct {
 	// Entity is the base model of DeviceConfigurationDeviceStatus
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ComplianceGracePeriodExpirationDateTime undocumented
 	ComplianceGracePeriodExpirationDateTime *time.Time `json:"complianceGracePeriodExpirationDateTime,omitempty"`
 	// DeviceDisplayName undocumented
@@ -753,7 +753,7 @@ type DeviceConfigurationSettingState struct {
 	// Object is the base model of DeviceConfigurationSettingState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CurrentValue undocumented
 	CurrentValue *string `json:"currentValue,omitempty"`
 	// ErrorCode undocumented
@@ -792,7 +792,7 @@ type DeviceConfigurationState struct {
 	// Entity is the base model of DeviceConfigurationState
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// PlatformType undocumented
@@ -819,7 +819,7 @@ type DeviceConfigurationUserOverview struct {
 	// Entity is the base model of DeviceConfigurationUserOverview
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConfigurationVersion undocumented
 	ConfigurationVersion *int `json:"configurationVersion,omitempty"`
 	// ErrorCount undocumented
@@ -848,7 +848,7 @@ type DeviceConfigurationUserStatus struct {
 	// Entity is the base model of DeviceConfigurationUserStatus
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DevicesCount undocumented
 	DevicesCount *int `json:"devicesCount,omitempty"`
 	// LastReportedDateTime undocumented
@@ -873,7 +873,7 @@ type DeviceDetail struct {
 	// Object is the base model of DeviceDetail
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Browser undocumented
 	Browser *string `json:"browser,omitempty"`
 	// DeviceID undocumented
@@ -902,7 +902,7 @@ type DeviceEnrollmentConfiguration struct {
 	// Entity is the base model of DeviceEnrollmentConfiguration
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -931,7 +931,7 @@ type DeviceEnrollmentLimitConfiguration struct {
 	// DeviceEnrollmentConfiguration is the base model of DeviceEnrollmentLimitConfiguration
 	DeviceEnrollmentConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Limit undocumented
 	Limit *int `json:"limit,omitempty"`
 }
@@ -948,7 +948,7 @@ type DeviceEnrollmentPlatformRestriction struct {
 	// Object is the base model of DeviceEnrollmentPlatformRestriction
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OsMaximumVersion undocumented
 	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
 	// OsMinimumVersion undocumented
@@ -971,7 +971,7 @@ type DeviceEnrollmentPlatformRestrictionsConfiguration struct {
 	// DeviceEnrollmentConfiguration is the base model of DeviceEnrollmentPlatformRestrictionsConfiguration
 	DeviceEnrollmentConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AndroidRestriction undocumented
 	AndroidRestriction *DeviceEnrollmentPlatformRestriction `json:"androidRestriction,omitempty"`
 	// IOSRestriction undocumented
@@ -996,7 +996,7 @@ type DeviceEnrollmentWindowsHelloForBusinessConfiguration struct {
 	// DeviceEnrollmentConfiguration is the base model of DeviceEnrollmentWindowsHelloForBusinessConfiguration
 	DeviceEnrollmentConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EnhancedBiometricsState undocumented
 	EnhancedBiometricsState *Enablement `json:"enhancedBiometricsState,omitempty"`
 	// PinExpirationInDays undocumented
@@ -1035,7 +1035,7 @@ type DeviceExchangeAccessStateSummary struct {
 	// Object is the base model of DeviceExchangeAccessStateSummary
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowedDeviceCount undocumented
 	AllowedDeviceCount *int `json:"allowedDeviceCount,omitempty"`
 	// BlockedDeviceCount undocumented
@@ -1060,7 +1060,7 @@ type DeviceGeoLocation struct {
 	// Object is the base model of DeviceGeoLocation
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Altitude undocumented
 	Altitude *float64 `json:"altitude,omitempty"`
 	// Heading undocumented
@@ -1091,7 +1091,7 @@ type DeviceHealthAttestationState struct {
 	// Object is the base model of DeviceHealthAttestationState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AttestationIdentityKey undocumented
 	AttestationIdentityKey *string `json:"attestationIdentityKey,omitempty"`
 	// BitLockerStatus undocumented
@@ -1170,7 +1170,7 @@ type DeviceInstallState struct {
 	// Entity is the base model of DeviceInstallState
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeviceID undocumented
 	DeviceID *string `json:"deviceId,omitempty"`
 	// DeviceName undocumented
@@ -1201,7 +1201,7 @@ type DeviceManagement struct {
 	// Entity is the base model of DeviceManagement
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IntuneAccountID undocumented
 	IntuneAccountID *UUID `json:"intuneAccountId,omitempty"`
 	// Settings undocumented
@@ -1288,7 +1288,7 @@ type DeviceManagementExchangeConnector struct {
 	// Entity is the base model of DeviceManagementExchangeConnector
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConnectorServerName undocumented
 	ConnectorServerName *string `json:"connectorServerName,omitempty"`
 	// ExchangeAlias undocumented
@@ -1321,7 +1321,7 @@ type DeviceManagementExportJob struct {
 	// Entity is the base model of DeviceManagementExportJob
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExpirationDateTime undocumented
 	ExpirationDateTime *time.Time `json:"expirationDateTime,omitempty"`
 	// Filter undocumented
@@ -1356,7 +1356,7 @@ type DeviceManagementPartner struct {
 	// Entity is the base model of DeviceManagementPartner
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// GroupsRequiringPartnerEnrollment undocumented
@@ -1389,7 +1389,7 @@ type DeviceManagementPartnerAssignment struct {
 	// Object is the base model of DeviceManagementPartnerAssignment
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
@@ -1406,7 +1406,7 @@ type DeviceManagementReports struct {
 	// Entity is the base model of DeviceManagementReports
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExportJobs undocumented
 	ExportJobs []DeviceManagementExportJob `json:"exportJobs,omitempty"`
 }
@@ -1423,7 +1423,7 @@ type DeviceManagementSettings struct {
 	// Object is the base model of DeviceManagementSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeviceComplianceCheckinThresholdDays undocumented
 	DeviceComplianceCheckinThresholdDays *int `json:"deviceComplianceCheckinThresholdDays,omitempty"`
 	// IsScheduledActionEnabled undocumented
@@ -1444,7 +1444,7 @@ type DeviceManagementTroubleshootingEvent struct {
 	// Entity is the base model of DeviceManagementTroubleshootingEvent
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CorrelationID undocumented
 	CorrelationID *string `json:"correlationId,omitempty"`
 	// EventDateTime undocumented
@@ -1463,7 +1463,7 @@ type DeviceOperatingSystemSummary struct {
 	// Object is the base model of DeviceOperatingSystemSummary
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AndroidCorporateWorkProfileCount undocumented
 	AndroidCorporateWorkProfileCount *int `json:"androidCorporateWorkProfileCount,omitempty"`
 	// AndroidCount undocumented

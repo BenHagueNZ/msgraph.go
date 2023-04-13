@@ -268,6 +268,28 @@ func (r *PrinterStatusRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+type PrinterCollectionCreateRequestBuilder struct{ BaseRequestBuilder }
+
+// Create action undocumentedrav
+func (b *PrintPrintersCollectionRequestBuilder) Create(reqObj *PrinterCollectionCreateRequestParameter) *PrinterCollectionCreateRequestBuilder {
+	bb := &PrinterCollectionCreateRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Create"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type PrinterCollectionCreateRequest struct{ BaseRequest }
+
+func (b *PrinterCollectionCreateRequestBuilder) Request() *PrinterCollectionCreateRequest {
+	return &PrinterCollectionCreateRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *PrinterCollectionCreateRequest) Post(ctx context.Context) error {
+	return r.JSONRequest(ctx, "POST", "", r.requestObject, nil)
+}
+
 type PrinterRestoreFactoryDefaultsRequestBuilder struct{ BaseRequestBuilder }
 
 // RestoreFactoryDefaults action undocumentedrav

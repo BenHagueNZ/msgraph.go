@@ -9,7 +9,7 @@ type Bitlocker struct {
 	// Entity is the base model of Bitlocker
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RecoveryKeys undocumented
 	RecoveryKeys []BitlockerRecoveryKey `json:"recoveryKeys,omitempty"`
 }
@@ -26,7 +26,7 @@ type BitlockerRecoveryKey struct {
 	// Entity is the base model of BitlockerRecoveryKey
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// DeviceID undocumented

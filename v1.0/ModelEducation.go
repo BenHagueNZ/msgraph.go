@@ -9,7 +9,7 @@ type EducationAssignment struct {
 	// Entity is the base model of EducationAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AddedStudentAction undocumented
 	AddedStudentAction *EducationAddedStudentAction `json:"addedStudentAction,omitempty"`
 	// AddToCalendarAction undocumented
@@ -76,7 +76,7 @@ type EducationAssignmentClassRecipient struct {
 	// EducationAssignmentRecipient is the base model of EducationAssignmentClassRecipient
 	EducationAssignmentRecipient
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewEducationAssignmentClassRecipient() (*EducationAssignmentClassRecipient, error) {
@@ -91,7 +91,7 @@ type EducationAssignmentDefaults struct {
 	// Entity is the base model of EducationAssignmentDefaults
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AddedStudentAction undocumented
 	AddedStudentAction *EducationAddedStudentAction `json:"addedStudentAction,omitempty"`
 	// AddToCalendarAction undocumented
@@ -114,7 +114,7 @@ type EducationAssignmentGrade struct {
 	// Object is the base model of EducationAssignmentGrade
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// GradedBy undocumented
 	GradedBy *IdentitySet `json:"gradedBy,omitempty"`
 	// GradedDateTime undocumented
@@ -133,7 +133,7 @@ type EducationAssignmentGradeType struct {
 	// Object is the base model of EducationAssignmentGradeType
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewEducationAssignmentGradeType() (*EducationAssignmentGradeType, error) {
@@ -148,7 +148,7 @@ type EducationAssignmentGroupRecipient struct {
 	// EducationAssignmentRecipient is the base model of EducationAssignmentGroupRecipient
 	EducationAssignmentRecipient
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewEducationAssignmentGroupRecipient() (*EducationAssignmentGroupRecipient, error) {
@@ -163,7 +163,7 @@ type EducationAssignmentIndividualRecipient struct {
 	// EducationAssignmentRecipient is the base model of EducationAssignmentIndividualRecipient
 	EducationAssignmentRecipient
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Recipients undocumented
 	Recipients []string `json:"recipients,omitempty"`
 }
@@ -180,7 +180,7 @@ type EducationAssignmentPointsGrade struct {
 	// EducationAssignmentGrade is the base model of EducationAssignmentPointsGrade
 	EducationAssignmentGrade
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Points undocumented
 	Points *float64 `json:"points,omitempty"`
 }
@@ -197,7 +197,7 @@ type EducationAssignmentPointsGradeType struct {
 	// EducationAssignmentGradeType is the base model of EducationAssignmentPointsGradeType
 	EducationAssignmentGradeType
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MaxPoints undocumented
 	MaxPoints *float64 `json:"maxPoints,omitempty"`
 }
@@ -214,7 +214,7 @@ type EducationAssignmentRecipient struct {
 	// Object is the base model of EducationAssignmentRecipient
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewEducationAssignmentRecipient() (*EducationAssignmentRecipient, error) {
@@ -229,7 +229,7 @@ type EducationAssignmentResource struct {
 	// Entity is the base model of EducationAssignmentResource
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DistributeForStudentWork undocumented
 	DistributeForStudentWork *bool `json:"distributeForStudentWork,omitempty"`
 	// Resource undocumented
@@ -248,7 +248,7 @@ type EducationAssignmentSettings struct {
 	// Entity is the base model of EducationAssignmentSettings
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// SubmissionAnimationDisabled undocumented
 	SubmissionAnimationDisabled *bool `json:"submissionAnimationDisabled,omitempty"`
 }
@@ -265,7 +265,7 @@ type EducationCategory struct {
 	// Entity is the base model of EducationCategory
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 }
@@ -282,7 +282,7 @@ type EducationClass struct {
 	// Entity is the base model of EducationClass
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ClassCode undocumented
 	ClassCode *string `json:"classCode,omitempty"`
 	// Course undocumented
@@ -337,7 +337,7 @@ type EducationCourse struct {
 	// Object is the base model of EducationCourse
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CourseNumber undocumented
 	CourseNumber *string `json:"courseNumber,omitempty"`
 	// Description undocumented
@@ -362,7 +362,7 @@ type EducationExcelResource struct {
 	// EducationResource is the base model of EducationExcelResource
 	EducationResource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FileURL undocumented
 	FileURL *string `json:"fileUrl,omitempty"`
 }
@@ -379,7 +379,7 @@ type EducationExternalResource struct {
 	// EducationResource is the base model of EducationExternalResource
 	EducationResource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// WebURL undocumented
 	WebURL *string `json:"webUrl,omitempty"`
 }
@@ -396,7 +396,7 @@ type EducationFeedback struct {
 	// Object is the base model of EducationFeedback
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FeedbackBy undocumented
 	FeedbackBy *IdentitySet `json:"feedbackBy,omitempty"`
 	// FeedbackDateTime undocumented
@@ -417,7 +417,7 @@ type EducationFeedbackOutcome struct {
 	// EducationOutcome is the base model of EducationFeedbackOutcome
 	EducationOutcome
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Feedback undocumented
 	Feedback *EducationFeedback `json:"feedback,omitempty"`
 	// PublishedFeedback undocumented
@@ -436,7 +436,7 @@ type EducationFeedbackResourceOutcome struct {
 	// EducationOutcome is the base model of EducationFeedbackResourceOutcome
 	EducationOutcome
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FeedbackResource undocumented
 	FeedbackResource *EducationResource `json:"feedbackResource,omitempty"`
 	// ResourceStatus undocumented
@@ -455,7 +455,7 @@ type EducationFileResource struct {
 	// EducationResource is the base model of EducationFileResource
 	EducationResource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FileURL undocumented
 	FileURL *string `json:"fileUrl,omitempty"`
 }
@@ -472,7 +472,7 @@ type EducationItemBody struct {
 	// Object is the base model of EducationItemBody
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *string `json:"content,omitempty"`
 	// ContentType undocumented
@@ -491,7 +491,7 @@ type EducationLinkResource struct {
 	// EducationResource is the base model of EducationLinkResource
 	EducationResource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Link undocumented
 	Link *string `json:"link,omitempty"`
 }
@@ -508,7 +508,7 @@ type EducationMediaResource struct {
 	// EducationResource is the base model of EducationMediaResource
 	EducationResource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FileURL undocumented
 	FileURL *string `json:"fileUrl,omitempty"`
 }
@@ -525,7 +525,7 @@ type EducationOnPremisesInfo struct {
 	// Object is the base model of EducationOnPremisesInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ImmutableID undocumented
 	ImmutableID *string `json:"immutableId,omitempty"`
 }
@@ -542,7 +542,7 @@ type EducationOrganization struct {
 	// Entity is the base model of EducationOrganization
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -565,7 +565,7 @@ type EducationOutcome struct {
 	// Entity is the base model of EducationOutcome
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// LastModifiedBy undocumented
 	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
 	// LastModifiedDateTime undocumented
@@ -584,7 +584,7 @@ type EducationPointsOutcome struct {
 	// EducationOutcome is the base model of EducationPointsOutcome
 	EducationOutcome
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Points undocumented
 	Points *EducationAssignmentPointsGrade `json:"points,omitempty"`
 	// PublishedPoints undocumented
@@ -603,7 +603,7 @@ type EducationPowerPointResource struct {
 	// EducationResource is the base model of EducationPowerPointResource
 	EducationResource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FileURL undocumented
 	FileURL *string `json:"fileUrl,omitempty"`
 }
@@ -620,7 +620,7 @@ type EducationResource struct {
 	// Object is the base model of EducationResource
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -645,7 +645,7 @@ type EducationRoot struct {
 	// Object is the base model of EducationRoot
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Classes undocumented
 	Classes []EducationClass `json:"classes,omitempty"`
 	// Me undocumented
@@ -668,7 +668,7 @@ type EducationRubric struct {
 	// Entity is the base model of EducationRubric
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -701,7 +701,7 @@ type EducationRubricOutcome struct {
 	// EducationOutcome is the base model of EducationRubricOutcome
 	EducationOutcome
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// PublishedRubricQualityFeedback undocumented
 	PublishedRubricQualityFeedback []RubricQualityFeedbackModel `json:"publishedRubricQualityFeedback,omitempty"`
 	// PublishedRubricQualitySelectedLevels undocumented
@@ -724,7 +724,7 @@ type EducationSchool struct {
 	// EducationOrganization is the base model of EducationSchool
 	EducationOrganization
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Address undocumented
 	Address *PhysicalAddress `json:"address,omitempty"`
 	// CreatedBy undocumented
@@ -767,7 +767,7 @@ type EducationStudent struct {
 	// Object is the base model of EducationStudent
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BirthDate undocumented
 	BirthDate *Date `json:"birthDate,omitempty"`
 	// ExternalID undocumented
@@ -794,7 +794,7 @@ type EducationSubmission struct {
 	// Entity is the base model of EducationSubmission
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ReassignedBy undocumented
 	ReassignedBy *IdentitySet `json:"reassignedBy,omitempty"`
 	// ReassignedDateTime undocumented
@@ -837,7 +837,7 @@ type EducationSubmissionIndividualRecipient struct {
 	// EducationSubmissionRecipient is the base model of EducationSubmissionIndividualRecipient
 	EducationSubmissionRecipient
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UserID undocumented
 	UserID *string `json:"userId,omitempty"`
 }
@@ -854,7 +854,7 @@ type EducationSubmissionRecipient struct {
 	// Object is the base model of EducationSubmissionRecipient
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewEducationSubmissionRecipient() (*EducationSubmissionRecipient, error) {
@@ -869,7 +869,7 @@ type EducationSubmissionResource struct {
 	// Entity is the base model of EducationSubmissionResource
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignmentResourceURL undocumented
 	AssignmentResourceURL *string `json:"assignmentResourceUrl,omitempty"`
 	// Resource undocumented
@@ -888,7 +888,7 @@ type EducationTeacher struct {
 	// Object is the base model of EducationTeacher
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExternalID undocumented
 	ExternalID *string `json:"externalId,omitempty"`
 	// TeacherNumber undocumented
@@ -907,7 +907,7 @@ type EducationTeamsAppResource struct {
 	// EducationResource is the base model of EducationTeamsAppResource
 	EducationResource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppIconWebURL undocumented
 	AppIconWebURL *string `json:"appIconWebUrl,omitempty"`
 	// AppID undocumented
@@ -930,7 +930,7 @@ type EducationTerm struct {
 	// Object is the base model of EducationTerm
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// EndDate undocumented
@@ -953,7 +953,7 @@ type EducationUser struct {
 	// Entity is the base model of EducationUser
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RelatedContacts undocumented
 	RelatedContacts []RelatedContact `json:"relatedContacts,omitempty"`
 	// AccountEnabled undocumented
@@ -1044,7 +1044,7 @@ type EducationWordResource struct {
 	// EducationResource is the base model of EducationWordResource
 	EducationResource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FileURL undocumented
 	FileURL *string `json:"fileUrl,omitempty"`
 }

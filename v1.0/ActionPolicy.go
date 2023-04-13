@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// ActivityBasedTimeoutPolicies returns request builder for ActivityBasedTimeoutPolicy collection rcn
+// ActivityBasedTimeoutPolicies returns request builder for ActivityBasedTimeoutPolicy collection
 func (b *PolicyRootRequestBuilder) ActivityBasedTimeoutPolicies() *PolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder {
 	bb := &PolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/activityBasedTimeoutPolicies"
@@ -121,7 +121,7 @@ func (b *PolicyRootRequestBuilder) AdminConsentRequestPolicy() *AdminConsentRequ
 	return bb
 }
 
-// AppManagementPolicies returns request builder for AppManagementPolicy collection rcn
+// AppManagementPolicies returns request builder for AppManagementPolicy collection
 func (b *PolicyRootRequestBuilder) AppManagementPolicies() *PolicyRootAppManagementPoliciesCollectionRequestBuilder {
 	bb := &PolicyRootAppManagementPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appManagementPolicies"
@@ -245,7 +245,7 @@ func (b *PolicyRootRequestBuilder) AuthorizationPolicy() *AuthorizationPolicyReq
 	return bb
 }
 
-// ClaimsMappingPolicies returns request builder for ClaimsMappingPolicy collection rcn
+// ClaimsMappingPolicies returns request builder for ClaimsMappingPolicy collection
 func (b *PolicyRootRequestBuilder) ClaimsMappingPolicies() *PolicyRootClaimsMappingPoliciesCollectionRequestBuilder {
 	bb := &PolicyRootClaimsMappingPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/claimsMappingPolicies"
@@ -348,7 +348,7 @@ func (r *PolicyRootClaimsMappingPoliciesCollectionRequest) Add(ctx context.Conte
 	return
 }
 
-// ConditionalAccessPolicies returns request builder for ConditionalAccessPolicy collection rcn
+// ConditionalAccessPolicies returns request builder for ConditionalAccessPolicy collection
 func (b *PolicyRootRequestBuilder) ConditionalAccessPolicies() *PolicyRootConditionalAccessPoliciesCollectionRequestBuilder {
 	bb := &PolicyRootConditionalAccessPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/conditionalAccessPolicies"
@@ -465,7 +465,7 @@ func (b *PolicyRootRequestBuilder) DefaultAppManagementPolicy() *TenantAppManage
 	return bb
 }
 
-// FeatureRolloutPolicies returns request builder for FeatureRolloutPolicy collection rcn
+// FeatureRolloutPolicies returns request builder for FeatureRolloutPolicy collection
 func (b *PolicyRootRequestBuilder) FeatureRolloutPolicies() *PolicyRootFeatureRolloutPoliciesCollectionRequestBuilder {
 	bb := &PolicyRootFeatureRolloutPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/featureRolloutPolicies"
@@ -568,7 +568,7 @@ func (r *PolicyRootFeatureRolloutPoliciesCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// HomeRealmDiscoveryPolicies returns request builder for HomeRealmDiscoveryPolicy collection rcn
+// HomeRealmDiscoveryPolicies returns request builder for HomeRealmDiscoveryPolicy collection
 func (b *PolicyRootRequestBuilder) HomeRealmDiscoveryPolicies() *PolicyRootHomeRealmDiscoveryPoliciesCollectionRequestBuilder {
 	bb := &PolicyRootHomeRealmDiscoveryPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/homeRealmDiscoveryPolicies"
@@ -678,7 +678,7 @@ func (b *PolicyRootRequestBuilder) IdentitySecurityDefaultsEnforcementPolicy() *
 	return bb
 }
 
-// PermissionGrantPolicies returns request builder for PermissionGrantPolicy collection rcn
+// PermissionGrantPolicies returns request builder for PermissionGrantPolicy collection
 func (b *PolicyRootRequestBuilder) PermissionGrantPolicies() *PolicyRootPermissionGrantPoliciesCollectionRequestBuilder {
 	bb := &PolicyRootPermissionGrantPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/permissionGrantPolicies"
@@ -781,7 +781,7 @@ func (r *PolicyRootPermissionGrantPoliciesCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// RoleManagementPolicies returns request builder for UnifiedRoleManagementPolicy collection rcn
+// RoleManagementPolicies returns request builder for UnifiedRoleManagementPolicy collection
 func (b *PolicyRootRequestBuilder) RoleManagementPolicies() *PolicyRootRoleManagementPoliciesCollectionRequestBuilder {
 	bb := &PolicyRootRoleManagementPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleManagementPolicies"
@@ -884,7 +884,7 @@ func (r *PolicyRootRoleManagementPoliciesCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// RoleManagementPolicyAssignments returns request builder for UnifiedRoleManagementPolicyAssignment collection rcn
+// RoleManagementPolicyAssignments returns request builder for UnifiedRoleManagementPolicyAssignment collection
 func (b *PolicyRootRequestBuilder) RoleManagementPolicyAssignments() *PolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder {
 	bb := &PolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleManagementPolicyAssignments"
@@ -987,7 +987,7 @@ func (r *PolicyRootRoleManagementPolicyAssignmentsCollectionRequest) Add(ctx con
 	return
 }
 
-// TokenIssuancePolicies returns request builder for TokenIssuancePolicy collection rcn
+// TokenIssuancePolicies returns request builder for TokenIssuancePolicy collection
 func (b *PolicyRootRequestBuilder) TokenIssuancePolicies() *PolicyRootTokenIssuancePoliciesCollectionRequestBuilder {
 	bb := &PolicyRootTokenIssuancePoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tokenIssuancePolicies"
@@ -1090,7 +1090,7 @@ func (r *PolicyRootTokenIssuancePoliciesCollectionRequest) Add(ctx context.Conte
 	return
 }
 
-// TokenLifetimePolicies returns request builder for TokenLifetimePolicy collection rcn
+// TokenLifetimePolicies returns request builder for TokenLifetimePolicy collection
 func (b *PolicyRootRequestBuilder) TokenLifetimePolicies() *PolicyRootTokenLifetimePoliciesCollectionRequestBuilder {
 	bb := &PolicyRootTokenLifetimePoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/tokenLifetimePolicies"
@@ -1193,35 +1193,35 @@ func (r *PolicyRootTokenLifetimePoliciesCollectionRequest) Add(ctx context.Conte
 	return
 }
 
-// PolicyBase returns request builder for PolicyBase collection rcn
-func (b *DirectoryObjectRequestBuilder) PolicyBase() *DirectoryObjectPolicyBaseCollectionRequestBuilder {
-	bb := &DirectoryObjectPolicyBaseCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/PolicyBase"
+// PolicyBase returns request builder for PolicyBase collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) PolicyBase() *AdministrativeUnitMembersCollectionPolicyBaseCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionPolicyBaseCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DirectoryObjectPolicyBaseCollectionRequestBuilder is request builder for PolicyBase collection
-type DirectoryObjectPolicyBaseCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AdministrativeUnitMembersCollectionPolicyBaseCollectionRequestBuilder is request builder for PolicyBase collection
+type AdministrativeUnitMembersCollectionPolicyBaseCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PolicyBase collection
-func (b *DirectoryObjectPolicyBaseCollectionRequestBuilder) Request() *DirectoryObjectPolicyBaseCollectionRequest {
-	return &DirectoryObjectPolicyBaseCollectionRequest{
+func (b *AdministrativeUnitMembersCollectionPolicyBaseCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionPolicyBaseCollectionRequest {
+	return &AdministrativeUnitMembersCollectionPolicyBaseCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for PolicyBase item
-func (b *DirectoryObjectPolicyBaseCollectionRequestBuilder) ID(id string) *PolicyBaseRequestBuilder {
+func (b *AdministrativeUnitMembersCollectionPolicyBaseCollectionRequestBuilder) ID(id string) *PolicyBaseRequestBuilder {
 	bb := &PolicyBaseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DirectoryObjectPolicyBaseCollectionRequest is request for PolicyBase collection
-type DirectoryObjectPolicyBaseCollectionRequest struct{ BaseRequest }
+// AdministrativeUnitMembersCollectionPolicyBaseCollectionRequest is request for PolicyBase collection
+type AdministrativeUnitMembersCollectionPolicyBaseCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for PolicyBase collection
-func (r *DirectoryObjectPolicyBaseCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]PolicyBase, error) {
+func (r *AdministrativeUnitMembersCollectionPolicyBaseCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]PolicyBase, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -1277,7 +1277,7 @@ func (r *DirectoryObjectPolicyBaseCollectionRequest) Paging(ctx context.Context,
 }
 
 // GetN performs GET request for PolicyBase collection, max N pages
-func (r *DirectoryObjectPolicyBaseCollectionRequest) GetN(ctx context.Context, n int) ([]PolicyBase, error) {
+func (r *AdministrativeUnitMembersCollectionPolicyBaseCollectionRequest) GetN(ctx context.Context, n int) ([]PolicyBase, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1286,12 +1286,12 @@ func (r *DirectoryObjectPolicyBaseCollectionRequest) GetN(ctx context.Context, n
 }
 
 // Get performs GET request for PolicyBase collection
-func (r *DirectoryObjectPolicyBaseCollectionRequest) Get(ctx context.Context) ([]PolicyBase, error) {
+func (r *AdministrativeUnitMembersCollectionPolicyBaseCollectionRequest) Get(ctx context.Context) ([]PolicyBase, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for PolicyBase collection
-func (r *DirectoryObjectPolicyBaseCollectionRequest) Add(ctx context.Context, reqObj *PolicyBase) (resObj *PolicyBase, err error) {
+func (r *AdministrativeUnitMembersCollectionPolicyBaseCollectionRequest) Add(ctx context.Context, reqObj *PolicyBase) (resObj *PolicyBase, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

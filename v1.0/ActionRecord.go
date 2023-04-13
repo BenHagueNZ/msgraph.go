@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// RecordOperation returns request builder for RecordOperation collection rcn
-func (b *CommsOperationRequestBuilder) RecordOperation() *CommsOperationRecordOperationCollectionRequestBuilder {
-	bb := &CommsOperationRecordOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/RecordOperation"
+// RecordOperation returns request builder for RecordOperation collection
+func (b *CallOperationsCollectionRequestBuilder) RecordOperation() *CallOperationsCollectionRecordOperationCollectionRequestBuilder {
+	bb := &CallOperationsCollectionRecordOperationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// CommsOperationRecordOperationCollectionRequestBuilder is request builder for RecordOperation collection
-type CommsOperationRecordOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// CallOperationsCollectionRecordOperationCollectionRequestBuilder is request builder for RecordOperation collection
+type CallOperationsCollectionRecordOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for RecordOperation collection
-func (b *CommsOperationRecordOperationCollectionRequestBuilder) Request() *CommsOperationRecordOperationCollectionRequest {
-	return &CommsOperationRecordOperationCollectionRequest{
+func (b *CallOperationsCollectionRecordOperationCollectionRequestBuilder) Request() *CallOperationsCollectionRecordOperationCollectionRequest {
+	return &CallOperationsCollectionRecordOperationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for RecordOperation item
-func (b *CommsOperationRecordOperationCollectionRequestBuilder) ID(id string) *RecordOperationRequestBuilder {
+func (b *CallOperationsCollectionRecordOperationCollectionRequestBuilder) ID(id string) *RecordOperationRequestBuilder {
 	bb := &RecordOperationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// CommsOperationRecordOperationCollectionRequest is request for RecordOperation collection
-type CommsOperationRecordOperationCollectionRequest struct{ BaseRequest }
+// CallOperationsCollectionRecordOperationCollectionRequest is request for RecordOperation collection
+type CallOperationsCollectionRecordOperationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for RecordOperation collection
-func (r *CommsOperationRecordOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RecordOperation, error) {
+func (r *CallOperationsCollectionRecordOperationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]RecordOperation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *CommsOperationRecordOperationCollectionRequest) Paging(ctx context.Cont
 }
 
 // GetN performs GET request for RecordOperation collection, max N pages
-func (r *CommsOperationRecordOperationCollectionRequest) GetN(ctx context.Context, n int) ([]RecordOperation, error) {
+func (r *CallOperationsCollectionRecordOperationCollectionRequest) GetN(ctx context.Context, n int) ([]RecordOperation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *CommsOperationRecordOperationCollectionRequest) GetN(ctx context.Contex
 }
 
 // Get performs GET request for RecordOperation collection
-func (r *CommsOperationRecordOperationCollectionRequest) Get(ctx context.Context) ([]RecordOperation, error) {
+func (r *CallOperationsCollectionRecordOperationCollectionRequest) Get(ctx context.Context) ([]RecordOperation, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for RecordOperation collection
-func (r *CommsOperationRecordOperationCollectionRequest) Add(ctx context.Context, reqObj *RecordOperation) (resObj *RecordOperation, err error) {
+func (r *CallOperationsCollectionRecordOperationCollectionRequest) Add(ctx context.Context, reqObj *RecordOperation) (resObj *RecordOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

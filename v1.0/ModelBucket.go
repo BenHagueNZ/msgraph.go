@@ -7,7 +7,7 @@ type BucketAggregationDefinition struct {
 	// Object is the base model of BucketAggregationDefinition
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsDescending undocumented
 	IsDescending *bool `json:"isDescending,omitempty"`
 	// MinimumCount undocumented
@@ -32,7 +32,7 @@ type BucketAggregationRange struct {
 	// Object is the base model of BucketAggregationRange
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// From undocumented
 	From *string `json:"from,omitempty"`
 	// To undocumented

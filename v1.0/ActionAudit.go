@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// DirectoryAudits returns request builder for DirectoryAudit collection rcn
+// DirectoryAudits returns request builder for DirectoryAudit collection
 func (b *AuditLogRootRequestBuilder) DirectoryAudits() *AuditLogRootDirectoryAuditsCollectionRequestBuilder {
 	bb := &AuditLogRootDirectoryAuditsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/directoryAudits"
@@ -114,7 +114,7 @@ func (r *AuditLogRootDirectoryAuditsCollectionRequest) Add(ctx context.Context, 
 	return
 }
 
-// Provisioning returns request builder for ProvisioningObjectSummary collection rcn
+// Provisioning returns request builder for ProvisioningObjectSummary collection
 func (b *AuditLogRootRequestBuilder) Provisioning() *AuditLogRootProvisioningCollectionRequestBuilder {
 	bb := &AuditLogRootProvisioningCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/provisioning"
@@ -217,7 +217,7 @@ func (r *AuditLogRootProvisioningCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// SignIns returns request builder for SignIn collection rcn
+// SignIns returns request builder for SignIn collection
 func (b *AuditLogRootRequestBuilder) SignIns() *AuditLogRootSignInsCollectionRequestBuilder {
 	bb := &AuditLogRootSignInsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/signIns"

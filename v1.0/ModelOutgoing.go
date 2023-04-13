@@ -7,7 +7,7 @@ type OutgoingCallOptions struct {
 	// CallOptions is the base model of OutgoingCallOptions
 	CallOptions
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewOutgoingCallOptions() (*OutgoingCallOptions, error) {

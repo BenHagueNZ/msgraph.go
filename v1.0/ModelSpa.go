@@ -7,7 +7,7 @@ type SpaApplication struct {
 	// Object is the base model of SpaApplication
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RedirectUris undocumented
 	RedirectUris []string `json:"redirectUris,omitempty"`
 }

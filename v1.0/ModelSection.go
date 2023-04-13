@@ -7,7 +7,7 @@ type SectionGroup struct {
 	// OnenoteEntityHierarchyModel is the base model of SectionGroup
 	OnenoteEntityHierarchyModel
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// SectionGroupsURL undocumented
 	SectionGroupsURL *string `json:"sectionGroupsUrl,omitempty"`
 	// SectionsURL undocumented
@@ -34,7 +34,7 @@ type SectionLinks struct {
 	// Object is the base model of SectionLinks
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OneNoteClientURL undocumented
 	OneNoteClientURL *ExternalLink `json:"oneNoteClientUrl,omitempty"`
 	// OneNoteWebURL undocumented

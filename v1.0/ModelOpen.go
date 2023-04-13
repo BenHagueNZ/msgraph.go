@@ -7,7 +7,7 @@ type OpenShift struct {
 	// ChangeTrackedEntity is the base model of OpenShift
 	ChangeTrackedEntity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DraftOpenShift undocumented
 	DraftOpenShift *OpenShiftItem `json:"draftOpenShift,omitempty"`
 	// SchedulingGroupID undocumented
@@ -28,7 +28,7 @@ type OpenShiftChangeRequestObject struct {
 	// ScheduleChangeRequestObject is the base model of OpenShiftChangeRequestObject
 	ScheduleChangeRequestObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OpenShiftID undocumented
 	OpenShiftID *string `json:"openShiftId,omitempty"`
 }
@@ -45,7 +45,7 @@ type OpenShiftItem struct {
 	// ShiftItem is the base model of OpenShiftItem
 	ShiftItem
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OpenSlotCount undocumented
 	OpenSlotCount *int `json:"openSlotCount,omitempty"`
 }
@@ -62,7 +62,7 @@ type OpenTypeExtension struct {
 	// Extension is the base model of OpenTypeExtension
 	Extension
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExtensionName undocumented
 	ExtensionName *string `json:"extensionName,omitempty"`
 }

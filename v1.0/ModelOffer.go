@@ -9,7 +9,7 @@ type OfferShiftRequestObject struct {
 	// ScheduleChangeRequestObject is the base model of OfferShiftRequestObject
 	ScheduleChangeRequestObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RecipientActionDateTime undocumented
 	RecipientActionDateTime *time.Time `json:"recipientActionDateTime,omitempty"`
 	// RecipientActionMessage undocumented

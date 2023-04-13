@@ -7,7 +7,7 @@ type CustomTimeZone struct {
 	// TimeZoneBase is the base model of CustomTimeZone
 	TimeZoneBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Bias undocumented
 	Bias *int `json:"bias,omitempty"`
 	// DaylightOffset undocumented

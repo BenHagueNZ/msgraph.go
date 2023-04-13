@@ -9,7 +9,7 @@ type VerifiedDomain struct {
 	// Object is the base model of VerifiedDomain
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Capabilities undocumented
 	Capabilities *string `json:"capabilities,omitempty"`
 	// IsDefault undocumented
@@ -34,7 +34,7 @@ type VerifiedPublisher struct {
 	// Object is the base model of VerifiedPublisher
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AddedDateTime undocumented
 	AddedDateTime *time.Time `json:"addedDateTime,omitempty"`
 	// DisplayName undocumented

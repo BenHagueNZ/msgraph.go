@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// SubjectRightsRequests returns request builder for SubjectRightsRequestObject collection rcn
+// SubjectRightsRequests returns request builder for SubjectRightsRequestObject collection
 func (b *PrivacyRequestBuilder) SubjectRightsRequests() *PrivacySubjectRightsRequestsCollectionRequestBuilder {
 	bb := &PrivacySubjectRightsRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/subjectRightsRequests"

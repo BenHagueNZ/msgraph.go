@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Runs returns request builder for SimulationAutomationRun collection rcn
+// Runs returns request builder for SimulationAutomationRun collection
 func (b *SimulationAutomationRequestBuilder) Runs() *SimulationAutomationRunsCollectionRequestBuilder {
 	bb := &SimulationAutomationRunsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/runs"

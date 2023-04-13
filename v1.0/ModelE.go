@@ -7,7 +7,7 @@ type EBookInstallSummary struct {
 	// Entity is the base model of EBookInstallSummary
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FailedDeviceCount undocumented
 	FailedDeviceCount *int `json:"failedDeviceCount,omitempty"`
 	// FailedUserCount undocumented

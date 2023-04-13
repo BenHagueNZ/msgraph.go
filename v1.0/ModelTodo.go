@@ -9,7 +9,7 @@ type Todo struct {
 	// Entity is the base model of Todo
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Lists undocumented
 	Lists []TodoTaskList `json:"lists,omitempty"`
 }
@@ -26,7 +26,7 @@ type TodoTask struct {
 	// Entity is the base model of TodoTask
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Body undocumented
 	Body *ItemBody `json:"body,omitempty"`
 	// BodyLastModifiedDateTime undocumented
@@ -81,7 +81,7 @@ type TodoTaskList struct {
 	// Entity is the base model of TodoTaskList
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// IsOwner undocumented

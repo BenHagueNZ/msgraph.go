@@ -7,7 +7,7 @@ type Windows81CompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of Windows81CompliancePolicy
 	DeviceCompliancePolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OsMaximumVersion undocumented
 	OsMaximumVersion *string `json:"osMaximumVersion,omitempty"`
 	// OsMinimumVersion undocumented
@@ -44,7 +44,7 @@ type Windows81GeneralConfiguration struct {
 	// DeviceConfiguration is the base model of Windows81GeneralConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccountsBlockAddingNonMicrosoftAccountEmail undocumented
 	AccountsBlockAddingNonMicrosoftAccountEmail *bool `json:"accountsBlockAddingNonMicrosoftAccountEmail,omitempty"`
 	// ApplyOnlyToWindows81 undocumented

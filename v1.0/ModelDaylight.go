@@ -7,7 +7,7 @@ type DaylightTimeZoneOffset struct {
 	// StandardTimeZoneOffset is the base model of DaylightTimeZoneOffset
 	StandardTimeZoneOffset
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DaylightBias undocumented
 	DaylightBias *int `json:"daylightBias,omitempty"`
 }

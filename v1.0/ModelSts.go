@@ -7,7 +7,7 @@ type StsPolicy struct {
 	// PolicyBase is the base model of StsPolicy
 	PolicyBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Definition undocumented
 	Definition []string `json:"definition,omitempty"`
 	// IsOrganizationDefault undocumented

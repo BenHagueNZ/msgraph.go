@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// EditionUpgradeConfiguration returns request builder for EditionUpgradeConfiguration collection rcn
-func (b *DeviceConfigurationRequestBuilder) EditionUpgradeConfiguration() *DeviceConfigurationEditionUpgradeConfigurationCollectionRequestBuilder {
-	bb := &DeviceConfigurationEditionUpgradeConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/EditionUpgradeConfiguration"
+// EditionUpgradeConfiguration returns request builder for EditionUpgradeConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) EditionUpgradeConfiguration() *DeviceManagementDeviceConfigurationsCollectionEditionUpgradeConfigurationCollectionRequestBuilder {
+	bb := &DeviceManagementDeviceConfigurationsCollectionEditionUpgradeConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DeviceConfigurationEditionUpgradeConfigurationCollectionRequestBuilder is request builder for EditionUpgradeConfiguration collection
-type DeviceConfigurationEditionUpgradeConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceManagementDeviceConfigurationsCollectionEditionUpgradeConfigurationCollectionRequestBuilder is request builder for EditionUpgradeConfiguration collection
+type DeviceManagementDeviceConfigurationsCollectionEditionUpgradeConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EditionUpgradeConfiguration collection
-func (b *DeviceConfigurationEditionUpgradeConfigurationCollectionRequestBuilder) Request() *DeviceConfigurationEditionUpgradeConfigurationCollectionRequest {
-	return &DeviceConfigurationEditionUpgradeConfigurationCollectionRequest{
+func (b *DeviceManagementDeviceConfigurationsCollectionEditionUpgradeConfigurationCollectionRequestBuilder) Request() *DeviceManagementDeviceConfigurationsCollectionEditionUpgradeConfigurationCollectionRequest {
+	return &DeviceManagementDeviceConfigurationsCollectionEditionUpgradeConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for EditionUpgradeConfiguration item
-func (b *DeviceConfigurationEditionUpgradeConfigurationCollectionRequestBuilder) ID(id string) *EditionUpgradeConfigurationRequestBuilder {
+func (b *DeviceManagementDeviceConfigurationsCollectionEditionUpgradeConfigurationCollectionRequestBuilder) ID(id string) *EditionUpgradeConfigurationRequestBuilder {
 	bb := &EditionUpgradeConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DeviceConfigurationEditionUpgradeConfigurationCollectionRequest is request for EditionUpgradeConfiguration collection
-type DeviceConfigurationEditionUpgradeConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceManagementDeviceConfigurationsCollectionEditionUpgradeConfigurationCollectionRequest is request for EditionUpgradeConfiguration collection
+type DeviceManagementDeviceConfigurationsCollectionEditionUpgradeConfigurationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for EditionUpgradeConfiguration collection
-func (r *DeviceConfigurationEditionUpgradeConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EditionUpgradeConfiguration, error) {
+func (r *DeviceManagementDeviceConfigurationsCollectionEditionUpgradeConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EditionUpgradeConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *DeviceConfigurationEditionUpgradeConfigurationCollectionRequest) Paging
 }
 
 // GetN performs GET request for EditionUpgradeConfiguration collection, max N pages
-func (r *DeviceConfigurationEditionUpgradeConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]EditionUpgradeConfiguration, error) {
+func (r *DeviceManagementDeviceConfigurationsCollectionEditionUpgradeConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]EditionUpgradeConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *DeviceConfigurationEditionUpgradeConfigurationCollectionRequest) GetN(c
 }
 
 // Get performs GET request for EditionUpgradeConfiguration collection
-func (r *DeviceConfigurationEditionUpgradeConfigurationCollectionRequest) Get(ctx context.Context) ([]EditionUpgradeConfiguration, error) {
+func (r *DeviceManagementDeviceConfigurationsCollectionEditionUpgradeConfigurationCollectionRequest) Get(ctx context.Context) ([]EditionUpgradeConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for EditionUpgradeConfiguration collection
-func (r *DeviceConfigurationEditionUpgradeConfigurationCollectionRequest) Add(ctx context.Context, reqObj *EditionUpgradeConfiguration) (resObj *EditionUpgradeConfiguration, err error) {
+func (r *DeviceManagementDeviceConfigurationsCollectionEditionUpgradeConfigurationCollectionRequest) Add(ctx context.Context, reqObj *EditionUpgradeConfiguration) (resObj *EditionUpgradeConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

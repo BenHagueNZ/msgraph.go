@@ -7,7 +7,7 @@ type CalculatedColumn struct {
 	// Object is the base model of CalculatedColumn
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Format undocumented
 	Format *string `json:"format,omitempty"`
 	// Formula undocumented

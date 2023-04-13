@@ -9,7 +9,7 @@ type OutlookCategory struct {
 	// Entity is the base model of OutlookCategory
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Color undocumented
 	Color *CategoryColor `json:"color,omitempty"`
 	// DisplayName undocumented
@@ -28,7 +28,7 @@ type OutlookGeoCoordinates struct {
 	// Object is the base model of OutlookGeoCoordinates
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Accuracy undocumented
 	Accuracy *float64 `json:"accuracy,omitempty"`
 	// Altitude undocumented
@@ -53,7 +53,7 @@ type OutlookItem struct {
 	// Entity is the base model of OutlookItem
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Categories undocumented
 	Categories []string `json:"categories,omitempty"`
 	// ChangeKey undocumented
@@ -76,7 +76,7 @@ type OutlookUser struct {
 	// Entity is the base model of OutlookUser
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MasterCategories undocumented
 	MasterCategories []OutlookCategory `json:"masterCategories,omitempty"`
 }

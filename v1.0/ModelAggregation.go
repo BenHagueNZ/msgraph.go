@@ -7,7 +7,7 @@ type AggregationOption struct {
 	// Object is the base model of AggregationOption
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BucketDefinition undocumented
 	BucketDefinition *BucketAggregationDefinition `json:"bucketDefinition,omitempty"`
 	// Field undocumented

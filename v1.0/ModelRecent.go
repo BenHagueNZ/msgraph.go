@@ -9,7 +9,7 @@ type RecentNotebook struct {
 	// Object is the base model of RecentNotebook
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// LastAccessedTime undocumented
@@ -32,7 +32,7 @@ type RecentNotebookLinks struct {
 	// Object is the base model of RecentNotebookLinks
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OneNoteClientURL undocumented
 	OneNoteClientURL *ExternalLink `json:"oneNoteClientUrl,omitempty"`
 	// OneNoteWebURL undocumented

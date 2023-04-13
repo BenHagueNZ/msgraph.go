@@ -7,7 +7,7 @@ type Recipient struct {
 	// Object is the base model of Recipient
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EmailAddress undocumented
 	EmailAddress *EmailAddress `json:"emailAddress,omitempty"`
 }

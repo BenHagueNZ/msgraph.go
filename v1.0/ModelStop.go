@@ -7,7 +7,7 @@ type StopHoldMusicOperation struct {
 	// CommsOperation is the base model of StopHoldMusicOperation
 	CommsOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewStopHoldMusicOperation() (*StopHoldMusicOperation, error) {

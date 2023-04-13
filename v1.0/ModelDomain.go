@@ -9,7 +9,7 @@ type Domain struct {
 	// Entity is the base model of Domain
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AuthenticationType undocumented
 	AuthenticationType *string `json:"authenticationType,omitempty"`
 	// AvailabilityStatus undocumented
@@ -58,7 +58,7 @@ type DomainDnsCnameRecord struct {
 	// DomainDnsRecord is the base model of DomainDnsCnameRecord
 	DomainDnsRecord
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CanonicalName undocumented
 	CanonicalName *string `json:"canonicalName,omitempty"`
 }
@@ -75,7 +75,7 @@ type DomainDnsMxRecord struct {
 	// DomainDnsRecord is the base model of DomainDnsMxRecord
 	DomainDnsRecord
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// MailExchange undocumented
 	MailExchange *string `json:"mailExchange,omitempty"`
 	// Preference undocumented
@@ -94,7 +94,7 @@ type DomainDnsRecord struct {
 	// Entity is the base model of DomainDnsRecord
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsOptional undocumented
 	IsOptional *bool `json:"isOptional,omitempty"`
 	// Label undocumented
@@ -119,7 +119,7 @@ type DomainDnsSrvRecord struct {
 	// DomainDnsRecord is the base model of DomainDnsSrvRecord
 	DomainDnsRecord
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// NameTarget undocumented
 	NameTarget *string `json:"nameTarget,omitempty"`
 	// Port undocumented
@@ -146,7 +146,7 @@ type DomainDnsTxtRecord struct {
 	// DomainDnsRecord is the base model of DomainDnsTxtRecord
 	DomainDnsRecord
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Text undocumented
 	Text *string `json:"text,omitempty"`
 }
@@ -163,7 +163,7 @@ type DomainDnsUnavailableRecord struct {
 	// DomainDnsRecord is the base model of DomainDnsUnavailableRecord
 	DomainDnsRecord
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 }
@@ -180,7 +180,7 @@ type DomainIdentitySource struct {
 	// IdentitySource is the base model of DomainIdentitySource
 	IdentitySource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// DomainName undocumented
@@ -199,7 +199,7 @@ type DomainState struct {
 	// Object is the base model of DomainState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// LastActionDateTime undocumented
 	LastActionDateTime *time.Time `json:"lastActionDateTime,omitempty"`
 	// Operation undocumented

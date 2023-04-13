@@ -7,7 +7,7 @@ type UsedInsight struct {
 	// Entity is the base model of UsedInsight
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// LastUsed undocumented
 	LastUsed *UsageDetails `json:"lastUsed,omitempty"`
 	// ResourceReference undocumented

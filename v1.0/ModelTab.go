@@ -7,7 +7,7 @@ type TabUpdatedEventMessageDetail struct {
 	// EventMessageDetail is the base model of TabUpdatedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Initiator undocumented
 	Initiator *IdentitySet `json:"initiator,omitempty"`
 	// TabID undocumented

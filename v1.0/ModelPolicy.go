@@ -7,7 +7,7 @@ type PolicyBase struct {
 	// DirectoryObject is the base model of PolicyBase
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -26,7 +26,7 @@ type PolicyRoot struct {
 	// Entity is the base model of PolicyRoot
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AuthenticationMethodsPolicy undocumented
 	AuthenticationMethodsPolicy *AuthenticationMethodsPolicy `json:"authenticationMethodsPolicy,omitempty"`
 	// AuthenticationFlowsPolicy undocumented

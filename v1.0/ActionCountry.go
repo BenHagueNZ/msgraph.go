@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// CountryNamedLocation returns request builder for CountryNamedLocation collection rcn
-func (b *ConditionalAccessRootRequestBuilder) CountryNamedLocation() *NamedLocationCountryNamedLocationCollectionRequestBuilder {
-	bb := &NamedLocationCountryNamedLocationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/namedLocations"
+// CountryNamedLocation returns request builder for CountryNamedLocation collection
+func (b *ConditionalAccessRootNamedLocationsCollectionRequestBuilder) CountryNamedLocation() *ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequestBuilder {
+	bb := &ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// NamedLocationCountryNamedLocationCollectionRequestBuilder is request builder for CountryNamedLocation collection
-type NamedLocationCountryNamedLocationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequestBuilder is request builder for CountryNamedLocation collection
+type ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for CountryNamedLocation collection
-func (b *NamedLocationCountryNamedLocationCollectionRequestBuilder) Request() *NamedLocationCountryNamedLocationCollectionRequest {
-	return &NamedLocationCountryNamedLocationCollectionRequest{
+func (b *ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequestBuilder) Request() *ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequest {
+	return &ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for CountryNamedLocation item
-func (b *NamedLocationCountryNamedLocationCollectionRequestBuilder) ID(id string) *CountryNamedLocationRequestBuilder {
+func (b *ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequestBuilder) ID(id string) *CountryNamedLocationRequestBuilder {
 	bb := &CountryNamedLocationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// NamedLocationCountryNamedLocationCollectionRequest is request for CountryNamedLocation collection
-type NamedLocationCountryNamedLocationCollectionRequest struct{ BaseRequest }
+// ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequest is request for CountryNamedLocation collection
+type ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for CountryNamedLocation collection
-func (r *NamedLocationCountryNamedLocationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CountryNamedLocation, error) {
+func (r *ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CountryNamedLocation, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *NamedLocationCountryNamedLocationCollectionRequest) Paging(ctx context.
 }
 
 // GetN performs GET request for CountryNamedLocation collection, max N pages
-func (r *NamedLocationCountryNamedLocationCollectionRequest) GetN(ctx context.Context, n int) ([]CountryNamedLocation, error) {
+func (r *ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequest) GetN(ctx context.Context, n int) ([]CountryNamedLocation, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,12 +104,12 @@ func (r *NamedLocationCountryNamedLocationCollectionRequest) GetN(ctx context.Co
 }
 
 // Get performs GET request for CountryNamedLocation collection
-func (r *NamedLocationCountryNamedLocationCollectionRequest) Get(ctx context.Context) ([]CountryNamedLocation, error) {
+func (r *ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequest) Get(ctx context.Context) ([]CountryNamedLocation, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for CountryNamedLocation collection
-func (r *NamedLocationCountryNamedLocationCollectionRequest) Add(ctx context.Context, reqObj *CountryNamedLocation) (resObj *CountryNamedLocation, err error) {
+func (r *ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequest) Add(ctx context.Context, reqObj *CountryNamedLocation) (resObj *CountryNamedLocation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

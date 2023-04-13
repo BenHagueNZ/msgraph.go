@@ -9,7 +9,7 @@ type DocumentSet struct {
 	// Object is the base model of DocumentSet
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowedContentTypes undocumented
 	AllowedContentTypes []ContentTypeInfo `json:"allowedContentTypes,omitempty"`
 	// DefaultContents undocumented
@@ -38,7 +38,7 @@ type DocumentSetContent struct {
 	// Object is the base model of DocumentSetContent
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentType undocumented
 	ContentType *ContentTypeInfo `json:"contentType,omitempty"`
 	// FileName undocumented
@@ -59,7 +59,7 @@ type DocumentSetVersion struct {
 	// ListItemVersion is the base model of DocumentSetVersion
 	ListItemVersion
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Comment undocumented
 	Comment *string `json:"comment,omitempty"`
 	// CreatedBy undocumented
@@ -84,7 +84,7 @@ type DocumentSetVersionItem struct {
 	// Object is the base model of DocumentSetVersionItem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ItemID undocumented
 	ItemID *string `json:"itemId,omitempty"`
 	// Title undocumented

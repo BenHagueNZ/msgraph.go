@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// BookingBusinesses returns request builder for BookingBusiness collection rcn
+// BookingBusinesses returns request builder for BookingBusiness collection
 func (b *SolutionsRootRequestBuilder) BookingBusinesses() *SolutionsRootBookingBusinessesCollectionRequestBuilder {
 	bb := &SolutionsRootBookingBusinessesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/bookingBusinesses"
@@ -114,7 +114,7 @@ func (r *SolutionsRootBookingBusinessesCollectionRequest) Add(ctx context.Contex
 	return
 }
 
-// BookingCurrencies returns request builder for BookingCurrency collection rcn
+// BookingCurrencies returns request builder for BookingCurrency collection
 func (b *SolutionsRootRequestBuilder) BookingCurrencies() *SolutionsRootBookingCurrenciesCollectionRequestBuilder {
 	bb := &SolutionsRootBookingCurrenciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/bookingCurrencies"

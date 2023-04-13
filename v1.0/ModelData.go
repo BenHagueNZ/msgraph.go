@@ -9,7 +9,7 @@ type DataPolicyOperation struct {
 	// Entity is the base model of DataPolicyOperation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CompletedDateTime undocumented
 	CompletedDateTime *time.Time `json:"completedDateTime,omitempty"`
 	// Progress undocumented
@@ -36,7 +36,7 @@ type DataSubject struct {
 	// Object is the base model of DataSubject
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Email undocumented
 	Email *string `json:"email,omitempty"`
 	// FirstName undocumented

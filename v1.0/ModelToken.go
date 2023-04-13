@@ -7,7 +7,7 @@ type TokenIssuancePolicy struct {
 	// StsPolicy is the base model of TokenIssuancePolicy
 	StsPolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewTokenIssuancePolicy() (*TokenIssuancePolicy, error) {
@@ -22,7 +22,7 @@ type TokenLifetimePolicy struct {
 	// StsPolicy is the base model of TokenLifetimePolicy
 	StsPolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewTokenLifetimePolicy() (*TokenLifetimePolicy, error) {
@@ -37,7 +37,7 @@ type TokenMeetingInfo struct {
 	// MeetingInfo is the base model of TokenMeetingInfo
 	MeetingInfo
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Token undocumented
 	Token *string `json:"token,omitempty"`
 }

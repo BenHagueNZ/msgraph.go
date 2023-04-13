@@ -7,7 +7,7 @@ type PageLinks struct {
 	// Object is the base model of PageLinks
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OneNoteClientURL undocumented
 	OneNoteClientURL *ExternalLink `json:"oneNoteClientUrl,omitempty"`
 	// OneNoteWebURL undocumented

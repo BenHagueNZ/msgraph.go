@@ -445,7 +445,7 @@ type DeviceManagementReportsGetSettingNonComplianceReportRequestParameter struct
 	Filter *string `json:"filter,omitempty"`
 }
 
-// Extensions returns request builder for Extension collection rcn
+// Extensions returns request builder for Extension collection
 func (b *DeviceRequestBuilder) Extensions() *DeviceExtensionsCollectionRequestBuilder {
 	bb := &DeviceExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensions"
@@ -548,7 +548,7 @@ func (r *DeviceExtensionsCollectionRequest) Add(ctx context.Context, reqObj *Ext
 	return
 }
 
-// MemberOf returns request builder for DirectoryObject collection rcn
+// MemberOf returns request builder for DirectoryObject collection
 func (b *DeviceRequestBuilder) MemberOf() *DeviceMemberOfCollectionRequestBuilder {
 	bb := &DeviceMemberOfCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/memberOf"
@@ -651,7 +651,7 @@ func (r *DeviceMemberOfCollectionRequest) Add(ctx context.Context, reqObj *Direc
 	return
 }
 
-// RegisteredOwners returns request builder for DirectoryObject collection rcn
+// RegisteredOwners returns request builder for DirectoryObject collection
 func (b *DeviceRequestBuilder) RegisteredOwners() *DeviceRegisteredOwnersCollectionRequestBuilder {
 	bb := &DeviceRegisteredOwnersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/registeredOwners"
@@ -754,7 +754,7 @@ func (r *DeviceRegisteredOwnersCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// RegisteredUsers returns request builder for DirectoryObject collection rcn
+// RegisteredUsers returns request builder for DirectoryObject collection
 func (b *DeviceRequestBuilder) RegisteredUsers() *DeviceRegisteredUsersCollectionRequestBuilder {
 	bb := &DeviceRegisteredUsersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/registeredUsers"
@@ -857,7 +857,7 @@ func (r *DeviceRegisteredUsersCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// TransitiveMemberOf returns request builder for DirectoryObject collection rcn
+// TransitiveMemberOf returns request builder for DirectoryObject collection
 func (b *DeviceRequestBuilder) TransitiveMemberOf() *DeviceTransitiveMemberOfCollectionRequestBuilder {
 	bb := &DeviceTransitiveMemberOfCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/transitiveMemberOf"
@@ -960,7 +960,7 @@ func (r *DeviceTransitiveMemberOfCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// AndroidManagedAppProtections returns request builder for AndroidManagedAppProtection collection rcn
+// AndroidManagedAppProtections returns request builder for AndroidManagedAppProtection collection
 func (b *DeviceAppManagementRequestBuilder) AndroidManagedAppProtections() *DeviceAppManagementAndroidManagedAppProtectionsCollectionRequestBuilder {
 	bb := &DeviceAppManagementAndroidManagedAppProtectionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/androidManagedAppProtections"
@@ -1063,7 +1063,7 @@ func (r *DeviceAppManagementAndroidManagedAppProtectionsCollectionRequest) Add(c
 	return
 }
 
-// DefaultManagedAppProtections returns request builder for DefaultManagedAppProtection collection rcn
+// DefaultManagedAppProtections returns request builder for DefaultManagedAppProtection collection
 func (b *DeviceAppManagementRequestBuilder) DefaultManagedAppProtections() *DeviceAppManagementDefaultManagedAppProtectionsCollectionRequestBuilder {
 	bb := &DeviceAppManagementDefaultManagedAppProtectionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/defaultManagedAppProtections"
@@ -1166,7 +1166,7 @@ func (r *DeviceAppManagementDefaultManagedAppProtectionsCollectionRequest) Add(c
 	return
 }
 
-// IOSManagedAppProtections returns request builder for IOSManagedAppProtection collection rcn
+// IOSManagedAppProtections returns request builder for IOSManagedAppProtection collection
 func (b *DeviceAppManagementRequestBuilder) IOSManagedAppProtections() *DeviceAppManagementIOSManagedAppProtectionsCollectionRequestBuilder {
 	bb := &DeviceAppManagementIOSManagedAppProtectionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/iosManagedAppProtections"
@@ -1269,7 +1269,7 @@ func (r *DeviceAppManagementIOSManagedAppProtectionsCollectionRequest) Add(ctx c
 	return
 }
 
-// ManagedAppPolicies returns request builder for ManagedAppPolicy collection rcn
+// ManagedAppPolicies returns request builder for ManagedAppPolicy collection
 func (b *DeviceAppManagementRequestBuilder) ManagedAppPolicies() *DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder {
 	bb := &DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/managedAppPolicies"
@@ -1372,7 +1372,7 @@ func (r *DeviceAppManagementManagedAppPoliciesCollectionRequest) Add(ctx context
 	return
 }
 
-// ManagedAppRegistrations returns request builder for ManagedAppRegistration collection rcn
+// ManagedAppRegistrations returns request builder for ManagedAppRegistration collection
 func (b *DeviceAppManagementRequestBuilder) ManagedAppRegistrations() *DeviceAppManagementManagedAppRegistrationsCollectionRequestBuilder {
 	bb := &DeviceAppManagementManagedAppRegistrationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/managedAppRegistrations"
@@ -1475,7 +1475,7 @@ func (r *DeviceAppManagementManagedAppRegistrationsCollectionRequest) Add(ctx co
 	return
 }
 
-// ManagedAppStatuses returns request builder for ManagedAppStatus collection rcn
+// ManagedAppStatuses returns request builder for ManagedAppStatus collection
 func (b *DeviceAppManagementRequestBuilder) ManagedAppStatuses() *DeviceAppManagementManagedAppStatusesCollectionRequestBuilder {
 	bb := &DeviceAppManagementManagedAppStatusesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/managedAppStatuses"
@@ -1578,7 +1578,7 @@ func (r *DeviceAppManagementManagedAppStatusesCollectionRequest) Add(ctx context
 	return
 }
 
-// ManagedEBooks returns request builder for ManagedEBook collection rcn
+// ManagedEBooks returns request builder for ManagedEBook collection
 func (b *DeviceAppManagementRequestBuilder) ManagedEBooks() *DeviceAppManagementManagedEBooksCollectionRequestBuilder {
 	bb := &DeviceAppManagementManagedEBooksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/managedEBooks"
@@ -1681,7 +1681,7 @@ func (r *DeviceAppManagementManagedEBooksCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// MDMWindowsInformationProtectionPolicies returns request builder for MDMWindowsInformationProtectionPolicy collection rcn
+// MDMWindowsInformationProtectionPolicies returns request builder for MDMWindowsInformationProtectionPolicy collection
 func (b *DeviceAppManagementRequestBuilder) MDMWindowsInformationProtectionPolicies() *DeviceAppManagementMDMWindowsInformationProtectionPoliciesCollectionRequestBuilder {
 	bb := &DeviceAppManagementMDMWindowsInformationProtectionPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/mdmWindowsInformationProtectionPolicies"
@@ -1784,7 +1784,7 @@ func (r *DeviceAppManagementMDMWindowsInformationProtectionPoliciesCollectionReq
 	return
 }
 
-// MobileAppCategories returns request builder for MobileAppCategory collection rcn
+// MobileAppCategories returns request builder for MobileAppCategory collection
 func (b *DeviceAppManagementRequestBuilder) MobileAppCategories() *DeviceAppManagementMobileAppCategoriesCollectionRequestBuilder {
 	bb := &DeviceAppManagementMobileAppCategoriesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/mobileAppCategories"
@@ -1887,7 +1887,7 @@ func (r *DeviceAppManagementMobileAppCategoriesCollectionRequest) Add(ctx contex
 	return
 }
 
-// MobileAppConfigurations returns request builder for ManagedDeviceMobileAppConfiguration collection rcn
+// MobileAppConfigurations returns request builder for ManagedDeviceMobileAppConfiguration collection
 func (b *DeviceAppManagementRequestBuilder) MobileAppConfigurations() *DeviceAppManagementMobileAppConfigurationsCollectionRequestBuilder {
 	bb := &DeviceAppManagementMobileAppConfigurationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/mobileAppConfigurations"
@@ -1990,7 +1990,7 @@ func (r *DeviceAppManagementMobileAppConfigurationsCollectionRequest) Add(ctx co
 	return
 }
 
-// MobileApps returns request builder for MobileApp collection rcn
+// MobileApps returns request builder for MobileApp collection
 func (b *DeviceAppManagementRequestBuilder) MobileApps() *DeviceAppManagementMobileAppsCollectionRequestBuilder {
 	bb := &DeviceAppManagementMobileAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/mobileApps"
@@ -2093,7 +2093,7 @@ func (r *DeviceAppManagementMobileAppsCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// TargetedManagedAppConfigurations returns request builder for TargetedManagedAppConfiguration collection rcn
+// TargetedManagedAppConfigurations returns request builder for TargetedManagedAppConfiguration collection
 func (b *DeviceAppManagementRequestBuilder) TargetedManagedAppConfigurations() *DeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder {
 	bb := &DeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/targetedManagedAppConfigurations"
@@ -2196,7 +2196,7 @@ func (r *DeviceAppManagementTargetedManagedAppConfigurationsCollectionRequest) A
 	return
 }
 
-// VPPTokens returns request builder for VPPToken collection rcn
+// VPPTokens returns request builder for VPPToken collection
 func (b *DeviceAppManagementRequestBuilder) VPPTokens() *DeviceAppManagementVPPTokensCollectionRequestBuilder {
 	bb := &DeviceAppManagementVPPTokensCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/vppTokens"
@@ -2299,7 +2299,7 @@ func (r *DeviceAppManagementVPPTokensCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// WindowsInformationProtectionPolicies returns request builder for WindowsInformationProtectionPolicy collection rcn
+// WindowsInformationProtectionPolicies returns request builder for WindowsInformationProtectionPolicy collection
 func (b *DeviceAppManagementRequestBuilder) WindowsInformationProtectionPolicies() *DeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder {
 	bb := &DeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/windowsInformationProtectionPolicies"
@@ -2402,7 +2402,7 @@ func (r *DeviceAppManagementWindowsInformationProtectionPoliciesCollectionReques
 	return
 }
 
-// Assignments returns request builder for DeviceCompliancePolicyAssignment collection rcn
+// Assignments returns request builder for DeviceCompliancePolicyAssignment collection
 func (b *DeviceCompliancePolicyRequestBuilder) Assignments() *DeviceCompliancePolicyAssignmentsCollectionRequestBuilder {
 	bb := &DeviceCompliancePolicyAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignments"
@@ -2505,7 +2505,7 @@ func (r *DeviceCompliancePolicyAssignmentsCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// DeviceSettingStateSummaries returns request builder for SettingStateDeviceSummary collection rcn
+// DeviceSettingStateSummaries returns request builder for SettingStateDeviceSummary collection
 func (b *DeviceCompliancePolicyRequestBuilder) DeviceSettingStateSummaries() *DeviceCompliancePolicyDeviceSettingStateSummariesCollectionRequestBuilder {
 	bb := &DeviceCompliancePolicyDeviceSettingStateSummariesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceSettingStateSummaries"
@@ -2615,7 +2615,7 @@ func (b *DeviceCompliancePolicyRequestBuilder) DeviceStatusOverview() *DeviceCom
 	return bb
 }
 
-// DeviceStatuses returns request builder for DeviceComplianceDeviceStatus collection rcn
+// DeviceStatuses returns request builder for DeviceComplianceDeviceStatus collection
 func (b *DeviceCompliancePolicyRequestBuilder) DeviceStatuses() *DeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder {
 	bb := &DeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceStatuses"
@@ -2718,7 +2718,7 @@ func (r *DeviceCompliancePolicyDeviceStatusesCollectionRequest) Add(ctx context.
 	return
 }
 
-// ScheduledActionsForRule returns request builder for DeviceComplianceScheduledActionForRule collection rcn
+// ScheduledActionsForRule returns request builder for DeviceComplianceScheduledActionForRule collection
 func (b *DeviceCompliancePolicyRequestBuilder) ScheduledActionsForRule() *DeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder {
 	bb := &DeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/scheduledActionsForRule"
@@ -2828,7 +2828,7 @@ func (b *DeviceCompliancePolicyRequestBuilder) UserStatusOverview() *DeviceCompl
 	return bb
 }
 
-// UserStatuses returns request builder for DeviceComplianceUserStatus collection rcn
+// UserStatuses returns request builder for DeviceComplianceUserStatus collection
 func (b *DeviceCompliancePolicyRequestBuilder) UserStatuses() *DeviceCompliancePolicyUserStatusesCollectionRequestBuilder {
 	bb := &DeviceCompliancePolicyUserStatusesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/userStatuses"
@@ -2931,7 +2931,7 @@ func (r *DeviceCompliancePolicyUserStatusesCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// DeviceComplianceSettingStates returns request builder for DeviceComplianceSettingState collection rcn
+// DeviceComplianceSettingStates returns request builder for DeviceComplianceSettingState collection
 func (b *DeviceCompliancePolicySettingStateSummaryRequestBuilder) DeviceComplianceSettingStates() *DeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionRequestBuilder {
 	bb := &DeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceComplianceSettingStates"
@@ -3034,7 +3034,7 @@ func (r *DeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesC
 	return
 }
 
-// ScheduledActionConfigurations returns request builder for DeviceComplianceActionItem collection rcn
+// ScheduledActionConfigurations returns request builder for DeviceComplianceActionItem collection
 func (b *DeviceComplianceScheduledActionForRuleRequestBuilder) ScheduledActionConfigurations() *DeviceComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionRequestBuilder {
 	bb := &DeviceComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/scheduledActionConfigurations"
@@ -3137,7 +3137,7 @@ func (r *DeviceComplianceScheduledActionForRuleScheduledActionConfigurationsColl
 	return
 }
 
-// Assignments returns request builder for DeviceConfigurationAssignment collection rcn
+// Assignments returns request builder for DeviceConfigurationAssignment collection
 func (b *DeviceConfigurationRequestBuilder) Assignments() *DeviceConfigurationAssignmentsCollectionRequestBuilder {
 	bb := &DeviceConfigurationAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignments"
@@ -3240,7 +3240,7 @@ func (r *DeviceConfigurationAssignmentsCollectionRequest) Add(ctx context.Contex
 	return
 }
 
-// DeviceSettingStateSummaries returns request builder for SettingStateDeviceSummary collection rcn
+// DeviceSettingStateSummaries returns request builder for SettingStateDeviceSummary collection
 func (b *DeviceConfigurationRequestBuilder) DeviceSettingStateSummaries() *DeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder {
 	bb := &DeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceSettingStateSummaries"
@@ -3350,7 +3350,7 @@ func (b *DeviceConfigurationRequestBuilder) DeviceStatusOverview() *DeviceConfig
 	return bb
 }
 
-// DeviceStatuses returns request builder for DeviceConfigurationDeviceStatus collection rcn
+// DeviceStatuses returns request builder for DeviceConfigurationDeviceStatus collection
 func (b *DeviceConfigurationRequestBuilder) DeviceStatuses() *DeviceConfigurationDeviceStatusesCollectionRequestBuilder {
 	bb := &DeviceConfigurationDeviceStatusesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceStatuses"
@@ -3460,7 +3460,7 @@ func (b *DeviceConfigurationRequestBuilder) UserStatusOverview() *DeviceConfigur
 	return bb
 }
 
-// UserStatuses returns request builder for DeviceConfigurationUserStatus collection rcn
+// UserStatuses returns request builder for DeviceConfigurationUserStatus collection
 func (b *DeviceConfigurationRequestBuilder) UserStatuses() *DeviceConfigurationUserStatusesCollectionRequestBuilder {
 	bb := &DeviceConfigurationUserStatusesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/userStatuses"
@@ -3563,7 +3563,7 @@ func (r *DeviceConfigurationUserStatusesCollectionRequest) Add(ctx context.Conte
 	return
 }
 
-// Assignments returns request builder for EnrollmentConfigurationAssignment collection rcn
+// Assignments returns request builder for EnrollmentConfigurationAssignment collection
 func (b *DeviceEnrollmentConfigurationRequestBuilder) Assignments() *DeviceEnrollmentConfigurationAssignmentsCollectionRequestBuilder {
 	bb := &DeviceEnrollmentConfigurationAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/assignments"
@@ -3673,7 +3673,7 @@ func (b *DeviceManagementRequestBuilder) ApplePushNotificationCertificate() *App
 	return bb
 }
 
-// AuditEvents returns request builder for AuditEvent collection rcn
+// AuditEvents returns request builder for AuditEvent collection
 func (b *DeviceManagementRequestBuilder) AuditEvents() *DeviceManagementAuditEventsCollectionRequestBuilder {
 	bb := &DeviceManagementAuditEventsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/auditEvents"
@@ -3776,7 +3776,7 @@ func (r *DeviceManagementAuditEventsCollectionRequest) Add(ctx context.Context, 
 	return
 }
 
-// ComplianceManagementPartners returns request builder for ComplianceManagementPartner collection rcn
+// ComplianceManagementPartners returns request builder for ComplianceManagementPartner collection
 func (b *DeviceManagementRequestBuilder) ComplianceManagementPartners() *DeviceManagementComplianceManagementPartnersCollectionRequestBuilder {
 	bb := &DeviceManagementComplianceManagementPartnersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/complianceManagementPartners"
@@ -3886,7 +3886,7 @@ func (b *DeviceManagementRequestBuilder) ConditionalAccessSettings() *OnPremises
 	return bb
 }
 
-// DetectedApps returns request builder for DetectedApp collection rcn
+// DetectedApps returns request builder for DetectedApp collection
 func (b *DeviceManagementRequestBuilder) DetectedApps() *DeviceManagementDetectedAppsCollectionRequestBuilder {
 	bb := &DeviceManagementDetectedAppsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/detectedApps"
@@ -3989,7 +3989,7 @@ func (r *DeviceManagementDetectedAppsCollectionRequest) Add(ctx context.Context,
 	return
 }
 
-// DeviceCategories returns request builder for DeviceCategory collection rcn
+// DeviceCategories returns request builder for DeviceCategory collection
 func (b *DeviceManagementRequestBuilder) DeviceCategories() *DeviceManagementDeviceCategoriesCollectionRequestBuilder {
 	bb := &DeviceManagementDeviceCategoriesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceCategories"
@@ -4092,7 +4092,7 @@ func (r *DeviceManagementDeviceCategoriesCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// DeviceCompliancePolicies returns request builder for DeviceCompliancePolicy collection rcn
+// DeviceCompliancePolicies returns request builder for DeviceCompliancePolicy collection
 func (b *DeviceManagementRequestBuilder) DeviceCompliancePolicies() *DeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder {
 	bb := &DeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceCompliancePolicies"
@@ -4202,7 +4202,7 @@ func (b *DeviceManagementRequestBuilder) DeviceCompliancePolicyDeviceStateSummar
 	return bb
 }
 
-// DeviceCompliancePolicySettingStateSummaries returns request builder for DeviceCompliancePolicySettingStateSummary collection rcn
+// DeviceCompliancePolicySettingStateSummaries returns request builder for DeviceCompliancePolicySettingStateSummary collection
 func (b *DeviceManagementRequestBuilder) DeviceCompliancePolicySettingStateSummaries() *DeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionRequestBuilder {
 	bb := &DeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceCompliancePolicySettingStateSummaries"
@@ -4312,7 +4312,7 @@ func (b *DeviceManagementRequestBuilder) DeviceConfigurationDeviceStateSummaries
 	return bb
 }
 
-// DeviceConfigurations returns request builder for DeviceConfiguration collection rcn
+// DeviceConfigurations returns request builder for DeviceConfiguration collection
 func (b *DeviceManagementRequestBuilder) DeviceConfigurations() *DeviceManagementDeviceConfigurationsCollectionRequestBuilder {
 	bb := &DeviceManagementDeviceConfigurationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceConfigurations"
@@ -4415,7 +4415,7 @@ func (r *DeviceManagementDeviceConfigurationsCollectionRequest) Add(ctx context.
 	return
 }
 
-// DeviceEnrollmentConfigurations returns request builder for DeviceEnrollmentConfiguration collection rcn
+// DeviceEnrollmentConfigurations returns request builder for DeviceEnrollmentConfiguration collection
 func (b *DeviceManagementRequestBuilder) DeviceEnrollmentConfigurations() *DeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder {
 	bb := &DeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceEnrollmentConfigurations"
@@ -4518,7 +4518,7 @@ func (r *DeviceManagementDeviceEnrollmentConfigurationsCollectionRequest) Add(ct
 	return
 }
 
-// DeviceManagementPartners returns request builder for DeviceManagementPartner collection rcn
+// DeviceManagementPartners returns request builder for DeviceManagementPartner collection
 func (b *DeviceManagementRequestBuilder) DeviceManagementPartners() *DeviceManagementDeviceManagementPartnersCollectionRequestBuilder {
 	bb := &DeviceManagementDeviceManagementPartnersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/deviceManagementPartners"
@@ -4621,7 +4621,7 @@ func (r *DeviceManagementDeviceManagementPartnersCollectionRequest) Add(ctx cont
 	return
 }
 
-// ExchangeConnectors returns request builder for DeviceManagementExchangeConnector collection rcn
+// ExchangeConnectors returns request builder for DeviceManagementExchangeConnector collection
 func (b *DeviceManagementRequestBuilder) ExchangeConnectors() *DeviceManagementExchangeConnectorsCollectionRequestBuilder {
 	bb := &DeviceManagementExchangeConnectorsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/exchangeConnectors"
@@ -4724,7 +4724,7 @@ func (r *DeviceManagementExchangeConnectorsCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// ImportedWindowsAutopilotDeviceIdentities returns request builder for ImportedWindowsAutopilotDeviceIdentity collection rcn
+// ImportedWindowsAutopilotDeviceIdentities returns request builder for ImportedWindowsAutopilotDeviceIdentity collection
 func (b *DeviceManagementRequestBuilder) ImportedWindowsAutopilotDeviceIdentities() *DeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder {
 	bb := &DeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/importedWindowsAutopilotDeviceIdentities"
@@ -4827,7 +4827,7 @@ func (r *DeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionReque
 	return
 }
 
-// IOSUpdateStatuses returns request builder for IOSUpdateDeviceStatus collection rcn
+// IOSUpdateStatuses returns request builder for IOSUpdateDeviceStatus collection
 func (b *DeviceManagementRequestBuilder) IOSUpdateStatuses() *DeviceManagementIOSUpdateStatusesCollectionRequestBuilder {
 	bb := &DeviceManagementIOSUpdateStatusesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/iosUpdateStatuses"
@@ -4937,7 +4937,7 @@ func (b *DeviceManagementRequestBuilder) ManagedDeviceOverview() *ManagedDeviceO
 	return bb
 }
 
-// ManagedDevices returns request builder for ManagedDevice collection rcn
+// ManagedDevices returns request builder for ManagedDevice collection
 func (b *DeviceManagementRequestBuilder) ManagedDevices() *DeviceManagementManagedDevicesCollectionRequestBuilder {
 	bb := &DeviceManagementManagedDevicesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/managedDevices"
@@ -5040,7 +5040,7 @@ func (r *DeviceManagementManagedDevicesCollectionRequest) Add(ctx context.Contex
 	return
 }
 
-// MobileThreatDefenseConnectors returns request builder for MobileThreatDefenseConnector collection rcn
+// MobileThreatDefenseConnectors returns request builder for MobileThreatDefenseConnector collection
 func (b *DeviceManagementRequestBuilder) MobileThreatDefenseConnectors() *DeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder {
 	bb := &DeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/mobileThreatDefenseConnectors"
@@ -5143,7 +5143,7 @@ func (r *DeviceManagementMobileThreatDefenseConnectorsCollectionRequest) Add(ctx
 	return
 }
 
-// NotificationMessageTemplates returns request builder for NotificationMessageTemplate collection rcn
+// NotificationMessageTemplates returns request builder for NotificationMessageTemplate collection
 func (b *DeviceManagementRequestBuilder) NotificationMessageTemplates() *DeviceManagementNotificationMessageTemplatesCollectionRequestBuilder {
 	bb := &DeviceManagementNotificationMessageTemplatesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/notificationMessageTemplates"
@@ -5246,7 +5246,7 @@ func (r *DeviceManagementNotificationMessageTemplatesCollectionRequest) Add(ctx 
 	return
 }
 
-// RemoteAssistancePartners returns request builder for RemoteAssistancePartner collection rcn
+// RemoteAssistancePartners returns request builder for RemoteAssistancePartner collection
 func (b *DeviceManagementRequestBuilder) RemoteAssistancePartners() *DeviceManagementRemoteAssistancePartnersCollectionRequestBuilder {
 	bb := &DeviceManagementRemoteAssistancePartnersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/remoteAssistancePartners"
@@ -5356,7 +5356,7 @@ func (b *DeviceManagementRequestBuilder) Reports() *DeviceManagementReportsReque
 	return bb
 }
 
-// ResourceOperations returns request builder for ResourceOperation collection rcn
+// ResourceOperations returns request builder for ResourceOperation collection
 func (b *DeviceManagementRequestBuilder) ResourceOperations() *DeviceManagementResourceOperationsCollectionRequestBuilder {
 	bb := &DeviceManagementResourceOperationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/resourceOperations"
@@ -5459,7 +5459,7 @@ func (r *DeviceManagementResourceOperationsCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// RoleAssignments returns request builder for DeviceAndAppManagementRoleAssignment collection rcn
+// RoleAssignments returns request builder for DeviceAndAppManagementRoleAssignment collection
 func (b *DeviceManagementRequestBuilder) RoleAssignments() *DeviceManagementRoleAssignmentsCollectionRequestBuilder {
 	bb := &DeviceManagementRoleAssignmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleAssignments"
@@ -5562,7 +5562,7 @@ func (r *DeviceManagementRoleAssignmentsCollectionRequest) Add(ctx context.Conte
 	return
 }
 
-// RoleDefinitions returns request builder for RoleDefinition collection rcn
+// RoleDefinitions returns request builder for RoleDefinition collection
 func (b *DeviceManagementRequestBuilder) RoleDefinitions() *DeviceManagementRoleDefinitionsCollectionRequestBuilder {
 	bb := &DeviceManagementRoleDefinitionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/roleDefinitions"
@@ -5672,7 +5672,7 @@ func (b *DeviceManagementRequestBuilder) SoftwareUpdateStatusSummary() *Software
 	return bb
 }
 
-// TelecomExpenseManagementPartners returns request builder for TelecomExpenseManagementPartner collection rcn
+// TelecomExpenseManagementPartners returns request builder for TelecomExpenseManagementPartner collection
 func (b *DeviceManagementRequestBuilder) TelecomExpenseManagementPartners() *DeviceManagementTelecomExpenseManagementPartnersCollectionRequestBuilder {
 	bb := &DeviceManagementTelecomExpenseManagementPartnersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/telecomExpenseManagementPartners"
@@ -5775,7 +5775,7 @@ func (r *DeviceManagementTelecomExpenseManagementPartnersCollectionRequest) Add(
 	return
 }
 
-// TermsAndConditions returns request builder for TermsAndConditions collection rcn
+// TermsAndConditions returns request builder for TermsAndConditions collection
 func (b *DeviceManagementRequestBuilder) TermsAndConditions() *DeviceManagementTermsAndConditionsCollectionRequestBuilder {
 	bb := &DeviceManagementTermsAndConditionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/termsAndConditions"
@@ -5878,7 +5878,7 @@ func (r *DeviceManagementTermsAndConditionsCollectionRequest) Add(ctx context.Co
 	return
 }
 
-// TroubleshootingEvents returns request builder for DeviceManagementTroubleshootingEvent collection rcn
+// TroubleshootingEvents returns request builder for DeviceManagementTroubleshootingEvent collection
 func (b *DeviceManagementRequestBuilder) TroubleshootingEvents() *DeviceManagementTroubleshootingEventsCollectionRequestBuilder {
 	bb := &DeviceManagementTroubleshootingEventsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/troubleshootingEvents"
@@ -5981,7 +5981,7 @@ func (r *DeviceManagementTroubleshootingEventsCollectionRequest) Add(ctx context
 	return
 }
 
-// WindowsAutopilotDeviceIdentities returns request builder for WindowsAutopilotDeviceIdentity collection rcn
+// WindowsAutopilotDeviceIdentities returns request builder for WindowsAutopilotDeviceIdentity collection
 func (b *DeviceManagementRequestBuilder) WindowsAutopilotDeviceIdentities() *DeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder {
 	bb := &DeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/windowsAutopilotDeviceIdentities"
@@ -6084,7 +6084,7 @@ func (r *DeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequest) Add(
 	return
 }
 
-// WindowsInformationProtectionAppLearningSummaries returns request builder for WindowsInformationProtectionAppLearningSummary collection rcn
+// WindowsInformationProtectionAppLearningSummaries returns request builder for WindowsInformationProtectionAppLearningSummary collection
 func (b *DeviceManagementRequestBuilder) WindowsInformationProtectionAppLearningSummaries() *DeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionRequestBuilder {
 	bb := &DeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/windowsInformationProtectionAppLearningSummaries"
@@ -6187,7 +6187,7 @@ func (r *DeviceManagementWindowsInformationProtectionAppLearningSummariesCollect
 	return
 }
 
-// WindowsInformationProtectionNetworkLearningSummaries returns request builder for WindowsInformationProtectionNetworkLearningSummary collection rcn
+// WindowsInformationProtectionNetworkLearningSummaries returns request builder for WindowsInformationProtectionNetworkLearningSummary collection
 func (b *DeviceManagementRequestBuilder) WindowsInformationProtectionNetworkLearningSummaries() *DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionRequestBuilder {
 	bb := &DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/windowsInformationProtectionNetworkLearningSummaries"
@@ -6290,7 +6290,7 @@ func (r *DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCol
 	return
 }
 
-// ExportJobs returns request builder for DeviceManagementExportJob collection rcn
+// ExportJobs returns request builder for DeviceManagementExportJob collection
 func (b *DeviceManagementReportsRequestBuilder) ExportJobs() *DeviceManagementReportsExportJobsCollectionRequestBuilder {
 	bb := &DeviceManagementReportsExportJobsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/exportJobs"
@@ -6393,35 +6393,35 @@ func (r *DeviceManagementReportsExportJobsCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// Device returns request builder for Device collection rcn
-func (b *DirectoryObjectRequestBuilder) Device() *DirectoryObjectDeviceCollectionRequestBuilder {
-	bb := &DirectoryObjectDeviceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/Device"
+// Device returns request builder for Device collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) Device() *AdministrativeUnitMembersCollectionDeviceCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionDeviceCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DirectoryObjectDeviceCollectionRequestBuilder is request builder for Device collection
-type DirectoryObjectDeviceCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AdministrativeUnitMembersCollectionDeviceCollectionRequestBuilder is request builder for Device collection
+type AdministrativeUnitMembersCollectionDeviceCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Device collection
-func (b *DirectoryObjectDeviceCollectionRequestBuilder) Request() *DirectoryObjectDeviceCollectionRequest {
-	return &DirectoryObjectDeviceCollectionRequest{
+func (b *AdministrativeUnitMembersCollectionDeviceCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionDeviceCollectionRequest {
+	return &AdministrativeUnitMembersCollectionDeviceCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for Device item
-func (b *DirectoryObjectDeviceCollectionRequestBuilder) ID(id string) *DeviceRequestBuilder {
+func (b *AdministrativeUnitMembersCollectionDeviceCollectionRequestBuilder) ID(id string) *DeviceRequestBuilder {
 	bb := &DeviceRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DirectoryObjectDeviceCollectionRequest is request for Device collection
-type DirectoryObjectDeviceCollectionRequest struct{ BaseRequest }
+// AdministrativeUnitMembersCollectionDeviceCollectionRequest is request for Device collection
+type AdministrativeUnitMembersCollectionDeviceCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for Device collection
-func (r *DirectoryObjectDeviceCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Device, error) {
+func (r *AdministrativeUnitMembersCollectionDeviceCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Device, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -6477,7 +6477,7 @@ func (r *DirectoryObjectDeviceCollectionRequest) Paging(ctx context.Context, met
 }
 
 // GetN performs GET request for Device collection, max N pages
-func (r *DirectoryObjectDeviceCollectionRequest) GetN(ctx context.Context, n int) ([]Device, error) {
+func (r *AdministrativeUnitMembersCollectionDeviceCollectionRequest) GetN(ctx context.Context, n int) ([]Device, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -6486,45 +6486,45 @@ func (r *DirectoryObjectDeviceCollectionRequest) GetN(ctx context.Context, n int
 }
 
 // Get performs GET request for Device collection
-func (r *DirectoryObjectDeviceCollectionRequest) Get(ctx context.Context) ([]Device, error) {
+func (r *AdministrativeUnitMembersCollectionDeviceCollectionRequest) Get(ctx context.Context) ([]Device, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for Device collection
-func (r *DirectoryObjectDeviceCollectionRequest) Add(ctx context.Context, reqObj *Device) (resObj *Device, err error) {
+func (r *AdministrativeUnitMembersCollectionDeviceCollectionRequest) Add(ctx context.Context, reqObj *Device) (resObj *Device, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// DeviceAndAppManagementRoleAssignment returns request builder for DeviceAndAppManagementRoleAssignment collection rcn
-func (b *RoleAssignmentRequestBuilder) DeviceAndAppManagementRoleAssignment() *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder {
-	bb := &RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceAndAppManagementRoleAssignment"
+// DeviceAndAppManagementRoleAssignment returns request builder for DeviceAndAppManagementRoleAssignment collection
+func (b *RoleDefinitionRoleAssignmentsCollectionRequestBuilder) DeviceAndAppManagementRoleAssignment() *RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder {
+	bb := &RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder is request builder for DeviceAndAppManagementRoleAssignment collection
-type RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder struct{ BaseRequestBuilder }
+// RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder is request builder for DeviceAndAppManagementRoleAssignment collection
+type RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceAndAppManagementRoleAssignment collection
-func (b *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder) Request() *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest {
-	return &RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest{
+func (b *RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder) Request() *RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequest {
+	return &RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for DeviceAndAppManagementRoleAssignment item
-func (b *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder) ID(id string) *DeviceAndAppManagementRoleAssignmentRequestBuilder {
+func (b *RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder) ID(id string) *DeviceAndAppManagementRoleAssignmentRequestBuilder {
 	bb := &DeviceAndAppManagementRoleAssignmentRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest is request for DeviceAndAppManagementRoleAssignment collection
-type RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest struct{ BaseRequest }
+// RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequest is request for DeviceAndAppManagementRoleAssignment collection
+type RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for DeviceAndAppManagementRoleAssignment collection
-func (r *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceAndAppManagementRoleAssignment, error) {
+func (r *RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceAndAppManagementRoleAssignment, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -6580,7 +6580,7 @@ func (r *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest) Pa
 }
 
 // GetN performs GET request for DeviceAndAppManagementRoleAssignment collection, max N pages
-func (r *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceAndAppManagementRoleAssignment, error) {
+func (r *RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceAndAppManagementRoleAssignment, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -6589,45 +6589,45 @@ func (r *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest) Ge
 }
 
 // Get performs GET request for DeviceAndAppManagementRoleAssignment collection
-func (r *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest) Get(ctx context.Context) ([]DeviceAndAppManagementRoleAssignment, error) {
+func (r *RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequest) Get(ctx context.Context) ([]DeviceAndAppManagementRoleAssignment, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for DeviceAndAppManagementRoleAssignment collection
-func (r *RoleAssignmentDeviceAndAppManagementRoleAssignmentCollectionRequest) Add(ctx context.Context, reqObj *DeviceAndAppManagementRoleAssignment) (resObj *DeviceAndAppManagementRoleAssignment, err error) {
+func (r *RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequest) Add(ctx context.Context, reqObj *DeviceAndAppManagementRoleAssignment) (resObj *DeviceAndAppManagementRoleAssignment, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// DeviceAndAppManagementRoleDefinition returns request builder for DeviceAndAppManagementRoleDefinition collection rcn
-func (b *RoleDefinitionRequestBuilder) DeviceAndAppManagementRoleDefinition() *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder {
-	bb := &RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceAndAppManagementRoleDefinition"
+// DeviceAndAppManagementRoleDefinition returns request builder for DeviceAndAppManagementRoleDefinition collection
+func (b *DeviceManagementRoleDefinitionsCollectionRequestBuilder) DeviceAndAppManagementRoleDefinition() *DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder {
+	bb := &DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder is request builder for DeviceAndAppManagementRoleDefinition collection
-type RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder is request builder for DeviceAndAppManagementRoleDefinition collection
+type DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceAndAppManagementRoleDefinition collection
-func (b *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder) Request() *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest {
-	return &RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest{
+func (b *DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder) Request() *DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequest {
+	return &DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for DeviceAndAppManagementRoleDefinition item
-func (b *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder) ID(id string) *DeviceAndAppManagementRoleDefinitionRequestBuilder {
+func (b *DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder) ID(id string) *DeviceAndAppManagementRoleDefinitionRequestBuilder {
 	bb := &DeviceAndAppManagementRoleDefinitionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest is request for DeviceAndAppManagementRoleDefinition collection
-type RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest struct{ BaseRequest }
+// DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequest is request for DeviceAndAppManagementRoleDefinition collection
+type DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for DeviceAndAppManagementRoleDefinition collection
-func (r *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceAndAppManagementRoleDefinition, error) {
+func (r *DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceAndAppManagementRoleDefinition, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -6683,7 +6683,7 @@ func (r *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest) Pa
 }
 
 // GetN performs GET request for DeviceAndAppManagementRoleDefinition collection, max N pages
-func (r *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceAndAppManagementRoleDefinition, error) {
+func (r *DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceAndAppManagementRoleDefinition, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -6692,12 +6692,12 @@ func (r *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest) Ge
 }
 
 // Get performs GET request for DeviceAndAppManagementRoleDefinition collection
-func (r *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest) Get(ctx context.Context) ([]DeviceAndAppManagementRoleDefinition, error) {
+func (r *DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequest) Get(ctx context.Context) ([]DeviceAndAppManagementRoleDefinition, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for DeviceAndAppManagementRoleDefinition collection
-func (r *RoleDefinitionDeviceAndAppManagementRoleDefinitionCollectionRequest) Add(ctx context.Context, reqObj *DeviceAndAppManagementRoleDefinition) (resObj *DeviceAndAppManagementRoleDefinition, err error) {
+func (r *DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequest) Add(ctx context.Context, reqObj *DeviceAndAppManagementRoleDefinition) (resObj *DeviceAndAppManagementRoleDefinition, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -6849,35 +6849,35 @@ func (b *DeviceEnrollmentConfigurationRequestBuilder) Entity() *EntityRequestBui
 	return bb
 }
 
-// DeviceEnrollmentLimitConfiguration returns request builder for DeviceEnrollmentLimitConfiguration collection rcn
-func (b *DeviceEnrollmentConfigurationRequestBuilder) DeviceEnrollmentLimitConfiguration() *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder {
-	bb := &DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceEnrollmentLimitConfiguration"
+// DeviceEnrollmentLimitConfiguration returns request builder for DeviceEnrollmentLimitConfiguration collection
+func (b *DeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder) DeviceEnrollmentLimitConfiguration() *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequestBuilder {
+	bb := &DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentLimitConfiguration collection
-type DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentLimitConfiguration collection
+type DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceEnrollmentLimitConfiguration collection
-func (b *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder) Request() *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest {
-	return &DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest{
+func (b *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequestBuilder) Request() *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequest {
+	return &DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for DeviceEnrollmentLimitConfiguration item
-func (b *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequestBuilder) ID(id string) *DeviceEnrollmentLimitConfigurationRequestBuilder {
+func (b *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequestBuilder) ID(id string) *DeviceEnrollmentLimitConfigurationRequestBuilder {
 	bb := &DeviceEnrollmentLimitConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest is request for DeviceEnrollmentLimitConfiguration collection
-type DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequest is request for DeviceEnrollmentLimitConfiguration collection
+type DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for DeviceEnrollmentLimitConfiguration collection
-func (r *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceEnrollmentLimitConfiguration, error) {
+func (r *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceEnrollmentLimitConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -6933,7 +6933,7 @@ func (r *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollecti
 }
 
 // GetN performs GET request for DeviceEnrollmentLimitConfiguration collection, max N pages
-func (r *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceEnrollmentLimitConfiguration, error) {
+func (r *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceEnrollmentLimitConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -6942,45 +6942,45 @@ func (r *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollecti
 }
 
 // Get performs GET request for DeviceEnrollmentLimitConfiguration collection
-func (r *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceEnrollmentLimitConfiguration, error) {
+func (r *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceEnrollmentLimitConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for DeviceEnrollmentLimitConfiguration collection
-func (r *DeviceEnrollmentConfigurationDeviceEnrollmentLimitConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceEnrollmentLimitConfiguration) (resObj *DeviceEnrollmentLimitConfiguration, err error) {
+func (r *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceEnrollmentLimitConfiguration) (resObj *DeviceEnrollmentLimitConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// DeviceEnrollmentPlatformRestrictionsConfiguration returns request builder for DeviceEnrollmentPlatformRestrictionsConfiguration collection rcn
-func (b *DeviceEnrollmentConfigurationRequestBuilder) DeviceEnrollmentPlatformRestrictionsConfiguration() *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder {
-	bb := &DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceEnrollmentPlatformRestrictionsConfiguration"
+// DeviceEnrollmentPlatformRestrictionsConfiguration returns request builder for DeviceEnrollmentPlatformRestrictionsConfiguration collection
+func (b *DeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder) DeviceEnrollmentPlatformRestrictionsConfiguration() *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder {
+	bb := &DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentPlatformRestrictionsConfiguration collection
-type DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentPlatformRestrictionsConfiguration collection
+type DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceEnrollmentPlatformRestrictionsConfiguration collection
-func (b *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder) Request() *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest {
-	return &DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest{
+func (b *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder) Request() *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest {
+	return &DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for DeviceEnrollmentPlatformRestrictionsConfiguration item
-func (b *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder) ID(id string) *DeviceEnrollmentPlatformRestrictionsConfigurationRequestBuilder {
+func (b *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder) ID(id string) *DeviceEnrollmentPlatformRestrictionsConfigurationRequestBuilder {
 	bb := &DeviceEnrollmentPlatformRestrictionsConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest is request for DeviceEnrollmentPlatformRestrictionsConfiguration collection
-type DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest is request for DeviceEnrollmentPlatformRestrictionsConfiguration collection
+type DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for DeviceEnrollmentPlatformRestrictionsConfiguration collection
-func (r *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceEnrollmentPlatformRestrictionsConfiguration, error) {
+func (r *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceEnrollmentPlatformRestrictionsConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -7036,7 +7036,7 @@ func (r *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfig
 }
 
 // GetN performs GET request for DeviceEnrollmentPlatformRestrictionsConfiguration collection, max N pages
-func (r *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceEnrollmentPlatformRestrictionsConfiguration, error) {
+func (r *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceEnrollmentPlatformRestrictionsConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -7045,45 +7045,45 @@ func (r *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfig
 }
 
 // Get performs GET request for DeviceEnrollmentPlatformRestrictionsConfiguration collection
-func (r *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceEnrollmentPlatformRestrictionsConfiguration, error) {
+func (r *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceEnrollmentPlatformRestrictionsConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for DeviceEnrollmentPlatformRestrictionsConfiguration collection
-func (r *DeviceEnrollmentConfigurationDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceEnrollmentPlatformRestrictionsConfiguration) (resObj *DeviceEnrollmentPlatformRestrictionsConfiguration, err error) {
+func (r *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceEnrollmentPlatformRestrictionsConfiguration) (resObj *DeviceEnrollmentPlatformRestrictionsConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// DeviceEnrollmentWindowsHelloForBusinessConfiguration returns request builder for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection rcn
-func (b *DeviceEnrollmentConfigurationRequestBuilder) DeviceEnrollmentWindowsHelloForBusinessConfiguration() *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder {
-	bb := &DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/DeviceEnrollmentWindowsHelloForBusinessConfiguration"
+// DeviceEnrollmentWindowsHelloForBusinessConfiguration returns request builder for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
+func (b *DeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder) DeviceEnrollmentWindowsHelloForBusinessConfiguration() *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder {
+	bb := &DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
-type DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
+type DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
-func (b *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder) Request() *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest {
-	return &DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest{
+func (b *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder) Request() *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest {
+	return &DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for DeviceEnrollmentWindowsHelloForBusinessConfiguration item
-func (b *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder) ID(id string) *DeviceEnrollmentWindowsHelloForBusinessConfigurationRequestBuilder {
+func (b *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder) ID(id string) *DeviceEnrollmentWindowsHelloForBusinessConfigurationRequestBuilder {
 	bb := &DeviceEnrollmentWindowsHelloForBusinessConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest is request for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
-type DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest struct{ BaseRequest }
+// DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest is request for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
+type DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
-func (r *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceEnrollmentWindowsHelloForBusinessConfiguration, error) {
+func (r *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DeviceEnrollmentWindowsHelloForBusinessConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -7139,7 +7139,7 @@ func (r *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessCon
 }
 
 // GetN performs GET request for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection, max N pages
-func (r *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceEnrollmentWindowsHelloForBusinessConfiguration, error) {
+func (r *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]DeviceEnrollmentWindowsHelloForBusinessConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -7148,12 +7148,12 @@ func (r *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessCon
 }
 
 // Get performs GET request for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
-func (r *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceEnrollmentWindowsHelloForBusinessConfiguration, error) {
+func (r *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) Get(ctx context.Context) ([]DeviceEnrollmentWindowsHelloForBusinessConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
-func (r *DeviceEnrollmentConfigurationDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceEnrollmentWindowsHelloForBusinessConfiguration) (resObj *DeviceEnrollmentWindowsHelloForBusinessConfiguration, err error) {
+func (r *DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequest) Add(ctx context.Context, reqObj *DeviceEnrollmentWindowsHelloForBusinessConfiguration) (resObj *DeviceEnrollmentWindowsHelloForBusinessConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -7202,6 +7202,34 @@ func (b *DeviceManagementReportsRequestBuilder) Entity() *EntityRequestBuilder {
 
 // Entity is navigation property rn
 func (b *DeviceManagementTroubleshootingEventRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *DeviceAppManagementMobileAppConfigurationsCollectionRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *DeviceAppManagementManagedEBooksCollectionRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *DeviceManagementRoleDefinitionsCollectionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

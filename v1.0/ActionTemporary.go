@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// IncludeTargets returns request builder for AuthenticationMethodTarget collection rcn
+// IncludeTargets returns request builder for AuthenticationMethodTarget collection
 func (b *TemporaryAccessPassAuthenticationMethodConfigurationRequestBuilder) IncludeTargets() *TemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder {
 	bb := &TemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/includeTargets"
@@ -114,35 +114,35 @@ func (r *TemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsColle
 	return
 }
 
-// TemporaryAccessPassAuthenticationMethod returns request builder for TemporaryAccessPassAuthenticationMethod collection rcn
-func (b *AuthenticationMethodRequestBuilder) TemporaryAccessPassAuthenticationMethod() *AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRequestBuilder {
-	bb := &AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/TemporaryAccessPassAuthenticationMethod"
+// TemporaryAccessPassAuthenticationMethod returns request builder for TemporaryAccessPassAuthenticationMethod collection
+func (b *AuthenticationMethodsCollectionRequestBuilder) TemporaryAccessPassAuthenticationMethod() *AuthenticationMethodsCollectionTemporaryAccessPassAuthenticationMethodCollectionRequestBuilder {
+	bb := &AuthenticationMethodsCollectionTemporaryAccessPassAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRequestBuilder is request builder for TemporaryAccessPassAuthenticationMethod collection
-type AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AuthenticationMethodsCollectionTemporaryAccessPassAuthenticationMethodCollectionRequestBuilder is request builder for TemporaryAccessPassAuthenticationMethod collection
+type AuthenticationMethodsCollectionTemporaryAccessPassAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TemporaryAccessPassAuthenticationMethod collection
-func (b *AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRequest {
-	return &AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRequest{
+func (b *AuthenticationMethodsCollectionTemporaryAccessPassAuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodsCollectionTemporaryAccessPassAuthenticationMethodCollectionRequest {
+	return &AuthenticationMethodsCollectionTemporaryAccessPassAuthenticationMethodCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for TemporaryAccessPassAuthenticationMethod item
-func (b *AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRequestBuilder) ID(id string) *TemporaryAccessPassAuthenticationMethodRequestBuilder {
+func (b *AuthenticationMethodsCollectionTemporaryAccessPassAuthenticationMethodCollectionRequestBuilder) ID(id string) *TemporaryAccessPassAuthenticationMethodRequestBuilder {
 	bb := &TemporaryAccessPassAuthenticationMethodRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRequest is request for TemporaryAccessPassAuthenticationMethod collection
-type AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRequest struct{ BaseRequest }
+// AuthenticationMethodsCollectionTemporaryAccessPassAuthenticationMethodCollectionRequest is request for TemporaryAccessPassAuthenticationMethod collection
+type AuthenticationMethodsCollectionTemporaryAccessPassAuthenticationMethodCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for TemporaryAccessPassAuthenticationMethod collection
-func (r *AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TemporaryAccessPassAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionTemporaryAccessPassAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TemporaryAccessPassAuthenticationMethod, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -198,7 +198,7 @@ func (r *AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRe
 }
 
 // GetN performs GET request for TemporaryAccessPassAuthenticationMethod collection, max N pages
-func (r *AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]TemporaryAccessPassAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionTemporaryAccessPassAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]TemporaryAccessPassAuthenticationMethod, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -207,45 +207,45 @@ func (r *AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRe
 }
 
 // Get performs GET request for TemporaryAccessPassAuthenticationMethod collection
-func (r *AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]TemporaryAccessPassAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionTemporaryAccessPassAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]TemporaryAccessPassAuthenticationMethod, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for TemporaryAccessPassAuthenticationMethod collection
-func (r *AuthenticationMethodTemporaryAccessPassAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *TemporaryAccessPassAuthenticationMethod) (resObj *TemporaryAccessPassAuthenticationMethod, err error) {
+func (r *AuthenticationMethodsCollectionTemporaryAccessPassAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *TemporaryAccessPassAuthenticationMethod) (resObj *TemporaryAccessPassAuthenticationMethod, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// TemporaryAccessPassAuthenticationMethodConfiguration returns request builder for TemporaryAccessPassAuthenticationMethodConfiguration collection rcn
-func (b *AuthenticationMethodConfigurationRequestBuilder) TemporaryAccessPassAuthenticationMethodConfiguration() *AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequestBuilder {
-	bb := &AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/TemporaryAccessPassAuthenticationMethodConfiguration"
+// TemporaryAccessPassAuthenticationMethodConfiguration returns request builder for TemporaryAccessPassAuthenticationMethodConfiguration collection
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionRequestBuilder) TemporaryAccessPassAuthenticationMethodConfiguration() *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequestBuilder {
+	bb := &AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequestBuilder is request builder for TemporaryAccessPassAuthenticationMethodConfiguration collection
-type AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequestBuilder is request builder for TemporaryAccessPassAuthenticationMethodConfiguration collection
+type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TemporaryAccessPassAuthenticationMethodConfiguration collection
-func (b *AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequestBuilder) Request() *AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest {
-	return &AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest{
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequestBuilder) Request() *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest {
+	return &AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for TemporaryAccessPassAuthenticationMethodConfiguration item
-func (b *AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequestBuilder) ID(id string) *TemporaryAccessPassAuthenticationMethodConfigurationRequestBuilder {
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequestBuilder) ID(id string) *TemporaryAccessPassAuthenticationMethodConfigurationRequestBuilder {
 	bb := &TemporaryAccessPassAuthenticationMethodConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest is request for TemporaryAccessPassAuthenticationMethodConfiguration collection
-type AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest struct{ BaseRequest }
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest is request for TemporaryAccessPassAuthenticationMethodConfiguration collection
+type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for TemporaryAccessPassAuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TemporaryAccessPassAuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TemporaryAccessPassAuthenticationMethodConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -301,7 +301,7 @@ func (r *AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMetho
 }
 
 // GetN performs GET request for TemporaryAccessPassAuthenticationMethodConfiguration collection, max N pages
-func (r *AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]TemporaryAccessPassAuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]TemporaryAccessPassAuthenticationMethodConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -310,12 +310,12 @@ func (r *AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMetho
 }
 
 // Get performs GET request for TemporaryAccessPassAuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest) Get(ctx context.Context) ([]TemporaryAccessPassAuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest) Get(ctx context.Context) ([]TemporaryAccessPassAuthenticationMethodConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for TemporaryAccessPassAuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest) Add(ctx context.Context, reqObj *TemporaryAccessPassAuthenticationMethodConfiguration) (resObj *TemporaryAccessPassAuthenticationMethodConfiguration, err error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionTemporaryAccessPassAuthenticationMethodConfigurationCollectionRequest) Add(ctx context.Context, reqObj *TemporaryAccessPassAuthenticationMethodConfiguration) (resObj *TemporaryAccessPassAuthenticationMethodConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

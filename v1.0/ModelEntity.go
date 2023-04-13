@@ -7,7 +7,7 @@ type Entity struct {
 	// Object is the base model of Entity
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ID undocumented
 	ID *string `json:"id,omitempty"`
 }

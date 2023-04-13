@@ -9,7 +9,7 @@ type AppleDeviceFeaturesConfigurationBase struct {
 	// DeviceConfiguration is the base model of AppleDeviceFeaturesConfigurationBase
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewAppleDeviceFeaturesConfigurationBase() (*AppleDeviceFeaturesConfigurationBase, error) {
@@ -24,7 +24,7 @@ type AppleManagedIdentityProvider struct {
 	// IdentityProviderBase is the base model of AppleManagedIdentityProvider
 	IdentityProviderBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CertificateData undocumented
 	CertificateData *string `json:"certificateData,omitempty"`
 	// DeveloperID undocumented
@@ -47,7 +47,7 @@ type ApplePushNotificationCertificate struct {
 	// Entity is the base model of ApplePushNotificationCertificate
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppleIdentifier undocumented
 	AppleIdentifier *string `json:"appleIdentifier,omitempty"`
 	// Certificate undocumented

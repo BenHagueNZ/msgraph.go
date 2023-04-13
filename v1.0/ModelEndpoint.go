@@ -7,7 +7,7 @@ type Endpoint struct {
 	// DirectoryObject is the base model of Endpoint
 	DirectoryObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Capability undocumented
 	Capability *string `json:"capability,omitempty"`
 	// ProviderID undocumented

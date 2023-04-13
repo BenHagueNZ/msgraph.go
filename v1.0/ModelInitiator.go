@@ -7,7 +7,7 @@ type Initiator struct {
 	// Identity is the base model of Initiator
 	Identity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// InitiatorType undocumented
 	InitiatorType *InitiatorType `json:"initiatorType,omitempty"`
 }

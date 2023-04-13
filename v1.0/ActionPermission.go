@@ -19,7 +19,7 @@ type PermissionGrantRequestParameter struct {
 	Recipients []DriveRecipient `json:"recipients,omitempty"`
 }
 
-// Excludes returns request builder for PermissionGrantConditionSet collection rcn
+// Excludes returns request builder for PermissionGrantConditionSet collection
 func (b *PermissionGrantPolicyRequestBuilder) Excludes() *PermissionGrantPolicyExcludesCollectionRequestBuilder {
 	bb := &PermissionGrantPolicyExcludesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/excludes"
@@ -122,7 +122,7 @@ func (r *PermissionGrantPolicyExcludesCollectionRequest) Add(ctx context.Context
 	return
 }
 
-// Includes returns request builder for PermissionGrantConditionSet collection rcn
+// Includes returns request builder for PermissionGrantConditionSet collection
 func (b *PermissionGrantPolicyRequestBuilder) Includes() *PermissionGrantPolicyIncludesCollectionRequestBuilder {
 	bb := &PermissionGrantPolicyIncludesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/includes"

@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// IncludeTargets returns request builder for AuthenticationMethodTarget collection rcn
+// IncludeTargets returns request builder for AuthenticationMethodTarget collection
 func (b *EmailAuthenticationMethodConfigurationRequestBuilder) IncludeTargets() *EmailAuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder {
 	bb := &EmailAuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/includeTargets"
@@ -114,35 +114,35 @@ func (r *EmailAuthenticationMethodConfigurationIncludeTargetsCollectionRequest) 
 	return
 }
 
-// EmailAuthenticationMethod returns request builder for EmailAuthenticationMethod collection rcn
-func (b *AuthenticationMethodRequestBuilder) EmailAuthenticationMethod() *AuthenticationMethodEmailAuthenticationMethodCollectionRequestBuilder {
-	bb := &AuthenticationMethodEmailAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/EmailAuthenticationMethod"
+// EmailAuthenticationMethod returns request builder for EmailAuthenticationMethod collection
+func (b *AuthenticationMethodsCollectionRequestBuilder) EmailAuthenticationMethod() *AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequestBuilder {
+	bb := &AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AuthenticationMethodEmailAuthenticationMethodCollectionRequestBuilder is request builder for EmailAuthenticationMethod collection
-type AuthenticationMethodEmailAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequestBuilder is request builder for EmailAuthenticationMethod collection
+type AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EmailAuthenticationMethod collection
-func (b *AuthenticationMethodEmailAuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodEmailAuthenticationMethodCollectionRequest {
-	return &AuthenticationMethodEmailAuthenticationMethodCollectionRequest{
+func (b *AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequestBuilder) Request() *AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequest {
+	return &AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for EmailAuthenticationMethod item
-func (b *AuthenticationMethodEmailAuthenticationMethodCollectionRequestBuilder) ID(id string) *EmailAuthenticationMethodRequestBuilder {
+func (b *AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequestBuilder) ID(id string) *EmailAuthenticationMethodRequestBuilder {
 	bb := &EmailAuthenticationMethodRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AuthenticationMethodEmailAuthenticationMethodCollectionRequest is request for EmailAuthenticationMethod collection
-type AuthenticationMethodEmailAuthenticationMethodCollectionRequest struct{ BaseRequest }
+// AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequest is request for EmailAuthenticationMethod collection
+type AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for EmailAuthenticationMethod collection
-func (r *AuthenticationMethodEmailAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EmailAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EmailAuthenticationMethod, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -198,7 +198,7 @@ func (r *AuthenticationMethodEmailAuthenticationMethodCollectionRequest) Paging(
 }
 
 // GetN performs GET request for EmailAuthenticationMethod collection, max N pages
-func (r *AuthenticationMethodEmailAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]EmailAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequest) GetN(ctx context.Context, n int) ([]EmailAuthenticationMethod, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -207,45 +207,45 @@ func (r *AuthenticationMethodEmailAuthenticationMethodCollectionRequest) GetN(ct
 }
 
 // Get performs GET request for EmailAuthenticationMethod collection
-func (r *AuthenticationMethodEmailAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]EmailAuthenticationMethod, error) {
+func (r *AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequest) Get(ctx context.Context) ([]EmailAuthenticationMethod, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for EmailAuthenticationMethod collection
-func (r *AuthenticationMethodEmailAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *EmailAuthenticationMethod) (resObj *EmailAuthenticationMethod, err error) {
+func (r *AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequest) Add(ctx context.Context, reqObj *EmailAuthenticationMethod) (resObj *EmailAuthenticationMethod, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// EmailAuthenticationMethodConfiguration returns request builder for EmailAuthenticationMethodConfiguration collection rcn
-func (b *AuthenticationMethodConfigurationRequestBuilder) EmailAuthenticationMethodConfiguration() *AuthenticationMethodConfigurationEmailAuthenticationMethodConfigurationCollectionRequestBuilder {
-	bb := &AuthenticationMethodConfigurationEmailAuthenticationMethodConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/EmailAuthenticationMethodConfiguration"
+// EmailAuthenticationMethodConfiguration returns request builder for EmailAuthenticationMethodConfiguration collection
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionRequestBuilder) EmailAuthenticationMethodConfiguration() *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequestBuilder {
+	bb := &AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// AuthenticationMethodConfigurationEmailAuthenticationMethodConfigurationCollectionRequestBuilder is request builder for EmailAuthenticationMethodConfiguration collection
-type AuthenticationMethodConfigurationEmailAuthenticationMethodConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequestBuilder is request builder for EmailAuthenticationMethodConfiguration collection
+type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EmailAuthenticationMethodConfiguration collection
-func (b *AuthenticationMethodConfigurationEmailAuthenticationMethodConfigurationCollectionRequestBuilder) Request() *AuthenticationMethodConfigurationEmailAuthenticationMethodConfigurationCollectionRequest {
-	return &AuthenticationMethodConfigurationEmailAuthenticationMethodConfigurationCollectionRequest{
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequestBuilder) Request() *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequest {
+	return &AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for EmailAuthenticationMethodConfiguration item
-func (b *AuthenticationMethodConfigurationEmailAuthenticationMethodConfigurationCollectionRequestBuilder) ID(id string) *EmailAuthenticationMethodConfigurationRequestBuilder {
+func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequestBuilder) ID(id string) *EmailAuthenticationMethodConfigurationRequestBuilder {
 	bb := &EmailAuthenticationMethodConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// AuthenticationMethodConfigurationEmailAuthenticationMethodConfigurationCollectionRequest is request for EmailAuthenticationMethodConfiguration collection
-type AuthenticationMethodConfigurationEmailAuthenticationMethodConfigurationCollectionRequest struct{ BaseRequest }
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequest is request for EmailAuthenticationMethodConfiguration collection
+type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for EmailAuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationEmailAuthenticationMethodConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EmailAuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EmailAuthenticationMethodConfiguration, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -301,7 +301,7 @@ func (r *AuthenticationMethodConfigurationEmailAuthenticationMethodConfiguration
 }
 
 // GetN performs GET request for EmailAuthenticationMethodConfiguration collection, max N pages
-func (r *AuthenticationMethodConfigurationEmailAuthenticationMethodConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]EmailAuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]EmailAuthenticationMethodConfiguration, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -310,45 +310,45 @@ func (r *AuthenticationMethodConfigurationEmailAuthenticationMethodConfiguration
 }
 
 // Get performs GET request for EmailAuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationEmailAuthenticationMethodConfigurationCollectionRequest) Get(ctx context.Context) ([]EmailAuthenticationMethodConfiguration, error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequest) Get(ctx context.Context) ([]EmailAuthenticationMethodConfiguration, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for EmailAuthenticationMethodConfiguration collection
-func (r *AuthenticationMethodConfigurationEmailAuthenticationMethodConfigurationCollectionRequest) Add(ctx context.Context, reqObj *EmailAuthenticationMethodConfiguration) (resObj *EmailAuthenticationMethodConfiguration, err error) {
+func (r *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequest) Add(ctx context.Context, reqObj *EmailAuthenticationMethodConfiguration) (resObj *EmailAuthenticationMethodConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// EmailFileAssessmentRequestObject returns request builder for EmailFileAssessmentRequestObject collection rcn
-func (b *ThreatAssessmentRequestObjectRequestBuilder) EmailFileAssessmentRequestObject() *ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollectionRequestBuilder {
-	bb := &ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/EmailFileAssessmentRequest"
+// EmailFileAssessmentRequestObject returns request builder for EmailFileAssessmentRequestObject collection
+func (b *InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder) EmailFileAssessmentRequestObject() *InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequestBuilder {
+	bb := &InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollectionRequestBuilder is request builder for EmailFileAssessmentRequestObject collection
-type ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollectionRequestBuilder struct{ BaseRequestBuilder }
+// InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequestBuilder is request builder for EmailFileAssessmentRequestObject collection
+type InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EmailFileAssessmentRequestObject collection
-func (b *ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollectionRequestBuilder) Request() *ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollectionRequest {
-	return &ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollectionRequest{
+func (b *InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequestBuilder) Request() *InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequest {
+	return &InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for EmailFileAssessmentRequestObject item
-func (b *ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollectionRequestBuilder) ID(id string) *EmailFileAssessmentRequestObjectRequestBuilder {
+func (b *InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequestBuilder) ID(id string) *EmailFileAssessmentRequestObjectRequestBuilder {
 	bb := &EmailFileAssessmentRequestObjectRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollectionRequest is request for EmailFileAssessmentRequestObject collection
-type ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollectionRequest struct{ BaseRequest }
+// InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequest is request for EmailFileAssessmentRequestObject collection
+type InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for EmailFileAssessmentRequestObject collection
-func (r *ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EmailFileAssessmentRequestObject, error) {
+func (r *InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]EmailFileAssessmentRequestObject, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -404,7 +404,7 @@ func (r *ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollection
 }
 
 // GetN performs GET request for EmailFileAssessmentRequestObject collection, max N pages
-func (r *ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollectionRequest) GetN(ctx context.Context, n int) ([]EmailFileAssessmentRequestObject, error) {
+func (r *InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequest) GetN(ctx context.Context, n int) ([]EmailFileAssessmentRequestObject, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -413,12 +413,12 @@ func (r *ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollection
 }
 
 // Get performs GET request for EmailFileAssessmentRequestObject collection
-func (r *ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollectionRequest) Get(ctx context.Context) ([]EmailFileAssessmentRequestObject, error) {
+func (r *InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequest) Get(ctx context.Context) ([]EmailFileAssessmentRequestObject, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for EmailFileAssessmentRequestObject collection
-func (r *ThreatAssessmentRequestObjectEmailFileAssessmentRequestObjectCollectionRequest) Add(ctx context.Context, reqObj *EmailFileAssessmentRequestObject) (resObj *EmailFileAssessmentRequestObject, err error) {
+func (r *InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequest) Add(ctx context.Context, reqObj *EmailFileAssessmentRequestObject) (resObj *EmailFileAssessmentRequestObject, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

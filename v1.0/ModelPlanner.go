@@ -9,7 +9,7 @@ type Planner struct {
 	// Entity is the base model of Planner
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Buckets undocumented
 	Buckets []PlannerBucket `json:"buckets,omitempty"`
 	// Plans undocumented
@@ -30,7 +30,7 @@ type PlannerAppliedCategories struct {
 	// Object is the base model of PlannerAppliedCategories
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewPlannerAppliedCategories() (*PlannerAppliedCategories, error) {
@@ -45,7 +45,7 @@ type PlannerAssignedToTaskBoardTaskFormat struct {
 	// Entity is the base model of PlannerAssignedToTaskBoardTaskFormat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OrderHintsByAssignee undocumented
 	OrderHintsByAssignee *PlannerOrderHintsByAssignee `json:"orderHintsByAssignee,omitempty"`
 	// UnassignedOrderHint undocumented
@@ -64,7 +64,7 @@ type PlannerAssignment struct {
 	// Object is the base model of PlannerAssignment
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedBy undocumented
 	AssignedBy *IdentitySet `json:"assignedBy,omitempty"`
 	// AssignedDateTime undocumented
@@ -85,7 +85,7 @@ type PlannerAssignments struct {
 	// Object is the base model of PlannerAssignments
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewPlannerAssignments() (*PlannerAssignments, error) {
@@ -100,7 +100,7 @@ type PlannerBucket struct {
 	// Entity is the base model of PlannerBucket
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// OrderHint undocumented
@@ -123,7 +123,7 @@ type PlannerBucketTaskBoardTaskFormat struct {
 	// Entity is the base model of PlannerBucketTaskBoardTaskFormat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OrderHint undocumented
 	OrderHint *string `json:"orderHint,omitempty"`
 }
@@ -140,7 +140,7 @@ type PlannerCategoryDescriptions struct {
 	// Object is the base model of PlannerCategoryDescriptions
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Category1 undocumented
 	Category1 *string `json:"category1,omitempty"`
 	// Category10 undocumented
@@ -205,7 +205,7 @@ type PlannerChecklistItem struct {
 	// Object is the base model of PlannerChecklistItem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsChecked undocumented
 	IsChecked *bool `json:"isChecked,omitempty"`
 	// LastModifiedBy undocumented
@@ -230,7 +230,7 @@ type PlannerChecklistItems struct {
 	// Object is the base model of PlannerChecklistItems
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewPlannerChecklistItems() (*PlannerChecklistItems, error) {
@@ -245,7 +245,7 @@ type PlannerExternalReference struct {
 	// Object is the base model of PlannerExternalReference
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Alias undocumented
 	Alias *string `json:"alias,omitempty"`
 	// LastModifiedBy undocumented
@@ -270,7 +270,7 @@ type PlannerExternalReferences struct {
 	// Object is the base model of PlannerExternalReferences
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewPlannerExternalReferences() (*PlannerExternalReferences, error) {
@@ -285,7 +285,7 @@ type PlannerGroup struct {
 	// Entity is the base model of PlannerGroup
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Plans undocumented
 	Plans []PlannerPlan `json:"plans,omitempty"`
 }
@@ -302,7 +302,7 @@ type PlannerOrderHintsByAssignee struct {
 	// Object is the base model of PlannerOrderHintsByAssignee
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewPlannerOrderHintsByAssignee() (*PlannerOrderHintsByAssignee, error) {
@@ -317,7 +317,7 @@ type PlannerPlan struct {
 	// Entity is the base model of PlannerPlan
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Container undocumented
 	Container *PlannerPlanContainer `json:"container,omitempty"`
 	// CreatedBy undocumented
@@ -348,7 +348,7 @@ type PlannerPlanContainer struct {
 	// Object is the base model of PlannerPlanContainer
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContainerID undocumented
 	ContainerID *string `json:"containerId,omitempty"`
 	// Type undocumented
@@ -369,7 +369,7 @@ type PlannerPlanDetails struct {
 	// Entity is the base model of PlannerPlanDetails
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CategoryDescriptions undocumented
 	CategoryDescriptions *PlannerCategoryDescriptions `json:"categoryDescriptions,omitempty"`
 	// SharedWith undocumented
@@ -388,7 +388,7 @@ type PlannerProgressTaskBoardTaskFormat struct {
 	// Entity is the base model of PlannerProgressTaskBoardTaskFormat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OrderHint undocumented
 	OrderHint *string `json:"orderHint,omitempty"`
 }
@@ -405,7 +405,7 @@ type PlannerTask struct {
 	// Entity is the base model of PlannerTask
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActiveChecklistItemCount undocumented
 	ActiveChecklistItemCount *int `json:"activeChecklistItemCount,omitempty"`
 	// AppliedCategories undocumented
@@ -470,7 +470,7 @@ type PlannerTaskDetails struct {
 	// Entity is the base model of PlannerTaskDetails
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Checklist undocumented
 	Checklist *PlannerChecklistItems `json:"checklist,omitempty"`
 	// Description undocumented
@@ -493,7 +493,7 @@ type PlannerUser struct {
 	// Entity is the base model of PlannerUser
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Plans undocumented
 	Plans []PlannerPlan `json:"plans,omitempty"`
 	// Tasks undocumented
@@ -512,7 +512,7 @@ type PlannerUserIDs struct {
 	// Object is the base model of PlannerUserIDs
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewPlannerUserIDs() (*PlannerUserIDs, error) {

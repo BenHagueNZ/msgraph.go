@@ -7,7 +7,7 @@ type StoragePlanInformation struct {
 	// Object is the base model of StoragePlanInformation
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UpgradeAvailable undocumented
 	UpgradeAvailable *bool `json:"upgradeAvailable,omitempty"`
 }

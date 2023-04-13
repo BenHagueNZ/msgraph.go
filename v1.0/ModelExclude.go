@@ -7,7 +7,7 @@ type ExcludeTarget struct {
 	// Object is the base model of ExcludeTarget
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ID undocumented
 	ID *string `json:"id,omitempty"`
 	// TargetType undocumented

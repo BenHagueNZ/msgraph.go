@@ -7,7 +7,7 @@ type SkypeForBusinessUserConversationMember struct {
 	// ConversationMember is the base model of SkypeForBusinessUserConversationMember
 	ConversationMember
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// TenantID undocumented
 	TenantID *string `json:"tenantId,omitempty"`
 	// UserID undocumented
@@ -26,7 +26,7 @@ type SkypeUserConversationMember struct {
 	// ConversationMember is the base model of SkypeUserConversationMember
 	ConversationMember
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// SkypeID undocumented
 	SkypeID *string `json:"skypeId,omitempty"`
 }

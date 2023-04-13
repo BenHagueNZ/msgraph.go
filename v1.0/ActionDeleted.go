@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Channels returns request builder for Channel collection rcn
+// Channels returns request builder for Channel collection
 func (b *DeletedTeamRequestBuilder) Channels() *DeletedTeamChannelsCollectionRequestBuilder {
 	bb := &DeletedTeamChannelsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/channels"

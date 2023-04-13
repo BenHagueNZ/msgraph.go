@@ -9,7 +9,7 @@ type ItemActionStat struct {
 	// Object is the base model of ItemActionStat
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActionCount undocumented
 	ActionCount *int `json:"actionCount,omitempty"`
 	// ActorCount undocumented
@@ -28,7 +28,7 @@ type ItemActivity struct {
 	// Entity is the base model of ItemActivity
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Access undocumented
 	Access *AccessAction `json:"access,omitempty"`
 	// ActivityDateTime undocumented
@@ -51,7 +51,7 @@ type ItemActivityStat struct {
 	// Entity is the base model of ItemActivityStat
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Access undocumented
 	Access *ItemActionStat `json:"access,omitempty"`
 	// Create undocumented
@@ -86,7 +86,7 @@ type ItemAnalytics struct {
 	// Entity is the base model of ItemAnalytics
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllTime undocumented
 	AllTime *ItemActivityStat `json:"allTime,omitempty"`
 	// ItemActivityStats undocumented
@@ -107,7 +107,7 @@ type ItemAttachment struct {
 	// Attachment is the base model of ItemAttachment
 	Attachment
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Item undocumented
 	Item *OutlookItem `json:"item,omitempty"`
 }
@@ -124,7 +124,7 @@ type ItemBody struct {
 	// Object is the base model of ItemBody
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Content undocumented
 	Content *string `json:"content,omitempty"`
 	// ContentType undocumented
@@ -143,7 +143,7 @@ type ItemPreviewInfo struct {
 	// Object is the base model of ItemPreviewInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// GetURL undocumented
 	GetURL *string `json:"getUrl,omitempty"`
 	// PostParameters undocumented
@@ -164,7 +164,7 @@ type ItemReference struct {
 	// Object is the base model of ItemReference
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DriveID undocumented
 	DriveID *string `json:"driveId,omitempty"`
 	// DriveType undocumented

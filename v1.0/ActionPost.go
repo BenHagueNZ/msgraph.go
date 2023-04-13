@@ -25,7 +25,7 @@ type PostReplyRequestParameter struct {
 	Post *Post `json:"Post,omitempty"`
 }
 
-// Attachments returns request builder for Attachment collection rcn
+// Attachments returns request builder for Attachment collection
 func (b *PostRequestBuilder) Attachments() *PostAttachmentsCollectionRequestBuilder {
 	bb := &PostAttachmentsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/attachments"
@@ -128,7 +128,7 @@ func (r *PostAttachmentsCollectionRequest) Add(ctx context.Context, reqObj *Atta
 	return
 }
 
-// Extensions returns request builder for Extension collection rcn
+// Extensions returns request builder for Extension collection
 func (b *PostRequestBuilder) Extensions() *PostExtensionsCollectionRequestBuilder {
 	bb := &PostExtensionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/extensions"
@@ -238,7 +238,7 @@ func (b *PostRequestBuilder) InReplyTo() *PostRequestBuilder {
 	return bb
 }
 
-// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection rcn
+// MultiValueExtendedProperties returns request builder for MultiValueLegacyExtendedProperty collection
 func (b *PostRequestBuilder) MultiValueExtendedProperties() *PostMultiValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &PostMultiValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/multiValueExtendedProperties"
@@ -341,7 +341,7 @@ func (r *PostMultiValueExtendedPropertiesCollectionRequest) Add(ctx context.Cont
 	return
 }
 
-// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection rcn
+// SingleValueExtendedProperties returns request builder for SingleValueLegacyExtendedProperty collection
 func (b *PostRequestBuilder) SingleValueExtendedProperties() *PostSingleValueExtendedPropertiesCollectionRequestBuilder {
 	bb := &PostSingleValueExtendedPropertiesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/singleValueExtendedProperties"

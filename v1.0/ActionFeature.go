@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AppliesTo returns request builder for DirectoryObject collection rcn
+// AppliesTo returns request builder for DirectoryObject collection
 func (b *FeatureRolloutPolicyRequestBuilder) AppliesTo() *FeatureRolloutPolicyAppliesToCollectionRequestBuilder {
 	bb := &FeatureRolloutPolicyAppliesToCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/appliesTo"

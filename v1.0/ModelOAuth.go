@@ -7,7 +7,7 @@ type OAuth2PermissionGrant struct {
 	// Entity is the base model of OAuth2PermissionGrant
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ClientID undocumented
 	ClientID *string `json:"clientId,omitempty"`
 	// ConsentType undocumented

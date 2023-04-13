@@ -15,7 +15,7 @@ import (
 type NotificationMessageTemplateSendTestMessageRequestParameter struct {
 }
 
-// LocalizedNotificationMessages returns request builder for LocalizedNotificationMessage collection rcn
+// LocalizedNotificationMessages returns request builder for LocalizedNotificationMessage collection
 func (b *NotificationMessageTemplateRequestBuilder) LocalizedNotificationMessages() *NotificationMessageTemplateLocalizedNotificationMessagesCollectionRequestBuilder {
 	bb := &NotificationMessageTemplateLocalizedNotificationMessagesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/localizedNotificationMessages"

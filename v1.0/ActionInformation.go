@@ -18,7 +18,7 @@ func (b *InformationProtectionRequestBuilder) Bitlocker() *BitlockerRequestBuild
 	return bb
 }
 
-// ThreatAssessmentRequests returns request builder for ThreatAssessmentRequestObject collection rcn
+// ThreatAssessmentRequests returns request builder for ThreatAssessmentRequestObject collection
 func (b *InformationProtectionRequestBuilder) ThreatAssessmentRequests() *InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder {
 	bb := &InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/threatAssessmentRequests"

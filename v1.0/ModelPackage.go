@@ -7,7 +7,7 @@ type Package struct {
 	// Object is the base model of Package
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Type undocumented
 	Type *string `json:"type,omitempty"`
 }

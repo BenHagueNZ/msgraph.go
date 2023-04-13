@@ -7,7 +7,7 @@ type Place struct {
 	// Entity is the base model of Place
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Address undocumented
 	Address *PhysicalAddress `json:"address,omitempty"`
 	// DisplayName undocumented

@@ -433,6 +433,144 @@ func (r *ServiceUpdateMessageViewpointRequest) Delete(ctx context.Context) error
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
+type ServiceUpdateMessageCollectionArchiveRequestBuilder struct{ BaseRequestBuilder }
+
+// Archive action undocumentedras
+func (b *ServiceAnnouncementMessagesCollectionRequestBuilder) Archive(reqObj *ServiceUpdateMessageCollectionArchiveRequestParameter) *ServiceUpdateMessageCollectionArchiveRequestBuilder {
+	bb := &ServiceUpdateMessageCollectionArchiveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Archive"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ServiceUpdateMessageCollectionArchiveRequest struct{ BaseRequest }
+
+func (b *ServiceUpdateMessageCollectionArchiveRequestBuilder) Request() *ServiceUpdateMessageCollectionArchiveRequest {
+	return &ServiceUpdateMessageCollectionArchiveRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ServiceUpdateMessageCollectionArchiveRequest) Post(ctx context.Context) (resObj *bool, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type ServiceUpdateMessageCollectionFavoriteRequestBuilder struct{ BaseRequestBuilder }
+
+// Favorite action undocumentedras
+func (b *ServiceAnnouncementMessagesCollectionRequestBuilder) Favorite(reqObj *ServiceUpdateMessageCollectionFavoriteRequestParameter) *ServiceUpdateMessageCollectionFavoriteRequestBuilder {
+	bb := &ServiceUpdateMessageCollectionFavoriteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Favorite"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ServiceUpdateMessageCollectionFavoriteRequest struct{ BaseRequest }
+
+func (b *ServiceUpdateMessageCollectionFavoriteRequestBuilder) Request() *ServiceUpdateMessageCollectionFavoriteRequest {
+	return &ServiceUpdateMessageCollectionFavoriteRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ServiceUpdateMessageCollectionFavoriteRequest) Post(ctx context.Context) (resObj *bool, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type ServiceUpdateMessageCollectionMarkReadRequestBuilder struct{ BaseRequestBuilder }
+
+// MarkRead action undocumentedras
+func (b *ServiceAnnouncementMessagesCollectionRequestBuilder) MarkRead(reqObj *ServiceUpdateMessageCollectionMarkReadRequestParameter) *ServiceUpdateMessageCollectionMarkReadRequestBuilder {
+	bb := &ServiceUpdateMessageCollectionMarkReadRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/MarkRead"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ServiceUpdateMessageCollectionMarkReadRequest struct{ BaseRequest }
+
+func (b *ServiceUpdateMessageCollectionMarkReadRequestBuilder) Request() *ServiceUpdateMessageCollectionMarkReadRequest {
+	return &ServiceUpdateMessageCollectionMarkReadRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ServiceUpdateMessageCollectionMarkReadRequest) Post(ctx context.Context) (resObj *bool, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type ServiceUpdateMessageCollectionMarkUnreadRequestBuilder struct{ BaseRequestBuilder }
+
+// MarkUnread action undocumentedras
+func (b *ServiceAnnouncementMessagesCollectionRequestBuilder) MarkUnread(reqObj *ServiceUpdateMessageCollectionMarkUnreadRequestParameter) *ServiceUpdateMessageCollectionMarkUnreadRequestBuilder {
+	bb := &ServiceUpdateMessageCollectionMarkUnreadRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/MarkUnread"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ServiceUpdateMessageCollectionMarkUnreadRequest struct{ BaseRequest }
+
+func (b *ServiceUpdateMessageCollectionMarkUnreadRequestBuilder) Request() *ServiceUpdateMessageCollectionMarkUnreadRequest {
+	return &ServiceUpdateMessageCollectionMarkUnreadRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ServiceUpdateMessageCollectionMarkUnreadRequest) Post(ctx context.Context) (resObj *bool, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type ServiceUpdateMessageCollectionUnarchiveRequestBuilder struct{ BaseRequestBuilder }
+
+// Unarchive action undocumentedras
+func (b *ServiceAnnouncementMessagesCollectionRequestBuilder) Unarchive(reqObj *ServiceUpdateMessageCollectionUnarchiveRequestParameter) *ServiceUpdateMessageCollectionUnarchiveRequestBuilder {
+	bb := &ServiceUpdateMessageCollectionUnarchiveRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Unarchive"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ServiceUpdateMessageCollectionUnarchiveRequest struct{ BaseRequest }
+
+func (b *ServiceUpdateMessageCollectionUnarchiveRequestBuilder) Request() *ServiceUpdateMessageCollectionUnarchiveRequest {
+	return &ServiceUpdateMessageCollectionUnarchiveRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ServiceUpdateMessageCollectionUnarchiveRequest) Post(ctx context.Context) (resObj *bool, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
+type ServiceUpdateMessageCollectionUnfavoriteRequestBuilder struct{ BaseRequestBuilder }
+
+// Unfavorite action undocumentedras
+func (b *ServiceAnnouncementMessagesCollectionRequestBuilder) Unfavorite(reqObj *ServiceUpdateMessageCollectionUnfavoriteRequestParameter) *ServiceUpdateMessageCollectionUnfavoriteRequestBuilder {
+	bb := &ServiceUpdateMessageCollectionUnfavoriteRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Unfavorite"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ServiceUpdateMessageCollectionUnfavoriteRequest struct{ BaseRequest }
+
+func (b *ServiceUpdateMessageCollectionUnfavoriteRequestBuilder) Request() *ServiceUpdateMessageCollectionUnfavoriteRequest {
+	return &ServiceUpdateMessageCollectionUnfavoriteRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ServiceUpdateMessageCollectionUnfavoriteRequest) Post(ctx context.Context) (resObj *bool, err error) {
+	err = r.JSONRequest(ctx, "POST", "", r.requestObject, &resObj)
+	return
+}
+
 type ServicePrincipalAddKeyRequestBuilder struct{ BaseRequestBuilder }
 
 // AddKey action undocumentedras

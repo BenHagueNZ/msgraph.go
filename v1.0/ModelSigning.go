@@ -9,7 +9,7 @@ type SigningCertificateUpdateStatus struct {
 	// Object is the base model of SigningCertificateUpdateStatus
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CertificateUpdateResult undocumented
 	CertificateUpdateResult *string `json:"certificateUpdateResult,omitempty"`
 	// LastRunDateTime undocumented

@@ -7,7 +7,7 @@ type SearchAggregation struct {
 	// Object is the base model of SearchAggregation
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Buckets undocumented
 	Buckets []SearchBucket `json:"buckets,omitempty"`
 	// Field undocumented
@@ -26,7 +26,7 @@ type SearchAlteration struct {
 	// Object is the base model of SearchAlteration
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AlteredHighlightedQueryString undocumented
 	AlteredHighlightedQueryString *string `json:"alteredHighlightedQueryString,omitempty"`
 	// AlteredQueryString undocumented
@@ -47,7 +47,7 @@ type SearchAlterationOptions struct {
 	// Object is the base model of SearchAlterationOptions
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EnableModification undocumented
 	EnableModification *bool `json:"enableModification,omitempty"`
 	// EnableSuggestion undocumented
@@ -66,7 +66,7 @@ type SearchBucket struct {
 	// Object is the base model of SearchBucket
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AggregationFilterToken undocumented
 	AggregationFilterToken *string `json:"aggregationFilterToken,omitempty"`
 	// Count undocumented
@@ -87,7 +87,7 @@ type SearchEntity struct {
 	// Entity is the base model of SearchEntity
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewSearchEntity() (*SearchEntity, error) {
@@ -102,7 +102,7 @@ type SearchHit struct {
 	// Object is the base model of SearchHit
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentSource undocumented
 	ContentSource *string `json:"contentSource,omitempty"`
 	// HitID undocumented
@@ -129,7 +129,7 @@ type SearchHitsContainer struct {
 	// Object is the base model of SearchHitsContainer
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Aggregations undocumented
 	Aggregations []SearchAggregation `json:"aggregations,omitempty"`
 	// Hits undocumented
@@ -152,7 +152,7 @@ type SearchQuery struct {
 	// Object is the base model of SearchQuery
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// QueryString undocumented
 	QueryString *string `json:"queryString,omitempty"`
 }
@@ -169,7 +169,7 @@ type SearchRequestObject struct {
 	// Object is the base model of SearchRequestObject
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AggregationFilters undocumented
 	AggregationFilters []string `json:"aggregationFilters,omitempty"`
 	// Aggregations undocumented
@@ -212,7 +212,7 @@ type SearchResponse struct {
 	// Object is the base model of SearchResponse
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// HitsContainers undocumented
 	HitsContainers []SearchHitsContainer `json:"hitsContainers,omitempty"`
 	// QueryAlterationResponse undocumented
@@ -235,7 +235,7 @@ type SearchResult struct {
 	// Object is the base model of SearchResult
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// OnClickTelemetryURL undocumented
 	OnClickTelemetryURL *string `json:"onClickTelemetryUrl,omitempty"`
 }

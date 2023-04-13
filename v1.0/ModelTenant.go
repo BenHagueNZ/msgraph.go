@@ -7,7 +7,7 @@ type TenantAppManagementPolicy struct {
 	// PolicyBase is the base model of TenantAppManagementPolicy
 	PolicyBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicationRestrictions undocumented
 	ApplicationRestrictions *AppManagementConfiguration `json:"applicationRestrictions,omitempty"`
 	// IsEnabled undocumented
@@ -28,7 +28,7 @@ type TenantRelationship struct {
 	// Object is the base model of TenantRelationship
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DelegatedAdminCustomers undocumented
 	DelegatedAdminCustomers []DelegatedAdminCustomer `json:"delegatedAdminCustomers,omitempty"`
 	// DelegatedAdminRelationships undocumented

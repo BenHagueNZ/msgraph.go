@@ -11,7 +11,7 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// Overrides returns request builder for InferenceClassificationOverride collection rcn
+// Overrides returns request builder for InferenceClassificationOverride collection
 func (b *InferenceClassificationRequestBuilder) Overrides() *InferenceClassificationOverridesCollectionRequestBuilder {
 	bb := &InferenceClassificationOverridesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/overrides"

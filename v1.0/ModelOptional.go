@@ -7,7 +7,7 @@ type OptionalClaim struct {
 	// Object is the base model of OptionalClaim
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AdditionalProperties undocumented
 	AdditionalProperties []string `json:"additionalProperties,omitempty"`
 	// Essential undocumented
@@ -30,7 +30,7 @@ type OptionalClaims struct {
 	// Object is the base model of OptionalClaims
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccessToken undocumented
 	AccessToken []OptionalClaim `json:"accessToken,omitempty"`
 	// IDToken undocumented

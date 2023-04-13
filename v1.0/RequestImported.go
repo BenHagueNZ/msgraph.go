@@ -2,7 +2,14 @@
 
 package msgraph
 
-import "context"
+import (
+	"context"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+
+	"github.com/BenHagueNZ/msgraph.go/jsonx"
+)
 
 // ImportedWindowsAutopilotDeviceIdentityRequestBuilder is request builder for ImportedWindowsAutopilotDeviceIdentity
 type ImportedWindowsAutopilotDeviceIdentityRequestBuilder struct{ BaseRequestBuilder }
@@ -101,4 +108,93 @@ func (r *ImportedWindowsAutopilotDeviceIdentityUploadRequest) Update(ctx context
 // Delete performs DELETE request for ImportedWindowsAutopilotDeviceIdentityUpload
 func (r *ImportedWindowsAutopilotDeviceIdentityUploadRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
+}
+
+type ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestBuilder struct{ BaseRequestBuilder }
+
+// Import action undocumentedrac
+func (b *DeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder) Import(reqObj *ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestParameter) *ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestBuilder {
+	bb := &ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Import"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+// Import action undocumentedrac
+func (b *ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionRequestBuilder) Import(reqObj *ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestParameter) *ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestBuilder {
+	bb := &ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/Import"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
+type ImportedWindowsAutopilotDeviceIdentityCollectionImportRequest struct{ BaseRequest }
+
+func (b *ImportedWindowsAutopilotDeviceIdentityCollectionImportRequestBuilder) Request() *ImportedWindowsAutopilotDeviceIdentityCollectionImportRequest {
+	return &ImportedWindowsAutopilotDeviceIdentityCollectionImportRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client, requestObject: b.requestObject},
+	}
+}
+
+func (r *ImportedWindowsAutopilotDeviceIdentityCollectionImportRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ImportedWindowsAutopilotDeviceIdentity, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ImportedWindowsAutopilotDeviceIdentity
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ImportedWindowsAutopilotDeviceIdentity
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, _ = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+func (r *ImportedWindowsAutopilotDeviceIdentityCollectionImportRequest) PostN(ctx context.Context, n int) ([]ImportedWindowsAutopilotDeviceIdentity, error) {
+	return r.Paging(ctx, "POST", "", r.requestObject, n)
+}
+
+func (r *ImportedWindowsAutopilotDeviceIdentityCollectionImportRequest) Post(ctx context.Context) ([]ImportedWindowsAutopilotDeviceIdentity, error) {
+	return r.Paging(ctx, "POST", "", r.requestObject, 0)
 }

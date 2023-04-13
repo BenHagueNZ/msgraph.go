@@ -7,7 +7,7 @@ type JoinMeetingIDMeetingInfo struct {
 	// MeetingInfo is the base model of JoinMeetingIDMeetingInfo
 	MeetingInfo
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// JoinMeetingID undocumented
 	JoinMeetingID *string `json:"joinMeetingId,omitempty"`
 	// Passcode undocumented
@@ -26,7 +26,7 @@ type JoinMeetingIDSettings struct {
 	// Object is the base model of JoinMeetingIDSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsPasscodeRequired undocumented
 	IsPasscodeRequired *bool `json:"isPasscodeRequired,omitempty"`
 	// JoinMeetingID undocumented

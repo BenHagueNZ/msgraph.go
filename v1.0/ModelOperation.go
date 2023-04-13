@@ -9,7 +9,7 @@ type Operation struct {
 	// Entity is the base model of Operation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// LastActionDateTime undocumented
@@ -30,7 +30,7 @@ type OperationError struct {
 	// Object is the base model of OperationError
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
 	// Message undocumented

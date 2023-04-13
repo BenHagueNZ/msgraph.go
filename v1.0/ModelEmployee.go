@@ -7,7 +7,7 @@ type EmployeeOrgData struct {
 	// Object is the base model of EmployeeOrgData
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CostCenter undocumented
 	CostCenter *string `json:"costCenter,omitempty"`
 	// Division undocumented

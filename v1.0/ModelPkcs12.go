@@ -7,7 +7,7 @@ type Pkcs12Certificate struct {
 	// APIAuthenticationConfigurationBase is the base model of Pkcs12Certificate
 	APIAuthenticationConfigurationBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Password undocumented
 	Password *string `json:"password,omitempty"`
 	// Pkcs12Value undocumented
@@ -26,7 +26,7 @@ type Pkcs12CertificateInformation struct {
 	// Object is the base model of Pkcs12CertificateInformation
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsActive undocumented
 	IsActive *bool `json:"isActive,omitempty"`
 	// NotAfter undocumented

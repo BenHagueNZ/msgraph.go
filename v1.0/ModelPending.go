@@ -9,7 +9,7 @@ type PendingContentUpdate struct {
 	// Object is the base model of PendingContentUpdate
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// QueuedDateTime undocumented
 	QueuedDateTime *time.Time `json:"queuedDateTime,omitempty"`
 }
@@ -26,7 +26,7 @@ type PendingOperations struct {
 	// Object is the base model of PendingOperations
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// PendingContentUpdate undocumented
 	PendingContentUpdate *PendingContentUpdate `json:"pendingContentUpdate,omitempty"`
 }

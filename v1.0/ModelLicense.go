@@ -9,7 +9,7 @@ type LicenseAssignmentState struct {
 	// Object is the base model of LicenseAssignmentState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedByGroup undocumented
 	AssignedByGroup *string `json:"assignedByGroup,omitempty"`
 	// DisabledPlans undocumented
@@ -36,7 +36,7 @@ type LicenseDetails struct {
 	// Entity is the base model of LicenseDetails
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ServicePlans undocumented
 	ServicePlans []ServicePlanInfo `json:"servicePlans,omitempty"`
 	// SKUID undocumented
@@ -57,7 +57,7 @@ type LicenseProcessingState struct {
 	// Object is the base model of LicenseProcessingState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// State undocumented
 	State *string `json:"state,omitempty"`
 }
@@ -74,7 +74,7 @@ type LicenseUnitsDetail struct {
 	// Object is the base model of LicenseUnitsDetail
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Enabled undocumented
 	Enabled *int `json:"enabled,omitempty"`
 	// Suspended undocumented

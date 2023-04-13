@@ -7,7 +7,7 @@ type Person struct {
 	// Entity is the base model of Person
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Birthday undocumented
 	Birthday *string `json:"birthday,omitempty"`
 	// CompanyName undocumented
@@ -60,7 +60,7 @@ type PersonOrGroupColumn struct {
 	// Object is the base model of PersonOrGroupColumn
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowMultipleSelection undocumented
 	AllowMultipleSelection *bool `json:"allowMultipleSelection,omitempty"`
 	// ChooseFromType undocumented
@@ -81,7 +81,7 @@ type PersonType struct {
 	// Object is the base model of PersonType
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Class undocumented
 	Class *string `json:"class,omitempty"`
 	// Subclass undocumented

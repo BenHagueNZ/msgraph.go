@@ -7,7 +7,7 @@ type RgbColor struct {
 	// Object is the base model of RgbColor
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// B undocumented
 	B *byte `json:"b,omitempty"`
 	// G undocumented

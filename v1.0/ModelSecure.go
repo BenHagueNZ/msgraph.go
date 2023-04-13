@@ -9,7 +9,7 @@ type SecureScore struct {
 	// Entity is the base model of SecureScore
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActiveUserCount undocumented
 	ActiveUserCount *int `json:"activeUserCount,omitempty"`
 	// AverageComparativeScores undocumented
@@ -44,7 +44,7 @@ type SecureScoreControlProfile struct {
 	// Entity is the base model of SecureScoreControlProfile
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActionType undocumented
 	ActionType *string `json:"actionType,omitempty"`
 	// ActionURL undocumented
@@ -97,7 +97,7 @@ type SecureScoreControlStateUpdate struct {
 	// Object is the base model of SecureScoreControlStateUpdate
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignedTo undocumented
 	AssignedTo *string `json:"assignedTo,omitempty"`
 	// Comment undocumented

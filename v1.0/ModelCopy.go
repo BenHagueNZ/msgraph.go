@@ -9,7 +9,7 @@ type CopyNotebookModel struct {
 	// Object is the base model of CopyNotebookModel
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *string `json:"createdBy,omitempty"`
 	// CreatedByIdentity undocumented

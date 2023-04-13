@@ -9,7 +9,7 @@ type Message struct {
 	// OutlookItem is the base model of Message
 	OutlookItem
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BccRecipients undocumented
 	BccRecipients []Recipient `json:"bccRecipients,omitempty"`
 	// Body undocumented
@@ -84,7 +84,7 @@ type MessagePinnedEventMessageDetail struct {
 	// EventMessageDetail is the base model of MessagePinnedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EventDateTime undocumented
 	EventDateTime *time.Time `json:"eventDateTime,omitempty"`
 	// Initiator undocumented
@@ -103,7 +103,7 @@ type MessageRule struct {
 	// Entity is the base model of MessageRule
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Actions undocumented
 	Actions *MessageRuleActions `json:"actions,omitempty"`
 	// Conditions undocumented
@@ -134,7 +134,7 @@ type MessageRuleActions struct {
 	// Object is the base model of MessageRuleActions
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssignCategories undocumented
 	AssignCategories []string `json:"assignCategories,omitempty"`
 	// CopyToFolder undocumented
@@ -171,7 +171,7 @@ type MessageRulePredicates struct {
 	// Object is the base model of MessageRulePredicates
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BodyContains undocumented
 	BodyContains []string `json:"bodyContains,omitempty"`
 	// BodyOrSubjectContains undocumented
@@ -246,7 +246,7 @@ type MessageSecurityState struct {
 	// Object is the base model of MessageSecurityState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ConnectingIP undocumented
 	ConnectingIP *string `json:"connectingIP,omitempty"`
 	// DeliveryAction undocumented
@@ -279,7 +279,7 @@ type MessageUnpinnedEventMessageDetail struct {
 	// EventMessageDetail is the base model of MessageUnpinnedEventMessageDetail
 	EventMessageDetail
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EventDateTime undocumented
 	EventDateTime *time.Time `json:"eventDateTime,omitempty"`
 	// Initiator undocumented

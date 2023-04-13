@@ -7,7 +7,7 @@ type UpdateRecordingStatusOperation struct {
 	// CommsOperation is the base model of UpdateRecordingStatusOperation
 	CommsOperation
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewUpdateRecordingStatusOperation() (*UpdateRecordingStatusOperation, error) {
@@ -22,7 +22,7 @@ type UpdateWindowsDeviceAccountActionParameter struct {
 	// Object is the base model of UpdateWindowsDeviceAccountActionParameter
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CalendarSyncEnabled undocumented
 	CalendarSyncEnabled *bool `json:"calendarSyncEnabled,omitempty"`
 	// DeviceAccount undocumented

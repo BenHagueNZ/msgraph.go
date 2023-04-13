@@ -22,7 +22,7 @@ func (b *CrossTenantAccessPolicyRequestBuilder) Default() *CrossTenantAccessPoli
 	return bb
 }
 
-// Partners returns request builder for CrossTenantAccessPolicyConfigurationPartner collection rcn
+// Partners returns request builder for CrossTenantAccessPolicyConfigurationPartner collection
 func (b *CrossTenantAccessPolicyRequestBuilder) Partners() *CrossTenantAccessPolicyPartnersCollectionRequestBuilder {
 	bb := &CrossTenantAccessPolicyPartnersCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/partners"

@@ -17,7 +17,7 @@ type CloudCommunicationsGetPresencesByUserIDRequestParameter struct {
 	IDs []string `json:"ids,omitempty"`
 }
 
-// CallRecords returns request builder for CallRecordsCallRecord collection rcn
+// CallRecords returns request builder for CallRecordsCallRecord collection
 func (b *CloudCommunicationsRequestBuilder) CallRecords() *CloudCommunicationsCallRecordsCollectionRequestBuilder {
 	bb := &CloudCommunicationsCallRecordsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/callRecords"
@@ -120,7 +120,7 @@ func (r *CloudCommunicationsCallRecordsCollectionRequest) Add(ctx context.Contex
 	return
 }
 
-// Calls returns request builder for Call collection rcn
+// Calls returns request builder for Call collection
 func (b *CloudCommunicationsRequestBuilder) Calls() *CloudCommunicationsCallsCollectionRequestBuilder {
 	bb := &CloudCommunicationsCallsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/calls"
@@ -223,7 +223,7 @@ func (r *CloudCommunicationsCallsCollectionRequest) Add(ctx context.Context, req
 	return
 }
 
-// OnlineMeetings returns request builder for OnlineMeeting collection rcn
+// OnlineMeetings returns request builder for OnlineMeeting collection
 func (b *CloudCommunicationsRequestBuilder) OnlineMeetings() *CloudCommunicationsOnlineMeetingsCollectionRequestBuilder {
 	bb := &CloudCommunicationsOnlineMeetingsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/onlineMeetings"
@@ -326,7 +326,7 @@ func (r *CloudCommunicationsOnlineMeetingsCollectionRequest) Add(ctx context.Con
 	return
 }
 
-// Presences returns request builder for Presence collection rcn
+// Presences returns request builder for Presence collection
 func (b *CloudCommunicationsRequestBuilder) Presences() *CloudCommunicationsPresencesCollectionRequestBuilder {
 	bb := &CloudCommunicationsPresencesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/presences"

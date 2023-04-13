@@ -9,7 +9,7 @@ type RemoteAssistancePartner struct {
 	// Entity is the base model of RemoteAssistancePartner
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// LastConnectionDateTime undocumented
@@ -32,7 +32,7 @@ type RemoteItem struct {
 	// Object is the base model of RemoteItem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -85,7 +85,7 @@ type RemoteLockActionResult struct {
 	// DeviceActionResult is the base model of RemoteLockActionResult
 	DeviceActionResult
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UnlockPin undocumented
 	UnlockPin *string `json:"unlockPin,omitempty"`
 }

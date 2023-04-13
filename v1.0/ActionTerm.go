@@ -25,7 +25,7 @@ func (b *TermColumnRequestBuilder) TermSet() *TermStoreSetRequestBuilder {
 	return bb
 }
 
-// Sets returns request builder for TermStoreSet collection rcn
+// Sets returns request builder for TermStoreSet collection
 func (b *TermStoreGroupRequestBuilder) Sets() *TermStoreGroupSetsCollectionRequestBuilder {
 	bb := &TermStoreGroupSetsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sets"
@@ -149,7 +149,7 @@ func (b *TermStoreRelationRequestBuilder) ToTerm() *TermStoreTermRequestBuilder 
 	return bb
 }
 
-// Children returns request builder for TermStoreTerm collection rcn
+// Children returns request builder for TermStoreTerm collection
 func (b *TermStoreSetRequestBuilder) Children() *TermStoreSetChildrenCollectionRequestBuilder {
 	bb := &TermStoreSetChildrenCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/children"
@@ -259,7 +259,7 @@ func (b *TermStoreSetRequestBuilder) ParentGroup() *TermStoreGroupRequestBuilder
 	return bb
 }
 
-// Relations returns request builder for TermStoreRelation collection rcn
+// Relations returns request builder for TermStoreRelation collection
 func (b *TermStoreSetRequestBuilder) Relations() *TermStoreSetRelationsCollectionRequestBuilder {
 	bb := &TermStoreSetRelationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/relations"
@@ -362,7 +362,7 @@ func (r *TermStoreSetRelationsCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// Terms returns request builder for TermStoreTerm collection rcn
+// Terms returns request builder for TermStoreTerm collection
 func (b *TermStoreSetRequestBuilder) Terms() *TermStoreSetTermsCollectionRequestBuilder {
 	bb := &TermStoreSetTermsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/terms"
@@ -465,7 +465,7 @@ func (r *TermStoreSetTermsCollectionRequest) Add(ctx context.Context, reqObj *Te
 	return
 }
 
-// Groups returns request builder for TermStoreGroup collection rcn
+// Groups returns request builder for TermStoreGroup collection
 func (b *TermStoreStoreRequestBuilder) Groups() *TermStoreStoreGroupsCollectionRequestBuilder {
 	bb := &TermStoreStoreGroupsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/groups"
@@ -568,7 +568,7 @@ func (r *TermStoreStoreGroupsCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// Sets returns request builder for TermStoreSet collection rcn
+// Sets returns request builder for TermStoreSet collection
 func (b *TermStoreStoreRequestBuilder) Sets() *TermStoreStoreSetsCollectionRequestBuilder {
 	bb := &TermStoreStoreSetsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/sets"
@@ -671,7 +671,7 @@ func (r *TermStoreStoreSetsCollectionRequest) Add(ctx context.Context, reqObj *T
 	return
 }
 
-// Children returns request builder for TermStoreTerm collection rcn
+// Children returns request builder for TermStoreTerm collection
 func (b *TermStoreTermRequestBuilder) Children() *TermStoreTermChildrenCollectionRequestBuilder {
 	bb := &TermStoreTermChildrenCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/children"
@@ -774,7 +774,7 @@ func (r *TermStoreTermChildrenCollectionRequest) Add(ctx context.Context, reqObj
 	return
 }
 
-// Relations returns request builder for TermStoreRelation collection rcn
+// Relations returns request builder for TermStoreRelation collection
 func (b *TermStoreTermRequestBuilder) Relations() *TermStoreTermRelationsCollectionRequestBuilder {
 	bb := &TermStoreTermRelationsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/relations"

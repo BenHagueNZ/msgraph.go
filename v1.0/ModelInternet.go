@@ -7,7 +7,7 @@ type InternetMessageHeader struct {
 	// Object is the base model of InternetMessageHeader
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Value undocumented

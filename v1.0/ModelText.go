@@ -7,7 +7,7 @@ type TextColumn struct {
 	// Object is the base model of TextColumn
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowMultipleLines undocumented
 	AllowMultipleLines *bool `json:"allowMultipleLines,omitempty"`
 	// AppendChangesToExistingText undocumented

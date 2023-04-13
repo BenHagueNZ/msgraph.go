@@ -7,7 +7,7 @@ type FreeBusyError struct {
 	// Object is the base model of FreeBusyError
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Message undocumented
 	Message *string `json:"message,omitempty"`
 	// ResponseCode undocumented

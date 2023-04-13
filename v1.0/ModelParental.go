@@ -7,7 +7,7 @@ type ParentalControlSettings struct {
 	// Object is the base model of ParentalControlSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CountriesBlockedForMinors undocumented
 	CountriesBlockedForMinors []string `json:"countriesBlockedForMinors,omitempty"`
 	// LegalAgeGroupRule undocumented

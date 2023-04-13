@@ -7,7 +7,7 @@ type URLAssessmentRequestObject struct {
 	// ThreatAssessmentRequestObject is the base model of URLAssessmentRequestObject
 	ThreatAssessmentRequestObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// URL undocumented
 	URL *string `json:"url,omitempty"`
 }

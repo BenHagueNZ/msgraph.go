@@ -9,7 +9,7 @@ type Shift struct {
 	// ChangeTrackedEntity is the base model of Shift
 	ChangeTrackedEntity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DraftShift undocumented
 	DraftShift *ShiftItem `json:"draftShift,omitempty"`
 	// SchedulingGroupID undocumented
@@ -32,7 +32,7 @@ type ShiftActivity struct {
 	// Object is the base model of ShiftActivity
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Code undocumented
 	Code *string `json:"code,omitempty"`
 	// DisplayName undocumented
@@ -59,7 +59,7 @@ type ShiftAvailability struct {
 	// Object is the base model of ShiftAvailability
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Recurrence undocumented
 	Recurrence *PatternedRecurrence `json:"recurrence,omitempty"`
 	// TimeSlots undocumented
@@ -80,7 +80,7 @@ type ShiftItem struct {
 	// ScheduleEntity is the base model of ShiftItem
 	ScheduleEntity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Activities undocumented
 	Activities []ShiftActivity `json:"activities,omitempty"`
 	// DisplayName undocumented
@@ -101,7 +101,7 @@ type ShiftPreferences struct {
 	// ChangeTrackedEntity is the base model of ShiftPreferences
 	ChangeTrackedEntity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Availability undocumented
 	Availability []ShiftAvailability `json:"availability,omitempty"`
 }

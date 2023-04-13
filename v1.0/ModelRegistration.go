@@ -7,7 +7,7 @@ type RegistrationEnforcement struct {
 	// Object is the base model of RegistrationEnforcement
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AuthenticationMethodsRegistrationCampaign undocumented
 	AuthenticationMethodsRegistrationCampaign *AuthenticationMethodsRegistrationCampaign `json:"authenticationMethodsRegistrationCampaign,omitempty"`
 }

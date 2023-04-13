@@ -9,7 +9,7 @@ type File struct {
 	// Object is the base model of File
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Hashes undocumented
 	Hashes *Hashes `json:"hashes,omitempty"`
 	// MimeType undocumented
@@ -30,7 +30,7 @@ type FileAssessmentRequestObject struct {
 	// ThreatAssessmentRequestObject is the base model of FileAssessmentRequestObject
 	ThreatAssessmentRequestObject
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentData undocumented
 	ContentData *string `json:"contentData,omitempty"`
 	// FileName undocumented
@@ -49,7 +49,7 @@ type FileAttachment struct {
 	// Attachment is the base model of FileAttachment
 	Attachment
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContentBytes undocumented
 	ContentBytes *Binary `json:"contentBytes,omitempty"`
 	// ContentID undocumented
@@ -70,7 +70,7 @@ type FileEncryptionInfo struct {
 	// Object is the base model of FileEncryptionInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EncryptionKey undocumented
 	EncryptionKey *Binary `json:"encryptionKey,omitempty"`
 	// FileDigest undocumented
@@ -99,7 +99,7 @@ type FileHash struct {
 	// Object is the base model of FileHash
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// HashType undocumented
 	HashType *FileHashType `json:"hashType,omitempty"`
 	// HashValue undocumented
@@ -118,7 +118,7 @@ type FileSecurityState struct {
 	// Object is the base model of FileSecurityState
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// FileHash undocumented
 	FileHash *FileHash `json:"fileHash,omitempty"`
 	// Name undocumented
@@ -141,7 +141,7 @@ type FileSystemInfo struct {
 	// Object is the base model of FileSystemInfo
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// LastAccessedDateTime undocumented

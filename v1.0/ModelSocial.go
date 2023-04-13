@@ -7,7 +7,7 @@ type SocialIdentityProvider struct {
 	// IdentityProviderBase is the base model of SocialIdentityProvider
 	IdentityProviderBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ClientID undocumented
 	ClientID *string `json:"clientId,omitempty"`
 	// ClientSecret undocumented

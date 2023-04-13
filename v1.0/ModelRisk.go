@@ -9,7 +9,7 @@ type RiskDetection struct {
 	// Entity is the base model of RiskDetection
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Activity undocumented
 	Activity *ActivityType `json:"activity,omitempty"`
 	// ActivityDateTime undocumented
@@ -62,7 +62,7 @@ type RiskServicePrincipalActivity struct {
 	// Object is the base model of RiskServicePrincipalActivity
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Detail undocumented
 	Detail *RiskDetail `json:"detail,omitempty"`
 	// RiskEventTypes undocumented
@@ -81,7 +81,7 @@ type RiskUserActivity struct {
 	// Object is the base model of RiskUserActivity
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Detail undocumented
 	Detail *RiskDetail `json:"detail,omitempty"`
 	// RiskEventTypes undocumented

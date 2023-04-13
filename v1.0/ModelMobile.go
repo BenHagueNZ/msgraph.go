@@ -9,7 +9,7 @@ type MobileApp struct {
 	// Entity is the base model of MobileApp
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -54,7 +54,7 @@ type MobileAppAssignment struct {
 	// Entity is the base model of MobileAppAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Intent undocumented
 	Intent *InstallIntent `json:"intent,omitempty"`
 	// Settings undocumented
@@ -75,7 +75,7 @@ type MobileAppAssignmentSettings struct {
 	// Object is the base model of MobileAppAssignmentSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewMobileAppAssignmentSettings() (*MobileAppAssignmentSettings, error) {
@@ -90,7 +90,7 @@ type MobileAppCategory struct {
 	// Entity is the base model of MobileAppCategory
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// LastModifiedDateTime undocumented
@@ -109,7 +109,7 @@ type MobileAppContent struct {
 	// Entity is the base model of MobileAppContent
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ContainedApps undocumented
 	ContainedApps []MobileContainedApp `json:"containedApps,omitempty"`
 	// Files undocumented
@@ -128,7 +128,7 @@ type MobileAppContentFile struct {
 	// Entity is the base model of MobileAppContentFile
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AzureStorageURI undocumented
 	AzureStorageURI *string `json:"azureStorageUri,omitempty"`
 	// AzureStorageURIExpirationDateTime undocumented
@@ -161,7 +161,7 @@ type MobileAppIdentifier struct {
 	// Object is the base model of MobileAppIdentifier
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewMobileAppIdentifier() (*MobileAppIdentifier, error) {
@@ -176,7 +176,7 @@ type MobileAppInstallTimeSettings struct {
 	// Object is the base model of MobileAppInstallTimeSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeadlineDateTime undocumented
 	DeadlineDateTime *time.Time `json:"deadlineDateTime,omitempty"`
 	// StartDateTime undocumented
@@ -197,7 +197,7 @@ type MobileContainedApp struct {
 	// Entity is the base model of MobileContainedApp
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewMobileContainedApp() (*MobileContainedApp, error) {
@@ -212,7 +212,7 @@ type MobileLobApp struct {
 	// MobileApp is the base model of MobileLobApp
 	MobileApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CommittedContentVersion undocumented
 	CommittedContentVersion *string `json:"committedContentVersion,omitempty"`
 	// FileName undocumented
@@ -235,7 +235,7 @@ type MobileThreatDefenseConnector struct {
 	// Entity is the base model of MobileThreatDefenseConnector
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowPartnerToCollectIOSApplicationMetadata undocumented
 	AllowPartnerToCollectIOSApplicationMetadata *bool `json:"allowPartnerToCollectIOSApplicationMetadata,omitempty"`
 	// AllowPartnerToCollectIOSPersonalApplicationMetadata undocumented

@@ -9,7 +9,7 @@ type ConditionalAccessApplications struct {
 	// Object is the base model of ConditionalAccessApplications
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExcludeApplications undocumented
 	ExcludeApplications []string `json:"excludeApplications,omitempty"`
 	// IncludeApplications undocumented
@@ -32,7 +32,7 @@ type ConditionalAccessClientApplications struct {
 	// Object is the base model of ConditionalAccessClientApplications
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExcludeServicePrincipals undocumented
 	ExcludeServicePrincipals []string `json:"excludeServicePrincipals,omitempty"`
 	// IncludeServicePrincipals undocumented
@@ -51,7 +51,7 @@ type ConditionalAccessConditionSet struct {
 	// Object is the base model of ConditionalAccessConditionSet
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Applications undocumented
 	Applications *ConditionalAccessApplications `json:"applications,omitempty"`
 	// ClientApplications undocumented
@@ -86,7 +86,7 @@ type ConditionalAccessDevices struct {
 	// Object is the base model of ConditionalAccessDevices
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeviceFilter undocumented
 	DeviceFilter *ConditionalAccessFilter `json:"deviceFilter,omitempty"`
 }
@@ -103,7 +103,7 @@ type ConditionalAccessFilter struct {
 	// Object is the base model of ConditionalAccessFilter
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Mode undocumented
 	Mode *FilterMode `json:"mode,omitempty"`
 	// Rule undocumented
@@ -122,7 +122,7 @@ type ConditionalAccessGrantControls struct {
 	// Object is the base model of ConditionalAccessGrantControls
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BuiltInControls undocumented
 	BuiltInControls []ConditionalAccessGrantControl `json:"builtInControls,omitempty"`
 	// CustomAuthenticationFactors undocumented
@@ -145,7 +145,7 @@ type ConditionalAccessLocations struct {
 	// Object is the base model of ConditionalAccessLocations
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExcludeLocations undocumented
 	ExcludeLocations []string `json:"excludeLocations,omitempty"`
 	// IncludeLocations undocumented
@@ -164,7 +164,7 @@ type ConditionalAccessPlatforms struct {
 	// Object is the base model of ConditionalAccessPlatforms
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExcludePlatforms undocumented
 	ExcludePlatforms []ConditionalAccessDevicePlatform `json:"excludePlatforms,omitempty"`
 	// IncludePlatforms undocumented
@@ -183,7 +183,7 @@ type ConditionalAccessPolicy struct {
 	// Entity is the base model of ConditionalAccessPolicy
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Conditions undocumented
 	Conditions *ConditionalAccessConditionSet `json:"conditions,omitempty"`
 	// CreatedDateTime undocumented
@@ -214,7 +214,7 @@ type ConditionalAccessPolicyDetail struct {
 	// Object is the base model of ConditionalAccessPolicyDetail
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Conditions undocumented
 	Conditions *ConditionalAccessConditionSet `json:"conditions,omitempty"`
 	// GrantControls undocumented
@@ -235,7 +235,7 @@ type ConditionalAccessRoot struct {
 	// Entity is the base model of ConditionalAccessRoot
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AuthenticationContextClassReferences undocumented
 	AuthenticationContextClassReferences []AuthenticationContextClassReference `json:"authenticationContextClassReferences,omitempty"`
 	// NamedLocations undocumented
@@ -258,7 +258,7 @@ type ConditionalAccessSessionControl struct {
 	// Object is the base model of ConditionalAccessSessionControl
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsEnabled undocumented
 	IsEnabled *bool `json:"isEnabled,omitempty"`
 }
@@ -275,7 +275,7 @@ type ConditionalAccessSessionControls struct {
 	// Object is the base model of ConditionalAccessSessionControls
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicationEnforcedRestrictions undocumented
 	ApplicationEnforcedRestrictions *ApplicationEnforcedRestrictionsSessionControl `json:"applicationEnforcedRestrictions,omitempty"`
 	// CloudAppSecurity undocumented
@@ -300,7 +300,7 @@ type ConditionalAccessTemplate struct {
 	// Entity is the base model of ConditionalAccessTemplate
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// Details undocumented
@@ -323,7 +323,7 @@ type ConditionalAccessUsers struct {
 	// Object is the base model of ConditionalAccessUsers
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ExcludeGroups undocumented
 	ExcludeGroups []string `json:"excludeGroups,omitempty"`
 	// ExcludeRoles undocumented

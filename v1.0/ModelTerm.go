@@ -9,7 +9,7 @@ type TermColumn struct {
 	// Object is the base model of TermColumn
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowMultipleValues undocumented
 	AllowMultipleValues *bool `json:"allowMultipleValues,omitempty"`
 	// ShowFullyQualifiedName undocumented
@@ -32,7 +32,7 @@ type TermStoreGroup struct {
 	// Entity is the base model of TermStoreGroup
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -59,7 +59,7 @@ type TermStoreLocalizedDescription struct {
 	// Object is the base model of TermStoreLocalizedDescription
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// LanguageTag undocumented
@@ -78,7 +78,7 @@ type TermStoreLocalizedLabel struct {
 	// Object is the base model of TermStoreLocalizedLabel
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsDefault undocumented
 	IsDefault *bool `json:"isDefault,omitempty"`
 	// LanguageTag undocumented
@@ -99,7 +99,7 @@ type TermStoreLocalizedName struct {
 	// Object is the base model of TermStoreLocalizedName
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// LanguageTag undocumented
 	LanguageTag *string `json:"languageTag,omitempty"`
 	// Name undocumented
@@ -118,7 +118,7 @@ type TermStoreRelation struct {
 	// Entity is the base model of TermStoreRelation
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Relationship undocumented
 	Relationship *TermStoreRelationType `json:"relationship,omitempty"`
 	// FromTerm undocumented
@@ -141,7 +141,7 @@ type TermStoreSet struct {
 	// Entity is the base model of TermStoreSet
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Description undocumented
@@ -172,7 +172,7 @@ type TermStoreStore struct {
 	// Entity is the base model of TermStoreStore
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DefaultLanguageTag undocumented
 	DefaultLanguageTag *string `json:"defaultLanguageTag,omitempty"`
 	// LanguageTags undocumented
@@ -195,7 +195,7 @@ type TermStoreTerm struct {
 	// Entity is the base model of TermStoreTerm
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedDateTime undocumented
 	CreatedDateTime *time.Time `json:"createdDateTime,omitempty"`
 	// Descriptions undocumented

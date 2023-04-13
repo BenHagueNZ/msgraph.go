@@ -7,7 +7,7 @@ type FeatureRolloutPolicy struct {
 	// Entity is the base model of FeatureRolloutPolicy
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Description undocumented
 	Description *string `json:"description,omitempty"`
 	// DisplayName undocumented
@@ -34,7 +34,7 @@ type FeatureTarget struct {
 	// Object is the base model of FeatureTarget
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ID undocumented
 	ID *string `json:"id,omitempty"`
 	// TargetType undocumented

@@ -7,7 +7,7 @@ type X509CertificateAuthenticationMethodConfiguration struct {
 	// AuthenticationMethodConfiguration is the base model of X509CertificateAuthenticationMethodConfiguration
 	AuthenticationMethodConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AuthenticationModeConfiguration undocumented
 	AuthenticationModeConfiguration *X509CertificateAuthenticationModeConfiguration `json:"authenticationModeConfiguration,omitempty"`
 	// CertificateUserBindings undocumented
@@ -28,7 +28,7 @@ type X509CertificateAuthenticationModeConfiguration struct {
 	// Object is the base model of X509CertificateAuthenticationModeConfiguration
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Rules undocumented
 	Rules []X509CertificateRule `json:"rules,omitempty"`
 	// X509CertificateAuthenticationDefaultMode undocumented
@@ -47,7 +47,7 @@ type X509CertificateRule struct {
 	// Object is the base model of X509CertificateRule
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Identifier undocumented
 	Identifier *string `json:"identifier,omitempty"`
 	// X509CertificateAuthenticationMode undocumented
@@ -68,7 +68,7 @@ type X509CertificateUserBinding struct {
 	// Object is the base model of X509CertificateUserBinding
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Priority undocumented
 	Priority *int `json:"priority,omitempty"`
 	// UserProperty undocumented

@@ -9,7 +9,7 @@ type BaseItem struct {
 	// Entity is the base model of BaseItem
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CreatedBy undocumented
 	CreatedBy *IdentitySet `json:"createdBy,omitempty"`
 	// CreatedDateTime undocumented
@@ -46,7 +46,7 @@ type BaseItemVersion struct {
 	// Entity is the base model of BaseItemVersion
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// LastModifiedBy undocumented
 	LastModifiedBy *IdentitySet `json:"lastModifiedBy,omitempty"`
 	// LastModifiedDateTime undocumented

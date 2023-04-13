@@ -7,7 +7,7 @@ type ProfilePhoto struct {
 	// Entity is the base model of ProfilePhoto
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Height undocumented
 	Height *int `json:"height,omitempty"`
 	// Width undocumented

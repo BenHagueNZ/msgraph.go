@@ -54,7 +54,7 @@ func (b *ContentTypeRequestBuilder) Base() *ContentTypeRequestBuilder {
 	return bb
 }
 
-// BaseTypes returns request builder for ContentType collection rcn
+// BaseTypes returns request builder for ContentType collection
 func (b *ContentTypeRequestBuilder) BaseTypes() *ContentTypeBaseTypesCollectionRequestBuilder {
 	bb := &ContentTypeBaseTypesCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/baseTypes"
@@ -157,7 +157,7 @@ func (r *ContentTypeBaseTypesCollectionRequest) Add(ctx context.Context, reqObj 
 	return
 }
 
-// ColumnLinks returns request builder for ColumnLink collection rcn
+// ColumnLinks returns request builder for ColumnLink collection
 func (b *ContentTypeRequestBuilder) ColumnLinks() *ContentTypeColumnLinksCollectionRequestBuilder {
 	bb := &ContentTypeColumnLinksCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/columnLinks"
@@ -260,7 +260,7 @@ func (r *ContentTypeColumnLinksCollectionRequest) Add(ctx context.Context, reqOb
 	return
 }
 
-// ColumnPositions returns request builder for ColumnDefinition collection rcn
+// ColumnPositions returns request builder for ColumnDefinition collection
 func (b *ContentTypeRequestBuilder) ColumnPositions() *ContentTypeColumnPositionsCollectionRequestBuilder {
 	bb := &ContentTypeColumnPositionsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/columnPositions"
@@ -363,7 +363,7 @@ func (r *ContentTypeColumnPositionsCollectionRequest) Add(ctx context.Context, r
 	return
 }
 
-// Columns returns request builder for ColumnDefinition collection rcn
+// Columns returns request builder for ColumnDefinition collection
 func (b *ContentTypeRequestBuilder) Columns() *ContentTypeColumnsCollectionRequestBuilder {
 	bb := &ContentTypeColumnsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/columns"

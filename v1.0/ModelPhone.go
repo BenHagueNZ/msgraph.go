@@ -7,7 +7,7 @@ type Phone struct {
 	// Object is the base model of Phone
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Language undocumented
 	Language *string `json:"language,omitempty"`
 	// Number undocumented
@@ -30,7 +30,7 @@ type PhoneAuthenticationMethod struct {
 	// AuthenticationMethod is the base model of PhoneAuthenticationMethod
 	AuthenticationMethod
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// PhoneNumber undocumented
 	PhoneNumber *string `json:"phoneNumber,omitempty"`
 	// PhoneType undocumented

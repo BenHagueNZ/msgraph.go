@@ -7,7 +7,7 @@ type Album struct {
 	// Object is the base model of Album
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CoverImageItemID undocumented
 	CoverImageItemID *string `json:"coverImageItemId,omitempty"`
 }

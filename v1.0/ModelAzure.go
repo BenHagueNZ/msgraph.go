@@ -7,7 +7,7 @@ type AzureActiveDirectoryTenant struct {
 	// IdentitySource is the base model of AzureActiveDirectoryTenant
 	IdentitySource
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// TenantID undocumented
@@ -26,7 +26,7 @@ type AzureCommunicationServicesUserConversationMember struct {
 	// ConversationMember is the base model of AzureCommunicationServicesUserConversationMember
 	ConversationMember
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AzureCommunicationServicesID undocumented
 	AzureCommunicationServicesID *string `json:"azureCommunicationServicesId,omitempty"`
 }

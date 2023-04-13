@@ -7,7 +7,7 @@ type ConfigurationManagerClientEnabledFeatures struct {
 	// Object is the base model of ConfigurationManagerClientEnabledFeatures
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CompliancePolicy undocumented
 	CompliancePolicy *bool `json:"compliancePolicy,omitempty"`
 	// DeviceConfiguration undocumented
@@ -34,7 +34,7 @@ type ConfigurationManagerCollectionAssignmentTarget struct {
 	// DeviceAndAppManagementAssignmentTarget is the base model of ConfigurationManagerCollectionAssignmentTarget
 	DeviceAndAppManagementAssignmentTarget
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CollectionID undocumented
 	CollectionID *string `json:"collectionId,omitempty"`
 }

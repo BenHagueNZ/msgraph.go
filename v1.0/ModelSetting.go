@@ -7,7 +7,7 @@ type SettingSource struct {
 	// Object is the base model of SettingSource
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// ID undocumented
@@ -28,7 +28,7 @@ type SettingStateDeviceSummary struct {
 	// Entity is the base model of SettingStateDeviceSummary
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CompliantDeviceCount undocumented
 	CompliantDeviceCount *int `json:"compliantDeviceCount,omitempty"`
 	// ConflictDeviceCount undocumented
@@ -61,7 +61,7 @@ type SettingTemplateValue struct {
 	// Object is the base model of SettingTemplateValue
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DefaultValue undocumented
 	DefaultValue *string `json:"defaultValue,omitempty"`
 	// Description undocumented
@@ -84,7 +84,7 @@ type SettingValue struct {
 	// Object is the base model of SettingValue
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Name undocumented
 	Name *string `json:"name,omitempty"`
 	// Value undocumented

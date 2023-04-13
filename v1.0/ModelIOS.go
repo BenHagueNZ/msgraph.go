@@ -9,7 +9,7 @@ type IOSCertificateProfile struct {
 	// DeviceConfiguration is the base model of IOSCertificateProfile
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewIOSCertificateProfile() (*IOSCertificateProfile, error) {
@@ -24,7 +24,7 @@ type IOSCompliancePolicy struct {
 	// DeviceCompliancePolicy is the base model of IOSCompliancePolicy
 	DeviceCompliancePolicy
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeviceThreatProtectionEnabled undocumented
 	DeviceThreatProtectionEnabled *bool `json:"deviceThreatProtectionEnabled,omitempty"`
 	// DeviceThreatProtectionRequiredSecurityLevel undocumented
@@ -67,7 +67,7 @@ type IOSCustomConfiguration struct {
 	// DeviceConfiguration is the base model of IOSCustomConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Payload undocumented
 	Payload *Binary `json:"payload,omitempty"`
 	// PayloadFileName undocumented
@@ -88,7 +88,7 @@ type IOSDeviceFeaturesConfiguration struct {
 	// AppleDeviceFeaturesConfigurationBase is the base model of IOSDeviceFeaturesConfiguration
 	AppleDeviceFeaturesConfigurationBase
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AssetTagTemplate undocumented
 	AssetTagTemplate *string `json:"assetTagTemplate,omitempty"`
 	// HomeScreenDockIcons undocumented
@@ -113,7 +113,7 @@ type IOSDeviceType struct {
 	// Object is the base model of IOSDeviceType
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IPad undocumented
 	IPad *bool `json:"iPad,omitempty"`
 	// IPhoneAndIPod undocumented
@@ -132,7 +132,7 @@ type IOSGeneralDeviceConfiguration struct {
 	// DeviceConfiguration is the base model of IOSGeneralDeviceConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AccountBlockModification undocumented
 	AccountBlockModification *bool `json:"accountBlockModification,omitempty"`
 	// ActivationLockAllowWhenSupervised undocumented
@@ -409,7 +409,7 @@ type IOSHomeScreenApp struct {
 	// IOSHomeScreenItem is the base model of IOSHomeScreenApp
 	IOSHomeScreenItem
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BundleID undocumented
 	BundleID *string `json:"bundleID,omitempty"`
 }
@@ -426,7 +426,7 @@ type IOSHomeScreenFolder struct {
 	// IOSHomeScreenItem is the base model of IOSHomeScreenFolder
 	IOSHomeScreenItem
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Pages undocumented
 	Pages []IOSHomeScreenFolderPage `json:"pages,omitempty"`
 }
@@ -443,7 +443,7 @@ type IOSHomeScreenFolderPage struct {
 	// Object is the base model of IOSHomeScreenFolderPage
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Apps undocumented
 	Apps []IOSHomeScreenApp `json:"apps,omitempty"`
 	// DisplayName undocumented
@@ -462,7 +462,7 @@ type IOSHomeScreenItem struct {
 	// Object is the base model of IOSHomeScreenItem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 }
@@ -479,7 +479,7 @@ type IOSHomeScreenPage struct {
 	// Object is the base model of IOSHomeScreenPage
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DisplayName undocumented
 	DisplayName *string `json:"displayName,omitempty"`
 	// Icons undocumented
@@ -498,7 +498,7 @@ type IOSLobApp struct {
 	// MobileLobApp is the base model of IOSLobApp
 	MobileLobApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
 	// BuildNumber undocumented
@@ -525,7 +525,7 @@ type IOSLobAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of IOSLobAppAssignmentSettings
 	MobileAppAssignmentSettings
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// IsRemovable undocumented
 	IsRemovable *bool `json:"isRemovable,omitempty"`
 	// UninstallOnDeviceRemoval undocumented
@@ -546,7 +546,7 @@ type IOSLobAppProvisioningConfigurationAssignment struct {
 	// Entity is the base model of IOSLobAppProvisioningConfigurationAssignment
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Target undocumented
 	Target *DeviceAndAppManagementAssignmentTarget `json:"target,omitempty"`
 }
@@ -563,7 +563,7 @@ type IOSManagedAppProtection struct {
 	// TargetedManagedAppProtection is the base model of IOSManagedAppProtection
 	TargetedManagedAppProtection
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppDataEncryptionType undocumented
 	AppDataEncryptionType *ManagedAppDataEncryptionType `json:"appDataEncryptionType,omitempty"`
 	// CustomBrowserProtocol undocumented
@@ -592,7 +592,7 @@ type IOSManagedAppRegistration struct {
 	// ManagedAppRegistration is the base model of IOSManagedAppRegistration
 	ManagedAppRegistration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewIOSManagedAppRegistration() (*IOSManagedAppRegistration, error) {
@@ -607,7 +607,7 @@ type IOSMinimumOperatingSystem struct {
 	// Object is the base model of IOSMinimumOperatingSystem
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// V10_0 undocumented
 	V10_0 *bool `json:"v10_0,omitempty"`
 	// V11_0 undocumented
@@ -638,7 +638,7 @@ type IOSMobileAppConfiguration struct {
 	// ManagedDeviceMobileAppConfiguration is the base model of IOSMobileAppConfiguration
 	ManagedDeviceMobileAppConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// EncodedSettingXML undocumented
 	EncodedSettingXML *Binary `json:"encodedSettingXml,omitempty"`
 	// Settings undocumented
@@ -657,7 +657,7 @@ type IOSMobileAppIdentifier struct {
 	// MobileAppIdentifier is the base model of IOSMobileAppIdentifier
 	MobileAppIdentifier
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// BundleID undocumented
 	BundleID *string `json:"bundleId,omitempty"`
 }
@@ -674,7 +674,7 @@ type IOSNetworkUsageRule struct {
 	// Object is the base model of IOSNetworkUsageRule
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CellularDataBlocked undocumented
 	CellularDataBlocked *bool `json:"cellularDataBlocked,omitempty"`
 	// CellularDataBlockWhenRoaming undocumented
@@ -695,7 +695,7 @@ type IOSNotificationSettings struct {
 	// Object is the base model of IOSNotificationSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AlertType undocumented
 	AlertType *IOSNotificationAlertType `json:"alertType,omitempty"`
 	// AppName undocumented
@@ -728,7 +728,7 @@ type IOSStoreApp struct {
 	// MobileApp is the base model of IOSStoreApp
 	MobileApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
 	// AppStoreURL undocumented
@@ -751,7 +751,7 @@ type IOSStoreAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of IOSStoreAppAssignmentSettings
 	MobileAppAssignmentSettings
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// VPNConfigurationID undocumented
 	VPNConfigurationID *string `json:"vpnConfigurationId,omitempty"`
 }
@@ -768,7 +768,7 @@ type IOSUpdateConfiguration struct {
 	// DeviceConfiguration is the base model of IOSUpdateConfiguration
 	DeviceConfiguration
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ActiveHoursEnd undocumented
 	ActiveHoursEnd *TimeOfDay `json:"activeHoursEnd,omitempty"`
 	// ActiveHoursStart undocumented
@@ -791,7 +791,7 @@ type IOSUpdateDeviceStatus struct {
 	// Entity is the base model of IOSUpdateDeviceStatus
 	Entity
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ComplianceGracePeriodExpirationDateTime undocumented
 	ComplianceGracePeriodExpirationDateTime *time.Time `json:"complianceGracePeriodExpirationDateTime,omitempty"`
 	// DeviceDisplayName undocumented
@@ -828,7 +828,7 @@ type IOSVPPApp struct {
 	// MobileApp is the base model of IOSVPPApp
 	MobileApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicableDeviceType undocumented
 	ApplicableDeviceType *IOSDeviceType `json:"applicableDeviceType,omitempty"`
 	// AppStoreURL undocumented
@@ -863,7 +863,7 @@ type IOSVPPAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of IOSVPPAppAssignmentSettings
 	MobileAppAssignmentSettings
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// UseDeviceLicensing undocumented
 	UseDeviceLicensing *bool `json:"useDeviceLicensing,omitempty"`
 	// VPNConfigurationID undocumented
@@ -882,7 +882,7 @@ type IOSVPPEBook struct {
 	// ManagedEBook is the base model of IOSVPPEBook
 	ManagedEBook
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AppleID undocumented
 	AppleID *string `json:"appleId,omitempty"`
 	// Genres undocumented
@@ -913,7 +913,7 @@ type IOSVPPEBookAssignment struct {
 	// ManagedEBookAssignment is the base model of IOSVPPEBookAssignment
 	ManagedEBookAssignment
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 }
 
 func NewIOSVPPEBookAssignment() (*IOSVPPEBookAssignment, error) {

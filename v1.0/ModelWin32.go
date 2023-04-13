@@ -7,7 +7,7 @@ type Win32LobApp struct {
 	// MobileLobApp is the base model of Win32LobApp
 	MobileLobApp
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ApplicableArchitectures undocumented
 	ApplicableArchitectures *WindowsArchitecture `json:"applicableArchitectures,omitempty"`
 	// InstallCommandLine undocumented
@@ -48,7 +48,7 @@ type Win32LobAppAssignmentSettings struct {
 	// MobileAppAssignmentSettings is the base model of Win32LobAppAssignmentSettings
 	MobileAppAssignmentSettings
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeliveryOptimizationPriority undocumented
 	DeliveryOptimizationPriority *Win32LobAppDeliveryOptimizationPriority `json:"deliveryOptimizationPriority,omitempty"`
 	// InstallTimeSettings undocumented
@@ -71,7 +71,7 @@ type Win32LobAppFileSystemRule struct {
 	// Win32LobAppRule is the base model of Win32LobAppFileSystemRule
 	Win32LobAppRule
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Check32BitOn64System undocumented
 	Check32BitOn64System *bool `json:"check32BitOn64System,omitempty"`
 	// ComparisonValue undocumented
@@ -98,7 +98,7 @@ type Win32LobAppInstallExperience struct {
 	// Object is the base model of Win32LobAppInstallExperience
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// DeviceRestartBehavior undocumented
 	DeviceRestartBehavior *Win32LobAppRestartBehavior `json:"deviceRestartBehavior,omitempty"`
 	// RunAsAccount undocumented
@@ -117,7 +117,7 @@ type Win32LobAppMsiInformation struct {
 	// Object is the base model of Win32LobAppMsiInformation
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// PackageType undocumented
 	PackageType *Win32LobAppMsiPackageType `json:"packageType,omitempty"`
 	// ProductCode undocumented
@@ -146,7 +146,7 @@ type Win32LobAppPowerShellScriptRule struct {
 	// Win32LobAppRule is the base model of Win32LobAppPowerShellScriptRule
 	Win32LobAppRule
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ComparisonValue undocumented
 	ComparisonValue *string `json:"comparisonValue,omitempty"`
 	// DisplayName undocumented
@@ -177,7 +177,7 @@ type Win32LobAppProductCodeRule struct {
 	// Win32LobAppRule is the base model of Win32LobAppProductCodeRule
 	Win32LobAppRule
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ProductCode undocumented
 	ProductCode *string `json:"productCode,omitempty"`
 	// ProductVersion undocumented
@@ -198,7 +198,7 @@ type Win32LobAppRegistryRule struct {
 	// Win32LobAppRule is the base model of Win32LobAppRegistryRule
 	Win32LobAppRule
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Check32BitOn64System undocumented
 	Check32BitOn64System *bool `json:"check32BitOn64System,omitempty"`
 	// ComparisonValue undocumented
@@ -225,7 +225,7 @@ type Win32LobAppRestartSettings struct {
 	// Object is the base model of Win32LobAppRestartSettings
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// CountdownDisplayBeforeRestartInMinutes undocumented
 	CountdownDisplayBeforeRestartInMinutes *int `json:"countdownDisplayBeforeRestartInMinutes,omitempty"`
 	// GracePeriodInMinutes undocumented
@@ -246,7 +246,7 @@ type Win32LobAppReturnCode struct {
 	// Object is the base model of Win32LobAppReturnCode
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// ReturnCode undocumented
 	ReturnCode *int `json:"returnCode,omitempty"`
 	// Type undocumented
@@ -265,7 +265,7 @@ type Win32LobAppRule struct {
 	// Object is the base model of Win32LobAppRule
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// RuleType undocumented
 	RuleType *Win32LobAppRuleType `json:"ruleType,omitempty"`
 }

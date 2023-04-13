@@ -7,7 +7,7 @@ type ChoiceColumn struct {
 	// Object is the base model of ChoiceColumn
 	Object
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// AllowTextEntry undocumented
 	AllowTextEntry *bool `json:"allowTextEntry,omitempty"`
 	// Choices undocumented

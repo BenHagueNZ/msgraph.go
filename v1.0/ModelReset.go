@@ -7,7 +7,7 @@ type ResetPasscodeActionResult struct {
 	// DeviceActionResult is the base model of ResetPasscodeActionResult
 	DeviceActionResult
 
-	ODataType string `json:"@odata.type"`
+	ODataType string `json:"@odata.type,omitempty"`
 	// Passcode undocumented
 	Passcode *string `json:"passcode,omitempty"`
 }

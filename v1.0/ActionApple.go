@@ -11,35 +11,35 @@ import (
 	"github.com/BenHagueNZ/msgraph.go/jsonx"
 )
 
-// AppleDeviceFeaturesConfigurationBase returns request builder for AppleDeviceFeaturesConfigurationBase collection rcn
-func (b *DeviceConfigurationRequestBuilder) AppleDeviceFeaturesConfigurationBase() *DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder {
-	bb := &DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/AppleDeviceFeaturesConfigurationBase"
+// AppleDeviceFeaturesConfigurationBase returns request builder for AppleDeviceFeaturesConfigurationBase collection
+func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) AppleDeviceFeaturesConfigurationBase() *DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder {
+	bb := &DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder is request builder for AppleDeviceFeaturesConfigurationBase collection
-type DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder struct{ BaseRequestBuilder }
+// DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder is request builder for AppleDeviceFeaturesConfigurationBase collection
+type DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AppleDeviceFeaturesConfigurationBase collection
-func (b *DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder) Request() *DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionRequest {
-	return &DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionRequest{
+func (b *DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder) Request() *DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequest {
+	return &DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for AppleDeviceFeaturesConfigurationBase item
-func (b *DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder) ID(id string) *AppleDeviceFeaturesConfigurationBaseRequestBuilder {
+func (b *DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder) ID(id string) *AppleDeviceFeaturesConfigurationBaseRequestBuilder {
 	bb := &AppleDeviceFeaturesConfigurationBaseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionRequest is request for AppleDeviceFeaturesConfigurationBase collection
-type DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionRequest struct{ BaseRequest }
+// DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequest is request for AppleDeviceFeaturesConfigurationBase collection
+type DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for AppleDeviceFeaturesConfigurationBase collection
-func (r *DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AppleDeviceFeaturesConfigurationBase, error) {
+func (r *DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AppleDeviceFeaturesConfigurationBase, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -95,7 +95,7 @@ func (r *DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionReques
 }
 
 // GetN performs GET request for AppleDeviceFeaturesConfigurationBase collection, max N pages
-func (r *DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionRequest) GetN(ctx context.Context, n int) ([]AppleDeviceFeaturesConfigurationBase, error) {
+func (r *DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequest) GetN(ctx context.Context, n int) ([]AppleDeviceFeaturesConfigurationBase, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -104,45 +104,45 @@ func (r *DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionReques
 }
 
 // Get performs GET request for AppleDeviceFeaturesConfigurationBase collection
-func (r *DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionRequest) Get(ctx context.Context) ([]AppleDeviceFeaturesConfigurationBase, error) {
+func (r *DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequest) Get(ctx context.Context) ([]AppleDeviceFeaturesConfigurationBase, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for AppleDeviceFeaturesConfigurationBase collection
-func (r *DeviceConfigurationAppleDeviceFeaturesConfigurationBaseCollectionRequest) Add(ctx context.Context, reqObj *AppleDeviceFeaturesConfigurationBase) (resObj *AppleDeviceFeaturesConfigurationBase, err error) {
+func (r *DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequest) Add(ctx context.Context, reqObj *AppleDeviceFeaturesConfigurationBase) (resObj *AppleDeviceFeaturesConfigurationBase, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
 
-// AppleManagedIdentityProvider returns request builder for AppleManagedIdentityProvider collection rcn
-func (b *IdentityProviderBaseRequestBuilder) AppleManagedIdentityProvider() *IdentityProviderBaseAppleManagedIdentityProviderCollectionRequestBuilder {
-	bb := &IdentityProviderBaseAppleManagedIdentityProviderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/AppleManagedIdentityProvider"
+// AppleManagedIdentityProvider returns request builder for AppleManagedIdentityProvider collection
+func (b *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionRequestBuilder) AppleManagedIdentityProvider() *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequestBuilder {
+	bb := &B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
 	return bb
 }
 
-// IdentityProviderBaseAppleManagedIdentityProviderCollectionRequestBuilder is request builder for AppleManagedIdentityProvider collection
-type IdentityProviderBaseAppleManagedIdentityProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
+// B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequestBuilder is request builder for AppleManagedIdentityProvider collection
+type B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AppleManagedIdentityProvider collection
-func (b *IdentityProviderBaseAppleManagedIdentityProviderCollectionRequestBuilder) Request() *IdentityProviderBaseAppleManagedIdentityProviderCollectionRequest {
-	return &IdentityProviderBaseAppleManagedIdentityProviderCollectionRequest{
+func (b *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequestBuilder) Request() *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequest {
+	return &B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for AppleManagedIdentityProvider item
-func (b *IdentityProviderBaseAppleManagedIdentityProviderCollectionRequestBuilder) ID(id string) *AppleManagedIdentityProviderRequestBuilder {
+func (b *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequestBuilder) ID(id string) *AppleManagedIdentityProviderRequestBuilder {
 	bb := &AppleManagedIdentityProviderRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// IdentityProviderBaseAppleManagedIdentityProviderCollectionRequest is request for AppleManagedIdentityProvider collection
-type IdentityProviderBaseAppleManagedIdentityProviderCollectionRequest struct{ BaseRequest }
+// B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequest is request for AppleManagedIdentityProvider collection
+type B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for AppleManagedIdentityProvider collection
-func (r *IdentityProviderBaseAppleManagedIdentityProviderCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AppleManagedIdentityProvider, error) {
+func (r *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AppleManagedIdentityProvider, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -198,7 +198,7 @@ func (r *IdentityProviderBaseAppleManagedIdentityProviderCollectionRequest) Pagi
 }
 
 // GetN performs GET request for AppleManagedIdentityProvider collection, max N pages
-func (r *IdentityProviderBaseAppleManagedIdentityProviderCollectionRequest) GetN(ctx context.Context, n int) ([]AppleManagedIdentityProvider, error) {
+func (r *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequest) GetN(ctx context.Context, n int) ([]AppleManagedIdentityProvider, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -207,12 +207,12 @@ func (r *IdentityProviderBaseAppleManagedIdentityProviderCollectionRequest) GetN
 }
 
 // Get performs GET request for AppleManagedIdentityProvider collection
-func (r *IdentityProviderBaseAppleManagedIdentityProviderCollectionRequest) Get(ctx context.Context) ([]AppleManagedIdentityProvider, error) {
+func (r *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequest) Get(ctx context.Context) ([]AppleManagedIdentityProvider, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for AppleManagedIdentityProvider collection
-func (r *IdentityProviderBaseAppleManagedIdentityProviderCollectionRequest) Add(ctx context.Context, reqObj *AppleManagedIdentityProvider) (resObj *AppleManagedIdentityProvider, err error) {
+func (r *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequest) Add(ctx context.Context, reqObj *AppleManagedIdentityProvider) (resObj *AppleManagedIdentityProvider, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
