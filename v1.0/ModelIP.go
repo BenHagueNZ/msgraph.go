@@ -10,6 +10,8 @@ type IPNamedLocation struct {
 	ODataType string `json:"@odata.type,omitempty"`
 	// IPRanges undocumented
 	IPRanges []IPRange `json:"ipRanges,omitempty"`
+	IPv4Ranges []IPv4CidrRange `json:"ipRanges,omitempty"`
+	IPv6Ranges []IPv6CidrRange `json:"ipRanges,omitempty"`
 	// IsTrusted undocumented
 	IsTrusted *bool `json:"isTrusted,omitempty"`
 }
