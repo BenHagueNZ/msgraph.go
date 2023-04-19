@@ -10,8 +10,6 @@ type IPNamedLocation struct {
 	ODataType string `json:"@odata.type,omitempty"`
 	// IPRanges undocumented
 	IPRanges []IPRange `json:"ipRanges,omitempty"`
-	IPv4Ranges []IPv4CidrRange `json:"ipRanges,omitempty"`
-	IPv6Ranges []IPv6CidrRange `json:"ipRanges,omitempty"`
 	// IsTrusted undocumented
 	IsTrusted *bool `json:"isTrusted,omitempty"`
 }
@@ -34,6 +32,20 @@ type IPRange struct {
 func NewIPRange() (*IPRange, error) {
 	newIPRange := &IPRange{
 		ODataType: "#microsoft.graph.IpRange",
+	}
+	return newIPRange, nil
+}
+
+func NewIPv6Range1() (*IPRange, error) {
+	newIPRange := &IPRange{
+		ODataType: "#microsoft.graph.IPv6CidrRange",
+	}
+	return newIPRange, nil
+}
+
+func NewIPv4Range1() (*IPRange, error) {
+	newIPRange := &IPRange{
+		ODataType: "#microsoft.graph.IPv4CidrRange",
 	}
 	return newIPRange, nil
 }
