@@ -25,7 +25,7 @@ func fix_ModelIP(outputFolder string) {
 		allText = allText + scanner.Text() + "\n"
 	}
 	appendContent := `
-	func filterIPRange(ss []IPRange, v4 bool) (ret []IPRange) {
+	func FilterIPRange(ss []IPRange, v4 bool) (ret []IPRange) {
 		odata := "#microsoft.graph.iPv6CidrRange"
 		if v4 {
 			odata = "#microsoft.graph.iPv4CidrRange"
