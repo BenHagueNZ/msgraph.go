@@ -140,7 +140,7 @@ func (b *CallRequestBuilder) AudioRoutingGroups() *CallAudioRoutingGroupsCollect
 	return bb
 }
 
-// CallAudioRoutingGroupsCollectionRequestBuilder is request builder for AudioRoutingGroup collection
+// CallAudioRoutingGroupsCollectionRequestBuilder is request builder for AudioRoutingGroup collection rcn
 type CallAudioRoutingGroupsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AudioRoutingGroup collection
@@ -243,7 +243,7 @@ func (b *CallRequestBuilder) ContentSharingSessions() *CallContentSharingSession
 	return bb
 }
 
-// CallContentSharingSessionsCollectionRequestBuilder is request builder for ContentSharingSession collection
+// CallContentSharingSessionsCollectionRequestBuilder is request builder for ContentSharingSession collection rcn
 type CallContentSharingSessionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ContentSharingSession collection
@@ -346,7 +346,7 @@ func (b *CallRequestBuilder) Operations() *CallOperationsCollectionRequestBuilde
 	return bb
 }
 
-// CallOperationsCollectionRequestBuilder is request builder for CommsOperation collection
+// CallOperationsCollectionRequestBuilder is request builder for CommsOperation collection rcn
 type CallOperationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for CommsOperation collection
@@ -449,7 +449,7 @@ func (b *CallRequestBuilder) Participants() *CallParticipantsCollectionRequestBu
 	return bb
 }
 
-// CallParticipantsCollectionRequestBuilder is request builder for Participant collection
+// CallParticipantsCollectionRequestBuilder is request builder for Participant collection rcn
 type CallParticipantsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Participant collection
@@ -559,7 +559,7 @@ func (b *CallRecordsCallRecordRequestBuilder) Sessions() *CallRecordsCallRecordS
 	return bb
 }
 
-// CallRecordsCallRecordSessionsCollectionRequestBuilder is request builder for CallRecordsSession collection
+// CallRecordsCallRecordSessionsCollectionRequestBuilder is request builder for CallRecordsSession collection rcn
 type CallRecordsCallRecordSessionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for CallRecordsSession collection
@@ -662,7 +662,7 @@ func (b *CallRecordsSessionRequestBuilder) Segments() *CallRecordsSessionSegment
 	return bb
 }
 
-// CallRecordsSessionSegmentsCollectionRequestBuilder is request builder for CallRecordsSegment collection
+// CallRecordsSessionSegmentsCollectionRequestBuilder is request builder for CallRecordsSegment collection rcn
 type CallRecordsSessionSegmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for CallRecordsSegment collection

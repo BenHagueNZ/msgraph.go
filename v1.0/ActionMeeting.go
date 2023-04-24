@@ -18,7 +18,7 @@ func (b *MeetingAttendanceReportRequestBuilder) AttendanceRecords() *MeetingAtte
 	return bb
 }
 
-// MeetingAttendanceReportAttendanceRecordsCollectionRequestBuilder is request builder for AttendanceRecord collection
+// MeetingAttendanceReportAttendanceRecordsCollectionRequestBuilder is request builder for AttendanceRecord collection rcn
 type MeetingAttendanceReportAttendanceRecordsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AttendanceRecord collection

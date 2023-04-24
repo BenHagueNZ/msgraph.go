@@ -25,7 +25,7 @@ func (b *RoleDefinitionRequestBuilder) RoleAssignments() *RoleDefinitionRoleAssi
 	return bb
 }
 
-// RoleDefinitionRoleAssignmentsCollectionRequestBuilder is request builder for RoleAssignment collection
+// RoleDefinitionRoleAssignmentsCollectionRequestBuilder is request builder for RoleAssignment collection rcn
 type RoleDefinitionRoleAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for RoleAssignment collection

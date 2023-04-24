@@ -18,7 +18,7 @@ func (b *AttackSimulationRootRequestBuilder) SimulationAutomations() *AttackSimu
 	return bb
 }
 
-// AttackSimulationRootSimulationAutomationsCollectionRequestBuilder is request builder for SimulationAutomation collection
+// AttackSimulationRootSimulationAutomationsCollectionRequestBuilder is request builder for SimulationAutomation collection rcn
 type AttackSimulationRootSimulationAutomationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SimulationAutomation collection
@@ -121,7 +121,7 @@ func (b *AttackSimulationRootRequestBuilder) Simulations() *AttackSimulationRoot
 	return bb
 }
 
-// AttackSimulationRootSimulationsCollectionRequestBuilder is request builder for Simulation collection
+// AttackSimulationRootSimulationsCollectionRequestBuilder is request builder for Simulation collection rcn
 type AttackSimulationRootSimulationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Simulation collection

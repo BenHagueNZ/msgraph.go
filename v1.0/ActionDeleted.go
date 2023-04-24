@@ -18,7 +18,7 @@ func (b *DeletedTeamRequestBuilder) Channels() *DeletedTeamChannelsCollectionReq
 	return bb
 }
 
-// DeletedTeamChannelsCollectionRequestBuilder is request builder for Channel collection
+// DeletedTeamChannelsCollectionRequestBuilder is request builder for Channel collection rcn
 type DeletedTeamChannelsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Channel collection

@@ -452,7 +452,7 @@ func (b *DeviceRequestBuilder) Extensions() *DeviceExtensionsCollectionRequestBu
 	return bb
 }
 
-// DeviceExtensionsCollectionRequestBuilder is request builder for Extension collection
+// DeviceExtensionsCollectionRequestBuilder is request builder for Extension collection rcn
 type DeviceExtensionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Extension collection
@@ -555,7 +555,7 @@ func (b *DeviceRequestBuilder) MemberOf() *DeviceMemberOfCollectionRequestBuilde
 	return bb
 }
 
-// DeviceMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection
+// DeviceMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type DeviceMemberOfCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -658,7 +658,7 @@ func (b *DeviceRequestBuilder) RegisteredOwners() *DeviceRegisteredOwnersCollect
 	return bb
 }
 
-// DeviceRegisteredOwnersCollectionRequestBuilder is request builder for DirectoryObject collection
+// DeviceRegisteredOwnersCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type DeviceRegisteredOwnersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -761,7 +761,7 @@ func (b *DeviceRequestBuilder) RegisteredUsers() *DeviceRegisteredUsersCollectio
 	return bb
 }
 
-// DeviceRegisteredUsersCollectionRequestBuilder is request builder for DirectoryObject collection
+// DeviceRegisteredUsersCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type DeviceRegisteredUsersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -864,7 +864,7 @@ func (b *DeviceRequestBuilder) TransitiveMemberOf() *DeviceTransitiveMemberOfCol
 	return bb
 }
 
-// DeviceTransitiveMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection
+// DeviceTransitiveMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type DeviceTransitiveMemberOfCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -967,7 +967,7 @@ func (b *DeviceAppManagementRequestBuilder) AndroidManagedAppProtections() *Devi
 	return bb
 }
 
-// DeviceAppManagementAndroidManagedAppProtectionsCollectionRequestBuilder is request builder for AndroidManagedAppProtection collection
+// DeviceAppManagementAndroidManagedAppProtectionsCollectionRequestBuilder is request builder for AndroidManagedAppProtection collection rcn
 type DeviceAppManagementAndroidManagedAppProtectionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AndroidManagedAppProtection collection
@@ -1070,7 +1070,7 @@ func (b *DeviceAppManagementRequestBuilder) DefaultManagedAppProtections() *Devi
 	return bb
 }
 
-// DeviceAppManagementDefaultManagedAppProtectionsCollectionRequestBuilder is request builder for DefaultManagedAppProtection collection
+// DeviceAppManagementDefaultManagedAppProtectionsCollectionRequestBuilder is request builder for DefaultManagedAppProtection collection rcn
 type DeviceAppManagementDefaultManagedAppProtectionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DefaultManagedAppProtection collection
@@ -1173,7 +1173,7 @@ func (b *DeviceAppManagementRequestBuilder) IOSManagedAppProtections() *DeviceAp
 	return bb
 }
 
-// DeviceAppManagementIOSManagedAppProtectionsCollectionRequestBuilder is request builder for IOSManagedAppProtection collection
+// DeviceAppManagementIOSManagedAppProtectionsCollectionRequestBuilder is request builder for IOSManagedAppProtection collection rcn
 type DeviceAppManagementIOSManagedAppProtectionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IOSManagedAppProtection collection
@@ -1276,7 +1276,7 @@ func (b *DeviceAppManagementRequestBuilder) ManagedAppPolicies() *DeviceAppManag
 	return bb
 }
 
-// DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder is request builder for ManagedAppPolicy collection
+// DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder is request builder for ManagedAppPolicy collection rcn
 type DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedAppPolicy collection
@@ -1379,7 +1379,7 @@ func (b *DeviceAppManagementRequestBuilder) ManagedAppRegistrations() *DeviceApp
 	return bb
 }
 
-// DeviceAppManagementManagedAppRegistrationsCollectionRequestBuilder is request builder for ManagedAppRegistration collection
+// DeviceAppManagementManagedAppRegistrationsCollectionRequestBuilder is request builder for ManagedAppRegistration collection rcn
 type DeviceAppManagementManagedAppRegistrationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedAppRegistration collection
@@ -1482,7 +1482,7 @@ func (b *DeviceAppManagementRequestBuilder) ManagedAppStatuses() *DeviceAppManag
 	return bb
 }
 
-// DeviceAppManagementManagedAppStatusesCollectionRequestBuilder is request builder for ManagedAppStatus collection
+// DeviceAppManagementManagedAppStatusesCollectionRequestBuilder is request builder for ManagedAppStatus collection rcn
 type DeviceAppManagementManagedAppStatusesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedAppStatus collection
@@ -1585,7 +1585,7 @@ func (b *DeviceAppManagementRequestBuilder) ManagedEBooks() *DeviceAppManagement
 	return bb
 }
 
-// DeviceAppManagementManagedEBooksCollectionRequestBuilder is request builder for ManagedEBook collection
+// DeviceAppManagementManagedEBooksCollectionRequestBuilder is request builder for ManagedEBook collection rcn
 type DeviceAppManagementManagedEBooksCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedEBook collection
@@ -1688,7 +1688,7 @@ func (b *DeviceAppManagementRequestBuilder) MDMWindowsInformationProtectionPolic
 	return bb
 }
 
-// DeviceAppManagementMDMWindowsInformationProtectionPoliciesCollectionRequestBuilder is request builder for MDMWindowsInformationProtectionPolicy collection
+// DeviceAppManagementMDMWindowsInformationProtectionPoliciesCollectionRequestBuilder is request builder for MDMWindowsInformationProtectionPolicy collection rcn
 type DeviceAppManagementMDMWindowsInformationProtectionPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MDMWindowsInformationProtectionPolicy collection
@@ -1791,7 +1791,7 @@ func (b *DeviceAppManagementRequestBuilder) MobileAppCategories() *DeviceAppMana
 	return bb
 }
 
-// DeviceAppManagementMobileAppCategoriesCollectionRequestBuilder is request builder for MobileAppCategory collection
+// DeviceAppManagementMobileAppCategoriesCollectionRequestBuilder is request builder for MobileAppCategory collection rcn
 type DeviceAppManagementMobileAppCategoriesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MobileAppCategory collection
@@ -1894,7 +1894,7 @@ func (b *DeviceAppManagementRequestBuilder) MobileAppConfigurations() *DeviceApp
 	return bb
 }
 
-// DeviceAppManagementMobileAppConfigurationsCollectionRequestBuilder is request builder for ManagedDeviceMobileAppConfiguration collection
+// DeviceAppManagementMobileAppConfigurationsCollectionRequestBuilder is request builder for ManagedDeviceMobileAppConfiguration collection rcn
 type DeviceAppManagementMobileAppConfigurationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedDeviceMobileAppConfiguration collection
@@ -1997,7 +1997,7 @@ func (b *DeviceAppManagementRequestBuilder) MobileApps() *DeviceAppManagementMob
 	return bb
 }
 
-// DeviceAppManagementMobileAppsCollectionRequestBuilder is request builder for MobileApp collection
+// DeviceAppManagementMobileAppsCollectionRequestBuilder is request builder for MobileApp collection rcn
 type DeviceAppManagementMobileAppsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MobileApp collection
@@ -2100,7 +2100,7 @@ func (b *DeviceAppManagementRequestBuilder) TargetedManagedAppConfigurations() *
 	return bb
 }
 
-// DeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder is request builder for TargetedManagedAppConfiguration collection
+// DeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder is request builder for TargetedManagedAppConfiguration collection rcn
 type DeviceAppManagementTargetedManagedAppConfigurationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TargetedManagedAppConfiguration collection
@@ -2203,7 +2203,7 @@ func (b *DeviceAppManagementRequestBuilder) VPPTokens() *DeviceAppManagementVPPT
 	return bb
 }
 
-// DeviceAppManagementVPPTokensCollectionRequestBuilder is request builder for VPPToken collection
+// DeviceAppManagementVPPTokensCollectionRequestBuilder is request builder for VPPToken collection rcn
 type DeviceAppManagementVPPTokensCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for VPPToken collection
@@ -2306,7 +2306,7 @@ func (b *DeviceAppManagementRequestBuilder) WindowsInformationProtectionPolicies
 	return bb
 }
 
-// DeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder is request builder for WindowsInformationProtectionPolicy collection
+// DeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder is request builder for WindowsInformationProtectionPolicy collection rcn
 type DeviceAppManagementWindowsInformationProtectionPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsInformationProtectionPolicy collection
@@ -2409,7 +2409,7 @@ func (b *DeviceCompliancePolicyRequestBuilder) Assignments() *DeviceCompliancePo
 	return bb
 }
 
-// DeviceCompliancePolicyAssignmentsCollectionRequestBuilder is request builder for DeviceCompliancePolicyAssignment collection
+// DeviceCompliancePolicyAssignmentsCollectionRequestBuilder is request builder for DeviceCompliancePolicyAssignment collection rcn
 type DeviceCompliancePolicyAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceCompliancePolicyAssignment collection
@@ -2512,7 +2512,7 @@ func (b *DeviceCompliancePolicyRequestBuilder) DeviceSettingStateSummaries() *De
 	return bb
 }
 
-// DeviceCompliancePolicyDeviceSettingStateSummariesCollectionRequestBuilder is request builder for SettingStateDeviceSummary collection
+// DeviceCompliancePolicyDeviceSettingStateSummariesCollectionRequestBuilder is request builder for SettingStateDeviceSummary collection rcn
 type DeviceCompliancePolicyDeviceSettingStateSummariesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SettingStateDeviceSummary collection
@@ -2622,7 +2622,7 @@ func (b *DeviceCompliancePolicyRequestBuilder) DeviceStatuses() *DeviceComplianc
 	return bb
 }
 
-// DeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder is request builder for DeviceComplianceDeviceStatus collection
+// DeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder is request builder for DeviceComplianceDeviceStatus collection rcn
 type DeviceCompliancePolicyDeviceStatusesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceComplianceDeviceStatus collection
@@ -2725,7 +2725,7 @@ func (b *DeviceCompliancePolicyRequestBuilder) ScheduledActionsForRule() *Device
 	return bb
 }
 
-// DeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder is request builder for DeviceComplianceScheduledActionForRule collection
+// DeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder is request builder for DeviceComplianceScheduledActionForRule collection rcn
 type DeviceCompliancePolicyScheduledActionsForRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceComplianceScheduledActionForRule collection
@@ -2835,7 +2835,7 @@ func (b *DeviceCompliancePolicyRequestBuilder) UserStatuses() *DeviceComplianceP
 	return bb
 }
 
-// DeviceCompliancePolicyUserStatusesCollectionRequestBuilder is request builder for DeviceComplianceUserStatus collection
+// DeviceCompliancePolicyUserStatusesCollectionRequestBuilder is request builder for DeviceComplianceUserStatus collection rcn
 type DeviceCompliancePolicyUserStatusesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceComplianceUserStatus collection
@@ -2938,7 +2938,7 @@ func (b *DeviceCompliancePolicySettingStateSummaryRequestBuilder) DeviceComplian
 	return bb
 }
 
-// DeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionRequestBuilder is request builder for DeviceComplianceSettingState collection
+// DeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionRequestBuilder is request builder for DeviceComplianceSettingState collection rcn
 type DeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceComplianceSettingState collection
@@ -3041,7 +3041,7 @@ func (b *DeviceComplianceScheduledActionForRuleRequestBuilder) ScheduledActionCo
 	return bb
 }
 
-// DeviceComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionRequestBuilder is request builder for DeviceComplianceActionItem collection
+// DeviceComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionRequestBuilder is request builder for DeviceComplianceActionItem collection rcn
 type DeviceComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceComplianceActionItem collection
@@ -3144,7 +3144,7 @@ func (b *DeviceConfigurationRequestBuilder) Assignments() *DeviceConfigurationAs
 	return bb
 }
 
-// DeviceConfigurationAssignmentsCollectionRequestBuilder is request builder for DeviceConfigurationAssignment collection
+// DeviceConfigurationAssignmentsCollectionRequestBuilder is request builder for DeviceConfigurationAssignment collection rcn
 type DeviceConfigurationAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceConfigurationAssignment collection
@@ -3247,7 +3247,7 @@ func (b *DeviceConfigurationRequestBuilder) DeviceSettingStateSummaries() *Devic
 	return bb
 }
 
-// DeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder is request builder for SettingStateDeviceSummary collection
+// DeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder is request builder for SettingStateDeviceSummary collection rcn
 type DeviceConfigurationDeviceSettingStateSummariesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SettingStateDeviceSummary collection
@@ -3357,7 +3357,7 @@ func (b *DeviceConfigurationRequestBuilder) DeviceStatuses() *DeviceConfiguratio
 	return bb
 }
 
-// DeviceConfigurationDeviceStatusesCollectionRequestBuilder is request builder for DeviceConfigurationDeviceStatus collection
+// DeviceConfigurationDeviceStatusesCollectionRequestBuilder is request builder for DeviceConfigurationDeviceStatus collection rcn
 type DeviceConfigurationDeviceStatusesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceConfigurationDeviceStatus collection
@@ -3467,7 +3467,7 @@ func (b *DeviceConfigurationRequestBuilder) UserStatuses() *DeviceConfigurationU
 	return bb
 }
 
-// DeviceConfigurationUserStatusesCollectionRequestBuilder is request builder for DeviceConfigurationUserStatus collection
+// DeviceConfigurationUserStatusesCollectionRequestBuilder is request builder for DeviceConfigurationUserStatus collection rcn
 type DeviceConfigurationUserStatusesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceConfigurationUserStatus collection
@@ -3570,7 +3570,7 @@ func (b *DeviceEnrollmentConfigurationRequestBuilder) Assignments() *DeviceEnrol
 	return bb
 }
 
-// DeviceEnrollmentConfigurationAssignmentsCollectionRequestBuilder is request builder for EnrollmentConfigurationAssignment collection
+// DeviceEnrollmentConfigurationAssignmentsCollectionRequestBuilder is request builder for EnrollmentConfigurationAssignment collection rcn
 type DeviceEnrollmentConfigurationAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EnrollmentConfigurationAssignment collection
@@ -3680,7 +3680,7 @@ func (b *DeviceManagementRequestBuilder) AuditEvents() *DeviceManagementAuditEve
 	return bb
 }
 
-// DeviceManagementAuditEventsCollectionRequestBuilder is request builder for AuditEvent collection
+// DeviceManagementAuditEventsCollectionRequestBuilder is request builder for AuditEvent collection rcn
 type DeviceManagementAuditEventsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AuditEvent collection
@@ -3783,7 +3783,7 @@ func (b *DeviceManagementRequestBuilder) ComplianceManagementPartners() *DeviceM
 	return bb
 }
 
-// DeviceManagementComplianceManagementPartnersCollectionRequestBuilder is request builder for ComplianceManagementPartner collection
+// DeviceManagementComplianceManagementPartnersCollectionRequestBuilder is request builder for ComplianceManagementPartner collection rcn
 type DeviceManagementComplianceManagementPartnersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ComplianceManagementPartner collection
@@ -3893,7 +3893,7 @@ func (b *DeviceManagementRequestBuilder) DetectedApps() *DeviceManagementDetecte
 	return bb
 }
 
-// DeviceManagementDetectedAppsCollectionRequestBuilder is request builder for DetectedApp collection
+// DeviceManagementDetectedAppsCollectionRequestBuilder is request builder for DetectedApp collection rcn
 type DeviceManagementDetectedAppsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DetectedApp collection
@@ -3996,7 +3996,7 @@ func (b *DeviceManagementRequestBuilder) DeviceCategories() *DeviceManagementDev
 	return bb
 }
 
-// DeviceManagementDeviceCategoriesCollectionRequestBuilder is request builder for DeviceCategory collection
+// DeviceManagementDeviceCategoriesCollectionRequestBuilder is request builder for DeviceCategory collection rcn
 type DeviceManagementDeviceCategoriesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceCategory collection
@@ -4099,7 +4099,7 @@ func (b *DeviceManagementRequestBuilder) DeviceCompliancePolicies() *DeviceManag
 	return bb
 }
 
-// DeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder is request builder for DeviceCompliancePolicy collection
+// DeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder is request builder for DeviceCompliancePolicy collection rcn
 type DeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceCompliancePolicy collection
@@ -4209,7 +4209,7 @@ func (b *DeviceManagementRequestBuilder) DeviceCompliancePolicySettingStateSumma
 	return bb
 }
 
-// DeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionRequestBuilder is request builder for DeviceCompliancePolicySettingStateSummary collection
+// DeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionRequestBuilder is request builder for DeviceCompliancePolicySettingStateSummary collection rcn
 type DeviceManagementDeviceCompliancePolicySettingStateSummariesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceCompliancePolicySettingStateSummary collection
@@ -4319,7 +4319,7 @@ func (b *DeviceManagementRequestBuilder) DeviceConfigurations() *DeviceManagemen
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionRequestBuilder is request builder for DeviceConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionRequestBuilder is request builder for DeviceConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceConfiguration collection
@@ -4422,7 +4422,7 @@ func (b *DeviceManagementRequestBuilder) DeviceEnrollmentConfigurations() *Devic
 	return bb
 }
 
-// DeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder is request builder for DeviceEnrollmentConfiguration collection
+// DeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder is request builder for DeviceEnrollmentConfiguration collection rcn
 type DeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceEnrollmentConfiguration collection
@@ -4525,7 +4525,7 @@ func (b *DeviceManagementRequestBuilder) DeviceManagementPartners() *DeviceManag
 	return bb
 }
 
-// DeviceManagementDeviceManagementPartnersCollectionRequestBuilder is request builder for DeviceManagementPartner collection
+// DeviceManagementDeviceManagementPartnersCollectionRequestBuilder is request builder for DeviceManagementPartner collection rcn
 type DeviceManagementDeviceManagementPartnersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceManagementPartner collection
@@ -4628,7 +4628,7 @@ func (b *DeviceManagementRequestBuilder) ExchangeConnectors() *DeviceManagementE
 	return bb
 }
 
-// DeviceManagementExchangeConnectorsCollectionRequestBuilder is request builder for DeviceManagementExchangeConnector collection
+// DeviceManagementExchangeConnectorsCollectionRequestBuilder is request builder for DeviceManagementExchangeConnector collection rcn
 type DeviceManagementExchangeConnectorsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceManagementExchangeConnector collection
@@ -4731,7 +4731,7 @@ func (b *DeviceManagementRequestBuilder) ImportedWindowsAutopilotDeviceIdentitie
 	return bb
 }
 
-// DeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder is request builder for ImportedWindowsAutopilotDeviceIdentity collection
+// DeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder is request builder for ImportedWindowsAutopilotDeviceIdentity collection rcn
 type DeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ImportedWindowsAutopilotDeviceIdentity collection
@@ -4834,7 +4834,7 @@ func (b *DeviceManagementRequestBuilder) IOSUpdateStatuses() *DeviceManagementIO
 	return bb
 }
 
-// DeviceManagementIOSUpdateStatusesCollectionRequestBuilder is request builder for IOSUpdateDeviceStatus collection
+// DeviceManagementIOSUpdateStatusesCollectionRequestBuilder is request builder for IOSUpdateDeviceStatus collection rcn
 type DeviceManagementIOSUpdateStatusesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IOSUpdateDeviceStatus collection
@@ -4944,7 +4944,7 @@ func (b *DeviceManagementRequestBuilder) ManagedDevices() *DeviceManagementManag
 	return bb
 }
 
-// DeviceManagementManagedDevicesCollectionRequestBuilder is request builder for ManagedDevice collection
+// DeviceManagementManagedDevicesCollectionRequestBuilder is request builder for ManagedDevice collection rcn
 type DeviceManagementManagedDevicesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedDevice collection
@@ -5047,7 +5047,7 @@ func (b *DeviceManagementRequestBuilder) MobileThreatDefenseConnectors() *Device
 	return bb
 }
 
-// DeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder is request builder for MobileThreatDefenseConnector collection
+// DeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder is request builder for MobileThreatDefenseConnector collection rcn
 type DeviceManagementMobileThreatDefenseConnectorsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MobileThreatDefenseConnector collection
@@ -5150,7 +5150,7 @@ func (b *DeviceManagementRequestBuilder) NotificationMessageTemplates() *DeviceM
 	return bb
 }
 
-// DeviceManagementNotificationMessageTemplatesCollectionRequestBuilder is request builder for NotificationMessageTemplate collection
+// DeviceManagementNotificationMessageTemplatesCollectionRequestBuilder is request builder for NotificationMessageTemplate collection rcn
 type DeviceManagementNotificationMessageTemplatesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for NotificationMessageTemplate collection
@@ -5253,7 +5253,7 @@ func (b *DeviceManagementRequestBuilder) RemoteAssistancePartners() *DeviceManag
 	return bb
 }
 
-// DeviceManagementRemoteAssistancePartnersCollectionRequestBuilder is request builder for RemoteAssistancePartner collection
+// DeviceManagementRemoteAssistancePartnersCollectionRequestBuilder is request builder for RemoteAssistancePartner collection rcn
 type DeviceManagementRemoteAssistancePartnersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for RemoteAssistancePartner collection
@@ -5363,7 +5363,7 @@ func (b *DeviceManagementRequestBuilder) ResourceOperations() *DeviceManagementR
 	return bb
 }
 
-// DeviceManagementResourceOperationsCollectionRequestBuilder is request builder for ResourceOperation collection
+// DeviceManagementResourceOperationsCollectionRequestBuilder is request builder for ResourceOperation collection rcn
 type DeviceManagementResourceOperationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ResourceOperation collection
@@ -5466,7 +5466,7 @@ func (b *DeviceManagementRequestBuilder) RoleAssignments() *DeviceManagementRole
 	return bb
 }
 
-// DeviceManagementRoleAssignmentsCollectionRequestBuilder is request builder for DeviceAndAppManagementRoleAssignment collection
+// DeviceManagementRoleAssignmentsCollectionRequestBuilder is request builder for DeviceAndAppManagementRoleAssignment collection rcn
 type DeviceManagementRoleAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceAndAppManagementRoleAssignment collection
@@ -5569,7 +5569,7 @@ func (b *DeviceManagementRequestBuilder) RoleDefinitions() *DeviceManagementRole
 	return bb
 }
 
-// DeviceManagementRoleDefinitionsCollectionRequestBuilder is request builder for RoleDefinition collection
+// DeviceManagementRoleDefinitionsCollectionRequestBuilder is request builder for RoleDefinition collection rcn
 type DeviceManagementRoleDefinitionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for RoleDefinition collection
@@ -5679,7 +5679,7 @@ func (b *DeviceManagementRequestBuilder) TelecomExpenseManagementPartners() *Dev
 	return bb
 }
 
-// DeviceManagementTelecomExpenseManagementPartnersCollectionRequestBuilder is request builder for TelecomExpenseManagementPartner collection
+// DeviceManagementTelecomExpenseManagementPartnersCollectionRequestBuilder is request builder for TelecomExpenseManagementPartner collection rcn
 type DeviceManagementTelecomExpenseManagementPartnersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TelecomExpenseManagementPartner collection
@@ -5782,7 +5782,7 @@ func (b *DeviceManagementRequestBuilder) TermsAndConditions() *DeviceManagementT
 	return bb
 }
 
-// DeviceManagementTermsAndConditionsCollectionRequestBuilder is request builder for TermsAndConditions collection
+// DeviceManagementTermsAndConditionsCollectionRequestBuilder is request builder for TermsAndConditions collection rcn
 type DeviceManagementTermsAndConditionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TermsAndConditions collection
@@ -5885,7 +5885,7 @@ func (b *DeviceManagementRequestBuilder) TroubleshootingEvents() *DeviceManageme
 	return bb
 }
 
-// DeviceManagementTroubleshootingEventsCollectionRequestBuilder is request builder for DeviceManagementTroubleshootingEvent collection
+// DeviceManagementTroubleshootingEventsCollectionRequestBuilder is request builder for DeviceManagementTroubleshootingEvent collection rcn
 type DeviceManagementTroubleshootingEventsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceManagementTroubleshootingEvent collection
@@ -5988,7 +5988,7 @@ func (b *DeviceManagementRequestBuilder) WindowsAutopilotDeviceIdentities() *Dev
 	return bb
 }
 
-// DeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder is request builder for WindowsAutopilotDeviceIdentity collection
+// DeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder is request builder for WindowsAutopilotDeviceIdentity collection rcn
 type DeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsAutopilotDeviceIdentity collection
@@ -6091,7 +6091,7 @@ func (b *DeviceManagementRequestBuilder) WindowsInformationProtectionAppLearning
 	return bb
 }
 
-// DeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionRequestBuilder is request builder for WindowsInformationProtectionAppLearningSummary collection
+// DeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionRequestBuilder is request builder for WindowsInformationProtectionAppLearningSummary collection rcn
 type DeviceManagementWindowsInformationProtectionAppLearningSummariesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsInformationProtectionAppLearningSummary collection
@@ -6194,7 +6194,7 @@ func (b *DeviceManagementRequestBuilder) WindowsInformationProtectionNetworkLear
 	return bb
 }
 
-// DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionRequestBuilder is request builder for WindowsInformationProtectionNetworkLearningSummary collection
+// DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionRequestBuilder is request builder for WindowsInformationProtectionNetworkLearningSummary collection rcn
 type DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsInformationProtectionNetworkLearningSummary collection
@@ -6297,7 +6297,7 @@ func (b *DeviceManagementReportsRequestBuilder) ExportJobs() *DeviceManagementRe
 	return bb
 }
 
-// DeviceManagementReportsExportJobsCollectionRequestBuilder is request builder for DeviceManagementExportJob collection
+// DeviceManagementReportsExportJobsCollectionRequestBuilder is request builder for DeviceManagementExportJob collection rcn
 type DeviceManagementReportsExportJobsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceManagementExportJob collection
@@ -6400,7 +6400,7 @@ func (b *AdministrativeUnitMembersCollectionRequestBuilder) Device() *Administra
 	return bb
 }
 
-// AdministrativeUnitMembersCollectionDeviceCollectionRequestBuilder is request builder for Device collection
+// AdministrativeUnitMembersCollectionDeviceCollectionRequestBuilder is request builder for Device collection rcn
 type AdministrativeUnitMembersCollectionDeviceCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Device collection
@@ -6503,7 +6503,7 @@ func (b *RoleDefinitionRoleAssignmentsCollectionRequestBuilder) DeviceAndAppMana
 	return bb
 }
 
-// RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder is request builder for DeviceAndAppManagementRoleAssignment collection
+// RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder is request builder for DeviceAndAppManagementRoleAssignment collection rcn
 type RoleDefinitionRoleAssignmentsCollectionDeviceAndAppManagementRoleAssignmentCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceAndAppManagementRoleAssignment collection
@@ -6606,7 +6606,7 @@ func (b *DeviceManagementRoleDefinitionsCollectionRequestBuilder) DeviceAndAppMa
 	return bb
 }
 
-// DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder is request builder for DeviceAndAppManagementRoleDefinition collection
+// DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder is request builder for DeviceAndAppManagementRoleDefinition collection rcn
 type DeviceManagementRoleDefinitionsCollectionDeviceAndAppManagementRoleDefinitionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceAndAppManagementRoleDefinition collection
@@ -6856,7 +6856,7 @@ func (b *DeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder)
 	return bb
 }
 
-// DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentLimitConfiguration collection
+// DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentLimitConfiguration collection rcn
 type DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentLimitConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceEnrollmentLimitConfiguration collection
@@ -6959,7 +6959,7 @@ func (b *DeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder)
 	return bb
 }
 
-// DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentPlatformRestrictionsConfiguration collection
+// DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentPlatformRestrictionsConfiguration collection rcn
 type DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentPlatformRestrictionsConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceEnrollmentPlatformRestrictionsConfiguration collection
@@ -7062,7 +7062,7 @@ func (b *DeviceManagementDeviceEnrollmentConfigurationsCollectionRequestBuilder)
 	return bb
 }
 
-// DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection
+// DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder is request builder for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection rcn
 type DeviceManagementDeviceEnrollmentConfigurationsCollectionDeviceEnrollmentWindowsHelloForBusinessConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceEnrollmentWindowsHelloForBusinessConfiguration collection

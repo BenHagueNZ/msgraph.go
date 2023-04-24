@@ -69,7 +69,7 @@ func (b *ChatRequestBuilder) InstalledApps() *ChatInstalledAppsCollectionRequest
 	return bb
 }
 
-// ChatInstalledAppsCollectionRequestBuilder is request builder for TeamsAppInstallation collection
+// ChatInstalledAppsCollectionRequestBuilder is request builder for TeamsAppInstallation collection rcn
 type ChatInstalledAppsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TeamsAppInstallation collection
@@ -179,7 +179,7 @@ func (b *ChatRequestBuilder) Members() *ChatMembersCollectionRequestBuilder {
 	return bb
 }
 
-// ChatMembersCollectionRequestBuilder is request builder for ConversationMember collection
+// ChatMembersCollectionRequestBuilder is request builder for ConversationMember collection rcn
 type ChatMembersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ConversationMember collection
@@ -282,7 +282,7 @@ func (b *ChatRequestBuilder) Messages() *ChatMessagesCollectionRequestBuilder {
 	return bb
 }
 
-// ChatMessagesCollectionRequestBuilder is request builder for ChatMessage collection
+// ChatMessagesCollectionRequestBuilder is request builder for ChatMessage collection rcn
 type ChatMessagesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ChatMessage collection
@@ -385,7 +385,7 @@ func (b *ChatRequestBuilder) PinnedMessages() *ChatPinnedMessagesCollectionReque
 	return bb
 }
 
-// ChatPinnedMessagesCollectionRequestBuilder is request builder for PinnedChatMessageInfo collection
+// ChatPinnedMessagesCollectionRequestBuilder is request builder for PinnedChatMessageInfo collection rcn
 type ChatPinnedMessagesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PinnedChatMessageInfo collection
@@ -488,7 +488,7 @@ func (b *ChatRequestBuilder) Tabs() *ChatTabsCollectionRequestBuilder {
 	return bb
 }
 
-// ChatTabsCollectionRequestBuilder is request builder for TeamsTab collection
+// ChatTabsCollectionRequestBuilder is request builder for TeamsTab collection rcn
 type ChatTabsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TeamsTab collection
@@ -591,7 +591,7 @@ func (b *ChatMessageRequestBuilder) HostedContents() *ChatMessageHostedContentsC
 	return bb
 }
 
-// ChatMessageHostedContentsCollectionRequestBuilder is request builder for ChatMessageHostedContent collection
+// ChatMessageHostedContentsCollectionRequestBuilder is request builder for ChatMessageHostedContent collection rcn
 type ChatMessageHostedContentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ChatMessageHostedContent collection
@@ -694,7 +694,7 @@ func (b *ChatMessageRequestBuilder) Replies() *ChatMessageRepliesCollectionReque
 	return bb
 }
 
-// ChatMessageRepliesCollectionRequestBuilder is request builder for ChatMessage collection
+// ChatMessageRepliesCollectionRequestBuilder is request builder for ChatMessage collection rcn
 type ChatMessageRepliesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ChatMessage collection

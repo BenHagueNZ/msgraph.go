@@ -18,7 +18,7 @@ func (b *ConditionalAccessRootNamedLocationsCollectionRequestBuilder) IPNamedLoc
 	return bb
 }
 
-// ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequestBuilder is request builder for IPNamedLocation collection
+// ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequestBuilder is request builder for IPNamedLocation collection rcn
 type ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IPNamedLocation collection

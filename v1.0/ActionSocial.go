@@ -18,7 +18,7 @@ func (b *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionRequestBuilder) S
 	return bb
 }
 
-// B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequestBuilder is request builder for SocialIdentityProvider collection
+// B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequestBuilder is request builder for SocialIdentityProvider collection rcn
 type B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSocialIdentityProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SocialIdentityProvider collection

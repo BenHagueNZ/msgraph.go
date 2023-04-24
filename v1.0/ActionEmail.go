@@ -18,7 +18,7 @@ func (b *EmailAuthenticationMethodConfigurationRequestBuilder) IncludeTargets() 
 	return bb
 }
 
-// EmailAuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder is request builder for AuthenticationMethodTarget collection
+// EmailAuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder is request builder for AuthenticationMethodTarget collection rcn
 type EmailAuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AuthenticationMethodTarget collection
@@ -121,7 +121,7 @@ func (b *AuthenticationMethodsCollectionRequestBuilder) EmailAuthenticationMetho
 	return bb
 }
 
-// AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequestBuilder is request builder for EmailAuthenticationMethod collection
+// AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequestBuilder is request builder for EmailAuthenticationMethod collection rcn
 type AuthenticationMethodsCollectionEmailAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EmailAuthenticationMethod collection
@@ -224,7 +224,7 @@ func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollection
 	return bb
 }
 
-// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequestBuilder is request builder for EmailAuthenticationMethodConfiguration collection
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequestBuilder is request builder for EmailAuthenticationMethodConfiguration collection rcn
 type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionEmailAuthenticationMethodConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EmailAuthenticationMethodConfiguration collection
@@ -327,7 +327,7 @@ func (b *InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder) 
 	return bb
 }
 
-// InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequestBuilder is request builder for EmailFileAssessmentRequestObject collection
+// InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequestBuilder is request builder for EmailFileAssessmentRequestObject collection rcn
 type InformationProtectionThreatAssessmentRequestsCollectionEmailFileAssessmentRequestObjectCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EmailFileAssessmentRequestObject collection

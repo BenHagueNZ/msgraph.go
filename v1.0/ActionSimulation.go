@@ -18,7 +18,7 @@ func (b *SimulationAutomationRequestBuilder) Runs() *SimulationAutomationRunsCol
 	return bb
 }
 
-// SimulationAutomationRunsCollectionRequestBuilder is request builder for SimulationAutomationRun collection
+// SimulationAutomationRunsCollectionRequestBuilder is request builder for SimulationAutomationRun collection rcn
 type SimulationAutomationRunsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SimulationAutomationRun collection

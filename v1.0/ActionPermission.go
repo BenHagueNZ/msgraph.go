@@ -26,7 +26,7 @@ func (b *PermissionGrantPolicyRequestBuilder) Excludes() *PermissionGrantPolicyE
 	return bb
 }
 
-// PermissionGrantPolicyExcludesCollectionRequestBuilder is request builder for PermissionGrantConditionSet collection
+// PermissionGrantPolicyExcludesCollectionRequestBuilder is request builder for PermissionGrantConditionSet collection rcn
 type PermissionGrantPolicyExcludesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PermissionGrantConditionSet collection
@@ -129,7 +129,7 @@ func (b *PermissionGrantPolicyRequestBuilder) Includes() *PermissionGrantPolicyI
 	return bb
 }
 
-// PermissionGrantPolicyIncludesCollectionRequestBuilder is request builder for PermissionGrantConditionSet collection
+// PermissionGrantPolicyIncludesCollectionRequestBuilder is request builder for PermissionGrantConditionSet collection rcn
 type PermissionGrantPolicyIncludesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PermissionGrantConditionSet collection

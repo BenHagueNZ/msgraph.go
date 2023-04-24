@@ -35,7 +35,7 @@ func (b *OnlineMeetingRequestBuilder) AttendanceReports() *OnlineMeetingAttendan
 	return bb
 }
 
-// OnlineMeetingAttendanceReportsCollectionRequestBuilder is request builder for MeetingAttendanceReport collection
+// OnlineMeetingAttendanceReportsCollectionRequestBuilder is request builder for MeetingAttendanceReport collection rcn
 type OnlineMeetingAttendanceReportsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MeetingAttendanceReport collection

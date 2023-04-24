@@ -29,7 +29,7 @@ func (b *CrossTenantAccessPolicyRequestBuilder) Partners() *CrossTenantAccessPol
 	return bb
 }
 
-// CrossTenantAccessPolicyPartnersCollectionRequestBuilder is request builder for CrossTenantAccessPolicyConfigurationPartner collection
+// CrossTenantAccessPolicyPartnersCollectionRequestBuilder is request builder for CrossTenantAccessPolicyConfigurationPartner collection rcn
 type CrossTenantAccessPolicyPartnersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for CrossTenantAccessPolicyConfigurationPartner collection

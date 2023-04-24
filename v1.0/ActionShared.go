@@ -25,7 +25,7 @@ func (b *SharedDriveItemRequestBuilder) Items() *SharedDriveItemItemsCollectionR
 	return bb
 }
 
-// SharedDriveItemItemsCollectionRequestBuilder is request builder for DriveItem collection
+// SharedDriveItemItemsCollectionRequestBuilder is request builder for DriveItem collection rcn
 type SharedDriveItemItemsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DriveItem collection
@@ -177,7 +177,7 @@ func (b *SharedWithChannelTeamInfoRequestBuilder) AllowedMembers() *SharedWithCh
 	return bb
 }
 
-// SharedWithChannelTeamInfoAllowedMembersCollectionRequestBuilder is request builder for ConversationMember collection
+// SharedWithChannelTeamInfoAllowedMembersCollectionRequestBuilder is request builder for ConversationMember collection rcn
 type SharedWithChannelTeamInfoAllowedMembersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ConversationMember collection
@@ -280,7 +280,7 @@ func (b *SiteItemsCollectionRequestBuilder) SharedDriveItem() *SiteItemsCollecti
 	return bb
 }
 
-// SiteItemsCollectionSharedDriveItemCollectionRequestBuilder is request builder for SharedDriveItem collection
+// SiteItemsCollectionSharedDriveItemCollectionRequestBuilder is request builder for SharedDriveItem collection rcn
 type SiteItemsCollectionSharedDriveItemCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SharedDriveItem collection
@@ -390,7 +390,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) SharedPCC
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequestBuilder is request builder for SharedPCConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequestBuilder is request builder for SharedPCConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionSharedPCConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SharedPCConfiguration collection

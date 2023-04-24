@@ -40,7 +40,7 @@ func (b *PrinterRequestBuilder) Connectors() *PrinterConnectorsCollectionRequest
 	return bb
 }
 
-// PrinterConnectorsCollectionRequestBuilder is request builder for PrintConnector collection
+// PrinterConnectorsCollectionRequestBuilder is request builder for PrintConnector collection rcn
 type PrinterConnectorsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintConnector collection
@@ -143,7 +143,7 @@ func (b *PrinterRequestBuilder) Shares() *PrinterSharesCollectionRequestBuilder 
 	return bb
 }
 
-// PrinterSharesCollectionRequestBuilder is request builder for PrinterShare collection
+// PrinterSharesCollectionRequestBuilder is request builder for PrinterShare collection rcn
 type PrinterSharesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrinterShare collection
@@ -246,7 +246,7 @@ func (b *PrinterRequestBuilder) TaskTriggers() *PrinterTaskTriggersCollectionReq
 	return bb
 }
 
-// PrinterTaskTriggersCollectionRequestBuilder is request builder for PrintTaskTrigger collection
+// PrinterTaskTriggersCollectionRequestBuilder is request builder for PrintTaskTrigger collection rcn
 type PrinterTaskTriggersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintTaskTrigger collection
@@ -349,7 +349,7 @@ func (b *PrinterBaseRequestBuilder) Jobs() *PrinterBaseJobsCollectionRequestBuil
 	return bb
 }
 
-// PrinterBaseJobsCollectionRequestBuilder is request builder for PrintJob collection
+// PrinterBaseJobsCollectionRequestBuilder is request builder for PrintJob collection rcn
 type PrinterBaseJobsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintJob collection
@@ -459,7 +459,7 @@ func (b *PrinterShareRequestBuilder) AllowedGroups() *PrinterShareAllowedGroupsC
 	return bb
 }
 
-// PrinterShareAllowedGroupsCollectionRequestBuilder is request builder for Group collection
+// PrinterShareAllowedGroupsCollectionRequestBuilder is request builder for Group collection rcn
 type PrinterShareAllowedGroupsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Group collection
@@ -562,7 +562,7 @@ func (b *PrinterShareRequestBuilder) AllowedUsers() *PrinterShareAllowedUsersCol
 	return bb
 }
 
-// PrinterShareAllowedUsersCollectionRequestBuilder is request builder for User collection
+// PrinterShareAllowedUsersCollectionRequestBuilder is request builder for User collection rcn
 type PrinterShareAllowedUsersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for User collection
@@ -679,7 +679,7 @@ func (b *PrintOperationsCollectionRequestBuilder) PrinterCreateOperation() *Prin
 	return bb
 }
 
-// PrintOperationsCollectionPrinterCreateOperationCollectionRequestBuilder is request builder for PrinterCreateOperation collection
+// PrintOperationsCollectionPrinterCreateOperationCollectionRequestBuilder is request builder for PrinterCreateOperation collection rcn
 type PrintOperationsCollectionPrinterCreateOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrinterCreateOperation collection

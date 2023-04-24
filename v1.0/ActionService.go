@@ -93,7 +93,7 @@ func (b *ServiceAnnouncementRequestBuilder) HealthOverviews() *ServiceAnnounceme
 	return bb
 }
 
-// ServiceAnnouncementHealthOverviewsCollectionRequestBuilder is request builder for ServiceHealth collection
+// ServiceAnnouncementHealthOverviewsCollectionRequestBuilder is request builder for ServiceHealth collection rcn
 type ServiceAnnouncementHealthOverviewsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ServiceHealth collection
@@ -196,7 +196,7 @@ func (b *ServiceAnnouncementRequestBuilder) Issues() *ServiceAnnouncementIssuesC
 	return bb
 }
 
-// ServiceAnnouncementIssuesCollectionRequestBuilder is request builder for ServiceHealthIssue collection
+// ServiceAnnouncementIssuesCollectionRequestBuilder is request builder for ServiceHealthIssue collection rcn
 type ServiceAnnouncementIssuesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ServiceHealthIssue collection
@@ -299,7 +299,7 @@ func (b *ServiceAnnouncementRequestBuilder) Messages() *ServiceAnnouncementMessa
 	return bb
 }
 
-// ServiceAnnouncementMessagesCollectionRequestBuilder is request builder for ServiceUpdateMessage collection
+// ServiceAnnouncementMessagesCollectionRequestBuilder is request builder for ServiceUpdateMessage collection rcn
 type ServiceAnnouncementMessagesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ServiceUpdateMessage collection
@@ -402,7 +402,7 @@ func (b *ServiceHealthRequestBuilder) Issues() *ServiceHealthIssuesCollectionReq
 	return bb
 }
 
-// ServiceHealthIssuesCollectionRequestBuilder is request builder for ServiceHealthIssue collection
+// ServiceHealthIssuesCollectionRequestBuilder is request builder for ServiceHealthIssue collection rcn
 type ServiceHealthIssuesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ServiceHealthIssue collection
@@ -505,7 +505,7 @@ func (b *ServicePrincipalRequestBuilder) AppManagementPolicies() *ServicePrincip
 	return bb
 }
 
-// ServicePrincipalAppManagementPoliciesCollectionRequestBuilder is request builder for AppManagementPolicy collection
+// ServicePrincipalAppManagementPoliciesCollectionRequestBuilder is request builder for AppManagementPolicy collection rcn
 type ServicePrincipalAppManagementPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AppManagementPolicy collection
@@ -608,7 +608,7 @@ func (b *ServicePrincipalRequestBuilder) AppRoleAssignedTo() *ServicePrincipalAp
 	return bb
 }
 
-// ServicePrincipalAppRoleAssignedToCollectionRequestBuilder is request builder for AppRoleAssignment collection
+// ServicePrincipalAppRoleAssignedToCollectionRequestBuilder is request builder for AppRoleAssignment collection rcn
 type ServicePrincipalAppRoleAssignedToCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AppRoleAssignment collection
@@ -711,7 +711,7 @@ func (b *ServicePrincipalRequestBuilder) AppRoleAssignments() *ServicePrincipalA
 	return bb
 }
 
-// ServicePrincipalAppRoleAssignmentsCollectionRequestBuilder is request builder for AppRoleAssignment collection
+// ServicePrincipalAppRoleAssignmentsCollectionRequestBuilder is request builder for AppRoleAssignment collection rcn
 type ServicePrincipalAppRoleAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AppRoleAssignment collection
@@ -814,7 +814,7 @@ func (b *ServicePrincipalRequestBuilder) ClaimsMappingPolicies() *ServicePrincip
 	return bb
 }
 
-// ServicePrincipalClaimsMappingPoliciesCollectionRequestBuilder is request builder for ClaimsMappingPolicy collection
+// ServicePrincipalClaimsMappingPoliciesCollectionRequestBuilder is request builder for ClaimsMappingPolicy collection rcn
 type ServicePrincipalClaimsMappingPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ClaimsMappingPolicy collection
@@ -917,7 +917,7 @@ func (b *ServicePrincipalRequestBuilder) CreatedObjects() *ServicePrincipalCreat
 	return bb
 }
 
-// ServicePrincipalCreatedObjectsCollectionRequestBuilder is request builder for DirectoryObject collection
+// ServicePrincipalCreatedObjectsCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type ServicePrincipalCreatedObjectsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -1020,7 +1020,7 @@ func (b *ServicePrincipalRequestBuilder) DelegatedPermissionClassifications() *S
 	return bb
 }
 
-// ServicePrincipalDelegatedPermissionClassificationsCollectionRequestBuilder is request builder for DelegatedPermissionClassification collection
+// ServicePrincipalDelegatedPermissionClassificationsCollectionRequestBuilder is request builder for DelegatedPermissionClassification collection rcn
 type ServicePrincipalDelegatedPermissionClassificationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DelegatedPermissionClassification collection
@@ -1123,7 +1123,7 @@ func (b *ServicePrincipalRequestBuilder) Endpoints() *ServicePrincipalEndpointsC
 	return bb
 }
 
-// ServicePrincipalEndpointsCollectionRequestBuilder is request builder for Endpoint collection
+// ServicePrincipalEndpointsCollectionRequestBuilder is request builder for Endpoint collection rcn
 type ServicePrincipalEndpointsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Endpoint collection
@@ -1226,7 +1226,7 @@ func (b *ServicePrincipalRequestBuilder) FederatedIdentityCredentials() *Service
 	return bb
 }
 
-// ServicePrincipalFederatedIdentityCredentialsCollectionRequestBuilder is request builder for FederatedIdentityCredential collection
+// ServicePrincipalFederatedIdentityCredentialsCollectionRequestBuilder is request builder for FederatedIdentityCredential collection rcn
 type ServicePrincipalFederatedIdentityCredentialsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for FederatedIdentityCredential collection
@@ -1329,7 +1329,7 @@ func (b *ServicePrincipalRequestBuilder) HomeRealmDiscoveryPolicies() *ServicePr
 	return bb
 }
 
-// ServicePrincipalHomeRealmDiscoveryPoliciesCollectionRequestBuilder is request builder for HomeRealmDiscoveryPolicy collection
+// ServicePrincipalHomeRealmDiscoveryPoliciesCollectionRequestBuilder is request builder for HomeRealmDiscoveryPolicy collection rcn
 type ServicePrincipalHomeRealmDiscoveryPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for HomeRealmDiscoveryPolicy collection
@@ -1432,7 +1432,7 @@ func (b *ServicePrincipalRequestBuilder) MemberOf() *ServicePrincipalMemberOfCol
 	return bb
 }
 
-// ServicePrincipalMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection
+// ServicePrincipalMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type ServicePrincipalMemberOfCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -1535,7 +1535,7 @@ func (b *ServicePrincipalRequestBuilder) OAuth2PermissionGrants() *ServicePrinci
 	return bb
 }
 
-// ServicePrincipalOAuth2PermissionGrantsCollectionRequestBuilder is request builder for OAuth2PermissionGrant collection
+// ServicePrincipalOAuth2PermissionGrantsCollectionRequestBuilder is request builder for OAuth2PermissionGrant collection rcn
 type ServicePrincipalOAuth2PermissionGrantsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OAuth2PermissionGrant collection
@@ -1638,7 +1638,7 @@ func (b *ServicePrincipalRequestBuilder) OwnedObjects() *ServicePrincipalOwnedOb
 	return bb
 }
 
-// ServicePrincipalOwnedObjectsCollectionRequestBuilder is request builder for DirectoryObject collection
+// ServicePrincipalOwnedObjectsCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type ServicePrincipalOwnedObjectsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -1741,7 +1741,7 @@ func (b *ServicePrincipalRequestBuilder) Owners() *ServicePrincipalOwnersCollect
 	return bb
 }
 
-// ServicePrincipalOwnersCollectionRequestBuilder is request builder for DirectoryObject collection
+// ServicePrincipalOwnersCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type ServicePrincipalOwnersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -1844,7 +1844,7 @@ func (b *ServicePrincipalRequestBuilder) TokenIssuancePolicies() *ServicePrincip
 	return bb
 }
 
-// ServicePrincipalTokenIssuancePoliciesCollectionRequestBuilder is request builder for TokenIssuancePolicy collection
+// ServicePrincipalTokenIssuancePoliciesCollectionRequestBuilder is request builder for TokenIssuancePolicy collection rcn
 type ServicePrincipalTokenIssuancePoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TokenIssuancePolicy collection
@@ -1947,7 +1947,7 @@ func (b *ServicePrincipalRequestBuilder) TokenLifetimePolicies() *ServicePrincip
 	return bb
 }
 
-// ServicePrincipalTokenLifetimePoliciesCollectionRequestBuilder is request builder for TokenLifetimePolicy collection
+// ServicePrincipalTokenLifetimePoliciesCollectionRequestBuilder is request builder for TokenLifetimePolicy collection rcn
 type ServicePrincipalTokenLifetimePoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TokenLifetimePolicy collection
@@ -2050,7 +2050,7 @@ func (b *ServicePrincipalRequestBuilder) TransitiveMemberOf() *ServicePrincipalT
 	return bb
 }
 
-// ServicePrincipalTransitiveMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection
+// ServicePrincipalTransitiveMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type ServicePrincipalTransitiveMemberOfCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -2153,7 +2153,7 @@ func (b *ServiceUpdateMessageRequestBuilder) Attachments() *ServiceUpdateMessage
 	return bb
 }
 
-// ServiceUpdateMessageAttachmentsCollectionRequestBuilder is request builder for ServiceAnnouncementAttachment collection
+// ServiceUpdateMessageAttachmentsCollectionRequestBuilder is request builder for ServiceAnnouncementAttachment collection rcn
 type ServiceUpdateMessageAttachmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ServiceAnnouncementAttachment collection
@@ -2284,7 +2284,7 @@ func (b *AdministrativeUnitMembersCollectionRequestBuilder) ServicePrincipal() *
 	return bb
 }
 
-// AdministrativeUnitMembersCollectionServicePrincipalCollectionRequestBuilder is request builder for ServicePrincipal collection
+// AdministrativeUnitMembersCollectionServicePrincipalCollectionRequestBuilder is request builder for ServicePrincipal collection rcn
 type AdministrativeUnitMembersCollectionServicePrincipalCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ServicePrincipal collection

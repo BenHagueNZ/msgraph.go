@@ -18,7 +18,7 @@ func (b *Fido2AuthenticationMethodConfigurationRequestBuilder) IncludeTargets() 
 	return bb
 }
 
-// Fido2AuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder is request builder for AuthenticationMethodTarget collection
+// Fido2AuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder is request builder for AuthenticationMethodTarget collection rcn
 type Fido2AuthenticationMethodConfigurationIncludeTargetsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AuthenticationMethodTarget collection
@@ -121,7 +121,7 @@ func (b *AuthenticationMethodsCollectionRequestBuilder) Fido2AuthenticationMetho
 	return bb
 }
 
-// AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequestBuilder is request builder for Fido2AuthenticationMethod collection
+// AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequestBuilder is request builder for Fido2AuthenticationMethod collection rcn
 type AuthenticationMethodsCollectionFido2AuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Fido2AuthenticationMethod collection
@@ -224,7 +224,7 @@ func (b *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollection
 	return bb
 }
 
-// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequestBuilder is request builder for Fido2AuthenticationMethodConfiguration collection
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequestBuilder is request builder for Fido2AuthenticationMethodConfiguration collection rcn
 type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionFido2AuthenticationMethodConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Fido2AuthenticationMethodConfiguration collection

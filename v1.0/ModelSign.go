@@ -40,8 +40,8 @@ type SignIn struct {
 	RiskDetail *RiskDetail `json:"riskDetail,omitempty"`
 	// RiskEventTypes undocumented
 	RiskEventTypes []RiskEventType `json:"riskEventTypes,omitempty"`
-	// RiskEventTypes_v2 undocumented
-	RiskEventTypes_v2 []string `json:"riskEventTypes_v2,omitempty"`
+	// RiskEventTypesUnderscorev2 undocumented
+	RiskEventTypesUnderscorev2 []string `json:"riskEventTypes_v2,omitempty"`
 	// RiskLevelAggregated undocumented
 	RiskLevelAggregated *RiskLevel `json:"riskLevelAggregated,omitempty"`
 	// RiskLevelDuringSignIn undocumented

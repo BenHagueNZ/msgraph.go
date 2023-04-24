@@ -18,7 +18,7 @@ func (b *DeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder) MacOS
 	return bb
 }
 
-// DeviceManagementDeviceCompliancePoliciesCollectionMacOSCompliancePolicyCollectionRequestBuilder is request builder for MacOSCompliancePolicy collection
+// DeviceManagementDeviceCompliancePoliciesCollectionMacOSCompliancePolicyCollectionRequestBuilder is request builder for MacOSCompliancePolicy collection rcn
 type DeviceManagementDeviceCompliancePoliciesCollectionMacOSCompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MacOSCompliancePolicy collection
@@ -121,7 +121,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) MacOSCust
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionMacOSCustomConfigurationCollectionRequestBuilder is request builder for MacOSCustomConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionMacOSCustomConfigurationCollectionRequestBuilder is request builder for MacOSCustomConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionMacOSCustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MacOSCustomConfiguration collection
@@ -224,7 +224,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) MacOSGene
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionMacOSGeneralDeviceConfigurationCollectionRequestBuilder is request builder for MacOSGeneralDeviceConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionMacOSGeneralDeviceConfigurationCollectionRequestBuilder is request builder for MacOSGeneralDeviceConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionMacOSGeneralDeviceConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MacOSGeneralDeviceConfiguration collection
@@ -327,7 +327,7 @@ func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) MacOSMicrosoftEd
 	return bb
 }
 
-// DeviceAppManagementMobileAppsCollectionMacOSMicrosoftEdgeAppCollectionRequestBuilder is request builder for MacOSMicrosoftEdgeApp collection
+// DeviceAppManagementMobileAppsCollectionMacOSMicrosoftEdgeAppCollectionRequestBuilder is request builder for MacOSMicrosoftEdgeApp collection rcn
 type DeviceAppManagementMobileAppsCollectionMacOSMicrosoftEdgeAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MacOSMicrosoftEdgeApp collection
@@ -430,7 +430,7 @@ func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) MacOSOfficeSuite
 	return bb
 }
 
-// DeviceAppManagementMobileAppsCollectionMacOSOfficeSuiteAppCollectionRequestBuilder is request builder for MacOSOfficeSuiteApp collection
+// DeviceAppManagementMobileAppsCollectionMacOSOfficeSuiteAppCollectionRequestBuilder is request builder for MacOSOfficeSuiteApp collection rcn
 type DeviceAppManagementMobileAppsCollectionMacOSOfficeSuiteAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MacOSOfficeSuiteApp collection

@@ -46,7 +46,7 @@ func (b *TargetedManagedAppConfigurationRequestBuilder) Apps() *TargetedManagedA
 	return bb
 }
 
-// TargetedManagedAppConfigurationAppsCollectionRequestBuilder is request builder for ManagedMobileApp collection
+// TargetedManagedAppConfigurationAppsCollectionRequestBuilder is request builder for ManagedMobileApp collection rcn
 type TargetedManagedAppConfigurationAppsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedMobileApp collection
@@ -149,7 +149,7 @@ func (b *TargetedManagedAppConfigurationRequestBuilder) Assignments() *TargetedM
 	return bb
 }
 
-// TargetedManagedAppConfigurationAssignmentsCollectionRequestBuilder is request builder for TargetedManagedAppPolicyAssignment collection
+// TargetedManagedAppConfigurationAssignmentsCollectionRequestBuilder is request builder for TargetedManagedAppPolicyAssignment collection rcn
 type TargetedManagedAppConfigurationAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TargetedManagedAppPolicyAssignment collection
@@ -259,7 +259,7 @@ func (b *TargetedManagedAppProtectionRequestBuilder) Assignments() *TargetedMana
 	return bb
 }
 
-// TargetedManagedAppProtectionAssignmentsCollectionRequestBuilder is request builder for TargetedManagedAppPolicyAssignment collection
+// TargetedManagedAppProtectionAssignmentsCollectionRequestBuilder is request builder for TargetedManagedAppPolicyAssignment collection rcn
 type TargetedManagedAppProtectionAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TargetedManagedAppPolicyAssignment collection

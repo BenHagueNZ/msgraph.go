@@ -64,7 +64,7 @@ func (b *TeamRequestBuilder) AllChannels() *TeamAllChannelsCollectionRequestBuil
 	return bb
 }
 
-// TeamAllChannelsCollectionRequestBuilder is request builder for Channel collection
+// TeamAllChannelsCollectionRequestBuilder is request builder for Channel collection rcn
 type TeamAllChannelsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Channel collection
@@ -167,7 +167,7 @@ func (b *TeamRequestBuilder) Channels() *TeamChannelsCollectionRequestBuilder {
 	return bb
 }
 
-// TeamChannelsCollectionRequestBuilder is request builder for Channel collection
+// TeamChannelsCollectionRequestBuilder is request builder for Channel collection rcn
 type TeamChannelsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Channel collection
@@ -277,7 +277,7 @@ func (b *TeamRequestBuilder) IncomingChannels() *TeamIncomingChannelsCollectionR
 	return bb
 }
 
-// TeamIncomingChannelsCollectionRequestBuilder is request builder for Channel collection
+// TeamIncomingChannelsCollectionRequestBuilder is request builder for Channel collection rcn
 type TeamIncomingChannelsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Channel collection
@@ -380,7 +380,7 @@ func (b *TeamRequestBuilder) InstalledApps() *TeamInstalledAppsCollectionRequest
 	return bb
 }
 
-// TeamInstalledAppsCollectionRequestBuilder is request builder for TeamsAppInstallation collection
+// TeamInstalledAppsCollectionRequestBuilder is request builder for TeamsAppInstallation collection rcn
 type TeamInstalledAppsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TeamsAppInstallation collection
@@ -483,7 +483,7 @@ func (b *TeamRequestBuilder) Members() *TeamMembersCollectionRequestBuilder {
 	return bb
 }
 
-// TeamMembersCollectionRequestBuilder is request builder for ConversationMember collection
+// TeamMembersCollectionRequestBuilder is request builder for ConversationMember collection rcn
 type TeamMembersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ConversationMember collection
@@ -586,7 +586,7 @@ func (b *TeamRequestBuilder) Operations() *TeamOperationsCollectionRequestBuilde
 	return bb
 }
 
-// TeamOperationsCollectionRequestBuilder is request builder for TeamsAsyncOperation collection
+// TeamOperationsCollectionRequestBuilder is request builder for TeamsAsyncOperation collection rcn
 type TeamOperationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TeamsAsyncOperation collection
@@ -710,7 +710,7 @@ func (b *TeamRequestBuilder) Tags() *TeamTagsCollectionRequestBuilder {
 	return bb
 }
 
-// TeamTagsCollectionRequestBuilder is request builder for TeamworkTag collection
+// TeamTagsCollectionRequestBuilder is request builder for TeamworkTag collection rcn
 type TeamTagsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TeamworkTag collection

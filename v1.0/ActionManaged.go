@@ -130,7 +130,7 @@ func (b *ManagedAppRegistrationRequestBuilder) AppliedPolicies() *ManagedAppRegi
 	return bb
 }
 
-// ManagedAppRegistrationAppliedPoliciesCollectionRequestBuilder is request builder for ManagedAppPolicy collection
+// ManagedAppRegistrationAppliedPoliciesCollectionRequestBuilder is request builder for ManagedAppPolicy collection rcn
 type ManagedAppRegistrationAppliedPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedAppPolicy collection
@@ -233,7 +233,7 @@ func (b *ManagedAppRegistrationRequestBuilder) IntendedPolicies() *ManagedAppReg
 	return bb
 }
 
-// ManagedAppRegistrationIntendedPoliciesCollectionRequestBuilder is request builder for ManagedAppPolicy collection
+// ManagedAppRegistrationIntendedPoliciesCollectionRequestBuilder is request builder for ManagedAppPolicy collection rcn
 type ManagedAppRegistrationIntendedPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedAppPolicy collection
@@ -336,7 +336,7 @@ func (b *ManagedAppRegistrationRequestBuilder) Operations() *ManagedAppRegistrat
 	return bb
 }
 
-// ManagedAppRegistrationOperationsCollectionRequestBuilder is request builder for ManagedAppOperation collection
+// ManagedAppRegistrationOperationsCollectionRequestBuilder is request builder for ManagedAppOperation collection rcn
 type ManagedAppRegistrationOperationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedAppOperation collection
@@ -446,7 +446,7 @@ func (b *ManagedDeviceRequestBuilder) DeviceCompliancePolicyStates() *ManagedDev
 	return bb
 }
 
-// ManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder is request builder for DeviceCompliancePolicyState collection
+// ManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder is request builder for DeviceCompliancePolicyState collection rcn
 type ManagedDeviceDeviceCompliancePolicyStatesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceCompliancePolicyState collection
@@ -549,7 +549,7 @@ func (b *ManagedDeviceRequestBuilder) DeviceConfigurationStates() *ManagedDevice
 	return bb
 }
 
-// ManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder is request builder for DeviceConfigurationState collection
+// ManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder is request builder for DeviceConfigurationState collection rcn
 type ManagedDeviceDeviceConfigurationStatesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceConfigurationState collection
@@ -652,7 +652,7 @@ func (b *ManagedDeviceRequestBuilder) Users() *ManagedDeviceUsersCollectionReque
 	return bb
 }
 
-// ManagedDeviceUsersCollectionRequestBuilder is request builder for User collection
+// ManagedDeviceUsersCollectionRequestBuilder is request builder for User collection rcn
 type ManagedDeviceUsersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for User collection
@@ -755,7 +755,7 @@ func (b *ManagedDeviceMobileAppConfigurationRequestBuilder) Assignments() *Manag
 	return bb
 }
 
-// ManagedDeviceMobileAppConfigurationAssignmentsCollectionRequestBuilder is request builder for ManagedDeviceMobileAppConfigurationAssignment collection
+// ManagedDeviceMobileAppConfigurationAssignmentsCollectionRequestBuilder is request builder for ManagedDeviceMobileAppConfigurationAssignment collection rcn
 type ManagedDeviceMobileAppConfigurationAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedDeviceMobileAppConfigurationAssignment collection
@@ -865,7 +865,7 @@ func (b *ManagedDeviceMobileAppConfigurationRequestBuilder) DeviceStatuses() *Ma
 	return bb
 }
 
-// ManagedDeviceMobileAppConfigurationDeviceStatusesCollectionRequestBuilder is request builder for ManagedDeviceMobileAppConfigurationDeviceStatus collection
+// ManagedDeviceMobileAppConfigurationDeviceStatusesCollectionRequestBuilder is request builder for ManagedDeviceMobileAppConfigurationDeviceStatus collection rcn
 type ManagedDeviceMobileAppConfigurationDeviceStatusesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedDeviceMobileAppConfigurationDeviceStatus collection
@@ -975,7 +975,7 @@ func (b *ManagedDeviceMobileAppConfigurationRequestBuilder) UserStatuses() *Mana
 	return bb
 }
 
-// ManagedDeviceMobileAppConfigurationUserStatusesCollectionRequestBuilder is request builder for ManagedDeviceMobileAppConfigurationUserStatus collection
+// ManagedDeviceMobileAppConfigurationUserStatusesCollectionRequestBuilder is request builder for ManagedDeviceMobileAppConfigurationUserStatus collection rcn
 type ManagedDeviceMobileAppConfigurationUserStatusesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedDeviceMobileAppConfigurationUserStatus collection
@@ -1078,7 +1078,7 @@ func (b *ManagedEBookRequestBuilder) Assignments() *ManagedEBookAssignmentsColle
 	return bb
 }
 
-// ManagedEBookAssignmentsCollectionRequestBuilder is request builder for ManagedEBookAssignment collection
+// ManagedEBookAssignmentsCollectionRequestBuilder is request builder for ManagedEBookAssignment collection rcn
 type ManagedEBookAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedEBookAssignment collection
@@ -1181,7 +1181,7 @@ func (b *ManagedEBookRequestBuilder) DeviceStates() *ManagedEBookDeviceStatesCol
 	return bb
 }
 
-// ManagedEBookDeviceStatesCollectionRequestBuilder is request builder for DeviceInstallState collection
+// ManagedEBookDeviceStatesCollectionRequestBuilder is request builder for DeviceInstallState collection rcn
 type ManagedEBookDeviceStatesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceInstallState collection
@@ -1291,7 +1291,7 @@ func (b *ManagedEBookRequestBuilder) UserStateSummary() *ManagedEBookUserStateSu
 	return bb
 }
 
-// ManagedEBookUserStateSummaryCollectionRequestBuilder is request builder for UserInstallStateSummary collection
+// ManagedEBookUserStateSummaryCollectionRequestBuilder is request builder for UserInstallStateSummary collection rcn
 type ManagedEBookUserStateSummaryCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UserInstallStateSummary collection
@@ -1394,7 +1394,7 @@ func (b *ManagedMobileLobAppRequestBuilder) ContentVersions() *ManagedMobileLobA
 	return bb
 }
 
-// ManagedMobileLobAppContentVersionsCollectionRequestBuilder is request builder for MobileAppContent collection
+// ManagedMobileLobAppContentVersionsCollectionRequestBuilder is request builder for MobileAppContent collection rcn
 type ManagedMobileLobAppContentVersionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MobileAppContent collection
@@ -1497,7 +1497,7 @@ func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) ManagedApp() *De
 	return bb
 }
 
-// DeviceAppManagementMobileAppsCollectionManagedAppCollectionRequestBuilder is request builder for ManagedApp collection
+// DeviceAppManagementMobileAppsCollectionManagedAppCollectionRequestBuilder is request builder for ManagedApp collection rcn
 type DeviceAppManagementMobileAppsCollectionManagedAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedApp collection
@@ -1600,7 +1600,7 @@ func (b *DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder) ManagedA
 	return bb
 }
 
-// DeviceAppManagementManagedAppPoliciesCollectionManagedAppConfigurationCollectionRequestBuilder is request builder for ManagedAppConfiguration collection
+// DeviceAppManagementManagedAppPoliciesCollectionManagedAppConfigurationCollectionRequestBuilder is request builder for ManagedAppConfiguration collection rcn
 type DeviceAppManagementManagedAppPoliciesCollectionManagedAppConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedAppConfiguration collection
@@ -1717,7 +1717,7 @@ func (b *DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder) ManagedA
 	return bb
 }
 
-// DeviceAppManagementManagedAppPoliciesCollectionManagedAppProtectionCollectionRequestBuilder is request builder for ManagedAppProtection collection
+// DeviceAppManagementManagedAppPoliciesCollectionManagedAppProtectionCollectionRequestBuilder is request builder for ManagedAppProtection collection rcn
 type DeviceAppManagementManagedAppPoliciesCollectionManagedAppProtectionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedAppProtection collection
@@ -1827,7 +1827,7 @@ func (b *DeviceAppManagementManagedAppStatusesCollectionRequestBuilder) ManagedA
 	return bb
 }
 
-// DeviceAppManagementManagedAppStatusesCollectionManagedAppStatusRawCollectionRequestBuilder is request builder for ManagedAppStatusRaw collection
+// DeviceAppManagementManagedAppStatusesCollectionManagedAppStatusRawCollectionRequestBuilder is request builder for ManagedAppStatusRaw collection rcn
 type DeviceAppManagementManagedAppStatusesCollectionManagedAppStatusRawCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedAppStatusRaw collection

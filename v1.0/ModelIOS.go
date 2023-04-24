@@ -608,22 +608,22 @@ type IOSMinimumOperatingSystem struct {
 	Object
 
 	ODataType string `json:"@odata.type,omitempty"`
-	// V10_0 undocumented
-	V10_0 *bool `json:"v10_0,omitempty"`
-	// V11_0 undocumented
-	V11_0 *bool `json:"v11_0,omitempty"`
-	// V12_0 undocumented
-	V12_0 *bool `json:"v12_0,omitempty"`
-	// V13_0 undocumented
-	V13_0 *bool `json:"v13_0,omitempty"`
-	// V14_0 undocumented
-	V14_0 *bool `json:"v14_0,omitempty"`
-	// V15_0 undocumented
-	V15_0 *bool `json:"v15_0,omitempty"`
-	// V8_0 undocumented
-	V8_0 *bool `json:"v8_0,omitempty"`
-	// V9_0 undocumented
-	V9_0 *bool `json:"v9_0,omitempty"`
+	// V10Underscore0 undocumented
+	V10Underscore0 *bool `json:"v10_0,omitempty"`
+	// V11Underscore0 undocumented
+	V11Underscore0 *bool `json:"v11_0,omitempty"`
+	// V12Underscore0 undocumented
+	V12Underscore0 *bool `json:"v12_0,omitempty"`
+	// V13Underscore0 undocumented
+	V13Underscore0 *bool `json:"v13_0,omitempty"`
+	// V14Underscore0 undocumented
+	V14Underscore0 *bool `json:"v14_0,omitempty"`
+	// V15Underscore0 undocumented
+	V15Underscore0 *bool `json:"v15_0,omitempty"`
+	// V8Underscore0 undocumented
+	V8Underscore0 *bool `json:"v8_0,omitempty"`
+	// V9Underscore0 undocumented
+	V9Underscore0 *bool `json:"v9_0,omitempty"`
 }
 
 func NewIOSMinimumOperatingSystem() (*IOSMinimumOperatingSystem, error) {

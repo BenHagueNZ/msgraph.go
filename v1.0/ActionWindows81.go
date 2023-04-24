@@ -18,7 +18,7 @@ func (b *DeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder) Windo
 	return bb
 }
 
-// DeviceManagementDeviceCompliancePoliciesCollectionWindows81CompliancePolicyCollectionRequestBuilder is request builder for Windows81CompliancePolicy collection
+// DeviceManagementDeviceCompliancePoliciesCollectionWindows81CompliancePolicyCollectionRequestBuilder is request builder for Windows81CompliancePolicy collection rcn
 type DeviceManagementDeviceCompliancePoliciesCollectionWindows81CompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Windows81CompliancePolicy collection
@@ -121,7 +121,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) Windows81
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionWindows81GeneralConfigurationCollectionRequestBuilder is request builder for Windows81GeneralConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionWindows81GeneralConfigurationCollectionRequestBuilder is request builder for Windows81GeneralConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionWindows81GeneralConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Windows81GeneralConfiguration collection

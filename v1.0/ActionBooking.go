@@ -42,7 +42,7 @@ func (b *BookingBusinessRequestBuilder) Appointments() *BookingBusinessAppointme
 	return bb
 }
 
-// BookingBusinessAppointmentsCollectionRequestBuilder is request builder for BookingAppointment collection
+// BookingBusinessAppointmentsCollectionRequestBuilder is request builder for BookingAppointment collection rcn
 type BookingBusinessAppointmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for BookingAppointment collection
@@ -145,7 +145,7 @@ func (b *BookingBusinessRequestBuilder) CalendarView() *BookingBusinessCalendarV
 	return bb
 }
 
-// BookingBusinessCalendarViewCollectionRequestBuilder is request builder for BookingAppointment collection
+// BookingBusinessCalendarViewCollectionRequestBuilder is request builder for BookingAppointment collection rcn
 type BookingBusinessCalendarViewCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for BookingAppointment collection
@@ -248,7 +248,7 @@ func (b *BookingBusinessRequestBuilder) CustomQuestions() *BookingBusinessCustom
 	return bb
 }
 
-// BookingBusinessCustomQuestionsCollectionRequestBuilder is request builder for BookingCustomQuestion collection
+// BookingBusinessCustomQuestionsCollectionRequestBuilder is request builder for BookingCustomQuestion collection rcn
 type BookingBusinessCustomQuestionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for BookingCustomQuestion collection
@@ -351,7 +351,7 @@ func (b *BookingBusinessRequestBuilder) Customers() *BookingBusinessCustomersCol
 	return bb
 }
 
-// BookingBusinessCustomersCollectionRequestBuilder is request builder for BookingCustomerBase collection
+// BookingBusinessCustomersCollectionRequestBuilder is request builder for BookingCustomerBase collection rcn
 type BookingBusinessCustomersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for BookingCustomerBase collection
@@ -454,7 +454,7 @@ func (b *BookingBusinessRequestBuilder) Services() *BookingBusinessServicesColle
 	return bb
 }
 
-// BookingBusinessServicesCollectionRequestBuilder is request builder for BookingService collection
+// BookingBusinessServicesCollectionRequestBuilder is request builder for BookingService collection rcn
 type BookingBusinessServicesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for BookingService collection
@@ -557,7 +557,7 @@ func (b *BookingBusinessRequestBuilder) StaffMembers() *BookingBusinessStaffMemb
 	return bb
 }
 
-// BookingBusinessStaffMembersCollectionRequestBuilder is request builder for BookingStaffMemberBase collection
+// BookingBusinessStaffMembersCollectionRequestBuilder is request builder for BookingStaffMemberBase collection rcn
 type BookingBusinessStaffMembersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for BookingStaffMemberBase collection
@@ -688,7 +688,7 @@ func (b *BookingBusinessCustomersCollectionRequestBuilder) BookingCustomer() *Bo
 	return bb
 }
 
-// BookingBusinessCustomersCollectionBookingCustomerCollectionRequestBuilder is request builder for BookingCustomer collection
+// BookingBusinessCustomersCollectionBookingCustomerCollectionRequestBuilder is request builder for BookingCustomer collection rcn
 type BookingBusinessCustomersCollectionBookingCustomerCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for BookingCustomer collection
@@ -805,7 +805,7 @@ func (b *BookingBusinessStaffMembersCollectionRequestBuilder) BookingStaffMember
 	return bb
 }
 
-// BookingBusinessStaffMembersCollectionBookingStaffMemberCollectionRequestBuilder is request builder for BookingStaffMember collection
+// BookingBusinessStaffMembersCollectionBookingStaffMemberCollectionRequestBuilder is request builder for BookingStaffMember collection rcn
 type BookingBusinessStaffMembersCollectionBookingStaffMemberCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for BookingStaffMember collection

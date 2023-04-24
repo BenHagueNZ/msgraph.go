@@ -18,7 +18,7 @@ func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) WebApp() *Device
 	return bb
 }
 
-// DeviceAppManagementMobileAppsCollectionWebAppCollectionRequestBuilder is request builder for WebApp collection
+// DeviceAppManagementMobileAppsCollectionWebAppCollectionRequestBuilder is request builder for WebApp collection rcn
 type DeviceAppManagementMobileAppsCollectionWebAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WebApp collection

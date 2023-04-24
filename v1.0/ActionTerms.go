@@ -18,7 +18,7 @@ func (b *TermsAndConditionsRequestBuilder) AcceptanceStatuses() *TermsAndConditi
 	return bb
 }
 
-// TermsAndConditionsAcceptanceStatusesCollectionRequestBuilder is request builder for TermsAndConditionsAcceptanceStatus collection
+// TermsAndConditionsAcceptanceStatusesCollectionRequestBuilder is request builder for TermsAndConditionsAcceptanceStatus collection rcn
 type TermsAndConditionsAcceptanceStatusesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TermsAndConditionsAcceptanceStatus collection
@@ -121,7 +121,7 @@ func (b *TermsAndConditionsRequestBuilder) Assignments() *TermsAndConditionsAssi
 	return bb
 }
 
-// TermsAndConditionsAssignmentsCollectionRequestBuilder is request builder for TermsAndConditionsAssignment collection
+// TermsAndConditionsAssignmentsCollectionRequestBuilder is request builder for TermsAndConditionsAssignment collection rcn
 type TermsAndConditionsAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TermsAndConditionsAssignment collection
@@ -231,7 +231,7 @@ func (b *TermsOfUseContainerRequestBuilder) AgreementAcceptances() *TermsOfUseCo
 	return bb
 }
 
-// TermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder is request builder for AgreementAcceptance collection
+// TermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder is request builder for AgreementAcceptance collection rcn
 type TermsOfUseContainerAgreementAcceptancesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AgreementAcceptance collection
@@ -334,7 +334,7 @@ func (b *TermsOfUseContainerRequestBuilder) Agreements() *TermsOfUseContainerAgr
 	return bb
 }
 
-// TermsOfUseContainerAgreementsCollectionRequestBuilder is request builder for Agreement collection
+// TermsOfUseContainerAgreementsCollectionRequestBuilder is request builder for Agreement collection rcn
 type TermsOfUseContainerAgreementsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Agreement collection

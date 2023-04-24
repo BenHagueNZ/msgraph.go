@@ -18,7 +18,7 @@ func (b *IOSManagedAppProtectionRequestBuilder) Apps() *IOSManagedAppProtectionA
 	return bb
 }
 
-// IOSManagedAppProtectionAppsCollectionRequestBuilder is request builder for ManagedMobileApp collection
+// IOSManagedAppProtectionAppsCollectionRequestBuilder is request builder for ManagedMobileApp collection rcn
 type IOSManagedAppProtectionAppsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedMobileApp collection
@@ -128,7 +128,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) IOSCertif
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionIOSCertificateProfileCollectionRequestBuilder is request builder for IOSCertificateProfile collection
+// DeviceManagementDeviceConfigurationsCollectionIOSCertificateProfileCollectionRequestBuilder is request builder for IOSCertificateProfile collection rcn
 type DeviceManagementDeviceConfigurationsCollectionIOSCertificateProfileCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IOSCertificateProfile collection
@@ -231,7 +231,7 @@ func (b *DeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder) IOSCo
 	return bb
 }
 
-// DeviceManagementDeviceCompliancePoliciesCollectionIOSCompliancePolicyCollectionRequestBuilder is request builder for IOSCompliancePolicy collection
+// DeviceManagementDeviceCompliancePoliciesCollectionIOSCompliancePolicyCollectionRequestBuilder is request builder for IOSCompliancePolicy collection rcn
 type DeviceManagementDeviceCompliancePoliciesCollectionIOSCompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IOSCompliancePolicy collection
@@ -334,7 +334,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) IOSCustom
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionIOSCustomConfigurationCollectionRequestBuilder is request builder for IOSCustomConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionIOSCustomConfigurationCollectionRequestBuilder is request builder for IOSCustomConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionIOSCustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IOSCustomConfiguration collection
@@ -437,7 +437,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) IOSGenera
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionIOSGeneralDeviceConfigurationCollectionRequestBuilder is request builder for IOSGeneralDeviceConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionIOSGeneralDeviceConfigurationCollectionRequestBuilder is request builder for IOSGeneralDeviceConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionIOSGeneralDeviceConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IOSGeneralDeviceConfiguration collection
@@ -547,7 +547,7 @@ func (b *DeviceAppManagementManagedAppRegistrationsCollectionRequestBuilder) IOS
 	return bb
 }
 
-// DeviceAppManagementManagedAppRegistrationsCollectionIOSManagedAppRegistrationCollectionRequestBuilder is request builder for IOSManagedAppRegistration collection
+// DeviceAppManagementManagedAppRegistrationsCollectionIOSManagedAppRegistrationCollectionRequestBuilder is request builder for IOSManagedAppRegistration collection rcn
 type DeviceAppManagementManagedAppRegistrationsCollectionIOSManagedAppRegistrationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IOSManagedAppRegistration collection
@@ -650,7 +650,7 @@ func (b *DeviceAppManagementMobileAppConfigurationsCollectionRequestBuilder) IOS
 	return bb
 }
 
-// DeviceAppManagementMobileAppConfigurationsCollectionIOSMobileAppConfigurationCollectionRequestBuilder is request builder for IOSMobileAppConfiguration collection
+// DeviceAppManagementMobileAppConfigurationsCollectionIOSMobileAppConfigurationCollectionRequestBuilder is request builder for IOSMobileAppConfiguration collection rcn
 type DeviceAppManagementMobileAppConfigurationsCollectionIOSMobileAppConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IOSMobileAppConfiguration collection
@@ -753,7 +753,7 @@ func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) IOSStoreApp() *D
 	return bb
 }
 
-// DeviceAppManagementMobileAppsCollectionIOSStoreAppCollectionRequestBuilder is request builder for IOSStoreApp collection
+// DeviceAppManagementMobileAppsCollectionIOSStoreAppCollectionRequestBuilder is request builder for IOSStoreApp collection rcn
 type DeviceAppManagementMobileAppsCollectionIOSStoreAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IOSStoreApp collection
@@ -856,7 +856,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) IOSUpdate
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionIOSUpdateConfigurationCollectionRequestBuilder is request builder for IOSUpdateConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionIOSUpdateConfigurationCollectionRequestBuilder is request builder for IOSUpdateConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionIOSUpdateConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IOSUpdateConfiguration collection
@@ -966,7 +966,7 @@ func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) IOSVPPApp() *Dev
 	return bb
 }
 
-// DeviceAppManagementMobileAppsCollectionIOSVPPAppCollectionRequestBuilder is request builder for IOSVPPApp collection
+// DeviceAppManagementMobileAppsCollectionIOSVPPAppCollectionRequestBuilder is request builder for IOSVPPApp collection rcn
 type DeviceAppManagementMobileAppsCollectionIOSVPPAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IOSVPPApp collection
@@ -1069,7 +1069,7 @@ func (b *DeviceAppManagementManagedEBooksCollectionRequestBuilder) IOSVPPEBook()
 	return bb
 }
 
-// DeviceAppManagementManagedEBooksCollectionIOSVPPEBookCollectionRequestBuilder is request builder for IOSVPPEBook collection
+// DeviceAppManagementManagedEBooksCollectionIOSVPPEBookCollectionRequestBuilder is request builder for IOSVPPEBook collection rcn
 type DeviceAppManagementManagedEBooksCollectionIOSVPPEBookCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IOSVPPEBook collection
@@ -1172,7 +1172,7 @@ func (b *ManagedEBookAssignmentsCollectionRequestBuilder) IOSVPPEBookAssignment(
 	return bb
 }
 
-// ManagedEBookAssignmentsCollectionIOSVPPEBookAssignmentCollectionRequestBuilder is request builder for IOSVPPEBookAssignment collection
+// ManagedEBookAssignmentsCollectionIOSVPPEBookAssignmentCollectionRequestBuilder is request builder for IOSVPPEBookAssignment collection rcn
 type ManagedEBookAssignmentsCollectionIOSVPPEBookAssignmentCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IOSVPPEBookAssignment collection

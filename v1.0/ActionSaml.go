@@ -18,7 +18,7 @@ func (b *SamlOrWsFedExternalDomainFederationRequestBuilder) Domains() *SamlOrWsF
 	return bb
 }
 
-// SamlOrWsFedExternalDomainFederationDomainsCollectionRequestBuilder is request builder for ExternalDomainName collection
+// SamlOrWsFedExternalDomainFederationDomainsCollectionRequestBuilder is request builder for ExternalDomainName collection rcn
 type SamlOrWsFedExternalDomainFederationDomainsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ExternalDomainName collection
@@ -121,7 +121,7 @@ func (b *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionRequestBuilder) S
 	return bb
 }
 
-// B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequestBuilder is request builder for SamlOrWsFedProvider collection
+// B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequestBuilder is request builder for SamlOrWsFedProvider collection rcn
 type B2xIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SamlOrWsFedProvider collection

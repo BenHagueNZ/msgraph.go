@@ -64,7 +64,7 @@ func (b *ApplicationRequestBuilder) AppManagementPolicies() *ApplicationAppManag
 	return bb
 }
 
-// ApplicationAppManagementPoliciesCollectionRequestBuilder is request builder for AppManagementPolicy collection
+// ApplicationAppManagementPoliciesCollectionRequestBuilder is request builder for AppManagementPolicy collection rcn
 type ApplicationAppManagementPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AppManagementPolicy collection
@@ -174,7 +174,7 @@ func (b *ApplicationRequestBuilder) ExtensionProperties() *ApplicationExtensionP
 	return bb
 }
 
-// ApplicationExtensionPropertiesCollectionRequestBuilder is request builder for ExtensionProperty collection
+// ApplicationExtensionPropertiesCollectionRequestBuilder is request builder for ExtensionProperty collection rcn
 type ApplicationExtensionPropertiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ExtensionProperty collection
@@ -277,7 +277,7 @@ func (b *ApplicationRequestBuilder) FederatedIdentityCredentials() *ApplicationF
 	return bb
 }
 
-// ApplicationFederatedIdentityCredentialsCollectionRequestBuilder is request builder for FederatedIdentityCredential collection
+// ApplicationFederatedIdentityCredentialsCollectionRequestBuilder is request builder for FederatedIdentityCredential collection rcn
 type ApplicationFederatedIdentityCredentialsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for FederatedIdentityCredential collection
@@ -380,7 +380,7 @@ func (b *ApplicationRequestBuilder) HomeRealmDiscoveryPolicies() *ApplicationHom
 	return bb
 }
 
-// ApplicationHomeRealmDiscoveryPoliciesCollectionRequestBuilder is request builder for HomeRealmDiscoveryPolicy collection
+// ApplicationHomeRealmDiscoveryPoliciesCollectionRequestBuilder is request builder for HomeRealmDiscoveryPolicy collection rcn
 type ApplicationHomeRealmDiscoveryPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for HomeRealmDiscoveryPolicy collection
@@ -483,7 +483,7 @@ func (b *ApplicationRequestBuilder) Owners() *ApplicationOwnersCollectionRequest
 	return bb
 }
 
-// ApplicationOwnersCollectionRequestBuilder is request builder for DirectoryObject collection
+// ApplicationOwnersCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type ApplicationOwnersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -586,7 +586,7 @@ func (b *ApplicationRequestBuilder) TokenIssuancePolicies() *ApplicationTokenIss
 	return bb
 }
 
-// ApplicationTokenIssuancePoliciesCollectionRequestBuilder is request builder for TokenIssuancePolicy collection
+// ApplicationTokenIssuancePoliciesCollectionRequestBuilder is request builder for TokenIssuancePolicy collection rcn
 type ApplicationTokenIssuancePoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TokenIssuancePolicy collection
@@ -689,7 +689,7 @@ func (b *ApplicationRequestBuilder) TokenLifetimePolicies() *ApplicationTokenLif
 	return bb
 }
 
-// ApplicationTokenLifetimePoliciesCollectionRequestBuilder is request builder for TokenLifetimePolicy collection
+// ApplicationTokenLifetimePoliciesCollectionRequestBuilder is request builder for TokenLifetimePolicy collection rcn
 type ApplicationTokenLifetimePoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TokenLifetimePolicy collection
@@ -806,7 +806,7 @@ func (b *AdministrativeUnitMembersCollectionRequestBuilder) Application() *Admin
 	return bb
 }
 
-// AdministrativeUnitMembersCollectionApplicationCollectionRequestBuilder is request builder for Application collection
+// AdministrativeUnitMembersCollectionApplicationCollectionRequestBuilder is request builder for Application collection rcn
 type AdministrativeUnitMembersCollectionApplicationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Application collection

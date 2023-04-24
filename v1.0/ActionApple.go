@@ -18,7 +18,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) AppleDevi
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder is request builder for AppleDeviceFeaturesConfigurationBase collection
+// DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder is request builder for AppleDeviceFeaturesConfigurationBase collection rcn
 type DeviceManagementDeviceConfigurationsCollectionAppleDeviceFeaturesConfigurationBaseCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AppleDeviceFeaturesConfigurationBase collection
@@ -121,7 +121,7 @@ func (b *B2xIdentityUserFlowUserFlowIdentityProvidersCollectionRequestBuilder) A
 	return bb
 }
 
-// B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequestBuilder is request builder for AppleManagedIdentityProvider collection
+// B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequestBuilder is request builder for AppleManagedIdentityProvider collection rcn
 type B2xIdentityUserFlowUserFlowIdentityProvidersCollectionAppleManagedIdentityProviderCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AppleManagedIdentityProvider collection

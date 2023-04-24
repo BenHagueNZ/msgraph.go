@@ -25,7 +25,7 @@ func (b *ExternalConnectorsExternalRequestBuilder) Connections() *ExternalConnec
 	return bb
 }
 
-// ExternalConnectorsExternalConnectionsCollectionRequestBuilder is request builder for ExternalConnectorsExternalConnection collection
+// ExternalConnectorsExternalConnectionsCollectionRequestBuilder is request builder for ExternalConnectorsExternalConnection collection rcn
 type ExternalConnectorsExternalConnectionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ExternalConnectorsExternalConnection collection
@@ -128,7 +128,7 @@ func (b *ExternalConnectorsExternalConnectionRequestBuilder) Groups() *ExternalC
 	return bb
 }
 
-// ExternalConnectorsExternalConnectionGroupsCollectionRequestBuilder is request builder for ExternalConnectorsExternalGroup collection
+// ExternalConnectorsExternalConnectionGroupsCollectionRequestBuilder is request builder for ExternalConnectorsExternalGroup collection rcn
 type ExternalConnectorsExternalConnectionGroupsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ExternalConnectorsExternalGroup collection
@@ -231,7 +231,7 @@ func (b *ExternalConnectorsExternalConnectionRequestBuilder) Items() *ExternalCo
 	return bb
 }
 
-// ExternalConnectorsExternalConnectionItemsCollectionRequestBuilder is request builder for ExternalConnectorsExternalItem collection
+// ExternalConnectorsExternalConnectionItemsCollectionRequestBuilder is request builder for ExternalConnectorsExternalItem collection rcn
 type ExternalConnectorsExternalConnectionItemsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ExternalConnectorsExternalItem collection
@@ -334,7 +334,7 @@ func (b *ExternalConnectorsExternalConnectionRequestBuilder) Operations() *Exter
 	return bb
 }
 
-// ExternalConnectorsExternalConnectionOperationsCollectionRequestBuilder is request builder for ExternalConnectorsConnectionOperation collection
+// ExternalConnectorsExternalConnectionOperationsCollectionRequestBuilder is request builder for ExternalConnectorsConnectionOperation collection rcn
 type ExternalConnectorsExternalConnectionOperationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ExternalConnectorsConnectionOperation collection
@@ -444,7 +444,7 @@ func (b *ExternalConnectorsExternalGroupRequestBuilder) Members() *ExternalConne
 	return bb
 }
 
-// ExternalConnectorsExternalGroupMembersCollectionRequestBuilder is request builder for ExternalConnectorsIdentity collection
+// ExternalConnectorsExternalGroupMembersCollectionRequestBuilder is request builder for ExternalConnectorsIdentity collection rcn
 type ExternalConnectorsExternalGroupMembersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ExternalConnectorsIdentity collection

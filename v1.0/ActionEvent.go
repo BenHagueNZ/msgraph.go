@@ -70,7 +70,7 @@ func (b *EventRequestBuilder) Attachments() *EventAttachmentsCollectionRequestBu
 	return bb
 }
 
-// EventAttachmentsCollectionRequestBuilder is request builder for Attachment collection
+// EventAttachmentsCollectionRequestBuilder is request builder for Attachment collection rcn
 type EventAttachmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Attachment collection
@@ -180,7 +180,7 @@ func (b *EventRequestBuilder) Extensions() *EventExtensionsCollectionRequestBuil
 	return bb
 }
 
-// EventExtensionsCollectionRequestBuilder is request builder for Extension collection
+// EventExtensionsCollectionRequestBuilder is request builder for Extension collection rcn
 type EventExtensionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Extension collection
@@ -283,7 +283,7 @@ func (b *EventRequestBuilder) Instances() *EventInstancesCollectionRequestBuilde
 	return bb
 }
 
-// EventInstancesCollectionRequestBuilder is request builder for Event collection
+// EventInstancesCollectionRequestBuilder is request builder for Event collection rcn
 type EventInstancesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Event collection
@@ -386,7 +386,7 @@ func (b *EventRequestBuilder) MultiValueExtendedProperties() *EventMultiValueExt
 	return bb
 }
 
-// EventMultiValueExtendedPropertiesCollectionRequestBuilder is request builder for MultiValueLegacyExtendedProperty collection
+// EventMultiValueExtendedPropertiesCollectionRequestBuilder is request builder for MultiValueLegacyExtendedProperty collection rcn
 type EventMultiValueExtendedPropertiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MultiValueLegacyExtendedProperty collection
@@ -489,7 +489,7 @@ func (b *EventRequestBuilder) SingleValueExtendedProperties() *EventSingleValueE
 	return bb
 }
 
-// EventSingleValueExtendedPropertiesCollectionRequestBuilder is request builder for SingleValueLegacyExtendedProperty collection
+// EventSingleValueExtendedPropertiesCollectionRequestBuilder is request builder for SingleValueLegacyExtendedProperty collection rcn
 type EventSingleValueExtendedPropertiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SingleValueLegacyExtendedProperty collection
@@ -606,7 +606,7 @@ func (b *MailFolderMessagesCollectionRequestBuilder) EventMessage() *MailFolderM
 	return bb
 }
 
-// MailFolderMessagesCollectionEventMessageCollectionRequestBuilder is request builder for EventMessage collection
+// MailFolderMessagesCollectionEventMessageCollectionRequestBuilder is request builder for EventMessage collection rcn
 type MailFolderMessagesCollectionEventMessageCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EventMessage collection

@@ -18,7 +18,7 @@ func (b *ConditionalAccessRootRequestBuilder) AuthenticationContextClassReferenc
 	return bb
 }
 
-// ConditionalAccessRootAuthenticationContextClassReferencesCollectionRequestBuilder is request builder for AuthenticationContextClassReference collection
+// ConditionalAccessRootAuthenticationContextClassReferencesCollectionRequestBuilder is request builder for AuthenticationContextClassReference collection rcn
 type ConditionalAccessRootAuthenticationContextClassReferencesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AuthenticationContextClassReference collection
@@ -121,7 +121,7 @@ func (b *ConditionalAccessRootRequestBuilder) NamedLocations() *ConditionalAcces
 	return bb
 }
 
-// ConditionalAccessRootNamedLocationsCollectionRequestBuilder is request builder for NamedLocation collection
+// ConditionalAccessRootNamedLocationsCollectionRequestBuilder is request builder for NamedLocation collection rcn
 type ConditionalAccessRootNamedLocationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for NamedLocation collection
@@ -224,7 +224,7 @@ func (b *ConditionalAccessRootRequestBuilder) Policies() *ConditionalAccessRootP
 	return bb
 }
 
-// ConditionalAccessRootPoliciesCollectionRequestBuilder is request builder for ConditionalAccessPolicy collection
+// ConditionalAccessRootPoliciesCollectionRequestBuilder is request builder for ConditionalAccessPolicy collection rcn
 type ConditionalAccessRootPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ConditionalAccessPolicy collection
@@ -327,7 +327,7 @@ func (b *ConditionalAccessRootRequestBuilder) Templates() *ConditionalAccessRoot
 	return bb
 }
 
-// ConditionalAccessRootTemplatesCollectionRequestBuilder is request builder for ConditionalAccessTemplate collection
+// ConditionalAccessRootTemplatesCollectionRequestBuilder is request builder for ConditionalAccessTemplate collection rcn
 type ConditionalAccessRootTemplatesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ConditionalAccessTemplate collection

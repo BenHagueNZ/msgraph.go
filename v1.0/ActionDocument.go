@@ -22,7 +22,7 @@ func (b *DocumentSetRequestBuilder) SharedColumns() *DocumentSetSharedColumnsCol
 	return bb
 }
 
-// DocumentSetSharedColumnsCollectionRequestBuilder is request builder for ColumnDefinition collection
+// DocumentSetSharedColumnsCollectionRequestBuilder is request builder for ColumnDefinition collection rcn
 type DocumentSetSharedColumnsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ColumnDefinition collection
@@ -125,7 +125,7 @@ func (b *DocumentSetRequestBuilder) WelcomePageColumns() *DocumentSetWelcomePage
 	return bb
 }
 
-// DocumentSetWelcomePageColumnsCollectionRequestBuilder is request builder for ColumnDefinition collection
+// DocumentSetWelcomePageColumnsCollectionRequestBuilder is request builder for ColumnDefinition collection rcn
 type DocumentSetWelcomePageColumnsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ColumnDefinition collection
@@ -228,7 +228,7 @@ func (b *ListItemVersionsCollectionRequestBuilder) DocumentSetVersion() *ListIte
 	return bb
 }
 
-// ListItemVersionsCollectionDocumentSetVersionCollectionRequestBuilder is request builder for DocumentSetVersion collection
+// ListItemVersionsCollectionDocumentSetVersionCollectionRequestBuilder is request builder for DocumentSetVersion collection rcn
 type ListItemVersionsCollectionDocumentSetVersionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DocumentSetVersion collection

@@ -25,7 +25,7 @@ func (b *DeviceManagementTroubleshootingEventsCollectionRequestBuilder) Enrollme
 	return bb
 }
 
-// DeviceManagementTroubleshootingEventsCollectionEnrollmentTroubleshootingEventCollectionRequestBuilder is request builder for EnrollmentTroubleshootingEvent collection
+// DeviceManagementTroubleshootingEventsCollectionEnrollmentTroubleshootingEventCollectionRequestBuilder is request builder for EnrollmentTroubleshootingEvent collection rcn
 type DeviceManagementTroubleshootingEventsCollectionEnrollmentTroubleshootingEventCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EnrollmentTroubleshootingEvent collection

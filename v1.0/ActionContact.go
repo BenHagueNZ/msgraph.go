@@ -18,7 +18,7 @@ func (b *ContactRequestBuilder) Extensions() *ContactExtensionsCollectionRequest
 	return bb
 }
 
-// ContactExtensionsCollectionRequestBuilder is request builder for Extension collection
+// ContactExtensionsCollectionRequestBuilder is request builder for Extension collection rcn
 type ContactExtensionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Extension collection
@@ -121,7 +121,7 @@ func (b *ContactRequestBuilder) MultiValueExtendedProperties() *ContactMultiValu
 	return bb
 }
 
-// ContactMultiValueExtendedPropertiesCollectionRequestBuilder is request builder for MultiValueLegacyExtendedProperty collection
+// ContactMultiValueExtendedPropertiesCollectionRequestBuilder is request builder for MultiValueLegacyExtendedProperty collection rcn
 type ContactMultiValueExtendedPropertiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MultiValueLegacyExtendedProperty collection
@@ -231,7 +231,7 @@ func (b *ContactRequestBuilder) SingleValueExtendedProperties() *ContactSingleVa
 	return bb
 }
 
-// ContactSingleValueExtendedPropertiesCollectionRequestBuilder is request builder for SingleValueLegacyExtendedProperty collection
+// ContactSingleValueExtendedPropertiesCollectionRequestBuilder is request builder for SingleValueLegacyExtendedProperty collection rcn
 type ContactSingleValueExtendedPropertiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SingleValueLegacyExtendedProperty collection
@@ -334,7 +334,7 @@ func (b *ContactFolderRequestBuilder) ChildFolders() *ContactFolderChildFoldersC
 	return bb
 }
 
-// ContactFolderChildFoldersCollectionRequestBuilder is request builder for ContactFolder collection
+// ContactFolderChildFoldersCollectionRequestBuilder is request builder for ContactFolder collection rcn
 type ContactFolderChildFoldersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ContactFolder collection
@@ -437,7 +437,7 @@ func (b *ContactFolderRequestBuilder) Contacts() *ContactFolderContactsCollectio
 	return bb
 }
 
-// ContactFolderContactsCollectionRequestBuilder is request builder for Contact collection
+// ContactFolderContactsCollectionRequestBuilder is request builder for Contact collection rcn
 type ContactFolderContactsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Contact collection
@@ -540,7 +540,7 @@ func (b *ContactFolderRequestBuilder) MultiValueExtendedProperties() *ContactFol
 	return bb
 }
 
-// ContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder is request builder for MultiValueLegacyExtendedProperty collection
+// ContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder is request builder for MultiValueLegacyExtendedProperty collection rcn
 type ContactFolderMultiValueExtendedPropertiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MultiValueLegacyExtendedProperty collection
@@ -643,7 +643,7 @@ func (b *ContactFolderRequestBuilder) SingleValueExtendedProperties() *ContactFo
 	return bb
 }
 
-// ContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder is request builder for SingleValueLegacyExtendedProperty collection
+// ContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder is request builder for SingleValueLegacyExtendedProperty collection rcn
 type ContactFolderSingleValueExtendedPropertiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SingleValueLegacyExtendedProperty collection

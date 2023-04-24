@@ -18,7 +18,7 @@ func (b *GraphServiceRequestBuilder) AgreementAcceptances() *GraphServiceAgreeme
 	return bb
 }
 
-// GraphServiceAgreementAcceptancesCollectionRequestBuilder is request builder for AgreementAcceptance collection
+// GraphServiceAgreementAcceptancesCollectionRequestBuilder is request builder for AgreementAcceptance collection rcn
 type GraphServiceAgreementAcceptancesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AgreementAcceptance collection
@@ -121,7 +121,7 @@ func (b *GraphServiceRequestBuilder) Agreements() *GraphServiceAgreementsCollect
 	return bb
 }
 
-// GraphServiceAgreementsCollectionRequestBuilder is request builder for Agreement collection
+// GraphServiceAgreementsCollectionRequestBuilder is request builder for Agreement collection rcn
 type GraphServiceAgreementsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Agreement collection
@@ -224,7 +224,7 @@ func (b *GraphServiceRequestBuilder) ApplicationTemplates() *GraphServiceApplica
 	return bb
 }
 
-// GraphServiceApplicationTemplatesCollectionRequestBuilder is request builder for ApplicationTemplate collection
+// GraphServiceApplicationTemplatesCollectionRequestBuilder is request builder for ApplicationTemplate collection rcn
 type GraphServiceApplicationTemplatesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ApplicationTemplate collection
@@ -327,7 +327,7 @@ func (b *GraphServiceRequestBuilder) Applications() *GraphServiceApplicationsCol
 	return bb
 }
 
-// GraphServiceApplicationsCollectionRequestBuilder is request builder for Application collection
+// GraphServiceApplicationsCollectionRequestBuilder is request builder for Application collection rcn
 type GraphServiceApplicationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Application collection
@@ -430,7 +430,7 @@ func (b *GraphServiceRequestBuilder) AuthenticationMethodConfigurations() *Graph
 	return bb
 }
 
-// GraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder is request builder for AuthenticationMethodConfiguration collection
+// GraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder is request builder for AuthenticationMethodConfiguration collection rcn
 type GraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AuthenticationMethodConfiguration collection
@@ -533,7 +533,7 @@ func (b *GraphServiceRequestBuilder) CertificateBasedAuthConfiguration() *GraphS
 	return bb
 }
 
-// GraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder is request builder for CertificateBasedAuthConfiguration collection
+// GraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder is request builder for CertificateBasedAuthConfiguration collection rcn
 type GraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for CertificateBasedAuthConfiguration collection
@@ -636,7 +636,7 @@ func (b *GraphServiceRequestBuilder) Chats() *GraphServiceChatsCollectionRequest
 	return bb
 }
 
-// GraphServiceChatsCollectionRequestBuilder is request builder for Chat collection
+// GraphServiceChatsCollectionRequestBuilder is request builder for Chat collection rcn
 type GraphServiceChatsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Chat collection
@@ -739,7 +739,7 @@ func (b *GraphServiceRequestBuilder) Connections() *GraphServiceConnectionsColle
 	return bb
 }
 
-// GraphServiceConnectionsCollectionRequestBuilder is request builder for ExternalConnectorsExternalConnection collection
+// GraphServiceConnectionsCollectionRequestBuilder is request builder for ExternalConnectorsExternalConnection collection rcn
 type GraphServiceConnectionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ExternalConnectorsExternalConnection collection
@@ -842,7 +842,7 @@ func (b *GraphServiceRequestBuilder) Contacts() *GraphServiceContactsCollectionR
 	return bb
 }
 
-// GraphServiceContactsCollectionRequestBuilder is request builder for OrgContact collection
+// GraphServiceContactsCollectionRequestBuilder is request builder for OrgContact collection rcn
 type GraphServiceContactsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OrgContact collection
@@ -945,7 +945,7 @@ func (b *GraphServiceRequestBuilder) Contracts() *GraphServiceContractsCollectio
 	return bb
 }
 
-// GraphServiceContractsCollectionRequestBuilder is request builder for Contract collection
+// GraphServiceContractsCollectionRequestBuilder is request builder for Contract collection rcn
 type GraphServiceContractsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Contract collection
@@ -1048,7 +1048,7 @@ func (b *GraphServiceRequestBuilder) DataPolicyOperations() *GraphServiceDataPol
 	return bb
 }
 
-// GraphServiceDataPolicyOperationsCollectionRequestBuilder is request builder for DataPolicyOperation collection
+// GraphServiceDataPolicyOperationsCollectionRequestBuilder is request builder for DataPolicyOperation collection rcn
 type GraphServiceDataPolicyOperationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DataPolicyOperation collection
@@ -1151,7 +1151,7 @@ func (b *GraphServiceRequestBuilder) Devices() *GraphServiceDevicesCollectionReq
 	return bb
 }
 
-// GraphServiceDevicesCollectionRequestBuilder is request builder for Device collection
+// GraphServiceDevicesCollectionRequestBuilder is request builder for Device collection rcn
 type GraphServiceDevicesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Device collection
@@ -1254,7 +1254,7 @@ func (b *GraphServiceRequestBuilder) DirectoryObjects() *GraphServiceDirectoryOb
 	return bb
 }
 
-// GraphServiceDirectoryObjectsCollectionRequestBuilder is request builder for DirectoryObject collection
+// GraphServiceDirectoryObjectsCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type GraphServiceDirectoryObjectsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -1357,7 +1357,7 @@ func (b *GraphServiceRequestBuilder) DirectoryRoleTemplates() *GraphServiceDirec
 	return bb
 }
 
-// GraphServiceDirectoryRoleTemplatesCollectionRequestBuilder is request builder for DirectoryRoleTemplate collection
+// GraphServiceDirectoryRoleTemplatesCollectionRequestBuilder is request builder for DirectoryRoleTemplate collection rcn
 type GraphServiceDirectoryRoleTemplatesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryRoleTemplate collection
@@ -1460,7 +1460,7 @@ func (b *GraphServiceRequestBuilder) DirectoryRoles() *GraphServiceDirectoryRole
 	return bb
 }
 
-// GraphServiceDirectoryRolesCollectionRequestBuilder is request builder for DirectoryRole collection
+// GraphServiceDirectoryRolesCollectionRequestBuilder is request builder for DirectoryRole collection rcn
 type GraphServiceDirectoryRolesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryRole collection
@@ -1563,7 +1563,7 @@ func (b *GraphServiceRequestBuilder) DomainDnsRecords() *GraphServiceDomainDnsRe
 	return bb
 }
 
-// GraphServiceDomainDnsRecordsCollectionRequestBuilder is request builder for DomainDnsRecord collection
+// GraphServiceDomainDnsRecordsCollectionRequestBuilder is request builder for DomainDnsRecord collection rcn
 type GraphServiceDomainDnsRecordsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DomainDnsRecord collection
@@ -1666,7 +1666,7 @@ func (b *GraphServiceRequestBuilder) Domains() *GraphServiceDomainsCollectionReq
 	return bb
 }
 
-// GraphServiceDomainsCollectionRequestBuilder is request builder for Domain collection
+// GraphServiceDomainsCollectionRequestBuilder is request builder for Domain collection rcn
 type GraphServiceDomainsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Domain collection
@@ -1769,7 +1769,7 @@ func (b *GraphServiceRequestBuilder) Drives() *GraphServiceDrivesCollectionReque
 	return bb
 }
 
-// GraphServiceDrivesCollectionRequestBuilder is request builder for Drive collection
+// GraphServiceDrivesCollectionRequestBuilder is request builder for Drive collection rcn
 type GraphServiceDrivesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Drive collection
@@ -1872,7 +1872,7 @@ func (b *GraphServiceRequestBuilder) GroupLifecyclePolicies() *GraphServiceGroup
 	return bb
 }
 
-// GraphServiceGroupLifecyclePoliciesCollectionRequestBuilder is request builder for GroupLifecyclePolicy collection
+// GraphServiceGroupLifecyclePoliciesCollectionRequestBuilder is request builder for GroupLifecyclePolicy collection rcn
 type GraphServiceGroupLifecyclePoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for GroupLifecyclePolicy collection
@@ -1975,7 +1975,7 @@ func (b *GraphServiceRequestBuilder) GroupSettingTemplates() *GraphServiceGroupS
 	return bb
 }
 
-// GraphServiceGroupSettingTemplatesCollectionRequestBuilder is request builder for GroupSettingTemplate collection
+// GraphServiceGroupSettingTemplatesCollectionRequestBuilder is request builder for GroupSettingTemplate collection rcn
 type GraphServiceGroupSettingTemplatesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for GroupSettingTemplate collection
@@ -2078,7 +2078,7 @@ func (b *GraphServiceRequestBuilder) GroupSettings() *GraphServiceGroupSettingsC
 	return bb
 }
 
-// GraphServiceGroupSettingsCollectionRequestBuilder is request builder for GroupSetting collection
+// GraphServiceGroupSettingsCollectionRequestBuilder is request builder for GroupSetting collection rcn
 type GraphServiceGroupSettingsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for GroupSetting collection
@@ -2181,7 +2181,7 @@ func (b *GraphServiceRequestBuilder) Groups() *GraphServiceGroupsCollectionReque
 	return bb
 }
 
-// GraphServiceGroupsCollectionRequestBuilder is request builder for Group collection
+// GraphServiceGroupsCollectionRequestBuilder is request builder for Group collection rcn
 type GraphServiceGroupsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Group collection
@@ -2284,7 +2284,7 @@ func (b *GraphServiceRequestBuilder) IdentityProviders() *GraphServiceIdentityPr
 	return bb
 }
 
-// GraphServiceIdentityProvidersCollectionRequestBuilder is request builder for IdentityProvider collection
+// GraphServiceIdentityProvidersCollectionRequestBuilder is request builder for IdentityProvider collection rcn
 type GraphServiceIdentityProvidersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IdentityProvider collection
@@ -2387,7 +2387,7 @@ func (b *GraphServiceRequestBuilder) Invitations() *GraphServiceInvitationsColle
 	return bb
 }
 
-// GraphServiceInvitationsCollectionRequestBuilder is request builder for Invitation collection
+// GraphServiceInvitationsCollectionRequestBuilder is request builder for Invitation collection rcn
 type GraphServiceInvitationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Invitation collection
@@ -2490,7 +2490,7 @@ func (b *GraphServiceRequestBuilder) Localizations() *GraphServiceLocalizationsC
 	return bb
 }
 
-// GraphServiceLocalizationsCollectionRequestBuilder is request builder for OrganizationalBrandingLocalization collection
+// GraphServiceLocalizationsCollectionRequestBuilder is request builder for OrganizationalBrandingLocalization collection rcn
 type GraphServiceLocalizationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OrganizationalBrandingLocalization collection
@@ -2593,7 +2593,7 @@ func (b *GraphServiceRequestBuilder) OAuth2PermissionGrants() *GraphServiceOAuth
 	return bb
 }
 
-// GraphServiceOAuth2PermissionGrantsCollectionRequestBuilder is request builder for OAuth2PermissionGrant collection
+// GraphServiceOAuth2PermissionGrantsCollectionRequestBuilder is request builder for OAuth2PermissionGrant collection rcn
 type GraphServiceOAuth2PermissionGrantsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OAuth2PermissionGrant collection
@@ -2696,7 +2696,7 @@ func (b *GraphServiceRequestBuilder) Organization() *GraphServiceOrganizationCol
 	return bb
 }
 
-// GraphServiceOrganizationCollectionRequestBuilder is request builder for Organization collection
+// GraphServiceOrganizationCollectionRequestBuilder is request builder for Organization collection rcn
 type GraphServiceOrganizationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Organization collection
@@ -2799,7 +2799,7 @@ func (b *GraphServiceRequestBuilder) PermissionGrants() *GraphServicePermissionG
 	return bb
 }
 
-// GraphServicePermissionGrantsCollectionRequestBuilder is request builder for ResourceSpecificPermissionGrant collection
+// GraphServicePermissionGrantsCollectionRequestBuilder is request builder for ResourceSpecificPermissionGrant collection rcn
 type GraphServicePermissionGrantsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ResourceSpecificPermissionGrant collection
@@ -2902,7 +2902,7 @@ func (b *GraphServiceRequestBuilder) Places() *GraphServicePlacesCollectionReque
 	return bb
 }
 
-// GraphServicePlacesCollectionRequestBuilder is request builder for Place collection
+// GraphServicePlacesCollectionRequestBuilder is request builder for Place collection rcn
 type GraphServicePlacesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Place collection
@@ -3005,7 +3005,7 @@ func (b *GraphServiceRequestBuilder) SchemaExtensions() *GraphServiceSchemaExten
 	return bb
 }
 
-// GraphServiceSchemaExtensionsCollectionRequestBuilder is request builder for SchemaExtension collection
+// GraphServiceSchemaExtensionsCollectionRequestBuilder is request builder for SchemaExtension collection rcn
 type GraphServiceSchemaExtensionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SchemaExtension collection
@@ -3108,7 +3108,7 @@ func (b *GraphServiceRequestBuilder) ScopedRoleMemberships() *GraphServiceScoped
 	return bb
 }
 
-// GraphServiceScopedRoleMembershipsCollectionRequestBuilder is request builder for ScopedRoleMembership collection
+// GraphServiceScopedRoleMembershipsCollectionRequestBuilder is request builder for ScopedRoleMembership collection rcn
 type GraphServiceScopedRoleMembershipsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ScopedRoleMembership collection
@@ -3211,7 +3211,7 @@ func (b *GraphServiceRequestBuilder) ServicePrincipals() *GraphServiceServicePri
 	return bb
 }
 
-// GraphServiceServicePrincipalsCollectionRequestBuilder is request builder for ServicePrincipal collection
+// GraphServiceServicePrincipalsCollectionRequestBuilder is request builder for ServicePrincipal collection rcn
 type GraphServiceServicePrincipalsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ServicePrincipal collection
@@ -3314,7 +3314,7 @@ func (b *GraphServiceRequestBuilder) Shares() *GraphServiceSharesCollectionReque
 	return bb
 }
 
-// GraphServiceSharesCollectionRequestBuilder is request builder for SharedDriveItem collection
+// GraphServiceSharesCollectionRequestBuilder is request builder for SharedDriveItem collection rcn
 type GraphServiceSharesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SharedDriveItem collection
@@ -3417,7 +3417,7 @@ func (b *GraphServiceRequestBuilder) Sites() *GraphServiceSitesCollectionRequest
 	return bb
 }
 
-// GraphServiceSitesCollectionRequestBuilder is request builder for Site collection
+// GraphServiceSitesCollectionRequestBuilder is request builder for Site collection rcn
 type GraphServiceSitesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Site collection
@@ -3520,7 +3520,7 @@ func (b *GraphServiceRequestBuilder) SubscribedSKUs() *GraphServiceSubscribedSKU
 	return bb
 }
 
-// GraphServiceSubscribedSKUsCollectionRequestBuilder is request builder for SubscribedSKU collection
+// GraphServiceSubscribedSKUsCollectionRequestBuilder is request builder for SubscribedSKU collection rcn
 type GraphServiceSubscribedSKUsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SubscribedSKU collection
@@ -3623,7 +3623,7 @@ func (b *GraphServiceRequestBuilder) Subscriptions() *GraphServiceSubscriptionsC
 	return bb
 }
 
-// GraphServiceSubscriptionsCollectionRequestBuilder is request builder for Subscription collection
+// GraphServiceSubscriptionsCollectionRequestBuilder is request builder for Subscription collection rcn
 type GraphServiceSubscriptionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Subscription collection
@@ -3726,7 +3726,7 @@ func (b *GraphServiceRequestBuilder) Teams() *GraphServiceTeamsCollectionRequest
 	return bb
 }
 
-// GraphServiceTeamsCollectionRequestBuilder is request builder for Team collection
+// GraphServiceTeamsCollectionRequestBuilder is request builder for Team collection rcn
 type GraphServiceTeamsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Team collection
@@ -3829,7 +3829,7 @@ func (b *GraphServiceRequestBuilder) TeamsTemplates() *GraphServiceTeamsTemplate
 	return bb
 }
 
-// GraphServiceTeamsTemplatesCollectionRequestBuilder is request builder for TeamsTemplate collection
+// GraphServiceTeamsTemplatesCollectionRequestBuilder is request builder for TeamsTemplate collection rcn
 type GraphServiceTeamsTemplatesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TeamsTemplate collection
@@ -3932,7 +3932,7 @@ func (b *GraphServiceRequestBuilder) Users() *GraphServiceUsersCollectionRequest
 	return bb
 }
 
-// GraphServiceUsersCollectionRequestBuilder is request builder for User collection
+// GraphServiceUsersCollectionRequestBuilder is request builder for User collection rcn
 type GraphServiceUsersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for User collection

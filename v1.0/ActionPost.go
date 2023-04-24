@@ -32,7 +32,7 @@ func (b *PostRequestBuilder) Attachments() *PostAttachmentsCollectionRequestBuil
 	return bb
 }
 
-// PostAttachmentsCollectionRequestBuilder is request builder for Attachment collection
+// PostAttachmentsCollectionRequestBuilder is request builder for Attachment collection rcn
 type PostAttachmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Attachment collection
@@ -135,7 +135,7 @@ func (b *PostRequestBuilder) Extensions() *PostExtensionsCollectionRequestBuilde
 	return bb
 }
 
-// PostExtensionsCollectionRequestBuilder is request builder for Extension collection
+// PostExtensionsCollectionRequestBuilder is request builder for Extension collection rcn
 type PostExtensionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Extension collection
@@ -245,7 +245,7 @@ func (b *PostRequestBuilder) MultiValueExtendedProperties() *PostMultiValueExten
 	return bb
 }
 
-// PostMultiValueExtendedPropertiesCollectionRequestBuilder is request builder for MultiValueLegacyExtendedProperty collection
+// PostMultiValueExtendedPropertiesCollectionRequestBuilder is request builder for MultiValueLegacyExtendedProperty collection rcn
 type PostMultiValueExtendedPropertiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MultiValueLegacyExtendedProperty collection
@@ -348,7 +348,7 @@ func (b *PostRequestBuilder) SingleValueExtendedProperties() *PostSingleValueExt
 	return bb
 }
 
-// PostSingleValueExtendedPropertiesCollectionRequestBuilder is request builder for SingleValueLegacyExtendedProperty collection
+// PostSingleValueExtendedPropertiesCollectionRequestBuilder is request builder for SingleValueLegacyExtendedProperty collection rcn
 type PostSingleValueExtendedPropertiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SingleValueLegacyExtendedProperty collection

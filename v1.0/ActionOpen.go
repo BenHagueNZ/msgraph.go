@@ -18,7 +18,7 @@ func (b *AdministrativeUnitExtensionsCollectionRequestBuilder) OpenTypeExtension
 	return bb
 }
 
-// AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequestBuilder is request builder for OpenTypeExtension collection
+// AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequestBuilder is request builder for OpenTypeExtension collection rcn
 type AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OpenTypeExtension collection

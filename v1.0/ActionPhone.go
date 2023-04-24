@@ -26,7 +26,7 @@ func (b *AuthenticationMethodsCollectionRequestBuilder) PhoneAuthenticationMetho
 	return bb
 }
 
-// AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequestBuilder is request builder for PhoneAuthenticationMethod collection
+// AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequestBuilder is request builder for PhoneAuthenticationMethod collection rcn
 type AuthenticationMethodsCollectionPhoneAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PhoneAuthenticationMethod collection

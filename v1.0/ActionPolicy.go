@@ -18,7 +18,7 @@ func (b *PolicyRootRequestBuilder) ActivityBasedTimeoutPolicies() *PolicyRootAct
 	return bb
 }
 
-// PolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder is request builder for ActivityBasedTimeoutPolicy collection
+// PolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder is request builder for ActivityBasedTimeoutPolicy collection rcn
 type PolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ActivityBasedTimeoutPolicy collection
@@ -128,7 +128,7 @@ func (b *PolicyRootRequestBuilder) AppManagementPolicies() *PolicyRootAppManagem
 	return bb
 }
 
-// PolicyRootAppManagementPoliciesCollectionRequestBuilder is request builder for AppManagementPolicy collection
+// PolicyRootAppManagementPoliciesCollectionRequestBuilder is request builder for AppManagementPolicy collection rcn
 type PolicyRootAppManagementPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AppManagementPolicy collection
@@ -252,7 +252,7 @@ func (b *PolicyRootRequestBuilder) ClaimsMappingPolicies() *PolicyRootClaimsMapp
 	return bb
 }
 
-// PolicyRootClaimsMappingPoliciesCollectionRequestBuilder is request builder for ClaimsMappingPolicy collection
+// PolicyRootClaimsMappingPoliciesCollectionRequestBuilder is request builder for ClaimsMappingPolicy collection rcn
 type PolicyRootClaimsMappingPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ClaimsMappingPolicy collection
@@ -355,7 +355,7 @@ func (b *PolicyRootRequestBuilder) ConditionalAccessPolicies() *PolicyRootCondit
 	return bb
 }
 
-// PolicyRootConditionalAccessPoliciesCollectionRequestBuilder is request builder for ConditionalAccessPolicy collection
+// PolicyRootConditionalAccessPoliciesCollectionRequestBuilder is request builder for ConditionalAccessPolicy collection rcn
 type PolicyRootConditionalAccessPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ConditionalAccessPolicy collection
@@ -472,7 +472,7 @@ func (b *PolicyRootRequestBuilder) FeatureRolloutPolicies() *PolicyRootFeatureRo
 	return bb
 }
 
-// PolicyRootFeatureRolloutPoliciesCollectionRequestBuilder is request builder for FeatureRolloutPolicy collection
+// PolicyRootFeatureRolloutPoliciesCollectionRequestBuilder is request builder for FeatureRolloutPolicy collection rcn
 type PolicyRootFeatureRolloutPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for FeatureRolloutPolicy collection
@@ -575,7 +575,7 @@ func (b *PolicyRootRequestBuilder) HomeRealmDiscoveryPolicies() *PolicyRootHomeR
 	return bb
 }
 
-// PolicyRootHomeRealmDiscoveryPoliciesCollectionRequestBuilder is request builder for HomeRealmDiscoveryPolicy collection
+// PolicyRootHomeRealmDiscoveryPoliciesCollectionRequestBuilder is request builder for HomeRealmDiscoveryPolicy collection rcn
 type PolicyRootHomeRealmDiscoveryPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for HomeRealmDiscoveryPolicy collection
@@ -685,7 +685,7 @@ func (b *PolicyRootRequestBuilder) PermissionGrantPolicies() *PolicyRootPermissi
 	return bb
 }
 
-// PolicyRootPermissionGrantPoliciesCollectionRequestBuilder is request builder for PermissionGrantPolicy collection
+// PolicyRootPermissionGrantPoliciesCollectionRequestBuilder is request builder for PermissionGrantPolicy collection rcn
 type PolicyRootPermissionGrantPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PermissionGrantPolicy collection
@@ -788,7 +788,7 @@ func (b *PolicyRootRequestBuilder) RoleManagementPolicies() *PolicyRootRoleManag
 	return bb
 }
 
-// PolicyRootRoleManagementPoliciesCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicy collection
+// PolicyRootRoleManagementPoliciesCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicy collection rcn
 type PolicyRootRoleManagementPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleManagementPolicy collection
@@ -891,7 +891,7 @@ func (b *PolicyRootRequestBuilder) RoleManagementPolicyAssignments() *PolicyRoot
 	return bb
 }
 
-// PolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyAssignment collection
+// PolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyAssignment collection rcn
 type PolicyRootRoleManagementPolicyAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleManagementPolicyAssignment collection
@@ -994,7 +994,7 @@ func (b *PolicyRootRequestBuilder) TokenIssuancePolicies() *PolicyRootTokenIssua
 	return bb
 }
 
-// PolicyRootTokenIssuancePoliciesCollectionRequestBuilder is request builder for TokenIssuancePolicy collection
+// PolicyRootTokenIssuancePoliciesCollectionRequestBuilder is request builder for TokenIssuancePolicy collection rcn
 type PolicyRootTokenIssuancePoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TokenIssuancePolicy collection
@@ -1097,7 +1097,7 @@ func (b *PolicyRootRequestBuilder) TokenLifetimePolicies() *PolicyRootTokenLifet
 	return bb
 }
 
-// PolicyRootTokenLifetimePoliciesCollectionRequestBuilder is request builder for TokenLifetimePolicy collection
+// PolicyRootTokenLifetimePoliciesCollectionRequestBuilder is request builder for TokenLifetimePolicy collection rcn
 type PolicyRootTokenLifetimePoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TokenLifetimePolicy collection
@@ -1200,7 +1200,7 @@ func (b *AdministrativeUnitMembersCollectionRequestBuilder) PolicyBase() *Admini
 	return bb
 }
 
-// AdministrativeUnitMembersCollectionPolicyBaseCollectionRequestBuilder is request builder for PolicyBase collection
+// AdministrativeUnitMembersCollectionPolicyBaseCollectionRequestBuilder is request builder for PolicyBase collection rcn
 type AdministrativeUnitMembersCollectionPolicyBaseCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PolicyBase collection

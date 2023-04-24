@@ -18,7 +18,7 @@ func (b *AppCatalogsRequestBuilder) TeamsApps() *AppCatalogsTeamsAppsCollectionR
 	return bb
 }
 
-// AppCatalogsTeamsAppsCollectionRequestBuilder is request builder for TeamsApp collection
+// AppCatalogsTeamsAppsCollectionRequestBuilder is request builder for TeamsApp collection rcn
 type AppCatalogsTeamsAppsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TeamsApp collection
@@ -121,7 +121,7 @@ func (b *AppConsentApprovalRouteRequestBuilder) AppConsentRequests() *AppConsent
 	return bb
 }
 
-// AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder is request builder for AppConsentRequestObject collection
+// AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder is request builder for AppConsentRequestObject collection rcn
 type AppConsentApprovalRouteAppConsentRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AppConsentRequestObject collection
@@ -224,7 +224,7 @@ func (b *AppConsentRequestObjectRequestBuilder) UserConsentRequests() *AppConsen
 	return bb
 }
 
-// AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder is request builder for UserConsentRequestObject collection
+// AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder is request builder for UserConsentRequestObject collection rcn
 type AppConsentRequestObjectUserConsentRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UserConsentRequestObject collection
@@ -327,7 +327,7 @@ func (b *AppManagementPolicyRequestBuilder) AppliesTo() *AppManagementPolicyAppl
 	return bb
 }
 
-// AppManagementPolicyAppliesToCollectionRequestBuilder is request builder for DirectoryObject collection
+// AppManagementPolicyAppliesToCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type AppManagementPolicyAppliesToCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -451,7 +451,7 @@ func (b *AdministrativeUnitMembersCollectionRequestBuilder) AppRoleAssignment() 
 	return bb
 }
 
-// AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequestBuilder is request builder for AppRoleAssignment collection
+// AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequestBuilder is request builder for AppRoleAssignment collection rcn
 type AdministrativeUnitMembersCollectionAppRoleAssignmentCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AppRoleAssignment collection

@@ -22,7 +22,7 @@ func (b *ListRequestBuilder) Columns() *ListColumnsCollectionRequestBuilder {
 	return bb
 }
 
-// ListColumnsCollectionRequestBuilder is request builder for ColumnDefinition collection
+// ListColumnsCollectionRequestBuilder is request builder for ColumnDefinition collection rcn
 type ListColumnsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ColumnDefinition collection
@@ -125,7 +125,7 @@ func (b *ListRequestBuilder) ContentTypes() *ListContentTypesCollectionRequestBu
 	return bb
 }
 
-// ListContentTypesCollectionRequestBuilder is request builder for ContentType collection
+// ListContentTypesCollectionRequestBuilder is request builder for ContentType collection rcn
 type ListContentTypesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ContentType collection
@@ -235,7 +235,7 @@ func (b *ListRequestBuilder) Items() *ListItemsCollectionRequestBuilder {
 	return bb
 }
 
-// ListItemsCollectionRequestBuilder is request builder for ListItem collection
+// ListItemsCollectionRequestBuilder is request builder for ListItem collection rcn
 type ListItemsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ListItem collection
@@ -338,7 +338,7 @@ func (b *ListRequestBuilder) Operations() *ListOperationsCollectionRequestBuilde
 	return bb
 }
 
-// ListOperationsCollectionRequestBuilder is request builder for RichLongRunningOperation collection
+// ListOperationsCollectionRequestBuilder is request builder for RichLongRunningOperation collection rcn
 type ListOperationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for RichLongRunningOperation collection
@@ -441,7 +441,7 @@ func (b *ListRequestBuilder) Subscriptions() *ListSubscriptionsCollectionRequest
 	return bb
 }
 
-// ListSubscriptionsCollectionRequestBuilder is request builder for Subscription collection
+// ListSubscriptionsCollectionRequestBuilder is request builder for Subscription collection rcn
 type ListSubscriptionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Subscription collection
@@ -551,7 +551,7 @@ func (b *ListItemRequestBuilder) DocumentSetVersions() *ListItemDocumentSetVersi
 	return bb
 }
 
-// ListItemDocumentSetVersionsCollectionRequestBuilder is request builder for DocumentSetVersion collection
+// ListItemDocumentSetVersionsCollectionRequestBuilder is request builder for DocumentSetVersion collection rcn
 type ListItemDocumentSetVersionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DocumentSetVersion collection
@@ -668,7 +668,7 @@ func (b *ListItemRequestBuilder) Versions() *ListItemVersionsCollectionRequestBu
 	return bb
 }
 
-// ListItemVersionsCollectionRequestBuilder is request builder for ListItemVersion collection
+// ListItemVersionsCollectionRequestBuilder is request builder for ListItemVersion collection rcn
 type ListItemVersionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ListItemVersion collection
@@ -778,7 +778,7 @@ func (b *SiteItemsCollectionRequestBuilder) List() *SiteItemsCollectionListColle
 	return bb
 }
 
-// SiteItemsCollectionListCollectionRequestBuilder is request builder for List collection
+// SiteItemsCollectionListCollectionRequestBuilder is request builder for List collection rcn
 type SiteItemsCollectionListCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for List collection
@@ -881,7 +881,7 @@ func (b *SiteItemsCollectionRequestBuilder) ListItem() *SiteItemsCollectionListI
 	return bb
 }
 
-// SiteItemsCollectionListItemCollectionRequestBuilder is request builder for ListItem collection
+// SiteItemsCollectionListItemCollectionRequestBuilder is request builder for ListItem collection rcn
 type SiteItemsCollectionListItemCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ListItem collection

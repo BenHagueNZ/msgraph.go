@@ -41,7 +41,7 @@ func (b *ScheduleRequestBuilder) OfferShiftRequests() *ScheduleOfferShiftRequest
 	return bb
 }
 
-// ScheduleOfferShiftRequestsCollectionRequestBuilder is request builder for OfferShiftRequestObject collection
+// ScheduleOfferShiftRequestsCollectionRequestBuilder is request builder for OfferShiftRequestObject collection rcn
 type ScheduleOfferShiftRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OfferShiftRequestObject collection
@@ -144,7 +144,7 @@ func (b *ScheduleRequestBuilder) OpenShiftChangeRequests() *ScheduleOpenShiftCha
 	return bb
 }
 
-// ScheduleOpenShiftChangeRequestsCollectionRequestBuilder is request builder for OpenShiftChangeRequestObject collection
+// ScheduleOpenShiftChangeRequestsCollectionRequestBuilder is request builder for OpenShiftChangeRequestObject collection rcn
 type ScheduleOpenShiftChangeRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OpenShiftChangeRequestObject collection
@@ -247,7 +247,7 @@ func (b *ScheduleRequestBuilder) OpenShifts() *ScheduleOpenShiftsCollectionReque
 	return bb
 }
 
-// ScheduleOpenShiftsCollectionRequestBuilder is request builder for OpenShift collection
+// ScheduleOpenShiftsCollectionRequestBuilder is request builder for OpenShift collection rcn
 type ScheduleOpenShiftsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OpenShift collection
@@ -350,7 +350,7 @@ func (b *ScheduleRequestBuilder) SchedulingGroups() *ScheduleSchedulingGroupsCol
 	return bb
 }
 
-// ScheduleSchedulingGroupsCollectionRequestBuilder is request builder for SchedulingGroup collection
+// ScheduleSchedulingGroupsCollectionRequestBuilder is request builder for SchedulingGroup collection rcn
 type ScheduleSchedulingGroupsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SchedulingGroup collection
@@ -453,7 +453,7 @@ func (b *ScheduleRequestBuilder) Shifts() *ScheduleShiftsCollectionRequestBuilde
 	return bb
 }
 
-// ScheduleShiftsCollectionRequestBuilder is request builder for Shift collection
+// ScheduleShiftsCollectionRequestBuilder is request builder for Shift collection rcn
 type ScheduleShiftsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Shift collection
@@ -556,7 +556,7 @@ func (b *ScheduleRequestBuilder) SwapShiftsChangeRequests() *ScheduleSwapShiftsC
 	return bb
 }
 
-// ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder is request builder for SwapShiftsChangeRequestObject collection
+// ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder is request builder for SwapShiftsChangeRequestObject collection rcn
 type ScheduleSwapShiftsChangeRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SwapShiftsChangeRequestObject collection
@@ -659,7 +659,7 @@ func (b *ScheduleRequestBuilder) TimeOffReasons() *ScheduleTimeOffReasonsCollect
 	return bb
 }
 
-// ScheduleTimeOffReasonsCollectionRequestBuilder is request builder for TimeOffReason collection
+// ScheduleTimeOffReasonsCollectionRequestBuilder is request builder for TimeOffReason collection rcn
 type ScheduleTimeOffReasonsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TimeOffReason collection
@@ -762,7 +762,7 @@ func (b *ScheduleRequestBuilder) TimeOffRequests() *ScheduleTimeOffRequestsColle
 	return bb
 }
 
-// ScheduleTimeOffRequestsCollectionRequestBuilder is request builder for TimeOffRequestObject collection
+// ScheduleTimeOffRequestsCollectionRequestBuilder is request builder for TimeOffRequestObject collection rcn
 type ScheduleTimeOffRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TimeOffRequestObject collection
@@ -865,7 +865,7 @@ func (b *ScheduleRequestBuilder) TimesOff() *ScheduleTimesOffCollectionRequestBu
 	return bb
 }
 
-// ScheduleTimesOffCollectionRequestBuilder is request builder for TimeOff collection
+// ScheduleTimesOffCollectionRequestBuilder is request builder for TimeOff collection rcn
 type ScheduleTimesOffCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TimeOff collection

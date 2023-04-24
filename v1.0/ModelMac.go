@@ -203,30 +203,30 @@ type MacOSMinimumOperatingSystem struct {
 	Object
 
 	ODataType string `json:"@odata.type,omitempty"`
-	// V10_10 undocumented
-	V10_10 *bool `json:"v10_10,omitempty"`
-	// V10_11 undocumented
-	V10_11 *bool `json:"v10_11,omitempty"`
-	// V10_12 undocumented
-	V10_12 *bool `json:"v10_12,omitempty"`
-	// V10_13 undocumented
-	V10_13 *bool `json:"v10_13,omitempty"`
-	// V10_14 undocumented
-	V10_14 *bool `json:"v10_14,omitempty"`
-	// V10_15 undocumented
-	V10_15 *bool `json:"v10_15,omitempty"`
-	// V10_7 undocumented
-	V10_7 *bool `json:"v10_7,omitempty"`
-	// V10_8 undocumented
-	V10_8 *bool `json:"v10_8,omitempty"`
-	// V10_9 undocumented
-	V10_9 *bool `json:"v10_9,omitempty"`
-	// V11_0 undocumented
-	V11_0 *bool `json:"v11_0,omitempty"`
-	// V12_0 undocumented
-	V12_0 *bool `json:"v12_0,omitempty"`
-	// V13_0 undocumented
-	V13_0 *bool `json:"v13_0,omitempty"`
+	// V10Underscore10 undocumented
+	V10Underscore10 *bool `json:"v10_10,omitempty"`
+	// V10Underscore11 undocumented
+	V10Underscore11 *bool `json:"v10_11,omitempty"`
+	// V10Underscore12 undocumented
+	V10Underscore12 *bool `json:"v10_12,omitempty"`
+	// V10Underscore13 undocumented
+	V10Underscore13 *bool `json:"v10_13,omitempty"`
+	// V10Underscore14 undocumented
+	V10Underscore14 *bool `json:"v10_14,omitempty"`
+	// V10Underscore15 undocumented
+	V10Underscore15 *bool `json:"v10_15,omitempty"`
+	// V10Underscore7 undocumented
+	V10Underscore7 *bool `json:"v10_7,omitempty"`
+	// V10Underscore8 undocumented
+	V10Underscore8 *bool `json:"v10_8,omitempty"`
+	// V10Underscore9 undocumented
+	V10Underscore9 *bool `json:"v10_9,omitempty"`
+	// V11Underscore0 undocumented
+	V11Underscore0 *bool `json:"v11_0,omitempty"`
+	// V12Underscore0 undocumented
+	V12Underscore0 *bool `json:"v12_0,omitempty"`
+	// V13Underscore0 undocumented
+	V13Underscore0 *bool `json:"v13_0,omitempty"`
 }
 
 func NewMacOSMinimumOperatingSystem() (*MacOSMinimumOperatingSystem, error) {

@@ -18,7 +18,7 @@ func (b *ApprovalRequestBuilder) Stages() *ApprovalStagesCollectionRequestBuilde
 	return bb
 }
 
-// ApprovalStagesCollectionRequestBuilder is request builder for ApprovalStage collection
+// ApprovalStagesCollectionRequestBuilder is request builder for ApprovalStage collection rcn
 type ApprovalStagesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ApprovalStage collection

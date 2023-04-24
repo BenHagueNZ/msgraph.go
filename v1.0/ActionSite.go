@@ -37,7 +37,7 @@ func (b *SiteRequestBuilder) Columns() *SiteColumnsCollectionRequestBuilder {
 	return bb
 }
 
-// SiteColumnsCollectionRequestBuilder is request builder for ColumnDefinition collection
+// SiteColumnsCollectionRequestBuilder is request builder for ColumnDefinition collection rcn
 type SiteColumnsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ColumnDefinition collection
@@ -140,7 +140,7 @@ func (b *SiteRequestBuilder) ContentTypes() *SiteContentTypesCollectionRequestBu
 	return bb
 }
 
-// SiteContentTypesCollectionRequestBuilder is request builder for ContentType collection
+// SiteContentTypesCollectionRequestBuilder is request builder for ContentType collection rcn
 type SiteContentTypesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ContentType collection
@@ -250,7 +250,7 @@ func (b *SiteRequestBuilder) Drives() *SiteDrivesCollectionRequestBuilder {
 	return bb
 }
 
-// SiteDrivesCollectionRequestBuilder is request builder for Drive collection
+// SiteDrivesCollectionRequestBuilder is request builder for Drive collection rcn
 type SiteDrivesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Drive collection
@@ -353,7 +353,7 @@ func (b *SiteRequestBuilder) ExternalColumns() *SiteExternalColumnsCollectionReq
 	return bb
 }
 
-// SiteExternalColumnsCollectionRequestBuilder is request builder for ColumnDefinition collection
+// SiteExternalColumnsCollectionRequestBuilder is request builder for ColumnDefinition collection rcn
 type SiteExternalColumnsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ColumnDefinition collection
@@ -456,7 +456,7 @@ func (b *SiteRequestBuilder) Items() *SiteItemsCollectionRequestBuilder {
 	return bb
 }
 
-// SiteItemsCollectionRequestBuilder is request builder for BaseItem collection
+// SiteItemsCollectionRequestBuilder is request builder for BaseItem collection rcn
 type SiteItemsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for BaseItem collection
@@ -559,7 +559,7 @@ func (b *SiteRequestBuilder) Lists() *SiteListsCollectionRequestBuilder {
 	return bb
 }
 
-// SiteListsCollectionRequestBuilder is request builder for List collection
+// SiteListsCollectionRequestBuilder is request builder for List collection rcn
 type SiteListsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for List collection
@@ -669,7 +669,7 @@ func (b *SiteRequestBuilder) Operations() *SiteOperationsCollectionRequestBuilde
 	return bb
 }
 
-// SiteOperationsCollectionRequestBuilder is request builder for RichLongRunningOperation collection
+// SiteOperationsCollectionRequestBuilder is request builder for RichLongRunningOperation collection rcn
 type SiteOperationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for RichLongRunningOperation collection
@@ -772,7 +772,7 @@ func (b *SiteRequestBuilder) Permissions() *SitePermissionsCollectionRequestBuil
 	return bb
 }
 
-// SitePermissionsCollectionRequestBuilder is request builder for Permission collection
+// SitePermissionsCollectionRequestBuilder is request builder for Permission collection rcn
 type SitePermissionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Permission collection
@@ -875,7 +875,7 @@ func (b *SiteRequestBuilder) Sites() *SiteSitesCollectionRequestBuilder {
 	return bb
 }
 
-// SiteSitesCollectionRequestBuilder is request builder for Site collection
+// SiteSitesCollectionRequestBuilder is request builder for Site collection rcn
 type SiteSitesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Site collection
@@ -985,7 +985,7 @@ func (b *SiteRequestBuilder) TermStores() *SiteTermStoresCollectionRequestBuilde
 	return bb
 }
 
-// SiteTermStoresCollectionRequestBuilder is request builder for TermStoreStore collection
+// SiteTermStoresCollectionRequestBuilder is request builder for TermStoreStore collection rcn
 type SiteTermStoresCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TermStoreStore collection
@@ -1088,7 +1088,7 @@ func (b *SiteItemsCollectionRequestBuilder) Site() *SiteItemsCollectionSiteColle
 	return bb
 }
 
-// SiteItemsCollectionSiteCollectionRequestBuilder is request builder for Site collection
+// SiteItemsCollectionSiteCollectionRequestBuilder is request builder for Site collection rcn
 type SiteItemsCollectionSiteCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Site collection

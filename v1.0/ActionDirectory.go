@@ -72,7 +72,7 @@ func (b *DirectoryRequestBuilder) AdministrativeUnits() *DirectoryAdministrative
 	return bb
 }
 
-// DirectoryAdministrativeUnitsCollectionRequestBuilder is request builder for AdministrativeUnit collection
+// DirectoryAdministrativeUnitsCollectionRequestBuilder is request builder for AdministrativeUnit collection rcn
 type DirectoryAdministrativeUnitsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AdministrativeUnit collection
@@ -175,7 +175,7 @@ func (b *DirectoryRequestBuilder) DeletedItems() *DirectoryDeletedItemsCollectio
 	return bb
 }
 
-// DirectoryDeletedItemsCollectionRequestBuilder is request builder for DirectoryObject collection
+// DirectoryDeletedItemsCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type DirectoryDeletedItemsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -278,7 +278,7 @@ func (b *DirectoryRequestBuilder) FederationConfigurations() *DirectoryFederatio
 	return bb
 }
 
-// DirectoryFederationConfigurationsCollectionRequestBuilder is request builder for IdentityProviderBase collection
+// DirectoryFederationConfigurationsCollectionRequestBuilder is request builder for IdentityProviderBase collection rcn
 type DirectoryFederationConfigurationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IdentityProviderBase collection
@@ -381,7 +381,7 @@ func (b *DirectoryRequestBuilder) OnPremisesSynchronization() *DirectoryOnPremis
 	return bb
 }
 
-// DirectoryOnPremisesSynchronizationCollectionRequestBuilder is request builder for OnPremisesDirectorySynchronization collection
+// DirectoryOnPremisesSynchronizationCollectionRequestBuilder is request builder for OnPremisesDirectorySynchronization collection rcn
 type DirectoryOnPremisesSynchronizationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OnPremisesDirectorySynchronization collection
@@ -484,7 +484,7 @@ func (b *DirectoryRoleRequestBuilder) Members() *DirectoryRoleMembersCollectionR
 	return bb
 }
 
-// DirectoryRoleMembersCollectionRequestBuilder is request builder for DirectoryObject collection
+// DirectoryRoleMembersCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type DirectoryRoleMembersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -587,7 +587,7 @@ func (b *DirectoryRoleRequestBuilder) ScopedMembers() *DirectoryRoleScopedMember
 	return bb
 }
 
-// DirectoryRoleScopedMembersCollectionRequestBuilder is request builder for ScopedRoleMembership collection
+// DirectoryRoleScopedMembersCollectionRequestBuilder is request builder for ScopedRoleMembership collection rcn
 type DirectoryRoleScopedMembersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ScopedRoleMembership collection
@@ -704,7 +704,7 @@ func (b *AdministrativeUnitMembersCollectionRequestBuilder) DirectoryObjectPartn
 	return bb
 }
 
-// AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequestBuilder is request builder for DirectoryObjectPartnerReference collection
+// AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequestBuilder is request builder for DirectoryObjectPartnerReference collection rcn
 type AdministrativeUnitMembersCollectionDirectoryObjectPartnerReferenceCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObjectPartnerReference collection
@@ -807,7 +807,7 @@ func (b *AdministrativeUnitMembersCollectionRequestBuilder) DirectoryRole() *Adm
 	return bb
 }
 
-// AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequestBuilder is request builder for DirectoryRole collection
+// AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequestBuilder is request builder for DirectoryRole collection rcn
 type AdministrativeUnitMembersCollectionDirectoryRoleCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryRole collection
@@ -910,7 +910,7 @@ func (b *AdministrativeUnitMembersCollectionRequestBuilder) DirectoryRoleTemplat
 	return bb
 }
 
-// AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequestBuilder is request builder for DirectoryRoleTemplate collection
+// AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequestBuilder is request builder for DirectoryRoleTemplate collection rcn
 type AdministrativeUnitMembersCollectionDirectoryRoleTemplateCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryRoleTemplate collection

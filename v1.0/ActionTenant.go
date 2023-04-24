@@ -18,7 +18,7 @@ func (b *TenantRelationshipRequestBuilder) DelegatedAdminCustomers() *TenantRela
 	return bb
 }
 
-// TenantRelationshipDelegatedAdminCustomersCollectionRequestBuilder is request builder for DelegatedAdminCustomer collection
+// TenantRelationshipDelegatedAdminCustomersCollectionRequestBuilder is request builder for DelegatedAdminCustomer collection rcn
 type TenantRelationshipDelegatedAdminCustomersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DelegatedAdminCustomer collection
@@ -121,7 +121,7 @@ func (b *TenantRelationshipRequestBuilder) DelegatedAdminRelationships() *Tenant
 	return bb
 }
 
-// TenantRelationshipDelegatedAdminRelationshipsCollectionRequestBuilder is request builder for DelegatedAdminRelationship collection
+// TenantRelationshipDelegatedAdminRelationshipsCollectionRequestBuilder is request builder for DelegatedAdminRelationship collection rcn
 type TenantRelationshipDelegatedAdminRelationshipsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DelegatedAdminRelationship collection

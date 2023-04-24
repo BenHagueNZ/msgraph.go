@@ -12,8 +12,8 @@ type Security struct {
 	ODataType string `json:"@odata.type,omitempty"`
 	// Cases undocumented
 	Cases *SecurityCasesRoot `json:"cases,omitempty"`
-	// Alerts_v2 undocumented
-	Alerts_v2 []SecurityAlert `json:"alerts_v2,omitempty"`
+	// AlertsUnderscorev2 undocumented
+	AlertsUnderscorev2 []SecurityAlert `json:"alerts_v2,omitempty"`
 	// Incidents undocumented
 	Incidents []SecurityIncident `json:"incidents,omitempty"`
 	// AttackSimulation undocumented
@@ -871,6 +871,25 @@ func NewSecurityHuntingRowResult() (*SecurityHuntingRowResult, error) {
 	return newSecurityHuntingRowResult, nil
 }
 
+// SecurityIPEvidence undocumented
+type SecurityIPEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityIPEvidence
+	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type,omitempty"`
+	// CountryLetterCode undocumented
+	CountryLetterCode *string `json:"countryLetterCode,omitempty"`
+	// IPAddress undocumented
+	IPAddress *string `json:"ipAddress,omitempty"`
+}
+
+func NewSecurityIPEvidence() (*SecurityIPEvidence, error) {
+	newSecurityIPEvidence := &SecurityIPEvidence{
+		ODataType: "#microsoft.graph.SecurityIpEvidence",
+	}
+	return newSecurityIPEvidence, nil
+}
+
 // SecurityIncident undocumented
 type SecurityIncident struct {
 	// Entity is the base model of SecurityIncident
@@ -912,25 +931,6 @@ func NewSecurityIncident() (*SecurityIncident, error) {
 		ODataType: "#microsoft.graph.SecurityIncident",
 	}
 	return newSecurityIncident, nil
-}
-
-// SecurityIPEvidence undocumented
-type SecurityIPEvidence struct {
-	// SecurityAlertEvidence is the base model of SecurityIPEvidence
-	SecurityAlertEvidence
-
-	ODataType string `json:"@odata.type,omitempty"`
-	// CountryLetterCode undocumented
-	CountryLetterCode *string `json:"countryLetterCode,omitempty"`
-	// IPAddress undocumented
-	IPAddress *string `json:"ipAddress,omitempty"`
-}
-
-func NewSecurityIPEvidence() (*SecurityIPEvidence, error) {
-	newSecurityIPEvidence := &SecurityIPEvidence{
-		ODataType: "#microsoft.graph.SecurityIpEvidence",
-	}
-	return newSecurityIPEvidence, nil
 }
 
 // SecurityLoggedOnUser undocumented
@@ -1291,6 +1291,23 @@ func NewSecurityTopicModelingSettings() (*SecurityTopicModelingSettings, error) 
 	return newSecurityTopicModelingSettings, nil
 }
 
+// SecurityURLEvidence undocumented
+type SecurityURLEvidence struct {
+	// SecurityAlertEvidence is the base model of SecurityURLEvidence
+	SecurityAlertEvidence
+
+	ODataType string `json:"@odata.type,omitempty"`
+	// URL undocumented
+	URL *string `json:"url,omitempty"`
+}
+
+func NewSecurityURLEvidence() (*SecurityURLEvidence, error) {
+	newSecurityURLEvidence := &SecurityURLEvidence{
+		ODataType: "#microsoft.graph.SecurityUrlEvidence",
+	}
+	return newSecurityURLEvidence, nil
+}
+
 // SecurityUnifiedGroupSource undocumented
 type SecurityUnifiedGroupSource struct {
 	// SecurityDataSource is the base model of SecurityUnifiedGroupSource
@@ -1308,23 +1325,6 @@ func NewSecurityUnifiedGroupSource() (*SecurityUnifiedGroupSource, error) {
 		ODataType: "#microsoft.graph.SecurityUnifiedGroupSource",
 	}
 	return newSecurityUnifiedGroupSource, nil
-}
-
-// SecurityURLEvidence undocumented
-type SecurityURLEvidence struct {
-	// SecurityAlertEvidence is the base model of SecurityURLEvidence
-	SecurityAlertEvidence
-
-	ODataType string `json:"@odata.type,omitempty"`
-	// URL undocumented
-	URL *string `json:"url,omitempty"`
-}
-
-func NewSecurityURLEvidence() (*SecurityURLEvidence, error) {
-	newSecurityURLEvidence := &SecurityURLEvidence{
-		ODataType: "#microsoft.graph.SecurityUrlEvidence",
-	}
-	return newSecurityURLEvidence, nil
 }
 
 // SecurityUserAccount undocumented

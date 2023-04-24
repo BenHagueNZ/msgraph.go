@@ -18,7 +18,7 @@ func (b *CallOperationsCollectionRequestBuilder) MuteParticipantOperation() *Cal
 	return bb
 }
 
-// CallOperationsCollectionMuteParticipantOperationCollectionRequestBuilder is request builder for MuteParticipantOperation collection
+// CallOperationsCollectionMuteParticipantOperationCollectionRequestBuilder is request builder for MuteParticipantOperation collection rcn
 type CallOperationsCollectionMuteParticipantOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MuteParticipantOperation collection

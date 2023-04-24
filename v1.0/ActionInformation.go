@@ -25,7 +25,7 @@ func (b *InformationProtectionRequestBuilder) ThreatAssessmentRequests() *Inform
 	return bb
 }
 
-// InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder is request builder for ThreatAssessmentRequestObject collection
+// InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder is request builder for ThreatAssessmentRequestObject collection rcn
 type InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ThreatAssessmentRequestObject collection

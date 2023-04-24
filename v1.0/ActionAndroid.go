@@ -18,7 +18,7 @@ func (b *AndroidManagedAppProtectionRequestBuilder) Apps() *AndroidManagedAppPro
 	return bb
 }
 
-// AndroidManagedAppProtectionAppsCollectionRequestBuilder is request builder for ManagedMobileApp collection
+// AndroidManagedAppProtectionAppsCollectionRequestBuilder is request builder for ManagedMobileApp collection rcn
 type AndroidManagedAppProtectionAppsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedMobileApp collection
@@ -128,7 +128,7 @@ func (b *DeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder) Andro
 	return bb
 }
 
-// DeviceManagementDeviceCompliancePoliciesCollectionAndroidCompliancePolicyCollectionRequestBuilder is request builder for AndroidCompliancePolicy collection
+// DeviceManagementDeviceCompliancePoliciesCollectionAndroidCompliancePolicyCollectionRequestBuilder is request builder for AndroidCompliancePolicy collection rcn
 type DeviceManagementDeviceCompliancePoliciesCollectionAndroidCompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AndroidCompliancePolicy collection
@@ -231,7 +231,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) AndroidCu
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionAndroidCustomConfigurationCollectionRequestBuilder is request builder for AndroidCustomConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionAndroidCustomConfigurationCollectionRequestBuilder is request builder for AndroidCustomConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionAndroidCustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AndroidCustomConfiguration collection
@@ -334,7 +334,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) AndroidGe
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionAndroidGeneralDeviceConfigurationCollectionRequestBuilder is request builder for AndroidGeneralDeviceConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionAndroidGeneralDeviceConfigurationCollectionRequestBuilder is request builder for AndroidGeneralDeviceConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionAndroidGeneralDeviceConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AndroidGeneralDeviceConfiguration collection
@@ -437,7 +437,7 @@ func (b *DeviceAppManagementManagedAppRegistrationsCollectionRequestBuilder) And
 	return bb
 }
 
-// DeviceAppManagementManagedAppRegistrationsCollectionAndroidManagedAppRegistrationCollectionRequestBuilder is request builder for AndroidManagedAppRegistration collection
+// DeviceAppManagementManagedAppRegistrationsCollectionAndroidManagedAppRegistrationCollectionRequestBuilder is request builder for AndroidManagedAppRegistration collection rcn
 type DeviceAppManagementManagedAppRegistrationsCollectionAndroidManagedAppRegistrationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AndroidManagedAppRegistration collection
@@ -540,7 +540,7 @@ func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) AndroidStoreApp(
 	return bb
 }
 
-// DeviceAppManagementMobileAppsCollectionAndroidStoreAppCollectionRequestBuilder is request builder for AndroidStoreApp collection
+// DeviceAppManagementMobileAppsCollectionAndroidStoreAppCollectionRequestBuilder is request builder for AndroidStoreApp collection rcn
 type DeviceAppManagementMobileAppsCollectionAndroidStoreAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AndroidStoreApp collection
@@ -643,7 +643,7 @@ func (b *DeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder) Andro
 	return bb
 }
 
-// DeviceManagementDeviceCompliancePoliciesCollectionAndroidWorkProfileCompliancePolicyCollectionRequestBuilder is request builder for AndroidWorkProfileCompliancePolicy collection
+// DeviceManagementDeviceCompliancePoliciesCollectionAndroidWorkProfileCompliancePolicyCollectionRequestBuilder is request builder for AndroidWorkProfileCompliancePolicy collection rcn
 type DeviceManagementDeviceCompliancePoliciesCollectionAndroidWorkProfileCompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AndroidWorkProfileCompliancePolicy collection
@@ -746,7 +746,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) AndroidWo
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionAndroidWorkProfileCustomConfigurationCollectionRequestBuilder is request builder for AndroidWorkProfileCustomConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionAndroidWorkProfileCustomConfigurationCollectionRequestBuilder is request builder for AndroidWorkProfileCustomConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionAndroidWorkProfileCustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AndroidWorkProfileCustomConfiguration collection
@@ -849,7 +849,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) AndroidWo
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder is request builder for AndroidWorkProfileGeneralDeviceConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder is request builder for AndroidWorkProfileGeneralDeviceConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionAndroidWorkProfileGeneralDeviceConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AndroidWorkProfileGeneralDeviceConfiguration collection

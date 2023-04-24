@@ -18,7 +18,7 @@ func (b *SubjectRightsRequestObjectRequestBuilder) Notes() *SubjectRightsRequest
 	return bb
 }
 
-// SubjectRightsRequestObjectNotesCollectionRequestBuilder is request builder for AuthoredNote collection
+// SubjectRightsRequestObjectNotesCollectionRequestBuilder is request builder for AuthoredNote collection rcn
 type SubjectRightsRequestObjectNotesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AuthoredNote collection

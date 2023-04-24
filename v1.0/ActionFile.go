@@ -18,7 +18,7 @@ func (b *InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder) 
 	return bb
 }
 
-// InformationProtectionThreatAssessmentRequestsCollectionFileAssessmentRequestObjectCollectionRequestBuilder is request builder for FileAssessmentRequestObject collection
+// InformationProtectionThreatAssessmentRequestsCollectionFileAssessmentRequestObjectCollectionRequestBuilder is request builder for FileAssessmentRequestObject collection rcn
 type InformationProtectionThreatAssessmentRequestsCollectionFileAssessmentRequestObjectCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for FileAssessmentRequestObject collection
@@ -121,7 +121,7 @@ func (b *EventAttachmentsCollectionRequestBuilder) FileAttachment() *EventAttach
 	return bb
 }
 
-// EventAttachmentsCollectionFileAttachmentCollectionRequestBuilder is request builder for FileAttachment collection
+// EventAttachmentsCollectionFileAttachmentCollectionRequestBuilder is request builder for FileAttachment collection rcn
 type EventAttachmentsCollectionFileAttachmentCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for FileAttachment collection

@@ -22,7 +22,7 @@ func (b *TeamsAppRequestBuilder) AppDefinitions() *TeamsAppAppDefinitionsCollect
 	return bb
 }
 
-// TeamsAppAppDefinitionsCollectionRequestBuilder is request builder for TeamsAppDefinition collection
+// TeamsAppAppDefinitionsCollectionRequestBuilder is request builder for TeamsAppDefinition collection rcn
 type TeamsAppAppDefinitionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TeamsAppDefinition collection

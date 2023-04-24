@@ -118,7 +118,7 @@ func (b *UserRequestBuilder) Activities() *UserActivitiesCollectionRequestBuilde
 	return bb
 }
 
-// UserActivitiesCollectionRequestBuilder is request builder for UserActivity collection
+// UserActivitiesCollectionRequestBuilder is request builder for UserActivity collection rcn
 type UserActivitiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UserActivity collection
@@ -221,7 +221,7 @@ func (b *UserRequestBuilder) AgreementAcceptances() *UserAgreementAcceptancesCol
 	return bb
 }
 
-// UserAgreementAcceptancesCollectionRequestBuilder is request builder for AgreementAcceptance collection
+// UserAgreementAcceptancesCollectionRequestBuilder is request builder for AgreementAcceptance collection rcn
 type UserAgreementAcceptancesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AgreementAcceptance collection
@@ -324,7 +324,7 @@ func (b *UserRequestBuilder) AppRoleAssignments() *UserAppRoleAssignmentsCollect
 	return bb
 }
 
-// UserAppRoleAssignmentsCollectionRequestBuilder is request builder for AppRoleAssignment collection
+// UserAppRoleAssignmentsCollectionRequestBuilder is request builder for AppRoleAssignment collection rcn
 type UserAppRoleAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AppRoleAssignment collection
@@ -441,7 +441,7 @@ func (b *UserRequestBuilder) CalendarGroups() *UserCalendarGroupsCollectionReque
 	return bb
 }
 
-// UserCalendarGroupsCollectionRequestBuilder is request builder for CalendarGroup collection
+// UserCalendarGroupsCollectionRequestBuilder is request builder for CalendarGroup collection rcn
 type UserCalendarGroupsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for CalendarGroup collection
@@ -544,7 +544,7 @@ func (b *UserRequestBuilder) CalendarView() *UserCalendarViewCollectionRequestBu
 	return bb
 }
 
-// UserCalendarViewCollectionRequestBuilder is request builder for Event collection
+// UserCalendarViewCollectionRequestBuilder is request builder for Event collection rcn
 type UserCalendarViewCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Event collection
@@ -647,7 +647,7 @@ func (b *UserRequestBuilder) Calendars() *UserCalendarsCollectionRequestBuilder 
 	return bb
 }
 
-// UserCalendarsCollectionRequestBuilder is request builder for Calendar collection
+// UserCalendarsCollectionRequestBuilder is request builder for Calendar collection rcn
 type UserCalendarsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Calendar collection
@@ -750,7 +750,7 @@ func (b *UserRequestBuilder) Chats() *UserChatsCollectionRequestBuilder {
 	return bb
 }
 
-// UserChatsCollectionRequestBuilder is request builder for Chat collection
+// UserChatsCollectionRequestBuilder is request builder for Chat collection rcn
 type UserChatsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Chat collection
@@ -853,7 +853,7 @@ func (b *UserRequestBuilder) ContactFolders() *UserContactFoldersCollectionReque
 	return bb
 }
 
-// UserContactFoldersCollectionRequestBuilder is request builder for ContactFolder collection
+// UserContactFoldersCollectionRequestBuilder is request builder for ContactFolder collection rcn
 type UserContactFoldersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ContactFolder collection
@@ -956,7 +956,7 @@ func (b *UserRequestBuilder) Contacts() *UserContactsCollectionRequestBuilder {
 	return bb
 }
 
-// UserContactsCollectionRequestBuilder is request builder for Contact collection
+// UserContactsCollectionRequestBuilder is request builder for Contact collection rcn
 type UserContactsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Contact collection
@@ -1059,7 +1059,7 @@ func (b *UserRequestBuilder) CreatedObjects() *UserCreatedObjectsCollectionReque
 	return bb
 }
 
-// UserCreatedObjectsCollectionRequestBuilder is request builder for DirectoryObject collection
+// UserCreatedObjectsCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type UserCreatedObjectsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -1162,7 +1162,7 @@ func (b *UserRequestBuilder) DeviceManagementTroubleshootingEvents() *UserDevice
 	return bb
 }
 
-// UserDeviceManagementTroubleshootingEventsCollectionRequestBuilder is request builder for DeviceManagementTroubleshootingEvent collection
+// UserDeviceManagementTroubleshootingEventsCollectionRequestBuilder is request builder for DeviceManagementTroubleshootingEvent collection rcn
 type UserDeviceManagementTroubleshootingEventsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceManagementTroubleshootingEvent collection
@@ -1265,7 +1265,7 @@ func (b *UserRequestBuilder) DirectReports() *UserDirectReportsCollectionRequest
 	return bb
 }
 
-// UserDirectReportsCollectionRequestBuilder is request builder for DirectoryObject collection
+// UserDirectReportsCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type UserDirectReportsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -1375,7 +1375,7 @@ func (b *UserRequestBuilder) Drives() *UserDrivesCollectionRequestBuilder {
 	return bb
 }
 
-// UserDrivesCollectionRequestBuilder is request builder for Drive collection
+// UserDrivesCollectionRequestBuilder is request builder for Drive collection rcn
 type UserDrivesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Drive collection
@@ -1478,7 +1478,7 @@ func (b *UserRequestBuilder) Events() *UserEventsCollectionRequestBuilder {
 	return bb
 }
 
-// UserEventsCollectionRequestBuilder is request builder for Event collection
+// UserEventsCollectionRequestBuilder is request builder for Event collection rcn
 type UserEventsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Event collection
@@ -1581,7 +1581,7 @@ func (b *UserRequestBuilder) Extensions() *UserExtensionsCollectionRequestBuilde
 	return bb
 }
 
-// UserExtensionsCollectionRequestBuilder is request builder for Extension collection
+// UserExtensionsCollectionRequestBuilder is request builder for Extension collection rcn
 type UserExtensionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Extension collection
@@ -1684,7 +1684,7 @@ func (b *UserRequestBuilder) FollowedSites() *UserFollowedSitesCollectionRequest
 	return bb
 }
 
-// UserFollowedSitesCollectionRequestBuilder is request builder for Site collection
+// UserFollowedSitesCollectionRequestBuilder is request builder for Site collection rcn
 type UserFollowedSitesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Site collection
@@ -1801,7 +1801,7 @@ func (b *UserRequestBuilder) JoinedTeams() *UserJoinedTeamsCollectionRequestBuil
 	return bb
 }
 
-// UserJoinedTeamsCollectionRequestBuilder is request builder for Team collection
+// UserJoinedTeamsCollectionRequestBuilder is request builder for Team collection rcn
 type UserJoinedTeamsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Team collection
@@ -1904,7 +1904,7 @@ func (b *UserRequestBuilder) LicenseDetails() *UserLicenseDetailsCollectionReque
 	return bb
 }
 
-// UserLicenseDetailsCollectionRequestBuilder is request builder for LicenseDetails collection
+// UserLicenseDetailsCollectionRequestBuilder is request builder for LicenseDetails collection rcn
 type UserLicenseDetailsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for LicenseDetails collection
@@ -2007,7 +2007,7 @@ func (b *UserRequestBuilder) MailFolders() *UserMailFoldersCollectionRequestBuil
 	return bb
 }
 
-// UserMailFoldersCollectionRequestBuilder is request builder for MailFolder collection
+// UserMailFoldersCollectionRequestBuilder is request builder for MailFolder collection rcn
 type UserMailFoldersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MailFolder collection
@@ -2110,7 +2110,7 @@ func (b *UserRequestBuilder) ManagedAppRegistrations() *UserManagedAppRegistrati
 	return bb
 }
 
-// UserManagedAppRegistrationsCollectionRequestBuilder is request builder for ManagedAppRegistration collection
+// UserManagedAppRegistrationsCollectionRequestBuilder is request builder for ManagedAppRegistration collection rcn
 type UserManagedAppRegistrationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedAppRegistration collection
@@ -2213,7 +2213,7 @@ func (b *UserRequestBuilder) ManagedDevices() *UserManagedDevicesCollectionReque
 	return bb
 }
 
-// UserManagedDevicesCollectionRequestBuilder is request builder for ManagedDevice collection
+// UserManagedDevicesCollectionRequestBuilder is request builder for ManagedDevice collection rcn
 type UserManagedDevicesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedDevice collection
@@ -2323,7 +2323,7 @@ func (b *UserRequestBuilder) MemberOf() *UserMemberOfCollectionRequestBuilder {
 	return bb
 }
 
-// UserMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection
+// UserMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type UserMemberOfCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -2426,7 +2426,7 @@ func (b *UserRequestBuilder) Messages() *UserMessagesCollectionRequestBuilder {
 	return bb
 }
 
-// UserMessagesCollectionRequestBuilder is request builder for Message collection
+// UserMessagesCollectionRequestBuilder is request builder for Message collection rcn
 type UserMessagesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Message collection
@@ -2529,7 +2529,7 @@ func (b *UserRequestBuilder) OAuth2PermissionGrants() *UserOAuth2PermissionGrant
 	return bb
 }
 
-// UserOAuth2PermissionGrantsCollectionRequestBuilder is request builder for OAuth2PermissionGrant collection
+// UserOAuth2PermissionGrantsCollectionRequestBuilder is request builder for OAuth2PermissionGrant collection rcn
 type UserOAuth2PermissionGrantsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OAuth2PermissionGrant collection
@@ -2639,7 +2639,7 @@ func (b *UserRequestBuilder) OnlineMeetings() *UserOnlineMeetingsCollectionReque
 	return bb
 }
 
-// UserOnlineMeetingsCollectionRequestBuilder is request builder for OnlineMeeting collection
+// UserOnlineMeetingsCollectionRequestBuilder is request builder for OnlineMeeting collection rcn
 type UserOnlineMeetingsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OnlineMeeting collection
@@ -2749,7 +2749,7 @@ func (b *UserRequestBuilder) OwnedDevices() *UserOwnedDevicesCollectionRequestBu
 	return bb
 }
 
-// UserOwnedDevicesCollectionRequestBuilder is request builder for DirectoryObject collection
+// UserOwnedDevicesCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type UserOwnedDevicesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -2852,7 +2852,7 @@ func (b *UserRequestBuilder) OwnedObjects() *UserOwnedObjectsCollectionRequestBu
 	return bb
 }
 
-// UserOwnedObjectsCollectionRequestBuilder is request builder for DirectoryObject collection
+// UserOwnedObjectsCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type UserOwnedObjectsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -2955,7 +2955,7 @@ func (b *UserRequestBuilder) People() *UserPeopleCollectionRequestBuilder {
 	return bb
 }
 
-// UserPeopleCollectionRequestBuilder is request builder for Person collection
+// UserPeopleCollectionRequestBuilder is request builder for Person collection rcn
 type UserPeopleCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Person collection
@@ -3065,7 +3065,7 @@ func (b *UserRequestBuilder) Photos() *UserPhotosCollectionRequestBuilder {
 	return bb
 }
 
-// UserPhotosCollectionRequestBuilder is request builder for ProfilePhoto collection
+// UserPhotosCollectionRequestBuilder is request builder for ProfilePhoto collection rcn
 type UserPhotosCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ProfilePhoto collection
@@ -3182,7 +3182,7 @@ func (b *UserRequestBuilder) RegisteredDevices() *UserRegisteredDevicesCollectio
 	return bb
 }
 
-// UserRegisteredDevicesCollectionRequestBuilder is request builder for DirectoryObject collection
+// UserRegisteredDevicesCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type UserRegisteredDevicesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -3285,7 +3285,7 @@ func (b *UserRequestBuilder) ScopedRoleMemberOf() *UserScopedRoleMemberOfCollect
 	return bb
 }
 
-// UserScopedRoleMemberOfCollectionRequestBuilder is request builder for ScopedRoleMembership collection
+// UserScopedRoleMemberOfCollectionRequestBuilder is request builder for ScopedRoleMembership collection rcn
 type UserScopedRoleMemberOfCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ScopedRoleMembership collection
@@ -3409,7 +3409,7 @@ func (b *UserRequestBuilder) TransitiveMemberOf() *UserTransitiveMemberOfCollect
 	return bb
 }
 
-// UserTransitiveMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection
+// UserTransitiveMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type UserTransitiveMemberOfCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -3512,7 +3512,7 @@ func (b *UserActivityRequestBuilder) HistoryItems() *UserActivityHistoryItemsCol
 	return bb
 }
 
-// UserActivityHistoryItemsCollectionRequestBuilder is request builder for ActivityHistoryItem collection
+// UserActivityHistoryItemsCollectionRequestBuilder is request builder for ActivityHistoryItem collection rcn
 type UserActivityHistoryItemsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ActivityHistoryItem collection
@@ -3636,7 +3636,7 @@ func (b *UserFlowLanguageConfigurationRequestBuilder) DefaultPages() *UserFlowLa
 	return bb
 }
 
-// UserFlowLanguageConfigurationDefaultPagesCollectionRequestBuilder is request builder for UserFlowLanguagePage collection
+// UserFlowLanguageConfigurationDefaultPagesCollectionRequestBuilder is request builder for UserFlowLanguagePage collection rcn
 type UserFlowLanguageConfigurationDefaultPagesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UserFlowLanguagePage collection
@@ -3739,7 +3739,7 @@ func (b *UserFlowLanguageConfigurationRequestBuilder) OverridesPages() *UserFlow
 	return bb
 }
 
-// UserFlowLanguageConfigurationOverridesPagesCollectionRequestBuilder is request builder for UserFlowLanguagePage collection
+// UserFlowLanguageConfigurationOverridesPagesCollectionRequestBuilder is request builder for UserFlowLanguagePage collection rcn
 type UserFlowLanguageConfigurationOverridesPagesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UserFlowLanguagePage collection
@@ -3842,7 +3842,7 @@ func (b *UserInstallStateSummaryRequestBuilder) DeviceStates() *UserInstallState
 	return bb
 }
 
-// UserInstallStateSummaryDeviceStatesCollectionRequestBuilder is request builder for DeviceInstallState collection
+// UserInstallStateSummaryDeviceStatesCollectionRequestBuilder is request builder for DeviceInstallState collection rcn
 type UserInstallStateSummaryDeviceStatesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeviceInstallState collection
@@ -3959,7 +3959,7 @@ func (b *UserTeamworkRequestBuilder) AssociatedTeams() *UserTeamworkAssociatedTe
 	return bb
 }
 
-// UserTeamworkAssociatedTeamsCollectionRequestBuilder is request builder for AssociatedTeamInfo collection
+// UserTeamworkAssociatedTeamsCollectionRequestBuilder is request builder for AssociatedTeamInfo collection rcn
 type UserTeamworkAssociatedTeamsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AssociatedTeamInfo collection
@@ -4062,7 +4062,7 @@ func (b *UserTeamworkRequestBuilder) InstalledApps() *UserTeamworkInstalledAppsC
 	return bb
 }
 
-// UserTeamworkInstalledAppsCollectionRequestBuilder is request builder for UserScopeTeamsAppInstallation collection
+// UserTeamworkInstalledAppsCollectionRequestBuilder is request builder for UserScopeTeamsAppInstallation collection rcn
 type UserTeamworkInstalledAppsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UserScopeTeamsAppInstallation collection
@@ -4165,7 +4165,7 @@ func (b *AdministrativeUnitMembersCollectionRequestBuilder) User() *Administrati
 	return bb
 }
 
-// AdministrativeUnitMembersCollectionUserCollectionRequestBuilder is request builder for User collection
+// AdministrativeUnitMembersCollectionUserCollectionRequestBuilder is request builder for User collection rcn
 type AdministrativeUnitMembersCollectionUserCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for User collection
@@ -4303,7 +4303,7 @@ func (b *ChatInstalledAppsCollectionRequestBuilder) UserScopeTeamsAppInstallatio
 	return bb
 }
 
-// ChatInstalledAppsCollectionUserScopeTeamsAppInstallationCollectionRequestBuilder is request builder for UserScopeTeamsAppInstallation collection
+// ChatInstalledAppsCollectionUserScopeTeamsAppInstallationCollectionRequestBuilder is request builder for UserScopeTeamsAppInstallation collection rcn
 type ChatInstalledAppsCollectionUserScopeTeamsAppInstallationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UserScopeTeamsAppInstallation collection

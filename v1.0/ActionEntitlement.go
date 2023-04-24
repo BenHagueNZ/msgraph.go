@@ -18,7 +18,7 @@ func (b *EntitlementManagementRequestBuilder) AccessPackageAssignmentApprovals()
 	return bb
 }
 
-// EntitlementManagementAccessPackageAssignmentApprovalsCollectionRequestBuilder is request builder for Approval collection
+// EntitlementManagementAccessPackageAssignmentApprovalsCollectionRequestBuilder is request builder for Approval collection rcn
 type EntitlementManagementAccessPackageAssignmentApprovalsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Approval collection
@@ -121,7 +121,7 @@ func (b *EntitlementManagementRequestBuilder) AccessPackages() *EntitlementManag
 	return bb
 }
 
-// EntitlementManagementAccessPackagesCollectionRequestBuilder is request builder for AccessPackage collection
+// EntitlementManagementAccessPackagesCollectionRequestBuilder is request builder for AccessPackage collection rcn
 type EntitlementManagementAccessPackagesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackage collection
@@ -224,7 +224,7 @@ func (b *EntitlementManagementRequestBuilder) AssignmentPolicies() *EntitlementM
 	return bb
 }
 
-// EntitlementManagementAssignmentPoliciesCollectionRequestBuilder is request builder for AccessPackageAssignmentPolicy collection
+// EntitlementManagementAssignmentPoliciesCollectionRequestBuilder is request builder for AccessPackageAssignmentPolicy collection rcn
 type EntitlementManagementAssignmentPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackageAssignmentPolicy collection
@@ -327,7 +327,7 @@ func (b *EntitlementManagementRequestBuilder) AssignmentRequests() *EntitlementM
 	return bb
 }
 
-// EntitlementManagementAssignmentRequestsCollectionRequestBuilder is request builder for AccessPackageAssignmentRequestObject collection
+// EntitlementManagementAssignmentRequestsCollectionRequestBuilder is request builder for AccessPackageAssignmentRequestObject collection rcn
 type EntitlementManagementAssignmentRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackageAssignmentRequestObject collection
@@ -430,7 +430,7 @@ func (b *EntitlementManagementRequestBuilder) Assignments() *EntitlementManageme
 	return bb
 }
 
-// EntitlementManagementAssignmentsCollectionRequestBuilder is request builder for AccessPackageAssignment collection
+// EntitlementManagementAssignmentsCollectionRequestBuilder is request builder for AccessPackageAssignment collection rcn
 type EntitlementManagementAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackageAssignment collection
@@ -533,7 +533,7 @@ func (b *EntitlementManagementRequestBuilder) Catalogs() *EntitlementManagementC
 	return bb
 }
 
-// EntitlementManagementCatalogsCollectionRequestBuilder is request builder for AccessPackageCatalog collection
+// EntitlementManagementCatalogsCollectionRequestBuilder is request builder for AccessPackageCatalog collection rcn
 type EntitlementManagementCatalogsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackageCatalog collection
@@ -636,7 +636,7 @@ func (b *EntitlementManagementRequestBuilder) ConnectedOrganizations() *Entitlem
 	return bb
 }
 
-// EntitlementManagementConnectedOrganizationsCollectionRequestBuilder is request builder for ConnectedOrganization collection
+// EntitlementManagementConnectedOrganizationsCollectionRequestBuilder is request builder for ConnectedOrganization collection rcn
 type EntitlementManagementConnectedOrganizationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ConnectedOrganization collection

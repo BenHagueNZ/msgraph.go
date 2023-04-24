@@ -18,7 +18,7 @@ func (b *B2xIdentityUserFlowRequestBuilder) IdentityProviders() *B2xIdentityUser
 	return bb
 }
 
-// B2xIdentityUserFlowIdentityProvidersCollectionRequestBuilder is request builder for IdentityProvider collection
+// B2xIdentityUserFlowIdentityProvidersCollectionRequestBuilder is request builder for IdentityProvider collection rcn
 type B2xIdentityUserFlowIdentityProvidersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IdentityProvider collection
@@ -121,7 +121,7 @@ func (b *B2xIdentityUserFlowRequestBuilder) Languages() *B2xIdentityUserFlowLang
 	return bb
 }
 
-// B2xIdentityUserFlowLanguagesCollectionRequestBuilder is request builder for UserFlowLanguageConfiguration collection
+// B2xIdentityUserFlowLanguagesCollectionRequestBuilder is request builder for UserFlowLanguageConfiguration collection rcn
 type B2xIdentityUserFlowLanguagesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UserFlowLanguageConfiguration collection
@@ -224,7 +224,7 @@ func (b *B2xIdentityUserFlowRequestBuilder) UserAttributeAssignments() *B2xIdent
 	return bb
 }
 
-// B2xIdentityUserFlowUserAttributeAssignmentsCollectionRequestBuilder is request builder for IdentityUserFlowAttributeAssignment collection
+// B2xIdentityUserFlowUserAttributeAssignmentsCollectionRequestBuilder is request builder for IdentityUserFlowAttributeAssignment collection rcn
 type B2xIdentityUserFlowUserAttributeAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IdentityUserFlowAttributeAssignment collection
@@ -327,7 +327,7 @@ func (b *B2xIdentityUserFlowRequestBuilder) UserFlowIdentityProviders() *B2xIden
 	return bb
 }
 
-// B2xIdentityUserFlowUserFlowIdentityProvidersCollectionRequestBuilder is request builder for IdentityProviderBase collection
+// B2xIdentityUserFlowUserFlowIdentityProvidersCollectionRequestBuilder is request builder for IdentityProviderBase collection rcn
 type B2xIdentityUserFlowUserFlowIdentityProvidersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IdentityProviderBase collection

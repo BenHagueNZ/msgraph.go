@@ -18,7 +18,7 @@ func (b *ConditionalAccessRootNamedLocationsCollectionRequestBuilder) CountryNam
 	return bb
 }
 
-// ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequestBuilder is request builder for CountryNamedLocation collection
+// ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequestBuilder is request builder for CountryNamedLocation collection rcn
 type ConditionalAccessRootNamedLocationsCollectionCountryNamedLocationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for CountryNamedLocation collection

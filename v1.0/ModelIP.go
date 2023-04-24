@@ -27,6 +27,8 @@ type IPRange struct {
 	Object
 
 	ODataType string `json:"@odata.type,omitempty"`
+	// CIDRAddress undocumented
+	CIDRAddress *string `json:"cidrAddress,omitempty"`
 }
 
 func NewIPRange() (*IPRange, error) {
@@ -36,16 +38,29 @@ func NewIPRange() (*IPRange, error) {
 	return newIPRange, nil
 }
 
-func NewIPv6Range1() (*IPRange, error) {
-	newIPRange := &IPRange{
-		ODataType: "#microsoft.graph.IPv6CidrRange",
+	func filterIPRange(ss []IPRange, v4 bool) (ret []IPRange) {
+		odata := "#microsoft.graph.iPv6CidrRange"
+		if v4 {
+			odata = "#microsoft.graph.iPv4CidrRange"
+		}
+		for _, s := range ss {
+			if s.ODataType == odata {
+				ret = append(ret, s)
+			}
+		}
+		return
 	}
-	return newIPRange, nil
-}
-
-func NewIPv4Range1() (*IPRange, error) {
-	newIPRange := &IPRange{
-		ODataType: "#microsoft.graph.IPv4CidrRange",
+	
+	func NewIPv6Range1() (*IPRange, error) {
+		newIPRange := &IPRange{
+			ODataType: "#microsoft.graph.IPv6CidrRange",
+		}
+		return newIPRange, nil
 	}
-	return newIPRange, nil
-}
+	
+	func NewIPv4Range1() (*IPRange, error) {
+		newIPRange := &IPRange{
+			ODataType: "#microsoft.graph.IPv4CidrRange",
+		}
+		return newIPRange, nil
+	}

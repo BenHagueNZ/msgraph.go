@@ -78,7 +78,7 @@ func (b *AccessPackageRequestBuilder) AccessPackagesIncompatibleWith() *AccessPa
 	return bb
 }
 
-// AccessPackageAccessPackagesIncompatibleWithCollectionRequestBuilder is request builder for AccessPackage collection
+// AccessPackageAccessPackagesIncompatibleWithCollectionRequestBuilder is request builder for AccessPackage collection rcn
 type AccessPackageAccessPackagesIncompatibleWithCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackage collection
@@ -181,7 +181,7 @@ func (b *AccessPackageRequestBuilder) AssignmentPolicies() *AccessPackageAssignm
 	return bb
 }
 
-// AccessPackageAssignmentPoliciesCollectionRequestBuilder is request builder for AccessPackageAssignmentPolicy collection
+// AccessPackageAssignmentPoliciesCollectionRequestBuilder is request builder for AccessPackageAssignmentPolicy collection rcn
 type AccessPackageAssignmentPoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackageAssignmentPolicy collection
@@ -291,7 +291,7 @@ func (b *AccessPackageRequestBuilder) IncompatibleAccessPackages() *AccessPackag
 	return bb
 }
 
-// AccessPackageIncompatibleAccessPackagesCollectionRequestBuilder is request builder for AccessPackage collection
+// AccessPackageIncompatibleAccessPackagesCollectionRequestBuilder is request builder for AccessPackage collection rcn
 type AccessPackageIncompatibleAccessPackagesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackage collection
@@ -394,7 +394,7 @@ func (b *AccessPackageRequestBuilder) IncompatibleGroups() *AccessPackageIncompa
 	return bb
 }
 
-// AccessPackageIncompatibleGroupsCollectionRequestBuilder is request builder for Group collection
+// AccessPackageIncompatibleGroupsCollectionRequestBuilder is request builder for Group collection rcn
 type AccessPackageIncompatibleGroupsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Group collection
@@ -539,7 +539,7 @@ func (b *AccessPackageAssignmentPolicyRequestBuilder) Questions() *AccessPackage
 	return bb
 }
 
-// AccessPackageAssignmentPolicyQuestionsCollectionRequestBuilder is request builder for AccessPackageQuestion collection
+// AccessPackageAssignmentPolicyQuestionsCollectionRequestBuilder is request builder for AccessPackageQuestion collection rcn
 type AccessPackageAssignmentPolicyQuestionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackageQuestion collection
@@ -663,7 +663,7 @@ func (b *AccessPackageAssignmentRequestRequirementsRequestBuilder) Questions() *
 	return bb
 }
 
-// AccessPackageAssignmentRequestRequirementsQuestionsCollectionRequestBuilder is request builder for AccessPackageQuestion collection
+// AccessPackageAssignmentRequestRequirementsQuestionsCollectionRequestBuilder is request builder for AccessPackageQuestion collection rcn
 type AccessPackageAssignmentRequestRequirementsQuestionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackageQuestion collection
@@ -766,7 +766,7 @@ func (b *AccessPackageCatalogRequestBuilder) AccessPackages() *AccessPackageCata
 	return bb
 }
 
-// AccessPackageCatalogAccessPackagesCollectionRequestBuilder is request builder for AccessPackage collection
+// AccessPackageCatalogAccessPackagesCollectionRequestBuilder is request builder for AccessPackage collection rcn
 type AccessPackageCatalogAccessPackagesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackage collection
@@ -876,7 +876,7 @@ func (b *AccessReviewHistoryDefinitionRequestBuilder) Instances() *AccessReviewH
 	return bb
 }
 
-// AccessReviewHistoryDefinitionInstancesCollectionRequestBuilder is request builder for AccessReviewHistoryInstance collection
+// AccessReviewHistoryDefinitionInstancesCollectionRequestBuilder is request builder for AccessReviewHistoryInstance collection rcn
 type AccessReviewHistoryDefinitionInstancesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessReviewHistoryInstance collection
@@ -979,7 +979,7 @@ func (b *AccessReviewInstanceRequestBuilder) ContactedReviewers() *AccessReviewI
 	return bb
 }
 
-// AccessReviewInstanceContactedReviewersCollectionRequestBuilder is request builder for AccessReviewReviewer collection
+// AccessReviewInstanceContactedReviewersCollectionRequestBuilder is request builder for AccessReviewReviewer collection rcn
 type AccessReviewInstanceContactedReviewersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessReviewReviewer collection
@@ -1082,7 +1082,7 @@ func (b *AccessReviewInstanceRequestBuilder) Decisions() *AccessReviewInstanceDe
 	return bb
 }
 
-// AccessReviewInstanceDecisionsCollectionRequestBuilder is request builder for AccessReviewInstanceDecisionItem collection
+// AccessReviewInstanceDecisionsCollectionRequestBuilder is request builder for AccessReviewInstanceDecisionItem collection rcn
 type AccessReviewInstanceDecisionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessReviewInstanceDecisionItem collection
@@ -1185,7 +1185,7 @@ func (b *AccessReviewInstanceRequestBuilder) Stages() *AccessReviewInstanceStage
 	return bb
 }
 
-// AccessReviewInstanceStagesCollectionRequestBuilder is request builder for AccessReviewStage collection
+// AccessReviewInstanceStagesCollectionRequestBuilder is request builder for AccessReviewStage collection rcn
 type AccessReviewInstanceStagesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessReviewStage collection
@@ -1288,7 +1288,7 @@ func (b *AccessReviewScheduleDefinitionRequestBuilder) Instances() *AccessReview
 	return bb
 }
 
-// AccessReviewScheduleDefinitionInstancesCollectionRequestBuilder is request builder for AccessReviewInstance collection
+// AccessReviewScheduleDefinitionInstancesCollectionRequestBuilder is request builder for AccessReviewInstance collection rcn
 type AccessReviewScheduleDefinitionInstancesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessReviewInstance collection
@@ -1391,7 +1391,7 @@ func (b *AccessReviewSetRequestBuilder) Definitions() *AccessReviewSetDefinition
 	return bb
 }
 
-// AccessReviewSetDefinitionsCollectionRequestBuilder is request builder for AccessReviewScheduleDefinition collection
+// AccessReviewSetDefinitionsCollectionRequestBuilder is request builder for AccessReviewScheduleDefinition collection rcn
 type AccessReviewSetDefinitionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessReviewScheduleDefinition collection
@@ -1494,7 +1494,7 @@ func (b *AccessReviewSetRequestBuilder) HistoryDefinitions() *AccessReviewSetHis
 	return bb
 }
 
-// AccessReviewSetHistoryDefinitionsCollectionRequestBuilder is request builder for AccessReviewHistoryDefinition collection
+// AccessReviewSetHistoryDefinitionsCollectionRequestBuilder is request builder for AccessReviewHistoryDefinition collection rcn
 type AccessReviewSetHistoryDefinitionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessReviewHistoryDefinition collection
@@ -1597,7 +1597,7 @@ func (b *AccessReviewStageRequestBuilder) Decisions() *AccessReviewStageDecision
 	return bb
 }
 
-// AccessReviewStageDecisionsCollectionRequestBuilder is request builder for AccessReviewInstanceDecisionItem collection
+// AccessReviewStageDecisionsCollectionRequestBuilder is request builder for AccessReviewInstanceDecisionItem collection rcn
 type AccessReviewStageDecisionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessReviewInstanceDecisionItem collection
@@ -1735,7 +1735,7 @@ func (b *AccessPackageAssignmentPolicyQuestionsCollectionRequestBuilder) AccessP
 	return bb
 }
 
-// AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder is request builder for AccessPackageMultipleChoiceQuestion collection
+// AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder is request builder for AccessPackageMultipleChoiceQuestion collection rcn
 type AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageMultipleChoiceQuestionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackageMultipleChoiceQuestion collection
@@ -1852,7 +1852,7 @@ func (b *AccessPackageAssignmentPolicyQuestionsCollectionRequestBuilder) AccessP
 	return bb
 }
 
-// AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequestBuilder is request builder for AccessPackageTextInputQuestion collection
+// AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequestBuilder is request builder for AccessPackageTextInputQuestion collection rcn
 type AccessPackageAssignmentPolicyQuestionsCollectionAccessPackageTextInputQuestionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AccessPackageTextInputQuestion collection

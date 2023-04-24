@@ -30,7 +30,7 @@ func (b *MailFolderRequestBuilder) ChildFolders() *MailFolderChildFoldersCollect
 	return bb
 }
 
-// MailFolderChildFoldersCollectionRequestBuilder is request builder for MailFolder collection
+// MailFolderChildFoldersCollectionRequestBuilder is request builder for MailFolder collection rcn
 type MailFolderChildFoldersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MailFolder collection
@@ -133,7 +133,7 @@ func (b *MailFolderRequestBuilder) MessageRules() *MailFolderMessageRulesCollect
 	return bb
 }
 
-// MailFolderMessageRulesCollectionRequestBuilder is request builder for MessageRule collection
+// MailFolderMessageRulesCollectionRequestBuilder is request builder for MessageRule collection rcn
 type MailFolderMessageRulesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MessageRule collection
@@ -236,7 +236,7 @@ func (b *MailFolderRequestBuilder) Messages() *MailFolderMessagesCollectionReque
 	return bb
 }
 
-// MailFolderMessagesCollectionRequestBuilder is request builder for Message collection
+// MailFolderMessagesCollectionRequestBuilder is request builder for Message collection rcn
 type MailFolderMessagesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Message collection
@@ -339,7 +339,7 @@ func (b *MailFolderRequestBuilder) MultiValueExtendedProperties() *MailFolderMul
 	return bb
 }
 
-// MailFolderMultiValueExtendedPropertiesCollectionRequestBuilder is request builder for MultiValueLegacyExtendedProperty collection
+// MailFolderMultiValueExtendedPropertiesCollectionRequestBuilder is request builder for MultiValueLegacyExtendedProperty collection rcn
 type MailFolderMultiValueExtendedPropertiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MultiValueLegacyExtendedProperty collection
@@ -442,7 +442,7 @@ func (b *MailFolderRequestBuilder) SingleValueExtendedProperties() *MailFolderSi
 	return bb
 }
 
-// MailFolderSingleValueExtendedPropertiesCollectionRequestBuilder is request builder for SingleValueLegacyExtendedProperty collection
+// MailFolderSingleValueExtendedPropertiesCollectionRequestBuilder is request builder for SingleValueLegacyExtendedProperty collection rcn
 type MailFolderSingleValueExtendedPropertiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SingleValueLegacyExtendedProperty collection
@@ -545,7 +545,7 @@ func (b *InformationProtectionThreatAssessmentRequestsCollectionRequestBuilder) 
 	return bb
 }
 
-// InformationProtectionThreatAssessmentRequestsCollectionMailAssessmentRequestObjectCollectionRequestBuilder is request builder for MailAssessmentRequestObject collection
+// InformationProtectionThreatAssessmentRequestsCollectionMailAssessmentRequestObjectCollectionRequestBuilder is request builder for MailAssessmentRequestObject collection rcn
 type InformationProtectionThreatAssessmentRequestsCollectionMailAssessmentRequestObjectCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MailAssessmentRequestObject collection
@@ -655,7 +655,7 @@ func (b *MailFolderChildFoldersCollectionRequestBuilder) MailSearchFolder() *Mai
 	return bb
 }
 
-// MailFolderChildFoldersCollectionMailSearchFolderCollectionRequestBuilder is request builder for MailSearchFolder collection
+// MailFolderChildFoldersCollectionMailSearchFolderCollectionRequestBuilder is request builder for MailSearchFolder collection rcn
 type MailFolderChildFoldersCollectionMailSearchFolderCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MailSearchFolder collection

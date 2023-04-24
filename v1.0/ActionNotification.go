@@ -22,7 +22,7 @@ func (b *NotificationMessageTemplateRequestBuilder) LocalizedNotificationMessage
 	return bb
 }
 
-// NotificationMessageTemplateLocalizedNotificationMessagesCollectionRequestBuilder is request builder for LocalizedNotificationMessage collection
+// NotificationMessageTemplateLocalizedNotificationMessagesCollectionRequestBuilder is request builder for LocalizedNotificationMessage collection rcn
 type NotificationMessageTemplateLocalizedNotificationMessagesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for LocalizedNotificationMessage collection

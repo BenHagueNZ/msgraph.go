@@ -18,7 +18,7 @@ func (b *SolutionsRootRequestBuilder) BookingBusinesses() *SolutionsRootBookingB
 	return bb
 }
 
-// SolutionsRootBookingBusinessesCollectionRequestBuilder is request builder for BookingBusiness collection
+// SolutionsRootBookingBusinessesCollectionRequestBuilder is request builder for BookingBusiness collection rcn
 type SolutionsRootBookingBusinessesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for BookingBusiness collection
@@ -121,7 +121,7 @@ func (b *SolutionsRootRequestBuilder) BookingCurrencies() *SolutionsRootBookingC
 	return bb
 }
 
-// SolutionsRootBookingCurrenciesCollectionRequestBuilder is request builder for BookingCurrency collection
+// SolutionsRootBookingCurrenciesCollectionRequestBuilder is request builder for BookingCurrency collection rcn
 type SolutionsRootBookingCurrenciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for BookingCurrency collection

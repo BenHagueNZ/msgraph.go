@@ -32,7 +32,7 @@ func (b *DomainRequestBuilder) DomainNameReferences() *DomainDomainNameReference
 	return bb
 }
 
-// DomainDomainNameReferencesCollectionRequestBuilder is request builder for DirectoryObject collection
+// DomainDomainNameReferencesCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type DomainDomainNameReferencesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -135,7 +135,7 @@ func (b *DomainRequestBuilder) FederationConfiguration() *DomainFederationConfig
 	return bb
 }
 
-// DomainFederationConfigurationCollectionRequestBuilder is request builder for InternalDomainFederation collection
+// DomainFederationConfigurationCollectionRequestBuilder is request builder for InternalDomainFederation collection rcn
 type DomainFederationConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for InternalDomainFederation collection
@@ -238,7 +238,7 @@ func (b *DomainRequestBuilder) ServiceConfigurationRecords() *DomainServiceConfi
 	return bb
 }
 
-// DomainServiceConfigurationRecordsCollectionRequestBuilder is request builder for DomainDnsRecord collection
+// DomainServiceConfigurationRecordsCollectionRequestBuilder is request builder for DomainDnsRecord collection rcn
 type DomainServiceConfigurationRecordsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DomainDnsRecord collection
@@ -341,7 +341,7 @@ func (b *DomainRequestBuilder) VerificationDnsRecords() *DomainVerificationDnsRe
 	return bb
 }
 
-// DomainVerificationDnsRecordsCollectionRequestBuilder is request builder for DomainDnsRecord collection
+// DomainVerificationDnsRecordsCollectionRequestBuilder is request builder for DomainDnsRecord collection rcn
 type DomainVerificationDnsRecordsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DomainDnsRecord collection
@@ -451,7 +451,7 @@ func (b *DomainServiceConfigurationRecordsCollectionRequestBuilder) DomainDnsCna
 	return bb
 }
 
-// DomainServiceConfigurationRecordsCollectionDomainDnsCnameRecordCollectionRequestBuilder is request builder for DomainDnsCnameRecord collection
+// DomainServiceConfigurationRecordsCollectionDomainDnsCnameRecordCollectionRequestBuilder is request builder for DomainDnsCnameRecord collection rcn
 type DomainServiceConfigurationRecordsCollectionDomainDnsCnameRecordCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DomainDnsCnameRecord collection
@@ -554,7 +554,7 @@ func (b *DomainServiceConfigurationRecordsCollectionRequestBuilder) DomainDnsMxR
 	return bb
 }
 
-// DomainServiceConfigurationRecordsCollectionDomainDnsMxRecordCollectionRequestBuilder is request builder for DomainDnsMxRecord collection
+// DomainServiceConfigurationRecordsCollectionDomainDnsMxRecordCollectionRequestBuilder is request builder for DomainDnsMxRecord collection rcn
 type DomainServiceConfigurationRecordsCollectionDomainDnsMxRecordCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DomainDnsMxRecord collection
@@ -657,7 +657,7 @@ func (b *DomainServiceConfigurationRecordsCollectionRequestBuilder) DomainDnsSrv
 	return bb
 }
 
-// DomainServiceConfigurationRecordsCollectionDomainDnsSrvRecordCollectionRequestBuilder is request builder for DomainDnsSrvRecord collection
+// DomainServiceConfigurationRecordsCollectionDomainDnsSrvRecordCollectionRequestBuilder is request builder for DomainDnsSrvRecord collection rcn
 type DomainServiceConfigurationRecordsCollectionDomainDnsSrvRecordCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DomainDnsSrvRecord collection
@@ -760,7 +760,7 @@ func (b *DomainServiceConfigurationRecordsCollectionRequestBuilder) DomainDnsTxt
 	return bb
 }
 
-// DomainServiceConfigurationRecordsCollectionDomainDnsTxtRecordCollectionRequestBuilder is request builder for DomainDnsTxtRecord collection
+// DomainServiceConfigurationRecordsCollectionDomainDnsTxtRecordCollectionRequestBuilder is request builder for DomainDnsTxtRecord collection rcn
 type DomainServiceConfigurationRecordsCollectionDomainDnsTxtRecordCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DomainDnsTxtRecord collection
@@ -863,7 +863,7 @@ func (b *DomainServiceConfigurationRecordsCollectionRequestBuilder) DomainDnsUna
 	return bb
 }
 
-// DomainServiceConfigurationRecordsCollectionDomainDnsUnavailableRecordCollectionRequestBuilder is request builder for DomainDnsUnavailableRecord collection
+// DomainServiceConfigurationRecordsCollectionDomainDnsUnavailableRecordCollectionRequestBuilder is request builder for DomainDnsUnavailableRecord collection rcn
 type DomainServiceConfigurationRecordsCollectionDomainDnsUnavailableRecordCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DomainDnsUnavailableRecord collection

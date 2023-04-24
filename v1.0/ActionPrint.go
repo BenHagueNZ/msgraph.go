@@ -46,7 +46,7 @@ func (b *PrintRequestBuilder) Connectors() *PrintConnectorsCollectionRequestBuil
 	return bb
 }
 
-// PrintConnectorsCollectionRequestBuilder is request builder for PrintConnector collection
+// PrintConnectorsCollectionRequestBuilder is request builder for PrintConnector collection rcn
 type PrintConnectorsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintConnector collection
@@ -149,7 +149,7 @@ func (b *PrintRequestBuilder) Operations() *PrintOperationsCollectionRequestBuil
 	return bb
 }
 
-// PrintOperationsCollectionRequestBuilder is request builder for PrintOperation collection
+// PrintOperationsCollectionRequestBuilder is request builder for PrintOperation collection rcn
 type PrintOperationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintOperation collection
@@ -252,7 +252,7 @@ func (b *PrintRequestBuilder) Printers() *PrintPrintersCollectionRequestBuilder 
 	return bb
 }
 
-// PrintPrintersCollectionRequestBuilder is request builder for Printer collection
+// PrintPrintersCollectionRequestBuilder is request builder for Printer collection rcn
 type PrintPrintersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Printer collection
@@ -355,7 +355,7 @@ func (b *PrintRequestBuilder) Services() *PrintServicesCollectionRequestBuilder 
 	return bb
 }
 
-// PrintServicesCollectionRequestBuilder is request builder for PrintService collection
+// PrintServicesCollectionRequestBuilder is request builder for PrintService collection rcn
 type PrintServicesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintService collection
@@ -458,7 +458,7 @@ func (b *PrintRequestBuilder) Shares() *PrintSharesCollectionRequestBuilder {
 	return bb
 }
 
-// PrintSharesCollectionRequestBuilder is request builder for PrinterShare collection
+// PrintSharesCollectionRequestBuilder is request builder for PrinterShare collection rcn
 type PrintSharesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrinterShare collection
@@ -561,7 +561,7 @@ func (b *PrintRequestBuilder) TaskDefinitions() *PrintTaskDefinitionsCollectionR
 	return bb
 }
 
-// PrintTaskDefinitionsCollectionRequestBuilder is request builder for PrintTaskDefinition collection
+// PrintTaskDefinitionsCollectionRequestBuilder is request builder for PrintTaskDefinition collection rcn
 type PrintTaskDefinitionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintTaskDefinition collection
@@ -664,7 +664,7 @@ func (b *PrintJobRequestBuilder) Documents() *PrintJobDocumentsCollectionRequest
 	return bb
 }
 
-// PrintJobDocumentsCollectionRequestBuilder is request builder for PrintDocument collection
+// PrintJobDocumentsCollectionRequestBuilder is request builder for PrintDocument collection rcn
 type PrintJobDocumentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintDocument collection
@@ -767,7 +767,7 @@ func (b *PrintJobRequestBuilder) Tasks() *PrintJobTasksCollectionRequestBuilder 
 	return bb
 }
 
-// PrintJobTasksCollectionRequestBuilder is request builder for PrintTask collection
+// PrintJobTasksCollectionRequestBuilder is request builder for PrintTask collection rcn
 type PrintJobTasksCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintTask collection
@@ -870,7 +870,7 @@ func (b *PrintServiceRequestBuilder) Endpoints() *PrintServiceEndpointsCollectio
 	return bb
 }
 
-// PrintServiceEndpointsCollectionRequestBuilder is request builder for PrintServiceEndpoint collection
+// PrintServiceEndpointsCollectionRequestBuilder is request builder for PrintServiceEndpoint collection rcn
 type PrintServiceEndpointsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintServiceEndpoint collection
@@ -987,7 +987,7 @@ func (b *PrintTaskDefinitionRequestBuilder) Tasks() *PrintTaskDefinitionTasksCol
 	return bb
 }
 
-// PrintTaskDefinitionTasksCollectionRequestBuilder is request builder for PrintTask collection
+// PrintTaskDefinitionTasksCollectionRequestBuilder is request builder for PrintTask collection rcn
 type PrintTaskDefinitionTasksCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintTask collection

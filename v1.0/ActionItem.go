@@ -25,7 +25,7 @@ func (b *ItemActivityStatRequestBuilder) Activities() *ItemActivityStatActivitie
 	return bb
 }
 
-// ItemActivityStatActivitiesCollectionRequestBuilder is request builder for ItemActivity collection
+// ItemActivityStatActivitiesCollectionRequestBuilder is request builder for ItemActivity collection rcn
 type ItemActivityStatActivitiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ItemActivity collection
@@ -135,7 +135,7 @@ func (b *ItemAnalyticsRequestBuilder) ItemActivityStats() *ItemAnalyticsItemActi
 	return bb
 }
 
-// ItemAnalyticsItemActivityStatsCollectionRequestBuilder is request builder for ItemActivityStat collection
+// ItemAnalyticsItemActivityStatsCollectionRequestBuilder is request builder for ItemActivityStat collection rcn
 type ItemAnalyticsItemActivityStatsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ItemActivityStat collection
@@ -273,7 +273,7 @@ func (b *EventAttachmentsCollectionRequestBuilder) ItemAttachment() *EventAttach
 	return bb
 }
 
-// EventAttachmentsCollectionItemAttachmentCollectionRequestBuilder is request builder for ItemAttachment collection
+// EventAttachmentsCollectionItemAttachmentCollectionRequestBuilder is request builder for ItemAttachment collection rcn
 type EventAttachmentsCollectionItemAttachmentCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ItemAttachment collection

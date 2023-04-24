@@ -18,7 +18,7 @@ func (b *ReportRootRequestBuilder) DailyPrintUsageByPrinter() *ReportRootDailyPr
 	return bb
 }
 
-// ReportRootDailyPrintUsageByPrinterCollectionRequestBuilder is request builder for PrintUsageByPrinter collection
+// ReportRootDailyPrintUsageByPrinterCollectionRequestBuilder is request builder for PrintUsageByPrinter collection rcn
 type ReportRootDailyPrintUsageByPrinterCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintUsageByPrinter collection
@@ -121,7 +121,7 @@ func (b *ReportRootRequestBuilder) DailyPrintUsageByUser() *ReportRootDailyPrint
 	return bb
 }
 
-// ReportRootDailyPrintUsageByUserCollectionRequestBuilder is request builder for PrintUsageByUser collection
+// ReportRootDailyPrintUsageByUserCollectionRequestBuilder is request builder for PrintUsageByUser collection rcn
 type ReportRootDailyPrintUsageByUserCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintUsageByUser collection
@@ -224,7 +224,7 @@ func (b *ReportRootRequestBuilder) MonthlyPrintUsageByPrinter() *ReportRootMonth
 	return bb
 }
 
-// ReportRootMonthlyPrintUsageByPrinterCollectionRequestBuilder is request builder for PrintUsageByPrinter collection
+// ReportRootMonthlyPrintUsageByPrinterCollectionRequestBuilder is request builder for PrintUsageByPrinter collection rcn
 type ReportRootMonthlyPrintUsageByPrinterCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintUsageByPrinter collection
@@ -327,7 +327,7 @@ func (b *ReportRootRequestBuilder) MonthlyPrintUsageByUser() *ReportRootMonthlyP
 	return bb
 }
 
-// ReportRootMonthlyPrintUsageByUserCollectionRequestBuilder is request builder for PrintUsageByUser collection
+// ReportRootMonthlyPrintUsageByUserCollectionRequestBuilder is request builder for PrintUsageByUser collection rcn
 type ReportRootMonthlyPrintUsageByUserCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PrintUsageByUser collection

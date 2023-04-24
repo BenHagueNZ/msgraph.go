@@ -24,7 +24,7 @@ func (b *AuthenticationRequestBuilder) EmailMethods() *AuthenticationEmailMethod
 	return bb
 }
 
-// AuthenticationEmailMethodsCollectionRequestBuilder is request builder for EmailAuthenticationMethod collection
+// AuthenticationEmailMethodsCollectionRequestBuilder is request builder for EmailAuthenticationMethod collection rcn
 type AuthenticationEmailMethodsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EmailAuthenticationMethod collection
@@ -127,7 +127,7 @@ func (b *AuthenticationRequestBuilder) Fido2Methods() *AuthenticationFido2Method
 	return bb
 }
 
-// AuthenticationFido2MethodsCollectionRequestBuilder is request builder for Fido2AuthenticationMethod collection
+// AuthenticationFido2MethodsCollectionRequestBuilder is request builder for Fido2AuthenticationMethod collection rcn
 type AuthenticationFido2MethodsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Fido2AuthenticationMethod collection
@@ -230,7 +230,7 @@ func (b *AuthenticationRequestBuilder) Methods() *AuthenticationMethodsCollectio
 	return bb
 }
 
-// AuthenticationMethodsCollectionRequestBuilder is request builder for AuthenticationMethod collection
+// AuthenticationMethodsCollectionRequestBuilder is request builder for AuthenticationMethod collection rcn
 type AuthenticationMethodsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AuthenticationMethod collection
@@ -333,7 +333,7 @@ func (b *AuthenticationRequestBuilder) MicrosoftAuthenticatorMethods() *Authenti
 	return bb
 }
 
-// AuthenticationMicrosoftAuthenticatorMethodsCollectionRequestBuilder is request builder for MicrosoftAuthenticatorAuthenticationMethod collection
+// AuthenticationMicrosoftAuthenticatorMethodsCollectionRequestBuilder is request builder for MicrosoftAuthenticatorAuthenticationMethod collection rcn
 type AuthenticationMicrosoftAuthenticatorMethodsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MicrosoftAuthenticatorAuthenticationMethod collection
@@ -436,7 +436,7 @@ func (b *AuthenticationRequestBuilder) Operations() *AuthenticationOperationsCol
 	return bb
 }
 
-// AuthenticationOperationsCollectionRequestBuilder is request builder for LongRunningOperation collection
+// AuthenticationOperationsCollectionRequestBuilder is request builder for LongRunningOperation collection rcn
 type AuthenticationOperationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for LongRunningOperation collection
@@ -539,7 +539,7 @@ func (b *AuthenticationRequestBuilder) PasswordMethods() *AuthenticationPassword
 	return bb
 }
 
-// AuthenticationPasswordMethodsCollectionRequestBuilder is request builder for PasswordAuthenticationMethod collection
+// AuthenticationPasswordMethodsCollectionRequestBuilder is request builder for PasswordAuthenticationMethod collection rcn
 type AuthenticationPasswordMethodsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PasswordAuthenticationMethod collection
@@ -642,7 +642,7 @@ func (b *AuthenticationRequestBuilder) PhoneMethods() *AuthenticationPhoneMethod
 	return bb
 }
 
-// AuthenticationPhoneMethodsCollectionRequestBuilder is request builder for PhoneAuthenticationMethod collection
+// AuthenticationPhoneMethodsCollectionRequestBuilder is request builder for PhoneAuthenticationMethod collection rcn
 type AuthenticationPhoneMethodsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PhoneAuthenticationMethod collection
@@ -745,7 +745,7 @@ func (b *AuthenticationRequestBuilder) SoftwareOathMethods() *AuthenticationSoft
 	return bb
 }
 
-// AuthenticationSoftwareOathMethodsCollectionRequestBuilder is request builder for SoftwareOathAuthenticationMethod collection
+// AuthenticationSoftwareOathMethodsCollectionRequestBuilder is request builder for SoftwareOathAuthenticationMethod collection rcn
 type AuthenticationSoftwareOathMethodsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SoftwareOathAuthenticationMethod collection
@@ -848,7 +848,7 @@ func (b *AuthenticationRequestBuilder) TemporaryAccessPassMethods() *Authenticat
 	return bb
 }
 
-// AuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder is request builder for TemporaryAccessPassAuthenticationMethod collection
+// AuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder is request builder for TemporaryAccessPassAuthenticationMethod collection rcn
 type AuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TemporaryAccessPassAuthenticationMethod collection
@@ -951,7 +951,7 @@ func (b *AuthenticationRequestBuilder) WindowsHelloForBusinessMethods() *Authent
 	return bb
 }
 
-// AuthenticationWindowsHelloForBusinessMethodsCollectionRequestBuilder is request builder for WindowsHelloForBusinessAuthenticationMethod collection
+// AuthenticationWindowsHelloForBusinessMethodsCollectionRequestBuilder is request builder for WindowsHelloForBusinessAuthenticationMethod collection rcn
 type AuthenticationWindowsHelloForBusinessMethodsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsHelloForBusinessAuthenticationMethod collection
@@ -1054,7 +1054,7 @@ func (b *AuthenticationMethodsPolicyRequestBuilder) AuthenticationMethodConfigur
 	return bb
 }
 
-// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionRequestBuilder is request builder for AuthenticationMethodConfiguration collection
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionRequestBuilder is request builder for AuthenticationMethodConfiguration collection rcn
 type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AuthenticationMethodConfiguration collection

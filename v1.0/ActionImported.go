@@ -24,7 +24,7 @@ func (b *ImportedWindowsAutopilotDeviceIdentityUploadRequestBuilder) DeviceIdent
 	return bb
 }
 
-// ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionRequestBuilder is request builder for ImportedWindowsAutopilotDeviceIdentity collection
+// ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionRequestBuilder is request builder for ImportedWindowsAutopilotDeviceIdentity collection rcn
 type ImportedWindowsAutopilotDeviceIdentityUploadDeviceIdentitiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ImportedWindowsAutopilotDeviceIdentity collection

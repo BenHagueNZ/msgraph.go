@@ -18,7 +18,7 @@ func (b *AuditLogRootRequestBuilder) DirectoryAudits() *AuditLogRootDirectoryAud
 	return bb
 }
 
-// AuditLogRootDirectoryAuditsCollectionRequestBuilder is request builder for DirectoryAudit collection
+// AuditLogRootDirectoryAuditsCollectionRequestBuilder is request builder for DirectoryAudit collection rcn
 type AuditLogRootDirectoryAuditsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryAudit collection
@@ -121,7 +121,7 @@ func (b *AuditLogRootRequestBuilder) Provisioning() *AuditLogRootProvisioningCol
 	return bb
 }
 
-// AuditLogRootProvisioningCollectionRequestBuilder is request builder for ProvisioningObjectSummary collection
+// AuditLogRootProvisioningCollectionRequestBuilder is request builder for ProvisioningObjectSummary collection rcn
 type AuditLogRootProvisioningCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ProvisioningObjectSummary collection
@@ -224,7 +224,7 @@ func (b *AuditLogRootRequestBuilder) SignIns() *AuditLogRootSignInsCollectionReq
 	return bb
 }
 
-// AuditLogRootSignInsCollectionRequestBuilder is request builder for SignIn collection
+// AuditLogRootSignInsCollectionRequestBuilder is request builder for SignIn collection rcn
 type AuditLogRootSignInsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SignIn collection

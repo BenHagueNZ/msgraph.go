@@ -50,7 +50,7 @@ func (b *EducationAssignmentRequestBuilder) Categories() *EducationAssignmentCat
 	return bb
 }
 
-// EducationAssignmentCategoriesCollectionRequestBuilder is request builder for EducationCategory collection
+// EducationAssignmentCategoriesCollectionRequestBuilder is request builder for EducationCategory collection rcn
 type EducationAssignmentCategoriesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationCategory collection
@@ -153,7 +153,7 @@ func (b *EducationAssignmentRequestBuilder) Resources() *EducationAssignmentReso
 	return bb
 }
 
-// EducationAssignmentResourcesCollectionRequestBuilder is request builder for EducationAssignmentResource collection
+// EducationAssignmentResourcesCollectionRequestBuilder is request builder for EducationAssignmentResource collection rcn
 type EducationAssignmentResourcesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationAssignmentResource collection
@@ -263,7 +263,7 @@ func (b *EducationAssignmentRequestBuilder) Submissions() *EducationAssignmentSu
 	return bb
 }
 
-// EducationAssignmentSubmissionsCollectionRequestBuilder is request builder for EducationSubmission collection
+// EducationAssignmentSubmissionsCollectionRequestBuilder is request builder for EducationSubmission collection rcn
 type EducationAssignmentSubmissionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationSubmission collection
@@ -366,7 +366,7 @@ func (b *EducationClassRequestBuilder) AssignmentCategories() *EducationClassAss
 	return bb
 }
 
-// EducationClassAssignmentCategoriesCollectionRequestBuilder is request builder for EducationCategory collection
+// EducationClassAssignmentCategoriesCollectionRequestBuilder is request builder for EducationCategory collection rcn
 type EducationClassAssignmentCategoriesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationCategory collection
@@ -483,7 +483,7 @@ func (b *EducationClassRequestBuilder) Assignments() *EducationClassAssignmentsC
 	return bb
 }
 
-// EducationClassAssignmentsCollectionRequestBuilder is request builder for EducationAssignment collection
+// EducationClassAssignmentsCollectionRequestBuilder is request builder for EducationAssignment collection rcn
 type EducationClassAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationAssignment collection
@@ -593,7 +593,7 @@ func (b *EducationClassRequestBuilder) Members() *EducationClassMembersCollectio
 	return bb
 }
 
-// EducationClassMembersCollectionRequestBuilder is request builder for EducationUser collection
+// EducationClassMembersCollectionRequestBuilder is request builder for EducationUser collection rcn
 type EducationClassMembersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationUser collection
@@ -696,7 +696,7 @@ func (b *EducationClassRequestBuilder) Schools() *EducationClassSchoolsCollectio
 	return bb
 }
 
-// EducationClassSchoolsCollectionRequestBuilder is request builder for EducationSchool collection
+// EducationClassSchoolsCollectionRequestBuilder is request builder for EducationSchool collection rcn
 type EducationClassSchoolsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationSchool collection
@@ -799,7 +799,7 @@ func (b *EducationClassRequestBuilder) Teachers() *EducationClassTeachersCollect
 	return bb
 }
 
-// EducationClassTeachersCollectionRequestBuilder is request builder for EducationUser collection
+// EducationClassTeachersCollectionRequestBuilder is request builder for EducationUser collection rcn
 type EducationClassTeachersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationUser collection
@@ -902,7 +902,7 @@ func (b *EducationRootRequestBuilder) Classes() *EducationRootClassesCollectionR
 	return bb
 }
 
-// EducationRootClassesCollectionRequestBuilder is request builder for EducationClass collection
+// EducationRootClassesCollectionRequestBuilder is request builder for EducationClass collection rcn
 type EducationRootClassesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationClass collection
@@ -1012,7 +1012,7 @@ func (b *EducationRootRequestBuilder) Schools() *EducationRootSchoolsCollectionR
 	return bb
 }
 
-// EducationRootSchoolsCollectionRequestBuilder is request builder for EducationSchool collection
+// EducationRootSchoolsCollectionRequestBuilder is request builder for EducationSchool collection rcn
 type EducationRootSchoolsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationSchool collection
@@ -1115,7 +1115,7 @@ func (b *EducationRootRequestBuilder) Users() *EducationRootUsersCollectionReque
 	return bb
 }
 
-// EducationRootUsersCollectionRequestBuilder is request builder for EducationUser collection
+// EducationRootUsersCollectionRequestBuilder is request builder for EducationUser collection rcn
 type EducationRootUsersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationUser collection
@@ -1225,7 +1225,7 @@ func (b *EducationSchoolRequestBuilder) Classes() *EducationSchoolClassesCollect
 	return bb
 }
 
-// EducationSchoolClassesCollectionRequestBuilder is request builder for EducationClass collection
+// EducationSchoolClassesCollectionRequestBuilder is request builder for EducationClass collection rcn
 type EducationSchoolClassesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationClass collection
@@ -1328,7 +1328,7 @@ func (b *EducationSchoolRequestBuilder) Users() *EducationSchoolUsersCollectionR
 	return bb
 }
 
-// EducationSchoolUsersCollectionRequestBuilder is request builder for EducationUser collection
+// EducationSchoolUsersCollectionRequestBuilder is request builder for EducationUser collection rcn
 type EducationSchoolUsersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationUser collection
@@ -1431,7 +1431,7 @@ func (b *EducationSubmissionRequestBuilder) Outcomes() *EducationSubmissionOutco
 	return bb
 }
 
-// EducationSubmissionOutcomesCollectionRequestBuilder is request builder for EducationOutcome collection
+// EducationSubmissionOutcomesCollectionRequestBuilder is request builder for EducationOutcome collection rcn
 type EducationSubmissionOutcomesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationOutcome collection
@@ -1534,7 +1534,7 @@ func (b *EducationSubmissionRequestBuilder) Resources() *EducationSubmissionReso
 	return bb
 }
 
-// EducationSubmissionResourcesCollectionRequestBuilder is request builder for EducationSubmissionResource collection
+// EducationSubmissionResourcesCollectionRequestBuilder is request builder for EducationSubmissionResource collection rcn
 type EducationSubmissionResourcesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationSubmissionResource collection
@@ -1637,7 +1637,7 @@ func (b *EducationSubmissionRequestBuilder) SubmittedResources() *EducationSubmi
 	return bb
 }
 
-// EducationSubmissionSubmittedResourcesCollectionRequestBuilder is request builder for EducationSubmissionResource collection
+// EducationSubmissionSubmittedResourcesCollectionRequestBuilder is request builder for EducationSubmissionResource collection rcn
 type EducationSubmissionSubmittedResourcesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationSubmissionResource collection
@@ -1740,7 +1740,7 @@ func (b *EducationUserRequestBuilder) Assignments() *EducationUserAssignmentsCol
 	return bb
 }
 
-// EducationUserAssignmentsCollectionRequestBuilder is request builder for EducationAssignment collection
+// EducationUserAssignmentsCollectionRequestBuilder is request builder for EducationAssignment collection rcn
 type EducationUserAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationAssignment collection
@@ -1843,7 +1843,7 @@ func (b *EducationUserRequestBuilder) Classes() *EducationUserClassesCollectionR
 	return bb
 }
 
-// EducationUserClassesCollectionRequestBuilder is request builder for EducationClass collection
+// EducationUserClassesCollectionRequestBuilder is request builder for EducationClass collection rcn
 type EducationUserClassesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationClass collection
@@ -1946,7 +1946,7 @@ func (b *EducationUserRequestBuilder) Rubrics() *EducationUserRubricsCollectionR
 	return bb
 }
 
-// EducationUserRubricsCollectionRequestBuilder is request builder for EducationRubric collection
+// EducationUserRubricsCollectionRequestBuilder is request builder for EducationRubric collection rcn
 type EducationUserRubricsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationRubric collection
@@ -2049,7 +2049,7 @@ func (b *EducationUserRequestBuilder) Schools() *EducationUserSchoolsCollectionR
 	return bb
 }
 
-// EducationUserSchoolsCollectionRequestBuilder is request builder for EducationSchool collection
+// EducationUserSchoolsCollectionRequestBuilder is request builder for EducationSchool collection rcn
 type EducationUserSchoolsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationSchool collection
@@ -2152,7 +2152,7 @@ func (b *EducationUserRequestBuilder) TaughtClasses() *EducationUserTaughtClasse
 	return bb
 }
 
-// EducationUserTaughtClassesCollectionRequestBuilder is request builder for EducationClass collection
+// EducationUserTaughtClassesCollectionRequestBuilder is request builder for EducationClass collection rcn
 type EducationUserTaughtClassesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationClass collection
@@ -2304,7 +2304,7 @@ func (b *EducationSubmissionOutcomesCollectionRequestBuilder) EducationFeedbackO
 	return bb
 }
 
-// EducationSubmissionOutcomesCollectionEducationFeedbackOutcomeCollectionRequestBuilder is request builder for EducationFeedbackOutcome collection
+// EducationSubmissionOutcomesCollectionEducationFeedbackOutcomeCollectionRequestBuilder is request builder for EducationFeedbackOutcome collection rcn
 type EducationSubmissionOutcomesCollectionEducationFeedbackOutcomeCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationFeedbackOutcome collection
@@ -2407,7 +2407,7 @@ func (b *EducationSubmissionOutcomesCollectionRequestBuilder) EducationFeedbackR
 	return bb
 }
 
-// EducationSubmissionOutcomesCollectionEducationFeedbackResourceOutcomeCollectionRequestBuilder is request builder for EducationFeedbackResourceOutcome collection
+// EducationSubmissionOutcomesCollectionEducationFeedbackResourceOutcomeCollectionRequestBuilder is request builder for EducationFeedbackResourceOutcome collection rcn
 type EducationSubmissionOutcomesCollectionEducationFeedbackResourceOutcomeCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationFeedbackResourceOutcome collection
@@ -2517,7 +2517,7 @@ func (b *EducationSubmissionOutcomesCollectionRequestBuilder) EducationPointsOut
 	return bb
 }
 
-// EducationSubmissionOutcomesCollectionEducationPointsOutcomeCollectionRequestBuilder is request builder for EducationPointsOutcome collection
+// EducationSubmissionOutcomesCollectionEducationPointsOutcomeCollectionRequestBuilder is request builder for EducationPointsOutcome collection rcn
 type EducationSubmissionOutcomesCollectionEducationPointsOutcomeCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationPointsOutcome collection
@@ -2627,7 +2627,7 @@ func (b *EducationSubmissionOutcomesCollectionRequestBuilder) EducationRubricOut
 	return bb
 }
 
-// EducationSubmissionOutcomesCollectionEducationRubricOutcomeCollectionRequestBuilder is request builder for EducationRubricOutcome collection
+// EducationSubmissionOutcomesCollectionEducationRubricOutcomeCollectionRequestBuilder is request builder for EducationRubricOutcome collection rcn
 type EducationSubmissionOutcomesCollectionEducationRubricOutcomeCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for EducationRubricOutcome collection

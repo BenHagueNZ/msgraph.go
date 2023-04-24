@@ -18,7 +18,7 @@ func (b *PlannerRequestBuilder) Buckets() *PlannerBucketsCollectionRequestBuilde
 	return bb
 }
 
-// PlannerBucketsCollectionRequestBuilder is request builder for PlannerBucket collection
+// PlannerBucketsCollectionRequestBuilder is request builder for PlannerBucket collection rcn
 type PlannerBucketsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PlannerBucket collection
@@ -121,7 +121,7 @@ func (b *PlannerRequestBuilder) Plans() *PlannerPlansCollectionRequestBuilder {
 	return bb
 }
 
-// PlannerPlansCollectionRequestBuilder is request builder for PlannerPlan collection
+// PlannerPlansCollectionRequestBuilder is request builder for PlannerPlan collection rcn
 type PlannerPlansCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PlannerPlan collection
@@ -224,7 +224,7 @@ func (b *PlannerRequestBuilder) Tasks() *PlannerTasksCollectionRequestBuilder {
 	return bb
 }
 
-// PlannerTasksCollectionRequestBuilder is request builder for PlannerTask collection
+// PlannerTasksCollectionRequestBuilder is request builder for PlannerTask collection rcn
 type PlannerTasksCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PlannerTask collection
@@ -327,7 +327,7 @@ func (b *PlannerBucketRequestBuilder) Tasks() *PlannerBucketTasksCollectionReque
 	return bb
 }
 
-// PlannerBucketTasksCollectionRequestBuilder is request builder for PlannerTask collection
+// PlannerBucketTasksCollectionRequestBuilder is request builder for PlannerTask collection rcn
 type PlannerBucketTasksCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PlannerTask collection
@@ -430,7 +430,7 @@ func (b *PlannerGroupRequestBuilder) Plans() *PlannerGroupPlansCollectionRequest
 	return bb
 }
 
-// PlannerGroupPlansCollectionRequestBuilder is request builder for PlannerPlan collection
+// PlannerGroupPlansCollectionRequestBuilder is request builder for PlannerPlan collection rcn
 type PlannerGroupPlansCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PlannerPlan collection
@@ -533,7 +533,7 @@ func (b *PlannerPlanRequestBuilder) Buckets() *PlannerPlanBucketsCollectionReque
 	return bb
 }
 
-// PlannerPlanBucketsCollectionRequestBuilder is request builder for PlannerBucket collection
+// PlannerPlanBucketsCollectionRequestBuilder is request builder for PlannerBucket collection rcn
 type PlannerPlanBucketsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PlannerBucket collection
@@ -643,7 +643,7 @@ func (b *PlannerPlanRequestBuilder) Tasks() *PlannerPlanTasksCollectionRequestBu
 	return bb
 }
 
-// PlannerPlanTasksCollectionRequestBuilder is request builder for PlannerTask collection
+// PlannerPlanTasksCollectionRequestBuilder is request builder for PlannerTask collection rcn
 type PlannerPlanTasksCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PlannerTask collection
@@ -774,7 +774,7 @@ func (b *PlannerUserRequestBuilder) Plans() *PlannerUserPlansCollectionRequestBu
 	return bb
 }
 
-// PlannerUserPlansCollectionRequestBuilder is request builder for PlannerPlan collection
+// PlannerUserPlansCollectionRequestBuilder is request builder for PlannerPlan collection rcn
 type PlannerUserPlansCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PlannerPlan collection
@@ -877,7 +877,7 @@ func (b *PlannerUserRequestBuilder) Tasks() *PlannerUserTasksCollectionRequestBu
 	return bb
 }
 
-// PlannerUserTasksCollectionRequestBuilder is request builder for PlannerTask collection
+// PlannerUserTasksCollectionRequestBuilder is request builder for PlannerTask collection rcn
 type PlannerUserTasksCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for PlannerTask collection

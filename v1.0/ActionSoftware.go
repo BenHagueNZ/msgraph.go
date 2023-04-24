@@ -18,7 +18,7 @@ func (b *AuthenticationMethodsCollectionRequestBuilder) SoftwareOathAuthenticati
 	return bb
 }
 
-// AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequestBuilder is request builder for SoftwareOathAuthenticationMethod collection
+// AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequestBuilder is request builder for SoftwareOathAuthenticationMethod collection rcn
 type AuthenticationMethodsCollectionSoftwareOathAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SoftwareOathAuthenticationMethod collection

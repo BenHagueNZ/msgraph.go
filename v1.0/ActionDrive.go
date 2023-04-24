@@ -119,7 +119,7 @@ func (b *DriveRequestBuilder) Bundles() *DriveBundlesCollectionRequestBuilder {
 	return bb
 }
 
-// DriveBundlesCollectionRequestBuilder is request builder for DriveItem collection
+// DriveBundlesCollectionRequestBuilder is request builder for DriveItem collection rcn
 type DriveBundlesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DriveItem collection
@@ -222,7 +222,7 @@ func (b *DriveRequestBuilder) Following() *DriveFollowingCollectionRequestBuilde
 	return bb
 }
 
-// DriveFollowingCollectionRequestBuilder is request builder for DriveItem collection
+// DriveFollowingCollectionRequestBuilder is request builder for DriveItem collection rcn
 type DriveFollowingCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DriveItem collection
@@ -325,7 +325,7 @@ func (b *DriveRequestBuilder) Items() *DriveItemsCollectionRequestBuilder {
 	return bb
 }
 
-// DriveItemsCollectionRequestBuilder is request builder for DriveItem collection
+// DriveItemsCollectionRequestBuilder is request builder for DriveItem collection rcn
 type DriveItemsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DriveItem collection
@@ -442,7 +442,7 @@ func (b *DriveRequestBuilder) Special() *DriveSpecialCollectionRequestBuilder {
 	return bb
 }
 
-// DriveSpecialCollectionRequestBuilder is request builder for DriveItem collection
+// DriveSpecialCollectionRequestBuilder is request builder for DriveItem collection rcn
 type DriveSpecialCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DriveItem collection
@@ -552,7 +552,7 @@ func (b *DriveItemRequestBuilder) Children() *DriveItemChildrenCollectionRequest
 	return bb
 }
 
-// DriveItemChildrenCollectionRequestBuilder is request builder for DriveItem collection
+// DriveItemChildrenCollectionRequestBuilder is request builder for DriveItem collection rcn
 type DriveItemChildrenCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DriveItem collection
@@ -662,7 +662,7 @@ func (b *DriveItemRequestBuilder) Permissions() *DriveItemPermissionsCollectionR
 	return bb
 }
 
-// DriveItemPermissionsCollectionRequestBuilder is request builder for Permission collection
+// DriveItemPermissionsCollectionRequestBuilder is request builder for Permission collection rcn
 type DriveItemPermissionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Permission collection
@@ -765,7 +765,7 @@ func (b *DriveItemRequestBuilder) Subscriptions() *DriveItemSubscriptionsCollect
 	return bb
 }
 
-// DriveItemSubscriptionsCollectionRequestBuilder is request builder for Subscription collection
+// DriveItemSubscriptionsCollectionRequestBuilder is request builder for Subscription collection rcn
 type DriveItemSubscriptionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Subscription collection
@@ -868,7 +868,7 @@ func (b *DriveItemRequestBuilder) Thumbnails() *DriveItemThumbnailsCollectionReq
 	return bb
 }
 
-// DriveItemThumbnailsCollectionRequestBuilder is request builder for ThumbnailSet collection
+// DriveItemThumbnailsCollectionRequestBuilder is request builder for ThumbnailSet collection rcn
 type DriveItemThumbnailsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ThumbnailSet collection
@@ -971,7 +971,7 @@ func (b *DriveItemRequestBuilder) Versions() *DriveItemVersionsCollectionRequest
 	return bb
 }
 
-// DriveItemVersionsCollectionRequestBuilder is request builder for DriveItemVersion collection
+// DriveItemVersionsCollectionRequestBuilder is request builder for DriveItemVersion collection rcn
 type DriveItemVersionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DriveItemVersion collection
@@ -1081,7 +1081,7 @@ func (b *SiteItemsCollectionRequestBuilder) Drive() *SiteItemsCollectionDriveCol
 	return bb
 }
 
-// SiteItemsCollectionDriveCollectionRequestBuilder is request builder for Drive collection
+// SiteItemsCollectionDriveCollectionRequestBuilder is request builder for Drive collection rcn
 type SiteItemsCollectionDriveCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Drive collection
@@ -1184,7 +1184,7 @@ func (b *SiteItemsCollectionRequestBuilder) DriveItem() *SiteItemsCollectionDriv
 	return bb
 }
 
-// SiteItemsCollectionDriveItemCollectionRequestBuilder is request builder for DriveItem collection
+// SiteItemsCollectionDriveItemCollectionRequestBuilder is request builder for DriveItem collection rcn
 type SiteItemsCollectionDriveItemCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DriveItem collection

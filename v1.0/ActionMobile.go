@@ -34,7 +34,7 @@ func (b *MobileAppRequestBuilder) Assignments() *MobileAppAssignmentsCollectionR
 	return bb
 }
 
-// MobileAppAssignmentsCollectionRequestBuilder is request builder for MobileAppAssignment collection
+// MobileAppAssignmentsCollectionRequestBuilder is request builder for MobileAppAssignment collection rcn
 type MobileAppAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MobileAppAssignment collection
@@ -137,7 +137,7 @@ func (b *MobileAppRequestBuilder) Categories() *MobileAppCategoriesCollectionReq
 	return bb
 }
 
-// MobileAppCategoriesCollectionRequestBuilder is request builder for MobileAppCategory collection
+// MobileAppCategoriesCollectionRequestBuilder is request builder for MobileAppCategory collection rcn
 type MobileAppCategoriesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MobileAppCategory collection
@@ -240,7 +240,7 @@ func (b *MobileAppContentRequestBuilder) ContainedApps() *MobileAppContentContai
 	return bb
 }
 
-// MobileAppContentContainedAppsCollectionRequestBuilder is request builder for MobileContainedApp collection
+// MobileAppContentContainedAppsCollectionRequestBuilder is request builder for MobileContainedApp collection rcn
 type MobileAppContentContainedAppsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MobileContainedApp collection
@@ -343,7 +343,7 @@ func (b *MobileAppContentRequestBuilder) Files() *MobileAppContentFilesCollectio
 	return bb
 }
 
-// MobileAppContentFilesCollectionRequestBuilder is request builder for MobileAppContentFile collection
+// MobileAppContentFilesCollectionRequestBuilder is request builder for MobileAppContentFile collection rcn
 type MobileAppContentFilesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MobileAppContentFile collection
@@ -446,7 +446,7 @@ func (b *MobileLobAppRequestBuilder) ContentVersions() *MobileLobAppContentVersi
 	return bb
 }
 
-// MobileLobAppContentVersionsCollectionRequestBuilder is request builder for MobileAppContent collection
+// MobileLobAppContentVersionsCollectionRequestBuilder is request builder for MobileAppContent collection rcn
 type MobileLobAppContentVersionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MobileAppContent collection
@@ -584,7 +584,7 @@ func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) MobileLobApp() *
 	return bb
 }
 
-// DeviceAppManagementMobileAppsCollectionMobileLobAppCollectionRequestBuilder is request builder for MobileLobApp collection
+// DeviceAppManagementMobileAppsCollectionMobileLobAppCollectionRequestBuilder is request builder for MobileLobApp collection rcn
 type DeviceAppManagementMobileAppsCollectionMobileLobAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MobileLobApp collection

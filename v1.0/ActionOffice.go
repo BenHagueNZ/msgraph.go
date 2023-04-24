@@ -18,7 +18,7 @@ func (b *OfficeGraphInsightsRequestBuilder) Shared() *OfficeGraphInsightsSharedC
 	return bb
 }
 
-// OfficeGraphInsightsSharedCollectionRequestBuilder is request builder for SharedInsight collection
+// OfficeGraphInsightsSharedCollectionRequestBuilder is request builder for SharedInsight collection rcn
 type OfficeGraphInsightsSharedCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SharedInsight collection
@@ -121,7 +121,7 @@ func (b *OfficeGraphInsightsRequestBuilder) Trending() *OfficeGraphInsightsTrend
 	return bb
 }
 
-// OfficeGraphInsightsTrendingCollectionRequestBuilder is request builder for Trending collection
+// OfficeGraphInsightsTrendingCollectionRequestBuilder is request builder for Trending collection rcn
 type OfficeGraphInsightsTrendingCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Trending collection
@@ -224,7 +224,7 @@ func (b *OfficeGraphInsightsRequestBuilder) Used() *OfficeGraphInsightsUsedColle
 	return bb
 }
 
-// OfficeGraphInsightsUsedCollectionRequestBuilder is request builder for UsedInsight collection
+// OfficeGraphInsightsUsedCollectionRequestBuilder is request builder for UsedInsight collection rcn
 type OfficeGraphInsightsUsedCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UsedInsight collection

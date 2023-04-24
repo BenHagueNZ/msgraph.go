@@ -18,7 +18,7 @@ func (b *OrgContactRequestBuilder) DirectReports() *OrgContactDirectReportsColle
 	return bb
 }
 
-// OrgContactDirectReportsCollectionRequestBuilder is request builder for DirectoryObject collection
+// OrgContactDirectReportsCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type OrgContactDirectReportsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -128,7 +128,7 @@ func (b *OrgContactRequestBuilder) MemberOf() *OrgContactMemberOfCollectionReque
 	return bb
 }
 
-// OrgContactMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection
+// OrgContactMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type OrgContactMemberOfCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -231,7 +231,7 @@ func (b *OrgContactRequestBuilder) TransitiveMemberOf() *OrgContactTransitiveMem
 	return bb
 }
 
-// OrgContactTransitiveMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection
+// OrgContactTransitiveMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type OrgContactTransitiveMemberOfCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -334,7 +334,7 @@ func (b *AdministrativeUnitMembersCollectionRequestBuilder) OrgContact() *Admini
 	return bb
 }
 
-// AdministrativeUnitMembersCollectionOrgContactCollectionRequestBuilder is request builder for OrgContact collection
+// AdministrativeUnitMembersCollectionOrgContactCollectionRequestBuilder is request builder for OrgContact collection rcn
 type AdministrativeUnitMembersCollectionOrgContactCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OrgContact collection

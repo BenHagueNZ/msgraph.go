@@ -36,7 +36,7 @@ func (b *TeamworkRequestBuilder) DeletedTeams() *TeamworkDeletedTeamsCollectionR
 	return bb
 }
 
-// TeamworkDeletedTeamsCollectionRequestBuilder is request builder for DeletedTeam collection
+// TeamworkDeletedTeamsCollectionRequestBuilder is request builder for DeletedTeam collection rcn
 type TeamworkDeletedTeamsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DeletedTeam collection
@@ -139,7 +139,7 @@ func (b *TeamworkRequestBuilder) WorkforceIntegrations() *TeamworkWorkforceInteg
 	return bb
 }
 
-// TeamworkWorkforceIntegrationsCollectionRequestBuilder is request builder for WorkforceIntegration collection
+// TeamworkWorkforceIntegrationsCollectionRequestBuilder is request builder for WorkforceIntegration collection rcn
 type TeamworkWorkforceIntegrationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkforceIntegration collection
@@ -242,7 +242,7 @@ func (b *TeamworkTagRequestBuilder) Members() *TeamworkTagMembersCollectionReque
 	return bb
 }
 
-// TeamworkTagMembersCollectionRequestBuilder is request builder for TeamworkTagMember collection
+// TeamworkTagMembersCollectionRequestBuilder is request builder for TeamworkTagMember collection rcn
 type TeamworkTagMembersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TeamworkTagMember collection

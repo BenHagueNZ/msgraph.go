@@ -93,6 +93,13 @@ type Singleton struct {
 	Type string
 }
 
+type AliasRegexp struct {
+	Alias               regexp.Regexp
+	CollectionAlias     regexp.Regexp
+	Namespace           string
+	CollectionNamespace string
+}
+
 func (g *Generator) Generate() error {
 	tmpl, err := template.ParseGlob("templates/*.tmpl")
 	if err != nil {
@@ -111,27 +118,34 @@ func (g *Generator) Generate() error {
 	if err != nil {
 		return err
 	}
+	allEntityTypeMap := map[string]*EntityType{}
 	allRequestModelMap := map[string]bool{}
-
+	dupCheckMap := map[string]bool{}
+	var allAliases []AliasRegexp
 	for _, schema := range o.Elems[0].Elems {
-		//	alias := regexp.MustCompile("^" + schema.AttrMap()["Alias"] + "\\.")
-		//	collectionAlias := regexp.MustCompile("^Collection\\(" + schema.AttrMap()["Alias"] + "\\.")
-		//	collectionNamespace := "Collection(" + schema.AttrMap()["Namespace"] + "."
-		namespace := "microsoft.graph."
-		alias := regexp.MustCompile(`^graph\.`)
-		collectionAlias := regexp.MustCompile(`^Collection\(graph\.`)
+		if schema.AttrMap()["Alias"] != "" {
+			var tempAliases AliasRegexp
+			tempAliases.Alias = *regexp.MustCompile("^" + schema.AttrMap()["Alias"] + "\\.")
+			tempAliases.CollectionAlias = *regexp.MustCompile("^Collection\\(" + schema.AttrMap()["Alias"] + "\\.")
+			tempAliases.CollectionNamespace = "Collection(" + schema.AttrMap()["Namespace"] + "."
+			tempAliases.Namespace = schema.AttrMap()["Namespace"] + "."
+			allAliases = append(allAliases, tempAliases)
+		}
+	}
+	for _, schema := range o.Elems[0].Elems {
 		collectionRequestAlias := regexp.MustCompile(`Request\)`)
 		collectionRequestNamespace := "RequestObject)"
 		requestAlias := regexp.MustCompile(`[Rr]equest$`)
 		requestNamespace := "RequestObject"
-		collectionNamespace := "Collection(microsoft.graph."
+		//	collectionNamespace := "Collection(" + schema.AttrMap()["Namespace"] + "."
+		namespace := schema.AttrMap()["Namespace"] + "."
+
+		//collectionNamespace := "Collection(microsoft.graph."
 		namePrefix := schema.AttrMap()["Namespace"]
-		fmt.Println()
-		fmt.Println("Schema", namePrefix)
 		if namePrefix == "microsoft.graph" {
 			namePrefix = ""
 		} else {
-			namePrefix = strings.Replace(namePrefix, namespace, "", 1)
+			namePrefix = strings.Replace(namePrefix, "microsoft.graph.", "", 1)
 			runes := []rune(namePrefix)
 			runes[0] = unicode.ToUpper(runes[0])
 			namePrefix = string(runes)
@@ -181,7 +195,9 @@ func (g *Generator) Generate() error {
 				runes[0] = unicode.ToUpper(runes[0])
 				t := nsPrefix + string(runes)
 				b := m["BaseType"]
-				b = alias.ReplaceAllString(b, namespace)
+				for _, alias := range allAliases {
+					b = alias.Alias.ReplaceAllString(b, alias.Namespace)
+				}
 				b = requestAlias.ReplaceAllString(b, requestNamespace)
 				et := &EntityType{Name: n, Sym: exported(n), Type: t, Base: b, Description: "undocumented"}
 				if strings.HasSuffix(et.Sym, "Request") {
@@ -196,23 +212,46 @@ func (g *Generator) Generate() error {
 					switch y.XMLName.Local {
 					case "Property":
 						n := ma["Name"]
-						t := alias.ReplaceAllString(ma["Type"], namespace)
-						t = collectionAlias.ReplaceAllString(t, collectionNamespace)
+						t := ma["Type"]
+						for _, alias := range allAliases {
+							t = alias.Alias.ReplaceAllString(t, alias.Namespace)
+							t = alias.CollectionAlias.ReplaceAllString(t, alias.CollectionNamespace)
+						}
+
 						m := &EntityTypeMember{Name: n, Sym: exported(n), Type: t, Description: "undocumented"}
 						et.Members = append(et.Members, m)
 					case "NavigationProperty":
 						n := ma["Name"]
-						t := alias.ReplaceAllString(ma["Type"], namespace)
-						t = collectionAlias.ReplaceAllString(t, collectionNamespace)
+						t := ma["Type"]
+						for _, alias := range allAliases {
+							t = alias.Alias.ReplaceAllString(t, alias.Namespace)
+							t = alias.CollectionAlias.ReplaceAllString(t, alias.CollectionNamespace)
+						}
 						t = collectionRequestAlias.ReplaceAllString(t, collectionRequestNamespace)
 						m := &EntityTypeNavigation{Name: n, Sym: exported(n), Type: t, Description: "undocumented"}
 						if strings.HasSuffix(m.Sym, "Request") {
 							m.Sym += "Navigation"
 						}
+						if strings.HasSuffix(m.Type, "request") {
+							m.Type += "Object"
+						}
+						if strings.HasSuffix(m.Type, "Request") {
+							t += "Object"
+						}
 						et.Navigations = append(et.Navigations, m)
 					}
 				}
+				fmt.Println(et.Name)
+				if et.Name == "IpRange" {
+					n := "cidrAddress"
+					t := "Edm.String"
+					m := &EntityTypeMember{Name: n, Sym: exported(n), Type: t, Description: "undocumented"}
+					et.Members = append(et.Members, m)
+				}
+
+				et.Name = lintName(et.Name)
 				entityTypeMap[et.Name] = et
+				allEntityTypeMap[et.Name] = et
 			case "Action":
 				m := x.AttrMap()
 				n := m["Name"]
@@ -228,17 +267,26 @@ func (g *Generator) Generate() error {
 					switch y.XMLName.Local {
 					case "Parameter":
 						n := ma["Name"]
-						t := alias.ReplaceAllString(ma["Type"], namespace)
-						t = collectionAlias.ReplaceAllString(t, collectionNamespace)
+						t := ma["Type"]
+						for _, alias := range allAliases {
+							t = alias.Alias.ReplaceAllString(t, alias.Namespace)
+							t = alias.CollectionAlias.ReplaceAllString(t, alias.CollectionNamespace)
+						}
 						t = collectionRequestAlias.ReplaceAllString(t, collectionRequestNamespace)
 						if strings.HasSuffix(t, "Request") {
+							t += "Object"
+						}
+						if strings.HasSuffix(t, "request") {
 							t += "Object"
 						}
 						m := &ActionTypeParameter{Name: n, Sym: exported(n), Type: t, Description: "undocumented"}
 						at.Parameters = append(at.Parameters, m)
 					case "ReturnType":
-						at.ReturnType = alias.ReplaceAllString(ma["Type"], namespace)
-						at.ReturnType = collectionAlias.ReplaceAllString(at.ReturnType, collectionNamespace)
+						at.ReturnType = ma["Type"]
+						for _, alias := range allAliases {
+							at.ReturnType = alias.Alias.ReplaceAllString(at.ReturnType, alias.Namespace)
+							at.ReturnType = alias.CollectionAlias.ReplaceAllString(at.ReturnType, alias.CollectionNamespace)
+						}
 					}
 				}
 				at.BindingParameterType = at.Parameters[0].Type
@@ -249,17 +297,25 @@ func (g *Generator) Generate() error {
 					ma := y.AttrMap()
 					switch y.XMLName.Local {
 					case "EntitySet":
+						t := ma["EntityType"]
+						for _, alias := range allAliases {
+							t = alias.Alias.ReplaceAllString(t, alias.Namespace)
+						}
 						s := &EntitySet{
 							Name: ma["Name"],
 							Sym:  exported(ma["Name"]),
-							Type: alias.ReplaceAllString(ma["EntityType"], namespace),
+							Type: t,
 						}
 						entitySetMap[s.Name] = s
 					case "Singleton":
+						t := ma["Type"]
+						for _, alias := range allAliases {
+							t = alias.Alias.ReplaceAllString(t, alias.Namespace)
+						}
 						s := &Singleton{
 							Name: ma["Name"],
 							Sym:  exported(ma["Name"]),
-							Type: alias.ReplaceAllString(ma["Type"], namespace),
+							Type: t,
 						}
 						singletonMap[s.Name] = s
 					}
@@ -270,15 +326,25 @@ func (g *Generator) Generate() error {
 				targetList := strings.Split(target, "/")
 				targetMember := ""
 				if len(targetList) > 1 {
-					target = alias.ReplaceAllString(targetList[0], namespace)
-					target = requestAlias.ReplaceAllString(target, requestNamespace)
-					targetMember = alias.ReplaceAllString(targetList[1], namespace)
-					targetMember = requestAlias.ReplaceAllString(targetMember, requestNamespace)
-				}
-				target = alias.ReplaceAllString(target, namespace)
-				target = requestAlias.ReplaceAllString(target, requestNamespace)
+					targetList0 := targetList[0]
+					for _, alias := range allAliases {
+						targetList0 = alias.Alias.ReplaceAllString(targetList0, alias.Namespace)
+					}
+					target = requestAlias.ReplaceAllString(targetList0, requestNamespace)
 
-				targetMember = alias.ReplaceAllString(targetMember, namespace)
+					targetList1 := targetList[1]
+					for _, alias := range allAliases {
+						targetList1 = alias.Alias.ReplaceAllString(targetList1, alias.Namespace)
+					}
+					targetMember = requestAlias.ReplaceAllString(targetList1, requestNamespace)
+				}
+				for _, alias := range allAliases {
+					alias.Alias.ReplaceAllString(target, alias.Namespace)
+				}
+				target = requestAlias.ReplaceAllString(target, requestNamespace)
+				for _, alias := range allAliases {
+					targetMember = alias.Alias.ReplaceAllString(targetMember, alias.Namespace)
+				}
 				targetMember = requestAlias.ReplaceAllString(targetMember, requestNamespace)
 				for _, y := range x.Elems {
 					switch y.XMLName.Local {
@@ -303,11 +369,6 @@ func (g *Generator) Generate() error {
 				}
 			}
 		}
-		//	continue
-		//	for x := range entityTypeMap {
-		//		fmt.Println(x)
-		//	}
-		//	os.Exit(0)
 
 		var out io.WriteCloser
 
@@ -338,15 +399,22 @@ func (g *Generator) Generate() error {
 
 		for _, key := range keys {
 			x := entityTypeMap[key]
-			x.Type = alias.ReplaceAllString(x.Type, namespace)
-			x.Base = alias.ReplaceAllString(x.Base, namespace)
+			for _, alias := range allAliases {
+				x.Type = alias.Alias.ReplaceAllString(x.Type, alias.Namespace)
+				x.Base = alias.Alias.ReplaceAllString(x.Base, namespace)
+			}
 
 			out, err = g.Create("Model", x.Sym)
 			if err != nil {
 				return err
 			}
 			g.X = x
-
+			for _, key := range x.Members {
+				key.Sym = strings.Replace(key.Sym, "_", "Underscore", 1)
+			}
+			for _, key := range x.Navigations {
+				key.Sym = strings.Replace(key.Sym, "_", "Underscore", 1)
+			}
 			err := tmpl.ExecuteTemplate(out, "model.go.tmpl", g)
 			if err != nil {
 				return err
@@ -360,8 +428,11 @@ func (g *Generator) Generate() error {
 		}
 		sort.Strings(keys)
 		for _, a := range keys {
-			a = collectionAlias.ReplaceAllString(a, collectionNamespace)
-			a = alias.ReplaceAllString(a, namespace)
+			for _, alias := range allAliases {
+				a = alias.Alias.ReplaceAllString(a, alias.CollectionNamespace)
+				a = alias.Alias.ReplaceAllString(a, alias.Namespace)
+			}
+
 			if _, ok := reservedTypeTable[a]; ok {
 				continue
 			}
@@ -384,11 +455,6 @@ func (g *Generator) Generate() error {
 			out.Close()
 		}
 		for _, x := range entityTypeMap {
-			//	if len(x.Navigations) == 0 {
-			//		fmt.Println("a")
-			//		fmt.Println(x.Sym)
-			//		continue
-			//	}
 			if !allRequestModelMap[x.Sym] {
 				requestModelMap[x.Sym] = true
 				allRequestModelMap[x.Sym] = true
@@ -493,6 +559,10 @@ func (g *Generator) Generate() error {
 					if !contains(actionRequestBuilderMap[strings.ToLower(y.Type)], x.Sym+y.Sym+"Collection") {
 						actionRequestBuilderMap[strings.ToLower(y.Type)] = append(actionRequestBuilderMap[strings.ToLower(y.Type)], x.Sym+y.Sym+"Collection")
 					}
+					if dupCheckMap[x.Sym+y.Sym] {
+						y.Sym = y.Sym + "1"
+					}
+					dupCheckMap[x.Sym+y.Sym] = true
 					err := tmpl.ExecuteTemplate(out, "request_collection_navigation.go.tmpl", g)
 					if err != nil {
 						return err
@@ -506,7 +576,7 @@ func (g *Generator) Generate() error {
 			}
 			out.Close()
 		}
-		fmt.Println(actionRequestBuilderMap)
+
 		for _, key := range keys {
 			x := entityTypeMap[key]
 			out, err = g.Create("Action", x.Sym)
@@ -514,11 +584,6 @@ func (g *Generator) Generate() error {
 				return err
 			}
 			if !navigations[x.Type] && !navigations["Collection("+x.Type+")"] && (x.Base != "") {
-				fmt.Println("a")
-				fmt.Println(x.Type)
-				fmt.Println(x.Base)
-				fmt.Println(x.Sym)
-				fmt.Println(key)
 				baseType := g.SymFromType(x.Base)
 				if strings.HasSuffix(baseType, "RequestObject") {
 					baseType = strings.TrimSuffix(baseType, "Object")
@@ -526,22 +591,18 @@ func (g *Generator) Generate() error {
 				if !complete[x.Sym] {
 					if navigations["Collection("+x.Base+")"] {
 						g.Y = x
-						y := entityTypeMap[baseType]
+						y := allEntityTypeMap[baseType]
 						//y.Sym = x.Sym
 						g.X = y
-						complete[y.Sym] = true
-						fmt.Println("c")
-						fmt.Println(y.Sym)
-						fmt.Println("Collection(" + y.Type + ")")
-						fmt.Println(actionRequestBuilderMap[strings.ToLower("Collection("+y.Type+")")])
+
 						val, ok := actionRequestBuilderMap[strings.ToLower("Collection("+y.Type+")")]
+						complete[y.Sym] = true
 						if ok {
 							y.Sym = val[0]
 						}
 						x.Name = ""
 						if !contains(actionRequestBuilderMap[strings.ToLower(x.Type)], x.Sym+"Collection") {
 							actionRequestBuilderMap[x.Type] = append(actionRequestBuilderMap[strings.ToLower(x.Type)], x.Sym+"Collection")
-							fmt.Println("Contains1")
 						}
 						err := tmpl.ExecuteTemplate(out, "request_collection_navigation.go.tmpl", g)
 						if err != nil {
@@ -554,15 +615,13 @@ func (g *Generator) Generate() error {
 							//y.Sym = x.Sym
 							g.Y = y
 							complete[y.Sym] = true
-							fmt.Println("b")
-							fmt.Println(y.Sym)
+
 							//val, ok := actionRequestBuilderMap[strings.ToLower(y.Type)]
 							//if ok {
 							//	x.Sym = val[0]
 							//}
 							if !contains(actionRequestBuilderMap[strings.ToLower(x.Type)], x.Sym) {
 								actionRequestBuilderMap[strings.ToLower(x.Type)] = append(actionRequestBuilderMap[strings.ToLower(x.Type)], x.Sym)
-								fmt.Println("Contains2")
 							}
 							err := tmpl.ExecuteTemplate(out, "request_navigation.go.tmpl", g)
 							if err != nil {

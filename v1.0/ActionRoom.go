@@ -18,7 +18,7 @@ func (b *RoomListRequestBuilder) Rooms() *RoomListRoomsCollectionRequestBuilder 
 	return bb
 }
 
-// RoomListRoomsCollectionRequestBuilder is request builder for Room collection
+// RoomListRoomsCollectionRequestBuilder is request builder for Room collection rcn
 type RoomListRoomsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Room collection

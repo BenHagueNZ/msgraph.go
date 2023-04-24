@@ -55,7 +55,7 @@ func (b *WindowsInformationProtectionRequestBuilder) Assignments() *WindowsInfor
 	return bb
 }
 
-// WindowsInformationProtectionAssignmentsCollectionRequestBuilder is request builder for TargetedManagedAppPolicyAssignment collection
+// WindowsInformationProtectionAssignmentsCollectionRequestBuilder is request builder for TargetedManagedAppPolicyAssignment collection rcn
 type WindowsInformationProtectionAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for TargetedManagedAppPolicyAssignment collection
@@ -158,7 +158,7 @@ func (b *WindowsInformationProtectionRequestBuilder) ExemptAppLockerFiles() *Win
 	return bb
 }
 
-// WindowsInformationProtectionExemptAppLockerFilesCollectionRequestBuilder is request builder for WindowsInformationProtectionAppLockerFile collection
+// WindowsInformationProtectionExemptAppLockerFilesCollectionRequestBuilder is request builder for WindowsInformationProtectionAppLockerFile collection rcn
 type WindowsInformationProtectionExemptAppLockerFilesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsInformationProtectionAppLockerFile collection
@@ -261,7 +261,7 @@ func (b *WindowsInformationProtectionRequestBuilder) ProtectedAppLockerFiles() *
 	return bb
 }
 
-// WindowsInformationProtectionProtectedAppLockerFilesCollectionRequestBuilder is request builder for WindowsInformationProtectionAppLockerFile collection
+// WindowsInformationProtectionProtectedAppLockerFilesCollectionRequestBuilder is request builder for WindowsInformationProtectionAppLockerFile collection rcn
 type WindowsInformationProtectionProtectedAppLockerFilesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsInformationProtectionAppLockerFile collection
@@ -364,7 +364,7 @@ func (b *WindowsUniversalAppXRequestBuilder) CommittedContainedApps() *WindowsUn
 	return bb
 }
 
-// WindowsUniversalAppXCommittedContainedAppsCollectionRequestBuilder is request builder for MobileContainedApp collection
+// WindowsUniversalAppXCommittedContainedAppsCollectionRequestBuilder is request builder for MobileContainedApp collection rcn
 type WindowsUniversalAppXCommittedContainedAppsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MobileContainedApp collection
@@ -474,7 +474,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) WindowsDe
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder is request builder for WindowsDefenderAdvancedThreatProtectionConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder is request builder for WindowsDefenderAdvancedThreatProtectionConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionWindowsDefenderAdvancedThreatProtectionConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsDefenderAdvancedThreatProtectionConfiguration collection
@@ -577,7 +577,7 @@ func (b *AuthenticationMethodsCollectionRequestBuilder) WindowsHelloForBusinessA
 	return bb
 }
 
-// AuthenticationMethodsCollectionWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder is request builder for WindowsHelloForBusinessAuthenticationMethod collection
+// AuthenticationMethodsCollectionWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder is request builder for WindowsHelloForBusinessAuthenticationMethod collection rcn
 type AuthenticationMethodsCollectionWindowsHelloForBusinessAuthenticationMethodCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsHelloForBusinessAuthenticationMethod collection
@@ -680,7 +680,7 @@ func (b *DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder) WindowsI
 	return bb
 }
 
-// DeviceAppManagementManagedAppPoliciesCollectionWindowsInformationProtectionCollectionRequestBuilder is request builder for WindowsInformationProtection collection
+// DeviceAppManagementManagedAppPoliciesCollectionWindowsInformationProtectionCollectionRequestBuilder is request builder for WindowsInformationProtection collection rcn
 type DeviceAppManagementManagedAppPoliciesCollectionWindowsInformationProtectionCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsInformationProtection collection
@@ -804,7 +804,7 @@ func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) WindowsMicrosoft
 	return bb
 }
 
-// DeviceAppManagementMobileAppsCollectionWindowsMicrosoftEdgeAppCollectionRequestBuilder is request builder for WindowsMicrosoftEdgeApp collection
+// DeviceAppManagementMobileAppsCollectionWindowsMicrosoftEdgeAppCollectionRequestBuilder is request builder for WindowsMicrosoftEdgeApp collection rcn
 type DeviceAppManagementMobileAppsCollectionWindowsMicrosoftEdgeAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsMicrosoftEdgeApp collection
@@ -907,7 +907,7 @@ func (b *DeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder) Windo
 	return bb
 }
 
-// DeviceManagementDeviceCompliancePoliciesCollectionWindowsPhone81CompliancePolicyCollectionRequestBuilder is request builder for WindowsPhone81CompliancePolicy collection
+// DeviceManagementDeviceCompliancePoliciesCollectionWindowsPhone81CompliancePolicyCollectionRequestBuilder is request builder for WindowsPhone81CompliancePolicy collection rcn
 type DeviceManagementDeviceCompliancePoliciesCollectionWindowsPhone81CompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsPhone81CompliancePolicy collection
@@ -1010,7 +1010,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) WindowsPh
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionWindowsPhone81CustomConfigurationCollectionRequestBuilder is request builder for WindowsPhone81CustomConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionWindowsPhone81CustomConfigurationCollectionRequestBuilder is request builder for WindowsPhone81CustomConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionWindowsPhone81CustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsPhone81CustomConfiguration collection
@@ -1113,7 +1113,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) WindowsPh
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionWindowsPhone81GeneralConfigurationCollectionRequestBuilder is request builder for WindowsPhone81GeneralConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionWindowsPhone81GeneralConfigurationCollectionRequestBuilder is request builder for WindowsPhone81GeneralConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionWindowsPhone81GeneralConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsPhone81GeneralConfiguration collection
@@ -1216,7 +1216,7 @@ func (b *MobileAppContentContainedAppsCollectionRequestBuilder) WindowsUniversal
 	return bb
 }
 
-// MobileAppContentContainedAppsCollectionWindowsUniversalAppXContainedAppCollectionRequestBuilder is request builder for WindowsUniversalAppXContainedApp collection
+// MobileAppContentContainedAppsCollectionWindowsUniversalAppXContainedAppCollectionRequestBuilder is request builder for WindowsUniversalAppXContainedApp collection rcn
 type MobileAppContentContainedAppsCollectionWindowsUniversalAppXContainedAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsUniversalAppXContainedApp collection
@@ -1319,7 +1319,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) WindowsUp
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionWindowsUpdateForBusinessConfigurationCollectionRequestBuilder is request builder for WindowsUpdateForBusinessConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionWindowsUpdateForBusinessConfigurationCollectionRequestBuilder is request builder for WindowsUpdateForBusinessConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionWindowsUpdateForBusinessConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsUpdateForBusinessConfiguration collection
@@ -1422,7 +1422,7 @@ func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) WindowsWebApp() 
 	return bb
 }
 
-// DeviceAppManagementMobileAppsCollectionWindowsWebAppCollectionRequestBuilder is request builder for WindowsWebApp collection
+// DeviceAppManagementMobileAppsCollectionWindowsWebAppCollectionRequestBuilder is request builder for WindowsWebApp collection rcn
 type DeviceAppManagementMobileAppsCollectionWindowsWebAppCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WindowsWebApp collection

@@ -552,12 +552,12 @@ type WindowsMinimumOperatingSystem struct {
 	Object
 
 	ODataType string `json:"@odata.type,omitempty"`
-	// V10_0 undocumented
-	V10_0 *bool `json:"v10_0,omitempty"`
-	// V8_0 undocumented
-	V8_0 *bool `json:"v8_0,omitempty"`
-	// V8_1 undocumented
-	V8_1 *bool `json:"v8_1,omitempty"`
+	// V10Underscore0 undocumented
+	V10Underscore0 *bool `json:"v10_0,omitempty"`
+	// V8Underscore0 undocumented
+	V8Underscore0 *bool `json:"v8_0,omitempty"`
+	// V8Underscore1 undocumented
+	V8Underscore1 *bool `json:"v8_1,omitempty"`
 }
 
 func NewWindowsMinimumOperatingSystem() (*WindowsMinimumOperatingSystem, error) {

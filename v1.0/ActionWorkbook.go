@@ -3408,7 +3408,7 @@ func (b *WorkbookRequestBuilder) Comments() *WorkbookCommentsCollectionRequestBu
 	return bb
 }
 
-// WorkbookCommentsCollectionRequestBuilder is request builder for WorkbookComment collection
+// WorkbookCommentsCollectionRequestBuilder is request builder for WorkbookComment collection rcn
 type WorkbookCommentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookComment collection
@@ -3518,7 +3518,7 @@ func (b *WorkbookRequestBuilder) Names() *WorkbookNamesCollectionRequestBuilder 
 	return bb
 }
 
-// WorkbookNamesCollectionRequestBuilder is request builder for WorkbookNamedItem collection
+// WorkbookNamesCollectionRequestBuilder is request builder for WorkbookNamedItem collection rcn
 type WorkbookNamesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookNamedItem collection
@@ -3621,7 +3621,7 @@ func (b *WorkbookRequestBuilder) Operations() *WorkbookOperationsCollectionReque
 	return bb
 }
 
-// WorkbookOperationsCollectionRequestBuilder is request builder for WorkbookOperation collection
+// WorkbookOperationsCollectionRequestBuilder is request builder for WorkbookOperation collection rcn
 type WorkbookOperationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookOperation collection
@@ -3724,7 +3724,7 @@ func (b *WorkbookRequestBuilder) Tables() *WorkbookTablesCollectionRequestBuilde
 	return bb
 }
 
-// WorkbookTablesCollectionRequestBuilder is request builder for WorkbookTable collection
+// WorkbookTablesCollectionRequestBuilder is request builder for WorkbookTable collection rcn
 type WorkbookTablesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookTable collection
@@ -3827,7 +3827,7 @@ func (b *WorkbookRequestBuilder) Worksheets() *WorkbookWorksheetsCollectionReque
 	return bb
 }
 
-// WorkbookWorksheetsCollectionRequestBuilder is request builder for WorkbookWorksheet collection
+// WorkbookWorksheetsCollectionRequestBuilder is request builder for WorkbookWorksheet collection rcn
 type WorkbookWorksheetsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookWorksheet collection
@@ -3958,7 +3958,7 @@ func (b *WorkbookChartRequestBuilder) Series() *WorkbookChartSeriesCollectionReq
 	return bb
 }
 
-// WorkbookChartSeriesCollectionRequestBuilder is request builder for WorkbookChartSeries collection
+// WorkbookChartSeriesCollectionRequestBuilder is request builder for WorkbookChartSeries collection rcn
 type WorkbookChartSeriesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookChartSeries collection
@@ -4243,7 +4243,7 @@ func (b *WorkbookChartSeriesRequestBuilder) Points() *WorkbookChartSeriesPointsC
 	return bb
 }
 
-// WorkbookChartSeriesPointsCollectionRequestBuilder is request builder for WorkbookChartPoint collection
+// WorkbookChartSeriesPointsCollectionRequestBuilder is request builder for WorkbookChartPoint collection rcn
 type WorkbookChartSeriesPointsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookChartPoint collection
@@ -4381,7 +4381,7 @@ func (b *WorkbookCommentRequestBuilder) Replies() *WorkbookCommentRepliesCollect
 	return bb
 }
 
-// WorkbookCommentRepliesCollectionRequestBuilder is request builder for WorkbookCommentReply collection
+// WorkbookCommentRepliesCollectionRequestBuilder is request builder for WorkbookCommentReply collection rcn
 type WorkbookCommentRepliesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookCommentReply collection
@@ -4519,7 +4519,7 @@ func (b *WorkbookRangeFormatRequestBuilder) Borders() *WorkbookRangeFormatBorder
 	return bb
 }
 
-// WorkbookRangeFormatBordersCollectionRequestBuilder is request builder for WorkbookRangeBorder collection
+// WorkbookRangeFormatBordersCollectionRequestBuilder is request builder for WorkbookRangeBorder collection rcn
 type WorkbookRangeFormatBordersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookRangeBorder collection
@@ -4643,7 +4643,7 @@ func (b *WorkbookRangeViewRequestBuilder) Rows() *WorkbookRangeViewRowsCollectio
 	return bb
 }
 
-// WorkbookRangeViewRowsCollectionRequestBuilder is request builder for WorkbookRangeView collection
+// WorkbookRangeViewRowsCollectionRequestBuilder is request builder for WorkbookRangeView collection rcn
 type WorkbookRangeViewRowsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookRangeView collection
@@ -4746,7 +4746,7 @@ func (b *WorkbookTableRequestBuilder) Columns() *WorkbookTableColumnsCollectionR
 	return bb
 }
 
-// WorkbookTableColumnsCollectionRequestBuilder is request builder for WorkbookTableColumn collection
+// WorkbookTableColumnsCollectionRequestBuilder is request builder for WorkbookTableColumn collection rcn
 type WorkbookTableColumnsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookTableColumn collection
@@ -4849,7 +4849,7 @@ func (b *WorkbookTableRequestBuilder) Rows() *WorkbookTableRowsCollectionRequest
 	return bb
 }
 
-// WorkbookTableRowsCollectionRequestBuilder is request builder for WorkbookTableRow collection
+// WorkbookTableRowsCollectionRequestBuilder is request builder for WorkbookTableRow collection rcn
 type WorkbookTableRowsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookTableRow collection
@@ -4973,7 +4973,7 @@ func (b *WorkbookWorksheetRequestBuilder) Charts() *WorkbookWorksheetChartsColle
 	return bb
 }
 
-// WorkbookWorksheetChartsCollectionRequestBuilder is request builder for WorkbookChart collection
+// WorkbookWorksheetChartsCollectionRequestBuilder is request builder for WorkbookChart collection rcn
 type WorkbookWorksheetChartsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookChart collection
@@ -5076,7 +5076,7 @@ func (b *WorkbookWorksheetRequestBuilder) Names() *WorkbookWorksheetNamesCollect
 	return bb
 }
 
-// WorkbookWorksheetNamesCollectionRequestBuilder is request builder for WorkbookNamedItem collection
+// WorkbookWorksheetNamesCollectionRequestBuilder is request builder for WorkbookNamedItem collection rcn
 type WorkbookWorksheetNamesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookNamedItem collection
@@ -5179,7 +5179,7 @@ func (b *WorkbookWorksheetRequestBuilder) PivotTables() *WorkbookWorksheetPivotT
 	return bb
 }
 
-// WorkbookWorksheetPivotTablesCollectionRequestBuilder is request builder for WorkbookPivotTable collection
+// WorkbookWorksheetPivotTablesCollectionRequestBuilder is request builder for WorkbookPivotTable collection rcn
 type WorkbookWorksheetPivotTablesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookPivotTable collection
@@ -5289,7 +5289,7 @@ func (b *WorkbookWorksheetRequestBuilder) Tables() *WorkbookWorksheetTablesColle
 	return bb
 }
 
-// WorkbookWorksheetTablesCollectionRequestBuilder is request builder for WorkbookTable collection
+// WorkbookWorksheetTablesCollectionRequestBuilder is request builder for WorkbookTable collection rcn
 type WorkbookWorksheetTablesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for WorkbookTable collection

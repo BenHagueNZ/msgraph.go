@@ -18,7 +18,7 @@ func (b *DeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder) Windo
 	return bb
 }
 
-// DeviceManagementDeviceCompliancePoliciesCollectionWindows10CompliancePolicyCollectionRequestBuilder is request builder for Windows10CompliancePolicy collection
+// DeviceManagementDeviceCompliancePoliciesCollectionWindows10CompliancePolicyCollectionRequestBuilder is request builder for Windows10CompliancePolicy collection rcn
 type DeviceManagementDeviceCompliancePoliciesCollectionWindows10CompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Windows10CompliancePolicy collection
@@ -121,7 +121,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) Windows10
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionWindows10CustomConfigurationCollectionRequestBuilder is request builder for Windows10CustomConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionWindows10CustomConfigurationCollectionRequestBuilder is request builder for Windows10CustomConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionWindows10CustomConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Windows10CustomConfiguration collection
@@ -224,7 +224,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) Windows10
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionWindows10EndpointProtectionConfigurationCollectionRequestBuilder is request builder for Windows10EndpointProtectionConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionWindows10EndpointProtectionConfigurationCollectionRequestBuilder is request builder for Windows10EndpointProtectionConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionWindows10EndpointProtectionConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Windows10EndpointProtectionConfiguration collection
@@ -327,7 +327,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) Windows10
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder is request builder for Windows10EnterpriseModernAppManagementConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder is request builder for Windows10EnterpriseModernAppManagementConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionWindows10EnterpriseModernAppManagementConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Windows10EnterpriseModernAppManagementConfiguration collection
@@ -430,7 +430,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) Windows10
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionWindows10GeneralConfigurationCollectionRequestBuilder is request builder for Windows10GeneralConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionWindows10GeneralConfigurationCollectionRequestBuilder is request builder for Windows10GeneralConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionWindows10GeneralConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Windows10GeneralConfiguration collection
@@ -533,7 +533,7 @@ func (b *DeviceManagementDeviceCompliancePoliciesCollectionRequestBuilder) Windo
 	return bb
 }
 
-// DeviceManagementDeviceCompliancePoliciesCollectionWindows10MobileCompliancePolicyCollectionRequestBuilder is request builder for Windows10MobileCompliancePolicy collection
+// DeviceManagementDeviceCompliancePoliciesCollectionWindows10MobileCompliancePolicyCollectionRequestBuilder is request builder for Windows10MobileCompliancePolicy collection rcn
 type DeviceManagementDeviceCompliancePoliciesCollectionWindows10MobileCompliancePolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Windows10MobileCompliancePolicy collection
@@ -636,7 +636,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) Windows10
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionWindows10SecureAssessmentConfigurationCollectionRequestBuilder is request builder for Windows10SecureAssessmentConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionWindows10SecureAssessmentConfigurationCollectionRequestBuilder is request builder for Windows10SecureAssessmentConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionWindows10SecureAssessmentConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Windows10SecureAssessmentConfiguration collection
@@ -739,7 +739,7 @@ func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) Windows10
 	return bb
 }
 
-// DeviceManagementDeviceConfigurationsCollectionWindows10TeamGeneralConfigurationCollectionRequestBuilder is request builder for Windows10TeamGeneralConfiguration collection
+// DeviceManagementDeviceConfigurationsCollectionWindows10TeamGeneralConfigurationCollectionRequestBuilder is request builder for Windows10TeamGeneralConfiguration collection rcn
 type DeviceManagementDeviceConfigurationsCollectionWindows10TeamGeneralConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Windows10TeamGeneralConfiguration collection

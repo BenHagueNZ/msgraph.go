@@ -42,7 +42,7 @@ func (b *RiskyServicePrincipalRequestBuilder) History() *RiskyServicePrincipalHi
 	return bb
 }
 
-// RiskyServicePrincipalHistoryCollectionRequestBuilder is request builder for RiskyServicePrincipalHistoryItem collection
+// RiskyServicePrincipalHistoryCollectionRequestBuilder is request builder for RiskyServicePrincipalHistoryItem collection rcn
 type RiskyServicePrincipalHistoryCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for RiskyServicePrincipalHistoryItem collection
@@ -145,7 +145,7 @@ func (b *RiskyUserRequestBuilder) History() *RiskyUserHistoryCollectionRequestBu
 	return bb
 }
 
-// RiskyUserHistoryCollectionRequestBuilder is request builder for RiskyUserHistoryItem collection
+// RiskyUserHistoryCollectionRequestBuilder is request builder for RiskyUserHistoryItem collection rcn
 type RiskyUserHistoryCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for RiskyUserHistoryItem collection
@@ -255,7 +255,7 @@ func (b *IdentityProtectionRootRiskyServicePrincipalsCollectionRequestBuilder) R
 	return bb
 }
 
-// IdentityProtectionRootRiskyServicePrincipalsCollectionRiskyServicePrincipalHistoryItemCollectionRequestBuilder is request builder for RiskyServicePrincipalHistoryItem collection
+// IdentityProtectionRootRiskyServicePrincipalsCollectionRiskyServicePrincipalHistoryItemCollectionRequestBuilder is request builder for RiskyServicePrincipalHistoryItem collection rcn
 type IdentityProtectionRootRiskyServicePrincipalsCollectionRiskyServicePrincipalHistoryItemCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for RiskyServicePrincipalHistoryItem collection
@@ -365,7 +365,7 @@ func (b *IdentityProtectionRootRiskyUsersCollectionRequestBuilder) RiskyUserHist
 	return bb
 }
 
-// IdentityProtectionRootRiskyUsersCollectionRiskyUserHistoryItemCollectionRequestBuilder is request builder for RiskyUserHistoryItem collection
+// IdentityProtectionRootRiskyUsersCollectionRiskyUserHistoryItemCollectionRequestBuilder is request builder for RiskyUserHistoryItem collection rcn
 type IdentityProtectionRootRiskyUsersCollectionRiskyUserHistoryItemCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for RiskyUserHistoryItem collection

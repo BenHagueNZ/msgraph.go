@@ -86,7 +86,7 @@ func (b *MessageRequestBuilder) Attachments() *MessageAttachmentsCollectionReque
 	return bb
 }
 
-// MessageAttachmentsCollectionRequestBuilder is request builder for Attachment collection
+// MessageAttachmentsCollectionRequestBuilder is request builder for Attachment collection rcn
 type MessageAttachmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Attachment collection
@@ -189,7 +189,7 @@ func (b *MessageRequestBuilder) Extensions() *MessageExtensionsCollectionRequest
 	return bb
 }
 
-// MessageExtensionsCollectionRequestBuilder is request builder for Extension collection
+// MessageExtensionsCollectionRequestBuilder is request builder for Extension collection rcn
 type MessageExtensionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Extension collection
@@ -292,7 +292,7 @@ func (b *MessageRequestBuilder) MultiValueExtendedProperties() *MessageMultiValu
 	return bb
 }
 
-// MessageMultiValueExtendedPropertiesCollectionRequestBuilder is request builder for MultiValueLegacyExtendedProperty collection
+// MessageMultiValueExtendedPropertiesCollectionRequestBuilder is request builder for MultiValueLegacyExtendedProperty collection rcn
 type MessageMultiValueExtendedPropertiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for MultiValueLegacyExtendedProperty collection
@@ -395,7 +395,7 @@ func (b *MessageRequestBuilder) SingleValueExtendedProperties() *MessageSingleVa
 	return bb
 }
 
-// MessageSingleValueExtendedPropertiesCollectionRequestBuilder is request builder for SingleValueLegacyExtendedProperty collection
+// MessageSingleValueExtendedPropertiesCollectionRequestBuilder is request builder for SingleValueLegacyExtendedProperty collection rcn
 type MessageSingleValueExtendedPropertiesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SingleValueLegacyExtendedProperty collection

@@ -266,38 +266,38 @@ type AndroidMinimumOperatingSystem struct {
 	Object
 
 	ODataType string `json:"@odata.type,omitempty"`
-	// V10_0 undocumented
-	V10_0 *bool `json:"v10_0,omitempty"`
-	// V11_0 undocumented
-	V11_0 *bool `json:"v11_0,omitempty"`
-	// V4_0 undocumented
-	V4_0 *bool `json:"v4_0,omitempty"`
-	// V4_0_3 undocumented
-	V4_0_3 *bool `json:"v4_0_3,omitempty"`
-	// V4_1 undocumented
-	V4_1 *bool `json:"v4_1,omitempty"`
-	// V4_2 undocumented
-	V4_2 *bool `json:"v4_2,omitempty"`
-	// V4_3 undocumented
-	V4_3 *bool `json:"v4_3,omitempty"`
-	// V4_4 undocumented
-	V4_4 *bool `json:"v4_4,omitempty"`
-	// V5_0 undocumented
-	V5_0 *bool `json:"v5_0,omitempty"`
-	// V5_1 undocumented
-	V5_1 *bool `json:"v5_1,omitempty"`
-	// V6_0 undocumented
-	V6_0 *bool `json:"v6_0,omitempty"`
-	// V7_0 undocumented
-	V7_0 *bool `json:"v7_0,omitempty"`
-	// V7_1 undocumented
-	V7_1 *bool `json:"v7_1,omitempty"`
-	// V8_0 undocumented
-	V8_0 *bool `json:"v8_0,omitempty"`
-	// V8_1 undocumented
-	V8_1 *bool `json:"v8_1,omitempty"`
-	// V9_0 undocumented
-	V9_0 *bool `json:"v9_0,omitempty"`
+	// V10Underscore0 undocumented
+	V10Underscore0 *bool `json:"v10_0,omitempty"`
+	// V11Underscore0 undocumented
+	V11Underscore0 *bool `json:"v11_0,omitempty"`
+	// V4Underscore0 undocumented
+	V4Underscore0 *bool `json:"v4_0,omitempty"`
+	// V4Underscore0_3 undocumented
+	V4Underscore0_3 *bool `json:"v4_0_3,omitempty"`
+	// V4Underscore1 undocumented
+	V4Underscore1 *bool `json:"v4_1,omitempty"`
+	// V4Underscore2 undocumented
+	V4Underscore2 *bool `json:"v4_2,omitempty"`
+	// V4Underscore3 undocumented
+	V4Underscore3 *bool `json:"v4_3,omitempty"`
+	// V4Underscore4 undocumented
+	V4Underscore4 *bool `json:"v4_4,omitempty"`
+	// V5Underscore0 undocumented
+	V5Underscore0 *bool `json:"v5_0,omitempty"`
+	// V5Underscore1 undocumented
+	V5Underscore1 *bool `json:"v5_1,omitempty"`
+	// V6Underscore0 undocumented
+	V6Underscore0 *bool `json:"v6_0,omitempty"`
+	// V7Underscore0 undocumented
+	V7Underscore0 *bool `json:"v7_0,omitempty"`
+	// V7Underscore1 undocumented
+	V7Underscore1 *bool `json:"v7_1,omitempty"`
+	// V8Underscore0 undocumented
+	V8Underscore0 *bool `json:"v8_0,omitempty"`
+	// V8Underscore1 undocumented
+	V8Underscore1 *bool `json:"v8_1,omitempty"`
+	// V9Underscore0 undocumented
+	V9Underscore0 *bool `json:"v9_0,omitempty"`
 }
 
 func NewAndroidMinimumOperatingSystem() (*AndroidMinimumOperatingSystem, error) {

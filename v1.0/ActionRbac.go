@@ -18,7 +18,7 @@ func (b *RbacApplicationRequestBuilder) RoleAssignmentScheduleInstances() *RbacA
 	return bb
 }
 
-// RbacApplicationRoleAssignmentScheduleInstancesCollectionRequestBuilder is request builder for UnifiedRoleAssignmentScheduleInstance collection
+// RbacApplicationRoleAssignmentScheduleInstancesCollectionRequestBuilder is request builder for UnifiedRoleAssignmentScheduleInstance collection rcn
 type RbacApplicationRoleAssignmentScheduleInstancesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleAssignmentScheduleInstance collection
@@ -121,7 +121,7 @@ func (b *RbacApplicationRequestBuilder) RoleAssignmentScheduleRequests() *RbacAp
 	return bb
 }
 
-// RbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder is request builder for UnifiedRoleAssignmentScheduleRequestObject collection
+// RbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder is request builder for UnifiedRoleAssignmentScheduleRequestObject collection rcn
 type RbacApplicationRoleAssignmentScheduleRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleAssignmentScheduleRequestObject collection
@@ -224,7 +224,7 @@ func (b *RbacApplicationRequestBuilder) RoleAssignmentSchedules() *RbacApplicati
 	return bb
 }
 
-// RbacApplicationRoleAssignmentSchedulesCollectionRequestBuilder is request builder for UnifiedRoleAssignmentSchedule collection
+// RbacApplicationRoleAssignmentSchedulesCollectionRequestBuilder is request builder for UnifiedRoleAssignmentSchedule collection rcn
 type RbacApplicationRoleAssignmentSchedulesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleAssignmentSchedule collection
@@ -327,7 +327,7 @@ func (b *RbacApplicationRequestBuilder) RoleAssignments() *RbacApplicationRoleAs
 	return bb
 }
 
-// RbacApplicationRoleAssignmentsCollectionRequestBuilder is request builder for UnifiedRoleAssignment collection
+// RbacApplicationRoleAssignmentsCollectionRequestBuilder is request builder for UnifiedRoleAssignment collection rcn
 type RbacApplicationRoleAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleAssignment collection
@@ -430,7 +430,7 @@ func (b *RbacApplicationRequestBuilder) RoleDefinitions() *RbacApplicationRoleDe
 	return bb
 }
 
-// RbacApplicationRoleDefinitionsCollectionRequestBuilder is request builder for UnifiedRoleDefinition collection
+// RbacApplicationRoleDefinitionsCollectionRequestBuilder is request builder for UnifiedRoleDefinition collection rcn
 type RbacApplicationRoleDefinitionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleDefinition collection
@@ -533,7 +533,7 @@ func (b *RbacApplicationRequestBuilder) RoleEligibilityScheduleInstances() *Rbac
 	return bb
 }
 
-// RbacApplicationRoleEligibilityScheduleInstancesCollectionRequestBuilder is request builder for UnifiedRoleEligibilityScheduleInstance collection
+// RbacApplicationRoleEligibilityScheduleInstancesCollectionRequestBuilder is request builder for UnifiedRoleEligibilityScheduleInstance collection rcn
 type RbacApplicationRoleEligibilityScheduleInstancesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleEligibilityScheduleInstance collection
@@ -636,7 +636,7 @@ func (b *RbacApplicationRequestBuilder) RoleEligibilityScheduleRequests() *RbacA
 	return bb
 }
 
-// RbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder is request builder for UnifiedRoleEligibilityScheduleRequestObject collection
+// RbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder is request builder for UnifiedRoleEligibilityScheduleRequestObject collection rcn
 type RbacApplicationRoleEligibilityScheduleRequestsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleEligibilityScheduleRequestObject collection
@@ -739,7 +739,7 @@ func (b *RbacApplicationRequestBuilder) RoleEligibilitySchedules() *RbacApplicat
 	return bb
 }
 
-// RbacApplicationRoleEligibilitySchedulesCollectionRequestBuilder is request builder for UnifiedRoleEligibilitySchedule collection
+// RbacApplicationRoleEligibilitySchedulesCollectionRequestBuilder is request builder for UnifiedRoleEligibilitySchedule collection rcn
 type RbacApplicationRoleEligibilitySchedulesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleEligibilitySchedule collection

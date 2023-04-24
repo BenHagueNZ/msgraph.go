@@ -110,7 +110,7 @@ func (b *UnifiedRoleDefinitionRequestBuilder) InheritsPermissionsFrom() *Unified
 	return bb
 }
 
-// UnifiedRoleDefinitionInheritsPermissionsFromCollectionRequestBuilder is request builder for UnifiedRoleDefinition collection
+// UnifiedRoleDefinitionInheritsPermissionsFromCollectionRequestBuilder is request builder for UnifiedRoleDefinition collection rcn
 type UnifiedRoleDefinitionInheritsPermissionsFromCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleDefinition collection
@@ -248,7 +248,7 @@ func (b *UnifiedRoleManagementPolicyRequestBuilder) EffectiveRules() *UnifiedRol
 	return bb
 }
 
-// UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyRule collection
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyRule collection rcn
 type UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleManagementPolicyRule collection
@@ -351,7 +351,7 @@ func (b *UnifiedRoleManagementPolicyRequestBuilder) Rules() *UnifiedRoleManageme
 	return bb
 }
 
-// UnifiedRoleManagementPolicyRulesCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyRule collection
+// UnifiedRoleManagementPolicyRulesCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyRule collection rcn
 type UnifiedRoleManagementPolicyRulesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleManagementPolicyRule collection
@@ -461,7 +461,7 @@ func (b *UnifiedRoleManagementPolicyRuleTargetRequestBuilder) TargetObjects() *U
 	return bb
 }
 
-// UnifiedRoleManagementPolicyRuleTargetTargetObjectsCollectionRequestBuilder is request builder for DirectoryObject collection
+// UnifiedRoleManagementPolicyRuleTargetTargetObjectsCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type UnifiedRoleManagementPolicyRuleTargetTargetObjectsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -641,7 +641,7 @@ func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder) Unif
 	return bb
 }
 
-// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyApprovalRule collection
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyApprovalRule collection rcn
 type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyApprovalRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleManagementPolicyApprovalRule collection
@@ -751,7 +751,7 @@ func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder) Unif
 	return bb
 }
 
-// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyAuthenticationContextRule collection
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyAuthenticationContextRule collection rcn
 type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyAuthenticationContextRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleManagementPolicyAuthenticationContextRule collection
@@ -854,7 +854,7 @@ func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder) Unif
 	return bb
 }
 
-// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyEnablementRule collection
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyEnablementRule collection rcn
 type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyEnablementRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleManagementPolicyEnablementRule collection
@@ -957,7 +957,7 @@ func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder) Unif
 	return bb
 }
 
-// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyExpirationRule collection
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyExpirationRule collection rcn
 type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyExpirationRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleManagementPolicyExpirationRule collection
@@ -1060,7 +1060,7 @@ func (b *UnifiedRoleManagementPolicyEffectiveRulesCollectionRequestBuilder) Unif
 	return bb
 }
 
-// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyNotificationRule collection
+// UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder is request builder for UnifiedRoleManagementPolicyNotificationRule collection rcn
 type UnifiedRoleManagementPolicyEffectiveRulesCollectionUnifiedRoleManagementPolicyNotificationRuleCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for UnifiedRoleManagementPolicyNotificationRule collection

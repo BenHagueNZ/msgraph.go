@@ -18,7 +18,7 @@ func (b *DefaultManagedAppProtectionRequestBuilder) Apps() *DefaultManagedAppPro
 	return bb
 }
 
-// DefaultManagedAppProtectionAppsCollectionRequestBuilder is request builder for ManagedMobileApp collection
+// DefaultManagedAppProtectionAppsCollectionRequestBuilder is request builder for ManagedMobileApp collection rcn
 type DefaultManagedAppProtectionAppsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ManagedMobileApp collection

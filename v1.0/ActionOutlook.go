@@ -18,7 +18,7 @@ func (b *OutlookUserRequestBuilder) MasterCategories() *OutlookUserMasterCategor
 	return bb
 }
 
-// OutlookUserMasterCategoriesCollectionRequestBuilder is request builder for OutlookCategory collection
+// OutlookUserMasterCategoriesCollectionRequestBuilder is request builder for OutlookCategory collection rcn
 type OutlookUserMasterCategoriesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OutlookCategory collection

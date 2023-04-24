@@ -24,7 +24,7 @@ func (b *CloudCommunicationsRequestBuilder) CallRecords() *CloudCommunicationsCa
 	return bb
 }
 
-// CloudCommunicationsCallRecordsCollectionRequestBuilder is request builder for CallRecordsCallRecord collection
+// CloudCommunicationsCallRecordsCollectionRequestBuilder is request builder for CallRecordsCallRecord collection rcn
 type CloudCommunicationsCallRecordsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for CallRecordsCallRecord collection
@@ -127,7 +127,7 @@ func (b *CloudCommunicationsRequestBuilder) Calls() *CloudCommunicationsCallsCol
 	return bb
 }
 
-// CloudCommunicationsCallsCollectionRequestBuilder is request builder for Call collection
+// CloudCommunicationsCallsCollectionRequestBuilder is request builder for Call collection rcn
 type CloudCommunicationsCallsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Call collection
@@ -230,7 +230,7 @@ func (b *CloudCommunicationsRequestBuilder) OnlineMeetings() *CloudCommunication
 	return bb
 }
 
-// CloudCommunicationsOnlineMeetingsCollectionRequestBuilder is request builder for OnlineMeeting collection
+// CloudCommunicationsOnlineMeetingsCollectionRequestBuilder is request builder for OnlineMeeting collection rcn
 type CloudCommunicationsOnlineMeetingsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for OnlineMeeting collection
@@ -333,7 +333,7 @@ func (b *CloudCommunicationsRequestBuilder) Presences() *CloudCommunicationsPres
 	return bb
 }
 
-// CloudCommunicationsPresencesCollectionRequestBuilder is request builder for Presence collection
+// CloudCommunicationsPresencesCollectionRequestBuilder is request builder for Presence collection rcn
 type CloudCommunicationsPresencesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Presence collection

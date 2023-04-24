@@ -18,7 +18,7 @@ func (b *SecurityRequestBuilder) Alerts() *SecurityAlertsCollectionRequestBuilde
 	return bb
 }
 
-// SecurityAlertsCollectionRequestBuilder is request builder for Alert collection
+// SecurityAlertsCollectionRequestBuilder is request builder for Alert collection rcn
 type SecurityAlertsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Alert collection
@@ -114,35 +114,35 @@ func (r *SecurityAlertsCollectionRequest) Add(ctx context.Context, reqObj *Alert
 	return
 }
 
-// Alerts_v2 returns request builder for SecurityAlert collection
-func (b *SecurityRequestBuilder) Alerts_v2() *SecurityAlerts_v2CollectionRequestBuilder {
-	bb := &SecurityAlerts_v2CollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// AlertsUnderscorev2 returns request builder for SecurityAlert collection
+func (b *SecurityRequestBuilder) AlertsUnderscorev2() *SecurityAlertsUnderscorev2CollectionRequestBuilder {
+	bb := &SecurityAlertsUnderscorev2CollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/alerts_v2"
 	return bb
 }
 
-// SecurityAlerts_v2CollectionRequestBuilder is request builder for SecurityAlert collection
-type SecurityAlerts_v2CollectionRequestBuilder struct{ BaseRequestBuilder }
+// SecurityAlertsUnderscorev2CollectionRequestBuilder is request builder for SecurityAlert collection rcn
+type SecurityAlertsUnderscorev2CollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityAlert collection
-func (b *SecurityAlerts_v2CollectionRequestBuilder) Request() *SecurityAlerts_v2CollectionRequest {
-	return &SecurityAlerts_v2CollectionRequest{
+func (b *SecurityAlertsUnderscorev2CollectionRequestBuilder) Request() *SecurityAlertsUnderscorev2CollectionRequest {
+	return &SecurityAlertsUnderscorev2CollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
 // ID returns request builder for SecurityAlert item
-func (b *SecurityAlerts_v2CollectionRequestBuilder) ID(id string) *SecurityAlertRequestBuilder {
+func (b *SecurityAlertsUnderscorev2CollectionRequestBuilder) ID(id string) *SecurityAlertRequestBuilder {
 	bb := &SecurityAlertRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// SecurityAlerts_v2CollectionRequest is request for SecurityAlert collection
-type SecurityAlerts_v2CollectionRequest struct{ BaseRequest }
+// SecurityAlertsUnderscorev2CollectionRequest is request for SecurityAlert collection
+type SecurityAlertsUnderscorev2CollectionRequest struct{ BaseRequest }
 
 // Paging perfoms paging operation for SecurityAlert collection
-func (r *SecurityAlerts_v2CollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityAlert, error) {
+func (r *SecurityAlertsUnderscorev2CollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SecurityAlert, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -198,7 +198,7 @@ func (r *SecurityAlerts_v2CollectionRequest) Paging(ctx context.Context, method,
 }
 
 // GetN performs GET request for SecurityAlert collection, max N pages
-func (r *SecurityAlerts_v2CollectionRequest) GetN(ctx context.Context, n int) ([]SecurityAlert, error) {
+func (r *SecurityAlertsUnderscorev2CollectionRequest) GetN(ctx context.Context, n int) ([]SecurityAlert, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -207,12 +207,12 @@ func (r *SecurityAlerts_v2CollectionRequest) GetN(ctx context.Context, n int) ([
 }
 
 // Get performs GET request for SecurityAlert collection
-func (r *SecurityAlerts_v2CollectionRequest) Get(ctx context.Context) ([]SecurityAlert, error) {
+func (r *SecurityAlertsUnderscorev2CollectionRequest) Get(ctx context.Context) ([]SecurityAlert, error) {
 	return r.GetN(ctx, 0)
 }
 
 // Add performs POST request for SecurityAlert collection
-func (r *SecurityAlerts_v2CollectionRequest) Add(ctx context.Context, reqObj *SecurityAlert) (resObj *SecurityAlert, err error) {
+func (r *SecurityAlertsUnderscorev2CollectionRequest) Add(ctx context.Context, reqObj *SecurityAlert) (resObj *SecurityAlert, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
@@ -238,7 +238,7 @@ func (b *SecurityRequestBuilder) Incidents() *SecurityIncidentsCollectionRequest
 	return bb
 }
 
-// SecurityIncidentsCollectionRequestBuilder is request builder for SecurityIncident collection
+// SecurityIncidentsCollectionRequestBuilder is request builder for SecurityIncident collection rcn
 type SecurityIncidentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityIncident collection
@@ -341,7 +341,7 @@ func (b *SecurityRequestBuilder) SecureScoreControlProfiles() *SecuritySecureSco
 	return bb
 }
 
-// SecuritySecureScoreControlProfilesCollectionRequestBuilder is request builder for SecureScoreControlProfile collection
+// SecuritySecureScoreControlProfilesCollectionRequestBuilder is request builder for SecureScoreControlProfile collection rcn
 type SecuritySecureScoreControlProfilesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecureScoreControlProfile collection
@@ -444,7 +444,7 @@ func (b *SecurityRequestBuilder) SecureScores() *SecuritySecureScoresCollectionR
 	return bb
 }
 
-// SecuritySecureScoresCollectionRequestBuilder is request builder for SecureScore collection
+// SecuritySecureScoresCollectionRequestBuilder is request builder for SecureScore collection rcn
 type SecuritySecureScoresCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecureScore collection
@@ -667,7 +667,7 @@ func (b *SecurityCasesRootRequestBuilder) EdiscoveryCases() *SecurityCasesRootEd
 	return bb
 }
 
-// SecurityCasesRootEdiscoveryCasesCollectionRequestBuilder is request builder for SecurityEdiscoveryCase collection
+// SecurityCasesRootEdiscoveryCasesCollectionRequestBuilder is request builder for SecurityEdiscoveryCase collection rcn
 type SecurityCasesRootEdiscoveryCasesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoveryCase collection
@@ -784,7 +784,7 @@ func (b *SecurityEdiscoveryCaseRequestBuilder) Custodians() *SecurityEdiscoveryC
 	return bb
 }
 
-// SecurityEdiscoveryCaseCustodiansCollectionRequestBuilder is request builder for SecurityEdiscoveryCustodian collection
+// SecurityEdiscoveryCaseCustodiansCollectionRequestBuilder is request builder for SecurityEdiscoveryCustodian collection rcn
 type SecurityEdiscoveryCaseCustodiansCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoveryCustodian collection
@@ -887,7 +887,7 @@ func (b *SecurityEdiscoveryCaseRequestBuilder) NoncustodialDataSources() *Securi
 	return bb
 }
 
-// SecurityEdiscoveryCaseNoncustodialDataSourcesCollectionRequestBuilder is request builder for SecurityEdiscoveryNoncustodialDataSource collection
+// SecurityEdiscoveryCaseNoncustodialDataSourcesCollectionRequestBuilder is request builder for SecurityEdiscoveryNoncustodialDataSource collection rcn
 type SecurityEdiscoveryCaseNoncustodialDataSourcesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoveryNoncustodialDataSource collection
@@ -990,7 +990,7 @@ func (b *SecurityEdiscoveryCaseRequestBuilder) Operations() *SecurityEdiscoveryC
 	return bb
 }
 
-// SecurityEdiscoveryCaseOperationsCollectionRequestBuilder is request builder for SecurityCaseOperation collection
+// SecurityEdiscoveryCaseOperationsCollectionRequestBuilder is request builder for SecurityCaseOperation collection rcn
 type SecurityEdiscoveryCaseOperationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityCaseOperation collection
@@ -1093,7 +1093,7 @@ func (b *SecurityEdiscoveryCaseRequestBuilder) ReviewSets() *SecurityEdiscoveryC
 	return bb
 }
 
-// SecurityEdiscoveryCaseReviewSetsCollectionRequestBuilder is request builder for SecurityEdiscoveryReviewSet collection
+// SecurityEdiscoveryCaseReviewSetsCollectionRequestBuilder is request builder for SecurityEdiscoveryReviewSet collection rcn
 type SecurityEdiscoveryCaseReviewSetsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoveryReviewSet collection
@@ -1196,7 +1196,7 @@ func (b *SecurityEdiscoveryCaseRequestBuilder) Searches() *SecurityEdiscoveryCas
 	return bb
 }
 
-// SecurityEdiscoveryCaseSearchesCollectionRequestBuilder is request builder for SecurityEdiscoverySearch collection
+// SecurityEdiscoveryCaseSearchesCollectionRequestBuilder is request builder for SecurityEdiscoverySearch collection rcn
 type SecurityEdiscoveryCaseSearchesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoverySearch collection
@@ -1306,7 +1306,7 @@ func (b *SecurityEdiscoveryCaseRequestBuilder) Tags() *SecurityEdiscoveryCaseTag
 	return bb
 }
 
-// SecurityEdiscoveryCaseTagsCollectionRequestBuilder is request builder for SecurityEdiscoveryReviewTag collection
+// SecurityEdiscoveryCaseTagsCollectionRequestBuilder is request builder for SecurityEdiscoveryReviewTag collection rcn
 type SecurityEdiscoveryCaseTagsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoveryReviewTag collection
@@ -1416,7 +1416,7 @@ func (b *SecurityEdiscoveryCustodianRequestBuilder) SiteSources() *SecurityEdisc
 	return bb
 }
 
-// SecurityEdiscoveryCustodianSiteSourcesCollectionRequestBuilder is request builder for SecuritySiteSource collection
+// SecurityEdiscoveryCustodianSiteSourcesCollectionRequestBuilder is request builder for SecuritySiteSource collection rcn
 type SecurityEdiscoveryCustodianSiteSourcesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecuritySiteSource collection
@@ -1519,7 +1519,7 @@ func (b *SecurityEdiscoveryCustodianRequestBuilder) UnifiedGroupSources() *Secur
 	return bb
 }
 
-// SecurityEdiscoveryCustodianUnifiedGroupSourcesCollectionRequestBuilder is request builder for SecurityUnifiedGroupSource collection
+// SecurityEdiscoveryCustodianUnifiedGroupSourcesCollectionRequestBuilder is request builder for SecurityUnifiedGroupSource collection rcn
 type SecurityEdiscoveryCustodianUnifiedGroupSourcesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityUnifiedGroupSource collection
@@ -1622,7 +1622,7 @@ func (b *SecurityEdiscoveryCustodianRequestBuilder) UserSources() *SecurityEdisc
 	return bb
 }
 
-// SecurityEdiscoveryCustodianUserSourcesCollectionRequestBuilder is request builder for SecurityUserSource collection
+// SecurityEdiscoveryCustodianUserSourcesCollectionRequestBuilder is request builder for SecurityUserSource collection rcn
 type SecurityEdiscoveryCustodianUserSourcesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityUserSource collection
@@ -1746,7 +1746,7 @@ func (b *SecurityEdiscoveryReviewSetRequestBuilder) Queries() *SecurityEdiscover
 	return bb
 }
 
-// SecurityEdiscoveryReviewSetQueriesCollectionRequestBuilder is request builder for SecurityEdiscoveryReviewSetQuery collection
+// SecurityEdiscoveryReviewSetQueriesCollectionRequestBuilder is request builder for SecurityEdiscoveryReviewSetQuery collection rcn
 type SecurityEdiscoveryReviewSetQueriesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoveryReviewSetQuery collection
@@ -1849,7 +1849,7 @@ func (b *SecurityEdiscoveryReviewTagRequestBuilder) ChildTags() *SecurityEdiscov
 	return bb
 }
 
-// SecurityEdiscoveryReviewTagChildTagsCollectionRequestBuilder is request builder for SecurityEdiscoveryReviewTag collection
+// SecurityEdiscoveryReviewTagChildTagsCollectionRequestBuilder is request builder for SecurityEdiscoveryReviewTag collection rcn
 type SecurityEdiscoveryReviewTagChildTagsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoveryReviewTag collection
@@ -1966,7 +1966,7 @@ func (b *SecurityEdiscoverySearchRequestBuilder) AdditionalSources() *SecurityEd
 	return bb
 }
 
-// SecurityEdiscoverySearchAdditionalSourcesCollectionRequestBuilder is request builder for SecurityDataSource collection
+// SecurityEdiscoverySearchAdditionalSourcesCollectionRequestBuilder is request builder for SecurityDataSource collection rcn
 type SecurityEdiscoverySearchAdditionalSourcesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityDataSource collection
@@ -2069,7 +2069,7 @@ func (b *SecurityEdiscoverySearchRequestBuilder) CustodianSources() *SecurityEdi
 	return bb
 }
 
-// SecurityEdiscoverySearchCustodianSourcesCollectionRequestBuilder is request builder for SecurityDataSource collection
+// SecurityEdiscoverySearchCustodianSourcesCollectionRequestBuilder is request builder for SecurityDataSource collection rcn
 type SecurityEdiscoverySearchCustodianSourcesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityDataSource collection
@@ -2179,7 +2179,7 @@ func (b *SecurityEdiscoverySearchRequestBuilder) NoncustodialSources() *Security
 	return bb
 }
 
-// SecurityEdiscoverySearchNoncustodialSourcesCollectionRequestBuilder is request builder for SecurityEdiscoveryNoncustodialDataSource collection
+// SecurityEdiscoverySearchNoncustodialSourcesCollectionRequestBuilder is request builder for SecurityEdiscoveryNoncustodialDataSource collection rcn
 type SecurityEdiscoverySearchNoncustodialSourcesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoveryNoncustodialDataSource collection
@@ -2282,7 +2282,7 @@ func (b *SecurityIncidentRequestBuilder) Alerts() *SecurityIncidentAlertsCollect
 	return bb
 }
 
-// SecurityIncidentAlertsCollectionRequestBuilder is request builder for SecurityAlert collection
+// SecurityIncidentAlertsCollectionRequestBuilder is request builder for SecurityAlert collection rcn
 type SecurityIncidentAlertsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityAlert collection
@@ -2399,7 +2399,7 @@ func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryAddToReviewSetOp
 	return bb
 }
 
-// SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryAddToReviewSetOperation collection
+// SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryAddToReviewSetOperation collection rcn
 type SecurityCaseOperationSecurityEdiscoveryAddToReviewSetOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoveryAddToReviewSetOperation collection
@@ -2502,7 +2502,7 @@ func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryEstimateOperatio
 	return bb
 }
 
-// SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryEstimateOperation collection
+// SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryEstimateOperation collection rcn
 type SecurityCaseOperationSecurityEdiscoveryEstimateOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoveryEstimateOperation collection
@@ -2605,7 +2605,7 @@ func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryHoldOperation() 
 	return bb
 }
 
-// SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryHoldOperation collection
+// SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryHoldOperation collection rcn
 type SecurityCaseOperationSecurityEdiscoveryHoldOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoveryHoldOperation collection
@@ -2708,7 +2708,7 @@ func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryIndexOperation()
 	return bb
 }
 
-// SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryIndexOperation collection
+// SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryIndexOperation collection rcn
 type SecurityCaseOperationSecurityEdiscoveryIndexOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoveryIndexOperation collection
@@ -2811,7 +2811,7 @@ func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryPurgeDataOperati
 	return bb
 }
 
-// SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryPurgeDataOperation collection
+// SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryPurgeDataOperation collection rcn
 type SecurityCaseOperationSecurityEdiscoveryPurgeDataOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoveryPurgeDataOperation collection
@@ -2914,7 +2914,7 @@ func (b *SecurityCaseOperationRequestBuilder) SecurityEdiscoveryTagOperation() *
 	return bb
 }
 
-// SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryTagOperation collection
+// SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder is request builder for SecurityEdiscoveryTagOperation collection rcn
 type SecurityCaseOperationSecurityEdiscoveryTagOperationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityEdiscoveryTagOperation collection
@@ -3017,7 +3017,7 @@ func (b *SecurityDataSourceRequestBuilder) SecuritySiteSource() *SecurityDataSou
 	return bb
 }
 
-// SecurityDataSourceSecuritySiteSourceCollectionRequestBuilder is request builder for SecuritySiteSource collection
+// SecurityDataSourceSecuritySiteSourceCollectionRequestBuilder is request builder for SecuritySiteSource collection rcn
 type SecurityDataSourceSecuritySiteSourceCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecuritySiteSource collection
@@ -3120,7 +3120,7 @@ func (b *SecurityDataSourceRequestBuilder) SecurityUnifiedGroupSource() *Securit
 	return bb
 }
 
-// SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequestBuilder is request builder for SecurityUnifiedGroupSource collection
+// SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequestBuilder is request builder for SecurityUnifiedGroupSource collection rcn
 type SecurityDataSourceSecurityUnifiedGroupSourceCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityUnifiedGroupSource collection
@@ -3223,7 +3223,7 @@ func (b *SecurityDataSourceRequestBuilder) SecurityUserSource() *SecurityDataSou
 	return bb
 }
 
-// SecurityDataSourceSecurityUserSourceCollectionRequestBuilder is request builder for SecurityUserSource collection
+// SecurityDataSourceSecurityUserSourceCollectionRequestBuilder is request builder for SecurityUserSource collection rcn
 type SecurityDataSourceSecurityUserSourceCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for SecurityUserSource collection

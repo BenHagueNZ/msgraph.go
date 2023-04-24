@@ -32,7 +32,7 @@ func (b *IdentityContainerRequestBuilder) APIConnectors() *IdentityContainerAPIC
 	return bb
 }
 
-// IdentityContainerAPIConnectorsCollectionRequestBuilder is request builder for IdentityAPIConnector collection
+// IdentityContainerAPIConnectorsCollectionRequestBuilder is request builder for IdentityAPIConnector collection rcn
 type IdentityContainerAPIConnectorsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IdentityAPIConnector collection
@@ -135,7 +135,7 @@ func (b *IdentityContainerRequestBuilder) B2xUserFlows() *IdentityContainerB2xUs
 	return bb
 }
 
-// IdentityContainerB2xUserFlowsCollectionRequestBuilder is request builder for B2xIdentityUserFlow collection
+// IdentityContainerB2xUserFlowsCollectionRequestBuilder is request builder for B2xIdentityUserFlow collection rcn
 type IdentityContainerB2xUserFlowsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for B2xIdentityUserFlow collection
@@ -245,7 +245,7 @@ func (b *IdentityContainerRequestBuilder) IdentityProviders() *IdentityContainer
 	return bb
 }
 
-// IdentityContainerIdentityProvidersCollectionRequestBuilder is request builder for IdentityProviderBase collection
+// IdentityContainerIdentityProvidersCollectionRequestBuilder is request builder for IdentityProviderBase collection rcn
 type IdentityContainerIdentityProvidersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IdentityProviderBase collection
@@ -348,7 +348,7 @@ func (b *IdentityContainerRequestBuilder) UserFlowAttributes() *IdentityContaine
 	return bb
 }
 
-// IdentityContainerUserFlowAttributesCollectionRequestBuilder is request builder for IdentityUserFlowAttribute collection
+// IdentityContainerUserFlowAttributesCollectionRequestBuilder is request builder for IdentityUserFlowAttribute collection rcn
 type IdentityContainerUserFlowAttributesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IdentityUserFlowAttribute collection
@@ -479,7 +479,7 @@ func (b *IdentityProtectionRootRequestBuilder) RiskDetections() *IdentityProtect
 	return bb
 }
 
-// IdentityProtectionRootRiskDetectionsCollectionRequestBuilder is request builder for RiskDetection collection
+// IdentityProtectionRootRiskDetectionsCollectionRequestBuilder is request builder for RiskDetection collection rcn
 type IdentityProtectionRootRiskDetectionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for RiskDetection collection
@@ -582,7 +582,7 @@ func (b *IdentityProtectionRootRequestBuilder) RiskyServicePrincipals() *Identit
 	return bb
 }
 
-// IdentityProtectionRootRiskyServicePrincipalsCollectionRequestBuilder is request builder for RiskyServicePrincipal collection
+// IdentityProtectionRootRiskyServicePrincipalsCollectionRequestBuilder is request builder for RiskyServicePrincipal collection rcn
 type IdentityProtectionRootRiskyServicePrincipalsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for RiskyServicePrincipal collection
@@ -685,7 +685,7 @@ func (b *IdentityProtectionRootRequestBuilder) RiskyUsers() *IdentityProtectionR
 	return bb
 }
 
-// IdentityProtectionRootRiskyUsersCollectionRequestBuilder is request builder for RiskyUser collection
+// IdentityProtectionRootRiskyUsersCollectionRequestBuilder is request builder for RiskyUser collection rcn
 type IdentityProtectionRootRiskyUsersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for RiskyUser collection
@@ -788,7 +788,7 @@ func (b *IdentityProtectionRootRequestBuilder) ServicePrincipalRiskDetections() 
 	return bb
 }
 
-// IdentityProtectionRootServicePrincipalRiskDetectionsCollectionRequestBuilder is request builder for ServicePrincipalRiskDetection collection
+// IdentityProtectionRootServicePrincipalRiskDetectionsCollectionRequestBuilder is request builder for ServicePrincipalRiskDetection collection rcn
 type IdentityProtectionRootServicePrincipalRiskDetectionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ServicePrincipalRiskDetection collection
@@ -905,7 +905,7 @@ func (b *IdentityContainerUserFlowAttributesCollectionRequestBuilder) IdentityBu
 	return bb
 }
 
-// IdentityContainerUserFlowAttributesCollectionIdentityBuiltInUserFlowAttributeCollectionRequestBuilder is request builder for IdentityBuiltInUserFlowAttribute collection
+// IdentityContainerUserFlowAttributesCollectionIdentityBuiltInUserFlowAttributeCollectionRequestBuilder is request builder for IdentityBuiltInUserFlowAttribute collection rcn
 type IdentityContainerUserFlowAttributesCollectionIdentityBuiltInUserFlowAttributeCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IdentityBuiltInUserFlowAttribute collection
@@ -1015,7 +1015,7 @@ func (b *IdentityContainerUserFlowAttributesCollectionRequestBuilder) IdentityCu
 	return bb
 }
 
-// IdentityContainerUserFlowAttributesCollectionIdentityCustomUserFlowAttributeCollectionRequestBuilder is request builder for IdentityCustomUserFlowAttribute collection
+// IdentityContainerUserFlowAttributesCollectionIdentityCustomUserFlowAttributeCollectionRequestBuilder is request builder for IdentityCustomUserFlowAttribute collection rcn
 type IdentityContainerUserFlowAttributesCollectionIdentityCustomUserFlowAttributeCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for IdentityCustomUserFlowAttribute collection

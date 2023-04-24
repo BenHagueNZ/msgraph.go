@@ -76,7 +76,7 @@ func (b *GroupRequestBuilder) AcceptedSenders() *GroupAcceptedSendersCollectionR
 	return bb
 }
 
-// GroupAcceptedSendersCollectionRequestBuilder is request builder for DirectoryObject collection
+// GroupAcceptedSendersCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type GroupAcceptedSendersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -179,7 +179,7 @@ func (b *GroupRequestBuilder) AppRoleAssignments() *GroupAppRoleAssignmentsColle
 	return bb
 }
 
-// GroupAppRoleAssignmentsCollectionRequestBuilder is request builder for AppRoleAssignment collection
+// GroupAppRoleAssignmentsCollectionRequestBuilder is request builder for AppRoleAssignment collection rcn
 type GroupAppRoleAssignmentsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for AppRoleAssignment collection
@@ -289,7 +289,7 @@ func (b *GroupRequestBuilder) CalendarView() *GroupCalendarViewCollectionRequest
 	return bb
 }
 
-// GroupCalendarViewCollectionRequestBuilder is request builder for Event collection
+// GroupCalendarViewCollectionRequestBuilder is request builder for Event collection rcn
 type GroupCalendarViewCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Event collection
@@ -392,7 +392,7 @@ func (b *GroupRequestBuilder) Conversations() *GroupConversationsCollectionReque
 	return bb
 }
 
-// GroupConversationsCollectionRequestBuilder is request builder for Conversation collection
+// GroupConversationsCollectionRequestBuilder is request builder for Conversation collection rcn
 type GroupConversationsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Conversation collection
@@ -509,7 +509,7 @@ func (b *GroupRequestBuilder) Drives() *GroupDrivesCollectionRequestBuilder {
 	return bb
 }
 
-// GroupDrivesCollectionRequestBuilder is request builder for Drive collection
+// GroupDrivesCollectionRequestBuilder is request builder for Drive collection rcn
 type GroupDrivesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Drive collection
@@ -612,7 +612,7 @@ func (b *GroupRequestBuilder) Events() *GroupEventsCollectionRequestBuilder {
 	return bb
 }
 
-// GroupEventsCollectionRequestBuilder is request builder for Event collection
+// GroupEventsCollectionRequestBuilder is request builder for Event collection rcn
 type GroupEventsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Event collection
@@ -715,7 +715,7 @@ func (b *GroupRequestBuilder) Extensions() *GroupExtensionsCollectionRequestBuil
 	return bb
 }
 
-// GroupExtensionsCollectionRequestBuilder is request builder for Extension collection
+// GroupExtensionsCollectionRequestBuilder is request builder for Extension collection rcn
 type GroupExtensionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Extension collection
@@ -818,7 +818,7 @@ func (b *GroupRequestBuilder) GroupLifecyclePolicies() *GroupGroupLifecyclePolic
 	return bb
 }
 
-// GroupGroupLifecyclePoliciesCollectionRequestBuilder is request builder for GroupLifecyclePolicy collection
+// GroupGroupLifecyclePoliciesCollectionRequestBuilder is request builder for GroupLifecyclePolicy collection rcn
 type GroupGroupLifecyclePoliciesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for GroupLifecyclePolicy collection
@@ -921,7 +921,7 @@ func (b *GroupRequestBuilder) MemberOf() *GroupMemberOfCollectionRequestBuilder 
 	return bb
 }
 
-// GroupMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection
+// GroupMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type GroupMemberOfCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -1024,7 +1024,7 @@ func (b *GroupRequestBuilder) Members() *GroupMembersCollectionRequestBuilder {
 	return bb
 }
 
-// GroupMembersCollectionRequestBuilder is request builder for DirectoryObject collection
+// GroupMembersCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type GroupMembersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -1127,7 +1127,7 @@ func (b *GroupRequestBuilder) MembersWithLicenseErrors() *GroupMembersWithLicens
 	return bb
 }
 
-// GroupMembersWithLicenseErrorsCollectionRequestBuilder is request builder for DirectoryObject collection
+// GroupMembersWithLicenseErrorsCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type GroupMembersWithLicenseErrorsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -1237,7 +1237,7 @@ func (b *GroupRequestBuilder) Owners() *GroupOwnersCollectionRequestBuilder {
 	return bb
 }
 
-// GroupOwnersCollectionRequestBuilder is request builder for DirectoryObject collection
+// GroupOwnersCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type GroupOwnersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -1340,7 +1340,7 @@ func (b *GroupRequestBuilder) PermissionGrants() *GroupPermissionGrantsCollectio
 	return bb
 }
 
-// GroupPermissionGrantsCollectionRequestBuilder is request builder for ResourceSpecificPermissionGrant collection
+// GroupPermissionGrantsCollectionRequestBuilder is request builder for ResourceSpecificPermissionGrant collection rcn
 type GroupPermissionGrantsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ResourceSpecificPermissionGrant collection
@@ -1450,7 +1450,7 @@ func (b *GroupRequestBuilder) Photos() *GroupPhotosCollectionRequestBuilder {
 	return bb
 }
 
-// GroupPhotosCollectionRequestBuilder is request builder for ProfilePhoto collection
+// GroupPhotosCollectionRequestBuilder is request builder for ProfilePhoto collection rcn
 type GroupPhotosCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ProfilePhoto collection
@@ -1560,7 +1560,7 @@ func (b *GroupRequestBuilder) RejectedSenders() *GroupRejectedSendersCollectionR
 	return bb
 }
 
-// GroupRejectedSendersCollectionRequestBuilder is request builder for DirectoryObject collection
+// GroupRejectedSendersCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type GroupRejectedSendersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -1663,7 +1663,7 @@ func (b *GroupRequestBuilder) Settings() *GroupSettingsCollectionRequestBuilder 
 	return bb
 }
 
-// GroupSettingsCollectionRequestBuilder is request builder for GroupSetting collection
+// GroupSettingsCollectionRequestBuilder is request builder for GroupSetting collection rcn
 type GroupSettingsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for GroupSetting collection
@@ -1766,7 +1766,7 @@ func (b *GroupRequestBuilder) Sites() *GroupSitesCollectionRequestBuilder {
 	return bb
 }
 
-// GroupSitesCollectionRequestBuilder is request builder for Site collection
+// GroupSitesCollectionRequestBuilder is request builder for Site collection rcn
 type GroupSitesCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Site collection
@@ -1876,7 +1876,7 @@ func (b *GroupRequestBuilder) Threads() *GroupThreadsCollectionRequestBuilder {
 	return bb
 }
 
-// GroupThreadsCollectionRequestBuilder is request builder for ConversationThread collection
+// GroupThreadsCollectionRequestBuilder is request builder for ConversationThread collection rcn
 type GroupThreadsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for ConversationThread collection
@@ -1979,7 +1979,7 @@ func (b *GroupRequestBuilder) TransitiveMemberOf() *GroupTransitiveMemberOfColle
 	return bb
 }
 
-// GroupTransitiveMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection
+// GroupTransitiveMemberOfCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type GroupTransitiveMemberOfCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -2082,7 +2082,7 @@ func (b *GroupRequestBuilder) TransitiveMembers() *GroupTransitiveMembersCollect
 	return bb
 }
 
-// GroupTransitiveMembersCollectionRequestBuilder is request builder for DirectoryObject collection
+// GroupTransitiveMembersCollectionRequestBuilder is request builder for DirectoryObject collection rcn
 type GroupTransitiveMembersCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for DirectoryObject collection
@@ -2185,7 +2185,7 @@ func (b *AdministrativeUnitMembersCollectionRequestBuilder) Group() *Administrat
 	return bb
 }
 
-// AdministrativeUnitMembersCollectionGroupCollectionRequestBuilder is request builder for Group collection
+// AdministrativeUnitMembersCollectionGroupCollectionRequestBuilder is request builder for Group collection rcn
 type AdministrativeUnitMembersCollectionGroupCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Group collection
@@ -2302,7 +2302,7 @@ func (b *AdministrativeUnitMembersCollectionRequestBuilder) GroupSettingTemplate
 	return bb
 }
 
-// AdministrativeUnitMembersCollectionGroupSettingTemplateCollectionRequestBuilder is request builder for GroupSettingTemplate collection
+// AdministrativeUnitMembersCollectionGroupSettingTemplateCollectionRequestBuilder is request builder for GroupSettingTemplate collection rcn
 type AdministrativeUnitMembersCollectionGroupSettingTemplateCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for GroupSettingTemplate collection

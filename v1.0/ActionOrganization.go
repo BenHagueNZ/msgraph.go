@@ -29,7 +29,7 @@ func (b *OrganizationRequestBuilder) CertificateBasedAuthConfiguration() *Organi
 	return bb
 }
 
-// OrganizationCertificateBasedAuthConfigurationCollectionRequestBuilder is request builder for CertificateBasedAuthConfiguration collection
+// OrganizationCertificateBasedAuthConfigurationCollectionRequestBuilder is request builder for CertificateBasedAuthConfiguration collection rcn
 type OrganizationCertificateBasedAuthConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for CertificateBasedAuthConfiguration collection
@@ -132,7 +132,7 @@ func (b *OrganizationRequestBuilder) Extensions() *OrganizationExtensionsCollect
 	return bb
 }
 
-// OrganizationExtensionsCollectionRequestBuilder is request builder for Extension collection
+// OrganizationExtensionsCollectionRequestBuilder is request builder for Extension collection rcn
 type OrganizationExtensionsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Extension collection
@@ -235,7 +235,7 @@ func (b *AdministrativeUnitMembersCollectionRequestBuilder) Organization() *Admi
 	return bb
 }
 
-// AdministrativeUnitMembersCollectionOrganizationCollectionRequestBuilder is request builder for Organization collection
+// AdministrativeUnitMembersCollectionOrganizationCollectionRequestBuilder is request builder for Organization collection rcn
 type AdministrativeUnitMembersCollectionOrganizationCollectionRequestBuilder struct{ BaseRequestBuilder }
 
 // Request returns request for Organization collection
