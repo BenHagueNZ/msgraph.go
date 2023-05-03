@@ -1159,3 +1159,17 @@ func (b *PrintUsageRequestBuilder) Entity() *EntityRequestBuilder {
 	bb.baseURL += "/Entity"
 	return bb
 }
+
+// Entity is navigation property rn
+func (b *PrintUsageByPrinterRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *PrintUsageByUserRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}

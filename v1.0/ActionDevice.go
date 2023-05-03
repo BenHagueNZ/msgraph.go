@@ -7208,13 +7208,6 @@ func (b *DeviceManagementTroubleshootingEventRequestBuilder) Entity() *EntityReq
 }
 
 // Entity is navigation property rn
-func (b *DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder) Entity() *EntityRequestBuilder {
-	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/Entity"
-	return bb
-}
-
-// Entity is navigation property rn
 func (b *DeviceAppManagementMobileAppConfigurationsCollectionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"

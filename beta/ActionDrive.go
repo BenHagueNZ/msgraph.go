@@ -1516,3 +1516,10 @@ func (r *SiteItemsCollectionDriveItemCollectionRequest) Add(ctx context.Context,
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
+
+// Entity is navigation property rn
+func (b *DriveItemVersionRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}

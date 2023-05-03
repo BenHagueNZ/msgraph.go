@@ -1655,14 +1655,6 @@ func (b *ManagedAppPolicyRequestBuilder) TargetApps(reqObj *ManagedAppPolicyTarg
 	return bb
 }
 
-// TargetApps action undocumentedrav
-func (b *DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder) TargetApps(reqObj *ManagedAppPolicyTargetAppsRequestParameter) *ManagedAppPolicyTargetAppsRequestBuilder {
-	bb := &ManagedAppPolicyTargetAppsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.BaseRequestBuilder.baseURL += "/TargetApps"
-	bb.BaseRequestBuilder.requestObject = reqObj
-	return bb
-}
-
 type ManagedAppPolicyTargetAppsRequest struct{ BaseRequest }
 
 func (b *ManagedAppPolicyTargetAppsRequestBuilder) Request() *ManagedAppPolicyTargetAppsRequest {

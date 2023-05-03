@@ -430,6 +430,109 @@ func (r *DeviceManagementDeviceConfigurationsCollectionAndroidGeneralDeviceConfi
 	return
 }
 
+// AndroidLobApp returns request builder for AndroidLobApp collection
+func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) AndroidLobApp() *DeviceAppManagementMobileAppsCollectionAndroidLobAppCollectionRequestBuilder {
+	bb := &DeviceAppManagementMobileAppsCollectionAndroidLobAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceAppManagementMobileAppsCollectionAndroidLobAppCollectionRequestBuilder is request builder for AndroidLobApp collection rcn
+type DeviceAppManagementMobileAppsCollectionAndroidLobAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for AndroidLobApp collection
+func (b *DeviceAppManagementMobileAppsCollectionAndroidLobAppCollectionRequestBuilder) Request() *DeviceAppManagementMobileAppsCollectionAndroidLobAppCollectionRequest {
+	return &DeviceAppManagementMobileAppsCollectionAndroidLobAppCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for AndroidLobApp item
+func (b *DeviceAppManagementMobileAppsCollectionAndroidLobAppCollectionRequestBuilder) ID(id string) *AndroidLobAppRequestBuilder {
+	bb := &AndroidLobAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceAppManagementMobileAppsCollectionAndroidLobAppCollectionRequest is request for AndroidLobApp collection
+type DeviceAppManagementMobileAppsCollectionAndroidLobAppCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for AndroidLobApp collection
+func (r *DeviceAppManagementMobileAppsCollectionAndroidLobAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]AndroidLobApp, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []AndroidLobApp
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []AndroidLobApp
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for AndroidLobApp collection, max N pages
+func (r *DeviceAppManagementMobileAppsCollectionAndroidLobAppCollectionRequest) GetN(ctx context.Context, n int) ([]AndroidLobApp, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for AndroidLobApp collection
+func (r *DeviceAppManagementMobileAppsCollectionAndroidLobAppCollectionRequest) Get(ctx context.Context) ([]AndroidLobApp, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for AndroidLobApp collection
+func (r *DeviceAppManagementMobileAppsCollectionAndroidLobAppCollectionRequest) Add(ctx context.Context, reqObj *AndroidLobApp) (resObj *AndroidLobApp, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // AndroidManagedAppRegistration returns request builder for AndroidManagedAppRegistration collection
 func (b *DeviceAppManagementManagedAppRegistrationsCollectionRequestBuilder) AndroidManagedAppRegistration() *DeviceAppManagementManagedAppRegistrationsCollectionAndroidManagedAppRegistrationCollectionRequestBuilder {
 	bb := &DeviceAppManagementManagedAppRegistrationsCollectionAndroidManagedAppRegistrationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}

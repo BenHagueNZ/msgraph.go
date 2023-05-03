@@ -39,3 +39,24 @@ type TimeCardStartBreakRequestParameter struct {
 	// Notes undocumented
 	Notes *ItemBody `json:"notes,omitempty"`
 }
+
+// Entity is navigation property rn
+func (b *TimeCardRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *TimeOffRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *TimeOffReasonRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}

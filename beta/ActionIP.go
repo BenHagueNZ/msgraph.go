@@ -114,6 +114,13 @@ func (r *IPSegmentConfigurationApplicationSegmentsCollectionRequest) Add(ctx con
 	return
 }
 
+// Entity is navigation property rn
+func (b *IPApplicationSegmentRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
 // IPNamedLocation returns request builder for IPNamedLocation collection
 func (b *ConditionalAccessRootNamedLocationsCollectionRequestBuilder) IPNamedLocation() *ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequestBuilder {
 	bb := &ConditionalAccessRootNamedLocationsCollectionIPNamedLocationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}

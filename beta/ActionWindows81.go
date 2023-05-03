@@ -334,6 +334,13 @@ func (r *DeviceManagementDeviceConfigurationsCollectionWindows81GeneralConfigura
 	return
 }
 
+// WindowsCertificateProfileBase is navigation property rn
+func (b *Windows81SCEPCertificateProfileRequestBuilder) WindowsCertificateProfileBase() *WindowsCertificateProfileBaseRequestBuilder {
+	bb := &WindowsCertificateProfileBaseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/WindowsCertificateProfileBase"
+	return bb
+}
+
 // Windows81TrustedRootCertificate returns request builder for Windows81TrustedRootCertificate collection
 func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) Windows81TrustedRootCertificate() *DeviceManagementDeviceConfigurationsCollectionWindows81TrustedRootCertificateCollectionRequestBuilder {
 	bb := &DeviceManagementDeviceConfigurationsCollectionWindows81TrustedRootCertificateCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -433,6 +440,109 @@ func (r *DeviceManagementDeviceConfigurationsCollectionWindows81TrustedRootCerti
 
 // Add performs POST request for Windows81TrustedRootCertificate collection
 func (r *DeviceManagementDeviceConfigurationsCollectionWindows81TrustedRootCertificateCollectionRequest) Add(ctx context.Context, reqObj *Windows81TrustedRootCertificate) (resObj *Windows81TrustedRootCertificate, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Windows81VpnConfiguration returns request builder for Windows81VpnConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) Windows81VpnConfiguration() *DeviceManagementDeviceConfigurationsCollectionWindows81VpnConfigurationCollectionRequestBuilder {
+	bb := &DeviceManagementDeviceConfigurationsCollectionWindows81VpnConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionWindows81VpnConfigurationCollectionRequestBuilder is request builder for Windows81VpnConfiguration collection rcn
+type DeviceManagementDeviceConfigurationsCollectionWindows81VpnConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for Windows81VpnConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionWindows81VpnConfigurationCollectionRequestBuilder) Request() *DeviceManagementDeviceConfigurationsCollectionWindows81VpnConfigurationCollectionRequest {
+	return &DeviceManagementDeviceConfigurationsCollectionWindows81VpnConfigurationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for Windows81VpnConfiguration item
+func (b *DeviceManagementDeviceConfigurationsCollectionWindows81VpnConfigurationCollectionRequestBuilder) ID(id string) *Windows81VpnConfigurationRequestBuilder {
+	bb := &Windows81VpnConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionWindows81VpnConfigurationCollectionRequest is request for Windows81VpnConfiguration collection
+type DeviceManagementDeviceConfigurationsCollectionWindows81VpnConfigurationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for Windows81VpnConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionWindows81VpnConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Windows81VpnConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []Windows81VpnConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []Windows81VpnConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for Windows81VpnConfiguration collection, max N pages
+func (r *DeviceManagementDeviceConfigurationsCollectionWindows81VpnConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]Windows81VpnConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for Windows81VpnConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionWindows81VpnConfigurationCollectionRequest) Get(ctx context.Context) ([]Windows81VpnConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for Windows81VpnConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionWindows81VpnConfigurationCollectionRequest) Add(ctx context.Context, reqObj *Windows81VpnConfiguration) (resObj *Windows81VpnConfiguration, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

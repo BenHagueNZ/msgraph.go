@@ -169,6 +169,14 @@ func (b *ListItemVersionRequestBuilder) RestoreVersion(reqObj *ListItemVersionRe
 	return bb
 }
 
+// RestoreVersion action undocumentedrav
+func (b *ListItemVersionsCollectionRequestBuilder) RestoreVersion(reqObj *ListItemVersionRestoreVersionRequestParameter) *ListItemVersionRestoreVersionRequestBuilder {
+	bb := &ListItemVersionRestoreVersionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.BaseRequestBuilder.baseURL += "/RestoreVersion"
+	bb.BaseRequestBuilder.requestObject = reqObj
+	return bb
+}
+
 type ListItemVersionRestoreVersionRequest struct{ BaseRequest }
 
 func (b *ListItemVersionRestoreVersionRequestBuilder) Request() *ListItemVersionRestoreVersionRequest {

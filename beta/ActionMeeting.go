@@ -534,6 +534,13 @@ func (r *MeetingRegistrationBaseRegistrantsCollectionMeetingRegistrantCollection
 }
 
 // Entity is navigation property rn
+func (b *MeetingRegistrationRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
 func (b *MeetingRegistrationBaseRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"

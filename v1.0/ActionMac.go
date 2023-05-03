@@ -217,6 +217,109 @@ func (r *DeviceManagementDeviceConfigurationsCollectionMacOSCustomConfigurationC
 	return
 }
 
+// MacOSDeviceFeaturesConfiguration returns request builder for MacOSDeviceFeaturesConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) MacOSDeviceFeaturesConfiguration() *DeviceManagementDeviceConfigurationsCollectionMacOSDeviceFeaturesConfigurationCollectionRequestBuilder {
+	bb := &DeviceManagementDeviceConfigurationsCollectionMacOSDeviceFeaturesConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionMacOSDeviceFeaturesConfigurationCollectionRequestBuilder is request builder for MacOSDeviceFeaturesConfiguration collection rcn
+type DeviceManagementDeviceConfigurationsCollectionMacOSDeviceFeaturesConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for MacOSDeviceFeaturesConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionMacOSDeviceFeaturesConfigurationCollectionRequestBuilder) Request() *DeviceManagementDeviceConfigurationsCollectionMacOSDeviceFeaturesConfigurationCollectionRequest {
+	return &DeviceManagementDeviceConfigurationsCollectionMacOSDeviceFeaturesConfigurationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for MacOSDeviceFeaturesConfiguration item
+func (b *DeviceManagementDeviceConfigurationsCollectionMacOSDeviceFeaturesConfigurationCollectionRequestBuilder) ID(id string) *MacOSDeviceFeaturesConfigurationRequestBuilder {
+	bb := &MacOSDeviceFeaturesConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionMacOSDeviceFeaturesConfigurationCollectionRequest is request for MacOSDeviceFeaturesConfiguration collection
+type DeviceManagementDeviceConfigurationsCollectionMacOSDeviceFeaturesConfigurationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for MacOSDeviceFeaturesConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionMacOSDeviceFeaturesConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MacOSDeviceFeaturesConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []MacOSDeviceFeaturesConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []MacOSDeviceFeaturesConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for MacOSDeviceFeaturesConfiguration collection, max N pages
+func (r *DeviceManagementDeviceConfigurationsCollectionMacOSDeviceFeaturesConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]MacOSDeviceFeaturesConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for MacOSDeviceFeaturesConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionMacOSDeviceFeaturesConfigurationCollectionRequest) Get(ctx context.Context) ([]MacOSDeviceFeaturesConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for MacOSDeviceFeaturesConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionMacOSDeviceFeaturesConfigurationCollectionRequest) Add(ctx context.Context, reqObj *MacOSDeviceFeaturesConfiguration) (resObj *MacOSDeviceFeaturesConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // MacOSGeneralDeviceConfiguration returns request builder for MacOSGeneralDeviceConfiguration collection
 func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) MacOSGeneralDeviceConfiguration() *DeviceManagementDeviceConfigurationsCollectionMacOSGeneralDeviceConfigurationCollectionRequestBuilder {
 	bb := &DeviceManagementDeviceConfigurationsCollectionMacOSGeneralDeviceConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -316,6 +419,109 @@ func (r *DeviceManagementDeviceConfigurationsCollectionMacOSGeneralDeviceConfigu
 
 // Add performs POST request for MacOSGeneralDeviceConfiguration collection
 func (r *DeviceManagementDeviceConfigurationsCollectionMacOSGeneralDeviceConfigurationCollectionRequest) Add(ctx context.Context, reqObj *MacOSGeneralDeviceConfiguration) (resObj *MacOSGeneralDeviceConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// MacOSLobApp returns request builder for MacOSLobApp collection
+func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) MacOSLobApp() *DeviceAppManagementMobileAppsCollectionMacOSLobAppCollectionRequestBuilder {
+	bb := &DeviceAppManagementMobileAppsCollectionMacOSLobAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceAppManagementMobileAppsCollectionMacOSLobAppCollectionRequestBuilder is request builder for MacOSLobApp collection rcn
+type DeviceAppManagementMobileAppsCollectionMacOSLobAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for MacOSLobApp collection
+func (b *DeviceAppManagementMobileAppsCollectionMacOSLobAppCollectionRequestBuilder) Request() *DeviceAppManagementMobileAppsCollectionMacOSLobAppCollectionRequest {
+	return &DeviceAppManagementMobileAppsCollectionMacOSLobAppCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for MacOSLobApp item
+func (b *DeviceAppManagementMobileAppsCollectionMacOSLobAppCollectionRequestBuilder) ID(id string) *MacOSLobAppRequestBuilder {
+	bb := &MacOSLobAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceAppManagementMobileAppsCollectionMacOSLobAppCollectionRequest is request for MacOSLobApp collection
+type DeviceAppManagementMobileAppsCollectionMacOSLobAppCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for MacOSLobApp collection
+func (r *DeviceAppManagementMobileAppsCollectionMacOSLobAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]MacOSLobApp, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []MacOSLobApp
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []MacOSLobApp
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for MacOSLobApp collection, max N pages
+func (r *DeviceAppManagementMobileAppsCollectionMacOSLobAppCollectionRequest) GetN(ctx context.Context, n int) ([]MacOSLobApp, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for MacOSLobApp collection
+func (r *DeviceAppManagementMobileAppsCollectionMacOSLobAppCollectionRequest) Get(ctx context.Context) ([]MacOSLobApp, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for MacOSLobApp collection
+func (r *DeviceAppManagementMobileAppsCollectionMacOSLobAppCollectionRequest) Add(ctx context.Context, reqObj *MacOSLobApp) (resObj *MacOSLobApp, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

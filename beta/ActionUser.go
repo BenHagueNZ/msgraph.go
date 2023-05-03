@@ -6373,6 +6373,13 @@ func (r *AdministrativeUnitMembersCollectionUserCollectionRequest) Add(ctx conte
 }
 
 // Entity is navigation property rn
+func (b *UserAccountInformationRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
 func (b *UserActivityRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"

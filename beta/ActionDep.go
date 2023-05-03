@@ -461,6 +461,212 @@ func (r *DepOnboardingSettingEnrollmentProfilesCollectionDepEnrollmentProfileCol
 	return
 }
 
+// DepIOSEnrollmentProfile returns request builder for DepIOSEnrollmentProfile collection
+func (b *DepOnboardingSettingEnrollmentProfilesCollectionRequestBuilder) DepIOSEnrollmentProfile() *DepOnboardingSettingEnrollmentProfilesCollectionDepIOSEnrollmentProfileCollectionRequestBuilder {
+	bb := &DepOnboardingSettingEnrollmentProfilesCollectionDepIOSEnrollmentProfileCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DepOnboardingSettingEnrollmentProfilesCollectionDepIOSEnrollmentProfileCollectionRequestBuilder is request builder for DepIOSEnrollmentProfile collection rcn
+type DepOnboardingSettingEnrollmentProfilesCollectionDepIOSEnrollmentProfileCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DepIOSEnrollmentProfile collection
+func (b *DepOnboardingSettingEnrollmentProfilesCollectionDepIOSEnrollmentProfileCollectionRequestBuilder) Request() *DepOnboardingSettingEnrollmentProfilesCollectionDepIOSEnrollmentProfileCollectionRequest {
+	return &DepOnboardingSettingEnrollmentProfilesCollectionDepIOSEnrollmentProfileCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DepIOSEnrollmentProfile item
+func (b *DepOnboardingSettingEnrollmentProfilesCollectionDepIOSEnrollmentProfileCollectionRequestBuilder) ID(id string) *DepIOSEnrollmentProfileRequestBuilder {
+	bb := &DepIOSEnrollmentProfileRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DepOnboardingSettingEnrollmentProfilesCollectionDepIOSEnrollmentProfileCollectionRequest is request for DepIOSEnrollmentProfile collection
+type DepOnboardingSettingEnrollmentProfilesCollectionDepIOSEnrollmentProfileCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DepIOSEnrollmentProfile collection
+func (r *DepOnboardingSettingEnrollmentProfilesCollectionDepIOSEnrollmentProfileCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DepIOSEnrollmentProfile, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DepIOSEnrollmentProfile
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DepIOSEnrollmentProfile
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DepIOSEnrollmentProfile collection, max N pages
+func (r *DepOnboardingSettingEnrollmentProfilesCollectionDepIOSEnrollmentProfileCollectionRequest) GetN(ctx context.Context, n int) ([]DepIOSEnrollmentProfile, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DepIOSEnrollmentProfile collection
+func (r *DepOnboardingSettingEnrollmentProfilesCollectionDepIOSEnrollmentProfileCollectionRequest) Get(ctx context.Context) ([]DepIOSEnrollmentProfile, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DepIOSEnrollmentProfile collection
+func (r *DepOnboardingSettingEnrollmentProfilesCollectionDepIOSEnrollmentProfileCollectionRequest) Add(ctx context.Context, reqObj *DepIOSEnrollmentProfile) (resObj *DepIOSEnrollmentProfile, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// DepMacOSEnrollmentProfile returns request builder for DepMacOSEnrollmentProfile collection
+func (b *DepOnboardingSettingEnrollmentProfilesCollectionRequestBuilder) DepMacOSEnrollmentProfile() *DepOnboardingSettingEnrollmentProfilesCollectionDepMacOSEnrollmentProfileCollectionRequestBuilder {
+	bb := &DepOnboardingSettingEnrollmentProfilesCollectionDepMacOSEnrollmentProfileCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DepOnboardingSettingEnrollmentProfilesCollectionDepMacOSEnrollmentProfileCollectionRequestBuilder is request builder for DepMacOSEnrollmentProfile collection rcn
+type DepOnboardingSettingEnrollmentProfilesCollectionDepMacOSEnrollmentProfileCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DepMacOSEnrollmentProfile collection
+func (b *DepOnboardingSettingEnrollmentProfilesCollectionDepMacOSEnrollmentProfileCollectionRequestBuilder) Request() *DepOnboardingSettingEnrollmentProfilesCollectionDepMacOSEnrollmentProfileCollectionRequest {
+	return &DepOnboardingSettingEnrollmentProfilesCollectionDepMacOSEnrollmentProfileCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DepMacOSEnrollmentProfile item
+func (b *DepOnboardingSettingEnrollmentProfilesCollectionDepMacOSEnrollmentProfileCollectionRequestBuilder) ID(id string) *DepMacOSEnrollmentProfileRequestBuilder {
+	bb := &DepMacOSEnrollmentProfileRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DepOnboardingSettingEnrollmentProfilesCollectionDepMacOSEnrollmentProfileCollectionRequest is request for DepMacOSEnrollmentProfile collection
+type DepOnboardingSettingEnrollmentProfilesCollectionDepMacOSEnrollmentProfileCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DepMacOSEnrollmentProfile collection
+func (r *DepOnboardingSettingEnrollmentProfilesCollectionDepMacOSEnrollmentProfileCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DepMacOSEnrollmentProfile, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DepMacOSEnrollmentProfile
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DepMacOSEnrollmentProfile
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DepMacOSEnrollmentProfile collection, max N pages
+func (r *DepOnboardingSettingEnrollmentProfilesCollectionDepMacOSEnrollmentProfileCollectionRequest) GetN(ctx context.Context, n int) ([]DepMacOSEnrollmentProfile, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DepMacOSEnrollmentProfile collection
+func (r *DepOnboardingSettingEnrollmentProfilesCollectionDepMacOSEnrollmentProfileCollectionRequest) Get(ctx context.Context) ([]DepMacOSEnrollmentProfile, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DepMacOSEnrollmentProfile collection
+func (r *DepOnboardingSettingEnrollmentProfilesCollectionDepMacOSEnrollmentProfileCollectionRequest) Add(ctx context.Context, reqObj *DepMacOSEnrollmentProfile) (resObj *DepMacOSEnrollmentProfile, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Entity is navigation property rn
 func (b *DepOnboardingSettingRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}

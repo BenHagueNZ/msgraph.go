@@ -1070,3 +1070,10 @@ func (b *ScheduleRequestBuilder) Entity() *EntityRequestBuilder {
 	bb.baseURL += "/Entity"
 	return bb
 }
+
+// Entity is navigation property rn
+func (b *ScheduleChangeRequestObjectRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}

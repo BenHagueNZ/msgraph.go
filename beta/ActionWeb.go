@@ -221,6 +221,13 @@ func (r *WebSegmentConfigurationApplicationSegmentsCollectionRequest) Add(ctx co
 	return
 }
 
+// Entity is navigation property rn
+func (b *WebAccountRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
 // WebApp returns request builder for WebApp collection
 func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) WebApp() *DeviceAppManagementMobileAppsCollectionWebAppCollectionRequestBuilder {
 	bb := &DeviceAppManagementMobileAppsCollectionWebAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -322,4 +329,11 @@ func (r *DeviceAppManagementMobileAppsCollectionWebAppCollectionRequest) Get(ctx
 func (r *DeviceAppManagementMobileAppsCollectionWebAppCollectionRequest) Add(ctx context.Context, reqObj *WebApp) (resObj *WebApp, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Entity is navigation property rn
+func (b *WebApplicationSegmentRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

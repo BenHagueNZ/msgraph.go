@@ -114,6 +114,109 @@ func (r *SamlOrWsFedExternalDomainFederationDomainsCollectionRequest) Add(ctx co
 	return
 }
 
+// SamlOrWsFedExternalDomainFederation returns request builder for SamlOrWsFedExternalDomainFederation collection
+func (b *B2cIdentityUserFlowUserFlowIdentityProvidersCollectionRequestBuilder) SamlOrWsFedExternalDomainFederation() *B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedExternalDomainFederationCollectionRequestBuilder {
+	bb := &B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedExternalDomainFederationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedExternalDomainFederationCollectionRequestBuilder is request builder for SamlOrWsFedExternalDomainFederation collection rcn
+type B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedExternalDomainFederationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for SamlOrWsFedExternalDomainFederation collection
+func (b *B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedExternalDomainFederationCollectionRequestBuilder) Request() *B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedExternalDomainFederationCollectionRequest {
+	return &B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedExternalDomainFederationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for SamlOrWsFedExternalDomainFederation item
+func (b *B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedExternalDomainFederationCollectionRequestBuilder) ID(id string) *SamlOrWsFedExternalDomainFederationRequestBuilder {
+	bb := &SamlOrWsFedExternalDomainFederationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedExternalDomainFederationCollectionRequest is request for SamlOrWsFedExternalDomainFederation collection
+type B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedExternalDomainFederationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for SamlOrWsFedExternalDomainFederation collection
+func (r *B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedExternalDomainFederationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]SamlOrWsFedExternalDomainFederation, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []SamlOrWsFedExternalDomainFederation
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []SamlOrWsFedExternalDomainFederation
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for SamlOrWsFedExternalDomainFederation collection, max N pages
+func (r *B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedExternalDomainFederationCollectionRequest) GetN(ctx context.Context, n int) ([]SamlOrWsFedExternalDomainFederation, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for SamlOrWsFedExternalDomainFederation collection
+func (r *B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedExternalDomainFederationCollectionRequest) Get(ctx context.Context) ([]SamlOrWsFedExternalDomainFederation, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for SamlOrWsFedExternalDomainFederation collection
+func (r *B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedExternalDomainFederationCollectionRequest) Add(ctx context.Context, reqObj *SamlOrWsFedExternalDomainFederation) (resObj *SamlOrWsFedExternalDomainFederation, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // SamlOrWsFedProvider returns request builder for SamlOrWsFedProvider collection
 func (b *B2cIdentityUserFlowUserFlowIdentityProvidersCollectionRequestBuilder) SamlOrWsFedProvider() *B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequestBuilder {
 	bb := &B2cIdentityUserFlowUserFlowIdentityProvidersCollectionSamlOrWsFedProviderCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}

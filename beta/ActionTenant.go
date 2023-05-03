@@ -241,11 +241,217 @@ func (b *TenantSetupInfoRequestBuilder) DefaultRolesSettings() *PrivilegedRoleSe
 	return bb
 }
 
+// TenantAppManagementPolicy returns request builder for TenantAppManagementPolicy collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) TenantAppManagementPolicy() *AdministrativeUnitMembersCollectionTenantAppManagementPolicyCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionTenantAppManagementPolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// AdministrativeUnitMembersCollectionTenantAppManagementPolicyCollectionRequestBuilder is request builder for TenantAppManagementPolicy collection rcn
+type AdministrativeUnitMembersCollectionTenantAppManagementPolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for TenantAppManagementPolicy collection
+func (b *AdministrativeUnitMembersCollectionTenantAppManagementPolicyCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionTenantAppManagementPolicyCollectionRequest {
+	return &AdministrativeUnitMembersCollectionTenantAppManagementPolicyCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for TenantAppManagementPolicy item
+func (b *AdministrativeUnitMembersCollectionTenantAppManagementPolicyCollectionRequestBuilder) ID(id string) *TenantAppManagementPolicyRequestBuilder {
+	bb := &TenantAppManagementPolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// AdministrativeUnitMembersCollectionTenantAppManagementPolicyCollectionRequest is request for TenantAppManagementPolicy collection
+type AdministrativeUnitMembersCollectionTenantAppManagementPolicyCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for TenantAppManagementPolicy collection
+func (r *AdministrativeUnitMembersCollectionTenantAppManagementPolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TenantAppManagementPolicy, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []TenantAppManagementPolicy
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []TenantAppManagementPolicy
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for TenantAppManagementPolicy collection, max N pages
+func (r *AdministrativeUnitMembersCollectionTenantAppManagementPolicyCollectionRequest) GetN(ctx context.Context, n int) ([]TenantAppManagementPolicy, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for TenantAppManagementPolicy collection
+func (r *AdministrativeUnitMembersCollectionTenantAppManagementPolicyCollectionRequest) Get(ctx context.Context) ([]TenantAppManagementPolicy, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for TenantAppManagementPolicy collection
+func (r *AdministrativeUnitMembersCollectionTenantAppManagementPolicyCollectionRequest) Add(ctx context.Context, reqObj *TenantAppManagementPolicy) (resObj *TenantAppManagementPolicy, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Entity is navigation property rn
 func (b *TenantAttachRBACRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
+}
+
+// TenantRelationshipAccessPolicyBase returns request builder for TenantRelationshipAccessPolicyBase collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) TenantRelationshipAccessPolicyBase() *AdministrativeUnitMembersCollectionTenantRelationshipAccessPolicyBaseCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionTenantRelationshipAccessPolicyBaseCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// AdministrativeUnitMembersCollectionTenantRelationshipAccessPolicyBaseCollectionRequestBuilder is request builder for TenantRelationshipAccessPolicyBase collection rcn
+type AdministrativeUnitMembersCollectionTenantRelationshipAccessPolicyBaseCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for TenantRelationshipAccessPolicyBase collection
+func (b *AdministrativeUnitMembersCollectionTenantRelationshipAccessPolicyBaseCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionTenantRelationshipAccessPolicyBaseCollectionRequest {
+	return &AdministrativeUnitMembersCollectionTenantRelationshipAccessPolicyBaseCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for TenantRelationshipAccessPolicyBase item
+func (b *AdministrativeUnitMembersCollectionTenantRelationshipAccessPolicyBaseCollectionRequestBuilder) ID(id string) *TenantRelationshipAccessPolicyBaseRequestBuilder {
+	bb := &TenantRelationshipAccessPolicyBaseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// AdministrativeUnitMembersCollectionTenantRelationshipAccessPolicyBaseCollectionRequest is request for TenantRelationshipAccessPolicyBase collection
+type AdministrativeUnitMembersCollectionTenantRelationshipAccessPolicyBaseCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for TenantRelationshipAccessPolicyBase collection
+func (r *AdministrativeUnitMembersCollectionTenantRelationshipAccessPolicyBaseCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TenantRelationshipAccessPolicyBase, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []TenantRelationshipAccessPolicyBase
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []TenantRelationshipAccessPolicyBase
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for TenantRelationshipAccessPolicyBase collection, max N pages
+func (r *AdministrativeUnitMembersCollectionTenantRelationshipAccessPolicyBaseCollectionRequest) GetN(ctx context.Context, n int) ([]TenantRelationshipAccessPolicyBase, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for TenantRelationshipAccessPolicyBase collection
+func (r *AdministrativeUnitMembersCollectionTenantRelationshipAccessPolicyBaseCollectionRequest) Get(ctx context.Context) ([]TenantRelationshipAccessPolicyBase, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for TenantRelationshipAccessPolicyBase collection
+func (r *AdministrativeUnitMembersCollectionTenantRelationshipAccessPolicyBaseCollectionRequest) Add(ctx context.Context, reqObj *TenantRelationshipAccessPolicyBase) (resObj *TenantRelationshipAccessPolicyBase, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
 }
 
 // Entity is navigation property rn

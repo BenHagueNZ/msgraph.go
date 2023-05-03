@@ -355,9 +355,215 @@ func (r *TargetedManagedAppProtectionAssignmentsCollectionRequest) Add(ctx conte
 	return
 }
 
+// TargetedManagedAppConfiguration returns request builder for TargetedManagedAppConfiguration collection
+func (b *DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder) TargetedManagedAppConfiguration() *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppConfigurationCollectionRequestBuilder {
+	bb := &DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppConfigurationCollectionRequestBuilder is request builder for TargetedManagedAppConfiguration collection rcn
+type DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for TargetedManagedAppConfiguration collection
+func (b *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppConfigurationCollectionRequestBuilder) Request() *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppConfigurationCollectionRequest {
+	return &DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppConfigurationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for TargetedManagedAppConfiguration item
+func (b *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppConfigurationCollectionRequestBuilder) ID(id string) *TargetedManagedAppConfigurationRequestBuilder {
+	bb := &TargetedManagedAppConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppConfigurationCollectionRequest is request for TargetedManagedAppConfiguration collection
+type DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppConfigurationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for TargetedManagedAppConfiguration collection
+func (r *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TargetedManagedAppConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []TargetedManagedAppConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []TargetedManagedAppConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for TargetedManagedAppConfiguration collection, max N pages
+func (r *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]TargetedManagedAppConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for TargetedManagedAppConfiguration collection
+func (r *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppConfigurationCollectionRequest) Get(ctx context.Context) ([]TargetedManagedAppConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for TargetedManagedAppConfiguration collection
+func (r *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppConfigurationCollectionRequest) Add(ctx context.Context, reqObj *TargetedManagedAppConfiguration) (resObj *TargetedManagedAppConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Entity is navigation property rn
 func (b *TargetedManagedAppPolicyAssignmentRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
+}
+
+// TargetedManagedAppProtection returns request builder for TargetedManagedAppProtection collection
+func (b *DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder) TargetedManagedAppProtection() *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppProtectionCollectionRequestBuilder {
+	bb := &DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppProtectionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppProtectionCollectionRequestBuilder is request builder for TargetedManagedAppProtection collection rcn
+type DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppProtectionCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for TargetedManagedAppProtection collection
+func (b *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppProtectionCollectionRequestBuilder) Request() *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppProtectionCollectionRequest {
+	return &DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppProtectionCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for TargetedManagedAppProtection item
+func (b *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppProtectionCollectionRequestBuilder) ID(id string) *TargetedManagedAppProtectionRequestBuilder {
+	bb := &TargetedManagedAppProtectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppProtectionCollectionRequest is request for TargetedManagedAppProtection collection
+type DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppProtectionCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for TargetedManagedAppProtection collection
+func (r *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppProtectionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]TargetedManagedAppProtection, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []TargetedManagedAppProtection
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []TargetedManagedAppProtection
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for TargetedManagedAppProtection collection, max N pages
+func (r *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppProtectionCollectionRequest) GetN(ctx context.Context, n int) ([]TargetedManagedAppProtection, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for TargetedManagedAppProtection collection
+func (r *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppProtectionCollectionRequest) Get(ctx context.Context) ([]TargetedManagedAppProtection, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for TargetedManagedAppProtection collection
+func (r *DeviceAppManagementManagedAppPoliciesCollectionTargetedManagedAppProtectionCollectionRequest) Add(ctx context.Context, reqObj *TargetedManagedAppProtection) (resObj *TargetedManagedAppProtection, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
 }

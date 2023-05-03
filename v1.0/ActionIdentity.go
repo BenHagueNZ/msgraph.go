@@ -1118,6 +1118,109 @@ func (b *IdentityProviderRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
+// IdentitySecurityDefaultsEnforcementPolicy returns request builder for IdentitySecurityDefaultsEnforcementPolicy collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) IdentitySecurityDefaultsEnforcementPolicy() *AdministrativeUnitMembersCollectionIdentitySecurityDefaultsEnforcementPolicyCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionIdentitySecurityDefaultsEnforcementPolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// AdministrativeUnitMembersCollectionIdentitySecurityDefaultsEnforcementPolicyCollectionRequestBuilder is request builder for IdentitySecurityDefaultsEnforcementPolicy collection rcn
+type AdministrativeUnitMembersCollectionIdentitySecurityDefaultsEnforcementPolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for IdentitySecurityDefaultsEnforcementPolicy collection
+func (b *AdministrativeUnitMembersCollectionIdentitySecurityDefaultsEnforcementPolicyCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionIdentitySecurityDefaultsEnforcementPolicyCollectionRequest {
+	return &AdministrativeUnitMembersCollectionIdentitySecurityDefaultsEnforcementPolicyCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for IdentitySecurityDefaultsEnforcementPolicy item
+func (b *AdministrativeUnitMembersCollectionIdentitySecurityDefaultsEnforcementPolicyCollectionRequestBuilder) ID(id string) *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder {
+	bb := &IdentitySecurityDefaultsEnforcementPolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// AdministrativeUnitMembersCollectionIdentitySecurityDefaultsEnforcementPolicyCollectionRequest is request for IdentitySecurityDefaultsEnforcementPolicy collection
+type AdministrativeUnitMembersCollectionIdentitySecurityDefaultsEnforcementPolicyCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for IdentitySecurityDefaultsEnforcementPolicy collection
+func (r *AdministrativeUnitMembersCollectionIdentitySecurityDefaultsEnforcementPolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IdentitySecurityDefaultsEnforcementPolicy, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []IdentitySecurityDefaultsEnforcementPolicy
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []IdentitySecurityDefaultsEnforcementPolicy
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for IdentitySecurityDefaultsEnforcementPolicy collection, max N pages
+func (r *AdministrativeUnitMembersCollectionIdentitySecurityDefaultsEnforcementPolicyCollectionRequest) GetN(ctx context.Context, n int) ([]IdentitySecurityDefaultsEnforcementPolicy, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for IdentitySecurityDefaultsEnforcementPolicy collection
+func (r *AdministrativeUnitMembersCollectionIdentitySecurityDefaultsEnforcementPolicyCollectionRequest) Get(ctx context.Context) ([]IdentitySecurityDefaultsEnforcementPolicy, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for IdentitySecurityDefaultsEnforcementPolicy collection
+func (r *AdministrativeUnitMembersCollectionIdentitySecurityDefaultsEnforcementPolicyCollectionRequest) Add(ctx context.Context, reqObj *IdentitySecurityDefaultsEnforcementPolicy) (resObj *IdentitySecurityDefaultsEnforcementPolicy, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Entity is navigation property rn
 func (b *IdentityUserFlowRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}

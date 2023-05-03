@@ -2277,6 +2277,13 @@ func (b *ServiceHealthRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
+// Entity is navigation property rn
+func (b *ServiceHealthIssueRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
 // ServicePrincipal returns request builder for ServicePrincipal collection
 func (b *AdministrativeUnitMembersCollectionRequestBuilder) ServicePrincipal() *AdministrativeUnitMembersCollectionServicePrincipalCollectionRequestBuilder {
 	bb := &AdministrativeUnitMembersCollectionServicePrincipalCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -2382,6 +2389,13 @@ func (r *AdministrativeUnitMembersCollectionServicePrincipalCollectionRequest) A
 
 // Entity is navigation property rn
 func (b *ServicePrincipalRiskDetectionRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *ServiceUpdateMessageRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb

@@ -643,6 +643,109 @@ func (r *DeviceManagementDeviceConfigurationsCollectionWindows10DeviceFirmwareCo
 	return
 }
 
+// Windows10EasEmailProfileConfiguration returns request builder for Windows10EasEmailProfileConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) Windows10EasEmailProfileConfiguration() *DeviceManagementDeviceConfigurationsCollectionWindows10EasEmailProfileConfigurationCollectionRequestBuilder {
+	bb := &DeviceManagementDeviceConfigurationsCollectionWindows10EasEmailProfileConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionWindows10EasEmailProfileConfigurationCollectionRequestBuilder is request builder for Windows10EasEmailProfileConfiguration collection rcn
+type DeviceManagementDeviceConfigurationsCollectionWindows10EasEmailProfileConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for Windows10EasEmailProfileConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionWindows10EasEmailProfileConfigurationCollectionRequestBuilder) Request() *DeviceManagementDeviceConfigurationsCollectionWindows10EasEmailProfileConfigurationCollectionRequest {
+	return &DeviceManagementDeviceConfigurationsCollectionWindows10EasEmailProfileConfigurationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for Windows10EasEmailProfileConfiguration item
+func (b *DeviceManagementDeviceConfigurationsCollectionWindows10EasEmailProfileConfigurationCollectionRequestBuilder) ID(id string) *Windows10EasEmailProfileConfigurationRequestBuilder {
+	bb := &Windows10EasEmailProfileConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionWindows10EasEmailProfileConfigurationCollectionRequest is request for Windows10EasEmailProfileConfiguration collection
+type DeviceManagementDeviceConfigurationsCollectionWindows10EasEmailProfileConfigurationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for Windows10EasEmailProfileConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionWindows10EasEmailProfileConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Windows10EasEmailProfileConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []Windows10EasEmailProfileConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []Windows10EasEmailProfileConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for Windows10EasEmailProfileConfiguration collection, max N pages
+func (r *DeviceManagementDeviceConfigurationsCollectionWindows10EasEmailProfileConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]Windows10EasEmailProfileConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for Windows10EasEmailProfileConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionWindows10EasEmailProfileConfigurationCollectionRequest) Get(ctx context.Context) ([]Windows10EasEmailProfileConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for Windows10EasEmailProfileConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionWindows10EasEmailProfileConfigurationCollectionRequest) Add(ctx context.Context, reqObj *Windows10EasEmailProfileConfiguration) (resObj *Windows10EasEmailProfileConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Windows10EndpointProtectionConfiguration returns request builder for Windows10EndpointProtectionConfiguration collection
 func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) Windows10EndpointProtectionConfiguration() *DeviceManagementDeviceConfigurationsCollectionWindows10EndpointProtectionConfigurationCollectionRequestBuilder {
 	bb := &DeviceManagementDeviceConfigurationsCollectionWindows10EndpointProtectionConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -1474,6 +1577,13 @@ func (r *DeviceManagementDeviceConfigurationsCollectionWindows10PFXImportCertifi
 	return
 }
 
+// WindowsCertificateProfileBase is navigation property rn
+func (b *Windows10PkcsCertificateProfileRequestBuilder) WindowsCertificateProfileBase() *WindowsCertificateProfileBaseRequestBuilder {
+	bb := &WindowsCertificateProfileBaseRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/WindowsCertificateProfileBase"
+	return bb
+}
+
 // Windows10SecureAssessmentConfiguration returns request builder for Windows10SecureAssessmentConfiguration collection
 func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) Windows10SecureAssessmentConfiguration() *DeviceManagementDeviceConfigurationsCollectionWindows10SecureAssessmentConfigurationCollectionRequestBuilder {
 	bb := &DeviceManagementDeviceConfigurationsCollectionWindows10SecureAssessmentConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -1680,6 +1790,109 @@ func (r *DeviceManagementDeviceConfigurationsCollectionWindows10TeamGeneralConfi
 	return
 }
 
+// Windows10VpnConfiguration returns request builder for Windows10VpnConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) Windows10VpnConfiguration() *DeviceManagementDeviceConfigurationsCollectionWindows10VpnConfigurationCollectionRequestBuilder {
+	bb := &DeviceManagementDeviceConfigurationsCollectionWindows10VpnConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionWindows10VpnConfigurationCollectionRequestBuilder is request builder for Windows10VpnConfiguration collection rcn
+type DeviceManagementDeviceConfigurationsCollectionWindows10VpnConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for Windows10VpnConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionWindows10VpnConfigurationCollectionRequestBuilder) Request() *DeviceManagementDeviceConfigurationsCollectionWindows10VpnConfigurationCollectionRequest {
+	return &DeviceManagementDeviceConfigurationsCollectionWindows10VpnConfigurationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for Windows10VpnConfiguration item
+func (b *DeviceManagementDeviceConfigurationsCollectionWindows10VpnConfigurationCollectionRequestBuilder) ID(id string) *Windows10VpnConfigurationRequestBuilder {
+	bb := &Windows10VpnConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionWindows10VpnConfigurationCollectionRequest is request for Windows10VpnConfiguration collection
+type DeviceManagementDeviceConfigurationsCollectionWindows10VpnConfigurationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for Windows10VpnConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionWindows10VpnConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Windows10VpnConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []Windows10VpnConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []Windows10VpnConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for Windows10VpnConfiguration collection, max N pages
+func (r *DeviceManagementDeviceConfigurationsCollectionWindows10VpnConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]Windows10VpnConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for Windows10VpnConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionWindows10VpnConfigurationCollectionRequest) Get(ctx context.Context) ([]Windows10VpnConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for Windows10VpnConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionWindows10VpnConfigurationCollectionRequest) Add(ctx context.Context, reqObj *Windows10VpnConfiguration) (resObj *Windows10VpnConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Windows10XCertificateProfile returns request builder for Windows10XCertificateProfile collection
 func (b *DeviceManagementResourceAccessProfilesCollectionRequestBuilder) Windows10XCertificateProfile() *DeviceManagementResourceAccessProfilesCollectionWindows10XCertificateProfileCollectionRequestBuilder {
 	bb := &DeviceManagementResourceAccessProfilesCollectionWindows10XCertificateProfileCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -1779,6 +1992,109 @@ func (r *DeviceManagementResourceAccessProfilesCollectionWindows10XCertificatePr
 
 // Add performs POST request for Windows10XCertificateProfile collection
 func (r *DeviceManagementResourceAccessProfilesCollectionWindows10XCertificateProfileCollectionRequest) Add(ctx context.Context, reqObj *Windows10XCertificateProfile) (resObj *Windows10XCertificateProfile, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// Windows10XSCEPCertificateProfile returns request builder for Windows10XSCEPCertificateProfile collection
+func (b *DeviceManagementResourceAccessProfilesCollectionRequestBuilder) Windows10XSCEPCertificateProfile() *DeviceManagementResourceAccessProfilesCollectionWindows10XSCEPCertificateProfileCollectionRequestBuilder {
+	bb := &DeviceManagementResourceAccessProfilesCollectionWindows10XSCEPCertificateProfileCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceManagementResourceAccessProfilesCollectionWindows10XSCEPCertificateProfileCollectionRequestBuilder is request builder for Windows10XSCEPCertificateProfile collection rcn
+type DeviceManagementResourceAccessProfilesCollectionWindows10XSCEPCertificateProfileCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for Windows10XSCEPCertificateProfile collection
+func (b *DeviceManagementResourceAccessProfilesCollectionWindows10XSCEPCertificateProfileCollectionRequestBuilder) Request() *DeviceManagementResourceAccessProfilesCollectionWindows10XSCEPCertificateProfileCollectionRequest {
+	return &DeviceManagementResourceAccessProfilesCollectionWindows10XSCEPCertificateProfileCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for Windows10XSCEPCertificateProfile item
+func (b *DeviceManagementResourceAccessProfilesCollectionWindows10XSCEPCertificateProfileCollectionRequestBuilder) ID(id string) *Windows10XSCEPCertificateProfileRequestBuilder {
+	bb := &Windows10XSCEPCertificateProfileRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceManagementResourceAccessProfilesCollectionWindows10XSCEPCertificateProfileCollectionRequest is request for Windows10XSCEPCertificateProfile collection
+type DeviceManagementResourceAccessProfilesCollectionWindows10XSCEPCertificateProfileCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for Windows10XSCEPCertificateProfile collection
+func (r *DeviceManagementResourceAccessProfilesCollectionWindows10XSCEPCertificateProfileCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]Windows10XSCEPCertificateProfile, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []Windows10XSCEPCertificateProfile
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []Windows10XSCEPCertificateProfile
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for Windows10XSCEPCertificateProfile collection, max N pages
+func (r *DeviceManagementResourceAccessProfilesCollectionWindows10XSCEPCertificateProfileCollectionRequest) GetN(ctx context.Context, n int) ([]Windows10XSCEPCertificateProfile, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for Windows10XSCEPCertificateProfile collection
+func (r *DeviceManagementResourceAccessProfilesCollectionWindows10XSCEPCertificateProfileCollectionRequest) Get(ctx context.Context) ([]Windows10XSCEPCertificateProfile, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for Windows10XSCEPCertificateProfile collection
+func (r *DeviceManagementResourceAccessProfilesCollectionWindows10XSCEPCertificateProfileCollectionRequest) Add(ctx context.Context, reqObj *Windows10XSCEPCertificateProfile) (resObj *Windows10XSCEPCertificateProfile, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

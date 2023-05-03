@@ -2953,6 +2953,13 @@ func (r *EducationSubmissionOutcomesCollectionEducationRubricOutcomeCollectionRe
 }
 
 // Entity is navigation property rn
+func (b *EducationSchoolRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
 func (b *EducationSubmissionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"

@@ -684,6 +684,13 @@ func (b *PrinterUsageSummaryRequestBuilder) Printer() *DirectoryObjectRequestBui
 }
 
 // Entity is navigation property rn
+func (b *PrinterRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
 func (b *PrinterBaseRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
@@ -791,4 +798,11 @@ func (r *PrintOperationsCollectionPrinterCreateOperationCollectionRequest) Get(c
 func (r *PrintOperationsCollectionPrinterCreateOperationCollectionRequest) Add(ctx context.Context, reqObj *PrinterCreateOperation) (resObj *PrinterCreateOperation, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Entity is navigation property rn
+func (b *PrinterShareRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

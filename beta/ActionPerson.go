@@ -18,6 +18,34 @@ func (b *PersonRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
+// Entity is navigation property rn
+func (b *PersonAnnotationRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *PersonAnnualEventRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *PersonAwardRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *PersonCertificationRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
 // PersonExtension returns request builder for PersonExtension collection
 func (b *AdministrativeUnitExtensionsCollectionRequestBuilder) PersonExtension() *AdministrativeUnitExtensionsCollectionPersonExtensionCollectionRequestBuilder {
 	bb := &AdministrativeUnitExtensionsCollectionPersonExtensionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -119,4 +147,32 @@ func (r *AdministrativeUnitExtensionsCollectionPersonExtensionCollectionRequest)
 func (r *AdministrativeUnitExtensionsCollectionPersonExtensionCollectionRequest) Add(ctx context.Context, reqObj *PersonExtension) (resObj *PersonExtension, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Entity is navigation property rn
+func (b *PersonInterestRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *PersonNameRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *PersonResponsibilityRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *PersonWebsiteRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }

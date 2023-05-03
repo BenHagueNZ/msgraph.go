@@ -120,6 +120,7 @@ func (g *Generator) Generate() error {
 	}
 	allEntityTypeMap := map[string]*EntityType{}
 	allRequestModelMap := map[string]bool{}
+	abstractTypeMap := map[string]string{}
 	dupCheckMap := map[string]bool{}
 	var allAliases []AliasRegexp
 	for _, schema := range o.Elems[0].Elems {
@@ -249,6 +250,16 @@ func (g *Generator) Generate() error {
 				}
 
 				et.Name = lintName(et.Name)
+				if m["Abstract"] == "true" {
+					val, ok := m["BaseType"]
+					if ok {
+						for _, alias := range allAliases {
+							val = alias.Alias.ReplaceAllString(val, alias.Namespace)
+						}
+						val = requestAlias.ReplaceAllString(val, requestNamespace)
+						abstractTypeMap[exported(m["Name"])] = val
+					}
+				}
 				entityTypeMap[et.Name] = et
 				allEntityTypeMap[et.Name] = et
 			case "Action":
@@ -368,7 +379,6 @@ func (g *Generator) Generate() error {
 				}
 			}
 		}
-
 		var out io.WriteCloser
 
 		keys := []string{}
@@ -435,8 +445,6 @@ func (g *Generator) Generate() error {
 			if _, ok := reservedTypeTable[a]; ok {
 				continue
 			}
-			fmt.Println("a")
-			fmt.Println(a)
 			x := actionTypeMap[a]
 			out, err = g.Create("Action", g.SymBaseType(a))
 			if err != nil {
@@ -447,8 +455,6 @@ func (g *Generator) Generate() error {
 				allRequestModelMap[g.SymBaseType(a)] = true
 			}
 			for _, y := range x {
-				fmt.Println("d")
-				fmt.Println(g)
 				g.X = y
 				err := tmpl.ExecuteTemplate(out, "action.go.tmpl", g)
 				if err != nil {
@@ -543,8 +549,6 @@ func (g *Generator) Generate() error {
 		sort.Strings(keys)
 		for _, key := range keys {
 			x := entityTypeMap[key]
-			fmt.Println("b")
-			fmt.Println(key)
 			if !contains(actionRequestBuilderMap[strings.ToLower(x.Type)], x.Sym) {
 				actionRequestBuilderMap[strings.ToLower(x.Type)] = append(actionRequestBuilderMap[strings.ToLower(x.Type)], x.Sym)
 			}
@@ -561,8 +565,6 @@ func (g *Generator) Generate() error {
 
 				navigations[y.Type] = true
 				g.Y = y
-				fmt.Println("c")
-				fmt.Println(g)
 				if isCollectionType(y.Type) {
 					if !contains(actionRequestBuilderMap[strings.ToLower(y.Type)], x.Sym+y.Sym+"Collection") {
 						actionRequestBuilderMap[strings.ToLower(y.Type)] = append(actionRequestBuilderMap[strings.ToLower(y.Type)], x.Sym+y.Sym+"Collection")
@@ -587,8 +589,6 @@ func (g *Generator) Generate() error {
 
 		for _, key := range keys {
 			x := entityTypeMap[key]
-			fmt.Println("e")
-			fmt.Println(x)
 			out, err = g.Create("Action", x.Sym)
 			if err != nil {
 				return err
@@ -598,19 +598,22 @@ func (g *Generator) Generate() error {
 				if strings.HasSuffix(baseType, "RequestObject") {
 					baseType = strings.TrimSuffix(baseType, "Object")
 				}
-				if baseType == "ManagedApp" {
-					baseType = "MobileApp"
-					fmt.Println("Changed")
-					fmt.Println(x.Base)
-					x.Base = "microsoft.graph.mobileApp"
+				fmt.Println("A")
+				if !navigations["Collection("+x.Base+")"] && !navigations[x.Base] {
+					fmt.Println(baseType)
+					val, ok := abstractTypeMap[baseType]
+					if ok {
+						x.Base = val
+						baseType = g.SymFromType(x.Base)
+						fmt.Println(x.Base)
+						fmt.Println(baseType)
+					}
 				}
-				fmt.Println("f")
-				fmt.Println(baseType)
-				fmt.Println(x.Sym)
+
 				if !complete[x.Sym] {
-					fmt.Println("not complete")
 					if navigations["Collection("+x.Base+")"] {
-						fmt.Println("Collection")
+						fmt.Println("collection")
+						fmt.Println(baseType)
 						g.Y = x
 						y := allEntityTypeMap[baseType]
 						//y.Sym = x.Sym
@@ -631,7 +634,8 @@ func (g *Generator) Generate() error {
 						}
 					} else {
 						if navigations[x.Base] {
-							fmt.Println("Not Collection")
+							fmt.Println("not collection")
+							fmt.Println(baseType)
 							g.X = x
 							y := entityTypeMap[baseType]
 							//y.Sym = x.Sym

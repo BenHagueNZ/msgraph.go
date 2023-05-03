@@ -217,6 +217,13 @@ func (r *B2cIdentityUserFlowIdentityProvidersCollectionOpenIDConnectProviderColl
 	return
 }
 
+// Entity is navigation property rn
+func (b *OpenShiftRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
 // OpenTypeExtension returns request builder for OpenTypeExtension collection
 func (b *AdministrativeUnitExtensionsCollectionRequestBuilder) OpenTypeExtension() *AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequestBuilder {
 	bb := &AdministrativeUnitExtensionsCollectionOpenTypeExtensionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}

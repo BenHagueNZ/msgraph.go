@@ -458,6 +458,109 @@ func (b *ExternalGroupRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
+// ExternalIdentitiesPolicy returns request builder for ExternalIdentitiesPolicy collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) ExternalIdentitiesPolicy() *AdministrativeUnitMembersCollectionExternalIdentitiesPolicyCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionExternalIdentitiesPolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// AdministrativeUnitMembersCollectionExternalIdentitiesPolicyCollectionRequestBuilder is request builder for ExternalIdentitiesPolicy collection rcn
+type AdministrativeUnitMembersCollectionExternalIdentitiesPolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ExternalIdentitiesPolicy collection
+func (b *AdministrativeUnitMembersCollectionExternalIdentitiesPolicyCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionExternalIdentitiesPolicyCollectionRequest {
+	return &AdministrativeUnitMembersCollectionExternalIdentitiesPolicyCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ExternalIdentitiesPolicy item
+func (b *AdministrativeUnitMembersCollectionExternalIdentitiesPolicyCollectionRequestBuilder) ID(id string) *ExternalIdentitiesPolicyRequestBuilder {
+	bb := &ExternalIdentitiesPolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// AdministrativeUnitMembersCollectionExternalIdentitiesPolicyCollectionRequest is request for ExternalIdentitiesPolicy collection
+type AdministrativeUnitMembersCollectionExternalIdentitiesPolicyCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ExternalIdentitiesPolicy collection
+func (r *AdministrativeUnitMembersCollectionExternalIdentitiesPolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ExternalIdentitiesPolicy, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ExternalIdentitiesPolicy
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ExternalIdentitiesPolicy
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ExternalIdentitiesPolicy collection, max N pages
+func (r *AdministrativeUnitMembersCollectionExternalIdentitiesPolicyCollectionRequest) GetN(ctx context.Context, n int) ([]ExternalIdentitiesPolicy, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ExternalIdentitiesPolicy collection
+func (r *AdministrativeUnitMembersCollectionExternalIdentitiesPolicyCollectionRequest) Get(ctx context.Context) ([]ExternalIdentitiesPolicy, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ExternalIdentitiesPolicy collection
+func (r *AdministrativeUnitMembersCollectionExternalIdentitiesPolicyCollectionRequest) Add(ctx context.Context, reqObj *ExternalIdentitiesPolicy) (resObj *ExternalIdentitiesPolicy, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Entity is navigation property rn
 func (b *ExternalItemRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -566,6 +669,13 @@ func (r *MeetingRegistrationBaseRegistrantsCollectionExternalMeetingRegistrantCo
 func (r *MeetingRegistrationBaseRegistrantsCollectionExternalMeetingRegistrantCollectionRequest) Add(ctx context.Context, reqObj *ExternalMeetingRegistrant) (resObj *ExternalMeetingRegistrant, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
+}
+
+// Entity is navigation property rn
+func (b *ExternalMeetingRegistrationRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
 }
 
 // ExternalConnectorsExternalItemExternalConnectorsAddActivitiesRequestParameter undocumented

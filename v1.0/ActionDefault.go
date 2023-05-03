@@ -120,3 +120,106 @@ func (b *DefaultManagedAppProtectionRequestBuilder) DeploymentSummary() *Managed
 	bb.baseURL += "/deploymentSummary"
 	return bb
 }
+
+// DefaultManagedAppProtection returns request builder for DefaultManagedAppProtection collection
+func (b *DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder) DefaultManagedAppProtection() *DeviceAppManagementManagedAppPoliciesCollectionDefaultManagedAppProtectionCollectionRequestBuilder {
+	bb := &DeviceAppManagementManagedAppPoliciesCollectionDefaultManagedAppProtectionCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceAppManagementManagedAppPoliciesCollectionDefaultManagedAppProtectionCollectionRequestBuilder is request builder for DefaultManagedAppProtection collection rcn
+type DeviceAppManagementManagedAppPoliciesCollectionDefaultManagedAppProtectionCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for DefaultManagedAppProtection collection
+func (b *DeviceAppManagementManagedAppPoliciesCollectionDefaultManagedAppProtectionCollectionRequestBuilder) Request() *DeviceAppManagementManagedAppPoliciesCollectionDefaultManagedAppProtectionCollectionRequest {
+	return &DeviceAppManagementManagedAppPoliciesCollectionDefaultManagedAppProtectionCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for DefaultManagedAppProtection item
+func (b *DeviceAppManagementManagedAppPoliciesCollectionDefaultManagedAppProtectionCollectionRequestBuilder) ID(id string) *DefaultManagedAppProtectionRequestBuilder {
+	bb := &DefaultManagedAppProtectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceAppManagementManagedAppPoliciesCollectionDefaultManagedAppProtectionCollectionRequest is request for DefaultManagedAppProtection collection
+type DeviceAppManagementManagedAppPoliciesCollectionDefaultManagedAppProtectionCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for DefaultManagedAppProtection collection
+func (r *DeviceAppManagementManagedAppPoliciesCollectionDefaultManagedAppProtectionCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]DefaultManagedAppProtection, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []DefaultManagedAppProtection
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []DefaultManagedAppProtection
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for DefaultManagedAppProtection collection, max N pages
+func (r *DeviceAppManagementManagedAppPoliciesCollectionDefaultManagedAppProtectionCollectionRequest) GetN(ctx context.Context, n int) ([]DefaultManagedAppProtection, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for DefaultManagedAppProtection collection
+func (r *DeviceAppManagementManagedAppPoliciesCollectionDefaultManagedAppProtectionCollectionRequest) Get(ctx context.Context) ([]DefaultManagedAppProtection, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for DefaultManagedAppProtection collection
+func (r *DeviceAppManagementManagedAppPoliciesCollectionDefaultManagedAppProtectionCollectionRequest) Add(ctx context.Context, reqObj *DefaultManagedAppProtection) (resObj *DefaultManagedAppProtection, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}

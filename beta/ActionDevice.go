@@ -28848,13 +28848,6 @@ func (b *DeviceShellScriptRequestBuilder) Entity() *EntityRequestBuilder {
 }
 
 // Entity is navigation property rn
-func (b *DeviceAppManagementManagedAppPoliciesCollectionRequestBuilder) Entity() *EntityRequestBuilder {
-	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
-	bb.baseURL += "/Entity"
-	return bb
-}
-
-// Entity is navigation property rn
 func (b *DeviceAppManagementManagedEBooksCollectionRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"

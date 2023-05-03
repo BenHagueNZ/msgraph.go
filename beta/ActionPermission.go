@@ -244,3 +244,106 @@ func (b *PermissionGrantConditionSetRequestBuilder) Entity() *EntityRequestBuild
 	bb.baseURL += "/Entity"
 	return bb
 }
+
+// PermissionGrantPolicy returns request builder for PermissionGrantPolicy collection
+func (b *AdministrativeUnitMembersCollectionRequestBuilder) PermissionGrantPolicy() *AdministrativeUnitMembersCollectionPermissionGrantPolicyCollectionRequestBuilder {
+	bb := &AdministrativeUnitMembersCollectionPermissionGrantPolicyCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// AdministrativeUnitMembersCollectionPermissionGrantPolicyCollectionRequestBuilder is request builder for PermissionGrantPolicy collection rcn
+type AdministrativeUnitMembersCollectionPermissionGrantPolicyCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for PermissionGrantPolicy collection
+func (b *AdministrativeUnitMembersCollectionPermissionGrantPolicyCollectionRequestBuilder) Request() *AdministrativeUnitMembersCollectionPermissionGrantPolicyCollectionRequest {
+	return &AdministrativeUnitMembersCollectionPermissionGrantPolicyCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for PermissionGrantPolicy item
+func (b *AdministrativeUnitMembersCollectionPermissionGrantPolicyCollectionRequestBuilder) ID(id string) *PermissionGrantPolicyRequestBuilder {
+	bb := &PermissionGrantPolicyRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// AdministrativeUnitMembersCollectionPermissionGrantPolicyCollectionRequest is request for PermissionGrantPolicy collection
+type AdministrativeUnitMembersCollectionPermissionGrantPolicyCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for PermissionGrantPolicy collection
+func (r *AdministrativeUnitMembersCollectionPermissionGrantPolicyCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]PermissionGrantPolicy, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []PermissionGrantPolicy
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []PermissionGrantPolicy
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for PermissionGrantPolicy collection, max N pages
+func (r *AdministrativeUnitMembersCollectionPermissionGrantPolicyCollectionRequest) GetN(ctx context.Context, n int) ([]PermissionGrantPolicy, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for PermissionGrantPolicy collection
+func (r *AdministrativeUnitMembersCollectionPermissionGrantPolicyCollectionRequest) Get(ctx context.Context) ([]PermissionGrantPolicy, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for PermissionGrantPolicy collection
+func (r *AdministrativeUnitMembersCollectionPermissionGrantPolicyCollectionRequest) Add(ctx context.Context, reqObj *PermissionGrantPolicy) (resObj *PermissionGrantPolicy, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}

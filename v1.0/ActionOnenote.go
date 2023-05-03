@@ -819,3 +819,17 @@ func (b *OnenoteEntityBaseModelRequestBuilder) Entity() *EntityRequestBuilder {
 	bb.baseURL += "/Entity"
 	return bb
 }
+
+// Entity is navigation property rn
+func (b *OnenoteEntitySchemaObjectModelRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}
+
+// Entity is navigation property rn
+func (b *OnenoteResourceRequestBuilder) Entity() *EntityRequestBuilder {
+	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/Entity"
+	return bb
+}

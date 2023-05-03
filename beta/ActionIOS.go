@@ -1593,6 +1593,212 @@ func (r *DeviceManagementDeviceConfigurationsCollectionIOSDerivedCredentialAuthe
 	return
 }
 
+// IOSDeviceFeaturesConfiguration returns request builder for IOSDeviceFeaturesConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) IOSDeviceFeaturesConfiguration() *DeviceManagementDeviceConfigurationsCollectionIOSDeviceFeaturesConfigurationCollectionRequestBuilder {
+	bb := &DeviceManagementDeviceConfigurationsCollectionIOSDeviceFeaturesConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionIOSDeviceFeaturesConfigurationCollectionRequestBuilder is request builder for IOSDeviceFeaturesConfiguration collection rcn
+type DeviceManagementDeviceConfigurationsCollectionIOSDeviceFeaturesConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for IOSDeviceFeaturesConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionIOSDeviceFeaturesConfigurationCollectionRequestBuilder) Request() *DeviceManagementDeviceConfigurationsCollectionIOSDeviceFeaturesConfigurationCollectionRequest {
+	return &DeviceManagementDeviceConfigurationsCollectionIOSDeviceFeaturesConfigurationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for IOSDeviceFeaturesConfiguration item
+func (b *DeviceManagementDeviceConfigurationsCollectionIOSDeviceFeaturesConfigurationCollectionRequestBuilder) ID(id string) *IOSDeviceFeaturesConfigurationRequestBuilder {
+	bb := &IOSDeviceFeaturesConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionIOSDeviceFeaturesConfigurationCollectionRequest is request for IOSDeviceFeaturesConfiguration collection
+type DeviceManagementDeviceConfigurationsCollectionIOSDeviceFeaturesConfigurationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for IOSDeviceFeaturesConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSDeviceFeaturesConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IOSDeviceFeaturesConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []IOSDeviceFeaturesConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []IOSDeviceFeaturesConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for IOSDeviceFeaturesConfiguration collection, max N pages
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSDeviceFeaturesConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]IOSDeviceFeaturesConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for IOSDeviceFeaturesConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSDeviceFeaturesConfigurationCollectionRequest) Get(ctx context.Context) ([]IOSDeviceFeaturesConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for IOSDeviceFeaturesConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSDeviceFeaturesConfigurationCollectionRequest) Add(ctx context.Context, reqObj *IOSDeviceFeaturesConfiguration) (resObj *IOSDeviceFeaturesConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
+// IOSEasEmailProfileConfiguration returns request builder for IOSEasEmailProfileConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) IOSEasEmailProfileConfiguration() *DeviceManagementDeviceConfigurationsCollectionIOSEasEmailProfileConfigurationCollectionRequestBuilder {
+	bb := &DeviceManagementDeviceConfigurationsCollectionIOSEasEmailProfileConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionIOSEasEmailProfileConfigurationCollectionRequestBuilder is request builder for IOSEasEmailProfileConfiguration collection rcn
+type DeviceManagementDeviceConfigurationsCollectionIOSEasEmailProfileConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for IOSEasEmailProfileConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionIOSEasEmailProfileConfigurationCollectionRequestBuilder) Request() *DeviceManagementDeviceConfigurationsCollectionIOSEasEmailProfileConfigurationCollectionRequest {
+	return &DeviceManagementDeviceConfigurationsCollectionIOSEasEmailProfileConfigurationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for IOSEasEmailProfileConfiguration item
+func (b *DeviceManagementDeviceConfigurationsCollectionIOSEasEmailProfileConfigurationCollectionRequestBuilder) ID(id string) *IOSEasEmailProfileConfigurationRequestBuilder {
+	bb := &IOSEasEmailProfileConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionIOSEasEmailProfileConfigurationCollectionRequest is request for IOSEasEmailProfileConfiguration collection
+type DeviceManagementDeviceConfigurationsCollectionIOSEasEmailProfileConfigurationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for IOSEasEmailProfileConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSEasEmailProfileConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IOSEasEmailProfileConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []IOSEasEmailProfileConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []IOSEasEmailProfileConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for IOSEasEmailProfileConfiguration collection, max N pages
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSEasEmailProfileConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]IOSEasEmailProfileConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for IOSEasEmailProfileConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSEasEmailProfileConfigurationCollectionRequest) Get(ctx context.Context) ([]IOSEasEmailProfileConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for IOSEasEmailProfileConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSEasEmailProfileConfigurationCollectionRequest) Add(ctx context.Context, reqObj *IOSEasEmailProfileConfiguration) (resObj *IOSEasEmailProfileConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // IOSEduDeviceConfiguration returns request builder for IOSEduDeviceConfiguration collection
 func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) IOSEduDeviceConfiguration() *DeviceManagementDeviceConfigurationsCollectionIOSEduDeviceConfigurationCollectionRequestBuilder {
 	bb := &DeviceManagementDeviceConfigurationsCollectionIOSEduDeviceConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -1799,6 +2005,109 @@ func (r *DeviceManagementDeviceConfigurationsCollectionIOSEducationDeviceConfigu
 	return
 }
 
+// IOSExpeditedCheckinConfiguration returns request builder for IOSExpeditedCheckinConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) IOSExpeditedCheckinConfiguration() *DeviceManagementDeviceConfigurationsCollectionIOSExpeditedCheckinConfigurationCollectionRequestBuilder {
+	bb := &DeviceManagementDeviceConfigurationsCollectionIOSExpeditedCheckinConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionIOSExpeditedCheckinConfigurationCollectionRequestBuilder is request builder for IOSExpeditedCheckinConfiguration collection rcn
+type DeviceManagementDeviceConfigurationsCollectionIOSExpeditedCheckinConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for IOSExpeditedCheckinConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionIOSExpeditedCheckinConfigurationCollectionRequestBuilder) Request() *DeviceManagementDeviceConfigurationsCollectionIOSExpeditedCheckinConfigurationCollectionRequest {
+	return &DeviceManagementDeviceConfigurationsCollectionIOSExpeditedCheckinConfigurationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for IOSExpeditedCheckinConfiguration item
+func (b *DeviceManagementDeviceConfigurationsCollectionIOSExpeditedCheckinConfigurationCollectionRequestBuilder) ID(id string) *IOSExpeditedCheckinConfigurationRequestBuilder {
+	bb := &IOSExpeditedCheckinConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionIOSExpeditedCheckinConfigurationCollectionRequest is request for IOSExpeditedCheckinConfiguration collection
+type DeviceManagementDeviceConfigurationsCollectionIOSExpeditedCheckinConfigurationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for IOSExpeditedCheckinConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSExpeditedCheckinConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IOSExpeditedCheckinConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []IOSExpeditedCheckinConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []IOSExpeditedCheckinConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for IOSExpeditedCheckinConfiguration collection, max N pages
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSExpeditedCheckinConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]IOSExpeditedCheckinConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for IOSExpeditedCheckinConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSExpeditedCheckinConfigurationCollectionRequest) Get(ctx context.Context) ([]IOSExpeditedCheckinConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for IOSExpeditedCheckinConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSExpeditedCheckinConfigurationCollectionRequest) Add(ctx context.Context, reqObj *IOSExpeditedCheckinConfiguration) (resObj *IOSExpeditedCheckinConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // IOSGeneralDeviceConfiguration returns request builder for IOSGeneralDeviceConfiguration collection
 func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) IOSGeneralDeviceConfiguration() *DeviceManagementDeviceConfigurationsCollectionIOSGeneralDeviceConfigurationCollectionRequestBuilder {
 	bb := &DeviceManagementDeviceConfigurationsCollectionIOSGeneralDeviceConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -1907,6 +2216,109 @@ func (b *IOSImportedPFXCertificateProfileRequestBuilder) IOSCertificateProfile()
 	bb := &IOSCertificateProfileRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/"
 	return bb
+}
+
+// IOSLobApp returns request builder for IOSLobApp collection
+func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) IOSLobApp() *DeviceAppManagementMobileAppsCollectionIOSLobAppCollectionRequestBuilder {
+	bb := &DeviceAppManagementMobileAppsCollectionIOSLobAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceAppManagementMobileAppsCollectionIOSLobAppCollectionRequestBuilder is request builder for IOSLobApp collection rcn
+type DeviceAppManagementMobileAppsCollectionIOSLobAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for IOSLobApp collection
+func (b *DeviceAppManagementMobileAppsCollectionIOSLobAppCollectionRequestBuilder) Request() *DeviceAppManagementMobileAppsCollectionIOSLobAppCollectionRequest {
+	return &DeviceAppManagementMobileAppsCollectionIOSLobAppCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for IOSLobApp item
+func (b *DeviceAppManagementMobileAppsCollectionIOSLobAppCollectionRequestBuilder) ID(id string) *IOSLobAppRequestBuilder {
+	bb := &IOSLobAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceAppManagementMobileAppsCollectionIOSLobAppCollectionRequest is request for IOSLobApp collection
+type DeviceAppManagementMobileAppsCollectionIOSLobAppCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for IOSLobApp collection
+func (r *DeviceAppManagementMobileAppsCollectionIOSLobAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IOSLobApp, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []IOSLobApp
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []IOSLobApp
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for IOSLobApp collection, max N pages
+func (r *DeviceAppManagementMobileAppsCollectionIOSLobAppCollectionRequest) GetN(ctx context.Context, n int) ([]IOSLobApp, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for IOSLobApp collection
+func (r *DeviceAppManagementMobileAppsCollectionIOSLobAppCollectionRequest) Get(ctx context.Context) ([]IOSLobApp, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for IOSLobApp collection
+func (r *DeviceAppManagementMobileAppsCollectionIOSLobAppCollectionRequest) Add(ctx context.Context, reqObj *IOSLobApp) (resObj *IOSLobApp, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
 }
 
 // Entity is navigation property rn
@@ -2560,6 +2972,109 @@ func (b *IOSUpdateDeviceStatusRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
+}
+
+// IOSVPNConfiguration returns request builder for IOSVPNConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionRequestBuilder) IOSVPNConfiguration() *DeviceManagementDeviceConfigurationsCollectionIOSVPNConfigurationCollectionRequestBuilder {
+	bb := &DeviceManagementDeviceConfigurationsCollectionIOSVPNConfigurationCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionIOSVPNConfigurationCollectionRequestBuilder is request builder for IOSVPNConfiguration collection rcn
+type DeviceManagementDeviceConfigurationsCollectionIOSVPNConfigurationCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for IOSVPNConfiguration collection
+func (b *DeviceManagementDeviceConfigurationsCollectionIOSVPNConfigurationCollectionRequestBuilder) Request() *DeviceManagementDeviceConfigurationsCollectionIOSVPNConfigurationCollectionRequest {
+	return &DeviceManagementDeviceConfigurationsCollectionIOSVPNConfigurationCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for IOSVPNConfiguration item
+func (b *DeviceManagementDeviceConfigurationsCollectionIOSVPNConfigurationCollectionRequestBuilder) ID(id string) *IOSVPNConfigurationRequestBuilder {
+	bb := &IOSVPNConfigurationRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceManagementDeviceConfigurationsCollectionIOSVPNConfigurationCollectionRequest is request for IOSVPNConfiguration collection
+type DeviceManagementDeviceConfigurationsCollectionIOSVPNConfigurationCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for IOSVPNConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSVPNConfigurationCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]IOSVPNConfiguration, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []IOSVPNConfiguration
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []IOSVPNConfiguration
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for IOSVPNConfiguration collection, max N pages
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSVPNConfigurationCollectionRequest) GetN(ctx context.Context, n int) ([]IOSVPNConfiguration, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for IOSVPNConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSVPNConfigurationCollectionRequest) Get(ctx context.Context) ([]IOSVPNConfiguration, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for IOSVPNConfiguration collection
+func (r *DeviceManagementDeviceConfigurationsCollectionIOSVPNConfigurationCollectionRequest) Add(ctx context.Context, reqObj *IOSVPNConfiguration) (resObj *IOSVPNConfiguration, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
 }
 
 // IOSVPPApp returns request builder for IOSVPPApp collection
