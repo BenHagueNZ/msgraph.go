@@ -2541,6 +2541,109 @@ func (b *ManagedAllDeviceCertificateStateRequestBuilder) Entity() *EntityRequest
 	return bb
 }
 
+// ManagedAndroidStoreApp returns request builder for ManagedAndroidStoreApp collection
+func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) ManagedAndroidStoreApp() *DeviceAppManagementMobileAppsCollectionManagedAndroidStoreAppCollectionRequestBuilder {
+	bb := &DeviceAppManagementMobileAppsCollectionManagedAndroidStoreAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceAppManagementMobileAppsCollectionManagedAndroidStoreAppCollectionRequestBuilder is request builder for ManagedAndroidStoreApp collection rcn
+type DeviceAppManagementMobileAppsCollectionManagedAndroidStoreAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ManagedAndroidStoreApp collection
+func (b *DeviceAppManagementMobileAppsCollectionManagedAndroidStoreAppCollectionRequestBuilder) Request() *DeviceAppManagementMobileAppsCollectionManagedAndroidStoreAppCollectionRequest {
+	return &DeviceAppManagementMobileAppsCollectionManagedAndroidStoreAppCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ManagedAndroidStoreApp item
+func (b *DeviceAppManagementMobileAppsCollectionManagedAndroidStoreAppCollectionRequestBuilder) ID(id string) *ManagedAndroidStoreAppRequestBuilder {
+	bb := &ManagedAndroidStoreAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceAppManagementMobileAppsCollectionManagedAndroidStoreAppCollectionRequest is request for ManagedAndroidStoreApp collection
+type DeviceAppManagementMobileAppsCollectionManagedAndroidStoreAppCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ManagedAndroidStoreApp collection
+func (r *DeviceAppManagementMobileAppsCollectionManagedAndroidStoreAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ManagedAndroidStoreApp, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ManagedAndroidStoreApp
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ManagedAndroidStoreApp
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ManagedAndroidStoreApp collection, max N pages
+func (r *DeviceAppManagementMobileAppsCollectionManagedAndroidStoreAppCollectionRequest) GetN(ctx context.Context, n int) ([]ManagedAndroidStoreApp, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ManagedAndroidStoreApp collection
+func (r *DeviceAppManagementMobileAppsCollectionManagedAndroidStoreAppCollectionRequest) Get(ctx context.Context) ([]ManagedAndroidStoreApp, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ManagedAndroidStoreApp collection
+func (r *DeviceAppManagementMobileAppsCollectionManagedAndroidStoreAppCollectionRequest) Add(ctx context.Context, reqObj *ManagedAndroidStoreApp) (resObj *ManagedAndroidStoreApp, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // ManagedApp returns request builder for ManagedApp collection
 func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) ManagedApp() *DeviceAppManagementMobileAppsCollectionManagedAppCollectionRequestBuilder {
 	bb := &DeviceAppManagementMobileAppsCollectionManagedAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
@@ -3264,11 +3367,217 @@ func (b *ManagedEBookCategoryRequestBuilder) Entity() *EntityRequestBuilder {
 	return bb
 }
 
+// ManagedIOSStoreApp returns request builder for ManagedIOSStoreApp collection
+func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) ManagedIOSStoreApp() *DeviceAppManagementMobileAppsCollectionManagedIOSStoreAppCollectionRequestBuilder {
+	bb := &DeviceAppManagementMobileAppsCollectionManagedIOSStoreAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceAppManagementMobileAppsCollectionManagedIOSStoreAppCollectionRequestBuilder is request builder for ManagedIOSStoreApp collection rcn
+type DeviceAppManagementMobileAppsCollectionManagedIOSStoreAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ManagedIOSStoreApp collection
+func (b *DeviceAppManagementMobileAppsCollectionManagedIOSStoreAppCollectionRequestBuilder) Request() *DeviceAppManagementMobileAppsCollectionManagedIOSStoreAppCollectionRequest {
+	return &DeviceAppManagementMobileAppsCollectionManagedIOSStoreAppCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ManagedIOSStoreApp item
+func (b *DeviceAppManagementMobileAppsCollectionManagedIOSStoreAppCollectionRequestBuilder) ID(id string) *ManagedIOSStoreAppRequestBuilder {
+	bb := &ManagedIOSStoreAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceAppManagementMobileAppsCollectionManagedIOSStoreAppCollectionRequest is request for ManagedIOSStoreApp collection
+type DeviceAppManagementMobileAppsCollectionManagedIOSStoreAppCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ManagedIOSStoreApp collection
+func (r *DeviceAppManagementMobileAppsCollectionManagedIOSStoreAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ManagedIOSStoreApp, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ManagedIOSStoreApp
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ManagedIOSStoreApp
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ManagedIOSStoreApp collection, max N pages
+func (r *DeviceAppManagementMobileAppsCollectionManagedIOSStoreAppCollectionRequest) GetN(ctx context.Context, n int) ([]ManagedIOSStoreApp, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ManagedIOSStoreApp collection
+func (r *DeviceAppManagementMobileAppsCollectionManagedIOSStoreAppCollectionRequest) Get(ctx context.Context) ([]ManagedIOSStoreApp, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ManagedIOSStoreApp collection
+func (r *DeviceAppManagementMobileAppsCollectionManagedIOSStoreAppCollectionRequest) Add(ctx context.Context, reqObj *ManagedIOSStoreApp) (resObj *ManagedIOSStoreApp, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
+}
+
 // Entity is navigation property rn
 func (b *ManagedMobileAppRequestBuilder) Entity() *EntityRequestBuilder {
 	bb := &EntityRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/Entity"
 	return bb
+}
+
+// ManagedMobileLobApp returns request builder for ManagedMobileLobApp collection
+func (b *DeviceAppManagementMobileAppsCollectionRequestBuilder) ManagedMobileLobApp() *DeviceAppManagementMobileAppsCollectionManagedMobileLobAppCollectionRequestBuilder {
+	bb := &DeviceAppManagementMobileAppsCollectionManagedMobileLobAppCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/"
+	return bb
+}
+
+// DeviceAppManagementMobileAppsCollectionManagedMobileLobAppCollectionRequestBuilder is request builder for ManagedMobileLobApp collection rcn
+type DeviceAppManagementMobileAppsCollectionManagedMobileLobAppCollectionRequestBuilder struct{ BaseRequestBuilder }
+
+// Request returns request for ManagedMobileLobApp collection
+func (b *DeviceAppManagementMobileAppsCollectionManagedMobileLobAppCollectionRequestBuilder) Request() *DeviceAppManagementMobileAppsCollectionManagedMobileLobAppCollectionRequest {
+	return &DeviceAppManagementMobileAppsCollectionManagedMobileLobAppCollectionRequest{
+		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
+	}
+}
+
+// ID returns request builder for ManagedMobileLobApp item
+func (b *DeviceAppManagementMobileAppsCollectionManagedMobileLobAppCollectionRequestBuilder) ID(id string) *ManagedMobileLobAppRequestBuilder {
+	bb := &ManagedMobileLobAppRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+	bb.baseURL += "/" + id
+	return bb
+}
+
+// DeviceAppManagementMobileAppsCollectionManagedMobileLobAppCollectionRequest is request for ManagedMobileLobApp collection
+type DeviceAppManagementMobileAppsCollectionManagedMobileLobAppCollectionRequest struct{ BaseRequest }
+
+// Paging perfoms paging operation for ManagedMobileLobApp collection
+func (r *DeviceAppManagementMobileAppsCollectionManagedMobileLobAppCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]ManagedMobileLobApp, error) {
+	req, err := r.NewJSONRequest(method, path, obj)
+	if err != nil {
+		return nil, err
+	}
+	if ctx != nil {
+		req = req.WithContext(ctx)
+	}
+	res, err := r.client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	var values []ManagedMobileLobApp
+	for {
+		if res.StatusCode != http.StatusOK {
+			b, _ := ioutil.ReadAll(res.Body)
+			res.Body.Close()
+			errRes := &ErrorResponse{Response: res}
+			err := jsonx.Unmarshal(b, errRes)
+			if err != nil {
+				return nil, fmt.Errorf("%s: %s", res.Status, string(b))
+			}
+			return nil, errRes
+		}
+		var (
+			paging Paging
+			value  []ManagedMobileLobApp
+		)
+		err := jsonx.NewDecoder(res.Body).Decode(&paging)
+		res.Body.Close()
+		if err != nil {
+			return nil, err
+		}
+		err = jsonx.Unmarshal(paging.Value, &value)
+		if err != nil {
+			return nil, err
+		}
+		values = append(values, value...)
+		if n >= 0 {
+			n--
+		}
+		if n == 0 || len(paging.NextLink) == 0 {
+			return values, nil
+		}
+		req, err = http.NewRequest("GET", paging.NextLink, nil)
+		if ctx != nil {
+			req = req.WithContext(ctx)
+		}
+		res, err = r.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
+// GetN performs GET request for ManagedMobileLobApp collection, max N pages
+func (r *DeviceAppManagementMobileAppsCollectionManagedMobileLobAppCollectionRequest) GetN(ctx context.Context, n int) ([]ManagedMobileLobApp, error) {
+	var query string
+	if r.query != nil {
+		query = "?" + r.query.Encode()
+	}
+	return r.Paging(ctx, "GET", query, nil, n)
+}
+
+// Get performs GET request for ManagedMobileLobApp collection
+func (r *DeviceAppManagementMobileAppsCollectionManagedMobileLobAppCollectionRequest) Get(ctx context.Context) ([]ManagedMobileLobApp, error) {
+	return r.GetN(ctx, 0)
+}
+
+// Add performs POST request for ManagedMobileLobApp collection
+func (r *DeviceAppManagementMobileAppsCollectionManagedMobileLobAppCollectionRequest) Add(ctx context.Context, reqObj *ManagedMobileLobApp) (resObj *ManagedMobileLobApp, err error) {
+	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
+	return
 }
 
 // ManagedTenantsManagementActionTenantDeploymentStatusCollectionManagedTenantsChangeDeploymentStatusRequestParameter undocumented
